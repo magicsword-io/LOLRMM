@@ -1,0 +1,30 @@
+Name: GoToAssist (GoTo Resolve)
+Description: GoToAssist (GoTo Resolve) is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\ProgramFiles*\GoTo Machine Installer\*
+  - '*\GoTo Machine Installer\*'
+  - '*\GoTo\*'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

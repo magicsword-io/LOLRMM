@@ -19,6 +19,9 @@ Details:
   InstallationPaths:
   - tigervnc*.exe
   - winvnc4.exe
+  - C:\Program Files\TightVNC\*
+  - '*\TightVNC\*'
+  - '*\tvnserver.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

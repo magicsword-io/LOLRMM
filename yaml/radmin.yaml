@@ -20,6 +20,9 @@ Details:
   - radmin.exe
   - famitrfc.exe
   - radmin3.exe
+  - C:\Program Files\Radmin Viewer 3\*
+  - '*\Radmin Viewer 3\*'
+  - '*\Radmin.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

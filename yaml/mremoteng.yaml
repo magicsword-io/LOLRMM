@@ -18,6 +18,9 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - mRemoteNG.exe
+  - C:\Program Files (x86)\mRemoteNG\*
+  - '*\mRemoteNG\*'
+  - '*\mRemoteNG.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

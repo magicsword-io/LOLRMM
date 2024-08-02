@@ -18,6 +18,8 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - ngrok.exe
+  - C:\*\ngrok.zip
+  - '*\ngrok*'
 ForensicArtifacts:
   Disk: []
   EventLog: []

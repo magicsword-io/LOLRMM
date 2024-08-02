@@ -29,6 +29,9 @@ Details:
   - g2host.exe
   - g2comm.exe
   - g2mainh.exe
+  - C:\Program Files (x86)\GoToMyPC\*
+  - '*\GoToMyPC\*'
+  - '*\2svc.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

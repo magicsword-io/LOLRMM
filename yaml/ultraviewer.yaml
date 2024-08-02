@@ -21,6 +21,9 @@ Details:
   - UltraViewer_setup*
   - UltraViewer_Desktop.exe
   - ultraviewer.exe
+  - C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
+  - '*\UltraViewer\'
+  - '*\UltraViewer_Desktop.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

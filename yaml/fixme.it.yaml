@@ -26,6 +26,9 @@ Details:
   - fixmeitclient.exe
   - TiClientCore.exe
   - TiClientHelper*.exe
+  - no installation required | recommend blocking fixme[.]it SaaS portal
+  - no installation required | recommend blocking fixme[.]it SaaS portal
+  - 9380CC75B872221A7425D7503565B67580407F60
 ForensicArtifacts:
   Disk: []
   EventLog: []

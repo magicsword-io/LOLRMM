@@ -1,0 +1,31 @@
+Name: RemoteUtilities
+Description: RemoteUtilities is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Program Files\Remote Utilities\*
+  - '*\Remote Utilities\*'
+  - '*\rutserv.exe'
+  - '*\Remote Manipulator System - Server\*'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

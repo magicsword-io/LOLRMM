@@ -1,0 +1,30 @@
+Name: ExtraPuTTY
+Description: ExtraPuTTY is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
+  - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+  - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

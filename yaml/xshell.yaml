@@ -1,0 +1,30 @@
+Name: Xshell
+Description: Xshell is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Program Files (x86)\NetSarang\xShell\*
+  - '*\NetSarang\xShell\*'
+  - '*\xShell.exe'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

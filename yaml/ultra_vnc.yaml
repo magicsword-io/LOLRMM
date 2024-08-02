@@ -1,0 +1,32 @@
+Name: Ultra VNC
+Description: Ultra VNC is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Program Files\uvnc bvba\UltraVNC\*
+  - '*\uvnc bvba\UltraVNC\*'
+  - '*\UVNC_Launch.exe'
+  - '*\winvnc.exe'
+  - '*\vncviewer.exe'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

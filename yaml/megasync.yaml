@@ -1,0 +1,33 @@
+Name: MEGAsync
+Description: MEGAsync is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Users\*\AppData\Local\MEGAsync\*
+  - '*Users\*\AppData\Local\MEGAsync\*'
+  - '*Users\*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\*'
+  - '*ProgramData\MEGAsync\*'
+  - '*\MEGAsyncSetup64.exe'
+  - '*\MEGAupdater.exe'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

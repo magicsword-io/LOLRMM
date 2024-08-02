@@ -21,6 +21,10 @@ Details:
   - mikogo-starter.exe
   - mikogo-service.exe
   - mikogolauncher.exe
+  - C:\Users\*\AppData\Roaming\Mikogo\*
+  - '*Users\*\AppData\Roaming\Mikogo\*'
+  - '*\Mikogo-Service.exe'
+  - '*\Mikogo-Screen-Service.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

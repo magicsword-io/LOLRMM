@@ -1,0 +1,32 @@
+Name: Google Drive
+Description: Google Drive is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Program Files\Google\Drive File Stream\*
+  - '*\Google\Drive File Stream\*'
+  - '*Users\*\AppData\*\Google\DriveFS*'
+  - G:\My Drive*
+  - '*\GoogleDriveFS.exe'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

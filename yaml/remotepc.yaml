@@ -22,6 +22,9 @@ Details:
   - Idrive.File-Transfer
   - idrive.RemotePCAgent
   - remotepchost.exe
+  - C:\Program Files (x86)\RemotePC\*
+  - '*\RemotePC\*'
+  - '*\RemotePCService.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

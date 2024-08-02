@@ -21,6 +21,10 @@ Details:
   - SolarWinds-Dameware-MRC*.exe
   - DameWare Mini Remote Control*.exe
   - SolarWinds-Dameware-DRS*.exe
+  - "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\\
+    *"
+  - '*\dwrcs\*'
+  - '*\dwrcst.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

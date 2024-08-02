@@ -24,6 +24,8 @@ Details:
   - Zohours.exe
   - ZohoURSService.exe
   - ZMAgent.exe
+  - C:\*\ZA_Access.exe
+  - '*\ZA_Access.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

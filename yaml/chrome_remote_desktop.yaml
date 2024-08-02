@@ -19,6 +19,9 @@ Details:
   InstallationPaths:
   - remote_host.exe
   - remoting_host.exe
+  - C:\Program Files (x86)\Google\Chrome Remote Desktop\*
+  - '*\Google\Chrome Remote Desktop\*'
+  - '*\remoting_host.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

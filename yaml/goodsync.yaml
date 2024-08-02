@@ -1,0 +1,31 @@
+Name: GoodSync
+Description: GoodSync is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - installation requires paid version of GoodSync Server
+  - installation requires paid version of GoodSync Server
+  - GoodSync-vsub-Setup.exe
+  - A40B81B36CDC2D24910FC58816E50DCDE21BD1A9
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

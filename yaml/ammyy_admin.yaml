@@ -19,6 +19,8 @@ Details:
   InstallationPaths:
   - aa_v*.exe
   - AMMYY_Admin.exe
+  - C:\Users\*\Downloads\AMMYY_Admin.exe
+  - '*\AMMYY_Admin.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

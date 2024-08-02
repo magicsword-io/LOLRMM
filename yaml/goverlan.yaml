@@ -22,6 +22,9 @@ Details:
   - GovAgentInstallHelper.exe
   - GovAgentx64.exe
   - GovReachClient.exe
+  - C:\Program Files (x86)\PJ Technologies\GOVsrv\*
+  - '*\PJ Technologies\GOVsrv\*'
+  - '*\GovSrv.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

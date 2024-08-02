@@ -22,6 +22,11 @@ Details:
   - LANDeskPortalManager.exe
   - ldinv32.exe
   - ldsensors.exe
+  - C:\Program Files (x86)\LANDesk\*
+  - '*\LANDesk\*'
+  - '*\issuser.exe'
+  - '*\softmon.exe'
+  - '*\tmcsvc.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

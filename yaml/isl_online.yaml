@@ -21,6 +21,9 @@ Details:
   - isllight.exe
   - isllightservice.exe
   - ISLLightClient.exe
+  - C:\Program Files (x86)\ISL Online\ISL Light*
+  - '*\ISL Online\ISL Light*'
+  - '*\ISLLight.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []
