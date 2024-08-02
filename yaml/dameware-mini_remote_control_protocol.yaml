@@ -1,0 +1,33 @@
+Name: Dameware-mini remote control Protocol
+Description: Dameware-mini remote control Protocol is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - dntus*.exe
+  - dwrcs.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - dameware.com
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

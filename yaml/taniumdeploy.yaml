@@ -1,0 +1,31 @@
+Name: Tanium Deploy
+Description: Tanium Deploy is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths: []
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - tanium.com/products/tanium-deploy
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

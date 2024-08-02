@@ -17,12 +17,13 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - vncserver.exe
   - winvnc*.exe
-  - vncviewer.exe
-  - vncserverui.exe
+  - vncserver.exe
   - winwvc.exe
   - winvncsc.exe
+  - vncserverui.exe
+  - vncviewer.exe
+  - winvnc.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -31,6 +32,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - realvnc.com/en/connect/download/vnc
     Port: ''
 Detections: []
 References:

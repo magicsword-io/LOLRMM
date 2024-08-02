@@ -29,6 +29,7 @@ ForensicArtifacts:
     Domain:
     - '*.logmeinrescue.com'
     - '*.logmeinrescue.eu'
+    - logmeinrescue.com
     Port: ''
 Detections: []
 References:

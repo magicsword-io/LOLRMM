@@ -1,0 +1,35 @@
+Name: Netop Remote Control (aka Impero Connect)
+Description: Netop Remote Control (aka Impero Connect) is a remote monitoring and
+  management (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - nhostsvc.exe
+  - nhstw32.exe
+  - nldrw32.exe
+  - rmserverconsolemediator.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - imperosoftware.com/impero-connect/
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

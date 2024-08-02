@@ -1,0 +1,33 @@
+Name: Netviewer
+Description: Netviewer is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - netviewer*.exe
+  - netviewer.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - download.cnet.com/Net-Viewer/3000-2370_4-10034828.html
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

@@ -28,6 +28,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.01com.com'
+    - 01com.com/imintouch-remote-pc-desktop
     Port: ''
 Detections: []
 References:

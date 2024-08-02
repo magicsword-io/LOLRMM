@@ -17,15 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - rutview.exe
+  - '*\Remote Manipulator System - Server\*'
   - C:\Program Files\Remote Utilities\*
   - '*\Remote Utilities\*'
+  - rutserv.exe
   - '*\rutserv.exe'
-  - '*\Remote Manipulator System - Server\*'
 ForensicArtifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - remoteutilities.com
+    Port: ''
 Detections: []
 References: []
 Acknowledgement: []

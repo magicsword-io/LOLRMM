@@ -19,6 +19,7 @@ Details:
   InstallationPaths:
   - neturo*.exe
   - ntrntservice.exe
+  - neturo.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []

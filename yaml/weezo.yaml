@@ -30,6 +30,7 @@ ForensicArtifacts:
     - '*.weezo.me'
     - weezo.net
     - '*.weezo.net'
+    - weezo.en.softonic.com
     Port: ''
 Detections: []
 References:

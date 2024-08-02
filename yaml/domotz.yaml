@@ -17,12 +17,12 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - domotz*.exe
-  - domotz_bash.exe
-  - domotz-windows*.exe
-  - Domotz Pro Desktop App.exe
-  - Domotz Pro Desktop App Setup*.exe
   - domotz.exe
+  - Domotz Pro Desktop App.exe
+  - domotz_bash.exe
+  - domotz*.exe
+  - Domotz Pro Desktop App Setup*.exe
+  - domotz-windows*.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -31,8 +31,8 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.domotz.co'
-    - '*cell-1.domotz.com'
     - domotz.com
+    - '*cell-1.domotz.com'
     Port: ''
 Detections: []
 References:

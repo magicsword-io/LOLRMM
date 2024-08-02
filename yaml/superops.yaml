@@ -26,11 +26,11 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - superops.ai
-    - '*.superops.ai'
-    - serv.superopsalpha.com
-    - '*.superopsalpha.com'
     - '*.superopsbeta.com'
+    - superops.ai
+    - serv.superopsalpha.com
+    - '*.superops.ai'
+    - '*.superopsalpha.com'
     Port: ''
 Detections: []
 References:

@@ -17,10 +17,12 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - lmnoipserver.exe
+  - ROMFUSClient.exe
   - romfusclient.exe
   - romviewer.exe
   - romserver.exe
-  - lmnoipserver.exe
+  - ROMServer.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -30,6 +32,7 @@ ForensicArtifacts:
     Domain:
     - '*.litemanager.ru'
     - '*.litemanager.com'
+    - litemanager.com
     Port: ''
 Detections: []
 References:

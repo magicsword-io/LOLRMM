@@ -17,16 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - Syncro.Installer.exe
   - Kabuto.App.Runner.exe
-  - Kabuto.Service.Runner.exe
+  - Syncro.Overmind.Service.exe
   - Kabuto.Installer.exe
   - KabutoSetup.exe
-  - Syncro.Overmind.Service.exe
+  - Syncro.Service.exe
+  - Kabuto.Service.Runner.exe
+  - Syncro.App.Runner.exe
   - SyncroLive.Service.exe
   - SyncroLive.Agent.exe
-  - Syncro.App.Runner.exe
-  - Syncro.Installer.exe
-  - Syncro.Service.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -34,11 +34,16 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - 'app.kabuto.io '
+    - kabuto.io
     - '*.syncromsp.com'
     - '*.syncroapi.com'
-    - '*.kabutoservices.com'
+    - syncromsp.com
+    - servably.com
     - ld.aurelius.host
+    - 'app.kabuto.io '
+    - '*.kabutoservices.com'
+    - repairshopr.com
+    - kabutoservices.com
     - attachments.servably.com
     Port: ''
 Detections: []

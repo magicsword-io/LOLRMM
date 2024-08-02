@@ -29,6 +29,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - ivanti.com/
     Port: ''
 Detections: []
 References:

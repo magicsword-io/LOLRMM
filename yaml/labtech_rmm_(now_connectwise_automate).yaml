@@ -1,0 +1,34 @@
+Name: LabTech RMM (Now ConnectWise Automate)
+Description: LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ltsvc.exe
+  - ltsvcmon.exe
+  - lttray.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - connectwise.com
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Pilixo_Installer*.exe
   - rdp.exe
+  - Pilixo_Installer*.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -26,9 +26,9 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - '*.pilixo.com'
     - pilixo.com
     - download.pilixo.com
+    - '*.pilixo.com'
     Port: ''
 Detections: []
 References:

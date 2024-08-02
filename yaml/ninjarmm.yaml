@@ -18,7 +18,9 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - ninjarmmagent.exe
+  - NinjaRMMAgent.exe
   - NinjaRMMAgenPatcher.exe
+  - ninjarmm-cli.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -26,8 +28,10 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - '*.ninjaone.com'
     - '*.ninjarmm.com'
+    - '*.ninjaone.com'
+    - resources.ninjarmm.com
+    - ninjaone.com
     Port: ''
 Detections: []
 References:

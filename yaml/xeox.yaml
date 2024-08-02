@@ -17,8 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - xeox-agent_*.exe
+  - xeox-agent_x64.exe
   - xeox_service_windows.exe
+  - xeox-agent_*.exe
+  - xeox-agent_x86.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -26,8 +28,8 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - xeox.com
     - '*.xeox.com'
+    - xeox.com
     Port: ''
 Detections: []
 References:

@@ -1,0 +1,38 @@
+Name: Parallels Access
+Description: Parallels Access is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - parallelsaccess-*.exe
+  - TSClient.exe
+  - prl_deskctl_agent.exe
+  - prl_deskctl_wizard.exe
+  - prl_pm_service.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.parallels.com'
+    - parallels.com/products/ras/try
+    Port: ''
+Detections: []
+References:
+- https://kb.parallels.com/en/129097
+Acknowledgement: []

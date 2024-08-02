@@ -33,6 +33,7 @@ ForensicArtifacts:
     - plus*.site24x7.in
     - plus*.site24x7.cn
     - plus*.site24x7.net.au
+    - site24x7.com/msp
     Port: ''
 Detections: []
 References:

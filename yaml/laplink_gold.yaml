@@ -18,6 +18,7 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - tsircusr.exe
+  - laplink.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -26,6 +27,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - wen.laplink.com/product/laplink-gold
     Port: ''
 Detections: []
 References:

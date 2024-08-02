@@ -27,6 +27,7 @@ ForensicArtifacts:
     Domain:
     - '*.alpemix.com'
     - '*.teknopars.com'
+    - alpemix.com
     Port: ''
 Detections: []
 References:

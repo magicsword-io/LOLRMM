@@ -21,6 +21,7 @@ Details:
   - simpleservice.exe
   - simplegatewayservice.exe
   - remote access.exe
+  - windowslauncher.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -29,6 +30,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - simple-help.com
     Port: ''
 Detections: []
 References:

@@ -17,12 +17,11 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - logmein*.exe
   - lmiguardiansvc.exe
   - lmiignition.exe
   - logmein.exe
   - logmeinsystray.exe
-  - logmein*.exe
-  - lmiignition.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -31,8 +30,10 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*logmein.eu'
-    - '*.logmeininc.com'
+    - logmeinrescue.com
     - '*.logmein.com'
+    - logmein.com/central
+    - '*.logmeininc.com'
     Port: ''
 Detections: []
 References:

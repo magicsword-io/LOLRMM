@@ -22,6 +22,7 @@ Details:
   - tv_w32.exe
   - tv_w64.exe
   - teamviewer.exe
+  - teamviewer_service.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -30,6 +31,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.teamviewer.com'
+    - teamviewer.com
     Port: ''
 Detections: []
 References:

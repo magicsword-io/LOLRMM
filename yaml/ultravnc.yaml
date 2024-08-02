@@ -25,6 +25,7 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
+    - ultravnc.com
     - user_managed
     Port: ''
 Detections: []

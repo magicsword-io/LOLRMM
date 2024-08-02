@@ -24,6 +24,8 @@ Details:
   - C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
   - '*\UltraViewer\'
   - '*\UltraViewer_Desktop.exe'
+  - ultraviewer_desktop.exe
+  - ultraviewer_service.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -32,6 +34,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '* .ultraviewer.net'
+    - ultraviewer.net
     Port: ''
 Detections: []
 References:

@@ -1,0 +1,33 @@
+Name: ScreenConnect (aka COnnectWise/Continuum)
+Description: ScreenConnect (aka COnnectWise/Continuum) is a remote monitoring and
+  management (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - screenconnect*.exe
+  - screenconnect.windowsclient.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - control.connectwise.com
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

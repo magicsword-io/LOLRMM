@@ -17,9 +17,11 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - InstallShield Setup.exe
+  - ManageEngine_Remote_Access_Plus.exe
+  - '*\dcagentservice.exe'
   - C:\Program Files (x86)\DesktopCentral_Agent\bin\*
   - '*\DesktopCentral_Agent\bin\*'
-  - '*\dcagentservice.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

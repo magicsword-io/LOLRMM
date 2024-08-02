@@ -29,6 +29,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.pcvisit.de'
+    - pcvisit.de
     Port: ''
 Detections: []
 References:

@@ -29,6 +29,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.parallels.com'
+    - parallels.com/products/ras/try
     Port: ''
 Detections: []
 References:

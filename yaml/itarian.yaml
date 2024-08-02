@@ -18,15 +18,15 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - ITSMAgent.exe
-  - ItsmRsp.exe
-  - ITSMService.exe
-  - RDesktop.exe
-  - RHost.exe
-  - RmmService.exe
-  - ComodoRemoteControl.exe
-  - RAccess.exe
   - RViewer.exe
+  - ItsmRsp.exe
+  - RAccess.exe
+  - RmmService.exe
   - ITarianRemoteAccessSetup.exe
+  - RDesktop.exe
+  - ComodoRemoteControl.exe
+  - ITSMService.exe
+  - RHost.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -34,8 +34,8 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - '*.itsm-us1.comodo.com'
     - mdmsupport.comodo.com
+    - '*.itsm-us1.comodo.com'
     - '*.cmdm.comodo.com'
     - remoteaccess.itarian.com
     - servicedesk.itarian.com

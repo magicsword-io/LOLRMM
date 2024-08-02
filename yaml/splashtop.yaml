@@ -17,9 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Splashtop\*
   - '*\Splashtop\*'
   - '*\Splashtop\Splashtop Remote\Client for RMM\*'
+  - strwinclt.exe
+  - C:\Program Files (x86)\Splashtop\*
   - '*\strwinclt.exe'
 ForensicArtifacts:
   Disk: []

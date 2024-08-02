@@ -17,6 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - GetScreen.exe
   - getscreen.exe
 ForensicArtifacts:
   Disk: []
@@ -25,8 +26,9 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - '*.getscreen.me'
     - getscreen.me
+    - GetScreen.me
+    - '*.getscreen.me'
     Port: ''
 Detections: []
 References:

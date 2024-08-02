@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rustdesk.exe
   - rustdesk*.exe
+  - rustdesk.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -26,7 +26,9 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
+    - rustdesk.com
     - user_managed
+    - web.rustdesk.com
     Port: ''
 Detections: []
 References:

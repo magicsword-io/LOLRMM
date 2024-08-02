@@ -17,17 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - basuptshelper.exe
+  - basupsrvcupdate.exe
+  - BASupApp.exe
   - BASupSysInf.exe
   - BASupAppSrvc.exe
-  - BASupAppElev.exe
-  - BASupApp.exe
   - TakeControl.exe
-  - BASupApp.exe
+  - BASupAppElev.exe
+  - basupsrvc.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - beanywhere.en.uptodown.com/windows
+    - beanywhere.com
+    Port: ''
 Detections: []
 References:
 - https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx

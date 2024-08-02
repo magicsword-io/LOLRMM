@@ -26,6 +26,7 @@ ForensicArtifacts:
     Domain:
     - '*.islonline.net'
     - rmm.barracudamsp.com
+    - barracudamsp.com
     Port: ''
 Detections: []
 References:

@@ -27,6 +27,7 @@ ForensicArtifacts:
     - charon.netreo.net
     - activation.netreo.net
     - '*.api.netreo.com'
+    - netreo.com
     Port: ''
 Detections: []
 References:

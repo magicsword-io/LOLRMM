@@ -1,0 +1,32 @@
+Name: FleetDeck
+Description: FleetDeck is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - fleetdeck_agent_svc.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - fleetdeck.io
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

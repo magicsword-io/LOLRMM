@@ -21,7 +21,11 @@ ForensicArtifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - encapto.com
+    Port: ''
 Detections: []
 References:
 - https://www.encapto.com - used to manage Cisco services

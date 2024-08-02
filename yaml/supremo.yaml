@@ -18,12 +18,9 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - supremo.exe
-  - supremohelper.exe
   - supremoservice.exe
   - supremosystem.exe
   - supremohelper.exe
-  - supremo.exe
-  - supremosystem.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []

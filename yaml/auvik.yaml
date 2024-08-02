@@ -28,6 +28,7 @@ ForensicArtifacts:
     Domain:
     - '*.my.auvik.com'
     - '*.auvik.com'
+    - auvik.com
     Port: ''
 Detections: []
 References:

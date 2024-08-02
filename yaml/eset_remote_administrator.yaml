@@ -30,6 +30,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - eset.com/me/business/remote-management/remote-administrator/
     Port: ''
 Detections: []
 References:

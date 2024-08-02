@@ -1,0 +1,34 @@
+Name: ITSupport247 (ConnectWise)
+Description: ITSupport247 (ConnectWise) is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - saazapsc.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.itsupport247.net'
+    - itsupport247.net
+    Port: ''
+Detections: []
+References:
+- https://control.itsupport247.net/
+Acknowledgement: []

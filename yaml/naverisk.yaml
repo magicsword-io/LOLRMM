@@ -26,6 +26,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - naverisk.com
     Port: ''
 Detections: []
 References:

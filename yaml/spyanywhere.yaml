@@ -26,6 +26,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.spytech-web.com'
+    - spyanywhere.com
     Port: ''
 Detections: []
 References:

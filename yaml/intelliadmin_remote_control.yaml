@@ -31,6 +31,7 @@ ForensicArtifacts:
     Domain:
     - user_managed
     - '*.intelliadmin.com'
+    - intelliadmin.com/remote-control
     Port: ''
 Detections: []
 References:

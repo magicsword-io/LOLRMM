@@ -30,6 +30,7 @@ ForensicArtifacts:
     - todesk.com
     - '*.todesk.com'
     - '*.todesk.com'
+    - todesktop.com
     Port: ''
 Detections: []
 References:

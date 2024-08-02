@@ -36,6 +36,7 @@ ForensicArtifacts:
     Domain:
     - '*.ivanticloud.com'
     - '*.ivanti.com'
+    - ivanti.com
     Port: ''
 Detections: []
 References:

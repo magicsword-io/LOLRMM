@@ -38,6 +38,7 @@ ForensicArtifacts:
     - '*.cloudberrylab.com'
     - '*.msp360.com'
     - '*.mspbackups.com'
+    - msp360.com
     Port: ''
 Detections: []
 References:

@@ -18,11 +18,16 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - PCMonitorManager.exe
+  - pcmonitorsrv.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - pulseway.com
+    Port: ''
 Detections: []
 References:
 - https://intercom.help/pulseway/en/

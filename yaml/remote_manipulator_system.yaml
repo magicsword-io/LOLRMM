@@ -27,6 +27,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.internetid.ru'
+    - rmansys.ru
     Port: ''
 Detections: []
 References:

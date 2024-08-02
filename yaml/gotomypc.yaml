@@ -17,21 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - g2file*.exe
-  - g2quick.exe
-  - g2svc.exe
-  - g2tray.exe
-  - g2svc.exe
-  - g2printh.exe
-  - g2fileh.exe
-  - g2tray.exe
-  - gopcsrv.exe
   - g2host.exe
-  - g2comm.exe
-  - g2mainh.exe
-  - C:\Program Files (x86)\GoToMyPC\*
-  - '*\GoToMyPC\*'
+  - gopcsrv.exe
+  - g2tray.exe
   - '*\2svc.exe'
+  - g2comm.exe
+  - g2svc.exe
+  - C:\Program Files (x86)\GoToMyPC\*
+  - g2quick.exe
+  - g2mainh.exe
+  - g2file*.exe
+  - g2fileh.exe
+  - g2printh.exe
+  - '*\GoToMyPC\*'
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -40,6 +38,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.GoToMyPC.com'
+    - get.gotomypc.com
     Port: ''
 Detections: []
 References:

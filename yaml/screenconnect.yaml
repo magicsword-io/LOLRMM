@@ -17,10 +17,11 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - Remote Workforce Client.exe
+  - '*\*\ScreenConnect.ClientService.exe'
   - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
   - '*\ScreenConnect Client*\*'
   - '*\*\ScreenConnect.WindowsClient.exe'
-  - '*\*\ScreenConnect.ClientService.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

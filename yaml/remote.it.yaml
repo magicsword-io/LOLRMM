@@ -29,6 +29,7 @@ ForensicArtifacts:
     Domain:
     - auth.api.remote.it
     - api.remote.it
+    - remote.it
     Port: ''
 Detections: []
 References:

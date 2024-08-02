@@ -1,0 +1,38 @@
+Name: ESET Remote Administrator
+Description: ESET Remote Administrator is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - einstaller.exe
+  - era.exe
+  - ERAAgent.exe
+  - ezhelp*.exe
+  - eratool.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    - eset.com/me/business/remote-management/remote-administrator/
+    Port: ''
+Detections: []
+References:
+- eset.com/me/business/remote-management/remote-administrator/
+Acknowledgement: []

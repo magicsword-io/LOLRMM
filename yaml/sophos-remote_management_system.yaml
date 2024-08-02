@@ -30,6 +30,7 @@ ForensicArtifacts:
     - '*.sophos.com'
     - '*.sophosupd.com'
     - '*.sophosupd.net'
+    - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
     Port: ''
 Detections: []
 References:

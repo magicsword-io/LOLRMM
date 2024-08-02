@@ -1,0 +1,30 @@
+Name: NoteOn-desktop sharing
+Description: NoteOn-desktop sharing is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - nateon*.exe
+  - nateon.exe
+  - nateonmain.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

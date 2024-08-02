@@ -17,9 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - SMPCSetup.exe
   - showmypc*.exe
   - showmypc.exe
-  - SMPCSetup.exe
+  - smpcsetup.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -27,8 +28,8 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - showmypc.com
     - '*.showmypc.com'
+    - showmypc.com
     Port: ''
 Detections: []
 References:

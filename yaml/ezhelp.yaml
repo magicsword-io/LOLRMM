@@ -28,6 +28,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.ezhelp.co.kr'
+    - ezhelp.co.kr
     Port: ''
 Detections: []
 References:

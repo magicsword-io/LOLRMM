@@ -28,6 +28,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - tele-desk.com
     Port: ''
 Detections: []
 References:

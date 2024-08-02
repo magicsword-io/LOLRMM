@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - action1_connector.exe
   - action1_agent.exe
   - action1_remote.exe
-  - action1_connector.exe
   - action1_update.exe
 ForensicArtifacts:
   Disk: []
@@ -28,9 +28,9 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - '*.action1.com'
     - action1.com
     - a1-backend-packages.s3.amazonaws.com
+    - '*.action1.com'
     - server.action1.com
     Port: ''
 Detections: []

@@ -29,6 +29,7 @@ ForensicArtifacts:
     - '*.iperiusremote.com'
     - '*.iperius.com'
     - '*.iperius-rs.com'
+    - iperiusremote.com
     Port: ''
 Detections: []
 References:

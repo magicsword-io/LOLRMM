@@ -26,6 +26,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - github.com/Mikej81/WebRDP
     Port: ''
 Detections: []
 References:

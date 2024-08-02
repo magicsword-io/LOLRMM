@@ -28,6 +28,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.crossloop.com'
+    - crossloop.en.softonic.com
     Port: ''
 Detections: []
 References:

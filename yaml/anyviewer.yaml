@@ -28,8 +28,8 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - controlserver.anyviewer.com
-    - '*.aomeisoftware.com'
     - aomeisoftware.com
+    - '*.aomeisoftware.com'
     Port: ''
 Detections: []
 References:

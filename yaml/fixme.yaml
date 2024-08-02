@@ -1,0 +1,37 @@
+Name: FixMe
+Description: FixMe is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - FixMeit Client.exe
+  - TiExpertStandalone.exe
+  - FixMeitClient*.exe
+  - TiExpertCore.exe
+  - FixMeit Unattended Access Setup.exe
+  - FixMeit Expert Setup.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - fixme.it
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

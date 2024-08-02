@@ -28,6 +28,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.fastviewer.com'
+    - fastviewer.com
     Port: ''
 Detections: []
 References:

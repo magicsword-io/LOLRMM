@@ -28,6 +28,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - github.com/stascorp/rdpwrap
     Port: ''
 Detections: []
 References:

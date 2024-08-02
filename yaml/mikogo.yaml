@@ -35,6 +35,7 @@ ForensicArtifacts:
     - '*.real-time-collaboration.com'
     - '*.mikogo4.com'
     - '*.mikogo.com'
+    - mikogo.com
     Port: ''
 Detections: []
 References:

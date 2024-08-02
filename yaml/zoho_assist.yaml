@@ -44,6 +44,7 @@ ForensicArtifacts:
     - downloads.zohodl.com.cn
     - downloads.zohocdn.com
     - gateway.zohoassist.com
+    - zoho.com/assist/
     Port: ''
 Detections: []
 References:

@@ -18,6 +18,7 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - meshcentral*.exe
+  - mesh*.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -26,6 +27,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - meshcentral.com
     Port: ''
 Detections: []
 References:

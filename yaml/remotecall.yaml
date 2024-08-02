@@ -33,6 +33,7 @@ ForensicArtifacts:
     Domain:
     - '*.remotecall.com'
     - '*.startsupport.com'
+    - remotecall.com
     Port: ''
 Detections: []
 References:

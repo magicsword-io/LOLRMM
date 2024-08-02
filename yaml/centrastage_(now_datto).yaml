@@ -28,6 +28,7 @@ ForensicArtifacts:
     Domain:
     - '*.rmm.datto.com'
     - '*cc.centrastage.net'
+    - datto.com/au/products/rmm/
     Port: ''
 Detections: []
 References:

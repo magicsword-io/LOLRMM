@@ -1,0 +1,39 @@
+Name: Chrome Remote Desktop
+Description: Chrome Remote Desktop is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - remote_host.exe
+  - remoting_host.exe
+  - C:\Program Files (x86)\Google\Chrome Remote Desktop\*
+  - '*\Google\Chrome Remote Desktop\*'
+  - '*\remoting_host.exe'
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*remotedesktop-pa.googleapis.com'
+    - '*remotedesktop.google.com'
+    - remotedesktop.google.com
+    Port: ''
+Detections: []
+References:
+- https://support.google.com/chrome/a/answer/2799701?hl=en
+Acknowledgement: []

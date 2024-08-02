@@ -30,6 +30,7 @@ ForensicArtifacts:
     Domain:
     - '*content.rview.com'
     - '*.rview.com'
+    - content.rview.com
     Port: ''
 Detections: []
 References:

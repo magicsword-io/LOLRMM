@@ -1,0 +1,32 @@
+Name: Quick Assist
+Description: Quick Assist is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: ''
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - quickassist.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.support.services.microsoft.com'
+    Port: ''
+Detections: []
+References: []
+Acknowledgement: []

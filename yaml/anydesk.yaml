@@ -35,11 +35,12 @@ Details:
   Vulnerabilities:
   - https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html
   InstallationPaths:
-  - C:\Program Files (x86)\AnyDesk\AnyDesk.exe
-  - C:\Program Files\AnyDesk\AnyDesk.exe
   - C:\Program Files (x86)\AnyDesk\*
   - '*\AnyDesk\*'
+  - C:\Program Files\AnyDesk\AnyDesk.exe
+  - C:\Program Files (x86)\AnyDesk\AnyDesk.exe
   - '*\AnyDesk.exe'
+  - anydesk.exe
 Artifacts:
   Disk:
   - File: '%programdata%\AnyDesk\ad_svc.trace'
@@ -145,3 +146,10 @@ Acknowledgement:
   Handle: '@ali_alwashali'
 - Person: "Th\xE9o Letailleur"
   Handle: in/theosyn
+ForensicArtifacts:
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - anydesk.com
+    - net.anydesk.com
+    Port: ''

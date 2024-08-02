@@ -27,6 +27,7 @@ ForensicArtifacts:
     Domain:
     - trusted.panorama9.com
     - changes.panorama9.com
+    - panorama9.com
     Port: ''
 Detections: []
 References:

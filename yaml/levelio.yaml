@@ -1,0 +1,36 @@
+Name: Level.io
+Description: Level.io is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - level-windows-amd64.exe
+  - level.exe
+  - level-remote-control-ffmpeg.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - level.io
+    - '*.level.io'
+    Port: ''
+Detections: []
+References:
+- https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues
+Acknowledgement: []

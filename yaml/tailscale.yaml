@@ -29,6 +29,7 @@ ForensicArtifacts:
     Domain:
     - '*.tailscale.com'
     - '*.tailscale.io'
+    - tailscale.com
     Port: ''
 Detections: []
 References:

@@ -31,6 +31,7 @@ ForensicArtifacts:
     Domain:
     - '*remotedesktop.google.com'
     - '*remotedesktop-pa.googleapis.com'
+    - remotedesktop.google.com
     Port: ''
 Detections: []
 References:

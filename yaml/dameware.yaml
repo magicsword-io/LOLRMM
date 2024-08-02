@@ -17,14 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - DameWare Remote Support.exe
-  - SolarWinds-Dameware-MRC*.exe
-  - DameWare Mini Remote Control*.exe
   - SolarWinds-Dameware-DRS*.exe
+  - DameWare Mini Remote Control*.exe
   - "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\\
     *"
+  - dwrcs.exe
   - '*\dwrcs\*'
   - '*\dwrcst.exe'
+  - DameWare Remote Support.exe
+  - SolarWinds-Dameware-MRC*.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []

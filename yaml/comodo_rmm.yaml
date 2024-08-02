@@ -28,6 +28,7 @@ ForensicArtifacts:
     Domain:
     - '*.itsm-us1.comodo.com'
     - '*mdmsupport.comodo.com'
+    - one.comodo.com
     Port: ''
 Detections: []
 References:

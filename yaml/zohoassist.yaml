@@ -1,0 +1,54 @@
+Name: Zoho Assist
+Description: Zoho Assist is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - zaservice.exe
+  - ZMAgent.exe
+  - C:\*\ZA_Access.exe
+  - ZohoMeeting.exe
+  - Zohours.exe
+  - zohotray.exe
+  - ZohoURSService.exe
+  - '*\ZA_Access.exe'
+  - Zaservice.exe
+  - za_connect.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.zoho.com.au'
+    - '*.zohoassist.jp'
+    - assist.zoho.com
+    - zoho.com/assist/
+    - '*.zoho.in'
+    - downloads.zohodl.com.cn
+    - '*.zohoassist.com'
+    - downloads.zohocdn.com
+    - gateway.zohoassist.com
+    - '*.zohoassist.com.cn'
+    - '*.zoho.com.cn'
+    - '*.zoho.com'
+    - '*.zoho.eu'
+    Port: ''
+Detections: []
+References:
+- https://www.zoho.com/assist/kb/firewall-configuration.html
+Acknowledgement: []

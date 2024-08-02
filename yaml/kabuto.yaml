@@ -26,6 +26,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.kabuto.io'
+    - repairtechsolutions.com/kabuto/
     Port: ''
 Detections: []
 References:

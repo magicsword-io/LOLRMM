@@ -17,11 +17,12 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\ATERA Networks\AteraAgent\*
-  - '*\ATERA Networks\AteraAgent\*'
   - '*\AteraAgent.exe'
-  - '*\AgentPackageNetworkDiscovery.exe'
   - '*\AgentPackageTaskScheduler.exe'
+  - C:\Program Files\ATERA Networks\AteraAgent\*
+  - atera_agent.exe
+  - '*\ATERA Networks\AteraAgent\*'
+  - '*\AgentPackageNetworkDiscovery.exe'
 ForensicArtifacts:
   Disk: []
   EventLog: []

@@ -29,6 +29,7 @@ ForensicArtifacts:
     Domain:
     - '*.gatherplace.com'
     - '*.gatherplace.net'
+    - gatherplace.com
     Port: ''
 Detections: []
 References:

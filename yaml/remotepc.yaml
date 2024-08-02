@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - remotepcservice.exe
-  - rpcsuite.exe
-  - Idrive.File-Transfer
-  - idrive.RemotePCAgent
-  - remotepchost.exe
   - C:\Program Files (x86)\RemotePC\*
+  - Idrive.File-Transfer
   - '*\RemotePC\*'
+  - remotepcservice.exe
+  - RemotePC.exe
+  - remotepchost.exe
+  - idrive.RemotePCAgent
+  - rpcsuite.exe
   - '*\RemotePCService.exe'
+  - RemotePCService.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -32,9 +34,10 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - '*.remotepc.com'
-    - remotepc.com
     - '*.remotedesktop.com'
+    - '*.remotepc.com'
+    - www.remotepc.com
+    - remotepc.com
     Port: ''
 Detections: []
 References:

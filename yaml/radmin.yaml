@@ -17,12 +17,13 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - radmin.exe
-  - famitrfc.exe
-  - radmin3.exe
   - C:\Program Files\Radmin Viewer 3\*
-  - '*\Radmin Viewer 3\*'
+  - radmin3.exe
   - '*\Radmin.exe'
+  - radmin.exe
+  - rserver3.exe
+  - famitrfc.exe
+  - '*\Radmin Viewer 3\*'
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -31,6 +32,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - radmin.com
     Port: ''
 Detections: []
 References:

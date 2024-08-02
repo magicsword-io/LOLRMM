@@ -27,6 +27,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.rudesktop.ru'
+    - rudesktop.ru
     Port: ''
 Detections: []
 References:

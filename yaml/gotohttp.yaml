@@ -17,8 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - gotohttp.exe
   - GotoHTTP_x64.exe
+  - gotohttp.exe
+  - GotoHTTP*.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []
@@ -26,8 +27,8 @@ ForensicArtifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - gotohttp.com
     - '*.gotohttp.com'
+    - gotohttp.com
     Port: ''
 Detections: []
 References:

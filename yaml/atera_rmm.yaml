@@ -29,6 +29,7 @@ ForensicArtifacts:
     Domain:
     - agent-api.atera.com
     - pubsub.atera.com
+    - atera.com
     Port: ''
 Detections: []
 References:

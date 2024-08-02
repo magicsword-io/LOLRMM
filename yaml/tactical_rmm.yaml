@@ -28,6 +28,7 @@ ForensicArtifacts:
     Domain:
     - login.tailscale.com
     - login.tailscale.com
+    - docs.tacticalrmm.com
     Port: ''
 Detections: []
 References:

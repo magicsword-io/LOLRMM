@@ -30,6 +30,7 @@ ForensicArtifacts:
     - '*.mdt.qq.com'
     - '*.desktop.qq.com'
     - upload_data.qq.com
+    - qq-messenger.en.softonic.com
     Port: ''
 Detections: []
 References:

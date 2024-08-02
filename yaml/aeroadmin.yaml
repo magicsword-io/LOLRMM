@@ -18,6 +18,7 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - aeroadmin.exe
+  - AeroAdmin.exe
 ForensicArtifacts:
   Disk: []
   EventLog: []

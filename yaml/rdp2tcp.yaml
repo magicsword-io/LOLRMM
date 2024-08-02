@@ -27,6 +27,7 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - user_managed
+    - github.com/V-E-O/rdp2tcp
     Port: ''
 Detections: []
 References:
