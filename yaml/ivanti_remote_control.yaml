@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - IvantiRemoteControl.exe
   - ArcUI.exe
   - AgentlessRC.exe
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

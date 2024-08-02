@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Program Files\TightVNC\*
   - '*\TightVNC\*'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

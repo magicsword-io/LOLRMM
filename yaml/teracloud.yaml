@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - c:\*\TeraCloud.Client*
   - '*\TeraCloud.Client*'
   - '*\Livedrive-Setup.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

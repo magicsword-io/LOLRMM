@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - tvnviewer.exe
   - TightVNCViewerPortable*.exe
   - tvnserver.exe
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Program Files\Box\Box\*
   - '*\Box\Box\*'
   - '*\Box.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - ngrok.exe
   - C:\*\ngrok.zip
   - '*\ngrok*'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

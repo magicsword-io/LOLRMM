@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - iit.exe
   - intouch.exe
   - I'm InTouch Go Installer.exe
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

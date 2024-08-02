@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -22,7 +22,7 @@ Details:
   - C:\Program Files (x86)\Google\Chrome Remote Desktop\*
   - '*\Google\Chrome Remote Desktop\*'
   - '*\remoting_host.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

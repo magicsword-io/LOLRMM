@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -21,7 +21,7 @@ Details:
   - action1_agent.exe
   - action1_remote.exe
   - action1_update.exe
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

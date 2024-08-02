@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -24,7 +24,7 @@ Details:
   - rserver3.exe
   - famitrfc.exe
   - '*\Radmin Viewer 3\*'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

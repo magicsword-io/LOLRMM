@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -21,7 +21,7 @@ Details:
   - ihcserver.exe
   - instanthousecall.exe
   - instanthousecall.exe
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - c:\Program Files\*\Duplicati.Server.exe
   - '*\*\Duplicati.Server.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

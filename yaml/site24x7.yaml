@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -21,7 +21,7 @@ Details:
   - MonitoringAgent.exe
   - Site24x7WindowsAgentTrayIcon.exe
   - Site24x7PluginAgent.exe
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

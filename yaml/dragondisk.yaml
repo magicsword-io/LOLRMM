@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Program Files (x86)\Almageste\DragonDisk\*
   - '*\Almageste\DragonDisk\*'
   - '*\DragonDisk.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

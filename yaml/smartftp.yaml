@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Program Files (x86)\SmartFTP Client\en-US\
   - '*\SmartFTP Client\*'
   - '*\SfShellTools.dll.mui'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

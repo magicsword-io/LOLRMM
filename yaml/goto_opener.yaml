@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Program Files (x86)\GoTo Opener
   - '*\GoTo Opener'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

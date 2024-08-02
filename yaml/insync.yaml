@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
   - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
   - '*\Insync.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

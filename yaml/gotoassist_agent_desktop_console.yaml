@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\*\G2RDesktopConsole-x64.msi
   - '*\G2RDesktopConsole-x64.msi'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

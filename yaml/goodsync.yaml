@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -21,7 +21,7 @@ Details:
   - installation requires paid version of GoodSync Server
   - GoodSync-vsub-Setup.exe
   - A40B81B36CDC2D24910FC58816E50DCDE21BD1A9
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -22,7 +22,7 @@ Details:
   - '*Users\*\AppData\*\Google\DriveFS*'
   - G:\My Drive*
   - '*\GoogleDriveFS.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

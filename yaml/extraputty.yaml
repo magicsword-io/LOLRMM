@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
   - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
   - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

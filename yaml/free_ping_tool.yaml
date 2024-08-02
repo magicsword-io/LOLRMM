@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - can't find this one
   - can't find this one
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

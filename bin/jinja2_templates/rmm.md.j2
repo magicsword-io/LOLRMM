@@ -75,9 +75,9 @@ displayTitle = "{{ rmm.Name }}"
 
 ### Forensic Artifacts
 
-{% if rmm.ForensicArtifacts.Disk %}
+{% if rmm.Artifacts.Disk %}
 #### Disk Artifacts
-{% for artifact in rmm.ForensicArtifacts.Disk %}
+{% for artifact in rmm.Artifacts.Disk %}
 - **File**: `{{ artifact.File }}`
   **Description**: {{ artifact.Description }}
   **OS**: {{ artifact.OS }}
@@ -90,9 +90,9 @@ displayTitle = "{{ rmm.Name }}"
 {% endfor %}
 {% endif %}
 
-{% if rmm.ForensicArtifacts.EventLog %}
+{% if rmm.Artifacts.EventLog %}
 #### Event Log Artifacts
-{% for artifact in rmm.ForensicArtifacts.EventLog %}
+{% for artifact in rmm.Artifacts.EventLog %}
 - **Event ID**: {{ artifact.EventID }}
   **Provider Name**: {{ artifact.ProviderName }}
   **Service Name**: {{ artifact.ServiceName }}
@@ -100,17 +100,17 @@ displayTitle = "{{ rmm.Name }}"
 {% endfor %}
 {% endif %}
 
-{% if rmm.ForensicArtifacts.Registry %}
+{% if rmm.Artifacts.Registry %}
 #### Registry Artifacts
-{% for artifact in rmm.ForensicArtifacts.Registry %}
+{% for artifact in rmm.Artifacts.Registry %}
 - **Path**: `{{ artifact.Path }}`
   **Description**: {{ artifact.Description }}
 {% endfor %}
 {% endif %}
 
-{% if rmm.ForensicArtifacts.Network %}
+{% if rmm.Artifacts.Network %}
 #### Network Artifacts
-{% for artifact in rmm.ForensicArtifacts.Network %}
+{% for artifact in rmm.Artifacts.Network %}
 - **Description**: {{ artifact.Description }}
   **Domain**: {{ artifact.Domain | join(', ') }}
   {% if artifact.Port %}**Port**: {{ artifact.Port }}{% endif %}

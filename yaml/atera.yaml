@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -23,11 +23,20 @@ Details:
   - atera_agent.exe
   - '*\ATERA Networks\AteraAgent\*'
   - '*\AgentPackageNetworkDiscovery.exe'
-ForensicArtifacts:
+  - atera_agent.exe
+  - ateraagent.exe
+  - syncrosetup.exe
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+   Network:
+  - Description: Known remote domains
+    Domain:
+    - agent-api.atera.com
+    - pubsub.atera.com
+    - atera.com
 Detections: []
-References: []
+References:
+- https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
 Acknowledgement: []

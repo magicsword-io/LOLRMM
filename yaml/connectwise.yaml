@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
   - '*\ScreenConnect*Client*\*'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

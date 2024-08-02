@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\*\SecureCRT.EXE
   - '*\SecureCRT.EXE'
   - '*\VanDyke Software\ClientPack\*'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

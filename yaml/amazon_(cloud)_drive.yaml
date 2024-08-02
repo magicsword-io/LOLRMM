@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - C:\Users\*\AppData\Local\Amazon\Cloud Drive\*
   - '*\AppData\Local\Amazon\Cloud Drive\*'
   - '*\AmazonCloudDrive.exe'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

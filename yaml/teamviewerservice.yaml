@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - teamviewer.exe
   - teamviewer_service.exe
   - teamviewerhost
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

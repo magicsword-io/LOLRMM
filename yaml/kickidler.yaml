@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - grabberEM.*msi
   - grabberTT*.msi
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

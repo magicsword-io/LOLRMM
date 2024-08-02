@@ -13,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -21,7 +21,7 @@ Details:
   - '*\OpenBoxLab\RaiDrive\*'
   - service = raidrive_*
   - Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenBoxLab\RaiDrive\Drives
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

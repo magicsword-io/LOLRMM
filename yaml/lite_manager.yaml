@@ -13,14 +13,14 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - "C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
   - "*\\LiteManager Pro \u2013 Viewer\\*"
   - '*\LMNoIpServer.exe.'
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []

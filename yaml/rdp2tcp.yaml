@@ -13,13 +13,13 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  OperatingSystem: []
+  SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - tdp2tcp.exe
   - rdp2tcp.py
-ForensicArtifacts:
+Artifacts:
   Disk: []
   EventLog: []
   Registry: []
