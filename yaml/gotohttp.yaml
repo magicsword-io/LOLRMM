@@ -1,0 +1,14 @@
+description: GotoHTTP
+remote_domain:
+- gotohttp.com
+- '*.gotohttp.com'
+remote_utility:
+- gotohttp.exe
+- GotoHTTP_x64.exe
+remote_utility_fileinfo:
+- GotoHTTP*
+- Pingbo*
+isutility: true
+category: RMM
+comment_reference: https://gotohttp.com/goto/help.12x
+last_update: 2/8/2024

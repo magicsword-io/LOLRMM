@@ -1,0 +1,10 @@
+description: Netviewer (GoToMeet)
+remote_utility:
+- nvClient.exe
+- netviewer.exe
+remote_utility_fileinfo: Algorius*
+remote_appid: netviewer
+isutility: true
+category: RMM
+comment_reference: 'Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html'
+last_update: 2/9/2024

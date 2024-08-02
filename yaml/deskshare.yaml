@@ -1,0 +1,13 @@
+description: DeskShare
+remote_domain: user_managed
+remote_utility:
+- TeamTaskManager.exe
+- DSGuest.exe
+remote_utility_fileinfo:
+- Team Task Manager*
+- DeskShare*
+remote_appid: deskshare
+isutility: true
+category: RMM
+comment_reference: https://www.deskshare.com/help/fml/Active-and-Passive-connection-mode.aspx
+last_update: 2/26/2024

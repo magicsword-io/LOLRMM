@@ -1,0 +1,6 @@
+description: CloudFlare Tunnel
+remote_utility: cloudflared.exe
+isutility: true
+category: Remote Access
+comment_reference: cloudflare.com/products/tunnel/
+last_update: 2/7/2024

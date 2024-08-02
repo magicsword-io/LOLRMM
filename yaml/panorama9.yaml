@@ -1,0 +1,10 @@
+description: Panorama9
+remote_domain:
+- trusted.panorama9.com
+- changes.panorama9.com
+remote_utility: p9agent*.exe
+remote_utility_fileinfo: Panorama9*
+isutility: true
+category: RMM
+comment_reference: https://support.panorama9.com/en/articles/1859605-what-ports-and-hosts-does-the-p9-agent-communicate-with
+last_update: 2/9/2024

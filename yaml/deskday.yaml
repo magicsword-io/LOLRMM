@@ -1,0 +1,9 @@
+description: DeskDay
+remote_domain:
+- deskday.ai
+- app.deskday.ai
+remote_utility: ultimate_*.exe
+isutility: true
+category: RMM
+comment_reference: https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate
+last_update: 2/7/2024

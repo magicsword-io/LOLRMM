@@ -1,0 +1,10 @@
+description: RuDesktop
+remote_domain: '*.rudesktop.ru'
+remote_utility:
+- rd.exe
+- rudesktop*.exe
+remote_appid: rudesktop-remote-desktop
+isutility: true
+category: RMM
+comment_reference: https://rudesktop.ru
+last_update: 2/9/2024

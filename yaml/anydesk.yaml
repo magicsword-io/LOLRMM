@@ -1,0 +1,13 @@
+description: AnyDesk
+remote_domain: net.anydesk.com
+remote_utility: anydesk.exe
+remote_utility_fileinfo:
+- anydesk*
+- philandro Software*
+remote_appid:
+- anydesk
+- anydesk
+isutility: true
+category: RMM
+comment_reference: https://support.anydesk.com/knowledge/firewall
+last_update: 2/7/2024

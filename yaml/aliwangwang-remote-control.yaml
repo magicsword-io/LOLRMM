@@ -1,0 +1,11 @@
+description: AliWangWang-remote-control
+remote_domain: wangwang.taobao.com
+remote_utility: alitask.exe
+remote_utility_fileinfo: AliWangWang*
+remote_appid:
+- ali-wangwang
+- ali-wangwang-remote-control
+isutility: true
+category: RMM
+comment_reference: https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale
+last_update: 2/7/2024

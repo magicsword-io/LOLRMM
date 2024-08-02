@@ -1,0 +1,12 @@
+description: Syspectr
+remote_domain:
+- atled.syspectr.com
+- app.syspectr.com
+remote_utility:
+- oo-syspectr*.exe
+- OOSysAgent.exe
+remote_utility_fileinfo: O&O Syspectr*
+isutility: true
+category: RMM
+comment_reference: https://www.syspectr.com/en/installation-in-a-network
+last_update: 2/26/2024

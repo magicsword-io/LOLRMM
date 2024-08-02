@@ -1,0 +1,14 @@
+description: RAdmin
+remote_domain: user_managed
+remote_utility:
+- radmin.exe
+- famitrfc.exe
+- radmin3.exe
+remote_utility_fileinfo:
+- famatech*
+- radmin*
+remote_appid: radmin
+isutility: true
+category: RMM
+comment_reference: https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/
+last_update: 2/9/2024

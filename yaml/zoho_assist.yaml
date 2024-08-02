@@ -1,0 +1,26 @@
+description: Zoho Assist
+remote_domain:
+- '*.zoho.com'
+- '*.zoho.eu'
+- '*.zoho.in'
+- '*.zoho.com.au'
+- '*.zoho.com.cn'
+- '*.zohoassist.com'
+- '*.zohoassist.jp'
+- '*.zohoassist.com.cn'
+- downloads.zohodl.com.cn
+- downloads.zohocdn.com
+- gateway.zohoassist.com
+remote_utility:
+- za_connect.exe
+- zaservice.exe
+- zohotray.exe
+- ZohoMeeting.exe
+- Zohours.exe
+- ZohoURSService.exe
+- ZMAgent.exe
+remote_utility_fileinfo: Zoho*
+isutility: true
+category: RMM
+comment_reference: https://www.zoho.com/assist/kb/firewall-configuration.html
+last_update: 2/14/2024

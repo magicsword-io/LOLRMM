@@ -1,0 +1,17 @@
+description: RemoteView
+remote_domain:
+- '*content.rview.com'
+- '*.rview.com'
+remote_utility:
+- remoteview.exe
+- rv.exe
+- rvagent.exe
+- rvagtray.exe
+remote_utility_fileinfo:
+- RemoteView*
+- RsDoctor*
+remote_appid: remoteview
+isutility: true
+category: RMM
+comment_reference: https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall
+last_update: 2/9/2024

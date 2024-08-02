@@ -1,0 +1,11 @@
+description: KHelpDesk
+remote_domain: '*.khelpdesk.com.br'
+remote_utility: KHelpDesk.exe
+remote_utility_fileinfo:
+- KHELPDESK*
+- Ferramenta de Acesso Remoto
+remote_appid: khelpdesk-remote-control
+isutility: true
+category: RMM
+comment_reference: https://www.khelpdesk.com.br/en-us
+last_update: 2/26/2024

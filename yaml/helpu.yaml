@@ -1,0 +1,16 @@
+description: HelpU
+remote_domain:
+- helpu.co.kr
+- '*.helpu.co.kr'
+remote_utility:
+- helpu_install.exe
+- HelpuUpdater.exe
+- HelpuManager.exe
+remote_utility_fileinfo:
+- helpU*
+- Help Manager Program
+remote_appid: helpu
+isutility: true
+category: RMM
+comment_reference: https://helpu.co.kr/
+last_update: 2/8/2024

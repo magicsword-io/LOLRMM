@@ -1,0 +1,15 @@
+description: ZeroTier
+remote_domain:
+- zerotier.com
+- '*.zerotier.com'
+remote_utility:
+- zerotier*.msi
+- zerotier*.exe
+- zero-powershell.exe
+remote_utility_fileinfo:
+- ZeroTier*
+- zero-powesrhell*
+isutility: true
+category: RMM
+comment_reference: https://my.zerotier.com/
+last_update: 2/14/2024

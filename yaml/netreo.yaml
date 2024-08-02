@@ -1,0 +1,9 @@
+description: Netreo
+remote_domain:
+- charon.netreo.net
+- activation.netreo.net
+- '*.api.netreo.com'
+isutility: true
+category: RMM
+comment_reference: https://solutions.netreo.com/docs/firewall-requirements
+last_update: 2/9/2024

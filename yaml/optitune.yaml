@@ -1,0 +1,14 @@
+description: OptiTune
+remote_domain:
+- '*.optitune.us'
+- '*.opti-tune.com'
+remote_utility:
+- OTService.exe
+- OTPowerShell.exe
+remote_utility_fileinfo:
+- Bravura Software*
+- OptiTune*
+isutility: true
+category: RMM
+comment_reference: https://www.bravurasoftware.com/optitune/support/faq.aspx
+last_update: 2/26/2024

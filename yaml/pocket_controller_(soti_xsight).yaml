@@ -1,0 +1,12 @@
+description: Pocket Controller (Soti Xsight)
+remote_domain: '*soti.net'
+remote_utility:
+- pocketcontroller.exe
+- wysebrowser.exe
+- XSightService.exe
+remote_utility_fileinfo: Pocket Controller*
+remote_appid: pocket-controller
+isutility: true
+category: RMM
+comment_reference: https://pulse.soti.net/support/soti-xsight/help/
+last_update: 2/9/2024

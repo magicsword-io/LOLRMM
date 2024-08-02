@@ -1,0 +1,10 @@
+description: Remobo
+remote_domain: user_managed
+remote_utility:
+- remobo.exe
+- remobo_client.exe
+- remobo_tracker.exe
+isutility: true
+category: RMM
+comment_reference: https://www.remobo.com - DOA as of 2024
+last_update: 2/9/2024

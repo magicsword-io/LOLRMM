@@ -1,0 +1,16 @@
+description: AnyViewer
+remote_domain:
+- controlserver.anyviewer.com
+- '*.aomeisoftware.com'
+- aomeisoftware.com
+remote_utility:
+- AnyViewerSetup.exe
+- RCClient.exe
+- RCService.exe
+remote_utility_fileinfo:
+- AOMEI*
+- Anyviewer*
+isutility: true
+category: RMM
+comment_reference: https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
+last_update: 2/7/2024

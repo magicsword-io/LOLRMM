@@ -1,0 +1,15 @@
+description: Atera RMM
+remote_domain:
+- agent-api.atera.com
+- pubsub.atera.com
+remote_utility:
+- atera_agent.exe
+- ateraagent.exe
+- syncrosetup.exe
+remote_utility_fileinfo:
+- Atera Networks
+- AteraAgent
+isutility: true
+category: RMM
+comment_reference: https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
+last_update: 2/7/2024

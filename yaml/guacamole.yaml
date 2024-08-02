@@ -1,0 +1,7 @@
+description: Guacamole
+remote_domain: user_managed
+remote_utility: guacd.exe
+isutility: true
+category: RMM
+comment_reference: guacamole.apache.org
+last_update: 2/8/2024

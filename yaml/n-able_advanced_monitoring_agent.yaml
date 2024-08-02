@@ -1,0 +1,27 @@
+description: N-Able Advanced Monitoring Agent
+remote_domain:
+- '*remote.management'
+- '*.logicnow.com'
+- '*systemmonitor.us'
+- '*systemmonitor.eu.com'
+- '*system-monitor.com'
+- systemmonitor.us.cdn.cloudflare.net
+- '*cloudbackup.management'
+- '*systemmonitor.co.uk'
+- '*.n-able.com'
+- '*.beanywhere.com '
+- '*.swi-tc.com'
+remote_utility:
+- Agent_*_RW.exe
+- BASEClient.exe
+- BASupApp.exe
+- BASupSrvc.exe
+- BASupSrvcCnfg.exe
+- BASupTSHelper.exe
+remote_utility_fileinfo:
+- N-Able*
+- Remote Monitoring*
+isutility: true
+category: RMM
+comment_reference: https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
+last_update: 2/9/2024

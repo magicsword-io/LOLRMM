@@ -1,0 +1,16 @@
+description: Iperius Remote
+remote_domain:
+- '*.iperiusremote.com'
+- '*.iperius.com'
+- '*.iperius-rs.com'
+remote_utility:
+- iperius.exe
+- iperiusremote.exe
+remote_utility_fileinfo:
+- Enter Srl*
+- Enter S.R.L*
+- Iperius Remote*
+isutility: true
+category: RMM
+comment_reference: https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx
+last_update: 2/8/2024

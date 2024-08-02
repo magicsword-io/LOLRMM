@@ -1,0 +1,8 @@
+description: Microsoft Quick Assist
+remote_domain: user_managed
+remote_utility: quickassist.exe
+remote_appid: ms-quick-assist
+isutility: true
+category: Built-in
+comment_reference: https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca
+last_update: 2/9/2024

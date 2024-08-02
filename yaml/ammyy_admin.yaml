@@ -1,0 +1,11 @@
+description: Ammyy Admin
+remote_domain: '*ammyy.com'
+remote_utility:
+- aa_v*.exe
+- AMMYY_Admin.exe
+remote_utility_fileinfo: Ammyy*
+remote_appid: ammyy-admin
+isutility: true
+category: RMM
+comment_reference: https://www.ammyy.com/en/admin_security.html
+last_update: 2/7/2024

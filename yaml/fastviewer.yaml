@@ -1,0 +1,12 @@
+description: FastViewer
+remote_domain: '*.fastviewer.com'
+remote_utility:
+- fastclient.exe
+- fastmaster.exe
+- FastViewer.exe
+remote_utility_fileinfo: Fastviewer*
+remote_appid: fastviewer
+isutility: true
+category: RMM
+comment_reference: https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf
+last_update: 2/7/2024

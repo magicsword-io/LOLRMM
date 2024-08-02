@@ -1,0 +1,6 @@
+description: EMCO Remote Console
+remote_domain: user_managed
+remote_utility: remoteconsole.exe
+isutility: true
+category: RMM
+last_update: 2/7/2024

@@ -1,0 +1,12 @@
+description: Barracuda
+remote_domain:
+- '*.islonline.net'
+- rmm.barracudamsp.com
+remote_utility_fileinfo:
+- Barracuda MSP
+- Barracuda Networks
+- LPI Level Platforms
+isutility: true
+category: RMM
+comment_reference: https://help.islonline.com/19799/166125
+last_update: 2/7/2024

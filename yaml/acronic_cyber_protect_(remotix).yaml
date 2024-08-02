@@ -1,0 +1,17 @@
+description: Acronic Cyber Protect (Remotix)
+remote_domain:
+- cloud.acronis.com
+- agents*-cloud.acronis.com
+- gw.remotix.com
+- connect.acronis.com
+remote_utility:
+- AcronisCyberProtectConnectQuickAssist*.exe
+- AcronisCyberProtectConnectAgent.exe
+remote_utility_fileinfo:
+- Acronis Cyber Protect Connect Quick Assist
+- Acronis Cyber Protect Connect Agent
+remote_appid: remotix
+isutility: true
+category: RMM
+comment_reference: https://kb.acronis.com/content/47189
+last_update: 2/26/2024

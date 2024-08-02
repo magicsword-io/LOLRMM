@@ -1,0 +1,10 @@
+description: TigerVNC
+remote_domain: user_managed
+remote_utility:
+- tigervnc*.exe
+- winvnc4.exe
+remote_utility_fileinfo: TigerVNC*
+isutility: true
+category: RMM
+comment_reference: https://github.com/TigerVNC/tigervnc/releases
+last_update: 2/26/2024

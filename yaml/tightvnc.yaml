@@ -1,0 +1,11 @@
+description: TightVNC
+remote_domain: user_managed
+remote_utility:
+- tvnviewer.exe
+- TightVNCViewerPortable*.exe
+- tvnserver.exe
+remote_utility_fileinfo: TightVNC*
+isutility: true
+category: RMM
+comment_reference: https://www.tightvnc.com/doc/win/TightVNC_for_Windows-Installation_and_Getting_Started.pdf
+last_update: 2/14/2024

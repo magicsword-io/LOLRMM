@@ -1,0 +1,12 @@
+description: BeAnyWhere
+remote_utility:
+- BASupSysInf.exe
+- BASupAppSrvc.exe
+- BASupAppElev.exe
+- BASupApp.exe
+- TakeControl.exe
+- BASupApp.exe
+isutility: true
+category: RMM
+comment_reference: https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx
+last_update: 2/7/2024

@@ -1,0 +1,13 @@
+description: Chrome Remote Desktop
+remote_domain:
+- '*remotedesktop.google.com'
+- '*remotedesktop-pa.googleapis.com'
+remote_utility:
+- remote_host.exe
+- remoting_host.exe
+remote_utility_fileinfo: Chrome Remote Desktop
+remote_appid: chrome-remote-desktop
+isutility: true
+category: RMM
+comment_reference: https://support.google.com/chrome/a/answer/2799701?hl=en
+last_update: 2/7/2024

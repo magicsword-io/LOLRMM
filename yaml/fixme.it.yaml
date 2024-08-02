@@ -1,0 +1,26 @@
+description: FixMe.it
+remote_domain:
+- '*.fixme.it'
+- '*.techinline.net'
+- fixme.it
+- '*set.me'
+- '*setme.net'
+remote_utility:
+- FixMeit Unattended Access Setup.exe
+- TiExpertStandalone.exe
+- FixMeitClient*.exe
+- FixMeit Client.exe
+- FixMeit Expert Setup.exe
+- TiExpertCore.exe
+- fixmeitclient.exe
+- TiClientCore.exe
+- TiClientHelper*.exe
+remote_utility_fileinfo:
+- FixMe*
+- SetMe*
+- FixMe.IT Helper
+remote_appid: techinline
+isutility: true
+category: RMM
+comment_reference: https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
+last_update: 2/7/2024

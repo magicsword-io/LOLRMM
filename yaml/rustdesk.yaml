@@ -1,0 +1,11 @@
+description: RustDesk
+remote_domain: user_managed
+remote_utility:
+- rustdesk.exe
+- rustdesk*.exe
+remote_utility_fileinfo: rustdesk*
+remote_appid: rustdesk-remote-desktop
+isutility: true
+category: RMM
+comment_reference: https://rustdesk.com/docs/en/
+last_update: 2/9/2024

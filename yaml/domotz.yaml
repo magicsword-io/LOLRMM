@@ -1,0 +1,17 @@
+description: Domotz
+remote_domain:
+- '*.domotz.co'
+- '*cell-1.domotz.com'
+- domotz.com
+remote_utility:
+- domotz*.exe
+- domotz_bash.exe
+- domotz-windows*.exe
+- Domotz Pro Desktop App.exe
+- Domotz Pro Desktop App Setup*.exe
+- domotz.exe
+remote_utility_fileinfo: Domotz*
+isutility: true
+category: RMM
+comment_reference: https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
+last_update: 2/7/2024

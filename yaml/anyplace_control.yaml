@@ -1,0 +1,9 @@
+description: Anyplace Control
+remote_domain: anyplace-control.com
+remote_utility: apc_host.exe
+remote_utility_fileinfo: Anyplace*
+remote_appid: anyplace-remote-control
+isutility: true
+category: RMM
+comment_reference: http://www.anyplace-control.com/anyplace-control/help/faq.htm
+last_update: 2/7/2024

@@ -1,0 +1,9 @@
+description: rdp2tcp
+remote_domain: user_managed
+remote_utility:
+- tdp2tcp.exe
+- rdp2tcp.py
+isutility: true
+category: RMM
+comment_reference: github.com/V-E-O/rdp2tcp
+last_update: 2/9/2024

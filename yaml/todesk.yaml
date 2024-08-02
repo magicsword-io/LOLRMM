@@ -1,0 +1,14 @@
+description: ToDesk
+remote_domain:
+- todesk.com
+- '*.todesk.com'
+- '*.todesk.com'
+remote_utility:
+- todesk.exe
+- ToDesk_Service.exe
+- ToDesk_Setup.exe
+remote_utility_fileinfo: ToDesk*
+isutility: true
+category: RMM
+comment_reference: https://www.todesk.com/
+last_update: 2/14/2024

@@ -1,0 +1,7 @@
+description: ngrok
+remote_domain: user_managed
+remote_utility: ngrok.exe
+isutility: true
+category: Developer Utility
+comment_reference: https://ngrok.com/docs/guides/running-behind-firewalls/
+last_update: 2/9/2024

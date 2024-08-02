@@ -1,0 +1,8 @@
+description: Zabbix Agent
+remote_domain: user_managed
+remote_utility: zabbix_agent*.exe
+remote_utility_fileinfo: Zabbix*
+isutility: true
+category: RMM
+comment_reference: https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent
+last_update: 2/14/2024

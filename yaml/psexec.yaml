@@ -1,0 +1,13 @@
+description: PSEXEC
+remote_domain: user_managed
+remote_utility:
+- psexec.exe
+- psexecsvc.exe
+remote_utility_fileinfo:
+- Sysinternals PsExec
+- PsExec*
+remote_appid: psexec
+isutility: true
+category: Remote Access
+comment_reference: https://learn.microsoft.com/en-us/sysinternals/downloads/psexec
+last_update: 2/9/2024

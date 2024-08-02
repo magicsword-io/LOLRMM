@@ -1,0 +1,8 @@
+description: MeshCentral
+remote_domain: user_managed
+remote_utility: meshcentral*.exe
+remote_utility_fileinfo: meshcentral
+isutility: true
+category: RMM
+comment_reference: https://ylianst.github.io/MeshCentral/meshcentral/
+last_update: 2/8/2024

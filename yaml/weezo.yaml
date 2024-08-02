@@ -1,0 +1,16 @@
+description: Weezo
+remote_domain:
+- '*.weezo.me'
+- weezo.net
+- '*.weezo.net'
+remote_utility:
+- weezohttpd.exe
+- weezo.exe
+- weezo setup*.exe
+remote_utility_fileinfo:
+- Peer 2 World
+- Weezo*
+isutility: true
+category: RMM
+comment_reference: weezo.en.softonic.com
+last_update: 2/14/2024

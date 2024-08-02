@@ -1,0 +1,14 @@
+description: Kaseya (VSA)
+remote_domain:
+- deploy01.kaseya.com
+- '*managedsupport.kaseya.net'
+- '*.kaseya.net'
+remote_utility:
+- agentmon.exe
+- KaUpdHlp.exe
+- KaUsrTsk.exe
+remote_utility_fileinfo: Kaseya*
+isutility: true
+category: RMM
+comment_reference: https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements
+last_update: 2/8/2024

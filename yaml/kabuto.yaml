@@ -1,0 +1,7 @@
+description: Kabuto
+remote_domain: '*.kabuto.io'
+remote_utility: Kabuto.App.Runner.exe
+isutility: true
+category: RMM
+comment_reference: https://www.repairtechsolutions.com/documentation/kabuto/
+last_update: 2/8/2024

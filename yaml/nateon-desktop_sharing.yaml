@@ -1,0 +1,10 @@
+description: NateOn-desktop sharing
+remote_domain: '*.nate.com'
+remote_utility:
+- nateon*.exe
+- nateon.exe
+- nateonmain.exe
+isutility: true
+category: RMM
+comment_reference: http://rsupport.nate.com/rview/r8/main/index.aspx
+last_update: 2/9/2024

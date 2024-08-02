@@ -1,0 +1,28 @@
+description: GoToMyPC
+remote_domain: '*.GoToMyPC.com'
+remote_utility:
+- g2file*.exe
+- g2quick.exe
+- g2svc.exe
+- g2tray.exe
+- g2svc.exe
+- g2printh.exe
+- g2fileh.exe
+- g2tray.exe
+- gopcsrv.exe
+- g2host.exe
+- g2comm.exe
+- g2mainh.exe
+remote_utility_fileinfo:
+- GoTo Opener
+- GoToOpener
+remote_appid:
+- gotomypc
+- gotomypc-base
+- gotomypc-desktop-sharing
+- gotomypc-remote-control
+- gotomypc-printing
+isutility: true
+category: RMM
+comment_reference: https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#
+last_update: 2/8/2024

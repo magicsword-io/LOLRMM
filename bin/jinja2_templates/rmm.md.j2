@@ -1,0 +1,68 @@
++++
+description = "{{ rmm.description }}"
+title = "{{ rmm.description }}"
+weight = 10
+displayTitle = "{{ rmm.description }}"
++++
+
+{% raw %}
+{{< block "grid-1" >}}
+{{< column "mt-2 pt-1">}}
+{% endraw %}
+
+# {{ rmm.description }}
+
+### Description
+
+{{ rmm.description }} is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Remote Access Details
+
+{% if rmm.remote_domain %}
+#### Remote Domains
+{% for domain in rmm.remote_domain %}
+- {{ domain }}
+{% endfor %}
+{% endif %}
+
+{% if rmm.remote_utility %}
+#### Remote Utilities
+{% for utility in rmm.remote_utility %}
+- {{ utility }}
+{% endfor %}
+{% endif %}
+
+{% if rmm.remote_utility_fileinfo %}
+#### Remote Utility File Information
+{% for fileinfo in rmm.remote_utility_fileinfo %}
+- {{ fileinfo }}
+{% endfor %}
+{% endif %}
+
+{% if rmm.remote_appid %}
+#### Remote App ID
+{{ rmm.remote_appid }}
+{% endif %}
+
+### Additional Details
+
+- **Is Utility**: {{ "Yes" if rmm.isutility else "No" }}
+- **Category**: {{ rmm.category }}
+{% if rmm.comment_reference %}
+- **Reference**: [{{ rmm.comment_reference }}]({{ rmm.comment_reference }})
+{% endif %}
+- **Last Updated**: {{ rmm.last_update }}
+
+### Resources
+<br>
+
+{% if rmm.comment_reference %}
+<li><a href="{{ rmm.comment_reference }}">{{ rmm.comment_reference }}</a></li>
+{% endif %}
+
+<br>
+
+{% raw %}
+{{< /column >}}
+{{< /block >}}
+{% endraw %}

@@ -1,0 +1,13 @@
+description: Sophos-Remote Management System
+remote_domain:
+- '*.sophos.com'
+- '*.sophosupd.com'
+- '*.sophosupd.net'
+remote_utility:
+- clientmrinit.exe
+- mgntsvc.exe
+- routernt.exe
+isutility: true
+category: RMM
+comment_reference: community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+last_update: 2/9/2024

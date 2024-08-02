@@ -1,0 +1,13 @@
+description: GatherPlace-desktop sharing
+remote_domain:
+- '*.gatherplace.com'
+- '*.gatherplace.net'
+remote_utility:
+- gp3.exe
+- gp4.exe
+- gp5.exe
+remote_utility_fileinfo: Gatherworks*
+isutility: true
+category: RMM
+comment_reference: https://www.gatherplace.com/kb?id=136377
+last_update: 2/7/2024

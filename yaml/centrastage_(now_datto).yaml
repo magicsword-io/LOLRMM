@@ -1,0 +1,12 @@
+description: CentraStage (Now Datto)
+remote_domain:
+- '*.rmm.datto.com'
+- '*cc.centrastage.net'
+remote_utility:
+- CagService.exe
+- AEMAgent.exe
+remote_utility_fileinfo: Datto*
+isutility: true
+category: RMM
+comment_reference: https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm
+last_update: 2/7/2024

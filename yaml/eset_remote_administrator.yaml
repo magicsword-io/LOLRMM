@@ -1,0 +1,13 @@
+description: ESET Remote Administrator
+remote_domain: user_managed
+remote_utility:
+- era.exe
+- einstaller.exe
+- ezhelp*.exe
+- eratool.exe
+- ERAAgent.exe
+remote_utility_fileinfo: ESET Management*
+isutility: true
+category: RMM
+comment_reference: eset.com/me/business/remote-management/remote-administrator/
+last_update: 2/7/2024

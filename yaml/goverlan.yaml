@@ -1,0 +1,14 @@
+description: Goverlan
+remote_domain: user_managed
+remote_utility:
+- goverrmc.exe
+- govsrv*.exe
+- GovAgentInstallHelper.exe
+- GovAgentx64.exe
+- GovReachClient.exe
+remote_utility_fileinfo: Goverlan*
+remote_appid: goverlan
+isutility: true
+category: RMM
+comment_reference: https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf
+last_update: 2/8/2024

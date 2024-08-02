@@ -1,0 +1,10 @@
+description: CrossTec Remote Control
+remote_domain: user_managed
+remote_utility:
+- PCIVIDEO.EXE
+- supporttool.exe
+remote_utility_fileinfo: CrossTec
+isutility: true
+category: RMM
+comment_reference: www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
+last_update: 2/7/2024

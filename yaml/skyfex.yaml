@@ -1,0 +1,13 @@
+description: SkyFex
+remote_domain:
+- skyfex.com
+- deskroll.com
+- '*.deskroll.com'
+remote_utility:
+- Deskroll.exe
+- DeskRollUA.exe
+remote_utility_fileinfo: DeskRoll Remote Desktop*
+isutility: true
+category: RMM
+comment_reference: https://skyfex.com/
+last_update: 2/9/2024

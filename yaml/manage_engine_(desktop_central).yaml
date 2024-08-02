@@ -1,0 +1,15 @@
+description: Manage Engine (Desktop Central)
+remote_domain:
+- desktopcentral.manageengine.com
+- desktopcentral.manageengine.com.eu
+- desktopcentral.manageengine.cn
+- '*.dms.zoho.com'
+- '*.dms.zoho.com.eu'
+- '*.-dms.zoho.com.cn'
+remote_utility:
+- dcagentservice.exe
+- dcagentregister.exe
+isutility: true
+category: RMM
+comment_reference: https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
+last_update: 2/8/2024

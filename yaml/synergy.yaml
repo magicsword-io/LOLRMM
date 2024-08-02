@@ -1,0 +1,7 @@
+description: Synergy
+remote_domain: user_managed
+remote_appid: synergy
+isutility: true
+category: RMM
+comment_reference: https://symless.com/synergy
+last_update: 2/26/2024

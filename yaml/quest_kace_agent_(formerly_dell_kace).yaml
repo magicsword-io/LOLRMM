@@ -1,0 +1,8 @@
+description: Quest KACE Agent (formerly Dell KACE)
+remote_domain: '*.kace.com'
+remote_utility: konea.exe
+remote_utility_fileinfo: KACE Agent*
+isutility: true
+category: RMM
+comment_reference: https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function
+last_update: 2/9/2024

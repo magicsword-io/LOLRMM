@@ -1,0 +1,16 @@
+description: SunLogin
+remote_domain:
+- sunlogin.oray.com
+- client.oray.net
+remote_utility:
+- OrayRemoteShell.exe
+- OrayRemoteService.exe
+- sunlogin*.exe
+remote_utility_fileinfo:
+- Shanghai Best Oray*
+- Remote control service
+remote_appid: sunlogin-remote-control
+isutility: true
+category: RMM
+comment_reference: https://sunlogin.oray.com/en/embed/software.html
+last_update: 2/26/2024

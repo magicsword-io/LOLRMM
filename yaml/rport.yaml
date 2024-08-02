@@ -1,0 +1,7 @@
+description: RPort
+remote_domain: user_managed
+remote_utility: rport.exe
+isutility: true
+category: RMM
+comment_reference: https://kb.rport.io/using-the-remote-access
+last_update: 2/9/2024

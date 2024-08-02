@@ -1,0 +1,14 @@
+description: pcAnywhere
+remote_domain: user_managed
+remote_utility:
+- awhost32.exe
+- pcaquickconnect.exe
+- winaw32.exe
+remote_appid:
+- pcanywhere
+- pcanywhere-remote-control
+- pcanywhere-base
+isutility: true
+category: RMM
+comment_reference: https://en.wikipedia.org/wiki/PcAnywhere
+last_update: 2/9/2024

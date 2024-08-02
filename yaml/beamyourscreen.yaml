@@ -1,0 +1,12 @@
+description: BeamYourScreen
+remote_domain:
+- beamyourscreen.com
+- '*.beamyourscreen.com'
+remote_utility:
+- beamyourscreen.exe
+- beamyourscreen-host.exe
+remote_utility_fileinfo: BeamYourScreen*
+isutility: true
+category: RMM
+comment_reference: beamyourscreen redirects to https://www.mikogo.com/
+last_update: 2/7/2024

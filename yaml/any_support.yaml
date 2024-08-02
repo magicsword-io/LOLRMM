@@ -1,0 +1,11 @@
+description: Any Support
+remote_domain: '*.anysupport.net'
+remote_utility: ManualLauncher.exe
+remote_utility_fileinfo:
+- AnySupport*
+- Koino Co., Ltd.
+remote_appid: anysupport
+isutility: true
+category: RMM
+comment_reference: https://www.anysupport.net/introduce_howto.php
+last_update: 2/27/2024

@@ -1,0 +1,11 @@
+description: RES Automation Manager
+remote_domain: user_managed
+remote_utility:
+- wisshell*.exe
+- wmc.exe
+- wmc_deployer.exe
+- wmcsvc.exe
+isutility: true
+category: RMM
+comment_reference: https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1
+last_update: 2/9/2024

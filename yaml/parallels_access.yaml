@@ -1,0 +1,13 @@
+description: Parallels Access
+remote_domain: '*.parallels.com'
+remote_utility:
+- prl_deskctl_agent.exe
+- prl_deskctl_wizard.exe
+- prl_pm_service.exe
+- parallelsaccess-*.exe
+remote_utility_fileinfo: Parallels Access*
+remote_appid: parallels-access
+isutility: true
+category: RMM
+comment_reference: https://kb.parallels.com/en/129097
+last_update: 2/9/2024

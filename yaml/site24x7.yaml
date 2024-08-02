@@ -1,0 +1,16 @@
+description: Site24x7
+remote_domain:
+- plus*.site24x7.com
+- plus*.site24x7.eu
+- plus*.site24x7.in
+- plus*.site24x7.cn
+- plus*.site24x7.net.au
+remote_utility:
+- MEAgentHelper.exe
+- MonitoringAgent.exe
+- Site24x7WindowsAgentTrayIcon.exe
+- Site24x7PluginAgent.exe
+isutility: true
+category: RMM
+comment_reference: https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent
+last_update: 2/13/2024

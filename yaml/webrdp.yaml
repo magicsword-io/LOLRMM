@@ -1,0 +1,7 @@
+description: WebRDP
+remote_domain: user_managed
+remote_utility: webrdp.exe
+isutility: true
+category: RMM
+comment_reference: github.com/Mikej81/WebRDP
+last_update: 2/14/2024

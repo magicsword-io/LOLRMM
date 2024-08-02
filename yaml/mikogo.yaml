@@ -1,0 +1,14 @@
+description: Mikogo
+remote_domain:
+- '*.real-time-collaboration.com'
+- '*.mikogo4.com'
+- '*.mikogo.com'
+remote_utility:
+- mikogo.exe
+- mikogo-starter.exe
+- mikogo-service.exe
+- mikogolauncher.exe
+isutility: true
+category: RMM
+comment_reference: https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services
+last_update: 2/7/2024

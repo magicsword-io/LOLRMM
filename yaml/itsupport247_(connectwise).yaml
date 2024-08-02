@@ -1,0 +1,7 @@
+description: ITSupport247 (ConnectWise)
+remote_domain: '*.itsupport247.net'
+remote_utility: saazapsc.exe
+isutility: true
+category: RMM
+comment_reference: https://control.itsupport247.net/
+last_update: 2/8/2024

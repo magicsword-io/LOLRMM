@@ -1,0 +1,12 @@
+description: GetScreen
+remote_domain:
+- '*.getscreen.me'
+- getscreen.me
+remote_utility: getscreen.exe
+remote_utility_fileinfo:
+- getscreen.me*
+- Point B Ltd*
+isutility: true
+category: RMM
+comment_reference: https://docs.getscreen.me/self-hosted/system-requirements/
+last_update: 2/7/2024

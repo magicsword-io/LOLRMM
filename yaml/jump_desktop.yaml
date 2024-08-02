@@ -1,0 +1,17 @@
+description: Jump Desktop
+remote_domain:
+- '*.jumpdesktop.com'
+- jumpdesktop.com
+- jumpto.me
+- '*.jumpto.me'
+remote_utility:
+- jumpclient.exe
+- jumpdesktop.exe
+- jumpservice.exe
+- jumpconnect.exe
+- jumpupdater.exe
+remote_appid: jumpdesktop
+isutility: true
+category: RMM
+comment_reference: https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
+last_update: 2/9/2024

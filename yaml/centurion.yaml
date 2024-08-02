@@ -1,0 +1,7 @@
+description: Centurion
+remote_domain: centuriontech.com
+remote_utility: ctiserv.exe
+isutility: true
+category: RMM
+comment_reference: https://data443.atlassian.net/servicedesk/customer/portal/20
+last_update: 2/7/2024

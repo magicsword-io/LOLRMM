@@ -1,0 +1,19 @@
+description: RemotePC
+remote_domain:
+- '*.remotepc.com'
+- remotepc.com
+- '*.remotedesktop.com'
+remote_utility:
+- remotepcservice.exe
+- rpcsuite.exe
+- Idrive.File-Transfer
+- idrive.RemotePCAgent
+- remotepchost.exe
+remote_utility_fileinfo:
+- remotedesktop*
+- remotepc*
+remote_appid: remotepc
+isutility: true
+category: RMM
+comment_reference: https://www.remotedesktop.com/helpdesk/faq-firewall
+last_update: 2/9/2024

@@ -1,0 +1,10 @@
+description: TurboMeeting
+remote_domain: user_managed
+remote_utility:
+- pcstarter.exe
+- turbomeeting.exe
+- turbomeetingstarter.exe
+isutility: true
+category: RMM
+comment_reference: http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv
+last_update: 2/14/2024

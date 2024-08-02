@@ -1,0 +1,7 @@
+description: Microsoft RDP
+remote_utility: mstsc.exe
+remote_appid: ms-rdp
+isutility: true
+category: Built-in
+comment_reference: https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows
+last_update: 2/8/2024

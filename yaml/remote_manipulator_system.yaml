@@ -1,0 +1,9 @@
+description: Remote Manipulator System
+remote_domain: '*.internetid.ru'
+remote_utility:
+- rfusclient.exe
+- rutserv.exe
+isutility: true
+category: RMM
+comment_reference: https://rmansys.ru/files/
+last_update: 2/9/2024

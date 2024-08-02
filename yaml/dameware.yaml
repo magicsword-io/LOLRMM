@@ -1,0 +1,10 @@
+description: DameWare
+remote_utility:
+- DameWare Remote Support.exe
+- SolarWinds-Dameware-MRC*.exe
+- DameWare Mini Remote Control*.exe
+- SolarWinds-Dameware-DRS*.exe
+isutility: true
+category: RMM
+comment_reference: https://documentation.solarwinds.com/en/success_center/dameware/content/install-standalone-port-requirements.htm
+last_update: 2/7/2024

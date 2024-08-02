@@ -1,0 +1,18 @@
+description: RemoteCall
+remote_domain:
+- '*.remotecall.com'
+- '*.startsupport.com'
+remote_utility:
+- rcengmgru.exe
+- rcmgrsvc.exe
+- rxstartsupport.exe
+- rcstartsupport.exe
+- raautoup.exe
+- agentu.exe
+- remotesupportplayeru.exe
+remote_utility_fileinfo: RSUPPORT*
+remote_appid: remotecall
+isutility: true
+category: RMM
+comment_reference: https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall
+last_update: 2/9/2024

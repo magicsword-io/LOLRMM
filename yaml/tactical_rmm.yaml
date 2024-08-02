@@ -1,0 +1,14 @@
+description: Tactical RMM
+remote_domain:
+- login.tailscale.com
+- login.tailscale.com
+remote_utility:
+- tacticalrmm.exe
+- tacticalrmm.exe
+remote_utility_fileinfo:
+- AmidaWare*
+- Tactical Techs*
+isutility: true
+category: RMM
+comment_reference: docs.tacticalrmm.com
+last_update: 2/14/2024

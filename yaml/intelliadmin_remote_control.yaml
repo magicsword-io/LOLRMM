@@ -1,0 +1,14 @@
+description: IntelliAdmin Remote Control
+remote_domain:
+- user_managed
+- '*.intelliadmin.com'
+remote_utility:
+- iadmin.exe
+- intelliadmin.exe
+- agent32.exe
+- agent64.exe
+- agent_setup_5.exe
+isutility: true
+category: RMM
+comment_reference: intelliadmin.com/remote-control
+last_update: 2/8/2024

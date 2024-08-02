@@ -1,0 +1,9 @@
+description: NTR Remote
+remote_domain: '*.ntrsupport.com'
+remote_utility: NTRsupportPro_EN.exe
+remote_utility_fileinfo: Net Transmit & Receive SL
+remote_appid: ntr-remote
+isutility: true
+category: RMM
+comment_reference: DOA as of 2024
+last_update: 2/26/2024

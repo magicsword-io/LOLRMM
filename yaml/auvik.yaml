@@ -1,0 +1,11 @@
+description: Auvik
+remote_domain:
+- '*.my.auvik.com'
+- '*.auvik.com'
+remote_utility:
+- auvik.engine.exe
+- auvik.agent.exe
+isutility: true
+category: RMM
+comment_reference: https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use
+last_update: 2/7/2024

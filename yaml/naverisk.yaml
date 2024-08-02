@@ -1,0 +1,10 @@
+description: Naverisk
+remote_domain: user_managed
+remote_utility: AgentSetup-*.exe
+remote_utility_fileinfo:
+- naverisk*
+- NavMK1 Limited*
+isutility: true
+category: RMM
+comment_reference: http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents
+last_update: 2/9/2024

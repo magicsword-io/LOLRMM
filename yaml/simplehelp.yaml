@@ -1,0 +1,12 @@
+description: SimpleHelp
+remote_domain: user_managed
+remote_utility:
+- simplehelpcustomer.exe
+- simpleservice.exe
+- simplegatewayservice.exe
+- remote access.exe
+remote_utility_fileinfo: SimpleHelp*
+isutility: true
+category: RMM
+comment_reference: https://simple-help.com/remote-support
+last_update: 2/9/2024

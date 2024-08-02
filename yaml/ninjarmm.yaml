@@ -1,0 +1,14 @@
+description: NinjaRMM
+remote_domain:
+- '*.ninjaone.com'
+- '*.ninjarmm.com'
+remote_utility:
+- ninjarmmagent.exe
+- NinjaRMMAgenPatcher.exe
+remote_utility_fileinfo:
+- NinjaRMM*
+- Ninja MSP*
+isutility: true
+category: RMM
+comment_reference: https://www.ninjaone.com/faq/
+last_update: 2/9/2024

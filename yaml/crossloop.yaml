@@ -1,0 +1,12 @@
+description: CrossLoop
+remote_domain: '*.crossloop.com'
+remote_utility:
+- crossloopservice.exe
+- CrossLoopConnect.exe
+- WinVNCStub.exe
+remote_utility_fileinfo: Crossloop*
+remote_appid: crossloop
+isutility: true
+category: RMM
+comment_reference: www.CrossLoop.com -> redirects to avast.com
+last_update: 2/7/2024

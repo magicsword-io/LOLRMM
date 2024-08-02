@@ -1,0 +1,9 @@
+description: Pcnow
+remote_utility:
+- mwcliun.exe
+- pcnmgr.exe
+- webexpcnow.exe
+isutility: true
+category: RMM
+comment_reference: http://pcnow.webex.com/ - DOA as of 2024
+last_update: 2/9/2024

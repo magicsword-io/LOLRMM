@@ -1,0 +1,15 @@
+description: Rapid7
+remote_domain:
+- '*.analytics.insight.rapid7.com'
+- '*.endpoint.ingress.rapid7.com'
+remote_utility:
+- ir_agent.exe
+- rapid7_agent_core.exe
+- rapid7_endpoint_broker.exe
+remote_utility_fileinfo:
+- Insight Agent*
+- Rapid7 Insight Agent*
+isutility: true
+category: RMM
+comment_reference: https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
+last_update: 2/14/2024

@@ -1,0 +1,11 @@
+description: I'm InTouch
+remote_domain: '*.01com.com'
+remote_utility:
+- iit.exe
+- intouch.exe
+- I'm InTouch Go Installer.exe
+remote_utility_fileinfo: I'm InTouch*
+isutility: true
+category: RMM
+comment_reference: https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
+last_update: 2/8/2024

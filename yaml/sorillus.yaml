@@ -1,0 +1,11 @@
+description: Sorillus
+remote_domain:
+- '*.sorillus.com'
+- sorillus.com
+remote_utility:
+- Sorillus-Launcher*.exe
+- Sorillus Launcher.exe
+isutility: true
+category: RMM
+comment_reference: https://sorillus.com/
+last_update: 2/9/2024

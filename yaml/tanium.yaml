@@ -1,0 +1,15 @@
+description: Tanium
+remote_domain:
+- cloud.tanium.com
+- '*.cloud.tanium.com'
+remote_utility:
+- TaniumClient.exe
+- TaniumCX.exe
+- TaniumExecWrapper.exe
+- TaniumFileInfo.exe
+- TPowerShell.exe
+remote_utility_fileinfo: Tanium*
+isutility: true
+category: RMM
+comment_reference: https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
+last_update: 2/14/2024

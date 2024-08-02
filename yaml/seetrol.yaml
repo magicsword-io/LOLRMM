@@ -1,0 +1,12 @@
+description: Seetrol
+remote_domain: seetrol.co.kr
+remote_utility:
+- seetrolcenter.exe
+- seetrolclient.exe
+- seetrolmyservice.exe
+- seetrolremote.exe
+- seetrolsetting.exe
+isutility: true
+category: RMM
+comment_reference: http://www.seetrol.com/en/features/features3.php
+last_update: 2/7/2024

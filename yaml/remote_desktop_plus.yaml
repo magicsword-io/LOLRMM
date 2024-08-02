@@ -1,0 +1,7 @@
+description: Remote Desktop Plus
+remote_utility: rdp.exe
+remote_utility_fileinfo: Remote Desktop Plus*
+isutility: true
+category: Utility
+comment_reference: https://www.donkz.nl/
+last_update: 2/9/2024

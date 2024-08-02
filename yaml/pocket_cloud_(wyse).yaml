@@ -1,0 +1,10 @@
+description: Pocket Cloud (Wyse)
+remote_utility:
+- pocketcloud*.exe
+- pocketcloudservice.exe
+remote_utility_fileinfo: PocketCloud*
+remote_appid: pocket-cloud
+isutility: true
+category: RMM
+comment_reference: https://wyse-pocketcloud.informer.com/2.1/
+last_update: 2/9/2024

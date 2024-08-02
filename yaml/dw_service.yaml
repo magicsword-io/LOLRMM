@@ -1,0 +1,12 @@
+description: DW Service
+remote_domain: '*.dwservice.net'
+remote_utility:
+- dwagsvc.exe
+- dwagent.exe
+- dwagsvc.exe
+remote_utility_fileinfo: DWSNET*
+remote_appid: dws-remote-control
+isutility: true
+category: RMM
+comment_reference: https://news.dwservice.net/dwservice-security-infrastructure/
+last_update: 2/7/2024

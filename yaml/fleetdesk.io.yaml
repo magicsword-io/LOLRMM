@@ -1,0 +1,16 @@
+description: FleetDesk.io
+remote_domain:
+- '*.fleetdeck.io'
+- cognito-idp.us-west-2.amazonaws.com
+- fleetdeck.io
+remote_utility:
+- fleetdeck_agent_svc.exe
+- fleetdeck_commander_svc.exe
+- fleetdeck_installer.exe
+- fleetdeck_agent.exe
+- fleetdeck_commander_launcher.exe
+remote_utility_fileinfo: FleetDeck*
+isutility: true
+category: RMM
+comment_reference: https://fleetdeck.io/faq/
+last_update: 2/7/2024

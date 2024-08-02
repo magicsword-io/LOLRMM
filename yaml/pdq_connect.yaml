@@ -1,0 +1,12 @@
+description: PDQ Connect
+remote_domain:
+- app.pdq.com
+- cfcdn.pdq.com
+remote_utility: pdq-connect*.exe
+remote_utility_fileinfo:
+- PDQ.com*
+- PDQConnectAgent*
+isutility: true
+category: RMM
+comment_reference: https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
+last_update: 2/26/2024

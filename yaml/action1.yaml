@@ -1,0 +1,16 @@
+description: Action1
+remote_domain:
+- '*.action1.com'
+- action1.com
+- a1-backend-packages.s3.amazonaws.com
+- server.action1.com
+remote_utility:
+- action1_agent.exe
+- action1_remote.exe
+- action1_connector.exe
+- action1_update.exe
+remote_utility_fileinfo: Action1*
+isutility: true
+category: RMM
+comment_reference: https://www.action1.com/documentation/firewall-configuration/
+last_update: 2/7/2024

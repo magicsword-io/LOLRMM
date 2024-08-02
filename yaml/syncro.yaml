@@ -1,0 +1,26 @@
+description: Syncro
+remote_domain:
+- 'app.kabuto.io '
+- '*.syncromsp.com'
+- '*.syncroapi.com'
+- '*.kabutoservices.com'
+- ld.aurelius.host
+- attachments.servably.com
+remote_utility:
+- Kabuto.App.Runner.exe
+- Kabuto.Service.Runner.exe
+- Kabuto.Installer.exe
+- KabutoSetup.exe
+- Syncro.Overmind.Service.exe
+- SyncroLive.Service.exe
+- SyncroLive.Agent.exe
+- Syncro.App.Runner.exe
+- Syncro.Installer.exe
+- Syncro.Service.exe
+remote_utility_fileinfo:
+- Servably*
+- Syncro*
+isutility: true
+category: RMM
+comment_reference: https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004
+last_update: 2/13/2024

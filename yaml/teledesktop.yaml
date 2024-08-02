@@ -1,0 +1,10 @@
+description: TeleDesktop
+remote_domain: user_managed
+remote_utility:
+- pstlaunch.exe
+- ptdskclient.exe
+- ptdskhost.exe
+isutility: true
+category: RMM
+comment_reference: http://potomacsoft.com/ - DOA as of 2024
+last_update: 2/14/2024

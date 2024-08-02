@@ -1,0 +1,12 @@
+description: ServerEye
+remote_domain: '*.server-eye.de'
+remote_utility:
+- servereye*.exe
+- ServiceProxyLocalSys.exe
+remote_utility_fileinfo:
+- ServerEye*
+- Server-Eye*
+isutility: true
+category: RMM
+comment_reference: https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf
+last_update: 2/9/2024

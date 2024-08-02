@@ -1,0 +1,10 @@
+description: DesktopNow
+remote_domain: '*.nchuser.com'
+remote_utility: desktopnow.exe
+remote_utility_fileinfo:
+- DesktopNow*
+- NCH Software*
+isutility: true
+category: RMM
+comment_reference: https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US
+last_update: 2/26/2024

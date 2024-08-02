@@ -1,0 +1,11 @@
+description: Xeox
+remote_domain:
+- xeox.com
+- '*.xeox.com'
+remote_utility:
+- xeox-agent_*.exe
+- xeox_service_windows.exe
+isutility: true
+category: RMM
+comment_reference: https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW
+last_update: 2/14/2024

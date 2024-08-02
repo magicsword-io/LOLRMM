@@ -1,0 +1,13 @@
+description: Pilixo
+remote_domain:
+- '*.pilixo.com'
+- pilixo.com
+- download.pilixo.com
+remote_utility:
+- Pilixo_Installer*.exe
+- rdp.exe
+remote_utility_fileinfo: Pilixo*
+isutility: true
+category: RMM
+comment_reference: https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls
+last_update: 2/9/2024

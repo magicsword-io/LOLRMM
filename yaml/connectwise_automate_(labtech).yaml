@@ -1,0 +1,10 @@
+description: Connectwise Automate (LabTech)
+remote_domain: '*.hostedrmm.com'
+remote_utility:
+- ltsvc.exe
+- ltsvcmon.exe
+- lttray.exe
+isutility: true
+category: RMM
+comment_reference: https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate
+last_update: 2/8/2024

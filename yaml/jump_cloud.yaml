@@ -1,0 +1,10 @@
+description: Jump Cloud
+remote_domain:
+- '*.api.jumpcloud.com'
+- '*.assist.jumpcloud.com'
+remote_utility: 'JumpCloud*.exe '
+remote_utility_fileinfo: JumpCloud*
+isutility: true
+category: RMM
+comment_reference: https://jumpcloud.com/support/understand-remote-assist-agent
+last_update: 2/26/2024

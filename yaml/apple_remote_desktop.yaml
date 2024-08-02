@@ -1,0 +1,8 @@
+description: Apple Remote Desktop
+remote_domain: user_managed
+remote_utility: ARDAgent.app
+remote_appid: apple-remote-desktop
+isutility: true
+category: RMM
+comment_reference: https://support.apple.com/guide/remote-desktop/install-and-set-up-remote-desktop-apdf49e03a4/mac
+last_update: 2/24/2024

@@ -1,0 +1,19 @@
+description: Absolute (Computrace)
+remote_domain:
+- '*search.namequery.com'
+- '*server.absolute.com'
+remote_utility:
+- rpcnet.exe
+- ctes.exe
+- ctespersitence.exe
+- cteshostsvc.exe
+- rpcld.exe
+remote_utility_fileinfo:
+- Absolute Software*
+- Absolute Persistence*
+- CTES*
+remote_appid: absolute-manage
+isutility: true
+category: RMM
+comment_reference: https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com
+last_update: 6/18/2024

@@ -1,0 +1,12 @@
+description: NoMachine
+remote_domain: user_managed
+remote_utility:
+- nomachine*.exe
+- nxservice*.ese
+- nxd.exe
+remote_utility_fileinfo: NoMachine*
+remote_appid: nomachine
+isutility: true
+category: RMM
+comment_reference: https://kb.nomachine.com/AR04S01122
+last_update: 2/9/2024

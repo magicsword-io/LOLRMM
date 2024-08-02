@@ -1,0 +1,8 @@
+description: MioNet (WD Anywhere Access)
+remote_utility:
+- mionet.exe
+- mionetmanager.exe
+isutility: true
+category: RMM
+comment_reference: https://en.wikipedia.org/wiki/WD_Anywhere_Access - DOA as of 2016
+last_update: 2/9/2024

@@ -1,0 +1,20 @@
+description: GoToAssist
+remote_domain:
+- goto.com
+- '*.getgo.com'
+- '*.fastsupport.com'
+- '*.gotoassist.com'
+- helpme.net
+- '*.gotoassist.me'
+- '*.gotoassist.at'
+- '*.desktopstreaming.com'
+remote_utility:
+- gotoassist.exe
+- g2a*.exe
+- GoTo Assist Opener.exe
+remote_utility_fileinfo: GoToAssist*
+remote_appid: gotoassist
+isutility: true
+category: RMM
+comment_reference: https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5
+last_update: 2/7/2024

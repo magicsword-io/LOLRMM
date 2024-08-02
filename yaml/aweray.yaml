@@ -1,0 +1,15 @@
+description: AweRay
+remote_domain:
+- asapi*.aweray.net
+- client-api.aweray.com
+remote_utility:
+- aweray_remote*.exe
+- AweSun.exe
+remote_utility_fileinfo:
+- AweRay*
+- AweSun*
+remote_appid: awesun
+isutility: true
+category: RMM
+comment_reference: https://sun.aweray.com/help
+last_update: 2/7/2024

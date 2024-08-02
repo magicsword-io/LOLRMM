@@ -1,0 +1,24 @@
+description: MSP360
+remote_domain:
+- '*.cloudberrylab.com'
+- '*.msp360.com'
+- '*.mspbackups.com'
+remote_utility:
+- Online Backup.exe
+- CBBackupPlan.exe
+- Cloud.Backup.Scheduler.exe
+- Cloud.Backup.RM.Service.exe
+- cbb.exe
+- CloudRaService.exe
+- CloudRaSd.exe
+- CloudRaCmd.exe
+- CloudRaUtilities.exe
+- Remote Desktop.exe
+- Connect.exe
+remote_utility_fileinfo:
+- MSP360*
+- Cloud.Ra*
+isutility: true
+category: RMM
+comment_reference: https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#
+last_update: 2/9/2024

@@ -1,0 +1,8 @@
+description: Echoware
+remote_utility:
+- echoserver*.exe
+- echoware.dll
+remote_appid: echoware
+isutility: true
+category: RMM
+last_update: 2/7/2024

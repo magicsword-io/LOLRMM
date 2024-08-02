@@ -1,0 +1,11 @@
+description: KickIdler
+remote_domain:
+- kickidler.com
+- my.kickidler.com
+remote_utility:
+- grabberEM.*msi
+- grabberTT*.msi
+isutility: true
+category: RMM
+comment_reference: https://www.kickidler.com/for-it/faq/
+last_update: 2/8/2024

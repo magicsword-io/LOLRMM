@@ -1,0 +1,11 @@
+description: Addigy
+remote_domain:
+- prod.addigy.com
+- grtmprod.addigy.com
+- agents.addigy.com
+remote_utility: addigy-*.pkg
+remote_utility_fileinfo: Addigy*
+isutility: true
+category: RMM
+comment_reference: https://addigy.com/
+last_update: 2/27/2024

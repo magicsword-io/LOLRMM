@@ -1,0 +1,7 @@
+description: Access Remote PC
+remote_utility:
+- rpcgrab.exe
+- rpcsetup.exe
+isutility: true
+category: RMM
+last_update: 2/7/2024

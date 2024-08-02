@@ -1,0 +1,15 @@
+description: Instant Housecall
+remote_domain:
+- '*.instanthousecall.com'
+- '*.instanthousecall.net'
+- instanthousecall.com
+- secure.instanthousecall.com
+remote_utility:
+- hsloader.exe
+- ihcserver.exe
+- instanthousecall.exe
+- instanthousecall.exe
+isutility: true
+category: RMM
+comment_reference: https://instanthousecall.com/features/
+last_update: 2/8/2024

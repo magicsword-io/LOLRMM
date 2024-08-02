@@ -1,0 +1,19 @@
+description: QQ IM-remote assistance
+remote_domain:
+- '*.mdt.qq.com'
+- '*.desktop.qq.com'
+- upload_data.qq.com
+remote_utility:
+- qq.exe
+- QQProtect.exe
+- qqpcmgr.exe
+remote_utility_fileinfo:
+- Tencent*
+- QQ*
+remote_appid:
+- qq
+- qq-rdp
+isutility: true
+category: RMM
+comment_reference: https://en.wikipedia.org/wiki/Tencent_QQ
+last_update: 2/9/2024

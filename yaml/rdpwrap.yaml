@@ -1,0 +1,10 @@
+description: rdpwrap
+remote_domain: user_managed
+remote_utility:
+- RDPWInst.exe
+- RDPCheck.exe
+- RDPConf.exe
+isutility: true
+category: Utility
+comment_reference: github.com/stascorp/rdpwrap
+last_update: 2/9/2024

@@ -1,0 +1,13 @@
+description: LogMeIn rescue
+remote_domain:
+- '*.logmeinrescue.com'
+- '*.logmeinrescue.eu'
+remote_utility:
+- support-logmeinrescue*.exe
+- support-logmeinrescue.exe
+- lmi_rescue.exe
+remote_appid: logmeinrescue
+isutility: true
+category: RMM
+comment_reference: https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue
+last_update: 2/8/2024

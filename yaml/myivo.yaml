@@ -1,0 +1,8 @@
+description: MyIVO
+remote_utility:
+- myivomgr.exe
+- myivomanager.exe
+isutility: true
+category: RMM
+comment_reference: myivo.com - DOA as of 2024
+last_update: 2/9/2024

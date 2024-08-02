@@ -1,0 +1,10 @@
+description: Pandora RC (eHorus)
+remote_domain: portal.ehorus.com
+remote_utility:
+- ehorus standalone.exe
+- ehorus_agent.exe
+remote_utility_fileinfo: eHorus*
+isutility: true
+category: RMM
+comment_reference: https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction
+last_update: 2/7/2024

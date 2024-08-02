@@ -1,0 +1,7 @@
+description: 247ithelp.com (ConnectWise)
+remote_domain: '*.247ithelp.com'
+remote_utility: Remote Workforce Client.exe
+isutility: true
+category: RMM
+comment_reference: Simlar / replaced by ScreenConnect
+last_update: 2/8/2024

@@ -1,0 +1,21 @@
+description: BeyondTrust (Bomgar)
+remote_domain:
+- '*.beyondtrustcloud.com'
+- '*.bomgarcloud.com'
+- bomgarcloud.com
+remote_utility:
+- bomgar-scc-*.exe
+- bomgar-scc.exe
+- bomgar-pac-*.exe
+- bomgar-pac.exe
+- bomgar-rdp.exe
+remote_utility_fileinfo:
+- BeyondTrust*
+- Bomgar*
+remote_appid:
+- beyond-trust-remote-support
+- bomgar
+isutility: true
+category: RMM
+comment_reference: https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm
+last_update: 2/7/2024

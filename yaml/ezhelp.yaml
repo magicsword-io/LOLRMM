@@ -1,0 +1,12 @@
+description: ezHelp
+remote_domain: '*.ezhelp.co.kr'
+remote_utility:
+- ezhelpclientmanager.exe
+- ezHelpManager.exe
+- ezhelpclient.exe
+remote_utility_fileinfo: Mastersoft Corp*
+remote_appid: ezhelp
+isutility: true
+category: RMM
+comment_reference: https://www.exhelp.co.kr
+last_update: 2/7/2024

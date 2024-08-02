@@ -1,0 +1,20 @@
+description: Splashtop Remote
+remote_domain:
+- splashtop.com
+- '*.api.splashtop.com'
+- '*.relay.splashtop.com'
+- '*.api.splashtop.eu'
+remote_utility:
+- strwinclt.exe
+- Splashtop_Streamer_Windows*.exe
+- SplashtopSOS.exe
+- sragent.exe
+- srmanager.exe
+- srserver.exe
+- srservice.exe
+remote_utility_fileinfo: Splashtop*
+remote_appid: splashtop-remote
+isutility: true
+category: RMM
+comment_reference: https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services
+last_update: 2/9/2024

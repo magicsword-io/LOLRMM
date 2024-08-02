@@ -1,0 +1,11 @@
+description: Comodo RMM
+remote_domain:
+- '*.itsm-us1.comodo.com'
+- '*mdmsupport.comodo.com'
+remote_utility:
+- itsmagent.exe
+- rviewer.exe
+isutility: true
+category: RMM
+comment_reference: https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
+last_update: 2/7/2024

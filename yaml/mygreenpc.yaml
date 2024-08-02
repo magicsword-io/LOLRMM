@@ -1,0 +1,8 @@
+description: MyGreenPC
+remote_domain: '*mygreenpc.com'
+remote_utility: mygreenpc.exe
+remote_appid: mygreenpc
+isutility: true
+category: RMM
+comment_reference: http://www.mygreenpc.com/
+last_update: 2/26/2024

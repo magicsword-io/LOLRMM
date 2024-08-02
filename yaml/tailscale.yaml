@@ -1,0 +1,13 @@
+description: Tailscale
+remote_domain:
+- '*.tailscale.com'
+- '*.tailscale.io'
+remote_utility:
+- tailscale-*.exe
+- tailscaled.exe
+- tailscale-ipn.exe
+remote_utility_fileinfo: Tailscale*
+isutility: true
+category: Remote Access
+comment_reference: https://tailscale.com/kb/1023/troubleshooting
+last_update: 2/14/2024

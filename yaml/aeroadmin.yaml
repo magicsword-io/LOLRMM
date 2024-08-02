@@ -1,0 +1,13 @@
+description: AeroAdmin
+remote_domain:
+- auth*.aeroadmin.com
+- aeroadmin.com
+remote_utility: aeroadmin.exe
+remote_utility_fileinfo:
+- AeroAdmin*
+- Aero Admin*
+remote_appid: aeroadmin
+isutility: true
+category: RMM
+comment_reference: https://support.aeroadmin.com/kb/faq.php?id=58
+last_update: 2/7/2024

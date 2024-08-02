@@ -1,0 +1,15 @@
+description: SuperOps
+remote_domain:
+- superops.ai
+- '*.superops.ai'
+- serv.superopsalpha.com
+- '*.superopsalpha.com'
+- '*.superopsbeta.com'
+remote_utility:
+- superopsticket.exe
+- superops.exe
+remote_utility_fileinfo: SuperOps*
+isutility: true
+category: RMM
+comment_reference: https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
+last_update: 2/7/2024

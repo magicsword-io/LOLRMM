@@ -1,0 +1,7 @@
+description: Ericom AccessNow
+remote_domain: user_managed
+remote_utility: accessserver*.exe
+isutility: true
+category: RMM
+comment_reference: https://www.ericom.com/connect-accessnow/
+last_update: 2/7/2024

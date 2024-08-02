@@ -1,0 +1,14 @@
+description: ShowMyPC
+remote_domain:
+- showmypc.com
+- '*.showmypc.com'
+remote_utility:
+- showmypc*.exe
+- showmypc.exe
+- SMPCSetup.exe
+remote_utility_fileinfo: ShowMyPC*
+remote_appid: showmypc
+isutility: true
+category: RMM
+comment_reference: https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf
+last_update: 2/9/2024

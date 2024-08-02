@@ -1,0 +1,12 @@
+description: NetSupport Manager
+remote_domain: '*.netsupportmanager.com'
+remote_utility:
+- pcictlui.exe
+- pcicfgui.exe
+- client32.exe
+remote_utility_fileinfo: netsupport
+remote_appid: netsupport-manager
+isutility: true
+category: RMM
+comment_reference: https://www.netsupportmanager.com/resources/
+last_update: 2/9/2024

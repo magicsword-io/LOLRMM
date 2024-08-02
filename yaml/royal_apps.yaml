@@ -1,0 +1,9 @@
+description: Royal Apps
+remote_domain: user_managed
+remote_utility:
+- royalserver.exe
+- royalts.exe
+isutility: true
+category: RMM
+comment_reference: https://www.royalapps.com/ts/win/download
+last_update: 2/9/2024

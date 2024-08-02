@@ -1,0 +1,22 @@
+description: VNC
+remote_domain: user_managed
+remote_utility:
+- vncserver.exe
+- winvnc*.exe
+- vncviewer.exe
+- vncserverui.exe
+- winwvc.exe
+- winvncsc.exe
+remote_utility_fileinfo: realvnc*
+remote_appid:
+- vnc
+- vnc-clipboard
+- vnc-print
+- vnc-encrypted
+- vnc-filetransfer
+- vnc-base
+- vnc-http
+isutility: true
+category: Remote Access
+comment_reference: https://realvnc.com/en/connect/download/vnc
+last_update: 2/14/2024

@@ -1,0 +1,19 @@
+description: PSEXEC (Clone)
+remote_domain: user_managed
+remote_utility:
+- paexec.exe
+- PAExec-*.exe
+- 'csexec.exe '
+- remcom.exe
+- remcomsvc.exe
+- xcmd.exe
+- xcmdsvc.exe
+remote_utility_fileinfo:
+- Power Admin*
+- PAExec*
+- Remote System Deployment*
+- Remote Command Executor*
+isutility: true
+category: Remote Access
+comment_reference: https://www.poweradmin.com/paexec/
+last_update: 2/9/2024

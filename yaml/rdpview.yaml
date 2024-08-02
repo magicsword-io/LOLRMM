@@ -1,0 +1,7 @@
+description: RDPView
+remote_domain: user_managed
+remote_utility: dwrcs.exe
+isutility: true
+category: RMM
+comment_reference: systemmanager.ru/dntu.en/rdp_view.htm - Same as Damware
+last_update: 2/9/2024

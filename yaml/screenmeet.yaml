@@ -1,0 +1,12 @@
+description: ScreenMeet
+remote_domain:
+- '*.screenmeet.com'
+- '*.scrn.mt'
+remote_utility:
+- ScreenMeetSupport.exe
+- ScreenMeet.Support.exe
+remote_utility_fileinfo: ScreenMeet*
+isutility: true
+category: RMM
+comment_reference: https://docs.screenmeet.com/docs/firewall-white-list
+last_update: 2/7/2024

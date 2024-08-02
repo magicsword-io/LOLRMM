@@ -1,0 +1,7 @@
+description: mRemoteNG
+remote_domain: user_managed
+remote_utility: mRemoteNG.exe
+isutility: true
+category: RMM
+comment_reference: https://github.com/mRemoteNG/mRemoteNG
+last_update: 2/9/2024

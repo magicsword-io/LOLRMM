@@ -1,0 +1,16 @@
+description: Laplink Everywhere
+remote_domain:
+- everywhere.laplink.com
+- le.laplink.com
+- atled.syspectr.com
+remote_utility:
+- laplink.exe
+- laplink-everywhere-setup*.exe
+- laplinkeverywhere.exe
+- llrcservice.exe
+- serverproxyservice.exe
+- OOSysAgent.exe
+isutility: true
+category: RMM
+comment_reference: https://everywhere.laplink.com/docs
+last_update: 2/8/2024

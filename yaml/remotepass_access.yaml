@@ -1,0 +1,9 @@
+description: RemotePass Access
+remote_utility:
+- remotepass-access.exe
+- rpaccess.exe
+- rpwhostscr.exe
+isutility: true
+category: RMM
+comment_reference: https://www.remotepass.com/rpaccess.html - DOA as of 2024
+last_update: 2/9/2024

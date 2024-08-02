@@ -1,0 +1,20 @@
+description: ScreenConnect (ConnectWise)
+remote_domain:
+- '*.connectwise.com'
+- '*.screenconnect.com'
+remote_utility:
+- Remote Workforce Client.exe
+- screenconnect*.exe
+- ConnectWiseControl*.exe
+- connectwise*.exe
+- screenconnect.windowsclient.exe
+- screenconnect.clientservice.exe
+remote_utility_fileinfo:
+- ConnectWise*
+- ScreenConnect*
+- CONTINUUM MANAGED*
+remote_appid: screenconnect
+isutility: true
+category: RMM
+comment_reference: https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/
+last_update: 2/7/2024

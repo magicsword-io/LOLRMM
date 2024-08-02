@@ -1,0 +1,7 @@
+description: SpyAnywhere
+remote_domain: '*.spytech-web.com'
+remote_utility: sysdiag.exe
+isutility: true
+category: RMM
+comment_reference: https://www.spyanywhere.com/support.shtml
+last_update: 2/9/2024

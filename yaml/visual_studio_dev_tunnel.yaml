@@ -1,0 +1,9 @@
+description: Visual Studio Dev Tunnel
+remote_domain:
+- global.rel.tunnels.api.visualstudio.com
+- '*.rel.tunnels.api.visualstudio.com'
+- '*.devtunnels.ms'
+isutility: true
+category: Developer Utility
+comment_reference: https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security
+last_update: 2/7/2024

@@ -1,0 +1,6 @@
+description: Microsoft TSC
+remote_utility: termsrv.exe
+isutility: true
+category: Built-in
+comment_reference: https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
+last_update: 2/8/2024

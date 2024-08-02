@@ -1,0 +1,7 @@
+description: UltraVNC
+remote_domain: user_managed
+remote_utility: UltraVNC*.exe
+isutility: true
+category: Remote Access
+comment_reference: https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html
+last_update: 2/14/2024

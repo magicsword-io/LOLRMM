@@ -1,0 +1,13 @@
+description: Pcvisit
+remote_domain: '*.pcvisit.de'
+remote_utility:
+- pcvisit.exe
+- pcvisit_client.exe
+- pcvisit-easysupport.exe
+- pcvisit_service_client.exe
+remote_utility_fileinfo: pcvisit*
+remote_appid: pcvisit
+isutility: true
+category: RMM
+comment_reference: https://www.pcvisit.de/
+last_update: 2/9/2024

@@ -1,0 +1,12 @@
+description: Remote.it
+remote_domain:
+- auth.api.remote.it
+- api.remote.it
+remote_utility:
+- remote-it-installer.exe
+- remote.it.exe
+- remoteit.exe
+isutility: true
+category: RMM
+comment_reference: https://docs.remote.it/introduction/get-started
+last_update: 2/9/2024

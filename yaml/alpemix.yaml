@@ -1,0 +1,13 @@
+description: Alpemix
+remote_domain:
+- '*.alpemix.com'
+- '*.teknopars.com'
+remote_utility: alpemix.exe
+remote_utility_fileinfo:
+- Alpemix*
+- Teknopars*
+remote_appid: alpemix
+isutility: true
+category: RMM
+comment_reference: https://www.alpemix.com/en/remote-access
+last_update: 2/7/2024

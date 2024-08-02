@@ -1,0 +1,10 @@
+description: Senso.cloud
+remote_domain: '*.senso.cloud'
+remote_utility:
+- SensoClient.exe
+- SensoService.exe
+- aadg.exe
+isutility: true
+category: RMM
+comment_reference: https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration
+last_update: 2/9/2024

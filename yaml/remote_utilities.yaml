@@ -1,0 +1,10 @@
+description: Remote Utilities
+remote_domain: '*.internetid.ru'
+remote_utility:
+- rutview.exe
+- rutserv.exe
+remote_utility_fileinfo: Remote Utilities*
+isutility: true
+category: RMM
+comment_reference: https://www.remoteutilities.com/download/
+last_update: 2/9/2024

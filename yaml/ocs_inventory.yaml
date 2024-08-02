@@ -1,0 +1,12 @@
+description: OCS inventory
+remote_domain: user_managed
+remote_utility:
+- ocsinventory.exe
+- ocsservice.exe
+remote_utility_fileinfo:
+- Ocs Inventory*
+- OcsPackager*
+isutility: true
+category: RMM
+comment_reference: https://ocsinventory-ng.org/?page_id=878&lang=en
+last_update: 2/9/2024

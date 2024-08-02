@@ -1,0 +1,10 @@
+description: Ivanti Remote Control
+remote_domain: '*.ivanticloud.com'
+remote_utility:
+- IvantiRemoteControl.exe
+- ArcUI.exe
+- AgentlessRC.exe
+isutility: true
+category: RMM
+comment_reference: https://rc1.ivanticloud.com/
+last_update: 2/9/2024
