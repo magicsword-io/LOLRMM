@@ -78,6 +78,7 @@ Artifacts:
     EventLog:
         - EventID: 7045
           ProviderName: Service Control Manager
+          LogFile: System.evtx
           ServiceName: TeamViewer
           ImagePath: '"C:\\Program Files\\TeamViewer\\TeamViewer_Service.exe"'
           Description: Service installation event as result of TeamViewer installation.

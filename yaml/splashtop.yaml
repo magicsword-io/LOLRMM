@@ -1,32 +1,115 @@
 Name: Splashtop
 Description: Splashtop is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
-Author: ''
+Author: Nasreddine Bencherchali
 Created: ''
 LastModified: ''
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - '*\Splashtop\*'
-  - '*\Splashtop\Splashtop Remote\Client for RMM\*'
-  - strwinclt.exe
-  - C:\Program Files (x86)\Splashtop\*
-  - '*\strwinclt.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Splashtop\*
+        - '*\Splashtop\Splashtop Remote\Client for RMM\*'
+        - strwinclt.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk:
+        - File: 'C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Status%4Operational.evtx'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Remote Session%4Operational.evtx'
+          Description: N/A
+          OS: Windows
+        - File: '%PROGRAMDATA%\Splashtop\Temp\log\FTCLog.txt'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\agent_log.txt'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\SPLog.txt'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\svcinfo.txt'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\sysinfo.txt'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRService.exe'
+          Description: 'Splashtop Remote Service'
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRAgent.exe'
+          Description: 'SplashTop Remote Agent'
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Software Updater\SSUAgent.exe'
+          Description: 'Splashtop Updater'
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRUtility.exe'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRFeature.exe'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\db\SRAgent.sqlite3'
+          Description: N/A
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Splashtop Software Updater Service
+          ImagePath: '"C:\\Program Files (x86)\\Splashtop\\Splashtop Software Updater\\SSUService.exe"'
+          Description: Service installation event as result of Splashtop Software Updater Service installation.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Splashtop® Remote Service
+          ImagePath: '"C:\\Program Files (x86)\\Splashtop\\Splashtop Remote\\Server\\SRService.exe"'
+          Description: Service installation event as result of Splashtop Remote Service installation.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: SplashtopRemoteService
+          ImagePath: '"C:\\Program Files (x86)\\Splashtop\\Splashtop Remote\\Server\\SRService.exe"'
+          Description: Service installation event as result of Splashtop Remote Service installation.
+    Registry:
+        - Path: 'KLM\SOFTWARE\WOW6432Node\Splashtop Inc.\*'
+          Description:
+        - Path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater'
+          Description:
+        - Path: 'HKLM\SYSTEM\CurrentControlSet\Services\SplashtopRemoteService'
+          Description:
+        - Path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Remote Session/Operational'
+          Description:
+        - Path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Status/Operational'
+          Description:
+        - Path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater\InstallRefCount'
+          Description:
+        - Path: 'HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SplashtopRemoteService'
+          Description:
+        - Path: 'HKU\.DEFAULT\Software\Splashtop Inc.\*'
+          Description:
+        - Path: 'HKU\SID\Software\Splashtop Inc.\*'
+          Description:
+        - Path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\Splashtop PDF Remote Printer'
+          Description:
+        - Path: 'HKLM\SOFTWARE\WOW6432Node\Splashtop Inc.\Splashtop Remote Server\ClientInfo\*'
+          Description:
+    Network:
+        - Domain: '*.splashtop.com'
+          Port: N/A
+          Description: N/A
 Detections: []
-References: []
-Acknowledgement: []
+References:
+    - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
+Acknowledgement:
+    - Person: "Théo Letailleur"
+      Handle: in/theosyn

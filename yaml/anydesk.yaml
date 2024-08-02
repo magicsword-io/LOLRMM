@@ -78,6 +78,7 @@ Artifacts:
     EventLog:
         - EventID: 7045
           ProviderName: Service Control Manager
+          LogFile: System.evtx
           ServiceName: AnyDesk Service
           ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
           Description: Service installation event as result of AnyDesk installation.

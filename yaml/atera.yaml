@@ -1,7 +1,7 @@
 Name: Atera
 Description: Atera is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
-Author: ''
+Author: Nasreddine Bencherchali
 Created: ''
 LastModified: ''
 Details:
@@ -17,26 +17,138 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - '*\AteraAgent.exe'
-  - '*\AgentPackageTaskScheduler.exe'
-  - C:\Program Files\ATERA Networks\AteraAgent\*
-  - atera_agent.exe
-  - '*\ATERA Networks\AteraAgent\*'
-  - '*\AgentPackageNetworkDiscovery.exe'
-  - atera_agent.exe
-  - ateraagent.exe
-  - syncrosetup.exe
+    - '*\AgentPackageNetworkDiscovery.exe'
+    - '*\AgentPackageTaskScheduler.exe'
+    - '*\ATERA Networks\AteraAgent\*'
+    - '*\AteraAgent.exe'
+    - atera_agent.exe
+    - atera_agent.exe
+    - ateraagent.exe
+    - C:\Program Files\ATERA Networks\AteraAgent\*
+    - C:\Program Files\Atera Networks
+    - C:\Program Files (x86)\Atera Networks
+    - syncrosetup.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-   Network:
-  - Description: Known remote domains
-    Domain:
-    - agent-api.atera.com
-    - pubsub.atera.com
-    - atera.com
-Detections: []
+    Disk:
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\*'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe'
+          Description: Atera service binary
+          OS: Windows
+        - File: 'C:\Program Files\Atera Networks\AlphaAgent.exe'
+          Description: Atera service binary
+          OS: Windows
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe'
+          Description: N/A
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: AteraAgent
+          ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\AteraAgent.exe"'
+          Description: Service installation event as result of AteraAgent installation.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: WinRing0_1_2_0
+          ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageMonitoring\\OpenHardwareMonitorLib.sys"'
+          Description: Service installation event as result of Atera pakcage manager installation.
+        - EventID: 11707
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Product: AteraAgent -- Installation completed successfully.'
+          Description: Service installation event as result of AteraAgent installation.
+        - EventID: 4688
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: 'C:\\Program Files\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageFileExplorer\\AgentPackageFileExplorer.exe XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX agent-api.atera.com/Production 443 [BASE64BLOB]'
+          Description: Service installation event as result of AteraAgent installation.
+    Registry:
+        - Path: HKLM\SOFTWARE\ATERA Networks\AlphaAgent
+          Description:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent
+          Description:
+        - Path: KLM\SOFTWARE\WOW6432Node\Splashtop Inc.
+          Description:
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater
+          Description:
+        - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AlphaAgent
+          Description:
+        - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AteraAgent
+          Description:
+        - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASAPI32
+          Description:
+        - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS
+          Description:
+        - Path: HKLM\SOFTWARE\ATERA Networks\*
+          Description:
+    Network:
+        - Domain: pubsub.atera.com
+          Port: N/A
+          Description: N/A
+        - Domain: pubsub.pubnub.com
+          Port: N/A
+          Description: N/A
+        - Domain: agentreporting.atera.com
+          Port: N/A
+          Description: N/A
+        - Domain: getalphacontrol.com
+          Port: N/A
+          Description: N/A
+        - Domain: app.atera.com
+          Port: N/A
+          Description: N/A
+        - Domain: agenthb.atera.com
+          Port: N/A
+          Description: N/A
+        - Domain: packagesstore.blob.core.windows.net
+          Port: N/A
+          Description: N/A
+        - Domain: ps.pndsn.com
+          Port: N/A
+          Description: N/A
+        - Domain: agent-api.atera.com
+          Port: N/A
+          Description: N/A
+        - Domain: cacerts.thawte.com
+          Port: N/A
+          Description: N/A
+        - Domain: agentreportingstore.blob.core.windows.net
+          Port: N/A
+          Description: N/A
+        - Domain: atera-agent-heartbeat.servicebus.windows.net
+          Port: N/A
+          Description: N/A
+        - Domain: ps.atera.com
+          Port: N/A
+          Description: N/A
+        - Domain: atera.pubnubapi.com
+          Port: N/A
+          Description: N/A
+        - Domain: appcdn.atera.com
+          Port: N/A
+          Description: N/A
+Detections: []    
 References:
-- https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
-Acknowledgement: []
+    - https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
+    - https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
+Acknowledgement:
+    - Person: "Théo Letailleur"
+      Handle: in/theosyn
