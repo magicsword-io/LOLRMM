@@ -1,0 +1,48 @@
+name: RMM Tool Update
+description: Submit new information or updates for an RMM tool
+title: "[RMM Update]: "
+labels: ["rmm-update"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this RMM tool update form!
+  - type: input
+    id: rmm-name
+    attributes:
+      label: RMM Tool Name
+      description: What's the name of the RMM tool you're updating?
+      placeholder: ex. AnyDesk
+    validations:
+      required: true
+  - type: dropdown
+    id: update-type
+    attributes:
+      label: Type of Update
+      description: What kind of update are you submitting?
+      options:
+        - New RMM Tool
+        - General Information Update
+        - Forensic Artifact
+        - Detection Method
+        - Vulnerability
+        - Reference
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: update-details
+    attributes:
+      label: Update Details
+      description: Please provide the details of your update.
+      placeholder: Describe your update here. Be as specific as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Please provide any relevant references or sources for this information.
+      placeholder: List any URLs, documents, or other sources that support this update.
