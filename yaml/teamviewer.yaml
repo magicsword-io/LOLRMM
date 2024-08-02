@@ -1,9 +1,9 @@
 Name: TeamViewer
-Description: TeamViewer is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: 2/14/2024
+Description: |
+    TeamViewer is a remote monitoring and management (RMM) tool.
+Author: Nasreddine Bencherchali
+Created: 2024-08-02
+LastModified: 2024-08-02
 Details:
   Website: ''
   PEMetadata:
@@ -31,9 +31,10 @@ ForensicArtifacts:
   - Description: Known remote domains
     Domain:
     - '*.teamviewer.com'
-    - teamviewer.com
+    - 
     Port: ''
 Detections: []
 References:
-- https://community.teamviewer.com/English/kb/articles/4139-ports-used-by-teamviewer
+    - https://community.teamviewer.com/English/kb/articles/4139-ports-used-by-teamviewer
+    - https://arista.my.site.com/AristaCommunity/s/article/Security-Analysis-TeamViewer#
 Acknowledgement: []

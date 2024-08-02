@@ -3,12 +3,10 @@ Category: RMM
 Description: 'AnyDesk is a popular remote desktop software that enables users to access
   and control a computer or device from a remote location. It was developed with the
   primary goal of facilitating remote work, technical support, and collaboration between
-  individuals and teams.
-
-  '
+  individuals and teams.'
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: 2023-09-29
-LastModified: 2023-09-29
+LastModified: 2024-08-02
 Details:
   Website: https://anydesk.com/en
   PEMetadata:
@@ -36,6 +34,9 @@ Details:
   - https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html
   InstallationPaths:
   - C:\Program Files (x86)\AnyDesk\*
+  - C:\Program Files (x86)\AnyDesk\
+  - C:\Program Files\AnyDesk\AnyDesk.exe
+  - C:\Program Files (x86)\AnyDesk\
   - '*\AnyDesk\*'
   - C:\Program Files\AnyDesk\AnyDesk.exe
   - C:\Program Files (x86)\AnyDesk\AnyDesk.exe
