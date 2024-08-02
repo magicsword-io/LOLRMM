@@ -1,12 +1,35 @@
-description: Syspectr
-remote_domain:
-- atled.syspectr.com
-- app.syspectr.com
-remote_utility:
-- oo-syspectr*.exe
-- OOSysAgent.exe
-remote_utility_fileinfo: O&O Syspectr*
-isutility: true
-category: RMM
-comment_reference: https://www.syspectr.com/en/installation-in-a-network
-last_update: 2/26/2024
+Name: Syspectr
+Description: Syspectr is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - oo-syspectr*.exe
+  - OOSysAgent.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - atled.syspectr.com
+    - app.syspectr.com
+    Port: ''
+Detections: []
+References:
+- https://www.syspectr.com/en/installation-in-a-network
+Acknowledgement: []

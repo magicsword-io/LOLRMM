@@ -1,11 +1,35 @@
-description: I'm InTouch
-remote_domain: '*.01com.com'
-remote_utility:
-- iit.exe
-- intouch.exe
-- I'm InTouch Go Installer.exe
-remote_utility_fileinfo: I'm InTouch*
-isutility: true
-category: RMM
-comment_reference: https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
-last_update: 2/8/2024
+Name: I'm InTouch
+Description: I'm InTouch is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - iit.exe
+  - intouch.exe
+  - I'm InTouch Go Installer.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.01com.com'
+    Port: ''
+Detections: []
+References:
+- https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
+Acknowledgement: []

@@ -1,19 +1,37 @@
-description: TeamViewer
-remote_domain: '*.teamviewer.com'
-remote_utility:
-- teamviewer*.exe
-- teamviewerqs.exe
-- tv_w32.exe
-- tv_w64.exe
-- teamviewer.exe
-remote_utility_fileinfo: TeamViewer*
-remote_appid:
-- teamviewer
-- teamviewer-remote-control
-- teamviewer-sharing
-- teamviewer-base
-- teamviewer-web
-isutility: true
-category: RMM
-comment_reference: https://community.teamviewer.com/English/kb/articles/4139-ports-used-by-teamviewer
-last_update: 2/14/2024
+Name: TeamViewer
+Description: TeamViewer is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - teamviewer*.exe
+  - teamviewerqs.exe
+  - tv_w32.exe
+  - tv_w64.exe
+  - teamviewer.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.teamviewer.com'
+    Port: ''
+Detections: []
+References:
+- https://community.teamviewer.com/English/kb/articles/4139-ports-used-by-teamviewer
+Acknowledgement: []

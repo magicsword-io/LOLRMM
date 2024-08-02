@@ -1,14 +1,37 @@
-description: ToDesk
-remote_domain:
-- todesk.com
-- '*.todesk.com'
-- '*.todesk.com'
-remote_utility:
-- todesk.exe
-- ToDesk_Service.exe
-- ToDesk_Setup.exe
-remote_utility_fileinfo: ToDesk*
-isutility: true
-category: RMM
-comment_reference: https://www.todesk.com/
-last_update: 2/14/2024
+Name: ToDesk
+Description: ToDesk is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - todesk.exe
+  - ToDesk_Service.exe
+  - ToDesk_Setup.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - todesk.com
+    - '*.todesk.com'
+    - '*.todesk.com'
+    Port: ''
+Detections: []
+References:
+- https://www.todesk.com/
+Acknowledgement: []

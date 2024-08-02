@@ -1,10 +1,34 @@
-description: Panorama9
-remote_domain:
-- trusted.panorama9.com
-- changes.panorama9.com
-remote_utility: p9agent*.exe
-remote_utility_fileinfo: Panorama9*
-isutility: true
-category: RMM
-comment_reference: https://support.panorama9.com/en/articles/1859605-what-ports-and-hosts-does-the-p9-agent-communicate-with
-last_update: 2/9/2024
+Name: Panorama9
+Description: Panorama9 is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - p9agent*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - trusted.panorama9.com
+    - changes.panorama9.com
+    Port: ''
+Detections: []
+References:
+- https://support.panorama9.com/en/articles/1859605-what-ports-and-hosts-does-the-p9-agent-communicate-with
+Acknowledgement: []

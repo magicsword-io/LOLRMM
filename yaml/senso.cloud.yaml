@@ -1,10 +1,35 @@
-description: Senso.cloud
-remote_domain: '*.senso.cloud'
-remote_utility:
-- SensoClient.exe
-- SensoService.exe
-- aadg.exe
-isutility: true
-category: RMM
-comment_reference: https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration
-last_update: 2/9/2024
+Name: Senso.cloud
+Description: Senso.cloud is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - SensoClient.exe
+  - SensoService.exe
+  - aadg.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.senso.cloud'
+    Port: ''
+Detections: []
+References:
+- https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration
+Acknowledgement: []

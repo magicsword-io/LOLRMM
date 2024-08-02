@@ -1,10 +1,35 @@
-description: TurboMeeting
-remote_domain: user_managed
-remote_utility:
-- pcstarter.exe
-- turbomeeting.exe
-- turbomeetingstarter.exe
-isutility: true
-category: RMM
-comment_reference: http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv
-last_update: 2/14/2024
+Name: TurboMeeting
+Description: TurboMeeting is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - pcstarter.exe
+  - turbomeeting.exe
+  - turbomeetingstarter.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv
+Acknowledgement: []

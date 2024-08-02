@@ -1,26 +1,45 @@
-description: FixMe.it
-remote_domain:
-- '*.fixme.it'
-- '*.techinline.net'
-- fixme.it
-- '*set.me'
-- '*setme.net'
-remote_utility:
-- FixMeit Unattended Access Setup.exe
-- TiExpertStandalone.exe
-- FixMeitClient*.exe
-- FixMeit Client.exe
-- FixMeit Expert Setup.exe
-- TiExpertCore.exe
-- fixmeitclient.exe
-- TiClientCore.exe
-- TiClientHelper*.exe
-remote_utility_fileinfo:
-- FixMe*
-- SetMe*
-- FixMe.IT Helper
-remote_appid: techinline
-isutility: true
-category: RMM
-comment_reference: https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
-last_update: 2/7/2024
+Name: FixMe.it
+Description: FixMe.it is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - FixMeit Unattended Access Setup.exe
+  - TiExpertStandalone.exe
+  - FixMeitClient*.exe
+  - FixMeit Client.exe
+  - FixMeit Expert Setup.exe
+  - TiExpertCore.exe
+  - fixmeitclient.exe
+  - TiClientCore.exe
+  - TiClientHelper*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.fixme.it'
+    - '*.techinline.net'
+    - fixme.it
+    - '*set.me'
+    - '*setme.net'
+    Port: ''
+Detections: []
+References:
+- https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
+Acknowledgement: []

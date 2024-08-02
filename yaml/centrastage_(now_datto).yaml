@@ -1,12 +1,35 @@
-description: CentraStage (Now Datto)
-remote_domain:
-- '*.rmm.datto.com'
-- '*cc.centrastage.net'
-remote_utility:
-- CagService.exe
-- AEMAgent.exe
-remote_utility_fileinfo: Datto*
-isutility: true
-category: RMM
-comment_reference: https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm
-last_update: 2/7/2024
+Name: CentraStage (Now Datto)
+Description: CentraStage (Now Datto) is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - CagService.exe
+  - AEMAgent.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.rmm.datto.com'
+    - '*cc.centrastage.net'
+    Port: ''
+Detections: []
+References:
+- https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm
+Acknowledgement: []

@@ -1,12 +1,34 @@
-description: PDQ Connect
-remote_domain:
-- app.pdq.com
-- cfcdn.pdq.com
-remote_utility: pdq-connect*.exe
-remote_utility_fileinfo:
-- PDQ.com*
-- PDQConnectAgent*
-isutility: true
-category: RMM
-comment_reference: https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
-last_update: 2/26/2024
+Name: PDQ Connect
+Description: PDQ Connect is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - pdq-connect*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - app.pdq.com
+    - cfcdn.pdq.com
+    Port: ''
+Detections: []
+References:
+- https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
+Acknowledgement: []

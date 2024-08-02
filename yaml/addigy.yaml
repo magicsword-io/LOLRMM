@@ -1,11 +1,35 @@
-description: Addigy
-remote_domain:
-- prod.addigy.com
-- grtmprod.addigy.com
-- agents.addigy.com
-remote_utility: addigy-*.pkg
-remote_utility_fileinfo: Addigy*
-isutility: true
-category: RMM
-comment_reference: https://addigy.com/
-last_update: 2/27/2024
+Name: Addigy
+Description: Addigy is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/27/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - addigy-*.pkg
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - prod.addigy.com
+    - grtmprod.addigy.com
+    - agents.addigy.com
+    Port: ''
+Detections: []
+References:
+- https://addigy.com/
+Acknowledgement: []

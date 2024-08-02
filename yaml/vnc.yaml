@@ -1,22 +1,38 @@
-description: VNC
-remote_domain: user_managed
-remote_utility:
-- vncserver.exe
-- winvnc*.exe
-- vncviewer.exe
-- vncserverui.exe
-- winwvc.exe
-- winvncsc.exe
-remote_utility_fileinfo: realvnc*
-remote_appid:
-- vnc
-- vnc-clipboard
-- vnc-print
-- vnc-encrypted
-- vnc-filetransfer
-- vnc-base
-- vnc-http
-isutility: true
-category: Remote Access
-comment_reference: https://realvnc.com/en/connect/download/vnc
-last_update: 2/14/2024
+Name: VNC
+Description: VNC is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - vncserver.exe
+  - winvnc*.exe
+  - vncviewer.exe
+  - vncserverui.exe
+  - winwvc.exe
+  - winvncsc.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://realvnc.com/en/connect/download/vnc
+Acknowledgement: []

@@ -1,14 +1,38 @@
-description: Mikogo
-remote_domain:
-- '*.real-time-collaboration.com'
-- '*.mikogo4.com'
-- '*.mikogo.com'
-remote_utility:
-- mikogo.exe
-- mikogo-starter.exe
-- mikogo-service.exe
-- mikogolauncher.exe
-isutility: true
-category: RMM
-comment_reference: https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services
-last_update: 2/7/2024
+Name: Mikogo
+Description: Mikogo is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - mikogo.exe
+  - mikogo-starter.exe
+  - mikogo-service.exe
+  - mikogolauncher.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.real-time-collaboration.com'
+    - '*.mikogo4.com'
+    - '*.mikogo.com'
+    Port: ''
+Detections: []
+References:
+- https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services
+Acknowledgement: []

@@ -1,16 +1,36 @@
-description: HelpU
-remote_domain:
-- helpu.co.kr
-- '*.helpu.co.kr'
-remote_utility:
-- helpu_install.exe
-- HelpuUpdater.exe
-- HelpuManager.exe
-remote_utility_fileinfo:
-- helpU*
-- Help Manager Program
-remote_appid: helpu
-isutility: true
-category: RMM
-comment_reference: https://helpu.co.kr/
-last_update: 2/8/2024
+Name: HelpU
+Description: HelpU is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - helpu_install.exe
+  - HelpuUpdater.exe
+  - HelpuManager.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - helpu.co.kr
+    - '*.helpu.co.kr'
+    Port: ''
+Detections: []
+References:
+- https://helpu.co.kr/
+Acknowledgement: []

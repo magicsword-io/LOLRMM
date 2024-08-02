@@ -1,12 +1,36 @@
-description: SimpleHelp
-remote_domain: user_managed
-remote_utility:
-- simplehelpcustomer.exe
-- simpleservice.exe
-- simplegatewayservice.exe
-- remote access.exe
-remote_utility_fileinfo: SimpleHelp*
-isutility: true
-category: RMM
-comment_reference: https://simple-help.com/remote-support
-last_update: 2/9/2024
+Name: SimpleHelp
+Description: SimpleHelp is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - simplehelpcustomer.exe
+  - simpleservice.exe
+  - simplegatewayservice.exe
+  - remote access.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://simple-help.com/remote-support
+Acknowledgement: []

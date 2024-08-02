@@ -1,14 +1,38 @@
-description: IntelliAdmin Remote Control
-remote_domain:
-- user_managed
-- '*.intelliadmin.com'
-remote_utility:
-- iadmin.exe
-- intelliadmin.exe
-- agent32.exe
-- agent64.exe
-- agent_setup_5.exe
-isutility: true
-category: RMM
-comment_reference: intelliadmin.com/remote-control
-last_update: 2/8/2024
+Name: IntelliAdmin Remote Control
+Description: IntelliAdmin Remote Control is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - iadmin.exe
+  - intelliadmin.exe
+  - agent32.exe
+  - agent64.exe
+  - agent_setup_5.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    - '*.intelliadmin.com'
+    Port: ''
+Detections: []
+References:
+- intelliadmin.com/remote-control
+Acknowledgement: []

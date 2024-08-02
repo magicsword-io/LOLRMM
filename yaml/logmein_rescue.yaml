@@ -1,13 +1,36 @@
-description: LogMeIn rescue
-remote_domain:
-- '*.logmeinrescue.com'
-- '*.logmeinrescue.eu'
-remote_utility:
-- support-logmeinrescue*.exe
-- support-logmeinrescue.exe
-- lmi_rescue.exe
-remote_appid: logmeinrescue
-isutility: true
-category: RMM
-comment_reference: https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue
-last_update: 2/8/2024
+Name: LogMeIn rescue
+Description: LogMeIn rescue is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - support-logmeinrescue*.exe
+  - support-logmeinrescue.exe
+  - lmi_rescue.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.logmeinrescue.com'
+    - '*.logmeinrescue.eu'
+    Port: ''
+Detections: []
+References:
+- https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue
+Acknowledgement: []

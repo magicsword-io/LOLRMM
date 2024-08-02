@@ -1,10 +1,35 @@
-description: Connectwise Automate (LabTech)
-remote_domain: '*.hostedrmm.com'
-remote_utility:
-- ltsvc.exe
-- ltsvcmon.exe
-- lttray.exe
-isutility: true
-category: RMM
-comment_reference: https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate
-last_update: 2/8/2024
+Name: Connectwise Automate (LabTech)
+Description: Connectwise Automate (LabTech) is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ltsvc.exe
+  - ltsvcmon.exe
+  - lttray.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.hostedrmm.com'
+    Port: ''
+Detections: []
+References:
+- https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate
+Acknowledgement: []

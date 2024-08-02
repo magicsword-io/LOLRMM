@@ -1,9 +1,34 @@
-description: Netreo
-remote_domain:
-- charon.netreo.net
-- activation.netreo.net
-- '*.api.netreo.com'
-isutility: true
-category: RMM
-comment_reference: https://solutions.netreo.com/docs/firewall-requirements
-last_update: 2/9/2024
+Name: Netreo
+Description: Netreo is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths: []
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - charon.netreo.net
+    - activation.netreo.net
+    - '*.api.netreo.com'
+    Port: ''
+Detections: []
+References:
+- https://solutions.netreo.com/docs/firewall-requirements
+Acknowledgement: []

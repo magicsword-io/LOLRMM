@@ -1,15 +1,35 @@
-description: AweRay
-remote_domain:
-- asapi*.aweray.net
-- client-api.aweray.com
-remote_utility:
-- aweray_remote*.exe
-- AweSun.exe
-remote_utility_fileinfo:
-- AweRay*
-- AweSun*
-remote_appid: awesun
-isutility: true
-category: RMM
-comment_reference: https://sun.aweray.com/help
-last_update: 2/7/2024
+Name: AweRay
+Description: AweRay is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - aweray_remote*.exe
+  - AweSun.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - asapi*.aweray.net
+    - client-api.aweray.com
+    Port: ''
+Detections: []
+References:
+- https://sun.aweray.com/help
+Acknowledgement: []

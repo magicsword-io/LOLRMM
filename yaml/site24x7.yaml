@@ -1,16 +1,40 @@
-description: Site24x7
-remote_domain:
-- plus*.site24x7.com
-- plus*.site24x7.eu
-- plus*.site24x7.in
-- plus*.site24x7.cn
-- plus*.site24x7.net.au
-remote_utility:
-- MEAgentHelper.exe
-- MonitoringAgent.exe
-- Site24x7WindowsAgentTrayIcon.exe
-- Site24x7PluginAgent.exe
-isutility: true
-category: RMM
-comment_reference: https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent
-last_update: 2/13/2024
+Name: Site24x7
+Description: Site24x7 is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/13/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - MEAgentHelper.exe
+  - MonitoringAgent.exe
+  - Site24x7WindowsAgentTrayIcon.exe
+  - Site24x7PluginAgent.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - plus*.site24x7.com
+    - plus*.site24x7.eu
+    - plus*.site24x7.in
+    - plus*.site24x7.cn
+    - plus*.site24x7.net.au
+    Port: ''
+Detections: []
+References:
+- https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent
+Acknowledgement: []

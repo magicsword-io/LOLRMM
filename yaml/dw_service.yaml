@@ -1,12 +1,35 @@
-description: DW Service
-remote_domain: '*.dwservice.net'
-remote_utility:
-- dwagsvc.exe
-- dwagent.exe
-- dwagsvc.exe
-remote_utility_fileinfo: DWSNET*
-remote_appid: dws-remote-control
-isutility: true
-category: RMM
-comment_reference: https://news.dwservice.net/dwservice-security-infrastructure/
-last_update: 2/7/2024
+Name: DW Service
+Description: DW Service is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - dwagsvc.exe
+  - dwagent.exe
+  - dwagsvc.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.dwservice.net'
+    Port: ''
+Detections: []
+References:
+- https://news.dwservice.net/dwservice-security-infrastructure/
+Acknowledgement: []

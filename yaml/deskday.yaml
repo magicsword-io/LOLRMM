@@ -1,9 +1,34 @@
-description: DeskDay
-remote_domain:
-- deskday.ai
-- app.deskday.ai
-remote_utility: ultimate_*.exe
-isutility: true
-category: RMM
-comment_reference: https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate
-last_update: 2/7/2024
+Name: DeskDay
+Description: DeskDay is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ultimate_*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - deskday.ai
+    - app.deskday.ai
+    Port: ''
+Detections: []
+References:
+- https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate
+Acknowledgement: []

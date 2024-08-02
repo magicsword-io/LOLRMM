@@ -1,19 +1,38 @@
-description: Absolute (Computrace)
-remote_domain:
-- '*search.namequery.com'
-- '*server.absolute.com'
-remote_utility:
-- rpcnet.exe
-- ctes.exe
-- ctespersitence.exe
-- cteshostsvc.exe
-- rpcld.exe
-remote_utility_fileinfo:
-- Absolute Software*
-- Absolute Persistence*
-- CTES*
-remote_appid: absolute-manage
-isutility: true
-category: RMM
-comment_reference: https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com
-last_update: 6/18/2024
+Name: Absolute (Computrace)
+Description: Absolute (Computrace) is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 6/18/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - rpcnet.exe
+  - ctes.exe
+  - ctespersitence.exe
+  - cteshostsvc.exe
+  - rpcld.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*search.namequery.com'
+    - '*server.absolute.com'
+    Port: ''
+Detections: []
+References:
+- https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com
+Acknowledgement: []

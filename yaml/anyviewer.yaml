@@ -1,16 +1,37 @@
-description: AnyViewer
-remote_domain:
-- controlserver.anyviewer.com
-- '*.aomeisoftware.com'
-- aomeisoftware.com
-remote_utility:
-- AnyViewerSetup.exe
-- RCClient.exe
-- RCService.exe
-remote_utility_fileinfo:
-- AOMEI*
-- Anyviewer*
-isutility: true
-category: RMM
-comment_reference: https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
-last_update: 2/7/2024
+Name: AnyViewer
+Description: AnyViewer is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - AnyViewerSetup.exe
+  - RCClient.exe
+  - RCService.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - controlserver.anyviewer.com
+    - '*.aomeisoftware.com'
+    - aomeisoftware.com
+    Port: ''
+Detections: []
+References:
+- https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
+Acknowledgement: []

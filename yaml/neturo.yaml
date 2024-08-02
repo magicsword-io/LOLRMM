@@ -1,9 +1,34 @@
-description: Neturo
-remote_domain: neturo.uplus.co.kr
-remote_utility:
-- neturo*.exe
-- ntrntservice.exe
-isutility: true
-category: RMM
-comment_reference: 'Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2'
-last_update: 2/9/2024
+Name: Neturo
+Description: Neturo is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - neturo*.exe
+  - ntrntservice.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - neturo.uplus.co.kr
+    Port: ''
+Detections: []
+References:
+- 'Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2'
+Acknowledgement: []

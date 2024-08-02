@@ -1,14 +1,38 @@
-description: LANDesk
-remote_domain:
-- '*.ivanticloud.com'
-- '*.ivanti.com'
-remote_utility:
-- issuser.exe
-- landeskagentbootstrap.exe
-- LANDeskPortalManager.exe
-- ldinv32.exe
-- ldsensors.exe
-isutility: true
-category: RMM
-comment_reference: https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US
-last_update: 2/8/2024
+Name: LANDesk
+Description: LANDesk is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - issuser.exe
+  - landeskagentbootstrap.exe
+  - LANDeskPortalManager.exe
+  - ldinv32.exe
+  - ldsensors.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.ivanticloud.com'
+    - '*.ivanti.com'
+    Port: ''
+Detections: []
+References:
+- https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US
+Acknowledgement: []

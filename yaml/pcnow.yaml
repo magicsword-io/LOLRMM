@@ -1,9 +1,31 @@
-description: Pcnow
-remote_utility:
-- mwcliun.exe
-- pcnmgr.exe
-- webexpcnow.exe
-isutility: true
-category: RMM
-comment_reference: http://pcnow.webex.com/ - DOA as of 2024
-last_update: 2/9/2024
+Name: Pcnow
+Description: Pcnow is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - mwcliun.exe
+  - pcnmgr.exe
+  - webexpcnow.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- http://pcnow.webex.com/ - DOA as of 2024
+Acknowledgement: []

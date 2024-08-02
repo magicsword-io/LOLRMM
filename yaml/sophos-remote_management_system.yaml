@@ -1,13 +1,37 @@
-description: Sophos-Remote Management System
-remote_domain:
-- '*.sophos.com'
-- '*.sophosupd.com'
-- '*.sophosupd.net'
-remote_utility:
-- clientmrinit.exe
-- mgntsvc.exe
-- routernt.exe
-isutility: true
-category: RMM
-comment_reference: community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
-last_update: 2/9/2024
+Name: Sophos-Remote Management System
+Description: Sophos-Remote Management System is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - clientmrinit.exe
+  - mgntsvc.exe
+  - routernt.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.sophos.com'
+    - '*.sophosupd.com'
+    - '*.sophosupd.net'
+    Port: ''
+Detections: []
+References:
+- community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+Acknowledgement: []

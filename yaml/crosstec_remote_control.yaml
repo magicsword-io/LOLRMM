@@ -1,10 +1,34 @@
-description: CrossTec Remote Control
-remote_domain: user_managed
-remote_utility:
-- PCIVIDEO.EXE
-- supporttool.exe
-remote_utility_fileinfo: CrossTec
-isutility: true
-category: RMM
-comment_reference: www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
-last_update: 2/7/2024
+Name: CrossTec Remote Control
+Description: CrossTec Remote Control is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - PCIVIDEO.EXE
+  - supporttool.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
+Acknowledgement: []

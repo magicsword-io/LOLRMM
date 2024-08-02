@@ -1,9 +1,34 @@
-description: rdp2tcp
-remote_domain: user_managed
-remote_utility:
-- tdp2tcp.exe
-- rdp2tcp.py
-isutility: true
-category: RMM
-comment_reference: github.com/V-E-O/rdp2tcp
-last_update: 2/9/2024
+Name: rdp2tcp
+Description: rdp2tcp is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - tdp2tcp.exe
+  - rdp2tcp.py
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- github.com/V-E-O/rdp2tcp
+Acknowledgement: []

@@ -1,17 +1,40 @@
-description: Domotz
-remote_domain:
-- '*.domotz.co'
-- '*cell-1.domotz.com'
-- domotz.com
-remote_utility:
-- domotz*.exe
-- domotz_bash.exe
-- domotz-windows*.exe
-- Domotz Pro Desktop App.exe
-- Domotz Pro Desktop App Setup*.exe
-- domotz.exe
-remote_utility_fileinfo: Domotz*
-isutility: true
-category: RMM
-comment_reference: https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
-last_update: 2/7/2024
+Name: Domotz
+Description: Domotz is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - domotz*.exe
+  - domotz_bash.exe
+  - domotz-windows*.exe
+  - Domotz Pro Desktop App.exe
+  - Domotz Pro Desktop App Setup*.exe
+  - domotz.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.domotz.co'
+    - '*cell-1.domotz.com'
+    - domotz.com
+    Port: ''
+Detections: []
+References:
+- https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
+Acknowledgement: []

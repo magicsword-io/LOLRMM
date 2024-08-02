@@ -1,14 +1,37 @@
-description: Kaseya (VSA)
-remote_domain:
-- deploy01.kaseya.com
-- '*managedsupport.kaseya.net'
-- '*.kaseya.net'
-remote_utility:
-- agentmon.exe
-- KaUpdHlp.exe
-- KaUsrTsk.exe
-remote_utility_fileinfo: Kaseya*
-isutility: true
-category: RMM
-comment_reference: https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements
-last_update: 2/8/2024
+Name: Kaseya (VSA)
+Description: Kaseya (VSA) is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - agentmon.exe
+  - KaUpdHlp.exe
+  - KaUsrTsk.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - deploy01.kaseya.com
+    - '*managedsupport.kaseya.net'
+    - '*.kaseya.net'
+    Port: ''
+Detections: []
+References:
+- https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements
+Acknowledgement: []

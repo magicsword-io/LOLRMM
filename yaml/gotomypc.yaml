@@ -1,28 +1,44 @@
-description: GoToMyPC
-remote_domain: '*.GoToMyPC.com'
-remote_utility:
-- g2file*.exe
-- g2quick.exe
-- g2svc.exe
-- g2tray.exe
-- g2svc.exe
-- g2printh.exe
-- g2fileh.exe
-- g2tray.exe
-- gopcsrv.exe
-- g2host.exe
-- g2comm.exe
-- g2mainh.exe
-remote_utility_fileinfo:
-- GoTo Opener
-- GoToOpener
-remote_appid:
-- gotomypc
-- gotomypc-base
-- gotomypc-desktop-sharing
-- gotomypc-remote-control
-- gotomypc-printing
-isutility: true
-category: RMM
-comment_reference: https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#
-last_update: 2/8/2024
+Name: GoToMyPC
+Description: GoToMyPC is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - g2file*.exe
+  - g2quick.exe
+  - g2svc.exe
+  - g2tray.exe
+  - g2svc.exe
+  - g2printh.exe
+  - g2fileh.exe
+  - g2tray.exe
+  - gopcsrv.exe
+  - g2host.exe
+  - g2comm.exe
+  - g2mainh.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.GoToMyPC.com'
+    Port: ''
+Detections: []
+References:
+- https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#
+Acknowledgement: []

@@ -1,9 +1,33 @@
-description: Anyplace Control
-remote_domain: anyplace-control.com
-remote_utility: apc_host.exe
-remote_utility_fileinfo: Anyplace*
-remote_appid: anyplace-remote-control
-isutility: true
-category: RMM
-comment_reference: http://www.anyplace-control.com/anyplace-control/help/faq.htm
-last_update: 2/7/2024
+Name: Anyplace Control
+Description: Anyplace Control is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - apc_host.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - anyplace-control.com
+    Port: ''
+Detections: []
+References:
+- http://www.anyplace-control.com/anyplace-control/help/faq.htm
+Acknowledgement: []

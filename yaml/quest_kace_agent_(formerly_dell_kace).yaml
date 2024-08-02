@@ -1,8 +1,33 @@
-description: Quest KACE Agent (formerly Dell KACE)
-remote_domain: '*.kace.com'
-remote_utility: konea.exe
-remote_utility_fileinfo: KACE Agent*
-isutility: true
-category: RMM
-comment_reference: https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function
-last_update: 2/9/2024
+Name: Quest KACE Agent (formerly Dell KACE)
+Description: Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - konea.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.kace.com'
+    Port: ''
+Detections: []
+References:
+- https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function
+Acknowledgement: []

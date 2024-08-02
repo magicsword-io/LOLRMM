@@ -1,13 +1,34 @@
-description: Alpemix
-remote_domain:
-- '*.alpemix.com'
-- '*.teknopars.com'
-remote_utility: alpemix.exe
-remote_utility_fileinfo:
-- Alpemix*
-- Teknopars*
-remote_appid: alpemix
-isutility: true
-category: RMM
-comment_reference: https://www.alpemix.com/en/remote-access
-last_update: 2/7/2024
+Name: Alpemix
+Description: Alpemix is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - alpemix.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.alpemix.com'
+    - '*.teknopars.com'
+    Port: ''
+Detections: []
+References:
+- https://www.alpemix.com/en/remote-access
+Acknowledgement: []

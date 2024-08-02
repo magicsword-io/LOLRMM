@@ -1,6 +1,29 @@
-description: Microsoft TSC
-remote_utility: termsrv.exe
-isutility: true
-category: Built-in
-comment_reference: https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
-last_update: 2/8/2024
+Name: Microsoft TSC
+Description: Microsoft TSC is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - termsrv.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
+Acknowledgement: []

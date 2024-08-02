@@ -1,25 +1,46 @@
-description: Itarian
-remote_domain:
-- '*.itsm-us1.comodo.com'
-- mdmsupport.comodo.com
-- '*.cmdm.comodo.com'
-- remoteaccess.itarian.com
-- servicedesk.itarian.com
-remote_utility:
-- ITSMAgent.exe
-- ItsmRsp.exe
-- ITSMService.exe
-- RDesktop.exe
-- RHost.exe
-- RmmService.exe
-- ComodoRemoteControl.exe
-- RAccess.exe
-- RViewer.exe
-- ITarianRemoteAccessSetup.exe
-remote_utility_fileinfo:
-- Itarian*
-- RMM*
-isutility: true
-category: RMM
-comment_reference: https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
-last_update: 2/8/2024
+Name: Itarian
+Description: Itarian is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ITSMAgent.exe
+  - ItsmRsp.exe
+  - ITSMService.exe
+  - RDesktop.exe
+  - RHost.exe
+  - RmmService.exe
+  - ComodoRemoteControl.exe
+  - RAccess.exe
+  - RViewer.exe
+  - ITarianRemoteAccessSetup.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.itsm-us1.comodo.com'
+    - mdmsupport.comodo.com
+    - '*.cmdm.comodo.com'
+    - remoteaccess.itarian.com
+    - servicedesk.itarian.com
+    Port: ''
+Detections: []
+References:
+- https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
+Acknowledgement: []

@@ -1,6 +1,29 @@
-description: CloudFlare Tunnel
-remote_utility: cloudflared.exe
-isutility: true
-category: Remote Access
-comment_reference: cloudflare.com/products/tunnel/
-last_update: 2/7/2024
+Name: CloudFlare Tunnel
+Description: CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - cloudflared.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- cloudflare.com/products/tunnel/
+Acknowledgement: []

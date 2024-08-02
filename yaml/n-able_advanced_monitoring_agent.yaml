@@ -1,27 +1,48 @@
-description: N-Able Advanced Monitoring Agent
-remote_domain:
-- '*remote.management'
-- '*.logicnow.com'
-- '*systemmonitor.us'
-- '*systemmonitor.eu.com'
-- '*system-monitor.com'
-- systemmonitor.us.cdn.cloudflare.net
-- '*cloudbackup.management'
-- '*systemmonitor.co.uk'
-- '*.n-able.com'
-- '*.beanywhere.com '
-- '*.swi-tc.com'
-remote_utility:
-- Agent_*_RW.exe
-- BASEClient.exe
-- BASupApp.exe
-- BASupSrvc.exe
-- BASupSrvcCnfg.exe
-- BASupTSHelper.exe
-remote_utility_fileinfo:
-- N-Able*
-- Remote Monitoring*
-isutility: true
-category: RMM
-comment_reference: https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
-last_update: 2/9/2024
+Name: N-Able Advanced Monitoring Agent
+Description: N-Able Advanced Monitoring Agent is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - Agent_*_RW.exe
+  - BASEClient.exe
+  - BASupApp.exe
+  - BASupSrvc.exe
+  - BASupSrvcCnfg.exe
+  - BASupTSHelper.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*remote.management'
+    - '*.logicnow.com'
+    - '*systemmonitor.us'
+    - '*systemmonitor.eu.com'
+    - '*system-monitor.com'
+    - systemmonitor.us.cdn.cloudflare.net
+    - '*cloudbackup.management'
+    - '*systemmonitor.co.uk'
+    - '*.n-able.com'
+    - '*.beanywhere.com '
+    - '*.swi-tc.com'
+    Port: ''
+Detections: []
+References:
+- https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
+Acknowledgement: []

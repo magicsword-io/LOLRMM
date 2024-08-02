@@ -1,21 +1,39 @@
-description: BeyondTrust (Bomgar)
-remote_domain:
-- '*.beyondtrustcloud.com'
-- '*.bomgarcloud.com'
-- bomgarcloud.com
-remote_utility:
-- bomgar-scc-*.exe
-- bomgar-scc.exe
-- bomgar-pac-*.exe
-- bomgar-pac.exe
-- bomgar-rdp.exe
-remote_utility_fileinfo:
-- BeyondTrust*
-- Bomgar*
-remote_appid:
-- beyond-trust-remote-support
-- bomgar
-isutility: true
-category: RMM
-comment_reference: https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm
-last_update: 2/7/2024
+Name: BeyondTrust (Bomgar)
+Description: BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - bomgar-scc-*.exe
+  - bomgar-scc.exe
+  - bomgar-pac-*.exe
+  - bomgar-pac.exe
+  - bomgar-rdp.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.beyondtrustcloud.com'
+    - '*.bomgarcloud.com'
+    - bomgarcloud.com
+    Port: ''
+Detections: []
+References:
+- https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm
+Acknowledgement: []

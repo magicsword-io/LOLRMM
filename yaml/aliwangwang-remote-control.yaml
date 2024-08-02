@@ -1,11 +1,33 @@
-description: AliWangWang-remote-control
-remote_domain: wangwang.taobao.com
-remote_utility: alitask.exe
-remote_utility_fileinfo: AliWangWang*
-remote_appid:
-- ali-wangwang
-- ali-wangwang-remote-control
-isutility: true
-category: RMM
-comment_reference: https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale
-last_update: 2/7/2024
+Name: AliWangWang-remote-control
+Description: AliWangWang-remote-control is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - alitask.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - wangwang.taobao.com
+    Port: ''
+Detections: []
+References:
+- https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale
+Acknowledgement: []

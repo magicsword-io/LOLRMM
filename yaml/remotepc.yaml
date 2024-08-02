@@ -1,19 +1,39 @@
-description: RemotePC
-remote_domain:
-- '*.remotepc.com'
-- remotepc.com
-- '*.remotedesktop.com'
-remote_utility:
-- remotepcservice.exe
-- rpcsuite.exe
-- Idrive.File-Transfer
-- idrive.RemotePCAgent
-- remotepchost.exe
-remote_utility_fileinfo:
-- remotedesktop*
-- remotepc*
-remote_appid: remotepc
-isutility: true
-category: RMM
-comment_reference: https://www.remotedesktop.com/helpdesk/faq-firewall
-last_update: 2/9/2024
+Name: RemotePC
+Description: RemotePC is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - remotepcservice.exe
+  - rpcsuite.exe
+  - Idrive.File-Transfer
+  - idrive.RemotePCAgent
+  - remotepchost.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.remotepc.com'
+    - remotepc.com
+    - '*.remotedesktop.com'
+    Port: ''
+Detections: []
+References:
+- https://www.remotedesktop.com/helpdesk/faq-firewall
+Acknowledgement: []

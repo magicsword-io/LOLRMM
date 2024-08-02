@@ -1,14 +1,35 @@
-description: Tactical RMM
-remote_domain:
-- login.tailscale.com
-- login.tailscale.com
-remote_utility:
-- tacticalrmm.exe
-- tacticalrmm.exe
-remote_utility_fileinfo:
-- AmidaWare*
-- Tactical Techs*
-isutility: true
-category: RMM
-comment_reference: docs.tacticalrmm.com
-last_update: 2/14/2024
+Name: Tactical RMM
+Description: Tactical RMM is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - tacticalrmm.exe
+  - tacticalrmm.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - login.tailscale.com
+    - login.tailscale.com
+    Port: ''
+Detections: []
+References:
+- docs.tacticalrmm.com
+Acknowledgement: []

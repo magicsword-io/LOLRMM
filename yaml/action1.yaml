@@ -1,16 +1,39 @@
-description: Action1
-remote_domain:
-- '*.action1.com'
-- action1.com
-- a1-backend-packages.s3.amazonaws.com
-- server.action1.com
-remote_utility:
-- action1_agent.exe
-- action1_remote.exe
-- action1_connector.exe
-- action1_update.exe
-remote_utility_fileinfo: Action1*
-isutility: true
-category: RMM
-comment_reference: https://www.action1.com/documentation/firewall-configuration/
-last_update: 2/7/2024
+Name: Action1
+Description: Action1 is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - action1_agent.exe
+  - action1_remote.exe
+  - action1_connector.exe
+  - action1_update.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.action1.com'
+    - action1.com
+    - a1-backend-packages.s3.amazonaws.com
+    - server.action1.com
+    Port: ''
+Detections: []
+References:
+- https://www.action1.com/documentation/firewall-configuration/
+Acknowledgement: []

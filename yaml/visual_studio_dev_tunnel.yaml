@@ -1,9 +1,34 @@
-description: Visual Studio Dev Tunnel
-remote_domain:
-- global.rel.tunnels.api.visualstudio.com
-- '*.rel.tunnels.api.visualstudio.com'
-- '*.devtunnels.ms'
-isutility: true
-category: Developer Utility
-comment_reference: https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security
-last_update: 2/7/2024
+Name: Visual Studio Dev Tunnel
+Description: Visual Studio Dev Tunnel is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths: []
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - global.rel.tunnels.api.visualstudio.com
+    - '*.rel.tunnels.api.visualstudio.com'
+    - '*.devtunnels.ms'
+    Port: ''
+Detections: []
+References:
+- https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security
+Acknowledgement: []

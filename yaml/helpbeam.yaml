@@ -1,6 +1,29 @@
-description: HelpBeam
-remote_utility: helpbeam*.exe
-isutility: true
-category: RMM
-comment_reference: https://www.helpbeam.com domain for sale in 2024
-last_update: 2/8/2024
+Name: HelpBeam
+Description: HelpBeam is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - helpbeam*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- https://www.helpbeam.com domain for sale in 2024
+Acknowledgement: []

@@ -1,15 +1,36 @@
-description: Rapid7
-remote_domain:
-- '*.analytics.insight.rapid7.com'
-- '*.endpoint.ingress.rapid7.com'
-remote_utility:
-- ir_agent.exe
-- rapid7_agent_core.exe
-- rapid7_endpoint_broker.exe
-remote_utility_fileinfo:
-- Insight Agent*
-- Rapid7 Insight Agent*
-isutility: true
-category: RMM
-comment_reference: https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
-last_update: 2/14/2024
+Name: Rapid7
+Description: Rapid7 is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ir_agent.exe
+  - rapid7_agent_core.exe
+  - rapid7_endpoint_broker.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.analytics.insight.rapid7.com'
+    - '*.endpoint.ingress.rapid7.com'
+    Port: ''
+Detections: []
+References:
+- https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
+Acknowledgement: []

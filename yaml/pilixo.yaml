@@ -1,13 +1,36 @@
-description: Pilixo
-remote_domain:
-- '*.pilixo.com'
-- pilixo.com
-- download.pilixo.com
-remote_utility:
-- Pilixo_Installer*.exe
-- rdp.exe
-remote_utility_fileinfo: Pilixo*
-isutility: true
-category: RMM
-comment_reference: https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls
-last_update: 2/9/2024
+Name: Pilixo
+Description: Pilixo is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - Pilixo_Installer*.exe
+  - rdp.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.pilixo.com'
+    - pilixo.com
+    - download.pilixo.com
+    Port: ''
+Detections: []
+References:
+- https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls
+Acknowledgement: []

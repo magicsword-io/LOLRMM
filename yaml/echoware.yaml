@@ -1,8 +1,29 @@
-description: Echoware
-remote_utility:
-- echoserver*.exe
-- echoware.dll
-remote_appid: echoware
-isutility: true
-category: RMM
-last_update: 2/7/2024
+Name: Echoware
+Description: Echoware is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - echoserver*.exe
+  - echoware.dll
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References: []
+Acknowledgement: []

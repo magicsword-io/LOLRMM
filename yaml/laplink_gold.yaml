@@ -1,7 +1,33 @@
-description: Laplink Gold
-remote_domain: user_managed
-remote_utility: tsircusr.exe
-isutility: true
-category: RMM
-comment_reference: wen.laplink.com/product/laplink-gold
-last_update: 2/8/2024
+Name: Laplink Gold
+Description: Laplink Gold is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - tsircusr.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- wen.laplink.com/product/laplink-gold
+Acknowledgement: []

@@ -1,12 +1,35 @@
-description: ScreenMeet
-remote_domain:
-- '*.screenmeet.com'
-- '*.scrn.mt'
-remote_utility:
-- ScreenMeetSupport.exe
-- ScreenMeet.Support.exe
-remote_utility_fileinfo: ScreenMeet*
-isutility: true
-category: RMM
-comment_reference: https://docs.screenmeet.com/docs/firewall-white-list
-last_update: 2/7/2024
+Name: ScreenMeet
+Description: ScreenMeet is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ScreenMeetSupport.exe
+  - ScreenMeet.Support.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.screenmeet.com'
+    - '*.scrn.mt'
+    Port: ''
+Detections: []
+References:
+- https://docs.screenmeet.com/docs/firewall-white-list
+Acknowledgement: []

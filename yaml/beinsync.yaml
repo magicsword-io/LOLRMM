@@ -1,13 +1,34 @@
-description: BeInSync
-remote_domain:
-- '*.beinsync.net'
-- '*.beinsync.com'
-remote_utility: Beinsync*.exe
-remote_utility_fileinfo:
-- BeInSync
-- BeInSync Client GUI
-remote_appid: beinsync
-isutility: true
-category: RMM
-comment_reference: https://en.wikipedia.org/wiki/Phoenix_Technologies
-last_update: 2/26/2024
+Name: BeInSync
+Description: BeInSync is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - Beinsync*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.beinsync.net'
+    - '*.beinsync.com'
+    Port: ''
+Detections: []
+References:
+- https://en.wikipedia.org/wiki/Phoenix_Technologies
+Acknowledgement: []

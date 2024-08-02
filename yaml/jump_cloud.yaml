@@ -1,10 +1,34 @@
-description: Jump Cloud
-remote_domain:
-- '*.api.jumpcloud.com'
-- '*.assist.jumpcloud.com'
-remote_utility: 'JumpCloud*.exe '
-remote_utility_fileinfo: JumpCloud*
-isutility: true
-category: RMM
-comment_reference: https://jumpcloud.com/support/understand-remote-assist-agent
-last_update: 2/26/2024
+Name: Jump Cloud
+Description: Jump Cloud is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - 'JumpCloud*.exe '
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.api.jumpcloud.com'
+    - '*.assist.jumpcloud.com'
+    Port: ''
+Detections: []
+References:
+- https://jumpcloud.com/support/understand-remote-assist-agent
+Acknowledgement: []

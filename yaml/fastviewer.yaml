@@ -1,12 +1,35 @@
-description: FastViewer
-remote_domain: '*.fastviewer.com'
-remote_utility:
-- fastclient.exe
-- fastmaster.exe
-- FastViewer.exe
-remote_utility_fileinfo: Fastviewer*
-remote_appid: fastviewer
-isutility: true
-category: RMM
-comment_reference: https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf
-last_update: 2/7/2024
+Name: FastViewer
+Description: FastViewer is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - fastclient.exe
+  - fastmaster.exe
+  - FastViewer.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.fastviewer.com'
+    Port: ''
+Detections: []
+References:
+- https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf
+Acknowledgement: []

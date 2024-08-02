@@ -1,9 +1,34 @@
-description: Royal Apps
-remote_domain: user_managed
-remote_utility:
-- royalserver.exe
-- royalts.exe
-isutility: true
-category: RMM
-comment_reference: https://www.royalapps.com/ts/win/download
-last_update: 2/9/2024
+Name: Royal Apps
+Description: Royal Apps is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - royalserver.exe
+  - royalts.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://www.royalapps.com/ts/win/download
+Acknowledgement: []

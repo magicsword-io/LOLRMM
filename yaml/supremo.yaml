@@ -1,21 +1,41 @@
-description: Supremo
-remote_domain:
-- supremocontrol.com
-- '*.supremocontrol.com'
-- '* .nanosystems.it'
-remote_utility:
-- supremo.exe
-- supremohelper.exe
-- supremoservice.exe
-- supremosystem.exe
-- supremohelper.exe
-- supremo.exe
-- supremosystem.exe
-remote_utility_fileinfo:
-- SupRemo*
-- NanoSystems*
-remote_appid: supremo
-isutility: true
-category: RMM
-comment_reference: https://www.supremocontrol.com/frequently-asked-questions/
-last_update: 2/13/2024
+Name: Supremo
+Description: Supremo is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/13/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - supremo.exe
+  - supremohelper.exe
+  - supremoservice.exe
+  - supremosystem.exe
+  - supremohelper.exe
+  - supremo.exe
+  - supremosystem.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - supremocontrol.com
+    - '*.supremocontrol.com'
+    - '* .nanosystems.it'
+    Port: ''
+Detections: []
+References:
+- https://www.supremocontrol.com/frequently-asked-questions/
+Acknowledgement: []

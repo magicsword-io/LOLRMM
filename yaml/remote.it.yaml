@@ -1,12 +1,36 @@
-description: Remote.it
-remote_domain:
-- auth.api.remote.it
-- api.remote.it
-remote_utility:
-- remote-it-installer.exe
-- remote.it.exe
-- remoteit.exe
-isutility: true
-category: RMM
-comment_reference: https://docs.remote.it/introduction/get-started
-last_update: 2/9/2024
+Name: Remote.it
+Description: Remote.it is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - remote-it-installer.exe
+  - remote.it.exe
+  - remoteit.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - auth.api.remote.it
+    - api.remote.it
+    Port: ''
+Detections: []
+References:
+- https://docs.remote.it/introduction/get-started
+Acknowledgement: []

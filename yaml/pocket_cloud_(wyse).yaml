@@ -1,10 +1,30 @@
-description: Pocket Cloud (Wyse)
-remote_utility:
-- pocketcloud*.exe
-- pocketcloudservice.exe
-remote_utility_fileinfo: PocketCloud*
-remote_appid: pocket-cloud
-isutility: true
-category: RMM
-comment_reference: https://wyse-pocketcloud.informer.com/2.1/
-last_update: 2/9/2024
+Name: Pocket Cloud (Wyse)
+Description: Pocket Cloud (Wyse) is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - pocketcloud*.exe
+  - pocketcloudservice.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- https://wyse-pocketcloud.informer.com/2.1/
+Acknowledgement: []

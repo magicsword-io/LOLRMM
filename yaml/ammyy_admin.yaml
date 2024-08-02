@@ -1,11 +1,34 @@
-description: Ammyy Admin
-remote_domain: '*ammyy.com'
-remote_utility:
-- aa_v*.exe
-- AMMYY_Admin.exe
-remote_utility_fileinfo: Ammyy*
-remote_appid: ammyy-admin
-isutility: true
-category: RMM
-comment_reference: https://www.ammyy.com/en/admin_security.html
-last_update: 2/7/2024
+Name: Ammyy Admin
+Description: Ammyy Admin is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - aa_v*.exe
+  - AMMYY_Admin.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*ammyy.com'
+    Port: ''
+Detections: []
+References:
+- https://www.ammyy.com/en/admin_security.html
+Acknowledgement: []

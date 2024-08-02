@@ -1,10 +1,34 @@
-description: RuDesktop
-remote_domain: '*.rudesktop.ru'
-remote_utility:
-- rd.exe
-- rudesktop*.exe
-remote_appid: rudesktop-remote-desktop
-isutility: true
-category: RMM
-comment_reference: https://rudesktop.ru
-last_update: 2/9/2024
+Name: RuDesktop
+Description: RuDesktop is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - rd.exe
+  - rudesktop*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.rudesktop.ru'
+    Port: ''
+Detections: []
+References:
+- https://rudesktop.ru
+Acknowledgement: []

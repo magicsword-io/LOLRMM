@@ -1,11 +1,35 @@
-description: Xeox
-remote_domain:
-- xeox.com
-- '*.xeox.com'
-remote_utility:
-- xeox-agent_*.exe
-- xeox_service_windows.exe
-isutility: true
-category: RMM
-comment_reference: https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW
-last_update: 2/14/2024
+Name: Xeox
+Description: Xeox is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - xeox-agent_*.exe
+  - xeox_service_windows.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - xeox.com
+    - '*.xeox.com'
+    Port: ''
+Detections: []
+References:
+- https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW
+Acknowledgement: []

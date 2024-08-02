@@ -1,12 +1,35 @@
-description: Pocket Controller (Soti Xsight)
-remote_domain: '*soti.net'
-remote_utility:
-- pocketcontroller.exe
-- wysebrowser.exe
-- XSightService.exe
-remote_utility_fileinfo: Pocket Controller*
-remote_appid: pocket-controller
-isutility: true
-category: RMM
-comment_reference: https://pulse.soti.net/support/soti-xsight/help/
-last_update: 2/9/2024
+Name: Pocket Controller (Soti Xsight)
+Description: Pocket Controller (Soti Xsight) is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - pocketcontroller.exe
+  - wysebrowser.exe
+  - XSightService.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*soti.net'
+    Port: ''
+Detections: []
+References:
+- https://pulse.soti.net/support/soti-xsight/help/
+Acknowledgement: []

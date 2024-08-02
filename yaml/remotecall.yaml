@@ -1,18 +1,40 @@
-description: RemoteCall
-remote_domain:
-- '*.remotecall.com'
-- '*.startsupport.com'
-remote_utility:
-- rcengmgru.exe
-- rcmgrsvc.exe
-- rxstartsupport.exe
-- rcstartsupport.exe
-- raautoup.exe
-- agentu.exe
-- remotesupportplayeru.exe
-remote_utility_fileinfo: RSUPPORT*
-remote_appid: remotecall
-isutility: true
-category: RMM
-comment_reference: https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall
-last_update: 2/9/2024
+Name: RemoteCall
+Description: RemoteCall is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - rcengmgru.exe
+  - rcmgrsvc.exe
+  - rxstartsupport.exe
+  - rcstartsupport.exe
+  - raautoup.exe
+  - agentu.exe
+  - remotesupportplayeru.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.remotecall.com'
+    - '*.startsupport.com'
+    Port: ''
+Detections: []
+References:
+- https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall
+Acknowledgement: []

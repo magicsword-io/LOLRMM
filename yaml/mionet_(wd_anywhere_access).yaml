@@ -1,8 +1,30 @@
-description: MioNet (WD Anywhere Access)
-remote_utility:
-- mionet.exe
-- mionetmanager.exe
-isutility: true
-category: RMM
-comment_reference: https://en.wikipedia.org/wiki/WD_Anywhere_Access - DOA as of 2016
-last_update: 2/9/2024
+Name: MioNet (WD Anywhere Access)
+Description: MioNet (WD Anywhere Access) is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - mionet.exe
+  - mionetmanager.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- https://en.wikipedia.org/wiki/WD_Anywhere_Access - DOA as of 2016
+Acknowledgement: []

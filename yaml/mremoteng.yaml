@@ -1,7 +1,33 @@
-description: mRemoteNG
-remote_domain: user_managed
-remote_utility: mRemoteNG.exe
-isutility: true
-category: RMM
-comment_reference: https://github.com/mRemoteNG/mRemoteNG
-last_update: 2/9/2024
+Name: mRemoteNG
+Description: mRemoteNG is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - mRemoteNG.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://github.com/mRemoteNG/mRemoteNG
+Acknowledgement: []

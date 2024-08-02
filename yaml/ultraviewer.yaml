@@ -1,15 +1,36 @@
-description: UltraViewer
-remote_domain: '* .ultraviewer.net'
-remote_utility:
-- UltraViewer_Service.exe
-- UltraViewer_setup*
-- UltraViewer_Desktop.exe
-- ultraviewer.exe
-remote_utility_fileinfo:
-- UltraViewer*
-- DucFabulous*
-remote_appid: ultraviewer
-isutility: true
-category: RMM
-comment_reference: https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html
-last_update: 2/14/2024
+Name: UltraViewer
+Description: UltraViewer is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - UltraViewer_Service.exe
+  - UltraViewer_setup*
+  - UltraViewer_Desktop.exe
+  - ultraviewer.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '* .ultraviewer.net'
+    Port: ''
+Detections: []
+References:
+- https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html
+Acknowledgement: []

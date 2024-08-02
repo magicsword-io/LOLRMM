@@ -1,12 +1,37 @@
-description: Seetrol
-remote_domain: seetrol.co.kr
-remote_utility:
-- seetrolcenter.exe
-- seetrolclient.exe
-- seetrolmyservice.exe
-- seetrolremote.exe
-- seetrolsetting.exe
-isutility: true
-category: RMM
-comment_reference: http://www.seetrol.com/en/features/features3.php
-last_update: 2/7/2024
+Name: Seetrol
+Description: Seetrol is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - seetrolcenter.exe
+  - seetrolclient.exe
+  - seetrolmyservice.exe
+  - seetrolremote.exe
+  - seetrolsetting.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - seetrol.co.kr
+    Port: ''
+Detections: []
+References:
+- http://www.seetrol.com/en/features/features3.php
+Acknowledgement: []

@@ -1,10 +1,35 @@
-description: Ivanti Remote Control
-remote_domain: '*.ivanticloud.com'
-remote_utility:
-- IvantiRemoteControl.exe
-- ArcUI.exe
-- AgentlessRC.exe
-isutility: true
-category: RMM
-comment_reference: https://rc1.ivanticloud.com/
-last_update: 2/9/2024
+Name: Ivanti Remote Control
+Description: Ivanti Remote Control is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - IvantiRemoteControl.exe
+  - ArcUI.exe
+  - AgentlessRC.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.ivanticloud.com'
+    Port: ''
+Detections: []
+References:
+- https://rc1.ivanticloud.com/
+Acknowledgement: []

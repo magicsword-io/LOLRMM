@@ -1,13 +1,34 @@
-description: AeroAdmin
-remote_domain:
-- auth*.aeroadmin.com
-- aeroadmin.com
-remote_utility: aeroadmin.exe
-remote_utility_fileinfo:
-- AeroAdmin*
-- Aero Admin*
-remote_appid: aeroadmin
-isutility: true
-category: RMM
-comment_reference: https://support.aeroadmin.com/kb/faq.php?id=58
-last_update: 2/7/2024
+Name: AeroAdmin
+Description: AeroAdmin is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - aeroadmin.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - auth*.aeroadmin.com
+    - aeroadmin.com
+    Port: ''
+Detections: []
+References:
+- https://support.aeroadmin.com/kb/faq.php?id=58
+Acknowledgement: []

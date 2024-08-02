@@ -1,11 +1,35 @@
-description: Sorillus
-remote_domain:
-- '*.sorillus.com'
-- sorillus.com
-remote_utility:
-- Sorillus-Launcher*.exe
-- Sorillus Launcher.exe
-isutility: true
-category: RMM
-comment_reference: https://sorillus.com/
-last_update: 2/9/2024
+Name: Sorillus
+Description: Sorillus is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - Sorillus-Launcher*.exe
+  - Sorillus Launcher.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.sorillus.com'
+    - sorillus.com
+    Port: ''
+Detections: []
+References:
+- https://sorillus.com/
+Acknowledgement: []

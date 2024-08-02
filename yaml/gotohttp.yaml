@@ -1,14 +1,35 @@
-description: GotoHTTP
-remote_domain:
-- gotohttp.com
-- '*.gotohttp.com'
-remote_utility:
-- gotohttp.exe
-- GotoHTTP_x64.exe
-remote_utility_fileinfo:
-- GotoHTTP*
-- Pingbo*
-isutility: true
-category: RMM
-comment_reference: https://gotohttp.com/goto/help.12x
-last_update: 2/8/2024
+Name: GotoHTTP
+Description: GotoHTTP is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - gotohttp.exe
+  - GotoHTTP_x64.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - gotohttp.com
+    - '*.gotohttp.com'
+    Port: ''
+Detections: []
+References:
+- https://gotohttp.com/goto/help.12x
+Acknowledgement: []

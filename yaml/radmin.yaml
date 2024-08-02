@@ -1,14 +1,35 @@
-description: RAdmin
-remote_domain: user_managed
-remote_utility:
-- radmin.exe
-- famitrfc.exe
-- radmin3.exe
-remote_utility_fileinfo:
-- famatech*
-- radmin*
-remote_appid: radmin
-isutility: true
-category: RMM
-comment_reference: https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/
-last_update: 2/9/2024
+Name: RAdmin
+Description: RAdmin is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - radmin.exe
+  - famitrfc.exe
+  - radmin3.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/
+Acknowledgement: []

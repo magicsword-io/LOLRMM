@@ -1,14 +1,35 @@
-description: OptiTune
-remote_domain:
-- '*.optitune.us'
-- '*.opti-tune.com'
-remote_utility:
-- OTService.exe
-- OTPowerShell.exe
-remote_utility_fileinfo:
-- Bravura Software*
-- OptiTune*
-isutility: true
-category: RMM
-comment_reference: https://www.bravurasoftware.com/optitune/support/faq.aspx
-last_update: 2/26/2024
+Name: OptiTune
+Description: OptiTune is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - OTService.exe
+  - OTPowerShell.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.optitune.us'
+    - '*.opti-tune.com'
+    Port: ''
+Detections: []
+References:
+- https://www.bravurasoftware.com/optitune/support/faq.aspx
+Acknowledgement: []

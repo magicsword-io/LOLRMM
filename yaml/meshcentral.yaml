@@ -1,8 +1,33 @@
-description: MeshCentral
-remote_domain: user_managed
-remote_utility: meshcentral*.exe
-remote_utility_fileinfo: meshcentral
-isutility: true
-category: RMM
-comment_reference: https://ylianst.github.io/MeshCentral/meshcentral/
-last_update: 2/8/2024
+Name: MeshCentral
+Description: MeshCentral is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - meshcentral*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://ylianst.github.io/MeshCentral/meshcentral/
+Acknowledgement: []

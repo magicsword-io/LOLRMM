@@ -1,7 +1,33 @@
-description: Kabuto
-remote_domain: '*.kabuto.io'
-remote_utility: Kabuto.App.Runner.exe
-isutility: true
-category: RMM
-comment_reference: https://www.repairtechsolutions.com/documentation/kabuto/
-last_update: 2/8/2024
+Name: Kabuto
+Description: Kabuto is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - Kabuto.App.Runner.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.kabuto.io'
+    Port: ''
+Detections: []
+References:
+- https://www.repairtechsolutions.com/documentation/kabuto/
+Acknowledgement: []

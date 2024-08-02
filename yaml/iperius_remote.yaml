@@ -1,16 +1,36 @@
-description: Iperius Remote
-remote_domain:
-- '*.iperiusremote.com'
-- '*.iperius.com'
-- '*.iperius-rs.com'
-remote_utility:
-- iperius.exe
-- iperiusremote.exe
-remote_utility_fileinfo:
-- Enter Srl*
-- Enter S.R.L*
-- Iperius Remote*
-isutility: true
-category: RMM
-comment_reference: https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx
-last_update: 2/8/2024
+Name: Iperius Remote
+Description: Iperius Remote is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - iperius.exe
+  - iperiusremote.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.iperiusremote.com'
+    - '*.iperius.com'
+    - '*.iperius-rs.com'
+    Port: ''
+Detections: []
+References:
+- https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx
+Acknowledgement: []

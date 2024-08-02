@@ -1,10 +1,33 @@
-description: Naverisk
-remote_domain: user_managed
-remote_utility: AgentSetup-*.exe
-remote_utility_fileinfo:
-- naverisk*
-- NavMK1 Limited*
-isutility: true
-category: RMM
-comment_reference: http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents
-last_update: 2/9/2024
+Name: Naverisk
+Description: Naverisk is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - AgentSetup-*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents
+Acknowledgement: []

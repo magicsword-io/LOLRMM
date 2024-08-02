@@ -1,9 +1,33 @@
-description: NTR Remote
-remote_domain: '*.ntrsupport.com'
-remote_utility: NTRsupportPro_EN.exe
-remote_utility_fileinfo: Net Transmit & Receive SL
-remote_appid: ntr-remote
-isutility: true
-category: RMM
-comment_reference: DOA as of 2024
-last_update: 2/26/2024
+Name: NTR Remote
+Description: NTR Remote is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - NTRsupportPro_EN.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.ntrsupport.com'
+    Port: ''
+Detections: []
+References:
+- DOA as of 2024
+Acknowledgement: []

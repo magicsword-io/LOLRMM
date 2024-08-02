@@ -1,5 +1,28 @@
-description: WebEx (Remote Access)
-isutility: true
-category: Remote Access
-comment_reference: https://help.webex.com/en-us/article/nyc3q0b/Set-Up-a-Computer-for-Remote-Access
-last_update: 2/14/2024
+Name: WebEx (Remote Access)
+Description: WebEx (Remote Access) is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths: []
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- https://help.webex.com/en-us/article/nyc3q0b/Set-Up-a-Computer-for-Remote-Access
+Acknowledgement: []

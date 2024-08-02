@@ -1,17 +1,36 @@
-description: Adobe Connect
-remote_domain: '*.adobeconnect.com'
-remote_utility:
-- ConnectAppSetup*.exe
-- ConnectShellSetup*.exe
-- Connect.exe
-- ConnectDetector.exe
-remote_utility_fileinfo: Adobe Connect
-remote_appid:
-- adobe-connect
-- adobe-meeting-remote-control
-- adobe-connectnow
-- adobe-connectnow-remote-control
-isutility: true
-category: RMM
-comment_reference: https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html
-last_update: 2/27/2024
+Name: Adobe Connect
+Description: Adobe Connect is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/27/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ConnectAppSetup*.exe
+  - ConnectShellSetup*.exe
+  - Connect.exe
+  - ConnectDetector.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.adobeconnect.com'
+    Port: ''
+Detections: []
+References:
+- https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html
+Acknowledgement: []

@@ -1,15 +1,38 @@
-description: Tanium
-remote_domain:
-- cloud.tanium.com
-- '*.cloud.tanium.com'
-remote_utility:
-- TaniumClient.exe
-- TaniumCX.exe
-- TaniumExecWrapper.exe
-- TaniumFileInfo.exe
-- TPowerShell.exe
-remote_utility_fileinfo: Tanium*
-isutility: true
-category: RMM
-comment_reference: https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
-last_update: 2/14/2024
+Name: Tanium
+Description: Tanium is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - TaniumClient.exe
+  - TaniumCX.exe
+  - TaniumExecWrapper.exe
+  - TaniumFileInfo.exe
+  - TPowerShell.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - cloud.tanium.com
+    - '*.cloud.tanium.com'
+    Port: ''
+Detections: []
+References:
+- https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
+Acknowledgement: []

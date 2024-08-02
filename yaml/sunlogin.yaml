@@ -1,16 +1,36 @@
-description: SunLogin
-remote_domain:
-- sunlogin.oray.com
-- client.oray.net
-remote_utility:
-- OrayRemoteShell.exe
-- OrayRemoteService.exe
-- sunlogin*.exe
-remote_utility_fileinfo:
-- Shanghai Best Oray*
-- Remote control service
-remote_appid: sunlogin-remote-control
-isutility: true
-category: RMM
-comment_reference: https://sunlogin.oray.com/en/embed/software.html
-last_update: 2/26/2024
+Name: SunLogin
+Description: SunLogin is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - OrayRemoteShell.exe
+  - OrayRemoteService.exe
+  - sunlogin*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - sunlogin.oray.com
+    - client.oray.net
+    Port: ''
+Detections: []
+References:
+- https://sunlogin.oray.com/en/embed/software.html
+Acknowledgement: []

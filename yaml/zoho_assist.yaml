@@ -1,26 +1,49 @@
-description: Zoho Assist
-remote_domain:
-- '*.zoho.com'
-- '*.zoho.eu'
-- '*.zoho.in'
-- '*.zoho.com.au'
-- '*.zoho.com.cn'
-- '*.zohoassist.com'
-- '*.zohoassist.jp'
-- '*.zohoassist.com.cn'
-- downloads.zohodl.com.cn
-- downloads.zohocdn.com
-- gateway.zohoassist.com
-remote_utility:
-- za_connect.exe
-- zaservice.exe
-- zohotray.exe
-- ZohoMeeting.exe
-- Zohours.exe
-- ZohoURSService.exe
-- ZMAgent.exe
-remote_utility_fileinfo: Zoho*
-isutility: true
-category: RMM
-comment_reference: https://www.zoho.com/assist/kb/firewall-configuration.html
-last_update: 2/14/2024
+Name: Zoho Assist
+Description: Zoho Assist is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - za_connect.exe
+  - zaservice.exe
+  - zohotray.exe
+  - ZohoMeeting.exe
+  - Zohours.exe
+  - ZohoURSService.exe
+  - ZMAgent.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.zoho.com'
+    - '*.zoho.eu'
+    - '*.zoho.in'
+    - '*.zoho.com.au'
+    - '*.zoho.com.cn'
+    - '*.zohoassist.com'
+    - '*.zohoassist.jp'
+    - '*.zohoassist.com.cn'
+    - downloads.zohodl.com.cn
+    - downloads.zohocdn.com
+    - gateway.zohoassist.com
+    Port: ''
+Detections: []
+References:
+- https://www.zoho.com/assist/kb/firewall-configuration.html
+Acknowledgement: []

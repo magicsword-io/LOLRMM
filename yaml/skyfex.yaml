@@ -1,13 +1,36 @@
-description: SkyFex
-remote_domain:
-- skyfex.com
-- deskroll.com
-- '*.deskroll.com'
-remote_utility:
-- Deskroll.exe
-- DeskRollUA.exe
-remote_utility_fileinfo: DeskRoll Remote Desktop*
-isutility: true
-category: RMM
-comment_reference: https://skyfex.com/
-last_update: 2/9/2024
+Name: SkyFex
+Description: SkyFex is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - Deskroll.exe
+  - DeskRollUA.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - skyfex.com
+    - deskroll.com
+    - '*.deskroll.com'
+    Port: ''
+Detections: []
+References:
+- https://skyfex.com/
+Acknowledgement: []

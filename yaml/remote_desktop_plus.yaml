@@ -1,7 +1,29 @@
-description: Remote Desktop Plus
-remote_utility: rdp.exe
-remote_utility_fileinfo: Remote Desktop Plus*
-isutility: true
-category: Utility
-comment_reference: https://www.donkz.nl/
-last_update: 2/9/2024
+Name: Remote Desktop Plus
+Description: Remote Desktop Plus is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - rdp.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- https://www.donkz.nl/
+Acknowledgement: []

@@ -1,11 +1,35 @@
-description: KickIdler
-remote_domain:
-- kickidler.com
-- my.kickidler.com
-remote_utility:
-- grabberEM.*msi
-- grabberTT*.msi
-isutility: true
-category: RMM
-comment_reference: https://www.kickidler.com/for-it/faq/
-last_update: 2/8/2024
+Name: KickIdler
+Description: KickIdler is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - grabberEM.*msi
+  - grabberTT*.msi
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - kickidler.com
+    - my.kickidler.com
+    Port: ''
+Detections: []
+References:
+- https://www.kickidler.com/for-it/faq/
+Acknowledgement: []

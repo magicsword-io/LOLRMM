@@ -1,16 +1,37 @@
-description: Weezo
-remote_domain:
-- '*.weezo.me'
-- weezo.net
-- '*.weezo.net'
-remote_utility:
-- weezohttpd.exe
-- weezo.exe
-- weezo setup*.exe
-remote_utility_fileinfo:
-- Peer 2 World
-- Weezo*
-isutility: true
-category: RMM
-comment_reference: weezo.en.softonic.com
-last_update: 2/14/2024
+Name: Weezo
+Description: Weezo is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - weezohttpd.exe
+  - weezo.exe
+  - weezo setup*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.weezo.me'
+    - weezo.net
+    - '*.weezo.net'
+    Port: ''
+Detections: []
+References:
+- weezo.en.softonic.com
+Acknowledgement: []

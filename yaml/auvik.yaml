@@ -1,11 +1,35 @@
-description: Auvik
-remote_domain:
-- '*.my.auvik.com'
-- '*.auvik.com'
-remote_utility:
-- auvik.engine.exe
-- auvik.agent.exe
-isutility: true
-category: RMM
-comment_reference: https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use
-last_update: 2/7/2024
+Name: Auvik
+Description: Auvik is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - auvik.engine.exe
+  - auvik.agent.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.my.auvik.com'
+    - '*.auvik.com'
+    Port: ''
+Detections: []
+References:
+- https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use
+Acknowledgement: []

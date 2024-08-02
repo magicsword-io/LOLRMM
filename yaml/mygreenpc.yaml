@@ -1,8 +1,33 @@
-description: MyGreenPC
-remote_domain: '*mygreenpc.com'
-remote_utility: mygreenpc.exe
-remote_appid: mygreenpc
-isutility: true
-category: RMM
-comment_reference: http://www.mygreenpc.com/
-last_update: 2/26/2024
+Name: MyGreenPC
+Description: MyGreenPC is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - mygreenpc.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*mygreenpc.com'
+    Port: ''
+Detections: []
+References:
+- http://www.mygreenpc.com/
+Acknowledgement: []

@@ -1,15 +1,36 @@
-description: ZeroTier
-remote_domain:
-- zerotier.com
-- '*.zerotier.com'
-remote_utility:
-- zerotier*.msi
-- zerotier*.exe
-- zero-powershell.exe
-remote_utility_fileinfo:
-- ZeroTier*
-- zero-powesrhell*
-isutility: true
-category: RMM
-comment_reference: https://my.zerotier.com/
-last_update: 2/14/2024
+Name: ZeroTier
+Description: ZeroTier is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - zerotier*.msi
+  - zerotier*.exe
+  - zero-powershell.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - zerotier.com
+    - '*.zerotier.com'
+    Port: ''
+Detections: []
+References:
+- https://my.zerotier.com/
+Acknowledgement: []

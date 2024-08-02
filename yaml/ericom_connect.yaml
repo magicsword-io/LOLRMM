@@ -1,9 +1,34 @@
-description: Ericom Connect
-remote_domain: user_managed
-remote_utility:
-- EricomConnectRemoteHost*.exe
-- ericomconnnectconfigurationtool.exe
-isutility: true
-category: RMM
-comment_reference: https://www.ericom.com/connect-accessnow/
-last_update: 2/7/2024
+Name: Ericom Connect
+Description: Ericom Connect is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - EricomConnectRemoteHost*.exe
+  - ericomconnnectconfigurationtool.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://www.ericom.com/connect-accessnow/
+Acknowledgement: []

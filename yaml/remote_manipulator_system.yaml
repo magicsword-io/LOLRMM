@@ -1,9 +1,34 @@
-description: Remote Manipulator System
-remote_domain: '*.internetid.ru'
-remote_utility:
-- rfusclient.exe
-- rutserv.exe
-isutility: true
-category: RMM
-comment_reference: https://rmansys.ru/files/
-last_update: 2/9/2024
+Name: Remote Manipulator System
+Description: Remote Manipulator System is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - rfusclient.exe
+  - rutserv.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.internetid.ru'
+    Port: ''
+Detections: []
+References:
+- https://rmansys.ru/files/
+Acknowledgement: []

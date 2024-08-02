@@ -1,11 +1,33 @@
-description: KHelpDesk
-remote_domain: '*.khelpdesk.com.br'
-remote_utility: KHelpDesk.exe
-remote_utility_fileinfo:
-- KHELPDESK*
-- Ferramenta de Acesso Remoto
-remote_appid: khelpdesk-remote-control
-isutility: true
-category: RMM
-comment_reference: https://www.khelpdesk.com.br/en-us
-last_update: 2/26/2024
+Name: KHelpDesk
+Description: KHelpDesk is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/26/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - KHelpDesk.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.khelpdesk.com.br'
+    Port: ''
+Detections: []
+References:
+- https://www.khelpdesk.com.br/en-us
+Acknowledgement: []

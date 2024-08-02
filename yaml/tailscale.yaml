@@ -1,13 +1,36 @@
-description: Tailscale
-remote_domain:
-- '*.tailscale.com'
-- '*.tailscale.io'
-remote_utility:
-- tailscale-*.exe
-- tailscaled.exe
-- tailscale-ipn.exe
-remote_utility_fileinfo: Tailscale*
-isutility: true
-category: Remote Access
-comment_reference: https://tailscale.com/kb/1023/troubleshooting
-last_update: 2/14/2024
+Name: Tailscale
+Description: Tailscale is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - tailscale-*.exe
+  - tailscaled.exe
+  - tailscale-ipn.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.tailscale.com'
+    - '*.tailscale.io'
+    Port: ''
+Detections: []
+References:
+- https://tailscale.com/kb/1023/troubleshooting
+Acknowledgement: []

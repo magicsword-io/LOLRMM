@@ -1,17 +1,40 @@
-description: Jump Desktop
-remote_domain:
-- '*.jumpdesktop.com'
-- jumpdesktop.com
-- jumpto.me
-- '*.jumpto.me'
-remote_utility:
-- jumpclient.exe
-- jumpdesktop.exe
-- jumpservice.exe
-- jumpconnect.exe
-- jumpupdater.exe
-remote_appid: jumpdesktop
-isutility: true
-category: RMM
-comment_reference: https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
-last_update: 2/9/2024
+Name: Jump Desktop
+Description: Jump Desktop is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - jumpclient.exe
+  - jumpdesktop.exe
+  - jumpservice.exe
+  - jumpconnect.exe
+  - jumpupdater.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.jumpdesktop.com'
+    - jumpdesktop.com
+    - jumpto.me
+    - '*.jumpto.me'
+    Port: ''
+Detections: []
+References:
+- https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
+Acknowledgement: []

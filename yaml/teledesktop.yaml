@@ -1,10 +1,35 @@
-description: TeleDesktop
-remote_domain: user_managed
-remote_utility:
-- pstlaunch.exe
-- ptdskclient.exe
-- ptdskhost.exe
-isutility: true
-category: RMM
-comment_reference: http://potomacsoft.com/ - DOA as of 2024
-last_update: 2/14/2024
+Name: TeleDesktop
+Description: TeleDesktop is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - pstlaunch.exe
+  - ptdskclient.exe
+  - ptdskhost.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- http://potomacsoft.com/ - DOA as of 2024
+Acknowledgement: []

@@ -1,16 +1,36 @@
-description: Distant Desktop
-remote_domain:
-- '*.distantdesktop.com'
-- '*signalserver.xyz'
-remote_utility:
-- distant-desktop.exe
-- dd.exe
-- ddsystem.exe
-remote_utility_fileinfo:
-- Distant Software*
-- Distant Desktop*
-- German Gorodokuplya*
-isutility: true
-category: RMM
-comment_reference: https://www.distantdesktop.com/manual/first-start.htm
-last_update: 2/8/2024
+Name: Distant Desktop
+Description: Distant Desktop is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - distant-desktop.exe
+  - dd.exe
+  - ddsystem.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.distantdesktop.com'
+    - '*signalserver.xyz'
+    Port: ''
+Detections: []
+References:
+- https://www.distantdesktop.com/manual/first-start.htm
+Acknowledgement: []

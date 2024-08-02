@@ -1,14 +1,37 @@
-description: Goverlan
-remote_domain: user_managed
-remote_utility:
-- goverrmc.exe
-- govsrv*.exe
-- GovAgentInstallHelper.exe
-- GovAgentx64.exe
-- GovReachClient.exe
-remote_utility_fileinfo: Goverlan*
-remote_appid: goverlan
-isutility: true
-category: RMM
-comment_reference: https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf
-last_update: 2/8/2024
+Name: Goverlan
+Description: Goverlan is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - goverrmc.exe
+  - govsrv*.exe
+  - GovAgentInstallHelper.exe
+  - GovAgentx64.exe
+  - GovReachClient.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf
+Acknowledgement: []

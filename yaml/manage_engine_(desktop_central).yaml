@@ -1,15 +1,39 @@
-description: Manage Engine (Desktop Central)
-remote_domain:
-- desktopcentral.manageengine.com
-- desktopcentral.manageengine.com.eu
-- desktopcentral.manageengine.cn
-- '*.dms.zoho.com'
-- '*.dms.zoho.com.eu'
-- '*.-dms.zoho.com.cn'
-remote_utility:
-- dcagentservice.exe
-- dcagentregister.exe
-isutility: true
-category: RMM
-comment_reference: https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
-last_update: 2/8/2024
+Name: Manage Engine (Desktop Central)
+Description: Manage Engine (Desktop Central) is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - dcagentservice.exe
+  - dcagentregister.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - desktopcentral.manageengine.com
+    - desktopcentral.manageengine.com.eu
+    - desktopcentral.manageengine.cn
+    - '*.dms.zoho.com'
+    - '*.dms.zoho.com.eu'
+    - '*.-dms.zoho.com.cn'
+    Port: ''
+Detections: []
+References:
+- https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
+Acknowledgement: []

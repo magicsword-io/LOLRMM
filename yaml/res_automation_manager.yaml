@@ -1,11 +1,36 @@
-description: RES Automation Manager
-remote_domain: user_managed
-remote_utility:
-- wisshell*.exe
-- wmc.exe
-- wmc_deployer.exe
-- wmcsvc.exe
-isutility: true
-category: RMM
-comment_reference: https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1
-last_update: 2/9/2024
+Name: RES Automation Manager
+Description: RES Automation Manager is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - wisshell*.exe
+  - wmc.exe
+  - wmc_deployer.exe
+  - wmcsvc.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1
+Acknowledgement: []

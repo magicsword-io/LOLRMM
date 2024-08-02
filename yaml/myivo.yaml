@@ -1,8 +1,30 @@
-description: MyIVO
-remote_utility:
-- myivomgr.exe
-- myivomanager.exe
-isutility: true
-category: RMM
-comment_reference: myivo.com - DOA as of 2024
-last_update: 2/9/2024
+Name: MyIVO
+Description: MyIVO is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - myivomgr.exe
+  - myivomanager.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- myivo.com - DOA as of 2024
+Acknowledgement: []

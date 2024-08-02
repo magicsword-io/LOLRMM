@@ -1,7 +1,33 @@
-description: UltraVNC
-remote_domain: user_managed
-remote_utility: UltraVNC*.exe
-isutility: true
-category: Remote Access
-comment_reference: https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html
-last_update: 2/14/2024
+Name: UltraVNC
+Description: UltraVNC is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/14/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - UltraVNC*.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - user_managed
+    Port: ''
+Detections: []
+References:
+- https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html
+Acknowledgement: []

@@ -1,6 +1,28 @@
-description: Electric AI (Kaseya)
-isutility: true
-category: RMM
-comment_reference: https://www.electric.ai/product/device-management-solutions - Usess
-  Kaseya/jamf
-last_update: 2/7/2024
+Name: Electric AI (Kaseya)
+Description: Electric AI (Kaseya) is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths: []
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
+Detections: []
+References:
+- https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf
+Acknowledgement: []

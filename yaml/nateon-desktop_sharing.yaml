@@ -1,10 +1,35 @@
-description: NateOn-desktop sharing
-remote_domain: '*.nate.com'
-remote_utility:
-- nateon*.exe
-- nateon.exe
-- nateonmain.exe
-isutility: true
-category: RMM
-comment_reference: http://rsupport.nate.com/rview/r8/main/index.aspx
-last_update: 2/9/2024
+Name: NateOn-desktop sharing
+Description: NateOn-desktop sharing is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - nateon*.exe
+  - nateon.exe
+  - nateonmain.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.nate.com'
+    Port: ''
+Detections: []
+References:
+- http://rsupport.nate.com/rview/r8/main/index.aspx
+Acknowledgement: []

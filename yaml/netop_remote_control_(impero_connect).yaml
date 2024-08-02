@@ -1,22 +1,42 @@
-description: Netop Remote Control (Impero Connect)
-remote_domain:
-- '*.connect.backdrop.cloud'
-- '*.netop.com'
-remote_utility:
-- nhostsvc.exe
-- nhstw32.exe
-- ngstw32.exe
-- Netop Ondemand.exe
-- nldrw32.exe
-- rmserverconsolemediator.exe
-- ImperoInit.exe
-- Connect.Backdrop.cloud*.exe
-- ImperoClientSVC.exe
-remote_utility_fileinfo:
-- Impero Solutions*
-- Impero Connect*
-remote_appid: netop-remote-control
-isutility: true
-category: RMM
-comment_reference: https://kb.netop.com/article/firewall-and-proxy-server-considerations-when-using-netop-portal-communication-373.html
-last_update: 2/9/2024
+Name: Netop Remote Control (Impero Connect)
+Description: Netop Remote Control (Impero Connect) is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/9/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - nhostsvc.exe
+  - nhstw32.exe
+  - ngstw32.exe
+  - Netop Ondemand.exe
+  - nldrw32.exe
+  - rmserverconsolemediator.exe
+  - ImperoInit.exe
+  - Connect.Backdrop.cloud*.exe
+  - ImperoClientSVC.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.connect.backdrop.cloud'
+    - '*.netop.com'
+    Port: ''
+Detections: []
+References:
+- https://kb.netop.com/article/firewall-and-proxy-server-considerations-when-using-netop-portal-communication-373.html
+Acknowledgement: []

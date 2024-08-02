@@ -1,12 +1,35 @@
-description: ezHelp
-remote_domain: '*.ezhelp.co.kr'
-remote_utility:
-- ezhelpclientmanager.exe
-- ezHelpManager.exe
-- ezhelpclient.exe
-remote_utility_fileinfo: Mastersoft Corp*
-remote_appid: ezhelp
-isutility: true
-category: RMM
-comment_reference: https://www.exhelp.co.kr
-last_update: 2/7/2024
+Name: ezHelp
+Description: ezHelp is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ezhelpclientmanager.exe
+  - ezHelpManager.exe
+  - ezhelpclient.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.ezhelp.co.kr'
+    Port: ''
+Detections: []
+References:
+- https://www.exhelp.co.kr
+Acknowledgement: []

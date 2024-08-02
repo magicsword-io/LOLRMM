@@ -1,20 +1,40 @@
-description: LogMeIn
-remote_domain:
-- '*logmein.eu'
-- '*.logmeininc.com'
-- '*.logmein.com'
-remote_utility:
-- lmiguardiansvc.exe
-- lmiignition.exe
-- logmein.exe
-- logmeinsystray.exe
-- logmein*.exe
-- lmiignition.exe
-remote_utility_fileinfo:
-- LogMeIn*
-- RemotelyAnywhere*
-remote_appid: logmein
-isutility: true
-category: RMM
-comment_reference: https://support.logmeininc.com/central/help/allowlisting-and-firewall-configuration
-last_update: 2/8/2024
+Name: LogMeIn
+Description: LogMeIn is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - lmiguardiansvc.exe
+  - lmiignition.exe
+  - logmein.exe
+  - logmeinsystray.exe
+  - logmein*.exe
+  - lmiignition.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*logmein.eu'
+    - '*.logmeininc.com'
+    - '*.logmein.com'
+    Port: ''
+Detections: []
+References:
+- https://support.logmeininc.com/central/help/allowlisting-and-firewall-configuration
+Acknowledgement: []

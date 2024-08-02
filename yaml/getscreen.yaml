@@ -1,12 +1,34 @@
-description: GetScreen
-remote_domain:
-- '*.getscreen.me'
-- getscreen.me
-remote_utility: getscreen.exe
-remote_utility_fileinfo:
-- getscreen.me*
-- Point B Ltd*
-isutility: true
-category: RMM
-comment_reference: https://docs.getscreen.me/self-hosted/system-requirements/
-last_update: 2/7/2024
+Name: GetScreen
+Description: GetScreen is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - getscreen.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.getscreen.me'
+    - getscreen.me
+    Port: ''
+Detections: []
+References:
+- https://docs.getscreen.me/self-hosted/system-requirements/
+Acknowledgement: []

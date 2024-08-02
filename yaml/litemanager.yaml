@@ -1,19 +1,37 @@
-description: LiteManager
-remote_domain:
-- '*.litemanager.ru'
-- '*.litemanager.com'
-remote_utility:
-- romfusclient.exe
-- romviewer.exe
-- romserver.exe
-- lmnoipserver.exe
-remote_utility_fileinfo:
-- Yakhnovets Denis*
-- ROMServer*
-- ROMViewer*
-- LiteManager*
-remote_appid: litemanager
-isutility: true
-category: RMM
-comment_reference: https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/
-last_update: 2/8/2024
+Name: LiteManager
+Description: LiteManager is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/8/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - romfusclient.exe
+  - romviewer.exe
+  - romserver.exe
+  - lmnoipserver.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - '*.litemanager.ru'
+    - '*.litemanager.com'
+    Port: ''
+Detections: []
+References:
+- https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/
+Acknowledgement: []

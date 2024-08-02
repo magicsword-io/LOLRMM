@@ -1,15 +1,38 @@
-description: SuperOps
-remote_domain:
-- superops.ai
-- '*.superops.ai'
-- serv.superopsalpha.com
-- '*.superopsalpha.com'
-- '*.superopsbeta.com'
-remote_utility:
-- superopsticket.exe
-- superops.exe
-remote_utility_fileinfo: SuperOps*
-isutility: true
-category: RMM
-comment_reference: https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
-last_update: 2/7/2024
+Name: SuperOps
+Description: SuperOps is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  OperatingSystem: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - superopsticket.exe
+  - superops.exe
+ForensicArtifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domain:
+    - superops.ai
+    - '*.superops.ai'
+    - serv.superopsalpha.com
+    - '*.superopsalpha.com'
+    - '*.superopsbeta.com'
+    Port: ''
+Detections: []
+References:
+- https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
+Acknowledgement: []
