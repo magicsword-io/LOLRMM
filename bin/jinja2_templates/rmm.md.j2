@@ -1,8 +1,8 @@
 +++
-description = "{{ rmm.description }}"
-title = "{{ rmm.description }}"
+description = "{{ rmm.Name }}"
+title = "{{ rmm.Name }}"
 weight = 10
-displayTitle = "{{ rmm.description }}"
+displayTitle = "{{ rmm.Name }}"
 +++
 
 {% raw %}
@@ -10,57 +10,133 @@ displayTitle = "{{ rmm.description }}"
 {{< column "mt-2 pt-1">}}
 {% endraw %}
 
-# {{ rmm.description }}
+# {{ rmm.Name }}
 
 ### Description
 
-{{ rmm.description }} is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+{{ rmm.Description }}
 
-### Remote Access Details
+### Details
 
-{% if rmm.remote_domain %}
-#### Remote Domains
-{% for domain in rmm.remote_domain %}
-- {{ domain }}
+{% if rmm.Details.Website %}
+- **Website**: [{{ rmm.Details.Website }}]({{ rmm.Details.Website }})
+{% endif %}
+
+{% if rmm.Details.PEMetadata %}
+#### PE Metadata
+{% if rmm.Details.PEMetadata.Filename %}
+- **Filename**: {{ rmm.Details.PEMetadata.Filename }}
+{% endif %}
+{% if rmm.Details.PEMetadata.OriginalFileName %}
+- **Original File Name**: {{ rmm.Details.PEMetadata.OriginalFileName }}
+{% endif %}
+{% if rmm.Details.PEMetadata.Description %}
+- **Description**: {{ rmm.Details.PEMetadata.Description }}
+{% endif %}
+{% endif %}
+
+{% if rmm.Details.Privileges %}
+- **Privileges**: {{ rmm.Details.Privileges }}
+{% endif %}
+{% if rmm.Details.Free is not none %}
+- **Free**: {{ "Yes" if rmm.Details.Free else "No" }}
+{% endif %}
+{% if rmm.Details.Verification is not none %}
+- **Verification**: {{ "Yes" if rmm.Details.Verification else "No" }}
+{% endif %}
+
+{% if rmm.Details.OperatingSystem %}
+#### Supported Operating Systems
+{% for os in rmm.Details.OperatingSystem %}
+- {{ os }}
 {% endfor %}
 {% endif %}
 
-{% if rmm.remote_utility %}
-#### Remote Utilities
-{% for utility in rmm.remote_utility %}
-- {{ utility }}
+{% if rmm.Details.Capabilities %}
+#### Capabilities
+{% for capability in rmm.Details.Capabilities %}
+- {{ capability }}
 {% endfor %}
 {% endif %}
 
-{% if rmm.remote_utility_fileinfo %}
-#### Remote Utility File Information
-{% for fileinfo in rmm.remote_utility_fileinfo %}
-- {{ fileinfo }}
+{% if rmm.Details.Vulnerabilities %}
+#### Known Vulnerabilities
+{% for vulnerability in rmm.Details.Vulnerabilities %}
+- [{{ vulnerability }}]({{ vulnerability }})
 {% endfor %}
 {% endif %}
 
-{% if rmm.remote_appid %}
-#### Remote App ID
-{{ rmm.remote_appid }}
+{% if rmm.Details.InstallationPaths %}
+#### Installation Paths
+{% for path in rmm.Details.InstallationPaths %}
+- `{{ path }}`
+{% endfor %}
 {% endif %}
 
-### Additional Details
+### Forensic Artifacts
 
-- **Is Utility**: {{ "Yes" if rmm.isutility else "No" }}
-- **Category**: {{ rmm.category }}
-{% if rmm.comment_reference %}
-- **Reference**: [{{ rmm.comment_reference }}]({{ rmm.comment_reference }})
+{% if rmm.ForensicArtifacts.Disk %}
+#### Disk Artifacts
+{% for artifact in rmm.ForensicArtifacts.Disk %}
+- **File**: `{{ artifact.File }}`
+  **Description**: {{ artifact.Description }}
+  **OS**: {{ artifact.OS }}
+  {% if artifact.Example %}
+  **Example**:
+  {% for example in artifact.Example %}
+    - `{{ example }}`
+  {% endfor %}
+  {% endif %}
+{% endfor %}
 {% endif %}
-- **Last Updated**: {{ rmm.last_update }}
 
-### Resources
-<br>
-
-{% if rmm.comment_reference %}
-<li><a href="{{ rmm.comment_reference }}">{{ rmm.comment_reference }}</a></li>
+{% if rmm.ForensicArtifacts.EventLog %}
+#### Event Log Artifacts
+{% for artifact in rmm.ForensicArtifacts.EventLog %}
+- **Event ID**: {{ artifact.EventID }}
+  **Provider Name**: {{ artifact.ProviderName }}
+  **Service Name**: {{ artifact.ServiceName }}
+  **Description**: {{ artifact.Description }}
+{% endfor %}
 {% endif %}
 
-<br>
+{% if rmm.ForensicArtifacts.Registry %}
+#### Registry Artifacts
+{% for artifact in rmm.ForensicArtifacts.Registry %}
+- **Path**: `{{ artifact.Path }}`
+  **Description**: {{ artifact.Description }}
+{% endfor %}
+{% endif %}
+
+{% if rmm.ForensicArtifacts.Network %}
+#### Network Artifacts
+{% for artifact in rmm.ForensicArtifacts.Network %}
+- **Description**: {{ artifact.Description }}
+  **Domain**: {{ artifact.Domain | join(', ') }}
+  {% if artifact.Port %}**Port**: {{ artifact.Port }}{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if rmm.Detections %}
+### Detections
+{% for detection in rmm.Detections %}
+- [{{ detection }}]({{ detection }})
+{% endfor %}
+{% endif %}
+
+{% if rmm.References %}
+### References
+{% for reference in rmm.References %}
+- [{{ reference }}]({{ reference }})
+{% endfor %}
+{% endif %}
+
+{% if rmm.Acknowledgement %}
+### Acknowledgements
+{% for ack in rmm.Acknowledgement %}
+- {{ ack.Person }}{% if ack.Handle %} ({{ ack.Handle }}){% endif %}
+{% endfor %}
+{% endif %}
 
 {% raw %}
 {{< /column >}}
