@@ -1,9 +1,6 @@
 Name: AnyDesk
 Category: RMM
-Description: 'AnyDesk is a popular remote desktop software that enables users to access
-  and control a computer or device from a remote location. It was developed with the
-  primary goal of facilitating remote work, technical support, and collaboration between
-  individuals and teams.'
+Description: 'AnyDesk is a popular remote desktop software that enables users to access and control a computer or device from a remote location. It was developed with the primary goal of facilitating remote work, technical support, and collaboration between individuals and teams.'
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: 2023-09-29
 LastModified: 2024-08-02
@@ -34,14 +31,7 @@ Details:
         - https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html
     InstallationPaths:
         - C:\Program Files (x86)\AnyDesk\*
-        - C:\Program Files (x86)\AnyDesk\
-        - C:\Program Files\AnyDesk\AnyDesk.exe
-        - C:\Program Files (x86)\AnyDesk\
-        - '*\AnyDesk\*'
-        - C:\Program Files\AnyDesk\AnyDesk.exe
-        - C:\Program Files (x86)\AnyDesk\AnyDesk.exe
-        - '*\AnyDesk.exe'
-        - anydesk.exe
+        - C:\Program Files\AnyDesk\*
 Artifacts:
     Disk:
         - File: '%programdata%\AnyDesk\ad_svc.trace'
@@ -121,6 +111,8 @@ Artifacts:
     Other:
         - Type: User-Agent
           Value: 'AnyDesk/*'
+        - Type: NamedPipe
+          Value: 'adprinterpipe'
 Detections:
     - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/builtin/system/service_control_manager/win_system_service_install_anydesk.yml
       Description: Anydesk Remote Access Software Service Installation
@@ -133,6 +125,7 @@ Detections:
 References:
     - https://support.anydesk.com/knowledge/firewall
     - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
+    - https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk
 Acknowledgement:
     - Person: Ali Alwashali
       Handle: '@ali_alwashali'
