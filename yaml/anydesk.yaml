@@ -1,4 +1,5 @@
 Name: AnyDesk
+Category: RMM
 Description: |
     AnyDesk is a popular remote desktop software that enables users to access and control a computer or device from a remote location. It was developed with the primary goal of facilitating remote work, technical support, and collaboration between individuals and teams.
 Author: Ali Alwashali, Nasreddine Bencherchali
@@ -7,19 +8,20 @@ LastModified: 2023-09-29
 Details:
     Website: https://anydesk.com/en
     PEMetadata:
-        Filename: ''
+        Filename: anydesk.exe
         OriginalFileName: AnyDesk.exe
-        Description: ''
+        Description: AnyDesk
+        Product: AnyDesk
     Privileges: User
     Free: Yes
     Verification: No
-    OperatingSystem: 
-        - Windows
+    SupportedOS: 
+        - Android 
+        - ChromeOS
+        - IOS
         - Linus
         - Mac
-        - Android 
-        - IOS
-        - ChromeOS
+        - Windows
     Capabilities:
         - File Transfer
         - File System Access  
@@ -31,8 +33,7 @@ Details:
     InstallationPaths:
         - C:\Program Files (x86)\AnyDesk\AnyDesk.exe
         - C:\Program Files\AnyDesk\AnyDesk.exe
-        - anydesk.exe
-ForensicArtifacts:
+Artifacts:
     Disk:
         - File: '%programdata%\AnyDesk\ad_svc.trace'
           Description: AnyDesk service log file. As well as ad.trace, we can determine the IP address of the other participant and its AnyDesk ID when a connection is established.
@@ -69,11 +70,18 @@ ForensicArtifacts:
         - File: '%PROGRAMDATA%\AnyDesk\system.conf'
           Description: N/A
           OS: Windows
+        - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk.lnk'
+          Description: N/A
+          OS: Windows
+        - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk'
+          Description: N/A
+          OS: Windows
     EventLog:
         - EventID: 7045
           ProviderName: Service Control Manager
           ServiceName: AnyDesk Service
-          Description: Service Installation event as result of AnyDesk installation.
+          ImagePath: "C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service
+          Description: Service installation event as result of AnyDesk installation.
     Registry:
         - Path: HKLM\SOFTWARE\Clients\Media\AnyDesk
           Description: N/A
@@ -85,6 +93,12 @@ ForensicArtifacts:
           Description: N/A
         - Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*
           Description: N/A
+        - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk
+          Description: N/A
+        - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk
+          Description: N/A
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
+          Description: N/A
     Network:
         - Description: During setup the boot.net.anydesk.com domain is request over port 443
           Domain: boot.net.anydesk.com
@@ -92,18 +106,18 @@ ForensicArtifacts:
         - Description: N/A
           Domain: relay-[a-f0-9]{8}.net.anydesk.com:443
           Port: 443
-        - Description: Known remote domains
-          Domain:
-            - net.anydesk.com
-          Port: ''
 Detections:
     - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/builtin/system/service_control_manager/win_system_service_install_anydesk.yml
+      Description: Anydesk Remote Access Software Service Installation
     - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/file/file_event/file_event_win_anydesk_artefact.yml
+      Description: N/A
     - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk.yml
-    - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml
+      Description: N/A
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml
+      Description: Remote Access Tool - AnyDesk Silent Installation
 References:
-    - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
     - https://support.anydesk.com/knowledge/firewall
+    - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
 Acknowledgement:
     - Person: Ali Alwashali
       Handle: '@ali_alwashali'
