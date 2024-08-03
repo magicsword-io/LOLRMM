@@ -1,21 +1,23 @@
 Name: Atera
-Description: Atera is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
-Author: Nasreddine Bencherchali
-Created: ''
+Description: > 
+  Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.
+Created: '2024/08/03'
 LastModified: ''
 Details:
-  Website: ''
+  Website: 'https://www.atera.com/'
   PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
+    Filename: 'AteraAgent.exe'
+    OriginalFileName: 'AteraAgent.exe'
+    Description: 'AteraAgent'
+  Privileges: 'SYSTEM'
+  Free: '30 day trial'
+  Verification: 'None'
+  SupportedOS: ['Windows', 'MacOS', 'Linux']
+  Capabilities: ['Integrated remote access with Splashtop and AnyDesk', 'Remote
+    monitoring and management', 'Patch management', 'Network discovery', 'Backup
+    and disaster recovery', 'Helpdesk and ticketing', 'Reporting and analytics',
+    'Billing and invoicing', 'Customer portal', 'Mobile app']
+  Vulnerabilities: ['CVE-2023-26078','CVE-2023-26077',]
   InstallationPaths:
     - '*\AgentPackageNetworkDiscovery.exe'
     - '*\AgentPackageTaskScheduler.exe'
@@ -145,10 +147,16 @@ Artifacts:
         - Domain: appcdn.atera.com
           Port: N/A
           Description: N/A
-Detections: []    
+Detections: ['https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml','https://github.com/The-DFIR-Report/Sigma-Rules/blob/main/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml']    
 References:
     - https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
     - https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
+    - https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018
+    - https://thedfirreport.com/?s=ateraagent
 Acknowledgement:
     - Person: "Théo Letailleur"
       Handle: in/theosyn
+    - Person: "Nasreddine Bencherchali"
+      Handle: "@nas_bench"
+    - Person: "Kostas"
+      Handle: "@kostastsale"
