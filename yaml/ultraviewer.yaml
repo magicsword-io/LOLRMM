@@ -26,6 +26,9 @@ Details:
   - '*\UltraViewer_Desktop.exe'
   - ultraviewer_desktop.exe
   - ultraviewer_service.exe
+  - UltraViewer_Desktop.exe
+  - UltraViewer_setup*
+  - UltraViewer_Service.exe
 Artifacts:
   Disk: []
   EventLog: []

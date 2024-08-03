@@ -18,6 +18,7 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - awhost32.exe
+  - awrem32.exe
   - pcaquickconnect.exe
   - winaw32.exe
 Artifacts:

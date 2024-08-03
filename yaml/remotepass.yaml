@@ -30,5 +30,6 @@ Artifacts:
     - remotepass.com
     Port: ''
 Detections: []
-References: []
+References:
+- https://www.remotepass.com/rpaccess.html - DOA as of 2024
 Acknowledgement: []
