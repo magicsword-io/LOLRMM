@@ -26,6 +26,9 @@ Details:
         - https://www.cvedetails.com/vulnerability-list/vendor_id-11100/product_id-19942/Teamviewer-Teamviewer.html
     InstallationPaths:
         - 'C:\Program Files\TeamViewer\'
+        - teamviewer_desktop.exe
+        - teamviewer_service.exe
+        - teamviewerhost
 Artifacts:
     Disk:
         - File: 'C:\Users\<username>\AppData\Local\Temp\TeamViewer\TV15Install.log'
@@ -73,6 +76,12 @@ Artifacts:
           Description: SQlite 3 database storing TeamViewer print jobs
           OS: Windows
         - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\TeamViewer.lnk'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Program Files*\TeamViewer\connections*.txt'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Users\*\AppData\Roaming\TeamViewer\MRU\RemoteSupport\*tvc'
           Description: N/A
           OS: Windows
     EventLog:
@@ -142,6 +151,7 @@ References:
     - https://arista.my.site.com/AristaCommunity/s/article/Security-Analysis-TeamViewer#
     - https://www.teamviewer.com/en/global/support/knowledge-base/teamviewer-classic/troubleshooting/log-file-reading-incoming-connection/
     - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
+    - https://github.com/Purp1eW0lf/Blue-Team-Notes
 Acknowledgement:
     - Person: "Théo Letailleur"
       Handle: 'in/theosyn'

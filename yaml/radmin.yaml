@@ -25,7 +25,11 @@ Details:
   - famitrfc.exe
   - '*\Radmin Viewer 3\*'
 Artifacts:
-  Disk: []
+  Disk:
+    - C:\Windows\SysWOW64\rserver30\Radm_log.htm
+    - C:\Windows\System32\rserver30\Radm_log.htm
+    - C:\Windows\System32\rserver30\CHATLOGS\*\*.htm
+    - C:\Users\*\Documents\ChatLogs\*\*.htm
   EventLog: []
   Registry: []
   Network:

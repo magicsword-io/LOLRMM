@@ -21,8 +21,15 @@ Details:
   - C:\Program Files (x86)\mRemoteNG\*
   - '*\mRemoteNG\*'
   - '*\mRemoteNG.exe'
+  - c:\Program Files (x86)%\mRemoteNG
+  - '*%\mRemoteNG'
+  - mRemoteNG-Installer-*.msi
+  - '*\mRemoteNG.exe'
 Artifacts:
-  Disk: []
+  Disk:
+    - C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
+    - C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
+    - C:\Users\*\AppData\*\mRemoteNG\**10\user.config
   EventLog: []
   Registry: []
   Network:

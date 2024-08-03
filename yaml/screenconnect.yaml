@@ -1,32 +1,62 @@
 Name: ScreenConnect
 Description: ScreenConnect is a remote monitoring and management (RMM) tool. More
   information will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: ''
+Author: Ali Alwashali, Nasreddine Bencherchali
+Created: 2023-10-01  
+LastModified: 2024-08-03  
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - Remote Workforce Client.exe
-  - '*\*\ScreenConnect.ClientService.exe'
-  - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
-  - '*\ScreenConnect Client*\*'
-  - '*\*\ScreenConnect.WindowsClient.exe'
+    Website: 'https://www.connectwise.com'
+    PEMetadata:
+        - Filename: ''
+          OriginalFileName: ''
+          Description: ''
+    Privileges: ''
+    Free: '14-Days Free Trial'
+    Verification: ''
+    SupportedOS:
+        - Android
+        - IOS
+        - Linux
+        - Mac
+        - Windows
+    Capabilities:
+        - Command Line Support
+        - File Transfer 
+        - Install Windows updates
+        - Receive notification when user performs a predefined event
+        - Remote Command Line
+        - Remote Control  
+        - Sound Capture
+        - Start / Stop services
+        - View event logs
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe
+        - Remote Workforce Client.exe
+        - '*\*\ScreenConnect.ClientService.exe'
+        - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
+        - '*\ScreenConnect Client*\*'
+        - '*\*\ScreenConnect.WindowsClient.exe'
+        - screenconnect*.exe
+        - screenconnect.windowsclient.exe
+        - Remote Workforce Client.exe
+        - screenconnect*.exe
+        - ConnectWiseControl*.exe
+        - connectwise*.exe
+        - screenconnect.windowsclient.exe
+        - screenconnect.clientservice.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk:
+        C:\Program Files*\ScreenConnect\App_Data\Session.db
+        C:\Program Files*\ScreenConnect\App_Data\User.xml
+        C:\ProgramData\ScreenConnect Client*\user.config
+    EventLog: []
+    Registry: []
+    Network:
+    - control.connectwise.com
+    - '*.connectwise.com'
+    - '*.screenconnect.com'
 Detections: []
-References: []
+References:
+    - https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/
 Acknowledgement: []

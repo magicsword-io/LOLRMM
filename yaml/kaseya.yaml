@@ -1,5 +1,5 @@
 Name: Kaseya (VSA)
-Description: Kaseya (VSA) is a remote monitoring and management (RMM) tool. More information
+Description: Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: ''
 Created: ''
@@ -21,7 +21,13 @@ Details:
   - KaUpdHlp.exe
   - KaUsrTsk.exe
 Artifacts:
-  Disk: []
+  Disk:
+    C:\Users\*\AppData\Local\Kaseya\Log\KaseyaLiveConnect\
+    C:\ProgramData\Kaseya\Log\Endpoint\*
+    C:\Program Files*\Kaseya\*\agentmon.log
+    C:\Users\*\AppData\Local\Temp\KASetup.log
+    C:\Windows\Temp\KASetup.log
+    C:\ProgramData\Kaseya\Log\KaseyaEdgeServices\
   EventLog: []
   Registry: []
   Network:
@@ -30,6 +36,7 @@ Artifacts:
     - deploy01.kaseya.com
     - '*managedsupport.kaseya.net'
     - '*.kaseya.net'
+    - kaseya.com
     Port: ''
 Detections: []
 References:

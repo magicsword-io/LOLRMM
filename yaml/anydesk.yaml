@@ -45,6 +45,12 @@ Artifacts:
           Example:
             - 'Incoming 2022-08-23, 10:23 Passwd 547911884 547911884'
             - 'Incoming 2022-09-28, 12:39 User 442226597 442226597'
+        - File: '%APPDATA%\AnyDesk\connection_trace.txt'
+          Description: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)
+          OS: Windows
+          Example:
+            - 'Incoming 2022-08-23, 10:23 Passwd 547911884 547911884'
+            - 'Incoming 2022-09-28, 12:39 User 442226597 442226597'
         - File: '%APPDATA%\AnyDesk\ad.trace'
           Description: 'AnyDesk user interface log file. In this log file, we can determine the IP address of the other participant and its AnyDesk ID. It is also possible to track events of file transfer. Below is the Client ID and external IP address of the remote participant.'
           OS: Windows
@@ -73,6 +79,12 @@ Artifacts:
           Description: N/A
           OS: Windows
         - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Users\*\Videos\AnyDesk\*.anydesk'
+          Description: N/A
+          OS: Windows
+        - File: 'C:\Windows\SysWOW64\config\systemprofile\AppData\Roaming\AnyDesk\*'
           Description: N/A
           OS: Windows
     EventLog:
