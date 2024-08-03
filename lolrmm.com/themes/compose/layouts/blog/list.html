@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{- $pages := where site.RegularPages "Section" site.Params.blogDir  }}
+<div class = 'wrap pt-2 mt-2'>
+  {{- $paginator := .Paginate $pages -}}
+  {{- $size := $paginator.PageSize }}
+  {{- $scratch := newScratch }}
+  {{- range $index, $value := $paginator.Pages }}
+    {{ if isset .Params "image" }}
+      {{ $scratch.Set "image" .Params.image }}
+    {{ else }}
+      {{ $scratch.Set "image" "thumbnail.svg" }}
+    {{ end }}
+    {{ $image := $scratch.Get "image" }}
+    {{ $bg := (absURL (printf "images/%s" $image)) }}
+    {{- if in $image "https://" }}
+      {{- $bg = $image }}
+    {{- end }}
+  <article class = 'article mb-2'>
+    <a href = '{{ $value.Permalink }}' {{ if eq $index 0 }} class = 'grid-reverse' {{ end }}>
+      <div class = 'article_thumb' style='background-image: url({{ $bg }})'></div>
+      <div class = 'article_meta {{ if eq $index 0 }} center_y {{ end }}'>
+        <time class = 'post_date'>{{ dateFormat "January 02, 2006" $value.Date }}</time>
+        <h3 class = 'article_title'>{{ $value.Title }}</h3>
+        <div class = 'article_excerpt {{ if eq $index 0 }} visible {{ end }}'>
+        <p>{{ $value.Summary | truncate 100 }}</p>
+        </div>
+      </div>
+    </a>
+  </article>
+  {{- if and (eq $index 0) (gt $size 1)  }}<div class = 'grid-2 article_showcase'>{{ end }}
+  {{- if and (eq $index (add $size -1)) (gt $size 1) }}</div>{{ end }}
+  {{- end }}
+</div>
+<!-- <a href = '{{ absURL (printf "post/%s" "") }}' class = 'post_nav'>
+  <span class = 'post_next'>View Archive
+  <svg class="icon icon_scale">
+    <use xlink:href="#double-arrow"></use>
+  </svg>
+  </span>
+</a> -->
+{{ end }}

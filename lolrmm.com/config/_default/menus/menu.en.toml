@@ -1,0 +1,4 @@
+[[main]]
+  name = "About"
+  weight = 5
+  url = "about/"

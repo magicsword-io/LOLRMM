@@ -1,0 +1,32 @@
+[copy]
+  other = "Copy"
+[copied]
+  other = "Copied"
+[docs_menu]
+  other = "Docs Menu"
+[no_matches]
+  other = "No matches found"
+[not_set]
+  other = "not set"
+[resize_snippet]
+  other = "Resize snippet height"
+[quick_links]
+  other = "Quick links"
+[search_field_placeholder]
+  other = "Search {{ .section }}"
+[search_results_label]
+  other = "Search Results"
+[short_search_query]
+  other = "Query is too short"
+[site]
+  other = "site"
+[site_menu]
+  other = "Site Menu"
+[toggle_line_numbers]
+  other = "Toggle line numbers"
+[toggle_line_wrap]
+  other = "Toggle line wrap"
+[to_top]
+  other = "Back to top"
+[type_to_search]
+  other = "Type to search"

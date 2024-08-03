@@ -1,0 +1,16 @@
+{{ $iconsPath := partialCached "functions/getIconPath" . }}
+html
+  --info-icon: url('{{ absURL $iconsPath  }}info.svg')
+  --sun-icon: url('{{ absURL $iconsPath  }}sun.svg')
+  --moon-icon: url('{{ absURL $iconsPath  }}moon.svg')
+  --next-icon: url('{{ absURL $iconsPath  }}next.svg')
+@import "variables"
+@import "base"
+@import "nav"
+@import "components"
+@import "blog"
+@import "utils"
+@import "syntax"
+@import "fonts"
+@import "chart"
+@import "custom"

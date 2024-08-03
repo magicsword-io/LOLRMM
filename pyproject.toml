@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "lolrmm"
+version = "0.1.0"
+description = ""
+authors = ["Jose Hernandez <jhernandez@magicsword.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.37.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

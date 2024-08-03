@@ -1,0 +1,9 @@
+baseURL = "https://www.lolrmm.com/"
+title = "lolrmm.com"
+enableRobotsTXT = true
+theme = ["compose"] # loading from local
+enableGitInfo = true
+# Google Analytics
+googleAnalytics = "G-9F510YT8DQ"
+[outputs]
+  home = ["HTML", "RSS","JSON"]
