@@ -1,0 +1,14 @@
+{{- define "main" }}
+  {{- .Content }}
+  {{ if eq .Kind "taxonomy" }}
+  <ol>
+    {{ range .Data.Pages }}
+      <li>
+        <a href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </li>
+    {{ end }}
+  </ol>
+  {{ end }}
+{{- end }}
