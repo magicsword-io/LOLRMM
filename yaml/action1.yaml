@@ -1,20 +1,21 @@
 Name: Action1
-Description: Action1 is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: 2/7/2024
+Description: > 
+  Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries. 
+  Through the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.
+Author: '@kostastsale'
+Created: '2024/03/08'
+LastModified: ''
 Details:
-  Website: ''
+  Website: 'https://www.action1.com/'
   PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
+    Filename: 'action1_agent.exe'
+    OriginalFileName: 'action1_agent.exe'
+    Description: 'Endpoint Agent'
+  Privileges: 'SYSTEM'
+  Free: 'Yes'
+  Verification: 'Corporate email required although temporary email services are accepted'
+  SupportedOS: ['Windows']
+  Capabilities: ['Remote monitoring and management', 'Patch management', 'Network discovery', 'Backup and disaster recovery', 'Helpdesk and ticketing', 'Reporting and analytics', 'Billing and invoicing', 'Customer portal', 'Mobile app']
   Vulnerabilities: []
   InstallationPaths:
   - action1_connector.exe
@@ -22,9 +23,44 @@ Details:
   - action1_remote.exe
   - action1_update.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
+    Disk:
+        - File: 'C:\Windows\Action1\action1_agent.exe'
+          Description: Action1 service binary
+          OS: Windows
+        - File: 'C:\Windows\Action1\*'
+          Description: Multiple files and binaries related to Action1 installation
+          OS: Windows
+        - File: 'C:\Windows\Action1\scripts\*'
+          Description: Multiple scripts related to Action1 installation
+          OS: Windows
+        - File: 'C:\Windows\Action1\rule_data\*'
+          Description: Files related to Action1 rules
+          OS: Windows
+  EventLog:
+      - EventID: 7045
+        ProviderName: Service Control Manager
+        LogFile: System.evtx
+        ServiceName: Action1 Agent
+        ImagePath: '"C:\\Windows\\Action1\\action1_agent.exe"'
+        Description: Service installation event as result of Action1 installation.
+      - EventID: 4688
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: 'C:\Windows\Action1\action1_agent.exe service'
+          Description: Service installation event as result of Action1 installation.
+      - EventID: 4688
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: 'C:\Windows\Action1\action1_agent.exe loggedonuser'
+          Description: Executing command to get logged on user.
+      
+  Registry: 
+      - Path: 'HKLM\System\CurrentControlSet\Services\A1Agent'
+        Description: Service installation event as result of Action1 installation.
+      - Path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe'
+        Description: Ensures that detailed crash information is available for analysis, which aids in maintaining the stability and reliability of the software.
+      - Path: 'HKLM\SOFTWARE\WOW6432Node\Action1'
+        Description: Storing its configuration settings and other relevant information
   Network:
   - Description: Known remote domains
     Domain:
@@ -32,8 +68,15 @@ Artifacts:
     - a1-backend-packages.s3.amazonaws.com
     - '*.action1.com'
     - server.action1.com
-    Port: ''
-Detections: []
+    Port: '22543'
+Detections: 
+      - Name: Arbitrary code execution and remote sessions via Action1 RMM
+        Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+        Link: 'https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml'
 References:
 - https://www.action1.com/documentation/firewall-configuration/
-Acknowledgement: []
+- https://www.action1.com/documentation/
+- https://twitter.com/Kostastsale/status/1646256901506605063?s=20
+Acknowledgement:
+    - Person: "Kostas"
+      Handle: "@kostastsale"

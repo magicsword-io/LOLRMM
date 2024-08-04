@@ -147,7 +147,13 @@ Artifacts:
         - Domain: appcdn.atera.com
           Port: N/A
           Description: N/A
-Detections: ['https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml','https://github.com/The-DFIR-Report/Sigma-Rules/blob/main/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml']    
+Detections: 
+      - Name: 'AteraAgent malicious installations'
+        Description: 'Detects AteraAgent installations with suspicious command line arguments.'
+        Link: 'https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml'
+      - Name: 'Atera Agent Installation'
+        Description: 'Detects Atera Agent installation.'
+        Link: 'https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml'
 References:
     - https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
     - https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
