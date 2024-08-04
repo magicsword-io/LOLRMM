@@ -1,28 +1,51 @@
 Name: AnyViewer
 Description: AnyViewer is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: 2/7/2024
+Author: '@kostastsale'
+Created: '2024/03/08'
+LastModified: ''
 Details:
-  Website: ''
+  Website: 'https://www.anyviewer.com/'
   PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
+    Filename: 
+        - 'AnyViewer.exe'
+        - 'RCClient.exe'
+        - 'ScreanCap.exe'
+        - 'AVCore.exe'
+        - 'RCService.exe'
+    OriginalFileName: 
+        - 'AnyViewer'
+        - 'RCClient.exe'
+    Description: 
+        - 'Splash Window'
+        - 'AnyViewer Core'
+        - 'Screan capture'
+  Privileges: 'System'
+  Free: 'up to 10 devices'
+  Verification: 'None'
+  SupportedOS: ['Windows']
+  Capabilities:
+    - 'Remote monitoring and management'
+    - 'Remote desktop'
+    - 'Remote shell open'
+    - 'Remote file transfer'
   Vulnerabilities: []
   InstallationPaths:
-  - AnyViewerSetup.exe
-  - RCClient.exe
-  - RCService.exe
+  - 'C:\\Program Files (x86)\\AnyViewer\\*'
 Artifacts:
   Disk: []
-  EventLog: []
+  EventLog:
+      - EventID: 4688
+        ProviderName: Microsoft-Security-Auditing
+        LogFile: Security.evtx
+        CommandLine: '"C:\\Program Files (x86)\\AnyViewer\\AVCore.exe" -d'
+        Description: Taking actions on the remote machine such as opening a command prompt.
+      - EventID: 7045
+        ProviderName: Service Control Manager
+        LogFile: System.evtx
+        ServiceName: RCService
+        ImagePath: 'C:\\Program Files (x86)\\AnyViewer\\RCService.exe'
+        Description: AnyViewer service installation service.
   Registry: []
   Network:
   - Description: Known remote domains
@@ -30,8 +53,16 @@ Artifacts:
     - controlserver.anyviewer.com
     - aomeisoftware.com
     - '*.aomeisoftware.com'
-    Port: ''
-Detections: []
+    Port: '443'
+Detections:
+    - Name: Arbitrary code execution and remote sessions via Action1 RMM
+      Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+      author: '@kostastsale'
+      Link: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml
+
 References:
 - https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
-Acknowledgement: []
+- https://www.anyviewer.com/help/remote-technical-support.html
+Acknowledgement:
+    - Person: "Kostas"
+      Handle: "@kostastsale"

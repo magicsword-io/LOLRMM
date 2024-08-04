@@ -71,6 +71,7 @@ Artifacts:
 Detections: 
       - Name: Arbitrary code execution and remote sessions via Action1 RMM
         Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+        author: '@kostastsale'
         Link: 'https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml'
 References:
 - https://www.action1.com/documentation/firewall-configuration/
