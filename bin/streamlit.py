@@ -12,7 +12,11 @@ def load_yaml_template(filename):
         return default_template()
     try:
         with open(f'yaml/{filename}', 'r') as file:
-            return yaml.safe_load(file)
+            data = yaml.safe_load(file)
+            # Convert PEMetadata to dict if it's a list
+            if 'Details' in data and 'PEMetadata' in data['Details'] and isinstance(data['Details']['PEMetadata'], list):
+                data['Details']['PEMetadata'] = data['Details']['PEMetadata'][0] if data['Details']['PEMetadata'] else {}
+            return data
     except yaml.YAMLError as e:
         st.error(f"Error loading YAML file: {e}")
         return default_template()
