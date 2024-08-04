@@ -1,0 +1,152 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "Name": { "type": "string" },
+      "Category": { "type": ["string", "null"] },
+      "Description": { "type": "string" },
+      "Author": { "type": ["string", "null"] },
+      "Created": { "type": ["string", "null"] },
+      "LastModified": { "type": ["string", "null"] },
+      "Details": {
+        "type": "object",
+        "properties": {
+          "Website": { "type": ["string", "null"] },
+          "PEMetadata": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "Filename": { "type": ["string", "null"] },
+                  "OriginalFileName": { "type": ["string", "null"] },
+                  "Description": { "type": ["string", "null"] }
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "Filename": { "type": ["string", "null"] },
+                    "OriginalFileName": { "type": ["string", "null"] },
+                    "Description": { "type": ["string", "null"] }
+                  }
+                }
+              }
+            ]
+          },
+          "Privileges": { "type": ["string", "null"] },
+          "Free": { "type": ["boolean", "string", "null"] },
+          "Verification": { "type": ["boolean", "string", "null"] },
+          "SupportedOS": { 
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          },
+          "Capabilities": { 
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          },
+          "Vulnerabilities": { 
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          },
+          "InstallationPaths": { 
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "Artifacts": {
+        "type": "object",
+        "properties": {
+          "Disk": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "properties": {
+                "File": { "type": "string" },
+                "Description": { "type": ["string", "null"] },
+                "OS": { "type": ["string", "null"] },
+                "Example": { "type": ["array", "null"], "items": { "type": "string" } }
+              }
+            }
+          },
+          "EventLog": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "properties": {
+                "EventID": { "type": ["integer", "null"] },
+                "ProviderName": { "type": ["string", "null"] },
+                "LogFile": { "type": ["string", "null"] },
+                "ServiceName": { "type": ["string", "null"] },
+                "ImagePath": { "type": ["string", "null"] },
+                "Description": { "type": ["string", "null"] }
+              }
+            }
+          },
+          "Registry": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "properties": {
+                "Path": { "type": "string" },
+                "Description": { "type": ["string", "null"] }
+              }
+            }
+          },
+          "Network": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "properties": {
+                "Description": { "type": ["string", "null"] },
+                "Domain": {
+                  "oneOf": [
+                    { "type": ["string", "null"] },
+                    { 
+                      "type": "array",
+                      "items": { "type": ["string", "null"] }
+                    }
+                  ]
+                },
+                "Port": { "type": ["string", "number", "null"] }
+              }
+            }
+          },
+          "Other": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "properties": {
+                "Type": { "type": ["string", "null"] },
+                "Value": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      },
+      "Detections": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "object",
+          "properties": {
+            "Sigma": { "type": ["string", "null"] },
+            "Description": { "type": ["string", "null"] }
+          }
+        }
+      },
+      "References": { "type": ["array", "null"], "items": { "type": ["string", "null"] } },
+      "Acknowledgement": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "object",
+          "properties": {
+            "Person": { "type": ["string", "null"] },
+            "Handle": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "required": ["Name", "Description"]
+  }

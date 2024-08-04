@@ -82,27 +82,27 @@ Artifacts:
           Description: Service installation event as result of Splashtop Remote Service installation.
     Registry:
         - Path: 'KLM\SOFTWARE\WOW6432Node\Splashtop Inc.\*'
-          Description:
+          Description: 'Splashtop Inc. registry key'
         - Path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater'
-          Description:
+          Description: 'Splashtop Software Updater uninstall key'
         - Path: 'HKLM\SYSTEM\CurrentControlSet\Services\SplashtopRemoteService'
-          Description:
+          Description: 'Splashtop Remote Service registry key'
         - Path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Remote Session/Operational'
-          Description:
+          Description: 'Splashtop Streamer Remote Session event log channel'
         - Path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Status/Operational'
-          Description:
+          Description: 'Splashtop Streamer Status event log channel'
         - Path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater\InstallRefCount'
-          Description:
+          Description: 'Splashtop Software Updater install reference count'
         - Path: 'HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SplashtopRemoteService'
-          Description:
+          Description: 'Splashtop Remote Service safe boot configuration'
         - Path: 'HKU\.DEFAULT\Software\Splashtop Inc.\*'
-          Description:
+          Description: 'Default user Splashtop Inc. registry key'
         - Path: 'HKU\SID\Software\Splashtop Inc.\*'
-          Description:
+          Description: 'User-specific Splashtop Inc. registry key'
         - Path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\Splashtop PDF Remote Printer'
-          Description:
+          Description: 'Splashtop PDF Remote Printer configuration'
         - Path: 'HKLM\SOFTWARE\WOW6432Node\Splashtop Inc.\Splashtop Remote Server\ClientInfo\*'
-          Description:
+          Description: 'Splashtop Remote Server client information'
     Network:
         - Domain: '*.splashtop.com'
           Port: N/A

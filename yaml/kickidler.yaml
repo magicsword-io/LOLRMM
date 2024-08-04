@@ -26,8 +26,8 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domain:
-    - kickidler.com
-    - my.kickidler.com
+    - 'kickidler.com'
+    - 'my.kickidler.com'
     Port: ''
 Detections: []
 References:

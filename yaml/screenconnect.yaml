@@ -2,8 +2,8 @@ Name: ScreenConnect
 Description: ScreenConnect is a remote monitoring and management (RMM) tool. More
   information will be added as it becomes available.
 Author: Ali Alwashali, Nasreddine Bencherchali
-Created: 2023-10-01  
-LastModified: 2024-08-03  
+Created: '2023-10-01'
+LastModified: '2024-08-03'
 Details:
     Website: 'https://www.connectwise.com'
     PEMetadata:
@@ -31,31 +31,40 @@ Details:
         - View event logs
     Vulnerabilities: []
     InstallationPaths:
-        - C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe
-        - Remote Workforce Client.exe
+        - 'C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe'
+        - 'Remote Workforce Client.exe'
         - '*\*\ScreenConnect.ClientService.exe'
-        - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
+        - 'C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*'
         - '*\ScreenConnect Client*\*'
         - '*\*\ScreenConnect.WindowsClient.exe'
-        - screenconnect*.exe
-        - screenconnect.windowsclient.exe
-        - Remote Workforce Client.exe
-        - screenconnect*.exe
-        - ConnectWiseControl*.exe
-        - connectwise*.exe
-        - screenconnect.windowsclient.exe
-        - screenconnect.clientservice.exe
+        - 'screenconnect*.exe'
+        - 'screenconnect.windowsclient.exe'
+        - 'Remote Workforce Client.exe'
+        - 'screenconnect*.exe'
+        - 'ConnectWiseControl*.exe'
+        - 'connectwise*.exe'
+        - 'screenconnect.windowsclient.exe'
+        - 'screenconnect.clientservice.exe'
 Artifacts:
     Disk:
-        C:\Program Files*\ScreenConnect\App_Data\Session.db
-        C:\Program Files*\ScreenConnect\App_Data\User.xml
-        C:\ProgramData\ScreenConnect Client*\user.config
+        - File: 'C:\Program Files*\ScreenConnect\App_Data\Session.db'
+          Description: 'ScreenConnect session database'
+          OS: Windows
+        - File: 'C:\Program Files*\ScreenConnect\App_Data\User.xml'
+          Description: 'ScreenConnect user configuration'
+          OS: Windows
+        - File: 'C:\ProgramData\ScreenConnect Client*\user.config'
+          Description: 'ScreenConnect client user configuration'
+          OS: Windows
     EventLog: []
     Registry: []
     Network:
-    - control.connectwise.com
-    - '*.connectwise.com'
-    - '*.screenconnect.com'
+        - Description: Known remote domains
+          Domain:
+            - control.connectwise.com
+            - '*.connectwise.com'
+            - '*.screenconnect.com'
+          Port: ''
 Detections: []
 References:
     - https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/

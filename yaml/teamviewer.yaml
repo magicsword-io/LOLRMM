@@ -2,8 +2,8 @@ Name: TeamViewer
 Description: |
     TeamViewer is a remote monitoring and management (RMM) tool.
 Author: Nasreddine Bencherchali
-Created: 2024-08-02
-LastModified: 2024-08-02
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
     Website: 'https://www.teamviewer.com/en'
     PEMetadata:
@@ -144,8 +144,7 @@ Artifacts:
           Value: 'TeamViewerHooks_DynamicMemMutex'
         - Type: Mutex
           Value: 'TeamViewer3_Win32_Instance_Mutex'
-Detections:
-    - TBD
+Detections: []
 References:
     - https://community.teamviewer.com/English/kb/articles/4139-ports-used-by-teamviewer
     - https://arista.my.site.com/AristaCommunity/s/article/Security-Analysis-TeamViewer#

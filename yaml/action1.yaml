@@ -23,52 +23,51 @@ Details:
   - action1_remote.exe
   - action1_update.exe
 Artifacts:
-    Disk:
-        - File: 'C:\Windows\Action1\action1_agent.exe'
-          Description: Action1 service binary
-          OS: Windows
-        - File: 'C:\Windows\Action1\*'
-          Description: Multiple files and binaries related to Action1 installation
-          OS: Windows
-        - File: 'C:\Windows\Action1\scripts\*'
-          Description: Multiple scripts related to Action1 installation
-          OS: Windows
-        - File: 'C:\Windows\Action1\rule_data\*'
-          Description: Files related to Action1 rules
-          OS: Windows
+  Disk:
+    - File: 'C:\Windows\Action1\action1_agent.exe'
+      Description: Action1 service binary
+      OS: Windows
+    - File: 'C:\Windows\Action1\*'
+      Description: Multiple files and binaries related to Action1 installation
+      OS: Windows
+    - File: 'C:\Windows\Action1\scripts\*'
+      Description: Multiple scripts related to Action1 installation
+      OS: Windows
+    - File: 'C:\Windows\Action1\rule_data\*'
+      Description: Files related to Action1 rules
+      OS: Windows
   EventLog:
-      - EventID: 7045
-        ProviderName: Service Control Manager
-        LogFile: System.evtx
-        ServiceName: Action1 Agent
-        ImagePath: '"C:\\Windows\\Action1\\action1_agent.exe"'
-        Description: Service installation event as result of Action1 installation.
-      - EventID: 4688
-          ProviderName: Microsoft-Security-Auditing
-          LogFile: Security.evtx
-          CommandLine: 'C:\Windows\Action1\action1_agent.exe service'
-          Description: Service installation event as result of Action1 installation.
-      - EventID: 4688
-          ProviderName: Microsoft-Security-Auditing
-          LogFile: Security.evtx
-          CommandLine: 'C:\Windows\Action1\action1_agent.exe loggedonuser'
-          Description: Executing command to get logged on user.
-      
+    - EventID: 7045
+      ProviderName: Service Control Manager
+      LogFile: System.evtx
+      ServiceName: Action1 Agent
+      ImagePath: '"C:\\Windows\\Action1\\action1_agent.exe"'
+      Description: Service installation event as result of Action1 installation.
+    - EventID: 4688
+      ProviderName: Microsoft-Security-Auditing
+      LogFile: Security.evtx
+      CommandLine: 'C:\Windows\Action1\action1_agent.exe service'
+      Description: Service installation event as result of Action1 installation.
+    - EventID: 4688
+      ProviderName: Microsoft-Security-Auditing
+      LogFile: Security.evtx
+      CommandLine: 'C:\Windows\Action1\action1_agent.exe loggedonuser'
+      Description: Executing command to get logged on user.
   Registry: 
-      - Path: 'HKLM\System\CurrentControlSet\Services\A1Agent'
-        Description: Service installation event as result of Action1 installation.
-      - Path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe'
-        Description: Ensures that detailed crash information is available for analysis, which aids in maintaining the stability and reliability of the software.
-      - Path: 'HKLM\SOFTWARE\WOW6432Node\Action1'
-        Description: Storing its configuration settings and other relevant information
+    - Path: 'HKLM\System\CurrentControlSet\Services\A1Agent'
+      Description: Service installation event as result of Action1 installation.
+    - Path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe'
+      Description: Ensures that detailed crash information is available for analysis, which aids in maintaining the stability and reliability of the software.
+    - Path: 'HKLM\SOFTWARE\WOW6432Node\Action1'
+      Description: Storing its configuration settings and other relevant information
   Network:
-  - Description: Known remote domains
-    Domain:
-    - action1.com
-    - a1-backend-packages.s3.amazonaws.com
-    - '*.action1.com'
-    - server.action1.com
-    Port: '22543'
+    - Description: Known remote domains
+      Domain:
+        - action1.com
+        - a1-backend-packages.s3.amazonaws.com
+        - '*.action1.com'
+        - server.action1.com
+      Port: '22543'
 Detections: 
       - Name: Arbitrary code execution and remote sessions via Action1 RMM
         Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM

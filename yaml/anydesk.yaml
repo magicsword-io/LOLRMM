@@ -2,8 +2,8 @@ Name: AnyDesk
 Category: RMM
 Description: 'AnyDesk is a popular remote desktop software that enables users to access and control a computer or device from a remote location. It was developed with the primary goal of facilitating remote work, technical support, and collaboration between individuals and teams.'
 Author: Ali Alwashali, Nasreddine Bencherchali
-Created: 2023-09-29
-LastModified: 2024-08-02
+Created: '2023-09-29'
+LastModified: '2024-08-02'
 Details:
     Website: https://anydesk.com/en
     PEMetadata:
@@ -134,7 +134,7 @@ Detections:
     - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk.yml
       Description: N/A
     - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml
-  Description: Remote Access Tool - AnyDesk Silent Installation
+      Description: Remote Access Tool - AnyDesk Silent Installation
 References:
     - https://support.anydesk.com/knowledge/firewall
     - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html

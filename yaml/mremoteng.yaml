@@ -27,9 +27,15 @@ Details:
   - '*\mRemoteNG.exe'
 Artifacts:
   Disk:
-    - C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
-    - C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
-    - C:\Users\*\AppData\*\mRemoteNG\**10\user.config
+    - File: 'C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log'
+      Description: 'mRemoteNG log file'
+      OS: Windows
+    - File: 'C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml'
+      Description: 'mRemoteNG configuration file'
+      OS: Windows
+    - File: 'C:\Users\*\AppData\*\mRemoteNG\**10\user.config'
+      Description: 'mRemoteNG user configuration file'
+      OS: Windows
   EventLog: []
   Registry: []
   Network:

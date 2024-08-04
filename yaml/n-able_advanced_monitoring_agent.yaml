@@ -35,7 +35,7 @@ Artifacts:
     - '*systemmonitor.us'
     - '*systemmonitor.eu.com'
     - '*system-monitor.com'
-    - systemmonitor.us.cdn.cloudflare.net
+    - 'systemmonitor.us.cdn.cloudflare.net'
     - '*cloudbackup.management'
     - '*systemmonitor.co.uk'
     - '*.n-able.com'
