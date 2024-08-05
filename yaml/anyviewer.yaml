@@ -7,19 +7,16 @@ LastModified: ''
 Details:
   Website: 'https://www.anyviewer.com/'
   PEMetadata:
-    Filename: 
-        - 'AnyViewer.exe'
-        - 'RCClient.exe'
-        - 'ScreanCap.exe'
-        - 'AVCore.exe'
-        - 'RCService.exe'
-    OriginalFileName: 
-        - 'AnyViewer'
-        - 'RCClient.exe'
-    Description: 
-        - 'Splash Window'
-        - 'AnyViewer Core'
-        - 'Screan capture'
+    - Filename: 'AnyViewer.exe'
+      OriginalFileName: 'AnyViewer'
+      Description: 'Splash Window'
+    - Filename: 'RCClient.exe'
+      OriginalFileName: 'RCClient.exe'
+      Description: 'AnyViewer Core'
+    - Filename: 'ScreanCap.exe'
+      Description: 'Screan capture'
+    - Filename: 'AVCore.exe'
+    - Filename: 'RCService.exe'
   Privileges: 'System'
   Free: 'up to 10 devices'
   Verification: 'None'
@@ -59,7 +56,6 @@ Detections:
       Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
       author: '@kostastsale'
       Link: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml
-
 References:
 - https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
 - https://www.anyviewer.com/help/remote-technical-support.html
