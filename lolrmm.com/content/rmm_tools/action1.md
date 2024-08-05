@@ -63,24 +63,28 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 #### Disk Artifacts
 
 - **File**: `C:\Windows\Action1\action1_agent.exe`
+
   **Description**: Action1 service binary
 
 
   **OS**: Windows
 
 - **File**: `C:\Windows\Action1\*`
+
   **Description**: Multiple files and binaries related to Action1 installation
 
 
   **OS**: Windows
 
 - **File**: `C:\Windows\Action1\scripts\*`
+
   **Description**: Multiple scripts related to Action1 installation
 
 
   **OS**: Windows
 
 - **File**: `C:\Windows\Action1\rule_data\*`
+
   **Description**: Files related to Action1 rules
 
 
@@ -140,7 +144,7 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
   (Author: @kostastsale)
 
   [Link](https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml)
-  
+
 
 ### References
 - [https://www.action1.com/documentation/firewall-configuration/](https://www.action1.com/documentation/firewall-configuration/)

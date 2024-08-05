@@ -48,18 +48,21 @@ mRemoteNG is a remote monitoring and management (RMM) tool. More information wil
 #### Disk Artifacts
 
 - **File**: `C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log`
+
   **Description**: mRemoteNG log file
 
 
   **OS**: Windows
 
 - **File**: `C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml`
+
   **Description**: mRemoteNG configuration file
 
 
   **OS**: Windows
 
 - **File**: `C:\Users\*\AppData\*\mRemoteNG\**10\user.config`
+
   **Description**: mRemoteNG user configuration file
 
 

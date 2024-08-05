@@ -73,18 +73,21 @@ ScreenConnect is a remote monitoring and management (RMM) tool. More information
 #### Disk Artifacts
 
 - **File**: `C:\Program Files*\ScreenConnect\App_Data\Session.db`
+
   **Description**: ScreenConnect session database
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files*\ScreenConnect\App_Data\User.xml`
+
   **Description**: ScreenConnect user configuration
 
 
   **OS**: Windows
 
 - **File**: `C:\ProgramData\ScreenConnect Client*\user.config`
+
   **Description**: ScreenConnect client user configuration
 
 

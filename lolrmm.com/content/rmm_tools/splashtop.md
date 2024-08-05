@@ -43,78 +43,91 @@ Splashtop is a remote monitoring and management (RMM) tool. More information wil
 #### Disk Artifacts
 
 - **File**: `C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Status%4Operational.evtx`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Remote Session%4Operational.evtx`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `%PROGRAMDATA%\Splashtop\Temp\log\FTCLog.txt`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\agent_log.txt`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\SPLog.txt`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\svcinfo.txt`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\sysinfo.txt`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRService.exe`
+
   **Description**: Splashtop Remote Service
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRAgent.exe`
+
   **Description**: SplashTop Remote Agent
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Software Updater\SSUAgent.exe`
+
   **Description**: Splashtop Updater
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRUtility.exe`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRFeature.exe`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\db\SRAgent.sqlite3`
+
   **Description**: N/A
 
 

@@ -43,36 +43,42 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
 #### Disk Artifacts
 
 - **File**: `C:\Users\*\AppData\Local\Kaseya\Log\KaseyaLiveConnect\*`
+
   **Description**: Kaseya Live Connect logs
 
 
   **OS**: Windows
 
 - **File**: `C:\ProgramData\Kaseya\Log\Endpoint\*`
+
   **Description**: Kaseya Endpoint logs
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files*\Kaseya\*\agentmon.log`
+
   **Description**: Kaseya Agent Monitor log
 
 
   **OS**: Windows
 
 - **File**: `C:\Users\*\AppData\Local\Temp\KASetup.log`
+
   **Description**: Kaseya Setup log in user temp directory
 
 
   **OS**: Windows
 
 - **File**: `C:\Windows\Temp\KASetup.log`
+
   **Description**: Kaseya Setup log in Windows temp directory
 
 
   **OS**: Windows
 
 - **File**: `C:\ProgramData\Kaseya\Log\KaseyaEdgeServices\*`
+
   **Description**: Kaseya Edge Services logs
 
 

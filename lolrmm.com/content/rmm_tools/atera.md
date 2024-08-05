@@ -75,54 +75,63 @@ Atera is a remote monitoring and management (RMM) tool. It is used by threat act
 #### Disk Artifacts
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\Packages\*`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe`
+
   **Description**: Atera service binary
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\Atera Networks\AlphaAgent.exe`
+
   **Description**: Atera service binary
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe`
+
   **Description**: N/A
 
 
   **OS**: Windows
 
 - **File**: `C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe`
+
   **Description**: N/A
 
 
@@ -277,14 +286,14 @@ Atera is a remote monitoring and management (RMM) tool. It is used by threat act
 
 
   [Link](https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml)
-  
+
 -   **Atera Agent Installation**
 
   Detects Atera Agent installation.
 
 
   [Link](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml)
-  
+
 
 ### References
 - [https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations](https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations)

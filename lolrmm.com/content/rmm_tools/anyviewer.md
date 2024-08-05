@@ -85,7 +85,7 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
   (Author: @kostastsale)
 
   [Link](https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml)
-  
+
 
 ### References
 - [https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html](https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html)

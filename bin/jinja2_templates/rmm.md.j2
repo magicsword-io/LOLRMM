@@ -115,6 +115,7 @@ displayTitle = "{{ rmm.Name }}"
 
 {% for artifact in rmm.Artifacts.Disk %}
 - **File**: `{{ artifact.File }}`
+
   {% if artifact.Description %}
   **Description**: {{ artifact.Description }}
   {% endif %}
@@ -200,6 +201,7 @@ displayTitle = "{{ rmm.Name }}"
 #### Other Artifacts
 {% for artifact in rmm.Artifacts.Other %}
 - {% if artifact.Type %}**Type**: {{ artifact.Type }}{% endif %}
+
   {% if artifact.Value %}
 
   **Value**: {{ artifact.Value }}
@@ -228,7 +230,7 @@ displayTitle = "{{ rmm.Name }}"
   {% if detection.Link %}
   [Link]({{ detection.Link }})
   {% endif %}
-  
+
 {% endfor %}
 {% endif %}
 
