@@ -1,16 +1,16 @@
 Name: LogMeIn
-Description: LogMeIn is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: |
+    LogMeIn is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: Nasreddine Bencherchali
-Created: 05-08-2024
-LastModified: 05-08-2024
+Created: '2024-08-05'
+LastModified: '2024-08-05'
 Details:
     Website: 'https://www.logmein.com/'
     PEMetadata:
         - Filename: 'lmiguardiansvc.exe'
         - Filename: 'lmiignition.exe'
-        - Filename: 'logmein.exe'
         - Filename: 'logmeinsystray.exe'
-        - Filename: ''
+        - Filename: 'logmein.exe'
           OriginalFileName: ''
           Company: 'LogMeIn, Inc.'
           Description: 'LMIGuardianSvc'

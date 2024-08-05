@@ -1,51 +1,52 @@
 Name: AnyViewer
-Description: AnyViewer is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: |
+    AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: '@kostastsale'
 Created: '2024/03/08'
-LastModified: ''
+LastModified: '2024/03/08'
 Details:
-  Website: 'https://www.anyviewer.com/'
-  PEMetadata:
-    - Filename: 'AnyViewer.exe'
-      OriginalFileName: 'AnyViewer'
-      Description: 'Splash Window'
-    - Filename: 'RCClient.exe'
-      OriginalFileName: 'RCClient.exe'
-      Description: 'AnyViewer Core'
-    - Filename: 'ScreanCap.exe'
-      Description: 'Screan capture'
-    - Filename: 'AVCore.exe'
-    - Filename: 'RCService.exe'
-  Privileges: 'System'
-  Free: 'up to 10 devices'
-  Verification: 'None'
-  SupportedOS: ['Windows']
-  Capabilities:
-    - 'Remote monitoring and management'
-    - 'Remote desktop'
-    - 'Remote shell open'
-    - 'Remote file transfer'
-  Vulnerabilities: []
-  InstallationPaths:
-  - 'C:\\Program Files (x86)\\AnyViewer\\*'
+    Website: 'https://www.anyviewer.com/'
+    PEMetadata:
+        - Filename: 'AnyViewer.exe'
+          OriginalFileName: 'AnyViewer'
+          Description: 'Splash Window'
+        - Filename: 'RCClient.exe'
+          OriginalFileName: 'RCClient.exe'
+          Description: 'AnyViewer Core'
+        - Filename: 'ScreanCap.exe'
+          Description: 'Screan capture'
+        - Filename: 'AVCore.exe'
+        - Filename: 'RCService.exe'
+    Privileges: 'System'
+    Free: 'up to 10 devices'
+    Verification: 'None'
+    SupportedOS:
+        - 'Windows'
+    Capabilities:
+        - 'Remote desktop'
+        - 'Remote file transfer'
+        - 'Remote monitoring and management'
+        - 'Remote shell open'
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'C:\\Program Files (x86)\\AnyViewer\\*'
 Artifacts:
-  Disk: []
-  EventLog:
-      - EventID: 4688
-        ProviderName: Microsoft-Security-Auditing
-        LogFile: Security.evtx
-        CommandLine: '"C:\\Program Files (x86)\\AnyViewer\\AVCore.exe" -d'
-        Description: Taking actions on the remote machine such as opening a command prompt.
-      - EventID: 7045
-        ProviderName: Service Control Manager
-        LogFile: System.evtx
-        ServiceName: RCService
-        ImagePath: 'C:\\Program Files (x86)\\AnyViewer\\RCService.exe'
-        Description: AnyViewer service installation service.
-  Registry: []
-  Network:
-  - Description: Known remote domains
+    Disk: []
+    EventLog:
+        - EventID: 4688
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: '"C:\\Program Files (x86)\\AnyViewer\\AVCore.exe" -d'
+          Description: Taking actions on the remote machine such as opening a command prompt.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: RCService
+          ImagePath: 'C:\\Program Files (x86)\\AnyViewer\\RCService.exe'
+          Description: AnyViewer service installation service.
+    Registry: []
+    Network:
+    - Description: Known remote domains
     Domain:
     - controlserver.anyviewer.com
     - aomeisoftware.com
@@ -57,8 +58,8 @@ Detections:
       author: '@kostastsale'
       Link: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml
 References:
-- https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
-- https://www.anyviewer.com/help/remote-technical-support.html
+    - https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
+    - https://www.anyviewer.com/help/remote-technical-support.html
 Acknowledgement:
     - Person: "Kostas"
       Handle: "@kostastsale"

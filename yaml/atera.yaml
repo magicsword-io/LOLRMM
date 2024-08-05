@@ -1,35 +1,47 @@
 Name: Atera
-Description: > 
-  Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.
+Description: |
+    Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.
 Created: '2024/08/03'
 LastModified: ''
 Details:
-  Website: 'https://www.atera.com/'
-  PEMetadata:
-    Filename: 'AteraAgent.exe'
-    OriginalFileName: 'AteraAgent.exe'
-    Description: 'AteraAgent'
-  Privileges: 'SYSTEM'
-  Free: '30 day trial'
-  Verification: 'None'
-  SupportedOS: ['Windows', 'MacOS', 'Linux']
-  Capabilities: ['Integrated remote access with Splashtop and AnyDesk', 'Remote
-    monitoring and management', 'Patch management', 'Network discovery', 'Backup
-    and disaster recovery', 'Helpdesk and ticketing', 'Reporting and analytics',
-    'Billing and invoicing', 'Customer portal', 'Mobile app']
-  Vulnerabilities: ['CVE-2023-26078','CVE-2023-26077',]
-  InstallationPaths:
-    - '*\AgentPackageNetworkDiscovery.exe'
-    - '*\AgentPackageTaskScheduler.exe'
-    - '*\ATERA Networks\AteraAgent\*'
-    - '*\AteraAgent.exe'
-    - atera_agent.exe
-    - atera_agent.exe
-    - ateraagent.exe
-    - C:\Program Files\ATERA Networks\AteraAgent\*
-    - C:\Program Files\Atera Networks
-    - C:\Program Files (x86)\Atera Networks
-    - syncrosetup.exe
+    Website: 'https://www.atera.com/'
+    PEMetadata:
+        - Filename: 'AteraAgent.exe'
+          OriginalFileName: 'AteraAgent.exe'
+          Description: 'AteraAgent'
+    Privileges: 'SYSTEM'
+    Free: '30 day trial'
+    Verification: 'None'
+    SupportedOS:
+        - 'Windows'
+        - 'MacOS'
+        - 'Linux'
+    Capabilities:
+        - 'Integrated remote access with Splashtop and AnyDesk'
+        - 'Remote monitoring and management'
+        - 'Patch management'
+        - 'Network discovery'
+        - 'Backup and disaster recovery'
+        - 'Helpdesk and ticketing'
+        - 'Reporting and analytics'
+        - 'Billing and invoicing'
+        - 'Customer portal'
+        - 'Mobile app'
+    Vulnerabilities:
+        - 'CVE-2023-26078'
+        - 'CVE-2023-26077'
+    InstallationPaths:
+        - '*\AgentPackageNetworkDiscovery.exe'
+        - '*\AgentPackageTaskScheduler.exe'
+        - '*\ATERA Networks\AteraAgent\*'
+        - '*\AteraAgent.exe'
+        - atera_agent.exe
+        - atera_agent.exe
+        - ateraagent.exe
+        - C:\Program Files\ATERA Networks\AteraAgent\*
+        - C:\Program Files\Atera Networks
+        - C:\Program Files (x86)\Atera Networks
+        - syncrosetup.exe
 Artifacts:
     Disk:
         - File: 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt'
@@ -148,12 +160,12 @@ Artifacts:
           Port: N/A
           Description: N/A
 Detections: 
-      - Name: 'AteraAgent malicious installations'
-        Description: 'Detects AteraAgent installations with suspicious command line arguments.'
-        Link: 'https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml'
-      - Name: 'Atera Agent Installation'
-        Description: 'Detects Atera Agent installation.'
-        Link: 'https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml'
+    - Sigma: 'https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml'
+      Name: 'AteraAgent malicious installations'
+      Description: 'Detects AteraAgent installations with suspicious command line arguments.'
+    - Sigma: 'https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml'
+      Name: 'Atera Agent Installation'
+      Description: 'Detects Atera Agent installation.'
 References:
     - https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
     - https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
