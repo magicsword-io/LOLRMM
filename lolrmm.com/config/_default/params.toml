@@ -29,8 +29,8 @@ enable = false
 [logo]
   #lightMode = "images/compose.svg"
   #darkMode = "images/compose-light.svg"
-  lightMode = "images/logo.png"
-  darkMode = "images/logo-dark.png"
+  #lightMode = "images/logo.png"
+  #darkMode = "images/logo-dark.png"
 
 
 [source]

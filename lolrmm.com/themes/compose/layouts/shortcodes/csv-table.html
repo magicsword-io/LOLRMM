@@ -1,0 +1,20 @@
+{{ $csvFile := .Get 0 }}
+{{ $csv := getCSV "," $csvFile }}
+<table>
+    <thead>
+        <tr>
+        {{ range $index, $element := index $csv 0 }}
+            <th>{{ . }}</th>
+        {{ end }}
+        </tr>
+    </thead>
+    <tbody>
+        {{ range $row := after 1 $csv }}
+            <tr>
+            {{ range $cell := $row }}
+                <td>{{ . | markdownify }}</td>
+            {{ end }}
+            </tr>
+        {{ end }}
+    </tbody>
+</table>

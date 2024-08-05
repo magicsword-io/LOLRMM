@@ -2,6 +2,17 @@ import streamlit as st
 import yaml
 from datetime import datetime, date
 import os
+import jsonschema
+import json
+from pathlib import Path
+
+def load_schema(schema_file='bin/spec/lolrmm.spec.json'):
+    try:
+        with open(schema_file, 'r') as f:
+            return json.load(f)
+    except IOError:
+        st.error(f"ERROR: reading schema file {schema_file}")
+        return None
 
 def list_yaml_files():
     yaml_files = [f for f in os.listdir('yaml') if f.endswith('.yaml')]
@@ -13,10 +24,48 @@ def load_yaml_template(filename):
     try:
         with open(f'yaml/{filename}', 'r') as file:
             data = yaml.safe_load(file)
-            # Convert PEMetadata to dict if it's a list
-            if 'Details' in data and 'PEMetadata' in data['Details'] and isinstance(data['Details']['PEMetadata'], list):
-                data['Details']['PEMetadata'] = data['Details']['PEMetadata'][0] if data['Details']['PEMetadata'] else {}
-            return data
+            
+            # Provide default values for empty fields
+            default = default_template()
+            
+            # Handle PEMetadata as a list
+            pe_metadata = data.get('Details', {}).get('PEMetadata', [])
+            pe_metadata_dict = pe_metadata[0] if isinstance(pe_metadata, list) and pe_metadata else {}
+            
+            # Merge the loaded data with default values
+            merged_data = {
+                'Name': data.get('Name', ''),  # Don't use default for Name
+                'Category': data.get('Category') or default['Category'],
+                'Description': data.get('Description') or default['Description'],
+                'Author': data.get('Author') or default['Author'],
+                'Created': data.get('Created') or default['Created'],
+                'LastModified': data.get('LastModified') or default['LastModified'],
+                'Details': {
+                    'Website': data.get('Details', {}).get('Website') or default['Details']['Website'],
+                    'PEMetadata': {
+                        'Filename': pe_metadata_dict.get('Filename') or default['Details']['PEMetadata']['Filename'],
+                        'OriginalFileName': pe_metadata_dict.get('OriginalFileName') or default['Details']['PEMetadata']['OriginalFileName'],
+                        'Description': pe_metadata_dict.get('Description') or default['Details']['PEMetadata']['Description'],
+                        'Product': pe_metadata_dict.get('Product') or default['Details']['PEMetadata']['Product']
+                    },
+                    'Privileges': data.get('Details', {}).get('Privileges') or default['Details']['Privileges'],
+                    'Free': data.get('Details', {}).get('Free', False),
+                    'Verification': data.get('Details', {}).get('Verification', False),
+                    'SupportedOS': data.get('Details', {}).get('SupportedOS') or default['Details']['SupportedOS'],
+                    'Capabilities': data.get('Details', {}).get('Capabilities') or default['Details']['Capabilities'],
+                    'Vulnerabilities': data.get('Details', {}).get('Vulnerabilities') or default['Details']['Vulnerabilities'],
+                    'InstallationPaths': data.get('Details', {}).get('InstallationPaths') or default['Details']['InstallationPaths']
+                },
+                'Artifacts': data.get('Artifacts') or default['Artifacts'],
+                'Detections': data.get('Detections') or default['Detections'],
+                'References': data.get('References') or default['References'],
+                'Acknowledgement': data.get('Acknowledgement') or default['Acknowledgement']
+            }
+            
+            # Update session state with the loaded name
+            st.session_state.name = merged_data['Name']
+            
+            return merged_data
     except yaml.YAMLError as e:
         st.error(f"Error loading YAML file: {e}")
         return default_template()
@@ -63,9 +112,32 @@ def save_yaml(data, filename):
     with open(f'yaml/{filename}.yaml', 'w') as file:
         yaml.dump(data, file, default_flow_style=False, sort_keys=False)
 
+def validate_yaml_data(yaml_data, schema):
+    validator = jsonschema.Draft7Validator(schema, format_checker=jsonschema.FormatChecker())
+    errors = list(validator.iter_errors(yaml_data))
+    return errors
+
+def check_hash_lengths(yaml_data):
+    errors = []
+    known_vulnerable_samples = yaml_data.get('KnownVulnerableSamples', [])
+    for sample in known_vulnerable_samples:
+        md5 = sample.get('MD5', '')
+        if md5 and len(md5) != 32:
+            errors.append(f"ERROR: MD5 length is not 32 characters")
+        sha1 = sample.get('SHA1', '')
+        if sha1 and len(sha1) != 40:
+            errors.append(f"ERROR: SHA1 length is not 40 characters")
+        sha256 = sample.get('SHA256', '')
+        if sha256 and len(sha256) != 64:
+            errors.append(f"ERROR: SHA256 length is not 64 characters")
+    return errors
+
 def main():
     st.set_page_config(layout="wide", page_title="LOLRMM")
     st.title("LOLRMM")
+
+    if 'name' not in st.session_state:
+        st.session_state.name = ""
 
     yaml_files = list_yaml_files()
     selected_file = st.selectbox("Select RMM Tool or create new", yaml_files, key="file_select")
@@ -78,7 +150,12 @@ def main():
     with tab1:
         col1, col2 = st.columns(2)
         with col1:
-            name = st.text_input("RMM Tool Name", value=template.get('Name', ''), key="name")
+            # Use a callback to update session state
+            def update_name():
+                st.session_state.name = st.session_state.name_input
+            
+            name = st.text_input("RMM Tool Name", value=st.session_state.name, key="name_input", on_change=update_name)
+            st.write(f"Debug: Current name value: {st.session_state.name}")
             category = st.text_input("Category", value=template.get('Category', ''), key="category")
             author = st.text_input("Author", value=template.get('Author', ''), key="author")
         with col2:
@@ -132,32 +209,59 @@ def main():
         installation_paths = st.text_area("Installation Paths (one per line)", value='\n'.join(template.get('Details', {}).get('InstallationPaths', [])), key="installation_paths")
 
     with tab3:
-        artifact_types = ['Disk', 'EventLog', 'Registry', 'Network']
+        artifact_types = ['Disk', 'EventLog', 'Registry', 'Network', 'Other']
         artifacts = {}
 
         for artifact_type in artifact_types:
             with st.expander(f"{artifact_type} Artifacts"):
                 artifacts[artifact_type] = []
-                for i, artifact in enumerate(template.get('Artifacts', {}).get(artifact_type, [])):
+                num_artifacts = st.number_input(f"Number of {artifact_type} Artifacts", min_value=0, value=1, key=f"num_{artifact_type}")
+                
+                for i in range(num_artifacts):
                     st.markdown(f"**{artifact_type} Artifact {i+1}**")
                     artifact_data = {}
-                    for key, value in artifact.items():
-                        if isinstance(value, list):
-                            artifact_data[key] = st.text_area(f"{key} {i+1}", value='\n'.join(value), key=f"{artifact_type}_{i}_{key}")
-                        else:
-                            artifact_data[key] = st.text_input(f"{key} {i+1}", value=value, key=f"{artifact_type}_{i}_{key}")
+                    
+                    if artifact_type == 'Disk':
+                        artifact_data['File'] = st.text_input(f"File {i+1}", key=f"{artifact_type}_{i}_file")
+                        artifact_data['Description'] = st.text_input(f"Description {i+1}", key=f"{artifact_type}_{i}_description")
+                        artifact_data['OS'] = st.text_input(f"OS {i+1}", key=f"{artifact_type}_{i}_os")
+                        artifact_data['Example'] = st.text_area(f"Example {i+1} (one per line)", key=f"{artifact_type}_{i}_example").split('\n')
+                    elif artifact_type == 'EventLog':
+                        artifact_data['EventID'] = st.number_input(f"EventID {i+1}", key=f"{artifact_type}_{i}_eventid")
+                        artifact_data['ProviderName'] = st.text_input(f"ProviderName {i+1}", key=f"{artifact_type}_{i}_providername")
+                        artifact_data['LogFile'] = st.text_input(f"LogFile {i+1}", key=f"{artifact_type}_{i}_logfile")
+                        artifact_data['ServiceName'] = st.text_input(f"ServiceName {i+1}", key=f"{artifact_type}_{i}_servicename")
+                        artifact_data['ImagePath'] = st.text_input(f"ImagePath {i+1}", key=f"{artifact_type}_{i}_imagepath")
+                        artifact_data['Description'] = st.text_input(f"Description {i+1}", key=f"{artifact_type}_{i}_description")
+                        artifact_data['CommandLine'] = st.text_input(f"CommandLine {i+1}", key=f"{artifact_type}_{i}_commandline")
+                    elif artifact_type == 'Registry':
+                        artifact_data['Path'] = st.text_input(f"Path {i+1}", key=f"{artifact_type}_{i}_path")
+                        artifact_data['Description'] = st.text_input(f"Description {i+1}", key=f"{artifact_type}_{i}_description")
+                    elif artifact_type == 'Network':
+                        artifact_data['Description'] = st.text_input(f"Description {i+1}", key=f"{artifact_type}_{i}_description")
+                        artifact_data['Domain'] = st.text_input(f"Domain {i+1}", key=f"{artifact_type}_{i}_domain")
+                        artifact_data['Port'] = st.text_input(f"Port {i+1}", key=f"{artifact_type}_{i}_port")
+                    elif artifact_type == 'Other':
+                        artifact_data['Type'] = st.text_input(f"Type {i+1}", key=f"{artifact_type}_{i}_type")
+                        artifact_data['Value'] = st.text_input(f"Value {i+1}", key=f"{artifact_type}_{i}_value")
+                    
                     artifacts[artifact_type].append(artifact_data)
                     st.markdown("---")
 
     with tab4:
+        num_detections = st.number_input("Number of Detections", min_value=0, value=1, key="num_detections")
         detections = []
-        for i, detection in enumerate(template.get('Detections', [])):
+        for i in range(num_detections):
             with st.expander(f"Detection {i+1}"):
-                sigma = st.text_input(f"Sigma Rule", value=detection.get('Sigma', ''), key=f"detection_{i}_sigma")
-                description = st.text_area(f"Description", value=detection.get('Description', ''), key=f"detection_{i}_description")
+                name = st.text_input(f"Name", key=f"detection_{i}_name")
+                description = st.text_area(f"Description", key=f"detection_{i}_description")
+                author = st.text_input(f"Author", key=f"detection_{i}_author")
+                link = st.text_input(f"Link", key=f"detection_{i}_link")
                 detections.append({
-                    'Sigma': sigma,
-                    'Description': description
+                    'Name': name,
+                    'Description': description,
+                    'author': author,
+                    'Link': link
                 })
 
     with tab5:
@@ -166,48 +270,90 @@ def main():
             references = st.text_area("References (one per line)", value='\n'.join(template.get('References', [])), key="references", height=200)
         
         with col2:
+            num_acknowledgements = st.number_input("Number of Acknowledgements", min_value=0, value=1, key="num_acknowledgements")
             acknowledgements = []
-            for i, ack in enumerate(template.get('Acknowledgement', [])):
+            for i in range(num_acknowledgements):
                 st.markdown(f"**Acknowledgement {i+1}**")
-                person = st.text_input(f"Person", value=ack.get('Person', ''), key=f"ack_{i}_person")
-                handle = st.text_input(f"Handle", value=ack.get('Handle', ''), key=f"ack_{i}_handle")
+                person = st.text_input(f"Person", key=f"ack_{i}_person")
+                handle = st.text_input(f"Handle", key=f"ack_{i}_handle")
                 acknowledgements.append({
                     'Person': person,
                     'Handle': handle
                 })
 
-    if st.button("Generate YAML", key="generate_yaml"):
-        yaml_data = {
-            'Name': name,
-            'Category': category,
-            'Description': description,
-            'Author': author,
-            'Created': created.strftime("%Y-%m-%d"),
-            'LastModified': last_modified.strftime("%Y-%m-%d"),
-            'Details': {
-                'Website': website,
-                'PEMetadata': {
-                    'Filename': filename,
-                    'OriginalFileName': original_filename,
-                    'Description': pe_description,
-                    'Product': product
-                },
-                'Privileges': privileges,
-                'Free': free,
-                'Verification': verification,
-                'SupportedOS': supported_os,
-                'Capabilities': capabilities,
-                'Vulnerabilities': vulnerabilities.split('\n'),
-                'InstallationPaths': installation_paths.split('\n')
-            },
-            'Artifacts': artifacts,
-            'Detections': detections,
-            'References': references.split('\n'),
-            'Acknowledgement': acknowledgements
-        }
+    col1, col2 = st.columns(2)
 
-        save_yaml(yaml_data, name.lower().replace(' ', '_'))
-        st.success(f"YAML file for {name} has been generated and saved!")
+    with col1:
+        if st.button("Generate YAML", key="generate_yaml"):
+            st.write(f"Debug: Name at button press: {st.session_state.name}")
+            if not st.session_state.name or st.session_state.name.strip() == "":
+                st.error("A name for the RMM Tool is required. Please enter a name in the 'Basic Info' tab.")
+            else:
+                yaml_data = {
+                    'Name': st.session_state.name,
+                    'Category': category,
+                    'Description': description,
+                    'Author': author,
+                    'Created': created.strftime("%Y-%m-%d"),
+                    'LastModified': last_modified.strftime("%Y-%m-%d"),
+                    'Details': {
+                        'Website': website,
+                        'PEMetadata': {
+                            'Filename': filename,
+                            'OriginalFileName': original_filename,
+                            'Description': pe_description,
+                            'Product': product
+                        },
+                        'Privileges': privileges,
+                        'Free': free,
+                        'Verification': verification,
+                        'SupportedOS': supported_os,
+                        'Capabilities': capabilities,
+                        'Vulnerabilities': vulnerabilities.split('\n') if vulnerabilities else [],
+                        'InstallationPaths': installation_paths.split('\n') if installation_paths else []
+                    },
+                    'Artifacts': artifacts,
+                    'Detections': detections,
+                    'References': references.split('\n') if references else [],
+                    'Acknowledgement': acknowledgements
+                }
+
+                # Remove empty fields
+                yaml_data = {k: v for k, v in yaml_data.items() if v}
+                for key in yaml_data.get('Details', {}):
+                    if isinstance(yaml_data['Details'][key], list):
+                        yaml_data['Details'][key] = [item for item in yaml_data['Details'][key] if item]
+                    elif isinstance(yaml_data['Details'][key], dict):
+                        yaml_data['Details'][key] = {k: v for k, v in yaml_data['Details'][key].items() if v}
+
+                # Validate YAML data
+                schema = load_schema()
+                if schema:
+                    validation_errors = validate_yaml_data(yaml_data, schema)
+                    hash_errors = check_hash_lengths(yaml_data)
+                    all_errors = validation_errors + hash_errors
+
+                    if all_errors:
+                        st.error("Validation errors found:")
+                        for error in all_errors:
+                            st.error(str(error))
+                    else:
+                        filename = st.session_state.name.lower().replace(' ', '_')
+                        save_yaml(yaml_data, filename)
+                        st.success(f"YAML file for {st.session_state.name} has been generated and saved as {filename}.yaml!")
+                        
+                        # Store the generated YAML in session state for viewing
+                        st.session_state.yaml_content = yaml.dump(yaml_data, default_flow_style=False, sort_keys=False)
+                else:
+                    st.error("Could not load schema file. YAML generation aborted.")
+
+    with col2:
+        if st.button("View YAML", key="view_yaml"):
+            if 'yaml_content' in st.session_state and st.session_state.yaml_content:
+                with st.expander("YAML Content", expanded=True):
+                    st.code(st.session_state.yaml_content, language="yaml")
+            else:
+                st.warning("No YAML has been generated yet. Please generate YAML first.")
 
 def handle_date(date_value, field_name):
     try:

@@ -1,237 +1,179 @@
 import yaml
 import argparse
 import sys
-import re
 import os
 import json
 import datetime
 import jinja2
 import csv
 
-def write_bootloaders_csv(bootloaders, output_dir, VERBOSE):
-    output_file = os.path.join(output_dir, 'content', 'api', 'bootloaders.csv')
+def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
+    output_file = os.path.join(output_dir, 'content', 'api', 'rmm_tools.csv')
     
-    header = ['Id', 'Author', 'Created', 'Command', 'Description', 'Usecase', 'Category', 'Privileges', 'MitreID',
-              'OperatingSystem', 'Resources', 'bootloader Description', 'Person', 'Handle', 'Detection',
-              'KnownVulnerableSamples_MD5', 'KnownVulnerableSamples_SHA1', 'KnownVulnerableSamples_SHA256',
-              'KnownVulnerableSamples_Publisher', 'KnownVulnerableSamples_Date',
-              'KnownVulnerableSamples_Company', 'KnownVulnerableSamples_Description', 
-              'KnownVulnerableSamples_Authentihash_MD5', 'KnownVulnerableSamples_Authentihash_SHA1', 'KnownVulnerableSamples_Authentihash_SHA256', 'Verified', 'Tags']
+    header = ['Name', 'Category', 'Description', 'Author', 'Created', 'LastModified',
+              'Website', 'Filename', 'OriginalFileName', 'PEDescription', 'Product',
+              'Privileges', 'Free', 'Verification', 'SupportedOS', 'Capabilities',
+              'Vulnerabilities', 'InstallationPaths', 'Artifacts', 'Detections',
+              'References', 'Acknowledgement']
 
     with open(output_file, 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=header)
         writer.writeheader()
 
-        for bootloader in bootloaders:
+        for rmm_tool in rmm_tools:
             if VERBOSE:
-                print(f"Writing bootloader CSV: {bootloader['Id']}")
+                print(f"Writing RMM tool CSV: {rmm_tool['Name']}")
 
-            md5s = [s['MD5'] for s in bootloader['KnownVulnerableSamples'] if 'MD5' in s]
-            sha1s = [s['SHA1'] for s in bootloader['KnownVulnerableSamples'] if 'SHA1' in s]
-            sha256s = [s['SHA256'] for s in bootloader['KnownVulnerableSamples'] if 'SHA256' in s]
-            publishers = [s['Publisher'] for s in bootloader['KnownVulnerableSamples'] if 'Publisher' in s]
-            dates = [s['Date'] for s in bootloader['KnownVulnerableSamples'] if 'Date' in s]
-            companies = [s['Company'] for s in bootloader['KnownVulnerableSamples'] if 'Company' in s]
-            descriptions = [s['Description'] for s in bootloader['KnownVulnerableSamples'] if 'Description' in s]
-            authentihash_md5s = [s['Authentihash']['MD5'] for s in bootloader['KnownVulnerableSamples'] if 'Authentihash' in s]
-            authentihash_sha1s = [s['Authentihash']['SHA1'] for s in bootloader['KnownVulnerableSamples'] if 'Authentihash' in s]
-            authentihash_sha256s = [s['Authentihash']['SHA256'] for s in bootloader['KnownVulnerableSamples'] if 'Authentihash' in s]
+            pe_metadata = rmm_tool.get('Details', {}).get('PEMetadata', {})
+            if isinstance(pe_metadata, list) and pe_metadata:
+                pe_metadata = pe_metadata[0]  # Take the first item if it's a list
 
-        
             row = {
-                'Id': bootloader.get('Id', ''),
-                'Author': bootloader.get('Author', ''),
-                'Created': bootloader.get('Created', ''),
-                'Command': bootloader.get('Command', ''),
-                'Description': bootloader.get('Description', ''),
-                'Usecase': bootloader.get('Usecase', ''),
-                'Category': bootloader.get('Category', ''),
-                'Privileges': bootloader.get('Privileges', ''),
-                'MitreID': bootloader.get('MitreID', ''),
-                'OperatingSystem': bootloader.get('OperatingSystem', ''),
-                'Resources': bootloader.get('Resources', ''),
-                'bootloader Description': bootloader.get('bootloader Description', ''),
-                'Person': bootloader.get('Person', ''),
-                'Handle': bootloader.get('Handle', ''),
-                'Detection': bootloader.get('Detection', ''),
-                'KnownVulnerableSamples_MD5': ', '.join(str(md5) for md5 in md5s),
-                'KnownVulnerableSamples_SHA1': ', '.join(str(sha1) for sha1 in sha1s),
-                'KnownVulnerableSamples_SHA256': ', '.join(str(sha256) for sha256 in sha256s),
-                'KnownVulnerableSamples_Publisher': ', '.join(str(publisher) for publisher in publishers),
-                'KnownVulnerableSamples_Date': ', '.join(str(date) for date in dates),
-                'KnownVulnerableSamples_Company': ', '.join(str(company) for company in companies),
-                'KnownVulnerableSamples_Description': ', '.join(str(description) for description in descriptions),
-                'KnownVulnerableSamples_Authentihash_MD5': ', '.join(str(md5) for md5 in authentihash_md5s),
-                'KnownVulnerableSamples_Authentihash_SHA1': ', '.join(str(sha1) for sha1 in authentihash_sha1s),
-                'KnownVulnerableSamples_Authentihash_SHA256': ', '.join(str(sha256) for sha256 in authentihash_sha256s),
-                'Verified': bootloader.get('Verified', ''),
-                'Tags': ', '.join(str(tag) for tag in bootloader['Tags'])                                  
+                'Name': rmm_tool.get('Name', ''),
+                'Category': rmm_tool.get('Category', ''),
+                'Description': rmm_tool.get('Description', ''),
+                'Author': rmm_tool.get('Author', ''),
+                'Created': rmm_tool.get('Created', ''),
+                'LastModified': rmm_tool.get('LastModified', ''),
+                'Website': rmm_tool.get('Details', {}).get('Website', ''),
+                'Filename': pe_metadata.get('Filename', ''),
+                'OriginalFileName': pe_metadata.get('OriginalFileName', ''),
+                'PEDescription': pe_metadata.get('Description', ''),
+                'Product': pe_metadata.get('Product', ''),
+                'Privileges': rmm_tool.get('Details', {}).get('Privileges', ''),
+                'Free': str(rmm_tool.get('Details', {}).get('Free', '')),
+                'Verification': str(rmm_tool.get('Details', {}).get('Verification', '')),
+                'SupportedOS': ', '.join(rmm_tool.get('Details', {}).get('SupportedOS', [])),
+                'Capabilities': ', '.join(rmm_tool.get('Details', {}).get('Capabilities', [])),
+                'Vulnerabilities': ', '.join(rmm_tool.get('Details', {}).get('Vulnerabilities', [])),
+                'InstallationPaths': ', '.join(rmm_tool.get('Details', {}).get('InstallationPaths', [])),
+                'Artifacts': json.dumps(rmm_tool.get('Artifacts', {})),
+                'Detections': json.dumps(rmm_tool.get('Detections', [])),
+                'References': ', '.join(rmm_tool.get('References', [])),
+                'Acknowledgement': json.dumps(rmm_tool.get('Acknowledgement', []))
             }
 
             writer.writerow(row)
 
+def write_rmm_tools_table_csv(rmm_tools, output_dir, VERBOSE):
+    output_file = os.path.join(output_dir, 'content', 'rmm_tools_table.csv')
+    
+    header = ['Name', 'Category', 'Description', 'Author']
 
+    with open(output_file, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=header)
+        writer.writeheader()
 
+        for rmm_tool in rmm_tools:
+            if VERBOSE:
+                print(f"Writing RMM tool table CSV: {rmm_tool['Name']}")
 
+            name_link = f"[{rmm_tool['Name']}](/rmm_tools/{rmm_tool['Name'].lower().replace(' ', '_')})"
 
-def write_top_os(bootloaders, output_dir, top_n=5):
-    os_count = {}
-    for bootloader in bootloaders:
-        command = bootloader.get('Commands')
-        if not command:
-            continue
-        os_name = command.get('OperatingSystem')
-        if not os_name or os_name.isspace() or os_name.lower() == 'n/a':
-            continue
-        os_name = os_name.strip().replace(',', '')
-        if os_name not in os_count:
-            os_count[os_name] = 0
-        os_count[os_name] += 1
-    sorted_os = sorted(os_count.items(), key=lambda x: x[1], reverse=True)[:top_n]
-    with open(f"{output_dir}/content/bootloaders_top_{top_n}_os.csv", "w") as f:
-        writer = csv.writer(f)
-        for os, count in sorted_os:
-            for _ in range(count):
-                writer.writerow([count, os])
+            row = {
+                'Name': name_link,
+                'Category': rmm_tool.get('Category', ''),
+                'Description': rmm_tool.get('Description', '')[:100] + '...' if rmm_tool.get('Description', '') else '',
+                'Author': rmm_tool.get('Author', '')
+            }
 
-def write_top_publishers(bootloaders, output_dir, top_n=5):
-    publishers_count = {}
+            writer.writerow(row)
 
-    for bootloader in bootloaders:
-        for hash_info in bootloader['KnownVulnerableSamples']:
-            publisher_str = hash_info.get('Publisher')  # Use the `get()` method here
-
-            if not publisher_str:
-                continue
-
-            publishers = re.findall(r'\"(.*?)\"|([^,]+)', publisher_str)
-            for publisher_tuple in publishers:
-                publisher = next(filter(None, publisher_tuple)).strip()
-
-                if publisher.lower() == 'n/a' or publisher.isspace() or publisher.lower() == 'ltd.':
-                    continue
-
-                if publisher not in publishers_count:
-                    publishers_count[publisher] = 0
-
-                publishers_count[publisher] += 1
-
-    sorted_publishers = sorted(publishers_count.items(), key=lambda x: x[1], reverse=True)[:top_n]
-
-    with open(f"{output_dir}/content/bootloaders_top_{top_n}_os.csv", "w") as f:
-        writer = csv.writer(f)
-
-        for publisher, count in sorted_publishers:
-            for _ in range(count):
-                writer.writerow([count, publisher])
-
-
-
-def generate_doc_bootloaders(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBOSE):
+def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBOSE):
     manifest_files = []
     for root, dirs, files in os.walk(REPO_PATH):
         for file in files:
-                manifest_files.append((os.path.join(root, file)))
+            if file.endswith('.yaml'):
+                manifest_files.append(os.path.join(root, file))
 
-    bootloaders = []
+    rmm_tools = []
     for manifest_file in manifest_files:
-        bootloader = dict()
         if VERBOSE:
-            print("processing bootloader {0}".format(manifest_file))
+            print(f"Processing RMM tool: {manifest_file}")
 
         with open(manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                rmm_tool = yaml.safe_load(stream)
+                rmm_tools.append(rmm_tool)
             except yaml.YAMLError as exc:
-                print(exc)
-                print("Error reading {0}".format(manifest_file))
+                print(f"Error reading {manifest_file}: {exc}")
                 sys.exit(1)
 
-        bootloaders.append(object)
+    # Write markdowns
+    j2_env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_PATH), 
+                                trim_blocks=True, 
+                                lstrip_blocks=True, 
+                                autoescape=False)
+    
+    def clean_multiline(text):
+        if isinstance(text, str):
+            return text.replace('\n', ' ').strip()
+        return text
 
-    # write markdowns
-    j2_env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_PATH), trim_blocks=True, autoescape=True, lstrip_blocks=False)
+    j2_env.filters['clean_multiline'] = clean_multiline
+    
     d = datetime.datetime.now()
-    template = j2_env.get_template('bootloader.md.j2')
-    for bootloader in bootloaders:
-        file_name = bootloader["Id"] + '.md'
-        output_path = os.path.join(OUTPUT_DIR + '/content/bootloaders/' + file_name)
-        output = template.render(bootloader=bootloader, time=str(d.strftime("%Y-%m-%d")))
+    template = j2_env.get_template('rmm.md.j2')
+    for rmm_tool in rmm_tools:
+        file_name = f"{rmm_tool['Name'].lower().replace(' ', '_')}.md"
+        output_path = os.path.join(OUTPUT_DIR, 'content', 'rmm_tools', file_name)
+        output = template.render(rmm=rmm_tool, time=str(d.strftime("%Y-%m-%d")))
         with open(output_path, 'w', encoding="utf-8") as f:
             f.write(output)
-    messages.append("site_gen.py wrote {0} bootloaders markdown to: {1}".format(len(bootloaders),OUTPUT_DIR + '/content/bootloaders/'))
+    messages.append(f"site_gen.py wrote {len(rmm_tools)} RMM tools markdown to: {os.path.join(OUTPUT_DIR, 'content', 'rmm_tools')}")
 
-    # write api csv
-    write_bootloaders_csv(bootloaders, OUTPUT_DIR, VERBOSE)
-    messages.append("site_gen.py wrote bootloaders CSV to: {0}".format(OUTPUT_DIR + '/content/api/bootloaders.csv'))
+    # Write API CSV
+    write_rmm_tools_csv(rmm_tools, OUTPUT_DIR, VERBOSE)
+    messages.append(f"site_gen.py wrote RMM tools CSV to: {os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.csv')}")
 
-    # write api json
-    with open(OUTPUT_DIR + '/content/api/' + 'bootloaders.json', 'w', encoding='utf-8') as f:
-        json.dump(bootloaders, f, ensure_ascii=False, indent=4)
-    messages.append("site_gen.py wrote bootloaders JSON to: {0}".format(OUTPUT_DIR + '/content/api/bootloaders.json'))
+    # Write API JSON
+    with open(os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.json'), 'w', encoding='utf-8') as f:
+        json.dump(rmm_tools, f, ensure_ascii=False, indent=4)
+    messages.append(f"site_gen.py wrote RMM tools JSON to: {os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.json')}")
 
-    # write listing csv
-    with open(OUTPUT_DIR + '/content/' + 'bootloaders_table.csv', 'w') as f:
-        writer = csv.writer(f)
-        for bootloader in bootloaders:
-            link = '[' + bootloader['Tags'][0] + '](bootloaders/' + bootloader["Id"] + '/)'
-            if ('SHA256' not in bootloader['KnownVulnerableSamples'][0]) or (bootloader['KnownVulnerableSamples'][0]['SHA256'] is None ) or (bootloader['KnownVulnerableSamples'][0]['SHA256'] == ''):
-                sha256='not available '
-            else:
-                sha256='[' + bootloader['KnownVulnerableSamples'][0]['SHA256'] + '](bootloaders/' + bootloader["Id"]+ '/)'
-            writer.writerow([link, sha256, bootloader['Category'].capitalize(), bootloader['Created']])
-    messages.append("site_gen.py wrote bootloaders table to: {0}".format(OUTPUT_DIR + '/content/bootloaders_table.csv'))
+    # Write RMM tools table CSV
+    write_rmm_tools_table_csv(rmm_tools, OUTPUT_DIR, VERBOSE)
+    messages.append(f"site_gen.py wrote RMM tools table CSV to: {os.path.join(OUTPUT_DIR, 'content', 'rmm_tools_table.csv')}")
 
-    # write top 5 os
-    write_top_os(bootloaders, OUTPUT_DIR)
-    messages.append("site_gen.py wrote bootloaders products to: {0}".format(OUTPUT_DIR + '/content/bootloaders_top_n_products.csv'))
-
-    return bootloaders, messages
-
+    return rmm_tools, messages
 
 if __name__ == "__main__":
-
-    # grab arguments
-    parser = argparse.ArgumentParser(description="Generates bootloaders.io site", epilog="""
-    This tool converts all bootloaders.io yamls and builds the site with all the supporting components.""")
-    parser.add_argument("-p", "--path", required=False, default="yaml", help="path to lolbootloader yaml folder. Defaults to `yaml`")
-    parser.add_argument("-o", "--output", required=False, default="bootloaders.io", help="path to the output directory for the site, defaults to `bootloaders.io`")
+    parser = argparse.ArgumentParser(description="Generates LOLRMM site", epilog="This tool converts all LOLRMM YAMLs and builds the site with all the supporting components.")
+    parser.add_argument("-p", "--path", required=False, default="yaml", help="path to LOLRMM yaml folder. Defaults to `yaml`")
+    parser.add_argument("-o", "--output", required=False, default="lolrmm.com", help="path to the output directory for the site, defaults to `lolrmm.io`")
     parser.add_argument("-v", "--verbose", required=False, default=False, action='store_true', help="prints verbose output")
 
-    # parse them
     args = parser.parse_args()
     REPO_PATH = args.path
     OUTPUT_DIR = args.output
     VERBOSE = args.verbose
 
-
-    TEMPLATE_PATH = os.path.join(REPO_PATH, '../bin/jinja2_templates')
+    TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), 'jinja2_templates')
 
     if VERBOSE:
-        print("wiping the {0}/content/bootloaders/ folder".format(OUTPUT_DIR))
+        print(f"Wiping the {os.path.join(OUTPUT_DIR, 'content', 'rmm_tools')} folder")
 
-    # first clean up old bootloaders
+    # Clean up old RMM tool files
     try:
-        for root, dirs, files in os.walk(OUTPUT_DIR + '/content/bootloaders/'):
-            for file in files:
-                if file.endswith(".md") and not file == '_index.md':
-                    os.remove(root + '/' + file)
+        rmm_tools_dir = os.path.join(OUTPUT_DIR, 'content', 'rmm_tools')
+        for file in os.listdir(rmm_tools_dir):
+            if file.endswith(".md") and file != '_index.md':
+                os.remove(os.path.join(rmm_tools_dir, file))
     except OSError as e:
-        print("error: %s : %s" % (file, e.strerror))
+        print(f"Error: {e}")
         sys.exit(1)
 
-
-    # also clean up API artifacts
-    if os.path.exists(OUTPUT_DIR + '/content/api/bootloaders.json'):
-        os.remove(OUTPUT_DIR + '/content/api/bootloaders.json')         
-    if os.path.exists(OUTPUT_DIR + '/content/api/bootloaders.csv'):        
-        os.remove(OUTPUT_DIR + '/content/api/bootloaders.csv')
-
+    # Clean up API artifacts
+    api_json = os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.json')
+    api_csv = os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.csv')
+    if os.path.exists(api_json):
+        os.remove(api_json)
+    if os.path.exists(api_csv):
+        os.remove(api_csv)
 
     messages = []
-    bootloaders, messages = generate_doc_bootloaders(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBOSE)
+    rmm_tools, messages = generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBOSE)
 
-    # print all the messages from generation
     for m in messages:
         print(m)
-    print("finished successfully!")
+    print("Finished successfully!")

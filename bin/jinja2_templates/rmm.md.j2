@@ -1,5 +1,5 @@
 +++
-description = "{{ rmm.Name }}"
+description = "{{ rmm.Description | clean_multiline }}"
 title = "{{ rmm.Name }}"
 weight = 10
 displayTitle = "{{ rmm.Name }}"
@@ -12,10 +12,27 @@ displayTitle = "{{ rmm.Name }}"
 
 # {{ rmm.Name }}
 
+{% if rmm.Category %}
+**Category**: {{ rmm.Category }}
+{% endif %}
+
 ### Description
 
 {{ rmm.Description }}
 
+{% if rmm.Author %}
+**Author**: {{ rmm.Author }}
+{% endif %}
+
+{% if rmm.Created %}
+**Created**: {{ rmm.Created }}
+{% endif %}
+
+{% if rmm.LastModified %}
+**Last Modified**: {{ rmm.LastModified }}
+{% endif %}
+
+{% if rmm.Details %}
 ### Details
 
 {% if rmm.Details.Website %}
@@ -24,6 +41,7 @@ displayTitle = "{{ rmm.Name }}"
 
 {% if rmm.Details.PEMetadata %}
 #### PE Metadata
+{% if rmm.Details.PEMetadata is mapping %}
 {% if rmm.Details.PEMetadata.Filename %}
 - **Filename**: {{ rmm.Details.PEMetadata.Filename }}
 {% endif %}
@@ -33,21 +51,36 @@ displayTitle = "{{ rmm.Name }}"
 {% if rmm.Details.PEMetadata.Description %}
 - **Description**: {{ rmm.Details.PEMetadata.Description }}
 {% endif %}
+{% if rmm.Details.PEMetadata.Product %}
+- **Product**: {{ rmm.Details.PEMetadata.Product }}
+{% endif %}
+{% else %}
+{% for item in rmm.Details.PEMetadata %}
+{% if item.Filename or item.OriginalFileName or item.Description or item.Product %}
+- {% if item.Filename %}**Filename**: {{ item.Filename }}{% endif %}
+  {% if item.OriginalFileName %}**Original File Name**: {{ item.OriginalFileName }}{% endif %}
+  {% if item.Description %}**Description**: {{ item.Description }}{% endif %}
+  {% if item.Product %}**Product**: {{ item.Product }}{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
 {% endif %}
 
 {% if rmm.Details.Privileges %}
 - **Privileges**: {{ rmm.Details.Privileges }}
 {% endif %}
+
 {% if rmm.Details.Free is not none %}
 - **Free**: {{ "Yes" if rmm.Details.Free else "No" }}
 {% endif %}
+
 {% if rmm.Details.Verification is not none %}
 - **Verification**: {{ "Yes" if rmm.Details.Verification else "No" }}
 {% endif %}
 
-{% if rmm.Details.OperatingSystem %}
+{% if rmm.Details.SupportedOS %}
 #### Supported Operating Systems
-{% for os in rmm.Details.OperatingSystem %}
+{% for os in rmm.Details.SupportedOS %}
 - {{ os }}
 {% endfor %}
 {% endif %}
@@ -72,15 +105,21 @@ displayTitle = "{{ rmm.Name }}"
 - `{{ path }}`
 {% endfor %}
 {% endif %}
+{% endif %}
 
+{% if rmm.Artifacts %}
 ### Forensic Artifacts
 
 {% if rmm.Artifacts.Disk %}
 #### Disk Artifacts
 {% for artifact in rmm.Artifacts.Disk %}
 - **File**: `{{ artifact.File }}`
+  {% if artifact.Description %}
   **Description**: {{ artifact.Description }}
+  {% endif %}
+  {% if artifact.OS %}
   **OS**: {{ artifact.OS }}
+  {% endif %}
   {% if artifact.Example %}
   **Example**:
   {% for example in artifact.Example %}
@@ -93,10 +132,28 @@ displayTitle = "{{ rmm.Name }}"
 {% if rmm.Artifacts.EventLog %}
 #### Event Log Artifacts
 {% for artifact in rmm.Artifacts.EventLog %}
-- **Event ID**: {{ artifact.EventID }}
-  **Provider Name**: {{ artifact.ProviderName }}
-  **Service Name**: {{ artifact.ServiceName }}
-  **Description**: {{ artifact.Description }}
+- Event Details:
+  {% if artifact.EventID %}
+  - **Event ID**: {{ artifact.EventID }}
+  {% endif %}
+  {% if artifact.ProviderName %}
+  - **Provider Name**: {{ artifact.ProviderName }}
+  {% endif %}
+  {% if artifact.LogFile %}
+  - **Log File**: {{ artifact.LogFile }}
+  {% endif %}
+  {% if artifact.ServiceName %}
+  - **Service Name**: {{ artifact.ServiceName }}
+  {% endif %}
+  {% if artifact.ImagePath %}
+  - **Image Path**: {{ artifact.ImagePath }}
+  {% endif %}
+  {% if artifact.Description %}
+  - **Description**: {{ artifact.Description }}
+  {% endif %}
+  {% if artifact.CommandLine %}
+  - **Command Line**: {{ artifact.CommandLine }}
+  {% endif %}
 {% endfor %}
 {% endif %}
 
@@ -104,23 +161,53 @@ displayTitle = "{{ rmm.Name }}"
 #### Registry Artifacts
 {% for artifact in rmm.Artifacts.Registry %}
 - **Path**: `{{ artifact.Path }}`
+  {% if artifact.Description %}
   **Description**: {{ artifact.Description }}
+  {% endif %}
 {% endfor %}
 {% endif %}
 
 {% if rmm.Artifacts.Network %}
 #### Network Artifacts
+
 {% for artifact in rmm.Artifacts.Network %}
-- **Description**: {{ artifact.Description }}
-  **Domain**: {{ artifact.Domain | join(', ') }}
-  {% if artifact.Port %}**Port**: {{ artifact.Port }}{% endif %}
+- {% if artifact.Description %}**Description**: {{ artifact.Description }}{% endif %}
+
+  {% if artifact.Domain %}
+  **Domain**: `{{ artifact.Domain if artifact.Domain is string else artifact.Domain | join('` `') }}`
+  {% endif %}
+
+  {% if artifact.Port %}
+  **Port**: `{{ artifact.Port }}`
+  {% endif %}
+
 {% endfor %}
+{% endif %}
+
+{% if rmm.Artifacts.Other %}
+#### Other Artifacts
+{% for artifact in rmm.Artifacts.Other %}
+- {% if artifact.Type %}**Type**: {{ artifact.Type }}{% endif %}
+  {% if artifact.Value %}
+  **Value**: {{ artifact.Value }}
+  {% endif %}
+{% endfor %}
+{% endif %}
 {% endif %}
 
 {% if rmm.Detections %}
 ### Detections
 {% for detection in rmm.Detections %}
-- [{{ detection }}]({{ detection }})
+- {% if detection.Name %}**{{ detection.Name }}**{% endif %}
+  {% if detection.Description %}
+  {{ detection.Description }}
+  {% endif %}
+  {% if detection.author %}
+  (Author: {{ detection.author }})
+  {% endif %}
+  {% if detection.Link %}
+  [Link]({{ detection.Link }})
+  {% endif %}
 {% endfor %}
 {% endif %}
 
