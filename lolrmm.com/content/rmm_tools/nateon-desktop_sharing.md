@@ -46,7 +46,8 @@ NateOn-desktop sharing is a remote monitoring and management (RMM) tool. More in
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.nate.com`
+  **Domain**:
+    - `*.nate.com`
 
 
 

@@ -53,7 +53,20 @@ Zoho Assist is a remote monitoring and management (RMM) tool. More information w
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.zoho.com.au` `*.zohoassist.jp` `assist.zoho.com` `zoho.com/assist/` `*.zoho.in` `downloads.zohodl.com.cn` `*.zohoassist.com` `downloads.zohocdn.com` `gateway.zohoassist.com` `*.zohoassist.com.cn` `*.zoho.com.cn` `*.zoho.com` `*.zoho.eu`
+  **Domain**:
+    - `*.zoho.com.au`
+    - `*.zohoassist.jp`
+    - `assist.zoho.com`
+    - `zoho.com/assist/`
+    - `*.zoho.in`
+    - `downloads.zohodl.com.cn`
+    - `*.zohoassist.com`
+    - `downloads.zohocdn.com`
+    - `gateway.zohoassist.com`
+    - `*.zohoassist.com.cn`
+    - `*.zoho.com.cn`
+    - `*.zoho.com`
+    - `*.zoho.eu`
 
 
 

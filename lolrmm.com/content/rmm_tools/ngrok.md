@@ -46,7 +46,9 @@ ngrok is a remote monitoring and management (RMM) tool. More information will be
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `ngrok.com`
+  **Domain**:
+    - `user_managed`
+    - `ngrok.com`
 
 
 

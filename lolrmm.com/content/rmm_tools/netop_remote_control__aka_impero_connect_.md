@@ -46,7 +46,8 @@ Netop Remote Control (aka Impero Connect) is a remote monitoring and management 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `imperosoftware.com/impero-connect/`
+  **Domain**:
+    - `imperosoftware.com/impero-connect/`
 
 
 

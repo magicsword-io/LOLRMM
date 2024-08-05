@@ -44,7 +44,9 @@ WebRDP is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `github.com/Mikej81/WebRDP`
+  **Domain**:
+    - `user_managed`
+    - `github.com/Mikej81/WebRDP`
 
 
 

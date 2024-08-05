@@ -44,7 +44,9 @@ ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. Mor
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.itsupport247.net` `itsupport247.net`
+  **Domain**:
+    - `*.itsupport247.net`
+    - `itsupport247.net`
 
 
 

@@ -154,22 +154,26 @@ TeamViewer is a remote monitoring and management (RMM) tool.
 #### Network Artifacts
 
 - **Description**: N/A
-  **Domain**: `*.teamviewer.com`
+  **Domain**:
+    `*.teamviewer.com`
 
   **Port**: `443`
 
 - **Description**: N/A
-  **Domain**: `router15.teamviewer.com`
+  **Domain**:
+    `router15.teamviewer.com`
 
   **Port**: `443`
 
 - **Description**: N/A
-  **Domain**: `client.teamviewer.com`
+  **Domain**:
+    `client.teamviewer.com`
 
   **Port**: `443`
 
 - **Description**: N/A
-  **Domain**: `taf.teamviewer.com`
+  **Domain**:
+    `taf.teamviewer.com`
 
   **Port**: `443`
 

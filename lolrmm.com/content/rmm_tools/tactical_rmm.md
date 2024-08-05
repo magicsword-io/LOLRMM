@@ -45,7 +45,10 @@ Tactical RMM is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `login.tailscale.com` `login.tailscale.com` `docs.tacticalrmm.com`
+  **Domain**:
+    - `login.tailscale.com`
+    - `login.tailscale.com`
+    - `docs.tacticalrmm.com`
 
 
 

@@ -45,7 +45,9 @@ OptiTune is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.optitune.us` `*.opti-tune.com`
+  **Domain**:
+    - `*.optitune.us`
+    - `*.opti-tune.com`
 
 
 

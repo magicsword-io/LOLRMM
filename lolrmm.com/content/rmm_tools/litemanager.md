@@ -49,7 +49,10 @@ LiteManager is a remote monitoring and management (RMM) tool. More information w
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.litemanager.ru` `*.litemanager.com` `litemanager.com`
+  **Domain**:
+    - `*.litemanager.ru`
+    - `*.litemanager.com`
+    - `litemanager.com`
 
 
 

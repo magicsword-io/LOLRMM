@@ -45,7 +45,10 @@ Auvik is a remote monitoring and management (RMM) tool. More information will be
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.my.auvik.com` `*.auvik.com` `auvik.com`
+  **Domain**:
+    - `*.my.auvik.com`
+    - `*.auvik.com`
+    - `auvik.com`
 
 
 

@@ -43,7 +43,8 @@ Quick Assist is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.support.services.microsoft.com`
+  **Domain**:
+    - `*.support.services.microsoft.com`
 
 
 

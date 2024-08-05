@@ -44,7 +44,9 @@ Zabbix Agent is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `zabbix.com`
+  **Domain**:
+    - `user_managed`
+    - `zabbix.com`
 
 
 

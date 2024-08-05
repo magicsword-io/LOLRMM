@@ -47,7 +47,9 @@ Pcvisit is a remote monitoring and management (RMM) tool. More information will 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.pcvisit.de` `pcvisit.de`
+  **Domain**:
+    - `*.pcvisit.de`
+    - `pcvisit.de`
 
 
 

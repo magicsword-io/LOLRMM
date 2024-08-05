@@ -44,7 +44,9 @@ AweRay (AweSun) is a remote monitoring and management (RMM) tool. More informati
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `asapi-us.aweray.net` `asapi.aweray.net`
+  **Domain**:
+    - `asapi-us.aweray.net`
+    - `asapi.aweray.net`
 
 
 

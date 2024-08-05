@@ -46,7 +46,10 @@ GatherPlace-desktop sharing is a remote monitoring and management (RMM) tool. Mo
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.gatherplace.com` `*.gatherplace.net` `gatherplace.com`
+  **Domain**:
+    - `*.gatherplace.com`
+    - `*.gatherplace.net`
+    - `gatherplace.com`
 
 
 

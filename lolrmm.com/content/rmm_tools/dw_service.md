@@ -46,7 +46,8 @@ DW Service is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.dwservice.net`
+  **Domain**:
+    - `*.dwservice.net`
 
 
 

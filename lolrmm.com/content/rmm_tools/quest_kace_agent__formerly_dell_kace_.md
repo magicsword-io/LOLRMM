@@ -44,7 +44,9 @@ Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.kace.com` `www.quest.com/kace/`
+  **Domain**:
+    - `*.kace.com`
+    - `www.quest.com/kace/`
 
 
 

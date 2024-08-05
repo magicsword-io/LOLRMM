@@ -44,7 +44,8 @@ Dameware-mini remote control Protocol is a remote monitoring and management (RMM
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `dameware.com`
+  **Domain**:
+    - `dameware.com`
 
 
 

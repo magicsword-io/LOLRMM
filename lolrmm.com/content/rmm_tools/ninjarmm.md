@@ -47,7 +47,11 @@ NinjaRMM is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.ninjarmm.com` `*.ninjaone.com` `resources.ninjarmm.com` `ninjaone.com`
+  **Domain**:
+    - `*.ninjarmm.com`
+    - `*.ninjaone.com`
+    - `resources.ninjarmm.com`
+    - `ninjaone.com`
 
 
 

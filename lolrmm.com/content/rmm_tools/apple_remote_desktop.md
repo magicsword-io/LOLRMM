@@ -44,7 +44,8 @@ Apple Remote Desktop is a remote monitoring and management (RMM) tool. More info
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed`
+  **Domain**:
+    - `user_managed`
 
 
 

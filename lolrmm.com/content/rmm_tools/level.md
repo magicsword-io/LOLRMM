@@ -41,7 +41,8 @@ Level is a remote monitoring and management (RMM) tool. More information will be
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `level.io`
+  **Domain**:
+    - `level.io`
 
 
 

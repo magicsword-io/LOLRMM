@@ -48,7 +48,8 @@ RemoteUtilities is a remote monitoring and management (RMM) tool. More informati
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `remoteutilities.com`
+  **Domain**:
+    - `remoteutilities.com`
 
 
 

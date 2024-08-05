@@ -53,7 +53,18 @@ Syncro is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `kabuto.io` `*.syncromsp.com` `*.syncroapi.com` `syncromsp.com` `servably.com` `ld.aurelius.host` `app.kabuto.io ` `*.kabutoservices.com` `repairshopr.com` `kabutoservices.com` `attachments.servably.com`
+  **Domain**:
+    - `kabuto.io`
+    - `*.syncromsp.com`
+    - `*.syncroapi.com`
+    - `syncromsp.com`
+    - `servably.com`
+    - `ld.aurelius.host`
+    - `app.kabuto.io `
+    - `*.kabutoservices.com`
+    - `repairshopr.com`
+    - `kabutoservices.com`
+    - `attachments.servably.com`
 
 
 

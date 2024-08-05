@@ -44,7 +44,8 @@ NTR Remote is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.ntrsupport.com`
+  **Domain**:
+    - `*.ntrsupport.com`
 
 
 

@@ -50,7 +50,26 @@ N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) too
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.beanywhere.com ` `systemmonitor.co.uk` `*system-monitor.com` `cloudbackup.management` `*systemmonitor.co.uk` `n-able.com` `systemmonitor.us` `*systemmonitor.eu.com` `*.logicnow.com` `*.swi-tc.com` `*remote.management` `systemmonitor.us.cdn.cloudflare.net` `*cloudbackup.management` `remote.management` `logicnow.com` `system-monitor.com` `*systemmonitor.us` `systemmonitor.eu.com` `*.n-able.com`
+  **Domain**:
+    - `*.beanywhere.com `
+    - `systemmonitor.co.uk`
+    - `*system-monitor.com`
+    - `cloudbackup.management`
+    - `*systemmonitor.co.uk`
+    - `n-able.com`
+    - `systemmonitor.us`
+    - `*systemmonitor.eu.com`
+    - `*.logicnow.com`
+    - `*.swi-tc.com`
+    - `*remote.management`
+    - `systemmonitor.us.cdn.cloudflare.net`
+    - `*cloudbackup.management`
+    - `remote.management`
+    - `logicnow.com`
+    - `system-monitor.com`
+    - `*systemmonitor.us`
+    - `systemmonitor.eu.com`
+    - `*.n-able.com`
 
 
 

@@ -44,7 +44,9 @@ Jump Cloud is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.api.jumpcloud.com` `*.assist.jumpcloud.com`
+  **Domain**:
+    - `*.api.jumpcloud.com`
+    - `*.assist.jumpcloud.com`
 
 
 

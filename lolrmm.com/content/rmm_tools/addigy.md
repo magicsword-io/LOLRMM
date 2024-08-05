@@ -44,7 +44,10 @@ Addigy is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `prod.addigy.com` `grtmprod.addigy.com` `agents.addigy.com`
+  **Domain**:
+    - `prod.addigy.com`
+    - `grtmprod.addigy.com`
+    - `agents.addigy.com`
 
 
 

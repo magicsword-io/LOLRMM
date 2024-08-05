@@ -46,7 +46,9 @@ HelpU is a remote monitoring and management (RMM) tool. More information will be
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `helpu.co.kr` `*.helpu.co.kr`
+  **Domain**:
+    - `helpu.co.kr`
+    - `*.helpu.co.kr`
 
 
 

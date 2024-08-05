@@ -47,7 +47,9 @@ Xeox is a remote monitoring and management (RMM) tool. More information will be 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.xeox.com` `xeox.com`
+  **Domain**:
+    - `*.xeox.com`
+    - `xeox.com`
 
 
 

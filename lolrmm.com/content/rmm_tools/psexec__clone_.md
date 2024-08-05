@@ -50,7 +50,8 @@ PSEXEC (Clone) is a remote monitoring and management (RMM) tool. More informatio
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed`
+  **Domain**:
+    - `user_managed`
 
 
 

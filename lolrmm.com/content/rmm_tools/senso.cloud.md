@@ -46,7 +46,9 @@ Senso.cloud is a remote monitoring and management (RMM) tool. More information w
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.senso.cloud` `senso.cloud`
+  **Domain**:
+    - `*.senso.cloud`
+    - `senso.cloud`
 
 
 

@@ -46,7 +46,9 @@ GotoHTTP is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.gotohttp.com` `gotohttp.com`
+  **Domain**:
+    - `*.gotohttp.com`
+    - `gotohttp.com`
 
 
 

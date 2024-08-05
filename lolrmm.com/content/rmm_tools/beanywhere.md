@@ -51,7 +51,9 @@ BeAnyWhere is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `beanywhere.en.uptodown.com/windows` `beanywhere.com`
+  **Domain**:
+    - `beanywhere.en.uptodown.com/windows`
+    - `beanywhere.com`
 
 
 

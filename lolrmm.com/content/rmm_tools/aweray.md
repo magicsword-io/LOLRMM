@@ -45,7 +45,9 @@ AweRay is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `asapi*.aweray.net` `client-api.aweray.com`
+  **Domain**:
+    - `asapi*.aweray.net`
+    - `client-api.aweray.com`
 
 
 

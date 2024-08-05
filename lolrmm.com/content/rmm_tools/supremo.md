@@ -47,7 +47,10 @@ Supremo is a remote monitoring and management (RMM) tool. More information will 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `supremocontrol.com` `*.supremocontrol.com` `* .nanosystems.it`
+  **Domain**:
+    - `supremocontrol.com`
+    - `*.supremocontrol.com`
+    - `* .nanosystems.it`
 
 
 

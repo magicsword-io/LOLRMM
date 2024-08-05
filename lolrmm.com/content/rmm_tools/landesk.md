@@ -53,7 +53,10 @@ LANDesk is a remote monitoring and management (RMM) tool. More information will 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.ivanticloud.com` `*.ivanti.com` `ivanti.com`
+  **Domain**:
+    - `*.ivanticloud.com`
+    - `*.ivanti.com`
+    - `ivanti.com`
 
 
 

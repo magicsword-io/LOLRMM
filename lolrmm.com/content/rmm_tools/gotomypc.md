@@ -56,7 +56,9 @@ GoToMyPC is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.GoToMyPC.com` `get.gotomypc.com`
+  **Domain**:
+    - `*.GoToMyPC.com`
+    - `get.gotomypc.com`
 
 
 

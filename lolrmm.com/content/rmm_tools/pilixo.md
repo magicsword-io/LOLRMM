@@ -45,7 +45,10 @@ Pilixo is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `pilixo.com` `download.pilixo.com` `*.pilixo.com`
+  **Domain**:
+    - `pilixo.com`
+    - `download.pilixo.com`
+    - `*.pilixo.com`
 
 
 

@@ -41,7 +41,8 @@ Tanium Deploy is a remote monitoring and management (RMM) tool. More information
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `tanium.com/products/tanium-deploy`
+  **Domain**:
+    - `tanium.com/products/tanium-deploy`
 
 
 

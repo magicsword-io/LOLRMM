@@ -144,17 +144,20 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 #### Network Artifacts
 
 - **Description**: During setup the boot.net.anydesk.com domain is request over port 443
-  **Domain**: `boot.net.anydesk.com`
+  **Domain**:
+    `boot.net.anydesk.com`
 
   **Port**: `443`
 
 - **Description**: N/A
-  **Domain**: `relay-[a-f0-9]{8}.net.anydesk.com:443`
+  **Domain**:
+    `relay-[a-f0-9]{8}.net.anydesk.com:443`
 
   **Port**: `443`
 
 - **Description**: N/A
-  **Domain**: `*.anydesk.com`
+  **Domain**:
+    `*.anydesk.com`
 
   **Port**: `443`
 

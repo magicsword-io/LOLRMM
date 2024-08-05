@@ -45,7 +45,8 @@ Remote Utilities is a remote monitoring and management (RMM) tool. More informat
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.internetid.ru`
+  **Domain**:
+    - `*.internetid.ru`
 
 
 

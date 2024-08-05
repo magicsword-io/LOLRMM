@@ -46,7 +46,9 @@ TurboMeeting is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `acceo.com/turbomeeting/`
+  **Domain**:
+    - `user_managed`
+    - `acceo.com/turbomeeting/`
 
 
 

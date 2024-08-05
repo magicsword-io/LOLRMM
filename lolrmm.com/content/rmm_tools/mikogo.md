@@ -51,7 +51,11 @@ Mikogo is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.real-time-collaboration.com` `*.mikogo4.com` `*.mikogo.com` `mikogo.com`
+  **Domain**:
+    - `*.real-time-collaboration.com`
+    - `*.mikogo4.com`
+    - `*.mikogo.com`
+    - `mikogo.com`
 
 
 

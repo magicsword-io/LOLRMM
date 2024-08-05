@@ -45,7 +45,8 @@ MyIVO is a remote monitoring and management (RMM) tool. More information will be
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `myivo-server.software.informer.com`
+  **Domain**:
+    - `myivo-server.software.informer.com`
 
 
 

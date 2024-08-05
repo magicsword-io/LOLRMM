@@ -42,7 +42,8 @@ Basecamp is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `basecamp.com`
+  **Domain**:
+    - `basecamp.com`
 
 
 

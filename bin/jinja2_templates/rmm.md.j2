@@ -174,7 +174,14 @@ displayTitle = "{{ rmm.Name }}"
 - {% if artifact.Description %}**Description**: {{ artifact.Description }}{% endif %}
 
   {% if artifact.Domain %}
-  **Domain**: `{{ artifact.Domain if artifact.Domain is string else artifact.Domain | join('` `') }}`
+  **Domain**:
+  {% if artifact.Domain is string %}
+    `{{ artifact.Domain }}`
+  {% else %}
+    {% for domain in artifact.Domain %}
+    - `{{ domain }}`
+    {% endfor %}
+  {% endif %}
   {% endif %}
 
   {% if artifact.Port %}

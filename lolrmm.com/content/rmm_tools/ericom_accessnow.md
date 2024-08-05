@@ -45,7 +45,9 @@ Ericom AccessNow is a remote monitoring and management (RMM) tool. More informat
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `ericom.com`
+  **Domain**:
+    - `user_managed`
+    - `ericom.com`
 
 
 

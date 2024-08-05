@@ -46,7 +46,9 @@ ZeroTier is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `zerotier.com` `*.zerotier.com`
+  **Domain**:
+    - `zerotier.com`
+    - `*.zerotier.com`
 
 
 

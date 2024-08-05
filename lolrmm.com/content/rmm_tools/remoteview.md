@@ -47,7 +47,10 @@ RemoteView is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*content.rview.com` `*.rview.com` `content.rview.com`
+  **Domain**:
+    - `*content.rview.com`
+    - `*.rview.com`
+    - `content.rview.com`
 
 
 

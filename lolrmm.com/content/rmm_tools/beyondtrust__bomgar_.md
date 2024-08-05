@@ -48,7 +48,10 @@ BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More info
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.beyondtrustcloud.com` `*.bomgarcloud.com` `bomgarcloud.com`
+  **Domain**:
+    - `*.beyondtrustcloud.com`
+    - `*.bomgarcloud.com`
+    - `bomgarcloud.com`
 
 
 

@@ -44,7 +44,8 @@ Netviewer is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `download.cnet.com/Net-Viewer/3000-2370_4-10034828.html`
+  **Domain**:
+    - `download.cnet.com/Net-Viewer/3000-2370_4-10034828.html`
 
 
 

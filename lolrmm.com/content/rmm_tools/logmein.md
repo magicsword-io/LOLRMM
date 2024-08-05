@@ -48,7 +48,12 @@ LogMeIn is a remote monitoring and management (RMM) tool. More information will 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*logmein.eu` `logmeinrescue.com` `*.logmein.com` `logmein.com/central` `*.logmeininc.com`
+  **Domain**:
+    - `*logmein.eu`
+    - `logmeinrescue.com`
+    - `*.logmein.com`
+    - `logmein.com/central`
+    - `*.logmeininc.com`
 
 
 

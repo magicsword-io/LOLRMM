@@ -45,7 +45,13 @@ Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `desktopcentral.manageengine.com` `desktopcentral.manageengine.com.eu` `desktopcentral.manageengine.cn` `*.dms.zoho.com` `*.dms.zoho.com.eu` `*.-dms.zoho.com.cn`
+  **Domain**:
+    - `desktopcentral.manageengine.com`
+    - `desktopcentral.manageengine.com.eu`
+    - `desktopcentral.manageengine.cn`
+    - `*.dms.zoho.com`
+    - `*.dms.zoho.com.eu`
+    - `*.-dms.zoho.com.cn`
 
 
 

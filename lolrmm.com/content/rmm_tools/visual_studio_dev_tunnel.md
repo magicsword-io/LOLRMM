@@ -42,7 +42,10 @@ Visual Studio Dev Tunnel is a remote monitoring and management (RMM) tool. More 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `global.rel.tunnels.api.visualstudio.com` `*.rel.tunnels.api.visualstudio.com` `*.devtunnels.ms`
+  **Domain**:
+    - `global.rel.tunnels.api.visualstudio.com`
+    - `*.rel.tunnels.api.visualstudio.com`
+    - `*.devtunnels.ms`
 
 
 

@@ -48,7 +48,11 @@ Jump Desktop is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.jumpdesktop.com` `jumpdesktop.com` `jumpto.me` `*.jumpto.me`
+  **Domain**:
+    - `*.jumpdesktop.com`
+    - `jumpdesktop.com`
+    - `jumpto.me`
+    - `*.jumpto.me`
 
 
 

@@ -65,7 +65,11 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `deploy01.kaseya.com` `*managedsupport.kaseya.net` `*.kaseya.net` `kaseya.com`
+  **Domain**:
+    - `deploy01.kaseya.com`
+    - `*managedsupport.kaseya.net`
+    - `*.kaseya.net`
+    - `kaseya.com`
 
 
 

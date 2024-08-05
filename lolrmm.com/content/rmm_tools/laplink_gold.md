@@ -45,7 +45,9 @@ Laplink Gold is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `wen.laplink.com/product/laplink-gold`
+  **Domain**:
+    - `user_managed`
+    - `wen.laplink.com/product/laplink-gold`
 
 
 

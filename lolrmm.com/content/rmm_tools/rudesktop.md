@@ -45,7 +45,9 @@ RuDesktop is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.rudesktop.ru` `rudesktop.ru`
+  **Domain**:
+    - `*.rudesktop.ru`
+    - `rudesktop.ru`
 
 
 

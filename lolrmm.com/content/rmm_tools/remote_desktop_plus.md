@@ -44,7 +44,8 @@ Remote Desktop Plus is a remote monitoring and management (RMM) tool. More infor
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `donkz.nl`
+  **Domain**:
+    - `donkz.nl`
 
 
 

@@ -53,7 +53,11 @@ RemotePC is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.remotedesktop.com` `*.remotepc.com` `www.remotepc.com` `remotepc.com`
+  **Domain**:
+    - `*.remotedesktop.com`
+    - `*.remotepc.com`
+    - `www.remotepc.com`
+    - `remotepc.com`
 
 
 

@@ -142,77 +142,92 @@ Atera is a remote monitoring and management (RMM) tool. It is used by threat act
 #### Network Artifacts
 
 - **Description**: N/A
-  **Domain**: `pubsub.atera.com`
+  **Domain**:
+    `pubsub.atera.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `pubsub.pubnub.com`
+  **Domain**:
+    `pubsub.pubnub.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `agentreporting.atera.com`
+  **Domain**:
+    `agentreporting.atera.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `getalphacontrol.com`
+  **Domain**:
+    `getalphacontrol.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `app.atera.com`
+  **Domain**:
+    `app.atera.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `agenthb.atera.com`
+  **Domain**:
+    `agenthb.atera.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `packagesstore.blob.core.windows.net`
+  **Domain**:
+    `packagesstore.blob.core.windows.net`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `ps.pndsn.com`
+  **Domain**:
+    `ps.pndsn.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `agent-api.atera.com`
+  **Domain**:
+    `agent-api.atera.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `cacerts.thawte.com`
+  **Domain**:
+    `cacerts.thawte.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `agentreportingstore.blob.core.windows.net`
+  **Domain**:
+    `agentreportingstore.blob.core.windows.net`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `atera-agent-heartbeat.servicebus.windows.net`
+  **Domain**:
+    `atera-agent-heartbeat.servicebus.windows.net`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `ps.atera.com`
+  **Domain**:
+    `ps.atera.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `atera.pubnubapi.com`
+  **Domain**:
+    `atera.pubnubapi.com`
 
   **Port**: `N/A`
 
 - **Description**: N/A
-  **Domain**: `appcdn.atera.com`
+  **Domain**:
+    `appcdn.atera.com`
 
   **Port**: `N/A`
 

@@ -44,7 +44,8 @@ AliWangWang-remote-control is a remote monitoring and management (RMM) tool. Mor
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `wangwang.taobao.com`
+  **Domain**:
+    - `wangwang.taobao.com`
 
 
 

@@ -86,7 +86,10 @@ ScreenConnect is a remote monitoring and management (RMM) tool. More information
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `control.connectwise.com` `*.connectwise.com` `*.screenconnect.com`
+  **Domain**:
+    - `control.connectwise.com`
+    - `*.connectwise.com`
+    - `*.screenconnect.com`
 
 
 

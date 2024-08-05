@@ -48,7 +48,9 @@ ESET Remote Administrator is a remote monitoring and management (RMM) tool. More
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `eset.com/me/business/remote-management/remote-administrator/`
+  **Domain**:
+    - `user_managed`
+    - `eset.com/me/business/remote-management/remote-administrator/`
 
 
 

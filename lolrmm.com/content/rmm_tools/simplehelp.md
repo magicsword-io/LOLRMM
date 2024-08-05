@@ -48,7 +48,9 @@ SimpleHelp is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `simple-help.com`
+  **Domain**:
+    - `user_managed`
+    - `simple-help.com`
 
 
 

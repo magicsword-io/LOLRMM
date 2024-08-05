@@ -44,7 +44,10 @@ Alpemix is a remote monitoring and management (RMM) tool. More information will 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.alpemix.com` `*.teknopars.com` `alpemix.com`
+  **Domain**:
+    - `*.alpemix.com`
+    - `*.teknopars.com`
+    - `alpemix.com`
 
 
 

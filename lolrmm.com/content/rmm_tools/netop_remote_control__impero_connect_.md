@@ -52,7 +52,9 @@ Netop Remote Control (Impero Connect) is a remote monitoring and management (RMM
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.connect.backdrop.cloud` `*.netop.com`
+  **Domain**:
+    - `*.connect.backdrop.cloud`
+    - `*.netop.com`
 
 
 

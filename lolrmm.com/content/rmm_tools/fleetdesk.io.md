@@ -48,7 +48,10 @@ FleetDesk.io is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.fleetdeck.io` `cognito-idp.us-west-2.amazonaws.com` `fleetdeck.io`
+  **Domain**:
+    - `*.fleetdeck.io`
+    - `cognito-idp.us-west-2.amazonaws.com`
+    - `fleetdeck.io`
 
 
 

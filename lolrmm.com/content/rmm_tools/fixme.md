@@ -48,7 +48,8 @@ FixMe is a remote monitoring and management (RMM) tool. More information will be
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `fixme.it`
+  **Domain**:
+    - `fixme.it`
 
 
 

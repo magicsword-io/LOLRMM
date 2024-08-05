@@ -45,7 +45,10 @@ GetScreen is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `getscreen.me` `GetScreen.me` `*.getscreen.me`
+  **Domain**:
+    - `getscreen.me`
+    - `GetScreen.me`
+    - `*.getscreen.me`
 
 
 

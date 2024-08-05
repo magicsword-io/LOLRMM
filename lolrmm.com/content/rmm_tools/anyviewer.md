@@ -68,7 +68,10 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `controlserver.anyviewer.com` `aomeisoftware.com` `*.aomeisoftware.com`
+  **Domain**:
+    - `controlserver.anyviewer.com`
+    - `aomeisoftware.com`
+    - `*.aomeisoftware.com`
 
   **Port**: `443`
 

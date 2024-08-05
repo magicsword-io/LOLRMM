@@ -106,7 +106,11 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `action1.com` `a1-backend-packages.s3.amazonaws.com` `*.action1.com` `server.action1.com`
+  **Domain**:
+    - `action1.com`
+    - `a1-backend-packages.s3.amazonaws.com`
+    - `*.action1.com`
+    - `server.action1.com`
 
   **Port**: `22543`
 

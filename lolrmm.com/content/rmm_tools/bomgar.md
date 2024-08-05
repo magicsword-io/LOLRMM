@@ -43,7 +43,8 @@ Bomgar is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `beyondtrust.com/brand/bomgar`
+  **Domain**:
+    - `beyondtrust.com/brand/bomgar`
 
 
 

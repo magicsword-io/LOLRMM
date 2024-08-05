@@ -44,7 +44,8 @@ displayTitle = "247ithelp.com (ConnectWise)"
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.247ithelp.com`
+  **Domain**:
+    - `*.247ithelp.com`
 
 
 

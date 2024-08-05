@@ -41,7 +41,8 @@ ManageEngine RMM Central is a remote monitoring and management (RMM) tool. More 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `manageengine.com/remote-monitoring-management/`
+  **Domain**:
+    - `manageengine.com/remote-monitoring-management/`
 
 
 

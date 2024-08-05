@@ -42,7 +42,10 @@ Barracuda is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.islonline.net` `rmm.barracudamsp.com` `barracudamsp.com`
+  **Domain**:
+    - `*.islonline.net`
+    - `rmm.barracudamsp.com`
+    - `barracudamsp.com`
 
 
 

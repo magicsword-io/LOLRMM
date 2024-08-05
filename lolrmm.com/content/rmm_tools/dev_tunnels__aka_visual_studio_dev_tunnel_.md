@@ -41,7 +41,8 @@ Dev Tunnels (aka Visual Studio Dev Tunnel) is a remote monitoring and management
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview`
+  **Domain**:
+    - `learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview`
 
 
 

@@ -45,7 +45,9 @@ MeshCentral is a remote monitoring and management (RMM) tool. More information w
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `meshcentral.com`
+  **Domain**:
+    - `user_managed`
+    - `meshcentral.com`
 
 
 

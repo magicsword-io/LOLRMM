@@ -46,7 +46,15 @@ GoToAssist is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `goto.com` `*.getgo.com` `*.fastsupport.com` `*.gotoassist.com` `helpme.net` `*.gotoassist.me` `*.gotoassist.at` `*.desktopstreaming.com`
+  **Domain**:
+    - `goto.com`
+    - `*.getgo.com`
+    - `*.fastsupport.com`
+    - `*.gotoassist.com`
+    - `helpme.net`
+    - `*.gotoassist.me`
+    - `*.gotoassist.at`
+    - `*.desktopstreaming.com`
 
 
 

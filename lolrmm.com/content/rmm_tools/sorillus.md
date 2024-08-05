@@ -45,7 +45,9 @@ Sorillus is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.sorillus.com` `sorillus.com`
+  **Domain**:
+    - `*.sorillus.com`
+    - `sorillus.com`
 
 
 

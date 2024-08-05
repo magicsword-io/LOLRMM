@@ -44,7 +44,8 @@ Centurion is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `centuriontech.com`
+  **Domain**:
+    - `centuriontech.com`
 
 
 

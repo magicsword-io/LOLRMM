@@ -42,7 +42,11 @@ Netreo is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `charon.netreo.net` `activation.netreo.net` `*.api.netreo.com` `netreo.com`
+  **Domain**:
+    - `charon.netreo.net`
+    - `activation.netreo.net`
+    - `*.api.netreo.com`
+    - `netreo.com`
 
 
 

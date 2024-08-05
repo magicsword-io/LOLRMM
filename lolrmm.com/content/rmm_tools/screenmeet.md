@@ -45,7 +45,9 @@ ScreenMeet is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.screenmeet.com` `*.scrn.mt`
+  **Domain**:
+    - `*.screenmeet.com`
+    - `*.scrn.mt`
 
 
 

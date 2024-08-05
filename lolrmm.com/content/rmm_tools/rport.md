@@ -44,7 +44,9 @@ RPort is a remote monitoring and management (RMM) tool. More information will be
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `user_managed` `rport.io`
+  **Domain**:
+    - `user_managed`
+    - `rport.io`
 
 
 

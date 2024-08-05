@@ -45,7 +45,10 @@ RustDesk is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `rustdesk.com` `user_managed` `web.rustdesk.com`
+  **Domain**:
+    - `rustdesk.com`
+    - `user_managed`
+    - `web.rustdesk.com`
 
 
 

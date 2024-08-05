@@ -46,7 +46,8 @@ Pocket Controller (Soti Xsight) is a remote monitoring and management (RMM) tool
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*soti.net`
+  **Domain**:
+    - `*soti.net`
 
 
 

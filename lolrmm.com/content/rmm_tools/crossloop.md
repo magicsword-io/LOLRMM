@@ -46,7 +46,9 @@ CrossLoop is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `*.crossloop.com` `crossloop.en.softonic.com`
+  **Domain**:
+    - `*.crossloop.com`
+    - `crossloop.en.softonic.com`
 
 
 

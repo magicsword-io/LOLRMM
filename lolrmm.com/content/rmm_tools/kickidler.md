@@ -45,7 +45,9 @@ KickIdler is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `kickidler.com` `my.kickidler.com`
+  **Domain**:
+    - `kickidler.com`
+    - `my.kickidler.com`
 
 
 

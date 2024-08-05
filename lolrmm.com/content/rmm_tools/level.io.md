@@ -46,7 +46,9 @@ Level.io is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**: `level.io` `*.level.io`
+  **Domain**:
+    - `level.io`
+    - `*.level.io`
 
 
 
