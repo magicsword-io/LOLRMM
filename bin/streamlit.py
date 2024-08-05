@@ -113,9 +113,19 @@ def main():
                                       default=valid_supported_os,
                                       key="supported_os")
 
+        # Get the capabilities from the template
+        template_capabilities = template.get('Details', {}).get('Capabilities', [])
+        
+        # Create a set of all unique capabilities (from template and some common ones)
+        all_capabilities = set(template_capabilities + [
+            'File Transfer', 'File System Access', 'Remote Control', 
+            'GUI Support', 'Command line Support', 'Remote monitoring and management',
+            'Remote desktop', 'Remote shell open'
+        ])
+
         capabilities = st.multiselect("Capabilities", 
-                                      options=['File Transfer', 'File System Access', 'Remote Control', 'GUI Support', 'Command line Support'],
-                                      default=template.get('Details', {}).get('Capabilities', []),
+                                      options=sorted(list(all_capabilities)),
+                                      default=template_capabilities,
                                       key="capabilities")
 
         vulnerabilities = st.text_area("Vulnerabilities (one per line)", value='\n'.join(template.get('Details', {}).get('Vulnerabilities', [])), key="vulnerabilities")
