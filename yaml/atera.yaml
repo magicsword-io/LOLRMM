@@ -95,7 +95,7 @@ Artifacts:
           CommandLine: 'C:\\Program Files\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageFileExplorer\\AgentPackageFileExplorer.exe XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX agent-api.atera.com/Production 443 [BASE64BLOB]'
           Description: Service installation event as result of AteraAgent installation.
     Registry:
-        - Path: HKLM\SOFTWARE\ATERA Networks\AlphaAgent
+        - Path: 'HKLM\SOFTWARE\ATERA Networks\AlphaAgent'
           Description:
         - Path: HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent
           Description:

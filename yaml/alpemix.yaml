@@ -64,7 +64,7 @@ Artifacts:
         - EventID: 7045
           ProviderName: Service Control Manager
           LogFile: System.evtx
-          ServiceName: AlpemixSrvcx
+          ServiceName: AlpemixSrvc
           ImagePath: '*\Alpemix.exe servicestartxxx'
           Description: Service installation event as result of Alpemix installation.
     Registry:

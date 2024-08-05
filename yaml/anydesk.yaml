@@ -88,6 +88,12 @@ Artifacts:
         - File: 'C:\Windows\SysWOW64\config\systemprofile\AppData\Roaming\AnyDesk\*'
           Description: N/A
           OS: Windows
+        - File: '~/Library/Application Support/AnyDesk/Logs/'
+          Description: N/A
+          OS: Mac
+        - File: '~/.config/AnyDesk/Logs/'
+          Description: N/A
+          OS: Linux
     EventLog:
         - EventID: 7045
           ProviderName: Service Control Manager
@@ -140,8 +146,12 @@ References:
     - https://support.anydesk.com/knowledge/firewall
     - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
     - https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk
+    - https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/
 Acknowledgement:
-    - Person: Ali Alwashali
-      Handle: '@ali_alwashali'
     - Person: "Théo Letailleur"
       Handle: in/theosyn
+    - Person: Ali Alwashali
+      Handle: '@ali_alwashali'
+    - Person: Nasreddine Bencherchali
+      Handle: '@nas_bench'
+  
