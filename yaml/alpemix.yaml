@@ -1,35 +1,85 @@
 Name: Alpemix
-Description: Alpemix is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: 2/7/2024
+Description: |
+    Alpemix is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Author: Nasreddine Bencherchali
+Created: '2024-08-05'
+LastModified: '2024-08-05'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - alpemix.exe
+    Website: 'https://www.alpemix.com/en/Home'
+    PEMetadata:
+        - Filename: 'Alpemix.exe'
+          OriginalFileName: 'Alpemix'
+          Description: 'Alpemix'
+          Product: 'Alpemix'
+          Description: 'Alpemix'
+          InternalName: 'Alpemix'
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - Linux
+        - Android
+        - Mac
+        - IOS
+    Capabilities:
+        - 5 Different Solutions for Remote Support
+        - Access to Unattended Computers
+        - Access to User Account Control (UAC) Screens
+        - Add Your Own Logo
+        - Auto Sizing
+        - Automatic Update
+        - Clipboard Transfer
+        - Computer Independent Licensing
+        - Contact List and Groups
+        - Encrypted Communication
+        - External Communication Barrier
+        - File Transfer
+        - Instant Messaging
+        - Multi-Platform Support
+        - Multiple Chat
+        - Multiple Connections
+        - No Port Forwarding Required
+        - Peer to Peer Connection (p2p)
+        - Receiving Offline Message
+        - Remote Restart
+        - ReportingRestricting The Authority
+        - Screen Sharing
+        - Sending Announcement Message
+        - Sharing a certain part of the screen
+        - Video Recording
+        - Voice Communication
+        - Who is currently supporting?
+        - Working in Black Screen Mode
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\AlpemixService.exe
+        - C:\AlpemixSrvc\
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.alpemix.com'
-    - '*.teknopars.com'
-    - alpemix.com
-    Port: ''
+    Disk:
+        - File: '%localappdata%\Alpemix\Alpemix.ini'
+          Description: N/A
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: AlpemixSrvcx
+          ImagePath: '*\Alpemix.exe servicestartxxx'
+          Description: Service installation event as result of Alpemix installation.
+    Registry:
+        - Path: 'HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx'
+          Description: N/A
+    Network:
+        - Domain: '*.alpemix.com'
+          Port: 443
+          Description: N/A
+        - Domain: '*.teknopars.com'
+          Port: 80
+          Description: N/A
 Detections: []
 References:
-- https://www.alpemix.com/en/remote-access
-Acknowledgement: []
+    - https://www.alpemix.com/en/remote-access
+Acknowledgement:
+    - Person: Nasreddine Bencherchali
+      Handle: '@nas_bench'
