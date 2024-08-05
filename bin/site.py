@@ -68,7 +68,8 @@ def write_rmm_tools_table_csv(rmm_tools, output_dir, VERBOSE):
             if VERBOSE:
                 print(f"Writing RMM tool table CSV: {rmm_tool['Name']}")
 
-            name_link = f"[{rmm_tool['Name']}](/rmm_tools/{rmm_tool['Name'].lower().replace(' ', '_')})"
+            # Replace parentheses with underscores in the link
+            name_link = f"[{rmm_tool['Name']}](/rmm_tools/{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')})"
 
             row = {
                 'Name': name_link,
@@ -115,7 +116,8 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
     d = datetime.datetime.now()
     template = j2_env.get_template('rmm.md.j2')
     for rmm_tool in rmm_tools:
-        file_name = f"{rmm_tool['Name'].lower().replace(' ', '_')}.md"
+        # Replace parentheses with underscores in the file name
+        file_name = f"{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')}.md"
         output_path = os.path.join(OUTPUT_DIR, 'content', 'rmm_tools', file_name)
         output = template.render(rmm=rmm_tool, time=str(d.strftime("%Y-%m-%d")))
         with open(output_path, 'w', encoding="utf-8") as f:
