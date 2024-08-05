@@ -61,18 +61,31 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 ### Forensic Artifacts
 
 #### Disk Artifacts
+
 - **File**: `C:\Windows\Action1\action1_agent.exe`
   **Description**: Action1 service binary
+
+
   **OS**: Windows
+
 - **File**: `C:\Windows\Action1\*`
   **Description**: Multiple files and binaries related to Action1 installation
+
+
   **OS**: Windows
+
 - **File**: `C:\Windows\Action1\scripts\*`
   **Description**: Multiple scripts related to Action1 installation
+
+
   **OS**: Windows
+
 - **File**: `C:\Windows\Action1\rule_data\*`
   **Description**: Files related to Action1 rules
+
+
   **OS**: Windows
+
 
 #### Event Log Artifacts
 - Event Details:
@@ -98,10 +111,13 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 #### Registry Artifacts
 - **Path**: `HKLM\System\CurrentControlSet\Services\A1Agent`
   **Description**: Service installation event as result of Action1 installation.
+
 - **Path**: `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe`
   **Description**: Ensures that detailed crash information is available for analysis, which aids in maintaining the stability and reliability of the software.
+
 - **Path**: `HKLM\SOFTWARE\WOW6432Node\Action1`
   **Description**: Storing its configuration settings and other relevant information
+
 
 #### Network Artifacts
 
@@ -117,9 +133,14 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 
 
 ### Detections
-- **Arbitrary code execution and remote sessions via Action1 RMM**  Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+-   **Arbitrary code execution and remote sessions via Action1 RMM**
+
+  Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+
   (Author: @kostastsale)
+
   [Link](https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml)
+  
 
 ### References
 - [https://www.action1.com/documentation/firewall-configuration/](https://www.action1.com/documentation/firewall-configuration/)

@@ -112,20 +112,24 @@ displayTitle = "{{ rmm.Name }}"
 
 {% if rmm.Artifacts.Disk %}
 #### Disk Artifacts
+
 {% for artifact in rmm.Artifacts.Disk %}
 - **File**: `{{ artifact.File }}`
   {% if artifact.Description %}
   **Description**: {{ artifact.Description }}
   {% endif %}
+
+  {% if artifact.Example %}
+  **Example**:
+  ```
+  {{ artifact.Example }}
+  ```
+  {% endif %}
+
   {% if artifact.OS %}
   **OS**: {{ artifact.OS }}
   {% endif %}
-  {% if artifact.Example %}
-  **Example**:
-  {% for example in artifact.Example %}
-    - `{{ example }}`
-  {% endfor %}
-  {% endif %}
+
 {% endfor %}
 {% endif %}
 
@@ -164,6 +168,7 @@ displayTitle = "{{ rmm.Name }}"
   {% if artifact.Description %}
   **Description**: {{ artifact.Description }}
   {% endif %}
+
 {% endfor %}
 {% endif %}
 
@@ -196,6 +201,7 @@ displayTitle = "{{ rmm.Name }}"
 {% for artifact in rmm.Artifacts.Other %}
 - {% if artifact.Type %}**Type**: {{ artifact.Type }}{% endif %}
   {% if artifact.Value %}
+
   **Value**: {{ artifact.Value }}
   {% endif %}
 {% endfor %}
@@ -205,16 +211,24 @@ displayTitle = "{{ rmm.Name }}"
 {% if rmm.Detections %}
 ### Detections
 {% for detection in rmm.Detections %}
-- {% if detection.Name %}**{{ detection.Name }}**{% endif %}
+- {% if detection.Sigma %}
+  [Sigma rule]({{ detection.Sigma }})
+  {% elif detection.Name %}
+  **{{ detection.Name }}**
+  {% endif %}
+
   {% if detection.Description %}
   {{ detection.Description }}
   {% endif %}
+
   {% if detection.author %}
   (Author: {{ detection.author }})
   {% endif %}
+
   {% if detection.Link %}
   [Link]({{ detection.Link }})
   {% endif %}
+  
 {% endfor %}
 {% endif %}
 

@@ -37,7 +37,7 @@ enable = false
   name = "GitHub"
   iconLight = "images/GitHubMarkLight.svg"
   iconDark = "images/GitHubMarkDark.svg"
-  url = "https://github.com/magicsword-io/bootloaders"
+  url = "https://github.com/magicsword-io/LOLRMM"
 
 [author]  
   name = "With ♥️ from Magicsword"

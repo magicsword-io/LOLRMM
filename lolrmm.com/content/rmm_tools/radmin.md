@@ -45,18 +45,31 @@ RAdmin is a remote monitoring and management (RMM) tool. More information will b
 ### Forensic Artifacts
 
 #### Disk Artifacts
+
 - **File**: `C:\Windows\SysWOW64\rserver30\Radm_log.htm`
   **Description**: RAdmin log file (32-bit)
+
+
   **OS**: Windows
+
 - **File**: `C:\Windows\System32\rserver30\Radm_log.htm`
   **Description**: RAdmin log file (64-bit)
+
+
   **OS**: Windows
+
 - **File**: `C:\Windows\System32\rserver30\CHATLOGS\*\*.htm`
   **Description**: RAdmin chat logs
+
+
   **OS**: Windows
+
 - **File**: `C:\Users\*\Documents\ChatLogs\*\*.htm`
   **Description**: RAdmin user chat logs
+
+
   **OS**: Windows
+
 
 
 

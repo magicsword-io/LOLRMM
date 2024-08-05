@@ -78,9 +78,14 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
 
 
 ### Detections
-- **Arbitrary code execution and remote sessions via Action1 RMM**  Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+-   **Arbitrary code execution and remote sessions via Action1 RMM**
+
+  Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+
   (Author: @kostastsale)
+
   [Link](https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml)
+  
 
 ### References
 - [https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html](https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html)

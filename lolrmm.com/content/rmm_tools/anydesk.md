@@ -60,59 +60,107 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 ### Forensic Artifacts
 
 #### Disk Artifacts
+
 - **File**: `%programdata%\AnyDesk\ad_svc.trace`
   **Description**: AnyDesk service log file. As well as ad.trace, we can determine the IP address of the other participant and its AnyDesk ID when a connection is established.
-  **OS**: Windows
+
   **Example**:
-    - `info 2022-08-23 10:20:11.969       gsvc   4628   3528    3                anynet.relay_conn - External address: 34.xx.xx.123:46798`
+  ```
+  ['info 2022-08-23 10:20:11.969       gsvc   4628   3528    3                anynet.relay_conn - External address: 34.xx.xx.123:46798']
+  ```
+
+  **OS**: Windows
+
 - **File**: `%programdata%\AnyDesk\connection_trace.txt`
   **Description**: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)
-  **OS**: Windows
+
   **Example**:
-    - `Incoming 2022-08-23, 10:23 Passwd 547911884 547911884`
-    - `Incoming 2022-09-28, 12:39 User 442226597 442226597`
+  ```
+  ['Incoming 2022-08-23, 10:23 Passwd 547911884 547911884', 'Incoming 2022-09-28, 12:39 User 442226597 442226597']
+  ```
+
+  **OS**: Windows
+
 - **File**: `%APPDATA%\AnyDesk\connection_trace.txt`
   **Description**: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)
-  **OS**: Windows
+
   **Example**:
-    - `Incoming 2022-08-23, 10:23 Passwd 547911884 547911884`
-    - `Incoming 2022-09-28, 12:39 User 442226597 442226597`
+  ```
+  ['Incoming 2022-08-23, 10:23 Passwd 547911884 547911884', 'Incoming 2022-09-28, 12:39 User 442226597 442226597']
+  ```
+
+  **OS**: Windows
+
 - **File**: `%APPDATA%\AnyDesk\ad.trace`
   **Description**: AnyDesk user interface log file. In this log file, we can determine the IP address of the other participant and its AnyDesk ID. It is also possible to track events of file transfer. Below is the Client ID and external IP address of the remote participant.
-  **OS**: Windows
+
   **Example**:
-    - `info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Client-ID: 442226597 (FPR: 8e28a2a25b30).`
-    - `info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Logged in from 12.xx.xx.21:59562 on relay 80e496c0.`
+  ```
+  ['info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Client-ID: 442226597 (FPR: 8e28a2a25b30).', 'info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Logged in from 12.xx.xx.21:59562 on relay 80e496c0.']
+  ```
+
+  **OS**: Windows
+
 - **File**: `%APPDATA%\AnyDesk\chat\*.txt`
   **Description**: If the chat functionality is used, its entries will be printed in a text file in this folder.
+
+
   **OS**: Windows
+
 - **File**: `%APPDATA%\AnyDesk\user.conf`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%PROGRAMDATA%\AnyDesk\service.conf`
   **Description**: Password can be set to auto-validate the session. The password will be saved in a salted hash format.
+
+
   **OS**: Windows
+
 - **File**: `%APPDATA%\AnyDesk\service.conf`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%APPDATA%\AnyDesk\system.conf`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%PROGRAMDATA%\AnyDesk\system.conf`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk.lnk`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `C:\Users\*\Videos\AnyDesk\*.anydesk`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `C:\Windows\SysWOW64\config\systemprofile\AppData\Roaming\AnyDesk\*`
   **Description**: N/A
+
+
   **OS**: Windows
+
 
 #### Event Log Artifacts
 - Event Details:
@@ -126,20 +174,28 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 #### Registry Artifacts
 - **Path**: `HKLM\SOFTWARE\Clients\Media\AnyDesk`
   **Description**: N/A
+
 - **Path**: `HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk`
   **Description**: N/A
+
 - **Path**: `HKLM\SOFTWARE\Classes\.anydesk\shell\open\command`
   **Description**: N/A
+
 - **Path**: `HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command`
   **Description**: N/A
+
 - **Path**: `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*`
   **Description**: N/A
+
 - **Path**: `HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk`
   **Description**: N/A
+
 - **Path**: `HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk`
   **Description**: N/A
+
 - **Path**: `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk`
   **Description**: N/A
+
 
 #### Network Artifacts
 
@@ -163,14 +219,36 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 
 
 #### Other Artifacts
-- **Type**: User-Agent  **Value**: AnyDesk/*
-- **Type**: NamedPipe  **Value**: adprinterpipe
+- **Type**: User-Agent
+  **Value**: AnyDesk/*
+- **Type**: NamedPipe
+  **Value**: adprinterpipe
 
 ### Detections
--   Anydesk Remote Access Software Service Installation
--   N/A
--   N/A
--   Remote Access Tool - AnyDesk Silent Installation
+-   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/builtin/system/service_control_manager/win_system_service_install_anydesk.yml)
+
+  Anydesk Remote Access Software Service Installation
+
+
+  
+-   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/file/file_event/file_event_win_anydesk_artefact.yml)
+
+  N/A
+
+
+  
+-   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk.yml)
+
+  N/A
+
+
+  
+-   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml)
+
+  Remote Access Tool - AnyDesk Silent Installation
+
+
+  
 
 ### References
 - [https://support.anydesk.com/knowledge/firewall](https://support.anydesk.com/knowledge/firewall)

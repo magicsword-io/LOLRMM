@@ -56,57 +56,109 @@ TeamViewer is a remote monitoring and management (RMM) tool.
 ### Forensic Artifacts
 
 #### Disk Artifacts
+
 - **File**: `C:\Users\<username>\AppData\Local\Temp\TeamViewer\TV15Install.log`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `TeamViewer\d\d_Logfile\.log`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `C:\Program Files\TeamViewer\Connections_incoming.txt`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `C:\Program Files\TeamViewer\TVNetwork.log`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%LOCALAPPDATA%\Temp\TeamViewer\TV15Install.log`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%APPDATA%\\TeamViewer\\TeamViewer\d\d_Logfile\.log`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `teamviewerqs.exe`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `tv_w32.exe`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `tv_w64.exe`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `tv_x64.exe`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `teamviewer.exe`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `teamviewer_service.exe`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `%LOCALAPPDATA%\TeamViewer\Database\tvchatfilecache.db`
   **Description**: SQlite 3 database storing cache about TeamViewer chat
+
+
   **OS**: Windows
+
 - **File**: `%LOCALAPPDATA%\TeamViewer\RemotePrinting\tvprint.db`
   **Description**: SQlite 3 database storing TeamViewer print jobs
+
+
   **OS**: Windows
+
 - **File**: `%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\TeamViewer.lnk`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `C:\Program Files*\TeamViewer\connections*.txt`
   **Description**: N/A
+
+
   **OS**: Windows
+
 - **File**: `C:\Users\*\AppData\Roaming\TeamViewer\MRU\RemoteSupport\*tvc`
   **Description**: N/A
+
+
   **OS**: Windows
+
 
 #### Event Log Artifacts
 - Event Details:
@@ -120,36 +172,52 @@ TeamViewer is a remote monitoring and management (RMM) tool.
 #### Registry Artifacts
 - **Path**: `HKLM\SOFTWARE\TeamViewer\*`
   **Description**: N/A
+
 - **Path**: `HKU\<SID>\SOFTWARE\TeamViewer\*`
   **Description**: N/A
+
 - **Path**: `HKLM\SYSTEM\CurrentControlSet\Services\TeamViewer\*`
   **Description**: N/A
+
 - **Path**: `HKLM\SOFTWARE\TeamViewer\ConnectionHistory`
   **Description**: N/A
+
 - **Path**: `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TeamViewer\*`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\MainWindowHandle`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImage`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePath`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePosition`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\MinimizeToTray`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedCapturingEndpoint`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioSendingVolumeV2`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedRenderingEndpoint`
   **Description**: N/A
+
 - **Path**: `HKLM\SOFTWARE\TeamViewer\ConnectionHistory`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\ClientWindow_Mode`
   **Description**: N/A
+
 - **Path**: `HKU\SID\SOFTWARE\TeamViewer\ClientWindowPositions`
   **Description**: N/A
+
 
 #### Network Artifacts
 
@@ -179,9 +247,12 @@ TeamViewer is a remote monitoring and management (RMM) tool.
 
 
 #### Other Artifacts
-- **Type**: Mutex  **Value**: TeamViewer_LogMutex
-- **Type**: Mutex  **Value**: TeamViewerHooks_DynamicMemMutex
-- **Type**: Mutex  **Value**: TeamViewer3_Win32_Instance_Mutex
+- **Type**: Mutex
+  **Value**: TeamViewer_LogMutex
+- **Type**: Mutex
+  **Value**: TeamViewerHooks_DynamicMemMutex
+- **Type**: Mutex
+  **Value**: TeamViewer3_Win32_Instance_Mutex
 
 
 ### References
