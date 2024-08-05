@@ -24,8 +24,8 @@ Details:
     Verification: ''
     SupportedOS:
         - Windows
-    Capabilities: ''
-    Vulnerabilities: ''
+    Capabilities: []
+    Vulnerabilities: []
     InstallationPaths:
         - 'C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe'
         - 'C:\Windows\SysWOW64\rserver30\rserver3.exe'
