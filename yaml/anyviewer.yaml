@@ -2,8 +2,8 @@ Name: AnyViewer
 Description: |
     AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: '@kostastsale'
-Created: '2024/03/08'
-LastModified: '2024/03/08'
+Created: '2024-08-03'
+LastModified: '2024-08-03'
 Details:
     Website: 'https://www.anyviewer.com/'
     PEMetadata:
@@ -29,7 +29,7 @@ Details:
         - 'Remote shell open'
     Vulnerabilities: []
     InstallationPaths:
-        - 'C:\\Program Files (x86)\\AnyViewer\\*'
+        - 'C:\Program Files (x86)\AnyViewer\*'
 Artifacts:
     Disk: []
     EventLog:
@@ -46,12 +46,12 @@ Artifacts:
           Description: AnyViewer service installation service.
     Registry: []
     Network:
-    - Description: Known remote domains
-    Domain:
-    - controlserver.anyviewer.com
-    - aomeisoftware.com
-    - '*.aomeisoftware.com'
-    Port: '443'
+        - Domain: '*.anyviewer.com'
+          Port: 443
+          Description: N/A
+        - Domain: '*.aomeisoftware.com'
+          Port: 443
+          Description: N/A
 Detections:
     - Name: Arbitrary code execution and remote sessions via Action1 RMM
       Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
