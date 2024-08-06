@@ -46,7 +46,8 @@ NoMachine is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `user_managed`
     - `nomachine.com`
 

@@ -1,0 +1,20 @@
+title: Potential Air Live Drive RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\AirLiveDrive.exe'
+  condition: selection
+id: 7dcb62ad-49e2-4133-abc7-d9b5da88b9d0
+status: experimental
+description: Detects potential processes activity of Air Live Drive RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Air Live Drive
+level: medium

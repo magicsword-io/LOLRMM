@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rdp.exe
-  - Pilixo_Installer*.exe
+    - rdp.exe
+    - Pilixo_Installer*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - pilixo.com
-    - download.pilixo.com
-    - '*.pilixo.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - pilixo.com
+        - download.pilixo.com
+        - '*.pilixo.com'
+      Ports: []
 Detections: []
 References:
-- https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls
+  - https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls
 Acknowledgement: []

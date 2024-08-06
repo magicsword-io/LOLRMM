@@ -1,0 +1,21 @@
+title: Potential Parallels Access RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.parallels.com'
+    - parallels.com/products/ras/try
+  condition: selection
+id: 8bd68c1a-b835-483b-b0f0-3966a38767ea
+status: experimental
+description: Detects potential network activity of Parallels Access RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Parallels Access
+level: medium

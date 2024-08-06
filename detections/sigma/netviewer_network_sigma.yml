@@ -1,0 +1,20 @@
+title: Potential Netviewer RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - download.cnet.com/Net-Viewer/3000-2370_4-10034828.html
+  condition: selection
+id: c4be0001-98f2-42bc-a0cf-0e6eecdc7480
+status: experimental
+description: Detects potential network activity of Netviewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Netviewer
+level: medium

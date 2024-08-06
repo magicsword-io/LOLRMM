@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\pCloud Drive\
-  - '*\pCloud Drive\'
-  - '*\pCloud.exe'
+    - C:\Program Files (x86)\pCloud Drive\
+    - '*\pCloud Drive\'
+    - '*\pCloud.exe'
 Artifacts:
   Disk: []
   EventLog: []

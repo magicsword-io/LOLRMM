@@ -1,0 +1,20 @@
+title: Potential Centurion RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - centuriontech.com
+  condition: selection
+id: 85c2c61a-f845-474e-9513-ecd49517fef9
+status: experimental
+description: Detects potential network activity of Centurion RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Centurion
+level: medium

@@ -1,0 +1,22 @@
+title: Potential Level.io RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - level-windows-amd64.exe
+    - level.exe
+    - level-remote-control-ffmpeg.exe
+  condition: selection
+id: fd2c2c3d-4957-492f-be6e-0bbb4cbbc309
+status: experimental
+description: Detects potential processes activity of Level.io RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Level.io
+level: medium

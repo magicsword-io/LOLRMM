@@ -1,0 +1,21 @@
+title: Potential RES Automation Manager RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - ivanti.com/
+  condition: selection
+id: eb1d5a1f-77b9-4d5b-ad4e-403595dc0ec8
+status: experimental
+description: Detects potential network activity of RES Automation Manager RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RES Automation Manager
+level: medium

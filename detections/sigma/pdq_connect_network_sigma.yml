@@ -1,0 +1,21 @@
+title: Potential PDQ Connect RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - app.pdq.com
+    - cfcdn.pdq.com
+  condition: selection
+id: ec16f6cc-8433-4c5a-a4b2-28c44004da30
+status: experimental
+description: Detects potential network activity of PDQ Connect RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of PDQ Connect
+level: medium

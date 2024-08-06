@@ -1,0 +1,24 @@
+title: Potential Action1 RMM Tool File Activity
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - C:\Windows\Action1\action1_agent.exe
+    - C:\Windows\Action1\*
+    - C:\Windows\Action1\scripts\*
+    - C:\Windows\Action1\rule_data\*
+    - C:\Windows\Action1\action1_log_*.log
+  condition: selection
+id: 7f4622a9-403e-4155-8b29-d7cc1eb8e34e
+status: experimental
+description: Detects potential files activity of Action1 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Action1
+level: medium

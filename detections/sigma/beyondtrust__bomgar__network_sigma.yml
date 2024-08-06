@@ -1,0 +1,22 @@
+title: Potential BeyondTrust (Bomgar) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.beyondtrustcloud.com'
+    - '*.bomgarcloud.com'
+    - bomgarcloud.com
+  condition: selection
+id: aee3906f-e99a-4a79-96f8-c4618b193d04
+status: experimental
+description: Detects potential network activity of BeyondTrust (Bomgar) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of BeyondTrust (Bomgar)
+level: medium

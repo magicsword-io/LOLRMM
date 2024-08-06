@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ngrok.exe
-  - C:\*\ngrok.zip
-  - '*\ngrok*'
+    - ngrok.exe
+    - C:\*\ngrok.zip
+    - '*\ngrok*'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - ngrok.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - ngrok.com
+      Ports: []
 Detections: []
 References:
-- https://ngrok.com/docs/guides/running-behind-firewalls/
+  - https://ngrok.com/docs/guides/running-behind-firewalls/
 Acknowledgement: []

@@ -46,7 +46,8 @@ Connectwise Automate (LabTech) is a remote monitoring and management (RMM) tool.
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.hostedrmm.com`
 
 

@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - aeroadmin.exe
-  - AeroAdmin.exe
+    - aeroadmin.exe
+    - AeroAdmin.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - auth*.aeroadmin.com
-    - aeroadmin.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - auth*.aeroadmin.com
+        - aeroadmin.com
+      Ports: []
 Detections: []
 References:
-- https://support.aeroadmin.com/kb/faq.php?id=58
+  - https://support.aeroadmin.com/kb/faq.php?id=58
 Acknowledgement: []

@@ -1,0 +1,22 @@
+title: Potential FastViewer RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - fastclient.exe
+    - fastmaster.exe
+    - FastViewer.exe
+  condition: selection
+id: 9a23c48e-679a-476c-8540-d5711d3374f0
+status: experimental
+description: Detects potential processes activity of FastViewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FastViewer
+level: medium

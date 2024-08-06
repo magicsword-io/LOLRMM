@@ -1,0 +1,20 @@
+title: Potential TigerVNC RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+  condition: selection
+id: b1046ed6-e6cc-4579-9fd5-cd743b111f66
+status: experimental
+description: Detects potential network activity of TigerVNC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TigerVNC
+level: medium

@@ -1,0 +1,22 @@
+title: Potential Insync RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+    - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
+    - '*\Insync.exe'
+  condition: selection
+id: 42e1d0d4-4bb1-438c-9627-1a2a5eb96feb
+status: experimental
+description: Detects potential processes activity of Insync RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Insync
+level: medium

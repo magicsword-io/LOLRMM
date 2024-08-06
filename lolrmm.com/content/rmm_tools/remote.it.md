@@ -46,7 +46,8 @@ Remote.it is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `auth.api.remote.it`
     - `api.remote.it`
     - `remote.it`

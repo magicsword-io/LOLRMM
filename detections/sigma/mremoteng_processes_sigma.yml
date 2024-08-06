@@ -1,0 +1,22 @@
+title: Potential mRemoteNG RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - mRemoteNG.exe
+    - '*\mRemoteNG.exe'
+    - '*\mRemoteNG.exe'
+  condition: selection
+id: f68491b7-3e94-4cf1-a240-1f5cd08998f1
+status: experimental
+description: Detects potential processes activity of mRemoteNG RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of mRemoteNG
+level: medium

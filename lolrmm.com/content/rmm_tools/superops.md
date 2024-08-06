@@ -45,7 +45,8 @@ SuperOps is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.superopsbeta.com`
     - `superops.ai`
     - `serv.superopsalpha.com`

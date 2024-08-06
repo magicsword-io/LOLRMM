@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - tsircusr.exe
-  - laplink.exe
+    - tsircusr.exe
+    - laplink.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - wen.laplink.com/product/laplink-gold
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - wen.laplink.com/product/laplink-gold
+      Ports: []
 Detections: []
 References:
-- wen.laplink.com/product/laplink-gold
+  - wen.laplink.com/product/laplink-gold
 Acknowledgement: []

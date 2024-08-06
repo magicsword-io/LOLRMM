@@ -17,24 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - laplink.exe
-  - laplink-everywhere-setup*.exe
-  - laplinkeverywhere.exe
-  - llrcservice.exe
-  - serverproxyservice.exe
-  - OOSysAgent.exe
+    - laplink.exe
+    - laplink-everywhere-setup*.exe
+    - laplinkeverywhere.exe
+    - llrcservice.exe
+    - serverproxyservice.exe
+    - OOSysAgent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - everywhere.laplink.com
-    - le.laplink.com
-    - atled.syspectr.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - everywhere.laplink.com
+        - le.laplink.com
+        - atled.syspectr.com
+      Ports: []
 Detections: []
 References:
-- https://everywhere.laplink.com/docs
+  - https://everywhere.laplink.com/docs
 Acknowledgement: []

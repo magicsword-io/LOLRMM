@@ -1,0 +1,21 @@
+title: Potential mRemoteNG RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - mremoteng.org
+  condition: selection
+id: 98913407-048d-4179-ab3d-23c00ff5f2ac
+status: experimental
+description: Detects potential network activity of mRemoteNG RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of mRemoteNG
+level: medium

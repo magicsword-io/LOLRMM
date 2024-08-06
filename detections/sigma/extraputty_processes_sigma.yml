@@ -1,0 +1,22 @@
+title: Potential ExtraPuTTY RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
+    - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+    - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+  condition: selection
+id: 531a60b8-7bea-4ba0-b813-1e7f36516ca8
+status: experimental
+description: Detects potential processes activity of ExtraPuTTY RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ExtraPuTTY
+level: medium

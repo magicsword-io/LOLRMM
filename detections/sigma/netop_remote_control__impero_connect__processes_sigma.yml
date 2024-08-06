@@ -1,0 +1,29 @@
+title: Potential Netop Remote Control (Impero Connect) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - nhostsvc.exe
+    - nhstw32.exe
+    - ngstw32.exe
+    - Netop Ondemand.exe
+    - nldrw32.exe
+    - rmserverconsolemediator.exe
+    - ImperoInit.exe
+    - Connect.Backdrop.cloud*.exe
+    - ImperoClientSVC.exe
+  condition: selection
+id: 38819b97-b44e-4f6d-ae56-c078e59959fc
+status: experimental
+description: Detects potential processes activity of Netop Remote Control (Impero
+  Connect) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Netop Remote Control (Impero Connect)
+level: medium

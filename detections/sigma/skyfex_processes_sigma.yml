@@ -1,0 +1,21 @@
+title: Potential SkyFex RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - Deskroll.exe
+    - DeskRollUA.exe
+  condition: selection
+id: b0e062f7-424f-4bb4-926e-394a6b6583d3
+status: experimental
+description: Detects potential processes activity of SkyFex RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SkyFex
+level: medium

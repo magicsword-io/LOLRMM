@@ -1,0 +1,24 @@
+title: Potential Seetrol RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - seetrolcenter.exe
+    - seetrolclient.exe
+    - seetrolmyservice.exe
+    - seetrolremote.exe
+    - seetrolsetting.exe
+  condition: selection
+id: 13298822-dd6b-4d97-94ce-11c1d01895d0
+status: experimental
+description: Detects potential processes activity of Seetrol RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Seetrol
+level: medium

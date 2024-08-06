@@ -195,10 +195,12 @@ Splashtop is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: N/A
-  **Domain**:
-    `*.splashtop.com`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `*.splashtop.com`
+
+  **Ports**:
+    - `N/A`
 
 
 

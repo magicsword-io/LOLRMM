@@ -1,0 +1,21 @@
+title: Potential TeamViewer RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - teamviewer_desktop.exe
+    - teamviewer_service.exe
+  condition: selection
+id: 60a63015-fb67-4303-8691-d8a3661b0543
+status: experimental
+description: Detects potential processes activity of TeamViewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TeamViewer
+level: medium

@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rpcnet.exe
-  - ctes.exe
-  - ctespersitence.exe
-  - cteshostsvc.exe
-  - rpcld.exe
+    - rpcnet.exe
+    - ctes.exe
+    - ctespersitence.exe
+    - cteshostsvc.exe
+    - rpcld.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*search.namequery.com'
-    - '*server.absolute.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*search.namequery.com'
+        - '*server.absolute.com'
+      Ports: []
 Detections: []
 References:
-- https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com
+  - https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com
 Acknowledgement: []

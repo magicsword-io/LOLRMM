@@ -1,0 +1,20 @@
+title: Potential EMCO Remote Console RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - remoteconsole.exe
+  condition: selection
+id: e93c8c59-c28e-4ad8-9659-8ea19e3658bd
+status: experimental
+description: Detects potential processes activity of EMCO Remote Console RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of EMCO Remote Console
+level: medium

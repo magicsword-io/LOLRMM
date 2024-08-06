@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - "C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
-  - "*\\LiteManager Pro \u2013 Viewer\\*"
-  - '*\LMNoIpServer.exe.'
+    - "C:\\Program Files\\LiteManager Pro – Viewer\\*"
+    - "*\\LiteManager Pro – Viewer\\*"
+    - '*\LMNoIpServer.exe.'
 Artifacts:
   Disk: []
   EventLog: []

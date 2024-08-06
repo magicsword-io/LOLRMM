@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - OrayRemoteShell.exe
-  - OrayRemoteService.exe
-  - sunlogin*.exe
+    - OrayRemoteShell.exe
+    - OrayRemoteService.exe
+    - sunlogin*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - sunlogin.oray.com
-    - client.oray.net
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - sunlogin.oray.com
+        - client.oray.net
+      Ports: []
 Detections: []
 References:
-- https://sunlogin.oray.com/en/embed/software.html
+  - https://sunlogin.oray.com/en/embed/software.html
 Acknowledgement: []

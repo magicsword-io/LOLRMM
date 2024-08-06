@@ -1,0 +1,21 @@
+title: Potential ScreenMeet RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ScreenMeetSupport.exe
+    - ScreenMeet.Support.exe
+  condition: selection
+id: fb392741-397f-451c-8cff-3e847fa381dc
+status: experimental
+description: Detects potential processes activity of ScreenMeet RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ScreenMeet
+level: medium

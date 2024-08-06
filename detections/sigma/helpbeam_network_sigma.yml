@@ -1,0 +1,20 @@
+title: Potential HelpBeam RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - helpbeam.software.informer.com
+  condition: selection
+id: 8dc08d74-0048-4ddb-90da-5f2115cc7ba7
+status: experimental
+description: Detects potential network activity of HelpBeam RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of HelpBeam
+level: medium

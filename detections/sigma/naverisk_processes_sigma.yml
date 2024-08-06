@@ -1,0 +1,20 @@
+title: Potential Naverisk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - AgentSetup-*.exe
+  condition: selection
+id: cbee1e76-a86f-45a8-9cf8-25b78205d612
+status: experimental
+description: Detects potential processes activity of Naverisk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Naverisk
+level: medium

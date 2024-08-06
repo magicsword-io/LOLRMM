@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - apc_host.exe
+    - apc_host.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - anyplace-control.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - anyplace-control.com
+      Ports: []
 Detections: []
 References:
-- http://www.anyplace-control.com/anyplace-control/help/faq.htm
+  - http://www.anyplace-control.com/anyplace-control/help/faq.htm
 Acknowledgement: []

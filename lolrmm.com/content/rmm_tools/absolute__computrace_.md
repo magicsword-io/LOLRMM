@@ -48,7 +48,8 @@ Absolute (Computrace) is a remote monitoring and management (RMM) tool. More inf
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*search.namequery.com`
     - `*server.absolute.com`
 

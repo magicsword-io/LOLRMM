@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - beamyourscreen.exe
-  - beamyourscreen-host.exe
+    - beamyourscreen.exe
+    - beamyourscreen-host.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - beamyourscreen.com
-    - '*.beamyourscreen.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - beamyourscreen.com
+        - '*.beamyourscreen.com'
+      Ports: []
 Detections: []
 References:
-- beamyourscreen redirects to https://www.mikogo.com/
+  - beamyourscreen redirects to https://www.mikogo.com/
 Acknowledgement: []

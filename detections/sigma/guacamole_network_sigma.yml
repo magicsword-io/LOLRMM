@@ -1,0 +1,21 @@
+title: Potential Guacamole RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - guacamole.apache.org
+  condition: selection
+id: 896eae41-1692-47e2-b54c-be224173b531
+status: experimental
+description: Detects potential network activity of Guacamole RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Guacamole
+level: medium

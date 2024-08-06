@@ -1,0 +1,21 @@
+title: Potential DriveMaker RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\*\DriveMaker.exe
+    - '*\DriveMaker.exe'
+  condition: selection
+id: 7f6b7e43-7312-4c04-9ea0-8e57bef0fb1c
+status: experimental
+description: Detects potential processes activity of DriveMaker RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DriveMaker
+level: medium

@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ezhelpclientmanager.exe
-  - ezHelpManager.exe
-  - ezhelpclient.exe
+    - ezhelpclientmanager.exe
+    - ezHelpManager.exe
+    - ezhelpclient.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.ezhelp.co.kr'
-    - ezhelp.co.kr
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.ezhelp.co.kr'
+        - ezhelp.co.kr
+      Ports: []
 Detections: []
 References:
-- https://www.exhelp.co.kr
+  - https://www.exhelp.co.kr
 Acknowledgement: []

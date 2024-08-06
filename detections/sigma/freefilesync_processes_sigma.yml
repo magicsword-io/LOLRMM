@@ -1,0 +1,20 @@
+title: Potential FreeFileSync RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\FreeFileSync.exe'
+  condition: selection
+id: ae9d7e28-3641-4bbf-84af-de03a781662d
+status: experimental
+description: Detects potential processes activity of FreeFileSync RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FreeFileSync
+level: medium

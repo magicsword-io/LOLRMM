@@ -1,0 +1,23 @@
+title: Potential NinjaRMM RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.ninjarmm.com'
+    - '*.ninjaone.com'
+    - resources.ninjarmm.com
+    - ninjaone.com
+  condition: selection
+id: 943a0877-790f-4440-bed5-182a1977adc5
+status: experimental
+description: Detects potential network activity of NinjaRMM RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NinjaRMM
+level: medium

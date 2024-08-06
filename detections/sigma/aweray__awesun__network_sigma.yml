@@ -1,0 +1,21 @@
+title: Potential AweRay (AweSun) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - asapi-us.aweray.net
+    - asapi.aweray.net
+  condition: selection
+id: 568bb069-9031-4b20-a781-b0885b7aaa15
+status: experimental
+description: Detects potential network activity of AweRay (AweSun) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of AweRay (AweSun)
+level: medium

@@ -1,0 +1,20 @@
+title: Potential RemoteUtilities RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - remoteutilities.com
+  condition: selection
+id: 344e66ba-237a-429a-9152-2aeb17227bb0
+status: experimental
+description: Detects potential network activity of RemoteUtilities RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RemoteUtilities
+level: medium

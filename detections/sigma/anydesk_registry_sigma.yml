@@ -1,0 +1,27 @@
+title: Potential AnyDesk RMM Tool Registry Activity
+logsource:
+  product: windows
+  category: registry_event
+detection:
+  selection:
+    TargetObject|contains:
+    - HKLM\SOFTWARE\Clients\Media\AnyDesk
+    - HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk
+    - HKLM\SOFTWARE\Classes\.anydesk\shell\open\command
+    - HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command
+    - HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*
+    - HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk
+    - HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk
+    - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
+  condition: selection
+id: 7a8349c5-b95d-4933-afb1-d744570bbb52
+status: experimental
+description: Detects potential registry activity of AnyDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of AnyDesk
+level: medium

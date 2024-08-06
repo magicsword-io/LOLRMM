@@ -1,0 +1,20 @@
+title: Potential Ivanti Remote Control RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.ivanticloud.com'
+  condition: selection
+id: 7638eeef-f973-4274-8e5e-f57c2523e948
+status: experimental
+description: Detects potential network activity of Ivanti Remote Control RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Ivanti Remote Control
+level: medium

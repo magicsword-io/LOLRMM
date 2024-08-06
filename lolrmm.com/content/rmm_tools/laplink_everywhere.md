@@ -49,7 +49,8 @@ Laplink Everywhere is a remote monitoring and management (RMM) tool. More inform
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `everywhere.laplink.com`
     - `le.laplink.com`
     - `atled.syspectr.com`

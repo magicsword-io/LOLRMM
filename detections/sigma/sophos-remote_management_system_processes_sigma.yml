@@ -1,0 +1,23 @@
+title: Potential Sophos-Remote Management System RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - clientmrinit.exe
+    - mgntsvc.exe
+    - routernt.exe
+  condition: selection
+id: a9b5ed5c-d618-4940-8f88-7f4f5560c1c8
+status: experimental
+description: Detects potential processes activity of Sophos-Remote Management System
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Sophos-Remote Management System
+level: medium

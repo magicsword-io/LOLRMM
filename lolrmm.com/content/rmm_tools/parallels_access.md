@@ -48,7 +48,8 @@ Parallels Access is a remote monitoring and management (RMM) tool. More informat
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.parallels.com`
     - `parallels.com/products/ras/try`
 

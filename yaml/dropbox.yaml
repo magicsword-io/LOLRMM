@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Dropbox\Client\*
-  - '*\Dropbox\Client\*'
-  - '*\Dropbox.exe'
-  - '*Users\*\Dropbox\bin\'
+    - C:\Program Files (x86)\Dropbox\Client\*
+    - '*\Dropbox\Client\*'
+    - '*\Dropbox.exe'
+    - '*Users\*\Dropbox\bin\'
 Artifacts:
   Disk: []
   EventLog: []

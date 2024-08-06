@@ -1,0 +1,22 @@
+title: Potential GetScreen RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - getscreen.me
+    - GetScreen.me
+    - '*.getscreen.me'
+  condition: selection
+id: fefb75cb-269d-4b86-9518-b987aa6c60cb
+status: experimental
+description: Detects potential network activity of GetScreen RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GetScreen
+level: medium

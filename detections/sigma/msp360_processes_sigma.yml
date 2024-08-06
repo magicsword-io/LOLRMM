@@ -1,0 +1,30 @@
+title: Potential MSP360 RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - Online Backup.exe
+    - CBBackupPlan.exe
+    - Cloud.Backup.Scheduler.exe
+    - Cloud.Backup.RM.Service.exe
+    - cbb.exe
+    - CloudRaService.exe
+    - CloudRaSd.exe
+    - CloudRaCmd.exe
+    - CloudRaUtilities.exe
+    - Remote Desktop.exe
+    - Connect.exe
+  condition: selection
+id: dbf2f768-4f03-4ad9-93b5-dc880deccf4a
+status: experimental
+description: Detects potential processes activity of MSP360 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MSP360
+level: medium

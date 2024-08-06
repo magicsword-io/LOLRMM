@@ -1,0 +1,21 @@
+title: Potential NoMachine RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - nomachine.com
+  condition: selection
+id: 2e10dab2-67bf-4e63-9e60-e21b6f136d1b
+status: experimental
+description: Detects potential network activity of NoMachine RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NoMachine
+level: medium

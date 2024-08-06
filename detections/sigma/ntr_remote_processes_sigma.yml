@@ -1,0 +1,20 @@
+title: Potential NTR Remote RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - NTRsupportPro_EN.exe
+  condition: selection
+id: e2c4554b-daaa-4f19-80e3-167c81ae53d2
+status: experimental
+description: Detects potential processes activity of NTR Remote RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NTR Remote
+level: medium

@@ -1,0 +1,23 @@
+title: Potential RAdmin RMM Tool File Activity
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - C:\Windows\SysWOW64\rserver30\Radm_log.htm
+    - C:\Windows\System32\rserver30\Radm_log.htm
+    - C:\Windows\System32\rserver30\CHATLOGS\*\*.htm
+    - C:\Users\*\Documents\ChatLogs\*\*.htm
+  condition: selection
+id: e464c51a-6a46-451c-9e35-22c26cf974c8
+status: experimental
+description: Detects potential files activity of RAdmin RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RAdmin
+level: medium

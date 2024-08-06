@@ -1,0 +1,20 @@
+title: Potential ngrok RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ngrok.exe
+  condition: selection
+id: cb5e7847-18d5-4f41-a762-c280ae647080
+status: experimental
+description: Detects potential processes activity of ngrok RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ngrok
+level: medium

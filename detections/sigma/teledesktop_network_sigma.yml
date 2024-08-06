@@ -1,0 +1,21 @@
+title: Potential TeleDesktop RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - tele-desk.com
+  condition: selection
+id: 1af396e2-b88e-49a9-8301-403363033e62
+status: experimental
+description: Detects potential network activity of TeleDesktop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TeleDesktop
+level: medium

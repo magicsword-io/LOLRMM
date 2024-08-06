@@ -1,0 +1,20 @@
+title: Potential Desktop Central RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - desktopcentral.manageengine.com
+  condition: selection
+id: 49049517-e26f-4e29-87af-fe66bae434b5
+status: experimental
+description: Detects potential network activity of Desktop Central RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Desktop Central
+level: medium

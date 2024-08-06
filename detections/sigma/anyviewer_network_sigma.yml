@@ -1,0 +1,21 @@
+title: Potential AnyViewer RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.anyviewer.com'
+    - '*.aomeisoftware.com'
+  condition: selection
+id: 12fbe9c8-21af-4a18-b63d-47fbd91e2424
+status: experimental
+description: Detects potential network activity of AnyViewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of AnyViewer
+level: medium

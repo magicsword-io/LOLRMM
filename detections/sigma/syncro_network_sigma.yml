@@ -1,0 +1,30 @@
+title: Potential Syncro RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - kabuto.io
+    - '*.syncromsp.com'
+    - '*.syncroapi.com'
+    - syncromsp.com
+    - servably.com
+    - ld.aurelius.host
+    - 'app.kabuto.io '
+    - '*.kabutoservices.com'
+    - repairshopr.com
+    - kabutoservices.com
+    - attachments.servably.com
+  condition: selection
+id: 69005fdf-9381-48cc-ae6c-99e454d6e355
+status: experimental
+description: Detects potential network activity of Syncro RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Syncro
+level: medium

@@ -1,0 +1,21 @@
+title: Potential OptiTune RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - OTService.exe
+    - OTPowerShell.exe
+  condition: selection
+id: 145f5308-f844-4178-b836-bf20f10dbe82
+status: experimental
+description: Detects potential processes activity of OptiTune RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of OptiTune
+level: medium

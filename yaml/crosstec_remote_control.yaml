@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - PCIVIDEO.EXE
-  - supporttool.exe
+    - PCIVIDEO.EXE
+    - supporttool.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - crosstecsoftware.com/remotecontrol
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - crosstecsoftware.com/remotecontrol
+      Ports: []
 Detections: []
 References:
-- www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
+  - www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
 Acknowledgement: []

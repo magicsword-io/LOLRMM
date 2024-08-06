@@ -1,0 +1,21 @@
+title: Potential Alpemix RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.alpemix.com'
+    - '*.teknopars.com'
+  condition: selection
+id: 205f5861-65df-4f9f-b51d-81f499b6b934
+status: experimental
+description: Detects potential network activity of Alpemix RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Alpemix
+level: medium

@@ -1,0 +1,22 @@
+title: Potential ManageEngine RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - InstallShield Setup.exe
+    - ManageEngine_Remote_Access_Plus.exe
+    - '*\dcagentservice.exe'
+  condition: selection
+id: 334bb064-254f-43c6-b6fd-860fbbf71878
+status: experimental
+description: Detects potential processes activity of ManageEngine RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ManageEngine
+level: medium

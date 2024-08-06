@@ -1,0 +1,21 @@
+title: Potential Jump Cloud RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.api.jumpcloud.com'
+    - '*.assist.jumpcloud.com'
+  condition: selection
+id: 3e096c39-5da8-47c5-bc83-74aacaff37e3
+status: experimental
+description: Detects potential network activity of Jump Cloud RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Jump Cloud
+level: medium

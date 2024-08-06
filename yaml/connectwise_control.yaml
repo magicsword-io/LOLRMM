@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - connectwisechat-customer.exe
-  - connectwisecontrol.client.exe
+    - connectwisechat-customer.exe
+    - connectwisecontrol.client.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - control.connectwise.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - control.connectwise.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

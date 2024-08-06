@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - supremo.exe
-  - supremoservice.exe
-  - supremosystem.exe
-  - supremohelper.exe
+    - supremo.exe
+    - supremoservice.exe
+    - supremosystem.exe
+    - supremohelper.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - supremocontrol.com
-    - '*.supremocontrol.com'
-    - '* .nanosystems.it'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - supremocontrol.com
+        - '*.supremocontrol.com'
+        - '* .nanosystems.it'
+      Ports: []
 Detections: []
 References:
-- https://www.supremocontrol.com/frequently-asked-questions/
+  - https://www.supremocontrol.com/frequently-asked-questions/
 Acknowledgement: []

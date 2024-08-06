@@ -1,0 +1,20 @@
+title: Potential Air Explorer RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\airexplorer.exe'
+  condition: selection
+id: 11506d38-e49f-4f4f-8ba4-4254b051fe06
+status: experimental
+description: Detects potential processes activity of Air Explorer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Air Explorer
+level: medium

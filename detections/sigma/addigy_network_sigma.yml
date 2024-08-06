@@ -1,0 +1,22 @@
+title: Potential Addigy RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - prod.addigy.com
+    - grtmprod.addigy.com
+    - agents.addigy.com
+  condition: selection
+id: b39c54d4-3f43-4d4b-ba03-fbed9889bf91
+status: experimental
+description: Detects potential network activity of Addigy RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Addigy
+level: medium

@@ -1,0 +1,21 @@
+title: Potential ngrok RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - ngrok.com
+  condition: selection
+id: 2a22abaa-eed9-4d56-a427-13bd5ac26f2b
+status: experimental
+description: Detects potential network activity of ngrok RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ngrok
+level: medium

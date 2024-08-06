@@ -1,0 +1,20 @@
+title: Potential CloudXplorer RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\clumsyleaf.cloudxplorer*.exe'
+  condition: selection
+id: 19ce5d34-ecdd-464a-b621-68f2db6086b8
+status: experimental
+description: Detects potential processes activity of CloudXplorer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CloudXplorer
+level: medium

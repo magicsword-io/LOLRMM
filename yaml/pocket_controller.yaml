@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - pocketcontroller.exe
-  - pocketcloudservice.exe
-  - wysebrowser.exe
+    - pocketcontroller.exe
+    - pocketcloudservice.exe
+    - wysebrowser.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - soti.net/products/soti-pocket-controller
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - soti.net/products/soti-pocket-controller
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

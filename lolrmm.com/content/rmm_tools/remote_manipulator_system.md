@@ -45,7 +45,8 @@ Remote Manipulator System is a remote monitoring and management (RMM) tool. More
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.internetid.ru`
     - `rmansys.ru`
 

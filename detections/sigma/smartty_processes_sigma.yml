@@ -1,0 +1,20 @@
+title: Potential SmarTTY RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\SmarTTY.exe'
+  condition: selection
+id: b6c62549-30e5-4a85-8bc5-5c89149e82da
+status: experimental
+description: Detects potential processes activity of SmarTTY RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SmarTTY
+level: medium

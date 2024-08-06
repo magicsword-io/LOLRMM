@@ -1,0 +1,24 @@
+title: Potential LogMeIn RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - logmein-gateway.com
+    - '*.logmein.com'
+    - '*.logmein.eu'
+    - logmeinrescue.com
+    - '*.logmeininc.com'
+  condition: selection
+id: 140c52df-e816-47f1-b8f4-d232b2a5f659
+status: experimental
+description: Detects potential network activity of LogMeIn RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LogMeIn
+level: medium

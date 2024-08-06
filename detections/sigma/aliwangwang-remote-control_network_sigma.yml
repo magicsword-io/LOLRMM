@@ -1,0 +1,21 @@
+title: Potential AliWangWang-remote-control RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - wangwang.taobao.com
+  condition: selection
+id: e3bce37d-bf78-414d-8a57-aff0725f1c24
+status: experimental
+description: Detects potential network activity of AliWangWang-remote-control RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of AliWangWang-remote-control
+level: medium

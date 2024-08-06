@@ -1,0 +1,22 @@
+title: Potential Domotz RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.domotz.co'
+    - domotz.com
+    - '*cell-1.domotz.com'
+  condition: selection
+id: fd38488d-6343-44a8-82c8-116377d4a672
+status: experimental
+description: Detects potential network activity of Domotz RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Domotz
+level: medium

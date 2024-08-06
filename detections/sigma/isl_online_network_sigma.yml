@@ -1,0 +1,21 @@
+title: Potential ISL Online RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.islonline.com'
+    - '*.islonline.net'
+  condition: selection
+id: 28edea4d-3c36-4c36-849c-dd50f34623ea
+status: experimental
+description: Detects potential network activity of ISL Online RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ISL Online
+level: medium

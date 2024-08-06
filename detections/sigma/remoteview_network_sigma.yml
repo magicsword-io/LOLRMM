@@ -1,0 +1,22 @@
+title: Potential RemoteView RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*content.rview.com'
+    - '*.rview.com'
+    - content.rview.com
+  condition: selection
+id: 67692309-c9e7-40ce-bdc5-88f5fc9c705f
+status: experimental
+description: Detects potential network activity of RemoteView RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RemoteView
+level: medium

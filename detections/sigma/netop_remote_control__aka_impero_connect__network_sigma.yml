@@ -1,0 +1,21 @@
+title: Potential Netop Remote Control (aka Impero Connect) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - imperosoftware.com/impero-connect/
+  condition: selection
+id: 7f9b9dcb-7516-4b13-98a9-c642a7bb17c0
+status: experimental
+description: Detects potential network activity of Netop Remote Control (aka Impero
+  Connect) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Netop Remote Control (aka Impero Connect)
+level: medium

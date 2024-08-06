@@ -1,0 +1,25 @@
+title: Potential Site24x7 RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - plus*.site24x7.com
+    - plus*.site24x7.eu
+    - plus*.site24x7.in
+    - plus*.site24x7.cn
+    - plus*.site24x7.net.au
+    - site24x7.com/msp
+  condition: selection
+id: a050e16b-7d1e-41bc-8fe7-dc185bc8b065
+status: experimental
+description: Detects potential network activity of Site24x7 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Site24x7
+level: medium

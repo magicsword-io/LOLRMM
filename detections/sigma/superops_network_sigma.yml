@@ -1,0 +1,24 @@
+title: Potential SuperOps RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.superopsbeta.com'
+    - superops.ai
+    - serv.superopsalpha.com
+    - '*.superops.ai'
+    - '*.superopsalpha.com'
+  condition: selection
+id: dfc1f885-91cc-4e9a-a055-6e1075c08ee4
+status: experimental
+description: Detects potential network activity of SuperOps RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SuperOps
+level: medium

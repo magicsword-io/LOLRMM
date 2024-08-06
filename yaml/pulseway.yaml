@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - PCMonitorManager.exe
-  - pcmonitorsrv.exe
+    - PCMonitorManager.exe
+    - pcmonitorsrv.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - pulseway.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - pulseway.com
+      Ports: []
 Detections: []
 References:
-- https://intercom.help/pulseway/en/
+  - https://intercom.help/pulseway/en/
 Acknowledgement: []

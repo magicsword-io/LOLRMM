@@ -1,0 +1,22 @@
+title: Potential AnyDesk RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - boot.net.anydesk.com
+    - relay-[a-f0-9]{8}.net.anydesk.com:443
+    - '*.anydesk.com'
+  condition: selection
+id: d11aa4a1-e631-41bd-99a8-3d3aae7d100a
+status: experimental
+description: Detects potential network activity of AnyDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of AnyDesk
+level: medium

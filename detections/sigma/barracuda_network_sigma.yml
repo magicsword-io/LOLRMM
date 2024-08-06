@@ -1,0 +1,22 @@
+title: Potential Barracuda RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.islonline.net'
+    - rmm.barracudamsp.com
+    - barracudamsp.com
+  condition: selection
+id: 911bfc08-ca86-4766-9607-5e6cce2bf0c2
+status: experimental
+description: Detects potential network activity of Barracuda RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Barracuda
+level: medium

@@ -1,0 +1,20 @@
+title: Potential RunSmart RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - runsmart.io
+  condition: selection
+id: ccc25e14-d20c-44f5-8c49-351e584ec3be
+status: experimental
+description: Detects potential network activity of RunSmart RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RunSmart
+level: medium

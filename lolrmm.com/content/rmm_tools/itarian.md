@@ -53,7 +53,8 @@ Itarian is a remote monitoring and management (RMM) tool. More information will 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `mdmsupport.comodo.com`
     - `*.itsm-us1.comodo.com`
     - `*.cmdm.comodo.com`

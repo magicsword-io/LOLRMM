@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Globalscape\CuteFTP\*
-  - '*\Globalscape\CuteFTP\*'
-  - '*\cuteftppro.exe'
+    - C:\Program Files (x86)\Globalscape\CuteFTP\*
+    - '*\Globalscape\CuteFTP\*'
+    - '*\cuteftppro.exe'
 Artifacts:
   Disk: []
   EventLog: []

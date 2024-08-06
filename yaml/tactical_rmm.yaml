@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - tacticalrmm.exe
-  - tacticalrmm.exe
+    - tacticalrmm.exe
+    - tacticalrmm.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - login.tailscale.com
-    - login.tailscale.com
-    - docs.tacticalrmm.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - login.tailscale.com
+        - login.tailscale.com
+        - docs.tacticalrmm.com
+      Ports: []
 Detections: []
 References:
-- docs.tacticalrmm.com
+  - docs.tacticalrmm.com
 Acknowledgement: []

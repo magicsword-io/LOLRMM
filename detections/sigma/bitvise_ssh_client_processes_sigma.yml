@@ -1,0 +1,20 @@
+title: Potential Bitvise SSH Client RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\BvSshClient-Inst.exe'
+  condition: selection
+id: d81910ba-90e5-46fb-a213-653888c4b423
+status: experimental
+description: Detects potential processes activity of Bitvise SSH Client RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Bitvise SSH Client
+level: medium

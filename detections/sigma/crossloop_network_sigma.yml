@@ -1,0 +1,21 @@
+title: Potential CrossLoop RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.crossloop.com'
+    - crossloop.en.softonic.com
+  condition: selection
+id: c2deeec3-aacc-4631-8211-3cec54658a24
+status: experimental
+description: Detects potential network activity of CrossLoop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CrossLoop
+level: medium

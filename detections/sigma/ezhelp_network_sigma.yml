@@ -1,0 +1,21 @@
+title: Potential ezHelp RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.ezhelp.co.kr'
+    - ezhelp.co.kr
+  condition: selection
+id: 74527672-ed2f-408d-bb34-d4d83ec5db9e
+status: experimental
+description: Detects potential network activity of ezHelp RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ezHelp
+level: medium

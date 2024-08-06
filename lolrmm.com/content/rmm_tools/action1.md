@@ -14,19 +14,24 @@ displayTitle = "Action1"
 
 ### Description
 
-Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries.  Through the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.
+Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries. 
+Through the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.
 
 
 **Author**: @kostastsale
 
-**Created**: 2024/03/08
+**Created**: 2024-08-03
 
+**Last Modified**: 2024-08-03
 
 ### Details
 
 - **Website**: [https://www.action1.com/](https://www.action1.com/)
 
 #### PE Metadata
+- **Filename**: action1_connector.exe
+- **Filename**: action1_remote.exe
+- **Filename**: action1_update.exe
 - **Filename**: action1_agent.exe
 - **Original File Name**: action1_agent.exe
 - **Description**: Endpoint Agent
@@ -41,22 +46,19 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 - Windows
 
 #### Capabilities
-- Remote monitoring and management
-- Patch management
-- Network discovery
 - Backup and disaster recovery
-- Helpdesk and ticketing
-- Reporting and analytics
 - Billing and invoicing
 - Customer portal
+- HelpDesk and ticketing
 - Mobile app
+- Network discovery
+- Patch management
+- Remote monitoring and management
+- Reporting and analytics
 
 
 #### Installation Paths
-- `action1_connector.exe`
-- `action1_agent.exe`
-- `action1_remote.exe`
-- `action1_update.exe`
+- `C:\Windows\Action1\*`
 
 ### Forensic Artifacts
 
@@ -86,6 +88,13 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 - **File**: `C:\Windows\Action1\rule_data\*`
 
   **Description**: Files related to Action1 rules
+
+
+  **OS**: Windows
+
+- **File**: `C:\Windows\Action1\action1_log_*.log`
+
+  **Description**: Contains history, errors, system notifications. Incoming and outgoing connections.
 
 
   **OS**: Windows
@@ -125,14 +134,21 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 
 #### Network Artifacts
 
-- **Description**: Known remote domains
-  **Domain**:
-    - `action1.com`
-    - `a1-backend-packages.s3.amazonaws.com`
-    - `*.action1.com`
-    - `server.action1.com`
+- **Description**: N/A
 
-  **Port**: `22543`
+  **Domains**:
+    - `*.action1.com`
+
+  **Ports**:
+    - `443`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `a1-backend-packages.s3.amazonaws.com`
+
+  **Ports**:
+    - `443`
 
 
 
@@ -150,6 +166,7 @@ Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables us
 - [https://www.action1.com/documentation/firewall-configuration/](https://www.action1.com/documentation/firewall-configuration/)
 - [https://www.action1.com/documentation/](https://www.action1.com/documentation/)
 - [https://twitter.com/Kostastsale/status/1646256901506605063?s=20](https://twitter.com/Kostastsale/status/1646256901506605063?s=20)
+- [https://ruler-project.github.io/ruler-project/RULER/remote/Action1/](https://ruler-project.github.io/ruler-project/RULER/remote/Action1/)
 
 ### Acknowledgements
 - Kostas (@kostastsale)

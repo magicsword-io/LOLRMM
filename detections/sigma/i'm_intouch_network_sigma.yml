@@ -1,0 +1,21 @@
+title: Potential I'm InTouch RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.01com.com'
+    - 01com.com/imintouch-remote-pc-desktop
+  condition: selection
+id: c19da028-3bbd-402e-b73e-6439ceb561eb
+status: experimental
+description: Detects potential network activity of I'm InTouch RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of I'm InTouch
+level: medium

@@ -50,7 +50,8 @@ N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) too
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.beanywhere.com `
     - `systemmonitor.co.uk`
     - `*system-monitor.com`

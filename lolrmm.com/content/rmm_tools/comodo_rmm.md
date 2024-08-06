@@ -45,7 +45,8 @@ Comodo RMM is a remote monitoring and management (RMM) tool. More information wi
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.itsm-us1.comodo.com`
     - `*mdmsupport.comodo.com`
     - `one.comodo.com`

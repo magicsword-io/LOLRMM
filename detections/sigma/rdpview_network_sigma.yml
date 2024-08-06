@@ -1,0 +1,21 @@
+title: Potential RDPView RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - systemmanager.ru/dntu.en/rdp_view.htm
+  condition: selection
+id: 2edfa714-43d0-4c14-aba4-c2957e159e3c
+status: experimental
+description: Detects potential network activity of RDPView RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RDPView
+level: medium

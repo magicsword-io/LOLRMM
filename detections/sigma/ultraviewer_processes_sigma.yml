@@ -1,0 +1,28 @@
+title: Potential UltraViewer RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - UltraViewer_Service.exe
+    - UltraViewer_Desktop.exe
+    - ultraviewer.exe
+    - C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
+    - '*\UltraViewer_Desktop.exe'
+    - ultraviewer_desktop.exe
+    - ultraviewer_service.exe
+    - UltraViewer_Desktop.exe
+    - UltraViewer_Service.exe
+  condition: selection
+id: e128c500-3bdc-4d74-be0b-6ea0ae06c266
+status: experimental
+description: Detects potential processes activity of UltraViewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of UltraViewer
+level: medium

@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - grabberEM.*msi
-  - grabberTT*.msi
+    - grabberEM.*msi
+    - grabberTT*.msi
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - 'kickidler.com'
-    - 'my.kickidler.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - 'kickidler.com'
+        - 'my.kickidler.com'
+      Ports: []
 Detections: []
 References:
-- https://www.kickidler.com/for-it/faq/
+  - https://www.kickidler.com/for-it/faq/
 Acknowledgement: []

@@ -1,0 +1,23 @@
+title: Potential RemoteView RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - remoteview.exe
+    - rv.exe
+    - rvagent.exe
+    - rvagtray.exe
+  condition: selection
+id: 653f6d79-85af-4014-8f3b-7a7f155871e3
+status: experimental
+description: Detects potential processes activity of RemoteView RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RemoteView
+level: medium

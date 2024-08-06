@@ -1,0 +1,20 @@
+title: Potential Royal Apps RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+  condition: selection
+id: d50c3772-ac44-4dfe-9a7f-8f15a6a87145
+status: experimental
+description: Detects potential network activity of Royal Apps RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Royal Apps
+level: medium

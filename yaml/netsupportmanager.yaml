@@ -17,21 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - pcictlui.exe
-  - client32.exe
-  - pcicfgui.exe
+    - pcictlui.exe
+    - client32.exe
+    - pcicfgui.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - geo.netsupportsoftware.com
-    - netsupportmanager.com
-    - '*.netsupportmanager.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - geo.netsupportsoftware.com
+        - netsupportmanager.com
+        - '*.netsupportmanager.com'
+      Ports: []
 Detections: []
 References:
-- https://www.netsupportmanager.com/resources/
+  - https://www.netsupportmanager.com/resources/
 Acknowledgement: []

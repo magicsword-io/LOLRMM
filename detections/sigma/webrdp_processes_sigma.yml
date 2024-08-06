@@ -1,0 +1,20 @@
+title: Potential WebRDP RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - webrdp.exe
+  condition: selection
+id: c3410ec9-8599-4c23-b7de-39fa8b1fc225
+status: experimental
+description: Detects potential processes activity of WebRDP RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of WebRDP
+level: medium

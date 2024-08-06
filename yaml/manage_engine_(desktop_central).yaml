@@ -17,23 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - dcagentservice.exe
-  - dcagentregister.exe
+    - dcagentservice.exe
+    - dcagentregister.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - desktopcentral.manageengine.com
-    - desktopcentral.manageengine.com.eu
-    - desktopcentral.manageengine.cn
-    - '*.dms.zoho.com'
-    - '*.dms.zoho.com.eu'
-    - '*.-dms.zoho.com.cn'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - desktopcentral.manageengine.com
+        - desktopcentral.manageengine.com.eu
+        - desktopcentral.manageengine.cn
+        - '*.dms.zoho.com'
+        - '*.dms.zoho.com.eu'
+        - '*.-dms.zoho.com.cn'
+      Ports: []
 Detections: []
 References:
-- https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
+  - https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
 Acknowledgement: []

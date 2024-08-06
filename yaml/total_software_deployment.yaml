@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\ProgramData\Total Software Deployment\*
-  - '*\Total Software Deployment\*'
-  - '*\tniwinagent.exe'
-  - '*\Tsdservice.exe'
+    - C:\ProgramData\Total Software Deployment\*
+    - '*\Total Software Deployment\*'
+    - '*\tniwinagent.exe'
+    - '*\Tsdservice.exe'
 Artifacts:
   Disk: []
   EventLog: []

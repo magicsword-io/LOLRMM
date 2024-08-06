@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - mionet.exe
-  - mionetmanager.exe
+    - mionet.exe
+    - mionetmanager.exe
 Artifacts:
   Disk: []
   EventLog: []

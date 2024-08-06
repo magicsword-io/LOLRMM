@@ -1,0 +1,22 @@
+title: Potential FleetDesk.io RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.fleetdeck.io'
+    - cognito-idp.us-west-2.amazonaws.com
+    - fleetdeck.io
+  condition: selection
+id: 11a0d8f2-624d-4b56-914f-31ce904f0ae1
+status: experimental
+description: Detects potential network activity of FleetDesk.io RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FleetDesk.io
+level: medium

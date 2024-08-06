@@ -1,0 +1,22 @@
+title: Potential RustDesk RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - rustdesk.com
+    - user_managed
+    - web.rustdesk.com
+  condition: selection
+id: 69fa67ae-7e43-4bf6-a4d8-69923f1c970a
+status: experimental
+description: Detects potential network activity of RustDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RustDesk
+level: medium

@@ -1,0 +1,21 @@
+title: Potential Netviewer RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - netviewer*.exe
+    - netviewer.exe
+  condition: selection
+id: c6955780-c235-47c4-92e9-c8180a25bdea
+status: experimental
+description: Detects potential processes activity of Netviewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Netviewer
+level: medium

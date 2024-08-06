@@ -1,0 +1,21 @@
+title: Potential AeroAdmin RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - aeroadmin.exe
+    - AeroAdmin.exe
+  condition: selection
+id: fe8a24ef-0c43-4310-bf6c-a57531759392
+status: experimental
+description: Detects potential processes activity of AeroAdmin RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of AeroAdmin
+level: medium

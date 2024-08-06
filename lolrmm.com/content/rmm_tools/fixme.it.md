@@ -55,7 +55,8 @@ FixMe.it is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.fixme.it`
     - `*.techinline.net`
     - `fixme.it`

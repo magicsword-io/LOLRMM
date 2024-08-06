@@ -1,0 +1,21 @@
+title: Potential EMCO Remote Console RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - emcosoftware.com
+  condition: selection
+id: c18f4446-bf56-478b-b34a-21649f517412
+status: experimental
+description: Detects potential network activity of EMCO Remote Console RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of EMCO Remote Console
+level: medium

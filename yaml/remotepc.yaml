@@ -17,29 +17,29 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\RemotePC\*
-  - Idrive.File-Transfer
-  - '*\RemotePC\*'
-  - remotepcservice.exe
-  - RemotePC.exe
-  - remotepchost.exe
-  - idrive.RemotePCAgent
-  - rpcsuite.exe
-  - '*\RemotePCService.exe'
-  - RemotePCService.exe
+    - C:\Program Files (x86)\RemotePC\*
+    - Idrive.File-Transfer
+    - '*\RemotePC\*'
+    - remotepcservice.exe
+    - RemotePC.exe
+    - remotepchost.exe
+    - idrive.RemotePCAgent
+    - rpcsuite.exe
+    - '*\RemotePCService.exe'
+    - RemotePCService.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.remotedesktop.com'
-    - '*.remotepc.com'
-    - www.remotepc.com
-    - remotepc.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.remotedesktop.com'
+        - '*.remotepc.com'
+        - www.remotepc.com
+        - remotepc.com
+      Ports: []
 Detections: []
 References:
-- https://www.remotedesktop.com/helpdesk/faq-firewall
+  - https://www.remotedesktop.com/helpdesk/faq-firewall
 Acknowledgement: []

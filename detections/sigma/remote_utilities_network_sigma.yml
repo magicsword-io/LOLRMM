@@ -1,0 +1,20 @@
+title: Potential Remote Utilities RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.internetid.ru'
+  condition: selection
+id: 739d6520-282b-4da3-a81e-804e0d42969b
+status: experimental
+description: Detects potential network activity of Remote Utilities RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Remote Utilities
+level: medium

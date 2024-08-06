@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Almageste\DragonDisk\*
-  - '*\Almageste\DragonDisk\*'
-  - '*\DragonDisk.exe'
+    - C:\Program Files (x86)\Almageste\DragonDisk\*
+    - '*\Almageste\DragonDisk\*'
+    - '*\DragonDisk.exe'
 Artifacts:
   Disk: []
   EventLog: []

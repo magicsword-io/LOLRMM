@@ -1,0 +1,23 @@
+title: Potential Iperius Remote RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.iperiusremote.com'
+    - '*.iperius.com'
+    - '*.iperius-rs.com'
+    - iperiusremote.com
+  condition: selection
+id: 85596ce8-a4e0-4c61-9e20-ecb5dde9d1f0
+status: experimental
+description: Detects potential network activity of Iperius Remote RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Iperius Remote
+level: medium

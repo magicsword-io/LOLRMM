@@ -17,24 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - domotz.exe
-  - Domotz Pro Desktop App.exe
-  - domotz_bash.exe
-  - domotz*.exe
-  - Domotz Pro Desktop App Setup*.exe
-  - domotz-windows*.exe
+    - domotz.exe
+    - Domotz Pro Desktop App.exe
+    - domotz_bash.exe
+    - domotz*.exe
+    - Domotz Pro Desktop App Setup*.exe
+    - domotz-windows*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.domotz.co'
-    - domotz.com
-    - '*cell-1.domotz.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.domotz.co'
+        - domotz.com
+        - '*cell-1.domotz.com'
+      Ports: []
 Detections: []
 References:
-- https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
+  - https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
 Acknowledgement: []

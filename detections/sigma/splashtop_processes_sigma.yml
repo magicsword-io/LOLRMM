@@ -1,0 +1,20 @@
+title: Potential Splashtop RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - strwinclt.exe
+  condition: selection
+id: 929cdf7d-ead5-42a2-a9e0-a09b5c9b6ab7
+status: experimental
+description: Detects potential processes activity of Splashtop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Splashtop
+level: medium

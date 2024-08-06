@@ -17,11 +17,11 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\uvnc bvba\UltraVNC\*
-  - '*\uvnc bvba\UltraVNC\*'
-  - '*\UVNC_Launch.exe'
-  - '*\winvnc.exe'
-  - '*\vncviewer.exe'
+    - C:\Program Files\uvnc bvba\UltraVNC\*
+    - '*\uvnc bvba\UltraVNC\*'
+    - '*\UVNC_Launch.exe'
+    - '*\winvnc.exe'
+    - '*\vncviewer.exe'
 Artifacts:
   Disk: []
   EventLog: []

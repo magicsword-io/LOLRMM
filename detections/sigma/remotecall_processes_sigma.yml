@@ -1,0 +1,26 @@
+title: Potential RemoteCall RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rcengmgru.exe
+    - rcmgrsvc.exe
+    - rxstartsupport.exe
+    - rcstartsupport.exe
+    - raautoup.exe
+    - agentu.exe
+    - remotesupportplayeru.exe
+  condition: selection
+id: 5e36e48c-f001-4058-9660-910bdc8c92fb
+status: experimental
+description: Detects potential processes activity of RemoteCall RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RemoteCall
+level: medium

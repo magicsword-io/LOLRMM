@@ -17,15 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - SolarWinds-Dameware-DRS*.exe
-  - DameWare Mini Remote Control*.exe
-  - "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\\
-    *"
-  - dwrcs.exe
-  - '*\dwrcs\*'
-  - '*\dwrcst.exe'
-  - DameWare Remote Support.exe
-  - SolarWinds-Dameware-MRC*.exe
+    - SolarWinds-Dameware-DRS*.exe
+    - DameWare Mini Remote Control*.exe
+    - "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote
+      Control\\*"
+    - dwrcs.exe
+    - '*\dwrcs\*'
+    - '*\dwrcst.exe'
+    - DameWare Remote Support.exe
+    - SolarWinds-Dameware-MRC*.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -33,5 +33,5 @@ Artifacts:
   Network: []
 Detections: []
 References:
-- https://documentation.solarwinds.com/en/success_center/dameware/content/install-standalone-port-requirements.htm
+  - https://documentation.solarwinds.com/en/success_center/dameware/content/install-standalone-port-requirements.htm
 Acknowledgement: []

@@ -71,11 +71,15 @@ Artifacts:
         - Path: 'HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx'
           Description: N/A
     Network:
-        - Domain: '*.alpemix.com'
-          Port: 443
+        - Domains:
+            - '*.alpemix.com'
+          Ports:
+            - 443
           Description: N/A
-        - Domain: '*.teknopars.com'
-          Port: 80
+        - Domains:
+            - '*.teknopars.com'
+          Ports:
+            - 80
           Description: N/A
 Detections: []
 References:

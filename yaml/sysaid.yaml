@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\SysAidServer\*
-  - '*\SysAidServer\*'
-  - '*\SysAid\*'
-  - '*\IliAS.exe'
+    - C:\Program Files\SysAidServer\*
+    - '*\SysAidServer\*'
+    - '*\SysAid\*'
+    - '*\IliAS.exe'
 Artifacts:
   Disk: []
   EventLog: []

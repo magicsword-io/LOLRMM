@@ -1,0 +1,20 @@
+title: Potential Royal TS RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - royalts.exe
+  condition: selection
+id: f6b58ad2-cafb-40be-93dd-515c43674019
+status: experimental
+description: Detects potential processes activity of Royal TS RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Royal TS
+level: medium

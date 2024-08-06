@@ -1,0 +1,21 @@
+title: Potential Naverisk RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - naverisk.com
+  condition: selection
+id: d2e4453c-a76c-46b4-8066-f71172d1ced1
+status: experimental
+description: Detects potential network activity of Naverisk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Naverisk
+level: medium

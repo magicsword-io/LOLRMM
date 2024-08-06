@@ -1,0 +1,22 @@
+title: Potential Panorama9 RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - trusted.panorama9.com
+    - changes.panorama9.com
+    - panorama9.com
+  condition: selection
+id: feb5fde0-63e1-444b-bf94-35f4996e4e35
+status: experimental
+description: Detects potential network activity of Panorama9 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Panorama9
+level: medium

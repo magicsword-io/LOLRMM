@@ -1,0 +1,21 @@
+title: Potential Ericom Connect RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - ericom.com
+  condition: selection
+id: de61c636-0439-4eca-a924-c529a0062a55
+status: experimental
+description: Detects potential network activity of Ericom Connect RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Ericom Connect
+level: medium

@@ -1,0 +1,22 @@
+title: Potential NoteOn-desktop sharing RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - nateon*.exe
+    - nateon.exe
+    - nateonmain.exe
+  condition: selection
+id: bc03649e-a7fe-42d0-8f29-59c5de5f39e1
+status: experimental
+description: Detects potential processes activity of NoteOn-desktop sharing RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NoteOn-desktop sharing
+level: medium

@@ -1,0 +1,22 @@
+title: Potential DW Service RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - dwagsvc.exe
+    - dwagent.exe
+    - dwagsvc.exe
+  condition: selection
+id: 792a090b-1099-4e3a-98d4-f5a89eef51e6
+status: experimental
+description: Detects potential processes activity of DW Service RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DW Service
+level: medium

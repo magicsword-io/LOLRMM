@@ -17,26 +17,26 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - strwinclt.exe
-  - Splashtop_Streamer_Windows*.exe
-  - SplashtopSOS.exe
-  - sragent.exe
-  - srmanager.exe
-  - srserver.exe
-  - srservice.exe
+    - strwinclt.exe
+    - Splashtop_Streamer_Windows*.exe
+    - SplashtopSOS.exe
+    - sragent.exe
+    - srmanager.exe
+    - srserver.exe
+    - srservice.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - splashtop.com
-    - '*.api.splashtop.com'
-    - '*.relay.splashtop.com'
-    - '*.api.splashtop.eu'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - splashtop.com
+        - '*.api.splashtop.com'
+        - '*.relay.splashtop.com'
+        - '*.api.splashtop.eu'
+      Ports: []
 Detections: []
 References:
-- https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services
+  - https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services
 Acknowledgement: []

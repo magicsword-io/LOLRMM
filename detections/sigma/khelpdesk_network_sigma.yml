@@ -1,0 +1,20 @@
+title: Potential KHelpDesk RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.khelpdesk.com.br'
+  condition: selection
+id: b59a8a5b-5c0b-4b1f-afcb-f36d935ef624
+status: experimental
+description: Detects potential network activity of KHelpDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of KHelpDesk
+level: medium

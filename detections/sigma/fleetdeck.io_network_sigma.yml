@@ -1,0 +1,20 @@
+title: Potential FleetDeck.io RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - fleetdeck.io
+  condition: selection
+id: 27d3bf44-72ef-4f02-9d7e-3e734abff9a4
+status: experimental
+description: Detects potential network activity of FleetDeck.io RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FleetDeck.io
+level: medium

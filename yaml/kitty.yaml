@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\*\kitty.exe
-  - '*\kitty.exe'
+    - C:\*\kitty.exe
+    - '*\kitty.exe'
 Artifacts:
   Disk: []
   EventLog: []

@@ -1,0 +1,21 @@
+title: Potential OCS inventory RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ocsinventory.exe
+    - ocsservice.exe
+  condition: selection
+id: bd83466c-be84-49eb-b225-a699ecea1eec
+status: experimental
+description: Detects potential processes activity of OCS inventory RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of OCS inventory
+level: medium

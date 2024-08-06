@@ -1,0 +1,20 @@
+title: Potential SuperPuTTY RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\superputty.exe'
+  condition: selection
+id: b3c4138d-4ba4-4f7e-9514-393815e4e9c4
+status: experimental
+description: Detects potential processes activity of SuperPuTTY RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SuperPuTTY
+level: medium

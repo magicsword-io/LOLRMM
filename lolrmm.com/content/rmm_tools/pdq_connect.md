@@ -44,7 +44,8 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `app.pdq.com`
     - `cfcdn.pdq.com`
 

@@ -45,7 +45,8 @@ OCS inventory is a remote monitoring and management (RMM) tool. More information
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `user_managed`
     - `ocsinventory-ng.org`
 

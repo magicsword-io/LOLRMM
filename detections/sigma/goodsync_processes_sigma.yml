@@ -1,0 +1,20 @@
+title: Potential GoodSync RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - GoodSync-vsub-Setup.exe
+  condition: selection
+id: cd376eb4-90a1-46c0-8af5-dfc65f5478bc
+status: experimental
+description: Detects potential processes activity of GoodSync RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GoodSync
+level: medium

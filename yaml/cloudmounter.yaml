@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\CloudMounter\*
-  - '*\CloudMounter\*'
-  - '*\CloudMounter\*'
-  - '*\cloudmounter.exe'
+    - C:\Program Files\CloudMounter\*
+    - '*\CloudMounter\*'
+    - '*\CloudMounter\*'
+    - '*\cloudmounter.exe'
 Artifacts:
   Disk: []
   EventLog: []

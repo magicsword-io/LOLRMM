@@ -1,0 +1,20 @@
+title: Potential PSEXEC (Clone) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+  condition: selection
+id: 8f7b7ad3-b7e2-4a74-8959-5e8e477fea2b
+status: experimental
+description: Detects potential network activity of PSEXEC (Clone) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of PSEXEC (Clone)
+level: medium

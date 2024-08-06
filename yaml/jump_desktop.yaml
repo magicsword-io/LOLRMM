@@ -17,24 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - jumpclient.exe
-  - jumpdesktop.exe
-  - jumpservice.exe
-  - jumpconnect.exe
-  - jumpupdater.exe
+    - jumpclient.exe
+    - jumpdesktop.exe
+    - jumpservice.exe
+    - jumpconnect.exe
+    - jumpupdater.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.jumpdesktop.com'
-    - jumpdesktop.com
-    - jumpto.me
-    - '*.jumpto.me'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.jumpdesktop.com'
+        - jumpdesktop.com
+        - jumpto.me
+        - '*.jumpto.me'
+      Ports: []
 Detections: []
 References:
-- https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
+  - https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
 Acknowledgement: []

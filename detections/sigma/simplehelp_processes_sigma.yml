@@ -1,0 +1,24 @@
+title: Potential SimpleHelp RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - simplehelpcustomer.exe
+    - simpleservice.exe
+    - simplegatewayservice.exe
+    - remote access.exe
+    - windowslauncher.exe
+  condition: selection
+id: fc385326-9703-4e2c-bd37-cd44115e2ae7
+status: experimental
+description: Detects potential processes activity of SimpleHelp RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SimpleHelp
+level: medium

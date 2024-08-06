@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - simplehelpcustomer.exe
-  - simpleservice.exe
-  - simplegatewayservice.exe
-  - remote access.exe
-  - windowslauncher.exe
+    - simplehelpcustomer.exe
+    - simpleservice.exe
+    - simplegatewayservice.exe
+    - remote access.exe
+    - windowslauncher.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - simple-help.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - simple-help.com
+      Ports: []
 Detections: []
 References:
-- https://simple-help.com/remote-support
+  - https://simple-help.com/remote-support
 Acknowledgement: []

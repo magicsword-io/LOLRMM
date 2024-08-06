@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rport.exe
+    - rport.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - rport.io
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - rport.io
+      Ports: []
 Detections: []
 References:
-- https://kb.rport.io/using-the-remote-access
+  - https://kb.rport.io/using-the-remote-access
 Acknowledgement: []

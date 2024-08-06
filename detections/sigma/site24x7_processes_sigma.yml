@@ -1,0 +1,23 @@
+title: Potential Site24x7 RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - MEAgentHelper.exe
+    - MonitoringAgent.exe
+    - Site24x7WindowsAgentTrayIcon.exe
+    - Site24x7PluginAgent.exe
+  condition: selection
+id: bf19a09d-d750-44ae-b020-6d0eef91aef3
+status: experimental
+description: Detects potential processes activity of Site24x7 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Site24x7
+level: medium

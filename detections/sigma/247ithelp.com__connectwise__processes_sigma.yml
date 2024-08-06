@@ -1,0 +1,21 @@
+title: Potential 247ithelp.com (ConnectWise) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - Remote Workforce Client.exe
+  condition: selection
+id: 9d28ac14-bd59-4b6c-b9e6-0b9f99b1c67a
+status: experimental
+description: Detects potential processes activity of 247ithelp.com (ConnectWise) RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of 247ithelp.com (ConnectWise)
+level: medium

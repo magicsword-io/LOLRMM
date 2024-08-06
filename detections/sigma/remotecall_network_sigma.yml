@@ -1,0 +1,22 @@
+title: Potential RemoteCall RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.remotecall.com'
+    - '*.startsupport.com'
+    - remotecall.com
+  condition: selection
+id: 1cbbab9a-2f1f-4431-83f0-289879a2617c
+status: experimental
+description: Detects potential network activity of RemoteCall RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RemoteCall
+level: medium

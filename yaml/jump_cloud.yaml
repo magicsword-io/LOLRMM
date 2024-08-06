@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - 'JumpCloud*.exe '
+    - 'JumpCloud*.exe '
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.api.jumpcloud.com'
-    - '*.assist.jumpcloud.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.api.jumpcloud.com'
+        - '*.assist.jumpcloud.com'
+      Ports: []
 Detections: []
 References:
-- https://jumpcloud.com/support/understand-remote-assist-agent
+  - https://jumpcloud.com/support/understand-remote-assist-agent
 Acknowledgement: []

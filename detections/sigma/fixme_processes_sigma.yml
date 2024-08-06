@@ -1,0 +1,25 @@
+title: Potential FixMe RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - FixMeit Client.exe
+    - TiExpertStandalone.exe
+    - FixMeitClient*.exe
+    - TiExpertCore.exe
+    - FixMeit Unattended Access Setup.exe
+    - FixMeit Expert Setup.exe
+  condition: selection
+id: e6db4c2c-6fdb-4dab-94e8-a28e7f2a237d
+status: experimental
+description: Detects potential processes activity of FixMe RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FixMe
+level: medium

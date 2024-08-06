@@ -1,0 +1,21 @@
+title: Potential Sorillus RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - Sorillus-Launcher*.exe
+    - Sorillus Launcher.exe
+  condition: selection
+id: eb89bcb8-c503-43d5-bf78-a3a2274beafa
+status: experimental
+description: Detects potential processes activity of Sorillus RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Sorillus
+level: medium

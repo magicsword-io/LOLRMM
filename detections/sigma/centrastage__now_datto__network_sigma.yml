@@ -1,0 +1,22 @@
+title: Potential CentraStage (Now Datto) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.rmm.datto.com'
+    - '*cc.centrastage.net'
+    - datto.com/au/products/rmm/
+  condition: selection
+id: 15a3cb98-b88e-41d5-9f04-e5b4c1619948
+status: experimental
+description: Detects potential network activity of CentraStage (Now Datto) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CentraStage (Now Datto)
+level: medium

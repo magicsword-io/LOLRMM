@@ -1,0 +1,21 @@
+title: Potential Distant Desktop RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.distantdesktop.com'
+    - '*signalserver.xyz'
+  condition: selection
+id: e2fbdd76-2bc3-43fa-9090-8a2edda86bc6
+status: experimental
+description: Detects potential network activity of Distant Desktop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Distant Desktop
+level: medium

@@ -1,0 +1,20 @@
+title: Potential Remcos RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - remcos*.exe
+  condition: selection
+id: a0b580fc-d021-4a9a-8dfc-73b031abec78
+status: experimental
+description: Detects potential processes activity of Remcos RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Remcos
+level: medium

@@ -1,0 +1,20 @@
+title: Potential eHorus RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ehorus standalone.exe
+  condition: selection
+id: 2e53c538-3fff-45ac-b903-f4ab6afaf8dd
+status: experimental
+description: Detects potential processes activity of eHorus RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of eHorus
+level: medium

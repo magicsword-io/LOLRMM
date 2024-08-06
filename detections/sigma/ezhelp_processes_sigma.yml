@@ -1,0 +1,22 @@
+title: Potential ezHelp RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ezhelpclientmanager.exe
+    - ezHelpManager.exe
+    - ezhelpclient.exe
+  condition: selection
+id: 41b78f9d-be97-482c-9e64-736fcef8573c
+status: experimental
+description: Detects potential processes activity of ezHelp RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ezHelp
+level: medium

@@ -1,0 +1,20 @@
+title: Potential Alpemix RMM Tool Registry Activity
+logsource:
+  product: windows
+  category: registry_event
+detection:
+  selection:
+    TargetObject|contains:
+    - HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx
+  condition: selection
+id: a39d804f-6af1-463a-8a16-403e8245c8bb
+status: experimental
+description: Detects potential registry activity of Alpemix RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Alpemix
+level: medium

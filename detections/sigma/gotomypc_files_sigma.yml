@@ -1,0 +1,20 @@
+title: Potential GoToMyPC RMM Tool File Activity
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - '%AppData%\GoTo\Logs\goto.log'
+  condition: selection
+id: 6c87a776-30c5-48c0-b307-4f28bcf2c711
+status: experimental
+description: Detects potential files activity of GoToMyPC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GoToMyPC
+level: medium

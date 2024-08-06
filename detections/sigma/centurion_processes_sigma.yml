@@ -1,0 +1,20 @@
+title: Potential Centurion RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ctiserv.exe
+  condition: selection
+id: cb0aabc9-bd36-4fc0-94aa-f4946a583c4d
+status: experimental
+description: Detects potential processes activity of Centurion RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Centurion
+level: medium

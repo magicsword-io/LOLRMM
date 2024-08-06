@@ -1,0 +1,21 @@
+title: Potential MEGAsync RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\MEGAsyncSetup64.exe'
+    - '*\MEGAupdater.exe'
+  condition: selection
+id: e6685ca9-f9cf-472d-b73a-77e601e33eb8
+status: experimental
+description: Detects potential processes activity of MEGAsync RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MEGAsync
+level: medium

@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - zabbix_agent*.exe
+    - zabbix_agent*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - zabbix.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - zabbix.com
+      Ports: []
 Detections: []
 References:
-- https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent
+  - https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent
 Acknowledgement: []

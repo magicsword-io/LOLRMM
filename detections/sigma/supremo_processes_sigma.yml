@@ -1,0 +1,23 @@
+title: Potential Supremo RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - supremo.exe
+    - supremoservice.exe
+    - supremosystem.exe
+    - supremohelper.exe
+  condition: selection
+id: 1bfb1878-e57c-43cb-80a6-2cfdd7d6da65
+status: experimental
+description: Detects potential processes activity of Supremo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Supremo
+level: medium

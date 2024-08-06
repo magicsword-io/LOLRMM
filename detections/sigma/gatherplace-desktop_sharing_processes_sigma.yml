@@ -1,0 +1,23 @@
+title: Potential GatherPlace-desktop sharing RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - gp3.exe
+    - gp4.exe
+    - gp5.exe
+  condition: selection
+id: 2dd488b0-acf8-42d5-8b71-c5a770875ac1
+status: experimental
+description: Detects potential processes activity of GatherPlace-desktop sharing RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GatherPlace-desktop sharing
+level: medium

@@ -1,0 +1,20 @@
+title: Potential DW Service RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.dwservice.net'
+  condition: selection
+id: 4b47ce00-b6c1-49fe-a586-55980d3839ca
+status: experimental
+description: Detects potential network activity of DW Service RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DW Service
+level: medium

@@ -45,7 +45,8 @@ Pandora RC (eHorus) is a remote monitoring and management (RMM) tool. More infor
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `portal.ehorus.com`
 
 

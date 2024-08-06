@@ -46,7 +46,8 @@ I'm InTouch is a remote monitoring and management (RMM) tool. More information w
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.01com.com`
     - `01com.com/imintouch-remote-pc-desktop`
 

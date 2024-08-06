@@ -1,0 +1,20 @@
+title: Potential MyGreenPC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - mygreenpc.exe
+  condition: selection
+id: 685fb54b-5ba1-4daa-a134-f0c76a6f096e
+status: experimental
+description: Detects potential processes activity of MyGreenPC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MyGreenPC
+level: medium

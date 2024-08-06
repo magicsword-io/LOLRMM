@@ -1,0 +1,21 @@
+title: Potential mstsc RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\Windows\System32\mstsc.exe
+    - '*Windows\System32\mstsc.exe'
+  condition: selection
+id: 3811a06f-cc68-419a-8313-4a31a443632d
+status: experimental
+description: Detects potential processes activity of mstsc RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of mstsc
+level: medium

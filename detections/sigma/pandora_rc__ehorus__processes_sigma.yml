@@ -1,0 +1,21 @@
+title: Potential Pandora RC (eHorus) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ehorus standalone.exe
+    - ehorus_agent.exe
+  condition: selection
+id: abd38a66-2d22-46ce-ae31-6658be5528e1
+status: experimental
+description: Detects potential processes activity of Pandora RC (eHorus) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pandora RC (eHorus)
+level: medium

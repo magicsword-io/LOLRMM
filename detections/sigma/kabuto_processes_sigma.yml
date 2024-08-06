@@ -1,0 +1,20 @@
+title: Potential Kabuto RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - Kabuto.App.Runner.exe
+  condition: selection
+id: e7a4d8f9-bf93-4af8-984d-b861778c3957
+status: experimental
+description: Detects potential processes activity of Kabuto RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Kabuto
+level: medium

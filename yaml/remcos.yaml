@@ -17,7 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - remcos*.exe
+    - remcos*.exe
 Artifacts:
   Disk: []
   EventLog: []

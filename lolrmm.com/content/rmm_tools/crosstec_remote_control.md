@@ -45,7 +45,8 @@ CrossTec Remote Control is a remote monitoring and management (RMM) tool. More i
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `user_managed`
     - `crosstecsoftware.com/remotecontrol`
 

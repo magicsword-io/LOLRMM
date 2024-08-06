@@ -1,0 +1,21 @@
+title: Potential Access Remote PC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rpcgrab.exe
+    - rpcsetup.exe
+  condition: selection
+id: 5154923f-ee36-46a8-b2e8-2b6ccfcf1fb2
+status: experimental
+description: Detects potential processes activity of Access Remote PC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Access Remote PC
+level: medium

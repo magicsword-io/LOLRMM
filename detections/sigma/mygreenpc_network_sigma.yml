@@ -1,0 +1,20 @@
+title: Potential MyGreenPC RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*mygreenpc.com'
+  condition: selection
+id: 2cba09e3-4478-4429-9c10-af8ee8a0b6ef
+status: experimental
+description: Detects potential network activity of MyGreenPC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MyGreenPC
+level: medium

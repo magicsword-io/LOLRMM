@@ -1,0 +1,21 @@
+title: Potential TightVNC RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - tightvnc.com
+  condition: selection
+id: d0e7dc0a-688b-4489-9d6e-39dbc233091a
+status: experimental
+description: Detects potential network activity of TightVNC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TightVNC
+level: medium

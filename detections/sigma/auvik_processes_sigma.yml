@@ -1,0 +1,21 @@
+title: Potential Auvik RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - auvik.engine.exe
+    - auvik.agent.exe
+  condition: selection
+id: 378d0184-2765-4408-a6c7-131b7f9575fe
+status: experimental
+description: Detects potential processes activity of Auvik RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Auvik
+level: medium

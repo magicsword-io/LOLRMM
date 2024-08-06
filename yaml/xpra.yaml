@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Xpra\*
-  - '*\Xpra\*'
-  - '*\Xpra-Launcher.exe'
-  - '*\Xpra-x86_64_Setup.exe'
+    - C:\Program Files (x86)\Xpra\*
+    - '*\Xpra\*'
+    - '*\Xpra-Launcher.exe'
+    - '*\Xpra-x86_64_Setup.exe'
 Artifacts:
   Disk: []
   EventLog: []

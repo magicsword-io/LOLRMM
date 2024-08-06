@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - KHelpDesk.exe
+    - KHelpDesk.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.khelpdesk.com.br'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.khelpdesk.com.br'
+      Ports: []
 Detections: []
 References:
-- https://www.khelpdesk.com.br/en-us
+  - https://www.khelpdesk.com.br/en-us
 Acknowledgement: []

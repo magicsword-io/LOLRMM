@@ -1,0 +1,22 @@
+title: Potential Tailscale RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.tailscale.com'
+    - '*.tailscale.io'
+    - tailscale.com
+  condition: selection
+id: 028528fd-5e98-4eb8-96fd-41594073a25d
+status: experimental
+description: Detects potential network activity of Tailscale RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Tailscale
+level: medium

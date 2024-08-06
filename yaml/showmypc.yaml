@@ -17,21 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - SMPCSetup.exe
-  - showmypc*.exe
-  - showmypc.exe
-  - smpcsetup.exe
+    - SMPCSetup.exe
+    - showmypc*.exe
+    - showmypc.exe
+    - smpcsetup.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.showmypc.com'
-    - showmypc.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.showmypc.com'
+        - showmypc.com
+      Ports: []
 Detections: []
 References:
-- https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf
+  - https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf
 Acknowledgement: []

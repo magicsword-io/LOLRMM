@@ -1,0 +1,21 @@
+title: Potential SecureCRT RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\*\SecureCRT.EXE
+    - '*\SecureCRT.EXE'
+  condition: selection
+id: 62857972-bb15-4d01-8cc6-b083b3106033
+status: experimental
+description: Detects potential processes activity of SecureCRT RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SecureCRT
+level: medium

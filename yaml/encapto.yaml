@@ -22,11 +22,11 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - encapto.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - encapto.com
+      Ports: []
 Detections: []
 References:
-- https://www.encapto.com - used to manage Cisco services
+  - https://www.encapto.com - used to manage Cisco services
 Acknowledgement: []

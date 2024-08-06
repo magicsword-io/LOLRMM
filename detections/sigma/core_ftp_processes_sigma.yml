@@ -1,0 +1,21 @@
+title: Potential Core FTP RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\*\coreftplite.exe
+    - '*\coreftplite.exe'
+  condition: selection
+id: 620bd021-0b5d-455f-b75a-d90bc92f0eba
+status: experimental
+description: Detects potential processes activity of Core FTP RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Core FTP
+level: medium

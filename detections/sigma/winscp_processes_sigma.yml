@@ -1,0 +1,20 @@
+title: Potential WinSCP RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\WinSCP.exe'
+  condition: selection
+id: 109a85ac-382a-4e07-932b-08a9a3049f8d
+status: experimental
+description: Detects potential processes activity of WinSCP RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of WinSCP
+level: medium

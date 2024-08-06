@@ -1,0 +1,22 @@
+title: Potential Auvik RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.my.auvik.com'
+    - '*.auvik.com'
+    - auvik.com
+  condition: selection
+id: 3985be0f-3646-4210-9ace-9c49cc5d4918
+status: experimental
+description: Detects potential network activity of Auvik RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Auvik
+level: medium

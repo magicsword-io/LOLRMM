@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Deskroll.exe
-  - DeskRollUA.exe
+    - Deskroll.exe
+    - DeskRollUA.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - skyfex.com
-    - deskroll.com
-    - '*.deskroll.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - skyfex.com
+        - deskroll.com
+        - '*.deskroll.com'
+      Ports: []
 Detections: []
 References:
-- https://skyfex.com/
+  - https://skyfex.com/
 Acknowledgement: []

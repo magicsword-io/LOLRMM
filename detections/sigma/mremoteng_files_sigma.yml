@@ -1,0 +1,22 @@
+title: Potential mRemoteNG RMM Tool File Activity
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
+    - C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
+    - C:\Users\*\AppData\*\mRemoteNG\**10\user.config
+  condition: selection
+id: dbb80e26-c3f2-42de-9dc4-85b750524ecb
+status: experimental
+description: Detects potential files activity of mRemoteNG RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of mRemoteNG
+level: medium

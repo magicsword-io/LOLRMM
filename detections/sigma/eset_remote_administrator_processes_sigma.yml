@@ -1,0 +1,25 @@
+title: Potential ESET Remote Administrator RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - einstaller.exe
+    - era.exe
+    - ERAAgent.exe
+    - ezhelp*.exe
+    - eratool.exe
+  condition: selection
+id: 3e59ba25-ec2b-40a4-b2e5-f1f6a340a200
+status: experimental
+description: Detects potential processes activity of ESET Remote Administrator RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ESET Remote Administrator
+level: medium

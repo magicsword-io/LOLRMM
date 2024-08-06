@@ -17,25 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rcengmgru.exe
-  - rcmgrsvc.exe
-  - rxstartsupport.exe
-  - rcstartsupport.exe
-  - raautoup.exe
-  - agentu.exe
-  - remotesupportplayeru.exe
+    - rcengmgru.exe
+    - rcmgrsvc.exe
+    - rxstartsupport.exe
+    - rcstartsupport.exe
+    - raautoup.exe
+    - agentu.exe
+    - remotesupportplayeru.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.remotecall.com'
-    - '*.startsupport.com'
-    - remotecall.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.remotecall.com'
+        - '*.startsupport.com'
+        - remotecall.com
+      Ports: []
 Detections: []
 References:
-- https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall
+  - https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall
 Acknowledgement: []

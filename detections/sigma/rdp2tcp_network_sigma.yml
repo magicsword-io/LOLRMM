@@ -1,0 +1,21 @@
+title: Potential rdp2tcp RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - github.com/V-E-O/rdp2tcp
+  condition: selection
+id: c25f85bd-7b60-4f30-afd9-b46f5e2f73f8
+status: experimental
+description: Detects potential network activity of rdp2tcp RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of rdp2tcp
+level: medium

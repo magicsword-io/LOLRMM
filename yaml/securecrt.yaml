@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\*\SecureCRT.EXE
-  - '*\SecureCRT.EXE'
-  - '*\VanDyke Software\ClientPack\*'
+    - C:\*\SecureCRT.EXE
+    - '*\SecureCRT.EXE'
+    - '*\VanDyke Software\ClientPack\*'
 Artifacts:
   Disk: []
   EventLog: []

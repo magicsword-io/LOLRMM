@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - This installs a modified VNC and cannot be blocked by path separate from VNC
-  - This installs a modified VNC and cannot be blocked by path separate from VNC
-  - '*\RealVNC\VNC4\*'
+    - This installs a modified VNC and cannot be blocked by path separate from VNC
+    - This installs a modified VNC and cannot be blocked by path separate from VNC
+    - '*\RealVNC\VNC4\*'
 Artifacts:
   Disk: []
   EventLog: []

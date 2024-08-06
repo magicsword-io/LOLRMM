@@ -22,10 +22,10 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - resources.doradosoftware.com/cruz-rmm
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - resources.doradosoftware.com/cruz-rmm
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

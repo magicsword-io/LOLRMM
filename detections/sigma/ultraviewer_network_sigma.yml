@@ -1,0 +1,21 @@
+title: Potential UltraViewer RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '* .ultraviewer.net'
+    - ultraviewer.net
+  condition: selection
+id: 485257d5-92ab-4899-9c0e-9c06cdfc9c01
+status: experimental
+description: Detects potential network activity of UltraViewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of UltraViewer
+level: medium

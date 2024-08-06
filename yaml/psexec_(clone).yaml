@@ -17,23 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - paexec.exe
-  - PAExec-*.exe
-  - 'csexec.exe '
-  - remcom.exe
-  - remcomsvc.exe
-  - xcmd.exe
-  - xcmdsvc.exe
+    - paexec.exe
+    - PAExec-*.exe
+    - 'csexec.exe '
+    - remcom.exe
+    - remcomsvc.exe
+    - xcmd.exe
+    - xcmdsvc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+      Ports: []
 Detections: []
 References:
-- https://www.poweradmin.com/paexec/
+  - https://www.poweradmin.com/paexec/
 Acknowledgement: []

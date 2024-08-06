@@ -17,21 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - AcronisCyberProtectConnectQuickAssist*.exe
-  - AcronisCyberProtectConnectAgent.exe
+    - AcronisCyberProtectConnectQuickAssist*.exe
+    - AcronisCyberProtectConnectAgent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - cloud.acronis.com
-    - agents*-cloud.acronis.com
-    - gw.remotix.com
-    - connect.acronis.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - cloud.acronis.com
+        - agents*-cloud.acronis.com
+        - gw.remotix.com
+        - connect.acronis.com
+      Ports: []
 Detections: []
 References:
-- https://kb.acronis.com/content/47189
+  - https://kb.acronis.com/content/47189
 Acknowledgement: []

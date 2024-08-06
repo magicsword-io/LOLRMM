@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Kabuto.App.Runner.exe
+    - Kabuto.App.Runner.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.kabuto.io'
-    - repairtechsolutions.com/kabuto/
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.kabuto.io'
+        - repairtechsolutions.com/kabuto/
+      Ports: []
 Detections: []
 References:
-- https://www.repairtechsolutions.com/documentation/kabuto/
+  - https://www.repairtechsolutions.com/documentation/kabuto/
 Acknowledgement: []

@@ -1,0 +1,20 @@
+title: Potential MyIVO RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - myivo-server.software.informer.com
+  condition: selection
+id: 83b240da-c6e7-409b-baf4-a2eca396de3e
+status: experimental
+description: Detects potential network activity of MyIVO RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MyIVO
+level: medium

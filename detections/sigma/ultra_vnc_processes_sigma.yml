@@ -1,0 +1,22 @@
+title: Potential Ultra VNC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\UVNC_Launch.exe'
+    - '*\winvnc.exe'
+    - '*\vncviewer.exe'
+  condition: selection
+id: 85e32981-9dba-4bd7-b18f-51b73a84431e
+status: experimental
+description: Detects potential processes activity of Ultra VNC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Ultra VNC
+level: medium

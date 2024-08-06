@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\*\puttytray.exe
-  - '*\puttytray.exe'
+    - C:\*\puttytray.exe
+    - '*\puttytray.exe'
 Artifacts:
   Disk: []
   EventLog: []

@@ -46,7 +46,8 @@ Rapid7 is a remote monitoring and management (RMM) tool. More information will b
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.analytics.insight.rapid7.com`
     - `*.endpoint.ingress.rapid7.com`
 

@@ -1,0 +1,21 @@
+title: Potential CentraStage (Now Datto) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - CagService.exe
+    - AEMAgent.exe
+  condition: selection
+id: 33858b25-62d1-4d27-ab5f-f0dd04ba8c87
+status: experimental
+description: Detects potential processes activity of CentraStage (Now Datto) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CentraStage (Now Datto)
+level: medium

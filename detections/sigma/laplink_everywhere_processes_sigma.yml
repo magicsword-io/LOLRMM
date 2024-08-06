@@ -1,0 +1,25 @@
+title: Potential Laplink Everywhere RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - laplink.exe
+    - laplink-everywhere-setup*.exe
+    - laplinkeverywhere.exe
+    - llrcservice.exe
+    - serverproxyservice.exe
+    - OOSysAgent.exe
+  condition: selection
+id: 0b740aa2-91ee-4d44-920a-16f7f8bf8df2
+status: experimental
+description: Detects potential processes activity of Laplink Everywhere RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Laplink Everywhere
+level: medium

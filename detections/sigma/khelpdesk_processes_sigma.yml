@@ -1,0 +1,20 @@
+title: Potential KHelpDesk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - KHelpDesk.exe
+  condition: selection
+id: 9204612d-c27f-40b2-aa71-a0977e5e60b6
+status: experimental
+description: Detects potential processes activity of KHelpDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of KHelpDesk
+level: medium

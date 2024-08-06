@@ -48,7 +48,8 @@ Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More inf
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*remotedesktop-pa.googleapis.com`
     - `*remotedesktop.google.com`
     - `remotedesktop.google.com`

@@ -17,25 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - goverrmc.exe
-  - govsrv*.exe
-  - GovAgentInstallHelper.exe
-  - GovAgentx64.exe
-  - GovReachClient.exe
-  - C:\Program Files (x86)\PJ Technologies\GOVsrv\*
-  - '*\PJ Technologies\GOVsrv\*'
-  - '*\GovSrv.exe'
+    - goverrmc.exe
+    - govsrv*.exe
+    - GovAgentInstallHelper.exe
+    - GovAgentx64.exe
+    - GovReachClient.exe
+    - C:\Program Files (x86)\PJ Technologies\GOVsrv\*
+    - '*\PJ Technologies\GOVsrv\*'
+    - '*\GovSrv.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - goverlan.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - goverlan.com
+      Ports: []
 Detections: []
 References:
-- https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf
+  - https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf
 Acknowledgement: []

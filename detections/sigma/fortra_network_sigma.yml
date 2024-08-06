@@ -1,0 +1,20 @@
+title: Potential Fortra RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - fortra.com
+  condition: selection
+id: 10fc8d64-3bea-4969-a8d2-fa5b0da7117b
+status: experimental
+description: Detects potential network activity of Fortra RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Fortra
+level: medium

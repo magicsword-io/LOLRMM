@@ -12,7 +12,7 @@ title = "LOLRMM"
 {{< block "grid-2" >}}
 {{< column >}}
 
-# LOLRMM (Living Off the Land Remote Monitoring and Management)
+# LOLRMM
 
 LOLRMM is a curated list of Remote Monitoring and Management (RMM) tools that could potentially be abused by threat actors. This project aims to assist security professionals in staying informed about these tools and their potential for misuse.
 

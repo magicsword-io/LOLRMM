@@ -1,0 +1,22 @@
+title: Potential NateOn-desktop sharing RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - nateon*.exe
+    - nateon.exe
+    - nateonmain.exe
+  condition: selection
+id: 6fe97cb7-aae9-4e95-a4a4-21a2473630eb
+status: experimental
+description: Detects potential processes activity of NateOn-desktop sharing RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NateOn-desktop sharing
+level: medium

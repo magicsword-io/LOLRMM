@@ -1,0 +1,21 @@
+title: Potential ShowMyPC RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.showmypc.com'
+    - showmypc.com
+  condition: selection
+id: 9a5c062f-4a66-4c04-9670-7495b14acb89
+status: experimental
+description: Detects potential network activity of ShowMyPC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ShowMyPC
+level: medium

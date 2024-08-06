@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Beinsync*.exe
+    - Beinsync*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.beinsync.net'
-    - '*.beinsync.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.beinsync.net'
+        - '*.beinsync.com'
+      Ports: []
 Detections: []
 References:
-- https://en.wikipedia.org/wiki/Phoenix_Technologies
+  - https://en.wikipedia.org/wiki/Phoenix_Technologies
 Acknowledgement: []

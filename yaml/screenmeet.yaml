@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ScreenMeetSupport.exe
-  - ScreenMeet.Support.exe
+    - ScreenMeetSupport.exe
+    - ScreenMeet.Support.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.screenmeet.com'
-    - '*.scrn.mt'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.screenmeet.com'
+        - '*.scrn.mt'
+      Ports: []
 Detections: []
 References:
-- https://docs.screenmeet.com/docs/firewall-white-list
+  - https://docs.screenmeet.com/docs/firewall-white-list
 Acknowledgement: []

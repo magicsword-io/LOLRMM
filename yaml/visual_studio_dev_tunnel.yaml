@@ -22,13 +22,13 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - global.rel.tunnels.api.visualstudio.com
-    - '*.rel.tunnels.api.visualstudio.com'
-    - '*.devtunnels.ms'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - global.rel.tunnels.api.visualstudio.com
+        - '*.rel.tunnels.api.visualstudio.com'
+        - '*.devtunnels.ms'
+      Ports: []
 Detections: []
 References:
-- https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security
+  - https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security
 Acknowledgement: []

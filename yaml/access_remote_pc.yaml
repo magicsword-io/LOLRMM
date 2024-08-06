@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rpcgrab.exe
-  - rpcsetup.exe
+    - rpcgrab.exe
+    - rpcsetup.exe
 Artifacts:
   Disk: []
   EventLog: []

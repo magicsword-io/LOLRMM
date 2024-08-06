@@ -22,10 +22,10 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - tanium.com/products/tanium-deploy
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - tanium.com/products/tanium-deploy
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

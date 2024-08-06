@@ -1,0 +1,26 @@
+title: Potential Manage Engine (Desktop Central) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - desktopcentral.manageengine.com
+    - desktopcentral.manageengine.com.eu
+    - desktopcentral.manageengine.cn
+    - '*.dms.zoho.com'
+    - '*.dms.zoho.com.eu'
+    - '*.-dms.zoho.com.cn'
+  condition: selection
+id: ef6a2323-711d-436a-8247-2c9f75ed0587
+status: experimental
+description: Detects potential network activity of Manage Engine (Desktop Central)
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Manage Engine (Desktop Central)
+level: medium

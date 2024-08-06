@@ -41,6 +41,24 @@ def check_sha256_length(object):
             return f"ERROR: SHA256 length is not {sha256_len} characters for object: {object['Id']}"
     return None
 
+def check_network_structure(object):
+    artifacts = object.get('Artifacts', {})
+    network = artifacts.get('Network', [])
+    for item in network:
+        if not isinstance(item, dict):
+            return f"ERROR: Network item is not a dictionary for object: {object['Name']}"
+        if 'Description' not in item:
+            return f"ERROR: Network item is missing 'Description' for object: {object['Name']}"
+        if 'Domains' not in item:
+            return f"ERROR: Network item is missing 'Domains' for object: {object['Name']}"
+        if not isinstance(item['Domains'], list):
+            return f"ERROR: 'Domains' is not a list for object: {object['Name']}"
+        if 'Ports' not in item:
+            return f"ERROR: Network item is missing 'Ports' for object: {object['Name']}"
+        if not isinstance(item['Ports'], list):
+            return f"ERROR: 'Ports' is not a list for object: {object['Name']}"
+    return None
+
 
 def validate_schema(yaml_dir, schema_file, verbose):
 
@@ -79,6 +97,7 @@ def validate_schema(yaml_dir, schema_file, verbose):
             check_md5_length(yaml_data),
             check_sha1_length(yaml_data),
             check_sha256_length(yaml_data),
+            check_network_structure(yaml_data),
         ]
 
         for check_error in check_errors:
@@ -115,4 +134,3 @@ if __name__ == "__main__":
     verbose = args.verbose
 
     main(yaml_dir, schema_file, verbose)
-

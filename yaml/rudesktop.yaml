@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rd.exe
-  - rudesktop*.exe
+    - rd.exe
+    - rudesktop*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.rudesktop.ru'
-    - rudesktop.ru
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.rudesktop.ru'
+        - rudesktop.ru
+      Ports: []
 Detections: []
 References:
-- https://rudesktop.ru
+  - https://rudesktop.ru
 Acknowledgement: []

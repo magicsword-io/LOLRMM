@@ -50,7 +50,8 @@ VNC is a remote monitoring and management (RMM) tool. More information will be a
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `user_managed`
     - `realvnc.com/en/connect/download/vnc`
 

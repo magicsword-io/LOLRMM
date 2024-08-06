@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - c:\*\TeraCloud.Client*
-  - '*\TeraCloud.Client*'
-  - '*\Livedrive-Setup.exe'
+    - c:\*\TeraCloud.Client*
+    - '*\TeraCloud.Client*'
+    - '*\Livedrive-Setup.exe'
 Artifacts:
   Disk: []
   EventLog: []

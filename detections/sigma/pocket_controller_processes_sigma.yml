@@ -1,0 +1,22 @@
+title: Potential Pocket Controller RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - pocketcontroller.exe
+    - pocketcloudservice.exe
+    - wysebrowser.exe
+  condition: selection
+id: 413781b5-5f19-47f6-b8ae-e438d89e8be8
+status: experimental
+description: Detects potential processes activity of Pocket Controller RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pocket Controller
+level: medium

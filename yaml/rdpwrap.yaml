@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - RDPWInst.exe
-  - RDPCheck.exe
-  - RDPConf.exe
+    - RDPWInst.exe
+    - RDPCheck.exe
+    - RDPConf.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - github.com/stascorp/rdpwrap
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - github.com/stascorp/rdpwrap
+      Ports: []
 Detections: []
 References:
-- github.com/stascorp/rdpwrap
+  - github.com/stascorp/rdpwrap
 Acknowledgement: []

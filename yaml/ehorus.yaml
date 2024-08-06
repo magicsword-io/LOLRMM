@@ -17,16 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ehorus standalone.exe
+    - ehorus standalone.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - ehorus.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - ehorus.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

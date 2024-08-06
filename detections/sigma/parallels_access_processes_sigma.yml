@@ -1,0 +1,24 @@
+title: Potential Parallels Access RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - parallelsaccess-*.exe
+    - TSClient.exe
+    - prl_deskctl_agent.exe
+    - prl_deskctl_wizard.exe
+    - prl_pm_service.exe
+  condition: selection
+id: 0730f421-f7b0-42fd-b906-3ffd264aefe4
+status: experimental
+description: Detects potential processes activity of Parallels Access RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Parallels Access
+level: medium

@@ -31,11 +31,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.analytics.insight.rapid7.com",
                         "*.endpoint.ingress.rapid7.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -77,11 +77,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "sunlogin.oray.com",
                         "client.oray.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -193,17 +193,25 @@
     },
     {
         "Name": "Kaseya (VSA)",
-        "Description": "Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/8/2024",
+        "Description": "Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
+        "Author": "Nasreddine Bencherchali",
+        "Created": "2024-08-05",
+        "LastModified": "2024-08-05",
         "Details": {
             "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
+            "PEMetadata": [
+                {
+                    "Filename": "agentmon.exe"
+                },
+                {
+                    "Filename": "KaUpdHlp.exe"
+                },
+                {
+                    "Filename": "KaUsrTsk.exe",
+                    "OriginalFileName": "",
+                    "Description": ""
+                }
+            ],
             "Privileges": "",
             "Free": "",
             "Verification": "",
@@ -211,17 +219,21 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "agentmon.exe",
-                "KaUpdHlp.exe",
-                "KaUsrTsk.exe"
+                "C:\\Program Files (x86)\\Kaseya\\",
+                "C:\\ProgramData\\Kaseya\\"
             ]
         },
         "Artifacts": {
             "Disk": [
                 {
-                    "File": "C:\\Users\\*\\AppData\\Local\\Kaseya\\Log\\KaseyaLiveConnect\\*",
+                    "File": "%localappdata%\\Kaseya\\Log\\KaseyaLiveConnect\\*",
                     "Description": "Kaseya Live Connect logs",
                     "OS": "Windows"
+                },
+                {
+                    "File": "~/Library/Logs/com.kaseya/KaseyaLiveConnect/*",
+                    "Description": "Kaseya Live Connect logs",
+                    "OS": "MacOS"
                 },
                 {
                     "File": "C:\\ProgramData\\Kaseya\\Log\\Endpoint\\*",
@@ -230,8 +242,17 @@
                 },
                 {
                     "File": "C:\\Program Files*\\Kaseya\\*\\agentmon.log",
+                    "Description": "Kaseya Agent Monitor log"
+                },
+                {
+                    "File": "/var/log/system.log",
                     "Description": "Kaseya Agent Monitor log",
-                    "OS": "Windows"
+                    "OS": "MacOS 32bit"
+                },
+                {
+                    "File": " ~/opt/kaseya/*/logs*",
+                    "Description": "Kaseya Agent Monitor log",
+                    "OS": "MacOS 64bit"
                 },
                 {
                     "File": "C:\\Users\\*\\AppData\\Local\\Temp\\KASetup.log",
@@ -247,6 +268,41 @@
                     "File": "C:\\ProgramData\\Kaseya\\Log\\KaseyaEdgeServices\\*",
                     "Description": "Kaseya Edge Services logs",
                     "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Kaseya\\api\\v1.0\\logs\\",
+                    "Description": "Kaseya API logs",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Kaseya\\api\\v1.5\\endpoint\\logs",
+                    "Description": "Kaseya API logs",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Kaseya\\api\\v1.5\\endpoints\\logs",
+                    "Description": "Kaseya API logs",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Kaseya\\Log\\MakeSelfSignedCert.exe\\",
+                    "Description": "Certificate creation",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Kaseya\\WebPages\\install\\makecert.txt",
+                    "Description": "Certificate creation",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Kaseya\\Log\\Endpoint\\Instance_*\\KaseyaEndpoint*",
+                    "Description": "Endpoint service logs",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Kaseya\\Log\\Endpoint\\Instance_*\\Session_*",
+                    "Description": "Session logs",
+                    "OS": "Windows"
                 }
             ],
             "EventLog": [],
@@ -254,19 +310,22 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "deploy01.kaseya.com",
                         "*managedsupport.kaseya.net",
                         "*.kaseya.net",
                         "kaseya.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
         "Detections": [],
         "References": [
-            "https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements"
+            "https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements",
+            "https://helpdesk.kaseya.com/hc/en-gb/articles/229009708-Live-Connect-Log-File-Locations",
+            "https://ruler-project.github.io/ruler-project/RULER/remote/Kaseya/",
+            "https://helpdesk.kaseya.com/hc/en-gb/articles/229009708-Live-Connect-Log-File-Locations"
         ],
         "Acknowledgement": []
     },
@@ -410,12 +469,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.domotz.co",
                         "domotz.com",
                         "*cell-1.domotz.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -489,10 +548,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "imperosoftware.com/impero-connect/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -600,13 +659,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.jumpdesktop.com",
                         "jumpdesktop.com",
                         "jumpto.me",
                         "*.jumpto.me"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -650,12 +709,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "*.intelliadmin.com",
                         "intelliadmin.com/remote-control"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -731,11 +790,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "zerotier.com",
                         "*.zerotier.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -776,11 +835,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "ericom.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -853,63 +912,16 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "au.pcmag.com/utilities/21470/webex-pcnow"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
         "Detections": [],
         "References": [
             "http://pcnow.webex.com/ - DOA as of 2024"
-        ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Ammyy Admin",
-        "Description": "Ammyy Admin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "AMMYY_Admin.exe",
-                "aa_v*.exe",
-                "C:\\Users\\*\\Downloads\\AMMYY_Admin.exe",
-                "*\\AMMYY_Admin.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domain": [
-                        "ammyy.com",
-                        "*ammyy.com"
-                    ],
-                    "Port": ""
-                }
-            ]
-        },
-        "Detections": [],
-        "References": [
-            "https://www.ammyy.com/en/admin_security.html"
         ],
         "Acknowledgement": []
     },
@@ -943,10 +955,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.nchuser.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -988,10 +1000,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*soti.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1034,13 +1046,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.instanthousecall.com",
                         "*.instanthousecall.net",
                         "instanthousecall.com",
                         "secure.instanthousecall.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1081,12 +1093,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.rmm.datto.com",
                         "*cc.centrastage.net",
                         "datto.com/au/products/rmm/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1233,12 +1245,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.logmeinrescue.com",
                         "*.logmeinrescue.eu",
                         "logmeinrescue.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1314,10 +1326,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.adobeconnect.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1357,10 +1369,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "cloudflare.com/products/tunnel/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1472,11 +1484,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.parallels.com",
                         "parallels.com/products/ras/try"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1517,10 +1529,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "control.connectwise.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1593,10 +1605,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1705,10 +1717,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "beyondtrust.com/brand/bomgar"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1783,11 +1795,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "helpu.co.kr",
                         "*.helpu.co.kr"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1833,13 +1845,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "splashtop.com",
                         "*.api.splashtop.com",
                         "*.relay.splashtop.com",
                         "*.api.splashtop.eu"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -1912,10 +1924,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "soti.net/products/soti-pocket-controller"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2021,10 +2033,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "royalapps.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2063,11 +2075,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.internetid.ru",
                         "rmansys.ru"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2108,7 +2120,7 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "desktopcentral.manageengine.com",
                         "desktopcentral.manageengine.com.eu",
                         "desktopcentral.manageengine.cn",
@@ -2116,7 +2128,7 @@
                         "*.dms.zoho.com.eu",
                         "*.-dms.zoho.com.cn"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2157,12 +2169,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.my.auvik.com",
                         "*.auvik.com",
                         "auvik.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2200,10 +2212,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "basecamp.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2286,7 +2298,7 @@
     {
         "Name": "AnyDesk",
         "Category": "RMM",
-        "Description": "AnyDesk is a popular remote desktop software that enables users to access and control a computer or device from a remote location. It was developed with the primary goal of facilitating remote work, technical support, and collaboration between individuals and teams.",
+        "Description": "AnyDesk is a popular remote desktop software that enables users to access and control a computer or device from a remote location. It was developed with the primary goal of facilitating remote work, technical support, and collaboration between individuals and teams.\n",
         "Author": "Ali Alwashali, Nasreddine Bencherchali",
         "Created": "2023-09-29",
         "LastModified": "2024-08-02",
@@ -2412,6 +2424,16 @@
                     "File": "C:\\Windows\\SysWOW64\\config\\systemprofile\\AppData\\Roaming\\AnyDesk\\*",
                     "Description": "N/A",
                     "OS": "Windows"
+                },
+                {
+                    "File": "~/Library/Application Support/AnyDesk/Logs/",
+                    "Description": "N/A",
+                    "OS": "Mac"
+                },
+                {
+                    "File": "~/.config/AnyDesk/Logs/",
+                    "Description": "N/A",
+                    "OS": "Linux"
                 }
             ],
             "EventLog": [
@@ -2460,19 +2482,31 @@
             ],
             "Network": [
                 {
-                    "Domain": "boot.net.anydesk.com",
-                    "Port": 443,
-                    "Description": "During setup the boot.net.anydesk.com domain is request over port 443"
+                    "Description": "During setup the boot.net.anydesk.com domain is request over port 443",
+                    "Domains": [
+                        "boot.net.anydesk.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 },
                 {
-                    "Domain": "relay-[a-f0-9]{8}.net.anydesk.com:443",
-                    "Port": 443,
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "relay-[a-f0-9]{8}.net.anydesk.com:443"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 },
                 {
-                    "Domain": "*.anydesk.com",
-                    "Port": 443,
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "*.anydesk.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 }
             ],
             "Other": [
@@ -2507,25 +2541,30 @@
         "References": [
             "https://support.anydesk.com/knowledge/firewall",
             "https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html",
-            "https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk"
+            "https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk",
+            "https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/"
         ],
         "Acknowledgement": [
+            {
+                "Person": "Théo Letailleur",
+                "Handle": "in/theosyn"
+            },
             {
                 "Person": "Ali Alwashali",
                 "Handle": "@ali_alwashali"
             },
             {
-                "Person": "Théo Letailleur",
-                "Handle": "in/theosyn"
+                "Person": "Nasreddine Bencherchali",
+                "Handle": "@nas_bench"
             }
         ]
     },
     {
         "Name": "AnyViewer",
-        "Description": "AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Description": "AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
         "Author": "@kostastsale",
-        "Created": "2024/03/08",
-        "LastModified": "",
+        "Created": "2024-08-03",
+        "LastModified": "2024-08-03",
         "Details": {
             "Website": "https://www.anyviewer.com/",
             "PEMetadata": [
@@ -2557,14 +2596,14 @@
                 "Windows"
             ],
             "Capabilities": [
-                "Remote monitoring and management",
                 "Remote desktop",
-                "Remote shell open",
-                "Remote file transfer"
+                "Remote file transfer",
+                "Remote monitoring and management",
+                "Remote shell open"
             ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "C:\\\\Program Files (x86)\\\\AnyViewer\\\\*"
+                "C:\\Program Files (x86)\\AnyViewer\\*"
             ]
         },
         "Artifacts": {
@@ -2589,13 +2628,22 @@
             "Registry": [],
             "Network": [
                 {
-                    "Description": "Known remote domains",
-                    "Domain": [
-                        "controlserver.anyviewer.com",
-                        "aomeisoftware.com",
+                    "Description": "N/A",
+                    "Domains": [
+                        "*.anyviewer.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "N/A",
+                    "Domains": [
                         "*.aomeisoftware.com"
                     ],
-                    "Port": "443"
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
@@ -2649,10 +2697,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.dwservice.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2690,10 +2738,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "level.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2734,7 +2782,7 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "plus*.site24x7.com",
                         "plus*.site24x7.eu",
                         "plus*.site24x7.in",
@@ -2742,7 +2790,7 @@
                         "plus*.site24x7.net.au",
                         "site24x7.com/msp"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2860,12 +2908,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "control.connectwise.com",
                         "*.connectwise.com",
                         "*.screenconnect.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2940,11 +2988,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.spytech-web.com",
                         "spyanywhere.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -2987,13 +3035,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.ninjarmm.com",
                         "*.ninjaone.com",
                         "resources.ninjarmm.com",
                         "ninjaone.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3105,11 +3153,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "simple-help.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3149,11 +3197,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "emcosoftware.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3193,11 +3241,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "ngrok.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3237,10 +3285,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3318,11 +3366,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "nomachine.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3535,9 +3583,13 @@
             ],
             "Network": [
                 {
-                    "Domain": "*.splashtop.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "*.splashtop.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 }
             ]
         },
@@ -3554,31 +3606,43 @@
     },
     {
         "Name": "RAdmin",
-        "Description": "RAdmin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/9/2024",
+        "Description": "RAdmin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
+        "Author": "Nasreddine Bencherchali",
+        "Created": "2024-08-05",
+        "LastModified": "2024-08-05",
         "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
+            "Website": "https://www.radmin.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "RServer3.exe",
+                    "OriginalFileName": "RServer3.exe",
+                    "InternalName": "RServer3",
+                    "Description": "Radmin Server",
+                    "Product": "Radmin Server",
+                    "Comments": "Radmin - Remote Control Server"
+                },
+                {
+                    "Filename": "Radmin.exe",
+                    "OriginalFileName": "Radmin.exe",
+                    "InternalName": "Radmin",
+                    "Description": "Radmin Viewer",
+                    "Product": "Radmin Viewer",
+                    "Comments": "Radmin Viewer"
+                }
+            ],
             "Privileges": "",
             "Free": "",
             "Verification": "",
-            "SupportedOS": [],
+            "SupportedOS": [
+                "Windows"
+            ],
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "C:\\Program Files\\Radmin Viewer 3\\*",
-                "radmin3.exe",
-                "*\\Radmin.exe",
-                "radmin.exe",
-                "rserver3.exe",
-                "famitrfc.exe",
-                "*\\Radmin Viewer 3\\*"
+                "C:\\Program Files (x86)\\Radmin Viewer 3\\Radmin.exe",
+                "C:\\Windows\\SysWOW64\\rserver30\\rserver3.exe",
+                "C:\\Windows\\SysWOW64\\rserver30\\FamItrfc",
+                "C:\\Windows\\SysWOW64\\rserver30\\FamItrf2"
             ]
         },
         "Artifacts": {
@@ -3605,23 +3669,46 @@
                 }
             ],
             "EventLog": [],
-            "Registry": [],
+            "Registry": [
+                {
+                    "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Radmin\\v3.0\\Server\\Parameters\\Radmin Security",
+                    "Description": "N/A"
+                }
+            ],
             "Network": [
                 {
-                    "Description": "Known remote domains",
-                    "Domain": [
-                        "user_managed",
+                    "Description": "N/A",
+                    "Domains": [
                         "radmin.com"
                     ],
-                    "Port": ""
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
-        "Detections": [],
-        "References": [
-            "https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/"
+        "Detections": [
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_pua_radmin.yml",
+                "Description": "PUA - Radmin Viewer Utility Execution"
+            },
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml",
+                "Description": "Enumeration for 3rd Party Creds From CLI"
+            }
         ],
-        "Acknowledgement": []
+        "References": [
+            "https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/",
+            "https://helpdesk.radmin.com/radmin3help/",
+            "https://helpdesk.radmin.com/radmin3help/files/viewercmd.htm",
+            "https://helpdesk.radmin.com/radmin3help/files/cmd.htm"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Nasreddine Bencherchali",
+                "Handle": "@nas_bench"
+            }
+        ]
     },
     {
         "Name": "LANDesk",
@@ -3662,12 +3749,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.ivanticloud.com",
                         "*.ivanti.com",
                         "ivanti.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3708,14 +3795,14 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.superopsbeta.com",
                         "superops.ai",
                         "serv.superopsalpha.com",
                         "*.superops.ai",
                         "*.superopsalpha.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3824,10 +3911,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "datto.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3868,12 +3955,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "supremocontrol.com",
                         "*.supremocontrol.com",
                         "* .nanosystems.it"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -3977,10 +4064,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.khelpdesk.com.br"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4022,11 +4109,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "acceo.com/turbomeeting/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4066,11 +4153,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "rport.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4213,11 +4300,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "ocsinventory-ng.org"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4259,10 +4346,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "remotepass.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4373,12 +4460,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.itsm-us1.comodo.com",
                         "*mdmsupport.comodo.com",
                         "one.comodo.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4421,11 +4508,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.showmypc.com",
                         "showmypc.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4467,13 +4554,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "todesk.com",
                         "*.todesk.com",
                         "*.todesk.com",
                         "todesktop.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4511,10 +4598,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "runsmart.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4592,40 +4679,109 @@
     },
     {
         "Name": "Alpemix",
-        "Description": "Alpemix is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
+        "Description": "Alpemix is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
+        "Author": "Nasreddine Bencherchali",
+        "Created": "2024-08-05",
+        "LastModified": "2024-08-05",
         "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
+            "Website": "https://www.alpemix.com/en/Home",
+            "PEMetadata": [
+                {
+                    "Filename": "Alpemix.exe",
+                    "OriginalFileName": "Alpemix",
+                    "Description": "Alpemix",
+                    "Product": "Alpemix",
+                    "InternalName": "Alpemix"
+                }
+            ],
             "Privileges": "",
             "Free": "",
             "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "Android",
+                "Mac",
+                "IOS"
+            ],
+            "Capabilities": [
+                "5 Different Solutions for Remote Support",
+                "Access to Unattended Computers",
+                "Access to User Account Control (UAC) Screens",
+                "Add Your Own Logo",
+                "Auto Sizing",
+                "Automatic Update",
+                "Clipboard Transfer",
+                "Computer Independent Licensing",
+                "Contact List and Groups",
+                "Encrypted Communication",
+                "External Communication Barrier",
+                "File Transfer",
+                "Instant Messaging",
+                "Multi-Platform Support",
+                "Multiple Chat",
+                "Multiple Connections",
+                "No Port Forwarding Required",
+                "Peer to Peer Connection (p2p)",
+                "Receiving Offline Message",
+                "Remote Restart",
+                "ReportingRestricting The Authority",
+                "Screen Sharing",
+                "Sending Announcement Message",
+                "Sharing a certain part of the screen",
+                "Video Recording",
+                "Voice Communication",
+                "Who is currently supporting?",
+                "Working in Black Screen Mode"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "alpemix.exe"
+                "C:\\AlpemixService.exe",
+                "C:\\AlpemixSrvc\\"
             ]
         },
         "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
+            "Disk": [
+                {
+                    "File": "%localappdata%\\Alpemix\\Alpemix.ini",
+                    "Description": "N/A",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "AlpemixSrvc",
+                    "ImagePath": "*\\Alpemix.exe servicestartxxx",
+                    "Description": "Service installation event as result of Alpemix installation."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\AlpemixSrvcx",
+                    "Description": "N/A"
+                }
+            ],
             "Network": [
                 {
-                    "Description": "Known remote domains",
-                    "Domain": [
-                        "*.alpemix.com",
-                        "*.teknopars.com",
-                        "alpemix.com"
+                    "Domains": [
+                        "*.alpemix.com"
                     ],
-                    "Port": ""
+                    "Ports": [
+                        443
+                    ],
+                    "Description": "N/A"
+                },
+                {
+                    "Domains": [
+                        "*.teknopars.com"
+                    ],
+                    "Ports": [
+                        80
+                    ],
+                    "Description": "N/A"
                 }
             ]
         },
@@ -4633,7 +4789,12 @@
         "References": [
             "https://www.alpemix.com/en/remote-access"
         ],
-        "Acknowledgement": []
+        "Acknowledgement": [
+            {
+                "Person": "Nasreddine Bencherchali",
+                "Handle": "@nas_bench"
+            }
+        ]
     },
     {
         "Name": "Royal TS",
@@ -4665,10 +4826,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "royalapps.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4744,11 +4905,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.pcvisit.de",
                         "pcvisit.de"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4790,10 +4951,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.hostedrmm.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4913,12 +5074,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.tailscale.com",
                         "*.tailscale.io",
                         "tailscale.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -4960,11 +5121,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.senso.cloud",
                         "senso.cloud"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5046,11 +5207,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "* .ultraviewer.net",
                         "ultraviewer.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5091,11 +5252,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "kickidler.com",
                         "my.kickidler.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5166,10 +5327,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "ehorus.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5207,10 +5368,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.support.services.microsoft.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5253,7 +5414,7 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*remote.management",
                         "*.logicnow.com",
                         "*systemmonitor.us",
@@ -5266,7 +5427,7 @@
                         "*.beanywhere.com ",
                         "*.swi-tc.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5341,11 +5502,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "asapi-us.aweray.net",
                         "asapi.aweray.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5383,10 +5544,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "fleetdeck.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5426,11 +5587,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "tele-desk.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5471,10 +5632,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.internetid.ru"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5547,11 +5708,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.netsupportmanager.com",
                         "netsupportmanager.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5593,11 +5754,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.gotohttp.com",
                         "gotohttp.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5642,10 +5803,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "remoteutilities.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5655,17 +5816,133 @@
     },
     {
         "Name": "GoToMyPC",
-        "Description": "GoToMyPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/8/2024",
+        "Description": "GoToMyPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
+        "Author": "Nasreddine Bencherchali",
+        "Created": "2024-08-05",
+        "LastModified": "2024-08-05",
         "Details": {
             "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
+            "PEMetadata": [
+                {
+                    "Filename": "AppCore.exe"
+                },
+                {
+                    "Filename": "g2comm.exe"
+                },
+                {
+                    "Filename": "g2file*.exe"
+                },
+                {
+                    "Filename": "g2fileh.exe"
+                },
+                {
+                    "Filename": "g2host.exe"
+                },
+                {
+                    "Filename": "g2m_download.exe"
+                },
+                {
+                    "Filename": "g2mainh.exe"
+                },
+                {
+                    "Filename": "G2MChat.exe"
+                },
+                {
+                    "Filename": "G2MCodecInstExtractor.exe"
+                },
+                {
+                    "Filename": "G2MComm.exe"
+                },
+                {
+                    "Filename": "G2MCoreInstExtractor.exe"
+                },
+                {
+                    "Filename": "G2MFeedback.exe"
+                },
+                {
+                    "Filename": "G2MHost.exee"
+                },
+                {
+                    "Filename": "G2MInstaller.exe"
+                },
+                {
+                    "Filename": "G2MInstallerExtractor.exe"
+                },
+                {
+                    "Filename": "G2MInstHigh.exe"
+                },
+                {
+                    "Filename": "G2MLauncher.exe"
+                },
+                {
+                    "Filename": "G2MMatchMaking.exe"
+                },
+                {
+                    "Filename": "G2MMaterials.exe"
+                },
+                {
+                    "Filename": "G2MPolling.exe"
+                },
+                {
+                    "Filename": "G2MQandA.exe"
+                },
+                {
+                    "Filename": "G2MRecorder.exe"
+                },
+                {
+                    "Filename": "G2MScrUtil64.exe"
+                },
+                {
+                    "Filename": "G2MSessionControl.exe"
+                },
+                {
+                    "Filename": "G2MStart.exe"
+                },
+                {
+                    "Filename": "G2MTesting.exe"
+                },
+                {
+                    "Filename": "G2MTranscoder.exe"
+                },
+                {
+                    "Filename": "G2MUI.exe"
+                },
+                {
+                    "Filename": "G2MUninstall.exe"
+                },
+                {
+                    "Filename": "g2mupload.exe"
+                },
+                {
+                    "Filename": "g2mvideoconference.exe"
+                },
+                {
+                    "Filename": "G2MView.exe"
+                },
+                {
+                    "Filename": "g2printh.exe"
+                },
+                {
+                    "Filename": "g2quick.exe"
+                },
+                {
+                    "Filename": "g2svc.exe"
+                },
+                {
+                    "Filename": "g2tray.exe"
+                },
+                {
+                    "Filename": "gopcsrv.exe"
+                },
+                {
+                    "Filename": "GoToScrUtils.exe"
+                },
+                {
+                    "Filename": "GoTo.exe",
+                    "OriginalFileName": "",
+                    "Description": ""
+                }
+            ],
             "Privileges": "",
             "Free": "",
             "Verification": "",
@@ -5673,41 +5950,60 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "g2host.exe",
-                "gopcsrv.exe",
-                "g2tray.exe",
-                "*\\2svc.exe",
-                "g2comm.exe",
-                "g2svc.exe",
-                "C:\\Program Files (x86)\\GoToMyPC\\*",
-                "g2quick.exe",
-                "g2mainh.exe",
-                "g2file*.exe",
-                "g2fileh.exe",
-                "g2printh.exe",
-                "*\\GoToMyPC\\*"
+                "C:\\Program Files (x86)\\GoToMyPC\\*"
             ]
         },
         "Artifacts": {
-            "Disk": [],
+            "Disk": [
+                {
+                    "File": "%AppData%\\GoTo\\Logs\\goto.log",
+                    "Description": "N/A",
+                    "OS": "Windows"
+                }
+            ],
             "EventLog": [],
-            "Registry": [],
+            "Registry": [
+                {
+                    "Path": "HKEY_LOCAL_MACHINE\\WOW6432Node\\Citrix\\GoToMyPc",
+                    "Description": "Configuration settings including registration email"
+                },
+                {
+                    "Path": "HKEY_LOCAL_MACHINE\\WOW6432Node\\Citrix\\GoToMyPc\\GuestInvite",
+                    "Description": "Guest invites send to connect"
+                },
+                {
+                    "Path": "HKEY_CURRENT_USER\\SOFTWARE\\Citrix\\GoToMyPc\\FileTransfer\\history",
+                    "Description": "hostname of the computer making connections and location of transferred files"
+                },
+                {
+                    "Path": "HKEY_USERS\\<SID>\\SOFTWARE\\Citrix\\GoToMyPc\\FileTransfer\\history",
+                    "Description": "hostname of the computer making connections and location of transferred files"
+                }
+            ],
             "Network": [
                 {
-                    "Description": "Known remote domains",
-                    "Domain": [
-                        "*.GoToMyPC.com",
-                        "get.gotomypc.com"
+                    "Description": "N/A",
+                    "Domains": [
+                        "*.GoToMyPC.com"
                     ],
-                    "Port": ""
+                    "Ports": [
+                        "N/A"
+                    ]
                 }
             ]
         },
         "Detections": [],
         "References": [
-            "https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#"
+            "https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#",
+            "https://support.goto.com/training/help/how-do-i-configure-gototraining-to-work-with-firewalls",
+            "https://ruler-project.github.io/ruler-project/RULER/remote/Citrix%20GoToMyPC/"
         ],
-        "Acknowledgement": []
+        "Acknowledgement": [
+            {
+                "Person": "Phill Moore",
+                "Handle": "@phillmoore"
+            }
+        ]
     },
     {
         "Name": "SmartCode Web VNC",
@@ -5777,10 +6073,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "seetrol.co.kr"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5820,11 +6116,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "systemmanager.ru/dntu.en/rdp_view.htm"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -5873,7 +6169,7 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.zoho.com.au",
                         "*.zohoassist.jp",
                         "assist.zoho.com",
@@ -5888,7 +6184,7 @@
                         "*.zoho.com",
                         "*.zoho.eu"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6135,10 +6431,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "imperosoftware.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6209,11 +6505,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "app.pdq.com",
                         "cfcdn.pdq.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6328,7 +6624,7 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "kabuto.io",
                         "*.syncromsp.com",
                         "*.syncroapi.com",
@@ -6341,7 +6637,7 @@
                         "kabutoservices.com",
                         "attachments.servably.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6381,16 +6677,16 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.247ithelp.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
         "Detections": [],
         "References": [
-            "Simlar / replaced by ScreenConnect"
+            "Similar / replaced by ScreenConnect"
         ],
         "Acknowledgement": []
     },
@@ -6425,10 +6721,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "download.cnet.com/Net-Viewer/3000-2370_4-10034828.html"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6467,11 +6763,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "atled.syspectr.com",
                         "app.syspectr.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6513,11 +6809,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.01com.com",
                         "01com.com/imintouch-remote-pc-desktop"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6595,10 +6891,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "islonline.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6672,11 +6968,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "ericom.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6756,12 +7052,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.litemanager.ru",
                         "*.litemanager.com",
                         "litemanager.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6808,11 +7104,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "beanywhere.en.uptodown.com/windows",
                         "beanywhere.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6852,11 +7148,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.api.jumpcloud.com",
                         "*.assist.jumpcloud.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6928,11 +7224,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "asapi*.aweray.net",
                         "client-api.aweray.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -6974,11 +7270,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "remobo.en.softonic.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7022,11 +7318,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "eset.com/me/business/remote-management/remote-administrator/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7070,12 +7366,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "bomgarcloud.com",
                         "*.bomgarcloud.com",
                         "*.beyondtrustcloud.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7155,10 +7451,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7200,12 +7496,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "auth.api.remote.it",
                         "api.remote.it",
                         "remote.it"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7243,10 +7539,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "resources.doradosoftware.com/cruz-rmm"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7284,11 +7580,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "guacamole.apache.org"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7328,12 +7624,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "prod.addigy.com",
                         "grtmprod.addigy.com",
                         "agents.addigy.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7374,11 +7670,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "auth*.aeroadmin.com",
                         "aeroadmin.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7422,12 +7718,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.fleetdeck.io",
                         "cognito-idp.us-west-2.amazonaws.com",
                         "fleetdeck.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7468,10 +7764,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "dameware.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7544,13 +7840,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "cloud.acronis.com",
                         "agents*-cloud.acronis.com",
                         "gw.remotix.com",
                         "connect.acronis.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7593,13 +7889,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.instanthousecall.com",
                         "secure.instanthousecall.com",
                         "*.instanthousecall.net",
                         "instanthousecall.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7640,12 +7936,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "skyfex.com",
                         "deskroll.com",
                         "*.deskroll.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7686,10 +7982,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7739,13 +8035,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.cloudberrylab.com",
                         "*.msp360.com",
                         "*.mspbackups.com",
                         "msp360.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7826,11 +8122,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "realvnc.com/en/connect/download/vnc"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7870,12 +8166,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "trusted.panorama9.com",
                         "changes.panorama9.com",
                         "panorama9.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7920,10 +8216,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "fixme.it"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -7968,11 +8264,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.islonline.com",
                         "*.islonline.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8015,11 +8311,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "ivanti.com/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8072,11 +8368,13 @@
         "LastModified": "",
         "Details": {
             "Website": "https://www.atera.com/",
-            "PEMetadata": {
-                "Filename": "AteraAgent.exe",
-                "OriginalFileName": "AteraAgent.exe",
-                "Description": "AteraAgent"
-            },
+            "PEMetadata": [
+                {
+                    "Filename": "AteraAgent.exe",
+                    "OriginalFileName": "AteraAgent.exe",
+                    "Description": "AteraAgent"
+                }
+            ],
             "Privileges": "SYSTEM",
             "Free": "30 day trial",
             "Verification": "None",
@@ -8235,92 +8533,152 @@
             ],
             "Network": [
                 {
-                    "Domain": "pubsub.atera.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "pubsub.atera.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "pubsub.pubnub.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "pubsub.pubnub.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "agentreporting.atera.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "agentreporting.atera.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "getalphacontrol.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "getalphacontrol.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "app.atera.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "app.atera.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "agenthb.atera.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "agenthb.atera.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "packagesstore.blob.core.windows.net",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "packagesstore.blob.core.windows.net"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "ps.pndsn.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "ps.pndsn.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "agent-api.atera.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "agent-api.atera.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "cacerts.thawte.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "cacerts.thawte.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "agentreportingstore.blob.core.windows.net",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "agentreportingstore.blob.core.windows.net"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "atera-agent-heartbeat.servicebus.windows.net",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "atera-agent-heartbeat.servicebus.windows.net"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "ps.atera.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "ps.atera.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "atera.pubnubapi.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "atera.pubnubapi.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 },
                 {
-                    "Domain": "appcdn.atera.com",
-                    "Port": "N/A",
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "appcdn.atera.com"
+                    ],
+                    "Ports": [
+                        "N/A"
+                    ]
                 }
             ]
         },
         "Detections": [
             {
+                "Sigma": "https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml",
                 "Name": "AteraAgent malicious installations",
-                "Description": "Detects AteraAgent installations with suspicious command line arguments.",
-                "Link": "https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml"
+                "Description": "Detects AteraAgent installations with suspicious command line arguments."
             },
             {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml",
                 "Name": "Atera Agent Installation",
-                "Description": "Detects Atera Agent installation.",
-                "Link": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml"
+                "Description": "Detects Atera Agent installation."
             }
         ],
         "References": [
@@ -8376,11 +8734,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.crossloop.com",
                         "crossloop.en.softonic.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8422,11 +8780,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "level.io",
                         "*.level.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8467,12 +8825,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "login.tailscale.com",
                         "login.tailscale.com",
                         "docs.tacticalrmm.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8510,10 +8868,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "fortra.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8554,11 +8912,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.sorillus.com",
                         "sorillus.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8604,12 +8962,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.remotecall.com",
                         "*.startsupport.com",
                         "remotecall.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8654,12 +9012,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "everywhere.laplink.com",
                         "le.laplink.com",
                         "atled.syspectr.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8739,10 +9097,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "neturo.uplus.co.kr"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8784,11 +9142,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.distantdesktop.com",
                         "*signalserver.xyz"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8859,10 +9217,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "anyplace-control.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -8970,11 +9328,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "github.com/stascorp/rdpwrap"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9012,10 +9370,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "n-able.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9301,24 +9659,38 @@
             ],
             "Network": [
                 {
-                    "Domain": "*.teamviewer.com",
-                    "Port": 443,
-                    "Description": "N/A"
+                    "Description": "Known remote domains",
+                    "Domains": [
+                        "*.teamviewer.com"
+                    ],
+                    "Ports": []
                 },
                 {
-                    "Domain": "router15.teamviewer.com",
-                    "Port": 443,
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "router15.teamviewer.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 },
                 {
-                    "Domain": "client.teamviewer.com",
-                    "Port": 443,
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "client.teamviewer.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 },
                 {
-                    "Domain": "taf.teamviewer.com",
-                    "Port": 443,
-                    "Description": "N/A"
+                    "Description": "N/A",
+                    "Domains": [
+                        "taf.teamviewer.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 }
             ],
             "Other": [
@@ -9390,14 +9762,14 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "mdmsupport.comodo.com",
                         "*.itsm-us1.comodo.com",
                         "*.cmdm.comodo.com",
                         "remoteaccess.itarian.com",
                         "servicedesk.itarian.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9435,12 +9807,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "global.rel.tunnels.api.visualstudio.com",
                         "*.rel.tunnels.api.visualstudio.com",
                         "*.devtunnels.ms"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9480,10 +9852,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.itsupport247.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9495,30 +9867,37 @@
     },
     {
         "Name": "LogMeIn",
-        "Description": "LogMeIn is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/8/2024",
+        "Description": "LogMeIn is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
+        "Author": "Nasreddine Bencherchali",
+        "Created": "2024-08-05",
+        "LastModified": "2024-08-05",
         "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
+            "Website": "https://www.logmein.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "lmiguardiansvc.exe"
+                },
+                {
+                    "Filename": "lmiignition.exe"
+                },
+                {
+                    "Filename": "logmeinsystray.exe"
+                },
+                {
+                    "Filename": "logmein.exe",
+                    "OriginalFileName": "",
+                    "Company": "LogMeIn, Inc.",
+                    "Description": "LMIGuardianSvc",
+                    "Product": "LMIGuardianSvc"
+                }
+            ],
             "Privileges": "",
             "Free": "",
             "Verification": "",
             "SupportedOS": [],
             "Capabilities": [],
             "Vulnerabilities": [],
-            "InstallationPaths": [
-                "logmein*.exe",
-                "lmiguardiansvc.exe",
-                "lmiignition.exe",
-                "logmein.exe",
-                "logmeinsystray.exe"
-            ]
+            "InstallationPaths": null
         },
         "Artifacts": {
             "Disk": [],
@@ -9526,23 +9905,71 @@
             "Registry": [],
             "Network": [
                 {
-                    "Description": "Known remote domains",
-                    "Domain": [
-                        "*logmein.eu",
-                        "logmeinrescue.com",
-                        "*.logmein.com",
-                        "logmein.com/central",
+                    "Description": "N/A",
+                    "Domains": [
+                        "logmein-gateway.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "N/A",
+                    "Domains": [
+                        "*.logmein.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "N/A",
+                    "Domains": [
+                        "*.logmein.eu"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "N/A",
+                    "Domains": [
+                        "logmeinrescue.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "N/A",
+                    "Domains": [
                         "*.logmeininc.com"
                     ],
-                    "Port": ""
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/dns_query/dns_query_win_remote_access_software_domains_non_browsers.yml",
+                "Description": "DNS Query To Remote Access Software Domain From Non-Browser App"
+            },
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_logmein.yml",
+                "Description": "Remote Access Tool - LogMeIn Execution"
+            }
+        ],
         "References": [
             "https://support.logmeininc.com/central/help/allowlisting-and-firewall-configuration"
         ],
-        "Acknowledgement": []
+        "Acknowledgement": [
+            {
+                "Person": "Nasreddine Bencherchali",
+                "Handle": "@nas_bench"
+            }
+        ]
     },
     {
         "Name": "Cyberduck",
@@ -9607,10 +10034,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "electric.ai"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9712,13 +10139,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "charon.netreo.net",
                         "activation.netreo.net",
                         "*.api.netreo.com",
                         "netreo.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9766,11 +10193,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.connect.backdrop.cloud",
                         "*.netop.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9813,10 +10240,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "splashtop.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9856,11 +10283,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.fastviewer.com",
                         "fastviewer.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9901,12 +10328,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "rustdesk.com",
                         "user_managed",
                         "web.rustdesk.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -9983,7 +10410,7 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "goto.com",
                         "*.getgo.com",
                         "*.fastsupport.com",
@@ -9993,7 +10420,7 @@
                         "*.gotoassist.at",
                         "*.desktopstreaming.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10067,10 +10494,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "helpbeam.software.informer.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10110,10 +10537,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.ntrsupport.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10154,10 +10581,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.server-eye.de"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10197,11 +10624,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "github.com/Mikej81/WebRDP"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10310,10 +10737,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.anysupport.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10354,11 +10781,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "beamyourscreen.com",
                         "*.beamyourscreen.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10400,13 +10827,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.sophos.com",
                         "*.sophosupd.com",
                         "*.sophosupd.net",
                         "community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10481,10 +10908,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "desktopcentral.manageengine.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10528,10 +10955,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10572,12 +10999,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "getscreen.me",
                         "GetScreen.me",
                         "*.getscreen.me"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10626,13 +11053,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.remotedesktop.com",
                         "*.remotepc.com",
                         "www.remotepc.com",
                         "remotepc.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10676,11 +11103,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "cloud.tanium.com",
                         "*.cloud.tanium.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10792,12 +11219,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*content.rview.com",
                         "*.rview.com",
                         "content.rview.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10837,11 +11264,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "ultravnc.com",
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10920,11 +11347,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*search.namequery.com",
                         "*server.absolute.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -10964,11 +11391,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.kace.com",
                         "www.quest.com/kace/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11009,10 +11436,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11092,11 +11519,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "eset.com/me/business/remote-management/remote-administrator/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11137,12 +11564,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "pilixo.com",
                         "download.pilixo.com",
                         "*.pilixo.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11225,13 +11652,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.real-time-collaboration.com",
                         "*.mikogo4.com",
                         "*.mikogo.com",
                         "mikogo.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11367,10 +11794,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "manageengine.com/remote-monitoring-management/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11446,12 +11873,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.gatherplace.com",
                         "*.gatherplace.net",
                         "gatherplace.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11492,11 +11919,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "wen.laplink.com/product/laplink-gold"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11536,10 +11963,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "centuriontech.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11581,10 +12008,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.ivanticloud.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11754,11 +12181,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.xeox.com",
                         "xeox.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11800,11 +12227,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.ezhelp.co.kr",
                         "ezhelp.co.kr"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11846,11 +12273,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "level.io",
                         "*.level.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11953,10 +12380,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -11999,11 +12426,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "live.screenconnect.com",
                         "control.connectwise.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12042,11 +12469,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.optitune.us",
                         "*.opti-tune.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12153,10 +12580,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "encapto.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12168,17 +12595,28 @@
     },
     {
         "Name": "Action1",
-        "Description": "Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries.  Through the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.\n",
+        "Description": "Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries. \nThrough the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.\n",
         "Author": "@kostastsale",
-        "Created": "2024/03/08",
-        "LastModified": "",
+        "Created": "2024-08-03",
+        "LastModified": "2024-08-03",
         "Details": {
             "Website": "https://www.action1.com/",
-            "PEMetadata": {
-                "Filename": "action1_agent.exe",
-                "OriginalFileName": "action1_agent.exe",
-                "Description": "Endpoint Agent"
-            },
+            "PEMetadata": [
+                {
+                    "Filename": "action1_connector.exe"
+                },
+                {
+                    "Filename": "action1_remote.exe"
+                },
+                {
+                    "Filename": "action1_update.exe"
+                },
+                {
+                    "Filename": "action1_agent.exe",
+                    "OriginalFileName": "action1_agent.exe",
+                    "Description": "Endpoint Agent"
+                }
+            ],
             "Privileges": "SYSTEM",
             "Free": "Yes",
             "Verification": "Corporate email required although temporary email services are accepted",
@@ -12186,22 +12624,19 @@
                 "Windows"
             ],
             "Capabilities": [
-                "Remote monitoring and management",
-                "Patch management",
-                "Network discovery",
                 "Backup and disaster recovery",
-                "Helpdesk and ticketing",
-                "Reporting and analytics",
                 "Billing and invoicing",
                 "Customer portal",
-                "Mobile app"
+                "HelpDesk and ticketing",
+                "Mobile app",
+                "Network discovery",
+                "Patch management",
+                "Remote monitoring and management",
+                "Reporting and analytics"
             ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "action1_connector.exe",
-                "action1_agent.exe",
-                "action1_remote.exe",
-                "action1_update.exe"
+                "C:\\Windows\\Action1\\*"
             ]
         },
         "Artifacts": {
@@ -12224,6 +12659,11 @@
                 {
                     "File": "C:\\Windows\\Action1\\rule_data\\*",
                     "Description": "Files related to Action1 rules",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\Action1\\action1_log_*.log",
+                    "Description": "Contains history, errors, system notifications. Incoming and outgoing connections.",
                     "OS": "Windows"
                 }
             ],
@@ -12267,14 +12707,22 @@
             ],
             "Network": [
                 {
-                    "Description": "Known remote domains",
-                    "Domain": [
-                        "action1.com",
-                        "a1-backend-packages.s3.amazonaws.com",
-                        "*.action1.com",
-                        "server.action1.com"
+                    "Description": "N/A",
+                    "Domains": [
+                        "*.action1.com"
                     ],
-                    "Port": "22543"
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "N/A",
+                    "Domains": [
+                        "a1-backend-packages.s3.amazonaws.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
@@ -12289,7 +12737,8 @@
         "References": [
             "https://www.action1.com/documentation/firewall-configuration/",
             "https://www.action1.com/documentation/",
-            "https://twitter.com/Kostastsale/status/1646256901506605063?s=20"
+            "https://twitter.com/Kostastsale/status/1646256901506605063?s=20",
+            "https://ruler-project.github.io/ruler-project/RULER/remote/Action1/"
         ],
         "Acknowledgement": [
             {
@@ -12332,10 +12781,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "fleetdeck.io"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12410,10 +12859,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12451,10 +12900,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "tanium.com/products/tanium-deploy"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12492,11 +12941,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "zabbix.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12538,13 +12987,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.weezo.me",
                         "weezo.net",
                         "*.weezo.net",
                         "weezo.en.softonic.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12584,11 +13033,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.beinsync.net",
                         "*.beinsync.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12629,11 +13078,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.screenmeet.com",
                         "*.scrn.mt"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12674,10 +13123,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "myivo-server.software.informer.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12719,10 +13168,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "connectwise.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12760,11 +13209,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.kabuto.io",
                         "repairtechsolutions.com/kabuto/"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12870,10 +13319,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "wangwang.taobao.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12920,11 +13369,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "goverlan.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -12964,10 +13413,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13013,7 +13462,7 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.beanywhere.com ",
                         "systemmonitor.co.uk",
                         "*system-monitor.com",
@@ -13034,7 +13483,7 @@
                         "systemmonitor.eu.com",
                         "*.n-able.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13105,10 +13554,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*mygreenpc.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13187,12 +13636,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*remotedesktop.google.com",
                         "*remotedesktop-pa.googleapis.com",
                         "remotedesktop.google.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13273,12 +13722,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*remotedesktop-pa.googleapis.com",
                         "*remotedesktop.google.com",
                         "remotedesktop.google.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13318,10 +13767,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "donkz.nl"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13363,10 +13812,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.nate.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13404,12 +13853,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.islonline.net",
                         "rmm.barracudamsp.com",
                         "barracudamsp.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13486,11 +13935,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "crosstecsoftware.com/remotecontrol"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13530,11 +13979,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "deskday.ai",
                         "app.deskday.ai"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13597,11 +14046,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "mremoteng.org"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13677,12 +14126,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "geo.netsupportsoftware.com",
                         "netsupportmanager.com",
                         "*.netsupportmanager.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13723,11 +14172,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "github.com/V-E-O/rdp2tcp"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13767,11 +14216,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.itsupport247.net",
                         "itsupport247.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13812,10 +14261,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "pulseway.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13855,11 +14304,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "naverisk.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -13941,11 +14390,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.islonline.com",
                         "*.islonline.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14051,13 +14500,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.mdt.qq.com",
                         "*.desktop.qq.com",
                         "upload_data.qq.com",
                         "qq-messenger.en.softonic.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14099,11 +14548,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.distantdesktop.com",
                         "*signalserver.xyz"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14154,14 +14603,14 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.fixme.it",
                         "*.techinline.net",
                         "fixme.it",
                         "*set.me",
                         "*setme.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14272,11 +14721,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.rudesktop.ru",
                         "rudesktop.ru"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14320,12 +14769,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.beyondtrustcloud.com",
                         "*.bomgarcloud.com",
                         "bomgarcloud.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14402,11 +14851,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "tightvnc.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14447,11 +14896,11 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "user_managed",
                         "meshcentral.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14524,10 +14973,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14636,10 +15085,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "portal.ehorus.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14681,10 +15130,10 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.dwservice.net"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },
@@ -14725,13 +15174,13 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domain": [
+                    "Domains": [
                         "*.iperiusremote.com",
                         "*.iperius.com",
                         "*.iperius-rs.com",
                         "iperiusremote.com"
                     ],
-                    "Port": ""
+                    "Ports": []
                 }
             ]
         },

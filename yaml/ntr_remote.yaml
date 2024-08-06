@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - NTRsupportPro_EN.exe
+    - NTRsupportPro_EN.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.ntrsupport.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.ntrsupport.com'
+      Ports: []
 Detections: []
 References:
-- DOA as of 2024
+  - DOA as of 2024
 Acknowledgement: []

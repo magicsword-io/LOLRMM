@@ -1,0 +1,35 @@
+title: Potential TeamViewer RMM Tool Registry Activity
+logsource:
+  product: windows
+  category: registry_event
+detection:
+  selection:
+    TargetObject|contains:
+    - HKLM\SOFTWARE\TeamViewer\*
+    - HKU\<SID>\SOFTWARE\TeamViewer\*
+    - HKLM\SYSTEM\CurrentControlSet\Services\TeamViewer\*
+    - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
+    - HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TeamViewer\*
+    - HKU\SID\SOFTWARE\TeamViewer\MainWindowHandle
+    - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImage
+    - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePath
+    - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePosition
+    - HKU\SID\SOFTWARE\TeamViewer\MinimizeToTray
+    - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedCapturingEndpoint
+    - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioSendingVolumeV2
+    - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedRenderingEndpoint
+    - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
+    - HKU\SID\SOFTWARE\TeamViewer\ClientWindow_Mode
+    - HKU\SID\SOFTWARE\TeamViewer\ClientWindowPositions
+  condition: selection
+id: a8763337-5097-4018-a8f0-2d17a1d39571
+status: experimental
+description: Detects potential registry activity of TeamViewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TeamViewer
+level: medium

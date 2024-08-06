@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Sorillus-Launcher*.exe
-  - Sorillus Launcher.exe
+    - Sorillus-Launcher*.exe
+    - Sorillus Launcher.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.sorillus.com'
-    - sorillus.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.sorillus.com'
+        - sorillus.com
+      Ports: []
 Detections: []
 References:
-- https://sorillus.com/
+  - https://sorillus.com/
 Acknowledgement: []

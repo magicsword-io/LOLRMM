@@ -1,0 +1,22 @@
+title: Potential SkyFex RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - skyfex.com
+    - deskroll.com
+    - '*.deskroll.com'
+  condition: selection
+id: 909be690-22c1-4f58-a5cf-48a7bf64af6b
+status: experimental
+description: Detects potential network activity of SkyFex RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SkyFex
+level: medium

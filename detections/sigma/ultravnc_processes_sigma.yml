@@ -1,0 +1,20 @@
+title: Potential UltraVNC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - UltraVNC*.exe
+  condition: selection
+id: fcb92823-5e3c-4acb-a02f-7af32793a651
+status: experimental
+description: Detects potential processes activity of UltraVNC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of UltraVNC
+level: medium

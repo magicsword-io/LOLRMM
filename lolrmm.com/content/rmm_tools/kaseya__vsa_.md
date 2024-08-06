@@ -17,13 +17,19 @@ displayTitle = "Kaseya (VSA)"
 Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
 
+**Author**: Nasreddine Bencherchali
 
-**Last Modified**: 2/8/2024
+**Created**: 2024-08-05
+
+**Last Modified**: 2024-08-05
 
 ### Details
 
 
 #### PE Metadata
+- **Filename**: agentmon.exe
+- **Filename**: KaUpdHlp.exe
+- **Filename**: KaUsrTsk.exe
 
 
 - **Free**: No
@@ -34,20 +40,26 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
 
 
 #### Installation Paths
-- `agentmon.exe`
-- `KaUpdHlp.exe`
-- `KaUsrTsk.exe`
+- `C:\Program Files (x86)\Kaseya\`
+- `C:\ProgramData\Kaseya\`
 
 ### Forensic Artifacts
 
 #### Disk Artifacts
 
-- **File**: `C:\Users\*\AppData\Local\Kaseya\Log\KaseyaLiveConnect\*`
+- **File**: `%localappdata%\Kaseya\Log\KaseyaLiveConnect\*`
 
   **Description**: Kaseya Live Connect logs
 
 
   **OS**: Windows
+
+- **File**: `~/Library/Logs/com.kaseya/KaseyaLiveConnect/*`
+
+  **Description**: Kaseya Live Connect logs
+
+
+  **OS**: MacOS
 
 - **File**: `C:\ProgramData\Kaseya\Log\Endpoint\*`
 
@@ -61,7 +73,20 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
   **Description**: Kaseya Agent Monitor log
 
 
-  **OS**: Windows
+
+- **File**: `/var/log/system.log`
+
+  **Description**: Kaseya Agent Monitor log
+
+
+  **OS**: MacOS 32bit
+
+- **File**: ` ~/opt/kaseya/*/logs*`
+
+  **Description**: Kaseya Agent Monitor log
+
+
+  **OS**: MacOS 64bit
 
 - **File**: `C:\Users\*\AppData\Local\Temp\KASetup.log`
 
@@ -84,13 +109,63 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
 
   **OS**: Windows
 
+- **File**: `C:\Kaseya\api\v1.0\logs\`
+
+  **Description**: Kaseya API logs
+
+
+  **OS**: Windows
+
+- **File**: `C:\Kaseya\api\v1.5\endpoint\logs`
+
+  **Description**: Kaseya API logs
+
+
+  **OS**: Windows
+
+- **File**: `C:\Kaseya\api\v1.5\endpoints\logs`
+
+  **Description**: Kaseya API logs
+
+
+  **OS**: Windows
+
+- **File**: `C:\Windows\System32\config\systemprofile\AppData\Local\Kaseya\Log\MakeSelfSignedCert.exe\`
+
+  **Description**: Certificate creation
+
+
+  **OS**: Windows
+
+- **File**: `C:\Kaseya\WebPages\install\makecert.txt`
+
+  **Description**: Certificate creation
+
+
+  **OS**: Windows
+
+- **File**: `C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\KaseyaEndpoint*`
+
+  **Description**: Endpoint service logs
+
+
+  **OS**: Windows
+
+- **File**: `C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\Session_*`
+
+  **Description**: Session logs
+
+
+  **OS**: Windows
+
 
 
 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `deploy01.kaseya.com`
     - `*managedsupport.kaseya.net`
     - `*.kaseya.net`
@@ -102,6 +177,9 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
 
 ### References
 - [https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements](https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements)
+- [https://helpdesk.kaseya.com/hc/en-gb/articles/229009708-Live-Connect-Log-File-Locations](https://helpdesk.kaseya.com/hc/en-gb/articles/229009708-Live-Connect-Log-File-Locations)
+- [https://ruler-project.github.io/ruler-project/RULER/remote/Kaseya/](https://ruler-project.github.io/ruler-project/RULER/remote/Kaseya/)
+- [https://helpdesk.kaseya.com/hc/en-gb/articles/229009708-Live-Connect-Log-File-Locations](https://helpdesk.kaseya.com/hc/en-gb/articles/229009708-Live-Connect-Log-File-Locations)
 
 
 

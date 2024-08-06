@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - remotepass-access.exe
-  - rpaccess.exe
-  - rpwhostscr.exe
+    - remotepass-access.exe
+    - rpaccess.exe
+    - rpwhostscr.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - remotepass.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - remotepass.com
+      Ports: []
 Detections: []
 References:
-- https://www.remotepass.com/rpaccess.html - DOA as of 2024
+  - https://www.remotepass.com/rpaccess.html - DOA as of 2024
 Acknowledgement: []

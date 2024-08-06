@@ -1,0 +1,21 @@
+title: Potential RAdmin RMM Tool Registry Activity
+logsource:
+  product: windows
+  category: registry_event
+detection:
+  selection:
+    TargetObject|contains:
+    - HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin
+      Security
+  condition: selection
+id: 92949938-da53-4bc2-b6a7-279500b6dc32
+status: experimental
+description: Detects potential registry activity of RAdmin RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RAdmin
+level: medium

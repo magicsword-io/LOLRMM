@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Users\*\current\
-  - '*Users\*\.odrive'
-  - '*\Odriveapp.exe'
+    - C:\Users\*\current\
+    - '*Users\*\.odrive'
+    - '*\Odriveapp.exe'
 Artifacts:
   Disk: []
   EventLog: []

@@ -1,0 +1,20 @@
+title: Potential CloudMounter RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\cloudmounter.exe'
+  condition: selection
+id: 42b54b7d-638c-4fc8-8d68-76a7635f4d96
+status: experimental
+description: Detects potential processes activity of CloudMounter RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CloudMounter
+level: medium

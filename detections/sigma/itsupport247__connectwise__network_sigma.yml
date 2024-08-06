@@ -1,0 +1,22 @@
+title: Potential ITSupport247 (ConnectWise) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.itsupport247.net'
+    - itsupport247.net
+  condition: selection
+id: 0647c412-8092-4dee-9be4-a736e4ed7b6f
+status: experimental
+description: Detects potential network activity of ITSupport247 (ConnectWise) RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ITSupport247 (ConnectWise)
+level: medium

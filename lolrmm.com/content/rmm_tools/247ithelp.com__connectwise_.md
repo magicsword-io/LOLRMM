@@ -44,7 +44,8 @@ displayTitle = "247ithelp.com (ConnectWise)"
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.247ithelp.com`
 
 
@@ -52,7 +53,7 @@ displayTitle = "247ithelp.com (ConnectWise)"
 
 
 ### References
-- [Simlar / replaced by ScreenConnect](Simlar / replaced by ScreenConnect)
+- [Similar / replaced by ScreenConnect](Similar / replaced by ScreenConnect)
 
 
 

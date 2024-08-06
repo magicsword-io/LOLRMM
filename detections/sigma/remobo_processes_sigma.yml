@@ -1,0 +1,22 @@
+title: Potential Remobo RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - remobo.exe
+    - remobo_client.exe
+    - remobo_tracker.exe
+  condition: selection
+id: 71349374-d006-4c54-bdeb-5aa4c797d4e5
+status: experimental
+description: Detects potential processes activity of Remobo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Remobo
+level: medium

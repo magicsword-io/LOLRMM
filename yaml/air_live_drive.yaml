@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\AirLiveDrive\*
-  - '*\AirLiveDrive\*'
-  - '*\AirLiveDrive.exe'
+    - C:\Program Files\AirLiveDrive\*
+    - '*\AirLiveDrive\*'
+    - '*\AirLiveDrive.exe'
 Artifacts:
   Disk: []
   EventLog: []

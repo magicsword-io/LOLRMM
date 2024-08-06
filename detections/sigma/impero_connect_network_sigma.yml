@@ -1,0 +1,20 @@
+title: Potential Impero Connect RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - imperosoftware.com
+  condition: selection
+id: d4fbc9e7-9ef9-45d0-8cb6-f261f0673cea
+status: experimental
+description: Detects potential network activity of Impero Connect RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Impero Connect
+level: medium

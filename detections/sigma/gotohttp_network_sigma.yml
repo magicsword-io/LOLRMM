@@ -1,0 +1,21 @@
+title: Potential GotoHTTP RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.gotohttp.com'
+    - gotohttp.com
+  condition: selection
+id: 75a00f1e-3eb2-40cd-94fa-85156e47c396
+status: experimental
+description: Detects potential network activity of GotoHTTP RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GotoHTTP
+level: medium

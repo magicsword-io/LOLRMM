@@ -97,22 +97,21 @@
           }
         },
         "Network": {
-          "type": ["array", "null"],
+          "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "Description": { "type": ["string", "null"] },
-              "Domain": {
-                "oneOf": [
-                  { "type": ["string", "null"] },
-                  { 
-                    "type": "array",
-                    "items": { "type": ["string", "null"] }
-                  }
-                ]
+              "Description": { "type": "string" },
+              "Domains": {
+                "type": "array",
+                "items": { "type": "string" }
               },
-              "Port": { "type": ["string", "number", "null"] }
-            }
+              "Ports": {
+                "type": "array",
+                "items": { "type": ["string", "integer"] }
+              }
+            },
+            "required": ["Description", "Domains", "Ports"]
           }
         },
         "Other": {

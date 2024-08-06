@@ -44,7 +44,8 @@ EMCO Remote Console is a remote monitoring and management (RMM) tool. More infor
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `user_managed`
     - `emcosoftware.com`
 

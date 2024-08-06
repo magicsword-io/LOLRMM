@@ -17,21 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - seetrolcenter.exe
-  - seetrolclient.exe
-  - seetrolmyservice.exe
-  - seetrolremote.exe
-  - seetrolsetting.exe
+    - seetrolcenter.exe
+    - seetrolclient.exe
+    - seetrolmyservice.exe
+    - seetrolremote.exe
+    - seetrolsetting.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - seetrol.co.kr
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - seetrol.co.kr
+      Ports: []
 Detections: []
 References:
-- http://www.seetrol.com/en/features/features3.php
+  - http://www.seetrol.com/en/features/features3.php
 Acknowledgement: []

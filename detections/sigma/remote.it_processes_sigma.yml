@@ -1,0 +1,22 @@
+title: Potential Remote.it RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - remote-it-installer.exe
+    - remote.it.exe
+    - remoteit.exe
+  condition: selection
+id: 5bde239f-c0ed-4a62-8a48-0098b2bc135a
+status: experimental
+description: Detects potential processes activity of Remote.it RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Remote.it
+level: medium

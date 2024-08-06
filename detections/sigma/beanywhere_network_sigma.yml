@@ -1,0 +1,21 @@
+title: Potential BeAnyWhere RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - beanywhere.en.uptodown.com/windows
+    - beanywhere.com
+  condition: selection
+id: dd150b92-9eee-4d16-9b3d-f03a6c40bf73
+status: experimental
+description: Detects potential network activity of BeAnyWhere RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of BeAnyWhere
+level: medium

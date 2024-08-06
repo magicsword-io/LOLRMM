@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - echoserver*.exe
-  - echoware.dll
+    - echoserver*.exe
+    - echoware.dll
 Artifacts:
   Disk: []
   EventLog: []

@@ -1,0 +1,20 @@
+title: Potential RAdmin RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - radmin.com
+  condition: selection
+id: 54af6cd0-c311-40ae-9e4b-9e51dc5d46be
+status: experimental
+description: Detects potential network activity of RAdmin RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RAdmin
+level: medium

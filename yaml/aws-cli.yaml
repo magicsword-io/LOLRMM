@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\Amazon\AWSCLI\*
-  - '*\Amazon\AWSCLI\*'
-  - '*\AWSCLIV*.msi'
-  - '*\AWSCLISetup.exe'
+    - C:\Program Files\Amazon\AWSCLI\*
+    - '*\Amazon\AWSCLI\*'
+    - '*\AWSCLIV*.msi'
+    - '*\AWSCLISetup.exe'
 Artifacts:
   Disk: []
   EventLog: []

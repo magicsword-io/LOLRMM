@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Rei Software\CarotDAV\*
-  - '*\Rei Software\CarotDAV\*'
-  - '*\CarotDAV.exe'
+    - C:\Program Files (x86)\Rei Software\CarotDAV\*
+    - '*\Rei Software\CarotDAV\*'
+    - '*\CarotDAV.exe'
 Artifacts:
   Disk: []
   EventLog: []

@@ -1,0 +1,25 @@
+title: Potential DameWare RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - SolarWinds-Dameware-DRS*.exe
+    - DameWare Mini Remote Control*.exe
+    - dwrcs.exe
+    - '*\dwrcst.exe'
+    - DameWare Remote Support.exe
+    - SolarWinds-Dameware-MRC*.exe
+  condition: selection
+id: 472346d9-395f-4aa7-8ca6-df009c3026d1
+status: experimental
+description: Detects potential processes activity of DameWare RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DameWare
+level: medium

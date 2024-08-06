@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Remote Workforce Client.exe
+    - Remote Workforce Client.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.247ithelp.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.247ithelp.com'
+      Ports: []
 Detections: []
 References:
-- Simlar / replaced by ScreenConnect
+  - Similar / replaced by ScreenConnect
 Acknowledgement: []

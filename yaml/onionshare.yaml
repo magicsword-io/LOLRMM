@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\OnionShare\*
-  - '*\OnionShare\*'
-  - '*\onionshare*.exe'
-  - OnionShare-win*.msi
+    - C:\Program Files (x86)\OnionShare\*
+    - '*\OnionShare\*'
+    - '*\onionshare*.exe'
+    - OnionShare-win*.msi
 Artifacts:
   Disk: []
   EventLog: []

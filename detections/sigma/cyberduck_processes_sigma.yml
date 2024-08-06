@@ -1,0 +1,20 @@
+title: Potential Cyberduck RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Cyberduck.exe'
+  condition: selection
+id: 6e64282f-f4ee-47fb-90f1-6cad17807ec8
+status: experimental
+description: Detects potential processes activity of Cyberduck RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Cyberduck
+level: medium

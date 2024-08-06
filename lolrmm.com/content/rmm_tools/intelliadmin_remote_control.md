@@ -48,7 +48,8 @@ IntelliAdmin Remote Control is a remote monitoring and management (RMM) tool. Mo
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `user_managed`
     - `*.intelliadmin.com`
     - `intelliadmin.com/remote-control`

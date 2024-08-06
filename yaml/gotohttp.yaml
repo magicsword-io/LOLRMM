@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - GotoHTTP_x64.exe
-  - gotohttp.exe
-  - GotoHTTP*.exe
+    - GotoHTTP_x64.exe
+    - gotohttp.exe
+    - GotoHTTP*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.gotohttp.com'
-    - gotohttp.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.gotohttp.com'
+        - gotohttp.com
+      Ports: []
 Detections: []
 References:
-- https://gotohttp.com/goto/help.12x
+  - https://gotohttp.com/goto/help.12x
 Acknowledgement: []

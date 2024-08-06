@@ -1,0 +1,21 @@
+title: Potential Syspectr RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - atled.syspectr.com
+    - app.syspectr.com
+  condition: selection
+id: c6c62120-4908-4241-b42d-ae278d611414
+status: experimental
+description: Detects potential network activity of Syspectr RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Syspectr
+level: medium

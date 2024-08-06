@@ -1,0 +1,20 @@
+title: Potential Cruz RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - resources.doradosoftware.com/cruz-rmm
+  condition: selection
+id: a1ca6182-5cf5-479a-895e-e7a10445c6b5
+status: experimental
+description: Detects potential network activity of Cruz RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Cruz
+level: medium

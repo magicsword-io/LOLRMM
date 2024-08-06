@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ctiserv.exe
+    - ctiserv.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - centuriontech.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - centuriontech.com
+      Ports: []
 Detections: []
 References:
-- https://data443.atlassian.net/servicedesk/customer/portal/20
+  - https://data443.atlassian.net/servicedesk/customer/portal/20
 Acknowledgement: []

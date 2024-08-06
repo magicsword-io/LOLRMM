@@ -1,0 +1,21 @@
+title: Potential LabTech RMM (Now ConnectWise Automate) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - connectwise.com
+  condition: selection
+id: 32d3fd5a-c1f2-4468-8b06-6dff37475b11
+status: experimental
+description: Detects potential network activity of LabTech RMM (Now ConnectWise Automate)
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LabTech RMM (Now ConnectWise Automate)
+level: medium

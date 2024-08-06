@@ -1,0 +1,21 @@
+title: Potential PSEXEC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - psexec.exe
+    - psexecsvc.exe
+  condition: selection
+id: 6733a308-74b7-45ef-8b4c-378f5310fe48
+status: experimental
+description: Detects potential processes activity of PSEXEC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of PSEXEC
+level: medium

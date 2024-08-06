@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Users\*\AppData\Roaming\SyncTrayzor\*
-  - '*Users\*\AppData\Roaming\SyncTrayzor\*'
-  - '*\Syncthing.exe'
+    - C:\Users\*\AppData\Roaming\SyncTrayzor\*
+    - '*Users\*\AppData\Roaming\SyncTrayzor\*'
+    - '*\Syncthing.exe'
 Artifacts:
   Disk: []
   EventLog: []

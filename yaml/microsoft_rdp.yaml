@@ -17,7 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - mstsc.exe
+    - mstsc.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -25,5 +25,5 @@ Artifacts:
   Network: []
 Detections: []
 References:
-- https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows
+  - https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows
 Acknowledgement: []

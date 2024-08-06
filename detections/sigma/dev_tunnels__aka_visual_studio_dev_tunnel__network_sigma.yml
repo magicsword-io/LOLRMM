@@ -1,0 +1,21 @@
+title: Potential Dev Tunnels (aka Visual Studio Dev Tunnel) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview
+  condition: selection
+id: 9bf57519-3848-4019-9bb9-204cbbccab36
+status: experimental
+description: Detects potential network activity of Dev Tunnels (aka Visual Studio
+  Dev Tunnel) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Dev Tunnels (aka Visual Studio Dev Tunnel)
+level: medium

@@ -1,0 +1,21 @@
+title: Potential Level.io RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - level.io
+    - '*.level.io'
+  condition: selection
+id: 19598e56-c542-4c9f-9635-f255180b017e
+status: experimental
+description: Detects potential network activity of Level.io RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Level.io
+level: medium

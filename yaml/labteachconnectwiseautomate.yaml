@@ -17,7 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ltsvc.exe
+    - ltsvc.exe
 Artifacts:
   Disk: []
   EventLog: []

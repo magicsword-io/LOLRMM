@@ -46,7 +46,8 @@ Sophos-Remote Management System is a remote monitoring and management (RMM) tool
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.sophos.com`
     - `*.sophosupd.com`
     - `*.sophosupd.net`

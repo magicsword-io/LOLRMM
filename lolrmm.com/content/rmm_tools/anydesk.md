@@ -17,6 +17,7 @@ displayTitle = "AnyDesk"
 
 AnyDesk is a popular remote desktop software that enables users to access and control a computer or device from a remote location. It was developed with the primary goal of facilitating remote work, technical support, and collaboration between individuals and teams.
 
+
 **Author**: Ali Alwashali, Nasreddine Bencherchali
 
 **Created**: 2023-09-29
@@ -28,7 +29,11 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 - **Website**: [https://anydesk.com/en](https://anydesk.com/en)
 
 #### PE Metadata
-- **Filename**: anydesk.exe**Original File Name**: AnyDesk.exe**Description**: AnyDesk**Product**: AnyDesk
+- **Filename**: anydesk.exe
+- **Original File Name**: AnyDesk.exe
+- **Description**: AnyDesk
+- **Product**: AnyDesk
+
 - **Privileges**: User
 
 - **Free**: Yes
@@ -175,6 +180,20 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 
   **OS**: Windows
 
+- **File**: `~/Library/Application Support/AnyDesk/Logs/`
+
+  **Description**: N/A
+
+
+  **OS**: Mac
+
+- **File**: `~/.config/AnyDesk/Logs/`
+
+  **Description**: N/A
+
+
+  **OS**: Linux
+
 
 #### Event Log Artifacts
 - Event Details:
@@ -214,22 +233,28 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 #### Network Artifacts
 
 - **Description**: During setup the boot.net.anydesk.com domain is request over port 443
-  **Domain**:
-    `boot.net.anydesk.com`
 
-  **Port**: `443`
+  **Domains**:
+    - `boot.net.anydesk.com`
 
-- **Description**: N/A
-  **Domain**:
-    `relay-[a-f0-9]{8}.net.anydesk.com:443`
-
-  **Port**: `443`
+  **Ports**:
+    - `443`
 
 - **Description**: N/A
-  **Domain**:
-    `*.anydesk.com`
 
-  **Port**: `443`
+  **Domains**:
+    - `relay-[a-f0-9]{8}.net.anydesk.com:443`
+
+  **Ports**:
+    - `443`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `*.anydesk.com`
+
+  **Ports**:
+    - `443`
 
 
 #### Other Artifacts
@@ -270,9 +295,10 @@ AnyDesk is a popular remote desktop software that enables users to access and co
 - [https://support.anydesk.com/knowledge/firewall](https://support.anydesk.com/knowledge/firewall)
 - [https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html](https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html)
 - [https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk](https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk)
+- [https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/](https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/)
 
 ### Acknowledgements
-- Ali Alwashali (@ali_alwashali)- Théo Letailleur (in/theosyn)
+- Théo Letailleur (in/theosyn)- Ali Alwashali (@ali_alwashali)- Nasreddine Bencherchali (@nas_bench)
 
 {{< /column >}}
 {{< /block >}}

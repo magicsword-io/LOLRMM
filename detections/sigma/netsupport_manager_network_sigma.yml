@@ -1,0 +1,22 @@
+title: Potential NetSupport Manager RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - geo.netsupportsoftware.com
+    - netsupportmanager.com
+    - '*.netsupportmanager.com'
+  condition: selection
+id: 158dd963-b994-44d0-952e-ee35c977eea6
+status: experimental
+description: Detects potential network activity of NetSupport Manager RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NetSupport Manager
+level: medium

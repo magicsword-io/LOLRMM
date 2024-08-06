@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rutview.exe
-  - rutserv.exe
+    - rutview.exe
+    - rutserv.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.internetid.ru'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.internetid.ru'
+      Ports: []
 Detections: []
 References:
-- https://www.remoteutilities.com/download/
+  - https://www.remoteutilities.com/download/
 Acknowledgement: []

@@ -41,7 +41,8 @@ N-ABLE Remote Access Software is a remote monitoring and management (RMM) tool. 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `n-able.com`
 
 

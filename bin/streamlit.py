@@ -239,8 +239,8 @@ def main():
                         artifact_data['Description'] = st.text_input(f"Description {i+1}", key=f"{artifact_type}_{i}_description")
                     elif artifact_type == 'Network':
                         artifact_data['Description'] = st.text_input(f"Description {i+1}", key=f"{artifact_type}_{i}_description")
-                        artifact_data['Domain'] = st.text_input(f"Domain {i+1}", key=f"{artifact_type}_{i}_domain")
-                        artifact_data['Port'] = st.text_input(f"Port {i+1}", key=f"{artifact_type}_{i}_port")
+                        artifact_data['Domains'] = st.text_area(f"Domains {i+1} (one per line)", key=f"{artifact_type}_{i}_domains").split('\n')
+                        artifact_data['Ports'] = st.text_area(f"Ports {i+1} (one per line)", key=f"{artifact_type}_{i}_ports").split('\n')
                     elif artifact_type == 'Other':
                         artifact_data['Type'] = st.text_input(f"Type {i+1}", key=f"{artifact_type}_{i}_type")
                         artifact_data['Value'] = st.text_input(f"Value {i+1}", key=f"{artifact_type}_{i}_value")
@@ -312,7 +312,12 @@ def main():
                         'Vulnerabilities': vulnerabilities.split('\n') if vulnerabilities else [],
                         'InstallationPaths': installation_paths.split('\n') if installation_paths else []
                     },
-                    'Artifacts': artifacts,
+                    'Artifacts': {
+                        'Disk': artifacts.get('Disk', []),
+                        'EventLog': artifacts.get('EventLog', []),
+                        'Registry': artifacts.get('Registry', []),
+                        'Network': artifacts.get('Network', [])
+                    },
                     'Detections': detections,
                     'References': references.split('\n') if references else [],
                     'Acknowledgement': acknowledgements

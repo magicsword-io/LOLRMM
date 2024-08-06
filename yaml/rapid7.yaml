@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ir_agent.exe
-  - rapid7_agent_core.exe
-  - rapid7_endpoint_broker.exe
+    - ir_agent.exe
+    - rapid7_agent_core.exe
+    - rapid7_endpoint_broker.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.analytics.insight.rapid7.com'
-    - '*.endpoint.ingress.rapid7.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.analytics.insight.rapid7.com'
+        - '*.endpoint.ingress.rapid7.com'
+      Ports: []
 Detections: []
 References:
-- https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
+  - https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
 Acknowledgement: []

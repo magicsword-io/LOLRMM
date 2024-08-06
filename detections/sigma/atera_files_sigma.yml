@@ -1,0 +1,28 @@
+title: Potential Atera RMM Tool File Activity
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt
+    - C:\Program Files\ATERA Networks\AteraAgent\Packages\*
+    - C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe
+    - C:\Program Files\Atera Networks\AlphaAgent.exe
+    - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe
+    - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe
+    - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe
+    - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe
+    - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe
+  condition: selection
+id: d7060c72-493c-4760-866f-90f7f96623a6
+status: experimental
+description: Detects potential files activity of Atera RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Atera
+level: medium

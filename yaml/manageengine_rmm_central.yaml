@@ -22,10 +22,10 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - manageengine.com/remote-monitoring-management/
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - manageengine.com/remote-monitoring-management/
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

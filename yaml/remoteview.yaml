@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - remoteview.exe
-  - rv.exe
-  - rvagent.exe
-  - rvagtray.exe
+    - remoteview.exe
+    - rv.exe
+    - rvagent.exe
+    - rvagtray.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*content.rview.com'
-    - '*.rview.com'
-    - content.rview.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*content.rview.com'
+        - '*.rview.com'
+        - content.rview.com
+      Ports: []
 Detections: []
 References:
-- https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall
+  - https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall
 Acknowledgement: []

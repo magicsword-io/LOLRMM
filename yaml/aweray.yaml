@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - aweray_remote*.exe
-  - AweSun.exe
+    - aweray_remote*.exe
+    - AweSun.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - asapi*.aweray.net
-    - client-api.aweray.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - asapi*.aweray.net
+        - client-api.aweray.com
+      Ports: []
 Detections: []
 References:
-- https://sun.aweray.com/help
+  - https://sun.aweray.com/help
 Acknowledgement: []

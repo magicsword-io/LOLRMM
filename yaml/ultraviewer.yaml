@@ -17,29 +17,29 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - UltraViewer_Service.exe
-  - UltraViewer_setup*
-  - UltraViewer_Desktop.exe
-  - ultraviewer.exe
-  - C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
-  - '*\UltraViewer\'
-  - '*\UltraViewer_Desktop.exe'
-  - ultraviewer_desktop.exe
-  - ultraviewer_service.exe
-  - UltraViewer_Desktop.exe
-  - UltraViewer_setup*
-  - UltraViewer_Service.exe
+    - UltraViewer_Service.exe
+    - UltraViewer_setup*
+    - UltraViewer_Desktop.exe
+    - ultraviewer.exe
+    - C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
+    - '*\UltraViewer\'
+    - '*\UltraViewer_Desktop.exe'
+    - ultraviewer_desktop.exe
+    - ultraviewer_service.exe
+    - UltraViewer_Desktop.exe
+    - UltraViewer_setup*
+    - UltraViewer_Service.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '* .ultraviewer.net'
-    - ultraviewer.net
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '* .ultraviewer.net'
+        - ultraviewer.net
+      Ports: []
 Detections: []
 References:
-- https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html
+  - https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html
 Acknowledgement: []

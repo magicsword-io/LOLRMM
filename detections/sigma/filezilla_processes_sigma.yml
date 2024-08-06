@@ -1,0 +1,20 @@
+title: Potential FileZilla RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\FileZilla.exe'
+  condition: selection
+id: 02e7c49a-32ee-4f8a-8676-e16051290eab
+status: experimental
+description: Detects potential processes activity of FileZilla RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FileZilla
+level: medium

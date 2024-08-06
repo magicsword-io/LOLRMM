@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - nvClient.exe
-  - netviewer.exe
+    - nvClient.exe
+    - netviewer.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -26,5 +26,5 @@ Artifacts:
   Network: []
 Detections: []
 References:
-- 'Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html'
+  - 'Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html'
 Acknowledgement: []

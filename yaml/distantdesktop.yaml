@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ddsystem.exe
-  - dd.exe
-  - distant-desktop.exe
+    - ddsystem.exe
+    - dd.exe
+    - distant-desktop.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.distantdesktop.com'
-    - '*signalserver.xyz'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.distantdesktop.com'
+        - '*signalserver.xyz'
+      Ports: []
 Detections: []
 References:
-- https://www.distantdesktop.com/manual/first-start.htm
+  - https://www.distantdesktop.com/manual/first-start.htm
 Acknowledgement: []

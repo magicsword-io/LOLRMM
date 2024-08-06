@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\*\DriveMaker.exe
-  - '*\DriveMaker.exe'
+    - C:\*\DriveMaker.exe
+    - '*\DriveMaker.exe'
 Artifacts:
   Disk: []
   EventLog: []

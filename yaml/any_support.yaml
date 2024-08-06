@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ManualLauncher.exe
+    - ManualLauncher.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.anysupport.net'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.anysupport.net'
+      Ports: []
 Detections: []
 References:
-- https://www.anysupport.net/introduce_howto.php
+  - https://www.anysupport.net/introduce_howto.php
 Acknowledgement: []

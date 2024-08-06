@@ -1,0 +1,23 @@
+title: Potential QQ IM-remote assistance RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.mdt.qq.com'
+    - '*.desktop.qq.com'
+    - upload_data.qq.com
+    - qq-messenger.en.softonic.com
+  condition: selection
+id: e9475957-1152-443b-bad4-f288034e78da
+status: experimental
+description: Detects potential network activity of QQ IM-remote assistance RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of QQ IM-remote assistance
+level: medium

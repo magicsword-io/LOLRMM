@@ -1,0 +1,20 @@
+title: Potential CuteFTP RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\cuteftppro.exe'
+  condition: selection
+id: 207ff40e-26a7-4ba6-b875-7167e3b5a5e7
+status: experimental
+description: Detects potential processes activity of CuteFTP RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CuteFTP
+level: medium

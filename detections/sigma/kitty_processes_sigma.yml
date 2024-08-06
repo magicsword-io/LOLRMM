@@ -1,0 +1,21 @@
+title: Potential KiTTY RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\*\kitty.exe
+    - '*\kitty.exe'
+  condition: selection
+id: e5a30831-ef55-4914-98bf-0d749db25fe6
+status: experimental
+description: Detects potential processes activity of KiTTY RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of KiTTY
+level: medium

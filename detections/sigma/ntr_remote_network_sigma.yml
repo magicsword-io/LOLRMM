@@ -1,0 +1,20 @@
+title: Potential NTR Remote RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.ntrsupport.com'
+  condition: selection
+id: 7e360029-f687-48f0-a58d-5010ba4ba70c
+status: experimental
+description: Detects potential network activity of NTR Remote RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NTR Remote
+level: medium

@@ -1,0 +1,32 @@
+title: Potential Splashtop RMM Tool File Activity
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Status%4Operational.evtx
+    - C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Remote Session%4Operational.evtx
+    - '%PROGRAMDATA%\Splashtop\Temp\log\FTCLog.txt'
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\agent_log.txt
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\SPLog.txt
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\svcinfo.txt
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\sysinfo.txt
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRService.exe
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRAgent.exe
+    - C:\Program Files (x86)\Splashtop\Splashtop Software Updater\SSUAgent.exe
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRUtility.exe
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRFeature.exe
+    - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\db\SRAgent.sqlite3
+  condition: selection
+id: cafe8dee-b8bc-4b1b-a092-4826b9010f83
+status: experimental
+description: Detects potential files activity of Splashtop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Splashtop
+level: medium

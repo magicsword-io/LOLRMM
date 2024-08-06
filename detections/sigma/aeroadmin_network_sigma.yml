@@ -1,0 +1,21 @@
+title: Potential AeroAdmin RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - auth*.aeroadmin.com
+    - aeroadmin.com
+  condition: selection
+id: 4b3f3c88-3441-4185-80c3-6c2bc5395e0a
+status: experimental
+description: Detects potential network activity of AeroAdmin RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of AeroAdmin
+level: medium

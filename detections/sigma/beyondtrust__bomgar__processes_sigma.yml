@@ -1,0 +1,24 @@
+title: Potential BeyondTrust (Bomgar) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - bomgar-scc-*.exe
+    - bomgar-scc.exe
+    - bomgar-pac-*.exe
+    - bomgar-pac.exe
+    - bomgar-rdp.exe
+  condition: selection
+id: ab7f89af-bdf6-45cf-a516-2582ea878bb0
+status: experimental
+description: Detects potential processes activity of BeyondTrust (Bomgar) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of BeyondTrust (Bomgar)
+level: medium

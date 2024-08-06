@@ -1,0 +1,21 @@
+title: Potential OCS inventory RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - ocsinventory-ng.org
+  condition: selection
+id: e0006d7f-7915-4519-9aae-fc555774f28b
+status: experimental
+description: Detects potential network activity of OCS inventory RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of OCS inventory
+level: medium

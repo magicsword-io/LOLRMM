@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - nateon*.exe
-  - nateon.exe
-  - nateonmain.exe
+    - nateon*.exe
+    - nateon.exe
+    - nateonmain.exe
 Artifacts:
   Disk: []
   EventLog: []

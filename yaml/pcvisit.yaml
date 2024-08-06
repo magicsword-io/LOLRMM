@@ -17,21 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - pcvisit.exe
-  - pcvisit_client.exe
-  - pcvisit-easysupport.exe
-  - pcvisit_service_client.exe
+    - pcvisit.exe
+    - pcvisit_client.exe
+    - pcvisit-easysupport.exe
+    - pcvisit_service_client.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.pcvisit.de'
-    - pcvisit.de
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.pcvisit.de'
+        - pcvisit.de
+      Ports: []
 Detections: []
 References:
-- https://www.pcvisit.de/
+  - https://www.pcvisit.de/
 Acknowledgement: []

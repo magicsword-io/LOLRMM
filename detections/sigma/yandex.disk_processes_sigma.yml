@@ -1,0 +1,20 @@
+title: Potential Yandex.Disk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\YandexDisk2.exe'
+  condition: selection
+id: 4ca61292-0477-43bf-b614-e1701a8ebe03
+status: experimental
+description: Detects potential processes activity of Yandex.Disk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Yandex.Disk
+level: medium

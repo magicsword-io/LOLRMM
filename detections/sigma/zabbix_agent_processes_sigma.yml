@@ -1,0 +1,20 @@
+title: Potential Zabbix Agent RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - zabbix_agent*.exe
+  condition: selection
+id: c43a960d-1b4c-4e24-87d8-449464ba1b27
+status: experimental
+description: Detects potential processes activity of Zabbix Agent RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Zabbix Agent
+level: medium

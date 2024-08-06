@@ -1,0 +1,20 @@
+title: Potential Pocket Controller RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - soti.net/products/soti-pocket-controller
+  condition: selection
+id: 7036f6e6-e4c6-4db1-8a73-81b8e5ce68e3
+status: experimental
+description: Detects potential network activity of Pocket Controller RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pocket Controller
+level: medium

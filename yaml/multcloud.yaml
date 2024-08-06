@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - requires sign up
-  - requires sign up
+    - requires sign up
+    - requires sign up
 Artifacts:
   Disk: []
   EventLog: []

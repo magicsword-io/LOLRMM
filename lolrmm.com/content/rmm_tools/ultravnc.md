@@ -44,7 +44,8 @@ UltraVNC is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `ultravnc.com`
     - `user_managed`
 

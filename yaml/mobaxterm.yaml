@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\*\MobaXterm_installer_12.1.msi
-  - '*\MobaXterm_installer_*.msi'
-  - '*\Mobatek\MobaXterm\*'
+    - C:\*\MobaXterm_installer_12.1.msi
+    - '*\MobaXterm_installer_*.msi'
+    - '*\Mobatek\MobaXterm\*'
 Artifacts:
   Disk: []
   EventLog: []

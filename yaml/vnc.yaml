@@ -17,24 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - winvnc*.exe
-  - vncserver.exe
-  - winwvc.exe
-  - winvncsc.exe
-  - vncserverui.exe
-  - vncviewer.exe
-  - winvnc.exe
+    - winvnc*.exe
+    - vncserver.exe
+    - winwvc.exe
+    - winvncsc.exe
+    - vncserverui.exe
+    - vncviewer.exe
+    - winvnc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - realvnc.com/en/connect/download/vnc
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - realvnc.com/en/connect/download/vnc
+      Ports: []
 Detections: []
 References:
-- https://realvnc.com/en/connect/download/vnc
+  - https://realvnc.com/en/connect/download/vnc
 Acknowledgement: []

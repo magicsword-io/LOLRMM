@@ -1,0 +1,20 @@
+title: Potential Microsoft Quick Assist RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+  condition: selection
+id: 8e62f1bf-bf32-4906-9dbe-55918e6aa74f
+status: experimental
+description: Detects potential network activity of Microsoft Quick Assist RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Microsoft Quick Assist
+level: medium

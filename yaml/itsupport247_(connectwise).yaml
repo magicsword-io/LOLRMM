@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - saazapsc.exe
+    - saazapsc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.itsupport247.net'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.itsupport247.net'
+      Ports: []
 Detections: []
 References:
-- https://control.itsupport247.net/
+  - https://control.itsupport247.net/
 Acknowledgement: []

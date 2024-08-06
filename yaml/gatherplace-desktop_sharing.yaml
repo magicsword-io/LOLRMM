@@ -17,21 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - gp3.exe
-  - gp4.exe
-  - gp5.exe
+    - gp3.exe
+    - gp4.exe
+    - gp5.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.gatherplace.com'
-    - '*.gatherplace.net'
-    - gatherplace.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.gatherplace.com'
+        - '*.gatherplace.net'
+        - gatherplace.com
+      Ports: []
 Detections: []
 References:
-- https://www.gatherplace.com/kb?id=136377
+  - https://www.gatherplace.com/kb?id=136377
 Acknowledgement: []

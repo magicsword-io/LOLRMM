@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - royalserver.exe
-  - royalts.exe
+    - royalserver.exe
+    - royalts.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+      Ports: []
 Detections: []
 References:
-- https://www.royalapps.com/ts/win/download
+  - https://www.royalapps.com/ts/win/download
 Acknowledgement: []

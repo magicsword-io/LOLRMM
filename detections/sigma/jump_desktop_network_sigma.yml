@@ -1,0 +1,23 @@
+title: Potential Jump Desktop RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.jumpdesktop.com'
+    - jumpdesktop.com
+    - jumpto.me
+    - '*.jumpto.me'
+  condition: selection
+id: 350d2a57-976a-46fc-b5e5-6679ad13a54e
+status: experimental
+description: Detects potential network activity of Jump Desktop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Jump Desktop
+level: medium

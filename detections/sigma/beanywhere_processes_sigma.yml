@@ -1,0 +1,27 @@
+title: Potential BeAnyWhere RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - basuptshelper.exe
+    - basupsrvcupdate.exe
+    - BASupApp.exe
+    - BASupSysInf.exe
+    - BASupAppSrvc.exe
+    - TakeControl.exe
+    - BASupAppElev.exe
+    - basupsrvc.exe
+  condition: selection
+id: 08213ecc-b7bc-46bd-8c66-782e512adf82
+status: experimental
+description: Detects potential processes activity of BeAnyWhere RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of BeAnyWhere
+level: medium

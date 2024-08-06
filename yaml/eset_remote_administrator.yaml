@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - era.exe
-  - einstaller.exe
-  - ezhelp*.exe
-  - eratool.exe
-  - ERAAgent.exe
+    - era.exe
+    - einstaller.exe
+    - ezhelp*.exe
+    - eratool.exe
+    - ERAAgent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - eset.com/me/business/remote-management/remote-administrator/
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - eset.com/me/business/remote-management/remote-administrator/
+      Ports: []
 Detections: []
 References:
-- eset.com/me/business/remote-management/remote-administrator/
+  - eset.com/me/business/remote-management/remote-administrator/
 Acknowledgement: []

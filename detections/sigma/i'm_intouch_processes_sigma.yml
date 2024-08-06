@@ -1,0 +1,22 @@
+title: Potential I'm InTouch RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - iit.exe
+    - intouch.exe
+    - I'm InTouch Go Installer.exe
+  condition: selection
+id: d17b064d-4f3e-49f6-8bbb-79b35d6e25d0
+status: experimental
+description: Detects potential processes activity of I'm InTouch RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of I'm InTouch
+level: medium

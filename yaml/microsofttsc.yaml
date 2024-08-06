@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - termsrv.exe
-  - mstsc.exe
+    - termsrv.exe
+    - mstsc.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -26,5 +26,5 @@ Artifacts:
   Network: []
 Detections: []
 References:
-- https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
+  - https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
 Acknowledgement: []

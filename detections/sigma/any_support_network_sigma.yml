@@ -1,0 +1,20 @@
+title: Potential Any Support RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.anysupport.net'
+  condition: selection
+id: 4d5213bc-ab32-4b51-9d17-596bc51b3ef4
+status: experimental
+description: Detects potential network activity of Any Support RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Any Support
+level: medium

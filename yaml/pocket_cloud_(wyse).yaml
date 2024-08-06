@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - pocketcloud*.exe
-  - pocketcloudservice.exe
+    - pocketcloud*.exe
+    - pocketcloudservice.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -26,5 +26,5 @@ Artifacts:
   Network: []
 Detections: []
 References:
-- https://wyse-pocketcloud.informer.com/2.1/
+  - https://wyse-pocketcloud.informer.com/2.1/
 Acknowledgement: []

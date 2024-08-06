@@ -1,0 +1,21 @@
+title: Potential Zabbix Agent RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - zabbix.com
+  condition: selection
+id: 94caa352-9ffe-4a70-8a7d-be85e19986ab
+status: experimental
+description: Detects potential network activity of Zabbix Agent RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Zabbix Agent
+level: medium

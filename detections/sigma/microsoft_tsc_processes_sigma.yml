@@ -1,0 +1,21 @@
+title: Potential Microsoft TSC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - termsrv.exe
+    - mstsc.exe
+  condition: selection
+id: 7fc55366-60d7-41fd-815f-7e84814a7134
+status: experimental
+description: Detects potential processes activity of Microsoft TSC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Microsoft TSC
+level: medium

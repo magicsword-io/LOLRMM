@@ -56,11 +56,17 @@ displayTitle = "{{ rmm.Name }}"
 {% endif %}
 {% else %}
 {% for item in rmm.Details.PEMetadata %}
-{% if item.Filename or item.OriginalFileName or item.Description or item.Product %}
-- {% if item.Filename %}**Filename**: {{ item.Filename }}{% endif %}
-  {% if item.OriginalFileName %}**Original File Name**: {{ item.OriginalFileName }}{% endif %}
-  {% if item.Description %}**Description**: {{ item.Description }}{% endif %}
-  {% if item.Product %}**Product**: {{ item.Product }}{% endif %}
+{% if item.Filename %}
+- **Filename**: {{ item.Filename }}
+{% endif %}
+{% if item.OriginalFileName %}
+- **Original File Name**: {{ item.OriginalFileName }}
+{% endif %}
+{% if item.Description %}
+- **Description**: {{ item.Description }}
+{% endif %}
+{% if item.Product %}
+- **Product**: {{ item.Product }}
 {% endif %}
 {% endfor %}
 {% endif %}
@@ -179,19 +185,19 @@ displayTitle = "{{ rmm.Name }}"
 {% for artifact in rmm.Artifacts.Network %}
 - {% if artifact.Description %}**Description**: {{ artifact.Description }}{% endif %}
 
-  {% if artifact.Domain %}
-  **Domain**:
-  {% if artifact.Domain is string %}
-    `{{ artifact.Domain }}`
-  {% else %}
-    {% for domain in artifact.Domain %}
+  {% if artifact.Domains %}
+
+  **Domains**:
+  {% for domain in artifact.Domains %}
     - `{{ domain }}`
-    {% endfor %}
-  {% endif %}
+  {% endfor %}
   {% endif %}
 
-  {% if artifact.Port %}
-  **Port**: `{{ artifact.Port }}`
+  {% if artifact.Ports %}
+  **Ports**:
+  {% for port in artifact.Ports %}
+    - `{{ port }}`
+  {% endfor %}
   {% endif %}
 
 {% endfor %}

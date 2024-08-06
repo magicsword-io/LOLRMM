@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - GetScreen.exe
-  - getscreen.exe
+    - GetScreen.exe
+    - getscreen.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - getscreen.me
-    - GetScreen.me
-    - '*.getscreen.me'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - getscreen.me
+        - GetScreen.me
+        - '*.getscreen.me'
+      Ports: []
 Detections: []
 References:
-- https://docs.getscreen.me/self-hosted/system-requirements/
+  - https://docs.getscreen.me/self-hosted/system-requirements/
 Acknowledgement: []

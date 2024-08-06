@@ -1,0 +1,21 @@
+title: Potential Remote Utilities RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rutview.exe
+    - rutserv.exe
+  condition: selection
+id: 6d3f8b2a-0895-463c-aaa7-ffc50088cf4a
+status: experimental
+description: Detects potential processes activity of Remote Utilities RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Remote Utilities
+level: medium

@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - RDConsole.exe
-  - RocketRemoteDesktop_Setup.exe
+    - RDConsole.exe
+    - RocketRemoteDesktop_Setup.exe
 Artifacts:
   Disk: []
   EventLog: []

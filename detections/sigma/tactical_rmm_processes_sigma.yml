@@ -1,0 +1,21 @@
+title: Potential Tactical RMM RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - tacticalrmm.exe
+    - tacticalrmm.exe
+  condition: selection
+id: cf319572-0845-41a2-9cbb-e5c54e5d1c02
+status: experimental
+description: Detects potential processes activity of Tactical RMM RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Tactical RMM
+level: medium

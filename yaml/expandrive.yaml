@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Users\*\ExpanDrive.exe
-  - '*\ExpanDrive.exe'
+    - C:\Users\*\ExpanDrive.exe
+    - '*\ExpanDrive.exe'
 Artifacts:
   Disk: []
   EventLog: []

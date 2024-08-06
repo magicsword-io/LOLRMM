@@ -1,0 +1,23 @@
+title: Potential ToDesk RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - todesk.com
+    - '*.todesk.com'
+    - '*.todesk.com'
+    - todesktop.com
+  condition: selection
+id: f60eb5d0-bedf-4fb9-8d7b-fb999f625ddf
+status: experimental
+description: Detects potential network activity of ToDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ToDesk
+level: medium

@@ -1,0 +1,21 @@
+title: Potential Xpra RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Xpra-Launcher.exe'
+    - '*\Xpra-x86_64_Setup.exe'
+  condition: selection
+id: e06551f8-da37-404b-b67b-f107e0ad030a
+status: experimental
+description: Detects potential processes activity of Xpra RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Xpra
+level: medium

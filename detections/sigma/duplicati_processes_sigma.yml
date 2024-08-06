@@ -1,0 +1,21 @@
+title: Potential Duplicati RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - c:\Program Files\*\Duplicati.Server.exe
+    - '*\*\Duplicati.Server.exe'
+  condition: selection
+id: 9946b483-9087-469f-83d3-3a9dd4ab8668
+status: experimental
+description: Detects potential processes activity of Duplicati RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Duplicati
+level: medium

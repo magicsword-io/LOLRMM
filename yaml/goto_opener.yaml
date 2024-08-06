@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\GoTo Opener
-  - '*\GoTo Opener'
+    - C:\Program Files (x86)\GoTo Opener
+    - '*\GoTo Opener'
 Artifacts:
   Disk: []
   EventLog: []

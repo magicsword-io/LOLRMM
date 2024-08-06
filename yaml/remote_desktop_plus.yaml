@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rdp.exe
+    - rdp.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - donkz.nl
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - donkz.nl
+      Ports: []
 Detections: []
 References:
-- https://www.donkz.nl/
+  - https://www.donkz.nl/
 Acknowledgement: []

@@ -41,7 +41,8 @@ Royal Server is a remote monitoring and management (RMM) tool. More information 
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `royalapps.com`
 
 

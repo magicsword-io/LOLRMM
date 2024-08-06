@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Downloads\SuperPuTTY\*
-  - '*Downloads\SuperPuTTY\*'
-  - '*\superputty.exe'
-  - '*\SuperPuTTY\*'
+    - C:\Downloads\SuperPuTTY\*
+    - '*Downloads\SuperPuTTY\*'
+    - '*\superputty.exe'
+    - '*\SuperPuTTY\*'
 Artifacts:
   Disk: []
   EventLog: []

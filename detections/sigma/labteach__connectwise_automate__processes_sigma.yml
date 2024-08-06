@@ -1,0 +1,21 @@
+title: Potential LabTeach (Connectwise Automate) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ltsvc.exe
+  condition: selection
+id: 8991b756-f264-4426-afa9-2a5216779fec
+status: experimental
+description: Detects potential processes activity of LabTeach (Connectwise Automate)
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LabTeach (Connectwise Automate)
+level: medium

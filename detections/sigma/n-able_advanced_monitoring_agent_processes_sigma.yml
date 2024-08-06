@@ -1,0 +1,27 @@
+title: Potential N-Able Advanced Monitoring Agent RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - BASupSrvc.exe
+    - winagent.exe
+    - BASupApp.exe
+    - BASupTSHelper.exe
+    - Agent_*_RW.exe
+    - BASEClient.exe
+    - BASupSrvcCnfg.exe
+  condition: selection
+id: 9e551a5d-1d5d-4457-87e8-00eb4d222fc0
+status: experimental
+description: Detects potential processes activity of N-Able Advanced Monitoring Agent
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of N-Able Advanced Monitoring Agent
+level: medium

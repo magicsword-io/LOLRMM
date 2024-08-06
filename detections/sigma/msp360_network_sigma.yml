@@ -1,0 +1,23 @@
+title: Potential MSP360 RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.cloudberrylab.com'
+    - '*.msp360.com'
+    - '*.mspbackups.com'
+    - msp360.com
+  condition: selection
+id: 68081126-d30b-4965-9193-c19af365d575
+status: experimental
+description: Detects potential network activity of MSP360 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MSP360
+level: medium

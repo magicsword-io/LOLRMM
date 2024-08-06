@@ -1,0 +1,21 @@
+title: Potential BeamYourScreen RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - beamyourscreen.com
+    - '*.beamyourscreen.com'
+  condition: selection
+id: c9cb8626-9037-423e-8548-8b4b6eb338b8
+status: experimental
+description: Detects potential network activity of BeamYourScreen RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of BeamYourScreen
+level: medium

@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ultimate_*.exe
+    - ultimate_*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - deskday.ai
-    - app.deskday.ai
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - deskday.ai
+        - app.deskday.ai
+      Ports: []
 Detections: []
 References:
-- https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate
+  - https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate
 Acknowledgement: []

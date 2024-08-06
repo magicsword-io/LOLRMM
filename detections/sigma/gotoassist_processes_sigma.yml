@@ -1,0 +1,22 @@
+title: Potential GoToAssist RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - gotoassist.exe
+    - g2a*.exe
+    - GoTo Assist Opener.exe
+  condition: selection
+id: 8130eb9f-41a4-4780-8f53-0764c797f675
+status: experimental
+description: Detects potential processes activity of GoToAssist RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GoToAssist
+level: medium

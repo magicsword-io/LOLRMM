@@ -17,32 +17,32 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - FixMeit Unattended Access Setup.exe
-  - TiExpertStandalone.exe
-  - FixMeitClient*.exe
-  - FixMeit Client.exe
-  - FixMeit Expert Setup.exe
-  - TiExpertCore.exe
-  - fixmeitclient.exe
-  - TiClientCore.exe
-  - TiClientHelper*.exe
-  - no installation required | recommend blocking fixme[.]it SaaS portal
-  - no installation required | recommend blocking fixme[.]it SaaS portal
-  - 9380CC75B872221A7425D7503565B67580407F60
+    - FixMeit Unattended Access Setup.exe
+    - TiExpertStandalone.exe
+    - FixMeitClient*.exe
+    - FixMeit Client.exe
+    - FixMeit Expert Setup.exe
+    - TiExpertCore.exe
+    - fixmeitclient.exe
+    - TiClientCore.exe
+    - TiClientHelper*.exe
+    - no installation required | recommend blocking fixme[.]it SaaS portal
+    - no installation required | recommend blocking fixme[.]it SaaS portal
+    - 9380CC75B872221A7425D7503565B67580407F60
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.fixme.it'
-    - '*.techinline.net'
-    - fixme.it
-    - '*set.me'
-    - '*setme.net'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.fixme.it'
+        - '*.techinline.net'
+        - fixme.it
+        - '*set.me'
+        - '*setme.net'
+      Ports: []
 Detections: []
 References:
-- https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
+  - https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
 Acknowledgement: []

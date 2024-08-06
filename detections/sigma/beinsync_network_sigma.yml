@@ -1,0 +1,21 @@
+title: Potential BeInSync RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.beinsync.net'
+    - '*.beinsync.com'
+  condition: selection
+id: 5848af8d-5e0d-4470-9d4b-348c262e0f21
+status: experimental
+description: Detects potential network activity of BeInSync RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of BeInSync
+level: medium

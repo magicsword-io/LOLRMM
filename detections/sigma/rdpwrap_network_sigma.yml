@@ -1,0 +1,21 @@
+title: Potential rdpwrap RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - github.com/stascorp/rdpwrap
+  condition: selection
+id: 72469538-033e-4dbf-8bad-d1b9188fb431
+status: experimental
+description: Detects potential network activity of rdpwrap RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of rdpwrap
+level: medium

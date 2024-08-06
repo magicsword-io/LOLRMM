@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\ClumsyLeaf Software\CloudXplorer\*
-  - '*\ClumsyLeaf Software\CloudXplorer\*'
-  - '*\clumsyleaf.cloudxplorer*.exe'
+    - C:\Program Files\ClumsyLeaf Software\CloudXplorer\*
+    - '*\ClumsyLeaf Software\CloudXplorer\*'
+    - '*\clumsyleaf.cloudxplorer*.exe'
 Artifacts:
   Disk: []
   EventLog: []

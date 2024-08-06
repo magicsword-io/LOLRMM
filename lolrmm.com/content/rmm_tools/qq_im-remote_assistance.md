@@ -46,7 +46,8 @@ QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More i
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.mdt.qq.com`
     - `*.desktop.qq.com`
     - `upload_data.qq.com`

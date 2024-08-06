@@ -17,30 +17,41 @@ displayTitle = "RAdmin"
 RAdmin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
 
+**Author**: Nasreddine Bencherchali
 
-**Last Modified**: 2/9/2024
+**Created**: 2024-08-05
+
+**Last Modified**: 2024-08-05
 
 ### Details
 
+- **Website**: [https://www.radmin.com/](https://www.radmin.com/)
 
 #### PE Metadata
+- **Filename**: RServer3.exe
+- **Original File Name**: RServer3.exe
+- **Description**: Radmin Server
+- **Product**: Radmin Server
+- **Filename**: Radmin.exe
+- **Original File Name**: Radmin.exe
+- **Description**: Radmin Viewer
+- **Product**: Radmin Viewer
 
 
 - **Free**: No
 
 - **Verification**: No
 
+#### Supported Operating Systems
+- Windows
 
 
 
 #### Installation Paths
-- `C:\Program Files\Radmin Viewer 3\*`
-- `radmin3.exe`
-- `*\Radmin.exe`
-- `radmin.exe`
-- `rserver3.exe`
-- `famitrfc.exe`
-- `*\Radmin Viewer 3\*`
+- `C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe`
+- `C:\Windows\SysWOW64\rserver30\rserver3.exe`
+- `C:\Windows\SysWOW64\rserver30\FamItrfc`
+- `C:\Windows\SysWOW64\rserver30\FamItrf2`
 
 ### Forensic Artifacts
 
@@ -76,22 +87,45 @@ RAdmin is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+#### Registry Artifacts
+- **Path**: `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin Security`
+  **Description**: N/A
+
 
 #### Network Artifacts
 
-- **Description**: Known remote domains
-  **Domain**:
-    - `user_managed`
+- **Description**: N/A
+
+  **Domains**:
     - `radmin.com`
 
+  **Ports**:
+    - `443`
+
+
+
+### Detections
+-   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_pua_radmin.yml)
+
+  PUA - Radmin Viewer Utility Execution
+
+
+
+-   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml)
+
+  Enumeration for 3rd Party Creds From CLI
 
 
 
 
 ### References
 - [https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/](https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/)
+- [https://helpdesk.radmin.com/radmin3help/](https://helpdesk.radmin.com/radmin3help/)
+- [https://helpdesk.radmin.com/radmin3help/files/viewercmd.htm](https://helpdesk.radmin.com/radmin3help/files/viewercmd.htm)
+- [https://helpdesk.radmin.com/radmin3help/files/cmd.htm](https://helpdesk.radmin.com/radmin3help/files/cmd.htm)
 
-
+### Acknowledgements
+- Nasreddine Bencherchali (@nas_bench)
 
 {{< /column >}}
 {{< /block >}}

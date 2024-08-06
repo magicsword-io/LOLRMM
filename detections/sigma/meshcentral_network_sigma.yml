@@ -1,0 +1,21 @@
+title: Potential MeshCentral RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - meshcentral.com
+  condition: selection
+id: bb08971a-ec87-4b11-b00b-fd143cb919c9
+status: experimental
+description: Detects potential network activity of MeshCentral RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MeshCentral
+level: medium

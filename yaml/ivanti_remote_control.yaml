@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - IvantiRemoteControl.exe
-  - ArcUI.exe
-  - AgentlessRC.exe
+    - IvantiRemoteControl.exe
+    - ArcUI.exe
+    - AgentlessRC.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.ivanticloud.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.ivanticloud.com'
+      Ports: []
 Detections: []
 References:
-- https://rc1.ivanticloud.com/
+  - https://rc1.ivanticloud.com/
 Acknowledgement: []

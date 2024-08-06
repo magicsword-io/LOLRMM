@@ -17,23 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - hsloader.exe
-  - InstantHousecall.exe
-  - ihcserver.exe
-  - instanthousecall.exe
+    - hsloader.exe
+    - InstantHousecall.exe
+    - ihcserver.exe
+    - instanthousecall.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.instanthousecall.com'
-    - secure.instanthousecall.com
-    - '*.instanthousecall.net'
-    - instanthousecall.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.instanthousecall.com'
+        - secure.instanthousecall.com
+        - '*.instanthousecall.net'
+        - instanthousecall.com
+      Ports: []
 Detections: []
 References:
-- https://instanthousecall.com/features/
+  - https://instanthousecall.com/features/
 Acknowledgement: []

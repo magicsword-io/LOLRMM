@@ -1,0 +1,21 @@
+title: Potential Goverlan RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - goverlan.com
+  condition: selection
+id: 8c5d4901-1a0e-45e3-b244-d09f95d540c6
+status: experimental
+description: Detects potential network activity of Goverlan RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Goverlan
+level: medium

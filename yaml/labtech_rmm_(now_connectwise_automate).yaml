@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ltsvc.exe
-  - ltsvcmon.exe
-  - lttray.exe
+    - ltsvc.exe
+    - ltsvcmon.exe
+    - lttray.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - connectwise.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - connectwise.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

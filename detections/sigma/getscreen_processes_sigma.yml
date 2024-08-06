@@ -1,0 +1,21 @@
+title: Potential GetScreen RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - GetScreen.exe
+    - getscreen.exe
+  condition: selection
+id: 818c0c4e-f1f5-49bc-ac4d-dab7d0e0c549
+status: experimental
+description: Detects potential processes activity of GetScreen RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GetScreen
+level: medium

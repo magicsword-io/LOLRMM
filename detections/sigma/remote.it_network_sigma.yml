@@ -1,0 +1,22 @@
+title: Potential Remote.it RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - auth.api.remote.it
+    - api.remote.it
+    - remote.it
+  condition: selection
+id: cad8e6ef-d128-406d-b0eb-b1f279715289
+status: experimental
+description: Detects potential network activity of Remote.it RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Remote.it
+level: medium

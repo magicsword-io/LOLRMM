@@ -1,0 +1,25 @@
+title: Potential LiteManager RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - lmnoipserver.exe
+    - ROMFUSClient.exe
+    - romfusclient.exe
+    - romviewer.exe
+    - romserver.exe
+    - ROMServer.exe
+  condition: selection
+id: 8a0a8a91-ff6e-4985-9d54-240e30409785
+status: experimental
+description: Detects potential processes activity of LiteManager RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LiteManager
+level: medium

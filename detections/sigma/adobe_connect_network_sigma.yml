@@ -1,0 +1,20 @@
+title: Potential Adobe Connect RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.adobeconnect.com'
+  condition: selection
+id: d1876275-98e9-4737-8640-5d1f0b40e6cc
+status: experimental
+description: Detects potential network activity of Adobe Connect RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Adobe Connect
+level: medium

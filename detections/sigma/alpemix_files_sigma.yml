@@ -1,0 +1,20 @@
+title: Potential Alpemix RMM Tool File Activity
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - '%localappdata%\Alpemix\Alpemix.ini'
+  condition: selection
+id: 12145296-1bca-4c10-bb86-667c78108a50
+status: experimental
+description: Detects potential files activity of Alpemix RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Alpemix
+level: medium

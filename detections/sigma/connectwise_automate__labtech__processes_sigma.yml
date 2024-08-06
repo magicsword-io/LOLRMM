@@ -1,0 +1,23 @@
+title: Potential Connectwise Automate (LabTech) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ltsvc.exe
+    - ltsvcmon.exe
+    - lttray.exe
+  condition: selection
+id: 56b0c72a-d206-4e36-9fb9-97e97c0737bb
+status: experimental
+description: Detects potential processes activity of Connectwise Automate (LabTech)
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Connectwise Automate (LabTech)
+level: medium

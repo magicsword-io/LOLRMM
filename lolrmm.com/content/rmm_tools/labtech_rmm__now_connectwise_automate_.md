@@ -45,7 +45,8 @@ LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RM
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `connectwise.com`
 
 

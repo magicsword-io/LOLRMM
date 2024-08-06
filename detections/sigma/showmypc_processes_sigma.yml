@@ -1,0 +1,23 @@
+title: Potential ShowMyPC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - SMPCSetup.exe
+    - showmypc*.exe
+    - showmypc.exe
+    - smpcsetup.exe
+  condition: selection
+id: ba5a0a1e-085c-4a59-94b0-fe6188bc914e
+status: experimental
+description: Detects potential processes activity of ShowMyPC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ShowMyPC
+level: medium

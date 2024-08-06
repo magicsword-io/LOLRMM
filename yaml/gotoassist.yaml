@@ -17,26 +17,26 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - gotoassist.exe
-  - g2a*.exe
-  - GoTo Assist Opener.exe
+    - gotoassist.exe
+    - g2a*.exe
+    - GoTo Assist Opener.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - goto.com
-    - '*.getgo.com'
-    - '*.fastsupport.com'
-    - '*.gotoassist.com'
-    - helpme.net
-    - '*.gotoassist.me'
-    - '*.gotoassist.at'
-    - '*.desktopstreaming.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - goto.com
+        - '*.getgo.com'
+        - '*.fastsupport.com'
+        - '*.gotoassist.com'
+        - helpme.net
+        - '*.gotoassist.me'
+        - '*.gotoassist.at'
+        - '*.desktopstreaming.com'
+      Ports: []
 Detections: []
 References:
-- https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5
+  - https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5
 Acknowledgement: []

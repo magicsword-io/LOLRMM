@@ -44,7 +44,8 @@ Panorama9 is a remote monitoring and management (RMM) tool. More information wil
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `trusted.panorama9.com`
     - `changes.panorama9.com`
     - `panorama9.com`

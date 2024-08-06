@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - myivomgr.exe
-  - myivomanager.exe
+    - myivomgr.exe
+    - myivomanager.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - myivo-server.software.informer.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - myivo-server.software.informer.com
+      Ports: []
 Detections: []
 References:
-- myivo.com - DOA as of 2024
+  - myivo.com - DOA as of 2024
 Acknowledgement: []

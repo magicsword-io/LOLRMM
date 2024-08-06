@@ -1,0 +1,20 @@
+title: Potential RPort RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rport.exe
+  condition: selection
+id: 148de890-e4b6-4d14-9464-fb1c55c0ed70
+status: experimental
+description: Detects potential processes activity of RPort RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RPort
+level: medium

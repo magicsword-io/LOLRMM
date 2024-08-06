@@ -1,0 +1,21 @@
+title: Potential Royal Apps RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - royalserver.exe
+    - royalts.exe
+  condition: selection
+id: fff6feab-baa5-4edf-8c00-8287d998f22e
+status: experimental
+description: Detects potential processes activity of Royal Apps RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Royal Apps
+level: medium

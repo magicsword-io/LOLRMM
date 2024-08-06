@@ -17,16 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - dcagentservice.exe
+    - dcagentservice.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - desktopcentral.manageengine.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - desktopcentral.manageengine.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - pdq-connect*.exe
+    - pdq-connect*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - app.pdq.com
-    - cfcdn.pdq.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - app.pdq.com
+        - cfcdn.pdq.com
+      Ports: []
 Detections: []
 References:
-- https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
+  - https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
 Acknowledgement: []

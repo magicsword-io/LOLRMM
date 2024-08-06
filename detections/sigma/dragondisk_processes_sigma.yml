@@ -1,0 +1,20 @@
+title: Potential DragonDisk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\DragonDisk.exe'
+  condition: selection
+id: 64bf08b5-3cff-472a-a041-ed5b1f694439
+status: experimental
+description: Detects potential processes activity of DragonDisk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DragonDisk
+level: medium

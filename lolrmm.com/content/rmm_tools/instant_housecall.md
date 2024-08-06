@@ -47,7 +47,8 @@ Instant Housecall is a remote monitoring and management (RMM) tool. More informa
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.instanthousecall.com`
     - `secure.instanthousecall.com`
     - `*.instanthousecall.net`

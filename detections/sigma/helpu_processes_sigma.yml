@@ -1,0 +1,22 @@
+title: Potential HelpU RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - helpu_install.exe
+    - HelpuUpdater.exe
+    - HelpuManager.exe
+  condition: selection
+id: fdff99d2-6d9a-4478-9b96-5eaf6db84f16
+status: experimental
+description: Detects potential processes activity of HelpU RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of HelpU
+level: medium

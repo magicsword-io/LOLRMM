@@ -17,41 +17,41 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - BASupSrvc.exe
-  - winagent.exe
-  - BASupApp.exe
-  - BASupTSHelper.exe
-  - Agent_*_RW.exe
-  - BASEClient.exe
-  - BASupSrvcCnfg.exe
+    - BASupSrvc.exe
+    - winagent.exe
+    - BASupApp.exe
+    - BASupTSHelper.exe
+    - Agent_*_RW.exe
+    - BASEClient.exe
+    - BASupSrvcCnfg.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.beanywhere.com '
-    - systemmonitor.co.uk
-    - '*system-monitor.com'
-    - cloudbackup.management
-    - '*systemmonitor.co.uk'
-    - n-able.com
-    - systemmonitor.us
-    - '*systemmonitor.eu.com'
-    - '*.logicnow.com'
-    - '*.swi-tc.com'
-    - '*remote.management'
-    - systemmonitor.us.cdn.cloudflare.net
-    - '*cloudbackup.management'
-    - remote.management
-    - logicnow.com
-    - system-monitor.com
-    - '*systemmonitor.us'
-    - systemmonitor.eu.com
-    - '*.n-able.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.beanywhere.com '
+        - systemmonitor.co.uk
+        - '*system-monitor.com'
+        - cloudbackup.management
+        - '*systemmonitor.co.uk'
+        - n-able.com
+        - systemmonitor.us
+        - '*systemmonitor.eu.com'
+        - '*.logicnow.com'
+        - '*.swi-tc.com'
+        - '*remote.management'
+        - systemmonitor.us.cdn.cloudflare.net
+        - '*cloudbackup.management'
+        - remote.management
+        - logicnow.com
+        - system-monitor.com
+        - '*systemmonitor.us'
+        - systemmonitor.eu.com
+        - '*.n-able.com'
+      Ports: []
 Detections: []
 References:
-- https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
+  - https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
 Acknowledgement: []

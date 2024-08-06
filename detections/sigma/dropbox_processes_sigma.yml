@@ -1,0 +1,20 @@
+title: Potential Dropbox RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Dropbox.exe'
+  condition: selection
+id: c9a987df-747a-4db6-90fa-9f41a2f8450d
+status: experimental
+description: Detects potential processes activity of Dropbox RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Dropbox
+level: medium

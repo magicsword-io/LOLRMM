@@ -1,0 +1,20 @@
+title: Potential Seetrol RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - seetrol.co.kr
+  condition: selection
+id: 90dc26d8-355a-4a02-95fd-5614f8b1a9e3
+status: experimental
+description: Detects potential network activity of Seetrol RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Seetrol
+level: medium

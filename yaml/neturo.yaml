@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - neturo*.exe
-  - ntrntservice.exe
-  - neturo.exe
+    - neturo*.exe
+    - ntrntservice.exe
+    - neturo.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - neturo.uplus.co.kr
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - neturo.uplus.co.kr
+      Ports: []
 Detections: []
 References:
-- 'Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2'
+  - 'Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2'
 Acknowledgement: []

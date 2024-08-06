@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\Cyberduck\*
-  - '*\Cyberduck\*'
-  - '*\Cyberduck.exe'
+    - C:\Program Files\Cyberduck\*
+    - '*\Cyberduck\*'
+    - '*\Cyberduck.exe'
 Artifacts:
   Disk: []
   EventLog: []

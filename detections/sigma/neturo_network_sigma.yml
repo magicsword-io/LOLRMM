@@ -1,0 +1,20 @@
+title: Potential Neturo RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - neturo.uplus.co.kr
+  condition: selection
+id: f57bd79d-f4cf-4df3-bbee-6d82c3022310
+status: experimental
+description: Detects potential network activity of Neturo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Neturo
+level: medium

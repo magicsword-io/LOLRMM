@@ -22,11 +22,11 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+      Ports: []
 Detections: []
 References:
-- https://symless.com/synergy
+  - https://symless.com/synergy
 Acknowledgement: []

@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - parallelsaccess-*.exe
-  - TSClient.exe
-  - prl_deskctl_agent.exe
-  - prl_deskctl_wizard.exe
-  - prl_pm_service.exe
+    - parallelsaccess-*.exe
+    - TSClient.exe
+    - prl_deskctl_agent.exe
+    - prl_deskctl_wizard.exe
+    - prl_pm_service.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.parallels.com'
-    - parallels.com/products/ras/try
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.parallels.com'
+        - parallels.com/products/ras/try
+      Ports: []
 Detections: []
 References:
-- https://kb.parallels.com/en/129097
+  - https://kb.parallels.com/en/129097
 Acknowledgement: []

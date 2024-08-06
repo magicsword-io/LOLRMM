@@ -1,0 +1,39 @@
+title: Potential N-Able Advanced Monitoring Agent RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.beanywhere.com '
+    - systemmonitor.co.uk
+    - '*system-monitor.com'
+    - cloudbackup.management
+    - '*systemmonitor.co.uk'
+    - n-able.com
+    - systemmonitor.us
+    - '*systemmonitor.eu.com'
+    - '*.logicnow.com'
+    - '*.swi-tc.com'
+    - '*remote.management'
+    - systemmonitor.us.cdn.cloudflare.net
+    - '*cloudbackup.management'
+    - remote.management
+    - logicnow.com
+    - system-monitor.com
+    - '*systemmonitor.us'
+    - systemmonitor.eu.com
+    - '*.n-able.com'
+  condition: selection
+id: 2055e220-81bd-45f6-87c4-a90b5ac57cf6
+status: experimental
+description: Detects potential network activity of N-Able Advanced Monitoring Agent
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of N-Able Advanced Monitoring Agent
+level: medium

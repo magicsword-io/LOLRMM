@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\*\OpenBoxLab\RaiDrive\*
-  - '*\OpenBoxLab\RaiDrive\*'
-  - service = raidrive_*
-  - Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenBoxLab\RaiDrive\Drives
+    - C:\*\OpenBoxLab\RaiDrive\*
+    - '*\OpenBoxLab\RaiDrive\*'
+    - service = raidrive_*
+    - Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenBoxLab\RaiDrive\Drives
 Artifacts:
   Disk: []
   EventLog: []

@@ -24,5 +24,5 @@ Artifacts:
   Network: []
 Detections: []
 References:
-- https://help.webex.com/en-us/article/nyc3q0b/Set-Up-a-Computer-for-Remote-Access
+  - https://help.webex.com/en-us/article/nyc3q0b/Set-Up-a-Computer-for-Remote-Access
 Acknowledgement: []

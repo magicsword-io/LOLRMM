@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - auvik.engine.exe
-  - auvik.agent.exe
+    - auvik.engine.exe
+    - auvik.agent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.my.auvik.com'
-    - '*.auvik.com'
-    - auvik.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.my.auvik.com'
+        - '*.auvik.com'
+        - auvik.com
+      Ports: []
 Detections: []
 References:
-- https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use
+  - https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use
 Acknowledgement: []

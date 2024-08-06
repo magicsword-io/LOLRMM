@@ -1,0 +1,20 @@
+title: Potential Syncthing RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Syncthing.exe'
+  condition: selection
+id: 0ad13468-0ded-455c-bbd5-5b71fda91c5c
+status: experimental
+description: Detects potential processes activity of Syncthing RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Syncthing
+level: medium

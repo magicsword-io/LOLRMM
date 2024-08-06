@@ -1,0 +1,26 @@
+title: Potential Splashtop Remote RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - strwinclt.exe
+    - Splashtop_Streamer_Windows*.exe
+    - SplashtopSOS.exe
+    - sragent.exe
+    - srmanager.exe
+    - srserver.exe
+    - srservice.exe
+  condition: selection
+id: 0796bee9-1457-4def-b2f3-d5fe05207563
+status: experimental
+description: Detects potential processes activity of Splashtop Remote RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Splashtop Remote
+level: medium

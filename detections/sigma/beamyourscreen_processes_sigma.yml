@@ -1,0 +1,21 @@
+title: Potential BeamYourScreen RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - beamyourscreen.exe
+    - beamyourscreen-host.exe
+  condition: selection
+id: a7d7b7d3-1f22-4213-8b42-b31d5bec4b5f
+status: experimental
+description: Detects potential processes activity of BeamYourScreen RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of BeamYourScreen
+level: medium

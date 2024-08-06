@@ -1,0 +1,22 @@
+title: Potential LANDesk RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.ivanticloud.com'
+    - '*.ivanti.com'
+    - ivanti.com
+  condition: selection
+id: 36db7bcf-975e-4430-812a-1a8b21e6dc8d
+status: experimental
+description: Detects potential network activity of LANDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LANDesk
+level: medium

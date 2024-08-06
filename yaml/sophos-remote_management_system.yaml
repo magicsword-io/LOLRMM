@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - clientmrinit.exe
-  - mgntsvc.exe
-  - routernt.exe
+    - clientmrinit.exe
+    - mgntsvc.exe
+    - routernt.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.sophos.com'
-    - '*.sophosupd.com'
-    - '*.sophosupd.net'
-    - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.sophos.com'
+        - '*.sophosupd.com'
+        - '*.sophosupd.net'
+        - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+      Ports: []
 Detections: []
 References:
-- community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+  - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
 Acknowledgement: []

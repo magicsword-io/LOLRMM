@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - pcstarter.exe
-  - turbomeeting.exe
-  - turbomeetingstarter.exe
+    - pcstarter.exe
+    - turbomeeting.exe
+    - turbomeetingstarter.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - acceo.com/turbomeeting/
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - acceo.com/turbomeeting/
+      Ports: []
 Detections: []
 References:
-- http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv
+  - http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv
 Acknowledgement: []

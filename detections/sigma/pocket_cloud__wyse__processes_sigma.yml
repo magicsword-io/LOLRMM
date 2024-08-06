@@ -1,0 +1,21 @@
+title: Potential Pocket Cloud (Wyse) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - pocketcloud*.exe
+    - pocketcloudservice.exe
+  condition: selection
+id: 710ca6b0-4944-4469-9d2e-d2ce5d93eb30
+status: experimental
+description: Detects potential processes activity of Pocket Cloud (Wyse) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pocket Cloud (Wyse)
+level: medium

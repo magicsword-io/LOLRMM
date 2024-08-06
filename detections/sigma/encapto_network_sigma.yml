@@ -1,0 +1,20 @@
+title: Potential Encapto RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - encapto.com
+  condition: selection
+id: b704e63b-f10c-4f64-8962-87d477c2586c
+status: experimental
+description: Detects potential network activity of Encapto RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Encapto
+level: medium

@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - portable tool. No install path
-  - portable tool. No install path
-  - rclone*.zip
-  - '*\rclone.exe'
+    - portable tool. No install path
+    - portable tool. No install path
+    - rclone*.zip
+    - '*\rclone.exe'
 Artifacts:
   Disk: []
   EventLog: []

@@ -46,8 +46,8 @@ def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
                 'SupportedOS': ', '.join(rmm_tool.get('Details', {}).get('SupportedOS', [])),
                 'Capabilities': ', '.join(rmm_tool.get('Details', {}).get('Capabilities', [])),
                 'Vulnerabilities': ', '.join(rmm_tool.get('Details', {}).get('Vulnerabilities', [])),
-                'InstallationPaths': ', '.join(rmm_tool.get('Details', {}).get('InstallationPaths', [])),
-                'Artifacts': json.dumps(rmm_tool.get('Artifacts', {})),
+                'InstallationPaths': ', '.join(rmm_tool.get('Details', {}).get('InstallationPaths', [])) if isinstance(rmm_tool.get('Details', {}).get('InstallationPaths', []), list) else str(rmm_tool.get('Details', {}).get('InstallationPaths', '')),
+                'Artifacts': json.dumps({k: v if k != 'Network' else [{'Description': item.get('Description', ''), 'Domains': item.get('Domains', []), 'Ports': item.get('Ports', [])} for item in v] for k, v in rmm_tool.get('Artifacts', {}).items()}),
                 'Detections': json.dumps(rmm_tool.get('Detections', [])),
                 'References': ', '.join(rmm_tool.get('References', [])),
                 'Acknowledgement': json.dumps(rmm_tool.get('Acknowledgement', []))

@@ -1,0 +1,20 @@
+title: Potential eHorus RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - ehorus.com
+  condition: selection
+id: 51b2e049-f994-43e8-929d-0d02cd815224
+status: experimental
+description: Detects potential network activity of eHorus RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of eHorus
+level: medium

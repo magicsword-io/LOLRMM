@@ -1,0 +1,21 @@
+title: Potential PuTTY Tray RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\*\puttytray.exe
+    - '*\puttytray.exe'
+  condition: selection
+id: f60da527-7653-4689-81fa-0f6ac08e9e72
+status: experimental
+description: Detects potential processes activity of PuTTY Tray RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of PuTTY Tray
+level: medium

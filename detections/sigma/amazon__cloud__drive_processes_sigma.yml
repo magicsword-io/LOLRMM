@@ -1,0 +1,20 @@
+title: Potential Amazon (Cloud) Drive RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\AmazonCloudDrive.exe'
+  condition: selection
+id: 41013154-16de-4a75-8b41-1aa4a350b15a
+status: experimental
+description: Detects potential processes activity of Amazon (Cloud) Drive RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Amazon (Cloud) Drive
+level: medium

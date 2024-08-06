@@ -1,0 +1,21 @@
+title: Potential ITSupport247 (ConnectWise) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - saazapsc.exe
+  condition: selection
+id: 8550c5e3-5dae-4a6d-bede-29a6fe0d28fe
+status: experimental
+description: Detects potential processes activity of ITSupport247 (ConnectWise) RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ITSupport247 (ConnectWise)
+level: medium

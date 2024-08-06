@@ -16,17 +16,29 @@ displayTitle = "AnyViewer"
 
 AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
+
 **Author**: @kostastsale
 
-**Created**: 2024/03/08
+**Created**: 2024-08-03
 
+**Last Modified**: 2024-08-03
 
 ### Details
 
 - **Website**: [https://www.anyviewer.com/](https://www.anyviewer.com/)
 
 #### PE Metadata
-- **Filename**: AnyViewer.exe**Original File Name**: AnyViewer**Description**: Splash Window- **Filename**: RCClient.exe**Original File Name**: RCClient.exe**Description**: AnyViewer Core- **Filename**: ScreanCap.exe**Description**: Screan capture- **Filename**: AVCore.exe- **Filename**: RCService.exe
+- **Filename**: AnyViewer.exe
+- **Original File Name**: AnyViewer
+- **Description**: Splash Window
+- **Filename**: RCClient.exe
+- **Original File Name**: RCClient.exe
+- **Description**: AnyViewer Core
+- **Filename**: ScreanCap.exe
+- **Description**: Screan capture
+- **Filename**: AVCore.exe
+- **Filename**: RCService.exe
+
 - **Privileges**: System
 
 - **Free**: Yes
@@ -37,14 +49,14 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
 - Windows
 
 #### Capabilities
-- Remote monitoring and management
 - Remote desktop
-- Remote shell open
 - Remote file transfer
+- Remote monitoring and management
+- Remote shell open
 
 
 #### Installation Paths
-- `C:\\Program Files (x86)\\AnyViewer\\*`
+- `C:\Program Files (x86)\AnyViewer\*`
 
 ### Forensic Artifacts
 
@@ -67,13 +79,21 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
 
 #### Network Artifacts
 
-- **Description**: Known remote domains
-  **Domain**:
-    - `controlserver.anyviewer.com`
-    - `aomeisoftware.com`
+- **Description**: N/A
+
+  **Domains**:
+    - `*.anyviewer.com`
+
+  **Ports**:
+    - `443`
+
+- **Description**: N/A
+
+  **Domains**:
     - `*.aomeisoftware.com`
 
-  **Port**: `443`
+  **Ports**:
+    - `443`
 
 
 

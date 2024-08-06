@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - iit.exe
-  - intouch.exe
-  - I'm InTouch Go Installer.exe
+    - iit.exe
+    - intouch.exe
+    - I'm InTouch Go Installer.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.01com.com'
-    - 01com.com/imintouch-remote-pc-desktop
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.01com.com'
+        - 01com.com/imintouch-remote-pc-desktop
+      Ports: []
 Detections: []
 References:
-- https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
+  - https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
 Acknowledgement: []

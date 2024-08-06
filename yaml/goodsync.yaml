@@ -17,10 +17,10 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - installation requires paid version of GoodSync Server
-  - installation requires paid version of GoodSync Server
-  - GoodSync-vsub-Setup.exe
-  - A40B81B36CDC2D24910FC58816E50DCDE21BD1A9
+    - installation requires paid version of GoodSync Server
+    - installation requires paid version of GoodSync Server
+    - GoodSync-vsub-Setup.exe
+    - A40B81B36CDC2D24910FC58816E50DCDE21BD1A9
 Artifacts:
   Disk: []
   EventLog: []

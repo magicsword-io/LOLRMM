@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\airexplorer\*
-  - '*\airexplorer\*'
-  - '*\airexplorer.exe'
+    - C:\Program Files\airexplorer\*
+    - '*\airexplorer\*'
+    - '*\airexplorer.exe'
 Artifacts:
   Disk: []
   EventLog: []

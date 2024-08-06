@@ -44,7 +44,8 @@ Anyplace Control is a remote monitoring and management (RMM) tool. More informat
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `anyplace-control.com`
 
 

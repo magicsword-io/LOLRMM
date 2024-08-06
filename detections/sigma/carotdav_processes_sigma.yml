@@ -1,0 +1,20 @@
+title: Potential CarotDAV RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\CarotDAV.exe'
+  condition: selection
+id: 12350913-2cdd-4b98-880a-ca2940d21175
+status: experimental
+description: Detects potential processes activity of CarotDAV RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CarotDAV
+level: medium

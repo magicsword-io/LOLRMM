@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
-  - '*Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*'
+    - C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
+    - '*Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*'
 Artifacts:
   Disk: []
   EventLog: []

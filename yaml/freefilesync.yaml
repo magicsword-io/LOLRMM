@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\FreeFileSync\*
-  - '*\FreeFileSync\*'
-  - '*\FreeFileSync.exe'
+    - C:\Program Files\FreeFileSync\*
+    - '*\FreeFileSync\*'
+    - '*\FreeFileSync.exe'
 Artifacts:
   Disk: []
   EventLog: []

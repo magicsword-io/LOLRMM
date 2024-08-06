@@ -1,0 +1,20 @@
+title: Potential DeskShare RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+  condition: selection
+id: eeb4ab03-601c-4fbc-9709-7eeda3949734
+status: experimental
+description: Detects potential network activity of DeskShare RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DeskShare
+level: medium

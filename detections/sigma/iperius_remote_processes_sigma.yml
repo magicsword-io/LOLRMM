@@ -1,0 +1,21 @@
+title: Potential Iperius Remote RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - iperius.exe
+    - iperiusremote.exe
+  condition: selection
+id: cb0c4646-c363-4107-8c13-29ab63e220cc
+status: experimental
+description: Detects potential processes activity of Iperius Remote RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Iperius Remote
+level: medium

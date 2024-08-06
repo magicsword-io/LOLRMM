@@ -17,25 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - '*\ISLLight.exe'
-  - isllight.exe
-  - ISLLightClient.exe
-  - C:\Program Files (x86)\ISL Online\ISL Light*
-  - '*\ISL Online\ISL Light*'
-  - ISLLight.exe
-  - isllightservice.exe
-  - islalwaysonmonitor.exe
+    - '*\ISLLight.exe'
+    - isllight.exe
+    - ISLLightClient.exe
+    - C:\Program Files (x86)\ISL Online\ISL Light*
+    - '*\ISL Online\ISL Light*'
+    - ISLLight.exe
+    - isllightservice.exe
+    - islalwaysonmonitor.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.islonline.com'
-    - '*.islonline.net'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.islonline.com'
+        - '*.islonline.net'
+      Ports: []
 Detections: []
 References:
-- https://help.islonline.com/19818/165940
+  - https://help.islonline.com/19818/165940
 Acknowledgement: []

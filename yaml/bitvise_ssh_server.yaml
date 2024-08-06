@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\Bitvise SSH Server\*
-  - '*\Bitvise SSH Server\*'
-  - '*\BvSshServer-Inst.exe'
+    - C:\Program Files\Bitvise SSH Server\*
+    - '*\Bitvise SSH Server\*'
+    - '*\BvSshServer-Inst.exe'
 Artifacts:
   Disk: []
   EventLog: []

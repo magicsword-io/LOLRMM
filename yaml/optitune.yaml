@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - OTService.exe
-  - OTPowerShell.exe
+    - OTService.exe
+    - OTPowerShell.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.optitune.us'
-    - '*.opti-tune.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.optitune.us'
+        - '*.opti-tune.com'
+      Ports: []
 Detections: []
 References:
-- https://www.bravurasoftware.com/optitune/support/faq.aspx
+  - https://www.bravurasoftware.com/optitune/support/faq.aspx
 Acknowledgement: []

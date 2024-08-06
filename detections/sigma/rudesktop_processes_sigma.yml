@@ -1,0 +1,21 @@
+title: Potential RuDesktop RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rd.exe
+    - rudesktop*.exe
+  condition: selection
+id: 490a6bd7-7f44-44d7-a102-7d4efabb03ee
+status: experimental
+description: Detects potential processes activity of RuDesktop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RuDesktop
+level: medium

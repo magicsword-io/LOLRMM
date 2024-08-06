@@ -1,0 +1,21 @@
+title: Potential Senso.cloud RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.senso.cloud'
+    - senso.cloud
+  condition: selection
+id: 8ca2efd7-9525-45c5-8109-41983d5a5326
+status: experimental
+description: Detects potential network activity of Senso.cloud RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Senso.cloud
+level: medium

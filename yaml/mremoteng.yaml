@@ -17,14 +17,14 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - mRemoteNG.exe
-  - C:\Program Files (x86)\mRemoteNG\*
-  - '*\mRemoteNG\*'
-  - '*\mRemoteNG.exe'
-  - c:\Program Files (x86)%\mRemoteNG
-  - '*%\mRemoteNG'
-  - mRemoteNG-Installer-*.msi
-  - '*\mRemoteNG.exe'
+    - mRemoteNG.exe
+    - C:\Program Files (x86)\mRemoteNG\*
+    - '*\mRemoteNG\*'
+    - '*\mRemoteNG.exe'
+    - c:\Program Files (x86)%\mRemoteNG
+    - '*%\mRemoteNG'
+    - mRemoteNG-Installer-*.msi
+    - '*\mRemoteNG.exe'
 Artifacts:
   Disk:
     - File: 'C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log'
@@ -39,12 +39,12 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - mremoteng.org
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - mremoteng.org
+      Ports: []
 Detections: []
 References:
-- https://github.com/mRemoteNG/mRemoteNG
+  - https://github.com/mRemoteNG/mRemoteNG
 Acknowledgement: []

@@ -22,10 +22,10 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - runsmart.io
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - runsmart.io
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

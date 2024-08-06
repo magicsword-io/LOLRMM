@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - dntus*.exe
-  - dwrcs.exe
+    - dntus*.exe
+    - dwrcs.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - dameware.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - dameware.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

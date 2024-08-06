@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - nomachine*.exe
-  - nxservice*.ese
-  - nxd.exe
+    - nomachine*.exe
+    - nxservice*.ese
+    - nxd.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - nomachine.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - nomachine.com
+      Ports: []
 Detections: []
 References:
-- https://kb.nomachine.com/AR04S01122
+  - https://kb.nomachine.com/AR04S01122
 Acknowledgement: []

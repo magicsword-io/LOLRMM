@@ -1,0 +1,21 @@
+title: Potential SpyAnywhere RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.spytech-web.com'
+    - spyanywhere.com
+  condition: selection
+id: 9bb15227-d20a-492f-823a-bb7060c832f2
+status: experimental
+description: Detects potential network activity of SpyAnywhere RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SpyAnywhere
+level: medium

@@ -1,0 +1,20 @@
+title: Potential Bomgar RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - bomgar-scc.exe
+  condition: selection
+id: 2854a115-3552-4cc7-bb64-cbbe9d457797
+status: experimental
+description: Detects potential processes activity of Bomgar RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Bomgar
+level: medium

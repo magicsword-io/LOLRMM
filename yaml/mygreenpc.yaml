@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - mygreenpc.exe
+    - mygreenpc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*mygreenpc.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*mygreenpc.com'
+      Ports: []
 Detections: []
 References:
-- http://www.mygreenpc.com/
+  - http://www.mygreenpc.com/
 Acknowledgement: []

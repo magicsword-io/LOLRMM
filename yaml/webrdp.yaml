@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - webrdp.exe
+    - webrdp.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - github.com/Mikej81/WebRDP
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - github.com/Mikej81/WebRDP
+      Ports: []
 Detections: []
 References:
-- github.com/Mikej81/WebRDP
+  - github.com/Mikej81/WebRDP
 Acknowledgement: []

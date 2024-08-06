@@ -1,0 +1,22 @@
+title: Potential Tailscale RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - tailscale-*.exe
+    - tailscaled.exe
+    - tailscale-ipn.exe
+  condition: selection
+id: c52d608d-e2d8-4f4c-9039-674d19dfd3cc
+status: experimental
+description: Detects potential processes activity of Tailscale RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Tailscale
+level: medium

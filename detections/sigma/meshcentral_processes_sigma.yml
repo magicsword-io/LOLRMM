@@ -1,0 +1,21 @@
+title: Potential MeshCentral RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - meshcentral*.exe
+    - mesh*.exe
+  condition: selection
+id: be89c905-3142-4422-a6d9-96893eb6a738
+status: experimental
+description: Detects potential processes activity of MeshCentral RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of MeshCentral
+level: medium

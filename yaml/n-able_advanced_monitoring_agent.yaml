@@ -17,32 +17,32 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Agent_*_RW.exe
-  - BASEClient.exe
-  - BASupApp.exe
-  - BASupSrvc.exe
-  - BASupSrvcCnfg.exe
-  - BASupTSHelper.exe
+    - Agent_*_RW.exe
+    - BASEClient.exe
+    - BASupApp.exe
+    - BASupSrvc.exe
+    - BASupSrvcCnfg.exe
+    - BASupTSHelper.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*remote.management'
-    - '*.logicnow.com'
-    - '*systemmonitor.us'
-    - '*systemmonitor.eu.com'
-    - '*system-monitor.com'
-    - 'systemmonitor.us.cdn.cloudflare.net'
-    - '*cloudbackup.management'
-    - '*systemmonitor.co.uk'
-    - '*.n-able.com'
-    - '*.beanywhere.com '
-    - '*.swi-tc.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*remote.management'
+        - '*.logicnow.com'
+        - '*systemmonitor.us'
+        - '*systemmonitor.eu.com'
+        - '*system-monitor.com'
+        - 'systemmonitor.us.cdn.cloudflare.net'
+        - '*cloudbackup.management'
+        - '*systemmonitor.co.uk'
+        - '*.n-able.com'
+        - '*.beanywhere.com '
+        - '*.swi-tc.com'
+      Ports: []
 Detections: []
 References:
-- https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
+  - https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
 Acknowledgement: []

@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - todesk.exe
-  - ToDesk_Service.exe
-  - ToDesk_Setup.exe
+    - todesk.exe
+    - ToDesk_Service.exe
+    - ToDesk_Setup.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - todesk.com
-    - '*.todesk.com'
-    - '*.todesk.com'
-    - todesktop.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - todesk.com
+        - '*.todesk.com'
+        - '*.todesk.com'
+        - todesktop.com
+      Ports: []
 Detections: []
 References:
-- https://www.todesk.com/
+  - https://www.todesk.com/
 Acknowledgement: []

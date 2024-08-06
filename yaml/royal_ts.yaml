@@ -17,16 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - royalts.exe
+    - royalts.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - royalapps.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - royalapps.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

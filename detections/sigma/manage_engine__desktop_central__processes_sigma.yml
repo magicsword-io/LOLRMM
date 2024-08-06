@@ -1,0 +1,22 @@
+title: Potential Manage Engine (Desktop Central) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - dcagentservice.exe
+    - dcagentregister.exe
+  condition: selection
+id: a4b7941c-dee0-419f-9c5a-21d2b193fdef
+status: experimental
+description: Detects potential processes activity of Manage Engine (Desktop Central)
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Manage Engine (Desktop Central)
+level: medium

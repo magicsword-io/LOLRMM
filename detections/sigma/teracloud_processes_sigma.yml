@@ -1,0 +1,20 @@
+title: Potential TeraCLOUD RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Livedrive-Setup.exe'
+  condition: selection
+id: cf555ad9-f528-4601-a4d2-995986111993
+status: experimental
+description: Detects potential processes activity of TeraCLOUD RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TeraCLOUD
+level: medium

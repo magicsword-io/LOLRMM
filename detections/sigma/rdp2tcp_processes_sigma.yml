@@ -1,0 +1,20 @@
+title: Potential rdp2tcp RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - tdp2tcp.exe
+  condition: selection
+id: e6616c93-a7d3-4a1e-8fa3-fd0f91c4a395
+status: experimental
+description: Detects potential processes activity of rdp2tcp RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of rdp2tcp
+level: medium

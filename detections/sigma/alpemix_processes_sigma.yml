@@ -1,0 +1,20 @@
+title: Potential Alpemix RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\AlpemixService.exe
+  condition: selection
+id: 7aa2d498-c192-48d2-942a-fddaebf2e1a6
+status: experimental
+description: Detects potential processes activity of Alpemix RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Alpemix
+level: medium

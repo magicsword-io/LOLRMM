@@ -45,7 +45,8 @@ Acronic Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `cloud.acronis.com`
     - `agents*-cloud.acronis.com`
     - `gw.remotix.com`

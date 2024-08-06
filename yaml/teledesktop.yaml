@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - pstlaunch.exe
-  - ptdskclient.exe
-  - ptdskhost.exe
+    - pstlaunch.exe
+    - ptdskclient.exe
+    - ptdskhost.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - tele-desk.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - tele-desk.com
+      Ports: []
 Detections: []
 References:
-- http://potomacsoft.com/ - DOA as of 2024
+  - http://potomacsoft.com/ - DOA as of 2024
 Acknowledgement: []

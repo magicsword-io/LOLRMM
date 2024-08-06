@@ -47,7 +47,8 @@ Site24x7 is a remote monitoring and management (RMM) tool. More information will
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `plus*.site24x7.com`
     - `plus*.site24x7.eu`
     - `plus*.site24x7.in`

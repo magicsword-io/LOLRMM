@@ -1,0 +1,22 @@
+title: Potential Dameware-mini remote control Protocol RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - dntus*.exe
+    - dwrcs.exe
+  condition: selection
+id: ff1b272d-294c-422b-add5-b6e1f23659a9
+status: experimental
+description: Detects potential processes activity of Dameware-mini remote control
+  Protocol RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Dameware-mini remote control Protocol
+level: medium

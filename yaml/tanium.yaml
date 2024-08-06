@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - TaniumClient.exe
-  - TaniumCX.exe
-  - TaniumExecWrapper.exe
-  - TaniumFileInfo.exe
-  - TPowerShell.exe
+    - TaniumClient.exe
+    - TaniumCX.exe
+    - TaniumExecWrapper.exe
+    - TaniumFileInfo.exe
+    - TPowerShell.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - cloud.tanium.com
-    - '*.cloud.tanium.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - cloud.tanium.com
+        - '*.cloud.tanium.com'
+      Ports: []
 Detections: []
 References:
-- https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
+  - https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
 Acknowledgement: []

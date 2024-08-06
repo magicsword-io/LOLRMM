@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - cloudflared.exe
+    - cloudflared.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - cloudflare.com/products/tunnel/
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - cloudflare.com/products/tunnel/
+      Ports: []
 Detections: []
 References:
-- cloudflare.com/products/tunnel/
+  - cloudflare.com/products/tunnel/
 Acknowledgement: []

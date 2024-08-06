@@ -1,0 +1,20 @@
+title: Potential DesktopNow RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - desktopnow.exe
+  condition: selection
+id: 41abf633-3de1-4374-9521-8138962a7906
+status: experimental
+description: Detects potential processes activity of DesktopNow RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DesktopNow
+level: medium

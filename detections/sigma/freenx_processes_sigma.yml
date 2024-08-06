@@ -1,0 +1,21 @@
+title: Potential FreeNX RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\*\nxplayer.exe
+    - '*\nxplayer.exe'
+  condition: selection
+id: c2252758-992e-4760-b22b-754aa5a67bde
+status: experimental
+description: Detects potential processes activity of FreeNX RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FreeNX
+level: medium

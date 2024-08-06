@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rustdesk*.exe
-  - rustdesk.exe
+    - rustdesk*.exe
+    - rustdesk.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - rustdesk.com
-    - user_managed
-    - web.rustdesk.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - rustdesk.com
+        - user_managed
+        - web.rustdesk.com
+      Ports: []
 Detections: []
 References:
-- https://rustdesk.com/docs/en/
+  - https://rustdesk.com/docs/en/
 Acknowledgement: []

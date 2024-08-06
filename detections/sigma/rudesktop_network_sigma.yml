@@ -1,0 +1,21 @@
+title: Potential RuDesktop RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.rudesktop.ru'
+    - rudesktop.ru
+  condition: selection
+id: 24f7d5ef-b4b9-4c86-b32d-ca0e8a0204f5
+status: experimental
+description: Detects potential network activity of RuDesktop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RuDesktop
+level: medium

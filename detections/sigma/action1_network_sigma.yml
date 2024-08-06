@@ -1,0 +1,21 @@
+title: Potential Action1 RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.action1.com'
+    - a1-backend-packages.s3.amazonaws.com
+  condition: selection
+id: 7c145727-9616-4cce-bb6a-465c287b93d1
+status: experimental
+description: Detects potential network activity of Action1 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Action1
+level: medium

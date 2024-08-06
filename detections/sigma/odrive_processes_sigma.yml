@@ -1,0 +1,20 @@
+title: Potential ODrive RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Odriveapp.exe'
+  condition: selection
+id: 9e015d9d-8c3b-4f4c-b0f9-fc75ee54f50e
+status: experimental
+description: Detects potential processes activity of ODrive RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ODrive
+level: medium

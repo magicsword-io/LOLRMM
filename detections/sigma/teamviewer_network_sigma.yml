@@ -1,0 +1,23 @@
+title: Potential TeamViewer RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.teamviewer.com'
+    - router15.teamviewer.com
+    - client.teamviewer.com
+    - taf.teamviewer.com
+  condition: selection
+id: 8bb232d7-382c-440a-a3b7-7da96f4beaa6
+status: experimental
+description: Detects potential network activity of TeamViewer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TeamViewer
+level: medium

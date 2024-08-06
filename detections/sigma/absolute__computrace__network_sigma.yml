@@ -1,0 +1,21 @@
+title: Potential Absolute (Computrace) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*search.namequery.com'
+    - '*server.absolute.com'
+  condition: selection
+id: bedff294-81de-4490-af18-aa114edbe484
+status: experimental
+description: Detects potential network activity of Absolute (Computrace) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Absolute (Computrace)
+level: medium

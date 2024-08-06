@@ -1,0 +1,22 @@
+title: Potential Pcnow RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - mwcliun.exe
+    - pcnmgr.exe
+    - webexpcnow.exe
+  condition: selection
+id: bc89ae60-5c10-4261-bf1b-7742678e0464
+status: experimental
+description: Detects potential processes activity of Pcnow RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pcnow
+level: medium

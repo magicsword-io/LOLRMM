@@ -1,0 +1,21 @@
+title: Potential RAdmin RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe
+    - C:\Windows\SysWOW64\rserver30\rserver3.exe
+  condition: selection
+id: 603006fc-b5b3-41f4-8fbc-5a847ada9660
+status: experimental
+description: Detects potential processes activity of RAdmin RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RAdmin
+level: medium

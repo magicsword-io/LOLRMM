@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rfusclient.exe
-  - rutserv.exe
+    - rfusclient.exe
+    - rutserv.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.internetid.ru'
-    - rmansys.ru
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.internetid.ru'
+        - rmansys.ru
+      Ports: []
 Detections: []
 References:
-- https://rmansys.ru/files/
+  - https://rmansys.ru/files/
 Acknowledgement: []

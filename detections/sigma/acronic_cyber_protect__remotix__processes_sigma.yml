@@ -1,0 +1,22 @@
+title: Potential Acronic Cyber Protect (Remotix) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - AcronisCyberProtectConnectQuickAssist*.exe
+    - AcronisCyberProtectConnectAgent.exe
+  condition: selection
+id: 1ccea099-1537-4dce-b40f-255383c63f49
+status: experimental
+description: Detects potential processes activity of Acronic Cyber Protect (Remotix)
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Acronic Cyber Protect (Remotix)
+level: medium

@@ -1,0 +1,20 @@
+title: Potential CloudBuckIt RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\CloudBuckIt*.exe'
+  condition: selection
+id: 3b10e73f-ae63-46e1-a675-f85057e4851c
+status: experimental
+description: Detects potential processes activity of CloudBuckIt RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of CloudBuckIt
+level: medium

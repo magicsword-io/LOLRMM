@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
-  - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
-  - '*\Insync.exe'
+    - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+    - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
+    - '*\Insync.exe'
 Artifacts:
   Disk: []
   EventLog: []

@@ -1,0 +1,26 @@
+title: Potential VNC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - winvnc*.exe
+    - vncserver.exe
+    - winwvc.exe
+    - winvncsc.exe
+    - vncserverui.exe
+    - vncviewer.exe
+    - winvnc.exe
+  condition: selection
+id: 4bbe598e-7148-4fa6-beb1-d03512c9b72d
+status: experimental
+description: Detects potential processes activity of VNC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of VNC
+level: medium

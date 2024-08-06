@@ -1,0 +1,23 @@
+title: Potential Weezo RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.weezo.me'
+    - weezo.net
+    - '*.weezo.net'
+    - weezo.en.softonic.com
+  condition: selection
+id: deded87f-0eff-49e7-b538-962ce9af125f
+status: experimental
+description: Detects potential network activity of Weezo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Weezo
+level: medium

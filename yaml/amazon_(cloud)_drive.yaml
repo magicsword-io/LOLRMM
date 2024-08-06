@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Users\*\AppData\Local\Amazon\Cloud Drive\*
-  - '*\AppData\Local\Amazon\Cloud Drive\*'
-  - '*\AmazonCloudDrive.exe'
+    - C:\Users\*\AppData\Local\Amazon\Cloud Drive\*
+    - '*\AppData\Local\Amazon\Cloud Drive\*'
+    - '*\AmazonCloudDrive.exe'
 Artifacts:
   Disk: []
   EventLog: []

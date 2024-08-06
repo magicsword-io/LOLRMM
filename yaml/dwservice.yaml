@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - dwagent.exe
-  - dwagsvc.exe
+    - dwagent.exe
+    - dwagsvc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.dwservice.net'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.dwservice.net'
+      Ports: []
 Detections: []
 References:
-- https://news.dwservice.net/dwservice-security-infrastructure/
+  - https://news.dwservice.net/dwservice-security-infrastructure/
 Acknowledgement: []

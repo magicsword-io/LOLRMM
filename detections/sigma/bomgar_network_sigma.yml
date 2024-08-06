@@ -1,0 +1,20 @@
+title: Potential Bomgar RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - beyondtrust.com/brand/bomgar
+  condition: selection
+id: ae1f3ed8-1b4b-4745-a32b-2ba9f657466e
+status: experimental
+description: Detects potential network activity of Bomgar RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Bomgar
+level: medium

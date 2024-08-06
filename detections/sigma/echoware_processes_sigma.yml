@@ -1,0 +1,20 @@
+title: Potential Echoware RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - echoserver*.exe
+  condition: selection
+id: a5837ca5-991e-4211-8c52-e7ed4bd72cf7
+status: experimental
+description: Detects potential processes activity of Echoware RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Echoware
+level: medium

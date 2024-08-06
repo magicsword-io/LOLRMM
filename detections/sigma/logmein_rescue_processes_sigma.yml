@@ -1,0 +1,22 @@
+title: Potential LogMeIn rescue RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - support-logmeinrescue*.exe
+    - support-logmeinrescue.exe
+    - lmi_rescue.exe
+  condition: selection
+id: e0e4d26a-917d-4682-8acb-3c02d65841b2
+status: experimental
+description: Detects potential processes activity of LogMeIn rescue RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LogMeIn rescue
+level: medium

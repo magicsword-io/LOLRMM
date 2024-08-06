@@ -1,0 +1,21 @@
+title: Potential Pcvisit RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.pcvisit.de'
+    - pcvisit.de
+  condition: selection
+id: 2096b807-b8e4-4d13-bf90-5a6f9522a239
+status: experimental
+description: Detects potential network activity of Pcvisit RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pcvisit
+level: medium

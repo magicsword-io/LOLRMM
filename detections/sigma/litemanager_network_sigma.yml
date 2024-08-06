@@ -1,0 +1,22 @@
+title: Potential LiteManager RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.litemanager.ru'
+    - '*.litemanager.com'
+    - litemanager.com
+  condition: selection
+id: 41ae8d72-857d-41ae-a8bd-8d58649d7c97
+status: experimental
+description: Detects potential network activity of LiteManager RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LiteManager
+level: medium

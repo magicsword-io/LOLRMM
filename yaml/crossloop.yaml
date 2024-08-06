@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - crossloopservice.exe
-  - CrossLoopConnect.exe
-  - WinVNCStub.exe
+    - crossloopservice.exe
+    - CrossLoopConnect.exe
+    - WinVNCStub.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.crossloop.com'
-    - crossloop.en.softonic.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.crossloop.com'
+        - crossloop.en.softonic.com
+      Ports: []
 Detections: []
 References:
-- www.CrossLoop.com -> redirects to avast.com
+  - www.CrossLoop.com -> redirects to avast.com
 Acknowledgement: []

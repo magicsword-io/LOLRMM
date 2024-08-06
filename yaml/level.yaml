@@ -22,10 +22,10 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - level.io
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - level.io
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

@@ -1,0 +1,34 @@
+title: Potential Atera RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - pubsub.atera.com
+    - pubsub.pubnub.com
+    - agentreporting.atera.com
+    - getalphacontrol.com
+    - app.atera.com
+    - agenthb.atera.com
+    - packagesstore.blob.core.windows.net
+    - ps.pndsn.com
+    - agent-api.atera.com
+    - cacerts.thawte.com
+    - agentreportingstore.blob.core.windows.net
+    - atera-agent-heartbeat.servicebus.windows.net
+    - ps.atera.com
+    - atera.pubnubapi.com
+    - appcdn.atera.com
+  condition: selection
+id: a7f7a42e-6d8e-428d-9879-adcf716e401b
+status: experimental
+description: Detects potential network activity of Atera RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Atera
+level: medium

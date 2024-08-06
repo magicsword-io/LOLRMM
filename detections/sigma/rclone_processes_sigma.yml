@@ -1,0 +1,20 @@
+title: Potential rclone RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\rclone.exe'
+  condition: selection
+id: a8d3f007-d640-4037-8824-50918c4f7f96
+status: experimental
+description: Detects potential processes activity of rclone RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of rclone
+level: medium

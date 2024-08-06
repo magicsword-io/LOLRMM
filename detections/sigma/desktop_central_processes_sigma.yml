@@ -1,0 +1,20 @@
+title: Potential Desktop Central RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - dcagentservice.exe
+  condition: selection
+id: 49210cc5-74c5-43d5-9a43-07d193e606f7
+status: experimental
+description: Detects potential processes activity of Desktop Central RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Desktop Central
+level: medium

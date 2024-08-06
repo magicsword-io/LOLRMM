@@ -1,0 +1,21 @@
+title: Potential TurboMeeting RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - acceo.com/turbomeeting/
+  condition: selection
+id: 808eab4f-4a46-4b56-99e2-0f7ce46afb06
+status: experimental
+description: Detects potential network activity of TurboMeeting RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of TurboMeeting
+level: medium

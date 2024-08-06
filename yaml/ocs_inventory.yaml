@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ocsinventory.exe
-  - ocsservice.exe
+    - ocsinventory.exe
+    - ocsservice.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - ocsinventory-ng.org
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - ocsinventory-ng.org
+      Ports: []
 Detections: []
 References:
-- https://ocsinventory-ng.org/?page_id=878&lang=en
+  - https://ocsinventory-ng.org/?page_id=878&lang=en
 Acknowledgement: []

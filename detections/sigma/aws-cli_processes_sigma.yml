@@ -1,0 +1,20 @@
+title: Potential aws-cli RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\AWSCLISetup.exe'
+  condition: selection
+id: 03c7e91a-7195-4419-81a9-7acb6437a61f
+status: experimental
+description: Detects potential processes activity of aws-cli RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of aws-cli
+level: medium

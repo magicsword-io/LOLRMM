@@ -17,36 +17,36 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Syncro.Installer.exe
-  - Kabuto.App.Runner.exe
-  - Syncro.Overmind.Service.exe
-  - Kabuto.Installer.exe
-  - KabutoSetup.exe
-  - Syncro.Service.exe
-  - Kabuto.Service.Runner.exe
-  - Syncro.App.Runner.exe
-  - SyncroLive.Service.exe
-  - SyncroLive.Agent.exe
+    - Syncro.Installer.exe
+    - Kabuto.App.Runner.exe
+    - Syncro.Overmind.Service.exe
+    - Kabuto.Installer.exe
+    - KabutoSetup.exe
+    - Syncro.Service.exe
+    - Kabuto.Service.Runner.exe
+    - Syncro.App.Runner.exe
+    - SyncroLive.Service.exe
+    - SyncroLive.Agent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - kabuto.io
-    - '*.syncromsp.com'
-    - '*.syncroapi.com'
-    - syncromsp.com
-    - servably.com
-    - ld.aurelius.host
-    - 'app.kabuto.io '
-    - '*.kabutoservices.com'
-    - repairshopr.com
-    - kabutoservices.com
-    - attachments.servably.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - kabuto.io
+        - '*.syncromsp.com'
+        - '*.syncroapi.com'
+        - syncromsp.com
+        - servably.com
+        - ld.aurelius.host
+        - 'app.kabuto.io '
+        - '*.kabutoservices.com'
+        - repairshopr.com
+        - kabutoservices.com
+        - attachments.servably.com
+      Ports: []
 Detections: []
 References:
-- https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004
+  - https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004
 Acknowledgement: []

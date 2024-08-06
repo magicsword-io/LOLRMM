@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - AgentSetup-*.exe
+    - AgentSetup-*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - naverisk.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - naverisk.com
+      Ports: []
 Detections: []
 References:
-- http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents
+  - http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents
 Acknowledgement: []

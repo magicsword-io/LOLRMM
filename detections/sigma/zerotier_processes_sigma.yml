@@ -1,0 +1,21 @@
+title: Potential ZeroTier RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - zerotier*.exe
+    - zero-powershell.exe
+  condition: selection
+id: 028f4c15-5379-489b-9621-f9cf16f7829a
+status: experimental
+description: Detects potential processes activity of ZeroTier RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ZeroTier
+level: medium

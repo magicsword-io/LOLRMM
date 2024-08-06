@@ -1,0 +1,20 @@
+title: Potential Azure Storage Explorer RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\StorageExplorer.exe'
+  condition: selection
+id: 00bc3746-457b-4b47-a246-f23f1155d9c0
+status: experimental
+description: Detects potential processes activity of Azure Storage Explorer RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Azure Storage Explorer
+level: medium

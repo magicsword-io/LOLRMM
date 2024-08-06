@@ -1,0 +1,20 @@
+title: Potential SysAid RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\IliAS.exe'
+  condition: selection
+id: 837586eb-5625-4b4f-b144-efbd74d38b0d
+status: experimental
+description: Detects potential processes activity of SysAid RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SysAid
+level: medium

@@ -1,0 +1,23 @@
+title: Potential GatherPlace-desktop sharing RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.gatherplace.com'
+    - '*.gatherplace.net'
+    - gatherplace.com
+  condition: selection
+id: fd1ae6a3-eb22-4a41-86a9-e7698d77b0f4
+status: experimental
+description: Detects potential network activity of GatherPlace-desktop sharing RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of GatherPlace-desktop sharing
+level: medium

@@ -1,0 +1,21 @@
+title: Potential Syspectr RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - oo-syspectr*.exe
+    - OOSysAgent.exe
+  condition: selection
+id: 47aaf8ca-0a83-45e1-a38c-4aee9e2bbda2
+status: experimental
+description: Detects potential processes activity of Syspectr RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Syspectr
+level: medium

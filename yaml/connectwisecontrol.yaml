@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - screenconnect.clientservice.exe
-  - connectwisecontrol.client.exe
-  - screenconnect.windowsclient.exe
-  - connectwisechat-customer.exe
+    - screenconnect.clientservice.exe
+    - connectwisecontrol.client.exe
+    - screenconnect.windowsclient.exe
+    - connectwisechat-customer.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - live.screenconnect.com
-    - control.connectwise.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - live.screenconnect.com
+        - control.connectwise.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

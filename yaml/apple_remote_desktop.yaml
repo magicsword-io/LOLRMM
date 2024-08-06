@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ARDAgent.app
+    - ARDAgent.app
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+      Ports: []
 Detections: []
 References:
-- https://support.apple.com/guide/remote-desktop/install-and-set-up-remote-desktop-apdf49e03a4/mac
+  - https://support.apple.com/guide/remote-desktop/install-and-set-up-remote-desktop-apdf49e03a4/mac
 Acknowledgement: []

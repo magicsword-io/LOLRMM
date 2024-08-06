@@ -1,0 +1,20 @@
+title: Potential Anyplace Control RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - anyplace-control.com
+  condition: selection
+id: 0f582c3c-bb0e-4b5b-955a-fdb0126872df
+status: experimental
+description: Detects potential network activity of Anyplace Control RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Anyplace Control
+level: medium

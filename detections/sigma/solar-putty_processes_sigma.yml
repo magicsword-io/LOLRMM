@@ -1,0 +1,20 @@
+title: Potential Solar-PuTTY RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Solar-PuTTY.exe'
+  condition: selection
+id: b1c81fc5-b27c-4c42-8fd0-f9e3e60deed3
+status: experimental
+description: Detects potential processes activity of Solar-PuTTY RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Solar-PuTTY
+level: medium

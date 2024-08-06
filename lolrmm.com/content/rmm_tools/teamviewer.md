@@ -28,7 +28,9 @@ TeamViewer is a remote monitoring and management (RMM) tool.
 - **Website**: [https://www.teamviewer.com/en](https://www.teamviewer.com/en)
 
 #### PE Metadata
-- **Filename**: TeamViewer.exe**Product**: TeamViewer
+- **Filename**: TeamViewer.exe
+- **Product**: TeamViewer
+
 - **Privileges**: user
 
 - **Free**: Yes
@@ -238,29 +240,35 @@ TeamViewer is a remote monitoring and management (RMM) tool.
 
 #### Network Artifacts
 
-- **Description**: N/A
-  **Domain**:
-    `*.teamviewer.com`
+- **Description**: Known remote domains
 
-  **Port**: `443`
+  **Domains**:
+    - `*.teamviewer.com`
 
-- **Description**: N/A
-  **Domain**:
-    `router15.teamviewer.com`
-
-  **Port**: `443`
 
 - **Description**: N/A
-  **Domain**:
-    `client.teamviewer.com`
 
-  **Port**: `443`
+  **Domains**:
+    - `router15.teamviewer.com`
+
+  **Ports**:
+    - `443`
 
 - **Description**: N/A
-  **Domain**:
-    `taf.teamviewer.com`
 
-  **Port**: `443`
+  **Domains**:
+    - `client.teamviewer.com`
+
+  **Ports**:
+    - `443`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `taf.teamviewer.com`
+
+  **Ports**:
+    - `443`
 
 
 #### Other Artifacts

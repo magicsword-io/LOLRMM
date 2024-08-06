@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - fastclient.exe
-  - fastmaster.exe
-  - FastViewer.exe
+    - fastclient.exe
+    - fastmaster.exe
+    - FastViewer.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.fastviewer.com'
-    - fastviewer.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.fastviewer.com'
+        - fastviewer.com
+      Ports: []
 Detections: []
 References:
-- https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf
+  - https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf
 Acknowledgement: []

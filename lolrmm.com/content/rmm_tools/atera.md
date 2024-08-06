@@ -188,111 +188,139 @@ Atera is a remote monitoring and management (RMM) tool. It is used by threat act
 #### Network Artifacts
 
 - **Description**: N/A
-  **Domain**:
-    `pubsub.atera.com`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `pubsub.atera.com`
 
-- **Description**: N/A
-  **Domain**:
-    `pubsub.pubnub.com`
-
-  **Port**: `N/A`
+  **Ports**:
+    - `N/A`
 
 - **Description**: N/A
-  **Domain**:
-    `agentreporting.atera.com`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `pubsub.pubnub.com`
 
-- **Description**: N/A
-  **Domain**:
-    `getalphacontrol.com`
-
-  **Port**: `N/A`
+  **Ports**:
+    - `N/A`
 
 - **Description**: N/A
-  **Domain**:
-    `app.atera.com`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `agentreporting.atera.com`
 
-- **Description**: N/A
-  **Domain**:
-    `agenthb.atera.com`
-
-  **Port**: `N/A`
+  **Ports**:
+    - `N/A`
 
 - **Description**: N/A
-  **Domain**:
-    `packagesstore.blob.core.windows.net`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `getalphacontrol.com`
 
-- **Description**: N/A
-  **Domain**:
-    `ps.pndsn.com`
-
-  **Port**: `N/A`
+  **Ports**:
+    - `N/A`
 
 - **Description**: N/A
-  **Domain**:
-    `agent-api.atera.com`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `app.atera.com`
 
-- **Description**: N/A
-  **Domain**:
-    `cacerts.thawte.com`
-
-  **Port**: `N/A`
+  **Ports**:
+    - `N/A`
 
 - **Description**: N/A
-  **Domain**:
-    `agentreportingstore.blob.core.windows.net`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `agenthb.atera.com`
 
-- **Description**: N/A
-  **Domain**:
-    `atera-agent-heartbeat.servicebus.windows.net`
-
-  **Port**: `N/A`
+  **Ports**:
+    - `N/A`
 
 - **Description**: N/A
-  **Domain**:
-    `ps.atera.com`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `packagesstore.blob.core.windows.net`
 
-- **Description**: N/A
-  **Domain**:
-    `atera.pubnubapi.com`
-
-  **Port**: `N/A`
+  **Ports**:
+    - `N/A`
 
 - **Description**: N/A
-  **Domain**:
-    `appcdn.atera.com`
 
-  **Port**: `N/A`
+  **Domains**:
+    - `ps.pndsn.com`
+
+  **Ports**:
+    - `N/A`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `agent-api.atera.com`
+
+  **Ports**:
+    - `N/A`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `cacerts.thawte.com`
+
+  **Ports**:
+    - `N/A`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `agentreportingstore.blob.core.windows.net`
+
+  **Ports**:
+    - `N/A`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `atera-agent-heartbeat.servicebus.windows.net`
+
+  **Ports**:
+    - `N/A`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `ps.atera.com`
+
+  **Ports**:
+    - `N/A`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `atera.pubnubapi.com`
+
+  **Ports**:
+    - `N/A`
+
+- **Description**: N/A
+
+  **Domains**:
+    - `appcdn.atera.com`
+
+  **Ports**:
+    - `N/A`
 
 
 
 ### Detections
--   **AteraAgent malicious installations**
+-   [Sigma rule](https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml)
 
   Detects AteraAgent installations with suspicious command line arguments.
 
 
-  [Link](https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml)
 
--   **Atera Agent Installation**
+-   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml)
 
   Detects Atera Agent installation.
 
 
-  [Link](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml)
 
 
 ### References

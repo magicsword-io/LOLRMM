@@ -46,7 +46,8 @@ NetSupport Manager is a remote monitoring and management (RMM) tool. More inform
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `geo.netsupportsoftware.com`
     - `netsupportmanager.com`
     - `*.netsupportmanager.com`

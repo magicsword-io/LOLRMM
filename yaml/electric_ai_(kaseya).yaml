@@ -24,5 +24,5 @@ Artifacts:
   Network: []
 Detections: []
 References:
-- https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf
+  - https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf
 Acknowledgement: []

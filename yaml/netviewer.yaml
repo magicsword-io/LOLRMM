@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - netviewer*.exe
-  - netviewer.exe
+    - netviewer*.exe
+    - netviewer.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - download.cnet.com/Net-Viewer/3000-2370_4-10034828.html
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - download.cnet.com/Net-Viewer/3000-2370_4-10034828.html
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

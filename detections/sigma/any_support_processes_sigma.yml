@@ -1,0 +1,20 @@
+title: Potential Any Support RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ManualLauncher.exe
+  condition: selection
+id: d3801f7a-fe49-4374-8618-318f347e61a0
+status: experimental
+description: Detects potential processes activity of Any Support RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Any Support
+level: medium

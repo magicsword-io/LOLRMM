@@ -1,0 +1,21 @@
+title: Potential ZeroTier RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - zerotier.com
+    - '*.zerotier.com'
+  condition: selection
+id: c026b849-24e1-46cd-aa06-b625928ab78d
+status: experimental
+description: Detects potential network activity of ZeroTier RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ZeroTier
+level: medium

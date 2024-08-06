@@ -1,0 +1,21 @@
+title: Potential RustDesk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rustdesk*.exe
+    - rustdesk.exe
+  condition: selection
+id: 05bf5bfd-36f9-446c-9c0c-cfb16684ad23
+status: experimental
+description: Detects potential processes activity of RustDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RustDesk
+level: medium

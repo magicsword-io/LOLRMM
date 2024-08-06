@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - superopsticket.exe
-  - superops.exe
+    - superopsticket.exe
+    - superops.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.superopsbeta.com'
-    - superops.ai
-    - serv.superopsalpha.com
-    - '*.superops.ai'
-    - '*.superopsalpha.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.superopsbeta.com'
+        - superops.ai
+        - serv.superopsalpha.com
+        - '*.superops.ai'
+        - '*.superopsalpha.com'
+      Ports: []
 Detections: []
 References:
-- https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
+  - https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
 Acknowledgement: []

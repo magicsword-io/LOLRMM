@@ -17,16 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - quickassist.exe
+    - quickassist.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.support.services.microsoft.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.support.services.microsoft.com'
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

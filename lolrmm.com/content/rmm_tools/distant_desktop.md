@@ -46,7 +46,8 @@ Distant Desktop is a remote monitoring and management (RMM) tool. More informati
 #### Network Artifacts
 
 - **Description**: Known remote domains
-  **Domain**:
+
+  **Domains**:
     - `*.distantdesktop.com`
     - `*signalserver.xyz`
 

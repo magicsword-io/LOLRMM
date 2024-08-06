@@ -17,16 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - bomgar-scc.exe
+    - bomgar-scc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - beyondtrust.com/brand/bomgar
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - beyondtrust.com/brand/bomgar
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

@@ -1,0 +1,21 @@
+title: Potential Pulseway RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - PCMonitorManager.exe
+    - pcmonitorsrv.exe
+  condition: selection
+id: 9203087c-e11c-46f4-9758-ed336c532c04
+status: experimental
+description: Detects potential processes activity of Pulseway RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pulseway
+level: medium

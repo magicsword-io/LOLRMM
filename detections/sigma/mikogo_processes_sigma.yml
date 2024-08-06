@@ -1,0 +1,25 @@
+title: Potential Mikogo RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - mikogo.exe
+    - mikogo-starter.exe
+    - mikogo-service.exe
+    - mikogolauncher.exe
+    - '*\Mikogo-Service.exe'
+    - '*\Mikogo-Screen-Service.exe'
+  condition: selection
+id: e313fb7f-7384-4f9a-8eb4-5a0b9e24fc2a
+status: experimental
+description: Detects potential processes activity of Mikogo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Mikogo
+level: medium

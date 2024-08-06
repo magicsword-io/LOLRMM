@@ -1,0 +1,21 @@
+title: Potential 247ithelp.com (ConnectWise) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.247ithelp.com'
+  condition: selection
+id: 57990b21-dfbc-4656-a748-8b4aa4571715
+status: experimental
+description: Detects potential network activity of 247ithelp.com (ConnectWise) RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of 247ithelp.com (ConnectWise)
+level: medium

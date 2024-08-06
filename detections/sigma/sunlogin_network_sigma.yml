@@ -1,0 +1,21 @@
+title: Potential SunLogin RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - sunlogin.oray.com
+    - client.oray.net
+  condition: selection
+id: 3bf0c03d-effa-4265-b158-a01fc3ed7895
+status: experimental
+description: Detects potential network activity of SunLogin RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SunLogin
+level: medium

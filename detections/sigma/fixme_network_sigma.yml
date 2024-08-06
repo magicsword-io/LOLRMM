@@ -1,0 +1,20 @@
+title: Potential FixMe RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - fixme.it
+  condition: selection
+id: 36321dca-a454-4453-9626-5df0a3272281
+status: experimental
+description: Detects potential network activity of FixMe RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FixMe
+level: medium

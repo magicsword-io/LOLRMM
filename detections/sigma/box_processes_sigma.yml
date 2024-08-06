@@ -1,0 +1,20 @@
+title: Potential Box RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\Box.exe'
+  condition: selection
+id: cd7b9007-1ee6-47cf-8d02-4393434ce85d
+status: experimental
+description: Detects potential processes activity of Box RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Box
+level: medium

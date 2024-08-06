@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - zerotier*.msi
-  - zerotier*.exe
-  - zero-powershell.exe
+    - zerotier*.msi
+    - zerotier*.exe
+    - zero-powershell.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - zerotier.com
-    - '*.zerotier.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - zerotier.com
+        - '*.zerotier.com'
+      Ports: []
 Detections: []
 References:
-- https://my.zerotier.com/
+  - https://my.zerotier.com/
 Acknowledgement: []

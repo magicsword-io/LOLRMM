@@ -17,30 +17,30 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - Online Backup.exe
-  - CBBackupPlan.exe
-  - Cloud.Backup.Scheduler.exe
-  - Cloud.Backup.RM.Service.exe
-  - cbb.exe
-  - CloudRaService.exe
-  - CloudRaSd.exe
-  - CloudRaCmd.exe
-  - CloudRaUtilities.exe
-  - Remote Desktop.exe
-  - Connect.exe
+    - Online Backup.exe
+    - CBBackupPlan.exe
+    - Cloud.Backup.Scheduler.exe
+    - Cloud.Backup.RM.Service.exe
+    - cbb.exe
+    - CloudRaService.exe
+    - CloudRaSd.exe
+    - CloudRaCmd.exe
+    - CloudRaUtilities.exe
+    - Remote Desktop.exe
+    - Connect.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.cloudberrylab.com'
-    - '*.msp360.com'
-    - '*.mspbackups.com'
-    - msp360.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.cloudberrylab.com'
+        - '*.msp360.com'
+        - '*.mspbackups.com'
+        - msp360.com
+      Ports: []
 Detections: []
 References:
-- https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#
+  - https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#
 Acknowledgement: []

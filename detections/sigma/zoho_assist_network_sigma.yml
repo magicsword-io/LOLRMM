@@ -1,0 +1,32 @@
+title: Potential Zoho Assist RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.zoho.com.au'
+    - '*.zohoassist.jp'
+    - assist.zoho.com
+    - zoho.com/assist/
+    - '*.zoho.in'
+    - downloads.zohodl.com.cn
+    - '*.zohoassist.com'
+    - downloads.zohocdn.com
+    - gateway.zohoassist.com
+    - '*.zohoassist.com.cn'
+    - '*.zoho.com.cn'
+    - '*.zoho.com'
+    - '*.zoho.eu'
+  condition: selection
+id: ca90a415-2385-4c50-a295-5e58e4ab3117
+status: experimental
+description: Detects potential network activity of Zoho Assist RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Zoho Assist
+level: medium

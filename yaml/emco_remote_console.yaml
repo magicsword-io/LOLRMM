@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - remoteconsole.exe
+    - remoteconsole.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - emcosoftware.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - emcosoftware.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

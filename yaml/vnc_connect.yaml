@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\RealVNC\VNC Server\*
-  - '*\RealVNC\VNC Server\*'
+    - C:\Program Files\RealVNC\VNC Server\*
+    - '*\RealVNC\VNC Server\*'
 Artifacts:
   Disk: []
   EventLog: []

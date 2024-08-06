@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - c:\Program Files (x86)\Sysprogs\SmarTTY\*
-  - '*\Sysprogs\SmarTTY\*'
-  - '*\SmarTTY.exe'
+    - c:\Program Files (x86)\Sysprogs\SmarTTY\*
+    - '*\Sysprogs\SmarTTY\*'
+    - '*\SmarTTY.exe'
 Artifacts:
   Disk: []
   EventLog: []

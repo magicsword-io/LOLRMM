@@ -1,0 +1,31 @@
+title: Potential ScreenConnect RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe
+    - Remote Workforce Client.exe
+    - '*\*\ScreenConnect.ClientService.exe'
+    - '*\*\ScreenConnect.WindowsClient.exe'
+    - screenconnect*.exe
+    - screenconnect.windowsclient.exe
+    - Remote Workforce Client.exe
+    - screenconnect*.exe
+    - ConnectWiseControl*.exe
+    - connectwise*.exe
+    - screenconnect.windowsclient.exe
+    - screenconnect.clientservice.exe
+  condition: selection
+id: db8b0664-603b-497e-a86e-02b545ace4ca
+status: experimental
+description: Detects potential processes activity of ScreenConnect RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ScreenConnect
+level: medium

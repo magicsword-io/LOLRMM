@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - ltsvc.exe
-  - ltsvcmon.exe
-  - lttray.exe
+    - ltsvc.exe
+    - ltsvcmon.exe
+    - lttray.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.hostedrmm.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.hostedrmm.com'
+      Ports: []
 Detections: []
 References:
-- https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate
+  - https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate
 Acknowledgement: []

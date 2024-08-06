@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Microsoft Azure Storage Explorer\*
-  - '*\Microsoft Azure Storage Explorer\*'
-  - '*\StorageExplorer.exe'
+    - C:\Program Files (x86)\Microsoft Azure Storage Explorer\*
+    - '*\Microsoft Azure Storage Explorer\*'
+    - '*\StorageExplorer.exe'
 Artifacts:
   Disk: []
   EventLog: []

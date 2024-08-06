@@ -17,22 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - weezohttpd.exe
-  - weezo.exe
-  - weezo setup*.exe
+    - weezohttpd.exe
+    - weezo.exe
+    - weezo setup*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.weezo.me'
-    - weezo.net
-    - '*.weezo.net'
-    - weezo.en.softonic.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.weezo.me'
+        - weezo.net
+        - '*.weezo.net'
+        - weezo.en.softonic.com
+      Ports: []
 Detections: []
 References:
-- weezo.en.softonic.com
+  - weezo.en.softonic.com
 Acknowledgement: []

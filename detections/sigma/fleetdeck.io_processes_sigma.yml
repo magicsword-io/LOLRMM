@@ -1,0 +1,24 @@
+title: Potential FleetDeck.io RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - fleetdeck_agent_svc.exe
+    - fleetdeck_commander_svc.exe
+    - fleetdeck_installer.exe
+    - fleetdeck_commander_launcher.exe
+    - fleetdeck_agent.exe
+  condition: selection
+id: 45c11c1b-e977-477e-a672-38a362bcb755
+status: experimental
+description: Detects potential processes activity of FleetDeck.io RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FleetDeck.io
+level: medium

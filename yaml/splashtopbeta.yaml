@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - SRServer.exe
-  - SplashtopSOS.exe
-  - Splashtop_Streamer_Windows*.exe
-  - SRManager.exe
+    - SRServer.exe
+    - SplashtopSOS.exe
+    - Splashtop_Streamer_Windows*.exe
+    - SRManager.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - splashtop.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - splashtop.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

@@ -1,0 +1,22 @@
+title: Potential Quest KACE Agent (formerly Dell KACE) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.kace.com'
+    - www.quest.com/kace/
+  condition: selection
+id: ddf7fe14-66c0-49bc-b6d9-373416946956
+status: experimental
+description: Detects potential network activity of Quest KACE Agent (formerly Dell
+  KACE) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Quest KACE Agent (formerly Dell KACE)
+level: medium

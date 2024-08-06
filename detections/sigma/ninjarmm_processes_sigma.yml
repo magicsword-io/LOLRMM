@@ -1,0 +1,23 @@
+title: Potential NinjaRMM RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - ninjarmmagent.exe
+    - NinjaRMMAgent.exe
+    - NinjaRMMAgenPatcher.exe
+    - ninjarmm-cli.exe
+  condition: selection
+id: df993854-40a2-4846-988d-930ceb6376d3
+status: experimental
+description: Detects potential processes activity of NinjaRMM RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NinjaRMM
+level: medium

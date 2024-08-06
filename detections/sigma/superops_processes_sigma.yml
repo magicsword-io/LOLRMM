@@ -1,0 +1,21 @@
+title: Potential SuperOps RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - superopsticket.exe
+    - superops.exe
+  condition: selection
+id: c4ebaabb-84f6-4b31-bf6f-fecdfcfca8a2
+status: experimental
+description: Detects potential processes activity of SuperOps RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SuperOps
+level: medium

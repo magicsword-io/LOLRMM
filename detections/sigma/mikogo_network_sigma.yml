@@ -1,0 +1,23 @@
+title: Potential Mikogo RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.real-time-collaboration.com'
+    - '*.mikogo4.com'
+    - '*.mikogo.com'
+    - mikogo.com
+  condition: selection
+id: 6c10acd2-41bb-4a88-aadd-62b3fd8cf23d
+status: experimental
+description: Detects potential network activity of Mikogo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Mikogo
+level: medium

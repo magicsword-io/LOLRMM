@@ -1,0 +1,21 @@
+title: Potential RPort RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - rport.io
+  condition: selection
+id: 5327298d-6448-4a92-9882-3ba955c968c0
+status: experimental
+description: Detects potential network activity of RPort RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RPort
+level: medium

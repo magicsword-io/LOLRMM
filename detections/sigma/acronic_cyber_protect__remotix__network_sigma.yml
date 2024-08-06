@@ -1,0 +1,24 @@
+title: Potential Acronic Cyber Protect (Remotix) RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - cloud.acronis.com
+    - agents*-cloud.acronis.com
+    - gw.remotix.com
+    - connect.acronis.com
+  condition: selection
+id: 0762ba65-8a6c-4986-8b73-fab8e6262f30
+status: experimental
+description: Detects potential network activity of Acronic Cyber Protect (Remotix)
+  RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Acronic Cyber Protect (Remotix)
+level: medium

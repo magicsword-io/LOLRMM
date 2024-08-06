@@ -1,0 +1,24 @@
+title: Potential FixMe.it RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.fixme.it'
+    - '*.techinline.net'
+    - fixme.it
+    - '*set.me'
+    - '*setme.net'
+  condition: selection
+id: e4887a12-cfa8-42f1-8182-85c92320316c
+status: experimental
+description: Detects potential network activity of FixMe.it RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of FixMe.it
+level: medium

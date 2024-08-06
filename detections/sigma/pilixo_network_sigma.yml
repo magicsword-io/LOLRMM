@@ -1,0 +1,22 @@
+title: Potential Pilixo RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - pilixo.com
+    - download.pilixo.com
+    - '*.pilixo.com'
+  condition: selection
+id: 4c200777-e2b3-47dc-964f-efec934f8ebb
+status: experimental
+description: Detects potential network activity of Pilixo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pilixo
+level: medium

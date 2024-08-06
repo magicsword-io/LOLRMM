@@ -1,0 +1,21 @@
+title: Potential ConnectWise Control RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - live.screenconnect.com
+    - control.connectwise.com
+  condition: selection
+id: b65464a9-856e-44bc-bdf6-6ebe26bec7bf
+status: experimental
+description: Detects potential network activity of ConnectWise Control RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ConnectWise Control
+level: medium

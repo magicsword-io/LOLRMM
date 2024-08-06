@@ -1,0 +1,20 @@
+title: Potential ManageEngine RMM Central RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - manageengine.com/remote-monitoring-management/
+  condition: selection
+id: 3a6ae97b-b6ca-4e15-a580-bfaf4fe0b138
+status: experimental
+description: Detects potential network activity of ManageEngine RMM Central RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ManageEngine RMM Central
+level: medium

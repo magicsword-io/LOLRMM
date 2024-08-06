@@ -1,0 +1,21 @@
+title: Potential Laplink Gold RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - wen.laplink.com/product/laplink-gold
+  condition: selection
+id: 0b4fb91e-3efc-481f-bf98-fe5ccfc5e3f3
+status: experimental
+description: Detects potential network activity of Laplink Gold RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Laplink Gold
+level: medium

@@ -1,0 +1,20 @@
+title: Potential NateOn-desktop sharing RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.nate.com'
+  condition: selection
+id: 4f6a1bdc-dfc2-49b6-a1b6-f1fe13ce0a84
+status: experimental
+description: Detects potential network activity of NateOn-desktop sharing RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of NateOn-desktop sharing
+level: medium

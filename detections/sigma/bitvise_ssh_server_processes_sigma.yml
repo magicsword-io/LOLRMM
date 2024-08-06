@@ -1,0 +1,20 @@
+title: Potential Bitvise SSH Server RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\BvSshServer-Inst.exe'
+  condition: selection
+id: bab80f0d-b756-40c4-a2a5-9438f2c4b1b2
+status: experimental
+description: Detects potential processes activity of Bitvise SSH Server RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Bitvise SSH Server
+level: medium

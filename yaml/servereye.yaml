@@ -17,18 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - servereye*.exe
-  - ServiceProxyLocalSys.exe
+    - servereye*.exe
+    - ServiceProxyLocalSys.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.server-eye.de'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.server-eye.de'
+      Ports: []
 Detections: []
 References:
-- https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf
+  - https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf
 Acknowledgement: []

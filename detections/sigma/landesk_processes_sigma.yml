@@ -1,0 +1,27 @@
+title: Potential LANDesk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - issuser.exe
+    - landeskagentbootstrap.exe
+    - LANDeskPortalManager.exe
+    - ldinv32.exe
+    - ldsensors.exe
+    - '*\issuser.exe'
+    - '*\softmon.exe'
+    - '*\tmcsvc.exe'
+  condition: selection
+id: 6a8e2dd0-88c2-4259-ad74-c1f69fec758c
+status: experimental
+description: Detects potential processes activity of LANDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of LANDesk
+level: medium

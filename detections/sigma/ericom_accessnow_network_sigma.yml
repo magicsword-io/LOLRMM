@@ -1,0 +1,21 @@
+title: Potential Ericom AccessNow RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - ericom.com
+  condition: selection
+id: ff565ebe-dfde-478d-8d53-70812493cea3
+status: experimental
+description: Detects potential network activity of Ericom AccessNow RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Ericom AccessNow
+level: medium

@@ -1,0 +1,22 @@
+title: Potential Remote Manipulator System RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rfusclient.exe
+    - rutserv.exe
+  condition: selection
+id: 9ef0d1d2-f5cf-46d6-9ff1-21a62c688322
+status: experimental
+description: Detects potential processes activity of Remote Manipulator System RMM
+  tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Remote Manipulator System
+level: medium

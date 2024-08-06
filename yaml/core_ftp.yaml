@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\*\coreftplite.exe
-  - '*\coreftplite.exe'
+    - C:\*\coreftplite.exe
+    - '*\coreftplite.exe'
 Artifacts:
   Disk: []
   EventLog: []

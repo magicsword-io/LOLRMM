@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
-  - '*\ManageEngine\*'
+    - C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
+    - '*\ManageEngine\*'
 Artifacts:
   Disk: []
   EventLog: []

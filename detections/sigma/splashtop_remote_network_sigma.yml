@@ -1,0 +1,23 @@
+title: Potential Splashtop Remote RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - splashtop.com
+    - '*.api.splashtop.com'
+    - '*.relay.splashtop.com'
+    - '*.api.splashtop.eu'
+  condition: selection
+id: ec94d3db-ebb4-4b27-a5ca-a1f1e1c21f60
+status: experimental
+description: Detects potential network activity of Splashtop Remote RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Splashtop Remote
+level: medium

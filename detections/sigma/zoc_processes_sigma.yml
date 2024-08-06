@@ -1,0 +1,20 @@
+title: Potential ZOC RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - '*\zoc.exe'
+  condition: selection
+id: 60ebad9d-046d-4342-b1fb-0477e52ad052
+status: experimental
+description: Detects potential processes activity of ZOC RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ZOC
+level: medium

@@ -1,0 +1,20 @@
+title: Potential Datto RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - datto.com
+  condition: selection
+id: 1252a5b1-a905-40a0-8b19-3366a5927fcb
+status: experimental
+description: Detects potential network activity of Datto RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Datto
+level: medium

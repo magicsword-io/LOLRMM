@@ -1,0 +1,29 @@
+title: Potential Zoho Assist RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - zaservice.exe
+    - ZMAgent.exe
+    - C:\*\ZA_Access.exe
+    - ZohoMeeting.exe
+    - Zohours.exe
+    - zohotray.exe
+    - ZohoURSService.exe
+    - '*\ZA_Access.exe'
+    - Zaservice.exe
+    - za_connect.exe
+  condition: selection
+id: 8154c1ac-a2e2-44bc-9464-600b51ea369a
+status: experimental
+description: Detects potential processes activity of Zoho Assist RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Zoho Assist
+level: medium

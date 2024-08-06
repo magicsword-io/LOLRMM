@@ -1,0 +1,20 @@
+title: Potential Panorama9 RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - p9agent*.exe
+  condition: selection
+id: 6eb8de75-36ac-4243-b7d0-c10883359eaa
+status: experimental
+description: Detects potential processes activity of Panorama9 RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Panorama9
+level: medium

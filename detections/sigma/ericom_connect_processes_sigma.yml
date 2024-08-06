@@ -1,0 +1,21 @@
+title: Potential Ericom Connect RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - EricomConnectRemoteHost*.exe
+    - ericomconnnectconfigurationtool.exe
+  condition: selection
+id: 0ac1f9b1-2298-4ecc-8ebc-69fd696ee875
+status: experimental
+description: Detects potential processes activity of Ericom Connect RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Ericom Connect
+level: medium

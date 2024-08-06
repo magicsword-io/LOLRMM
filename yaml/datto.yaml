@@ -22,10 +22,10 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - datto.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - datto.com
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

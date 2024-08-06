@@ -17,20 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - helpu_install.exe
-  - HelpuUpdater.exe
-  - HelpuManager.exe
+    - helpu_install.exe
+    - HelpuUpdater.exe
+    - HelpuManager.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - helpu.co.kr
-    - '*.helpu.co.kr'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - helpu.co.kr
+        - '*.helpu.co.kr'
+      Ports: []
 Detections: []
 References:
-- https://helpu.co.kr/
+  - https://helpu.co.kr/
 Acknowledgement: []

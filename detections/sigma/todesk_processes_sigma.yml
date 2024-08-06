@@ -1,0 +1,22 @@
+title: Potential ToDesk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - todesk.exe
+    - ToDesk_Service.exe
+    - ToDesk_Setup.exe
+  condition: selection
+id: 97dc9b3b-1f96-468f-8794-f7430ff65aa5
+status: experimental
+description: Detects potential processes activity of ToDesk RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of ToDesk
+level: medium

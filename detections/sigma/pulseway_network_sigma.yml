@@ -1,0 +1,20 @@
+title: Potential Pulseway RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - pulseway.com
+  condition: selection
+id: ea1f256c-6716-4f1a-ac14-12d12168aa35
+status: experimental
+description: Detects potential network activity of Pulseway RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Pulseway
+level: medium

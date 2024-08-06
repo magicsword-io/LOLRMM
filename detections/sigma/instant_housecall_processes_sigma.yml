@@ -1,0 +1,23 @@
+title: Potential Instant Housecall RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - hsloader.exe
+    - InstantHousecall.exe
+    - ihcserver.exe
+    - instanthousecall.exe
+  condition: selection
+id: fe519a4c-803f-454a-89f4-63e3a36cb860
+status: experimental
+description: Detects potential processes activity of Instant Housecall RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Instant Housecall
+level: medium

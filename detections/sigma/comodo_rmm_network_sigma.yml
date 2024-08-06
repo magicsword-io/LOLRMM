@@ -1,0 +1,22 @@
+title: Potential Comodo RMM RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.itsm-us1.comodo.com'
+    - '*mdmsupport.comodo.com'
+    - one.comodo.com
+  condition: selection
+id: 95e408b6-051b-4912-9076-91d3b9596774
+status: experimental
+description: Detects potential network activity of Comodo RMM RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Comodo RMM
+level: medium

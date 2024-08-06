@@ -1,0 +1,20 @@
+title: Potential Royal Server RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - royalapps.com
+  condition: selection
+id: e4efda53-eb11-4928-9d1e-728e594e95cc
+status: experimental
+description: Detects potential network activity of Royal Server RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Royal Server
+level: medium

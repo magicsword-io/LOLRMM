@@ -1,0 +1,20 @@
+title: Potential Electric RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - electric.ai
+  condition: selection
+id: 3b56bafd-b0fa-4ee1-9a63-6fc1e5e683f9
+status: experimental
+description: Detects potential network activity of Electric RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Electric
+level: medium

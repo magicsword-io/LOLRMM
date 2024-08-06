@@ -1,0 +1,24 @@
+title: Potential Itarian RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - mdmsupport.comodo.com
+    - '*.itsm-us1.comodo.com'
+    - '*.cmdm.comodo.com'
+    - remoteaccess.itarian.com
+    - servicedesk.itarian.com
+  condition: selection
+id: 8ba16778-fb8a-4ed4-a423-88bf449b0a10
+status: experimental
+description: Detects potential network activity of Itarian RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Itarian
+level: medium

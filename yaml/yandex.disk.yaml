@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files (x86)\Yandex\*
-  - '*\Yandex\*'
-  - '*\YandexDisk2.exe'
+    - C:\Program Files (x86)\Yandex\*
+    - '*\Yandex\*'
+    - '*\YandexDisk2.exe'
 Artifacts:
   Disk: []
   EventLog: []

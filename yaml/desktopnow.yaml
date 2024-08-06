@@ -17,17 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - desktopnow.exe
+    - desktopnow.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.nchuser.com'
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.nchuser.com'
+      Ports: []
 Detections: []
 References:
-- https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US
+  - https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US
 Acknowledgement: []

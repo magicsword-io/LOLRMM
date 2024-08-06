@@ -17,27 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - mikogo.exe
-  - mikogo-starter.exe
-  - mikogo-service.exe
-  - mikogolauncher.exe
-  - C:\Users\*\AppData\Roaming\Mikogo\*
-  - '*Users\*\AppData\Roaming\Mikogo\*'
-  - '*\Mikogo-Service.exe'
-  - '*\Mikogo-Screen-Service.exe'
+    - mikogo.exe
+    - mikogo-starter.exe
+    - mikogo-service.exe
+    - mikogolauncher.exe
+    - C:\Users\*\AppData\Roaming\Mikogo\*
+    - '*Users\*\AppData\Roaming\Mikogo\*'
+    - '*\Mikogo-Service.exe'
+    - '*\Mikogo-Screen-Service.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - '*.real-time-collaboration.com'
-    - '*.mikogo4.com'
-    - '*.mikogo.com'
-    - mikogo.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - '*.real-time-collaboration.com'
+        - '*.mikogo4.com'
+        - '*.mikogo.com'
+        - mikogo.com
+      Ports: []
 Detections: []
 References:
-- https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services
+  - https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services
 Acknowledgement: []

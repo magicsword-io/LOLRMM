@@ -1,0 +1,20 @@
+title: Potential RemotePass RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - remotepass.com
+  condition: selection
+id: bf1cc13b-925a-4546-b827-12e94c167f10
+status: experimental
+description: Detects potential network activity of RemotePass RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RemotePass
+level: medium

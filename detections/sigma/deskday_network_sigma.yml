@@ -1,0 +1,21 @@
+title: Potential DeskDay RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - deskday.ai
+    - app.deskday.ai
+  condition: selection
+id: 1e7352e0-fc3e-4a59-83b9-c957fa53cc19
+status: experimental
+description: Detects potential network activity of DeskDay RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of DeskDay
+level: medium

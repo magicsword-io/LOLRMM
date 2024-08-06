@@ -1,0 +1,20 @@
+title: Potential Splashtop RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.splashtop.com'
+  condition: selection
+id: 1a007436-4cef-43e0-a05a-ddcd2b860d92
+status: experimental
+description: Detects potential network activity of Splashtop RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Splashtop
+level: medium

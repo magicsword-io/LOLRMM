@@ -1,0 +1,21 @@
+title: Potential Sorillus RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.sorillus.com'
+    - sorillus.com
+  condition: selection
+id: da1481ce-10c2-4282-9275-a6fccdf17fd0
+status: experimental
+description: Detects potential network activity of Sorillus RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Sorillus
+level: medium

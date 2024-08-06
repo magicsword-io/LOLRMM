@@ -1,0 +1,25 @@
+title: Potential Domotz RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - domotz.exe
+    - Domotz Pro Desktop App.exe
+    - domotz_bash.exe
+    - domotz*.exe
+    - Domotz Pro Desktop App Setup*.exe
+    - domotz-windows*.exe
+  condition: selection
+id: b706db62-efcb-42f4-ae9c-4183747821a3
+status: experimental
+description: Detects potential processes activity of Domotz RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Domotz
+level: medium

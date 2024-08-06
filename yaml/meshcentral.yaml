@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - meshcentral*.exe
-  - mesh*.exe
+    - meshcentral*.exe
+    - mesh*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - meshcentral.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - meshcentral.com
+      Ports: []
 Detections: []
 References:
-- https://ylianst.github.io/MeshCentral/meshcentral/
+  - https://ylianst.github.io/MeshCentral/meshcentral/
 Acknowledgement: []

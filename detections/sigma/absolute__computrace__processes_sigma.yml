@@ -1,0 +1,24 @@
+title: Potential Absolute (Computrace) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - rpcnet.exe
+    - ctes.exe
+    - ctespersitence.exe
+    - cteshostsvc.exe
+    - rpcld.exe
+  condition: selection
+id: e94edb5c-0b99-449a-be7a-d92c8a39f723
+status: experimental
+description: Detects potential processes activity of Absolute (Computrace) RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Absolute (Computrace)
+level: medium

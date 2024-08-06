@@ -1,0 +1,22 @@
+title: Potential Neturo RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - neturo*.exe
+    - ntrntservice.exe
+    - neturo.exe
+  condition: selection
+id: b3349de8-1401-45aa-b30e-0c9822e6f580
+status: experimental
+description: Detects potential processes activity of Neturo RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Neturo
+level: medium

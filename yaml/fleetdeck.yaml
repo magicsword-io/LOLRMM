@@ -17,16 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - fleetdeck_agent_svc.exe
+    - fleetdeck_agent_svc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - fleetdeck.io
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - fleetdeck.io
+      Ports: []
 Detections: []
 References: []
 Acknowledgement: []

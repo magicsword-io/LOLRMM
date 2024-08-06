@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\CloudBerryLab\CloudBerry Drive\*
-  - '*\CloudBerryLab\CloudBerry Drive\*'
+    - C:\Program Files\CloudBerryLab\CloudBerry Drive\*
+    - '*\CloudBerryLab\CloudBerry Drive\*'
 Artifacts:
   Disk: []
   EventLog: []

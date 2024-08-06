@@ -17,19 +17,19 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - accessserver*.exe
-  - accessserver.exe
+    - accessserver*.exe
+    - accessserver.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-  - Description: Known remote domains
-    Domain:
-    - user_managed
-    - ericom.com
-    Port: ''
+    - Description: Known remote domains
+      Domains:
+        - user_managed
+        - ericom.com
+      Ports: []
 Detections: []
 References:
-- https://www.ericom.com/connect-accessnow/
+  - https://www.ericom.com/connect-accessnow/
 Acknowledgement: []

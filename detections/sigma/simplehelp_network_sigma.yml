@@ -1,0 +1,21 @@
+title: Potential SimpleHelp RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - user_managed
+    - simple-help.com
+  condition: selection
+id: e45efa45-c836-42c7-b259-8acf6371d472
+status: experimental
+description: Detects potential network activity of SimpleHelp RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of SimpleHelp
+level: medium

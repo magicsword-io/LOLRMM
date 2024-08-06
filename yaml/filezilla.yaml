@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\Program Files\FileZilla FTP Client\*
-  - '*\FileZilla FTP Client\*'
-  - '*\FileZilla.exe'
+    - C:\Program Files\FileZilla FTP Client\*
+    - '*\FileZilla FTP Client\*'
+    - '*\FileZilla.exe'
 Artifacts:
   Disk: []
   EventLog: []

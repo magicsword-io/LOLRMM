@@ -17,7 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - quickassist.exe
+    - quickassist.exe
 Artifacts:
   Disk: []
   EventLog: []

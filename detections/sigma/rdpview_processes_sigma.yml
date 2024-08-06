@@ -1,0 +1,20 @@
+title: Potential RDPView RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - dwrcs.exe
+  condition: selection
+id: 5fdf254f-cbd3-4608-8566-220cb3cffae8
+status: experimental
+description: Detects potential processes activity of RDPView RMM tool
+author: LOLRMM Project
+date: 2024/08/05
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of RDPView
+level: medium
