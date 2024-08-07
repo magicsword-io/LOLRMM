@@ -23,6 +23,9 @@ PuTTY is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

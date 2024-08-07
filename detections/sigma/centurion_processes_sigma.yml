@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - ctiserv.exe
   condition: selection
-id: cb0aabc9-bd36-4fc0-94aa-f4946a583c4d
+id: 34de100b-becb-4364-9a9d-a325dae08231
 status: experimental
 description: Detects potential processes activity of Centurion RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

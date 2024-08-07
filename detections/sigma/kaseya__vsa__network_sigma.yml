@@ -10,11 +10,11 @@ detection:
     - '*.kaseya.net'
     - kaseya.com
   condition: selection
-id: dffea627-3a34-487c-b597-07241638f177
+id: 92bfd790-5430-4154-b3fd-25aad0220766
 status: experimental
 description: Detects potential network activity of Kaseya (VSA) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

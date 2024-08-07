@@ -8,11 +8,11 @@ detection:
     - rutview.exe
     - rutserv.exe
   condition: selection
-id: 6d3f8b2a-0895-463c-aaa7-ffc50088cf4a
+id: 25341a7d-f001-4a8b-89ae-dec90cbe3817
 status: experimental
 description: Detects potential processes activity of Remote Utilities RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

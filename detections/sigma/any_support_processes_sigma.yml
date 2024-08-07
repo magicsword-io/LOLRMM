@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - ManualLauncher.exe
   condition: selection
-id: d3801f7a-fe49-4374-8618-318f347e61a0
+id: 9a46a911-07de-4a3e-9bd9-4a47a0e015c4
 status: experimental
 description: Detects potential processes activity of Any Support RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

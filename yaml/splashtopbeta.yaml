@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - SRServer.exe
-    - SplashtopSOS.exe
-    - Splashtop_Streamer_Windows*.exe
-    - SRManager.exe
+  - SRServer.exe
+  - SplashtopSOS.exe
+  - Splashtop_Streamer_Windows*.exe
+  - SRManager.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - splashtop.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - splashtop.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__network_sigma.yml
+  Description: Detects potential network activity of Splashtop (Beta) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__processes_sigma.yml
+  Description: Detects potential processes activity of Splashtop (Beta) RMM tool
 References: []
 Acknowledgement: []

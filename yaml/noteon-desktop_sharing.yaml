@@ -17,14 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - nateon*.exe
-    - nateon.exe
-    - nateonmain.exe
+  - nateon*.exe
+  - nateon.exe
+  - nateonmain.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/noteon-desktop_sharing_processes_sigma.yml
+  Description: Detects potential processes activity of NoteOn-desktop sharing RMM
+    tool
 References: []
 Acknowledgement: []

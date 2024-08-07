@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\WinSCP.exe'
   condition: selection
-id: 109a85ac-382a-4e07-932b-08a9a3049f8d
+id: efbd211f-a10d-499c-b395-cc60cc49ba3e
 status: experimental
 description: Detects potential processes activity of WinSCP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

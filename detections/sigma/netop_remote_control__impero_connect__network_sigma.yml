@@ -8,12 +8,12 @@ detection:
     - '*.connect.backdrop.cloud'
     - '*.netop.com'
   condition: selection
-id: 01b1b541-7fe3-46d0-b1a5-90d3f8c0a610
+id: 5501bcd1-7a4f-4dc4-b85f-d7071e5f7f00
 status: experimental
 description: Detects potential network activity of Netop Remote Control (Impero Connect)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

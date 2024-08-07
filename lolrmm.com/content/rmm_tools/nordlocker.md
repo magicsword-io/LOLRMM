@@ -23,6 +23,9 @@ NordLocker is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

@@ -8,11 +8,11 @@ detection:
     - GetScreen.exe
     - getscreen.exe
   condition: selection
-id: 818c0c4e-f1f5-49bc-ac4d-dab7d0e0c549
+id: 0c38030b-b6a5-4df0-8c3e-bbe6c56c1bb7
 status: experimental
 description: Detects potential processes activity of GetScreen RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

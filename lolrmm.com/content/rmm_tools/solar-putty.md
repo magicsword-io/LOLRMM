@@ -23,6 +23,9 @@ Solar-PuTTY is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Solar-PuTTY is a remote monitoring and management (RMM) tool. More information w
 
 
 
+### Detections
+- Detects potential processes activity of Solar-PuTTY RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/solar-putty_processes_sigma.yml)
 
 
 

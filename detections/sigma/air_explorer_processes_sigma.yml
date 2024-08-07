@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\airexplorer.exe'
   condition: selection
-id: 11506d38-e49f-4f4f-8ba4-4254b051fe06
+id: 24bbfdf2-d188-4297-9d25-d1cc73dd2a38
 status: experimental
 description: Detects potential processes activity of Air Explorer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

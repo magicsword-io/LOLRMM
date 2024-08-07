@@ -17,21 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - support-logmeinrescue*.exe
-    - support-logmeinrescue.exe
-    - lmi_rescue.exe
+  - support-logmeinrescue*.exe
+  - support-logmeinrescue.exe
+  - lmi_rescue.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.logmeinrescue.com'
-        - '*.logmeinrescue.eu'
-        - logmeinrescue.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.logmeinrescue.com'
+    - '*.logmeinrescue.eu'
+    - logmeinrescue.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_network_sigma.yml
+  Description: Detects potential network activity of LogMeIn rescue RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_processes_sigma.yml
+  Description: Detects potential processes activity of LogMeIn rescue RMM tool
 References:
-  - https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue
+- https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue
 Acknowledgement: []

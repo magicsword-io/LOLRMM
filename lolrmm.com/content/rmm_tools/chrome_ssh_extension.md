@@ -23,6 +23,9 @@ Chrome SSH Extension is a remote monitoring and management (RMM) tool. More info
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

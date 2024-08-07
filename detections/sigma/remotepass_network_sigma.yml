@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - remotepass.com
   condition: selection
-id: bf1cc13b-925a-4546-b827-12e94c167f10
+id: 82fd5bc7-0dad-4558-950d-1833b2325333
 status: experimental
 description: Detects potential network activity of RemotePass RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

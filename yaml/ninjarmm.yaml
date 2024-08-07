@@ -17,23 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ninjarmmagent.exe
-    - NinjaRMMAgent.exe
-    - NinjaRMMAgenPatcher.exe
-    - ninjarmm-cli.exe
+  - ninjarmmagent.exe
+  - NinjaRMMAgent.exe
+  - NinjaRMMAgenPatcher.exe
+  - ninjarmm-cli.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.ninjarmm.com'
-        - '*.ninjaone.com'
-        - resources.ninjarmm.com
-        - ninjaone.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.ninjarmm.com'
+    - '*.ninjaone.com'
+    - resources.ninjarmm.com
+    - ninjaone.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_network_sigma.yml
+  Description: Detects potential network activity of NinjaRMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_processes_sigma.yml
+  Description: Detects potential processes activity of NinjaRMM RMM tool
 References:
-  - https://www.ninjaone.com/faq/
+- https://www.ninjaone.com/faq/
 Acknowledgement: []

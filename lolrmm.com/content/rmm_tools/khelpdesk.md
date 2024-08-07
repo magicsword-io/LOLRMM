@@ -24,6 +24,9 @@ KHelpDesk is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ KHelpDesk is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.khelpdesk.com.br`
 
 
-
-
+### Detections
+- Detects potential network activity of KHelpDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/khelpdesk_network_sigma.yml)
+- Detects potential processes activity of KHelpDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/khelpdesk_processes_sigma.yml)
 
 ### References
 - [https://www.khelpdesk.com.br/en-us](https://www.khelpdesk.com.br/en-us)

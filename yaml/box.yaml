@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\Box\Box\*
-    - '*\Box\Box\*'
-    - '*\Box.exe'
+  - C:\Program Files\Box\Box\*
+  - '*\Box\Box\*'
+  - '*\Box.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/box_processes_sigma.yml
+  Description: Detects potential processes activity of Box RMM tool
 References: []
 Acknowledgement: []

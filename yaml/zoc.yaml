@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\ZOC8\*
-    - '*\ZOC?\*'
-    - '*\zoc.exe'
+  - C:\Program Files\ZOC8\*
+  - '*\ZOC?\*'
+  - '*\zoc.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoc_processes_sigma.yml
+  Description: Detects potential processes activity of ZOC RMM tool
 References: []
 Acknowledgement: []

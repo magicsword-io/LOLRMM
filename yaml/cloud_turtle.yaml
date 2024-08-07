@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\Genie9\*
-    - '*\Genie9\*'
+  - C:\Program Files (x86)\Genie9\*
+  - '*\Genie9\*'
 Artifacts:
   Disk: []
   EventLog: []

@@ -17,24 +17,28 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - winvnc*.exe
-    - vncserver.exe
-    - winwvc.exe
-    - winvncsc.exe
-    - vncserverui.exe
-    - vncviewer.exe
-    - winvnc.exe
+  - winvnc*.exe
+  - vncserver.exe
+  - winwvc.exe
+  - winvncsc.exe
+  - vncserverui.exe
+  - vncviewer.exe
+  - winvnc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - realvnc.com/en/connect/download/vnc
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - realvnc.com/en/connect/download/vnc
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_network_sigma.yml
+  Description: Detects potential network activity of VNC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_processes_sigma.yml
+  Description: Detects potential processes activity of VNC RMM tool
 References:
-  - https://realvnc.com/en/connect/download/vnc
+- https://realvnc.com/en/connect/download/vnc
 Acknowledgement: []

@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - guacd.exe
+  - guacd.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - guacamole.apache.org
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - guacamole.apache.org
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_network_sigma.yml
+  Description: Detects potential network activity of Guacamole RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_processes_sigma.yml
+  Description: Detects potential processes activity of Guacamole RMM tool
 References:
-  - guacamole.apache.org
+- guacamole.apache.org
 Acknowledgement: []

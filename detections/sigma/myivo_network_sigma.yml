@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - myivo-server.software.informer.com
   condition: selection
-id: 83b240da-c6e7-409b-baf4-a2eca396de3e
+id: f1af04ef-8b80-4de2-bc4f-cb0fbe7c5b2a
 status: experimental
 description: Detects potential network activity of MyIVO RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

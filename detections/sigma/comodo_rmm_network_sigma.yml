@@ -9,11 +9,11 @@ detection:
     - '*mdmsupport.comodo.com'
     - one.comodo.com
   condition: selection
-id: 95e408b6-051b-4912-9076-91d3b9596774
+id: 6f6593a9-b2fa-4a29-9fdf-67972e2af588
 status: experimental
 description: Detects potential network activity of Comodo RMM RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

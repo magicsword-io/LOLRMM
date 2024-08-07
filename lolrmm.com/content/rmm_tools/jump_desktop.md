@@ -24,6 +24,9 @@ Jump Desktop is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,18 +49,18 @@ Jump Desktop is a remote monitoring and management (RMM) tool. More information 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.jumpdesktop.com`
     - `jumpdesktop.com`
     - `jumpto.me`
     - `*.jumpto.me`
 
 
-
-
+### Detections
+- Detects potential network activity of Jump Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_network_sigma.yml)
+- Detects potential processes activity of Jump Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_processes_sigma.yml)
 
 ### References
 - [https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect](https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect)

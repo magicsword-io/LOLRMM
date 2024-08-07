@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - centuriontech.com
   condition: selection
-id: 85c2c61a-f845-474e-9513-ecd49517fef9
+id: fc93a409-f9df-4dab-abb0-ff489eb32a06
 status: experimental
 description: Detects potential network activity of Centurion RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

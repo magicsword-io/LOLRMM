@@ -23,6 +23,9 @@ Free Tools Launcher is a remote monitoring and management (RMM) tool. More infor
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

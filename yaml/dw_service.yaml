@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - dwagsvc.exe
-    - dwagent.exe
-    - dwagsvc.exe
+  - dwagsvc.exe
+  - dwagent.exe
+  - dwagsvc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.dwservice.net'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.dwservice.net'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_network_sigma.yml
+  Description: Detects potential network activity of DW Service RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_processes_sigma.yml
+  Description: Detects potential processes activity of DW Service RMM tool
 References:
-  - https://news.dwservice.net/dwservice-security-infrastructure/
+- https://news.dwservice.net/dwservice-security-infrastructure/
 Acknowledgement: []

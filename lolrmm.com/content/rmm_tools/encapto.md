@@ -24,6 +24,9 @@ Encapto is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -40,15 +43,13 @@ Encapto is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `encapto.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Encapto RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/encapto_network_sigma.yml)
 
 ### References
 - [https://www.encapto.com - used to manage Cisco services](https://www.encapto.com - used to manage Cisco services)

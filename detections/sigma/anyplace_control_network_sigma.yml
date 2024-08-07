@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - anyplace-control.com
   condition: selection
-id: 0f582c3c-bb0e-4b5b-955a-fdb0126872df
+id: 655792d3-42e6-41e1-a39a-0c6966b8750b
 status: experimental
 description: Detects potential network activity of Anyplace Control RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

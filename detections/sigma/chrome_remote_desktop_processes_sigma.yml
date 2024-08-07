@@ -9,11 +9,11 @@ detection:
     - remoting_host.exe
     - '*\remoting_host.exe'
   condition: selection
-id: 7c19412f-e059-46f9-a92c-5fc8f8454287
+id: 9ba8e1a9-1a5f-4297-bc82-712f5427355a
 status: experimental
 description: Detects potential processes activity of Chrome Remote Desktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

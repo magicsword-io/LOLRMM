@@ -9,11 +9,11 @@ detection:
     - ptdskclient.exe
     - ptdskhost.exe
   condition: selection
-id: fe9d74df-35a6-4a20-8f07-171f046552f6
+id: 43f2f2b7-a006-4ed3-814a-e16eceb94cf6
 status: experimental
 description: Detects potential processes activity of TeleDesktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

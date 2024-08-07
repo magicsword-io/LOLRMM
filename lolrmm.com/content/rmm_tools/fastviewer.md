@@ -24,6 +24,9 @@ FastViewer is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ FastViewer is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.fastviewer.com`
     - `fastviewer.com`
 
 
-
-
+### Detections
+- Detects potential network activity of FastViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_network_sigma.yml)
+- Detects potential processes activity of FastViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_processes_sigma.yml)
 
 ### References
 - [https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf](https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf)

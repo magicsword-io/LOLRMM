@@ -9,11 +9,11 @@ detection:
     - QQProtect.exe
     - qqpcmgr.exe
   condition: selection
-id: 8b7e56d6-f575-4ff6-96dd-6ef58e5c7791
+id: d9d973a5-c10a-425e-8bbd-585dd3c24015
 status: experimental
 description: Detects potential processes activity of QQ IM-remote assistance RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

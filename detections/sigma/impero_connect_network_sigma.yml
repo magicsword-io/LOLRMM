@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - imperosoftware.com
   condition: selection
-id: d4fbc9e7-9ef9-45d0-8cb6-f261f0673cea
+id: fc474a0d-c3ae-43b7-9547-65ae0417e4fb
 status: experimental
 description: Detects potential network activity of Impero Connect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\CarotDAV.exe'
   condition: selection
-id: 12350913-2cdd-4b98-880a-ca2940d21175
+id: 7dcb3a6d-9092-45ae-88be-f56ec4b5d932
 status: experimental
 description: Detects potential processes activity of CarotDAV RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

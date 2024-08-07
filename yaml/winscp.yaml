@@ -17,15 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
-    - '*\WinSCP*Portable\*'
-    - '*\WinSCP.exe'
-    - '*\WinSCP\*'
+  - C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
+  - '*\WinSCP*Portable\*'
+  - '*\WinSCP.exe'
+  - '*\WinSCP\*'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/winscp_processes_sigma.yml
+  Description: Detects potential processes activity of WinSCP RMM tool
 References: []
 Acknowledgement: []

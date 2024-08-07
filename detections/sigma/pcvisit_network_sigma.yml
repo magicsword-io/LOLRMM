@@ -8,11 +8,11 @@ detection:
     - '*.pcvisit.de'
     - pcvisit.de
   condition: selection
-id: 2096b807-b8e4-4d13-bf90-5a6f9522a239
+id: 75e41cc0-eaa9-4795-b240-8b679fb9862e
 status: experimental
 description: Detects potential network activity of Pcvisit RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

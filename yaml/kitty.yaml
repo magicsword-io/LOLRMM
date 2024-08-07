@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\*\kitty.exe
-    - '*\kitty.exe'
+  - C:\*\kitty.exe
+  - '*\kitty.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kitty_processes_sigma.yml
+  Description: Detects potential processes activity of KiTTY RMM tool
 References: []
 Acknowledgement: []

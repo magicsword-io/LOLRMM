@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - webrdp.exe
   condition: selection
-id: c3410ec9-8599-4c23-b7de-39fa8b1fc225
+id: a873659f-031a-47ee-80ea-972bbcd23e36
 status: experimental
 description: Detects potential processes activity of WebRDP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -9,11 +9,11 @@ detection:
     - netsupportmanager.com
     - '*.netsupportmanager.com'
   condition: selection
-id: 158dd963-b994-44d0-952e-ee35c977eea6
+id: 12c50888-08e9-4d43-b6d5-6d65ea4fcb49
 status: experimental
 description: Detects potential network activity of NetSupport Manager RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

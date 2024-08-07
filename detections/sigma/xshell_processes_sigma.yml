@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\xShell.exe'
   condition: selection
-id: b4abcd70-dc12-437c-bac0-82ce21684bb8
+id: 95fe2bf1-0c97-4c3c-b42b-c88eb93c1ead
 status: experimental
 description: Detects potential processes activity of Xshell RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\NetSarang\xShell\*
-    - '*\NetSarang\xShell\*'
-    - '*\xShell.exe'
+  - C:\Program Files (x86)\NetSarang\xShell\*
+  - '*\NetSarang\xShell\*'
+  - '*\xShell.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xshell_processes_sigma.yml
+  Description: Detects potential processes activity of Xshell RMM tool
 References: []
 Acknowledgement: []

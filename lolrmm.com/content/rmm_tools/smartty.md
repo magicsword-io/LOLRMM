@@ -23,6 +23,9 @@ SmarTTY is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ SmarTTY is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+### Detections
+- Detects potential processes activity of SmarTTY RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/smartty_processes_sigma.yml)
 
 
 

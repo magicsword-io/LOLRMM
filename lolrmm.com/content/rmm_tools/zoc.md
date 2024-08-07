@@ -23,6 +23,9 @@ ZOC is a remote monitoring and management (RMM) tool. More information will be a
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ ZOC is a remote monitoring and management (RMM) tool. More information will be a
 
 
 
+### Detections
+- Detects potential processes activity of ZOC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoc_processes_sigma.yml)
 
 
 

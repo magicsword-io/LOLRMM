@@ -24,6 +24,9 @@ Sorillus is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,16 +46,16 @@ Sorillus is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.sorillus.com`
     - `sorillus.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Sorillus RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_network_sigma.yml)
+- Detects potential processes activity of Sorillus RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_processes_sigma.yml)
 
 ### References
 - [https://sorillus.com/](https://sorillus.com/)

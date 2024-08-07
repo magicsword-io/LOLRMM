@@ -24,6 +24,9 @@ GetScreen is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,17 +46,17 @@ GetScreen is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `getscreen.me`
     - `GetScreen.me`
     - `*.getscreen.me`
 
 
-
-
+### Detections
+- Detects potential network activity of GetScreen RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_network_sigma.yml)
+- Detects potential processes activity of GetScreen RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_processes_sigma.yml)
 
 ### References
 - [https://docs.getscreen.me/self-hosted/system-requirements/](https://docs.getscreen.me/self-hosted/system-requirements/)

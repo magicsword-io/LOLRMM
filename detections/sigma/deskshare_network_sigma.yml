@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - user_managed
   condition: selection
-id: eeb4ab03-601c-4fbc-9709-7eeda3949734
+id: cc4d6f65-b7c0-419a-97d2-107595b325cf
 status: experimental
 description: Detects potential network activity of DeskShare RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

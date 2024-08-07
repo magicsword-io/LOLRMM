@@ -7,12 +7,12 @@ detection:
     DestinationHostname|endswith:
     - '*.247ithelp.com'
   condition: selection
-id: 57990b21-dfbc-4656-a748-8b4aa4571715
+id: 8248627a-264d-423c-b684-f96a5792a332
 status: experimental
 description: Detects potential network activity of 247ithelp.com (ConnectWise) RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

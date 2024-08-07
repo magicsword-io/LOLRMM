@@ -17,23 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - paexec.exe
-    - PAExec-*.exe
-    - 'csexec.exe '
-    - remcom.exe
-    - remcomsvc.exe
-    - xcmd.exe
-    - xcmdsvc.exe
+  - paexec.exe
+  - PAExec-*.exe
+  - 'csexec.exe '
+  - remcom.exe
+  - remcomsvc.exe
+  - xcmd.exe
+  - xcmdsvc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__network_sigma.yml
+  Description: Detects potential network activity of PSEXEC (Clone) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__processes_sigma.yml
+  Description: Detects potential processes activity of PSEXEC (Clone) RMM tool
 References:
-  - https://www.poweradmin.com/paexec/
+- https://www.poweradmin.com/paexec/
 Acknowledgement: []

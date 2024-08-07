@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\IliAS.exe'
   condition: selection
-id: 837586eb-5625-4b4f-b144-efbd74d38b0d
+id: 8ff7285f-da3e-4a2f-b941-e23f63c29013
 status: experimental
 description: Detects potential processes activity of SysAid RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

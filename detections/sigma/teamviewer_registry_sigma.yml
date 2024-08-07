@@ -22,11 +22,11 @@ detection:
     - HKU\SID\SOFTWARE\TeamViewer\ClientWindow_Mode
     - HKU\SID\SOFTWARE\TeamViewer\ClientWindowPositions
   condition: selection
-id: a8763337-5097-4018-a8f0-2d17a1d39571
+id: 8bc53048-ffad-4f92-9b66-a75d19e9dde9
 status: experimental
 description: Detects potential registry activity of TeamViewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

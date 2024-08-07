@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\Dropbox.exe'
   condition: selection
-id: c9a987df-747a-4db6-90fa-9f41a2f8450d
+id: 6300b5e7-3e3c-4c2b-8767-c92fb412f065
 status: experimental
 description: Detects potential processes activity of Dropbox RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,16 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - dcagentservice.exe
+  - dcagentservice.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - desktopcentral.manageengine.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - desktopcentral.manageengine.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml
+  Description: Detects potential network activity of Desktop Central RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml
+  Description: Detects potential processes activity of Desktop Central RMM tool
 References: []
 Acknowledgement: []

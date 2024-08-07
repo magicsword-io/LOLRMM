@@ -9,11 +9,11 @@ detection:
     - '*.auvik.com'
     - auvik.com
   condition: selection
-id: 3985be0f-3646-4210-9ace-9c49cc5d4918
+id: f94ee7e0-7d77-4710-814a-1660d2bad2da
 status: experimental
 description: Detects potential network activity of Auvik RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

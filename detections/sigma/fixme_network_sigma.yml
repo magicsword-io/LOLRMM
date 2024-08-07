@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - fixme.it
   condition: selection
-id: 36321dca-a454-4453-9626-5df0a3272281
+id: 4ae6e481-664f-43dd-9e7f-8dc88b724da3
 status: experimental
 description: Detects potential network activity of FixMe RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

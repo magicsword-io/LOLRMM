@@ -24,6 +24,9 @@ Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More info
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More info
 
 
 
+### Detections
+- Detects potential processes activity of Netviewer (GoToMeet) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml)
 
 ### References
 - [Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html](Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html)

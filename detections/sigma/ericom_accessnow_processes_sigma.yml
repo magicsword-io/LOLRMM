@@ -8,11 +8,11 @@ detection:
     - accessserver*.exe
     - accessserver.exe
   condition: selection
-id: 1c2e736f-2300-4d61-b987-8acaf4c7afe8
+id: b1f1b872-2e40-4538-acdb-1999ce3e8b1f
 status: experimental
 description: Detects potential processes activity of Ericom AccessNow RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

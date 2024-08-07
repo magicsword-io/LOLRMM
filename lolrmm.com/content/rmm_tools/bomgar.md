@@ -23,6 +23,9 @@ Bomgar is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -41,15 +44,15 @@ Bomgar is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `beyondtrust.com/brand/bomgar`
 
 
-
-
+### Detections
+- Detects potential network activity of Bomgar RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bomgar_network_sigma.yml)
+- Detects potential processes activity of Bomgar RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bomgar_processes_sigma.yml)
 
 
 

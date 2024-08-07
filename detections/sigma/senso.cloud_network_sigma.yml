@@ -8,11 +8,11 @@ detection:
     - '*.senso.cloud'
     - senso.cloud
   condition: selection
-id: 8ca2efd7-9525-45c5-8109-41983d5a5326
+id: 442fed01-60ef-4b36-996a-9dcaca32fe48
 status: experimental
 description: Detects potential network activity of Senso.cloud RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

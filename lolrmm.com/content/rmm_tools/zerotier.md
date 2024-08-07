@@ -24,6 +24,9 @@ ZeroTier is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ ZeroTier is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `zerotier.com`
     - `*.zerotier.com`
 
 
-
-
+### Detections
+- Detects potential network activity of ZeroTier RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zerotier_network_sigma.yml)
+- Detects potential processes activity of ZeroTier RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zerotier_processes_sigma.yml)
 
 ### References
 - [https://my.zerotier.com/](https://my.zerotier.com/)

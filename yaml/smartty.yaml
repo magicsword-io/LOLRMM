@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - c:\Program Files (x86)\Sysprogs\SmarTTY\*
-    - '*\Sysprogs\SmarTTY\*'
-    - '*\SmarTTY.exe'
+  - c:\Program Files (x86)\Sysprogs\SmarTTY\*
+  - '*\Sysprogs\SmarTTY\*'
+  - '*\SmarTTY.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/smartty_processes_sigma.yml
+  Description: Detects potential processes activity of SmarTTY RMM tool
 References: []
 Acknowledgement: []

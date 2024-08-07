@@ -7,12 +7,12 @@ detection:
     DestinationHostname|endswith:
     - '*.hostedrmm.com'
   condition: selection
-id: 48cd2e53-f8b7-4150-b62c-768f7e64c5bc
+id: 24aea3f1-7d41-4736-b083-bafb6ed85644
 status: experimental
 description: Detects potential network activity of Connectwise Automate (LabTech)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

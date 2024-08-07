@@ -23,6 +23,9 @@ MioNet (Also known as WD Anywhere Access) is a remote monitoring and management 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,6 +46,9 @@ MioNet (Also known as WD Anywhere Access) is a remote monitoring and management 
 
 
 
+### Detections
+- Detects potential processes activity of MioNet (Also known as WD Anywhere Access) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mionet__also_known_as_wd_anywhere_access__processes_sigma.yml)
 
 
 

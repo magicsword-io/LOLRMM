@@ -24,6 +24,9 @@ BeInSync is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ BeInSync is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.beinsync.net`
     - `*.beinsync.com`
 
 
-
-
+### Detections
+- Detects potential network activity of BeInSync RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_network_sigma.yml)
+- Detects potential processes activity of BeInSync RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_processes_sigma.yml)
 
 ### References
 - [https://en.wikipedia.org/wiki/Phoenix_Technologies](https://en.wikipedia.org/wiki/Phoenix_Technologies)

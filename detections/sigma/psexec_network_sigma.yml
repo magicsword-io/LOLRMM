@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - user_managed
   condition: selection
-id: e4cff708-d52f-4383-8c5e-9353e960c88b
+id: 8b96d374-2a49-47cd-b7b6-6065eab92469
 status: experimental
 description: Detects potential network activity of PSEXEC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

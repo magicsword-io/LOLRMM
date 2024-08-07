@@ -9,11 +9,11 @@ detection:
     - '*.logmeinrescue.eu'
     - logmeinrescue.com
   condition: selection
-id: 7faeb6e9-bf43-48e9-a137-f03fe531ea12
+id: eadfb2f5-ad74-4729-ace0-3fc1131880b9
 status: experimental
 description: Detects potential network activity of LogMeIn rescue RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

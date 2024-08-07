@@ -8,12 +8,12 @@ detection:
     - dntus*.exe
     - dwrcs.exe
   condition: selection
-id: ff1b272d-294c-422b-add5-b6e1f23659a9
+id: 37a2b016-e2ab-49f7-933b-1278a701b18f
 status: experimental
 description: Detects potential processes activity of Dameware-mini remote control
   Protocol RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

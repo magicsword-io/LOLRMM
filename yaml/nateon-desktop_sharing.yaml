@@ -17,19 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - nateon*.exe
-    - nateon.exe
-    - nateonmain.exe
+  - nateon*.exe
+  - nateon.exe
+  - nateonmain.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.nate.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.nate.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_network_sigma.yml
+  Description: Detects potential network activity of NateOn-desktop sharing RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_processes_sigma.yml
+  Description: Detects potential processes activity of NateOn-desktop sharing RMM
+    tool
 References:
-  - http://rsupport.nate.com/rview/r8/main/index.aspx
+- http://rsupport.nate.com/rview/r8/main/index.aspx
 Acknowledgement: []

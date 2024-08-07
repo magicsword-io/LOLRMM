@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\Cyberduck\*
-    - '*\Cyberduck\*'
-    - '*\Cyberduck.exe'
+  - C:\Program Files\Cyberduck\*
+  - '*\Cyberduck\*'
+  - '*\Cyberduck.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cyberduck_processes_sigma.yml
+  Description: Detects potential processes activity of Cyberduck RMM tool
 References: []
 Acknowledgement: []

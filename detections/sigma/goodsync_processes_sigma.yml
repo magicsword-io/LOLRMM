@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - GoodSync-vsub-Setup.exe
   condition: selection
-id: cd376eb4-90a1-46c0-8af5-dfc65f5478bc
+id: 1de89b25-4e7d-4020-bf52-f51e1a22e38f
 status: experimental
 description: Detects potential processes activity of GoodSync RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

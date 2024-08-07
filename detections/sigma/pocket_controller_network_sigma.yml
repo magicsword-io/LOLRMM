@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - soti.net/products/soti-pocket-controller
   condition: selection
-id: 7036f6e6-e4c6-4db1-8a73-81b8e5ce68e3
+id: bb79c471-cfa9-47cc-9325-b65101bbb1f5
 status: experimental
 description: Detects potential network activity of Pocket Controller RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

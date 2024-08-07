@@ -13,11 +13,11 @@ detection:
     - srserver.exe
     - srservice.exe
   condition: selection
-id: 0796bee9-1457-4def-b2f3-d5fe05207563
+id: eeafd28d-ed54-4904-b5e0-81c88109d0ac
 status: experimental
 description: Detects potential processes activity of Splashtop Remote RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -23,6 +23,9 @@ LabTeach (Connectwise Automate) is a remote monitoring and management (RMM) tool
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,6 +45,9 @@ LabTeach (Connectwise Automate) is a remote monitoring and management (RMM) tool
 
 
 
+### Detections
+- Detects potential processes activity of LabTeach (Connectwise Automate) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labteach__connectwise_automate__processes_sigma.yml)
 
 
 

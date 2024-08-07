@@ -8,11 +8,11 @@ detection:
     - user_managed
     - crosstecsoftware.com/remotecontrol
   condition: selection
-id: a9dc2bac-a820-4ccf-943c-e2085914c194
+id: 8aca80db-6f0c-4f83-935a-d2da94e489dc
 status: experimental
 description: Detects potential network activity of CrossTec Remote Control RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

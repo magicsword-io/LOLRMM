@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - p9agent*.exe
   condition: selection
-id: 6eb8de75-36ac-4243-b7d0-c10883359eaa
+id: 9913f423-61c0-41ca-a7e6-4853d5228b45
 status: experimental
 description: Detects potential processes activity of Panorama9 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - KHelpDesk.exe
   condition: selection
-id: 9204612d-c27f-40b2-aa71-a0977e5e60b6
+id: f202fd9a-3f36-48b5-8902-65e393a61805
 status: experimental
 description: Detects potential processes activity of KHelpDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

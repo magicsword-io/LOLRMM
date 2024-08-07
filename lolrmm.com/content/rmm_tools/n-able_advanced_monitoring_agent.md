@@ -24,6 +24,9 @@ N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) too
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -48,10 +51,7 @@ N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) too
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.beanywhere.com `
     - `systemmonitor.co.uk`
     - `*system-monitor.com`
@@ -73,8 +73,11 @@ N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) too
     - `*.n-able.com`
 
 
-
-
+### Detections
+- Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml)
+- Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml)
 
 ### References
 - [https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm](https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm)

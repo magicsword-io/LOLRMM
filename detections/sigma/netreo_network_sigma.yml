@@ -10,11 +10,11 @@ detection:
     - '*.api.netreo.com'
     - netreo.com
   condition: selection
-id: 00f55b50-efb6-4de8-a936-d92634a081ff
+id: bce122a6-0821-4d9a-953a-2b1e9d5b218b
 status: experimental
 description: Detects potential network activity of Netreo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

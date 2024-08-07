@@ -17,12 +17,14 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - remcos*.exe
+  - remcos*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remcos_processes_sigma.yml
+  Description: Detects potential processes activity of Remcos RMM tool
 References: []
 Acknowledgement: []

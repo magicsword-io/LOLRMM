@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - aeroadmin.exe
-    - AeroAdmin.exe
+  - aeroadmin.exe
+  - AeroAdmin.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - auth*.aeroadmin.com
-        - aeroadmin.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - auth*.aeroadmin.com
+    - aeroadmin.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aeroadmin_network_sigma.yml
+  Description: Detects potential network activity of AeroAdmin RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aeroadmin_processes_sigma.yml
+  Description: Detects potential processes activity of AeroAdmin RMM tool
 References:
-  - https://support.aeroadmin.com/kb/faq.php?id=58
+- https://support.aeroadmin.com/kb/faq.php?id=58
 Acknowledgement: []

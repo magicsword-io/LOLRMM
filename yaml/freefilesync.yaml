@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\FreeFileSync\*
-    - '*\FreeFileSync\*'
-    - '*\FreeFileSync.exe'
+  - C:\Program Files\FreeFileSync\*
+  - '*\FreeFileSync\*'
+  - '*\FreeFileSync.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/freefilesync_processes_sigma.yml
+  Description: Detects potential processes activity of FreeFileSync RMM tool
 References: []
 Acknowledgement: []

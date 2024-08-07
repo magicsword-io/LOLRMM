@@ -8,11 +8,11 @@ detection:
     - tacticalrmm.exe
     - tacticalrmm.exe
   condition: selection
-id: cf319572-0845-41a2-9cbb-e5c54e5d1c02
+id: 58f7ad72-6d1a-46b6-b998-4a984395f7d5
 status: experimental
 description: Detects potential processes activity of Tactical RMM RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

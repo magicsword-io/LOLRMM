@@ -8,11 +8,11 @@ detection:
     - '* .ultraviewer.net'
     - ultraviewer.net
   condition: selection
-id: 485257d5-92ab-4899-9c0e-9c06cdfc9c01
+id: c0e39e37-f563-46a1-90a7-2a1736c1165c
 status: experimental
 description: Detects potential network activity of UltraViewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

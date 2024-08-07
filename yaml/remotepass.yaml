@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - remotepass-access.exe
-    - rpaccess.exe
-    - rpwhostscr.exe
+  - remotepass-access.exe
+  - rpaccess.exe
+  - rpwhostscr.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - remotepass.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - remotepass.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_network_sigma.yml
+  Description: Detects potential network activity of RemotePass RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_processes_sigma.yml
+  Description: Detects potential processes activity of RemotePass RMM tool
 References:
-  - https://www.remotepass.com/rpaccess.html - DOA as of 2024
+- https://www.remotepass.com/rpaccess.html - DOA as of 2024
 Acknowledgement: []

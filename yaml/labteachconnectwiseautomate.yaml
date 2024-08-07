@@ -17,12 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ltsvc.exe
+  - ltsvc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labteach__connectwise_automate__processes_sigma.yml
+  Description: Detects potential processes activity of LabTeach (Connectwise Automate)
+    RMM tool
 References: []
 Acknowledgement: []

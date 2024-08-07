@@ -9,11 +9,11 @@ detection:
     - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
     - '*\Insync.exe'
   condition: selection
-id: 42e1d0d4-4bb1-438c-9627-1a2a5eb96feb
+id: 1b5f0d04-d37b-4e61-8d20-7dac0f2c3c7c
 status: experimental
 description: Detects potential processes activity of Insync RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

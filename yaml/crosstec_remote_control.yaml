@@ -17,19 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - PCIVIDEO.EXE
-    - supporttool.exe
+  - PCIVIDEO.EXE
+  - supporttool.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - crosstecsoftware.com/remotecontrol
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - crosstecsoftware.com/remotecontrol
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_network_sigma.yml
+  Description: Detects potential network activity of CrossTec Remote Control RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_processes_sigma.yml
+  Description: Detects potential processes activity of CrossTec Remote Control RMM
+    tool
 References:
-  - www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
+- www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
 Acknowledgement: []

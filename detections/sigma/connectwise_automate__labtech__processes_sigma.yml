@@ -9,12 +9,12 @@ detection:
     - ltsvcmon.exe
     - lttray.exe
   condition: selection
-id: 56b0c72a-d206-4e36-9fb9-97e97c0737bb
+id: 3fc5c412-a53a-47ae-b2cc-e140e32a22ce
 status: experimental
 description: Detects potential processes activity of Connectwise Automate (LabTech)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

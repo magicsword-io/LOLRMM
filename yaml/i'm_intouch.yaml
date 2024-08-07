@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - iit.exe
-    - intouch.exe
-    - I'm InTouch Go Installer.exe
+  - iit.exe
+  - intouch.exe
+  - I'm InTouch Go Installer.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.01com.com'
-        - 01com.com/imintouch-remote-pc-desktop
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.01com.com'
+    - 01com.com/imintouch-remote-pc-desktop
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_network_sigma.yml
+  Description: Detects potential network activity of I'm InTouch RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_processes_sigma.yml
+  Description: Detects potential processes activity of I'm InTouch RMM tool
 References:
-  - https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
+- https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
 Acknowledgement: []

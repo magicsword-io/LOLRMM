@@ -18,11 +18,11 @@ detection:
     - screenconnect.windowsclient.exe
     - screenconnect.clientservice.exe
   condition: selection
-id: db8b0664-603b-497e-a86e-02b545ace4ca
+id: bc9c7d89-4f55-4a5b-beb2-e4f6ad488fec
 status: experimental
 description: Detects potential processes activity of ScreenConnect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

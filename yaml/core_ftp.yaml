@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\*\coreftplite.exe
-    - '*\coreftplite.exe'
+  - C:\*\coreftplite.exe
+  - '*\coreftplite.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/core_ftp_processes_sigma.yml
+  Description: Detects potential processes activity of Core FTP RMM tool
 References: []
 Acknowledgement: []

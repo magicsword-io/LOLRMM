@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - au.pcmag.com/utilities/21470/webex-pcnow
   condition: selection
-id: 9cde03fd-742d-46f7-a066-c7bb6c19ceba
+id: f3ce42d7-b932-4009-9d84-6ff8c6385b19
 status: experimental
 description: Detects potential network activity of Pcnow RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

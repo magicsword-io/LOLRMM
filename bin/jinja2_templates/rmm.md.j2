@@ -42,32 +42,14 @@ displayTitle = "{{ rmm.Name }}"
 {% if rmm.Details.PEMetadata %}
 #### PE Metadata
 {% if rmm.Details.PEMetadata is mapping %}
-{% if rmm.Details.PEMetadata.Filename %}
-- **Filename**: {{ rmm.Details.PEMetadata.Filename }}
-{% endif %}
-{% if rmm.Details.PEMetadata.OriginalFileName %}
-- **Original File Name**: {{ rmm.Details.PEMetadata.OriginalFileName }}
-{% endif %}
-{% if rmm.Details.PEMetadata.Description %}
-- **Description**: {{ rmm.Details.PEMetadata.Description }}
-{% endif %}
-{% if rmm.Details.PEMetadata.Product %}
-- **Product**: {{ rmm.Details.PEMetadata.Product }}
-{% endif %}
+{% for key, value in rmm.Details.PEMetadata.items() %}
+- **{{ key }}**: {{ value }}
+{% endfor %}
 {% else %}
 {% for item in rmm.Details.PEMetadata %}
-{% if item.Filename %}
-- **Filename**: {{ item.Filename }}
-{% endif %}
-{% if item.OriginalFileName %}
-- **Original File Name**: {{ item.OriginalFileName }}
-{% endif %}
-{% if item.Description %}
-- **Description**: {{ item.Description }}
-{% endif %}
-{% if item.Product %}
-- **Product**: {{ item.Product }}
-{% endif %}
+{% for key, value in item.items() %}
+- **{{ key }}**: {{ value }}
+{% endfor %}
 {% endfor %}
 {% endif %}
 {% endif %}
@@ -118,25 +100,20 @@ displayTitle = "{{ rmm.Name }}"
 
 {% if rmm.Artifacts.Disk %}
 #### Disk Artifacts
-
 {% for artifact in rmm.Artifacts.Disk %}
 - **File**: `{{ artifact.File }}`
-
-  {% if artifact.Description %}
+{% if artifact.Description %}
   **Description**: {{ artifact.Description }}
-  {% endif %}
-
-  {% if artifact.Example %}
+{% endif %}
+{% if artifact.Example %}
   **Example**:
   ```
   {{ artifact.Example }}
   ```
-  {% endif %}
-
-  {% if artifact.OS %}
+{% endif %}
+{% if artifact.OS %}
   **OS**: {{ artifact.OS }}
-  {% endif %}
-
+{% endif %}
 {% endfor %}
 {% endif %}
 
@@ -144,27 +121,9 @@ displayTitle = "{{ rmm.Name }}"
 #### Event Log Artifacts
 {% for artifact in rmm.Artifacts.EventLog %}
 - Event Details:
-  {% if artifact.EventID %}
-  - **Event ID**: {{ artifact.EventID }}
-  {% endif %}
-  {% if artifact.ProviderName %}
-  - **Provider Name**: {{ artifact.ProviderName }}
-  {% endif %}
-  {% if artifact.LogFile %}
-  - **Log File**: {{ artifact.LogFile }}
-  {% endif %}
-  {% if artifact.ServiceName %}
-  - **Service Name**: {{ artifact.ServiceName }}
-  {% endif %}
-  {% if artifact.ImagePath %}
-  - **Image Path**: {{ artifact.ImagePath }}
-  {% endif %}
-  {% if artifact.Description %}
-  - **Description**: {{ artifact.Description }}
-  {% endif %}
-  {% if artifact.CommandLine %}
-  - **Command Line**: {{ artifact.CommandLine }}
-  {% endif %}
+{% for key, value in artifact.items() %}
+  - **{{ key }}**: {{ value }}
+{% endfor %}
 {% endfor %}
 {% endif %}
 
@@ -172,34 +131,28 @@ displayTitle = "{{ rmm.Name }}"
 #### Registry Artifacts
 {% for artifact in rmm.Artifacts.Registry %}
 - **Path**: `{{ artifact.Path }}`
-  {% if artifact.Description %}
+{% if artifact.Description %}
   **Description**: {{ artifact.Description }}
-  {% endif %}
-
+{% endif %}
 {% endfor %}
 {% endif %}
 
 {% if rmm.Artifacts.Network %}
 #### Network Artifacts
-
 {% for artifact in rmm.Artifacts.Network %}
 - {% if artifact.Description %}**Description**: {{ artifact.Description }}{% endif %}
-
-  {% if artifact.Domains %}
-
+{% if artifact.Domains %}
   **Domains**:
-  {% for domain in artifact.Domains %}
+{% for domain in artifact.Domains %}
     - `{{ domain }}`
-  {% endfor %}
-  {% endif %}
-
-  {% if artifact.Ports %}
+{% endfor %}
+{% endif %}
+{% if artifact.Ports %}
   **Ports**:
-  {% for port in artifact.Ports %}
+{% for port in artifact.Ports %}
     - `{{ port }}`
-  {% endfor %}
-  {% endif %}
-
+{% endfor %}
+{% endif %}
 {% endfor %}
 {% endif %}
 
@@ -207,11 +160,9 @@ displayTitle = "{{ rmm.Name }}"
 #### Other Artifacts
 {% for artifact in rmm.Artifacts.Other %}
 - {% if artifact.Type %}**Type**: {{ artifact.Type }}{% endif %}
-
-  {% if artifact.Value %}
-
+{% if artifact.Value %}
   **Value**: {{ artifact.Value }}
-  {% endif %}
+{% endif %}
 {% endfor %}
 {% endif %}
 {% endif %}
@@ -219,24 +170,19 @@ displayTitle = "{{ rmm.Name }}"
 {% if rmm.Detections %}
 ### Detections
 {% for detection in rmm.Detections %}
-- {% if detection.Sigma %}
-  [Sigma rule]({{ detection.Sigma }})
-  {% elif detection.Name %}
-  **{{ detection.Name }}**
-  {% endif %}
-
-  {% if detection.Description %}
-  {{ detection.Description }}
-  {% endif %}
-
-  {% if detection.author %}
-  (Author: {{ detection.author }})
-  {% endif %}
-
-  {% if detection.Link %}
-  [Link]({{ detection.Link }})
-  {% endif %}
-
+- {{ detection.Description }}
+{% if detection.Sigma %}
+  - [Sigma Rule]({{ detection.Sigma }})
+{% endif %}
+{% if detection.Name %}
+  - **{{ detection.Name }}**
+{% endif %}
+{% if detection.author %}
+  - Author: {{ detection.author }}
+{% endif %}
+{% if detection.Link %}
+  - [Additional Information]({{ detection.Link }})
+{% endif %}
 {% endfor %}
 {% endif %}
 

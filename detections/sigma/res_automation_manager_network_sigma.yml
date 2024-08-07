@@ -8,11 +8,11 @@ detection:
     - user_managed
     - ivanti.com/
   condition: selection
-id: eb1d5a1f-77b9-4d5b-ad4e-403595dc0ec8
+id: c04bd4ba-7b7a-46a2-8eb0-0abf217e7122
 status: experimental
 description: Detects potential network activity of RES Automation Manager RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

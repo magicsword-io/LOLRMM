@@ -17,19 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - rfusclient.exe
-    - rutserv.exe
+  - rfusclient.exe
+  - rutserv.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.internetid.ru'
-        - rmansys.ru
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.internetid.ru'
+    - rmansys.ru
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml
+  Description: Detects potential network activity of Remote Manipulator System RMM
+    tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml
+  Description: Detects potential processes activity of Remote Manipulator System RMM
+    tool
 References:
-  - https://rmansys.ru/files/
+- https://rmansys.ru/files/
 Acknowledgement: []

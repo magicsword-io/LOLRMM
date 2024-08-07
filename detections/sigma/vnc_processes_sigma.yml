@@ -13,11 +13,11 @@ detection:
     - vncviewer.exe
     - winvnc.exe
   condition: selection
-id: 4bbe598e-7148-4fa6-beb1-d03512c9b72d
+id: 3a2aba3d-58ca-43c5-b15c-9b7bc17d3257
 status: experimental
 description: Detects potential processes activity of VNC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

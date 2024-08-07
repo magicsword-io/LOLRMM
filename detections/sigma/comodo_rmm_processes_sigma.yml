@@ -8,11 +8,11 @@ detection:
     - itsmagent.exe
     - rviewer.exe
   condition: selection
-id: 3aacd78c-ad2e-4d51-be20-31f482295998
+id: 1f2d2541-f3b7-488a-b553-aebd29c01eaa
 status: experimental
 description: Detects potential processes activity of Comodo RMM RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

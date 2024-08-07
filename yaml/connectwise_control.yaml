@@ -17,17 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - connectwisechat-customer.exe
-    - connectwisecontrol.client.exe
+  - connectwisechat-customer.exe
+  - connectwisecontrol.client.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - control.connectwise.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - control.connectwise.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml
+  Description: Detects potential network activity of ConnectWise Control RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml
+  Description: Detects potential processes activity of ConnectWise Control RMM tool
 References: []
 Acknowledgement: []

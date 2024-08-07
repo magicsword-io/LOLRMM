@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.server-eye.de'
   condition: selection
-id: b867eeea-bea0-4148-b5d9-24df9e67b700
+id: cb61655a-fb52-45a6-97a7-8de1f1320c2a
 status: experimental
 description: Detects potential network activity of ServerEye RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

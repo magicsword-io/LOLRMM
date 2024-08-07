@@ -8,12 +8,12 @@ detection:
     - '*.kace.com'
     - www.quest.com/kace/
   condition: selection
-id: ddf7fe14-66c0-49bc-b6d9-373416946956
+id: 41765104-e0bb-4caf-9d80-f0b76da82722
 status: experimental
 description: Detects potential network activity of Quest KACE Agent (formerly Dell
   KACE) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

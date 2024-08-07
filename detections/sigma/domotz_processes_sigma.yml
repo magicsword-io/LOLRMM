@@ -12,11 +12,11 @@ detection:
     - Domotz Pro Desktop App Setup*.exe
     - domotz-windows*.exe
   condition: selection
-id: b706db62-efcb-42f4-ae9c-4183747821a3
+id: 5b2ca434-384d-4c09-b980-ec6d63d23eab
 status: experimental
 description: Detects potential processes activity of Domotz RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

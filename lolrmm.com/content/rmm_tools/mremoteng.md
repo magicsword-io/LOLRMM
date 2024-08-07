@@ -24,6 +24,9 @@ mRemoteNG is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,42 +49,31 @@ mRemoteNG is a remote monitoring and management (RMM) tool. More information wil
 ### Forensic Artifacts
 
 #### Disk Artifacts
-
 - **File**: `C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log`
-
   **Description**: mRemoteNG log file
-
-
   **OS**: Windows
-
 - **File**: `C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml`
-
   **Description**: mRemoteNG configuration file
-
-
   **OS**: Windows
-
 - **File**: `C:\Users\*\AppData\*\mRemoteNG\**10\user.config`
-
   **Description**: mRemoteNG user configuration file
-
-
   **OS**: Windows
-
 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `mremoteng.org`
 
 
-
-
+### Detections
+- Detects potential network activity of mRemoteNG RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_network_sigma.yml)
+- Detects potential files activity of mRemoteNG RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_files_sigma.yml)
+- Detects potential processes activity of mRemoteNG RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_processes_sigma.yml)
 
 ### References
 - [https://github.com/mRemoteNG/mRemoteNG](https://github.com/mRemoteNG/mRemoteNG)

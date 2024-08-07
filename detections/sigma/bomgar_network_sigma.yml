@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - beyondtrust.com/brand/bomgar
   condition: selection
-id: ae1f3ed8-1b4b-4745-a32b-2ba9f657466e
+id: f3308c30-40e3-4604-83d3-83d7e6b9583b
 status: experimental
 description: Detects potential network activity of Bomgar RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

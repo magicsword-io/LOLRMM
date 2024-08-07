@@ -23,6 +23,9 @@ FixMe is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,15 +49,15 @@ FixMe is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `fixme.it`
 
 
-
-
+### Detections
+- Detects potential network activity of FixMe RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_network_sigma.yml)
+- Detects potential processes activity of FixMe RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_processes_sigma.yml)
 
 
 

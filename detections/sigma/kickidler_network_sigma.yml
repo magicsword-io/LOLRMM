@@ -8,11 +8,11 @@ detection:
     - kickidler.com
     - my.kickidler.com
   condition: selection
-id: 12f8c8ca-f36c-40fb-9ee7-dc0d2832fbe1
+id: c20767f9-ddf7-44af-84dc-1c2731c69665
 status: experimental
 description: Detects potential network activity of KickIdler RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

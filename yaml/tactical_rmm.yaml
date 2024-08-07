@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - tacticalrmm.exe
-    - tacticalrmm.exe
+  - tacticalrmm.exe
+  - tacticalrmm.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - login.tailscale.com
-        - login.tailscale.com
-        - docs.tacticalrmm.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - login.tailscale.com
+    - login.tailscale.com
+    - docs.tacticalrmm.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_network_sigma.yml
+  Description: Detects potential network activity of Tactical RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml
+  Description: Detects potential processes activity of Tactical RMM RMM tool
 References:
-  - docs.tacticalrmm.com
+- docs.tacticalrmm.com
 Acknowledgement: []

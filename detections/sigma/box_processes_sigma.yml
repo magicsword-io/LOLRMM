@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\Box.exe'
   condition: selection
-id: cd7b9007-1ee6-47cf-8d02-4393434ce85d
+id: e7af44b5-c19f-460f-a717-35b07594b505
 status: experimental
 description: Detects potential processes activity of Box RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

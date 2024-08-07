@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - oo-syspectr*.exe
-    - OOSysAgent.exe
+  - oo-syspectr*.exe
+  - OOSysAgent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - atled.syspectr.com
-        - app.syspectr.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - atled.syspectr.com
+    - app.syspectr.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_network_sigma.yml
+  Description: Detects potential network activity of Syspectr RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_processes_sigma.yml
+  Description: Detects potential processes activity of Syspectr RMM tool
 References:
-  - https://www.syspectr.com/en/installation-in-a-network
+- https://www.syspectr.com/en/installation-in-a-network
 Acknowledgement: []

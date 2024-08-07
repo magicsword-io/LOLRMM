@@ -8,11 +8,11 @@ detection:
     - '*.alpemix.com'
     - '*.teknopars.com'
   condition: selection
-id: 205f5861-65df-4f9f-b51d-81f499b6b934
+id: 3de99ba1-bfc3-4569-a352-0f1b1b455a78
 status: experimental
 description: Detects potential network activity of Alpemix RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

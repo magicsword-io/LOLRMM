@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - zerotier*.msi
-    - zerotier*.exe
-    - zero-powershell.exe
+  - zerotier*.msi
+  - zerotier*.exe
+  - zero-powershell.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - zerotier.com
-        - '*.zerotier.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - zerotier.com
+    - '*.zerotier.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zerotier_network_sigma.yml
+  Description: Detects potential network activity of ZeroTier RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zerotier_processes_sigma.yml
+  Description: Detects potential processes activity of ZeroTier RMM tool
 References:
-  - https://my.zerotier.com/
+- https://my.zerotier.com/
 Acknowledgement: []

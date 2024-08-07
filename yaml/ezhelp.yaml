@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ezhelpclientmanager.exe
-    - ezHelpManager.exe
-    - ezhelpclient.exe
+  - ezhelpclientmanager.exe
+  - ezHelpManager.exe
+  - ezhelpclient.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.ezhelp.co.kr'
-        - ezhelp.co.kr
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.ezhelp.co.kr'
+    - ezhelp.co.kr
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_network_sigma.yml
+  Description: Detects potential network activity of ezHelp RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_processes_sigma.yml
+  Description: Detects potential processes activity of ezHelp RMM tool
 References:
-  - https://www.exhelp.co.kr
+- https://www.exhelp.co.kr
 Acknowledgement: []

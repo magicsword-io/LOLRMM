@@ -23,6 +23,9 @@ Cruz is a remote monitoring and management (RMM) tool. More information will be 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -39,15 +42,13 @@ Cruz is a remote monitoring and management (RMM) tool. More information will be 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `resources.doradosoftware.com/cruz-rmm`
 
 
-
-
+### Detections
+- Detects potential network activity of Cruz RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cruz_network_sigma.yml)
 
 
 

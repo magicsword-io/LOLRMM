@@ -24,6 +24,9 @@ Sophos-Remote Management System is a remote monitoring and management (RMM) tool
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,18 +47,18 @@ Sophos-Remote Management System is a remote monitoring and management (RMM) tool
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.sophos.com`
     - `*.sophosupd.com`
     - `*.sophosupd.net`
     - `community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system`
 
 
-
-
+### Detections
+- Detects potential network activity of Sophos-Remote Management System RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sophos-remote_management_system_network_sigma.yml)
+- Detects potential processes activity of Sophos-Remote Management System RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sophos-remote_management_system_processes_sigma.yml)
 
 ### References
 - [community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system](community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system)

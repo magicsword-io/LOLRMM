@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - cloudflared.exe
   condition: selection
-id: 4d840c3f-cf3e-42d7-818f-dd397e7e600c
+id: 2f96065e-f2f6-4f4a-8567-4a79e03eeb5f
 status: experimental
 description: Detects potential processes activity of CloudFlare Tunnel RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

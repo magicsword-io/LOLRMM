@@ -8,11 +8,11 @@ detection:
     - user_managed
     - ocsinventory-ng.org
   condition: selection
-id: e0006d7f-7915-4519-9aae-fc555774f28b
+id: cfe53dff-bb84-4eec-aac7-284628e1ac49
 status: experimental
 description: Detects potential network activity of OCS inventory RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

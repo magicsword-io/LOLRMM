@@ -10,12 +10,12 @@ detection:
     - '*.sophosupd.net'
     - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
   condition: selection
-id: 5c6fccbd-c8ff-44fd-ad83-75635b48b68e
+id: 78b4d010-29f8-4fea-b406-c2c335039e41
 status: experimental
 description: Detects potential network activity of Sophos-Remote Management System
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

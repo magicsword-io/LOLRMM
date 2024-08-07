@@ -24,6 +24,9 @@ Tactical RMM is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,17 +46,17 @@ Tactical RMM is a remote monitoring and management (RMM) tool. More information 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `login.tailscale.com`
     - `login.tailscale.com`
     - `docs.tacticalrmm.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Tactical RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_network_sigma.yml)
+- Detects potential processes activity of Tactical RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml)
 
 ### References
 - [docs.tacticalrmm.com](docs.tacticalrmm.com)

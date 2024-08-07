@@ -8,11 +8,11 @@ detection:
     - ocsinventory.exe
     - ocsservice.exe
   condition: selection
-id: bd83466c-be84-49eb-b225-a699ecea1eec
+id: 9da56624-e193-40ca-85a3-831343f5b797
 status: experimental
 description: Detects potential processes activity of OCS inventory RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

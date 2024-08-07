@@ -10,11 +10,11 @@ detection:
     - NinjaRMMAgenPatcher.exe
     - ninjarmm-cli.exe
   condition: selection
-id: df993854-40a2-4846-988d-930ceb6376d3
+id: ba65e84e-5ded-409f-9c72-c9704732786d
 status: experimental
 description: Detects potential processes activity of NinjaRMM RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

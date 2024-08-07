@@ -23,6 +23,9 @@ NinjaOne (formerly NinjaRMM) is a remote monitoring and management (RMM) tool. M
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

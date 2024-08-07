@@ -17,15 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\SysAidServer\*
-    - '*\SysAidServer\*'
-    - '*\SysAid\*'
-    - '*\IliAS.exe'
+  - C:\Program Files\SysAidServer\*
+  - '*\SysAidServer\*'
+  - '*\SysAid\*'
+  - '*\IliAS.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sysaid_processes_sigma.yml
+  Description: Detects potential processes activity of SysAid RMM tool
 References: []
 Acknowledgement: []

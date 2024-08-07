@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Users\*\AppData\Roaming\SyncTrayzor\*
-    - '*Users\*\AppData\Roaming\SyncTrayzor\*'
-    - '*\Syncthing.exe'
+  - C:\Users\*\AppData\Roaming\SyncTrayzor\*
+  - '*Users\*\AppData\Roaming\SyncTrayzor\*'
+  - '*\Syncthing.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncthing_processes_sigma.yml
+  Description: Detects potential processes activity of Syncthing RMM tool
 References: []
 Acknowledgement: []

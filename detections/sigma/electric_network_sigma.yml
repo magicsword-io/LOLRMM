@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - electric.ai
   condition: selection
-id: 3b56bafd-b0fa-4ee1-9a63-6fc1e5e683f9
+id: 13449186-dca1-4550-9b4b-d5eef84f88a2
 status: experimental
 description: Detects potential network activity of Electric RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

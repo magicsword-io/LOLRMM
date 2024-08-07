@@ -17,21 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - tailscale-*.exe
-    - tailscaled.exe
-    - tailscale-ipn.exe
+  - tailscale-*.exe
+  - tailscaled.exe
+  - tailscale-ipn.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.tailscale.com'
-        - '*.tailscale.io'
-        - tailscale.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.tailscale.com'
+    - '*.tailscale.io'
+    - tailscale.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_network_sigma.yml
+  Description: Detects potential network activity of Tailscale RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_processes_sigma.yml
+  Description: Detects potential processes activity of Tailscale RMM tool
 References:
-  - https://tailscale.com/kb/1023/troubleshooting
+- https://tailscale.com/kb/1023/troubleshooting
 Acknowledgement: []

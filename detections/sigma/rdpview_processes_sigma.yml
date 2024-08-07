@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - dwrcs.exe
   condition: selection
-id: 5fdf254f-cbd3-4608-8566-220cb3cffae8
+id: 251045d0-56ca-4477-a089-7c7ccd0f7017
 status: experimental
 description: Detects potential processes activity of RDPView RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

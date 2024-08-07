@@ -24,6 +24,9 @@ QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More i
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,18 +47,18 @@ QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More i
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.mdt.qq.com`
     - `*.desktop.qq.com`
     - `upload_data.qq.com`
     - `qq-messenger.en.softonic.com`
 
 
-
-
+### Detections
+- Detects potential network activity of QQ IM-remote assistance RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_network_sigma.yml)
+- Detects potential processes activity of QQ IM-remote assistance RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_processes_sigma.yml)
 
 ### References
 - [https://en.wikipedia.org/wiki/Tencent_QQ](https://en.wikipedia.org/wiki/Tencent_QQ)

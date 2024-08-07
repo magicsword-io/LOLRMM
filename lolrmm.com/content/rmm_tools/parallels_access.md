@@ -24,6 +24,9 @@ Parallels Access is a remote monitoring and management (RMM) tool. More informat
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,16 +49,16 @@ Parallels Access is a remote monitoring and management (RMM) tool. More informat
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.parallels.com`
     - `parallels.com/products/ras/try`
 
 
-
-
+### Detections
+- Detects potential network activity of Parallels Access RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parallels_access_network_sigma.yml)
+- Detects potential processes activity of Parallels Access RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parallels_access_processes_sigma.yml)
 
 ### References
 - [https://kb.parallels.com/en/129097](https://kb.parallels.com/en/129097)

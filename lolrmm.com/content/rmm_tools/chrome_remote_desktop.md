@@ -24,6 +24,9 @@ Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More inf
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,17 +49,17 @@ Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More inf
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*remotedesktop-pa.googleapis.com`
     - `*remotedesktop.google.com`
     - `remotedesktop.google.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Chrome Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml)
+- Detects potential processes activity of Chrome Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_processes_sigma.yml)
 
 ### References
 - [https://support.google.com/chrome/a/answer/2799701?hl=en](https://support.google.com/chrome/a/answer/2799701?hl=en)

@@ -17,23 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - bomgar-scc-*.exe
-    - bomgar-scc.exe
-    - bomgar-pac-*.exe
-    - bomgar-pac.exe
-    - bomgar-rdp.exe
+  - bomgar-scc-*.exe
+  - bomgar-scc.exe
+  - bomgar-pac-*.exe
+  - bomgar-pac.exe
+  - bomgar-rdp.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.beyondtrustcloud.com'
-        - '*.bomgarcloud.com'
-        - bomgarcloud.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.beyondtrustcloud.com'
+    - '*.bomgarcloud.com'
+    - bomgarcloud.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__network_sigma.yml
+  Description: Detects potential network activity of BeyondTrust (Bomgar) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__processes_sigma.yml
+  Description: Detects potential processes activity of BeyondTrust (Bomgar) RMM tool
 References:
-  - https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm
+- https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm
 Acknowledgement: []

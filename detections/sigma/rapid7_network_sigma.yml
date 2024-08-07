@@ -8,11 +8,11 @@ detection:
     - '*.analytics.insight.rapid7.com'
     - '*.endpoint.ingress.rapid7.com'
   condition: selection
-id: f8c9b88c-c245-47df-8440-b6ce62fcedfb
+id: 7f04155f-dc7e-4ed7-ad64-716130f1352e
 status: experimental
 description: Detects potential network activity of Rapid7 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

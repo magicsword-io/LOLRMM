@@ -23,6 +23,9 @@ Rocket Remote Desktop is a remote monitoring and management (RMM) tool. More inf
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,6 +46,9 @@ Rocket Remote Desktop is a remote monitoring and management (RMM) tool. More inf
 
 
 
+### Detections
+- Detects potential processes activity of Rocket Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rocket_remote_desktop_processes_sigma.yml)
 
 
 

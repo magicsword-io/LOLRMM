@@ -23,6 +23,9 @@ DragonDisk is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ DragonDisk is a remote monitoring and management (RMM) tool. More information wi
 
 
 
+### Detections
+- Detects potential processes activity of DragonDisk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dragondisk_processes_sigma.yml)
 
 
 

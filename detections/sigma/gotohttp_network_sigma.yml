@@ -8,11 +8,11 @@ detection:
     - '*.gotohttp.com'
     - gotohttp.com
   condition: selection
-id: 75a00f1e-3eb2-40cd-94fa-85156e47c396
+id: 0ab632b8-05a4-4272-a55d-b53bf94ed676
 status: experimental
 description: Detects potential network activity of GotoHTTP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

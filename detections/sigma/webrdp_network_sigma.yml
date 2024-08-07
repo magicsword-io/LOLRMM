@@ -8,11 +8,11 @@ detection:
     - user_managed
     - github.com/Mikej81/WebRDP
   condition: selection
-id: 6f3e2cf2-c423-494f-8a59-a45b7322c56b
+id: f7766337-77b5-417b-be10-f051c4b65acd
 status: experimental
 description: Detects potential network activity of WebRDP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

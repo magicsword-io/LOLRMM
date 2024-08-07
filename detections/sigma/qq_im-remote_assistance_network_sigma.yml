@@ -10,11 +10,11 @@ detection:
     - upload_data.qq.com
     - qq-messenger.en.softonic.com
   condition: selection
-id: e9475957-1152-443b-bad4-f288034e78da
+id: a433daa3-deae-474a-9958-36cb9b287bb4
 status: experimental
 description: Detects potential network activity of QQ IM-remote assistance RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - islonline.com
   condition: selection
-id: 51d67156-0fae-402f-b874-5643410197b2
+id: 962c66b5-e5d4-4e59-b31e-d127fbc500bb
 status: experimental
 description: Detects potential network activity of ISL Light RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

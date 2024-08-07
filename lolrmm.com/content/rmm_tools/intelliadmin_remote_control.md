@@ -24,6 +24,9 @@ IntelliAdmin Remote Control is a remote monitoring and management (RMM) tool. Mo
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,17 +49,17 @@ IntelliAdmin Remote Control is a remote monitoring and management (RMM) tool. Mo
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `*.intelliadmin.com`
     - `intelliadmin.com/remote-control`
 
 
-
-
+### Detections
+- Detects potential network activity of IntelliAdmin Remote Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_network_sigma.yml)
+- Detects potential processes activity of IntelliAdmin Remote Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_processes_sigma.yml)
 
 ### References
 - [intelliadmin.com/remote-control](intelliadmin.com/remote-control)

@@ -23,6 +23,9 @@ pCloud is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ pCloud is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+### Detections
+- Detects potential processes activity of pCloud RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcloud_processes_sigma.yml)
 
 
 

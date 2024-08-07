@@ -24,6 +24,9 @@ Centurion is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ Centurion is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `centuriontech.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Centurion RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centurion_network_sigma.yml)
+- Detects potential processes activity of Centurion RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centurion_processes_sigma.yml)
 
 ### References
 - [https://data443.atlassian.net/servicedesk/customer/portal/20](https://data443.atlassian.net/servicedesk/customer/portal/20)

@@ -9,11 +9,11 @@ detection:
     - '*.connectwise.com'
     - '*.screenconnect.com'
   condition: selection
-id: 8369b67f-a422-4ccf-bed5-150032ea38c7
+id: 745f1940-e16c-42f5-87bb-66f342e0dba8
 status: experimental
 description: Detects potential network activity of ScreenConnect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

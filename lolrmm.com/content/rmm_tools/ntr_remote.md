@@ -24,6 +24,9 @@ NTR Remote is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ NTR Remote is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.ntrsupport.com`
 
 
-
-
+### Detections
+- Detects potential network activity of NTR Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_network_sigma.yml)
+- Detects potential processes activity of NTR Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_processes_sigma.yml)
 
 ### References
 - [DOA as of 2024](DOA as of 2024)

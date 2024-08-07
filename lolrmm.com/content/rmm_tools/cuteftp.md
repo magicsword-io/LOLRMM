@@ -23,6 +23,9 @@ CuteFTP is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ CuteFTP is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+### Detections
+- Detects potential processes activity of CuteFTP RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cuteftp_processes_sigma.yml)
 
 
 

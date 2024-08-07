@@ -8,11 +8,11 @@ detection:
     - beamyourscreen.com
     - '*.beamyourscreen.com'
   condition: selection
-id: c9cb8626-9037-423e-8548-8b4b6eb338b8
+id: ad4210bf-66b5-4c7e-b20b-f71d609dc5a7
 status: experimental
 description: Detects potential network activity of BeamYourScreen RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

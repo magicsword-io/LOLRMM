@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - ImperoClientSVC.exe
   condition: selection
-id: 3e22900e-4ff6-42cc-bf8c-3813e5194882
+id: 271eea29-f7dc-499a-85a6-4907de4cd34a
 status: experimental
 description: Detects potential processes activity of Impero Connect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

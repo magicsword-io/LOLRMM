@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - user_managed
   condition: selection
-id: 6551d5ac-5ed1-4d24-8247-6ea4a27f6194
+id: 3354bc61-36e7-463d-a0cd-8de668b2d0b8
 status: experimental
 description: Detects potential network activity of Apple Remote Desktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

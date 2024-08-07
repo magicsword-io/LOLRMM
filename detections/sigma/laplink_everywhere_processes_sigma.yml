@@ -12,11 +12,11 @@ detection:
     - serverproxyservice.exe
     - OOSysAgent.exe
   condition: selection
-id: 0b740aa2-91ee-4d44-920a-16f7f8bf8df2
+id: 556a0418-03d1-42de-b217-68bf2856e15d
 status: experimental
 description: Detects potential processes activity of Laplink Everywhere RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

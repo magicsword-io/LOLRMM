@@ -24,6 +24,9 @@ Remote Desktop Plus is a remote monitoring and management (RMM) tool. More infor
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ Remote Desktop Plus is a remote monitoring and management (RMM) tool. More infor
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `donkz.nl`
 
 
-
-
+### Detections
+- Detects potential network activity of Remote Desktop Plus RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_desktop_plus_network_sigma.yml)
+- Detects potential processes activity of Remote Desktop Plus RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_desktop_plus_processes_sigma.yml)
 
 ### References
 - [https://www.donkz.nl/](https://www.donkz.nl/)

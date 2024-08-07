@@ -8,11 +8,11 @@ detection:
     - app.pdq.com
     - cfcdn.pdq.com
   condition: selection
-id: ec16f6cc-8433-4c5a-a4b2-28c44004da30
+id: e27c6d0b-9d16-4eb3-9abd-8ba0a2cc0f6e
 status: experimental
 description: Detects potential network activity of PDQ Connect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

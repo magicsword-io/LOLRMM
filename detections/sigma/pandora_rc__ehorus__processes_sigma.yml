@@ -8,11 +8,11 @@ detection:
     - ehorus standalone.exe
     - ehorus_agent.exe
   condition: selection
-id: abd38a66-2d22-46ce-ae31-6658be5528e1
+id: 0a18fcba-4d6d-4a78-9e5a-81294907bc16
 status: experimental
 description: Detects potential processes activity of Pandora RC (eHorus) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

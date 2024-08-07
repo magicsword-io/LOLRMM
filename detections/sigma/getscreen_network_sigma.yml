@@ -9,11 +9,11 @@ detection:
     - GetScreen.me
     - '*.getscreen.me'
   condition: selection
-id: fefb75cb-269d-4b86-9518-b987aa6c60cb
+id: 6d5045f0-ab0c-49ef-aeb8-0fc087eb8bc3
 status: experimental
 description: Detects potential network activity of GetScreen RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

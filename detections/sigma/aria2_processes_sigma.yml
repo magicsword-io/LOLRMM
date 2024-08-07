@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\aria2c.exe'
   condition: selection
-id: 0bbb7df2-faf4-4551-b701-0a1d10e7f1a6
+id: 6c235ccb-9731-4e38-9fe2-b16ae844528b
 status: experimental
 description: Detects potential processes activity of aria2 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

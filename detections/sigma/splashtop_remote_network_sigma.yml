@@ -10,11 +10,11 @@ detection:
     - '*.relay.splashtop.com'
     - '*.api.splashtop.eu'
   condition: selection
-id: ec94d3db-ebb4-4b27-a5ca-a1f1e1c21f60
+id: 18041451-00ec-4664-8583-db22469e1d84
 status: experimental
 description: Detects potential network activity of Splashtop Remote RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

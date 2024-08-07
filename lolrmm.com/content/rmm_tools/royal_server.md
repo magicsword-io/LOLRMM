@@ -23,6 +23,9 @@ Royal Server is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -39,15 +42,13 @@ Royal Server is a remote monitoring and management (RMM) tool. More information 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `royalapps.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Royal Server RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_server_network_sigma.yml)
 
 
 

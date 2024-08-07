@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - SensoClient.exe
-    - SensoService.exe
-    - aadg.exe
+  - SensoClient.exe
+  - SensoService.exe
+  - aadg.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.senso.cloud'
-        - senso.cloud
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.senso.cloud'
+    - senso.cloud
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/senso.cloud_network_sigma.yml
+  Description: Detects potential network activity of Senso.cloud RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/senso.cloud_processes_sigma.yml
+  Description: Detects potential processes activity of Senso.cloud RMM tool
 References:
-  - https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration
+- https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration
 Acknowledgement: []

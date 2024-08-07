@@ -24,6 +24,9 @@ Xeox is a remote monitoring and management (RMM) tool. More information will be 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,16 +48,16 @@ Xeox is a remote monitoring and management (RMM) tool. More information will be 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.xeox.com`
     - `xeox.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Xeox RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_network_sigma.yml)
+- Detects potential processes activity of Xeox RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_processes_sigma.yml)
 
 ### References
 - [https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW](https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW)

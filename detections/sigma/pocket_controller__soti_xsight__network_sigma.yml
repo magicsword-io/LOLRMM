@@ -7,12 +7,12 @@ detection:
     DestinationHostname|endswith:
     - '*soti.net'
   condition: selection
-id: 9d79323f-16ed-4db4-b185-66e14d6babbd
+id: e49aea52-4057-4ebf-9c22-3424e1c52632
 status: experimental
 description: Detects potential network activity of Pocket Controller (Soti Xsight)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -8,11 +8,11 @@ detection:
     - user_managed
     - tele-desk.com
   condition: selection
-id: 1af396e2-b88e-49a9-8301-403363033e62
+id: 81a1ee71-af2f-4190-8402-8f48876a11fa
 status: experimental
 description: Detects potential network activity of TeleDesktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

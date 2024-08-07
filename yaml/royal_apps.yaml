@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - royalserver.exe
-    - royalts.exe
+  - royalserver.exe
+  - royalts.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_network_sigma.yml
+  Description: Detects potential network activity of Royal Apps RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_processes_sigma.yml
+  Description: Detects potential processes activity of Royal Apps RMM tool
 References:
-  - https://www.royalapps.com/ts/win/download
+- https://www.royalapps.com/ts/win/download
 Acknowledgement: []

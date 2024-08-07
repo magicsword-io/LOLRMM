@@ -10,11 +10,11 @@ detection:
     - supremosystem.exe
     - supremohelper.exe
   condition: selection
-id: 1bfb1878-e57c-43cb-80a6-2cfdd7d6da65
+id: d00d2571-88c6-459e-a2e1-6c928b6be5e5
 status: experimental
 description: Detects potential processes activity of Supremo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

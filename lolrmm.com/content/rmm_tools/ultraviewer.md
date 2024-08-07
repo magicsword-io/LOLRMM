@@ -24,6 +24,9 @@ UltraViewer is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -53,16 +56,16 @@ UltraViewer is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `* .ultraviewer.net`
     - `ultraviewer.net`
 
 
-
-
+### Detections
+- Detects potential network activity of UltraViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultraviewer_network_sigma.yml)
+- Detects potential processes activity of UltraViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultraviewer_processes_sigma.yml)
 
 ### References
 - [https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html](https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html)

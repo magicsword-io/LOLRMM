@@ -24,6 +24,9 @@ Kabuto is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ Kabuto is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.kabuto.io`
     - `repairtechsolutions.com/kabuto/`
 
 
-
-
+### Detections
+- Detects potential network activity of Kabuto RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kabuto_network_sigma.yml)
+- Detects potential processes activity of Kabuto RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kabuto_processes_sigma.yml)
 
 ### References
 - [https://www.repairtechsolutions.com/documentation/kabuto/](https://www.repairtechsolutions.com/documentation/kabuto/)

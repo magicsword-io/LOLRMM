@@ -8,11 +8,11 @@ detection:
     - zerotier.com
     - '*.zerotier.com'
   condition: selection
-id: c026b849-24e1-46cd-aa06-b625928ab78d
+id: cfc057e5-e86c-46c8-b261-d459149305f7
 status: experimental
 description: Detects potential network activity of ZeroTier RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

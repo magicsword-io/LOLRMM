@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\Livedrive-Setup.exe'
   condition: selection
-id: cf555ad9-f528-4601-a4d2-995986111993
+id: 77ad4b3c-dc22-42b6-931d-8bbc1a648ead
 status: experimental
 description: Detects potential processes activity of TeraCLOUD RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

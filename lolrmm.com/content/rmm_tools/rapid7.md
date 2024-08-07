@@ -24,6 +24,9 @@ Rapid7 is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ Rapid7 is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.analytics.insight.rapid7.com`
     - `*.endpoint.ingress.rapid7.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Rapid7 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_network_sigma.yml)
+- Detects potential processes activity of Rapid7 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_processes_sigma.yml)
 
 ### References
 - [https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/](https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/)

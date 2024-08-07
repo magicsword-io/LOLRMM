@@ -8,11 +8,11 @@ detection:
     - '*.beinsync.net'
     - '*.beinsync.com'
   condition: selection
-id: 5848af8d-5e0d-4470-9d4b-348c262e0f21
+id: 50cf7c20-63d2-4739-8c9e-4e0028962b49
 status: experimental
 description: Detects potential network activity of BeInSync RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

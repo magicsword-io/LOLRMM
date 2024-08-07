@@ -23,6 +23,9 @@ ConnectWise Control is a remote monitoring and management (RMM) tool. More infor
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ ConnectWise Control is a remote monitoring and management (RMM) tool. More infor
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `live.screenconnect.com`
     - `control.connectwise.com`
 
 
-
-
+### Detections
+- Detects potential network activity of ConnectWise Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml)
+- Detects potential processes activity of ConnectWise Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml)
 
 
 

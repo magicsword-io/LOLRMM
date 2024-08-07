@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - tsircusr.exe
-    - laplink.exe
+  - tsircusr.exe
+  - laplink.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - wen.laplink.com/product/laplink-gold
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - wen.laplink.com/product/laplink-gold
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_network_sigma.yml
+  Description: Detects potential network activity of Laplink Gold RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_processes_sigma.yml
+  Description: Detects potential processes activity of Laplink Gold RMM tool
 References:
-  - wen.laplink.com/product/laplink-gold
+- wen.laplink.com/product/laplink-gold
 Acknowledgement: []

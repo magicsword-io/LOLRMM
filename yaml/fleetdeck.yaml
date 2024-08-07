@@ -17,16 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - fleetdeck_agent_svc.exe
+  - fleetdeck_agent_svc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - fleetdeck.io
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - fleetdeck.io
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_network_sigma.yml
+  Description: Detects potential network activity of FleetDeck RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_processes_sigma.yml
+  Description: Detects potential processes activity of FleetDeck RMM tool
 References: []
 Acknowledgement: []

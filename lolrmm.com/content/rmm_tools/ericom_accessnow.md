@@ -24,6 +24,9 @@ Ericom AccessNow is a remote monitoring and management (RMM) tool. More informat
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,16 +46,16 @@ Ericom AccessNow is a remote monitoring and management (RMM) tool. More informat
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `ericom.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Ericom AccessNow RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_accessnow_network_sigma.yml)
+- Detects potential processes activity of Ericom AccessNow RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_accessnow_processes_sigma.yml)
 
 ### References
 - [https://www.ericom.com/connect-accessnow/](https://www.ericom.com/connect-accessnow/)

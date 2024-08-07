@@ -22,10 +22,12 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - tanium.com/products/tanium-deploy
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - tanium.com/products/tanium-deploy
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_deploy_network_sigma.yml
+  Description: Detects potential network activity of Tanium Deploy RMM tool
 References: []
 Acknowledgement: []

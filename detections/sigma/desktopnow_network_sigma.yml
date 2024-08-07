@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.nchuser.com'
   condition: selection
-id: 8a52c5e1-bc7c-4fb6-b6ae-b6b4ed0a5015
+id: 2541974e-61bc-4869-b902-f828f3db1a2d
 status: experimental
 description: Detects potential network activity of DesktopNow RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

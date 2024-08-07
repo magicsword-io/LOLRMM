@@ -29,9 +29,10 @@ Alpemix is a remote monitoring and management (RMM) tool. More information will 
 
 #### PE Metadata
 - **Filename**: Alpemix.exe
-- **Original File Name**: Alpemix
+- **OriginalFileName**: Alpemix
 - **Description**: Alpemix
 - **Product**: Alpemix
+- **InternalName**: Alpemix
 
 
 - **Free**: No
@@ -83,49 +84,43 @@ Alpemix is a remote monitoring and management (RMM) tool. More information will 
 ### Forensic Artifacts
 
 #### Disk Artifacts
-
 - **File**: `%localappdata%\Alpemix\Alpemix.ini`
-
   **Description**: N/A
-
-
   **OS**: Windows
-
 
 #### Event Log Artifacts
 - Event Details:
-  - **Event ID**: 7045
-  - **Provider Name**: Service Control Manager
-  - **Log File**: System.evtx
-  - **Service Name**: AlpemixSrvc
-  - **Image Path**: *\Alpemix.exe servicestartxxx
+  - **EventID**: 7045
+  - **ProviderName**: Service Control Manager
+  - **LogFile**: System.evtx
+  - **ServiceName**: AlpemixSrvc
+  - **ImagePath**: *\Alpemix.exe servicestartxxx
   - **Description**: Service installation event as result of Alpemix installation.
 
 #### Registry Artifacts
 - **Path**: `HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx`
   **Description**: N/A
 
-
 #### Network Artifacts
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.alpemix.com`
-
   **Ports**:
     - `443`
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.teknopars.com`
-
   **Ports**:
     - `80`
 
 
-
+### Detections
+- Detects potential registry activity of Alpemix RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_registry_sigma.yml)
+- Detects potential network activity of Alpemix RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_network_sigma.yml)
+- Detects potential files activity of Alpemix RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_files_sigma.yml)
+- Detects potential processes activity of Alpemix RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_processes_sigma.yml)
 
 ### References
 - [https://www.alpemix.com/en/remote-access](https://www.alpemix.com/en/remote-access)

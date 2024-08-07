@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - rdp.exe
   condition: selection
-id: 5ebbc977-79f7-416d-a0be-6bde707ea877
+id: 628b038a-8b36-481f-be3d-4ca385aea7be
 status: experimental
 description: Detects potential processes activity of Remote Desktop Plus RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

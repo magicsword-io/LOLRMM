@@ -10,11 +10,11 @@ detection:
     - jumpto.me
     - '*.jumpto.me'
   condition: selection
-id: 350d2a57-976a-46fc-b5e5-6679ad13a54e
+id: 5e78e6b3-b646-460b-8407-7135a837bd9f
 status: experimental
 description: Detects potential network activity of Jump Desktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

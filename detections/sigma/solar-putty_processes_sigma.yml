@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\Solar-PuTTY.exe'
   condition: selection
-id: b1c81fc5-b27c-4c42-8fd0-f9e3e60deed3
+id: f97f2561-15d9-4649-a34c-ca25cb71ad2e
 status: experimental
 description: Detects potential processes activity of Solar-PuTTY RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

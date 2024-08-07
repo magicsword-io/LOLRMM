@@ -33,7 +33,7 @@ Through the web interface of action1, the administrator must create a new policy
 - **Filename**: action1_remote.exe
 - **Filename**: action1_update.exe
 - **Filename**: action1_agent.exe
-- **Original File Name**: action1_agent.exe
+- **OriginalFileName**: action1_agent.exe
 - **Description**: Endpoint Agent
 
 - **Privileges**: SYSTEM
@@ -63,104 +63,73 @@ Through the web interface of action1, the administrator must create a new policy
 ### Forensic Artifacts
 
 #### Disk Artifacts
-
 - **File**: `C:\Windows\Action1\action1_agent.exe`
-
   **Description**: Action1 service binary
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\Action1\*`
-
   **Description**: Multiple files and binaries related to Action1 installation
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\Action1\scripts\*`
-
   **Description**: Multiple scripts related to Action1 installation
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\Action1\rule_data\*`
-
   **Description**: Files related to Action1 rules
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\Action1\action1_log_*.log`
-
   **Description**: Contains history, errors, system notifications. Incoming and outgoing connections.
-
-
   **OS**: Windows
-
 
 #### Event Log Artifacts
 - Event Details:
-  - **Event ID**: 7045
-  - **Provider Name**: Service Control Manager
-  - **Log File**: System.evtx
-  - **Service Name**: Action1 Agent
-  - **Image Path**: "C:\\Windows\\Action1\\action1_agent.exe"
+  - **EventID**: 7045
+  - **ProviderName**: Service Control Manager
+  - **LogFile**: System.evtx
+  - **ServiceName**: Action1 Agent
+  - **ImagePath**: "C:\\Windows\\Action1\\action1_agent.exe"
   - **Description**: Service installation event as result of Action1 installation.
 - Event Details:
-  - **Event ID**: 4688
-  - **Provider Name**: Microsoft-Security-Auditing
-  - **Log File**: Security.evtx
+  - **EventID**: 4688
+  - **ProviderName**: Microsoft-Security-Auditing
+  - **LogFile**: Security.evtx
+  - **CommandLine**: C:\Windows\Action1\action1_agent.exe service
   - **Description**: Service installation event as result of Action1 installation.
-  - **Command Line**: C:\Windows\Action1\action1_agent.exe service
 - Event Details:
-  - **Event ID**: 4688
-  - **Provider Name**: Microsoft-Security-Auditing
-  - **Log File**: Security.evtx
+  - **EventID**: 4688
+  - **ProviderName**: Microsoft-Security-Auditing
+  - **LogFile**: Security.evtx
+  - **CommandLine**: C:\Windows\Action1\action1_agent.exe loggedonuser
   - **Description**: Executing command to get logged on user.
-  - **Command Line**: C:\Windows\Action1\action1_agent.exe loggedonuser
 
 #### Registry Artifacts
 - **Path**: `HKLM\System\CurrentControlSet\Services\A1Agent`
   **Description**: Service installation event as result of Action1 installation.
-
 - **Path**: `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe`
   **Description**: Ensures that detailed crash information is available for analysis, which aids in maintaining the stability and reliability of the software.
-
 - **Path**: `HKLM\SOFTWARE\WOW6432Node\Action1`
   **Description**: Storing its configuration settings and other relevant information
 
-
 #### Network Artifacts
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.action1.com`
-
   **Ports**:
     - `443`
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `a1-backend-packages.s3.amazonaws.com`
-
   **Ports**:
     - `443`
-
 
 
 ### Detections
--   **Arbitrary code execution and remote sessions via Action1 RMM**
-
-  Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
-
-  (Author: @kostastsale)
-
-  [Link](https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml)
-
+- Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+  - **Arbitrary code execution and remote sessions via Action1 RMM**
+  - Author: @kostastsale
+  - [Additional Information](https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml)
+- Detects potential registry activity of Action1 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_registry_sigma.yml)
+- Detects potential network activity of Action1 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_network_sigma.yml)
+- Detects potential files activity of Action1 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_files_sigma.yml)
 
 ### References
 - [https://www.action1.com/documentation/firewall-configuration/](https://www.action1.com/documentation/firewall-configuration/)

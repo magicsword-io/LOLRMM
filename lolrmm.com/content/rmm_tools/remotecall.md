@@ -24,6 +24,9 @@ RemoteCall is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -48,17 +51,17 @@ RemoteCall is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.remotecall.com`
     - `*.startsupport.com`
     - `remotecall.com`
 
 
-
-
+### Detections
+- Detects potential network activity of RemoteCall RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_network_sigma.yml)
+- Detects potential processes activity of RemoteCall RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_processes_sigma.yml)
 
 ### References
 - [https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall](https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall)

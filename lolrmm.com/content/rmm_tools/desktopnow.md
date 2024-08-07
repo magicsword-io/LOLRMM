@@ -24,6 +24,9 @@ DesktopNow is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ DesktopNow is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.nchuser.com`
 
 
-
-
+### Detections
+- Detects potential network activity of DesktopNow RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktopnow_network_sigma.yml)
+- Detects potential processes activity of DesktopNow RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktopnow_processes_sigma.yml)
 
 ### References
 - [https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US](https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US)

@@ -24,6 +24,9 @@ Pandora RC (eHorus) is a remote monitoring and management (RMM) tool. More infor
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,15 +46,15 @@ Pandora RC (eHorus) is a remote monitoring and management (RMM) tool. More infor
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `portal.ehorus.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Pandora RC (eHorus) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__network_sigma.yml)
+- Detects potential processes activity of Pandora RC (eHorus) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__processes_sigma.yml)
 
 ### References
 - [https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction](https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction)

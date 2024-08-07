@@ -9,11 +9,11 @@ detection:
     - '*.rview.com'
     - content.rview.com
   condition: selection
-id: 67692309-c9e7-40ce-bdc5-88f5fc9c705f
+id: f9311795-53c6-4b41-8633-2dd5848a5aaf
 status: experimental
 description: Detects potential network activity of RemoteView RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

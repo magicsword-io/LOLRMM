@@ -21,11 +21,11 @@ detection:
     - atera.pubnubapi.com
     - appcdn.atera.com
   condition: selection
-id: a7f7a42e-6d8e-428d-9879-adcf716e401b
+id: ea23aeb1-701b-4cd9-9951-5d00ce194c2b
 status: experimental
 description: Detects potential network activity of Atera RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

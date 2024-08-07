@@ -9,11 +9,11 @@ detection:
     - download.pilixo.com
     - '*.pilixo.com'
   condition: selection
-id: 4c200777-e2b3-47dc-964f-efec934f8ebb
+id: 11be93dd-95ec-496f-902b-77c07a26a467
 status: experimental
 description: Detects potential network activity of Pilixo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

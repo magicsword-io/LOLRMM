@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - aweray_remote*.exe
-    - AweSun.exe
+  - aweray_remote*.exe
+  - AweSun.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - asapi*.aweray.net
-        - client-api.aweray.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - asapi*.aweray.net
+    - client-api.aweray.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray_network_sigma.yml
+  Description: Detects potential network activity of AweRay RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray_processes_sigma.yml
+  Description: Detects potential processes activity of AweRay RMM tool
 References:
-  - https://sun.aweray.com/help
+- https://sun.aweray.com/help
 Acknowledgement: []

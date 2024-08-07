@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\TightVNC\*
-    - '*\TightVNC\*'
+  - C:\Program Files\TightVNC\*
+  - '*\TightVNC\*'
 Artifacts:
   Disk: []
   EventLog: []

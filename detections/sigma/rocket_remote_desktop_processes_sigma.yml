@@ -8,11 +8,11 @@ detection:
     - RDConsole.exe
     - RocketRemoteDesktop_Setup.exe
   condition: selection
-id: b781922e-bd33-43df-bf08-9333e175f293
+id: ffe2edfb-5ae7-4817-a2c0-644f1e22a5b0
 status: experimental
 description: Detects potential processes activity of Rocket Remote Desktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -10,11 +10,11 @@ detection:
     - showmypc.exe
     - smpcsetup.exe
   condition: selection
-id: ba5a0a1e-085c-4a59-94b0-fe6188bc914e
+id: d4ccc591-a330-4be4-bbf1-f2168cdfb166
 status: experimental
 description: Detects potential processes activity of ShowMyPC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,22 +17,26 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - supremo.exe
-    - supremoservice.exe
-    - supremosystem.exe
-    - supremohelper.exe
+  - supremo.exe
+  - supremoservice.exe
+  - supremosystem.exe
+  - supremohelper.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - supremocontrol.com
-        - '*.supremocontrol.com'
-        - '* .nanosystems.it'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - supremocontrol.com
+    - '*.supremocontrol.com'
+    - '* .nanosystems.it'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_network_sigma.yml
+  Description: Detects potential network activity of Supremo RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_processes_sigma.yml
+  Description: Detects potential processes activity of Supremo RMM tool
 References:
-  - https://www.supremocontrol.com/frequently-asked-questions/
+- https://www.supremocontrol.com/frequently-asked-questions/
 Acknowledgement: []

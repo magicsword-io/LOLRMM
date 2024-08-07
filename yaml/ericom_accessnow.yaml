@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - accessserver*.exe
-    - accessserver.exe
+  - accessserver*.exe
+  - accessserver.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - ericom.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - ericom.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_accessnow_network_sigma.yml
+  Description: Detects potential network activity of Ericom AccessNow RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_accessnow_processes_sigma.yml
+  Description: Detects potential processes activity of Ericom AccessNow RMM tool
 References:
-  - https://www.ericom.com/connect-accessnow/
+- https://www.ericom.com/connect-accessnow/
 Acknowledgement: []

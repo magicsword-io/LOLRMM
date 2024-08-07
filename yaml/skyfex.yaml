@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - Deskroll.exe
-    - DeskRollUA.exe
+  - Deskroll.exe
+  - DeskRollUA.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - skyfex.com
-        - deskroll.com
-        - '*.deskroll.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - skyfex.com
+    - deskroll.com
+    - '*.deskroll.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_network_sigma.yml
+  Description: Detects potential network activity of SkyFex RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_processes_sigma.yml
+  Description: Detects potential processes activity of SkyFex RMM tool
 References:
-  - https://skyfex.com/
+- https://skyfex.com/
 Acknowledgement: []

@@ -8,11 +8,11 @@ detection:
     - user_managed
     - github.com/V-E-O/rdp2tcp
   condition: selection
-id: c25f85bd-7b60-4f30-afd9-b46f5e2f73f8
+id: a378c29e-4c16-48a0-bf97-74cd91c1090e
 status: experimental
 description: Detects potential network activity of rdp2tcp RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

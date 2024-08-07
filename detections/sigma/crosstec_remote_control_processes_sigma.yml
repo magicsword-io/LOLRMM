@@ -8,11 +8,11 @@ detection:
     - PCIVIDEO.EXE
     - supporttool.exe
   condition: selection
-id: 6e8cced7-1973-4a34-ab85-a3a6bf5440b8
+id: 97b2d8e4-652c-4722-b268-c21395609fbc
 status: experimental
 description: Detects potential processes activity of CrossTec Remote Control RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\SmarTTY.exe'
   condition: selection
-id: b6c62549-30e5-4a85-8bc5-5c89149e82da
+id: adb38ae5-f722-4cf0-92ea-881354509552
 status: experimental
 description: Detects potential processes activity of SmarTTY RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

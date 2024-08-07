@@ -23,6 +23,9 @@ Dropbox is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,6 +48,9 @@ Dropbox is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+### Detections
+- Detects potential processes activity of Dropbox RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dropbox_processes_sigma.yml)
 
 
 

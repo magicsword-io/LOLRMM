@@ -9,11 +9,11 @@ detection:
     - login.tailscale.com
     - docs.tacticalrmm.com
   condition: selection
-id: 3b2877e6-a54a-4e1a-b57e-3526ce5d0c71
+id: 607074fd-7a44-49eb-948a-8bf893afc142
 status: experimental
 description: Detects potential network activity of Tactical RMM RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

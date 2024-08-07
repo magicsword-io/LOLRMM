@@ -8,11 +8,11 @@ detection:
     - user_managed
     - nomachine.com
   condition: selection
-id: 2e10dab2-67bf-4e63-9e60-e21b6f136d1b
+id: b80bd471-4420-482d-93c4-d2755a4ed4dc
 status: experimental
 description: Detects potential network activity of NoMachine RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

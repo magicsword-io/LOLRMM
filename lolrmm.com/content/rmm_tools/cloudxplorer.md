@@ -23,6 +23,9 @@ CloudXplorer is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ CloudXplorer is a remote monitoring and management (RMM) tool. More information 
 
 
 
+### Detections
+- Detects potential processes activity of CloudXplorer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudxplorer_processes_sigma.yml)
 
 
 

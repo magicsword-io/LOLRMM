@@ -17,21 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - pcvisit.exe
-    - pcvisit_client.exe
-    - pcvisit-easysupport.exe
-    - pcvisit_service_client.exe
+  - pcvisit.exe
+  - pcvisit_client.exe
+  - pcvisit-easysupport.exe
+  - pcvisit_service_client.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.pcvisit.de'
-        - pcvisit.de
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.pcvisit.de'
+    - pcvisit.de
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_network_sigma.yml
+  Description: Detects potential network activity of Pcvisit RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_processes_sigma.yml
+  Description: Detects potential processes activity of Pcvisit RMM tool
 References:
-  - https://www.pcvisit.de/
+- https://www.pcvisit.de/
 Acknowledgement: []

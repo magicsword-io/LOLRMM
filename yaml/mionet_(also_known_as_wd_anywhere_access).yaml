@@ -17,13 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - mionet.exe
-    - mionetmanager.exe
+  - mionet.exe
+  - mionetmanager.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mionet__also_known_as_wd_anywhere_access__processes_sigma.yml
+  Description: Detects potential processes activity of MioNet (Also known as WD Anywhere
+    Access) RMM tool
 References: []
 Acknowledgement: []

@@ -8,11 +8,11 @@ detection:
     - user_managed
     - ngrok.com
   condition: selection
-id: 2a22abaa-eed9-4d56-a427-13bd5ac26f2b
+id: 2f94f187-ac51-4e50-a6f5-7f6c3bfa5578
 status: experimental
 description: Detects potential network activity of ngrok RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

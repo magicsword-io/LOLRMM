@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - NTRsupportPro_EN.exe
   condition: selection
-id: e2c4554b-daaa-4f19-80e3-167c81ae53d2
+id: 47a5d227-0695-472d-b9c6-b0642522e98e
 status: experimental
 description: Detects potential processes activity of NTR Remote RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

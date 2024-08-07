@@ -24,6 +24,9 @@ LiteManager is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -47,17 +50,17 @@ LiteManager is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.litemanager.ru`
     - `*.litemanager.com`
     - `litemanager.com`
 
 
-
-
+### Detections
+- Detects potential network activity of LiteManager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_network_sigma.yml)
+- Detects potential processes activity of LiteManager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_processes_sigma.yml)
 
 ### References
 - [https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/](https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/)

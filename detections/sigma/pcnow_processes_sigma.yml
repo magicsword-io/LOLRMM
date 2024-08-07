@@ -9,11 +9,11 @@ detection:
     - pcnmgr.exe
     - webexpcnow.exe
   condition: selection
-id: bc89ae60-5c10-4261-bf1b-7742678e0464
+id: 2bc661c4-b05f-4971-bfc8-eef0bcddad00
 status: experimental
 description: Detects potential processes activity of Pcnow RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

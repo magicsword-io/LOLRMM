@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\FileZilla.exe'
   condition: selection
-id: 02e7c49a-32ee-4f8a-8676-e16051290eab
+id: 214b6209-b165-4b2a-943e-2bae48ad5664
 status: experimental
 description: Detects potential processes activity of FileZilla RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

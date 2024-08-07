@@ -23,6 +23,9 @@ Air Explorer is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Air Explorer is a remote monitoring and management (RMM) tool. More information 
 
 
 
+### Detections
+- Detects potential processes activity of Air Explorer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/air_explorer_processes_sigma.yml)
 
 
 

@@ -8,11 +8,11 @@ detection:
     - atled.syspectr.com
     - app.syspectr.com
   condition: selection
-id: c6c62120-4908-4241-b42d-ae278d611414
+id: 1c369a6a-d658-458d-8b8c-8afc2c192e6e
 status: experimental
 description: Detects potential network activity of Syspectr RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

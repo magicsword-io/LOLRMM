@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - apc_host.exe
   condition: selection
-id: ab5b1ddc-b614-4b5d-aa32-e84cc9e42891
+id: b8b70d3d-58df-4a20-b4c0-e225f291f230
 status: experimental
 description: Detects potential processes activity of Anyplace Control RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

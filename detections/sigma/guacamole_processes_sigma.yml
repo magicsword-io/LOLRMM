@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - guacd.exe
   condition: selection
-id: 1c1e1d69-a65c-4788-9478-731ef46be597
+id: 12ace335-9d02-4845-bda4-10b1597afc3e
 status: experimental
 description: Detects potential processes activity of Guacamole RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

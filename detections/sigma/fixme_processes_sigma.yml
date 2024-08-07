@@ -12,11 +12,11 @@ detection:
     - FixMeit Unattended Access Setup.exe
     - FixMeit Expert Setup.exe
   condition: selection
-id: e6db4c2c-6fdb-4dab-94e8-a28e7f2a237d
+id: 723d54d9-a8b0-40e4-9b27-a8c97881353f
 status: experimental
 description: Detects potential processes activity of FixMe RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

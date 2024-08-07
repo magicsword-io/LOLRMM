@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - rustdesk*.exe
-    - rustdesk.exe
+  - rustdesk*.exe
+  - rustdesk.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - rustdesk.com
-        - user_managed
-        - web.rustdesk.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - rustdesk.com
+    - user_managed
+    - web.rustdesk.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml
+  Description: Detects potential network activity of RustDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml
+  Description: Detects potential processes activity of RustDesk RMM tool
 References:
-  - https://rustdesk.com/docs/en/
+- https://rustdesk.com/docs/en/
 Acknowledgement: []

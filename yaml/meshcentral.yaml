@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - meshcentral*.exe
-    - mesh*.exe
+  - meshcentral*.exe
+  - mesh*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - meshcentral.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - meshcentral.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml
+  Description: Detects potential network activity of MeshCentral RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml
+  Description: Detects potential processes activity of MeshCentral RMM tool
 References:
-  - https://ylianst.github.io/MeshCentral/meshcentral/
+- https://ylianst.github.io/MeshCentral/meshcentral/
 Acknowledgement: []

@@ -24,6 +24,9 @@ GatherPlace-desktop sharing is a remote monitoring and management (RMM) tool. Mo
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,17 +47,17 @@ GatherPlace-desktop sharing is a remote monitoring and management (RMM) tool. Mo
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.gatherplace.com`
     - `*.gatherplace.net`
     - `gatherplace.com`
 
 
-
-
+### Detections
+- Detects potential network activity of GatherPlace-desktop sharing RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_network_sigma.yml)
+- Detects potential processes activity of GatherPlace-desktop sharing RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_processes_sigma.yml)
 
 ### References
 - [https://www.gatherplace.com/kb?id=136377](https://www.gatherplace.com/kb?id=136377)

@@ -17,25 +17,29 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - basuptshelper.exe
-    - basupsrvcupdate.exe
-    - BASupApp.exe
-    - BASupSysInf.exe
-    - BASupAppSrvc.exe
-    - TakeControl.exe
-    - BASupAppElev.exe
-    - basupsrvc.exe
+  - basuptshelper.exe
+  - basupsrvcupdate.exe
+  - BASupApp.exe
+  - BASupSysInf.exe
+  - BASupAppSrvc.exe
+  - TakeControl.exe
+  - BASupAppElev.exe
+  - basupsrvc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - beanywhere.en.uptodown.com/windows
-        - beanywhere.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - beanywhere.en.uptodown.com/windows
+    - beanywhere.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_network_sigma.yml
+  Description: Detects potential network activity of BeAnyWhere RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_processes_sigma.yml
+  Description: Detects potential processes activity of BeAnyWhere RMM tool
 References:
-  - https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx
+- https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx
 Acknowledgement: []

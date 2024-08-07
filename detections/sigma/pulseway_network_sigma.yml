@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - pulseway.com
   condition: selection
-id: ea1f256c-6716-4f1a-ac14-12d12168aa35
+id: 786ef50c-ef11-4ee2-b3fd-84e55f779ed8
 status: experimental
 description: Detects potential network activity of Pulseway RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

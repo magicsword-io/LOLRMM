@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\*\nxplayer.exe
-    - '*\nxplayer.exe'
+  - C:\*\nxplayer.exe
+  - '*\nxplayer.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/freenx_processes_sigma.yml
+  Description: Detects potential processes activity of FreeNX RMM tool
 References: []
 Acknowledgement: []

@@ -23,6 +23,9 @@ Splashtop (Beta) is a remote monitoring and management (RMM) tool. More informat
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,15 +47,15 @@ Splashtop (Beta) is a remote monitoring and management (RMM) tool. More informat
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `splashtop.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Splashtop (Beta) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__network_sigma.yml)
+- Detects potential processes activity of Splashtop (Beta) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__processes_sigma.yml)
 
 
 

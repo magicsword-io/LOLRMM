@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - fortra.com
   condition: selection
-id: 10fc8d64-3bea-4969-a8d2-fa5b0da7117b
+id: 995ea532-e7e8-4b53-a4ae-c6846a58cc75
 status: experimental
 description: Detects potential network activity of Fortra RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

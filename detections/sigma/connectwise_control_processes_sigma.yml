@@ -10,11 +10,11 @@ detection:
     - screenconnect.windowsclient.exe
     - connectwisechat-customer.exe
   condition: selection
-id: 50b35c69-9bb9-47dd-964a-90942458314c
+id: 4a407e58-10a2-4e23-8fad-2787ba64a5fb
 status: experimental
 description: Detects potential processes activity of ConnectWise Control RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - manageengine.com/remote-monitoring-management/
   condition: selection
-id: 3a6ae97b-b6ca-4e15-a580-bfaf4fe0b138
+id: 3b13b430-0a0e-4422-a0d1-8b5b0f844b69
 status: experimental
 description: Detects potential network activity of ManageEngine RMM Central RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

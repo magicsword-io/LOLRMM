@@ -24,6 +24,9 @@ Site24x7 is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,10 +48,7 @@ Site24x7 is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `plus*.site24x7.com`
     - `plus*.site24x7.eu`
     - `plus*.site24x7.in`
@@ -57,8 +57,11 @@ Site24x7 is a remote monitoring and management (RMM) tool. More information will
     - `site24x7.com/msp`
 
 
-
-
+### Detections
+- Detects potential network activity of Site24x7 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_network_sigma.yml)
+- Detects potential processes activity of Site24x7 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_processes_sigma.yml)
 
 ### References
 - [https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent](https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent)

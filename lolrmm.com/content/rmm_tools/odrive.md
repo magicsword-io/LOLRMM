@@ -23,6 +23,9 @@ ODrive is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ ODrive is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+### Detections
+- Detects potential processes activity of ODrive RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/odrive_processes_sigma.yml)
 
 
 

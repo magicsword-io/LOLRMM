@@ -8,11 +8,11 @@ detection:
     - C:\*\SecureCRT.EXE
     - '*\SecureCRT.EXE'
   condition: selection
-id: 62857972-bb15-4d01-8cc6-b083b3106033
+id: 2061644f-6016-4f64-8c09-111c8e6422fe
 status: experimental
 description: Detects potential processes activity of SecureCRT RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

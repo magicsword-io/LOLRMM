@@ -24,6 +24,9 @@ rdp2tcp is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,16 +46,16 @@ rdp2tcp is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `github.com/V-E-O/rdp2tcp`
 
 
-
-
+### Detections
+- Detects potential network activity of rdp2tcp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_network_sigma.yml)
+- Detects potential processes activity of rdp2tcp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_processes_sigma.yml)
 
 ### References
 - [github.com/V-E-O/rdp2tcp](github.com/V-E-O/rdp2tcp)

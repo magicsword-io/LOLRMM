@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ehorus standalone.exe
-    - ehorus_agent.exe
+  - ehorus standalone.exe
+  - ehorus_agent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - portal.ehorus.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - portal.ehorus.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__network_sigma.yml
+  Description: Detects potential network activity of Pandora RC (eHorus) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__processes_sigma.yml
+  Description: Detects potential processes activity of Pandora RC (eHorus) RMM tool
 References:
-  - https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction
+- https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction
 Acknowledgement: []

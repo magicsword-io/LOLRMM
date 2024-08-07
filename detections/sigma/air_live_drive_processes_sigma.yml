@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\AirLiveDrive.exe'
   condition: selection
-id: 7dcb62ad-49e2-4133-abc7-d9b5da88b9d0
+id: a77cc3b0-d89a-4f23-aea9-e960e3f56515
 status: experimental
 description: Detects potential processes activity of Air Live Drive RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

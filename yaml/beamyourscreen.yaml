@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - beamyourscreen.exe
-    - beamyourscreen-host.exe
+  - beamyourscreen.exe
+  - beamyourscreen-host.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - beamyourscreen.com
-        - '*.beamyourscreen.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - beamyourscreen.com
+    - '*.beamyourscreen.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_network_sigma.yml
+  Description: Detects potential network activity of BeamYourScreen RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_processes_sigma.yml
+  Description: Detects potential processes activity of BeamYourScreen RMM tool
 References:
-  - beamyourscreen redirects to https://www.mikogo.com/
+- beamyourscreen redirects to https://www.mikogo.com/
 Acknowledgement: []

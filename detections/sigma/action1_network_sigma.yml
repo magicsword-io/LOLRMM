@@ -8,11 +8,11 @@ detection:
     - '*.action1.com'
     - a1-backend-packages.s3.amazonaws.com
   condition: selection
-id: 7c145727-9616-4cce-bb6a-465c287b93d1
+id: 5a513b93-4825-4b09-b50a-e073e390bc96
 status: experimental
 description: Detects potential network activity of Action1 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

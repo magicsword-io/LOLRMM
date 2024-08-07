@@ -23,6 +23,9 @@ Remote Desktop Manager (Devolutions) is a remote monitoring and management (RMM)
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

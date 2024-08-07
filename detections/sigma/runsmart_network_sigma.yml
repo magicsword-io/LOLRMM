@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - runsmart.io
   condition: selection
-id: ccc25e14-d20c-44f5-8c49-351e584ec3be
+id: c95bdc66-f183-4eed-9c0a-8278185269bf
 status: experimental
 description: Detects potential network activity of RunSmart RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

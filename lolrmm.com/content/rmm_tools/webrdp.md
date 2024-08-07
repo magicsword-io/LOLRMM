@@ -24,6 +24,9 @@ WebRDP is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ WebRDP is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `github.com/Mikej81/WebRDP`
 
 
-
-
+### Detections
+- Detects potential network activity of WebRDP RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/webrdp_network_sigma.yml)
+- Detects potential processes activity of WebRDP RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/webrdp_processes_sigma.yml)
 
 ### References
 - [github.com/Mikej81/WebRDP](github.com/Mikej81/WebRDP)

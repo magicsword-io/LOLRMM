@@ -9,11 +9,11 @@ detection:
     - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
     - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
   condition: selection
-id: 531a60b8-7bea-4ba0-b813-1e7f36516ca8
+id: 0389408b-eb81-4de9-8304-76da1d845757
 status: experimental
 description: Detects potential processes activity of ExtraPuTTY RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,16 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - quickassist.exe
+  - quickassist.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.support.services.microsoft.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.support.services.microsoft.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_network_sigma.yml
+  Description: Detects potential network activity of Quick Assist RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml
+  Description: Detects potential processes activity of Quick Assist RMM tool
 References: []
 Acknowledgement: []

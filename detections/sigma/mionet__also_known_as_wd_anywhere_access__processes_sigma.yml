@@ -8,12 +8,12 @@ detection:
     - mionet.exe
     - mionetmanager.exe
   condition: selection
-id: 4039e2e4-b395-42d5-8aa5-cdd6ccf0fb2b
+id: 88102b66-9f64-425c-86cf-fb29cdd68806
 status: experimental
 description: Detects potential processes activity of MioNet (Also known as WD Anywhere
   Access) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

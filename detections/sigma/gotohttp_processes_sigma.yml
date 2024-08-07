@@ -9,11 +9,11 @@ detection:
     - gotohttp.exe
     - GotoHTTP*.exe
   condition: selection
-id: 73d4e848-f97f-448a-adbf-9251f2fde542
+id: e2dde6a3-0330-48e1-9b80-73ec40a9201c
 status: experimental
 description: Detects potential processes activity of GotoHTTP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

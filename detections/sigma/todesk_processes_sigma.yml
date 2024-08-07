@@ -9,11 +9,11 @@ detection:
     - ToDesk_Service.exe
     - ToDesk_Setup.exe
   condition: selection
-id: 97dc9b3b-1f96-468f-8794-f7430ff65aa5
+id: a7014b31-abf1-41ae-aeff-0bed5bf0062e
 status: experimental
 description: Detects potential processes activity of ToDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

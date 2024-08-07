@@ -9,11 +9,11 @@ detection:
     - fastmaster.exe
     - FastViewer.exe
   condition: selection
-id: 9a23c48e-679a-476c-8540-d5711d3374f0
+id: 820782ac-3ab0-4d83-8ba2-0f5349a56a99
 status: experimental
 description: Detects potential processes activity of FastViewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -8,11 +8,11 @@ detection:
     - HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin
       Security
   condition: selection
-id: 92949938-da53-4bc2-b6a7-279500b6dc32
+id: 239f1c2a-4f19-4c92-8ef5-5bbd9c367887
 status: experimental
 description: Detects potential registry activity of RAdmin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -24,6 +24,9 @@ pcAnywhere is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,15 +48,15 @@ pcAnywhere is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
 
 
-
-
+### Detections
+- Detects potential network activity of pcAnywhere RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcanywhere_network_sigma.yml)
+- Detects potential processes activity of pcAnywhere RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcanywhere_processes_sigma.yml)
 
 ### References
 - [https://en.wikipedia.org/wiki/PcAnywhere](https://en.wikipedia.org/wiki/PcAnywhere)

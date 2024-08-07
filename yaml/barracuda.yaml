@@ -22,13 +22,15 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.islonline.net'
-        - rmm.barracudamsp.com
-        - barracudamsp.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.islonline.net'
+    - rmm.barracudamsp.com
+    - barracudamsp.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/barracuda_network_sigma.yml
+  Description: Detects potential network activity of Barracuda RMM tool
 References:
-  - https://help.islonline.com/19799/166125
+- https://help.islonline.com/19799/166125
 Acknowledgement: []

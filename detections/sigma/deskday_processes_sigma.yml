@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - ultimate_*.exe
   condition: selection
-id: 66a073b7-15f1-4798-b2b7-8c0a2bc182f6
+id: 0cb80515-5804-40eb-9491-74381eb04a36
 status: experimental
 description: Detects potential processes activity of DeskDay RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

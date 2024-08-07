@@ -23,6 +23,9 @@ Pocket Controller is a remote monitoring and management (RMM) tool. More informa
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,15 +46,15 @@ Pocket Controller is a remote monitoring and management (RMM) tool. More informa
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `soti.net/products/soti-pocket-controller`
 
 
-
-
+### Detections
+- Detects potential network activity of Pocket Controller RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_network_sigma.yml)
+- Detects potential processes activity of Pocket Controller RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_processes_sigma.yml)
 
 
 

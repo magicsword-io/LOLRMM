@@ -7,12 +7,12 @@ detection:
     ParentImage|endswith:
     - alitask.exe
   condition: selection
-id: bcf0c5a7-d413-4b01-b54a-9df9f4f42e14
+id: bda23e7b-9c5e-441b-b9bf-e30906c7cc3d
 status: experimental
 description: Detects potential processes activity of AliWangWang-remote-control RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

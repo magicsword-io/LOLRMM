@@ -8,11 +8,11 @@ detection:
     - sunlogin.oray.com
     - client.oray.net
   condition: selection
-id: 3bf0c03d-effa-4265-b158-a01fc3ed7895
+id: 31635987-f2ef-41e0-b788-a1c0bfd9f096
 status: experimental
 description: Detects potential network activity of SunLogin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

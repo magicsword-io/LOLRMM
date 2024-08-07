@@ -12,11 +12,11 @@ detection:
     - '*\Mikogo-Service.exe'
     - '*\Mikogo-Screen-Service.exe'
   condition: selection
-id: e313fb7f-7384-4f9a-8eb4-5a0b9e24fc2a
+id: 2d03f8d5-126b-4b10-8e69-c7408a861cc0
 status: experimental
 description: Detects potential processes activity of Mikogo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

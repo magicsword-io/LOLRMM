@@ -9,11 +9,11 @@ detection:
     - ManageEngine_Remote_Access_Plus.exe
     - '*\dcagentservice.exe'
   condition: selection
-id: 334bb064-254f-43c6-b6fd-860fbbf71878
+id: 829a2556-2fa1-4ddd-bd0c-a3c6318a9596
 status: experimental
 description: Detects potential processes activity of ManageEngine RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

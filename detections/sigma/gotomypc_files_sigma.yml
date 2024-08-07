@@ -7,11 +7,11 @@ detection:
     TargetFilename|endswith:
     - '%AppData%\GoTo\Logs\goto.log'
   condition: selection
-id: 6c87a776-30c5-48c0-b307-4f28bcf2c711
+id: 987976ac-6971-4332-894a-916a4a631629
 status: experimental
 description: Detects potential files activity of GoToMyPC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

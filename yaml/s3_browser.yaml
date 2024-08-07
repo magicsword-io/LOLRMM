@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\S3 Browser\*
-    - '*\S3 Browser\*'
-    - '*\s3browser*.exe'
+  - C:\Program Files (x86)\S3 Browser\*
+  - '*\S3 Browser\*'
+  - '*\s3browser*.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/s3_browser_processes_sigma.yml
+  Description: Detects potential processes activity of S3 Browser RMM tool
 References: []
 Acknowledgement: []

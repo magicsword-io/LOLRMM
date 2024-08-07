@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - user_managed
   condition: selection
-id: ae203b38-67bf-479b-8bb2-03b897de2302
+id: 8a14773a-b4b5-4d4a-962b-b080c95b7812
 status: experimental
 description: Detects potential network activity of Synergy RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

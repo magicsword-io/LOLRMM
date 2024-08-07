@@ -8,11 +8,11 @@ detection:
     - user_managed
     - guacamole.apache.org
   condition: selection
-id: 896eae41-1692-47e2-b54c-be224173b531
+id: 3ab12f88-dd15-4b80-9ecd-cf3ab4cc1faa
 status: experimental
 description: Detects potential network activity of Guacamole RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

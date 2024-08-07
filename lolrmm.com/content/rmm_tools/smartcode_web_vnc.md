@@ -23,6 +23,9 @@ SmartCode Web VNC is a remote monitoring and management (RMM) tool. More informa
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

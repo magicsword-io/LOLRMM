@@ -23,6 +23,9 @@ Syncthing is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Syncthing is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+### Detections
+- Detects potential processes activity of Syncthing RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncthing_processes_sigma.yml)
 
 
 

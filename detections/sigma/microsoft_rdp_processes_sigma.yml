@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - mstsc.exe
   condition: selection
-id: 25e436bf-6c1d-46f0-b1f0-2ac838300fab
+id: 1865354f-ee9f-4e21-a959-490ef6cce164
 status: experimental
 description: Detects potential processes activity of Microsoft RDP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

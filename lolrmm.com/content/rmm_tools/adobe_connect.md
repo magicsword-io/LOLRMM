@@ -24,6 +24,9 @@ Adobe Connect is a remote monitoring and management (RMM) tool. More information
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,15 +48,15 @@ Adobe Connect is a remote monitoring and management (RMM) tool. More information
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.adobeconnect.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Adobe Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_network_sigma.yml)
+- Detects potential processes activity of Adobe Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_processes_sigma.yml)
 
 ### References
 - [https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html](https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html)

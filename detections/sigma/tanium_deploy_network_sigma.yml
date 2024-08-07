@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - tanium.com/products/tanium-deploy
   condition: selection
-id: fa03eb29-961a-40fa-bf6e-e85b5502224a
+id: 3b543ca9-031b-4480-aeb3-a99b2314770d
 status: experimental
 description: Detects potential network activity of Tanium Deploy RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

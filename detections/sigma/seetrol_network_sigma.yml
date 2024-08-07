@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - seetrol.co.kr
   condition: selection
-id: 90dc26d8-355a-4a02-95fd-5614f8b1a9e3
+id: 7c4f13a7-2112-432b-9ba4-bbcf9ed5d985
 status: experimental
 description: Detects potential network activity of Seetrol RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

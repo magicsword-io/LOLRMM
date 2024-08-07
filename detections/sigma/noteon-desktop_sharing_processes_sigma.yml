@@ -9,11 +9,11 @@ detection:
     - nateon.exe
     - nateonmain.exe
   condition: selection
-id: bc03649e-a7fe-42d0-8f29-59c5de5f39e1
+id: cee2070b-07ca-4fec-a1e3-1653fdd6da8a
 status: experimental
 description: Detects potential processes activity of NoteOn-desktop sharing RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

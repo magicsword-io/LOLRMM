@@ -8,11 +8,11 @@ detection:
     - user_managed
     - eset.com/me/business/remote-management/remote-administrator/
   condition: selection
-id: 13ff2372-ded1-4577-b120-eb240ea6ab7b
+id: d0f8dc3b-f6c4-4293-a6c3-9c5928d5355e
 status: experimental
 description: Detects potential network activity of ESET Remote Administrator RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

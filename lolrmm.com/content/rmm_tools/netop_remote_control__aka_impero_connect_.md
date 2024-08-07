@@ -23,6 +23,9 @@ Netop Remote Control (aka Impero Connect) is a remote monitoring and management 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,15 +47,15 @@ Netop Remote Control (aka Impero Connect) is a remote monitoring and management 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `imperosoftware.com/impero-connect/`
 
 
-
-
+### Detections
+- Detects potential network activity of Netop Remote Control (aka Impero Connect) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__network_sigma.yml)
+- Detects potential processes activity of Netop Remote Control (aka Impero Connect) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__processes_sigma.yml)
 
 
 

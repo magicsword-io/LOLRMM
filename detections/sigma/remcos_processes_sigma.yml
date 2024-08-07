@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - remcos*.exe
   condition: selection
-id: a0b580fc-d021-4a9a-8dfc-73b031abec78
+id: 18b30604-7121-43a5-9015-dcf63d2e6d0b
 status: experimental
 description: Detects potential processes activity of Remcos RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

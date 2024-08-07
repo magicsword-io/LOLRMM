@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - pocketcontroller.exe
-    - pocketcloudservice.exe
-    - wysebrowser.exe
+  - pocketcontroller.exe
+  - pocketcloudservice.exe
+  - wysebrowser.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - soti.net/products/soti-pocket-controller
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - soti.net/products/soti-pocket-controller
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_network_sigma.yml
+  Description: Detects potential network activity of Pocket Controller RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_processes_sigma.yml
+  Description: Detects potential processes activity of Pocket Controller RMM tool
 References: []
 Acknowledgement: []

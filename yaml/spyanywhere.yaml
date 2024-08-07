@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - sysdiag.exe
+  - sysdiag.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.spytech-web.com'
-        - spyanywhere.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.spytech-web.com'
+    - spyanywhere.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_network_sigma.yml
+  Description: Detects potential network activity of SpyAnywhere RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_processes_sigma.yml
+  Description: Detects potential processes activity of SpyAnywhere RMM tool
 References:
-  - https://www.spyanywhere.com/support.shtml
+- https://www.spyanywhere.com/support.shtml
 Acknowledgement: []

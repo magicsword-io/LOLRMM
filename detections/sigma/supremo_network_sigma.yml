@@ -9,11 +9,11 @@ detection:
     - '*.supremocontrol.com'
     - '* .nanosystems.it'
   condition: selection
-id: 01908e55-ca2f-4a2f-b8d2-459c5096054e
+id: f6e480a2-9d9e-48ba-abb3-86799bbc999d
 status: experimental
 description: Detects potential network activity of Supremo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

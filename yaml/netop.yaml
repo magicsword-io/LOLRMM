@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\Danware Data\NetOp Packn Deploy\*
-    - '*\Danware Data\NetOp Packn Deploy\*'
-    - '*\Netop Remote Control\*'
+  - C:\Program Files\Danware Data\NetOp Packn Deploy\*
+  - '*\Danware Data\NetOp Packn Deploy\*'
+  - '*\Netop Remote Control\*'
 Artifacts:
   Disk: []
   EventLog: []

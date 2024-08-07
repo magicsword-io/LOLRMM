@@ -13,11 +13,11 @@ detection:
     - agentu.exe
     - remotesupportplayeru.exe
   condition: selection
-id: 5e36e48c-f001-4058-9660-910bdc8c92fb
+id: 31a0b59a-c838-485a-8e60-c8d428f1c812
 status: experimental
 description: Detects potential processes activity of RemoteCall RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

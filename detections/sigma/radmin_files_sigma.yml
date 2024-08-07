@@ -10,11 +10,11 @@ detection:
     - C:\Windows\System32\rserver30\CHATLOGS\*\*.htm
     - C:\Users\*\Documents\ChatLogs\*\*.htm
   condition: selection
-id: e464c51a-6a46-451c-9e35-22c26cf974c8
+id: a731af2c-02a3-40d0-8c86-e410c4c259cd
 status: experimental
 description: Detects potential files activity of RAdmin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

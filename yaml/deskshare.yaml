@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - TeamTaskManager.exe
-    - DSGuest.exe
+  - TeamTaskManager.exe
+  - DSGuest.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskshare_network_sigma.yml
+  Description: Detects potential network activity of DeskShare RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskshare_processes_sigma.yml
+  Description: Detects potential processes activity of DeskShare RMM tool
 References:
-  - https://www.deskshare.com/help/fml/Active-and-Passive-connection-mode.aspx
+- https://www.deskshare.com/help/fml/Active-and-Passive-connection-mode.aspx
 Acknowledgement: []

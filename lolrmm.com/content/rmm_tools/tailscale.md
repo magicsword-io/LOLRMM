@@ -24,6 +24,9 @@ Tailscale is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,17 +47,17 @@ Tailscale is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.tailscale.com`
     - `*.tailscale.io`
     - `tailscale.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Tailscale RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_network_sigma.yml)
+- Detects potential processes activity of Tailscale RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_processes_sigma.yml)
 
 ### References
 - [https://tailscale.com/kb/1023/troubleshooting](https://tailscale.com/kb/1023/troubleshooting)

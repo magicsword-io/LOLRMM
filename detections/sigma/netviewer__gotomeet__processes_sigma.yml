@@ -8,11 +8,11 @@ detection:
     - nvClient.exe
     - netviewer.exe
   condition: selection
-id: 41193a61-287e-4469-bda1-184d3bdd6ebd
+id: dcbbb83f-6aac-41dc-831b-c4a7a9091fa5
 status: experimental
 description: Detects potential processes activity of Netviewer (GoToMeet) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

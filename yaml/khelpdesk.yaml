@@ -17,17 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - KHelpDesk.exe
+  - KHelpDesk.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.khelpdesk.com.br'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.khelpdesk.com.br'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/khelpdesk_network_sigma.yml
+  Description: Detects potential network activity of KHelpDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/khelpdesk_processes_sigma.yml
+  Description: Detects potential processes activity of KHelpDesk RMM tool
 References:
-  - https://www.khelpdesk.com.br/en-us
+- https://www.khelpdesk.com.br/en-us
 Acknowledgement: []

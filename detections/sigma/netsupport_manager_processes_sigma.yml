@@ -9,11 +9,11 @@ detection:
     - client32.exe
     - pcicfgui.exe
   condition: selection
-id: 9dd16421-b86b-47cd-818a-4abf97687a23
+id: 4205c323-1702-4b84-9d11-a705987a1098
 status: experimental
 description: Detects potential processes activity of NetSupport Manager RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

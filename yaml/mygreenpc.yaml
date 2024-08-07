@@ -17,17 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - mygreenpc.exe
+  - mygreenpc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*mygreenpc.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*mygreenpc.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mygreenpc_network_sigma.yml
+  Description: Detects potential network activity of MyGreenPC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mygreenpc_processes_sigma.yml
+  Description: Detects potential processes activity of MyGreenPC RMM tool
 References:
-  - http://www.mygreenpc.com/
+- http://www.mygreenpc.com/
 Acknowledgement: []

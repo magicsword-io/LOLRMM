@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\clumsyleaf.cloudxplorer*.exe'
   condition: selection
-id: 19ce5d34-ecdd-464a-b621-68f2db6086b8
+id: ac3686dd-66b2-4b2a-94e0-c26a2487bd9a
 status: experimental
 description: Detects potential processes activity of CloudXplorer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

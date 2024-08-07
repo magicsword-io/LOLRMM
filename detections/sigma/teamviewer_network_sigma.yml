@@ -10,11 +10,11 @@ detection:
     - client.teamviewer.com
     - taf.teamviewer.com
   condition: selection
-id: 8bb232d7-382c-440a-a3b7-7da96f4beaa6
+id: 298163bf-7c5d-4d8d-b9b7-6f0df2820afc
 status: experimental
 description: Detects potential network activity of TeamViewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

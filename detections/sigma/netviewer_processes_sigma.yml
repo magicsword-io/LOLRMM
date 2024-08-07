@@ -8,11 +8,11 @@ detection:
     - netviewer*.exe
     - netviewer.exe
   condition: selection
-id: c6955780-c235-47c4-92e9-c8180a25bdea
+id: dcf2f0c3-4771-4020-ac33-97b1558997ff
 status: experimental
 description: Detects potential processes activity of Netviewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

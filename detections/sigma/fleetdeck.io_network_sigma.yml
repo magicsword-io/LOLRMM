@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - fleetdeck.io
   condition: selection
-id: 27d3bf44-72ef-4f02-9d7e-3e734abff9a4
+id: 430ac9bb-c9db-4f8f-85c3-b0db33be9d26
 status: experimental
 description: Detects potential network activity of FleetDeck.io RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

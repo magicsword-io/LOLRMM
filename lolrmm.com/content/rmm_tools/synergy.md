@@ -24,6 +24,9 @@ Synergy is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -40,15 +43,13 @@ Synergy is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
 
 
-
-
+### Detections
+- Detects potential network activity of Synergy RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/synergy_network_sigma.yml)
 
 ### References
 - [https://symless.com/synergy](https://symless.com/synergy)

@@ -23,6 +23,9 @@ Amazon (Cloud) Drive is a remote monitoring and management (RMM) tool. More info
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Amazon (Cloud) Drive is a remote monitoring and management (RMM) tool. More info
 
 
 
+### Detections
+- Detects potential processes activity of Amazon (Cloud) Drive RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/amazon__cloud__drive_processes_sigma.yml)
 
 
 

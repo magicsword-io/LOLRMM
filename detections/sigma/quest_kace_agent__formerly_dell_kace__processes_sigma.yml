@@ -7,12 +7,12 @@ detection:
     ParentImage|endswith:
     - konea.exe
   condition: selection
-id: 940df660-0a64-4bf8-a995-82c9ed3dc7fa
+id: eda0239d-73f8-4440-98cb-f1fa957e42b4
 status: experimental
 description: Detects potential processes activity of Quest KACE Agent (formerly Dell
   KACE) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

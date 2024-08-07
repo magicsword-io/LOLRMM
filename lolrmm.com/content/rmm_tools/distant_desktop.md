@@ -24,6 +24,9 @@ Distant Desktop is a remote monitoring and management (RMM) tool. More informati
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ Distant Desktop is a remote monitoring and management (RMM) tool. More informati
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.distantdesktop.com`
     - `*signalserver.xyz`
 
 
-
-
+### Detections
+- Detects potential network activity of Distant Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml)
+- Detects potential processes activity of Distant Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_processes_sigma.yml)
 
 ### References
 - [https://www.distantdesktop.com/manual/first-start.htm](https://www.distantdesktop.com/manual/first-start.htm)

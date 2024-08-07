@@ -17,29 +17,33 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\RemotePC\*
-    - Idrive.File-Transfer
-    - '*\RemotePC\*'
-    - remotepcservice.exe
-    - RemotePC.exe
-    - remotepchost.exe
-    - idrive.RemotePCAgent
-    - rpcsuite.exe
-    - '*\RemotePCService.exe'
-    - RemotePCService.exe
+  - C:\Program Files (x86)\RemotePC\*
+  - Idrive.File-Transfer
+  - '*\RemotePC\*'
+  - remotepcservice.exe
+  - RemotePC.exe
+  - remotepchost.exe
+  - idrive.RemotePCAgent
+  - rpcsuite.exe
+  - '*\RemotePCService.exe'
+  - RemotePCService.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.remotedesktop.com'
-        - '*.remotepc.com'
-        - www.remotepc.com
-        - remotepc.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.remotedesktop.com'
+    - '*.remotepc.com'
+    - www.remotepc.com
+    - remotepc.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_network_sigma.yml
+  Description: Detects potential network activity of RemotePC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_processes_sigma.yml
+  Description: Detects potential processes activity of RemotePC RMM tool
 References:
-  - https://www.remotedesktop.com/helpdesk/faq-firewall
+- https://www.remotedesktop.com/helpdesk/faq-firewall
 Acknowledgement: []

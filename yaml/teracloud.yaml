@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - c:\*\TeraCloud.Client*
-    - '*\TeraCloud.Client*'
-    - '*\Livedrive-Setup.exe'
+  - c:\*\TeraCloud.Client*
+  - '*\TeraCloud.Client*'
+  - '*\Livedrive-Setup.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teracloud_processes_sigma.yml
+  Description: Detects potential processes activity of TeraCLOUD RMM tool
 References: []
 Acknowledgement: []

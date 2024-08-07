@@ -9,11 +9,11 @@ detection:
     - dwagent.exe
     - dwagsvc.exe
   condition: selection
-id: 792a090b-1099-4e3a-98d4-f5a89eef51e6
+id: 5652feeb-de11-4703-a3fb-1d43fc633ebc
 status: experimental
 description: Detects potential processes activity of DW Service RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -8,11 +8,11 @@ detection:
     - C:\Users\*\ExpanDrive.exe
     - '*\ExpanDrive.exe'
   condition: selection
-id: 93becb5e-c88b-4ef3-8e1b-b51b4661ab18
+id: 063831a9-cbe9-4699-bc06-29cfc716b55f
 status: experimental
 description: Detects potential processes activity of ExpanDrive RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

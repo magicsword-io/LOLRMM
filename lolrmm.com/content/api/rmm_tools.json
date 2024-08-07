@@ -39,7 +39,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_network_sigma.yml",
+                "Description": "Detects potential network activity of Rapid7 RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Rapid7 RMM tool"
+            }
+        ],
         "References": [
             "https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/"
         ],
@@ -85,7 +94,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_network_sigma.yml",
+                "Description": "Detects potential network activity of SunLogin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SunLogin RMM tool"
+            }
+        ],
         "References": [
             "https://sunlogin.oray.com/en/embed/software.html"
         ],
@@ -153,7 +171,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/box_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Box RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -320,7 +343,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kaseya__vsa__network_sigma.yml",
+                "Description": "Detects potential network activity of Kaseya (VSA) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kaseya__vsa__files_sigma.yml",
+                "Description": "Detects potential files activity of Kaseya (VSA) RMM tool"
+            }
+        ],
         "References": [
             "https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements",
             "https://helpdesk.kaseya.com/hc/en-gb/articles/229009708-Live-Connect-Log-File-Locations",
@@ -359,7 +391,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/putty_tray_processes_sigma.yml",
+                "Description": "Detects potential processes activity of PuTTY Tray RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -394,7 +431,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/azure_storage_explorer_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Azure Storage Explorer RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -430,7 +472,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sysaid_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SysAid RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -478,7 +525,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_network_sigma.yml",
+                "Description": "Detects potential network activity of Domotz RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Domotz RMM tool"
+            }
+        ],
         "References": [
             "https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/"
         ],
@@ -555,7 +611,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__network_sigma.yml",
+                "Description": "Detects potential network activity of Netop Remote Control (aka Impero Connect) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Netop Remote Control (aka Impero Connect) RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -619,7 +684,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_tsc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Microsoft TSC RMM tool"
+            }
+        ],
         "References": [
             "https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application"
         ],
@@ -669,7 +739,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_network_sigma.yml",
+                "Description": "Detects potential network activity of Jump Desktop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Jump Desktop RMM tool"
+            }
+        ],
         "References": [
             "https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect"
         ],
@@ -718,7 +797,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_network_sigma.yml",
+                "Description": "Detects potential network activity of IntelliAdmin Remote Control RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_processes_sigma.yml",
+                "Description": "Detects potential processes activity of IntelliAdmin Remote Control RMM tool"
+            }
+        ],
         "References": [
             "intelliadmin.com/remote-control"
         ],
@@ -798,7 +886,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zerotier_network_sigma.yml",
+                "Description": "Detects potential network activity of ZeroTier RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zerotier_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ZeroTier RMM tool"
+            }
+        ],
         "References": [
             "https://my.zerotier.com/"
         ],
@@ -843,7 +940,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_accessnow_network_sigma.yml",
+                "Description": "Detects potential network activity of Ericom AccessNow RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_accessnow_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Ericom AccessNow RMM tool"
+            }
+        ],
         "References": [
             "https://www.ericom.com/connect-accessnow/"
         ],
@@ -919,7 +1025,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml",
+                "Description": "Detects potential network activity of Pcnow RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pcnow RMM tool"
+            }
+        ],
         "References": [
             "http://pcnow.webex.com/ - DOA as of 2024"
         ],
@@ -962,7 +1077,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktopnow_network_sigma.yml",
+                "Description": "Detects potential network activity of DesktopNow RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktopnow_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DesktopNow RMM tool"
+            }
+        ],
         "References": [
             "https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US"
         ],
@@ -1007,7 +1131,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__network_sigma.yml",
+                "Description": "Detects potential network activity of Pocket Controller (Soti Xsight) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pocket Controller (Soti Xsight) RMM tool"
+            }
+        ],
         "References": [
             "https://pulse.soti.net/support/soti-xsight/help/"
         ],
@@ -1056,7 +1189,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml",
+                "Description": "Detects potential network activity of Instant Housecall RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Instant Housecall RMM tool"
+            }
+        ],
         "References": [
             "https://instanthousecall.com/features/"
         ],
@@ -1102,7 +1244,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__network_sigma.yml",
+                "Description": "Detects potential network activity of CentraStage (Now Datto) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__processes_sigma.yml",
+                "Description": "Detects potential processes activity of CentraStage (Now Datto) RMM tool"
+            }
+        ],
         "References": [
             "https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm"
         ],
@@ -1138,7 +1289,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/core_ftp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Core FTP RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1173,7 +1329,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/insync_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Insync RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1207,7 +1368,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_tsc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Microsoft TSC RMM tool"
+            }
+        ],
         "References": [
             "https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application"
         ],
@@ -1254,7 +1420,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_network_sigma.yml",
+                "Description": "Detects potential network activity of LogMeIn rescue RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_processes_sigma.yml",
+                "Description": "Detects potential processes activity of LogMeIn rescue RMM tool"
+            }
+        ],
         "References": [
             "https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue"
         ],
@@ -1333,7 +1508,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_network_sigma.yml",
+                "Description": "Detects potential network activity of Adobe Connect RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Adobe Connect RMM tool"
+            }
+        ],
         "References": [
             "https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html"
         ],
@@ -1376,7 +1560,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_network_sigma.yml",
+                "Description": "Detects potential network activity of CloudFlare Tunnel RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CloudFlare Tunnel RMM tool"
+            }
+        ],
         "References": [
             "cloudflare.com/products/tunnel/"
         ],
@@ -1412,7 +1605,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/drivemaker_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DriveMaker RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1446,7 +1644,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mstsc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of mstsc RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1492,7 +1695,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parallels_access_network_sigma.yml",
+                "Description": "Detects potential network activity of Parallels Access RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parallels_access_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Parallels Access RMM tool"
+            }
+        ],
         "References": [
             "https://kb.parallels.com/en/129097"
         ],
@@ -1536,7 +1748,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml",
+                "Description": "Detects potential network activity of ConnectWise Control RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ConnectWise Control RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1612,7 +1833,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_network_sigma.yml",
+                "Description": "Detects potential network activity of TigerVNC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of TigerVNC RMM tool"
+            }
+        ],
         "References": [
             "https://github.com/TigerVNC/tigervnc/releases"
         ],
@@ -1648,7 +1878,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rocket_remote_desktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Rocket Remote Desktop RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1683,7 +1918,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/noteon-desktop_sharing_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NoteOn-desktop sharing RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1724,7 +1964,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bomgar_network_sigma.yml",
+                "Description": "Detects potential network activity of Bomgar RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bomgar_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Bomgar RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1759,7 +2008,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcloud_processes_sigma.yml",
+                "Description": "Detects potential processes activity of pCloud RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1803,7 +2057,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpu_network_sigma.yml",
+                "Description": "Detects potential network activity of HelpU RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpu_processes_sigma.yml",
+                "Description": "Detects potential processes activity of HelpU RMM tool"
+            }
+        ],
         "References": [
             "https://helpu.co.kr/"
         ],
@@ -1855,7 +2118,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_network_sigma.yml",
+                "Description": "Detects potential network activity of Splashtop Remote RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Splashtop Remote RMM tool"
+            }
+        ],
         "References": [
             "https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services"
         ],
@@ -1931,7 +2203,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_network_sigma.yml",
+                "Description": "Detects potential network activity of Pocket Controller RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pocket Controller RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -1966,7 +2247,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xshell_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Xshell RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -2001,7 +2287,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bitvise_ssh_client_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Bitvise SSH Client RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -2040,7 +2331,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_server_network_sigma.yml",
+                "Description": "Detects potential network activity of Royal Server RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -2083,7 +2379,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml",
+                "Description": "Detects potential network activity of Remote Manipulator System RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Remote Manipulator System RMM tool"
+            }
+        ],
         "References": [
             "https://rmansys.ru/files/"
         ],
@@ -2132,7 +2437,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml",
+                "Description": "Detects potential network activity of Manage Engine (Desktop Central) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Manage Engine (Desktop Central) RMM tool"
+            }
+        ],
         "References": [
             "https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html"
         ],
@@ -2178,7 +2492,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/auvik_network_sigma.yml",
+                "Description": "Detects potential network activity of Auvik RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/auvik_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Auvik RMM tool"
+            }
+        ],
         "References": [
             "https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use"
         ],
@@ -2219,7 +2542,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/basecamp_network_sigma.yml",
+                "Description": "Detects potential network activity of Basecamp RMM tool"
+            }
+        ],
         "References": [
             "basecamp.com - No specific RMM tool listed"
         ],
@@ -2291,7 +2619,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aws-cli_processes_sigma.yml",
+                "Description": "Detects potential processes activity of aws-cli RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -2536,6 +2869,18 @@
             {
                 "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml",
                 "Description": "Remote Access Tool - AnyDesk Silent Installation"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_registry_sigma.yml",
+                "Description": "Detects potential registry activity of AnyDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_network_sigma.yml",
+                "Description": "Detects potential network activity of AnyDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_files_sigma.yml",
+                "Description": "Detects potential files activity of AnyDesk RMM tool"
             }
         ],
         "References": [
@@ -2653,6 +2998,10 @@
                 "Description": "Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM",
                 "author": "@kostastsale",
                 "Link": "https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyviewer_network_sigma.yml",
+                "Description": "Detects potential network activity of AnyViewer RMM tool"
             }
         ],
         "References": [
@@ -2704,7 +3053,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_network_sigma.yml",
+                "Description": "Detects potential network activity of DW Service RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DW Service RMM tool"
+            }
+        ],
         "References": [
             "https://news.dwservice.net/dwservice-security-infrastructure/"
         ],
@@ -2745,7 +3103,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml",
+                "Description": "Detects potential network activity of Level RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -2794,7 +3157,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_network_sigma.yml",
+                "Description": "Detects potential network activity of Site24x7 RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Site24x7 RMM tool"
+            }
+        ],
         "References": [
             "https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent"
         ],
@@ -2917,7 +3289,20 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_network_sigma.yml",
+                "Description": "Detects potential network activity of ScreenConnect RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_files_sigma.yml",
+                "Description": "Detects potential files activity of ScreenConnect RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ScreenConnect RMM tool"
+            }
+        ],
         "References": [
             "https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/"
         ],
@@ -2996,7 +3381,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_network_sigma.yml",
+                "Description": "Detects potential network activity of SpyAnywhere RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SpyAnywhere RMM tool"
+            }
+        ],
         "References": [
             "https://www.spyanywhere.com/support.shtml"
         ],
@@ -3045,7 +3439,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_network_sigma.yml",
+                "Description": "Detects potential network activity of NinjaRMM RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NinjaRMM RMM tool"
+            }
+        ],
         "References": [
             "https://www.ninjaone.com/faq/"
         ],
@@ -3082,7 +3485,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudxplorer_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CloudXplorer RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -3161,7 +3569,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml",
+                "Description": "Detects potential network activity of SimpleHelp RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SimpleHelp RMM tool"
+            }
+        ],
         "References": [
             "https://simple-help.com/remote-support"
         ],
@@ -3205,7 +3622,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/emco_remote_console_network_sigma.yml",
+                "Description": "Detects potential network activity of EMCO Remote Console RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/emco_remote_console_processes_sigma.yml",
+                "Description": "Detects potential processes activity of EMCO Remote Console RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -3249,7 +3675,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_network_sigma.yml",
+                "Description": "Detects potential network activity of ngrok RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ngrok RMM tool"
+            }
+        ],
         "References": [
             "https://ngrok.com/docs/guides/running-behind-firewalls/"
         ],
@@ -3292,7 +3727,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/apple_remote_desktop_network_sigma.yml",
+                "Description": "Detects potential network activity of Apple Remote Desktop RMM tool"
+            }
+        ],
         "References": [
             "https://support.apple.com/guide/remote-desktop/install-and-set-up-remote-desktop-apdf49e03a4/mac"
         ],
@@ -3328,7 +3768,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Netviewer (GoToMeet) RMM tool"
+            }
+        ],
         "References": [
             "Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html"
         ],
@@ -3374,7 +3819,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nomachine_network_sigma.yml",
+                "Description": "Detects potential network activity of NoMachine RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nomachine_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NoMachine RMM tool"
+            }
+        ],
         "References": [
             "https://kb.nomachine.com/AR04S01122"
         ],
@@ -3410,7 +3864,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mionet__wd_anywhere_access__processes_sigma.yml",
+                "Description": "Detects potential processes activity of MioNet (WD Anywhere Access) RMM tool"
+            }
+        ],
         "References": [
             "https://en.wikipedia.org/wiki/WD_Anywhere_Access - DOA as of 2016"
         ],
@@ -3593,7 +4052,24 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Splashtop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_network_sigma.yml",
+                "Description": "Detects potential network activity of Splashtop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_files_sigma.yml",
+                "Description": "Detects potential files activity of Splashtop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Splashtop RMM tool"
+            }
+        ],
         "References": [
             "https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html"
         ],
@@ -3695,6 +4171,22 @@
             {
                 "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml",
                 "Description": "Enumeration for 3rd Party Creds From CLI"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_registry_sigma.yml",
+                "Description": "Detects potential registry activity of RAdmin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_network_sigma.yml",
+                "Description": "Detects potential network activity of RAdmin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_files_sigma.yml",
+                "Description": "Detects potential files activity of RAdmin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RAdmin RMM tool"
             }
         ],
         "References": [
@@ -3758,7 +4250,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/landesk_network_sigma.yml",
+                "Description": "Detects potential network activity of LANDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/landesk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of LANDesk RMM tool"
+            }
+        ],
         "References": [
             "https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US"
         ],
@@ -3806,7 +4307,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_network_sigma.yml",
+                "Description": "Detects potential network activity of SuperOps RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SuperOps RMM tool"
+            }
+        ],
         "References": [
             "https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent"
         ],
@@ -3918,7 +4428,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/datto_network_sigma.yml",
+                "Description": "Detects potential network activity of Datto RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -3964,7 +4479,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_network_sigma.yml",
+                "Description": "Detects potential network activity of Supremo RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Supremo RMM tool"
+            }
+        ],
         "References": [
             "https://www.supremocontrol.com/frequently-asked-questions/"
         ],
@@ -4030,7 +4554,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Quick Assist RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4071,7 +4600,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/khelpdesk_network_sigma.yml",
+                "Description": "Detects potential network activity of KHelpDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/khelpdesk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of KHelpDesk RMM tool"
+            }
+        ],
         "References": [
             "https://www.khelpdesk.com.br/en-us"
         ],
@@ -4117,7 +4655,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/turbomeeting_network_sigma.yml",
+                "Description": "Detects potential network activity of TurboMeeting RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/turbomeeting_processes_sigma.yml",
+                "Description": "Detects potential processes activity of TurboMeeting RMM tool"
+            }
+        ],
         "References": [
             "http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv"
         ],
@@ -4161,7 +4708,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rport_network_sigma.yml",
+                "Description": "Detects potential network activity of RPort RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rport_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RPort RMM tool"
+            }
+        ],
         "References": [
             "https://kb.rport.io/using-the-remote-access"
         ],
@@ -4231,7 +4787,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/expandrive_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ExpanDrive RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4265,7 +4826,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mionet__also_known_as_wd_anywhere_access__processes_sigma.yml",
+                "Description": "Detects potential processes activity of MioNet (Also known as WD Anywhere Access) RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4308,7 +4874,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_network_sigma.yml",
+                "Description": "Detects potential network activity of OCS inventory RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_processes_sigma.yml",
+                "Description": "Detects potential processes activity of OCS inventory RMM tool"
+            }
+        ],
         "References": [
             "https://ocsinventory-ng.org/?page_id=878&lang=en"
         ],
@@ -4353,7 +4928,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_network_sigma.yml",
+                "Description": "Detects potential network activity of RemotePass RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RemotePass RMM tool"
+            }
+        ],
         "References": [
             "https://www.remotepass.com/rpaccess.html - DOA as of 2024"
         ],
@@ -4390,7 +4974,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/air_explorer_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Air Explorer RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4469,7 +5058,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_network_sigma.yml",
+                "Description": "Detects potential network activity of Comodo RMM RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Comodo RMM RMM tool"
+            }
+        ],
         "References": [
             "https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html"
         ],
@@ -4516,7 +5114,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_network_sigma.yml",
+                "Description": "Detects potential network activity of ShowMyPC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ShowMyPC RMM tool"
+            }
+        ],
         "References": [
             "https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf"
         ],
@@ -4564,7 +5171,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/todesk_network_sigma.yml",
+                "Description": "Detects potential network activity of ToDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/todesk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ToDesk RMM tool"
+            }
+        ],
         "References": [
             "https://www.todesk.com/"
         ],
@@ -4605,7 +5221,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/runsmart_network_sigma.yml",
+                "Description": "Detects potential network activity of RunSmart RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4673,7 +5294,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/echoware_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Echoware RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4785,7 +5411,24 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Alpemix RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_network_sigma.yml",
+                "Description": "Detects potential network activity of Alpemix RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_files_sigma.yml",
+                "Description": "Detects potential files activity of Alpemix RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Alpemix RMM tool"
+            }
+        ],
         "References": [
             "https://www.alpemix.com/en/remote-access"
         ],
@@ -4833,7 +5476,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_ts_network_sigma.yml",
+                "Description": "Detects potential network activity of Royal TS RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_ts_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Royal TS RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4868,7 +5520,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dragondisk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DragonDisk RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4913,7 +5570,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_network_sigma.yml",
+                "Description": "Detects potential network activity of Pcvisit RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pcvisit RMM tool"
+            }
+        ],
         "References": [
             "https://www.pcvisit.de/"
         ],
@@ -4958,7 +5624,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_automate__labtech__network_sigma.yml",
+                "Description": "Detects potential network activity of Connectwise Automate (LabTech) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_automate__labtech__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Connectwise Automate (LabTech) RMM tool"
+            }
+        ],
         "References": [
             "https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate"
         ],
@@ -5000,7 +5675,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DameWare RMM tool"
+            }
+        ],
         "References": [
             "https://documentation.solarwinds.com/en/success_center/dameware/content/install-standalone-port-requirements.htm"
         ],
@@ -5038,7 +5718,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/onionshare_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Onionshare RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -5083,7 +5768,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_network_sigma.yml",
+                "Description": "Detects potential network activity of Tailscale RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Tailscale RMM tool"
+            }
+        ],
         "References": [
             "https://tailscale.com/kb/1023/troubleshooting"
         ],
@@ -5129,7 +5823,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/senso.cloud_network_sigma.yml",
+                "Description": "Detects potential network activity of Senso.cloud RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/senso.cloud_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Senso.cloud RMM tool"
+            }
+        ],
         "References": [
             "https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration"
         ],
@@ -5215,7 +5918,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultraviewer_network_sigma.yml",
+                "Description": "Detects potential network activity of UltraViewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultraviewer_processes_sigma.yml",
+                "Description": "Detects potential processes activity of UltraViewer RMM tool"
+            }
+        ],
         "References": [
             "https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html"
         ],
@@ -5260,7 +5972,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kickidler_network_sigma.yml",
+                "Description": "Detects potential network activity of KickIdler RMM tool"
+            }
+        ],
         "References": [
             "https://www.kickidler.com/for-it/faq/"
         ],
@@ -5334,7 +6051,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_network_sigma.yml",
+                "Description": "Detects potential network activity of eHorus RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_processes_sigma.yml",
+                "Description": "Detects potential processes activity of eHorus RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -5375,7 +6101,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_network_sigma.yml",
+                "Description": "Detects potential network activity of Quick Assist RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Quick Assist RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -5431,7 +6166,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml",
+                "Description": "Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml",
+                "Description": "Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool"
+            }
+        ],
         "References": [
             "https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm"
         ],
@@ -5467,7 +6211,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kitty_processes_sigma.yml",
+                "Description": "Detects potential processes activity of KiTTY RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -5510,7 +6259,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray__awesun__network_sigma.yml",
+                "Description": "Detects potential network activity of AweRay (AweSun) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray__awesun__processes_sigma.yml",
+                "Description": "Detects potential processes activity of AweRay (AweSun) RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -5551,7 +6309,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_network_sigma.yml",
+                "Description": "Detects potential network activity of FleetDeck RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FleetDeck RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -5595,7 +6362,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_network_sigma.yml",
+                "Description": "Detects potential network activity of TeleDesktop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of TeleDesktop RMM tool"
+            }
+        ],
         "References": [
             "http://potomacsoft.com/ - DOA as of 2024"
         ],
@@ -5639,7 +6415,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_utilities_network_sigma.yml",
+                "Description": "Detects potential network activity of Remote Utilities RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_utilities_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Remote Utilities RMM tool"
+            }
+        ],
         "References": [
             "https://www.remoteutilities.com/download/"
         ],
@@ -5716,7 +6501,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_network_sigma.yml",
+                "Description": "Detects potential network activity of NetSupport Manager RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NetSupport Manager RMM tool"
+            }
+        ],
         "References": [
             "https://www.netsupportmanager.com/resources/"
         ],
@@ -5762,7 +6556,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_network_sigma.yml",
+                "Description": "Detects potential network activity of GotoHTTP RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of GotoHTTP RMM tool"
+            }
+        ],
         "References": [
             "https://gotohttp.com/goto/help.12x"
         ],
@@ -5810,7 +6613,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteutilities_network_sigma.yml",
+                "Description": "Detects potential network activity of RemoteUtilities RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteutilities_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RemoteUtilities RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -5992,7 +6804,20 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_registry_sigma.yml",
+                "Description": "Detects potential registry activity of GoToMyPC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_network_sigma.yml",
+                "Description": "Detects potential network activity of GoToMyPC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_files_sigma.yml",
+                "Description": "Detects potential files activity of GoToMyPC RMM tool"
+            }
+        ],
         "References": [
             "https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#",
             "https://support.goto.com/training/help/how-do-i-configure-gototraining-to-work-with-firewalls",
@@ -6080,7 +6905,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_network_sigma.yml",
+                "Description": "Detects potential network activity of Seetrol RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Seetrol RMM tool"
+            }
+        ],
         "References": [
             "http://www.seetrol.com/en/features/features3.php"
         ],
@@ -6124,7 +6958,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpview_network_sigma.yml",
+                "Description": "Detects potential network activity of RDPView RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpview_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RDPView RMM tool"
+            }
+        ],
         "References": [
             "systemmanager.ru/dntu.en/rdp_view.htm - Same as Damware"
         ],
@@ -6188,7 +7031,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_network_sigma.yml",
+                "Description": "Detects potential network activity of Zoho Assist RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Zoho Assist RMM tool"
+            }
+        ],
         "References": [
             "https://www.zoho.com/assist/kb/firewall-configuration.html"
         ],
@@ -6226,7 +7078,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xpra_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Xpra RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6261,7 +7118,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudbuckit_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CloudBuckIt RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6329,7 +7191,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/odrive_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ODrive RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6397,7 +7264,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ManageEngine RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6438,7 +7310,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_network_sigma.yml",
+                "Description": "Detects potential network activity of Impero Connect RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Impero Connect RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6471,7 +7352,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remcos_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Remcos RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6513,7 +7399,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_network_sigma.yml",
+                "Description": "Detects potential network activity of PDQ Connect RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_processes_sigma.yml",
+                "Description": "Detects potential processes activity of PDQ Connect RMM tool"
+            }
+        ],
         "References": [
             "https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements"
         ],
@@ -6581,7 +7476,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/air_live_drive_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Air Live Drive RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6641,7 +7541,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_network_sigma.yml",
+                "Description": "Detects potential network activity of Syncro RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Syncro RMM tool"
+            }
+        ],
         "References": [
             "https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004"
         ],
@@ -6684,7 +7593,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__network_sigma.yml",
+                "Description": "Detects potential network activity of 247ithelp.com (ConnectWise) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__processes_sigma.yml",
+                "Description": "Detects potential processes activity of 247ithelp.com (ConnectWise) RMM tool"
+            }
+        ],
         "References": [
             "Similar / replaced by ScreenConnect"
         ],
@@ -6728,7 +7646,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer_network_sigma.yml",
+                "Description": "Detects potential network activity of Netviewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Netviewer RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6771,7 +7698,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_network_sigma.yml",
+                "Description": "Detects potential network activity of Syspectr RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Syspectr RMM tool"
+            }
+        ],
         "References": [
             "https://www.syspectr.com/en/installation-in-a-network"
         ],
@@ -6817,7 +7753,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_network_sigma.yml",
+                "Description": "Detects potential network activity of I'm InTouch RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_processes_sigma.yml",
+                "Description": "Detects potential processes activity of I'm InTouch RMM tool"
+            }
+        ],
         "References": [
             "https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/"
         ],
@@ -6855,7 +7800,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aria2_processes_sigma.yml",
+                "Description": "Detects potential processes activity of aria2 RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6898,7 +7848,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_light_network_sigma.yml",
+                "Description": "Detects potential network activity of ISL Light RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_light_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ISL Light RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -6976,7 +7935,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_network_sigma.yml",
+                "Description": "Detects potential network activity of Ericom Connect RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Ericom Connect RMM tool"
+            }
+        ],
         "References": [
             "https://www.ericom.com/connect-accessnow/"
         ],
@@ -7013,7 +7981,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/yandex.disk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Yandex.Disk RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -7061,7 +8034,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_network_sigma.yml",
+                "Description": "Detects potential network activity of LiteManager RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_processes_sigma.yml",
+                "Description": "Detects potential processes activity of LiteManager RMM tool"
+            }
+        ],
         "References": [
             "https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/"
         ],
@@ -7112,7 +8094,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_network_sigma.yml",
+                "Description": "Detects potential network activity of BeAnyWhere RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_processes_sigma.yml",
+                "Description": "Detects potential processes activity of BeAnyWhere RMM tool"
+            }
+        ],
         "References": [
             "https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx"
         ],
@@ -7156,7 +8147,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_cloud_network_sigma.yml",
+                "Description": "Detects potential network activity of Jump Cloud RMM tool"
+            }
+        ],
         "References": [
             "https://jumpcloud.com/support/understand-remote-assist-agent"
         ],
@@ -7232,7 +8228,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray_network_sigma.yml",
+                "Description": "Detects potential network activity of AweRay RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray_processes_sigma.yml",
+                "Description": "Detects potential processes activity of AweRay RMM tool"
+            }
+        ],
         "References": [
             "https://sun.aweray.com/help"
         ],
@@ -7278,7 +8283,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remobo_network_sigma.yml",
+                "Description": "Detects potential network activity of Remobo RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remobo_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Remobo RMM tool"
+            }
+        ],
         "References": [
             "https://www.remobo.com - DOA as of 2024"
         ],
@@ -7326,7 +8340,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_network_sigma.yml",
+                "Description": "Detects potential network activity of ESET Remote Administrator RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ESET Remote Administrator RMM tool"
+            }
+        ],
         "References": [
             "eset.com/me/business/remote-management/remote-administrator/"
         ],
@@ -7375,7 +8398,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__network_sigma.yml",
+                "Description": "Detects potential network activity of BeyondTrust (Bomgar) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__processes_sigma.yml",
+                "Description": "Detects potential processes activity of BeyondTrust (Bomgar) RMM tool"
+            }
+        ],
         "References": [
             "https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm"
         ],
@@ -7414,7 +8446,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultra_vnc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Ultra VNC RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -7458,7 +8495,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcanywhere_network_sigma.yml",
+                "Description": "Detects potential network activity of pcAnywhere RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcanywhere_processes_sigma.yml",
+                "Description": "Detects potential processes activity of pcAnywhere RMM tool"
+            }
+        ],
         "References": [
             "https://en.wikipedia.org/wiki/PcAnywhere"
         ],
@@ -7505,7 +8551,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_network_sigma.yml",
+                "Description": "Detects potential network activity of Remote.it RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Remote.it RMM tool"
+            }
+        ],
         "References": [
             "https://docs.remote.it/introduction/get-started"
         ],
@@ -7546,7 +8601,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cruz_network_sigma.yml",
+                "Description": "Detects potential network activity of Cruz RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -7588,7 +8648,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_network_sigma.yml",
+                "Description": "Detects potential network activity of Guacamole RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Guacamole RMM tool"
+            }
+        ],
         "References": [
             "guacamole.apache.org"
         ],
@@ -7633,7 +8702,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/addigy_network_sigma.yml",
+                "Description": "Detects potential network activity of Addigy RMM tool"
+            }
+        ],
         "References": [
             "https://addigy.com/"
         ],
@@ -7678,7 +8752,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aeroadmin_network_sigma.yml",
+                "Description": "Detects potential network activity of AeroAdmin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aeroadmin_processes_sigma.yml",
+                "Description": "Detects potential processes activity of AeroAdmin RMM tool"
+            }
+        ],
         "References": [
             "https://support.aeroadmin.com/kb/faq.php?id=58"
         ],
@@ -7727,7 +8810,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml",
+                "Description": "Detects potential network activity of FleetDesk.io RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FleetDesk.io RMM tool"
+            }
+        ],
         "References": [
             "https://fleetdeck.io/faq/"
         ],
@@ -7771,7 +8863,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml",
+                "Description": "Detects potential network activity of Dameware-mini remote control Protocol RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Dameware-mini remote control Protocol RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -7805,7 +8906,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/access_remote_pc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Access Remote PC RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -7850,7 +8956,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__network_sigma.yml",
+                "Description": "Detects potential network activity of Acronic Cyber Protect (Remotix) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Acronic Cyber Protect (Remotix) RMM tool"
+            }
+        ],
         "References": [
             "https://kb.acronis.com/content/47189"
         ],
@@ -7899,7 +9014,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml",
+                "Description": "Detects potential network activity of Instant Housecall RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Instant Housecall RMM tool"
+            }
+        ],
         "References": [
             "https://instanthousecall.com/features/"
         ],
@@ -7945,7 +9069,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_network_sigma.yml",
+                "Description": "Detects potential network activity of SkyFex RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SkyFex RMM tool"
+            }
+        ],
         "References": [
             "https://skyfex.com/"
         ],
@@ -7989,7 +9122,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec_network_sigma.yml",
+                "Description": "Detects potential network activity of PSEXEC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec_processes_sigma.yml",
+                "Description": "Detects potential processes activity of PSEXEC RMM tool"
+            }
+        ],
         "References": [
             "https://learn.microsoft.com/en-us/sysinternals/downloads/psexec"
         ],
@@ -8045,7 +9187,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_network_sigma.yml",
+                "Description": "Detects potential network activity of MSP360 RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_processes_sigma.yml",
+                "Description": "Detects potential processes activity of MSP360 RMM tool"
+            }
+        ],
         "References": [
             "https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#"
         ],
@@ -8082,7 +9233,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/securecrt_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SecureCRT RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -8130,7 +9286,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_network_sigma.yml",
+                "Description": "Detects potential network activity of VNC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of VNC RMM tool"
+            }
+        ],
         "References": [
             "https://realvnc.com/en/connect/download/vnc"
         ],
@@ -8175,7 +9340,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/panorama9_network_sigma.yml",
+                "Description": "Detects potential network activity of Panorama9 RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/panorama9_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Panorama9 RMM tool"
+            }
+        ],
         "References": [
             "https://support.panorama9.com/en/articles/1859605-what-ports-and-hosts-does-the-p9-agent-communicate-with"
         ],
@@ -8223,7 +9397,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_network_sigma.yml",
+                "Description": "Detects potential network activity of FixMe RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FixMe RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -8272,7 +9455,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_network_sigma.yml",
+                "Description": "Detects potential network activity of ISL Online RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ISL Online RMM tool"
+            }
+        ],
         "References": [
             "https://help.islonline.com/19818/165940"
         ],
@@ -8319,7 +9511,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/res_automation_manager_network_sigma.yml",
+                "Description": "Detects potential network activity of RES Automation Manager RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/res_automation_manager_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RES Automation Manager RMM tool"
+            }
+        ],
         "References": [
             "https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1"
         ],
@@ -8357,7 +9558,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rclone_processes_sigma.yml",
+                "Description": "Detects potential processes activity of rclone RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -8679,6 +9885,22 @@
                 "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml",
                 "Name": "Atera Agent Installation",
                 "Description": "Detects Atera Agent installation."
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Atera RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_network_sigma.yml",
+                "Description": "Detects potential network activity of Atera RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_files_sigma.yml",
+                "Description": "Detects potential files activity of Atera RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Atera RMM tool"
             }
         ],
         "References": [
@@ -8742,7 +9964,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crossloop_network_sigma.yml",
+                "Description": "Detects potential network activity of CrossLoop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crossloop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CrossLoop RMM tool"
+            }
+        ],
         "References": [
             "www.CrossLoop.com -> redirects to avast.com"
         ],
@@ -8788,7 +10019,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml",
+                "Description": "Detects potential network activity of Level.io RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Level.io RMM tool"
+            }
+        ],
         "References": [
             "https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues"
         ],
@@ -8834,7 +10074,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_network_sigma.yml",
+                "Description": "Detects potential network activity of Tactical RMM RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Tactical RMM RMM tool"
+            }
+        ],
         "References": [
             "docs.tacticalrmm.com"
         ],
@@ -8875,7 +10124,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fortra_network_sigma.yml",
+                "Description": "Detects potential network activity of Fortra RMM tool"
+            }
+        ],
         "References": [
             "https://www.fortra.com - No free/cloud RMM softwars listed"
         ],
@@ -8920,7 +10174,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_network_sigma.yml",
+                "Description": "Detects potential network activity of Sorillus RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Sorillus RMM tool"
+            }
+        ],
         "References": [
             "https://sorillus.com/"
         ],
@@ -8971,7 +10234,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_network_sigma.yml",
+                "Description": "Detects potential network activity of RemoteCall RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RemoteCall RMM tool"
+            }
+        ],
         "References": [
             "https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall"
         ],
@@ -9021,7 +10293,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_network_sigma.yml",
+                "Description": "Detects potential network activity of Laplink Everywhere RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Laplink Everywhere RMM tool"
+            }
+        ],
         "References": [
             "https://everywhere.laplink.com/docs"
         ],
@@ -9061,7 +10342,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/megasync_processes_sigma.yml",
+                "Description": "Detects potential processes activity of MEGAsync RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -9104,7 +10390,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_network_sigma.yml",
+                "Description": "Detects potential network activity of Neturo RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Neturo RMM tool"
+            }
+        ],
         "References": [
             "Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2"
         ],
@@ -9150,7 +10445,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml",
+                "Description": "Detects potential network activity of Distant Desktop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Distant Desktop RMM tool"
+            }
+        ],
         "References": [
             "https://www.distantdesktop.com/manual/first-start.htm"
         ],
@@ -9224,7 +10528,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyplace_control_network_sigma.yml",
+                "Description": "Detects potential network activity of Anyplace Control RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyplace_control_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Anyplace Control RMM tool"
+            }
+        ],
         "References": [
             "http://www.anyplace-control.com/anyplace-control/help/faq.htm"
         ],
@@ -9292,7 +10605,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/extraputty_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ExtraPuTTY RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -9336,7 +10654,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpwrap_network_sigma.yml",
+                "Description": "Detects potential network activity of rdpwrap RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpwrap_processes_sigma.yml",
+                "Description": "Detects potential processes activity of rdpwrap RMM tool"
+            }
+        ],
         "References": [
             "github.com/stascorp/rdpwrap"
         ],
@@ -9377,7 +10704,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_remote_access_software_network_sigma.yml",
+                "Description": "Detects potential network activity of N-ABLE Remote Access Software RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -9414,7 +10746,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/google_drive_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Google Drive RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -9449,7 +10786,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/solar-putty_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Solar-PuTTY RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -9708,7 +11050,24 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teamviewer_registry_sigma.yml",
+                "Description": "Detects potential registry activity of TeamViewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teamviewer_network_sigma.yml",
+                "Description": "Detects potential network activity of TeamViewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teamviewer_files_sigma.yml",
+                "Description": "Detects potential files activity of TeamViewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teamviewer_processes_sigma.yml",
+                "Description": "Detects potential processes activity of TeamViewer RMM tool"
+            }
+        ],
         "References": [
             "https://community.teamviewer.com/English/kb/articles/4139-ports-used-by-teamviewer",
             "https://arista.my.site.com/AristaCommunity/s/article/Security-Analysis-TeamViewer#",
@@ -9773,7 +11132,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itarian_network_sigma.yml",
+                "Description": "Detects potential network activity of Itarian RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itarian_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Itarian RMM tool"
+            }
+        ],
         "References": [
             "https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html"
         ],
@@ -9816,7 +11184,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/visual_studio_dev_tunnel_network_sigma.yml",
+                "Description": "Detects potential network activity of Visual Studio Dev Tunnel RMM tool"
+            }
+        ],
         "References": [
             "https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/security"
         ],
@@ -9859,7 +11232,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml",
+                "Description": "Detects potential network activity of ITSupport247 (ConnectWise) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__processes_sigma.yml",
+                "Description": "Detects potential processes activity of ITSupport247 (ConnectWise) RMM tool"
+            }
+        ],
         "References": [
             "https://control.itsupport247.net/"
         ],
@@ -9959,6 +11341,10 @@
             {
                 "Sigma": "https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_logmein.yml",
                 "Description": "Remote Access Tool - LogMeIn Execution"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_network_sigma.yml",
+                "Description": "Detects potential network activity of LogMeIn RMM tool"
             }
         ],
         "References": [
@@ -10002,7 +11388,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cyberduck_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Cyberduck RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -10041,7 +11432,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_network_sigma.yml",
+                "Description": "Detects potential network activity of Electric RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -10107,7 +11503,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teracloud_processes_sigma.yml",
+                "Description": "Detects potential processes activity of TeraCLOUD RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -10149,7 +11550,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netreo_network_sigma.yml",
+                "Description": "Detects potential network activity of Netreo RMM tool"
+            }
+        ],
         "References": [
             "https://solutions.netreo.com/docs/firewall-requirements"
         ],
@@ -10201,7 +11607,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__impero_connect__network_sigma.yml",
+                "Description": "Detects potential network activity of Netop Remote Control (Impero Connect) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__impero_connect__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Netop Remote Control (Impero Connect) RMM tool"
+            }
+        ],
         "References": [
             "https://kb.netop.com/article/firewall-and-proxy-server-considerations-when-using-netop-portal-communication-373.html"
         ],
@@ -10247,7 +11662,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__network_sigma.yml",
+                "Description": "Detects potential network activity of Splashtop (Beta) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Splashtop (Beta) RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -10291,7 +11715,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_network_sigma.yml",
+                "Description": "Detects potential network activity of FastViewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FastViewer RMM tool"
+            }
+        ],
         "References": [
             "https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf"
         ],
@@ -10337,7 +11770,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml",
+                "Description": "Detects potential network activity of RustDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RustDesk RMM tool"
+            }
+        ],
         "References": [
             "https://rustdesk.com/docs/en/"
         ],
@@ -10424,7 +11866,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_network_sigma.yml",
+                "Description": "Detects potential network activity of GoToAssist RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_processes_sigma.yml",
+                "Description": "Detects potential processes activity of GoToAssist RMM tool"
+            }
+        ],
         "References": [
             "https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5"
         ],
@@ -10501,7 +11952,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpbeam_network_sigma.yml",
+                "Description": "Detects potential network activity of HelpBeam RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpbeam_processes_sigma.yml",
+                "Description": "Detects potential processes activity of HelpBeam RMM tool"
+            }
+        ],
         "References": [
             "https://www.helpbeam.com domain for sale in 2024"
         ],
@@ -10544,7 +12004,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_network_sigma.yml",
+                "Description": "Detects potential network activity of NTR Remote RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NTR Remote RMM tool"
+            }
+        ],
         "References": [
             "DOA as of 2024"
         ],
@@ -10588,7 +12057,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_network_sigma.yml",
+                "Description": "Detects potential network activity of ServerEye RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ServerEye RMM tool"
+            }
+        ],
         "References": [
             "https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf"
         ],
@@ -10632,7 +12110,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/webrdp_network_sigma.yml",
+                "Description": "Detects potential network activity of WebRDP RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/webrdp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of WebRDP RMM tool"
+            }
+        ],
         "References": [
             "github.com/Mikej81/WebRDP"
         ],
@@ -10703,7 +12190,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/s3_browser_processes_sigma.yml",
+                "Description": "Detects potential processes activity of S3 Browser RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -10744,7 +12236,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/any_support_network_sigma.yml",
+                "Description": "Detects potential network activity of Any Support RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/any_support_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Any Support RMM tool"
+            }
+        ],
         "References": [
             "https://www.anysupport.net/introduce_howto.php"
         ],
@@ -10789,7 +12290,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_network_sigma.yml",
+                "Description": "Detects potential network activity of BeamYourScreen RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_processes_sigma.yml",
+                "Description": "Detects potential processes activity of BeamYourScreen RMM tool"
+            }
+        ],
         "References": [
             "beamyourscreen redirects to https://www.mikogo.com/"
         ],
@@ -10837,7 +12347,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sophos-remote_management_system_network_sigma.yml",
+                "Description": "Detects potential network activity of Sophos-Remote Management System RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sophos-remote_management_system_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Sophos-Remote Management System RMM tool"
+            }
+        ],
         "References": [
             "community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system"
         ],
@@ -10874,7 +12393,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/amazon__cloud__drive_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Amazon (Cloud) Drive RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -10915,7 +12439,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml",
+                "Description": "Detects potential network activity of Desktop Central RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Desktop Central RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -10962,7 +12495,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__network_sigma.yml",
+                "Description": "Detects potential network activity of PSEXEC (Clone) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__processes_sigma.yml",
+                "Description": "Detects potential processes activity of PSEXEC (Clone) RMM tool"
+            }
+        ],
         "References": [
             "https://www.poweradmin.com/paexec/"
         ],
@@ -11008,7 +12550,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_network_sigma.yml",
+                "Description": "Detects potential network activity of GetScreen RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_processes_sigma.yml",
+                "Description": "Detects potential processes activity of GetScreen RMM tool"
+            }
+        ],
         "References": [
             "https://docs.getscreen.me/self-hosted/system-requirements/"
         ],
@@ -11063,7 +12614,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_network_sigma.yml",
+                "Description": "Detects potential network activity of RemotePC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RemotePC RMM tool"
+            }
+        ],
         "References": [
             "https://www.remotedesktop.com/helpdesk/faq-firewall"
         ],
@@ -11111,7 +12671,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_network_sigma.yml",
+                "Description": "Detects potential network activity of Tanium RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Tanium RMM tool"
+            }
+        ],
         "References": [
             "https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html"
         ],
@@ -11149,7 +12718,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goodsync_processes_sigma.yml",
+                "Description": "Detects potential processes activity of GoodSync RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -11182,7 +12756,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labteach__connectwise_automate__processes_sigma.yml",
+                "Description": "Detects potential processes activity of LabTeach (Connectwise Automate) RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -11228,7 +12807,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_network_sigma.yml",
+                "Description": "Detects potential network activity of RemoteView RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RemoteView RMM tool"
+            }
+        ],
         "References": [
             "https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall"
         ],
@@ -11272,7 +12860,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultravnc_network_sigma.yml",
+                "Description": "Detects potential network activity of UltraVNC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultravnc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of UltraVNC RMM tool"
+            }
+        ],
         "References": [
             "https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html"
         ],
@@ -11309,7 +12906,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/smartty_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SmarTTY RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -11355,7 +12957,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__network_sigma.yml",
+                "Description": "Detects potential network activity of Absolute (Computrace) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Absolute (Computrace) RMM tool"
+            }
+        ],
         "References": [
             "https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com"
         ],
@@ -11399,7 +13010,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__network_sigma.yml",
+                "Description": "Detects potential network activity of Quest KACE Agent (formerly Dell KACE) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Quest KACE Agent (formerly Dell KACE) RMM tool"
+            }
+        ],
         "References": [
             "https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function"
         ],
@@ -11443,7 +13063,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskshare_network_sigma.yml",
+                "Description": "Detects potential network activity of DeskShare RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskshare_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DeskShare RMM tool"
+            }
+        ],
         "References": [
             "https://www.deskshare.com/help/fml/Active-and-Passive-connection-mode.aspx"
         ],
@@ -11479,7 +13108,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_cloud__wyse__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pocket Cloud (Wyse) RMM tool"
+            }
+        ],
         "References": [
             "https://wyse-pocketcloud.informer.com/2.1/"
         ],
@@ -11527,7 +13161,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_network_sigma.yml",
+                "Description": "Detects potential network activity of ESET Remote Administrator RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ESET Remote Administrator RMM tool"
+            }
+        ],
         "References": [
             "eset.com/me/business/remote-management/remote-administrator/"
         ],
@@ -11573,7 +13216,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pilixo_network_sigma.yml",
+                "Description": "Detects potential network activity of Pilixo RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pilixo_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pilixo RMM tool"
+            }
+        ],
         "References": [
             "https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls"
         ],
@@ -11611,7 +13263,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudmounter_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CloudMounter RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -11662,7 +13319,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_network_sigma.yml",
+                "Description": "Detects potential network activity of Mikogo RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Mikogo RMM tool"
+            }
+        ],
         "References": [
             "https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services"
         ],
@@ -11762,7 +13428,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/duplicati_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Duplicati RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -11801,7 +13472,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_rmm_central_network_sigma.yml",
+                "Description": "Detects potential network activity of ManageEngine RMM Central RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -11837,7 +13513,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/winscp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of WinSCP RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -11882,7 +13563,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_network_sigma.yml",
+                "Description": "Detects potential network activity of GatherPlace-desktop sharing RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_processes_sigma.yml",
+                "Description": "Detects potential processes activity of GatherPlace-desktop sharing RMM tool"
+            }
+        ],
         "References": [
             "https://www.gatherplace.com/kb?id=136377"
         ],
@@ -11927,7 +13617,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_network_sigma.yml",
+                "Description": "Detects potential network activity of Laplink Gold RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Laplink Gold RMM tool"
+            }
+        ],
         "References": [
             "wen.laplink.com/product/laplink-gold"
         ],
@@ -11970,7 +13669,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centurion_network_sigma.yml",
+                "Description": "Detects potential network activity of Centurion RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centurion_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Centurion RMM tool"
+            }
+        ],
         "References": [
             "https://data443.atlassian.net/servicedesk/customer/portal/20"
         ],
@@ -12015,7 +13723,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ivanti_remote_control_network_sigma.yml",
+                "Description": "Detects potential network activity of Ivanti Remote Control RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ivanti_remote_control_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Ivanti Remote Control RMM tool"
+            }
+        ],
         "References": [
             "https://rc1.ivanticloud.com/"
         ],
@@ -12189,7 +13906,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_network_sigma.yml",
+                "Description": "Detects potential network activity of Xeox RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Xeox RMM tool"
+            }
+        ],
         "References": [
             "https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW"
         ],
@@ -12235,7 +13961,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_network_sigma.yml",
+                "Description": "Detects potential network activity of ezHelp RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ezHelp RMM tool"
+            }
+        ],
         "References": [
             "https://www.exhelp.co.kr"
         ],
@@ -12281,7 +14016,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml",
+                "Description": "Detects potential network activity of Level.io RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Level.io RMM tool"
+            }
+        ],
         "References": [
             "https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues"
         ],
@@ -12387,7 +14131,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/synergy_network_sigma.yml",
+                "Description": "Detects potential network activity of Synergy RMM tool"
+            }
+        ],
         "References": [
             "https://symless.com/synergy"
         ],
@@ -12434,7 +14183,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml",
+                "Description": "Detects potential network activity of ConnectWise Control RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ConnectWise Control RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -12477,7 +14235,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/optitune_network_sigma.yml",
+                "Description": "Detects potential network activity of OptiTune RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/optitune_processes_sigma.yml",
+                "Description": "Detects potential processes activity of OptiTune RMM tool"
+            }
+        ],
         "References": [
             "https://www.bravurasoftware.com/optitune/support/faq.aspx"
         ],
@@ -12587,7 +14354,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/encapto_network_sigma.yml",
+                "Description": "Detects potential network activity of Encapto RMM tool"
+            }
+        ],
         "References": [
             "https://www.encapto.com - used to manage Cisco services"
         ],
@@ -12732,6 +14504,18 @@
                 "Description": "Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM",
                 "author": "@kostastsale",
                 "Link": "https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Action1 RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_network_sigma.yml",
+                "Description": "Detects potential network activity of Action1 RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_files_sigma.yml",
+                "Description": "Detects potential files activity of Action1 RMM tool"
             }
         ],
         "References": [
@@ -12788,7 +14572,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_network_sigma.yml",
+                "Description": "Detects potential network activity of FleetDeck.io RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FleetDeck.io RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -12824,7 +14617,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superputty_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SuperPuTTY RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -12866,7 +14664,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_network_sigma.yml",
+                "Description": "Detects potential network activity of Royal Apps RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Royal Apps RMM tool"
+            }
+        ],
         "References": [
             "https://www.royalapps.com/ts/win/download"
         ],
@@ -12907,7 +14714,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_deploy_network_sigma.yml",
+                "Description": "Detects potential network activity of Tanium Deploy RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -12949,7 +14761,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zabbix_agent_network_sigma.yml",
+                "Description": "Detects potential network activity of Zabbix Agent RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zabbix_agent_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Zabbix Agent RMM tool"
+            }
+        ],
         "References": [
             "https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent"
         ],
@@ -12997,7 +14818,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_network_sigma.yml",
+                "Description": "Detects potential network activity of Weezo RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Weezo RMM tool"
+            }
+        ],
         "References": [
             "weezo.en.softonic.com"
         ],
@@ -13041,7 +14871,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_network_sigma.yml",
+                "Description": "Detects potential network activity of BeInSync RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_processes_sigma.yml",
+                "Description": "Detects potential processes activity of BeInSync RMM tool"
+            }
+        ],
         "References": [
             "https://en.wikipedia.org/wiki/Phoenix_Technologies"
         ],
@@ -13086,7 +14925,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenmeet_network_sigma.yml",
+                "Description": "Detects potential network activity of ScreenMeet RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenmeet_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ScreenMeet RMM tool"
+            }
+        ],
         "References": [
             "https://docs.screenmeet.com/docs/firewall-white-list"
         ],
@@ -13130,7 +14978,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/myivo_network_sigma.yml",
+                "Description": "Detects potential network activity of MyIVO RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/myivo_processes_sigma.yml",
+                "Description": "Detects potential processes activity of MyIVO RMM tool"
+            }
+        ],
         "References": [
             "myivo.com - DOA as of 2024"
         ],
@@ -13175,7 +15032,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__network_sigma.yml",
+                "Description": "Detects potential network activity of LabTech RMM (Now ConnectWise Automate) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__processes_sigma.yml",
+                "Description": "Detects potential processes activity of LabTech RMM (Now ConnectWise Automate) RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -13217,7 +15083,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kabuto_network_sigma.yml",
+                "Description": "Detects potential network activity of Kabuto RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kabuto_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Kabuto RMM tool"
+            }
+        ],
         "References": [
             "https://www.repairtechsolutions.com/documentation/kabuto/"
         ],
@@ -13285,7 +15160,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ZOC RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -13326,7 +15206,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_network_sigma.yml",
+                "Description": "Detects potential network activity of AliWangWang-remote-control RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_processes_sigma.yml",
+                "Description": "Detects potential processes activity of AliWangWang-remote-control RMM tool"
+            }
+        ],
         "References": [
             "https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale"
         ],
@@ -13377,7 +15266,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_network_sigma.yml",
+                "Description": "Detects potential network activity of Goverlan RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Goverlan RMM tool"
+            }
+        ],
         "References": [
             "https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf"
         ],
@@ -13420,7 +15318,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_network_sigma.yml",
+                "Description": "Detects potential network activity of Microsoft Quick Assist RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Microsoft Quick Assist RMM tool"
+            }
+        ],
         "References": [
             "https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca"
         ],
@@ -13487,7 +15394,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml",
+                "Description": "Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml",
+                "Description": "Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool"
+            }
+        ],
         "References": [
             "https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm"
         ],
@@ -13561,7 +15477,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mygreenpc_network_sigma.yml",
+                "Description": "Detects potential network activity of MyGreenPC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mygreenpc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of MyGreenPC RMM tool"
+            }
+        ],
         "References": [
             "http://www.mygreenpc.com/"
         ],
@@ -13598,7 +15523,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncthing_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Syncthing RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -13645,7 +15575,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml",
+                "Description": "Detects potential network activity of Chrome Remote Desktop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Chrome Remote Desktop RMM tool"
+            }
+        ],
         "References": [
             "https://support.google.com/chrome/a/answer/2799701?hl=en"
         ],
@@ -13682,7 +15621,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Microsoft RDP RMM tool"
+            }
+        ],
         "References": [
             "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows"
         ],
@@ -13731,7 +15675,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml",
+                "Description": "Detects potential network activity of Chrome Remote Desktop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Chrome Remote Desktop RMM tool"
+            }
+        ],
         "References": [
             "https://support.google.com/chrome/a/answer/2799701?hl=en"
         ],
@@ -13774,7 +15727,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_desktop_plus_network_sigma.yml",
+                "Description": "Detects potential network activity of Remote Desktop Plus RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_desktop_plus_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Remote Desktop Plus RMM tool"
+            }
+        ],
         "References": [
             "https://www.donkz.nl/"
         ],
@@ -13819,7 +15781,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_network_sigma.yml",
+                "Description": "Detects potential network activity of NateOn-desktop sharing RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NateOn-desktop sharing RMM tool"
+            }
+        ],
         "References": [
             "http://rsupport.nate.com/rview/r8/main/index.aspx"
         ],
@@ -13862,7 +15833,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/barracuda_network_sigma.yml",
+                "Description": "Detects potential network activity of Barracuda RMM tool"
+            }
+        ],
         "References": [
             "https://help.islonline.com/19799/166125"
         ],
@@ -13900,7 +15876,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dropbox_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Dropbox RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -13943,7 +15924,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_network_sigma.yml",
+                "Description": "Detects potential network activity of CrossTec Remote Control RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CrossTec Remote Control RMM tool"
+            }
+        ],
         "References": [
             "www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024"
         ],
@@ -13987,7 +15977,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskday_network_sigma.yml",
+                "Description": "Detects potential network activity of DeskDay RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskday_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DeskDay RMM tool"
+            }
+        ],
         "References": [
             "https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate"
         ],
@@ -14054,7 +16053,20 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_network_sigma.yml",
+                "Description": "Detects potential network activity of mRemoteNG RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_files_sigma.yml",
+                "Description": "Detects potential files activity of mRemoteNG RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_processes_sigma.yml",
+                "Description": "Detects potential processes activity of mRemoteNG RMM tool"
+            }
+        ],
         "References": [
             "https://github.com/mRemoteNG/mRemoteNG"
         ],
@@ -14090,7 +16102,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/freenx_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FreeNX RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -14135,7 +16152,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_network_sigma.yml",
+                "Description": "Detects potential network activity of NetSupport Manager RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NetSupport Manager RMM tool"
+            }
+        ],
         "References": [
             "https://www.netsupportmanager.com/resources/"
         ],
@@ -14180,7 +16206,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_network_sigma.yml",
+                "Description": "Detects potential network activity of rdp2tcp RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of rdp2tcp RMM tool"
+            }
+        ],
         "References": [
             "github.com/V-E-O/rdp2tcp"
         ],
@@ -14224,7 +16259,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml",
+                "Description": "Detects potential network activity of ITSupport247 (ConnectWise) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__processes_sigma.yml",
+                "Description": "Detects potential processes activity of ITSupport247 (ConnectWise) RMM tool"
+            }
+        ],
         "References": [
             "https://control.itsupport247.net/"
         ],
@@ -14268,7 +16312,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_network_sigma.yml",
+                "Description": "Detects potential network activity of Pulseway RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pulseway RMM tool"
+            }
+        ],
         "References": [
             "https://intercom.help/pulseway/en/"
         ],
@@ -14312,7 +16365,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/naverisk_network_sigma.yml",
+                "Description": "Detects potential network activity of Naverisk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/naverisk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Naverisk RMM tool"
+            }
+        ],
         "References": [
             "http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents"
         ],
@@ -14350,7 +16412,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/total_software_deployment_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Total Software Deployment RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -14398,7 +16465,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_network_sigma.yml",
+                "Description": "Detects potential network activity of ISL Online RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_processes_sigma.yml",
+                "Description": "Detects potential processes activity of ISL Online RMM tool"
+            }
+        ],
         "References": [
             "https://help.islonline.com/19818/165940"
         ],
@@ -14510,7 +16586,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_network_sigma.yml",
+                "Description": "Detects potential network activity of QQ IM-remote assistance RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_processes_sigma.yml",
+                "Description": "Detects potential processes activity of QQ IM-remote assistance RMM tool"
+            }
+        ],
         "References": [
             "https://en.wikipedia.org/wiki/Tencent_QQ"
         ],
@@ -14556,7 +16641,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml",
+                "Description": "Detects potential network activity of Distant Desktop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Distant Desktop RMM tool"
+            }
+        ],
         "References": [
             "https://www.distantdesktop.com/manual/first-start.htm"
         ],
@@ -14614,7 +16708,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml",
+                "Description": "Detects potential network activity of FixMe.it RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FixMe.it RMM tool"
+            }
+        ],
         "References": [
             "https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use"
         ],
@@ -14651,7 +16754,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/filezilla_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FileZilla RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -14684,7 +16792,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Microsoft RDP RMM tool"
+            }
+        ],
         "References": [
             "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows"
         ],
@@ -14729,7 +16842,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rudesktop_network_sigma.yml",
+                "Description": "Detects potential network activity of RuDesktop RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rudesktop_processes_sigma.yml",
+                "Description": "Detects potential processes activity of RuDesktop RMM tool"
+            }
+        ],
         "References": [
             "https://rudesktop.ru"
         ],
@@ -14778,7 +16900,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__network_sigma.yml",
+                "Description": "Detects potential network activity of BeyondTrust (Bomgar) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__processes_sigma.yml",
+                "Description": "Detects potential processes activity of BeyondTrust (Bomgar) RMM tool"
+            }
+        ],
         "References": [
             "https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm"
         ],
@@ -14815,7 +16946,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/freefilesync_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FreeFileSync RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -14859,7 +16995,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tightvnc_network_sigma.yml",
+                "Description": "Detects potential network activity of TightVNC RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tightvnc_processes_sigma.yml",
+                "Description": "Detects potential processes activity of TightVNC RMM tool"
+            }
+        ],
         "References": [
             "https://www.tightvnc.com/doc/win/TightVNC_for_Windows-Installation_and_Getting_Started.pdf"
         ],
@@ -14904,7 +17049,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml",
+                "Description": "Detects potential network activity of MeshCentral RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml",
+                "Description": "Detects potential processes activity of MeshCentral RMM tool"
+            }
+        ],
         "References": [
             "https://ylianst.github.io/MeshCentral/meshcentral/"
         ],
@@ -14941,7 +17095,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cuteftp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CuteFTP RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -14980,7 +17139,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dev_tunnels__aka_visual_studio_dev_tunnel__network_sigma.yml",
+                "Description": "Detects potential network activity of Dev Tunnels (aka Visual Studio Dev Tunnel) RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -15015,7 +17179,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/carotdav_processes_sigma.yml",
+                "Description": "Detects potential processes activity of CarotDAV RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -15050,7 +17219,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bitvise_ssh_server_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Bitvise SSH Server RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -15092,7 +17266,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__network_sigma.yml",
+                "Description": "Detects potential network activity of Pandora RC (eHorus) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Pandora RC (eHorus) RMM tool"
+            }
+        ],
         "References": [
             "https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction"
         ],
@@ -15137,7 +17320,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_network_sigma.yml",
+                "Description": "Detects potential network activity of DW Service RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_processes_sigma.yml",
+                "Description": "Detects potential processes activity of DW Service RMM tool"
+            }
+        ],
         "References": [
             "https://news.dwservice.net/dwservice-security-infrastructure/"
         ],
@@ -15184,7 +17376,16 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_network_sigma.yml",
+                "Description": "Detects potential network activity of Iperius Remote RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Iperius Remote RMM tool"
+            }
+        ],
         "References": [
             "https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx"
         ],

@@ -17,17 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - NTRsupportPro_EN.exe
+  - NTRsupportPro_EN.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.ntrsupport.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.ntrsupport.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_network_sigma.yml
+  Description: Detects potential network activity of NTR Remote RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_processes_sigma.yml
+  Description: Detects potential processes activity of NTR Remote RMM tool
 References:
-  - DOA as of 2024
+- DOA as of 2024
 Acknowledgement: []

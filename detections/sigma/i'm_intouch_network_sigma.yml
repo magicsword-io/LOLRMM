@@ -8,11 +8,11 @@ detection:
     - '*.01com.com'
     - 01com.com/imintouch-remote-pc-desktop
   condition: selection
-id: c19da028-3bbd-402e-b73e-6439ceb561eb
+id: e9c4aa64-be23-4708-a1dd-e8c3661d74e6
 status: experimental
 description: Detects potential network activity of I'm InTouch RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

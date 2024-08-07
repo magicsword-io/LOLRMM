@@ -8,11 +8,11 @@ detection:
     - TeamTaskManager.exe
     - DSGuest.exe
   condition: selection
-id: 626b8053-8365-4d4a-b767-0e27c37e4ec7
+id: 7bf7edf6-bcbe-4916-b9f0-139d63834ac3
 status: experimental
 description: Detects potential processes activity of DeskShare RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

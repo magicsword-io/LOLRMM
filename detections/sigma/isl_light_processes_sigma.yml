@@ -9,11 +9,11 @@ detection:
     - isllight.exe
     - isllightservice.exe
   condition: selection
-id: f5df51e2-0ed0-48f2-8158-f0da9c7f1957
+id: 28dff07b-24d9-454b-a219-d096ed081c61
 status: experimental
 description: Detects potential processes activity of ISL Light RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

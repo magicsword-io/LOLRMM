@@ -23,6 +23,9 @@ rclone is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,6 +48,9 @@ rclone is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+### Detections
+- Detects potential processes activity of rclone RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rclone_processes_sigma.yml)
 
 
 

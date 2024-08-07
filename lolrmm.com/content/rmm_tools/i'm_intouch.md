@@ -24,6 +24,9 @@ I'm InTouch is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ I'm InTouch is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.01com.com`
     - `01com.com/imintouch-remote-pc-desktop`
 
 
-
-
+### Detections
+- Detects potential network activity of I'm InTouch RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_network_sigma.yml)
+- Detects potential processes activity of I'm InTouch RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_processes_sigma.yml)
 
 ### References
 - [https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/](https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/)

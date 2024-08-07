@@ -8,11 +8,11 @@ detection:
     - '*.fastviewer.com'
     - fastviewer.com
   condition: selection
-id: 1e62e748-c923-4d2a-a36f-763d6623b526
+id: 2bd1088d-19c5-4d3d-a22b-bf56245c9cc8
 status: experimental
 description: Detects potential network activity of FastViewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

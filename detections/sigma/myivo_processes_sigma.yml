@@ -8,11 +8,11 @@ detection:
     - myivomgr.exe
     - myivomanager.exe
   condition: selection
-id: 5b8dfe1c-c608-4b24-b2bd-4632239b343b
+id: ebbf3afb-cee4-4024-8da8-48e156b003d1
 status: experimental
 description: Detects potential processes activity of MyIVO RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

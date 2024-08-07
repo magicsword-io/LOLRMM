@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\Bitvise SSH Server\*
-    - '*\Bitvise SSH Server\*'
-    - '*\BvSshServer-Inst.exe'
+  - C:\Program Files\Bitvise SSH Server\*
+  - '*\Bitvise SSH Server\*'
+  - '*\BvSshServer-Inst.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bitvise_ssh_server_processes_sigma.yml
+  Description: Detects potential processes activity of Bitvise SSH Server RMM tool
 References: []
 Acknowledgement: []

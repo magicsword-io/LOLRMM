@@ -23,6 +23,9 @@ AweRay (AweSun) is a remote monitoring and management (RMM) tool. More informati
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ AweRay (AweSun) is a remote monitoring and management (RMM) tool. More informati
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `asapi-us.aweray.net`
     - `asapi.aweray.net`
 
 
-
-
+### Detections
+- Detects potential network activity of AweRay (AweSun) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray__awesun__network_sigma.yml)
+- Detects potential processes activity of AweRay (AweSun) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray__awesun__processes_sigma.yml)
 
 
 

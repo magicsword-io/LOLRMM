@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ocsinventory.exe
-    - ocsservice.exe
+  - ocsinventory.exe
+  - ocsservice.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - ocsinventory-ng.org
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - ocsinventory-ng.org
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_network_sigma.yml
+  Description: Detects potential network activity of OCS inventory RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_processes_sigma.yml
+  Description: Detects potential processes activity of OCS inventory RMM tool
 References:
-  - https://ocsinventory-ng.org/?page_id=878&lang=en
+- https://ocsinventory-ng.org/?page_id=878&lang=en
 Acknowledgement: []

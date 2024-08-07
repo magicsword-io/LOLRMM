@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - sysdiag.exe
   condition: selection
-id: 42514a85-c189-46f8-a293-8f7f48f55012
+id: cd302294-1c3e-479a-a464-aff706a761af
 status: experimental
 description: Detects potential processes activity of SpyAnywhere RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

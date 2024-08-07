@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - user_managed
   condition: selection
-id: 8e62f1bf-bf32-4906-9dbe-55918e6aa74f
+id: 9a0fc403-4c77-4519-85e8-84c36bd6456b
 status: experimental
 description: Detects potential network activity of Microsoft Quick Assist RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

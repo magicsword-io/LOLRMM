@@ -8,12 +8,12 @@ detection:
     - '*.itsupport247.net'
     - itsupport247.net
   condition: selection
-id: 0647c412-8092-4dee-9be4-a736e4ed7b6f
+id: 7c677c95-b608-4705-8573-4cf6f0e2432a
 status: experimental
 description: Detects potential network activity of ITSupport247 (ConnectWise) RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,15 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - portable tool. No install path
-    - portable tool. No install path
-    - rclone*.zip
-    - '*\rclone.exe'
+  - portable tool. No install path
+  - portable tool. No install path
+  - rclone*.zip
+  - '*\rclone.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rclone_processes_sigma.yml
+  Description: Detects potential processes activity of rclone RMM tool
 References: []
 Acknowledgement: []

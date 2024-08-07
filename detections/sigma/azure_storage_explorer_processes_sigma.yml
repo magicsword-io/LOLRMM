@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\StorageExplorer.exe'
   condition: selection
-id: 00bc3746-457b-4b47-a246-f23f1155d9c0
+id: 5a756379-897d-47ec-b00a-5fa73eaf4988
 status: experimental
 description: Detects potential processes activity of Azure Storage Explorer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

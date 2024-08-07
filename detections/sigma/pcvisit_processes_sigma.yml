@@ -10,11 +10,11 @@ detection:
     - pcvisit-easysupport.exe
     - pcvisit_service_client.exe
   condition: selection
-id: d642e75b-db71-4fb0-8439-3704455eb7d0
+id: da7aef8c-62ce-4abf-adf3-9df130d9dd30
 status: experimental
 description: Detects potential processes activity of Pcvisit RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

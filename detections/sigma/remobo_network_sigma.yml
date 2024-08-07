@@ -8,11 +8,11 @@ detection:
     - user_managed
     - remobo.en.softonic.com
   condition: selection
-id: ca71a43c-1423-4004-8a96-b789a80b1cc3
+id: 93e3bc0d-2fd2-4803-a4bd-06c3ce99dd6e
 status: experimental
 description: Detects potential network activity of Remobo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

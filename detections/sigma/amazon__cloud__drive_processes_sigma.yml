@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\AmazonCloudDrive.exe'
   condition: selection
-id: 41013154-16de-4a75-8b41-1aa4a350b15a
+id: 786546bb-4108-481e-9309-a498b49009bf
 status: experimental
 description: Detects potential processes activity of Amazon (Cloud) Drive RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

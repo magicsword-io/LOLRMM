@@ -17,19 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - addigy-*.pkg
+  - addigy-*.pkg
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - prod.addigy.com
-        - grtmprod.addigy.com
-        - agents.addigy.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - prod.addigy.com
+    - grtmprod.addigy.com
+    - agents.addigy.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/addigy_network_sigma.yml
+  Description: Detects potential network activity of Addigy RMM tool
 References:
-  - https://addigy.com/
+- https://addigy.com/
 Acknowledgement: []

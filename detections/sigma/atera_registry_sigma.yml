@@ -16,11 +16,11 @@ detection:
     - HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS
     - HKLM\SOFTWARE\ATERA Networks\*
   condition: selection
-id: 2de6bfd0-9ff2-439c-9886-207f1ab5cc35
+id: 3d7e3f5a-f6da-4a6d-a65d-11ed0f292c67
 status: experimental
 description: Detects potential registry activity of Atera RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

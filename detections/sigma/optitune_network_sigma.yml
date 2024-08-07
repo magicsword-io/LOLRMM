@@ -8,11 +8,11 @@ detection:
     - '*.optitune.us'
     - '*.opti-tune.com'
   condition: selection
-id: 411944b0-da03-4d35-a49e-6fdb83850250
+id: 22949aea-1e6c-4d5a-9caa-069a8561716c
 status: experimental
 description: Detects potential network activity of OptiTune RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

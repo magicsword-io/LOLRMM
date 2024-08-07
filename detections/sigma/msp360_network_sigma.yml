@@ -10,11 +10,11 @@ detection:
     - '*.mspbackups.com'
     - msp360.com
   condition: selection
-id: 68081126-d30b-4965-9193-c19af365d575
+id: 5b9b0cf1-ebcc-4ec2-97b9-af7911ce3624
 status: experimental
 description: Detects potential network activity of MSP360 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

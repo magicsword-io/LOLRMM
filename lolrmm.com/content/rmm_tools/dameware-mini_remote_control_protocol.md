@@ -23,6 +23,9 @@ Dameware-mini remote control Protocol is a remote monitoring and management (RMM
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ Dameware-mini remote control Protocol is a remote monitoring and management (RMM
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `dameware.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Dameware-mini remote control Protocol RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml)
+- Detects potential processes activity of Dameware-mini remote control Protocol RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_processes_sigma.yml)
 
 
 

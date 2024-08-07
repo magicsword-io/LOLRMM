@@ -9,11 +9,11 @@ detection:
     - deskroll.com
     - '*.deskroll.com'
   condition: selection
-id: 909be690-22c1-4f58-a5cf-48a7bf64af6b
+id: 9576d699-5443-4d7b-b464-e2443de129b3
 status: experimental
 description: Detects potential network activity of SkyFex RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

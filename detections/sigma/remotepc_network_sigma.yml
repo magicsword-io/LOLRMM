@@ -10,11 +10,11 @@ detection:
     - www.remotepc.com
     - remotepc.com
   condition: selection
-id: 340f2c24-b35b-4082-bccc-1193e459ba85
+id: fa8e726b-d853-4ac5-9d88-905be2962b0b
 status: experimental
 description: Detects potential network activity of RemotePC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,24 +17,28 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - islalwaysonmonitor.exe
-    - isllight.exe
-    - isllightservice.exe
-    - ISLLightClient.exe
-    - C:\Program Files (x86)\ISL Online\ISL Light*
-    - '*\ISL Online\ISL Light*'
-    - '*\ISLLight.exe'
+  - islalwaysonmonitor.exe
+  - isllight.exe
+  - isllightservice.exe
+  - ISLLightClient.exe
+  - C:\Program Files (x86)\ISL Online\ISL Light*
+  - '*\ISL Online\ISL Light*'
+  - '*\ISLLight.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.islonline.com'
-        - '*.islonline.net'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.islonline.com'
+    - '*.islonline.net'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_network_sigma.yml
+  Description: Detects potential network activity of ISL Online RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_processes_sigma.yml
+  Description: Detects potential processes activity of ISL Online RMM tool
 References:
-  - https://help.islonline.com/19818/165940
+- https://help.islonline.com/19818/165940
 Acknowledgement: []

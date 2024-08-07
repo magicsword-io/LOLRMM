@@ -25,12 +25,12 @@ detection:
     - systemmonitor.eu.com
     - '*.n-able.com'
   condition: selection
-id: 2055e220-81bd-45f6-87c4-a90b5ac57cf6
+id: ca8791dc-7469-4a02-945f-80b9a131b0c4
 status: experimental
 description: Detects potential network activity of N-Able Advanced Monitoring Agent
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -24,6 +24,9 @@ BeamYourScreen is a remote monitoring and management (RMM) tool. More informatio
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,16 +46,16 @@ BeamYourScreen is a remote monitoring and management (RMM) tool. More informatio
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `beamyourscreen.com`
     - `*.beamyourscreen.com`
 
 
-
-
+### Detections
+- Detects potential network activity of BeamYourScreen RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_network_sigma.yml)
+- Detects potential processes activity of BeamYourScreen RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_processes_sigma.yml)
 
 ### References
 - [beamyourscreen redirects to https://www.mikogo.com/](beamyourscreen redirects to https://www.mikogo.com/)

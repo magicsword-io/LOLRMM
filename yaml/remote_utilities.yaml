@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - rutview.exe
-    - rutserv.exe
+  - rutview.exe
+  - rutserv.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.internetid.ru'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.internetid.ru'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_utilities_network_sigma.yml
+  Description: Detects potential network activity of Remote Utilities RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_utilities_processes_sigma.yml
+  Description: Detects potential processes activity of Remote Utilities RMM tool
 References:
-  - https://www.remoteutilities.com/download/
+- https://www.remoteutilities.com/download/
 Acknowledgement: []

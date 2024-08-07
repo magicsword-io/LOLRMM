@@ -17,16 +17,18 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\uvnc bvba\UltraVNC\*
-    - '*\uvnc bvba\UltraVNC\*'
-    - '*\UVNC_Launch.exe'
-    - '*\winvnc.exe'
-    - '*\vncviewer.exe'
+  - C:\Program Files\uvnc bvba\UltraVNC\*
+  - '*\uvnc bvba\UltraVNC\*'
+  - '*\UVNC_Launch.exe'
+  - '*\winvnc.exe'
+  - '*\vncviewer.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultra_vnc_processes_sigma.yml
+  Description: Detects potential processes activity of Ultra VNC RMM tool
 References: []
 Acknowledgement: []

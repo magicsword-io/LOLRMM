@@ -8,11 +8,11 @@ detection:
     - '*\MEGAsyncSetup64.exe'
     - '*\MEGAupdater.exe'
   condition: selection
-id: e6685ca9-f9cf-472d-b73a-77e601e33eb8
+id: a0026069-13de-49ef-be27-1951aecc3581
 status: experimental
 description: Detects potential processes activity of MEGAsync RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

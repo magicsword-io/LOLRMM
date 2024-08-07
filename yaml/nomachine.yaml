@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - nomachine*.exe
-    - nxservice*.ese
-    - nxd.exe
+  - nomachine*.exe
+  - nxservice*.ese
+  - nxd.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - nomachine.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - nomachine.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nomachine_network_sigma.yml
+  Description: Detects potential network activity of NoMachine RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nomachine_processes_sigma.yml
+  Description: Detects potential processes activity of NoMachine RMM tool
 References:
-  - https://kb.nomachine.com/AR04S01122
+- https://kb.nomachine.com/AR04S01122
 Acknowledgement: []

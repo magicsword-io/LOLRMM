@@ -66,6 +66,8 @@ GoToMyPC is a remote monitoring and management (RMM) tool. More information will
 - **Filename**: gopcsrv.exe
 - **Filename**: GoToScrUtils.exe
 - **Filename**: GoTo.exe
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -81,42 +83,35 @@ GoToMyPC is a remote monitoring and management (RMM) tool. More information will
 ### Forensic Artifacts
 
 #### Disk Artifacts
-
 - **File**: `%AppData%\GoTo\Logs\goto.log`
-
   **Description**: N/A
-
-
   **OS**: Windows
-
 
 
 #### Registry Artifacts
 - **Path**: `HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc`
   **Description**: Configuration settings including registration email
-
 - **Path**: `HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc\GuestInvite`
   **Description**: Guest invites send to connect
-
 - **Path**: `HKEY_CURRENT_USER\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history`
   **Description**: hostname of the computer making connections and location of transferred files
-
 - **Path**: `HKEY_USERS\<SID>\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history`
   **Description**: hostname of the computer making connections and location of transferred files
 
-
 #### Network Artifacts
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.GoToMyPC.com`
-
   **Ports**:
     - `N/A`
 
 
-
+### Detections
+- Detects potential registry activity of GoToMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_registry_sigma.yml)
+- Detects potential network activity of GoToMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_network_sigma.yml)
+- Detects potential files activity of GoToMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_files_sigma.yml)
 
 ### References
 - [https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#](https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#)

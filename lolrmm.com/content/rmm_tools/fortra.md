@@ -24,6 +24,9 @@ Fortra is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -40,15 +43,13 @@ Fortra is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `fortra.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Fortra RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fortra_network_sigma.yml)
 
 ### References
 - [https://www.fortra.com - No free/cloud RMM softwars listed](https://www.fortra.com - No free/cloud RMM softwars listed)

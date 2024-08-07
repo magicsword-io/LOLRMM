@@ -22,10 +22,13 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dev_tunnels__aka_visual_studio_dev_tunnel__network_sigma.yml
+  Description: Detects potential network activity of Dev Tunnels (aka Visual Studio
+    Dev Tunnel) RMM tool
 References: []
 Acknowledgement: []

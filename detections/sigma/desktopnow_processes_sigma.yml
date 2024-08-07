@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - desktopnow.exe
   condition: selection
-id: 41abf633-3de1-4374-9521-8138962a7906
+id: 0e8c58da-b287-414c-86de-42efa6aaac8a
 status: experimental
 description: Detects potential processes activity of DesktopNow RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

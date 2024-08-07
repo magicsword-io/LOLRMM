@@ -8,11 +8,11 @@ detection:
     - user_managed
     - wen.laplink.com/product/laplink-gold
   condition: selection
-id: 0b4fb91e-3efc-481f-bf98-fe5ccfc5e3f3
+id: 6e659208-d21e-4981-af48-79bf35b52b87
 status: experimental
 description: Detects potential network activity of Laplink Gold RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

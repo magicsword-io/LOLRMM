@@ -24,6 +24,9 @@ SkyFex is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,17 +46,17 @@ SkyFex is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `skyfex.com`
     - `deskroll.com`
     - `*.deskroll.com`
 
 
-
-
+### Detections
+- Detects potential network activity of SkyFex RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_network_sigma.yml)
+- Detects potential processes activity of SkyFex RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_processes_sigma.yml)
 
 ### References
 - [https://skyfex.com/](https://skyfex.com/)

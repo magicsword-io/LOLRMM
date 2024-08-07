@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - remoteconsole.exe
   condition: selection
-id: e93c8c59-c28e-4ad8-9659-8ea19e3658bd
+id: 03128fb8-63b7-4c37-bebb-ed7f8fcc82ab
 status: experimental
 description: Detects potential processes activity of EMCO Remote Console RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

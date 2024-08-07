@@ -8,11 +8,11 @@ detection:
     - servereye*.exe
     - ServiceProxyLocalSys.exe
   condition: selection
-id: abb42680-66bf-4e6f-9f08-ea0290b09953
+id: a50f03f8-3431-42b6-96a0-ce50a88d4ef8
 status: experimental
 description: Detects potential processes activity of ServerEye RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

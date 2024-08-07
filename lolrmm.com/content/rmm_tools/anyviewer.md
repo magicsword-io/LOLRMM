@@ -29,10 +29,10 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
 
 #### PE Metadata
 - **Filename**: AnyViewer.exe
-- **Original File Name**: AnyViewer
+- **OriginalFileName**: AnyViewer
 - **Description**: Splash Window
 - **Filename**: RCClient.exe
-- **Original File Name**: RCClient.exe
+- **OriginalFileName**: RCClient.exe
 - **Description**: AnyViewer Core
 - **Filename**: ScreanCap.exe
 - **Description**: Screan capture
@@ -63,49 +63,38 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
 
 #### Event Log Artifacts
 - Event Details:
-  - **Event ID**: 4688
-  - **Provider Name**: Microsoft-Security-Auditing
-  - **Log File**: Security.evtx
+  - **EventID**: 4688
+  - **ProviderName**: Microsoft-Security-Auditing
+  - **LogFile**: Security.evtx
+  - **CommandLine**: "C:\\Program Files (x86)\\AnyViewer\\AVCore.exe" -d
   - **Description**: Taking actions on the remote machine such as opening a command prompt.
-  - **Command Line**: "C:\\Program Files (x86)\\AnyViewer\\AVCore.exe" -d
 - Event Details:
-  - **Event ID**: 7045
-  - **Provider Name**: Service Control Manager
-  - **Log File**: System.evtx
-  - **Service Name**: RCService
-  - **Image Path**: C:\\Program Files (x86)\\AnyViewer\\RCService.exe
+  - **EventID**: 7045
+  - **ProviderName**: Service Control Manager
+  - **LogFile**: System.evtx
+  - **ServiceName**: RCService
+  - **ImagePath**: C:\\Program Files (x86)\\AnyViewer\\RCService.exe
   - **Description**: AnyViewer service installation service.
 
 
 #### Network Artifacts
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.anyviewer.com`
-
   **Ports**:
     - `443`
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.aomeisoftware.com`
-
   **Ports**:
     - `443`
-
 
 
 ### Detections
--   **Arbitrary code execution and remote sessions via Action1 RMM**
-
-  Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
-
-  (Author: @kostastsale)
-
-  [Link](https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml)
-
+- Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+  - **Arbitrary code execution and remote sessions via Action1 RMM**
+  - Author: @kostastsale
+  - [Additional Information](https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml)
+- Detects potential network activity of AnyViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyviewer_network_sigma.yml)
 
 ### References
 - [https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html](https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html)

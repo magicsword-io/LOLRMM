@@ -30,6 +30,8 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
 - **Filename**: agentmon.exe
 - **Filename**: KaUpdHlp.exe
 - **Filename**: KaUsrTsk.exe
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,134 +48,69 @@ Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More i
 ### Forensic Artifacts
 
 #### Disk Artifacts
-
 - **File**: `%localappdata%\Kaseya\Log\KaseyaLiveConnect\*`
-
   **Description**: Kaseya Live Connect logs
-
-
   **OS**: Windows
-
 - **File**: `~/Library/Logs/com.kaseya/KaseyaLiveConnect/*`
-
   **Description**: Kaseya Live Connect logs
-
-
   **OS**: MacOS
-
 - **File**: `C:\ProgramData\Kaseya\Log\Endpoint\*`
-
   **Description**: Kaseya Endpoint logs
-
-
   **OS**: Windows
-
 - **File**: `C:\Program Files*\Kaseya\*\agentmon.log`
-
   **Description**: Kaseya Agent Monitor log
-
-
-
 - **File**: `/var/log/system.log`
-
   **Description**: Kaseya Agent Monitor log
-
-
   **OS**: MacOS 32bit
-
 - **File**: ` ~/opt/kaseya/*/logs*`
-
   **Description**: Kaseya Agent Monitor log
-
-
   **OS**: MacOS 64bit
-
 - **File**: `C:\Users\*\AppData\Local\Temp\KASetup.log`
-
   **Description**: Kaseya Setup log in user temp directory
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\Temp\KASetup.log`
-
   **Description**: Kaseya Setup log in Windows temp directory
-
-
   **OS**: Windows
-
 - **File**: `C:\ProgramData\Kaseya\Log\KaseyaEdgeServices\*`
-
   **Description**: Kaseya Edge Services logs
-
-
   **OS**: Windows
-
 - **File**: `C:\Kaseya\api\v1.0\logs\`
-
   **Description**: Kaseya API logs
-
-
   **OS**: Windows
-
 - **File**: `C:\Kaseya\api\v1.5\endpoint\logs`
-
   **Description**: Kaseya API logs
-
-
   **OS**: Windows
-
 - **File**: `C:\Kaseya\api\v1.5\endpoints\logs`
-
   **Description**: Kaseya API logs
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\System32\config\systemprofile\AppData\Local\Kaseya\Log\MakeSelfSignedCert.exe\`
-
   **Description**: Certificate creation
-
-
   **OS**: Windows
-
 - **File**: `C:\Kaseya\WebPages\install\makecert.txt`
-
   **Description**: Certificate creation
-
-
   **OS**: Windows
-
 - **File**: `C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\KaseyaEndpoint*`
-
   **Description**: Endpoint service logs
-
-
   **OS**: Windows
-
 - **File**: `C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\Session_*`
-
   **Description**: Session logs
-
-
   **OS**: Windows
-
 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `deploy01.kaseya.com`
     - `*managedsupport.kaseya.net`
     - `*.kaseya.net`
     - `kaseya.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Kaseya (VSA) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kaseya__vsa__network_sigma.yml)
+- Detects potential files activity of Kaseya (VSA) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kaseya__vsa__files_sigma.yml)
 
 ### References
 - [https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements](https://helpdesk.kaseya.com/hc/en-gb/articles/229012608-Software-Deployment-URL-Port-Requirements)

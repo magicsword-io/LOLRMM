@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.khelpdesk.com.br'
   condition: selection
-id: b59a8a5b-5c0b-4b1f-afcb-f36d935ef624
+id: fb3acb0c-c623-44d5-97fa-3595c4bf8a35
 status: experimental
 description: Detects potential network activity of KHelpDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

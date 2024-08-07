@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.nate.com'
   condition: selection
-id: 4f6a1bdc-dfc2-49b6-a1b6-f1fe13ce0a84
+id: a14b3a24-e9c8-4c9b-9668-65953bf06324
 status: experimental
 description: Detects potential network activity of NateOn-desktop sharing RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

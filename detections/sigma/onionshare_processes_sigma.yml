@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\onionshare*.exe'
   condition: selection
-id: 84a46952-fbfa-43af-af4b-748f54e2ee6f
+id: 47582285-6b9b-4f48-a5ad-f60b1a9da608
 status: experimental
 description: Detects potential processes activity of Onionshare RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

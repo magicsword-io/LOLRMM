@@ -8,11 +8,11 @@ detection:
     - '*.kabuto.io'
     - repairtechsolutions.com/kabuto/
   condition: selection
-id: 7f412ef1-821b-44ea-bfe3-96e54e087e9d
+id: 7748836e-1d1a-4c37-8d82-b9ef3f50764c
 status: experimental
 description: Detects potential network activity of Kabuto RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

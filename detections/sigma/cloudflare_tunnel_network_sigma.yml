@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - cloudflare.com/products/tunnel/
   condition: selection
-id: ba784c59-8d23-4e44-b59a-18a9280b045f
+id: f64ebd79-45b1-4ed4-8dad-571d0bca51b6
 status: experimental
 description: Detects potential network activity of CloudFlare Tunnel RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

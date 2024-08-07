@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Windows\System32\mstsc.exe
-    - '*Windows\System32\mstsc.exe'
+  - C:\Windows\System32\mstsc.exe
+  - '*Windows\System32\mstsc.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mstsc_processes_sigma.yml
+  Description: Detects potential processes activity of mstsc RMM tool
 References: []
 Acknowledgement: []

@@ -24,6 +24,9 @@ Laplink Gold is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,16 +46,16 @@ Laplink Gold is a remote monitoring and management (RMM) tool. More information 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `wen.laplink.com/product/laplink-gold`
 
 
-
-
+### Detections
+- Detects potential network activity of Laplink Gold RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_network_sigma.yml)
+- Detects potential processes activity of Laplink Gold RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_processes_sigma.yml)
 
 ### References
 - [wen.laplink.com/product/laplink-gold](wen.laplink.com/product/laplink-gold)

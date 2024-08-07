@@ -8,11 +8,11 @@ detection:
     - psexec.exe
     - psexecsvc.exe
   condition: selection
-id: 6733a308-74b7-45ef-8b4c-378f5310fe48
+id: 11340ea1-ca47-436e-a3ec-658556aa3615
 status: experimental
 description: Detects potential processes activity of PSEXEC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

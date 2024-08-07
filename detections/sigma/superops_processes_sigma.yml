@@ -8,11 +8,11 @@ detection:
     - superopsticket.exe
     - superops.exe
   condition: selection
-id: c4ebaabb-84f6-4b31-bf6f-fecdfcfca8a2
+id: b40a28b6-6003-4142-a64e-e084556270b7
 status: experimental
 description: Detects potential processes activity of SuperOps RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

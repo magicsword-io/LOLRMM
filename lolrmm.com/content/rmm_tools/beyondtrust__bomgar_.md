@@ -24,6 +24,9 @@ BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More info
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,17 +49,17 @@ BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More info
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.beyondtrustcloud.com`
     - `*.bomgarcloud.com`
     - `bomgarcloud.com`
 
 
-
-
+### Detections
+- Detects potential network activity of BeyondTrust (Bomgar) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__network_sigma.yml)
+- Detects potential processes activity of BeyondTrust (Bomgar) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__processes_sigma.yml)
 
 ### References
 - [https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm](https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm)

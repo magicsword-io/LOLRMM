@@ -17,24 +17,28 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - domotz.exe
-    - Domotz Pro Desktop App.exe
-    - domotz_bash.exe
-    - domotz*.exe
-    - Domotz Pro Desktop App Setup*.exe
-    - domotz-windows*.exe
+  - domotz.exe
+  - Domotz Pro Desktop App.exe
+  - domotz_bash.exe
+  - domotz*.exe
+  - Domotz Pro Desktop App Setup*.exe
+  - domotz-windows*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.domotz.co'
-        - domotz.com
-        - '*cell-1.domotz.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.domotz.co'
+    - domotz.com
+    - '*cell-1.domotz.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_network_sigma.yml
+  Description: Detects potential network activity of Domotz RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_processes_sigma.yml
+  Description: Detects potential processes activity of Domotz RMM tool
 References:
-  - https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
+- https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
 Acknowledgement: []

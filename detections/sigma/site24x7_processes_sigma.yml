@@ -10,11 +10,11 @@ detection:
     - Site24x7WindowsAgentTrayIcon.exe
     - Site24x7PluginAgent.exe
   condition: selection
-id: bf19a09d-d750-44ae-b020-6d0eef91aef3
+id: 9d04b875-51f1-4a55-8ce7-56e9a8af5b63
 status: experimental
 description: Detects potential processes activity of Site24x7 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

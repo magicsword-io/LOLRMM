@@ -23,6 +23,9 @@ GoToAssist Agent Desktop Console is a remote monitoring and management (RMM) too
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

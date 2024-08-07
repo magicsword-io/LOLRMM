@@ -9,11 +9,11 @@ detection:
     - '*.litemanager.com'
     - litemanager.com
   condition: selection
-id: 41ae8d72-857d-41ae-a8bd-8d58649d7c97
+id: 4a4aa609-2d4c-4056-a00d-b884785c4678
 status: experimental
 description: Detects potential network activity of LiteManager RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

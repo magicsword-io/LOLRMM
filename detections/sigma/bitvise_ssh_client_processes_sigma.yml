@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\BvSshClient-Inst.exe'
   condition: selection
-id: d81910ba-90e5-46fb-a213-653888c4b423
+id: 32fcae3a-a465-4a26-95f6-b18f3018c631
 status: experimental
 description: Detects potential processes activity of Bitvise SSH Client RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

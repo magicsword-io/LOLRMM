@@ -8,11 +8,11 @@ detection:
     - user_managed
     - ericom.com
   condition: selection
-id: de61c636-0439-4eca-a924-c529a0062a55
+id: 774e5589-c1ad-4dac-bff8-f20069295f06
 status: experimental
 description: Detects potential network activity of Ericom Connect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

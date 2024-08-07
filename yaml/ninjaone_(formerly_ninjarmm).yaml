@@ -17,7 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - '*ProgramData\NinjaRMMAgent\*'
+  - '*ProgramData\NinjaRMMAgent\*'
 Artifacts:
   Disk: []
   EventLog: []

@@ -12,11 +12,11 @@ detection:
     - plus*.site24x7.net.au
     - site24x7.com/msp
   condition: selection
-id: a050e16b-7d1e-41bc-8fe7-dc185bc8b065
+id: d81c6910-6e18-47ad-84f1-eca46efba94e
 status: experimental
 description: Detects potential network activity of Site24x7 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

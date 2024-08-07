@@ -24,6 +24,9 @@ displayTitle = "247ithelp.com (ConnectWise)"
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ displayTitle = "247ithelp.com (ConnectWise)"
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.247ithelp.com`
 
 
-
-
+### Detections
+- Detects potential network activity of 247ithelp.com (ConnectWise) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__network_sigma.yml)
+- Detects potential processes activity of 247ithelp.com (ConnectWise) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__processes_sigma.yml)
 
 ### References
 - [Similar / replaced by ScreenConnect](Similar / replaced by ScreenConnect)

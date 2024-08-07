@@ -17,17 +17,21 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - desktopnow.exe
+  - desktopnow.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.nchuser.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.nchuser.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktopnow_network_sigma.yml
+  Description: Detects potential network activity of DesktopNow RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktopnow_processes_sigma.yml
+  Description: Detects potential processes activity of DesktopNow RMM tool
 References:
-  - https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US
+- https://forums.ivanti.com/s/article/Network-Ports-used-by-Environment-Manager?language=en_US
 Acknowledgement: []

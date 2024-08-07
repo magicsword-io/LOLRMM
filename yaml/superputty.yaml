@@ -17,15 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Downloads\SuperPuTTY\*
-    - '*Downloads\SuperPuTTY\*'
-    - '*\superputty.exe'
-    - '*\SuperPuTTY\*'
+  - C:\Downloads\SuperPuTTY\*
+  - '*Downloads\SuperPuTTY\*'
+  - '*\superputty.exe'
+  - '*\SuperPuTTY\*'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superputty_processes_sigma.yml
+  Description: Detects potential processes activity of SuperPuTTY RMM tool
 References: []
 Acknowledgement: []

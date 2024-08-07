@@ -24,6 +24,9 @@ ISL Online is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -48,16 +51,16 @@ ISL Online is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.islonline.com`
     - `*.islonline.net`
 
 
-
-
+### Detections
+- Detects potential network activity of ISL Online RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_network_sigma.yml)
+- Detects potential processes activity of ISL Online RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_processes_sigma.yml)
 
 ### References
 - [https://help.islonline.com/19818/165940](https://help.islonline.com/19818/165940)

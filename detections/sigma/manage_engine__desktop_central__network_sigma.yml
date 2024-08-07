@@ -12,12 +12,12 @@ detection:
     - '*.dms.zoho.com.eu'
     - '*.-dms.zoho.com.cn'
   condition: selection
-id: ef6a2323-711d-436a-8247-2c9f75ed0587
+id: 0b0a90db-548e-48b6-9c11-97c408b57dc1
 status: experimental
 description: Detects potential network activity of Manage Engine (Desktop Central)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

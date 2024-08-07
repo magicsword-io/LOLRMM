@@ -22,11 +22,11 @@ detection:
       Remote Printer
     - HKLM\SOFTWARE\WOW6432Node\Splashtop Inc.\Splashtop Remote Server\ClientInfo\*
   condition: selection
-id: 46ec9250-2779-4df2-8835-34920087ddda
+id: 04c91c15-0a2e-4092-8417-e011178ae756
 status: experimental
 description: Detects potential registry activity of Splashtop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -24,6 +24,9 @@ TurboMeeting is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ TurboMeeting is a remote monitoring and management (RMM) tool. More information 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `acceo.com/turbomeeting/`
 
 
-
-
+### Detections
+- Detects potential network activity of TurboMeeting RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/turbomeeting_network_sigma.yml)
+- Detects potential processes activity of TurboMeeting RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/turbomeeting_processes_sigma.yml)
 
 ### References
 - [http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv](http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv)

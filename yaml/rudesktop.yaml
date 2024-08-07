@@ -17,19 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - rd.exe
-    - rudesktop*.exe
+  - rd.exe
+  - rudesktop*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.rudesktop.ru'
-        - rudesktop.ru
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.rudesktop.ru'
+    - rudesktop.ru
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rudesktop_network_sigma.yml
+  Description: Detects potential network activity of RuDesktop RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rudesktop_processes_sigma.yml
+  Description: Detects potential processes activity of RuDesktop RMM tool
 References:
-  - https://rudesktop.ru
+- https://rudesktop.ru
 Acknowledgement: []

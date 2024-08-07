@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - user_managed
   condition: selection
-id: fca66b1b-fca5-468f-8980-5bd2c2cf1304
+id: 6c56c938-14d3-405c-ab44-c7c806b17ab8
 status: experimental
 description: Detects potential network activity of pcAnywhere RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

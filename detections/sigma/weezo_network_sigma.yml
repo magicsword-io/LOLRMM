@@ -10,11 +10,11 @@ detection:
     - '*.weezo.net'
     - weezo.en.softonic.com
   condition: selection
-id: deded87f-0eff-49e7-b538-962ce9af125f
+id: 4ccf2652-03ea-4740-aa03-8f7c57f904e1
 status: experimental
 description: Detects potential network activity of Weezo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -8,11 +8,11 @@ detection:
     - '*.rudesktop.ru'
     - rudesktop.ru
   condition: selection
-id: 24f7d5ef-b4b9-4c86-b32d-ca0e8a0204f5
+id: 3a37ab9b-197e-4d4d-8cb1-43c8cbe70298
 status: experimental
 description: Detects potential network activity of RuDesktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

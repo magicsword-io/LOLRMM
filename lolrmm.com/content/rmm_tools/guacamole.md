@@ -24,6 +24,9 @@ Guacamole is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ Guacamole is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `guacamole.apache.org`
 
 
-
-
+### Detections
+- Detects potential network activity of Guacamole RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_network_sigma.yml)
+- Detects potential processes activity of Guacamole RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_processes_sigma.yml)
 
 ### References
 - [guacamole.apache.org](guacamole.apache.org)

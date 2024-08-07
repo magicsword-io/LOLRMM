@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\zoc.exe'
   condition: selection
-id: 60ebad9d-046d-4342-b1fb-0477e52ad052
+id: 6ecbaa7a-6684-4262-9870-058cc85ca350
 status: experimental
 description: Detects potential processes activity of ZOC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -24,6 +24,9 @@ Pcnow is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,15 +47,15 @@ Pcnow is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `au.pcmag.com/utilities/21470/webex-pcnow`
 
 
-
-
+### Detections
+- Detects potential network activity of Pcnow RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml)
+- Detects potential processes activity of Pcnow RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml)
 
 ### References
 - [http://pcnow.webex.com/ - DOA as of 2024](http://pcnow.webex.com/ - DOA as of 2024)

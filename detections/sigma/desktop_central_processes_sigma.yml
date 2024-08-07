@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - dcagentservice.exe
   condition: selection
-id: 49210cc5-74c5-43d5-9a43-07d193e606f7
+id: 239e8a76-aee7-4840-9428-ecfe26be8103
 status: experimental
 description: Detects potential processes activity of Desktop Central RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

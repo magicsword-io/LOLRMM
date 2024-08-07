@@ -23,6 +23,9 @@ Desktop Central is a remote monitoring and management (RMM) tool. More informati
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -41,15 +44,15 @@ Desktop Central is a remote monitoring and management (RMM) tool. More informati
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `desktopcentral.manageengine.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Desktop Central RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml)
+- Detects potential processes activity of Desktop Central RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml)
 
 
 

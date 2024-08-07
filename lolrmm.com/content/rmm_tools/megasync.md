@@ -23,6 +23,9 @@ MEGAsync is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -47,6 +50,9 @@ MEGAsync is a remote monitoring and management (RMM) tool. More information will
 
 
 
+### Detections
+- Detects potential processes activity of MEGAsync RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/megasync_processes_sigma.yml)
 
 
 

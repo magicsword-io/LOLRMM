@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\SmartFTP Client\en-US\
-    - '*\SmartFTP Client\*'
-    - '*\SfShellTools.dll.mui'
+  - C:\Program Files (x86)\SmartFTP Client\en-US\
+  - '*\SmartFTP Client\*'
+  - '*\SfShellTools.dll.mui'
 Artifacts:
   Disk: []
   EventLog: []

@@ -24,6 +24,9 @@ Pulseway is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,15 +46,15 @@ Pulseway is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `pulseway.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Pulseway RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_network_sigma.yml)
+- Detects potential processes activity of Pulseway RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_processes_sigma.yml)
 
 ### References
 - [https://intercom.help/pulseway/en/](https://intercom.help/pulseway/en/)

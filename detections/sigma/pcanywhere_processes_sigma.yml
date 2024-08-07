@@ -10,11 +10,11 @@ detection:
     - pcaquickconnect.exe
     - winaw32.exe
   condition: selection
-id: 1740d837-2239-4d57-910c-c1e2164e7fd1
+id: b46a081f-220d-44bc-b6d7-56151c414478
 status: experimental
 description: Detects potential processes activity of pcAnywhere RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - download.cnet.com/Net-Viewer/3000-2370_4-10034828.html
   condition: selection
-id: c4be0001-98f2-42bc-a0cf-0e6eecdc7480
+id: f861142d-58b1-4c98-a407-83e458a59444
 status: experimental
 description: Detects potential network activity of Netviewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

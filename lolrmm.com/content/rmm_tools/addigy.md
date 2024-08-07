@@ -24,6 +24,9 @@ Addigy is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,17 +45,15 @@ Addigy is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `prod.addigy.com`
     - `grtmprod.addigy.com`
     - `agents.addigy.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Addigy RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/addigy_network_sigma.yml)
 
 ### References
 - [https://addigy.com/](https://addigy.com/)

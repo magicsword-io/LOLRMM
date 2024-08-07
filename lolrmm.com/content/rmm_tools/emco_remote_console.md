@@ -24,6 +24,9 @@ EMCO Remote Console is a remote monitoring and management (RMM) tool. More infor
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ EMCO Remote Console is a remote monitoring and management (RMM) tool. More infor
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `emcosoftware.com`
 
 
-
-
+### Detections
+- Detects potential network activity of EMCO Remote Console RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/emco_remote_console_network_sigma.yml)
+- Detects potential processes activity of EMCO Remote Console RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/emco_remote_console_processes_sigma.yml)
 
 
 

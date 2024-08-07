@@ -24,6 +24,9 @@ Pilixo is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,17 +46,17 @@ Pilixo is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `pilixo.com`
     - `download.pilixo.com`
     - `*.pilixo.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Pilixo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pilixo_network_sigma.yml)
+- Detects potential processes activity of Pilixo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pilixo_processes_sigma.yml)
 
 ### References
 - [https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls](https://pilixo.freshdesk.com/support/solutions/articles/9000141879-device-connectivity-and-firewalls)

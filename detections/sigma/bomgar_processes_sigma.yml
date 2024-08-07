@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - bomgar-scc.exe
   condition: selection
-id: 2854a115-3552-4cc7-bb64-cbbe9d457797
+id: 752f62db-1fee-42bd-b5a8-7b4dd3c6e788
 status: experimental
 description: Detects potential processes activity of Bomgar RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

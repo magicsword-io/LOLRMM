@@ -8,11 +8,11 @@ detection:
     - asapi-us.aweray.net
     - asapi.aweray.net
   condition: selection
-id: 568bb069-9031-4b20-a781-b0885b7aaa15
+id: 03183418-50dd-4d3e-af59-54c1e138a577
 status: experimental
 description: Detects potential network activity of AweRay (AweSun) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -8,11 +8,11 @@ detection:
     - rd.exe
     - rudesktop*.exe
   condition: selection
-id: 490a6bd7-7f44-44d7-a102-7d4efabb03ee
+id: 26af703f-9c35-4356-a7d5-01a61b9e981f
 status: experimental
 description: Detects potential processes activity of RuDesktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

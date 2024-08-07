@@ -9,11 +9,11 @@ detection:
     - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe
     - HKLM\SOFTWARE\WOW6432Node\Action1
   condition: selection
-id: 80c27704-debd-4f21-a1b5-5bce294e86cd
+id: 178e38f0-33b9-4ff3-a3a5-62cbb073bc45
 status: experimental
 description: Detects potential registry activity of Action1 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

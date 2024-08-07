@@ -23,6 +23,9 @@ SecureCRT is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ SecureCRT is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+### Detections
+- Detects potential processes activity of SecureCRT RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/securecrt_processes_sigma.yml)
 
 
 

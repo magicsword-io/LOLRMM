@@ -11,11 +11,11 @@ detection:
     - ISLLightClient.exe
     - '*\ISLLight.exe'
   condition: selection
-id: 859b7b71-b8f1-408e-aa2b-ed76c6ae8f5b
+id: 377c9711-2892-4ed8-b90e-ebcb8bc0cfdd
 status: experimental
 description: Detects potential processes activity of ISL Online RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

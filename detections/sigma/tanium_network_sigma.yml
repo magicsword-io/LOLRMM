@@ -8,11 +8,11 @@ detection:
     - cloud.tanium.com
     - '*.cloud.tanium.com'
   condition: selection
-id: c67acdcb-aa09-4fe8-8821-eeefd1d7c743
+id: baa01bb8-f609-4d18-9831-dce77aa66a16
 status: experimental
 description: Detects potential network activity of Tanium RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

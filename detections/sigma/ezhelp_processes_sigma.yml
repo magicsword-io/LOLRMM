@@ -9,11 +9,11 @@ detection:
     - ezHelpManager.exe
     - ezhelpclient.exe
   condition: selection
-id: 41b78f9d-be97-482c-9e64-736fcef8573c
+id: a3d5fca0-c518-4d77-aef3-80aaa4ff00cc
 status: experimental
 description: Detects potential processes activity of ezHelp RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

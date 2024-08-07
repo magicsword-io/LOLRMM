@@ -16,11 +16,11 @@ detection:
     - ITSMService.exe
     - RHost.exe
   condition: selection
-id: 27a1ec01-6826-4395-9be2-c0a40f8c7580
+id: 57c6e0df-6077-4f29-b48d-2999d628c549
 status: experimental
 description: Detects potential processes activity of Itarian RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -8,11 +8,11 @@ detection:
     - '*.parallels.com'
     - parallels.com/products/ras/try
   condition: selection
-id: 8bd68c1a-b835-483b-b0f0-3966a38767ea
+id: 77e59b05-dafb-45e4-a552-99826ab6f85a
 status: experimental
 description: Detects potential network activity of Parallels Access RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

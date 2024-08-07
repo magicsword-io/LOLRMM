@@ -17,18 +17,20 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - 'JumpCloud*.exe '
+  - 'JumpCloud*.exe '
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.api.jumpcloud.com'
-        - '*.assist.jumpcloud.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.api.jumpcloud.com'
+    - '*.assist.jumpcloud.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_cloud_network_sigma.yml
+  Description: Detects potential network activity of Jump Cloud RMM tool
 References:
-  - https://jumpcloud.com/support/understand-remote-assist-agent
+- https://jumpcloud.com/support/understand-remote-assist-agent
 Acknowledgement: []

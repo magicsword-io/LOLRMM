@@ -14,11 +14,11 @@ detection:
     - '*.gotoassist.at'
     - '*.desktopstreaming.com'
   condition: selection
-id: ae06c136-d713-4125-9d83-487ff21d37a1
+id: 35baa228-9b56-416d-9652-d696f35ca87b
 status: experimental
 description: Detects potential network activity of GoToAssist RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

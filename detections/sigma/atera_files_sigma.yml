@@ -15,11 +15,11 @@ detection:
     - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe
     - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe
   condition: selection
-id: d7060c72-493c-4760-866f-90f7f96623a6
+id: a08c1267-edce-4af3-8f48-bf74bb4f52c6
 status: experimental
 description: Detects potential files activity of Atera RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -8,11 +8,11 @@ detection:
     - rpcgrab.exe
     - rpcsetup.exe
   condition: selection
-id: 5154923f-ee36-46a8-b2e8-2b6ccfcf1fb2
+id: cc09bf82-5dfe-464a-b6e5-14375fe84de5
 status: experimental
 description: Detects potential processes activity of Access Remote PC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

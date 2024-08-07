@@ -24,6 +24,9 @@ UltraVNC is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ UltraVNC is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `ultravnc.com`
     - `user_managed`
 
 
-
-
+### Detections
+- Detects potential network activity of UltraVNC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultravnc_network_sigma.yml)
+- Detects potential processes activity of UltraVNC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultravnc_processes_sigma.yml)
 
 ### References
 - [https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html](https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html)

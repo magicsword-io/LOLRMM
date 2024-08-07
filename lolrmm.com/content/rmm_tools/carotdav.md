@@ -23,6 +23,9 @@ CarotDAV is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ CarotDAV is a remote monitoring and management (RMM) tool. More information will
 
 
 
+### Detections
+- Detects potential processes activity of CarotDAV RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/carotdav_processes_sigma.yml)
 
 
 

@@ -9,11 +9,11 @@ detection:
     - '*cc.centrastage.net'
     - datto.com/au/products/rmm/
   condition: selection
-id: 15a3cb98-b88e-41d5-9f04-e5b4c1619948
+id: 3a88e2fc-5a18-462a-ae8d-4b397d11db5d
 status: experimental
 description: Detects potential network activity of CentraStage (Now Datto) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

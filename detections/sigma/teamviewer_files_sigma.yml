@@ -23,11 +23,11 @@ detection:
     - C:\Program Files*\TeamViewer\connections*.txt
     - C:\Users\*\AppData\Roaming\TeamViewer\MRU\RemoteSupport\*tvc
   condition: selection
-id: 8d164608-dc8a-4dc6-a8fc-508183765b7c
+id: a690575f-3b07-494b-8783-2ab290a28275
 status: experimental
 description: Detects potential files activity of TeamViewer RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

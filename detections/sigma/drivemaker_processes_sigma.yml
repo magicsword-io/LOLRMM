@@ -8,11 +8,11 @@ detection:
     - C:\*\DriveMaker.exe
     - '*\DriveMaker.exe'
   condition: selection
-id: 7f6b7e43-7312-4c04-9ea0-8e57bef0fb1c
+id: 51338b36-de22-4824-9de4-04ef3d67da26
 status: experimental
 description: Detects potential processes activity of DriveMaker RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

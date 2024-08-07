@@ -13,12 +13,12 @@ detection:
     - BASEClient.exe
     - BASupSrvcCnfg.exe
   condition: selection
-id: 9e551a5d-1d5d-4457-87e8-00eb4d222fc0
+id: e5bd2958-99d7-4d10-99cc-56d3e2ec3d56
 status: experimental
 description: Detects potential processes activity of N-Able Advanced Monitoring Agent
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

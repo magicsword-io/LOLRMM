@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
-    - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
-    - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+  - C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
+  - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+  - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/extraputty_processes_sigma.yml
+  Description: Detects potential processes activity of ExtraPuTTY RMM tool
 References: []
 Acknowledgement: []

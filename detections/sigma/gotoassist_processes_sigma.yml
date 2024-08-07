@@ -9,11 +9,11 @@ detection:
     - g2a*.exe
     - GoTo Assist Opener.exe
   condition: selection
-id: 8130eb9f-41a4-4780-8f53-0764c797f675
+id: 07ec59df-b06d-40f6-86c0-5b90d94e5b34
 status: experimental
 description: Detects potential processes activity of GoToAssist RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

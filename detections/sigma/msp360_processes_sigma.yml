@@ -17,11 +17,11 @@ detection:
     - Remote Desktop.exe
     - Connect.exe
   condition: selection
-id: dbf2f768-4f03-4ad9-93b5-dc880deccf4a
+id: 8bb15580-456b-4f5c-87ba-895a2f5fc91a
 status: experimental
 description: Detects potential processes activity of MSP360 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

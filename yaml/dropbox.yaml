@@ -17,15 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\Dropbox\Client\*
-    - '*\Dropbox\Client\*'
-    - '*\Dropbox.exe'
-    - '*Users\*\Dropbox\bin\'
+  - C:\Program Files (x86)\Dropbox\Client\*
+  - '*\Dropbox\Client\*'
+  - '*\Dropbox.exe'
+  - '*Users\*\Dropbox\bin\'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dropbox_processes_sigma.yml
+  Description: Detects potential processes activity of Dropbox RMM tool
 References: []
 Acknowledgement: []

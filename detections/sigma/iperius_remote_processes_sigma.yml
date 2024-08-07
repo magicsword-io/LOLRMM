@@ -8,11 +8,11 @@ detection:
     - iperius.exe
     - iperiusremote.exe
   condition: selection
-id: cb0c4646-c363-4107-8c13-29ab63e220cc
+id: 971a62f4-b00c-49ac-95fe-b275ca6ce6e0
 status: experimental
 description: Detects potential processes activity of Iperius Remote RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

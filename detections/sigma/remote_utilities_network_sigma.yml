@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.internetid.ru'
   condition: selection
-id: 739d6520-282b-4da3-a81e-804e0d42969b
+id: 99a2b4e7-a1ee-40ff-8133-088df4428c1b
 status: experimental
 description: Detects potential network activity of Remote Utilities RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

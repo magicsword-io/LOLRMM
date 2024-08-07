@@ -17,22 +17,26 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - TaniumClient.exe
-    - TaniumCX.exe
-    - TaniumExecWrapper.exe
-    - TaniumFileInfo.exe
-    - TPowerShell.exe
+  - TaniumClient.exe
+  - TaniumCX.exe
+  - TaniumExecWrapper.exe
+  - TaniumFileInfo.exe
+  - TPowerShell.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - cloud.tanium.com
-        - '*.cloud.tanium.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - cloud.tanium.com
+    - '*.cloud.tanium.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_network_sigma.yml
+  Description: Detects potential network activity of Tanium RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_processes_sigma.yml
+  Description: Detects potential processes activity of Tanium RMM tool
 References:
-  - https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
+- https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
 Acknowledgement: []

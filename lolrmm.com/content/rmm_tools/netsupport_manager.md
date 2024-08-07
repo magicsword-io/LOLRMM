@@ -24,6 +24,9 @@ NetSupport Manager is a remote monitoring and management (RMM) tool. More inform
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,17 +47,17 @@ NetSupport Manager is a remote monitoring and management (RMM) tool. More inform
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `geo.netsupportsoftware.com`
     - `netsupportmanager.com`
     - `*.netsupportmanager.com`
 
 
-
-
+### Detections
+- Detects potential network activity of NetSupport Manager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_network_sigma.yml)
+- Detects potential processes activity of NetSupport Manager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_processes_sigma.yml)
 
 ### References
 - [https://www.netsupportmanager.com/resources/](https://www.netsupportmanager.com/resources/)

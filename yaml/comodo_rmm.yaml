@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - itsmagent.exe
-    - rviewer.exe
+  - itsmagent.exe
+  - rviewer.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.itsm-us1.comodo.com'
-        - '*mdmsupport.comodo.com'
-        - one.comodo.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.itsm-us1.comodo.com'
+    - '*mdmsupport.comodo.com'
+    - one.comodo.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_network_sigma.yml
+  Description: Detects potential network activity of Comodo RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_processes_sigma.yml
+  Description: Detects potential processes activity of Comodo RMM RMM tool
 References:
-  - https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
+- https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
 Acknowledgement: []

@@ -22,10 +22,12 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - datto.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - datto.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/datto_network_sigma.yml
+  Description: Detects potential network activity of Datto RMM tool
 References: []
 Acknowledgement: []

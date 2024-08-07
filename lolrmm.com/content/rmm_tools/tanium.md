@@ -24,6 +24,9 @@ Tanium is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,16 +49,16 @@ Tanium is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `cloud.tanium.com`
     - `*.cloud.tanium.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Tanium RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_network_sigma.yml)
+- Detects potential processes activity of Tanium RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_processes_sigma.yml)
 
 ### References
 - [https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html](https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html)

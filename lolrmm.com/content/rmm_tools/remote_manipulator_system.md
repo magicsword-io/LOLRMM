@@ -24,6 +24,9 @@ Remote Manipulator System is a remote monitoring and management (RMM) tool. More
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,16 +46,16 @@ Remote Manipulator System is a remote monitoring and management (RMM) tool. More
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.internetid.ru`
     - `rmansys.ru`
 
 
-
-
+### Detections
+- Detects potential network activity of Remote Manipulator System RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml)
+- Detects potential processes activity of Remote Manipulator System RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml)
 
 ### References
 - [https://rmansys.ru/files/](https://rmansys.ru/files/)

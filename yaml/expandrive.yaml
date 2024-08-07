@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Users\*\ExpanDrive.exe
-    - '*\ExpanDrive.exe'
+  - C:\Users\*\ExpanDrive.exe
+  - '*\ExpanDrive.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/expandrive_processes_sigma.yml
+  Description: Detects potential processes activity of ExpanDrive RMM tool
 References: []
 Acknowledgement: []

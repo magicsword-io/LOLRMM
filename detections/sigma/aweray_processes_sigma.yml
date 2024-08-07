@@ -8,11 +8,11 @@ detection:
     - aweray_remote*.exe
     - AweSun.exe
   condition: selection
-id: 73599e0d-0582-4b48-9618-43242fe8c77b
+id: 33f501f4-fe8e-49bb-a659-5d9a5c852fe5
 status: experimental
 description: Detects potential processes activity of AweRay RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

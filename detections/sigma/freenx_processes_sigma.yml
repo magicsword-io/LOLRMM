@@ -8,11 +8,11 @@ detection:
     - C:\*\nxplayer.exe
     - '*\nxplayer.exe'
   condition: selection
-id: c2252758-992e-4760-b22b-754aa5a67bde
+id: a8679551-7b77-4937-9b0d-d58e81caf27f
 status: experimental
 description: Detects potential processes activity of FreeNX RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

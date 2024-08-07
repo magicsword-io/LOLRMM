@@ -23,6 +23,9 @@ CloudBuckIt is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ CloudBuckIt is a remote monitoring and management (RMM) tool. More information w
 
 
 
+### Detections
+- Detects potential processes activity of CloudBuckIt RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudbuckit_processes_sigma.yml)
 
 
 

@@ -24,6 +24,9 @@ ToDesk is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,18 +47,18 @@ ToDesk is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `todesk.com`
     - `*.todesk.com`
     - `*.todesk.com`
     - `todesktop.com`
 
 
-
-
+### Detections
+- Detects potential network activity of ToDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/todesk_network_sigma.yml)
+- Detects potential processes activity of ToDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/todesk_processes_sigma.yml)
 
 ### References
 - [https://www.todesk.com/](https://www.todesk.com/)

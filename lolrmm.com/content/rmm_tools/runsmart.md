@@ -23,6 +23,9 @@ RunSmart is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -39,15 +42,13 @@ RunSmart is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `runsmart.io`
 
 
-
-
+### Detections
+- Detects potential network activity of RunSmart RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/runsmart_network_sigma.yml)
 
 
 

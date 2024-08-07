@@ -8,11 +8,11 @@ detection:
     - '*.showmypc.com'
     - showmypc.com
   condition: selection
-id: 9a5c062f-4a66-4c04-9670-7495b14acb89
+id: b5e51b9f-67b9-4e77-8dea-93de4f367a8d
 status: experimental
 description: Detects potential network activity of ShowMyPC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

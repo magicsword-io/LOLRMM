@@ -8,11 +8,11 @@ detection:
     - C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe
     - C:\Windows\SysWOW64\rserver30\rserver3.exe
   condition: selection
-id: 603006fc-b5b3-41f4-8fbc-5a847ada9660
+id: b47e3faf-70e8-4067-b211-000156df756b
 status: experimental
 description: Detects potential processes activity of RAdmin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

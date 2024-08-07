@@ -24,6 +24,9 @@ Instant Housecall is a remote monitoring and management (RMM) tool. More informa
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,18 +48,18 @@ Instant Housecall is a remote monitoring and management (RMM) tool. More informa
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.instanthousecall.com`
     - `secure.instanthousecall.com`
     - `*.instanthousecall.net`
     - `instanthousecall.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Instant Housecall RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml)
+- Detects potential processes activity of Instant Housecall RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml)
 
 ### References
 - [https://instanthousecall.com/features/](https://instanthousecall.com/features/)

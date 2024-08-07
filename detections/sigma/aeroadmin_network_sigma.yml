@@ -8,11 +8,11 @@ detection:
     - auth*.aeroadmin.com
     - aeroadmin.com
   condition: selection
-id: 4b3f3c88-3441-4185-80c3-6c2bc5395e0a
+id: bc4aa1a5-b066-4d36-baa1-fce0df698f6b
 status: experimental
 description: Detects potential network activity of AeroAdmin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

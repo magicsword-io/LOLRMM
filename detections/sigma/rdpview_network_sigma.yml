@@ -8,11 +8,11 @@ detection:
     - user_managed
     - systemmanager.ru/dntu.en/rdp_view.htm
   condition: selection
-id: 2edfa714-43d0-4c14-aba4-c2957e159e3c
+id: 68ade31f-2e89-4455-af5a-f7ec0826ad39
 status: experimental
 description: Detects potential network activity of RDPView RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

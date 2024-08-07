@@ -8,11 +8,11 @@ detection:
     - c:\Program Files\*\Duplicati.Server.exe
     - '*\*\Duplicati.Server.exe'
   condition: selection
-id: 9946b483-9087-469f-83d3-3a9dd4ab8668
+id: 270a1720-2a6c-43ab-8ff9-c694909ea6ae
 status: experimental
 description: Detects potential processes activity of Duplicati RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

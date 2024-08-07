@@ -8,11 +8,11 @@ detection:
     - user_managed
     - acceo.com/turbomeeting/
   condition: selection
-id: 808eab4f-4a46-4b56-99e2-0f7ce46afb06
+id: f1d46c89-a357-4a9c-9dee-e5d35dcb683a
 status: experimental
 description: Detects potential network activity of TurboMeeting RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

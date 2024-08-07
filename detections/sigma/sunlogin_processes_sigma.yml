@@ -9,11 +9,11 @@ detection:
     - OrayRemoteService.exe
     - sunlogin*.exe
   condition: selection
-id: b63646f8-1a94-4cad-b965-a372ceec3b91
+id: 820431ec-1186-4462-b809-17dbc4603614
 status: experimental
 description: Detects potential processes activity of SunLogin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

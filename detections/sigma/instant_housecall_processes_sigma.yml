@@ -10,11 +10,11 @@ detection:
     - ihcserver.exe
     - instanthousecall.exe
   condition: selection
-id: fe519a4c-803f-454a-89f4-63e3a36cb860
+id: ff766798-323b-4075-a0cb-67b617ede5a9
 status: experimental
 description: Detects potential processes activity of Instant Housecall RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

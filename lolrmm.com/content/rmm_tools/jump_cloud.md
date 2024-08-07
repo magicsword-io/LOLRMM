@@ -24,6 +24,9 @@ Jump Cloud is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,14 @@ Jump Cloud is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.api.jumpcloud.com`
     - `*.assist.jumpcloud.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Jump Cloud RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_cloud_network_sigma.yml)
 
 ### References
 - [https://jumpcloud.com/support/understand-remote-assist-agent](https://jumpcloud.com/support/understand-remote-assist-agent)

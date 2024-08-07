@@ -23,6 +23,9 @@ LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RM
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,15 +46,15 @@ LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RM
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `connectwise.com`
 
 
-
-
+### Detections
+- Detects potential network activity of LabTech RMM (Now ConnectWise Automate) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__network_sigma.yml)
+- Detects potential processes activity of LabTech RMM (Now ConnectWise Automate) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__processes_sigma.yml)
 
 
 

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - fleetdeck_agent_svc.exe
   condition: selection
-id: 6321c6cc-b12d-465c-91fe-ded016ffbac3
+id: b8194fd9-f7a9-4c15-97cd-34351971c00b
 status: experimental
 description: Detects potential processes activity of FleetDeck RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

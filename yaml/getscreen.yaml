@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - GetScreen.exe
-    - getscreen.exe
+  - GetScreen.exe
+  - getscreen.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - getscreen.me
-        - GetScreen.me
-        - '*.getscreen.me'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - getscreen.me
+    - GetScreen.me
+    - '*.getscreen.me'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_network_sigma.yml
+  Description: Detects potential network activity of GetScreen RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_processes_sigma.yml
+  Description: Detects potential processes activity of GetScreen RMM tool
 References:
-  - https://docs.getscreen.me/self-hosted/system-requirements/
+- https://docs.getscreen.me/self-hosted/system-requirements/
 Acknowledgement: []

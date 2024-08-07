@@ -8,11 +8,11 @@ detection:
     - ultravnc.com
     - user_managed
   condition: selection
-id: 610d606a-9b3b-43c2-a4cd-933edd355eae
+id: 45678de7-dcbb-42b5-80d7-f21b399a1250
 status: experimental
 description: Detects potential network activity of UltraVNC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

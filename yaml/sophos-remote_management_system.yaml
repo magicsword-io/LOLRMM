@@ -17,22 +17,28 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - clientmrinit.exe
-    - mgntsvc.exe
-    - routernt.exe
+  - clientmrinit.exe
+  - mgntsvc.exe
+  - routernt.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.sophos.com'
-        - '*.sophosupd.com'
-        - '*.sophosupd.net'
-        - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.sophos.com'
+    - '*.sophosupd.com'
+    - '*.sophosupd.net'
+    - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sophos-remote_management_system_network_sigma.yml
+  Description: Detects potential network activity of Sophos-Remote Management System
+    RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sophos-remote_management_system_processes_sigma.yml
+  Description: Detects potential processes activity of Sophos-Remote Management System
+    RMM tool
 References:
-  - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+- community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
 Acknowledgement: []

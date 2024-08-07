@@ -8,11 +8,11 @@ detection:
     - user_managed
     - rport.io
   condition: selection
-id: 5327298d-6448-4a92-9882-3ba955c968c0
+id: 61cccc5f-5847-446b-a421-6a0ac02375ee
 status: experimental
 description: Detects potential network activity of RPort RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

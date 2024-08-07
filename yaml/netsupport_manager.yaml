@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - pcictlui.exe
-    - pcicfgui.exe
-    - client32.exe
+  - pcictlui.exe
+  - pcicfgui.exe
+  - client32.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.netsupportmanager.com'
-        - netsupportmanager.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.netsupportmanager.com'
+    - netsupportmanager.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_network_sigma.yml
+  Description: Detects potential network activity of NetSupport Manager RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_processes_sigma.yml
+  Description: Detects potential processes activity of NetSupport Manager RMM tool
 References:
-  - https://www.netsupportmanager.com/resources/
+- https://www.netsupportmanager.com/resources/
 Acknowledgement: []

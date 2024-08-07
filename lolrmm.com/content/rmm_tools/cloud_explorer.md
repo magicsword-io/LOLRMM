@@ -23,6 +23,9 @@ Cloud Explorer is a remote monitoring and management (RMM) tool. More informatio
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No

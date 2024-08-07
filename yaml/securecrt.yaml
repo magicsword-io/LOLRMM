@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\*\SecureCRT.EXE
-    - '*\SecureCRT.EXE'
-    - '*\VanDyke Software\ClientPack\*'
+  - C:\*\SecureCRT.EXE
+  - '*\SecureCRT.EXE'
+  - '*\VanDyke Software\ClientPack\*'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/securecrt_processes_sigma.yml
+  Description: Detects potential processes activity of SecureCRT RMM tool
 References: []
 Acknowledgement: []

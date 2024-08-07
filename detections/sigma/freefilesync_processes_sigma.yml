@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\FreeFileSync.exe'
   condition: selection
-id: ae9d7e28-3641-4bbf-84af-de03a781662d
+id: 22878dc1-16ee-4206-a5bf-d28eb818b87e
 status: experimental
 description: Detects potential processes activity of FreeFileSync RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

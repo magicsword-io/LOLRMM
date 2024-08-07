@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\Odriveapp.exe'
   condition: selection
-id: 9e015d9d-8c3b-4f4c-b0f9-fc75ee54f50e
+id: 3ecd5480-76d3-45f4-9c12-0adb425592a5
 status: experimental
 description: Detects potential processes activity of ODrive RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

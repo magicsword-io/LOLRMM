@@ -24,6 +24,9 @@ Goverlan is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -49,16 +52,16 @@ Goverlan is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `goverlan.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Goverlan RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_network_sigma.yml)
+- Detects potential processes activity of Goverlan RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_processes_sigma.yml)
 
 ### References
 - [https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf](https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf)

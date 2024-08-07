@@ -14,11 +14,11 @@ detection:
     - BASupAppElev.exe
     - basupsrvc.exe
   condition: selection
-id: 08213ecc-b7bc-46bd-8c66-782e512adf82
+id: 80c4b81e-e606-4715-9834-456c18e5009e
 status: experimental
 description: Detects potential processes activity of BeAnyWhere RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

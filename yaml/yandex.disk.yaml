@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\Yandex\*
-    - '*\Yandex\*'
-    - '*\YandexDisk2.exe'
+  - C:\Program Files (x86)\Yandex\*
+  - '*\Yandex\*'
+  - '*\YandexDisk2.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/yandex.disk_processes_sigma.yml
+  Description: Detects potential processes activity of Yandex.Disk RMM tool
 References: []
 Acknowledgement: []

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - echoserver*.exe
   condition: selection
-id: a5837ca5-991e-4211-8c52-e7ed4bd72cf7
+id: 6f03854f-166a-472e-a756-fecade3b89b9
 status: experimental
 description: Detects potential processes activity of Echoware RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

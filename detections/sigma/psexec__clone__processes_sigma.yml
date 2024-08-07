@@ -12,11 +12,11 @@ detection:
     - xcmd.exe
     - xcmdsvc.exe
   condition: selection
-id: 3bf1b4ee-eadc-4ffb-b007-763156991f06
+id: ce875247-1a7a-4679-8fdd-23736f66fbf7
 status: experimental
 description: Detects potential processes activity of PSEXEC (Clone) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

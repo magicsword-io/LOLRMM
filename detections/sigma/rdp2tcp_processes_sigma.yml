@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - tdp2tcp.exe
   condition: selection
-id: e6616c93-a7d3-4a1e-8fa3-fd0f91c4a395
+id: a4f71aeb-9561-4483-b35b-267093abd3a0
 status: experimental
 description: Detects potential processes activity of rdp2tcp RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

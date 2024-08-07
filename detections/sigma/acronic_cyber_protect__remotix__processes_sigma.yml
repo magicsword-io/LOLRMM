@@ -8,12 +8,12 @@ detection:
     - AcronisCyberProtectConnectQuickAssist*.exe
     - AcronisCyberProtectConnectAgent.exe
   condition: selection
-id: 1ccea099-1537-4dce-b40f-255383c63f49
+id: 9b9647ab-97cc-4c7c-8540-5c1c1c8000c4
 status: experimental
 description: Detects potential processes activity of Acronic Cyber Protect (Remotix)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

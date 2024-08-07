@@ -8,11 +8,11 @@ detection:
     - oo-syspectr*.exe
     - OOSysAgent.exe
   condition: selection
-id: 47aaf8ca-0a83-45e1-a38c-4aee9e2bbda2
+id: cee48c18-78d7-4b7b-ab00-7def87fb17c5
 status: experimental
 description: Detects potential processes activity of Syspectr RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

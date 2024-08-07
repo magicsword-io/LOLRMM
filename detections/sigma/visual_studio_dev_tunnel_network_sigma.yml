@@ -9,11 +9,11 @@ detection:
     - '*.rel.tunnels.api.visualstudio.com'
     - '*.devtunnels.ms'
   condition: selection
-id: 2a41349a-a161-4752-a7df-6668d6c0a6d1
+id: 96ab593b-1829-4d12-b5e3-ec7b8d36ce31
 status: experimental
 description: Detects potential network activity of Visual Studio Dev Tunnel RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

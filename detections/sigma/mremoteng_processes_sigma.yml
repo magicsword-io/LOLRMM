@@ -9,11 +9,11 @@ detection:
     - '*\mRemoteNG.exe'
     - '*\mRemoteNG.exe'
   condition: selection
-id: f68491b7-3e94-4cf1-a240-1f5cd08998f1
+id: 0e45e59e-8578-4251-b097-15e6f99f5134
 status: experimental
 description: Detects potential processes activity of mRemoteNG RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

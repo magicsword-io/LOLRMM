@@ -23,6 +23,9 @@ Impero Connect is a remote monitoring and management (RMM) tool. More informatio
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -41,15 +44,15 @@ Impero Connect is a remote monitoring and management (RMM) tool. More informatio
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `imperosoftware.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Impero Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_network_sigma.yml)
+- Detects potential processes activity of Impero Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_processes_sigma.yml)
 
 
 

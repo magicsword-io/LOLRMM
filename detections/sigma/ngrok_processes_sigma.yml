@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - ngrok.exe
   condition: selection
-id: cb5e7847-18d5-4f41-a762-c280ae647080
+id: 5c6a492b-4f87-4f2f-8f1d-95b1c7c16ef1
 status: experimental
 description: Detects potential processes activity of ngrok RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

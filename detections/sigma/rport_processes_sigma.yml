@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - rport.exe
   condition: selection
-id: 148de890-e4b6-4d14-9464-fb1c55c0ed70
+id: 0a914737-0a66-4bfb-98f4-4f6e46c25f86
 status: experimental
 description: Detects potential processes activity of RPort RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

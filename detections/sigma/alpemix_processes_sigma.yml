@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - C:\AlpemixService.exe
   condition: selection
-id: 7aa2d498-c192-48d2-942a-fddaebf2e1a6
+id: 36f4abfb-41ad-41eb-a463-d928daef3de3
 status: experimental
 description: Detects potential processes activity of Alpemix RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

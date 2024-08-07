@@ -8,11 +8,11 @@ detection:
     - user_managed
     - naverisk.com
   condition: selection
-id: d2e4453c-a76c-46b4-8066-f71172d1ced1
+id: 5dbbce46-68fb-4d3c-a3e0-6c0d9e23cde9
 status: experimental
 description: Detects potential network activity of Naverisk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

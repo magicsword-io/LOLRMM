@@ -17,15 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\CloudMounter\*
-    - '*\CloudMounter\*'
-    - '*\CloudMounter\*'
-    - '*\cloudmounter.exe'
+  - C:\Program Files\CloudMounter\*
+  - '*\CloudMounter\*'
+  - '*\CloudMounter\*'
+  - '*\cloudmounter.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudmounter_processes_sigma.yml
+  Description: Detects potential processes activity of CloudMounter RMM tool
 References: []
 Acknowledgement: []

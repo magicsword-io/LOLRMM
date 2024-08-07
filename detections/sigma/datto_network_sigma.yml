@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - datto.com
   condition: selection
-id: 1252a5b1-a905-40a0-8b19-3366a5927fcb
+id: 899970a6-b2b2-4aa4-bcf9-554a37180f47
 status: experimental
 description: Detects potential network activity of Datto RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

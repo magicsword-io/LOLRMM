@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.ntrsupport.com'
   condition: selection
-id: 7e360029-f687-48f0-a58d-5010ba4ba70c
+id: d34f06a0-1823-45ff-a667-43b140058f47
 status: experimental
 description: Detects potential network activity of NTR Remote RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

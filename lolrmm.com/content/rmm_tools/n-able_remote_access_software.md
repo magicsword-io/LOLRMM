@@ -23,6 +23,9 @@ N-ABLE Remote Access Software is a remote monitoring and management (RMM) tool. 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -39,15 +42,13 @@ N-ABLE Remote Access Software is a remote monitoring and management (RMM) tool. 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `n-able.com`
 
 
-
-
+### Detections
+- Detects potential network activity of N-ABLE Remote Access Software RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_remote_access_software_network_sigma.yml)
 
 
 

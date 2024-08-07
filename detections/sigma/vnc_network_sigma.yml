@@ -8,11 +8,11 @@ detection:
     - user_managed
     - realvnc.com/en/connect/download/vnc
   condition: selection
-id: ceffb2e4-253d-412e-9c5a-d35e00e92cbd
+id: 9cad51cf-fb13-479a-a44f-3a847a04e882
 status: experimental
 description: Detects potential network activity of VNC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

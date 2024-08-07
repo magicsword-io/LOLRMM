@@ -24,6 +24,9 @@ Senso.cloud is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ Senso.cloud is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.senso.cloud`
     - `senso.cloud`
 
 
-
-
+### Detections
+- Detects potential network activity of Senso.cloud RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/senso.cloud_network_sigma.yml)
+- Detects potential processes activity of Senso.cloud RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/senso.cloud_processes_sigma.yml)
 
 ### References
 - [https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration](https://support.senso.cloud/support/solutions/articles/79000116305-firewall-and-content-filter-configuration)

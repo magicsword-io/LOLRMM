@@ -11,11 +11,11 @@ detection:
     - fleetdeck_agent.exe
     - fleetdeck_commander_launcher.exe
   condition: selection
-id: cdb69ca7-560d-412d-b342-0b7b8c929d58
+id: 6d868e41-b759-4e0e-976d-7e3ce05b7b87
 status: experimental
 description: Detects potential processes activity of FleetDesk.io RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

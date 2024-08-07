@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - termsrv.exe
-    - mstsc.exe
+  - termsrv.exe
+  - mstsc.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_tsc_processes_sigma.yml
+  Description: Detects potential processes activity of Microsoft TSC RMM tool
 References:
-  - https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
+- https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
 Acknowledgement: []

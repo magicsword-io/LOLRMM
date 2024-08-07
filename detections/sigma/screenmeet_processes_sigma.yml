@@ -8,11 +8,11 @@ detection:
     - ScreenMeetSupport.exe
     - ScreenMeet.Support.exe
   condition: selection
-id: fb392741-397f-451c-8cff-3e847fa381dc
+id: 613fe1d2-7cb9-4de8-9cf4-99eaf7798277
 status: experimental
 description: Detects potential processes activity of ScreenMeet RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

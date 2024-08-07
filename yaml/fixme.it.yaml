@@ -17,32 +17,36 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - FixMeit Unattended Access Setup.exe
-    - TiExpertStandalone.exe
-    - FixMeitClient*.exe
-    - FixMeit Client.exe
-    - FixMeit Expert Setup.exe
-    - TiExpertCore.exe
-    - fixmeitclient.exe
-    - TiClientCore.exe
-    - TiClientHelper*.exe
-    - no installation required | recommend blocking fixme[.]it SaaS portal
-    - no installation required | recommend blocking fixme[.]it SaaS portal
-    - 9380CC75B872221A7425D7503565B67580407F60
+  - FixMeit Unattended Access Setup.exe
+  - TiExpertStandalone.exe
+  - FixMeitClient*.exe
+  - FixMeit Client.exe
+  - FixMeit Expert Setup.exe
+  - TiExpertCore.exe
+  - fixmeitclient.exe
+  - TiClientCore.exe
+  - TiClientHelper*.exe
+  - no installation required | recommend blocking fixme[.]it SaaS portal
+  - no installation required | recommend blocking fixme[.]it SaaS portal
+  - 9380CC75B872221A7425D7503565B67580407F60
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.fixme.it'
-        - '*.techinline.net'
-        - fixme.it
-        - '*set.me'
-        - '*setme.net'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.fixme.it'
+    - '*.techinline.net'
+    - fixme.it
+    - '*set.me'
+    - '*setme.net'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml
+  Description: Detects potential network activity of FixMe.it RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml
+  Description: Detects potential processes activity of FixMe.it RMM tool
 References:
-  - https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
+- https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
 Acknowledgement: []

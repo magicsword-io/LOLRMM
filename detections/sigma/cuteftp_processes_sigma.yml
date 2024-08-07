@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\cuteftppro.exe'
   condition: selection
-id: 207ff40e-26a7-4ba6-b875-7167e3b5a5e7
+id: 83e2b32c-24fd-4f57-a3a2-807e4ff592d2
 status: experimental
 description: Detects potential processes activity of CuteFTP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

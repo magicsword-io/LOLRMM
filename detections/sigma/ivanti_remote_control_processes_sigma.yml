@@ -9,11 +9,11 @@ detection:
     - ArcUI.exe
     - AgentlessRC.exe
   condition: selection
-id: b6b520cb-bd22-4dd5-a657-94faac8d20b6
+id: 3036c733-577f-4cc4-ab1c-2d67cc133328
 status: experimental
 description: Detects potential processes activity of Ivanti Remote Control RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

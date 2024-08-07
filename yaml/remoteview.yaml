@@ -17,22 +17,26 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - remoteview.exe
-    - rv.exe
-    - rvagent.exe
-    - rvagtray.exe
+  - remoteview.exe
+  - rv.exe
+  - rvagent.exe
+  - rvagtray.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*content.rview.com'
-        - '*.rview.com'
-        - content.rview.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*content.rview.com'
+    - '*.rview.com'
+    - content.rview.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_network_sigma.yml
+  Description: Detects potential network activity of RemoteView RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_processes_sigma.yml
+  Description: Detects potential processes activity of RemoteView RMM tool
 References:
-  - https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall
+- https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall
 Acknowledgement: []

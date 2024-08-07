@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - rpcgrab.exe
-    - rpcsetup.exe
+  - rpcgrab.exe
+  - rpcsetup.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/access_remote_pc_processes_sigma.yml
+  Description: Detects potential processes activity of Access Remote PC RMM tool
 References: []
 Acknowledgement: []

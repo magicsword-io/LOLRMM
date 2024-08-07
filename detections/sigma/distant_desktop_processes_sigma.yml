@@ -9,11 +9,11 @@ detection:
     - dd.exe
     - distant-desktop.exe
   condition: selection
-id: 960e377e-a5e7-4808-b307-f395dc213574
+id: b836c38b-2b26-4464-a575-7ebf486f040f
 status: experimental
 description: Detects potential processes activity of Distant Desktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

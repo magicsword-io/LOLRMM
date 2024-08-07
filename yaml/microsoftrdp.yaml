@@ -17,15 +17,17 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - termsrv.exe
-    - mstsc.exe
-    - Microsoft Remote Desktop
+  - termsrv.exe
+  - mstsc.exe
+  - Microsoft Remote Desktop
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml
+  Description: Detects potential processes activity of Microsoft RDP RMM tool
 References:
-  - https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows
+- https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows
 Acknowledgement: []

@@ -17,21 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - tigervnc*.exe
-    - winvnc4.exe
-    - C:\Program Files\TightVNC\*
-    - '*\TightVNC\*'
-    - '*\tvnserver.exe'
+  - tigervnc*.exe
+  - winvnc4.exe
+  - C:\Program Files\TightVNC\*
+  - '*\TightVNC\*'
+  - '*\tvnserver.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_network_sigma.yml
+  Description: Detects potential network activity of TigerVNC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_processes_sigma.yml
+  Description: Detects potential processes activity of TigerVNC RMM tool
 References:
-  - https://github.com/TigerVNC/tigervnc/releases
+- https://github.com/TigerVNC/tigervnc/releases
 Acknowledgement: []

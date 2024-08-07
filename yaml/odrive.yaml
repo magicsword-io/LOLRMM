@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Users\*\current\
-    - '*Users\*\.odrive'
-    - '*\Odriveapp.exe'
+  - C:\Users\*\current\
+  - '*Users\*\.odrive'
+  - '*\Odriveapp.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/odrive_processes_sigma.yml
+  Description: Detects potential processes activity of ODrive RMM tool
 References: []
 Acknowledgement: []

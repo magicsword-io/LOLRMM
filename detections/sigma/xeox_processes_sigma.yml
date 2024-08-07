@@ -10,11 +10,11 @@ detection:
     - xeox-agent_*.exe
     - xeox-agent_x86.exe
   condition: selection
-id: 6ed8da66-0176-4a33-8d71-7d589aced3b7
+id: 9063ed28-7fb7-4ea6-af24-e51e6d0cbb09
 status: experimental
 description: Detects potential processes activity of Xeox RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

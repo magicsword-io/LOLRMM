@@ -7,12 +7,12 @@ detection:
     ParentImage|endswith:
     - ltsvc.exe
   condition: selection
-id: 8991b756-f264-4426-afa9-2a5216779fec
+id: 3696a0f8-c8a0-417a-a408-e9bdf4caf318
 status: experimental
 description: Detects potential processes activity of LabTeach (Connectwise Automate)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

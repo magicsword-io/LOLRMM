@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - user_managed
   condition: selection
-id: b1046ed6-e6cc-4579-9fd5-cd743b111f66
+id: d40e408b-1732-48a3-8d81-88409cd9ebfe
 status: experimental
 description: Detects potential network activity of TigerVNC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

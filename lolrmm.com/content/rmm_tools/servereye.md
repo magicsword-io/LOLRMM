@@ -24,6 +24,9 @@ ServerEye is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,15 +46,15 @@ ServerEye is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.server-eye.de`
 
 
-
-
+### Detections
+- Detects potential network activity of ServerEye RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_network_sigma.yml)
+- Detects potential processes activity of ServerEye RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_processes_sigma.yml)
 
 ### References
 - [https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf](https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf)

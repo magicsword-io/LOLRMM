@@ -8,11 +8,11 @@ detection:
     - '*search.namequery.com'
     - '*server.absolute.com'
   condition: selection
-id: bedff294-81de-4490-af18-aa114edbe484
+id: 4b510fc9-5a6e-4cdd-955a-6398c8710ee4
 status: experimental
 description: Detects potential network activity of Absolute (Computrace) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

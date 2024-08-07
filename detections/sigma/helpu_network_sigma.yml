@@ -8,11 +8,11 @@ detection:
     - helpu.co.kr
     - '*.helpu.co.kr'
   condition: selection
-id: 739baa64-d07d-4b66-998e-4a79161fff6e
+id: f7818a0e-2039-4ad5-ae84-891d93dff067
 status: experimental
 description: Detects potential network activity of HelpU RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

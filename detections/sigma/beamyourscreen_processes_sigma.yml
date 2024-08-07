@@ -8,11 +8,11 @@ detection:
     - beamyourscreen.exe
     - beamyourscreen-host.exe
   condition: selection
-id: a7d7b7d3-1f22-4213-8b42-b31d5bec4b5f
+id: 90ef4fa3-63a2-49b6-a9df-3b6bc4d53114
 status: experimental
 description: Detects potential processes activity of BeamYourScreen RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

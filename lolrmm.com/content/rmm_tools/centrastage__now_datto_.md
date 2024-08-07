@@ -24,6 +24,9 @@ CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More i
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,17 +46,17 @@ CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More i
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.rmm.datto.com`
     - `*cc.centrastage.net`
     - `datto.com/au/products/rmm/`
 
 
-
-
+### Detections
+- Detects potential network activity of CentraStage (Now Datto) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__network_sigma.yml)
+- Detects potential processes activity of CentraStage (Now Datto) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__processes_sigma.yml)
 
 ### References
 - [https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm](https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm)

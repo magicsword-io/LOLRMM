@@ -9,11 +9,11 @@ detection:
     - HelpuUpdater.exe
     - HelpuManager.exe
   condition: selection
-id: fdff99d2-6d9a-4478-9b96-5eaf6db84f16
+id: 0779ec5e-05d7-4174-ab1c-a66175b3bf92
 status: experimental
 description: Detects potential processes activity of HelpU RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

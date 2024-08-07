@@ -11,11 +11,11 @@ detection:
     - remote access.exe
     - windowslauncher.exe
   condition: selection
-id: fc385326-9703-4e2c-bd37-cd44115e2ae7
+id: a9f963f8-d1f7-482e-a72d-d61ba2a8cfd5
 status: experimental
 description: Detects potential processes activity of SimpleHelp RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

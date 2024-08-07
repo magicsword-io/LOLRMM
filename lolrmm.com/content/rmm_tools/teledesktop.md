@@ -24,6 +24,9 @@ TeleDesktop is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ TeleDesktop is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `tele-desk.com`
 
 
-
-
+### Detections
+- Detects potential network activity of TeleDesktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_network_sigma.yml)
+- Detects potential processes activity of TeleDesktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_processes_sigma.yml)
 
 ### References
 - [http://potomacsoft.com/ - DOA as of 2024](http://potomacsoft.com/ - DOA as of 2024)

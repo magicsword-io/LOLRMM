@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\FileZilla FTP Client\*
-    - '*\FileZilla FTP Client\*'
-    - '*\FileZilla.exe'
+  - C:\Program Files\FileZilla FTP Client\*
+  - '*\FileZilla FTP Client\*'
+  - '*\FileZilla.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/filezilla_processes_sigma.yml
+  Description: Detects potential processes activity of FileZilla RMM tool
 References: []
 Acknowledgement: []

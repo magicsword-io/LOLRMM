@@ -8,11 +8,11 @@ detection:
     - rustdesk*.exe
     - rustdesk.exe
   condition: selection
-id: 05bf5bfd-36f9-446c-9c0c-cfb16684ad23
+id: c586fb90-dabc-4b16-b0b3-f6b0f6024b91
 status: experimental
 description: Detects potential processes activity of RustDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

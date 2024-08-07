@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - pcstarter.exe
-    - turbomeeting.exe
-    - turbomeetingstarter.exe
+  - pcstarter.exe
+  - turbomeeting.exe
+  - turbomeetingstarter.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - acceo.com/turbomeeting/
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - acceo.com/turbomeeting/
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/turbomeeting_network_sigma.yml
+  Description: Detects potential network activity of TurboMeeting RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/turbomeeting_processes_sigma.yml
+  Description: Detects potential processes activity of TurboMeeting RMM tool
 References:
-  - http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv
+- http://sourcing.rhubcom.com/v5/faqs.html#collapsetwentysix2-topdiv
 Acknowledgement: []

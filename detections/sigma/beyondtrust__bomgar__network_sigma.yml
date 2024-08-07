@@ -9,11 +9,11 @@ detection:
     - '*.bomgarcloud.com'
     - bomgarcloud.com
   condition: selection
-id: aee3906f-e99a-4a79-96f8-c4618b193d04
+id: 6238e5fb-4629-4c45-b828-c09d66b398d4
 status: experimental
 description: Detects potential network activity of BeyondTrust (Bomgar) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

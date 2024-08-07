@@ -8,11 +8,11 @@ detection:
     - '*.screenmeet.com'
     - '*.scrn.mt'
   condition: selection
-id: 7d29b8a4-7a01-4cf8-aead-2f2f415ab219
+id: 8a5e7ba1-65ff-4f55-a524-62411a667b65
 status: experimental
 description: Detects potential network activity of ScreenMeet RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

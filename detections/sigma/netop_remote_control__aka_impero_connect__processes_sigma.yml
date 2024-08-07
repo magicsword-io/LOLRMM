@@ -10,12 +10,12 @@ detection:
     - nldrw32.exe
     - rmserverconsolemediator.exe
   condition: selection
-id: 4b71dd98-1381-4dd2-8be1-804f40f63039
+id: 3a4303d5-7d7f-4ea2-9d7e-f218c5971713
 status: experimental
 description: Detects potential processes activity of Netop Remote Control (aka Impero
   Connect) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

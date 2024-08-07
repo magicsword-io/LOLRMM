@@ -17,11 +17,11 @@ detection:
     - kabutoservices.com
     - attachments.servably.com
   condition: selection
-id: 69005fdf-9381-48cc-ae6c-99e454d6e355
+id: a6178ede-3a67-4e98-8285-c0e5a99c7777
 status: experimental
 description: Detects potential network activity of Syncro RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

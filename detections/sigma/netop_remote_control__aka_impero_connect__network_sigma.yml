@@ -7,12 +7,12 @@ detection:
     DestinationHostname|endswith:
     - imperosoftware.com/impero-connect/
   condition: selection
-id: 7f9b9dcb-7516-4b13-98a9-c642a7bb17c0
+id: a1e072c6-6662-4fed-8c3f-24731315a82a
 status: experimental
 description: Detects potential network activity of Netop Remote Control (aka Impero
   Connect) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

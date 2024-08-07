@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - neturo.uplus.co.kr
   condition: selection
-id: f57bd79d-f4cf-4df3-bbee-6d82c3022310
+id: 39327f41-3a98-4a53-ac28-6b610b138cba
 status: experimental
 description: Detects potential network activity of Neturo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

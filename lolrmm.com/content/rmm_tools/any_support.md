@@ -24,6 +24,9 @@ Any Support is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ Any Support is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.anysupport.net`
 
 
-
-
+### Detections
+- Detects potential network activity of Any Support RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/any_support_network_sigma.yml)
+- Detects potential processes activity of Any Support RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/any_support_processes_sigma.yml)
 
 ### References
 - [https://www.anysupport.net/introduce_howto.php](https://www.anysupport.net/introduce_howto.php)

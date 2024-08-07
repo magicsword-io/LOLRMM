@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - GotoHTTP_x64.exe
-    - gotohttp.exe
-    - GotoHTTP*.exe
+  - GotoHTTP_x64.exe
+  - gotohttp.exe
+  - GotoHTTP*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.gotohttp.com'
-        - gotohttp.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.gotohttp.com'
+    - gotohttp.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_network_sigma.yml
+  Description: Detects potential network activity of GotoHTTP RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_processes_sigma.yml
+  Description: Detects potential processes activity of GotoHTTP RMM tool
 References:
-  - https://gotohttp.com/goto/help.12x
+- https://gotohttp.com/goto/help.12x
 Acknowledgement: []

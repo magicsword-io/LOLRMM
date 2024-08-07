@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\*\G2RDesktopConsole-x64.msi
-    - '*\G2RDesktopConsole-x64.msi'
+  - C:\*\G2RDesktopConsole-x64.msi
+  - '*\G2RDesktopConsole-x64.msi'
 Artifacts:
   Disk: []
   EventLog: []

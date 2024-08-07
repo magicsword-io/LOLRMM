@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ngrok.exe
-    - C:\*\ngrok.zip
-    - '*\ngrok*'
+  - ngrok.exe
+  - C:\*\ngrok.zip
+  - '*\ngrok*'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - ngrok.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - ngrok.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_network_sigma.yml
+  Description: Detects potential network activity of ngrok RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_processes_sigma.yml
+  Description: Detects potential processes activity of ngrok RMM tool
 References:
-  - https://ngrok.com/docs/guides/running-behind-firewalls/
+- https://ngrok.com/docs/guides/running-behind-firewalls/
 Acknowledgement: []

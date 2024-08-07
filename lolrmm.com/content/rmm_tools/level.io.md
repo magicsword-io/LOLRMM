@@ -24,6 +24,9 @@ Level.io is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ Level.io is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `level.io`
     - `*.level.io`
 
 
-
-
+### Detections
+- Detects potential network activity of Level.io RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml)
+- Detects potential processes activity of Level.io RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml)
 
 ### References
 - [https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues](https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues)

@@ -24,6 +24,9 @@ CrossLoop is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ CrossLoop is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.crossloop.com`
     - `crossloop.en.softonic.com`
 
 
-
-
+### Detections
+- Detects potential network activity of CrossLoop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crossloop_network_sigma.yml)
+- Detects potential processes activity of CrossLoop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crossloop_processes_sigma.yml)
 
 ### References
 - [www.CrossLoop.com -> redirects to avast.com](www.CrossLoop.com -> redirects to avast.com)

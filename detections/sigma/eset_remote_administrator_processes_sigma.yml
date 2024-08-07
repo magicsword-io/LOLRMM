@@ -11,12 +11,12 @@ detection:
     - ezhelp*.exe
     - eratool.exe
   condition: selection
-id: 3e59ba25-ec2b-40a4-b2e5-f1f6a340a200
+id: 3963c4a9-9c8f-46c9-999d-cd1859c4312f
 status: experimental
 description: Detects potential processes activity of ESET Remote Administrator RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

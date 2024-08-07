@@ -23,6 +23,9 @@ RemoteUtilities is a remote monitoring and management (RMM) tool. More informati
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,15 +49,15 @@ RemoteUtilities is a remote monitoring and management (RMM) tool. More informati
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `remoteutilities.com`
 
 
-
-
+### Detections
+- Detects potential network activity of RemoteUtilities RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteutilities_network_sigma.yml)
+- Detects potential processes activity of RemoteUtilities RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteutilities_processes_sigma.yml)
 
 
 

@@ -14,11 +14,11 @@ detection:
     - HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk
     - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
   condition: selection
-id: 7a8349c5-b95d-4933-afb1-d744570bbb52
+id: cd914a84-51f3-4342-be98-4e5bc1b7a55e
 status: experimental
 description: Detects potential registry activity of AnyDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

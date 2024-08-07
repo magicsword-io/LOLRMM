@@ -23,6 +23,9 @@ ManageEngine RMM Central is a remote monitoring and management (RMM) tool. More 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -39,15 +42,13 @@ ManageEngine RMM Central is a remote monitoring and management (RMM) tool. More 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `manageengine.com/remote-monitoring-management/`
 
 
-
-
+### Detections
+- Detects potential network activity of ManageEngine RMM Central RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_rmm_central_network_sigma.yml)
 
 
 

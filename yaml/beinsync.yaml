@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - Beinsync*.exe
+  - Beinsync*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.beinsync.net'
-        - '*.beinsync.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.beinsync.net'
+    - '*.beinsync.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_network_sigma.yml
+  Description: Detects potential network activity of BeInSync RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_processes_sigma.yml
+  Description: Detects potential processes activity of BeInSync RMM tool
 References:
-  - https://en.wikipedia.org/wiki/Phoenix_Technologies
+- https://en.wikipedia.org/wiki/Phoenix_Technologies
 Acknowledgement: []

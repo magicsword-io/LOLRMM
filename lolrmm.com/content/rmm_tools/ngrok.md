@@ -24,6 +24,9 @@ ngrok is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ ngrok is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `ngrok.com`
 
 
-
-
+### Detections
+- Detects potential network activity of ngrok RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_network_sigma.yml)
+- Detects potential processes activity of ngrok RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_processes_sigma.yml)
 
 ### References
 - [https://ngrok.com/docs/guides/running-behind-firewalls/](https://ngrok.com/docs/guides/running-behind-firewalls/)

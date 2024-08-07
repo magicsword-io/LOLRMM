@@ -8,11 +8,11 @@ detection:
     - level.io
     - '*.level.io'
   condition: selection
-id: 19598e56-c542-4c9f-9635-f255180b017e
+id: 5b3131cc-ad91-4dbf-b429-2b013e7f8a69
 status: experimental
 description: Detects potential network activity of Level.io RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

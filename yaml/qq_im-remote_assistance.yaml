@@ -17,22 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - qq.exe
-    - QQProtect.exe
-    - qqpcmgr.exe
+  - qq.exe
+  - QQProtect.exe
+  - qqpcmgr.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.mdt.qq.com'
-        - '*.desktop.qq.com'
-        - upload_data.qq.com
-        - qq-messenger.en.softonic.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.mdt.qq.com'
+    - '*.desktop.qq.com'
+    - upload_data.qq.com
+    - qq-messenger.en.softonic.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_network_sigma.yml
+  Description: Detects potential network activity of QQ IM-remote assistance RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_processes_sigma.yml
+  Description: Detects potential processes activity of QQ IM-remote assistance RMM
+    tool
 References:
-  - https://en.wikipedia.org/wiki/Tencent_QQ
+- https://en.wikipedia.org/wiki/Tencent_QQ
 Acknowledgement: []

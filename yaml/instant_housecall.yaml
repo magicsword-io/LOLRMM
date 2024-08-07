@@ -17,23 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - hsloader.exe
-    - ihcserver.exe
-    - instanthousecall.exe
-    - instanthousecall.exe
+  - hsloader.exe
+  - ihcserver.exe
+  - instanthousecall.exe
+  - instanthousecall.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.instanthousecall.com'
-        - '*.instanthousecall.net'
-        - instanthousecall.com
-        - secure.instanthousecall.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.instanthousecall.com'
+    - '*.instanthousecall.net'
+    - instanthousecall.com
+    - secure.instanthousecall.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml
+  Description: Detects potential network activity of Instant Housecall RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml
+  Description: Detects potential processes activity of Instant Housecall RMM tool
 References:
-  - https://instanthousecall.com/features/
+- https://instanthousecall.com/features/
 Acknowledgement: []

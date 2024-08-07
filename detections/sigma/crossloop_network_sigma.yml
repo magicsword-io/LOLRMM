@@ -8,11 +8,11 @@ detection:
     - '*.crossloop.com'
     - crossloop.en.softonic.com
   condition: selection
-id: c2deeec3-aacc-4631-8211-3cec54658a24
+id: bef711ea-7e18-441b-b4c0-609c348fd068
 status: experimental
 description: Detects potential network activity of CrossLoop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

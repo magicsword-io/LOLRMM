@@ -10,11 +10,11 @@ detection:
     - rvagent.exe
     - rvagtray.exe
   condition: selection
-id: 653f6d79-85af-4014-8f3b-7a7f155871e3
+id: 6f0bead3-a60a-4f69-934c-72de73a18d10
 status: experimental
 description: Detects potential processes activity of RemoteView RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

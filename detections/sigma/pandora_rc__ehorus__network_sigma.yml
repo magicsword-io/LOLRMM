@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - portal.ehorus.com
   condition: selection
-id: 36f176db-1352-4a64-beef-8032366df8e4
+id: 9a1e3e4b-16fd-4465-afab-39614fd0132b
 status: experimental
 description: Detects potential network activity of Pandora RC (eHorus) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

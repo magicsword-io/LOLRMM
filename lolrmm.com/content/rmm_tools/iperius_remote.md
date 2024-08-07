@@ -24,6 +24,9 @@ Iperius Remote is a remote monitoring and management (RMM) tool. More informatio
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,18 +46,18 @@ Iperius Remote is a remote monitoring and management (RMM) tool. More informatio
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.iperiusremote.com`
     - `*.iperius.com`
     - `*.iperius-rs.com`
     - `iperiusremote.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Iperius Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_network_sigma.yml)
+- Detects potential processes activity of Iperius Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_processes_sigma.yml)
 
 ### References
 - [https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx](https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx)

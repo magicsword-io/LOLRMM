@@ -8,11 +8,11 @@ detection:
     - '*.api.jumpcloud.com'
     - '*.assist.jumpcloud.com'
   condition: selection
-id: 3e096c39-5da8-47c5-bc83-74aacaff37e3
+id: c1e37014-daab-4e69-8224-a2d59eecc118
 status: experimental
 description: Detects potential network activity of Jump Cloud RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

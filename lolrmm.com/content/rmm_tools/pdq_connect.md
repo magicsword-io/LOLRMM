@@ -24,6 +24,9 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `app.pdq.com`
     - `cfcdn.pdq.com`
 
 
-
-
+### Detections
+- Detects potential network activity of PDQ Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_network_sigma.yml)
+- Detects potential processes activity of PDQ Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_processes_sigma.yml)
 
 ### References
 - [https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements](https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements)

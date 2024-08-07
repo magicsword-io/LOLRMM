@@ -24,6 +24,9 @@ Pocket Cloud (Wyse) is a remote monitoring and management (RMM) tool. More infor
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Pocket Cloud (Wyse) is a remote monitoring and management (RMM) tool. More infor
 
 
 
+### Detections
+- Detects potential processes activity of Pocket Cloud (Wyse) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_cloud__wyse__processes_sigma.yml)
 
 ### References
 - [https://wyse-pocketcloud.informer.com/2.1/](https://wyse-pocketcloud.informer.com/2.1/)

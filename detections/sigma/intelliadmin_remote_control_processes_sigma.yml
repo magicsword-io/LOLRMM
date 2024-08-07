@@ -11,12 +11,12 @@ detection:
     - agent64.exe
     - agent_setup_5.exe
   condition: selection
-id: 03d4392c-9a36-42ff-8281-e499373a8c82
+id: 92dd3c65-418e-4acf-802e-d1e2bf377863
 status: experimental
 description: Detects potential processes activity of IntelliAdmin Remote Control RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

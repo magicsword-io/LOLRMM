@@ -8,11 +8,11 @@ detection:
     - termsrv.exe
     - mstsc.exe
   condition: selection
-id: 7fc55366-60d7-41fd-815f-7e84814a7134
+id: 68f5e6b4-717f-4d4f-a633-c99e342469ea
 status: experimental
 description: Detects potential processes activity of Microsoft TSC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

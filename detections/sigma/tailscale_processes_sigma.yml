@@ -9,11 +9,11 @@ detection:
     - tailscaled.exe
     - tailscale-ipn.exe
   condition: selection
-id: c52d608d-e2d8-4f4c-9039-674d19dfd3cc
+id: 0b2d2c36-e382-49d8-982a-9805d7c50f67
 status: experimental
 description: Detects potential processes activity of Tailscale RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

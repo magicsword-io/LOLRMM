@@ -24,6 +24,9 @@ Pocket Controller (Soti Xsight) is a remote monitoring and management (RMM) tool
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,15 +47,15 @@ Pocket Controller (Soti Xsight) is a remote monitoring and management (RMM) tool
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*soti.net`
 
 
-
-
+### Detections
+- Detects potential network activity of Pocket Controller (Soti Xsight) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__network_sigma.yml)
+- Detects potential processes activity of Pocket Controller (Soti Xsight) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__processes_sigma.yml)
 
 ### References
 - [https://pulse.soti.net/support/soti-xsight/help/](https://pulse.soti.net/support/soti-xsight/help/)

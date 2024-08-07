@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\ProgramFiles*\GoTo Machine Installer\*
-    - '*\GoTo Machine Installer\*'
-    - '*\GoTo\*'
+  - C:\ProgramFiles*\GoTo Machine Installer\*
+  - '*\GoTo Machine Installer\*'
+  - '*\GoTo\*'
 Artifacts:
   Disk: []
   EventLog: []

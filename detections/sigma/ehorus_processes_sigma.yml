@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - ehorus standalone.exe
   condition: selection
-id: 2e53c538-3fff-45ac-b903-f4ab6afaf8dd
+id: 006d9c2f-3eaf-4b59-b8c3-b9ee5ad5ba47
 status: experimental
 description: Detects potential processes activity of eHorus RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

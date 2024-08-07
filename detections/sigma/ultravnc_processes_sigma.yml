@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - UltraVNC*.exe
   condition: selection
-id: fcb92823-5e3c-4acb-a02f-7af32793a651
+id: c956baf8-4414-4b19-97cc-edfe477cec0f
 status: experimental
 description: Detects potential processes activity of UltraVNC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

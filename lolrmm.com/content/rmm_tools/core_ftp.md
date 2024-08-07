@@ -23,6 +23,9 @@ Core FTP is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,6 +46,9 @@ Core FTP is a remote monitoring and management (RMM) tool. More information will
 
 
 
+### Detections
+- Detects potential processes activity of Core FTP RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/core_ftp_processes_sigma.yml)
 
 
 

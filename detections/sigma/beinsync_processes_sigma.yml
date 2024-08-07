@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - Beinsync*.exe
   condition: selection
-id: 5145c047-a8e1-41b4-9f02-f841d8839bc4
+id: 354d1441-64c5-4429-9e43-ae376256f426
 status: experimental
 description: Detects potential processes activity of BeInSync RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

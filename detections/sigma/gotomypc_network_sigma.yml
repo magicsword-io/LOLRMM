@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.GoToMyPC.com'
   condition: selection
-id: 2d6122bc-eea9-4d95-bd13-ba5395138411
+id: a500441d-2754-4a91-8ce1-016086b78b26
 status: experimental
 description: Detects potential network activity of GoToMyPC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

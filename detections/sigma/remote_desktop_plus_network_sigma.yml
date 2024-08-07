@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - donkz.nl
   condition: selection
-id: 8d6e63bc-0f07-4720-887b-55ca3681d866
+id: 0234d2e6-d57e-49a3-898f-bee1543163c5
 status: experimental
 description: Detects potential network activity of Remote Desktop Plus RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

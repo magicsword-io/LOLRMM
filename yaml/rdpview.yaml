@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - dwrcs.exe
+  - dwrcs.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - systemmanager.ru/dntu.en/rdp_view.htm
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - systemmanager.ru/dntu.en/rdp_view.htm
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpview_network_sigma.yml
+  Description: Detects potential network activity of RDPView RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpview_processes_sigma.yml
+  Description: Detects potential processes activity of RDPView RMM tool
 References:
-  - systemmanager.ru/dntu.en/rdp_view.htm - Same as Damware
+- systemmanager.ru/dntu.en/rdp_view.htm - Same as Damware
 Acknowledgement: []

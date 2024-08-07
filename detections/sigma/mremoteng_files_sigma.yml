@@ -9,11 +9,11 @@ detection:
     - C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
     - C:\Users\*\AppData\*\mRemoteNG\**10\user.config
   condition: selection
-id: dbb80e26-c3f2-42de-9dc4-85b750524ecb
+id: f05be463-6a61-4a89-ab8b-f17bf9b879e3
 status: experimental
 description: Detects potential files activity of mRemoteNG RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

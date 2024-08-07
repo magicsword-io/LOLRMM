@@ -9,11 +9,11 @@ detection:
     - C:\Program Files*\ScreenConnect\App_Data\User.xml
     - C:\ProgramData\ScreenConnect Client*\user.config
   condition: selection
-id: 7946b8d4-9321-4ee7-916c-d7de92832038
+id: adb2440e-8700-4ab3-9a1a-6b761826955f
 status: experimental
 description: Detects potential files activity of ScreenConnect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

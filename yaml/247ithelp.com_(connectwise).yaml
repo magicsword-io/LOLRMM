@@ -17,17 +17,23 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - Remote Workforce Client.exe
+  - Remote Workforce Client.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.247ithelp.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.247ithelp.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__network_sigma.yml
+  Description: Detects potential network activity of 247ithelp.com (ConnectWise) RMM
+    tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__processes_sigma.yml
+  Description: Detects potential processes activity of 247ithelp.com (ConnectWise)
+    RMM tool
 References:
-  - Similar / replaced by ScreenConnect
+- Similar / replaced by ScreenConnect
 Acknowledgement: []

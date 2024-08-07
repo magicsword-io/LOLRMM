@@ -22,10 +22,12 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - level.io
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - level.io
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
+  Description: Detects potential network activity of Level RMM tool
 References: []
 Acknowledgement: []

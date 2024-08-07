@@ -24,6 +24,9 @@ RES Automation Manager is a remote monitoring and management (RMM) tool. More in
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,16 +48,16 @@ RES Automation Manager is a remote monitoring and management (RMM) tool. More in
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `ivanti.com/`
 
 
-
-
+### Detections
+- Detects potential network activity of RES Automation Manager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/res_automation_manager_network_sigma.yml)
+- Detects potential processes activity of RES Automation Manager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/res_automation_manager_processes_sigma.yml)
 
 ### References
 - [https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1](https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1)

@@ -17,20 +17,24 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ddsystem.exe
-    - dd.exe
-    - distant-desktop.exe
+  - ddsystem.exe
+  - dd.exe
+  - distant-desktop.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.distantdesktop.com'
-        - '*signalserver.xyz'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.distantdesktop.com'
+    - '*signalserver.xyz'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml
+  Description: Detects potential network activity of Distant Desktop RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_processes_sigma.yml
+  Description: Detects potential processes activity of Distant Desktop RMM tool
 References:
-  - https://www.distantdesktop.com/manual/first-start.htm
+- https://www.distantdesktop.com/manual/first-start.htm
 Acknowledgement: []

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\Syncthing.exe'
   condition: selection
-id: 0ad13468-0ded-455c-bbd5-5b71fda91c5c
+id: 44dd04d8-4691-4d7f-9fb0-c4eb4a654465
 status: experimental
 description: Detects potential processes activity of Syncthing RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

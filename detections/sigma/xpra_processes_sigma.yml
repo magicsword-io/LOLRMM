@@ -8,11 +8,11 @@ detection:
     - '*\Xpra-Launcher.exe'
     - '*\Xpra-x86_64_Setup.exe'
   condition: selection
-id: e06551f8-da37-404b-b67b-f107e0ad030a
+id: 01788429-3310-48f4-852e-6bc26f0747c0
 status: experimental
 description: Detects potential processes activity of Xpra RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

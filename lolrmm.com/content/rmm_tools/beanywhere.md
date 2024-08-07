@@ -24,6 +24,9 @@ BeAnyWhere is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -49,16 +52,16 @@ BeAnyWhere is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `beanywhere.en.uptodown.com/windows`
     - `beanywhere.com`
 
 
-
-
+### Detections
+- Detects potential network activity of BeAnyWhere RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_network_sigma.yml)
+- Detects potential processes activity of BeAnyWhere RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_processes_sigma.yml)
 
 ### References
 - [https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx](https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx)

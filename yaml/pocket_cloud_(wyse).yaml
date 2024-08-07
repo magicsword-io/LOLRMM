@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - pocketcloud*.exe
-    - pocketcloudservice.exe
+  - pocketcloud*.exe
+  - pocketcloudservice.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_cloud__wyse__processes_sigma.yml
+  Description: Detects potential processes activity of Pocket Cloud (Wyse) RMM tool
 References:
-  - https://wyse-pocketcloud.informer.com/2.1/
+- https://wyse-pocketcloud.informer.com/2.1/
 Acknowledgement: []

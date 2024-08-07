@@ -7,12 +7,12 @@ detection:
     ParentImage|endswith:
     - Remote Workforce Client.exe
   condition: selection
-id: 9d28ac14-bd59-4b6c-b9e6-0b9f99b1c67a
+id: a2f54c3b-da16-46a2-b437-201b65a53500
 status: experimental
 description: Detects potential processes activity of 247ithelp.com (ConnectWise) RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

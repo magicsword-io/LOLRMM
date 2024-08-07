@@ -24,6 +24,9 @@ Access Remote PC is a remote monitoring and management (RMM) tool. More informat
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Access Remote PC is a remote monitoring and management (RMM) tool. More informat
 
 
 
+### Detections
+- Detects potential processes activity of Access Remote PC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/access_remote_pc_processes_sigma.yml)
 
 
 

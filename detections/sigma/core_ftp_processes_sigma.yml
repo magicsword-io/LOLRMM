@@ -8,11 +8,11 @@ detection:
     - C:\*\coreftplite.exe
     - '*\coreftplite.exe'
   condition: selection
-id: 620bd021-0b5d-455f-b75a-d90bc92f0eba
+id: 394b2510-7844-4a84-be47-3f75ac85bd70
 status: experimental
 description: Detects potential processes activity of Core FTP RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

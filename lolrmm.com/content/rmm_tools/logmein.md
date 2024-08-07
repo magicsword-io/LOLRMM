@@ -32,6 +32,8 @@ LogMeIn is a remote monitoring and management (RMM) tool. More information will 
 - **Filename**: lmiignition.exe
 - **Filename**: logmeinsystray.exe
 - **Filename**: logmein.exe
+- **OriginalFileName**: 
+- **Company**: LogMeIn, Inc.
 - **Description**: LMIGuardianSvc
 - **Product**: LMIGuardianSvc
 
@@ -50,62 +52,35 @@ LogMeIn is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### Network Artifacts
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `logmein-gateway.com`
-
   **Ports**:
     - `443`
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.logmein.com`
-
   **Ports**:
     - `443`
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.logmein.eu`
-
   **Ports**:
     - `443`
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `logmeinrescue.com`
-
   **Ports**:
     - `443`
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `*.logmeininc.com`
-
   **Ports**:
     - `443`
-
 
 
 ### Detections
--   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/dns_query/dns_query_win_remote_access_software_domains_non_browsers.yml)
-
-  DNS Query To Remote Access Software Domain From Non-Browser App
-
-
-
--   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_logmein.yml)
-
-  Remote Access Tool - LogMeIn Execution
-
-
-
+- DNS Query To Remote Access Software Domain From Non-Browser App
+  - [Sigma Rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/dns_query/dns_query_win_remote_access_software_domains_non_browsers.yml)
+- Remote Access Tool - LogMeIn Execution
+  - [Sigma Rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_logmein.yml)
+- Detects potential network activity of LogMeIn RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_network_sigma.yml)
 
 ### References
 - [https://support.logmeininc.com/central/help/allowlisting-and-firewall-configuration](https://support.logmeininc.com/central/help/allowlisting-and-firewall-configuration)

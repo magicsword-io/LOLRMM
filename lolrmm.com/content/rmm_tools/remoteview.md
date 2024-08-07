@@ -24,6 +24,9 @@ RemoteView is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,17 +48,17 @@ RemoteView is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*content.rview.com`
     - `*.rview.com`
     - `content.rview.com`
 
 
-
-
+### Detections
+- Detects potential network activity of RemoteView RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_network_sigma.yml)
+- Detects potential processes activity of RemoteView RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_processes_sigma.yml)
 
 ### References
 - [https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall](https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall)

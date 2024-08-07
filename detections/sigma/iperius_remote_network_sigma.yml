@@ -10,11 +10,11 @@ detection:
     - '*.iperius-rs.com'
     - iperiusremote.com
   condition: selection
-id: 85596ce8-a4e0-4c61-9e20-ecb5dde9d1f0
+id: a0b1f500-b4b2-40c3-9f7e-6ab5bbacf0e9
 status: experimental
 description: Detects potential network activity of Iperius Remote RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

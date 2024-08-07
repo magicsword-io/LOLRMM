@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\AWSCLISetup.exe'
   condition: selection
-id: 03c7e91a-7195-4419-81a9-7acb6437a61f
+id: 4e09548c-79e4-487e-9d0a-03cd67827b7d
 status: experimental
 description: Detects potential processes activity of aws-cli RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

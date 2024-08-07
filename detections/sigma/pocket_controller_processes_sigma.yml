@@ -9,11 +9,11 @@ detection:
     - pocketcloudservice.exe
     - wysebrowser.exe
   condition: selection
-id: 413781b5-5f19-47f6-b8ae-e438d89e8be8
+id: b942a1b1-e907-4817-b13c-56b43f741606
 status: experimental
 description: Detects potential processes activity of Pocket Controller RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

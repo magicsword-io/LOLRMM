@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - helpbeam*.exe
   condition: selection
-id: d3d9bc5d-7363-4336-b44c-565cf1426489
+id: a79a8449-d2a8-4d4e-9050-3e1fb530f790
 status: experimental
 description: Detects potential processes activity of HelpBeam RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

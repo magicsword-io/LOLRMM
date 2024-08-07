@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - zabbix_agent*.exe
   condition: selection
-id: c43a960d-1b4c-4e24-87d8-449464ba1b27
+id: 415d6e06-ca39-4cbf-9a23-c14d720f92e4
 status: experimental
 description: Detects potential processes activity of Zabbix Agent RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

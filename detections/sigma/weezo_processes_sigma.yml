@@ -9,11 +9,11 @@ detection:
     - weezo.exe
     - weezo setup*.exe
   condition: selection
-id: 935c2e8f-86e0-4cf8-9336-72211826dde5
+id: cbcbaca5-c8f9-425e-a44e-f2ab24b474bb
 status: experimental
 description: Detects potential processes activity of Weezo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

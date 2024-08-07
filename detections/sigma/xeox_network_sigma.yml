@@ -8,11 +8,11 @@ detection:
     - '*.xeox.com'
     - xeox.com
   condition: selection
-id: effa0e01-efd4-4d5b-91a9-4061c5e17ffc
+id: 1ff42714-efb3-4550-81af-748ae2d1c526
 status: experimental
 description: Detects potential network activity of Xeox RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

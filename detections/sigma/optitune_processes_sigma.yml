@@ -8,11 +8,11 @@ detection:
     - OTService.exe
     - OTPowerShell.exe
   condition: selection
-id: 145f5308-f844-4178-b836-bf20f10dbe82
+id: 6f92accd-69ed-4cea-a134-e55bb58f496a
 status: experimental
 description: Detects potential processes activity of OptiTune RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

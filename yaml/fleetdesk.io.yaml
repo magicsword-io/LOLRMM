@@ -17,23 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - fleetdeck_agent_svc.exe
-    - fleetdeck_commander_svc.exe
-    - fleetdeck_installer.exe
-    - fleetdeck_agent.exe
-    - fleetdeck_commander_launcher.exe
+  - fleetdeck_agent_svc.exe
+  - fleetdeck_commander_svc.exe
+  - fleetdeck_installer.exe
+  - fleetdeck_agent.exe
+  - fleetdeck_commander_launcher.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.fleetdeck.io'
-        - cognito-idp.us-west-2.amazonaws.com
-        - fleetdeck.io
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.fleetdeck.io'
+    - cognito-idp.us-west-2.amazonaws.com
+    - fleetdeck.io
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml
+  Description: Detects potential network activity of FleetDesk.io RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml
+  Description: Detects potential processes activity of FleetDesk.io RMM tool
 References:
-  - https://fleetdeck.io/faq/
+- https://fleetdeck.io/faq/
 Acknowledgement: []

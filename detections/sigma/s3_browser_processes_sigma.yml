@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\s3browser*.exe'
   condition: selection
-id: f67a2571-7d02-4f20-8e39-8a94727c17c9
+id: 578521d9-c5ea-4acb-848b-137796c5bd3a
 status: experimental
 description: Detects potential processes activity of S3 Browser RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

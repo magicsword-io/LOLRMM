@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\Rei Software\CarotDAV\*
-    - '*\Rei Software\CarotDAV\*'
-    - '*\CarotDAV.exe'
+  - C:\Program Files (x86)\Rei Software\CarotDAV\*
+  - '*\Rei Software\CarotDAV\*'
+  - '*\CarotDAV.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/carotdav_processes_sigma.yml
+  Description: Detects potential processes activity of CarotDAV RMM tool
 References: []
 Acknowledgement: []

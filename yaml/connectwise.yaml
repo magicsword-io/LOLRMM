@@ -17,8 +17,8 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
-    - '*\ScreenConnect*Client*\*'
+  - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
+  - '*\ScreenConnect*Client*\*'
 Artifacts:
   Disk: []
   EventLog: []

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\GoogleDriveFS.exe'
   condition: selection
-id: e09b30de-7916-4f8c-a80c-230c8e288f86
+id: b8b3c2a8-ac0d-4384-aaa0-ca4866c1ba1d
 status: experimental
 description: Detects potential processes activity of Google Drive RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

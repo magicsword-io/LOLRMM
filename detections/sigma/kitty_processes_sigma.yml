@@ -8,11 +8,11 @@ detection:
     - C:\*\kitty.exe
     - '*\kitty.exe'
   condition: selection
-id: e5a30831-ef55-4914-98bf-0d749db25fe6
+id: 3fad837e-9c84-4098-a411-d0accba8543d
 status: experimental
 description: Detects potential processes activity of KiTTY RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

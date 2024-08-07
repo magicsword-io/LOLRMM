@@ -24,6 +24,9 @@ LANDesk is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -51,17 +54,17 @@ LANDesk is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.ivanticloud.com`
     - `*.ivanti.com`
     - `ivanti.com`
 
 
-
-
+### Detections
+- Detects potential network activity of LANDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/landesk_network_sigma.yml)
+- Detects potential processes activity of LANDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/landesk_processes_sigma.yml)
 
 ### References
 - [https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US](https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US)

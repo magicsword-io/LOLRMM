@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - pdq-connect*.exe
   condition: selection
-id: aeb1c68a-95a5-45c4-bebf-c8acf2468f9b
+id: 53f5bc8e-62d8-409e-9588-7910e706dc5f
 status: experimental
 description: Detects potential processes activity of PDQ Connect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

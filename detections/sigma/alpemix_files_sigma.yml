@@ -7,11 +7,11 @@ detection:
     TargetFilename|endswith:
     - '%localappdata%\Alpemix\Alpemix.ini'
   condition: selection
-id: 12145296-1bca-4c10-bb86-667c78108a50
+id: 6737b828-5c7c-4341-b016-0f6b56c24dd5
 status: experimental
 description: Detects potential files activity of Alpemix RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

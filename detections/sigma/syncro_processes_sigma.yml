@@ -16,11 +16,11 @@ detection:
     - SyncroLive.Service.exe
     - SyncroLive.Agent.exe
   condition: selection
-id: 9443925c-0d3c-4454-86e0-9b01674eea71
+id: 1dae4fcd-efac-4f3a-8a66-9faa8db0f808
 status: experimental
 description: Detects potential processes activity of Syncro RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

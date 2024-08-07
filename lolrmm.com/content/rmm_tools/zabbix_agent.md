@@ -24,6 +24,9 @@ Zabbix Agent is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ Zabbix Agent is a remote monitoring and management (RMM) tool. More information 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `zabbix.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Zabbix Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zabbix_agent_network_sigma.yml)
+- Detects potential processes activity of Zabbix Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zabbix_agent_processes_sigma.yml)
 
 ### References
 - [https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent](https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent)

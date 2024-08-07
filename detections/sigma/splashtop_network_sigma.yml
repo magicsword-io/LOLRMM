@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.splashtop.com'
   condition: selection
-id: 1a007436-4cef-43e0-a05a-ddcd2b860d92
+id: 435cfa08-9ab6-4ddf-b68c-580819dbe116
 status: experimental
 description: Detects potential network activity of Splashtop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,19 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ltsvc.exe
-    - ltsvcmon.exe
-    - lttray.exe
+  - ltsvc.exe
+  - ltsvcmon.exe
+  - lttray.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.hostedrmm.com'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.hostedrmm.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_automate__labtech__network_sigma.yml
+  Description: Detects potential network activity of Connectwise Automate (LabTech)
+    RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_automate__labtech__processes_sigma.yml
+  Description: Detects potential processes activity of Connectwise Automate (LabTech)
+    RMM tool
 References:
-  - https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate
+- https://www.connectwise.com/company/announcements/labtech-now-connectwise-automate
 Acknowledgement: []

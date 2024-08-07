@@ -19,11 +19,11 @@ detection:
     - '*.zoho.com'
     - '*.zoho.eu'
   condition: selection
-id: ca90a415-2385-4c50-a295-5e58e4ab3117
+id: f0241638-0572-451d-be6a-ae0a0ab84b72
 status: experimental
 description: Detects potential network activity of Zoho Assist RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

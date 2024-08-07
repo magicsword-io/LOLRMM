@@ -23,6 +23,9 @@ SysAid is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,6 +48,9 @@ SysAid is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+### Detections
+- Detects potential processes activity of SysAid RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sysaid_processes_sigma.yml)
 
 
 

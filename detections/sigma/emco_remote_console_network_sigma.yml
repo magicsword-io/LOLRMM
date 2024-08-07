@@ -8,11 +8,11 @@ detection:
     - user_managed
     - emcosoftware.com
   condition: selection
-id: c18f4446-bf56-478b-b34a-21649f517412
+id: d76fbf27-bd18-4f77-875f-a80a02b6e8cc
 status: experimental
 description: Detects potential network activity of EMCO Remote Console RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

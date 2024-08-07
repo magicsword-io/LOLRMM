@@ -17,21 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - seetrolcenter.exe
-    - seetrolclient.exe
-    - seetrolmyservice.exe
-    - seetrolremote.exe
-    - seetrolsetting.exe
+  - seetrolcenter.exe
+  - seetrolclient.exe
+  - seetrolmyservice.exe
+  - seetrolremote.exe
+  - seetrolsetting.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - seetrol.co.kr
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - seetrol.co.kr
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_network_sigma.yml
+  Description: Detects potential network activity of Seetrol RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_processes_sigma.yml
+  Description: Detects potential processes activity of Seetrol RMM tool
 References:
-  - http://www.seetrol.com/en/features/features3.php
+- http://www.seetrol.com/en/features/features3.php
 Acknowledgement: []

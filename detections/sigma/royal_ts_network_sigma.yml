@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - royalapps.com
   condition: selection
-id: 4b728567-ea5c-47d2-98ae-d2376b0b1b8a
+id: 6b0eb373-eb26-4648-84e3-cfd0259bbd8e
 status: experimental
 description: Detects potential network activity of Royal TS RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

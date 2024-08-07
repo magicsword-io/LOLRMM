@@ -24,6 +24,9 @@ NateOn-desktop sharing is a remote monitoring and management (RMM) tool. More in
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,15 +47,15 @@ NateOn-desktop sharing is a remote monitoring and management (RMM) tool. More in
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.nate.com`
 
 
-
-
+### Detections
+- Detects potential network activity of NateOn-desktop sharing RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_network_sigma.yml)
+- Detects potential processes activity of NateOn-desktop sharing RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_processes_sigma.yml)
 
 ### References
 - [http://rsupport.nate.com/rview/r8/main/index.aspx](http://rsupport.nate.com/rview/r8/main/index.aspx)

@@ -17,18 +17,22 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - PCMonitorManager.exe
-    - pcmonitorsrv.exe
+  - PCMonitorManager.exe
+  - pcmonitorsrv.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - pulseway.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - pulseway.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_network_sigma.yml
+  Description: Detects potential network activity of Pulseway RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_processes_sigma.yml
+  Description: Detects potential processes activity of Pulseway RMM tool
 References:
-  - https://intercom.help/pulseway/en/
+- https://intercom.help/pulseway/en/
 Acknowledgement: []

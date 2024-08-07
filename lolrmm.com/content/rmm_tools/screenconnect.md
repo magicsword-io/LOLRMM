@@ -27,6 +27,9 @@ ScreenConnect is a remote monitoring and management (RMM) tool. More information
 - **Website**: [https://www.connectwise.com](https://www.connectwise.com)
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: Yes
@@ -71,43 +74,32 @@ ScreenConnect is a remote monitoring and management (RMM) tool. More information
 ### Forensic Artifacts
 
 #### Disk Artifacts
-
 - **File**: `C:\Program Files*\ScreenConnect\App_Data\Session.db`
-
   **Description**: ScreenConnect session database
-
-
   **OS**: Windows
-
 - **File**: `C:\Program Files*\ScreenConnect\App_Data\User.xml`
-
   **Description**: ScreenConnect user configuration
-
-
   **OS**: Windows
-
 - **File**: `C:\ProgramData\ScreenConnect Client*\user.config`
-
   **Description**: ScreenConnect client user configuration
-
-
   **OS**: Windows
-
 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `control.connectwise.com`
     - `*.connectwise.com`
     - `*.screenconnect.com`
 
 
-
-
+### Detections
+- Detects potential network activity of ScreenConnect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_network_sigma.yml)
+- Detects potential files activity of ScreenConnect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_files_sigma.yml)
+- Detects potential processes activity of ScreenConnect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_processes_sigma.yml)
 
 ### References
 - [https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/](https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/)

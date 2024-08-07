@@ -10,12 +10,12 @@ detection:
     - gw.remotix.com
     - connect.acronis.com
   condition: selection
-id: 0762ba65-8a6c-4986-8b73-fab8e6262f30
+id: a7ed0eb9-3d99-47ee-a335-3162430f519c
 status: experimental
 description: Detects potential network activity of Acronic Cyber Protect (Remotix)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

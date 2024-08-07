@@ -8,11 +8,11 @@ detection:
     - aeroadmin.exe
     - AeroAdmin.exe
   condition: selection
-id: fe8a24ef-0c43-4310-bf6c-a57531759392
+id: bc9952c3-2d21-418e-9eed-a1d0450ee0c1
 status: experimental
 description: Detects potential processes activity of AeroAdmin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

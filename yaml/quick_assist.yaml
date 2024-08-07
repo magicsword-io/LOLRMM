@@ -17,12 +17,14 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - quickassist.exe
+  - quickassist.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml
+  Description: Detects potential processes activity of Quick Assist RMM tool
 References: []
 Acknowledgement: []

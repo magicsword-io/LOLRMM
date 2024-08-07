@@ -8,11 +8,11 @@ detection:
     - Sorillus-Launcher*.exe
     - Sorillus Launcher.exe
   condition: selection
-id: eb89bcb8-c503-43d5-bf78-a3a2274beafa
+id: dd380a97-a692-4e46-90cd-aa151b207089
 status: experimental
 description: Detects potential processes activity of Sorillus RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

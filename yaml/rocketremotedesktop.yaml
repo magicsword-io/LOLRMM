@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - RDConsole.exe
-    - RocketRemoteDesktop_Setup.exe
+  - RDConsole.exe
+  - RocketRemoteDesktop_Setup.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rocket_remote_desktop_processes_sigma.yml
+  Description: Detects potential processes activity of Rocket Remote Desktop RMM tool
 References: []
 Acknowledgement: []

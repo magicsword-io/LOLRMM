@@ -8,11 +8,11 @@ detection:
     - zerotier*.exe
     - zero-powershell.exe
   condition: selection
-id: 028f4c15-5379-489b-9621-f9cf16f7829a
+id: 3bb23fe4-d277-4cb0-ad3c-3ca22b56ba46
 status: experimental
 description: Detects potential processes activity of ZeroTier RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

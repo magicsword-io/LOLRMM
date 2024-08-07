@@ -9,11 +9,11 @@ detection:
     - ntrntservice.exe
     - neturo.exe
   condition: selection
-id: b3349de8-1401-45aa-b30e-0c9822e6f580
+id: 229b9923-a34d-4c65-b024-2160ed14557e
 status: experimental
 description: Detects potential processes activity of Neturo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

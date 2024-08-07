@@ -23,6 +23,9 @@ mstsc is a remote monitoring and management (RMM) tool. More information will be
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,6 +46,9 @@ mstsc is a remote monitoring and management (RMM) tool. More information will be
 
 
 
+### Detections
+- Detects potential processes activity of mstsc RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mstsc_processes_sigma.yml)
 
 
 

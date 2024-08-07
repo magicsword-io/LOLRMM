@@ -8,11 +8,11 @@ detection:
     - '*.internetid.ru'
     - rmansys.ru
   condition: selection
-id: e6ceaa1d-4b94-4e3e-af7f-233af7f4a074
+id: ade1656e-2425-423d-ab31-d97438ed9c8f
 status: experimental
 description: Detects potential network activity of Remote Manipulator System RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

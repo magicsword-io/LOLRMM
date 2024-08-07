@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - encapto.com
   condition: selection
-id: b704e63b-f10c-4f64-8962-87d477c2586c
+id: 78836ae6-3dc5-4271-9643-7d6f02e60b4b
 status: experimental
 description: Detects potential network activity of Encapto RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

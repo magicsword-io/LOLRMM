@@ -9,11 +9,11 @@ detection:
     - turbomeeting.exe
     - turbomeetingstarter.exe
   condition: selection
-id: 087dc368-3c7f-41cd-808f-91f092ce09e6
+id: 65fa645d-2346-4959-b096-ce2c0c8910c2
 status: experimental
 description: Detects potential processes activity of TurboMeeting RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

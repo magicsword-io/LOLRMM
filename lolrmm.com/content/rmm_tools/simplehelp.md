@@ -24,6 +24,9 @@ SimpleHelp is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,16 +49,16 @@ SimpleHelp is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `simple-help.com`
 
 
-
-
+### Detections
+- Detects potential network activity of SimpleHelp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml)
+- Detects potential processes activity of SimpleHelp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml)
 
 ### References
 - [https://simple-help.com/remote-support](https://simple-help.com/remote-support)

@@ -9,12 +9,12 @@ detection:
     - mgntsvc.exe
     - routernt.exe
   condition: selection
-id: a9b5ed5c-d618-4940-8f88-7f4f5560c1c8
+id: e01d827a-4e75-484d-bbc5-c5c5179f56a4
 status: experimental
 description: Detects potential processes activity of Sophos-Remote Management System
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

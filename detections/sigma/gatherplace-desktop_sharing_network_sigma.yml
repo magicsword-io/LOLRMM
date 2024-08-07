@@ -9,12 +9,12 @@ detection:
     - '*.gatherplace.net'
     - gatherplace.com
   condition: selection
-id: fd1ae6a3-eb22-4a41-86a9-e7698d77b0f4
+id: ef086892-3bcd-4b23-91b5-4838a3842152
 status: experimental
 description: Detects potential network activity of GatherPlace-desktop sharing RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

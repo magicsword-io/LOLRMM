@@ -17,22 +17,28 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - era.exe
-    - einstaller.exe
-    - ezhelp*.exe
-    - eratool.exe
-    - ERAAgent.exe
+  - era.exe
+  - einstaller.exe
+  - ezhelp*.exe
+  - eratool.exe
+  - ERAAgent.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - eset.com/me/business/remote-management/remote-administrator/
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - eset.com/me/business/remote-management/remote-administrator/
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_network_sigma.yml
+  Description: Detects potential network activity of ESET Remote Administrator RMM
+    tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_processes_sigma.yml
+  Description: Detects potential processes activity of ESET Remote Administrator RMM
+    tool
 References:
-  - eset.com/me/business/remote-management/remote-administrator/
+- eset.com/me/business/remote-management/remote-administrator/
 Acknowledgement: []

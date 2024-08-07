@@ -24,6 +24,9 @@ Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,10 +46,7 @@ Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `desktopcentral.manageengine.com`
     - `desktopcentral.manageengine.com.eu`
     - `desktopcentral.manageengine.cn`
@@ -55,8 +55,11 @@ Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool
     - `*.-dms.zoho.com.cn`
 
 
-
-
+### Detections
+- Detects potential network activity of Manage Engine (Desktop Central) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml)
+- Detects potential processes activity of Manage Engine (Desktop Central) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml)
 
 ### References
 - [https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html](https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html)

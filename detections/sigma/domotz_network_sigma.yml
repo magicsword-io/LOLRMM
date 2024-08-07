@@ -9,11 +9,11 @@ detection:
     - domotz.com
     - '*cell-1.domotz.com'
   condition: selection
-id: fd38488d-6343-44a8-82c8-116377d4a672
+id: 3e2c6509-b097-4847-9162-be651728e793
 status: experimental
 description: Detects potential network activity of Domotz RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

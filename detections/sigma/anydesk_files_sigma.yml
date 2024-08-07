@@ -22,11 +22,11 @@ detection:
     - ~/Library/Application Support/AnyDesk/Logs/
     - ~/.config/AnyDesk/Logs/
   condition: selection
-id: 62f2cf67-0469-4f9c-be66-10401ed65dfa
+id: 20ebd46b-44ea-4679-9563-ca9b6b4d75e0
 status: experimental
 description: Detects potential files activity of AnyDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

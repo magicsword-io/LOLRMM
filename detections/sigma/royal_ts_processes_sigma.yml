@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - royalts.exe
   condition: selection
-id: f6b58ad2-cafb-40be-93dd-515c43674019
+id: 5a1504da-daca-4287-995f-3b911f517848
 status: experimental
 description: Detects potential processes activity of Royal TS RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

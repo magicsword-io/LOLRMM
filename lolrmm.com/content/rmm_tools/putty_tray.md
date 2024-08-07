@@ -23,6 +23,9 @@ PuTTY Tray is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,6 +46,9 @@ PuTTY Tray is a remote monitoring and management (RMM) tool. More information wi
 
 
 
+### Detections
+- Detects potential processes activity of PuTTY Tray RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/putty_tray_processes_sigma.yml)
 
 
 

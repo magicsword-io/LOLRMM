@@ -9,11 +9,11 @@ detection:
     - cognito-idp.us-west-2.amazonaws.com
     - fleetdeck.io
   condition: selection
-id: 11a0d8f2-624d-4b56-914f-31ce904f0ae1
+id: 129d5713-af89-4506-97f2-ee966aaa34b1
 status: experimental
 description: Detects potential network activity of FleetDesk.io RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

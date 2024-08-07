@@ -9,11 +9,11 @@ detection:
     - '*\winvnc.exe'
     - '*\vncviewer.exe'
   condition: selection
-id: 85e32981-9dba-4bd7-b18f-51b73a84431e
+id: dd1b2f4a-644e-4794-b261-917ac7e3046b
 status: experimental
 description: Detects potential processes activity of Ultra VNC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,12 +7,12 @@ detection:
     DestinationHostname|endswith:
     - n-able.com
   condition: selection
-id: 08134126-6619-4434-b01f-c65998bd6d35
+id: 4eba2de3-3df8-41f8-986f-a9d8b649eac0
 status: experimental
 description: Detects potential network activity of N-ABLE Remote Access Software RMM
   tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -24,6 +24,9 @@ Zoho Assist is a remote monitoring and management (RMM) tool. More information w
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -51,10 +54,7 @@ Zoho Assist is a remote monitoring and management (RMM) tool. More information w
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.zoho.com.au`
     - `*.zohoassist.jp`
     - `assist.zoho.com`
@@ -70,8 +70,11 @@ Zoho Assist is a remote monitoring and management (RMM) tool. More information w
     - `*.zoho.eu`
 
 
-
-
+### Detections
+- Detects potential network activity of Zoho Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_network_sigma.yml)
+- Detects potential processes activity of Zoho Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_processes_sigma.yml)
 
 ### References
 - [https://www.zoho.com/assist/kb/firewall-configuration.html](https://www.zoho.com/assist/kb/firewall-configuration.html)

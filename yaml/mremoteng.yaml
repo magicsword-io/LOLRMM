@@ -17,34 +17,40 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - mRemoteNG.exe
-    - C:\Program Files (x86)\mRemoteNG\*
-    - '*\mRemoteNG\*'
-    - '*\mRemoteNG.exe'
-    - c:\Program Files (x86)%\mRemoteNG
-    - '*%\mRemoteNG'
-    - mRemoteNG-Installer-*.msi
-    - '*\mRemoteNG.exe'
+  - mRemoteNG.exe
+  - C:\Program Files (x86)\mRemoteNG\*
+  - '*\mRemoteNG\*'
+  - '*\mRemoteNG.exe'
+  - c:\Program Files (x86)%\mRemoteNG
+  - '*%\mRemoteNG'
+  - mRemoteNG-Installer-*.msi
+  - '*\mRemoteNG.exe'
 Artifacts:
   Disk:
-    - File: 'C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log'
-      Description: 'mRemoteNG log file'
-      OS: Windows
-    - File: 'C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml'
-      Description: 'mRemoteNG configuration file'
-      OS: Windows
-    - File: 'C:\Users\*\AppData\*\mRemoteNG\**10\user.config'
-      Description: 'mRemoteNG user configuration file'
-      OS: Windows
+  - File: C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
+    Description: mRemoteNG log file
+    OS: Windows
+  - File: C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
+    Description: mRemoteNG configuration file
+    OS: Windows
+  - File: C:\Users\*\AppData\*\mRemoteNG\**10\user.config
+    Description: mRemoteNG user configuration file
+    OS: Windows
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - user_managed
-        - mremoteng.org
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - mremoteng.org
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_network_sigma.yml
+  Description: Detects potential network activity of mRemoteNG RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_files_sigma.yml
+  Description: Detects potential files activity of mRemoteNG RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_processes_sigma.yml
+  Description: Detects potential processes activity of mRemoteNG RMM tool
 References:
-  - https://github.com/mRemoteNG/mRemoteNG
+- https://github.com/mRemoteNG/mRemoteNG
 Acknowledgement: []

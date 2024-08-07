@@ -24,6 +24,9 @@ Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,16 +45,16 @@ Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.kace.com`
     - `www.quest.com/kace/`
 
 
-
-
+### Detections
+- Detects potential network activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__network_sigma.yml)
+- Detects potential processes activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__processes_sigma.yml)
 
 ### References
 - [https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function](https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function)

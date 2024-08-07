@@ -29,13 +29,17 @@ RAdmin is a remote monitoring and management (RMM) tool. More information will b
 
 #### PE Metadata
 - **Filename**: RServer3.exe
-- **Original File Name**: RServer3.exe
+- **OriginalFileName**: RServer3.exe
+- **InternalName**: RServer3
 - **Description**: Radmin Server
 - **Product**: Radmin Server
+- **Comments**: Radmin - Remote Control Server
 - **Filename**: Radmin.exe
-- **Original File Name**: Radmin.exe
+- **OriginalFileName**: Radmin.exe
+- **InternalName**: Radmin
 - **Description**: Radmin Viewer
 - **Product**: Radmin Viewer
+- **Comments**: Radmin Viewer
 
 
 - **Free**: No
@@ -56,67 +60,44 @@ RAdmin is a remote monitoring and management (RMM) tool. More information will b
 ### Forensic Artifacts
 
 #### Disk Artifacts
-
 - **File**: `C:\Windows\SysWOW64\rserver30\Radm_log.htm`
-
   **Description**: RAdmin log file (32-bit)
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\System32\rserver30\Radm_log.htm`
-
   **Description**: RAdmin log file (64-bit)
-
-
   **OS**: Windows
-
 - **File**: `C:\Windows\System32\rserver30\CHATLOGS\*\*.htm`
-
   **Description**: RAdmin chat logs
-
-
   **OS**: Windows
-
 - **File**: `C:\Users\*\Documents\ChatLogs\*\*.htm`
-
   **Description**: RAdmin user chat logs
-
-
   **OS**: Windows
-
 
 
 #### Registry Artifacts
 - **Path**: `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin Security`
   **Description**: N/A
 
-
 #### Network Artifacts
-
-- **Description**: N/A
-
-  **Domains**:
+- **Description**: N/A  **Domains**:
     - `radmin.com`
-
   **Ports**:
     - `443`
 
 
-
 ### Detections
--   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_pua_radmin.yml)
-
-  PUA - Radmin Viewer Utility Execution
-
-
-
--   [Sigma rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml)
-
-  Enumeration for 3rd Party Creds From CLI
-
-
-
+- PUA - Radmin Viewer Utility Execution
+  - [Sigma Rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_pua_radmin.yml)
+- Enumeration for 3rd Party Creds From CLI
+  - [Sigma Rule](https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml)
+- Detects potential registry activity of RAdmin RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_registry_sigma.yml)
+- Detects potential network activity of RAdmin RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_network_sigma.yml)
+- Detects potential files activity of RAdmin RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_files_sigma.yml)
+- Detects potential processes activity of RAdmin RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_processes_sigma.yml)
 
 ### References
 - [https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/](https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/)

@@ -17,21 +17,25 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - FixMeit Client.exe
-    - TiExpertStandalone.exe
-    - FixMeitClient*.exe
-    - TiExpertCore.exe
-    - FixMeit Unattended Access Setup.exe
-    - FixMeit Expert Setup.exe
+  - FixMeit Client.exe
+  - TiExpertStandalone.exe
+  - FixMeitClient*.exe
+  - TiExpertCore.exe
+  - FixMeit Unattended Access Setup.exe
+  - FixMeit Expert Setup.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - fixme.it
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - fixme.it
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_network_sigma.yml
+  Description: Detects potential network activity of FixMe RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_processes_sigma.yml
+  Description: Detects potential processes activity of FixMe RMM tool
 References: []
 Acknowledgement: []

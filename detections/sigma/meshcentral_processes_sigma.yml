@@ -8,11 +8,11 @@ detection:
     - meshcentral*.exe
     - mesh*.exe
   condition: selection
-id: be89c905-3142-4422-a6d9-96893eb6a738
+id: 86eb4e28-14e7-4dfa-8d6d-3e35db4f7d2e
 status: experimental
 description: Detects potential processes activity of MeshCentral RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

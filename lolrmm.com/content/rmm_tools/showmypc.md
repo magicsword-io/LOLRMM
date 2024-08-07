@@ -24,6 +24,9 @@ ShowMyPC is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,16 +48,16 @@ ShowMyPC is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.showmypc.com`
     - `showmypc.com`
 
 
-
-
+### Detections
+- Detects potential network activity of ShowMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_network_sigma.yml)
+- Detects potential processes activity of ShowMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_processes_sigma.yml)
 
 ### References
 - [https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf](https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf)

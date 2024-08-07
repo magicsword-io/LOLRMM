@@ -16,11 +16,11 @@ detection:
     - Zaservice.exe
     - za_connect.exe
   condition: selection
-id: 8154c1ac-a2e2-44bc-9464-600b51ea369a
+id: 4d4a089c-d901-4d5d-8252-869a87d8a4d7
 status: experimental
 description: Detects potential processes activity of Zoho Assist RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

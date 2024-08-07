@@ -23,6 +23,9 @@ Google Drive is a remote monitoring and management (RMM) tool. More information 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -46,6 +49,9 @@ Google Drive is a remote monitoring and management (RMM) tool. More information 
 
 
 
+### Detections
+- Detects potential processes activity of Google Drive RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/google_drive_processes_sigma.yml)
 
 
 

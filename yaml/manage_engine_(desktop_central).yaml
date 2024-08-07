@@ -17,23 +17,29 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - dcagentservice.exe
-    - dcagentregister.exe
+  - dcagentservice.exe
+  - dcagentregister.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - desktopcentral.manageengine.com
-        - desktopcentral.manageengine.com.eu
-        - desktopcentral.manageengine.cn
-        - '*.dms.zoho.com'
-        - '*.dms.zoho.com.eu'
-        - '*.-dms.zoho.com.cn'
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - desktopcentral.manageengine.com
+    - desktopcentral.manageengine.com.eu
+    - desktopcentral.manageengine.cn
+    - '*.dms.zoho.com'
+    - '*.dms.zoho.com.eu'
+    - '*.-dms.zoho.com.cn'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml
+  Description: Detects potential network activity of Manage Engine (Desktop Central)
+    RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml
+  Description: Detects potential processes activity of Manage Engine (Desktop Central)
+    RMM tool
 References:
-  - https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
+- https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
 Acknowledgement: []

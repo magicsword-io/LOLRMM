@@ -8,11 +8,11 @@ detection:
     - '*.distantdesktop.com'
     - '*signalserver.xyz'
   condition: selection
-id: e2fbdd76-2bc3-43fa-9090-8a2edda86bc6
+id: 05201a97-1e4e-42d8-9dca-3a2af6c53fce
 status: experimental
 description: Detects potential network activity of Distant Desktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

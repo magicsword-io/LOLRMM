@@ -23,6 +23,9 @@ RemotePass is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,15 +46,15 @@ RemotePass is a remote monitoring and management (RMM) tool. More information wi
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `remotepass.com`
 
 
-
-
+### Detections
+- Detects potential network activity of RemotePass RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_network_sigma.yml)
+- Detects potential processes activity of RemotePass RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_processes_sigma.yml)
 
 ### References
 - [https://www.remotepass.com/rpaccess.html - DOA as of 2024](https://www.remotepass.com/rpaccess.html - DOA as of 2024)

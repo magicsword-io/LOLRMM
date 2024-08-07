@@ -14,11 +14,11 @@ detection:
     - '*\softmon.exe'
     - '*\tmcsvc.exe'
   condition: selection
-id: 6a8e2dd0-88c2-4259-ad74-c1f69fec758c
+id: a2b98f5b-a4f2-4e25-a2f7-60aa5426888c
 status: experimental
 description: Detects potential processes activity of LANDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

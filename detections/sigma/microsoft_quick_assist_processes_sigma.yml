@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - quickassist.exe
   condition: selection
-id: 8e8b1b16-f337-40eb-a353-c9d63422a102
+id: e9080b05-c0ea-4365-be44-461450421166
 status: experimental
 description: Detects potential processes activity of Microsoft Quick Assist RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

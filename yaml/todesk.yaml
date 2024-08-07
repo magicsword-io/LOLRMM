@@ -17,22 +17,26 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - todesk.exe
-    - ToDesk_Service.exe
-    - ToDesk_Setup.exe
+  - todesk.exe
+  - ToDesk_Service.exe
+  - ToDesk_Setup.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - todesk.com
-        - '*.todesk.com'
-        - '*.todesk.com'
-        - todesktop.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - todesk.com
+    - '*.todesk.com'
+    - '*.todesk.com'
+    - todesktop.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/todesk_network_sigma.yml
+  Description: Detects potential network activity of ToDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/todesk_processes_sigma.yml
+  Description: Detects potential processes activity of ToDesk RMM tool
 References:
-  - https://www.todesk.com/
+- https://www.todesk.com/
 Acknowledgement: []

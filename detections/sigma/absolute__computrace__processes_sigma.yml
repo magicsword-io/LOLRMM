@@ -11,11 +11,11 @@ detection:
     - cteshostsvc.exe
     - rpcld.exe
   condition: selection
-id: e94edb5c-0b99-449a-be7a-d92c8a39f723
+id: f263b53c-1907-43ec-b69a-d81d3abeeb7e
 status: experimental
 description: Detects potential processes activity of Absolute (Computrace) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -10,11 +10,11 @@ detection:
     - HKEY_CURRENT_USER\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history
     - HKEY_USERS\<SID>\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history
   condition: selection
-id: 42e10fa6-4158-4e0d-bf1d-986abbfb44ce
+id: 19774fdd-89fd-43eb-9871-30c5930f1af4
 status: experimental
 description: Detects potential registry activity of GoToMyPC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

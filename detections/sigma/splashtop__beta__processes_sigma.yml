@@ -10,11 +10,11 @@ detection:
     - Splashtop_Streamer_Windows*.exe
     - SRManager.exe
   condition: selection
-id: a59f4049-70d8-4d80-885d-d451e119e565
+id: e6c17068-b536-42b3-836e-23bb280bc9ed
 status: experimental
 description: Detects potential processes activity of Splashtop (Beta) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

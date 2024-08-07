@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files (x86)\CloudBuckIt\*
-    - '*\CloudBuckIt\*'
-    - '*\CloudBuckIt*.exe'
+  - C:\Program Files (x86)\CloudBuckIt\*
+  - '*\CloudBuckIt\*'
+  - '*\CloudBuckIt*.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudbuckit_processes_sigma.yml
+  Description: Detects potential processes activity of CloudBuckIt RMM tool
 References: []
 Acknowledgement: []

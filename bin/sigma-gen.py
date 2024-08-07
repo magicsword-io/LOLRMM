@@ -37,7 +37,7 @@ def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     
     return artifacts
 
-def generate_sigma_rules(yaml_file: str, output_dir: str) -> None:
+def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]]:
     with open(yaml_file, 'r') as f:
         data = yaml.safe_load(f)
     
@@ -88,20 +88,38 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> None:
                 }
             }
             
-            # Ensure no extra nesting for any artifact type
             detection_key = list(rule_template["detection"]["selection"].keys())[0]
             rule["detection"]["selection"][detection_key] = artifacts[artifact_type]
             
             safe_name = name.lower().replace(' ', '_').replace('(', '_').replace(')', '_')
-            output_file = os.path.join(output_dir, f"{safe_name}_{artifact_type}_sigma.yml")
-            with open(output_file, 'w') as f:
+            output_file = f"{safe_name}_{artifact_type}_sigma.yml"
+            full_output_path = os.path.join(output_dir, output_file)
+            with open(full_output_path, 'w') as f:
                 yaml.dump(rule, f, sort_keys=False)
-            generated_rules.append(artifact_type)
+            
+            github_url = f"https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/{output_file}"
+            generated_rules.append({
+                "Sigma": github_url,
+                "Description": f"Detects potential {artifact_type} activity of {name} RMM tool"
+            })
     
-    if generated_rules:
-        print(f"Generated {', '.join(generated_rules)} rules for {name}")
-    else:
-        print(f"No artifacts found for {name}")
+    return generated_rules
+
+def update_yaml_with_sigma_rules(yaml_file: str, sigma_rules: List[Dict[str, Any]]) -> None:
+    with open(yaml_file, 'r') as f:
+        data = yaml.safe_load(f)
+    
+    if 'Detections' not in data:
+        data['Detections'] = []
+    
+    # Remove existing generated rules
+    data['Detections'] = [rule for rule in data['Detections'] if not rule.get('Sigma', '').startswith('https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/')]
+    
+    # Add new generated rules
+    data['Detections'].extend(sigma_rules)
+    
+    with open(yaml_file, 'w') as f:
+        yaml.dump(data, f, sort_keys=False)
 
 def main() -> None:
     yaml_dir = 'yaml/'
@@ -111,9 +129,10 @@ def main() -> None:
     for filename in os.listdir(yaml_dir):
         if filename.endswith('.yaml'):
             yaml_file = os.path.join(yaml_dir, filename)
-            generate_sigma_rules(yaml_file, output_dir)
+            sigma_rules = generate_sigma_rules(yaml_file, output_dir)
+            update_yaml_with_sigma_rules(yaml_file, sigma_rules)
     
-    print(f"[+] Sigma rule generation complete. Files saved in {output_dir}")
+    print(f"[+] Sigma rule generation and YAML update complete. Files saved in {output_dir}")
 
 if __name__ == "__main__":
     main()

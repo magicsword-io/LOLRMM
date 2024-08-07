@@ -17,13 +17,15 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\*\puttytray.exe
-    - '*\puttytray.exe'
+  - C:\*\puttytray.exe
+  - '*\puttytray.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/putty_tray_processes_sigma.yml
+  Description: Detects potential processes activity of PuTTY Tray RMM tool
 References: []
 Acknowledgement: []

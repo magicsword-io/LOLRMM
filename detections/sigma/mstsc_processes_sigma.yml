@@ -8,11 +8,11 @@ detection:
     - C:\Windows\System32\mstsc.exe
     - '*Windows\System32\mstsc.exe'
   condition: selection
-id: 3811a06f-cc68-419a-8313-4a31a443632d
+id: 95a522bd-aa12-4d0b-9e44-37381ef561c0
 status: experimental
 description: Detects potential processes activity of mstsc RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

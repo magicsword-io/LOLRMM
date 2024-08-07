@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\superputty.exe'
   condition: selection
-id: b3c4138d-4ba4-4f7e-9514-393815e4e9c4
+id: 41eff1f5-a23d-4545-bfd4-97cc71fb51fa
 status: experimental
 description: Detects potential processes activity of SuperPuTTY RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

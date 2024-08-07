@@ -9,11 +9,11 @@ detection:
     - user_managed
     - web.rustdesk.com
   condition: selection
-id: 69fa67ae-7e43-4bf6-a4d8-69923f1c970a
+id: 9dfd4863-c198-462d-95d4-44c654d3a6b4
 status: experimental
 description: Detects potential network activity of RustDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

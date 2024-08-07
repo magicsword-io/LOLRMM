@@ -10,11 +10,11 @@ detection:
     - '*.instanthousecall.net'
     - instanthousecall.com
   condition: selection
-id: 95c7d7ea-cdea-4d62-bf6d-373003a04727
+id: 8d93e400-46bd-4d83-af61-d70ea2da9750
 status: experimental
 description: Detects potential network activity of Instant Housecall RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

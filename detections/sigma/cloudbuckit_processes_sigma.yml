@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\CloudBuckIt*.exe'
   condition: selection
-id: 3b10e73f-ae63-46e1-a675-f85057e4851c
+id: eaba647a-e577-414d-bdd5-16062dc9682c
 status: experimental
 description: Detects potential processes activity of CloudBuckIt RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

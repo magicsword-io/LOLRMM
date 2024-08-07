@@ -8,11 +8,11 @@ detection:
     - '*.ezhelp.co.kr'
     - ezhelp.co.kr
   condition: selection
-id: 74527672-ed2f-408d-bb34-d4d83ec5db9e
+id: 1c9349b6-941a-4c1f-9ba0-ab78e16f06fa
 status: experimental
 description: Detects potential network activity of ezHelp RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

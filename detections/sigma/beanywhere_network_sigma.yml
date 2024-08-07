@@ -8,11 +8,11 @@ detection:
     - beanywhere.en.uptodown.com/windows
     - beanywhere.com
   condition: selection
-id: dd150b92-9eee-4d16-9b3d-f03a6c40bf73
+id: cea354d4-bf38-4623-b978-3aef587e5566
 status: experimental
 description: Detects potential network activity of BeAnyWhere RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

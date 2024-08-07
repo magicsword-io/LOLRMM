@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - strwinclt.exe
   condition: selection
-id: 929cdf7d-ead5-42a2-a9e0-a09b5c9b6ab7
+id: 7fb2bbef-d140-461d-aca3-9c0cfe6d3d4b
 status: experimental
 description: Detects potential processes activity of Splashtop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

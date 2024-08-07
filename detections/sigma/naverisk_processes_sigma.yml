@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - AgentSetup-*.exe
   condition: selection
-id: cbee1e76-a86f-45a8-9cf8-25b78205d612
+id: 937c6b2e-0b0f-4ebb-a5a5-6dbcf9e7bde2
 status: experimental
 description: Detects potential processes activity of Naverisk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

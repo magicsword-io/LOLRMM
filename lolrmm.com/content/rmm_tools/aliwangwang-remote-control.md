@@ -24,6 +24,9 @@ AliWangWang-remote-control is a remote monitoring and management (RMM) tool. Mor
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -42,15 +45,15 @@ AliWangWang-remote-control is a remote monitoring and management (RMM) tool. Mor
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `wangwang.taobao.com`
 
 
-
-
+### Detections
+- Detects potential network activity of AliWangWang-remote-control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_network_sigma.yml)
+- Detects potential processes activity of AliWangWang-remote-control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_processes_sigma.yml)
 
 ### References
 - [https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale](https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale)

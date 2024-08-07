@@ -9,11 +9,11 @@ detection:
     - relay-[a-f0-9]{8}.net.anydesk.com:443
     - '*.anydesk.com'
   condition: selection
-id: d11aa4a1-e631-41bd-99a8-3d3aae7d100a
+id: bf3b1c02-8383-40df-8f5b-14e4a1e4fafe
 status: experimental
 description: Detects potential network activity of AnyDesk RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -9,11 +9,11 @@ detection:
     - le.laplink.com
     - atled.syspectr.com
   condition: selection
-id: cf6322ff-5c9b-42e7-bee1-ca4b3b684428
+id: 59176766-d732-472f-9ee1-db3c096ba760
 status: experimental
 description: Detects potential network activity of Laplink Everywhere RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

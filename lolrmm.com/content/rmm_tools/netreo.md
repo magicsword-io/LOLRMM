@@ -24,6 +24,9 @@ Netreo is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -40,18 +43,16 @@ Netreo is a remote monitoring and management (RMM) tool. More information will b
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `charon.netreo.net`
     - `activation.netreo.net`
     - `*.api.netreo.com`
     - `netreo.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Netreo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netreo_network_sigma.yml)
 
 ### References
 - [https://solutions.netreo.com/docs/firewall-requirements](https://solutions.netreo.com/docs/firewall-requirements)

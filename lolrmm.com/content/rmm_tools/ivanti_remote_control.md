@@ -24,6 +24,9 @@ Ivanti Remote Control is a remote monitoring and management (RMM) tool. More inf
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,15 +47,15 @@ Ivanti Remote Control is a remote monitoring and management (RMM) tool. More inf
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.ivanticloud.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Ivanti Remote Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ivanti_remote_control_network_sigma.yml)
+- Detects potential processes activity of Ivanti Remote Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ivanti_remote_control_processes_sigma.yml)
 
 ### References
 - [https://rc1.ivanticloud.com/](https://rc1.ivanticloud.com/)

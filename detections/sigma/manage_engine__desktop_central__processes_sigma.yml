@@ -8,12 +8,12 @@ detection:
     - dcagentservice.exe
     - dcagentregister.exe
   condition: selection
-id: a4b7941c-dee0-419f-9c5a-21d2b193fdef
+id: ff26154b-b874-43f2-8497-5fa6b26f382f
 status: experimental
 description: Detects potential processes activity of Manage Engine (Desktop Central)
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

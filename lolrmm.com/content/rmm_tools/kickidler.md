@@ -24,6 +24,9 @@ KickIdler is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,16 +46,14 @@ KickIdler is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `kickidler.com`
     - `my.kickidler.com`
 
 
-
-
+### Detections
+- Detects potential network activity of KickIdler RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kickidler_network_sigma.yml)
 
 ### References
 - [https://www.kickidler.com/for-it/faq/](https://www.kickidler.com/for-it/faq/)

@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.dwservice.net'
   condition: selection
-id: 4b47ce00-b6c1-49fe-a586-55980d3839ca
+id: 91d0fd60-1096-40d1-9080-b1793c54e687
 status: experimental
 description: Detects potential network activity of DW Service RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

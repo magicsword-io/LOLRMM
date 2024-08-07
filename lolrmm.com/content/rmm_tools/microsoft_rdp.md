@@ -24,6 +24,9 @@ Microsoft RDP is a remote monitoring and management (RMM) tool. More information
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,6 +46,9 @@ Microsoft RDP is a remote monitoring and management (RMM) tool. More information
 
 
 
+### Detections
+- Detects potential processes activity of Microsoft RDP RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml)
 
 ### References
 - [https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows)

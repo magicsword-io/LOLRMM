@@ -7,12 +7,12 @@ detection:
     DestinationHostname|endswith:
     - dameware.com
   condition: selection
-id: ef1d354d-c7fa-41c9-8dfa-b1650ad6eb6f
+id: 64f99179-c36e-4271-aee4-e3e75e866a86
 status: experimental
 description: Detects potential network activity of Dameware-mini remote control Protocol
   RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

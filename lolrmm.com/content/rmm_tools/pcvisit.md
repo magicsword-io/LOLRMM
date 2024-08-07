@@ -24,6 +24,9 @@ Pcvisit is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,16 +48,16 @@ Pcvisit is a remote monitoring and management (RMM) tool. More information will 
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.pcvisit.de`
     - `pcvisit.de`
 
 
-
-
+### Detections
+- Detects potential network activity of Pcvisit RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_network_sigma.yml)
+- Detects potential processes activity of Pcvisit RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_processes_sigma.yml)
 
 ### References
 - [https://www.pcvisit.de/](https://www.pcvisit.de/)

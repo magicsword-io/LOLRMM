@@ -17,22 +17,26 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - parallelsaccess-*.exe
-    - TSClient.exe
-    - prl_deskctl_agent.exe
-    - prl_deskctl_wizard.exe
-    - prl_pm_service.exe
+  - parallelsaccess-*.exe
+  - TSClient.exe
+  - prl_deskctl_agent.exe
+  - prl_deskctl_wizard.exe
+  - prl_pm_service.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.parallels.com'
-        - parallels.com/products/ras/try
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.parallels.com'
+    - parallels.com/products/ras/try
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parallels_access_network_sigma.yml
+  Description: Detects potential network activity of Parallels Access RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parallels_access_processes_sigma.yml
+  Description: Detects potential processes activity of Parallels Access RMM tool
 References:
-  - https://kb.parallels.com/en/129097
+- https://kb.parallels.com/en/129097
 Acknowledgement: []

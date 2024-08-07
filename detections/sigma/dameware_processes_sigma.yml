@@ -12,11 +12,11 @@ detection:
     - DameWare Remote Support.exe
     - SolarWinds-Dameware-MRC*.exe
   condition: selection
-id: 472346d9-395f-4aa7-8ca6-df009c3026d1
+id: 1d9073a9-6c31-4e3f-9b6d-ea50ad04a5ad
 status: experimental
 description: Detects potential processes activity of DameWare RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

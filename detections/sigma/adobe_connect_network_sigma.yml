@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - '*.adobeconnect.com'
   condition: selection
-id: d1876275-98e9-4737-8640-5d1f0b40e6cc
+id: dac102d1-aa4b-43ca-b6e4-872deb21629f
 status: experimental
 description: Detects potential network activity of Adobe Connect RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

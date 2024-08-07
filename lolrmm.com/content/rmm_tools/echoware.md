@@ -24,6 +24,9 @@ Echoware is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Echoware is a remote monitoring and management (RMM) tool. More information will
 
 
 
+### Detections
+- Detects potential processes activity of Echoware RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/echoware_processes_sigma.yml)
 
 
 

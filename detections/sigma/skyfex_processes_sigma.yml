@@ -8,11 +8,11 @@ detection:
     - Deskroll.exe
     - DeskRollUA.exe
   condition: selection
-id: b0e062f7-424f-4bb4-926e-394a6b6583d3
+id: 6a2573e2-7550-4caf-927b-ed8f490a68b7
 status: experimental
 description: Detects potential processes activity of SkyFex RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

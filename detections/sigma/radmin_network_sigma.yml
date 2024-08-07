@@ -7,11 +7,11 @@ detection:
     DestinationHostname|endswith:
     - radmin.com
   condition: selection
-id: 54af6cd0-c311-40ae-9e4b-9e51dc5d46be
+id: 2f743e87-b02b-4178-b327-c0047197e2cd
 status: experimental
 description: Detects potential network activity of RAdmin RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

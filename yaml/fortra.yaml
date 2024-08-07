@@ -22,11 +22,13 @@ Artifacts:
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - fortra.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - fortra.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fortra_network_sigma.yml
+  Description: Detects potential network activity of Fortra RMM tool
 References:
-  - https://www.fortra.com - No free/cloud RMM softwars listed
+- https://www.fortra.com - No free/cloud RMM softwars listed
 Acknowledgement: []

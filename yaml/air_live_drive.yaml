@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\AirLiveDrive\*
-    - '*\AirLiveDrive\*'
-    - '*\AirLiveDrive.exe'
+  - C:\Program Files\AirLiveDrive\*
+  - '*\AirLiveDrive\*'
+  - '*\AirLiveDrive.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/air_live_drive_processes_sigma.yml
+  Description: Detects potential processes activity of Air Live Drive RMM tool
 References: []
 Acknowledgement: []

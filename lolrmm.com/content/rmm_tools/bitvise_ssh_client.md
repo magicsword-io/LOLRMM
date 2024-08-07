@@ -23,6 +23,9 @@ Bitvise SSH Client is a remote monitoring and management (RMM) tool. More inform
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Bitvise SSH Client is a remote monitoring and management (RMM) tool. More inform
 
 
 
+### Detections
+- Detects potential processes activity of Bitvise SSH Client RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bitvise_ssh_client_processes_sigma.yml)
 
 
 

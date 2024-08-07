@@ -10,11 +10,11 @@ detection:
     - resources.ninjarmm.com
     - ninjaone.com
   condition: selection
-id: 943a0877-790f-4440-bed5-182a1977adc5
+id: 36fd47e6-13f9-4eb0-a826-8f34e3e1dc0e
 status: experimental
 description: Detects potential network activity of NinjaRMM RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

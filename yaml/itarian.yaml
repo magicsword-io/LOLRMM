@@ -17,30 +17,34 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - ITSMAgent.exe
-    - RViewer.exe
-    - ItsmRsp.exe
-    - RAccess.exe
-    - RmmService.exe
-    - ITarianRemoteAccessSetup.exe
-    - RDesktop.exe
-    - ComodoRemoteControl.exe
-    - ITSMService.exe
-    - RHost.exe
+  - ITSMAgent.exe
+  - RViewer.exe
+  - ItsmRsp.exe
+  - RAccess.exe
+  - RmmService.exe
+  - ITarianRemoteAccessSetup.exe
+  - RDesktop.exe
+  - ComodoRemoteControl.exe
+  - ITSMService.exe
+  - RHost.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - mdmsupport.comodo.com
-        - '*.itsm-us1.comodo.com'
-        - '*.cmdm.comodo.com'
-        - remoteaccess.itarian.com
-        - servicedesk.itarian.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - mdmsupport.comodo.com
+    - '*.itsm-us1.comodo.com'
+    - '*.cmdm.comodo.com'
+    - remoteaccess.itarian.com
+    - servicedesk.itarian.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itarian_network_sigma.yml
+  Description: Detects potential network activity of Itarian RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itarian_processes_sigma.yml
+  Description: Detects potential processes activity of Itarian RMM tool
 References:
-  - https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
+- https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
 Acknowledgement: []

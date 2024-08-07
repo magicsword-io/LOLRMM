@@ -9,11 +9,11 @@ detection:
     - support-logmeinrescue.exe
     - lmi_rescue.exe
   condition: selection
-id: e0e4d26a-917d-4682-8acb-3c02d65841b2
+id: 1d9b0eb0-ad3f-4385-bd87-8a63c8c946d8
 status: experimental
 description: Detects potential processes activity of LogMeIn rescue RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,14 +17,16 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - C:\Program Files\Solar-Putty-v4\*
-    - '*\Solar-Putty-v4\*'
-    - '*\Solar-PuTTY.exe'
+  - C:\Program Files\Solar-Putty-v4\*
+  - '*\Solar-Putty-v4\*'
+  - '*\Solar-PuTTY.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/solar-putty_processes_sigma.yml
+  Description: Detects potential processes activity of Solar-PuTTY RMM tool
 References: []
 Acknowledgement: []

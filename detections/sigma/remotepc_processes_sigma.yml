@@ -12,11 +12,11 @@ detection:
     - '*\RemotePCService.exe'
     - RemotePCService.exe
   condition: selection
-id: 6fd12cf3-4020-4aa8-b200-dfd538f16c0d
+id: 5afe5393-d9b5-47e6-a332-a32ba5f07fea
 status: experimental
 description: Detects potential processes activity of RemotePC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

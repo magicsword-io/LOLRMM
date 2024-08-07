@@ -12,11 +12,11 @@ detection:
     - romserver.exe
     - ROMServer.exe
   condition: selection
-id: 8a0a8a91-ff6e-4985-9d54-240e30409785
+id: 8dca1aac-5754-4637-b668-04e7689f767b
 status: experimental
 description: Detects potential processes activity of LiteManager RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

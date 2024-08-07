@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\Cyberduck.exe'
   condition: selection
-id: 6e64282f-f4ee-47fb-90f1-6cad17807ec8
+id: e55934bd-a4a0-4c44-8be7-cb86fb42f5d2
 status: experimental
 description: Detects potential processes activity of Cyberduck RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

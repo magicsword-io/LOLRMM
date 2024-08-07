@@ -24,6 +24,9 @@ RustDesk is a remote monitoring and management (RMM) tool. More information will
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -43,17 +46,17 @@ RustDesk is a remote monitoring and management (RMM) tool. More information will
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `rustdesk.com`
     - `user_managed`
     - `web.rustdesk.com`
 
 
-
-
+### Detections
+- Detects potential network activity of RustDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml)
+- Detects potential processes activity of RustDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml)
 
 ### References
 - [https://rustdesk.com/docs/en/](https://rustdesk.com/docs/en/)

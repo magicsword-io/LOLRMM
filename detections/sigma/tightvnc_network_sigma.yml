@@ -8,11 +8,11 @@ detection:
     - user_managed
     - tightvnc.com
   condition: selection
-id: d0e7dc0a-688b-4489-9d6e-39dbc233091a
+id: d46f2e01-18f7-4d3f-8d6e-1aa0a920897c
 status: experimental
 description: Detects potential network activity of TightVNC RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

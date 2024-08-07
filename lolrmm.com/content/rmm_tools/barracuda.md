@@ -24,6 +24,9 @@ Barracuda is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -40,17 +43,15 @@ Barracuda is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `*.islonline.net`
     - `rmm.barracudamsp.com`
     - `barracudamsp.com`
 
 
-
-
+### Detections
+- Detects potential network activity of Barracuda RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/barracuda_network_sigma.yml)
 
 ### References
 - [https://help.islonline.com/19799/166125](https://help.islonline.com/19799/166125)

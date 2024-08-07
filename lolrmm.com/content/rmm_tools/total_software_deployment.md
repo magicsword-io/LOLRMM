@@ -23,6 +23,9 @@ Total Software Deployment is a remote monitoring and management (RMM) tool. More
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -45,6 +48,9 @@ Total Software Deployment is a remote monitoring and management (RMM) tool. More
 
 
 
+### Detections
+- Detects potential processes activity of Total Software Deployment RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/total_software_deployment_processes_sigma.yml)
 
 
 

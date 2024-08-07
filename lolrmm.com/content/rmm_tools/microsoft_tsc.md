@@ -24,6 +24,9 @@ Microsoft TSC is a remote monitoring and management (RMM) tool. More information
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Microsoft TSC is a remote monitoring and management (RMM) tool. More information
 
 
 
+### Detections
+- Detects potential processes activity of Microsoft TSC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_tsc_processes_sigma.yml)
 
 ### References
 - [https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application](https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application)

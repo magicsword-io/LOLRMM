@@ -22,11 +22,11 @@ detection:
     - C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\KaseyaEndpoint*
     - C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\Session_*
   condition: selection
-id: 8293aac2-fea0-4fa9-84c0-a5bc93eb4a9b
+id: 6d887504-0f57-484a-ad7f-9479291eccd1
 status: experimental
 description: Detects potential files activity of Kaseya (VSA) RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -7,11 +7,11 @@ detection:
     ParentImage|endswith:
     - '*\cloudmounter.exe'
   condition: selection
-id: 42b54b7d-638c-4fc8-8d68-76a7635f4d96
+id: 75a0db57-84e2-481d-852a-c181fe747964
 status: experimental
 description: Detects potential processes activity of CloudMounter RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

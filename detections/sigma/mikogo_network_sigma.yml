@@ -10,11 +10,11 @@ detection:
     - '*.mikogo.com'
     - mikogo.com
   condition: selection
-id: 6c10acd2-41bb-4a88-aadd-62b3fd8cf23d
+id: 5c555745-beff-4d2b-97ec-56d195946030
 status: experimental
 description: Detects potential network activity of Mikogo RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

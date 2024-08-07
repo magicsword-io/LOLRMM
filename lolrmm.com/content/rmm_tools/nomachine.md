@@ -24,6 +24,9 @@ NoMachine is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,16 +47,16 @@ NoMachine is a remote monitoring and management (RMM) tool. More information wil
 
 
 #### Network Artifacts
-
-- **Description**: Known remote domains
-
-  **Domains**:
+- **Description**: Known remote domains  **Domains**:
     - `user_managed`
     - `nomachine.com`
 
 
-
-
+### Detections
+- Detects potential network activity of NoMachine RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nomachine_network_sigma.yml)
+- Detects potential processes activity of NoMachine RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nomachine_processes_sigma.yml)
 
 ### References
 - [https://kb.nomachine.com/AR04S01122](https://kb.nomachine.com/AR04S01122)

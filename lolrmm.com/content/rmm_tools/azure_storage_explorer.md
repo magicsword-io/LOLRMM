@@ -23,6 +23,9 @@ Azure Storage Explorer is a remote monitoring and management (RMM) tool. More in
 
 
 #### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
 
 
 - **Free**: No
@@ -44,6 +47,9 @@ Azure Storage Explorer is a remote monitoring and management (RMM) tool. More in
 
 
 
+### Detections
+- Detects potential processes activity of Azure Storage Explorer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/azure_storage_explorer_processes_sigma.yml)
 
 
 

@@ -9,11 +9,11 @@ detection:
     - rapid7_agent_core.exe
     - rapid7_endpoint_broker.exe
   condition: selection
-id: f25540c6-ee87-4b05-a54a-92a946ef83dc
+id: 020a798c-246d-45fb-85bf-5df3be0cbf06
 status: experimental
 description: Detects potential processes activity of Rapid7 RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

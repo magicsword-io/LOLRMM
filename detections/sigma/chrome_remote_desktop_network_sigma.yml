@@ -9,11 +9,11 @@ detection:
     - '*remotedesktop.google.com'
     - remotedesktop.google.com
   condition: selection
-id: a6479d3f-04d3-462a-ba87-b725df37f592
+id: 51447322-5c31-4d35-ac2d-31edbf479644
 status: experimental
 description: Detects potential network activity of Chrome Remote Desktop RMM tool
 author: LOLRMM Project
-date: 2024/08/05
+date: 2024/08/07
 tags:
 - attack.execution
 - attack.t1219

@@ -17,21 +17,27 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-    - gp3.exe
-    - gp4.exe
-    - gp5.exe
+  - gp3.exe
+  - gp4.exe
+  - gp5.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network:
-    - Description: Known remote domains
-      Domains:
-        - '*.gatherplace.com'
-        - '*.gatherplace.net'
-        - gatherplace.com
-      Ports: []
-Detections: []
+  - Description: Known remote domains
+    Domains:
+    - '*.gatherplace.com'
+    - '*.gatherplace.net'
+    - gatherplace.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_network_sigma.yml
+  Description: Detects potential network activity of GatherPlace-desktop sharing RMM
+    tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_processes_sigma.yml
+  Description: Detects potential processes activity of GatherPlace-desktop sharing
+    RMM tool
 References:
-  - https://www.gatherplace.com/kb?id=136377
+- https://www.gatherplace.com/kb?id=136377
 Acknowledgement: []
