@@ -1,0 +1,69 @@
+---
+description: "Mikogo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Mikogo"
+displayTitle: "Mikogo"
+---
+
+
+
+# Mikogo
+
+
+### Description
+
+Mikogo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+
+
+**Last Modified**: 2/7/2024
+
+### Details
+
+
+#### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
+
+
+- **Free**: No
+
+- **Verification**: No
+
+
+
+
+#### Installation Paths
+- `mikogo.exe`
+- `mikogo-starter.exe`
+- `mikogo-service.exe`
+- `mikogolauncher.exe`
+- `C:\Users\*\AppData\Roaming\Mikogo\*`
+- `*Users\*\AppData\Roaming\Mikogo\*`
+- `*\Mikogo-Service.exe`
+- `*\Mikogo-Screen-Service.exe`
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+- **Description**: Known remote domains
+<br/>**Domains**:
+    - `*.real-time-collaboration.com`
+    - `*.mikogo4.com`
+    - `*.mikogo.com`
+    - `mikogo.com`
+
+
+### Detections
+- Detects potential network activity of Mikogo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_network_sigma.yml)
+- Detects potential processes activity of Mikogo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_processes_sigma.yml)
+
+### References
+- [https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services](https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services)
+
+

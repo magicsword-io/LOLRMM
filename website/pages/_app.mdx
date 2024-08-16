@@ -1,0 +1,15 @@
+import "../styles.css";
+import {useEffect, useState} from "react";
+
+export default function Nextra({Component, pageProps}) {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  if (isClient) {
+    return (
+      <Component {...pageProps} />
+    );
+  }
+  return null;
+}

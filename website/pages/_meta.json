@@ -1,0 +1,14 @@
+{
+	"index": {
+		"display": "hidden",
+		"theme": {
+			"sidebar": false,
+			"toc": true,
+			"layout": "raw"
+		}
+	},
+	"tools": "Tools",
+	"*": {
+		"type": "page"
+	}
+}

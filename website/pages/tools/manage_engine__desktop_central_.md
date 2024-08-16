@@ -1,0 +1,65 @@
+---
+description: "Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Manage Engine (Desktop Central)"
+displayTitle: "Manage Engine (Desktop Central)"
+---
+
+
+
+# Manage Engine (Desktop Central)
+
+
+### Description
+
+Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+
+
+**Last Modified**: 2/8/2024
+
+### Details
+
+
+#### PE Metadata
+- **Filename**: 
+- **OriginalFileName**: 
+- **Description**: 
+
+
+- **Free**: No
+
+- **Verification**: No
+
+
+
+
+#### Installation Paths
+- `dcagentservice.exe`
+- `dcagentregister.exe`
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+- **Description**: Known remote domains
+<br/>**Domains**:
+    - `desktopcentral.manageengine.com`
+    - `desktopcentral.manageengine.com.eu`
+    - `desktopcentral.manageengine.cn`
+    - `*.dms.zoho.com`
+    - `*.dms.zoho.com.eu`
+    - `*.-dms.zoho.com.cn`
+
+
+### Detections
+- Detects potential network activity of Manage Engine (Desktop Central) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml)
+- Detects potential processes activity of Manage Engine (Desktop Central) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml)
+
+### References
+- [https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html](https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html)
+
+
