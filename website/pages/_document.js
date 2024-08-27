@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { SkipNavLink } from "nextra-theme-docs";
-import React from "react";
 
 class MyDocument extends Document {
 	render() {
@@ -8,7 +7,7 @@ class MyDocument extends Document {
 			<Html lang="en">
 				<Head />
 				<body>
-					<SkipNavLink styled />
+					<SkipNavLink styled={true} />
 					<Main />
 					<NextScript />
 				</body>
@@ -17,4 +16,5 @@ class MyDocument extends Document {
 	}
 }
 
+// biome-ignore lint/style/noDefaultExport: This is a global file
 export default MyDocument;

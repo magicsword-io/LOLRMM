@@ -2,14 +2,12 @@ import { Analytics } from "@vercel/analytics/react";
 import { useRouter } from "next/router";
 // @ts-ignore
 import { type DocsThemeConfig, useConfig } from "nextra-theme-docs";
-import React from "react";
 import { Logo } from "./components/logo";
 
 const config: DocsThemeConfig = {
 	darkMode: false,
 	nextThemes: {
 		defaultTheme: "dark",
-		themes: ["dark"],
 	},
 	logo: <Logo />,
 	project: {
@@ -17,6 +15,7 @@ const config: DocsThemeConfig = {
 	},
 	toc: {
 		float: true,
+		backToTop: true,
 	},
 	docsRepositoryBase:
 		"https://github.com/magicsword-io/LOLRMM/tree/main/website/",
@@ -53,13 +52,12 @@ const config: DocsThemeConfig = {
 				<meta property="og:title" content={title} />
 				<meta
 					property="og:description"
-					content={
-						frontMatter.description || "LOLRMM site"
-					}
+					content={frontMatter.description || "LOLRMM site"}
 				/>
 			</>
 		);
 	},
 };
 
+// biome-ignore lint/style/noDefaultExport: This is a config file
 export default config;

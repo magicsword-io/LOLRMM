@@ -9,10 +9,18 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"all": true,
+			"style": {
+				"useNamingConvention": "off"
+			}
 		}
 	},
 	"files": {
 		"maxSize": 2621440
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
 	}
 }

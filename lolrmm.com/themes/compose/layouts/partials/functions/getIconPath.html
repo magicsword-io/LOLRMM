@@ -1,6 +1,0 @@
-{{ $sp := site.Params }}
-{{ $iconsPath := "icons/" }}
-{{ with $sp.iconsPath }}
-  {{ $iconsPath = . }}
-{{ end }}
-{{ return $iconsPath }}
