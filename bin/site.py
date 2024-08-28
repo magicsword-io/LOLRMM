@@ -6,9 +6,10 @@ import json
 import datetime
 import jinja2
 import csv
+import re
 
 def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
-    output_file = os.path.join(output_dir, 'content', 'api', 'rmm_tools.csv')
+    output_file = os.path.join(output_dir, 'public', 'api', 'rmm_tools.csv')
     
     header = ['Name', 'Category', 'Description', 'Author', 'Created', 'LastModified',
               'Website', 'Filename', 'OriginalFileName', 'PEDescription', 'Product',
@@ -56,7 +57,7 @@ def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
             writer.writerow(row)
 
 def write_rmm_tools_table_csv(rmm_tools, output_dir, VERBOSE):
-    output_file = os.path.join(output_dir, 'content', 'rmm_tools_table.csv')
+    output_file = os.path.join(output_dir, 'public', 'rmm_tools_table.csv')
     
     header = ['Name', 'Category', 'Description', 'Author']
 
@@ -112,37 +113,39 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
         return text
 
     j2_env.filters['clean_multiline'] = clean_multiline
-    
+    j2_env.globals.update(dump=json.dumps)
+    j2_env.globals.update(escape=re.escape)
+
     d = datetime.datetime.now()
     template = j2_env.get_template('rmm.md.j2')
     for rmm_tool in rmm_tools:
         # Replace parentheses with underscores in the file name
-        file_name = f"{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')}.md"
-        output_path = os.path.join(OUTPUT_DIR, 'content', 'rmm_tools', file_name)
+        file_name = f"{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')}.mdx"
+        output_path = os.path.join(OUTPUT_DIR, 'pages', 'tools', file_name)
         output = template.render(rmm=rmm_tool, time=str(d.strftime("%Y-%m-%d")))
         with open(output_path, 'w', encoding="utf-8") as f:
             f.write(output)
-    messages.append(f"site_gen.py wrote {len(rmm_tools)} RMM tools markdown to: {os.path.join(OUTPUT_DIR, 'content', 'rmm_tools')}")
+    messages.append(f"site_gen.py wrote {len(rmm_tools)} RMM tools markdown to: {os.path.join(OUTPUT_DIR, 'pages', 'tools')}")
 
     # Write API CSV
     write_rmm_tools_csv(rmm_tools, OUTPUT_DIR, VERBOSE)
-    messages.append(f"site_gen.py wrote RMM tools CSV to: {os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.csv')}")
+    messages.append(f"site_gen.py wrote RMM tools CSV to: {os.path.join(OUTPUT_DIR, 'public', 'api', 'rmm_tools.csv')}")
 
     # Write API JSON
-    with open(os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.json'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(OUTPUT_DIR, 'public', 'api', 'rmm_tools.json'), 'w', encoding='utf-8') as f:
         json.dump(rmm_tools, f, ensure_ascii=False, indent=4)
-    messages.append(f"site_gen.py wrote RMM tools JSON to: {os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.json')}")
+    messages.append(f"site_gen.py wrote RMM tools JSON to: {os.path.join(OUTPUT_DIR, 'public', 'api', 'rmm_tools.json')}")
 
     # Write RMM tools table CSV
     write_rmm_tools_table_csv(rmm_tools, OUTPUT_DIR, VERBOSE)
-    messages.append(f"site_gen.py wrote RMM tools table CSV to: {os.path.join(OUTPUT_DIR, 'content', 'rmm_tools_table.csv')}")
+    messages.append(f"site_gen.py wrote RMM tools table CSV to: {os.path.join(OUTPUT_DIR, 'public' , 'rmm_tools_table.csv')}")
 
     return rmm_tools, messages
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generates LOLRMM site", epilog="This tool converts all LOLRMM YAMLs and builds the site with all the supporting components.")
     parser.add_argument("-p", "--path", required=False, default="yaml", help="path to LOLRMM yaml folder. Defaults to `yaml`")
-    parser.add_argument("-o", "--output", required=False, default="lolrmm.com", help="path to the output directory for the site, defaults to `lolrmm.io`")
+    parser.add_argument("-o", "--output", required=False, default="website", help="path to the output directory for the site, defaults to `lolrmm.io`")
     parser.add_argument("-v", "--verbose", required=False, default=False, action='store_true', help="prints verbose output")
 
     args = parser.parse_args()
@@ -153,11 +156,11 @@ if __name__ == "__main__":
     TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), 'jinja2_templates')
 
     if VERBOSE:
-        print(f"Wiping the {os.path.join(OUTPUT_DIR, 'content', 'rmm_tools')} folder")
+        print(f"Wiping the {os.path.join(OUTPUT_DIR, 'pages', 'tools')} folder")
 
     # Clean up old RMM tool files
     try:
-        rmm_tools_dir = os.path.join(OUTPUT_DIR, 'content', 'rmm_tools')
+        rmm_tools_dir = os.path.join(OUTPUT_DIR, 'pages', 'tools')
         for file in os.listdir(rmm_tools_dir):
             if file.endswith(".md") and file != '_index.md':
                 os.remove(os.path.join(rmm_tools_dir, file))
@@ -166,8 +169,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Clean up API artifacts
-    api_json = os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.json')
-    api_csv = os.path.join(OUTPUT_DIR, 'content', 'api', 'rmm_tools.csv')
+    api_json = os.path.join(OUTPUT_DIR, 'public', 'api', 'rmm_tools.json')
+    api_csv = os.path.join(OUTPUT_DIR, 'public', 'api',  'rmm_tools.csv')
     if os.path.exists(api_json):
         os.remove(api_json)
     if os.path.exists(api_csv):
