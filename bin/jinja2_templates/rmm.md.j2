@@ -4,7 +4,7 @@ title = "{{ rmm.Name }}"
 ---
 
 
-import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable} from "../../components/card";
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # {{ rmm.Name }}
@@ -13,18 +13,18 @@ import {EuiSpacer} from "@elastic/eui"
 
 ### Details
 <Details author={"{{rmm.Author}}"}
-         website={"{{rmm.Website}}"}
+         category={"{{rmm.Category}}"}
          created={"{{rmm.Created}}"}
+         website={"{{rmm.Details.Website}}"}
          lastModified={"{{rmm.LastModified}}"}
          privileges={"{{rmm.Details.Privileges}}"}
-         pricing={"{{rmm.Details.Pricing}}"}
-         category={"{{rmm.Category}}"}
+         free={ {{dump(rmm.Details.Free)}} }
          verification={"{{rmm.Details.Verification}}"}
 />
 
 {% if rmm.Details.InstallationPaths %}
 #### Installation Paths
-<Card code={"{{"\\n".join(rmm.Details.InstallationPaths)}}"}/>
+<Card code={ {{dump(rmm.Details.InstallationPaths)}} }/>
 {% endif %}
 
 {% if rmm.Details.SupportedOS %}
@@ -35,6 +35,50 @@ import {EuiSpacer} from "@elastic/eui"
 {% if rmm.Details.Capabilities %}
 #### Capabilities
 <Badges color="#FFA500" badges={ {{dump(rmm.Details.Capabilities)}} }/>
+{% endif %}
+
+{% if rmm.Details.Vulnerabilities %}
+#### Known Vulnerabilities
+{% for vulnerability in rmm.Details.Vulnerabilities %}
+- [{{ vulnerability }}]({{ vulnerability }})
+{% endfor %}
+{% endif %}
+
+
+{% if rmm.Artifacts %}
+### Forensic Artifacts
+
+{% if rmm.Artifacts.Disk %}
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ {{dump(rmm.Artifacts.Disk)}} }/>
+{% endif %}
+
+{% if rmm.Artifacts.EventLog %}
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ {{dump(rmm.Artifacts.EventLog)}} }/>
+{% endif %}
+
+{% if rmm.Artifacts.Registry %}
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ {{dump(rmm.Artifacts.Registry)}} }/>
+{% endif %}
+
+{% if rmm.Artifacts.Network %}
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ {{dump(rmm.Artifacts.Network)}} }/>
+{% endif %}
+
+{% if rmm.Artifacts.Other %}
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ {{dump(rmm.Artifacts.Other)}} }/>
+{% endif %}
+
+
 {% endif %}
 
 {% if rmm.Detections %}

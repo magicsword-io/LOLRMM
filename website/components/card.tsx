@@ -3,6 +3,7 @@ import {
 	type EuiBadgeProps,
 	EuiButton,
 	EuiCard,
+	EuiCode,
 	EuiCodeBlock,
 	EuiDescriptionList,
 	EuiFlexGrid,
@@ -14,7 +15,8 @@ import {
 	EuiSpacer,
 	copyToClipboard,
 } from "@elastic/eui";
-import { isEmpty } from "lodash";
+import { isArray, isBoolean, isEmpty } from "lodash";
+import type { ReactNode } from "react";
 
 export function Badges({
 	badges,
@@ -23,7 +25,7 @@ export function Badges({
 	return (
 		<>
 			<EuiSpacer size="m" />
-			<EuiFlexGroup gutterSize="s">
+			<EuiFlexGroup wrap={true} responsive={false} gutterSize="s">
 				{badges.map((badge) => (
 					<EuiFlexItem grow={false} key={badge}>
 						<EuiBadge color={color}>{badge}</EuiBadge>
@@ -56,19 +58,19 @@ export function Details(props: DetailProps) {
 						listItems={[
 							{
 								title: "Author",
-								description: props.author ?? "--",
+								description: checkEmptyOrDefaultValue(props.author),
 							},
 							{
 								title: "Category",
-								description: props.category ?? "--",
+								description: checkEmptyOrDefaultValue(props.category),
 							},
 							{
 								title: "Created",
-								description: props.created ?? "--",
+								description: checkEmptyOrDefaultValue(props.created),
 							},
 							{
 								title: "Last Modified",
-								description: props.lastModified ?? "--",
+								description: checkEmptyOrDefaultValue(props.lastModified),
 							},
 						]}
 					/>
@@ -79,19 +81,23 @@ export function Details(props: DetailProps) {
 						listItems={[
 							{
 								title: "Website",
-								description: (
-									<EuiLink href={props.website ?? "#"}>
-										{props.website ?? "--"}
-									</EuiLink>
+								description: isEmpty(props.website) ? (
+									"--"
+								) : (
+									<EuiLink href={props.website}>{props.website}</EuiLink>
 								),
 							},
 							{
 								title: "Privileges",
-								description: props.privileges ?? "--",
+								description: checkEmptyOrDefaultValue(props.privileges),
 							},
 							{
 								title: "Pricing",
-								description: props.free ? "Free" : "Paid",
+								description: isBoolean(props.free)
+									? props.free
+										? "Free"
+										: "Paid"
+									: "Unknown",
 							},
 							{
 								title: "Verification",
@@ -126,12 +132,9 @@ function DiskArtifactItem({ data }: { data: DiskArtifact }) {
 		{
 			title: "File Name",
 			description: (
-				<EuiBadge
-					onClick={(event) => copyToClipboard(event.currentTarget.innerText)}
-					onClickAriaLabel="Copy text"
-				>
+				<EuiCode onClick={() => copyToClipboard(data.File)}>
 					{data.File}
-				</EuiBadge>
+				</EuiCode>
 			),
 		},
 		{
@@ -156,10 +159,7 @@ function DiskArtifactItem({ data }: { data: DiskArtifact }) {
 			layout="horizontal"
 			betaBadgeProps={{
 				label: (
-					<EuiIcon
-						size="xl"
-						type={`https://lolrmm.vercel.app/platforms/${data.OS.toLowerCase()}.svg`}
-					/>
+					<EuiIcon size="xl" type={`/platforms/${data.OS.toLowerCase()}.svg`} />
 				),
 				tooltipContent:
 					"This module is not GA. Please help us by reporting any bugs.",
@@ -171,6 +171,7 @@ function DiskArtifactItem({ data }: { data: DiskArtifact }) {
 		</EuiCard>
 	);
 }
+
 export function DiskArtifacts({ data }: { data: DiskArtifact[] }) {
 	return (
 		<>
@@ -184,6 +185,13 @@ export function DiskArtifacts({ data }: { data: DiskArtifact[] }) {
 			</EuiFlexGrid>
 		</>
 	);
+}
+
+function checkEmptyOrDefaultValue(value: string, replaceWith = "--") {
+	if (isEmpty(value)) {
+		return replaceWith;
+	}
+	return value;
 }
 
 export function PEMetadata() {
@@ -234,6 +242,7 @@ type EventLog = {
 	ImagePath: string;
 	Description: string;
 };
+
 export function EventLogTable({ data }: { data: EventLog[] }) {
 	const columns = [
 		{
@@ -282,6 +291,100 @@ export function EventLogTable({ data }: { data: EventLog[] }) {
 	);
 }
 
+type NetworkArtifact = {
+	Description: string;
+	Domains: string[];
+	Ports: string[];
+};
+export function NetworkArtifactsTable({ data }: { data: NetworkArtifact[] }) {
+	const columns = [
+		{
+			field: "Description",
+			name: "Description",
+		},
+		{
+			field: "Domains",
+			name: "Domains",
+			render: (x) => (
+				<EuiFlexGroup
+					style={{ maxWidth: "300px" }}
+					wrap={true}
+					responsive={false}
+					gutterSize="s"
+				>
+					{x.map((y) => (
+						<EuiCode onClick={() => copyToClipboard(y)} key={y}>
+							{y}
+						</EuiCode>
+					))}
+				</EuiFlexGroup>
+			),
+		},
+		{
+			field: "Ports",
+			name: "Ports",
+			innerWidth: "100px",
+			render: (x) => (
+				<EuiFlexGroup
+					style={{ maxWidth: "100px" }}
+					wrap={true}
+					responsive={false}
+					gutterSize="s"
+				>
+					{x.map((y) => (
+						<EuiCode onClick={() => copyToClipboard(y)} key={y}>
+							{y}
+						</EuiCode>
+					))}
+				</EuiFlexGroup>
+			),
+		},
+	];
+
+	return (
+		<EuiInMemoryTable<NetworkArtifact>
+			tableCaption="EventLog Table"
+			items={data}
+			columns={columns}
+			pagination={{
+				pageSizeOptions: [10, 20, 50, 0],
+				initialPageSize: 10,
+				initialPageIndex: 0,
+			}}
+			sorting={{
+				sort: {
+					field: "EventID",
+					direction: "asc",
+				},
+			}}
+		/>
+	);
+}
+
+type OtherArtifact = {
+	Type: string;
+	Value: string;
+};
+
+export function OtherArtifactsTable({ data }: { data: OtherArtifact[] }) {
+	const listItems = data.map((x) => {
+		return {
+			title: `${x.Type}:`,
+			description: (
+				<EuiCode onClick={() => copyToClipboard(x.Value)}>{x.Value}</EuiCode>
+			),
+		};
+	});
+
+	return (
+		<EuiDescriptionList
+			type="responsiveColumn"
+			listItems={listItems}
+			compressed={true}
+		/>
+	);
+}
+
 type Registry = {
 	Path: string;
 	Description: string;
@@ -302,7 +405,7 @@ export function RegistryTable({ data }: { data: Registry[] }) {
 	return (
 		<>
 			<EuiButton
-				key="loadUsers"
+				key="copyRegistryPaths"
 				onClick={() => {
 					copyToClipboard(data.map((x) => x.Path).join("\n"));
 				}}
@@ -330,13 +433,37 @@ export function RegistryTable({ data }: { data: Registry[] }) {
 	);
 }
 
-export function Card({ code }: { code: string }) {
+export function Card({ code }: { code: string | string[] }) {
+	let codeBlock: string;
+	if (isArray(code)) {
+		codeBlock = (code as string[]).join("\n");
+	} else {
+		codeBlock = code as string;
+	}
+
 	return (
 		<>
 			<EuiSpacer size="l" />
 			<EuiCodeBlock paddingSize="m" isCopyable={true} lineNumbers={true}>
-				{code}
+				{codeBlock}
 			</EuiCodeBlock>
 		</>
+	);
+}
+
+export function Accordion({
+	title,
+	children,
+}: { title: ReactNode; children: ReactNode }) {
+	return (
+		<details
+			open={true}
+			className="last-of-type:mb-0 rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2 mt-4"
+		>
+			<summary>
+				<strong className="text-lg">{title}</strong>
+			</summary>
+			<div className="nx-p-2">{children}</div>
+		</details>
 	);
 }

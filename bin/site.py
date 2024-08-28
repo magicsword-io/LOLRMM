@@ -6,6 +6,7 @@ import json
 import datetime
 import jinja2
 import csv
+import re
 
 def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
     output_file = os.path.join(output_dir, 'public', 'api', 'rmm_tools.csv')
@@ -113,7 +114,8 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
 
     j2_env.filters['clean_multiline'] = clean_multiline
     j2_env.globals.update(dump=json.dumps)
-    
+    j2_env.globals.update(escape=re.escape)
+
     d = datetime.datetime.now()
     template = j2_env.get_template('rmm.md.j2')
     for rmm_tool in rmm_tools:
