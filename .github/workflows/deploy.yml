@@ -1,19 +1,24 @@
 name: Deploy site
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy-site:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         submodules: true
     - name: Set up Python 3.12
@@ -26,11 +31,20 @@ jobs:
       run: poetry install
     - name: Generate MDX
       run: poetry run python bin/site.py -v
-    - name: Install Vercel CLI
-      run: npm install --global vercel@latest
-    - name: Deploy Project Artifacts to Vercel
+
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22.x
+    - name: Export site
       run: |
-        cd website
-        vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-        vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-        vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        npm install
+        npm run build
+      working-directory: website
+    - name: Deploy
+      run: |
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+      working-directory: website
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
