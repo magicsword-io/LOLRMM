@@ -54,7 +54,7 @@ function Contents() {
 			<EuiSpacer size="xxl" />
 
 			<EuiTitle size="m">
-				<h4>Tools</h4>
+				<h4>RMM Tools</h4>
 			</EuiTitle>
 
 			<EuiSpacer size="xxl" />

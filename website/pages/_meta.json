@@ -1,14 +1,23 @@
 {
 	"index": {
-		"display": "hidden",
+		"title": "Home",
+		"type": "page",
 		"theme": {
 			"sidebar": false,
 			"toc": true,
 			"layout": "raw"
 		}
 	},
-	"tools": "Tools",
-	"*": {
+	"premium": {
+		"title": "Premium",
+		"type": "page",
+		"href": "https://www.magicsword.io/premium",
+		"newWindow": true
+	},
+	"about": {
+		"title": "About",
 		"type": "page"
 	}
+
+	
 }

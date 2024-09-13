@@ -39,7 +39,7 @@ const config: DocsThemeConfig = {
 	head: () => {
 		const { frontMatter } = useConfig();
 		const { asPath } = useRouter();
-		const basePath = "https://lolrmm.vercel.app";
+		const basePath = "https://lolrmm.com";
 		const url = basePath + asPath;
 		const ogImage = `${basePath}/og.png`;
 		const title = frontMatter.title || "Docs";
@@ -48,7 +48,7 @@ const config: DocsThemeConfig = {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta property="og:url" content={url} />
 				<meta property="og:image" content={ogImage} />
-				<meta property="og:image:alt" content="AtomicRedTeam" />
+				<meta property="og:image:alt" content="LOLRMM" />
 				<meta property="og:title" content={title} />
 				<meta
 					property="og:description"
