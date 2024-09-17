@@ -1,0 +1,52 @@
+---
+description = "TeleDesktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "TeleDesktop"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# TeleDesktop
+
+TeleDesktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["pstlaunch.exe", "ptdskclient.exe", "ptdskhost.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "tele-desk.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of TeleDesktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_network_sigma.yml)
+- Detects potential processes activity of TeleDesktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_processes_sigma.yml)
+
+### References
+- [http://potomacsoft.com/ - DOA as of 2024](http://potomacsoft.com/ - DOA as of 2024)
+

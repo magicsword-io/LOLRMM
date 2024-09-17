@@ -1,0 +1,52 @@
+---
+description = "Naverisk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Naverisk"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Naverisk
+
+Naverisk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["AgentSetup-*.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "naverisk.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Naverisk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/naverisk_network_sigma.yml)
+- Detects potential processes activity of Naverisk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/naverisk_processes_sigma.yml)
+
+### References
+- [http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents](http://kb.naverisk.com/en/articles/2811223-deploying-naverisk-agents)
+

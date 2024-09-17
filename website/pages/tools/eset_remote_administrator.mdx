@@ -1,0 +1,52 @@
+---
+description = "ESET Remote Administrator is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "ESET Remote Administrator"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ESET Remote Administrator
+
+ESET Remote Administrator is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["einstaller.exe", "era.exe", "ERAAgent.exe", "ezhelp*.exe", "eratool.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "eset.com/me/business/remote-management/remote-administrator/"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of ESET Remote Administrator RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_network_sigma.yml)
+- Detects potential processes activity of ESET Remote Administrator RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_processes_sigma.yml)
+
+### References
+- [eset.com/me/business/remote-management/remote-administrator/](eset.com/me/business/remote-management/remote-administrator/)
+

@@ -1,0 +1,48 @@
+---
+description = "Netreo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Netreo"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Netreo
+
+Netreo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["charon.netreo.net", "activation.netreo.net", "*.api.netreo.com", "netreo.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Netreo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netreo_network_sigma.yml)
+
+### References
+- [https://solutions.netreo.com/docs/firewall-requirements](https://solutions.netreo.com/docs/firewall-requirements)
+

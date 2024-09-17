@@ -1,0 +1,52 @@
+---
+description = "ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "ezHelp"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ezHelp
+
+ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ezhelpclientmanager.exe", "ezHelpManager.exe", "ezhelpclient.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.ezhelp.co.kr", "ezhelp.co.kr"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of ezHelp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_network_sigma.yml)
+- Detects potential processes activity of ezHelp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_processes_sigma.yml)
+
+### References
+- [https://www.exhelp.co.kr](https://www.exhelp.co.kr)
+

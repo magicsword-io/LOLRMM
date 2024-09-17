@@ -1,0 +1,52 @@
+---
+description = "Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Adobe Connect"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Adobe Connect
+
+Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/27/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ConnectAppSetup*.exe", "ConnectShellSetup*.exe", "Connect.exe", "ConnectDetector.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.adobeconnect.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Adobe Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_network_sigma.yml)
+- Detects potential processes activity of Adobe Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_processes_sigma.yml)
+
+### References
+- [https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html](https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html)
+

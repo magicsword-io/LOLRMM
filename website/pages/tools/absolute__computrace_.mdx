@@ -1,0 +1,52 @@
+---
+description = "Absolute (Computrace) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Absolute (Computrace)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Absolute (Computrace)
+
+Absolute (Computrace) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"6/18/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["rpcnet.exe", "ctes.exe", "ctespersitence.exe", "cteshostsvc.exe", "rpcld.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*search.namequery.com", "*server.absolute.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Absolute (Computrace) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__network_sigma.yml)
+- Detects potential processes activity of Absolute (Computrace) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__processes_sigma.yml)
+
+### References
+- [https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com](https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com)
+

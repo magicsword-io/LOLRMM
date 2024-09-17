@@ -1,0 +1,52 @@
+---
+description = "RemotePass is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "RemotePass"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RemotePass
+
+RemotePass is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["remotepass-access.exe", "rpaccess.exe", "rpwhostscr.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["remotepass.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of RemotePass RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_network_sigma.yml)
+- Detects potential processes activity of RemotePass RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_processes_sigma.yml)
+
+### References
+- [https://www.remotepass.com/rpaccess.html - DOA as of 2024](https://www.remotepass.com/rpaccess.html - DOA as of 2024)
+

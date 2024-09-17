@@ -1,0 +1,48 @@
+---
+description = "Encapto is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Encapto"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Encapto
+
+Encapto is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["encapto.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Encapto RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/encapto_network_sigma.yml)
+
+### References
+- [https://www.encapto.com - used to manage Cisco services](https://www.encapto.com - used to manage Cisco services)
+

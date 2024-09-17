@@ -1,0 +1,45 @@
+---
+description = "Total Software Deployment is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Total Software Deployment"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Total Software Deployment
+
+Total Software Deployment is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\ProgramData\\Total Software Deployment\\*", "*\\Total Software Deployment\\*", "*\\tniwinagent.exe", "*\\Tsdservice.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+
+
+
+
+### Detections
+- Detects potential processes activity of Total Software Deployment RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/total_software_deployment_processes_sigma.yml)
+
+

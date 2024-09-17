@@ -1,0 +1,52 @@
+---
+description = "SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "SunLogin"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# SunLogin
+
+SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/26/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["OrayRemoteShell.exe", "OrayRemoteService.exe", "sunlogin*.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["sunlogin.oray.com", "client.oray.net"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of SunLogin RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_network_sigma.yml)
+- Detects potential processes activity of SunLogin RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_processes_sigma.yml)
+
+### References
+- [https://sunlogin.oray.com/en/embed/software.html](https://sunlogin.oray.com/en/embed/software.html)
+

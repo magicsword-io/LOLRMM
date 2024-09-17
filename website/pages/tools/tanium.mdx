@@ -1,0 +1,52 @@
+---
+description = "Tanium is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Tanium"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Tanium
+
+Tanium is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["TaniumClient.exe", "TaniumCX.exe", "TaniumExecWrapper.exe", "TaniumFileInfo.exe", "TPowerShell.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["cloud.tanium.com", "*.cloud.tanium.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Tanium RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_network_sigma.yml)
+- Detects potential processes activity of Tanium RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_processes_sigma.yml)
+
+### References
+- [https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html](https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html)
+

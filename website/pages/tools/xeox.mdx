@@ -1,0 +1,52 @@
+---
+description = "Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Xeox"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Xeox
+
+Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["xeox-agent_x64.exe", "xeox_service_windows.exe", "xeox-agent_*.exe", "xeox-agent_x86.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.xeox.com", "xeox.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Xeox RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_network_sigma.yml)
+- Detects potential processes activity of Xeox RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_processes_sigma.yml)
+
+### References
+- [https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW](https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW)
+

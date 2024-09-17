@@ -36,10 +36,21 @@ jobs:
         npm install
         npm run build
       working-directory: website
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+
+    - name: Upload site artifact
+      uses: actions/upload-artifact@v3
       with:
-        path: ./website/out
+        name: site
+        path: website/build
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "Update generated site files"
+        git push
+      working-directory: website
 
 # Deployment job
   deploy:

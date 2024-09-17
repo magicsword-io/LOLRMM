@@ -1,0 +1,65 @@
+---
+description = "AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "AnyViewer"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# AnyViewer
+
+AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+
+### Details
+<Details author={"@kostastsale"}
+         category={""}
+         created={"2024-08-03"}
+         website={"https://www.anyviewer.com/"}
+         lastModified={"2024-08-03"}
+         privileges={"System"}
+         free={ "up to 10 devices" }
+         verification={"None"}
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\AnyViewer\\*"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote desktop", "Remote file transfer", "Remote monitoring and management", "Remote shell open"] }/>
+
+
+
+### Forensic Artifacts
+
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 4688, "ProviderName": "Microsoft-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "\"C:\\\\Program Files (x86)\\\\AnyViewer\\\\AVCore.exe\" -d", "Description": "Taking actions on the remote machine such as opening a command prompt."}, {"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "RCService", "ImagePath": "C:\\\\Program Files (x86)\\\\AnyViewer\\\\RCService.exe", "Description": "AnyViewer service installation service."}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "N/A", "Domains": ["*.anyviewer.com"], "Ports": [443]}, {"Description": "N/A", "Domains": ["*.aomeisoftware.com"], "Ports": [443]}] }/>
+
+
+
+
+### Detections
+- Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+  - **Arbitrary code execution and remote sessions via Action1 RMM**
+  - Author: @kostastsale
+  - [Additional Information](https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml)
+- Detects potential network activity of AnyViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyviewer_network_sigma.yml)
+
+### References
+- [https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html](https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html)
+- [https://www.anyviewer.com/help/remote-technical-support.html](https://www.anyviewer.com/help/remote-technical-support.html)
+
+### Acknowledgements
+- Kostas (@kostastsale)

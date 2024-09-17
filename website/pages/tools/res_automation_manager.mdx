@@ -1,0 +1,52 @@
+---
+description = "RES Automation Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "RES Automation Manager"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RES Automation Manager
+
+RES Automation Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["wisshell*.exe", "wmc.exe", "wmc_deployer.exe", "wmcsvc.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "ivanti.com/"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of RES Automation Manager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/res_automation_manager_network_sigma.yml)
+- Detects potential processes activity of RES Automation Manager RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/res_automation_manager_processes_sigma.yml)
+
+### References
+- [https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1](https://forums.ivanti.com/s/article/INFO-Which-ports-does-Ivanti-Automation-use?language=en_US&ui-force-components-controllers-recordGlobalValueProvider.RecordGvp.getRecord=1)
+

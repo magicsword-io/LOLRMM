@@ -1,0 +1,52 @@
+---
+description = "Splashtop Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Splashtop Remote"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Splashtop Remote
+
+Splashtop Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["strwinclt.exe", "Splashtop_Streamer_Windows*.exe", "SplashtopSOS.exe", "sragent.exe", "srmanager.exe", "srserver.exe", "srservice.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["splashtop.com", "*.api.splashtop.com", "*.relay.splashtop.com", "*.api.splashtop.eu"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Splashtop Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_network_sigma.yml)
+- Detects potential processes activity of Splashtop Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_processes_sigma.yml)
+
+### References
+- [https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services](https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services)
+

@@ -1,0 +1,52 @@
+---
+description = "MSP360 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "MSP360"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# MSP360
+
+MSP360 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["Online Backup.exe", "CBBackupPlan.exe", "Cloud.Backup.Scheduler.exe", "Cloud.Backup.RM.Service.exe", "cbb.exe", "CloudRaService.exe", "CloudRaSd.exe", "CloudRaCmd.exe", "CloudRaUtilities.exe", "Remote Desktop.exe", "Connect.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.cloudberrylab.com", "*.msp360.com", "*.mspbackups.com", "msp360.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of MSP360 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_network_sigma.yml)
+- Detects potential processes activity of MSP360 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_processes_sigma.yml)
+
+### References
+- [https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#](https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#)
+

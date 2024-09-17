@@ -1,0 +1,45 @@
+---
+description = "Echoware is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Echoware"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Echoware
+
+Echoware is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["echoserver*.exe", "echoware.dll"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+
+
+
+
+### Detections
+- Detects potential processes activity of Echoware RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/echoware_processes_sigma.yml)
+
+

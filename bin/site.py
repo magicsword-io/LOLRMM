@@ -145,7 +145,7 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generates LOLRMM site", epilog="This tool converts all LOLRMM YAMLs and builds the site with all the supporting components.")
     parser.add_argument("-p", "--path", required=False, default="yaml", help="path to LOLRMM yaml folder. Defaults to `yaml`")
-    parser.add_argument("-o", "--output", required=False, default="website", help="path to the output directory for the site, defaults to `lolrmm.io`")
+    parser.add_argument("-o", "--output", required=False, default="website", help="path to the output directory for the site, defaults to `website`")
     parser.add_argument("-v", "--verbose", required=False, default=False, action='store_true', help="prints verbose output")
 
     args = parser.parse_args()

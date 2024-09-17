@@ -1,0 +1,52 @@
+---
+description = "Itarian is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Itarian"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Itarian
+
+Itarian is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ITSMAgent.exe", "RViewer.exe", "ItsmRsp.exe", "RAccess.exe", "RmmService.exe", "ITarianRemoteAccessSetup.exe", "RDesktop.exe", "ComodoRemoteControl.exe", "ITSMService.exe", "RHost.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["mdmsupport.comodo.com", "*.itsm-us1.comodo.com", "*.cmdm.comodo.com", "remoteaccess.itarian.com", "servicedesk.itarian.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Itarian RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itarian_network_sigma.yml)
+- Detects potential processes activity of Itarian RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itarian_processes_sigma.yml)
+
+### References
+- [https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html](https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html)
+

@@ -1,0 +1,52 @@
+---
+description = "SkyFex is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "SkyFex"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# SkyFex
+
+SkyFex is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["Deskroll.exe", "DeskRollUA.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["skyfex.com", "deskroll.com", "*.deskroll.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of SkyFex RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_network_sigma.yml)
+- Detects potential processes activity of SkyFex RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/skyfex_processes_sigma.yml)
+
+### References
+- [https://skyfex.com/](https://skyfex.com/)
+

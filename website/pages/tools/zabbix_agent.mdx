@@ -1,0 +1,52 @@
+---
+description = "Zabbix Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Zabbix Agent"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Zabbix Agent
+
+Zabbix Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["zabbix_agent*.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "zabbix.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Zabbix Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zabbix_agent_network_sigma.yml)
+- Detects potential processes activity of Zabbix Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zabbix_agent_processes_sigma.yml)
+
+### References
+- [https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent](https://www.zabbix.com/documentation/current/en/manual/appendix/install/windows_agent)
+

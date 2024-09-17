@@ -1,0 +1,52 @@
+---
+description = "Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Supremo"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Supremo
+
+Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/13/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["supremo.exe", "supremoservice.exe", "supremosystem.exe", "supremohelper.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["supremocontrol.com", "*.supremocontrol.com", "* .nanosystems.it"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Supremo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_network_sigma.yml)
+- Detects potential processes activity of Supremo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_processes_sigma.yml)
+
+### References
+- [https://www.supremocontrol.com/frequently-asked-questions/](https://www.supremocontrol.com/frequently-asked-questions/)
+

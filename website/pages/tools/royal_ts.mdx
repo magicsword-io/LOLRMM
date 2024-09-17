@@ -1,0 +1,50 @@
+---
+description = "Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Royal TS"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Royal TS
+
+Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["royalts.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["royalapps.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Royal TS RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_ts_network_sigma.yml)
+- Detects potential processes activity of Royal TS RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_ts_processes_sigma.yml)
+
+

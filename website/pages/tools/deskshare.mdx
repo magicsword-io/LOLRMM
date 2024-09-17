@@ -1,0 +1,52 @@
+---
+description = "DeskShare is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "DeskShare"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# DeskShare
+
+DeskShare is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/26/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["TeamTaskManager.exe", "DSGuest.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of DeskShare RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskshare_network_sigma.yml)
+- Detects potential processes activity of DeskShare RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskshare_processes_sigma.yml)
+
+### References
+- [https://www.deskshare.com/help/fml/Active-and-Passive-connection-mode.aspx](https://www.deskshare.com/help/fml/Active-and-Passive-connection-mode.aspx)
+

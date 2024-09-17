@@ -1,0 +1,52 @@
+---
+description = "Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Chrome Remote Desktop"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Chrome Remote Desktop
+
+Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["remote_host.exe", "remoting_host.exe", "C:\\Program Files (x86)\\Google\\Chrome Remote Desktop\\*", "*\\Google\\Chrome Remote Desktop\\*", "*\\remoting_host.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*remotedesktop-pa.googleapis.com", "*remotedesktop.google.com", "remotedesktop.google.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Chrome Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml)
+- Detects potential processes activity of Chrome Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_processes_sigma.yml)
+
+### References
+- [https://support.google.com/chrome/a/answer/2799701?hl=en](https://support.google.com/chrome/a/answer/2799701?hl=en)
+

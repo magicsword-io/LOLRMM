@@ -1,0 +1,52 @@
+---
+description = "ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "ISL Online"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ISL Online
+
+ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["islalwaysonmonitor.exe", "isllight.exe", "isllightservice.exe", "ISLLightClient.exe", "C:\\Program Files (x86)\\ISL Online\\ISL Light*", "*\\ISL Online\\ISL Light*", "*\\ISLLight.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.islonline.com", "*.islonline.net"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of ISL Online RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_network_sigma.yml)
+- Detects potential processes activity of ISL Online RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_processes_sigma.yml)
+
+### References
+- [https://help.islonline.com/19818/165940](https://help.islonline.com/19818/165940)
+

@@ -1,0 +1,48 @@
+---
+description = "Fortra is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Fortra"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Fortra
+
+Fortra is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["fortra.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Fortra RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fortra_network_sigma.yml)
+
+### References
+- [https://www.fortra.com - No free/cloud RMM softwars listed](https://www.fortra.com - No free/cloud RMM softwars listed)
+

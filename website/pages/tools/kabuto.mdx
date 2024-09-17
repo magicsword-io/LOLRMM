@@ -1,0 +1,52 @@
+---
+description = "Kabuto is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Kabuto"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Kabuto
+
+Kabuto is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["Kabuto.App.Runner.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.kabuto.io", "repairtechsolutions.com/kabuto/"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Kabuto RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kabuto_network_sigma.yml)
+- Detects potential processes activity of Kabuto RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kabuto_processes_sigma.yml)
+
+### References
+- [https://www.repairtechsolutions.com/documentation/kabuto/](https://www.repairtechsolutions.com/documentation/kabuto/)
+

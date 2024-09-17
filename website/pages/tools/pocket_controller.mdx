@@ -1,0 +1,50 @@
+---
+description = "Pocket Controller is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Pocket Controller"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Pocket Controller
+
+Pocket Controller is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["pocketcontroller.exe", "pocketcloudservice.exe", "wysebrowser.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["soti.net/products/soti-pocket-controller"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Pocket Controller RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_network_sigma.yml)
+- Detects potential processes activity of Pocket Controller RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_processes_sigma.yml)
+
+

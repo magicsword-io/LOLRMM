@@ -1,0 +1,52 @@
+---
+description = "rdpwrap is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "rdpwrap"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# rdpwrap
+
+rdpwrap is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["RDPWInst.exe", "RDPCheck.exe", "RDPConf.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "github.com/stascorp/rdpwrap"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of rdpwrap RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpwrap_network_sigma.yml)
+- Detects potential processes activity of rdpwrap RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpwrap_processes_sigma.yml)
+
+### References
+- [github.com/stascorp/rdpwrap](github.com/stascorp/rdpwrap)
+

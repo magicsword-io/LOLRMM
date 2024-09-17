@@ -1,0 +1,52 @@
+---
+description = "N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "N-Able Advanced Monitoring Agent"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# N-Able Advanced Monitoring Agent
+
+N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["BASupSrvc.exe", "winagent.exe", "BASupApp.exe", "BASupTSHelper.exe", "Agent_*_RW.exe", "BASEClient.exe", "BASupSrvcCnfg.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.beanywhere.com ", "systemmonitor.co.uk", "*system-monitor.com", "cloudbackup.management", "*systemmonitor.co.uk", "n-able.com", "systemmonitor.us", "*systemmonitor.eu.com", "*.logicnow.com", "*.swi-tc.com", "*remote.management", "systemmonitor.us.cdn.cloudflare.net", "*cloudbackup.management", "remote.management", "logicnow.com", "system-monitor.com", "*systemmonitor.us", "systemmonitor.eu.com", "*.n-able.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml)
+- Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml)
+
+### References
+- [https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm](https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm)
+

@@ -1,0 +1,52 @@
+---
+description = "I'm InTouch is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "I'm InTouch"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# I'm InTouch
+
+I'm InTouch is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["iit.exe", "intouch.exe", "I'm InTouch Go Installer.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.01com.com", "01com.com/imintouch-remote-pc-desktop"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of I'm InTouch RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_network_sigma.yml)
+- Detects potential processes activity of I'm InTouch RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_processes_sigma.yml)
+
+### References
+- [https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/](https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/)
+

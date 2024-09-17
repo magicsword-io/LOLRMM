@@ -1,0 +1,45 @@
+---
+description = "mstsc is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "mstsc"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# mstsc
+
+mstsc is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Windows\\System32\\mstsc.exe", "*Windows\\System32\\mstsc.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+
+
+
+
+### Detections
+- Detects potential processes activity of mstsc RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mstsc_processes_sigma.yml)
+
+

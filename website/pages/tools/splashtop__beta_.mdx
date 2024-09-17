@@ -1,0 +1,50 @@
+---
+description = "Splashtop (Beta) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Splashtop (Beta)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Splashtop (Beta)
+
+Splashtop (Beta) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["SRServer.exe", "SplashtopSOS.exe", "Splashtop_Streamer_Windows*.exe", "SRManager.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["splashtop.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Splashtop (Beta) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__network_sigma.yml)
+- Detects potential processes activity of Splashtop (Beta) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__processes_sigma.yml)
+
+

@@ -1,0 +1,52 @@
+---
+description = "ServerEye is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "ServerEye"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ServerEye
+
+ServerEye is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["servereye*.exe", "ServiceProxyLocalSys.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.server-eye.de"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of ServerEye RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_network_sigma.yml)
+- Detects potential processes activity of ServerEye RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_processes_sigma.yml)
+
+### References
+- [https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf](https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf)
+

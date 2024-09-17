@@ -1,0 +1,52 @@
+---
+description = "GoToAssist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "GoToAssist"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# GoToAssist
+
+GoToAssist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["gotoassist.exe", "g2a*.exe", "GoTo Assist Opener.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["goto.com", "*.getgo.com", "*.fastsupport.com", "*.gotoassist.com", "helpme.net", "*.gotoassist.me", "*.gotoassist.at", "*.desktopstreaming.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of GoToAssist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_network_sigma.yml)
+- Detects potential processes activity of GoToAssist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_processes_sigma.yml)
+
+### References
+- [https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5](https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5)
+

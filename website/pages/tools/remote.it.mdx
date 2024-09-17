@@ -1,0 +1,52 @@
+---
+description = "Remote.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Remote.it"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Remote.it
+
+Remote.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["remote-it-installer.exe", "remote.it.exe", "remoteit.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["auth.api.remote.it", "api.remote.it", "remote.it"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Remote.it RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_network_sigma.yml)
+- Detects potential processes activity of Remote.it RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_processes_sigma.yml)
+
+### References
+- [https://docs.remote.it/introduction/get-started](https://docs.remote.it/introduction/get-started)
+

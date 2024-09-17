@@ -1,0 +1,52 @@
+---
+description = "Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Microsoft Quick Assist"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Microsoft Quick Assist
+
+Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["quickassist.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Microsoft Quick Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_network_sigma.yml)
+- Detects potential processes activity of Microsoft Quick Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_processes_sigma.yml)
+
+### References
+- [https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca](https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca)
+

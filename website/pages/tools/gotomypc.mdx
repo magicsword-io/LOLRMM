@@ -1,0 +1,65 @@
+---
+description = "GoToMyPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "GoToMyPC"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# GoToMyPC
+
+GoToMyPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+
+### Details
+<Details author={"Nasreddine Bencherchali"}
+         category={""}
+         created={"2024-08-05"}
+         website={""}
+         lastModified={"2024-08-05"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\GoToMyPC\\*"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "%AppData%\\GoTo\\Logs\\goto.log", "Description": "N/A", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKEY_LOCAL_MACHINE\\WOW6432Node\\Citrix\\GoToMyPc", "Description": "Configuration settings including registration email"}, {"Path": "HKEY_LOCAL_MACHINE\\WOW6432Node\\Citrix\\GoToMyPc\\GuestInvite", "Description": "Guest invites send to connect"}, {"Path": "HKEY_CURRENT_USER\\SOFTWARE\\Citrix\\GoToMyPc\\FileTransfer\\history", "Description": "hostname of the computer making connections and location of transferred files"}, {"Path": "HKEY_USERS\\<SID>\\SOFTWARE\\Citrix\\GoToMyPc\\FileTransfer\\history", "Description": "hostname of the computer making connections and location of transferred files"}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "N/A", "Domains": ["*.GoToMyPC.com"], "Ports": ["N/A"]}] }/>
+
+
+
+
+### Detections
+- Detects potential registry activity of GoToMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_registry_sigma.yml)
+- Detects potential network activity of GoToMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_network_sigma.yml)
+- Detects potential files activity of GoToMyPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_files_sigma.yml)
+
+### References
+- [https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#](https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#)
+- [https://support.goto.com/training/help/how-do-i-configure-gototraining-to-work-with-firewalls](https://support.goto.com/training/help/how-do-i-configure-gototraining-to-work-with-firewalls)
+- [https://ruler-project.github.io/ruler-project/RULER/remote/Citrix%20GoToMyPC/](https://ruler-project.github.io/ruler-project/RULER/remote/Citrix%20GoToMyPC/)
+
+### Acknowledgements
+- Phill Moore (@phillmoore)

@@ -1,0 +1,52 @@
+---
+description = "QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "QQ IM-remote assistance"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# QQ IM-remote assistance
+
+QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["qq.exe", "QQProtect.exe", "qqpcmgr.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.mdt.qq.com", "*.desktop.qq.com", "upload_data.qq.com", "qq-messenger.en.softonic.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of QQ IM-remote assistance RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_network_sigma.yml)
+- Detects potential processes activity of QQ IM-remote assistance RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/qq_im-remote_assistance_processes_sigma.yml)
+
+### References
+- [https://en.wikipedia.org/wiki/Tencent_QQ](https://en.wikipedia.org/wiki/Tencent_QQ)
+

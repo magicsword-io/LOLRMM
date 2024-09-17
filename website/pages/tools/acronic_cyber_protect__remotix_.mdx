@@ -1,0 +1,52 @@
+---
+description = "Acronic Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Acronic Cyber Protect (Remotix)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Acronic Cyber Protect (Remotix)
+
+Acronic Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/26/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["AcronisCyberProtectConnectQuickAssist*.exe", "AcronisCyberProtectConnectAgent.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["cloud.acronis.com", "agents*-cloud.acronis.com", "gw.remotix.com", "connect.acronis.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Acronic Cyber Protect (Remotix) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__network_sigma.yml)
+- Detects potential processes activity of Acronic Cyber Protect (Remotix) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__processes_sigma.yml)
+
+### References
+- [https://kb.acronis.com/content/47189](https://kb.acronis.com/content/47189)
+

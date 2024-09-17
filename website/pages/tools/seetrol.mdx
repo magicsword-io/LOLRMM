@@ -1,0 +1,52 @@
+---
+description = "Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Seetrol"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Seetrol
+
+Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["seetrolcenter.exe", "seetrolclient.exe", "seetrolmyservice.exe", "seetrolremote.exe", "seetrolsetting.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["seetrol.co.kr"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Seetrol RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_network_sigma.yml)
+- Detects potential processes activity of Seetrol RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_processes_sigma.yml)
+
+### References
+- [http://www.seetrol.com/en/features/features3.php](http://www.seetrol.com/en/features/features3.php)
+

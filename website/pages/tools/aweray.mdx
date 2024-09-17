@@ -1,0 +1,52 @@
+---
+description = "AweRay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "AweRay"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# AweRay
+
+AweRay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["aweray_remote*.exe", "AweSun.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["asapi*.aweray.net", "client-api.aweray.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of AweRay RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray_network_sigma.yml)
+- Detects potential processes activity of AweRay RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray_processes_sigma.yml)
+
+### References
+- [https://sun.aweray.com/help](https://sun.aweray.com/help)
+

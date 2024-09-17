@@ -1,0 +1,50 @@
+---
+description = "LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "LabTech RMM (Now ConnectWise Automate)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# LabTech RMM (Now ConnectWise Automate)
+
+LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ltsvc.exe", "ltsvcmon.exe", "lttray.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["connectwise.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of LabTech RMM (Now ConnectWise Automate) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__network_sigma.yml)
+- Detects potential processes activity of LabTech RMM (Now ConnectWise Automate) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__processes_sigma.yml)
+
+

@@ -1,0 +1,52 @@
+---
+description = "FastViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "FastViewer"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# FastViewer
+
+FastViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["fastclient.exe", "fastmaster.exe", "FastViewer.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.fastviewer.com", "fastviewer.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of FastViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_network_sigma.yml)
+- Detects potential processes activity of FastViewer RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_processes_sigma.yml)
+
+### References
+- [https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf](https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf)
+

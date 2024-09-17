@@ -1,0 +1,52 @@
+---
+description = "NateOn-desktop sharing is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "NateOn-desktop sharing"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# NateOn-desktop sharing
+
+NateOn-desktop sharing is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["nateon*.exe", "nateon.exe", "nateonmain.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.nate.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of NateOn-desktop sharing RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_network_sigma.yml)
+- Detects potential processes activity of NateOn-desktop sharing RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_processes_sigma.yml)
+
+### References
+- [http://rsupport.nate.com/rview/r8/main/index.aspx](http://rsupport.nate.com/rview/r8/main/index.aspx)
+

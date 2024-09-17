@@ -1,0 +1,50 @@
+---
+description = "Jump Cloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Jump Cloud"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Jump Cloud
+
+Jump Cloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/26/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["JumpCloud*.exe "] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.api.jumpcloud.com", "*.assist.jumpcloud.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Jump Cloud RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_cloud_network_sigma.yml)
+
+### References
+- [https://jumpcloud.com/support/understand-remote-assist-agent](https://jumpcloud.com/support/understand-remote-assist-agent)
+

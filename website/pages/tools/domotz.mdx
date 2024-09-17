@@ -1,0 +1,52 @@
+---
+description = "Domotz is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Domotz"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Domotz
+
+Domotz is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["domotz.exe", "Domotz Pro Desktop App.exe", "domotz_bash.exe", "domotz*.exe", "Domotz Pro Desktop App Setup*.exe", "domotz-windows*.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.domotz.co", "domotz.com", "*cell-1.domotz.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Domotz RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_network_sigma.yml)
+- Detects potential processes activity of Domotz RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_processes_sigma.yml)
+
+### References
+- [https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/](https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/)
+

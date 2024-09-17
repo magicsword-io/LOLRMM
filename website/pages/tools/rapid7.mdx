@@ -1,0 +1,52 @@
+---
+description = "Rapid7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Rapid7"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Rapid7
+
+Rapid7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ir_agent.exe", "rapid7_agent_core.exe", "rapid7_endpoint_broker.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.analytics.insight.rapid7.com", "*.endpoint.ingress.rapid7.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Rapid7 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_network_sigma.yml)
+- Detects potential processes activity of Rapid7 RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_processes_sigma.yml)
+
+### References
+- [https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/](https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/)
+

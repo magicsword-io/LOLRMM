@@ -1,0 +1,52 @@
+---
+description = "Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Quest KACE Agent (formerly Dell KACE)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Quest KACE Agent (formerly Dell KACE)
+
+Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["konea.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.kace.com", "www.quest.com/kace/"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__network_sigma.yml)
+- Detects potential processes activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__processes_sigma.yml)
+
+### References
+- [https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function](https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function)
+

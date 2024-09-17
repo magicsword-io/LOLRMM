@@ -1,0 +1,52 @@
+---
+description = "CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "CentraStage (Now Datto)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# CentraStage (Now Datto)
+
+CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["CagService.exe", "AEMAgent.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.rmm.datto.com", "*cc.centrastage.net", "datto.com/au/products/rmm/"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of CentraStage (Now Datto) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__network_sigma.yml)
+- Detects potential processes activity of CentraStage (Now Datto) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__processes_sigma.yml)
+
+### References
+- [https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm](https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm)
+

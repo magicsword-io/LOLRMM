@@ -1,0 +1,52 @@
+---
+description = "Laplink Everywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Laplink Everywhere"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Laplink Everywhere
+
+Laplink Everywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["laplink.exe", "laplink-everywhere-setup*.exe", "laplinkeverywhere.exe", "llrcservice.exe", "serverproxyservice.exe", "OOSysAgent.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["everywhere.laplink.com", "le.laplink.com", "atled.syspectr.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Laplink Everywhere RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_network_sigma.yml)
+- Detects potential processes activity of Laplink Everywhere RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_processes_sigma.yml)
+
+### References
+- [https://everywhere.laplink.com/docs](https://everywhere.laplink.com/docs)
+

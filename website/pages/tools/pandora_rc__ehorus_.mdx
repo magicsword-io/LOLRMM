@@ -1,0 +1,52 @@
+---
+description = "Pandora RC (eHorus) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Pandora RC (eHorus)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Pandora RC (eHorus)
+
+Pandora RC (eHorus) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ehorus standalone.exe", "ehorus_agent.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["portal.ehorus.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Pandora RC (eHorus) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__network_sigma.yml)
+- Detects potential processes activity of Pandora RC (eHorus) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pandora_rc__ehorus__processes_sigma.yml)
+
+### References
+- [https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction](https://pandorafms.com/manual/!current/en/documentation/09_pandora_rc/01_pandora_rc_introduction)
+

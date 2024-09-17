@@ -1,0 +1,46 @@
+---
+description = "Dev Tunnels (aka Visual Studio Dev Tunnel) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Dev Tunnels (aka Visual Studio Dev Tunnel)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Dev Tunnels (aka Visual Studio Dev Tunnel)
+
+Dev Tunnels (aka Visual Studio Dev Tunnel) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Dev Tunnels (aka Visual Studio Dev Tunnel) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dev_tunnels__aka_visual_studio_dev_tunnel__network_sigma.yml)
+
+

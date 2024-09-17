@@ -1,0 +1,46 @@
+---
+description = "N-ABLE Remote Access Software is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "N-ABLE Remote Access Software"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# N-ABLE Remote Access Software
+
+N-ABLE Remote Access Software is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["n-able.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of N-ABLE Remote Access Software RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_remote_access_software_network_sigma.yml)
+
+

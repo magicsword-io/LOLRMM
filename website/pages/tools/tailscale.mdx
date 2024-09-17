@@ -1,0 +1,52 @@
+---
+description = "Tailscale is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Tailscale"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Tailscale
+
+Tailscale is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["tailscale-*.exe", "tailscaled.exe", "tailscale-ipn.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.tailscale.com", "*.tailscale.io", "tailscale.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Tailscale RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_network_sigma.yml)
+- Detects potential processes activity of Tailscale RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tailscale_processes_sigma.yml)
+
+### References
+- [https://tailscale.com/kb/1023/troubleshooting](https://tailscale.com/kb/1023/troubleshooting)
+

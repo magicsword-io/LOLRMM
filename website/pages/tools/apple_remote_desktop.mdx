@@ -1,0 +1,50 @@
+---
+description = "Apple Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Apple Remote Desktop"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Apple Remote Desktop
+
+Apple Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/24/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ARDAgent.app"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Apple Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/apple_remote_desktop_network_sigma.yml)
+
+### References
+- [https://support.apple.com/guide/remote-desktop/install-and-set-up-remote-desktop-apdf49e03a4/mac](https://support.apple.com/guide/remote-desktop/install-and-set-up-remote-desktop-apdf49e03a4/mac)
+

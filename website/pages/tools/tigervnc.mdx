@@ -1,0 +1,52 @@
+---
+description = "TigerVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "TigerVNC"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# TigerVNC
+
+TigerVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/26/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["tigervnc*.exe", "winvnc4.exe", "C:\\Program Files\\TightVNC\\*", "*\\TightVNC\\*", "*\\tvnserver.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of TigerVNC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_network_sigma.yml)
+- Detects potential processes activity of TigerVNC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_processes_sigma.yml)
+
+### References
+- [https://github.com/TigerVNC/tigervnc/releases](https://github.com/TigerVNC/tigervnc/releases)
+

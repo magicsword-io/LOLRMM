@@ -1,0 +1,52 @@
+---
+description = "Zoho Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Zoho Assist"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Zoho Assist
+
+Zoho Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["zaservice.exe", "ZMAgent.exe", "C:\\*\\ZA_Access.exe", "ZohoMeeting.exe", "Zohours.exe", "zohotray.exe", "ZohoURSService.exe", "*\\ZA_Access.exe", "Zaservice.exe", "za_connect.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.zoho.com.au", "*.zohoassist.jp", "assist.zoho.com", "zoho.com/assist/", "*.zoho.in", "downloads.zohodl.com.cn", "*.zohoassist.com", "downloads.zohocdn.com", "gateway.zohoassist.com", "*.zohoassist.com.cn", "*.zoho.com.cn", "*.zoho.com", "*.zoho.eu"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Zoho Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_network_sigma.yml)
+- Detects potential processes activity of Zoho Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_processes_sigma.yml)
+
+### References
+- [https://www.zoho.com/assist/kb/firewall-configuration.html](https://www.zoho.com/assist/kb/firewall-configuration.html)
+

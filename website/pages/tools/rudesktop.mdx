@@ -1,0 +1,52 @@
+---
+description = "RuDesktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "RuDesktop"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RuDesktop
+
+RuDesktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["rd.exe", "rudesktop*.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.rudesktop.ru", "rudesktop.ru"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of RuDesktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rudesktop_network_sigma.yml)
+- Detects potential processes activity of RuDesktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rudesktop_processes_sigma.yml)
+
+### References
+- [https://rudesktop.ru](https://rudesktop.ru)
+

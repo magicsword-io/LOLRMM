@@ -1,0 +1,52 @@
+---
+description = "Syncro is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Syncro"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Syncro
+
+Syncro is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/13/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["Syncro.Installer.exe", "Kabuto.App.Runner.exe", "Syncro.Overmind.Service.exe", "Kabuto.Installer.exe", "KabutoSetup.exe", "Syncro.Service.exe", "Kabuto.Service.Runner.exe", "Syncro.App.Runner.exe", "SyncroLive.Service.exe", "SyncroLive.Agent.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["kabuto.io", "*.syncromsp.com", "*.syncroapi.com", "syncromsp.com", "servably.com", "ld.aurelius.host", "app.kabuto.io ", "*.kabutoservices.com", "repairshopr.com", "kabutoservices.com", "attachments.servably.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Syncro RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_network_sigma.yml)
+- Detects potential processes activity of Syncro RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_processes_sigma.yml)
+
+### References
+- [https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004](https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004)
+

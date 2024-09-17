@@ -1,0 +1,52 @@
+---
+description = "BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "BeyondTrust (Bomgar)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# BeyondTrust (Bomgar)
+
+BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["bomgar-scc-*.exe", "bomgar-scc.exe", "bomgar-pac-*.exe", "bomgar-pac.exe", "bomgar-rdp.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.beyondtrustcloud.com", "*.bomgarcloud.com", "bomgarcloud.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of BeyondTrust (Bomgar) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__network_sigma.yml)
+- Detects potential processes activity of BeyondTrust (Bomgar) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__processes_sigma.yml)
+
+### References
+- [https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm](https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm)
+

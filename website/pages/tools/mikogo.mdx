@@ -1,0 +1,52 @@
+---
+description = "Mikogo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Mikogo"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Mikogo
+
+Mikogo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["mikogo.exe", "mikogo-starter.exe", "mikogo-service.exe", "mikogolauncher.exe", "C:\\Users\\*\\AppData\\Roaming\\Mikogo\\*", "*Users\\*\\AppData\\Roaming\\Mikogo\\*", "*\\Mikogo-Service.exe", "*\\Mikogo-Screen-Service.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.real-time-collaboration.com", "*.mikogo4.com", "*.mikogo.com", "mikogo.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Mikogo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_network_sigma.yml)
+- Detects potential processes activity of Mikogo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_processes_sigma.yml)
+
+### References
+- [https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services](https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services)
+

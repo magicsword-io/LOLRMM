@@ -1,0 +1,48 @@
+---
+description = "Basecamp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Basecamp"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Basecamp
+
+Basecamp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["basecamp.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Basecamp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/basecamp_network_sigma.yml)
+
+### References
+- [basecamp.com - No specific RMM tool listed](basecamp.com - No specific RMM tool listed)
+

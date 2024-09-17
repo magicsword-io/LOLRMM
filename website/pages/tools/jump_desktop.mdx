@@ -1,0 +1,52 @@
+---
+description = "Jump Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Jump Desktop"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Jump Desktop
+
+Jump Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["jumpclient.exe", "jumpdesktop.exe", "jumpservice.exe", "jumpconnect.exe", "jumpupdater.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.jumpdesktop.com", "jumpdesktop.com", "jumpto.me", "*.jumpto.me"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Jump Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_network_sigma.yml)
+- Detects potential processes activity of Jump Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_processes_sigma.yml)
+
+### References
+- [https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect](https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect)
+

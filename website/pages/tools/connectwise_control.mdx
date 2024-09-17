@@ -1,0 +1,50 @@
+---
+description = "ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "ConnectWise Control"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ConnectWise Control
+
+ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={""}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["screenconnect.clientservice.exe", "connectwisecontrol.client.exe", "screenconnect.windowsclient.exe", "connectwisechat-customer.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["live.screenconnect.com", "control.connectwise.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of ConnectWise Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml)
+- Detects potential processes activity of ConnectWise Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml)
+
+

@@ -1,0 +1,52 @@
+---
+description = "DeskDay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "DeskDay"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# DeskDay
+
+DeskDay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["ultimate_*.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["deskday.ai", "app.deskday.ai"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of DeskDay RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskday_network_sigma.yml)
+- Detects potential processes activity of DeskDay RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/deskday_processes_sigma.yml)
+
+### References
+- [https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate](https://support.deskday.ai/en/articles/8235973-installing-the-end-user-application-ultimate)
+

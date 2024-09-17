@@ -1,0 +1,52 @@
+---
+description = "HelpU is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "HelpU"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# HelpU
+
+HelpU is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["helpu_install.exe", "HelpuUpdater.exe", "HelpuManager.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["helpu.co.kr", "*.helpu.co.kr"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of HelpU RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpu_network_sigma.yml)
+- Detects potential processes activity of HelpU RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpu_processes_sigma.yml)
+
+### References
+- [https://helpu.co.kr/](https://helpu.co.kr/)
+

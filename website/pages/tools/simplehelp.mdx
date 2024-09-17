@@ -1,0 +1,52 @@
+---
+description = "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "SimpleHelp"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# SimpleHelp
+
+SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["simplehelpcustomer.exe", "simpleservice.exe", "simplegatewayservice.exe", "remote access.exe", "windowslauncher.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "simple-help.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of SimpleHelp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml)
+- Detects potential processes activity of SimpleHelp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml)
+
+### References
+- [https://simple-help.com/remote-support](https://simple-help.com/remote-support)
+

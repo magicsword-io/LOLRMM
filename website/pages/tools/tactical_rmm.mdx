@@ -1,0 +1,52 @@
+---
+description = "Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Tactical RMM"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Tactical RMM
+
+Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/14/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["tacticalrmm.exe", "tacticalrmm.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["login.tailscale.com", "login.tailscale.com", "docs.tacticalrmm.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Tactical RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_network_sigma.yml)
+- Detects potential processes activity of Tactical RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml)
+
+### References
+- [docs.tacticalrmm.com](docs.tacticalrmm.com)
+

@@ -1,0 +1,52 @@
+---
+description = "RemoteView is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "RemoteView"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RemoteView
+
+RemoteView is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["remoteview.exe", "rv.exe", "rvagent.exe", "rvagtray.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*content.rview.com", "*.rview.com", "content.rview.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of RemoteView RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_network_sigma.yml)
+- Detects potential processes activity of RemoteView RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_processes_sigma.yml)
+
+### References
+- [https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall](https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall)
+

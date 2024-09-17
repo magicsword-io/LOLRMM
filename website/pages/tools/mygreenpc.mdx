@@ -1,0 +1,52 @@
+---
+description = "MyGreenPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "MyGreenPC"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# MyGreenPC
+
+MyGreenPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/26/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["mygreenpc.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*mygreenpc.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of MyGreenPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mygreenpc_network_sigma.yml)
+- Detects potential processes activity of MyGreenPC RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mygreenpc_processes_sigma.yml)
+
+### References
+- [http://www.mygreenpc.com/](http://www.mygreenpc.com/)
+

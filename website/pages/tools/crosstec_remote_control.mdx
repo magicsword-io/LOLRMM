@@ -1,0 +1,52 @@
+---
+description = "CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "CrossTec Remote Control"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# CrossTec Remote Control
+
+CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["PCIVIDEO.EXE", "supporttool.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "crosstecsoftware.com/remotecontrol"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of CrossTec Remote Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_network_sigma.yml)
+- Detects potential processes activity of CrossTec Remote Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_processes_sigma.yml)
+
+### References
+- [www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024](www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024)
+

@@ -1,0 +1,52 @@
+---
+description = "Guacamole is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Guacamole"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Guacamole
+
+Guacamole is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["guacd.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "guacamole.apache.org"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Guacamole RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_network_sigma.yml)
+- Detects potential processes activity of Guacamole RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_processes_sigma.yml)
+
+### References
+- [guacamole.apache.org](guacamole.apache.org)
+

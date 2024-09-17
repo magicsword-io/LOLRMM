@@ -1,0 +1,57 @@
+---
+description = "mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "mRemoteNG"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# mRemoteNG
+
+mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["mRemoteNG.exe", "C:\\Program Files (x86)\\mRemoteNG\\*", "*\\mRemoteNG\\*", "*\\mRemoteNG.exe", "c:\\Program Files (x86)%\\mRemoteNG", "*%\\mRemoteNG", "mRemoteNG-Installer-*.msi", "*\\mRemoteNG.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Users\\*\\AppData\\Roaming\\mRemoteNG\\mRemoteNG.log", "Description": "mRemoteNG log file", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\mRemoteNG\\confCons.xml", "Description": "mRemoteNG configuration file", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\*\\mRemoteNG\\**10\\user.config", "Description": "mRemoteNG user configuration file", "OS": "Windows"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "mremoteng.org"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of mRemoteNG RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_network_sigma.yml)
+- Detects potential files activity of mRemoteNG RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_files_sigma.yml)
+- Detects potential processes activity of mRemoteNG RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_processes_sigma.yml)
+
+### References
+- [https://github.com/mRemoteNG/mRemoteNG](https://github.com/mRemoteNG/mRemoteNG)
+

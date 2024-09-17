@@ -1,0 +1,52 @@
+---
+description = "Anyplace Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Anyplace Control"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Anyplace Control
+
+Anyplace Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/7/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["apc_host.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["anyplace-control.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Anyplace Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyplace_control_network_sigma.yml)
+- Detects potential processes activity of Anyplace Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyplace_control_processes_sigma.yml)
+
+### References
+- [http://www.anyplace-control.com/anyplace-control/help/faq.htm](http://www.anyplace-control.com/anyplace-control/help/faq.htm)
+

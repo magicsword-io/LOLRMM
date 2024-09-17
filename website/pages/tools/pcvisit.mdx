@@ -1,0 +1,52 @@
+---
+description = "Pcvisit is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Pcvisit"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Pcvisit
+
+Pcvisit is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["pcvisit.exe", "pcvisit_client.exe", "pcvisit-easysupport.exe", "pcvisit_service_client.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.pcvisit.de", "pcvisit.de"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Pcvisit RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_network_sigma.yml)
+- Detects potential processes activity of Pcvisit RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcvisit_processes_sigma.yml)
+
+### References
+- [https://www.pcvisit.de/](https://www.pcvisit.de/)
+

@@ -1,0 +1,52 @@
+---
+description = "LANDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "LANDesk"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# LANDesk
+
+LANDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/8/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["issuser.exe", "landeskagentbootstrap.exe", "LANDeskPortalManager.exe", "ldinv32.exe", "ldsensors.exe", "C:\\Program Files (x86)\\LANDesk\\*", "*\\LANDesk\\*", "*\\issuser.exe", "*\\softmon.exe", "*\\tmcsvc.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.ivanticloud.com", "*.ivanti.com", "ivanti.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of LANDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/landesk_network_sigma.yml)
+- Detects potential processes activity of LANDesk RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/landesk_processes_sigma.yml)
+
+### References
+- [https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US](https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US)
+

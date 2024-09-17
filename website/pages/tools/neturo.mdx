@@ -1,0 +1,52 @@
+---
+description = "Neturo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title = "Neturo"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Neturo
+
+Neturo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+### Details
+<Details author={""}
+         category={""}
+         created={""}
+         website={""}
+         lastModified={"2/9/2024"}
+         privileges={""}
+         free={ "" }
+         verification={""}
+/>
+
+#### Installation Paths
+<Card code={ ["neturo*.exe", "ntrntservice.exe", "neturo.exe"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["neturo.uplus.co.kr"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Neturo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_network_sigma.yml)
+- Detects potential processes activity of Neturo RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_processes_sigma.yml)
+
+### References
+- [Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2](Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2)
+
