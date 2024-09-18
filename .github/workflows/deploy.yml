@@ -38,11 +38,10 @@ jobs:
         npm run build
       working-directory: website
 
-    - name: Upload site artifact
-      uses: actions/upload-artifact@v3
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
       with:
-        name: site
-        path: website/build
+        path: ./website/out
 
     - name: Commit and push changes
       env:
@@ -69,10 +68,6 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Download site artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
