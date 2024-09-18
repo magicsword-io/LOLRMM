@@ -70,7 +70,7 @@ export function App() {
 			panelled={null}
 			restrictWidth="90%"
 			css={{ backgroundColor: "black" }}
-		>
+			>
 			<EuiPageTemplate.Header
 				description={
 					<>
