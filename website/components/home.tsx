@@ -12,6 +12,7 @@ import { RMMTable } from "./tools";
 function Contents() {
 	return (
 		<>
+			<EuiSpacer size="xxl" />
 			<EuiFlexGroup>
 				<EuiToast
 					title={
@@ -71,8 +72,12 @@ export function App() {
 			css={{ backgroundColor: "black" }}
 		>
 			<EuiPageTemplate.Header
-				pageTitle="LOLRMM"
-				description="LOLRMM is a curated list of Remote Monitoring and Management (RMM) tools that could potentially be abused by threat actors. This project aims to assist security professionals in staying informed about these tools and their potential for misuse."
+				description={
+					<>
+						<img src="/images/logo.png" alt="LOLRMM Logo" style={{ width: '200px', display: 'block' }} />
+						<p>LOLRMM is a curated list of Remote Monitoring and Management (RMM) tools that could potentially be abused by threat actors. This project aims to assist security professionals in staying informed about these tools and their potential for misuse.</p>
+					</>
+				}
 				iconProps={{
 					href: "/images/logo.png",
 				}}
