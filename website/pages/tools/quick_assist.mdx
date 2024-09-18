@@ -34,11 +34,16 @@ Quick Assist is a remote monitoring and management (RMM) tool. More information 
 
 
 
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.support.services.microsoft.com"], "Ports": []}] }/>
 
 
 
 
 ### Detections
+- Detects potential network activity of Quick Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_network_sigma.yml)
 - Detects potential processes activity of Quick Assist RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml)
 
