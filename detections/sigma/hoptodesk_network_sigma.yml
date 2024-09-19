@@ -6,8 +6,8 @@ detection:
   selection:
     DestinationHostname|endswith:
     - signal.hoptodesk.com
-	- api.hoptodesk.com
-	- turn.hoptodesk.com
+    - api.hoptodesk.com
+    - turn.hoptodesk.com
     - hoptodesk.com
   condition: selection
 status: experimental
