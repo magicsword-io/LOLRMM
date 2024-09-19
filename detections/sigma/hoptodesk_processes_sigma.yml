@@ -1,0 +1,20 @@
+title: Potential HopToDesk RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - hoptodesk.exe
+    - HopToDesk.exe
+  condition: selection
+status: experimental
+description: Detects potential processes activity of HopToDesk RMM tool
+author: LOLRMM Project
+date: 2024/09/19
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of HopToDesk
+level: medium
