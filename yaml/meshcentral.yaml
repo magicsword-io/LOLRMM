@@ -1,7 +1,6 @@
 Name: MeshCentral
 Description: >
   MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used along with MeshCentral to remotely manage computers. MeshAgent can execute commands on the target host by leveraging win-console to obscure their activities and win-dispatcher to run malicious code through IPC with child processes.
-  To reduce the number of false positives in environments that already use MessAgent as their remote management tool, investigations should focus on the grandparent parent command, MessAgent.exe, and focus on the child processes created as a result of the interactive suspicious commands to the target host.
 Author: '@kostastsale'
 Created: '2024-09-20'
 LastModified: '2024-09-20'
