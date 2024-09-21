@@ -58,7 +58,7 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml
   Description: Detects potential processes activity of MeshCentral RMM tool
 - Sigma: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/proc_creation_windows_meshagent.yml
-    Name: Detects MeshAgent Command Execution via MeshCentral
+  Description: Detects MeshAgent Command Execution via MeshCentral
 References:
 - https://ylianst.github.io/MeshCentral/meshcentral/
 - https://github.com/Ylianst/MeshAgent
