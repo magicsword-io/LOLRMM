@@ -12978,32 +12978,65 @@
     },
     {
         "Name": "MeshCentral",
-        "Description": "MeshCentral is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/8/2024",
+        "Description": "MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used along with MeshCentral to remotely manage computers. MeshAgent can execute commands on the target host by leveraging win-console to obscure their activities and win-dispatcher to run malicious code through IPC with child processes.\n",
+        "Author": "@kostastsale",
+        "Created": "2024-09-20",
+        "LastModified": "2024-09-20",
         "Details": {
-            "Website": "",
+            "Website": "https://meshcentral.com/",
             "PEMetadata": {
-                "Filename": "",
+                "Filename": "MeshAgent.exe",
                 "OriginalFileName": "",
-                "Description": ""
+                "Description": "MeshCentral Background Service Agent"
             },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
+            "Privileges": "SYSTEM",
+            "Free": "Yes",
+            "Verification": "N/A",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "MacOS",
+                "FreeBSD"
+            ],
+            "Capabilities": [
+                "Remote Desktop & Terminal",
+                "Remote File Access",
+                "Text and Voice Chat",
+                "Server File Storage",
+                "Real-time User interface",
+                "Port Forwarding"
+            ],
+            "Vulnerabilities": [
+                "CVE-2024-26135"
+            ],
             "InstallationPaths": [
                 "meshcentral*.exe",
-                "mesh*.exe"
+                "meshagent*.exe"
             ]
         },
         "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Mesh Agent\\MeshAgent.exe",
+                    "Description": "Local MeshAgent service binary after installation",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Mesh Agent\\MeshAgent.msh",
+                    "Description": "Local MeshAgent service configuration file. Contains configuration settings including the MeshCentral server address, port, and other settings. If the MeshAgent is run without being installed, the configuration file is created in the same directory as the MeshAgent binary.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "Mesh Agent background service",
+                    "ImagePath": "\"C:\\\\Program Files\\\\Mesh Agent\\\\MeshAgent.exe\"",
+                    "Description": "Service installation event as result of MeshAgent installation."
+                }
+            ],
             "Network": [
                 {
                     "Description": "Known remote domains",
@@ -13023,12 +13056,22 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml",
                 "Description": "Detects potential processes activity of MeshCentral RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/proc_creation_windows_meshagent.yml",
+                "Description": "Detects MeshAgent Command Execution via MeshCentral"
             }
         ],
         "References": [
-            "https://ylianst.github.io/MeshCentral/meshcentral/"
+            "https://ylianst.github.io/MeshCentral/meshcentral/",
+            "https://github.com/Ylianst/MeshAgent"
         ],
-        "Acknowledgement": []
+        "Acknowledgement": [
+            {
+                "Person": "Kostas",
+                "Handle": "@kostastsale"
+            }
+        ]
     },
     {
         "Name": "MSP360",

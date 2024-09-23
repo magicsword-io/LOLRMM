@@ -1,5 +1,5 @@
 ---
-description = "MeshCentral is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description = "MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used along with MeshCentral to remotely manage computers. MeshAgent can execute commands on the target host by leveraging win-console to obscure their activities and win-dispatcher to run malicious code through IPC with child processes."
 title = "MeshCentral"
 ---
 
@@ -9,29 +9,42 @@ import {EuiSpacer} from "@elastic/eui"
 
 # MeshCentral
 
-MeshCentral is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used along with MeshCentral to remotely manage computers. MeshAgent can execute commands on the target host by leveraging win-console to obscure their activities and win-dispatcher to run malicious code through IPC with child processes.
+
 
 ### Details
-<Details author={""}
+<Details author={"@kostastsale"}
          category={""}
-         created={""}
-         website={""}
-         lastModified={"2/8/2024"}
-         privileges={""}
-         free={ "" }
-         verification={""}
+         created={"2024-09-20"}
+         website={"https://meshcentral.com/"}
+         lastModified={"2024-09-20"}
+         privileges={"SYSTEM"}
+         free={ "Yes" }
+         verification={"N/A"}
 />
 
 #### Installation Paths
-<Card code={ ["meshcentral*.exe", "mesh*.exe"] }/>
+<Card code={ ["meshcentral*.exe", "meshagent*.exe"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "MacOS", "FreeBSD"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Desktop & Terminal", "Remote File Access", "Text and Voice Chat", "Server File Storage", "Real-time User interface", "Port Forwarding"] }/>
 
+#### Known Vulnerabilities
+- [CVE-2024-26135](CVE-2024-26135)
 
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Mesh Agent\\MeshAgent.exe", "Description": "Local MeshAgent service binary after installation", "OS": "Windows"}, {"File": "C:\\Program Files\\Mesh Agent\\MeshAgent.msh", "Description": "Local MeshAgent service configuration file. Contains configuration settings including the MeshCentral server address, port, and other settings. If the MeshAgent is run without being installed, the configuration file is created in the same directory as the MeshAgent binary.", "OS": "Windows"}] }/>
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "Mesh Agent background service", "ImagePath": "\"C:\\\\Program Files\\\\Mesh Agent\\\\MeshAgent.exe\"", "Description": "Service installation event as result of MeshAgent installation."}] }/>
 
 
 #### Network Artifacts
@@ -46,7 +59,12 @@ MeshCentral is a remote monitoring and management (RMM) tool. More information w
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml)
 - Detects potential processes activity of MeshCentral RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml)
+- Detects MeshAgent Command Execution via MeshCentral
+  - [Sigma Rule](https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/proc_creation_windows_meshagent.yml)
 
 ### References
 - [https://ylianst.github.io/MeshCentral/meshcentral/](https://ylianst.github.io/MeshCentral/meshcentral/)
+- [https://github.com/Ylianst/MeshAgent](https://github.com/Ylianst/MeshAgent)
 
+### Acknowledgements
+- Kostas (@kostastsale)
