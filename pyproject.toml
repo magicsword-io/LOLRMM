@@ -2,7 +2,7 @@
 name = "lolrmm"
 version = "0.1.0"
 description = ""
-authors = ["Jose Hernandez <jhernandez@magicsword.io>"]
+authors = ["Magic Sword <info@magicsword.io>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
