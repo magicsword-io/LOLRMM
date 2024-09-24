@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-streamlit = "^1.37.0"
+streamlit = "^1.38.0"
 pyyaml = "^6.0"
 
 [build-system]
