@@ -5,6 +5,7 @@ import {
 	EuiSpacer,
 	EuiTitle,
 	EuiToast,
+	EuiImage,
 } from "@elastic/eui";
 import "@elastic/eui/dist/eui_theme_dark.css";
 import { RMMTable } from "./tools";
@@ -25,16 +26,7 @@ function Contents() {
 							<EuiLink href="https://github.com/magicsword-io/lolrmm/issues/new/choose">
 								issue
 							</EuiLink>
-							, or suggest new RMM tools to be added.
-						</>
-					}
-					color="warning"
-					iconType="iInCircle"
-				/>
-				<EuiToast
-					title={
-						<>
-							You can also access the RMM tools list via API using{" "}
+							, or suggest new RMM tools to be added. You can also access the RMM tools list via API using{" "}
 							<EuiLink href="/api/rmm_tools.csv">CSV</EuiLink> or{" "}
 							<EuiLink href="/api/rmm_tools.json">JSON</EuiLink>. For users of
 							security monitoring tools, check out the pre-built{" "}
@@ -51,6 +43,24 @@ function Contents() {
 					color="primary"
 					iconType="iInCircle"
 				/>
+				<EuiToast
+					title={
+						<>
+							Interested in learning how to <span style={{ color: 'red' }}>block</span> these remote management tools natively on Windows?
+							<br />
+							<EuiLink href="https://www.magicsword.io/premium">
+								<EuiImage
+									alt="MagicSword Logo"
+									src="/images/magicsword.png"
+									style={{ width: '110px', height: '110px', verticalAlign: 'middle', display: 'inline-block', marginRight: '10px', marginTop: '10px' }}
+								/>
+								Explore MagicSword Premium
+							</EuiLink>
+						</>
+					}
+					color="warning"
+					iconType="lock"
+					/>
 			</EuiFlexGroup>
 			<EuiSpacer size="xxl" />
 
@@ -60,8 +70,8 @@ function Contents() {
 
 			<EuiSpacer size="xxl" />
 			<RMMTable />
-		</>
-	);
+			</>
+		);
 }
 
 export function App() {
