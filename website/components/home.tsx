@@ -30,14 +30,14 @@ function Contents() {
 							<EuiLink href="/api/rmm_tools.csv">CSV</EuiLink> or{" "}
 							<EuiLink href="/api/rmm_tools.json">JSON</EuiLink>. For users of
 							security monitoring tools, check out the pre-built{" "}
-							<EuiLink href="https://github.com/magicsword-io/lolrmm/blob/main/detections/configs">
-								configurations
-							</EuiLink>
-							. We also provide{" "}
 							<EuiLink href="https://github.com/magicsword-io/lolrmm/blob/main/detections/sigma">
-								Sigma rules{" "}
+									<EuiImage
+										alt="Sigma Logo"
+										src="/images/sigma_logo.png"
+										style={{ width: '20px', height: '20px', marginRight: '5px', verticalAlign: 'middle' }}
+									/>
+									Sigma rules
 							</EuiLink>
-							for SIEMs.
 						</>
 					}
 					color="primary"
