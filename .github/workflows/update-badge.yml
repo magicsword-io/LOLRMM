@@ -2,9 +2,10 @@ name: Update RMM Tools Badge
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'yaml/**'
-  workflow_dispatch:
 
 jobs:
   update-badge:
@@ -21,9 +22,11 @@ jobs:
         run: python bin/update_badge.py
 
       - name: Commit and push if changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
           git add rmm-tools-count.json
           git commit -m "Update RMM Tools count badge" || exit 0
-          git push
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
