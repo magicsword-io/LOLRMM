@@ -1,6 +1,7 @@
 import "../styles.css";
 import {useEffect, useState} from "react";
 import {EuiProvider} from "@elastic/eui";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export default function Nextra({Component, pageProps}) {
   const [isClient, setIsClient] = useState(false);
@@ -9,9 +10,12 @@ export default function Nextra({Component, pageProps}) {
   }, []);
   if (isClient) {
     return (
-      <EuiProvider colorMode={"dark"}>
+      <>
+        <EuiProvider colorMode={"dark"}>
           <Component {...pageProps} />
-      </EuiProvider>
+        </EuiProvider>
+        <GoogleAnalytics gaId="G-D04FRZLYM5" />
+      </>
     );
   }
   return null;
