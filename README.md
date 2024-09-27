@@ -33,7 +33,7 @@ To begin working with LOLRMM, you can:
 To fetch the complete list of RMM tools in JSON format, you can use the following curl command:
 
 ```bash
-curl https://lolrmm.com/api/rmm_tools.json
+curl https://lolrmm.io/api/rmm_tools.json
 ```
 
 This will return a JSON array containing detailed information about all cataloged RMM tools.
@@ -41,7 +41,7 @@ This will return a JSON array containing detailed information about all cataloge
 For CSV format, simply change the extension to `.csv`:
 
 ```bash
-curl https://lolrmm.com/api/rmm_tools.csv
+curl https://lolrmm.io/api/rmm_tools.csv
 ```
 
 These APIs provide an easy way to integrate LOLRMM data into your threat hunting, detection, and prevention workflows.
