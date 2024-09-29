@@ -26,6 +26,16 @@ function Contents() {
 							<EuiLink href="https://github.com/magicsword-io/lolrmm/issues/new/choose">
 								issue
 							</EuiLink>
+							, or suggest new RMM tools to be added.
+						</>
+					}
+					color="warning"
+					iconType="iInCircle"
+				/>
+				<EuiToast
+					title={
+						<> 
+							You can also access the RMM tools list via API using{" "}
 							, or suggest new RMM tools to be added. You can also access the RMM tools list via API using{" "}
 							<EuiLink href="/api/rmm_tools.csv">CSV</EuiLink> or{" "}
 							<EuiLink href="/api/rmm_tools.json">JSON</EuiLink>. For users of
@@ -85,7 +95,9 @@ export function App() {
 				description={
 					<>
 						<img src="/images/logo.png" alt="LOLRMM Logo" style={{ width: '200px', display: 'block' }} />
-						<p>LOLRMM is a curated list of Remote Monitoring and Management (RMM) tools that could potentially be abused by threat actors. This project aims to assist security professionals in staying informed about these tools and their potential for misuse.</p>
+						<p>
+							LOLRMM is a curated list of Remote Monitoring and Management (RMM) tools that could potentially be abused by threat actors. Inspired by the original <EuiLink href="https://lolbas-project.github.io/">LOLBAS project</EuiLink> for tracking binaries and closely associated with <EuiLink href="https://loldrivers.io">LOLDrivers</EuiLink> for malicious drivers, this project aims to assist security professionals in staying informed about these tools and their potential for misuse. For a collection of similar "Living Off The Land" projects, visit <EuiLink href="https://lolol.farm/">lolol.farm</EuiLink>.
+						</p>
 					</>
 				}
 				iconProps={{
