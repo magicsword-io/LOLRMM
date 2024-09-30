@@ -1,0 +1,34 @@
+Name: Basecamp
+Description: Basecamp is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
+Author: ''
+Created: ''
+LastModified: 2/7/2024
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths: []
+Artifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - basecamp.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/basecamp_network_sigma.yml
+  Description: Detects potential network activity of Basecamp RMM tool
+References:
+- basecamp.com - No specific RMM tool listed
+Acknowledgement: []
