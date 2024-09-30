@@ -7,6 +7,7 @@ import datetime
 import jinja2
 import csv
 import re
+import shutil
 
 def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
     output_file = os.path.join(output_dir, 'public', 'api', 'rmm_tools.csv')
@@ -116,16 +117,19 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
     j2_env.globals.update(dump=json.dumps)
     j2_env.globals.update(escape=re.escape)
 
+    tools_dir = os.path.join(OUTPUT_DIR, 'pages', 'tools')
+    shutil.rmtree(tools_dir)
+    os.mkdir(tools_dir)
     d = datetime.datetime.now()
     template = j2_env.get_template('rmm.md.j2')
     for rmm_tool in rmm_tools:
         # Replace parentheses with underscores in the file name
         file_name = f"{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')}.mdx"
-        output_path = os.path.join(OUTPUT_DIR, 'pages', 'tools', file_name)
+        output_path = os.path.join(tools_dir, file_name)
         output = template.render(rmm=rmm_tool, time=str(d.strftime("%Y-%m-%d")))
         with open(output_path, 'w', encoding="utf-8") as f:
             f.write(output)
-    messages.append(f"site_gen.py wrote {len(rmm_tools)} RMM tools markdown to: {os.path.join(OUTPUT_DIR, 'pages', 'tools')}")
+    messages.append(f"site_gen.py wrote {len(rmm_tools)} RMM tools markdown to: {tools_dir}")
 
     # Write API CSV
     write_rmm_tools_csv(rmm_tools, OUTPUT_DIR, VERBOSE)
