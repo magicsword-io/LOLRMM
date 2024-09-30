@@ -19,6 +19,7 @@ Details:
   InstallationPaths:
   - connectwisechat-customer.exe
   - connectwisecontrol.client.exe
+  - screenconnect.windowsclient.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -26,6 +27,7 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domains:
+    - live.screenconnect.com
     - control.connectwise.com
     Ports: []
 Detections:
