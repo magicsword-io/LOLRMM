@@ -4,6 +4,6 @@ This website uses [Nextra](https://nextra.site) and [Elastic UI](https://eui.ela
 
 ## Local Development
 
-First, run `pnpm i` to install the dependencies.
+First, run `npm install` to install the dependencies.
 
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
+Then, run `npm run dev` to start the development server and visit localhost:3000.
