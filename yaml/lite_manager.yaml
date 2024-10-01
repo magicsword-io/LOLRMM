@@ -3,7 +3,7 @@ Description: Lite Manager is a remote monitoring and management (RMM) tool. More
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: ''
+LastModified: 2/8/2024
 Details:
   Website: ''
   PEMetadata:
@@ -20,11 +20,28 @@ Details:
   - "C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
   - "*\\LiteManager Pro \u2013 Viewer\\*"
   - '*\LMNoIpServer.exe.'
+  - lmnoipserver.exe
+  - ROMFUSClient.exe
+  - romfusclient.exe
+  - romviewer.exe
+  - romserver.exe
+  - ROMServer.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
-Detections: []
-References: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.litemanager.ru'
+    - '*.litemanager.com'
+    - litemanager.com
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_network_sigma.yml
+  Description: Detects potential network activity of LiteManager RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_processes_sigma.yml
+  Description: Detects potential processes activity of LiteManager RMM tool
+References:
+- https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/
 Acknowledgement: []

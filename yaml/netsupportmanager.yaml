@@ -18,8 +18,8 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - pcictlui.exe
-  - client32.exe
   - pcicfgui.exe
+  - client32.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -27,9 +27,9 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domains:
+    - '*.netsupportmanager.com'
     - geo.netsupportsoftware.com
     - netsupportmanager.com
-    - '*.netsupportmanager.com'
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_network_sigma.yml

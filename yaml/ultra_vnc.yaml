@@ -3,7 +3,7 @@ Description: Ultra VNC is a remote monitoring and management (RMM) tool. More in
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: ''
+LastModified: 2/14/2024
 Details:
   Website: ''
   PEMetadata:
@@ -22,13 +22,22 @@ Details:
   - '*\UVNC_Launch.exe'
   - '*\winvnc.exe'
   - '*\vncviewer.exe'
+  - UltraVNC*.exe
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - ultravnc.com
+    - user_managed
+    Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultra_vnc_processes_sigma.yml
-  Description: Detects potential processes activity of Ultra VNC RMM tool
-References: []
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultravnc_network_sigma.yml
+  Description: Detects potential network activity of UltraVNC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultravnc_processes_sigma.yml
+  Description: Detects potential processes activity of UltraVNC RMM tool
+References:
+- https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html
 Acknowledgement: []
