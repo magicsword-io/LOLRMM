@@ -4,14 +4,14 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'yaml/**'
 
 jobs:
   update-badge:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PUSH_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -25,8 +25,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global push.default simple
           git add rmm-tools-count.json
-          git commit -m "Update RMM Tools count badge" || exit 0
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF}
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update RMM Tools count badge" && git pull --rebase origin main && git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF})
