@@ -23,5 +23,6 @@ Artifacts:
   Registry: []
   Network: []
 Detections: []
-References: []
+References: 
+- https://wiki.x2go.org/doku.php
 Acknowledgement: []
