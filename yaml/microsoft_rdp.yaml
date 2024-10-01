@@ -17,7 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - termsrv.exe
   - mstsc.exe
+  - Microsoft Remote Desktop
 Artifacts:
   Disk: []
   EventLog: []

@@ -21,8 +21,14 @@ Artifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
-Detections: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - electric.ai
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_network_sigma.yml
+  Description: Detects potential network activity of Electric RMM tool
 References:
 - https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf
 Acknowledgement: []

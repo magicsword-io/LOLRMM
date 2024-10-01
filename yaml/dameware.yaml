@@ -21,6 +21,7 @@ Details:
   - DameWare Mini Remote Control*.exe
   - "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\\
     *"
+  - dntus*.exe
   - dwrcs.exe
   - '*\dwrcs\*'
   - '*\dwrcst.exe'
@@ -30,8 +31,15 @@ Artifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - dameware.com
+    Ports: []
 Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml
+  Description: Detects potential network activity of Dameware-mini remote control
+    Protocol RMM tool
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_processes_sigma.yml
   Description: Detects potential processes activity of DameWare RMM tool
 References:
