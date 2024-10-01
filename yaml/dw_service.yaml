@@ -17,6 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
+  - dwagsvc.exe
   - dwagent.exe
   - dwagsvc.exe
 Artifacts:

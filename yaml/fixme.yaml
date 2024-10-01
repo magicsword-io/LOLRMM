@@ -1,9 +1,9 @@
-Name: FixMe
-Description: FixMe is a remote monitoring and management (RMM) tool. More information
+Name: FixMe.it
+Description: FixMe.it is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: ''
+LastModified: 2/7/2024
 Details:
   Website: ''
   PEMetadata:
@@ -23,6 +23,11 @@ Details:
   - TiExpertCore.exe
   - FixMeit Unattended Access Setup.exe
   - FixMeit Expert Setup.exe
+  - TiExpertCore.exe
+  - fixmeitclient.exe
+  - TiClientCore.exe
+  - TiClientHelper*.exe
+  - 9380CC75B872221A7425D7503565B67580407F60
 Artifacts:
   Disk: []
   EventLog: []
@@ -30,7 +35,11 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domains:
+    - '*.fixme.it'
+    - '*.techinline.net'
     - fixme.it
+    - '*set.me'
+    - '*setme.net'
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_network_sigma.yml

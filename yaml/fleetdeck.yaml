@@ -1,5 +1,5 @@
-Name: FleetDeck
-Description: FleetDeck is a remote monitoring and management (RMM) tool. More information
+Name: FleetDeck.io
+Description: FleetDeck.io is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: ''
 Created: ''
@@ -18,6 +18,10 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - fleetdeck_agent_svc.exe
+  - fleetdeck_commander_svc.exe
+  - fleetdeck_installer.exe
+  - fleetdeck_commander_launcher.exe
+  - fleetdeck_agent.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -25,12 +29,15 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domains:
+    - '*.fleetdeck.io'
+    - cognito-idp.us-west-2.amazonaws.com
     - fleetdeck.io
     Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_network_sigma.yml
-  Description: Detects potential network activity of FleetDeck RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_processes_sigma.yml
-  Description: Detects potential processes activity of FleetDeck RMM tool
-References: []
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml
+  Description: Detects potential network activity of FleetDesk.io RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml
+  Description: Detects potential processes activity of FleetDesk.io RMM tool
+References:
+- https://fleetdeck.io/faq/
 Acknowledgement: []
