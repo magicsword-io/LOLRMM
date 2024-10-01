@@ -18,6 +18,7 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - termsrv.exe
+  - mstsc.exe
 Artifacts:
   Disk: []
   EventLog: []

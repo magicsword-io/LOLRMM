@@ -34,12 +34,9 @@ Artifacts:
     - '*.-dms.zoho.com.cn'
     Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml
-  Description: Detects potential network activity of Manage Engine (Desktop Central)
-    RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml
-  Description: Detects potential processes activity of Manage Engine (Desktop Central)
-    RMM tool
-References:
-- https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml
+  Description: Detects potential network activity of Desktop Central RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml
+  Description: Detects potential processes activity of Desktop Central RMM tool
+References: []
 Acknowledgement: []

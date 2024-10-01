@@ -3,7 +3,7 @@ Description: Microsoft Quick Assist is a remote monitoring and management (RMM) 
   More information will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/9/2024
+LastModified: ''
 Details:
   Website: ''
   PEMetadata:
@@ -26,6 +26,7 @@ Artifacts:
   - Description: Known remote domains
     Domains:
     - user_managed
+    - '*.support.services.microsoft.com'
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_network_sigma.yml

@@ -29,5 +29,6 @@ Artifacts:
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_server_network_sigma.yml
   Description: Detects potential network activity of Royal Server RMM tool
-References: []
+References: 
+- https://royalapps.com/server/main/features
 Acknowledgement: []

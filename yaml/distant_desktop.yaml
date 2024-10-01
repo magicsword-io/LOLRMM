@@ -17,9 +17,9 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - distant-desktop.exe
-  - dd.exe
   - ddsystem.exe
+  - dd.exe
+  - distant-desktop.exe
 Artifacts:
   Disk: []
   EventLog: []
