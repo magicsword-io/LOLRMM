@@ -23,7 +23,7 @@ DameWare is a remote monitoring and management (RMM) tool. More information will
 />
 
 #### Installation Paths
-<Card code={ ["SolarWinds-Dameware-DRS*.exe", "DameWare Mini Remote Control*.exe", "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\*", "dwrcs.exe", "*\\dwrcs\\*", "*\\dwrcst.exe", "DameWare Remote Support.exe", "SolarWinds-Dameware-MRC*.exe"] }/>
+<Card code={ ["SolarWinds-Dameware-DRS*.exe", "DameWare Mini Remote Control*.exe", "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\*", "dntus*.exe", "dwrcs.exe", "*\\dwrcs\\*", "*\\dwrcst.exe", "DameWare Remote Support.exe", "SolarWinds-Dameware-MRC*.exe"] }/>
 
 
 
@@ -34,11 +34,16 @@ DameWare is a remote monitoring and management (RMM) tool. More information will
 
 
 
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["dameware.com"], "Ports": []}] }/>
 
 
 
 
 ### Detections
+- Detects potential network activity of Dameware-mini remote control Protocol RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml)
 - Detects potential processes activity of DameWare RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_processes_sigma.yml)
 

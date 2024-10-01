@@ -280,9 +280,22 @@
             "Disk": [],
             "EventLog": [],
             "Registry": [],
-            "Network": []
+            "Network": [
+                {
+                    "Description": "Known remote domains",
+                    "Domains": [
+                        "electric.ai"
+                    ],
+                    "Ports": []
+                }
+            ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_network_sigma.yml",
+                "Description": "Detects potential network activity of Electric RMM tool"
+            }
+        ],
         "References": [
             "https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf"
         ],
@@ -485,44 +498,6 @@
         "References": [
             "http://pcnow.webex.com/ - DOA as of 2024"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Quick Assist",
-        "Description": "Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "quickassist.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Quick Assist RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -1190,40 +1165,6 @@
         ]
     },
     {
-        "Name": "CloudBerry Explorer",
-        "Description": "CloudBerry Explorer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\CloudBerryLab\\CloudBerry Drive\\*",
-                "*\\CloudBerryLab\\CloudBerry Drive\\*"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Auvik",
         "Description": "Auvik is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -1276,79 +1217,6 @@
         "References": [
             "https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Microsoft RDP",
-        "Description": "Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/8/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "termsrv.exe",
-                "mstsc.exe",
-                "Microsoft Remote Desktop"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Microsoft RDP RMM tool"
-            }
-        ],
-        "References": [
-            "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows"
-        ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Microsoft OneDrive",
-        "Description": "Microsoft OneDrive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -1586,45 +1454,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "ExpanDrive",
-        "Description": "ExpanDrive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Users\\*\\ExpanDrive.exe",
-                "*\\ExpanDrive.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/expandrive_processes_sigma.yml",
-                "Description": "Detects potential processes activity of ExpanDrive RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "OCS inventory",
         "Description": "OCS inventory is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -1731,46 +1560,6 @@
         "References": [
             "https://gotohttp.com/goto/help.12x"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "CloudXplorer",
-        "Description": "CloudXplorer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\ClumsyLeaf Software\\CloudXplorer\\*",
-                "*\\ClumsyLeaf Software\\CloudXplorer\\*",
-                "*\\clumsyleaf.cloudxplorer*.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudxplorer_processes_sigma.yml",
-                "Description": "Detects potential processes activity of CloudXplorer RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -2360,47 +2149,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Dropbox",
-        "Description": "Dropbox is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files (x86)\\Dropbox\\Client\\*",
-                "*\\Dropbox\\Client\\*",
-                "*\\Dropbox.exe",
-                "*Users\\*\\Dropbox\\bin\\"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dropbox_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Dropbox RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "TightVNC",
         "Description": "TightVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -2515,46 +2263,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Box",
-        "Description": "Box is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\Box\\Box\\*",
-                "*\\Box\\Box\\*",
-                "*\\Box.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/box_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Box RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Sophos-Remote Management System",
         "Description": "Sophos-Remote Management System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -2654,37 +2362,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Cloud Explorer",
-        "Description": "Cloud Explorer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Splashtop Remote",
         "Description": "Splashtop Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -2746,57 +2423,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Dameware-mini remote control Protocol",
-        "Description": "Dameware-mini remote control Protocol is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "dntus*.exe",
-                "dwrcs.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "dameware.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml",
-                "Description": "Detects potential network activity of Dameware-mini remote control Protocol RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Dameware-mini remote control Protocol RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "rdp2tcp",
         "Description": "rdp2tcp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -2847,64 +2473,6 @@
         ],
         "References": [
             "github.com/V-E-O/rdp2tcp"
-        ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "FleetDesk.io",
-        "Description": "FleetDesk.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "fleetdeck_agent_svc.exe",
-                "fleetdeck_commander_svc.exe",
-                "fleetdeck_installer.exe",
-                "fleetdeck_agent.exe",
-                "fleetdeck_commander_launcher.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "*.fleetdeck.io",
-                        "cognito-idp.us-west-2.amazonaws.com",
-                        "fleetdeck.io"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml",
-                "Description": "Detects potential network activity of FleetDesk.io RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FleetDesk.io RMM tool"
-            }
-        ],
-        "References": [
-            "https://fleetdeck.io/faq/"
         ],
         "Acknowledgement": []
     },
@@ -3306,37 +2874,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Cloudsfer",
-        "Description": "Cloudsfer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "LANDesk",
         "Description": "LANDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -3397,50 +2934,6 @@
         "References": [
             "https://forums.ivanti.com/s/article/URL-exception-list-for-Ivanti-Security-Controls?language=en_US"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Cruz",
-        "Description": "Cruz is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "resources.doradosoftware.com/cruz-rmm"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cruz_network_sigma.yml",
-                "Description": "Detects potential network activity of Cruz RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -3688,46 +3181,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "ODrive",
-        "Description": "ODrive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Users\\*\\current\\",
-                "*Users\\*\\.odrive",
-                "*\\Odriveapp.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/odrive_processes_sigma.yml",
-                "Description": "Detects potential processes activity of ODrive RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "MultCloud",
         "Description": "MultCloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -3948,56 +3401,6 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_processes_sigma.yml",
                 "Description": "Detects potential processes activity of eHorus RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Bomgar",
-        "Description": "Bomgar is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "bomgar-scc.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "beyondtrust.com/brand/bomgar"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bomgar_network_sigma.yml",
-                "Description": "Detects potential network activity of Bomgar RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bomgar_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Bomgar RMM tool"
             }
         ],
         "References": [],
@@ -4574,46 +3977,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Azure Storage Explorer",
-        "Description": "Azure Storage Explorer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files (x86)\\Microsoft Azure Storage Explorer\\*",
-                "*\\Microsoft Azure Storage Explorer\\*",
-                "*\\StorageExplorer.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/azure_storage_explorer_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Azure Storage Explorer RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "NinjaOne (formerly NinjaRMM)",
         "Description": "NinjaOne (formerly NinjaRMM) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -4699,73 +4062,6 @@
         "References": [
             "https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "CloudHQ",
-        "Description": "CloudHQ is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Raidrive",
-        "Description": "Raidrive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\*\\OpenBoxLab\\RaiDrive\\*",
-                "*\\OpenBoxLab\\RaiDrive\\*",
-                "service = raidrive_*",
-                "Computer\\HKEY_LOCAL_MACHINE\\SOFTWARE\\OpenBoxLab\\RaiDrive\\Drives"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -4950,47 +4246,6 @@
         "References": [
             "https://www.ultraviewer.net/en/200000026-summary-of-ultraviewer-s-security-information.html"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "aria2",
-        "Description": "aria2 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\ProgramData\\CentraStage\\AEMAgent\\*",
-                "*ProgramData\\CentraStage\\AEMAgent\\*",
-                "*\\Steinberg\\Download Assistant\\3rd Party\\optional\\aria2\\*",
-                "*\\aria2c.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aria2_processes_sigma.yml",
-                "Description": "Detects potential processes activity of aria2 RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -5779,59 +5034,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "DW Service",
-        "Description": "DW Service is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "dwagent.exe",
-                "dwagsvc.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "*.dwservice.net"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_network_sigma.yml",
-                "Description": "Detects potential network activity of DW Service RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_processes_sigma.yml",
-                "Description": "Detects potential processes activity of DW Service RMM tool"
-            }
-        ],
-        "References": [
-            "https://news.dwservice.net/dwservice-security-infrastructure/"
-        ],
-        "Acknowledgement": []
-    },
-    {
         "Name": "SecureCRT",
         "Description": "SecureCRT is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -6446,99 +5648,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Microsoft TSC",
-        "Description": "Microsoft TSC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/8/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "termsrv.exe",
-                "mstsc.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_tsc_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Microsoft TSC RMM tool"
-            }
-        ],
-        "References": [
-            "https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application"
-        ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "AweRay (AweSun)",
-        "Description": "AweRay (AweSun) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "aweray_remote*.exe",
-                "AweSun.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "asapi-us.aweray.net",
-                        "asapi.aweray.net"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray__awesun__network_sigma.yml",
-                "Description": "Detects potential network activity of AweRay (AweSun) RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aweray__awesun__processes_sigma.yml",
-                "Description": "Detects potential processes activity of AweRay (AweSun) RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "NoMachine",
         "Description": "NoMachine is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -6644,46 +5753,6 @@
         "References": [
             "https://uvnc.com/docs/uvnc-server/49-UltraVNC-server-configuration.html"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "TeraCLOUD",
-        "Description": "TeraCLOUD is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "c:\\*\\TeraCloud.Client*",
-                "*\\TeraCloud.Client*",
-                "*\\Livedrive-Setup.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teracloud_processes_sigma.yml",
-                "Description": "Detects potential processes activity of TeraCLOUD RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -6858,46 +5927,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Air Explorer",
-        "Description": "Air Explorer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\airexplorer\\*",
-                "*\\airexplorer\\*",
-                "*\\airexplorer.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/air_explorer_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Air Explorer RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Bitvise SSH Client",
         "Description": "Bitvise SSH Client is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -6965,7 +5994,9 @@
             "Network": []
         },
         "Detections": [],
-        "References": [],
+        "References": [
+            "https://github.com/flit/cotvnc"
+        ],
         "Acknowledgement": []
     },
     {
@@ -7097,7 +6128,9 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "mstsc.exe"
+                "termsrv.exe",
+                "mstsc.exe",
+                "Microsoft Remote Desktop"
             ]
         },
         "Artifacts": {
@@ -7158,7 +6191,9 @@
                 "Description": "Detects potential network activity of Royal Server RMM tool"
             }
         ],
-        "References": [],
+        "References": [
+            "https://royalapps.com/server/main/features"
+        ],
         "Acknowledgement": []
     },
     {
@@ -7346,47 +6381,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "GoodSync",
-        "Description": "GoodSync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "installation requires paid version of GoodSync Server",
-                "installation requires paid version of GoodSync Server",
-                "GoodSync-vsub-Setup.exe",
-                "A40B81B36CDC2D24910FC58816E50DCDE21BD1A9"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goodsync_processes_sigma.yml",
-                "Description": "Detects potential processes activity of GoodSync RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "DesktopNow",
         "Description": "DesktopNow is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -7470,47 +6464,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "CloudMounter",
-        "Description": "CloudMounter is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\CloudMounter\\*",
-                "*\\CloudMounter\\*",
-                "*\\CloudMounter\\*",
-                "*\\cloudmounter.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudmounter_processes_sigma.yml",
-                "Description": "Detects potential processes activity of CloudMounter RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Distant Desktop",
         "Description": "Distant Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -7530,9 +6483,9 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "distant-desktop.exe",
+                "ddsystem.exe",
                 "dd.exe",
-                "ddsystem.exe"
+                "distant-desktop.exe"
             ]
         },
         "Artifacts": {
@@ -7588,6 +6541,7 @@
                 "SolarWinds-Dameware-DRS*.exe",
                 "DameWare Mini Remote Control*.exe",
                 "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\*",
+                "dntus*.exe",
                 "dwrcs.exe",
                 "*\\dwrcs\\*",
                 "*\\dwrcst.exe",
@@ -7599,9 +6553,21 @@
             "Disk": [],
             "EventLog": [],
             "Registry": [],
-            "Network": []
+            "Network": [
+                {
+                    "Description": "Known remote domains",
+                    "Domains": [
+                        "dameware.com"
+                    ],
+                    "Ports": []
+                }
+            ]
         },
         "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml",
+                "Description": "Detects potential network activity of Dameware-mini remote control Protocol RMM tool"
+            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_processes_sigma.yml",
                 "Description": "Detects potential processes activity of DameWare RMM tool"
@@ -7693,37 +6659,6 @@
                 "Description": "Detects potential processes activity of Insync RMM tool"
             }
         ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Bomgar - Now BeyondTrust",
-        "Description": "Bomgar - Now BeyondTrust is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
         "References": [],
         "Acknowledgement": []
     },
@@ -7844,45 +6779,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Core FTP",
-        "Description": "Core FTP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\*\\coreftplite.exe",
-                "*\\coreftplite.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/core_ftp_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Core FTP RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Netreo",
         "Description": "Netreo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -7929,86 +6825,6 @@
         "References": [
             "https://solutions.netreo.com/docs/firewall-requirements"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "CuteFTP",
-        "Description": "CuteFTP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files (x86)\\Globalscape\\CuteFTP\\*",
-                "*\\Globalscape\\CuteFTP\\*",
-                "*\\cuteftppro.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cuteftp_processes_sigma.yml",
-                "Description": "Detects potential processes activity of CuteFTP RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "CloudBuckIt",
-        "Description": "CloudBuckIt is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files (x86)\\CloudBuckIt\\*",
-                "*\\CloudBuckIt\\*",
-                "*\\CloudBuckIt*.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudbuckit_processes_sigma.yml",
-                "Description": "Detects potential processes activity of CloudBuckIt RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -8231,46 +7047,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "FileZilla",
-        "Description": "FileZilla is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\FileZilla FTP Client\\*",
-                "*\\FileZilla FTP Client\\*",
-                "*\\FileZilla.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/filezilla_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FileZilla RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "XRDP",
         "Description": "XRDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -8413,46 +7189,6 @@
         "References": [
             "https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "pCloud",
-        "Description": "pCloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files (x86)\\pCloud Drive\\",
-                "*\\pCloud Drive\\",
-                "*\\pCloud.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcloud_processes_sigma.yml",
-                "Description": "Detects potential processes activity of pCloud RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -8714,56 +7450,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Desktop Central",
-        "Description": "Desktop Central is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "dcagentservice.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "desktopcentral.manageengine.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml",
-                "Description": "Detects potential network activity of Desktop Central RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Desktop Central RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "DW Service",
         "Description": "DW Service is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -8867,47 +7553,6 @@
         "References": [
             "DOA as of 2024"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "aws-cli",
-        "Description": "aws-cli is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\Amazon\\AWSCLI\\*",
-                "*\\Amazon\\AWSCLI\\*",
-                "*\\AWSCLIV*.msi",
-                "*\\AWSCLISetup.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aws-cli_processes_sigma.yml",
-                "Description": "Detects potential processes activity of aws-cli RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -9018,64 +7663,6 @@
             }
         ],
         "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "BeyondTrust (Bomgar)",
-        "Description": "BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "bomgar-scc.exe",
-                "bomgar-rdp.exe",
-                "bomgar-scc-*.exe",
-                "bomgar-pac-*.exe",
-                "bomgar-pac.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "bomgarcloud.com",
-                        "*.bomgarcloud.com",
-                        "*.beyondtrustcloud.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__network_sigma.yml",
-                "Description": "Detects potential network activity of BeyondTrust (Bomgar) RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beyondtrust__bomgar__processes_sigma.yml",
-                "Description": "Detects potential processes activity of BeyondTrust (Bomgar) RMM tool"
-            }
-        ],
-        "References": [
-            "https://www.beyondtrust.com/docs/remote-support/getting-started/deployment/cloud/network.htm"
-        ],
         "Acknowledgement": []
     },
     {
@@ -9788,7 +8375,8 @@
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "connectwisechat-customer.exe",
-                "connectwisecontrol.client.exe"
+                "connectwisecontrol.client.exe",
+                "screenconnect.windowsclient.exe"
             ]
         },
         "Artifacts": {
@@ -9799,6 +8387,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
+                        "live.screenconnect.com",
                         "control.connectwise.com"
                     ],
                     "Ports": []
@@ -9859,8 +8448,8 @@
         "Acknowledgement": []
     },
     {
-        "Name": "FleetDeck",
-        "Description": "FleetDeck is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Name": "FleetDeck.io",
+        "Description": "FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
         "LastModified": "",
@@ -9878,7 +8467,11 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "fleetdeck_agent_svc.exe"
+                "fleetdeck_agent_svc.exe",
+                "fleetdeck_commander_svc.exe",
+                "fleetdeck_installer.exe",
+                "fleetdeck_commander_launcher.exe",
+                "fleetdeck_agent.exe"
             ]
         },
         "Artifacts": {
@@ -9889,6 +8482,8 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
+                        "*.fleetdeck.io",
+                        "cognito-idp.us-west-2.amazonaws.com",
                         "fleetdeck.io"
                     ],
                     "Ports": []
@@ -9897,15 +8492,17 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_network_sigma.yml",
-                "Description": "Detects potential network activity of FleetDeck RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml",
+                "Description": "Detects potential network activity of FleetDesk.io RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FleetDeck RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FleetDesk.io RMM tool"
             }
         ],
-        "References": [],
+        "References": [
+            "https://fleetdeck.io/faq/"
+        ],
         "Acknowledgement": []
     },
     {
@@ -9964,63 +8561,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "ESET Remote Administrator",
-        "Description": "ESET Remote Administrator is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "einstaller.exe",
-                "era.exe",
-                "ERAAgent.exe",
-                "ezhelp*.exe",
-                "eratool.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "user_managed",
-                        "eset.com/me/business/remote-management/remote-administrator/"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_network_sigma.yml",
-                "Description": "Detects potential network activity of ESET Remote Administrator RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_processes_sigma.yml",
-                "Description": "Detects potential processes activity of ESET Remote Administrator RMM tool"
-            }
-        ],
-        "References": [
-            "eset.com/me/business/remote-management/remote-administrator/"
-        ],
-        "Acknowledgement": []
-    },
-    {
         "Name": "ToDesk",
         "Description": "ToDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -10074,61 +8614,6 @@
         ],
         "References": [
             "https://www.todesk.com/"
-        ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Distant Desktop",
-        "Description": "Distant Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/8/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "ddsystem.exe",
-                "dd.exe",
-                "distant-desktop.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "*.distantdesktop.com",
-                        "*signalserver.xyz"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml",
-                "Description": "Detects potential network activity of Distant Desktop RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Distant Desktop RMM tool"
-            }
-        ],
-        "References": [
-            "https://www.distantdesktop.com/manual/first-start.htm"
         ],
         "Acknowledgement": []
     },
@@ -10915,37 +9400,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "CloudFuze",
-        "Description": "CloudFuze is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Free Tools Launcher",
         "Description": "Free Tools Launcher is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -11127,37 +9581,6 @@
                 "Description": "Detects potential processes activity of KiTTY RMM tool"
             }
         ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Proton Drive",
-        "Description": "Proton Drive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
         "References": [],
         "Acknowledgement": []
     },
@@ -11447,46 +9870,6 @@
         "References": [
             "wen.laplink.com/product/laplink-gold"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Cyberduck",
-        "Description": "Cyberduck is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\Cyberduck\\*",
-                "*\\Cyberduck\\*",
-                "*\\Cyberduck.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cyberduck_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Cyberduck RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -11842,46 +10225,9 @@
             "Network": []
         },
         "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "DriveMaker",
-        "Description": "DriveMaker is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\*\\DriveMaker.exe",
-                "*\\DriveMaker.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/drivemaker_processes_sigma.yml",
-                "Description": "Detects potential processes activity of DriveMaker RMM tool"
-            }
+        "References": [
+            "https://wiki.x2go.org/doku.php"
         ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -12030,48 +10376,6 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop__beta__processes_sigma.yml",
                 "Description": "Detects potential processes activity of Splashtop (Beta) RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Google Drive",
-        "Description": "Google Drive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\Google\\Drive File Stream\\*",
-                "*\\Google\\Drive File Stream\\*",
-                "*Users\\*\\AppData\\*\\Google\\DriveFS*",
-                "G:\\My Drive*",
-                "*\\GoogleDriveFS.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/google_drive_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Google Drive RMM tool"
             }
         ],
         "References": [],
@@ -12545,73 +10849,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "FixMe.it",
-        "Description": "FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "FixMeit Unattended Access Setup.exe",
-                "TiExpertStandalone.exe",
-                "FixMeitClient*.exe",
-                "FixMeit Client.exe",
-                "FixMeit Expert Setup.exe",
-                "TiExpertCore.exe",
-                "fixmeitclient.exe",
-                "TiClientCore.exe",
-                "TiClientHelper*.exe",
-                "no installation required | recommend blocking fixme[.]it SaaS portal",
-                "no installation required | recommend blocking fixme[.]it SaaS portal",
-                "9380CC75B872221A7425D7503565B67580407F60"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "*.fixme.it",
-                        "*.techinline.net",
-                        "fixme.it",
-                        "*set.me",
-                        "*setme.net"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml",
-                "Description": "Detects potential network activity of FixMe.it RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FixMe.it RMM tool"
-            }
-        ],
-        "References": [
-            "https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use"
-        ],
-        "Acknowledgement": []
-    },
-    {
         "Name": "RDPView",
         "Description": "RDPView is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -12870,50 +11107,6 @@
         "References": [
             "https://www.gatherplace.com/kb?id=136377"
         ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Electric",
-        "Description": "Electric is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "electric.ai"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_network_sigma.yml",
-                "Description": "Detects potential network activity of Electric RMM tool"
-            }
-        ],
-        "References": [],
         "Acknowledgement": []
     },
     {
@@ -13263,7 +11456,8 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "termsrv.exe"
+                "termsrv.exe",
+                "mstsc.exe"
             ]
         },
         "Artifacts": {
@@ -13496,11 +11690,11 @@
         "Acknowledgement": []
     },
     {
-        "Name": "FixMe",
-        "Description": "FixMe is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Name": "FixMe.it",
+        "Description": "FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "",
+        "LastModified": "2/7/2024",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13520,7 +11714,12 @@
                 "FixMeitClient*.exe",
                 "TiExpertCore.exe",
                 "FixMeit Unattended Access Setup.exe",
-                "FixMeit Expert Setup.exe"
+                "FixMeit Expert Setup.exe",
+                "TiExpertCore.exe",
+                "fixmeitclient.exe",
+                "TiClientCore.exe",
+                "TiClientHelper*.exe",
+                "9380CC75B872221A7425D7503565B67580407F60"
             ]
         },
         "Artifacts": {
@@ -13531,7 +11730,11 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "fixme.it"
+                        "*.fixme.it",
+                        "*.techinline.net",
+                        "fixme.it",
+                        "*set.me",
+                        "*setme.net"
                     ],
                     "Ports": []
                 }
@@ -13545,47 +11748,6 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_processes_sigma.yml",
                 "Description": "Detects potential processes activity of FixMe RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "rclone",
-        "Description": "rclone is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "portable tool. No install path",
-                "portable tool. No install path",
-                "rclone*.zip",
-                "*\\rclone.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rclone_processes_sigma.yml",
-                "Description": "Detects potential processes activity of rclone RMM tool"
             }
         ],
         "References": [],
@@ -14301,46 +12463,6 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/onionshare_processes_sigma.yml",
                 "Description": "Detects potential processes activity of Onionshare RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Air Live Drive",
-        "Description": "Air Live Drive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\AirLiveDrive\\*",
-                "*\\AirLiveDrive\\*",
-                "*\\AirLiveDrive.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/air_live_drive_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Air Live Drive RMM tool"
             }
         ],
         "References": [],
@@ -15505,226 +13627,8 @@
         "Acknowledgement": []
     },
     {
-        "Name": "FleetDeck.io",
-        "Description": "FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "fleetdeck_agent_svc.exe",
-                "fleetdeck_commander_svc.exe",
-                "fleetdeck_installer.exe",
-                "fleetdeck_commander_launcher.exe",
-                "fleetdeck_agent.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "fleetdeck.io"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_network_sigma.yml",
-                "Description": "Detects potential network activity of FleetDeck.io RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FleetDeck.io RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Chrome Remote Desktop",
-        "Description": "Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/7/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "remote_host.exe",
-                "remoting_host.exe",
-                "C:\\Program Files (x86)\\Google\\Chrome Remote Desktop\\*",
-                "*\\Google\\Chrome Remote Desktop\\*",
-                "*\\remoting_host.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "*remotedesktop-pa.googleapis.com",
-                        "*remotedesktop.google.com",
-                        "remotedesktop.google.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml",
-                "Description": "Detects potential network activity of Chrome Remote Desktop RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Chrome Remote Desktop RMM tool"
-            }
-        ],
-        "References": [
-            "https://support.google.com/chrome/a/answer/2799701?hl=en"
-        ],
-        "Acknowledgement": []
-    },
-    {
         "Name": "RealVNC",
         "Description": "RealVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "rsync",
-        "Description": "rsync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Datto",
-        "Description": "Datto is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "datto.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/datto_network_sigma.yml",
-                "Description": "Detects potential network activity of Datto RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "CloudExplorer",
-        "Description": "CloudExplorer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
         "LastModified": "",
@@ -15841,60 +13745,6 @@
             "Network": []
         },
         "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "ConnectWise Control",
-        "Description": "ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "screenconnect.clientservice.exe",
-                "connectwisecontrol.client.exe",
-                "screenconnect.windowsclient.exe",
-                "connectwisechat-customer.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "live.screenconnect.com",
-                        "control.connectwise.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml",
-                "Description": "Detects potential network activity of ConnectWise Control RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml",
-                "Description": "Detects potential processes activity of ConnectWise Control RMM tool"
-            }
-        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -16183,40 +14033,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Cloud Turtle",
-        "Description": "Cloud Turtle is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files (x86)\\Genie9\\*",
-                "*\\Genie9\\*"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Apple Remote Desktop",
         "Description": "Apple Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -16287,37 +14103,6 @@
                 "C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\iodihamcpbpeioajjeobimgagajmlibd*",
                 "*Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\iodihamcpbpeioajjeobimgagajmlibd*"
             ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "CloudGopher",
-        "Description": "CloudGopher is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
         },
         "Artifacts": {
             "Disk": [],
@@ -16612,46 +14397,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "FreeFileSync",
-        "Description": "FreeFileSync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Program Files\\FreeFileSync\\*",
-                "*\\FreeFileSync\\*",
-                "*\\FreeFileSync.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/freefilesync_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FreeFileSync RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "ITSupport247 (ConnectWise)",
         "Description": "ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -16906,37 +14651,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Ocamlfuse",
-        "Description": "Ocamlfuse is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "GetScreen",
         "Description": "GetScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -17178,46 +14892,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Amazon (Cloud) Drive",
-        "Description": "Amazon (Cloud) Drive is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "C:\\Users\\*\\AppData\\Local\\Amazon\\Cloud Drive\\*",
-                "*\\AppData\\Local\\Amazon\\Cloud Drive\\*",
-                "*\\AmazonCloudDrive.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/amazon__cloud__drive_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Amazon (Cloud) Drive RMM tool"
-            }
-        ],
-        "References": [],
-        "Acknowledgement": []
-    },
-    {
         "Name": "MyGreenPC",
         "Description": "MyGreenPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
@@ -17329,7 +15003,7 @@
         "Description": "Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2/9/2024",
+        "LastModified": "",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -17355,7 +15029,8 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed"
+                        "user_managed",
+                        "*.support.services.microsoft.com"
                     ],
                     "Ports": []
                 }
@@ -17421,17 +15096,15 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml",
-                "Description": "Detects potential network activity of Manage Engine (Desktop Central) RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml",
+                "Description": "Detects potential network activity of Desktop Central RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml",
-                "Description": "Detects potential processes activity of Manage Engine (Desktop Central) RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Desktop Central RMM tool"
             }
         ],
-        "References": [
-            "https://www.manageengine.com/products/desktop-central/help/domains-required-for-agent-communication.html"
-        ],
+        "References": [],
         "Acknowledgement": []
     }
 ]

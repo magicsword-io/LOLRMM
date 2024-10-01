@@ -23,7 +23,7 @@ FixMe.it is a remote monitoring and management (RMM) tool. More information will
 />
 
 #### Installation Paths
-<Card code={ ["FixMeit Unattended Access Setup.exe", "TiExpertStandalone.exe", "FixMeitClient*.exe", "FixMeit Client.exe", "FixMeit Expert Setup.exe", "TiExpertCore.exe", "fixmeitclient.exe", "TiClientCore.exe", "TiClientHelper*.exe", "no installation required | recommend blocking fixme[.]it SaaS portal", "no installation required | recommend blocking fixme[.]it SaaS portal", "9380CC75B872221A7425D7503565B67580407F60"] }/>
+<Card code={ ["FixMeit Client.exe", "TiExpertStandalone.exe", "FixMeitClient*.exe", "TiExpertCore.exe", "FixMeit Unattended Access Setup.exe", "FixMeit Expert Setup.exe", "TiExpertCore.exe", "fixmeitclient.exe", "TiClientCore.exe", "TiClientHelper*.exe", "9380CC75B872221A7425D7503565B67580407F60"] }/>
 
 
 
@@ -42,11 +42,9 @@ FixMe.it is a remote monitoring and management (RMM) tool. More information will
 
 
 ### Detections
-- Detects potential network activity of FixMe.it RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml)
-- Detects potential processes activity of FixMe.it RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml)
+- Detects potential network activity of FixMe RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_network_sigma.yml)
+- Detects potential processes activity of FixMe RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_processes_sigma.yml)
 
-### References
-- [https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use](https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use)
 

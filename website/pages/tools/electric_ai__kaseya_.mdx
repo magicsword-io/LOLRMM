@@ -32,10 +32,16 @@ Electric AI (Kaseya) is a remote monitoring and management (RMM) tool. More info
 
 
 
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["electric.ai"], "Ports": []}] }/>
 
 
 
 
+### Detections
+- Detects potential network activity of Electric RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_network_sigma.yml)
 
 ### References
 - [https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf](https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf)
