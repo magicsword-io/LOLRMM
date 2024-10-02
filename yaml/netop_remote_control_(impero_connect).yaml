@@ -26,6 +26,9 @@ Details:
   - ImperoInit.exe
   - Connect.Backdrop.cloud*.exe
   - ImperoClientSVC.exe
+  - C:\Program Files\Danware Data\NetOp Packn Deploy\*
+  - '*\Danware Data\NetOp Packn Deploy\*'
+  - '*\Netop Remote Control\*'
 Artifacts:
   Disk: []
   EventLog: []
