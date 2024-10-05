@@ -1,0 +1,20 @@
+title: Potential Bored Tunnels aka BTunnels RMM Tool Network Activity
+logsource:
+  product: windows
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+    - '*.btunnel.co.in'
+  condition: selection
+id: bbca74ee-fc4a-4565-a88c-db2adc8d0374
+status: experimental
+description: Detects potential network activity of Bored Tunnels aka BTunnels
+author: Kamran Saifullah
+date: 2024/10/10
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of Bored Tunnels aka BTunnels
+level: medium
