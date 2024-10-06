@@ -1,8 +1,8 @@
 Name: Atera
 Description: |
   Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.
-Created: 2024-08-03
-LastModified: 2024-10-06
+Created: '2024-08-03'
+LastModified: '2024-10-06'
 Details:
   Website: https://www.atera.com/
   PEMetadata:
