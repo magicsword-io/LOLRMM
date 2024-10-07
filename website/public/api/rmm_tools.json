@@ -3632,7 +3632,7 @@
         "Description": "AnyDesk is a popular remote desktop software that enables users to access and control a computer or device from a remote location. It was developed with the primary goal of facilitating remote work, technical support, and collaboration between individuals and teams.\n",
         "Author": "Ali Alwashali, Nasreddine Bencherchali",
         "Created": "2023-09-29",
-        "LastModified": "2024-08-02",
+        "LastModified": "2024-10-06",
         "Details": {
             "Website": "https://anydesk.com/en",
             "PEMetadata": [
@@ -3772,6 +3772,14 @@
                     "EventID": 7045,
                     "ProviderName": "Service Control Manager",
                     "LogFile": "System.evtx",
+                    "ServiceName": "AnyDesk Service",
+                    "ImagePath": "\"C:\\\\Program Files (x86)\\\\AnyDesk\\\\AnyDesk.exe\" --service",
+                    "Description": "Service installation event as result of AnyDesk installation."
+                },
+                {
+                    "EventID": 4697,
+                    "ProviderName": "Microsoft-Security-Auditing",
+                    "LogFile": "Security.evtx",
                     "ServiceName": "AnyDesk Service",
                     "ImagePath": "\"C:\\\\Program Files (x86)\\\\AnyDesk\\\\AnyDesk.exe\" --service",
                     "Description": "Service installation event as result of AnyDesk installation."
@@ -7775,8 +7783,8 @@
     {
         "Name": "Atera",
         "Description": "Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.\n",
-        "Created": "2024/08/03",
-        "LastModified": "",
+        "Created": "2024-08-03",
+        "LastModified": "2024-10-06",
         "Details": {
             "Website": "https://www.atera.com/",
             "PEMetadata": [
@@ -7897,7 +7905,7 @@
                     "Description": "Service installation event as result of AteraAgent installation."
                 },
                 {
-                    "EventID": 4688,
+                    "EventID": 4697,
                     "ProviderName": "Microsoft-Security-Auditing",
                     "LogFile": "Security.evtx",
                     "CommandLine": "C:\\\\Program Files\\\\ATERA Networks\\\\AteraAgent\\\\Packages\\\\AgentPackageFileExplorer\\\\AgentPackageFileExplorer.exe XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX agent-api.atera.com/Production 443 [BASE64BLOB]",
@@ -12110,7 +12118,7 @@
         "Description": "Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries. \nThrough the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.\n",
         "Author": "@kostastsale",
         "Created": "2024-08-03",
-        "LastModified": "2024-08-03",
+        "LastModified": "2024-10-06",
         "Details": {
             "Website": "https://www.action1.com/",
             "PEMetadata": [
@@ -12184,14 +12192,15 @@
                     "EventID": 7045,
                     "ProviderName": "Service Control Manager",
                     "LogFile": "System.evtx",
-                    "ServiceName": "Action1 Agent",
+                    "ServiceName": "A1Agent",
                     "ImagePath": "\"C:\\\\Windows\\\\Action1\\\\action1_agent.exe\"",
                     "Description": "Service installation event as result of Action1 installation."
                 },
                 {
-                    "EventID": 4688,
+                    "EventID": 4697,
                     "ProviderName": "Microsoft-Security-Auditing",
                     "LogFile": "Security.evtx",
+                    "ServiceName": "A1Agent",
                     "CommandLine": "C:\\Windows\\Action1\\action1_agent.exe service",
                     "Description": "Service installation event as result of Action1 installation."
                 },
