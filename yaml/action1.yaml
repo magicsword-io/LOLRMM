@@ -5,7 +5,7 @@ Description: "Action1 is a powerful Remote Monitoring and Management(RMM) tool t
   \ remote execution and then points that the agent is installed.\n"
 Author: '@kostastsale'
 Created: '2024-08-03'
-LastModified: '2024-08-03'
+LastModified: '2024-10-06'
 Details:
   Website: https://www.action1.com/
   PEMetadata:
@@ -55,12 +55,13 @@ Artifacts:
   - EventID: 7045
     ProviderName: Service Control Manager
     LogFile: System.evtx
-    ServiceName: Action1 Agent
+    ServiceName: A1Agent
     ImagePath: '"C:\\Windows\\Action1\\action1_agent.exe"'
     Description: Service installation event as result of Action1 installation.
-  - EventID: 4688
+  - EventID: 4697
     ProviderName: Microsoft-Security-Auditing
     LogFile: Security.evtx
+    ServiceName: A1Agent
     CommandLine: C:\Windows\Action1\action1_agent.exe service
     Description: Service installation event as result of Action1 installation.
   - EventID: 4688

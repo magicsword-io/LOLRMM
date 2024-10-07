@@ -8,7 +8,7 @@ Description: 'AnyDesk is a popular remote desktop software that enables users to
   '
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-09-29'
-LastModified: '2024-08-02'
+LastModified: '2024-10-06'
 Details:
   Website: https://anydesk.com/en
   PEMetadata:
@@ -118,6 +118,12 @@ Artifacts:
   - EventID: 7045
     ProviderName: Service Control Manager
     LogFile: System.evtx
+    ServiceName: AnyDesk Service
+    ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
+    Description: Service installation event as result of AnyDesk installation.
+  - EventID: 4697
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
     ServiceName: AnyDesk Service
     ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
     Description: Service installation event as result of AnyDesk installation.
