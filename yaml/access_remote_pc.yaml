@@ -3,29 +3,67 @@ Description: Access Remote PC is a remote monitoring and management (RMM) tool. 
   information will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/7/2024
+LastModified: '2024-10-07'
 Details:
-  Website: ''
+  Website: https://www.remotedesktop.com/
   PEMetadata:
     Filename: ''
     OriginalFileName: ''
     Description: ''
   Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
+  Free: 'Yes'
+  Verification: Registration required
+  SupportedOS:
+  - Windows
+  - Mac
+  - Linux
+  - Android
+  - iOS
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - rpcgrab.exe
-  - rpcsetup.exe
+  - C:\Program Files (x86)\RemotePC\*
 Artifacts:
-  Disk: []
-  EventLog: []
+  Disk: 
+  - File: C:\Program Files (x86)\RemotePC\RemotePCUIU.exe
+    Description: RemotePC service binary
+    OS: Windows
+  - File: C:\Program Files (x86)\RemotePC\*
+    Description: Multiple files and binaries related to RemotePC installation
+    OS: Windows
+  EventLog: 
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: RemotePC Performance Service
+    ImagePath: '"C:\\Program Files (x86)\\RemotePC\\RemotePCPerformance\\RPCPerformanceService.exe"'
+    Description: Service installation event as result of RemotePC installation.
+  - EventID: 4688
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: sc  create RPCService start=auto binpath="C:\Program Files (x86)\RemotePC\RemotePCService.exe"
+    Description: Executing command to install RemotePC service.
+  - EventID: 4688
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: C:\Windows\system32\schtasks /create /SC DAILY /st 12:00 /TN "RPCPerformanceHealthCheck" /TR "C:\Program Files (x86)\RemotePC\RemotePCPerformance\RPCPerformanceDownloader.exe" /rl HIGHEST /ru system
+    Description: Executing command to create RemotePC HealthCheck scheduled task.
+  - EventID: 4688
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: "C:\Windows\regedit.exe" /s "C:\Program Files (x86)\RemotePC\\Register.reg"
+    Description: Executing command to install various registry changes related to RemotePC.
+  - EventID: 4688
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: netsh  advfirewall firewall add rule name="RemotePCDesktop" enable=yes dir=in action=allow profile=any program="C:\Program Files (x86)\RemotePC\RemotePCDesktop.exe" description="This program is used for File Transfer and is part of RemotePC product."
+    Description: Executing command to add local firewall rule to allow inbound traffic for RemotePC.
   Registry: []
   Network: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/access_remote_pc_processes_sigma.yml
   Description: Detects potential processes activity of Access Remote PC RMM tool
 References: []
-Acknowledgement: []
+Acknowledgement: 
+- Person: Daniel Koifman
+  Handle: '@koifsec'
