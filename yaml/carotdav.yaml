@@ -3,7 +3,7 @@ Description: CarotDAV is a remote monitoring and management (RMM) tool. More inf
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: ''
+LastModified: 10/08/2024
 Details:
   Website: ''
   PEMetadata:
@@ -24,9 +24,15 @@ Artifacts:
   Disk: []
   EventLog: []
   Registry: []
-  Network: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - rei.to
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/carotdav_processes_sigma.yml
   Description: Detects potential processes activity of CarotDAV RMM tool
-References: []
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/carotdav_network_sigma.yml
+  Description: Detects potential network activity of CarotDAV RMM tool
+References:
+- http://rei.to/carotdav_en.html
 Acknowledgement: []
