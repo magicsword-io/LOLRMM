@@ -28,6 +28,8 @@ Artifacts:
   - Description: Known remote domains
     Domains:
     - rei.to
+    Ports:
+    - 80
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/carotdav_processes_sigma.yml
   Description: Detects potential processes activity of CarotDAV RMM tool
