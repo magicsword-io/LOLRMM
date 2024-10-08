@@ -16,7 +16,7 @@ ScreenConnect is a remote monitoring and management (RMM) tool. More information
          category={""}
          created={"2023-10-01"}
          website={"https://www.connectwise.com"}
-         lastModified={"2024-08-03"}
+         lastModified={"2024-10-08"}
          privileges={""}
          free={ "14-Days Free Trial" }
          verification={""}
@@ -39,6 +39,9 @@ ScreenConnect is a remote monitoring and management (RMM) tool. More information
 <EuiSpacer size="xl"/>
 <DiskArtifacts data={ [{"File": "C:\\Program Files*\\ScreenConnect\\App_Data\\Session.db", "Description": "ScreenConnect session database", "OS": "Windows"}, {"File": "C:\\Program Files*\\ScreenConnect\\App_Data\\User.xml", "Description": "ScreenConnect user configuration", "OS": "Windows"}, {"File": "C:\\ProgramData\\ScreenConnect Client*\\user.config", "Description": "ScreenConnect client user configuration", "OS": "Windows"}] }/>
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": ["ScreenConnect", "ScreenConnect Client (<hex string>)"], "LogFile": "Application.evtx", "ServiceName": "ScreenConnect Client (<hex string>)", "Description": "Service installation event as a result of ScreenConnect installation."}, {"EventID": 20, "ProviderName": ["ScreenConnect", "ScreenConnect Client (<hex string>)"], "LogFile": "Application.evtx", "ServiceName": "ScreenConnect Client (<hex string>)", "Description": "Logs events such as successful or failed connections, and user logins."}] }/>
 
 
 #### Network Artifacts
@@ -58,4 +61,5 @@ ScreenConnect is a remote monitoring and management (RMM) tool. More information
 
 ### References
 - [https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/](https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/)
+- [https://www.huntandhackett.com/blog/revil-the-usage-of-legitimate-remote-admin-tooling](https://www.huntandhackett.com/blog/revil-the-usage-of-legitimate-remote-admin-tooling)
 
