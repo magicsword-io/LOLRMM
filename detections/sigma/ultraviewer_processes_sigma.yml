@@ -12,8 +12,6 @@ detection:
     - '*\UltraViewer_Desktop.exe'
     - ultraviewer_desktop.exe
     - ultraviewer_service.exe
-    - UltraViewer_Desktop.exe
-    - UltraViewer_Service.exe
   condition: selection
 id: 71b5a484-76c9-4341-9267-f4b7eb8fd8a3
 status: experimental
