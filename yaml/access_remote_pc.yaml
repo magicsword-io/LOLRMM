@@ -7,12 +7,12 @@ LastModified: '2024-10-07'
 Details:
   Website: https://www.remotedesktop.com/
   PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: 'Yes'
-  Verification: Registration required
+    Filename: 
+    OriginalFileName: 
+    Description: 
+  Privileges: 
+  Free: true
+  Verification: true
   SupportedOS:
   - Windows
   - Mac
@@ -22,13 +22,13 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
-  - C:\\Program Files (x86)\\RemotePC\\*
+  - C:\Program Files (x86)\RemotePC\*
 Artifacts:
   Disk: 
-  - File: C:\\Program Files (x86)\\RemotePC\\RemotePCUIU.exe
+  - File: 'C:\Program Files (x86)\RemotePC\RemotePCUIU.exe'
     Description: RemotePC service binary
     OS: Windows
-  - File: C:\\Program Files (x86)\\RemotePC\\*
+  - File: C:\Program Files (x86)\RemotePC\*
     Description: Multiple files and binaries related to RemotePC installation
     OS: Windows
   EventLog: 
@@ -51,7 +51,7 @@ Artifacts:
   - EventID: 4688
     ProviderName: Microsoft-Security-Auditing
     LogFile: Security.evtx
-    CommandLine: "C:\\Windows\\regedit.exe" /s "C:\\Program Files (x86)\\RemotePC\\Register.reg"
+    CommandLine: "C:\\Windows\\regedit.exe /s C:\\Program Files (x86)\\RemotePC\\Register.reg"
     Description: Executing command to install various registry changes related to RemotePC.
   - EventID: 4688
     ProviderName: Microsoft-Security-Auditing
