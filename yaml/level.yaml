@@ -33,7 +33,7 @@ Artifacts:
     - level.io
     - builds.level.io
     Ports: 
-	- 443
+    - 443
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
   Description: Detects potential network activity of Level RMM tool
