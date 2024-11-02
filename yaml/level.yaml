@@ -1,5 +1,5 @@
 Name: Level
-Description: Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. 
+Description: Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. The tool is using OSQuery to collect basic machine information, and will also spawn osqueri.exe. 
 Author: 'Christian Henriksen, ITM8 | Improsec'
 Created: '11/02-2024'
 LastModified: '11/02-2024'
@@ -25,6 +25,7 @@ Details:
 Artifacts:
   Disk: 
   - Scheduled task Level\Level Watchdog
+  - osqueryi.exe 
   EventLog: []
   Registry: []
   Network:
@@ -32,10 +33,14 @@ Artifacts:
     Domains:
     - level.io
     - builds.level.io
+    - agents.level.io
+    - online.level.io
+    - downloads.io
     Ports: 
     - 443
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
   Description: Detects potential network activity of Level RMM tool
-References: []
+References: 
+- https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
 Acknowledgement: []
