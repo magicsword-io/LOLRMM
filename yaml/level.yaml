@@ -1,31 +1,39 @@
 Name: Level
-Description: Level is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: ''
+Description: Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. 
+Author: 'Christian Henriksen, ITM8 | Improsec'
+Created: '11/02-2024'
+LastModified: '11/02-2024'
 Details:
-  Website: ''
+  Website: 'https://level.io/'
   PEMetadata:
-    Filename: ''
+    Filename: level.exe
     OriginalFileName: ''
     Description: ''
-  Privileges: ''
-  Free: ''
+  Privileges: 'User'
+  Free: 'Free'
   Verification: ''
-  SupportedOS: []
-  Capabilities: []
+  SupportedOS: 
+  - Windows
+  Capabilities: 
+  - File Transfer
+  - File System Access
+  - Remote Control
+  - Automation & Scripting
   Vulnerabilities: []
-  InstallationPaths: []
+  InstallationPaths: 
+  - C:\Program Files\Level\*
 Artifacts:
-  Disk: []
+  Disk: 
+  - Scheduled task Level\Level Watchdog
   EventLog: []
   Registry: []
   Network:
   - Description: Known remote domains
     Domains:
     - level.io
-    Ports: []
+    - builds.level.io
+    Ports: 
+	- 443
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
   Description: Detects potential network activity of Level RMM tool
