@@ -57,16 +57,26 @@ Artifacts:
     Description: ScreenConnect client user configuration
     OS: Windows
   EventLog:
-  - EventID: 7045
-    ProviderName: ["ScreenConnect", "ScreenConnect Client (<hex string>)"]
-    LogFile: Application.evtx
-    ServiceName: ScreenConnect Client (<hex string>)
-    Description: Service installation event as a result of ScreenConnect installation.
   - EventID: 20
-    ProviderName: ["ScreenConnect", "ScreenConnect Client (<hex string>)"]
+    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
     LogFile: Application.evtx
-    ServiceName: ScreenConnect Client (<hex string>)
-    Description: Logs events such as successful or failed connections, and user logins.
+    ServiceName: ScreenConnect Client ()
+    Description: Logs network information (e.g. connection created successfully, connection attempt failed)
+  - EventID: 100
+    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
+    LogFile: Application.evtx
+    ServiceName: ScreenConnect Client ()
+    Description: User connected
+  - EventID: 101
+    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
+    LogFile: Application.evtx
+    ServiceName: ScreenConnect Client ()
+    Description: User disconnected
+  - EventID: 200
+    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
+    LogFile: Application.evtx
+    ServiceName: ScreenConnect Client ()
+    Description: Executed command on host
   Registry: []
   Network:
   - Description: Known remote domains
