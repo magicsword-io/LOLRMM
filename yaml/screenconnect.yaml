@@ -58,22 +58,22 @@ Artifacts:
     OS: Windows
   EventLog:
   - EventID: 20
-    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
+    ProviderName: ScreenConnect
     LogFile: Application.evtx
     ServiceName: ScreenConnect Client ()
     Description: Logs network information (e.g. connection created successfully, connection attempt failed)
   - EventID: 100
-    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
+    ProviderName: ScreenConnect
     LogFile: Application.evtx
     ServiceName: ScreenConnect Client ()
     Description: User connected
   - EventID: 101
-    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
+    ProviderName: ScreenConnect
     LogFile: Application.evtx
     ServiceName: ScreenConnect Client ()
     Description: User disconnected
   - EventID: 200
-    ProviderName: ["ScreenConnect", "ScreenConnect Client ()"]
+    ProviderName: ScreenConnect
     LogFile: Application.evtx
     ServiceName: ScreenConnect Client ()
     Description: Executed command on host
