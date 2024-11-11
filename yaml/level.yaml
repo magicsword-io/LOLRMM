@@ -19,15 +19,12 @@ Details:
   - File System Access
   - Remote Control
   - Automation & Scripting
-  Vulnerabilities: []
   InstallationPaths: 
   - C:\Program Files\Level\*
 Artifacts:
   Disk: 
-  - Scheduled task Level\Level Watchdog
-  - osqueryi.exe 
-  EventLog: []
-  Registry: []
+  -File: 'C:\Program Files\Level\osqueryi.exe'
+  Description: A tool used by level to collect machine state information. 
   Network:
   - Description: Known remote domains
     Domains:
@@ -43,4 +40,3 @@ Detections:
   Description: Detects potential network activity of Level RMM tool
 References: 
 - https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
-Acknowledgement: []
