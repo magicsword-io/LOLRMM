@@ -19,8 +19,8 @@ Details:
   InstallationPaths:
   - SolarWinds-Dameware-DRS*.exe
   - DameWare Mini Remote Control*.exe
-  - "C:\\Windows\\dwrcs\\*\n c:\\Program File\\SolarWinds\\Dameware Mini Remote Control\\\
-    *"
+  - 'C:\Windows\dwrcs\*'
+  - 'C:\Program Files\SolarWinds\Dameware Mini Remote Control\*'
   - dntus*.exe
   - dwrcs.exe
   - '*\dwrcs\*'
