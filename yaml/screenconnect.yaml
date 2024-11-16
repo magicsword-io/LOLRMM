@@ -3,7 +3,7 @@ Description: ScreenConnect is a remote monitoring and management (RMM) tool. Mor
   information will be added as it becomes available.
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-10-01'
-LastModified: '2024-10-08'
+LastModified: '2024-11-16'
 Details:
   Website: https://www.connectwise.com
   PEMetadata:
@@ -33,9 +33,7 @@ Details:
   InstallationPaths:
   - C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe
   - Remote Workforce Client.exe
-  - '*\*\ScreenConnect.ClientService.exe'
   - C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
-  - '*\ScreenConnect Client*\*'
   - '*\*\ScreenConnect.WindowsClient.exe'
   - screenconnect*.exe
   - screenconnect.windowsclient.exe
@@ -60,23 +58,19 @@ Artifacts:
   - EventID: 20
     ProviderName: ScreenConnect
     LogFile: Application.evtx
-    ServiceName: ScreenConnect Client ()
-    Description: Logs network information (e.g. connection created successfully, connection attempt failed)
+    Data: Logs network information (e.g. connection created successfully, connection attempt failed)
   - EventID: 100
     ProviderName: ScreenConnect
     LogFile: Application.evtx
-    ServiceName: ScreenConnect Client ()
-    Description: User connected
+    Data: User connected
   - EventID: 101
     ProviderName: ScreenConnect
     LogFile: Application.evtx
-    ServiceName: ScreenConnect Client ()
-    Description: User disconnected
+    Data: User disconnected
   - EventID: 200
     ProviderName: ScreenConnect
     LogFile: Application.evtx
-    ServiceName: ScreenConnect Client ()
-    Description: Executed command on host
+    Data: Executed command on host
   Registry: []
   Network:
   - Description: Known remote domains
