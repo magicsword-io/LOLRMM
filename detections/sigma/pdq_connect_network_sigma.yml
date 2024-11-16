@@ -7,6 +7,7 @@ detection:
     DestinationHostname|endswith:
     - app.pdq.com
     - cfcdn.pdq.com
+    - pdqinstallers.*.r2.cloudflarestorage.com
   condition: selection
 id: e27c6d0b-9d16-4eb3-9abd-8ba0a2cc0f6e
 status: experimental
