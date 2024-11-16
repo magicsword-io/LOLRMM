@@ -1,33 +1,42 @@
 Name: Level
-Description: Level is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: ''
+Description: Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. The tool is using OSQuery to collect basic machine information, and will also spawn osqueri.exe. 
+Author: 'Christian Henriksen, ITM8 | Improsec'
+Created: '11/02-2024'
+LastModified: '11/02-2024'
 Details:
-  Website: ''
+  Website: 'https://level.io/'
   PEMetadata:
-    Filename: ''
+    Filename: level.exe
     OriginalFileName: ''
     Description: ''
-  Privileges: ''
-  Free: ''
+  Privileges: 'User'
+  Free: 'Free'
   Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths: []
+  SupportedOS: 
+  - Windows
+  Capabilities: 
+  - File Transfer
+  - File System Access
+  - Remote Control
+  - Automation & Scripting
+  InstallationPaths: 
+  - C:\Program Files\Level\*
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
+  Disk: 
+  -File: 'C:\Program Files\Level\osqueryi.exe'
+  Description: A tool used by level to collect machine state information. 
   Network:
   - Description: Known remote domains
     Domains:
     - level.io
-    Ports: []
+    - builds.level.io
+    - agents.level.io
+    - online.level.io
+    - downloads.io
+    Ports: 
+    - 443
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
   Description: Detects potential network activity of Level RMM tool
-References: []
-Acknowledgement: []
+References: 
+- https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
