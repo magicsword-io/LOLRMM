@@ -16,7 +16,8 @@ Details:
   SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
-  InstallationPaths: []
+  InstallationPaths: 
+  - putty.exe
 Artifacts:
   Disk: []
   EventLog: []
