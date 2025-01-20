@@ -34,9 +34,9 @@ def load_yaml_template(filename):
             
             # Merge the loaded data with default values
             merged_data = {
-                'Name': data.get('Name', ''),  # Don't use default for Name
+                'Name': data.get('Name', ''),
                 'Category': data.get('Category') or default['Category'],
-                'Description': data.get('Description') or default['Description'],
+                'Description': data.get('Description', ''),  # Don't use default for Description
                 'Author': data.get('Author') or default['Author'],
                 'Created': data.get('Created') or default['Created'],
                 'LastModified': data.get('LastModified') or default['LastModified'],
