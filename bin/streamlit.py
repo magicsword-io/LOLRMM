@@ -36,7 +36,7 @@ def load_yaml_template(filename):
             merged_data = {
                 'Name': data.get('Name', ''),
                 'Category': data.get('Category') or default['Category'],
-                'Description': data.get('Description', ''),  # Don't use default for Description
+                'Description': data.get('Description', ''),
                 'Author': data.get('Author') or default['Author'],
                 'Created': data.get('Created') or default['Created'],
                 'LastModified': data.get('LastModified') or default['LastModified'],
@@ -163,7 +163,10 @@ def main():
             created = st.date_input("Created Date", value=created_date, key="created")
             last_modified_date = handle_date(template.get('LastModified', ''), "LastModified")
             last_modified = st.date_input("Last Modified Date", value=last_modified_date, key="last_modified")
+        
+        st.write(f"Debug: Template description: {template.get('Description', '')}")
         description = st.text_area("Description", value=template.get('Description', ''), key="description", height=150)
+        st.write(f"Debug: Input description value: {description}")
 
     with tab2:
         col1, col2 = st.columns(2)
@@ -323,15 +326,15 @@ def main():
                     'Acknowledgement': acknowledgements
                 }
 
-                # Remove empty fields
-                yaml_data = {k: v for k, v in yaml_data.items() if v}
+                st.write(f"Debug: Description value: {description}")
+
+                yaml_data = {k: v for k, v in yaml_data.items() if v or k == 'Description'}
                 for key in yaml_data.get('Details', {}):
                     if isinstance(yaml_data['Details'][key], list):
                         yaml_data['Details'][key] = [item for item in yaml_data['Details'][key] if item]
                     elif isinstance(yaml_data['Details'][key], dict):
                         yaml_data['Details'][key] = {k: v for k, v in yaml_data['Details'][key].items() if v}
 
-                # Validate YAML data
                 schema = load_schema()
                 if schema:
                     validation_errors = validate_yaml_data(yaml_data, schema)
@@ -347,7 +350,6 @@ def main():
                         save_yaml(yaml_data, filename)
                         st.success(f"YAML file for {st.session_state.name} has been generated and saved as {filename}.yaml!")
                         
-                        # Store the generated YAML in session state for viewing
                         st.session_state.yaml_content = yaml.dump(yaml_data, default_flow_style=False, sort_keys=False)
                 else:
                     st.error("Could not load schema file. YAML generation aborted.")
