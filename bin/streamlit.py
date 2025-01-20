@@ -165,7 +165,12 @@ def main():
             last_modified = st.date_input("Last Modified Date", value=last_modified_date, key="last_modified")
         
         st.write(f"Debug: Template description: {template.get('Description', '')}")
-        description = st.text_area("Description", value=template.get('Description', ''), key="description", height=150)
+        description = st.text_area(
+            "Description", 
+            value=template.get('Description', ''), 
+            key="description",
+            height=150
+        )
         st.write(f"Debug: Input description value: {description}")
 
     with tab2:
@@ -292,10 +297,18 @@ def main():
             if not st.session_state.name or st.session_state.name.strip() == "":
                 st.error("A name for the RMM Tool is required. Please enter a name in the 'Basic Info' tab.")
             else:
+                # Get the description from the form
+                description_value = st.session_state.description  # Get description from session state
+                st.write(f"Debug: Description from session: {description_value}")
+                
+                if not description_value or description_value.strip() == "":
+                    st.error("A description is required. Please enter a description in the 'Basic Info' tab.")
+                    return
+
                 yaml_data = {
                     'Name': st.session_state.name,
                     'Category': category,
-                    'Description': description,
+                    'Description': description_value,  # Use the description from session state
                     'Author': author,
                     'Created': created.strftime("%Y-%m-%d"),
                     'LastModified': last_modified.strftime("%Y-%m-%d"),
@@ -326,15 +339,12 @@ def main():
                     'Acknowledgement': acknowledgements
                 }
 
-                st.write(f"Debug: Description value: {description}")
+                # Debug output
+                st.write(f"Debug: Final description in yaml_data: {yaml_data.get('Description', '')}")
 
-                yaml_data = {k: v for k, v in yaml_data.items() if v or k == 'Description'}
-                for key in yaml_data.get('Details', {}):
-                    if isinstance(yaml_data['Details'][key], list):
-                        yaml_data['Details'][key] = [item for item in yaml_data['Details'][key] if item]
-                    elif isinstance(yaml_data['Details'][key], dict):
-                        yaml_data['Details'][key] = {k: v for k, v in yaml_data['Details'][key].items() if v}
-
+                # Don't filter out Description even if empty
+                yaml_data = {k: v for k, v in yaml_data.items()}  # Remove the filtering entirely
+                
                 schema = load_schema()
                 if schema:
                     validation_errors = validate_yaml_data(yaml_data, schema)
