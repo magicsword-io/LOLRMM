@@ -19,7 +19,7 @@ Details:
   InstallationPaths:
   - "C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
   - "*\\LiteManager Pro \u2013 Viewer\\*"
-  - '*\LMNoIpServer.exe.'
+  - '*\LMNoIpServer.exe'
 Artifacts:
   Disk: []
   EventLog: []
