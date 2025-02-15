@@ -17,7 +17,7 @@ Details:
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths: 
-  - putty.exe
+  - '*\putty.exe'
 Artifacts:
   Disk: []
   EventLog: []
