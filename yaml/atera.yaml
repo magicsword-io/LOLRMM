@@ -1,10 +1,8 @@
 Name: Atera
-Description: 'Atera is a remote monitoring and management (RMM) tool. It is used by
-  threat actors to deploy ransomware or facilitate command execution and lateral movement.
-
-  '
-Created: 2024/08/03
-LastModified: ''
+Description: |
+  Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.
+Created: '2024-08-03'
+LastModified: '2024-10-06'
 Details:
   Website: https://www.atera.com/
   PEMetadata:
@@ -91,7 +89,7 @@ Artifacts:
     LogFile: Application.evtx
     Data: 'Product: AteraAgent -- Installation completed successfully.'
     Description: Service installation event as result of AteraAgent installation.
-  - EventID: 4688
+  - EventID: 4697
     ProviderName: Microsoft-Security-Auditing
     LogFile: Security.evtx
     CommandLine: C:\\Program Files\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageFileExplorer\\AgentPackageFileExplorer.exe

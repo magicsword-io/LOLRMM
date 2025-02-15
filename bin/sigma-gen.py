@@ -76,7 +76,7 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
                 "status": "experimental",
                 "description": f"Detects potential {artifact_type} activity of {name} RMM tool",
                 "author": "LOLRMM Project",
-                "date": date.today().strftime('%Y/%m/%d'),
+                "date": date.today().strftime('%Y-%m-%d'),
                 "tags": ["attack.execution", "attack.t1219"],
                 "falsepositives": [f"Legitimate use of {name}"],
                 "level": "medium",
