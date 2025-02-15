@@ -2698,7 +2698,7 @@
             "InstallationPaths": [
                 "C:\\Program Files\\LiteManager Pro – Viewer\\*",
                 "*\\LiteManager Pro – Viewer\\*",
-                "*\\LMNoIpServer.exe."
+                "*\\LMNoIpServer.exe"
             ]
         },
         "Artifacts": {
@@ -12709,7 +12709,9 @@
             "SupportedOS": [],
             "Capabilities": [],
             "Vulnerabilities": [],
-            "InstallationPaths": []
+            "InstallationPaths": [
+                "*\\putty.exe"
+            ]
         },
         "Artifacts": {
             "Disk": [],
