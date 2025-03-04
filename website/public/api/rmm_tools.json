@@ -9678,36 +9678,50 @@
     },
     {
         "Name": "Level",
-        "Description": "Level is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "",
+        "Description": "Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. The tool is using OSQuery to collect basic machine information, and will also spawn osqueri.exe.",
+        "Author": "Christian Henriksen, ITM8 | Improsec",
+        "Created": "11/02-2024",
+        "LastModified": "11/02-2024",
         "Details": {
-            "Website": "",
+            "Website": "https://level.io/",
             "PEMetadata": {
-                "Filename": "",
+                "Filename": "level.exe",
                 "OriginalFileName": "",
                 "Description": ""
             },
-            "Privileges": "",
-            "Free": "",
+            "Privileges": "User",
+            "Free": "Free",
             "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": []
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "File Transfer",
+                "File System Access",
+                "Remote Control",
+                "Automation & Scripting"
+            ],
+            "InstallationPaths": [
+                "C:\\Program Files\\Level\\*"
+            ]
         },
         "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
+            "Disk": null,
+            "-File": "C:\\Program Files\\Level\\osqueryi.exe",
+            "Description": "A tool used by level to collect machine state information.",
             "Network": [
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "level.io"
+                        "level.io",
+                        "builds.level.io",
+                        "agents.level.io",
+                        "online.level.io",
+                        "downloads.io"
                     ],
-                    "Ports": []
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
@@ -9717,8 +9731,9 @@
                 "Description": "Detects potential network activity of Level RMM tool"
             }
         ],
-        "References": [],
-        "Acknowledgement": []
+        "References": [
+            "https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/"
+        ]
     },
     {
         "Name": "FleetDeck.io",
@@ -12875,6 +12890,73 @@
         ],
         "References": [
             "https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html"
+        ],
+        "Acknowledgement": []
+    },
+    {
+        "Name": "SimpleHelp",
+        "Description": "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Author": "Phyo Paing Htun",
+        "Created": "",
+        "LastModified": "16/10/2024",
+        "Details": {
+            "Website": "https://simple-help.com/",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "",
+            "Free": "",
+            "Verification": "",
+            "SupportedOS": [
+                "windows"
+            ],
+            "Capabilities": [],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "simplehelpcustomer.exe",
+                "simpleservice.exe",
+                "simplegatewayservice.exe",
+                "remote access.exe",
+                "windowslauncher.exe",
+                "spsrv.exe",
+                "serviceconfig.xml"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Known remote domains",
+                    "Domains": [
+                        "user_managed",
+                        "simple-help.com",
+                        "51.255.19.178",
+                        "51.255.19.179"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml",
+                "Description": "Detects potential network activity of SimpleHelp RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml",
+                "Description": "Detects potential processes activity of SimpleHelp RMM tool"
+            }
+        ],
+        "References": [
+            "https://simple-help.com/remote-support",
+            "https://www.huntress.com/blog/slashandgrab-screen-connect-post-exploitation-in-the-wild-cve-2024-1709-cve-2024-1708",
+            "https://www.group-ib.com/blog/muddywater-infrastructure/"
         ],
         "Acknowledgement": []
     },

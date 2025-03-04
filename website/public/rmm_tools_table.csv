@@ -170,7 +170,7 @@ Name,Category,Description,Author
 [TeamViewer](/rmm_tools/teamviewer),,"TeamViewer is a remote monitoring and management (RMM) tool.
 ...","Nasreddine Bencherchali, Michael Haag"
 [Xshell](/rmm_tools/xshell),,Xshell is a remote monitoring and management (RMM) tool. More information will be added as it become...,
-[Level](/rmm_tools/level),,Level is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
+[Level](/rmm_tools/level),,Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automa...,"Christian Henriksen, ITM8 | Improsec"
 [FleetDeck.io](/rmm_tools/fleetdeck.io),,FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [BeyondTrust (Bomgar)](/rmm_tools/beyondtrust__bomgar_),,BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More information will be adde...,
 [MEGAsync](/rmm_tools/megasync),,MEGAsync is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
@@ -234,6 +234,7 @@ Name,Category,Description,Author
 [DesktopNow](/rmm_tools/desktopnow),,DesktopNow is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Fortra](/rmm_tools/fortra),,Fortra is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Tanium](/rmm_tools/tanium),,Tanium is a remote monitoring and management (RMM) tool. More information will be added as it become...,
+[SimpleHelp](/rmm_tools/simplehelp),,SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it be...,Phyo Paing Htun
 [ServerEye](/rmm_tools/servereye),,ServerEye is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [LogMeIn rescue](/rmm_tools/logmein_rescue),,LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as i...,
 [TurboMeeting](/rmm_tools/turbomeeting),,TurboMeeting is a remote monitoring and management (RMM) tool. More information will be added as it ...,
