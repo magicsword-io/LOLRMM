@@ -248,7 +248,7 @@ export function Table() {
 				field: "Details.Privileges",
 				name: "Privileges",
 				multiSelect: "or",
-				options: uniq(data.map((x) => x.Details.Privileges.toLowerCase())).map(
+				options: uniq(data.map((x) => (x.Details.Privileges ?? "").toLowerCase())).map(
 					(x) => ({
 						value: x,
 						name: x === "" ? "None" : capitalize(x),
