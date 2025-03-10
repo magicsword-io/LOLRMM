@@ -9,7 +9,6 @@ detection:
     - '*\AgentPackageTaskScheduler.exe'
     - '*\AteraAgent.exe'
     - atera_agent.exe
-    - atera_agent.exe
     - ateraagent.exe
     - syncrosetup.exe
   condition: selection

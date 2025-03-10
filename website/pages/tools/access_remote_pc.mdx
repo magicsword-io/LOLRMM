@@ -15,23 +15,31 @@ Access Remote PC is a remote monitoring and management (RMM) tool. More informat
 <Details author={""}
          category={""}
          created={""}
-         website={""}
-         lastModified={"2/7/2024"}
-         privileges={""}
-         free={ "" }
-         verification={""}
+         website={"https://www.remotedesktop.com/"}
+         lastModified={"2024-10-07"}
+         privileges={"None"}
+         free={ true }
+         verification={"True"}
 />
 
 #### Installation Paths
-<Card code={ ["rpcgrab.exe", "rpcsetup.exe"] }/>
+<Card code={ ["C:\\Program Files (x86)\\RemotePC\\*"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Mac", "Linux", "Android", "iOS"] }/>
 
 
 
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\RemotePC\\RemotePCUIU.exe", "Description": "RemotePC service binary", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\RemotePC\\*", "Description": "Multiple files and binaries related to RemotePC installation", "OS": "Windows"}] }/>
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "RemotePC Performance Service", "ImagePath": "\"C:\\\\Program Files (x86)\\\\RemotePC\\\\RemotePCPerformance\\\\RPCPerformanceService.exe\"", "Description": "Service installation event as result of RemotePC installation."}, {"EventID": 4688, "ProviderName": "Microsoft-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "sc  create RPCService start=auto binpath=\"C:\\\\Program Files (x86)\\\\RemotePC\\\\RemotePCService.exe\"", "Description": "Executing command to install RemotePC service."}, {"EventID": 4688, "ProviderName": "Microsoft-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "C:\\\\Windows\\\\system32\\\\schtasks /create /SC DAILY /st 12:00 /TN \"RPCPerformanceHealthCheck\" /TR \"C:\\\\Program Files (x86)\\\\RemotePC\\\\RemotePCPerformance\\\\RPCPerformanceDownloader.exe\" /rl HIGHEST /ru system", "Description": "Executing command to create RemotePC HealthCheck scheduled task."}, {"EventID": 4688, "ProviderName": "Microsoft-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "C:\\Windows\\regedit.exe /s C:\\Program Files (x86)\\RemotePC\\Register.reg", "Description": "Executing command to install various registry changes related to RemotePC."}, {"EventID": 4688, "ProviderName": "Microsoft-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "netsh  advfirewall firewall add rule name=\"RemotePCDesktop\" enable=yes dir=in action=allow profile=any program=\"C:\\Program Files (x86)\\RemotePC\\RemotePCDesktop.exe\" description=\"This program is used for File Transfer and is part of RemotePC product.\"", "Description": "Executing command to add local firewall rule to allow inbound traffic for RemotePC."}] }/>
 
 
 
@@ -43,3 +51,5 @@ Access Remote PC is a remote monitoring and management (RMM) tool. More informat
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/access_remote_pc_processes_sigma.yml)
 
 
+### Acknowledgements
+- Daniel Koifman (@koifsec)

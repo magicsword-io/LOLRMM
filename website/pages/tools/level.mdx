@@ -1,5 +1,5 @@
 ---
-description = "Level is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description = "Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. The tool is using OSQuery to collect basic machine information, and will also spawn osqueri.exe."
 title = "Level"
 ---
 
@@ -9,21 +9,27 @@ import {EuiSpacer} from "@elastic/eui"
 
 # Level
 
-Level is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. The tool is using OSQuery to collect basic machine information, and will also spawn osqueri.exe.
 
 ### Details
-<Details author={""}
+<Details author={"Christian Henriksen, ITM8 | Improsec"}
          category={""}
-         created={""}
-         website={""}
-         lastModified={""}
-         privileges={""}
-         free={ "" }
+         created={"11/02-2024"}
+         website={"https://level.io/"}
+         lastModified={"11/02-2024"}
+         privileges={"User"}
+         free={ "Free" }
          verification={""}
 />
 
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Level\\*"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["File Transfer", "File System Access", "Remote Control", "Automation & Scripting"] }/>
 
 
 
@@ -34,7 +40,7 @@ Level is a remote monitoring and management (RMM) tool. More information will be
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["level.io"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["level.io", "builds.level.io", "agents.level.io", "online.level.io", "downloads.io"], "Ports": [443]}] }/>
 
 
 
@@ -43,4 +49,6 @@ Level is a remote monitoring and management (RMM) tool. More information will be
 - Detects potential network activity of Level RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml)
 
+### References
+- [https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/](https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/)
 

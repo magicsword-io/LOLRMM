@@ -7,7 +7,6 @@ detection:
     ParentImage|endswith:
     - dwagsvc.exe
     - dwagent.exe
-    - dwagsvc.exe
   condition: selection
 id: 5652feeb-de11-4703-a3fb-1d43fc633ebc
 status: experimental
