@@ -86,7 +86,7 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
     manifest_files = []
     for root, dirs, files in os.walk(REPO_PATH):
         for file in files:
-            if file.endswith('.yaml'):
+            if file.endswith('.yaml') or file.endswith('.yml'):
                 manifest_files.append(os.path.join(root, file))
 
     rmm_tools = []

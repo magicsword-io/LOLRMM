@@ -71,7 +71,7 @@ def validate_schema(yaml_dir, schema_file, verbose):
     except IOError:
         print("ERROR: reading schema file {0}".format(schema_file))
 
-    yaml_files = glob.glob(path.join(yaml_dir, "*.yaml"))
+    yaml_files = glob.glob(f"{yaml_dir}/*.y?ml") + glob.glob(f"{yaml_dir}/*.yml")
 
     for yaml_file in yaml_files:
         if verbose:
