@@ -13,14 +13,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/cyberbuff/lolrmm.io.git"
+		"url": "git+https://github.com/magicsword-io/LOLRMM.git"
 	},
-	"author": "cyberbuff <code@0x6c.dev>",
+	"author": "magicsword-io",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/cyberbuff/lolrmm.io/issues"
+		"url": "https://github.com/magicsword-io/LOLRMM/issues"
 	},
-	"homepage": "https://github.com/cyberbuff/lolrmm.io",
+	"homepage": "https://github.com/magicsword-io/LOLRMM",
 	"dependencies": {
 		"@elastic/datemath": "^5.0.3",
 		"@elastic/eui": "^95.9.0",

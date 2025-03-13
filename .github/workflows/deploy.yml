@@ -17,6 +17,16 @@ jobs:
       with:
         submodules: true
         token: ${{ secrets.PUSH_TOKEN }}
+    - name: Setup Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: 1.24.x
+    - name: Install yamlfmt
+      run: |
+        go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+    - name: Format YAML files
+      run: |
+        yamlfmt -dstar **/*.{yaml,yml} -conf .yamlfmt
     - name: Set up Python 3.12
       uses: actions/setup-python@v5.2.0
       with:

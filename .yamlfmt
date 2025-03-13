@@ -1,0 +1,7 @@
+formatter:
+  type: basic
+  indentless_arrays: true
+  include_document_start: false
+  trim_trailing_whitespace: true
+  eof_newline: true
+  max_line_length: 0
