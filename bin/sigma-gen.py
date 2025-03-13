@@ -127,7 +127,7 @@ def main() -> None:
     os.makedirs(output_dir, exist_ok=True)
 
     for filename in os.listdir(yaml_dir):
-        if filename.endswith('.yaml'):
+        if filename.endswith('.yaml') or filename.endswith('.yml'):
             yaml_file = os.path.join(yaml_dir, filename)
             sigma_rules = generate_sigma_rules(yaml_file, output_dir)
             update_yaml_with_sigma_rules(yaml_file, sigma_rules)

@@ -15,7 +15,7 @@ def load_schema(schema_file='bin/spec/lolrmm.spec.json'):
         return None
 
 def list_yaml_files():
-    yaml_files = [f for f in os.listdir('yaml') if f.endswith('.yaml')]
+    yaml_files = [f for f in os.listdir('yaml') if f.endswith('.yaml') or f.endswith('.yml')]
     return ['New RMM Tool'] + yaml_files
 
 def load_yaml_template(filename):

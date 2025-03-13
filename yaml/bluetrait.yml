@@ -86,10 +86,10 @@ Artifacts:
       Example: '<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event"><System><Provider Name="Service Control Manager" Guid="{555908d1-a6d7-4695-8e1e-26931d2012f4}" EventSourceName="Service Control Manager"/><EventID Qualifiers="16384">7045</EventID><Version>0</Version><Level>4</Level><Task>0</Task><Opcode>0</Opcode><Keywords>0x8080000000000000</Keywords><TimeCreated SystemTime="2025-03-13T16:08:59.994503700Z"/><EventRecordID>170044</EventRecordID><Correlation/><Execution ProcessID="600" ThreadID="4652"/><Channel>System</Channel><Computer>ar-win-3</Computer><Security UserID="S-1-5-18"/></System><EventData><Data Name="ServiceName">Bluetrait Agent</Data><Data Name="ImagePath">"C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe"</Data><Data Name="ServiceType">user mode service</Data><Data Name="StartType">auto start</Data><Data Name="AccountName">LocalSystem</Data></EventData></Event>'
   Network:
     - Description: 'Known domains used by Bluetrait'
-      Domain:
+      Domains:
         - 'bluetrait.io'
         - '*.bluetrait.io'
-      Port: 
+      Ports: 
         - 443
         - 8080
 Detections:
