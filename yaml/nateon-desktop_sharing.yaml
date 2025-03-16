@@ -27,7 +27,6 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domains:
-    - '*.nate.com'
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nateon-desktop_sharing_network_sigma.yml
