@@ -11,8 +11,8 @@ tags:
     - attack.execution
     - attack.t1219
 logsource:
-    product: windows
     category: network_connection
+    product: windows
 detection:
     selection:
         DestinationHostname|endswith:
