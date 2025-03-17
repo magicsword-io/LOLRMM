@@ -8,6 +8,7 @@ import jinja2
 import csv
 import re
 import shutil
+import subprocess
 
 def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
     output_file = os.path.join(output_dir, 'public', 'api', 'rmm_tools.csv')
@@ -175,13 +176,31 @@ if __name__ == "__main__":
     # Clean up API artifacts
     api_json = os.path.join(OUTPUT_DIR, 'public', 'api', 'rmm_tools.json')
     api_csv = os.path.join(OUTPUT_DIR, 'public', 'api',  'rmm_tools.csv')
+    api_domains_csv = os.path.join(OUTPUT_DIR, 'public', 'api',  'rmm_domains.csv')
     if os.path.exists(api_json):
         os.remove(api_json)
     if os.path.exists(api_csv):
         os.remove(api_csv)
+    if os.path.exists(api_domains_csv):
+        os.remove(api_domains_csv)
 
     messages = []
     rmm_tools, messages = generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBOSE)
+
+    # Generate the domains CSV file
+    if VERBOSE:
+        print("Generating RMM domains CSV file...")
+    try:
+        # Run the generate_domains_csv.py script
+        script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "generate_domains_csv.py")
+        result = subprocess.run(["python3", script_path], capture_output=True, text=True)
+        if result.returncode == 0:
+            if VERBOSE:
+                print(result.stdout)
+        else:
+            print(f"Error generating domains CSV: {result.stderr}")
+    except Exception as e:
+        print(f"Failed to generate domains CSV: {e}")
 
     for m in messages:
         print(m)
