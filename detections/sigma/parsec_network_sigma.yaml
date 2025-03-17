@@ -1,0 +1,24 @@
+title: Potential Parsec RMM Tool Network Activity
+id: 2aa01350-aefa-4af9-8e1d-1657286e0bb9
+status: experimental
+description: Detects Potential Parsec RMM Tool Network Activity
+references:
+    - https://parsec.app/
+    - https://www.virustotal.com/gui/file/206cd186aaa431d3975eb30f682b83851ef4f81125d2004f53b681117da23ec6/behavior
+author: Luca Di Bartolomeo
+date: 2025-03-16
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'parsec.app'
+            - 'parsec.gg'
+    condition: selection
+falsepositives:
+    - Legitimate Parsec usage
+level: medium
