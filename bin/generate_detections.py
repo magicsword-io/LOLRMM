@@ -50,8 +50,8 @@ def generate_sigma_rule():
             "https://github.com/magicsword-io/LOLRMM"
         ],
         "author": "LOLRMM Project",
-        "date": datetime.now().strftime('%Y/%m/%d'),
-        "modified": datetime.now().strftime('%Y/%m/%d'),
+        "date": "2025-03-18",
+        "modified": datetime.now().strftime('%Y-%m-%d'),
         "tags": [
             "attack.lateral_movement",
             "attack.t1219"
