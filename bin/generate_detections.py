@@ -131,8 +131,8 @@ def generate_sigma_domains_rule():
             "https://github.com/magicsword-io/LOLRMM"
         ],
         "author": "LOLRMM Project",
-        "date": datetime.now().strftime('%Y/%m/%d'),
-        "modified": datetime.now().strftime('%Y/%m/%d'),
+        "date": "2025-03-18",
+        "modified": datetime.now().strftime('%Y-%m-%d'),
         "tags": [
             "attack.command-and-control",
             "attack.t1219"
