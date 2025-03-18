@@ -53,7 +53,7 @@ def generate_sigma_rule():
         "date": "2025-03-18",
         "modified": datetime.now().strftime('%Y-%m-%d'),
         "tags": [
-            "attack.lateral_movement",
+            "attack.lateral-movement",
             "attack.t1219"
         ],
         "logsource": {
