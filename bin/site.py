@@ -201,6 +201,21 @@ if __name__ == "__main__":
             print(f"Error generating domains CSV: {result.stderr}")
     except Exception as e:
         print(f"Failed to generate domains CSV: {e}")
+        
+    # Generate detection files
+    if VERBOSE:
+        print("Generating detection files...")
+    try:
+        # Run the generate_detections.py script 
+        script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "generate_detections.py")
+        result = subprocess.run(["python3", script_path], capture_output=True, text=True)
+        if result.returncode == 0:
+            if VERBOSE:
+                print(result.stdout)
+        else:
+            print(f"Error generating detection files: {result.stderr}")
+    except Exception as e:
+        print(f"Failed to generate detection files: {e}")
 
     for m in messages:
         print(m)

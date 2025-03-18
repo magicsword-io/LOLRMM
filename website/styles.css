@@ -2,3 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+/* Fix for EUI Accordion display */
+.euiAccordion__childWrapper {
+  height: auto !important;
+  visibility: visible !important;
+  overflow: visible !important;
+}
+
+.siemDetectionsAccordion {
+  display: block !important;
+  width: 100% !important;
+}
+
+.siemDetectionsAccordion .euiAccordion__buttonContent {
+  width: 100%;
+}
+
+.siemDetectionsAccordion .euiPanel {
+  width: 100% !important;
+}
+
+/* Make code blocks responsive */
+.euiCodeBlock {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Container styles for dynamic accordion */
+.contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure accordion doesn't push content down */
+.accordion-container .euiAccordion__childWrapper {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: black;
+}
+
+/* Add spacing when accordion is open to prevent overlap */
+.accordion-container[data-accordion-open="true"] {
+  margin-bottom: 650px; /* Adjust this value based on the height of your accordion content */
+}
+
+/* Style buttons */
+.euiButtonEmpty {
+  margin-top: 8px;
+}
+
+/* Handle code block with better visibility */
+.euiCodeBlock {
+  margin: 8px 0;
+  border-radius: 4px;
+}

@@ -6,27 +6,3 @@ title: Home - LOLRMM
 import {App} from "../components/home";
 
 <App/>
-
-## KQL Queries for RMM Detection
-
-### Detecting Unauthorized RMM Domains in Your MDE Environment
-
-LOLRMM provides a comprehensive list of known RMM domains that you can use to detect unauthorized RMM tools in your environment. Below is a sample KQL query for Microsoft Defender for Endpoint:
-
-```kql
-// Detecting Unauthorized RMM Instances in Your MDE Environment
-
-let SanctionRMM = dynamic("YOUR_APPROVED_RMM_DOMAINS"); // E.g. "bomgarcloud.com" - Replace with your approved RMM domains
-let RMMList = externaldata(URI: string, RMMTool: string)
-    [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];
-let RMMUrl = RMMList | project URI;
-
-DeviceNetworkEvents
-| where TimeGenerated > ago(1h)
-| where ActionType == @"ConnectionSuccess"
-| where RemoteUrl has_any(RMMUrl)
-| where not (RemoteUrl has_any(SanctionRMM))
-| summarize arg_max(TimeGenerated, *) by DeviceId
-```
-
-Replace `YOUR_APPROVED_RMM_DOMAINS` with your organization's approved RMM domains to exclude them from the detection.
