@@ -134,7 +134,7 @@ def generate_sigma_domains_rule():
         "date": datetime.now().strftime('%Y/%m/%d'),
         "modified": datetime.now().strftime('%Y/%m/%d'),
         "tags": [
-            "attack.command_and_control",
+            "attack.command-and-control",
             "attack.t1219"
         ],
         "logsource": {
