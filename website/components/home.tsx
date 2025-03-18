@@ -387,11 +387,22 @@ DeviceNetworkEvents
 										<p>
 											LOLRMM provides Sigma rules for detecting Remote Monitoring and Management (RMM) tools in your environment.
 											These rules can be converted to your specific SIEM platform using the <EuiLink href="https://github.com/SigmaHQ/sigma" target="_blank">Sigma converter</EuiLink>.
-											Below is a sample Sigma rule for detecting RMM executables:
 										</p>
 									</EuiText>
-									<EuiSpacer size="s" />
-									<EuiCodeBlock language="yaml" fontSize="s" paddingSize="m" isCopyable>
+									
+									<EuiSpacer size="m" />
+									
+									<EuiAccordion
+										id="process-detection-rule"
+										buttonContent={
+											<EuiTitle size="s">
+												<h5>Process Detection Rule (Generic RMM Tool Detection)</h5>
+											</EuiTitle>
+										}
+										paddingSize="m"
+										initialIsOpen={false}
+									>
+										<EuiCodeBlock language="yaml" fontSize="s" paddingSize="m" isCopyable>
 {`title: Generic RMM Tool Detection
 id: ba1e3a37-6751-48e8-9f7a-73d9062f137c
 status: experimental
@@ -409,7 +420,9 @@ logsource:
     product: windows
 detection:
     selection:
-        Image|endswith:
+        Image|endswith:${sigmaRuleData && sigmaRuleData.executables.length > 0 ? 
+            '\n' + sigmaRuleData.executables.map(exe => `            - '\\\\${exe}'`).join('\n') :
+            `
             - '\\\\anydesk.exe'
             - '\\\\teamviewer.exe'
             - '\\\\splashtop.exe'
@@ -421,21 +434,53 @@ detection:
             - '\\\\bomgar.exe'
             - '\\\\dwservice.exe'
             - '\\\\rustdesk.exe'
-            - '\\\\ultraviewer.exe'
-            # Plus many more RMM executables
+            - '\\\\ultraviewer.exe'`}
     condition: selection
 falsepositives:
     - Legitimate usage of remote management tools
 level: medium`}
-									</EuiCodeBlock>
+										</EuiCodeBlock>
+									</EuiAccordion>
+									
+									{sigmaRuleData && sigmaRuleData.executables.length > 0 && (
+										<>
+											<EuiSpacer size="s" />
+											<EuiCallOut 
+												title="RMM Executables" 
+												color="success"
+												iconType="check"
+											>
+												<p>The Sigma rule detects {sigmaRuleData.executables.length} RMM executables</p>
+											</EuiCallOut>
+										</>
+									)}
+									
 									<EuiSpacer size="s" />
 									<EuiText size="s">
 										<p>
-											We also provide a DNS-based detection rule for all RMM domains to identify network communication with RMM services:
+											<EuiButtonEmpty 
+												href="https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/generic_rmm_detection.yml" 
+												target="_blank"
+												iconType="logoGithub"
+												size="s">
+												View process detection rule on GitHub
+											</EuiButtonEmpty>
 										</p>
 									</EuiText>
-									<EuiSpacer size="s" />
-									<EuiCodeBlock language="yaml" fontSize="s" paddingSize="m" isCopyable>
+									
+									<EuiSpacer size="m" />
+									
+									<EuiAccordion
+										id="dns-detection-rule"
+										buttonContent={
+											<EuiTitle size="s">
+												<h5>DNS Detection Rule (RMM Domains)</h5>
+											</EuiTitle>
+										}
+										paddingSize="m"
+										initialIsOpen={false}
+									>
+										<EuiCodeBlock language="yaml" fontSize="s" paddingSize="m" isCopyable>
 {`title: DNS Queries to Known RMM Domains
 id: 9fa68c28-79b2-4ab5-af95-0c7b2f706c63
 status: experimental
@@ -453,7 +498,9 @@ logsource:
     product: any
 detection:
     selection:
-        query|contains:
+        query|contains:${domainsRuleData && domainsRuleData.domains.length > 0 ? 
+            '\n' + domainsRuleData.domains.map(domain => `            - '${domain}'`).join('\n') :
+            `
             - '.anydesk.com'
             - '.teamviewer.com'
             - '.splashtop.com'
@@ -461,21 +508,37 @@ detection:
             - '.bomgar.com'
             - '.logmein.com'
             - '.supremo.com'
-            # Plus many more RMM domains
+            - '.dwservice.com'
+            - '.atera.com'
+            - '.rustdesk.com'`}
     condition: selection
 falsepositives:
     - Legitimate usage of remote management tools
 level: medium`}
-									</EuiCodeBlock>
+										</EuiCodeBlock>
+									</EuiAccordion>
+									
+									{domainsRuleData && domainsRuleData.domains.length > 0 && (
+										<>
+											<EuiSpacer size="s" />
+											<EuiCallOut 
+												title="RMM Domains" 
+												color="success"
+												iconType="globe"
+											>
+												<p>The domain rule detects DNS queries to {domainsRuleData.domains.length} RMM domains</p>
+											</EuiCallOut>
+										</>
+									)}
 									<EuiSpacer size="s" />
 									<EuiText size="s">
 										<p>
 											<EuiButtonEmpty 
-												href="https://github.com/magicsword-io/lolrmm/tree/main/detections/sigma" 
+												href="https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rmm_domains_dns_queries.yml" 
 												target="_blank"
 												iconType="logoGithub"
 												size="s">
-												View all Sigma rules on GitHub
+												View DNS detection rule on GitHub
 											</EuiButtonEmpty>
 										</p>
 									</EuiText>
