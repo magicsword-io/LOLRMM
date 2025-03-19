@@ -373,7 +373,7 @@ DeviceNetworkEvents
 											<EuiButtonEmpty 
 												href="https://research.splunk.com/network/885ea672-07ee-475a-879e-60d28aa5dd42/" 
 												target="_blank"
-												iconType="logoSplunk"
+												iconType="https://splunk.com/favicon.ico"
 												size="s">
 												View full detection details on Splunk Research
 											</EuiButtonEmpty>

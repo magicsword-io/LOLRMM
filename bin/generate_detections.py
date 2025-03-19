@@ -72,16 +72,20 @@ def generate_sigma_rule():
         "level": "medium"
     }
     
-    # Ensure the detections/sigma directory exists
-    output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "detections", "sigma")
-    os.makedirs(output_dir, exist_ok=True)
-    
-    # Write the Sigma rule to a file
-    output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
-    with open(output_file, 'w', encoding='utf-8') as file:
-        yaml.dump(sigma_rule, file, default_flow_style=False, sort_keys=False)
-    
-    print(f"Generated Sigma rule at {output_file}")
+    dirs = [
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "detections", "sigma"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "website", "public", "api", "detections", "sigma")
+    ]
+    for output_dir in dirs:
+        # Ensure the directory exists
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Write the Sigma rule to a file
+        output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
+        with open(output_file, 'w', encoding='utf-8') as file:
+            yaml.dump(sigma_rule, file, default_flow_style=False, sort_keys=False)
+        
+        print(f"Generated Sigma rule at {output_file}")
 
 def generate_sigma_domains_rule():
     """Generate a Sigma rule for detecting DNS queries to RMM domains"""
@@ -156,16 +160,20 @@ def generate_sigma_domains_rule():
         "level": "medium"
     }
     
-    # Ensure the detections/sigma directory exists
-    output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "detections", "sigma")
-    os.makedirs(output_dir, exist_ok=True)
-    
-    # Write the Sigma rule to a file
-    output_file = os.path.join(output_dir, "rmm_domains_dns_queries.yml")
-    with open(output_file, 'w', encoding='utf-8') as file:
-        yaml.dump(sigma_domains_rule, file, default_flow_style=False, sort_keys=False)
-    
-    print(f"Generated RMM domains Sigma rule at {output_file}")
+    dirs = [
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "detections", "sigma"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "website", "public", "api", "detections", "sigma")
+    ]
+    for output_dir in dirs:
+        # Ensure the directory exists
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Write the Sigma rule to a file
+        output_file = os.path.join(output_dir, "rmm_domains_dns_queries.yml")
+        with open(output_file, 'w', encoding='utf-8') as file:
+            yaml.dump(sigma_domains_rule, file, default_flow_style=False, sort_keys=False)
+        
+        print(f"Generated RMM domains Sigma rule at {output_file}")
 
 def generate_splunk_detection():
     """Generate a Splunk detection for RMM tools"""
