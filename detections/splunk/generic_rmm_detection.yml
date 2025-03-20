@@ -1,0 +1,21 @@
+name: Generic RMM Tool Detection for Splunk
+id: splunk-rmm-001
+description: Detects usage of Remote Monitoring and Management (RMM) tools via network
+  traffic
+author: LOLRMM Project
+date: 2025/03/17
+query: "| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time)\
+  \ as lastTime values(All_Traffic.dest_port) as dest_port latest(user) as user from\
+  \ datamodel=Network_Traffic by All_Traffic.src All_Traffic.dest, All_Traffic.app\
+  \ \n| `drop_dm_object_name(\"All_Traffic\")` \n| `security_content_ctime(firstTime)`\
+  \ \n| `security_content_ctime(lastTime)` \n| lookup remote_access_software remote_appid\
+  \ AS app OUTPUT isutility, description as signature, comment_reference as desc,\
+  \ category \n| search isutility = True \n| `remote_access_software_usage_exceptions`\
+  \ \n| `detect_remote_access_software_usage_traffic_filter`"
+references:
+- https://github.com/magicsword-io/LOLRMM
+- https://research.splunk.com/network/885ea672-07ee-475a-879e-60d28aa5dd42/
+requirements:
+- Splunk Enterprise Security
+- Network Traffic datamodel
+- Remote Access Software lookup table

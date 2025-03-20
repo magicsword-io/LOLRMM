@@ -25,6 +25,8 @@ jobs:
       run: curl -sSL https://install.python-poetry.org | python -
     - name: Install dependencies with Poetry
       run: poetry install
+    - name: Make scripts executable
+      run: chmod +x bin/*.py
     - name: Generate MDX
       run: poetry run python bin/site.py -v
 
