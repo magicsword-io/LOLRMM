@@ -43,6 +43,7 @@ Artifacts:
     - rmmservice.ca
     - '*.rmmservice.ca'
     - ninja-backup.com
+    - '*.ninja-backup.com'
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_network_sigma.yml
