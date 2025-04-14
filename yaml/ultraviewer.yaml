@@ -36,7 +36,7 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domains:
-    - '* .ultraviewer.net'
+    - '*.ultraviewer.net'
     - ultraviewer.net
     Ports: []
 Detections:
