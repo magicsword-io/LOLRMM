@@ -17,22 +17,25 @@ def correct_date_format(file_path):
 
     with open(file_path, 'w') as file:
         for line in lines:
-            if 'LastModified:' in line:
-                # Find the date in the line
-                match = date_pattern.search(line)
-                if match:
-                    old_date = match.group(0)
-                    # Replace slashes with dashes in the date format
-                    new_date = old_date.replace('/', '-')
-                    # Print the previous and new value
-                    print(f"File: {file_path}")
-                    print(f"Previous: {line.strip()}")
-                    corrected_line = line.replace(old_date, new_date)
-                    print(f"New: {corrected_line.strip()}")
-                    file.write(corrected_line)
-                    changes_made = True
-                else:
-                    file.write(line)
+            for field in ['LastModified:', 'Created:']:
+                if field in line:
+                    # Find the date in the line
+                    match = date_pattern.search(line)
+                    if match:
+                        old_date = match.group(0)
+                        # Replace slashes with dashes in the date format
+                        new_date = old_date.replace('/', '-')
+                        # Print the previous and new value
+                        print(f"File: {file_path}")
+                        print(f"Previous: {line.strip()}")
+                        corrected_line = line.replace(old_date, new_date)
+                        print(f"New: {corrected_line.strip()}")
+                        file.write(corrected_line)
+                        changes_made = True
+                        break
+                    else:
+                        file.write(line)
+                        break
             else:
                 file.write(line)
     
