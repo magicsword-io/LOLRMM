@@ -2,7 +2,7 @@ import os
 import re
 
 # Directory containing the .yaml files
-directory = '.'
+directory = 'yaml'
 
 # Regex pattern to match the date format with slashes
 date_pattern = re.compile(r'(\d{1,2})/(\d{1,2})/(\d{2})')
