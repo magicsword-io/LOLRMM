@@ -12,7 +12,7 @@ import sys
 import argparse
 from pathlib import Path
 from os import path, walk
-
+import datetime
 
 def check_md5_length(object):
     md5_len = 32
@@ -59,6 +59,25 @@ def check_network_structure(object):
             return f"ERROR: 'Ports' is not a list for object: {object['Name']}"
     return None
 
+# Add this function to validate ISO 8601 format for Created
+def check_created_iso8601(object):
+    created = object.get('Created', None)
+    if created:
+        try:
+            datetime.datetime.fromisoformat(created)
+        except ValueError:
+            return f"ERROR: Created field is not valid ISO 8601 format for object: {object.get('Id', 'Unknown')}"
+    return None
+    
+# Add this function to validate ISO 8601 format for LastModified
+def check_last_modified_iso8601(object):
+    last_modified = object.get('LastModified', None)
+    if last_modified:
+        try:
+            datetime.datetime.fromisoformat(last_modified)
+        except ValueError:
+            return f"ERROR: LastModified field is not valid ISO 8601 format for object: {object.get('Id', 'Unknown')}"
+    return None
 
 def validate_schema(yaml_dir, schema_file, verbose):
 
@@ -93,11 +112,13 @@ def validate_schema(yaml_dir, schema_file, verbose):
             error = True
 
         # Additional YAML checks
-        check_errors = [ 
+        check_errors = [
             check_md5_length(yaml_data),
             check_sha1_length(yaml_data),
             check_sha256_length(yaml_data),
             check_network_structure(yaml_data),
+            check_created_iso8601(yaml_data),        # ISO 8601 check for Created
+            check_last_modified_iso8601(yaml_data),  # ISO 8601 check for LastModified
         ]
 
         for check_error in check_errors:
@@ -106,7 +127,6 @@ def validate_schema(yaml_dir, schema_file, verbose):
                 error = True
 
     return error, errors
-
 
 def main(yaml_dir, schema_file, verbose):
 
@@ -119,7 +139,6 @@ def main(yaml_dir, schema_file, verbose):
         sys.exit("Errors found")
     else:
         print("No Errors found")
-
 
 if __name__ == "__main__":
     # grab arguments
