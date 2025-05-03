@@ -118,3 +118,47 @@ pnpm dev
 8. Visit `http://localhost:3000` in your browser to view the site.
 
 Join us in our quest to create a safer and more secure digital environment for organizations everywhere. With LOLRMM by your side, you'll be well-equipped to understand and address the potential risks associated with RMM tools in the ever-evolving cyber landscape.
+
+## 🤖 GitHub Actions
+
+### Purpose
+
+The GitHub workflow files in the `.github/workflows` directory automate various tasks and processes for continuous integration, continuous delivery, and other project maintenance activities.
+These workflow files leverage GitHub Actions to execute predefined steps based on specific triggers such as code pushes, pull requests, or scheduled intervals.
+
+### Key Goals
+- **Automate Testing**: Ensure that all code changes pass necessary tests before merging into the main branch.
+- **Continuous Integration**: Automatically build and validate the project in different environments and configurations.
+- **Code Quality Checks**: Run static analysis tools to maintain code quality and adherence to coding standards.
+- **Deployment**: Manage the deployment process to various environments, ensuring seamless and reliable releases.
+- **Badge Updates**: Automatically update project badges to reflect the current status, such as the number of Remote Monitoring and Management (RMM)
+
+### Prerequisites
+To create a `PUSH_TOKEN` for use in your GitHub Actions workflow, you'll need to generate a personal access token (PAT) on GitHub and then add it to your repository's secrets. Here's how to do it:
+
+#### Steps to Create a Personal Access Token:
+1. **Log in to GitHub**: Open your web browser and log in to your GitHub account.
+2. **Generate a Token**:
+   - Click on your profile picture in the top right corner and select "Settings".
+   - In the left sidebar, click on "Developer settings".
+   - Click on "Personal access tokens" and then "Tokens (classic)".
+   - Click the "Generate new token" button.
+   - Set a descriptive name for the token, like `PUSH_TOKEN`.
+   - Select the appropriate scopes. At a minimum, you need `repo` scope for repository access.
+   - Click "Generate token".
+   - **Important**: Copy the token now and save it somewhere secure. You won't be able to see it again.
+
+#### Steps to Add the Token to Your Repository's Secrets:
+1. **Navigate to Your Repository**: Go to the main page of your repository on GitHub.
+2. **Open Settings**:
+   - Click on the "Settings" tab.
+   - In the left sidebar, click on "Secrets and variables" and then "Actions".
+3. **Add a New Secret**:
+   - Click the "New repository secret" button.
+   - Set the name of the secret to `PUSH_TOKEN`.
+   - Paste the personal access token you generated earlier into the "Value" field.
+   - Click "Add secret".
+
+Now, your workflow file will use the `PUSH_TOKEN` from your repository secrets when it runs.
+
+If you follow these steps, your `PUSH_TOKEN` should be correctly created and accessible for your GitHub Actions workflow.
