@@ -25,6 +25,8 @@ jobs:
       run: curl -sSL https://install.python-poetry.org | python -
     - name: Install dependencies with Poetry
       run: poetry install
+    - name: Make scripts executable
+      run: chmod +x bin/*.py
     - name: Generate MDX
       run: poetry run python bin/site.py -v
 
@@ -51,7 +53,8 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git config --global push.default simple
         git add .
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update generated site files" && git pull --rebase origin main && git push https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git HEAD:main)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update generated site files [skip ci]" && 
+        git push https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git HEAD:main)
       working-directory: website
 
 # Deployment job

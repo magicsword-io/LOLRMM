@@ -13,7 +13,8 @@ Details:
   Privileges: 'Curent User'
   Free: 'Yes/1 active session at a time'
   Verification: 'None'
-  SupportedOS: 'Windows'
+  SupportedOS:
+  - 'Windows'
   Capabilities: 
     - 'Remote Management session'
     - 'RDP Connection'
@@ -46,39 +47,36 @@ Artifacts:
 
   EventLog:
       - EventID: 4688
-          ProviderName: Microsoft-Security-Auditing
-          LogFile: Security.evtx
-          CommandLine: 'rundll32.exe "C:\ProgramData\AMMYY\aa_nts.dll",run'
-          Description: Execution of Ammyy Admin
+        ProviderName: Microsoft-Security-Auditing
+        LogFile: Security.evtx
+        CommandLine: 'rundll32.exe "C:\ProgramData\AMMYY\aa_nts.dll",run'
+        Description: Execution of Ammyy Admin
       - EventID: 7045
-          ProviderName: Service Control Manager
-          LogFile: System.evtx
-          ServiceName: Ammyy Admin
-          ImagePath: "C:\\*\\AA_v3.exe" - service
-          Description: Ammyy Admin service installation event
+        ProviderName: Service Control Manager
+        LogFile: System.evtx
+        ServiceName: Ammyy Admin
+        ImagePath: "C:\\*\\AA_v3.exe"
+        Description: Ammyy Admin service installation event
   Registry:
       - Path: HKU\.DEFAULT\Software\Ammyy\Admin
-          Key: 'hr3'
-          Type: 'Reg_Binary'
-          Description: 'Writing the hr3 binary in the registry. The hr3 is likely used to store admin-related information.'
+        Key: 'hr3'
+        Type: 'Reg_Binary'
+        Description: 'Writing the hr3 binary in the registry. The hr3 is likely used to store admin-related information.'
       - Path: HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Network\AmmyyAdmin
-          Description: 'Ammyy Admin service allows AMMYY admin to run in safe mode.'
+        Description: 'Ammyy Admin service allows AMMYY admin to run in safe mode.'
   Network:
   - Description: Known remote domains
-    Domain:
+    Domains:
     - ammyy.com
     - '*ammyy.com'
-  - Description: Ammyy Routers
-    IP:
     - '136.243.104.235'
     - '136.243.104.242'
     - '136.243.18.122'
-    Port: 
-      - Incoming: 5931
-      - Outgoing: 
-        - 80
-        - 443
-        - 8080
+    Ports: 
+      - 5931 # Incoming
+      - 80 # Outgoing
+      - 443 # Outgoing
+      - 8080 # Outgoing
 Detections:
   - Sigma: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/ammyy_admin.yml
     Name: Detecting Ammy Admin RMM Agent Execution

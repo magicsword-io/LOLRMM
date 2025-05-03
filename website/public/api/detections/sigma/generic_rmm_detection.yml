@@ -1,0 +1,601 @@
+title: Generic RMM Tool Detection
+id: ba1e3a37-6751-48e8-9f7a-73d9062f137c
+status: experimental
+description: Detects processes associated with common Remote Monitoring and Management
+  (RMM) tools that could be used for lateral movement
+references:
+- https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: '2025-03-18'
+modified: '2025-03-24'
+tags:
+- attack.lateral-movement
+- attack.t1219
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith:
+    - \\9380CC75B872221A7425D7503565B67580407F60
+    - \\AEMAgent.exe
+    - \\AMMYY_Admin.exe
+    - \\ARDAgent.app
+    - \\AcronisCyberProtectConnectAgent.exe
+    - \\AcronisCyberProtectConnectQuickAssist*.exe
+    - \\AeroAdmin.exe
+    - \\AgentSetup-*.exe
+    - \\Agent_*_RW.exe
+    - \\AgentlessRC.exe
+    - \\ArcUI.exe
+    - \\AweSun.exe
+    - \\BASEClient.exe
+    - \\BASupApp.exe
+    - \\BASupAppElev.exe
+    - \\BASupAppSrvc.exe
+    - \\BASupSrvc.exe
+    - \\BASupSrvcCnfg.exe
+    - \\BASupSysInf.exe
+    - \\BASupTSHelper.exe
+    - \\Beinsync*.exe
+    - \\C:\*\G2RDesktopConsole-x64.msi
+    - \\C:\*\MobaXterm_installer_12.1.msi
+    - \\C:\*\SecureCRT.EXE
+    - \\C:\*\ZA_Access.exe
+    - \\C:\*\kitty.exe
+    - \\C:\*\ngrok.zip
+    - \\C:\*\nxplayer.exe
+    - \\C:\*\puttytray.exe
+    - \\C:\AlpemixService.exe
+    - \\C:\AlpemixSrvc\
+    - \\C:\Downloads\SuperPuTTY\*
+    - \\C:\Program Files (x86)\Almageste\DragonDisk\*
+    - \\C:\Program Files (x86)\AnyDesk\*
+    - \\C:\Program Files (x86)\AnyViewer\*
+    - \\C:\Program Files (x86)\Atera Networks
+    - \\C:\Program Files (x86)\Bitvise SSH Client\*
+    - \\C:\Program Files (x86)\Bluetrait Agent\*
+    - \\C:\Program Files (x86)\DesktopCentral_Agent\bin\*
+    - \\C:\Program Files (x86)\GoTo Opener
+    - \\C:\Program Files (x86)\GoToMyPC\*
+    - \\C:\Program Files (x86)\Google\Chrome Remote Desktop\*
+    - \\C:\Program Files (x86)\ISL Online\ISL Light*
+    - \\C:\Program Files (x86)\Kaseya\
+    - \\C:\Program Files (x86)\LANDesk\*
+    - \\C:\Program Files (x86)\NetSarang\xShell\*
+    - \\C:\Program Files (x86)\OnionShare\*
+    - \\C:\Program Files (x86)\PJ Technologies\GOVsrv\*
+    - \\C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe
+    - \\C:\Program Files (x86)\RemotePC\*
+    - \\C:\Program Files (x86)\S3 Browser\*
+    - \\C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
+    - \\C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe
+    - \\C:\Program Files (x86)\SmartFTP Client\en-US\
+    - \\C:\Program Files (x86)\Splashtop\*
+    - \\C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
+    - \\C:\Program Files (x86)\Xpra\*
+    - \\C:\Program Files (x86)\Yandex\*
+    - \\C:\Program Files (x86)\mRemoteNG\*
+    - \\C:\Program Files\ATERA Networks\AteraAgent\*
+    - \\C:\Program Files\AnyDesk\*
+    - \\C:\Program Files\Atera Networks
+    - \\C:\Program Files\Bitvise SSH Server\*
+    - \\C:\Program Files\Danware Data\NetOp Packn Deploy\*
+    - \\C:\Program Files\Level\*
+    - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
+    - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
+    - \\C:\Program Files\RealVNC\VNC Server\*
+    - \\C:\Program Files\Remote Utilities\*
+    - \\C:\Program Files\Solar-Putty-v4\*
+    - \\C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
+    - \\C:\Program Files\SysAidServer\*
+    - \\C:\Program Files\TeamViewer\
+    - \\C:\Program Files\TightVNC\*
+    - \\C:\Program Files\ZOC8\*
+    - \\C:\Program Files\uvnc bvba\UltraVNC\*
+    - \\C:\ProgramData\Kaseya\
+    - \\C:\ProgramData\Total Software Deployment\*
+    - \\C:\ProgramFiles*\GoTo Machine Installer\*
+    - \\C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
+    - \\C:\Users\*\AppData\Local\MEGAsync\*
+    - \\C:\Users\*\AppData\Roaming\Mikogo\*
+    - \\C:\Users\*\AppData\Roaming\SyncTrayzor\*
+    - \\C:\Users\*\Downloads\AMMYY_Admin.exe
+    - \\C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
+    - \\C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
+    - \\C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+    - \\C:\Windows\Action1\*
+    - \\C:\Windows\SysWOW64\rserver30\FamItrf2
+    - \\C:\Windows\SysWOW64\rserver30\FamItrfc
+    - \\C:\Windows\SysWOW64\rserver30\rserver3.exe
+    - \\C:\Windows\System32\mstsc.exe
+    - \\C:\Windows\dwrcs\*
+    - \\C:\\ProgramData\\AMMYY\\*
+    - \\CBBackupPlan.exe
+    - \\CagService.exe
+    - \\Cloud.Backup.RM.Service.exe
+    - \\Cloud.Backup.Scheduler.exe
+    - \\CloudRaCmd.exe
+    - \\CloudRaSd.exe
+    - \\CloudRaService.exe
+    - \\CloudRaUtilities.exe
+    - \\ComodoRemoteControl.exe
+    - \\Connect.Backdrop.cloud*.exe
+    - \\Connect.exe
+    - \\ConnectAppSetup*.exe
+    - \\ConnectDetector.exe
+    - \\ConnectShellSetup*.exe
+    - \\ConnectWiseControl*.exe
+    - \\CrossLoopConnect.exe
+    - \\DSGuest.exe
+    - \\DameWare Mini Remote Control*.exe
+    - \\DameWare Remote Support.exe
+    - \\DeskRollUA.exe
+    - \\Deskroll.exe
+    - \\Domotz Pro Desktop App Setup*.exe
+    - \\Domotz Pro Desktop App.exe
+    - \\ERAAgent.exe
+    - \\EricomConnectRemoteHost*.exe
+    - \\FastViewer.exe
+    - \\FixMeit Client.exe
+    - \\FixMeit Expert Setup.exe
+    - \\FixMeit Unattended Access Setup.exe
+    - \\FixMeitClient*.exe
+    - \\GetScreen.exe
+    - \\GoTo Assist Opener.exe
+    - \\GotoHTTP*.exe
+    - \\GotoHTTP_x64.exe
+    - \\GovAgentInstallHelper.exe
+    - \\GovAgentx64.exe
+    - \\GovReachClient.exe
+    - \\HelpuManager.exe
+    - \\HelpuUpdater.exe
+    - \\I'm InTouch Go Installer.exe
+    - \\ISLLight.exe
+    - \\ISLLightClient.exe
+    - \\ITSMAgent.exe
+    - \\ITSMService.exe
+    - \\ITarianRemoteAccessSetup.exe
+    - \\Idrive.File-Transfer
+    - \\ImperoClientSVC.exe
+    - \\ImperoInit.exe
+    - \\InstallShield Setup.exe
+    - \\InstantHousecall.exe
+    - \\ItsmRsp.exe
+    - \\IvantiRemoteControl.exe
+    - '\\JumpCloud*.exe '
+    - \\KHelpDesk.exe
+    - \\Kabuto.App.Runner.exe
+    - \\Kabuto.Installer.exe
+    - \\Kabuto.Service.Runner.exe
+    - \\KabutoSetup.exe
+    - \\LANDeskPortalManager.exe
+    - \\MEAgentHelper.exe
+    - \\ManageEngine_Remote_Access_Plus.exe
+    - \\ManualLauncher.exe
+    - \\Microsoft Remote Desktop
+    - \\MonitoringAgent.exe
+    - \\NTRsupportPro_EN.exe
+    - \\Netop Ondemand.exe
+    - \\NinjaRMMAgenPatcher.exe
+    - \\NinjaRMMAgent.exe
+    - \\OOSysAgent.exe
+    - \\OTPowerShell.exe
+    - \\OTService.exe
+    - \\OnionShare-win*.msi
+    - \\Online Backup.exe
+    - \\OrayRemoteService.exe
+    - \\OrayRemoteShell.exe
+    - \\PAExec-*.exe
+    - \\PCIVIDEO.EXE
+    - \\PCMonitorManager.exe
+    - \\Pilixo_Installer*.exe
+    - \\QQProtect.exe
+    - \\RAccess.exe
+    - \\RDConsole.exe
+    - \\RDPCheck.exe
+    - \\RDPConf.exe
+    - \\RDPWInst.exe
+    - \\RDesktop.exe
+    - \\RHost.exe
+    - \\ROMFUSClient.exe
+    - \\ROMServer.exe
+    - \\RViewer.exe
+    - \\Remote Desktop.exe
+    - \\Remote Workforce Client.exe
+    - \\RemotePC.exe
+    - \\RemotePCService.exe
+    - \\RmmService.exe
+    - \\RocketRemoteDesktop_Setup.exe
+    - \\SMPCSetup.exe
+    - \\SRManager.exe
+    - \\SRServer.exe
+    - \\ScreenMeet.Support.exe
+    - \\ScreenMeetSupport.exe
+    - \\SensoClient.exe
+    - \\SensoService.exe
+    - \\ServiceProxyLocalSys.exe
+    - \\Site24x7PluginAgent.exe
+    - \\Site24x7WindowsAgentTrayIcon.exe
+    - \\SolarWinds-Dameware-DRS*.exe
+    - \\SolarWinds-Dameware-MRC*.exe
+    - \\Sorillus Launcher.exe
+    - \\Sorillus-Launcher*.exe
+    - \\SplashtopSOS.exe
+    - \\Splashtop_Streamer_Windows*.exe
+    - \\Syncro.App.Runner.exe
+    - \\Syncro.Installer.exe
+    - \\Syncro.Overmind.Service.exe
+    - \\Syncro.Service.exe
+    - \\SyncroLive.Agent.exe
+    - \\SyncroLive.Service.exe
+    - \\TPowerShell.exe
+    - \\TSClient.exe
+    - \\TakeControl.exe
+    - \\TaniumCX.exe
+    - \\TaniumClient.exe
+    - \\TaniumExecWrapper.exe
+    - \\TaniumFileInfo.exe
+    - \\TeamTaskManager.exe
+    - \\This installs a modified VNC and cannot be blocked by path separate from VNC
+    - \\TiClientCore.exe
+    - \\TiClientHelper*.exe
+    - \\TiExpertCore.exe
+    - \\TiExpertStandalone.exe
+    - \\TightVNCViewerPortable*.exe
+    - \\ToDesk_Service.exe
+    - \\ToDesk_Setup.exe
+    - \\UltraVNC*.exe
+    - \\UltraViewer_Desktop.exe
+    - \\UltraViewer_Service.exe
+    - \\UltraViewer_setup*
+    - \\WinVNCStub.exe
+    - \\XSightService.exe
+    - \\ZMAgent.exe
+    - \\Zaservice.exe
+    - \\ZohoMeeting.exe
+    - \\ZohoURSService.exe
+    - \\Zohours.exe
+    - \\aa_v*.exe
+    - \\aadg.exe
+    - \\accessserver*.exe
+    - \\accessserver.exe
+    - \\addigy-*.pkg
+    - \\aeroadmin.exe
+    - \\agent32.exe
+    - \\agent64.exe
+    - \\agent_setup_5.exe
+    - \\agentu.exe
+    - \\alitask.exe
+    - \\apc_host.exe
+    - \\atera_agent.exe
+    - \\ateraagent.exe
+    - \\auvik.agent.exe
+    - \\auvik.engine.exe
+    - \\aweray_remote*.exe
+    - \\awhost32.exe
+    - \\awrem32.exe
+    - \\basupsrvc.exe
+    - \\basupsrvcupdate.exe
+    - \\basuptshelper.exe
+    - \\beamyourscreen-host.exe
+    - \\beamyourscreen.exe
+    - \\bomgar-pac-*.exe
+    - \\bomgar-pac.exe
+    - \\bomgar-rdp.exe
+    - \\bomgar-scc-*.exe
+    - \\bomgar-scc.exe
+    - \\c:\Program Files (x86)%\mRemoteNG
+    - \\c:\Program Files (x86)\Sysprogs\SmarTTY\*
+    - \\c:\Program Files\*\Duplicati.Server.exe
+    - \\can't find this one
+    - \\cbb.exe
+    - \\client32.exe
+    - \\clientmrinit.exe
+    - \\cloudflared.exe
+    - \\connectwise*.exe
+    - \\connectwisechat-customer.exe
+    - \\connectwisecontrol.client.exe
+    - \\crossloopservice.exe
+    - '\\csexec.exe '
+    - \\ctes.exe
+    - \\cteshostsvc.exe
+    - \\ctespersitence.exe
+    - \\ctiserv.exe
+    - \\dcagentregister.exe
+    - \\dcagentservice.exe
+    - \\dd.exe
+    - \\ddsystem.exe
+    - \\desktopnow.exe
+    - \\distant-desktop.exe
+    - \\dntus*.exe
+    - \\domotz*.exe
+    - \\domotz-windows*.exe
+    - \\domotz.exe
+    - \\domotz_bash.exe
+    - \\dwagent.exe
+    - \\dwagsvc.exe
+    - \\dwrcs.exe
+    - \\echoserver*.exe
+    - \\echoware.dll
+    - \\ehorus standalone.exe
+    - \\ehorus_agent.exe
+    - \\einstaller.exe
+    - \\era.exe
+    - \\eratool.exe
+    - \\ericomconnnectconfigurationtool.exe
+    - \\ezHelpManager.exe
+    - \\ezhelp*.exe
+    - \\ezhelpclient.exe
+    - \\ezhelpclientmanager.exe
+    - \\fastclient.exe
+    - \\fastmaster.exe
+    - \\fixmeitclient.exe
+    - \\fleetdeck_agent.exe
+    - \\fleetdeck_agent_svc.exe
+    - \\fleetdeck_commander_launcher.exe
+    - \\fleetdeck_commander_svc.exe
+    - \\fleetdeck_installer.exe
+    - \\g2a*.exe
+    - \\getscreen.exe
+    - \\gotoassist.exe
+    - \\gotohttp.exe
+    - \\goverrmc.exe
+    - \\govsrv*.exe
+    - \\gp3.exe
+    - \\gp4.exe
+    - \\gp5.exe
+    - \\grabberEM.*msi
+    - \\grabberTT*.msi
+    - \\guacd.exe
+    - \\helpbeam*.exe
+    - \\helpu_install.exe
+    - \\hsloader.exe
+    - \\iadmin.exe
+    - \\idrive.RemotePCAgent
+    - \\ihcserver.exe
+    - \\iit.exe
+    - \\instanthousecall.exe
+    - \\intelliadmin.exe
+    - \\intouch.exe
+    - \\iperius.exe
+    - \\iperiusremote.exe
+    - \\ir_agent.exe
+    - \\islalwaysonmonitor.exe
+    - \\isllight.exe
+    - \\isllightservice.exe
+    - \\issuser.exe
+    - \\itsmagent.exe
+    - \\jumpclient.exe
+    - \\jumpconnect.exe
+    - \\jumpdesktop.exe
+    - \\jumpservice.exe
+    - \\jumpupdater.exe
+    - \\konea.exe
+    - \\landeskagentbootstrap.exe
+    - \\laplink-everywhere-setup*.exe
+    - \\laplink.exe
+    - \\laplinkeverywhere.exe
+    - \\ldinv32.exe
+    - \\ldsensors.exe
+    - \\level-remote-control-ffmpeg.exe
+    - \\level-windows-amd64.exe
+    - \\level.exe
+    - \\llrcservice.exe
+    - \\lmi_rescue.exe
+    - \\lmnoipserver.exe
+    - \\ltsvc.exe
+    - \\ltsvcmon.exe
+    - \\lttray.exe
+    - \\mRemoteNG-Installer-*.msi
+    - \\mRemoteNG.exe
+    - \\meshagent*.exe
+    - \\meshcentral*.exe
+    - \\mgntsvc.exe
+    - \\mikogo-service.exe
+    - \\mikogo-starter.exe
+    - \\mikogo.exe
+    - \\mikogolauncher.exe
+    - \\mionet.exe
+    - \\mionetmanager.exe
+    - \\mstsc.exe
+    - \\mwcliun.exe
+    - \\mygreenpc.exe
+    - \\myivomanager.exe
+    - \\myivomgr.exe
+    - \\nateon*.exe
+    - \\nateon.exe
+    - \\nateonmain.exe
+    - \\neturo*.exe
+    - \\neturo.exe
+    - \\netviewer*.exe
+    - \\netviewer.exe
+    - \\ngrok.exe
+    - \\ngstw32.exe
+    - \\nhostsvc.exe
+    - \\nhstw32.exe
+    - \\ninjarmm-cli.exe
+    - \\ninjarmmagent.exe
+    - \\nldrw32.exe
+    - \\nomachine*.exe
+    - \\ntrntservice.exe
+    - \\nvClient.exe
+    - \\nxd.exe
+    - \\nxservice*.ese
+    - \\ocsinventory.exe
+    - \\ocsservice.exe
+    - \\oo-syspectr*.exe
+    - \\p9agent*.exe
+    - \\paexec.exe
+    - \\parallelsaccess-*.exe
+    - \\pcaquickconnect.exe
+    - \\pcicfgui.exe
+    - \\pcictlui.exe
+    - \\pcmonitorsrv.exe
+    - \\pcnmgr.exe
+    - \\pcstarter.exe
+    - \\pcvisit-easysupport.exe
+    - \\pcvisit.exe
+    - \\pcvisit_client.exe
+    - \\pcvisit_service_client.exe
+    - \\pdq-connect*.exe
+    - \\pocketcloud*.exe
+    - \\pocketcloudservice.exe
+    - \\pocketcontroller.exe
+    - \\prl_deskctl_agent.exe
+    - \\prl_deskctl_wizard.exe
+    - \\prl_pm_service.exe
+    - \\psexec.exe
+    - \\psexecsvc.exe
+    - \\pstlaunch.exe
+    - \\ptdskclient.exe
+    - \\ptdskhost.exe
+    - \\qq.exe
+    - \\qqpcmgr.exe
+    - \\quickassist.exe
+    - \\raautoup.exe
+    - \\rapid7_agent_core.exe
+    - \\rapid7_endpoint_broker.exe
+    - \\rcengmgru.exe
+    - \\rcmgrsvc.exe
+    - \\rcstartsupport.exe
+    - \\rd.exe
+    - \\rdp.exe
+    - \\rdp2tcp.py
+    - \\remcom.exe
+    - \\remcomsvc.exe
+    - \\remcos*.exe
+    - \\remobo.exe
+    - \\remobo_client.exe
+    - \\remobo_tracker.exe
+    - \\remote access.exe
+    - \\remote-it-installer.exe
+    - \\remote.it.exe
+    - \\remote_host.exe
+    - \\remoteconsole.exe
+    - \\remoteit.exe
+    - \\remotepass-access.exe
+    - \\remotepchost.exe
+    - \\remotepcservice.exe
+    - \\remotesupportplayeru.exe
+    - \\remoteview.exe
+    - \\remoting_host.exe
+    - \\requires sign up
+    - \\rfusclient.exe
+    - \\rmserverconsolemediator.exe
+    - \\romfusclient.exe
+    - \\romserver.exe
+    - \\romviewer.exe
+    - \\routernt.exe
+    - \\royalserver.exe
+    - \\royalts.exe
+    - \\rpaccess.exe
+    - \\rpcld.exe
+    - \\rpcnet.exe
+    - \\rpcsuite.exe
+    - \\rport.exe
+    - \\rpwhostscr.exe
+    - \\rudesktop*.exe
+    - \\rustdesk*.exe
+    - \\rustdesk.exe
+    - \\rutserv.exe
+    - \\rutview.exe
+    - \\rv.exe
+    - \\rvagent.exe
+    - \\rvagtray.exe
+    - \\rviewer.exe
+    - \\rxstartsupport.exe
+    - \\saazapsc.exe
+    - \\screenconnect*.exe
+    - \\screenconnect.clientservice.exe
+    - \\screenconnect.windowsclient.exe
+    - \\seetrolcenter.exe
+    - \\seetrolclient.exe
+    - \\seetrolmyservice.exe
+    - \\seetrolremote.exe
+    - \\seetrolsetting.exe
+    - \\servereye*.exe
+    - \\serverproxyservice.exe
+    - \\serviceconfig.xml
+    - \\showmypc*.exe
+    - \\showmypc.exe
+    - \\simplegatewayservice.exe
+    - \\simplehelpcustomer.exe
+    - \\simpleservice.exe
+    - \\smpcsetup.exe
+    - \\spsrv.exe
+    - \\sragent.exe
+    - \\srmanager.exe
+    - \\srserver.exe
+    - \\srservice.exe
+    - \\strwinclt.exe
+    - \\sunlogin*.exe
+    - \\superops.exe
+    - \\superopsticket.exe
+    - \\support-logmeinrescue*.exe
+    - \\support-logmeinrescue.exe
+    - \\supporttool.exe
+    - \\supremo.exe
+    - \\supremohelper.exe
+    - \\supremoservice.exe
+    - \\supremosystem.exe
+    - \\syncrosetup.exe
+    - \\sysdiag.exe
+    - \\tacticalrmm.exe
+    - \\tailscale-*.exe
+    - \\tailscale-ipn.exe
+    - \\tailscaled.exe
+    - \\tdp2tcp.exe
+    - \\teamviewer_desktop.exe
+    - \\teamviewer_service.exe
+    - \\teamviewerhost
+    - \\termsrv.exe
+    - \\tigervnc*.exe
+    - \\todesk.exe
+    - \\tsircusr.exe
+    - \\turbomeeting.exe
+    - \\turbomeetingstarter.exe
+    - \\tvnserver.exe
+    - \\tvnviewer.exe
+    - \\ultimate_*.exe
+    - \\ultraviewer.exe
+    - \\ultraviewer_desktop.exe
+    - \\ultraviewer_service.exe
+    - \\vncserver.exe
+    - \\vncserverui.exe
+    - \\vncviewer.exe
+    - \\webexpcnow.exe
+    - \\webrdp.exe
+    - \\weezo setup*.exe
+    - \\weezo.exe
+    - \\weezohttpd.exe
+    - \\winagent.exe
+    - \\winaw32.exe
+    - \\windowslauncher.exe
+    - \\winvnc*.exe
+    - \\winvnc.exe
+    - \\winvnc4.exe
+    - \\winvncsc.exe
+    - \\winwvc.exe
+    - \\wisshell*.exe
+    - \\wmc.exe
+    - \\wmc_deployer.exe
+    - \\wmcsvc.exe
+    - \\wysebrowser.exe
+    - \\xcmd.exe
+    - \\xcmdsvc.exe
+    - \\xeox-agent_*.exe
+    - \\xeox-agent_x64.exe
+    - \\xeox-agent_x86.exe
+    - \\xeox_service_windows.exe
+    - \\za_connect.exe
+    - \\zabbix_agent*.exe
+    - \\zaservice.exe
+    - \\zero-powershell.exe
+    - \\zerotier*.exe
+    - \\zerotier*.msi
+    - \\zohotray.exe
+  condition: selection
+falsepositives:
+- Legitimate usage of remote management tools
+level: medium

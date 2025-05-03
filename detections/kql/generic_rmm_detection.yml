@@ -1,0 +1,18 @@
+name: Generic RMM Domain Detection for Microsoft Defender for Endpoint
+id: kql-rmm-001
+description: Detects network connections to known RMM domains
+author: LOLRMM Project
+date: 2025/03/17
+query: "// Detecting Unauthorized RMM Instances in Your MDE Environment\n\nlet SanctionRMM\
+  \ = dynamic(\"YOUR_APPROVED_RMM_DOMAINS\"); // E.g. \"bomgarcloud.com\" - Replace\
+  \ with your approved RMM domains\nlet RMMList = externaldata(URI: string, RMMTool:\
+  \ string)\n    [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];\n\
+  let RMMUrl = RMMList | project URI;\n\nDeviceNetworkEvents\n| where TimeGenerated\
+  \ > ago(1h)\n| where ActionType == @\"ConnectionSuccess\"\n| where RemoteUrl has_any(RMMUrl)\n\
+  | where not (RemoteUrl has_any(SanctionRMM))\n| summarize arg_max(TimeGenerated,\
+  \ *) by DeviceId"
+references:
+- https://github.com/magicsword-io/LOLRMM
+requirements:
+- Microsoft Defender for Endpoint
+- Access to DeviceNetworkEvents table

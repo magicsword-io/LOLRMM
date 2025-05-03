@@ -6,7 +6,6 @@ detection:
   selection:
     ParentImage|endswith:
     - tacticalrmm.exe
-    - tacticalrmm.exe
   condition: selection
 id: 58f7ad72-6d1a-46b6-b998-4a984395f7d5
 status: experimental

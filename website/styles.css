@@ -2,3 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+/* Fix for EUI Accordion display */
+.euiAccordion__childWrapper {
+  height: fit-content !important;
+  visibility: visible !important;
+  overflow: clip !important;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.euiAccordion-isOpen .euiAccordion__childWrapper {
+  max-height: 2400px; /* Adjust this value based on your content */
+  opacity: 1;
+}
+
+.euiAccordion-isOpen .euiAccordion__childWrapper .euiAccordion__childWrapper {
+  height: fit-content !important;
+  visibility: visible !important;
+  overflow: clip !important;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.euiAccordion-isOpen .euiAccordion__childWrapper .euiAccordion-isOpen .euiAccordion__childWrapper {
+  max-height: 800px; /* Adjust this value based on your content */
+  opacity: 1;
+  overflow: auto !important;
+}
+
+/* Handle code block with better visibility */
+.euiCodeBlock {
+  border-radius: 8px;
+}
