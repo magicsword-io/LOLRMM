@@ -31,5 +31,5 @@ Artifacts:
     - '*.parsec.app'
     Ports: []
 Detections:
-References:
+References: 'https://x.com/malmoeb/status/1923255362318196951'
 Acknowledgement: []
