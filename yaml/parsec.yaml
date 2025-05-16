@@ -1,10 +1,10 @@
 Name: Parsec
-Description: Parsec is a remote monitoring and management (RMM) tool. 
+Description: 'Parsec is a remote monitoring and management (RMM) tool. 
 Remote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency. 
-Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.
+Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.'
 Author: 'Matt Green - @mgreen27'
-Created: '5/16/2025'
-LastModified: 5/16/2025
+Created: 2025-5-16
+LastModified: 2025-5-16
 Details:
   Website: 'https://parsec.app'
   PEMetadata:
@@ -31,5 +31,6 @@ Artifacts:
     - '*.parsec.app'
     Ports: []
 Detections:
-References: 'https://x.com/malmoeb/status/1923255362318196951'
+References: 
+  - https://x.com/malmoeb/status/1923255362318196951
 Acknowledgement: []
