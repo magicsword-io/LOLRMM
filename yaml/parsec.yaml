@@ -1,0 +1,37 @@
+Name: Parsec
+Description: |
+  Parsec is a remote monitoring and management (RMM) tool. 
+  Remote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency. 
+  Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.
+Author: 'Matt Green - @mgreen27'
+Created: 2025-5-16
+LastModified: 2025-5-16
+Details:
+  Website: 'https://parsec.app'
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: 'Parsec'
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - parsecd.exe
+  - pservice.exe
+  - "C:\\Program Files\\Parsec\\*"
+Artifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.parsec.app'
+    Ports: []
+Detections:
+References: 
+  - https://x.com/malmoeb/status/1923255362318196951
+Acknowledgement: []
