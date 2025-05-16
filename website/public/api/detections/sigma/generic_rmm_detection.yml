@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2025-03-24'
+modified: '2025-05-16'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -84,6 +84,7 @@ detection:
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
+    - \\C:\Program Files\Parsec\*
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Utilities\*
     - \\C:\Program Files\Solar-Putty-v4\*
@@ -428,6 +429,7 @@ detection:
     - \\p9agent*.exe
     - \\paexec.exe
     - \\parallelsaccess-*.exe
+    - \\parsecd.exe
     - \\pcaquickconnect.exe
     - \\pcicfgui.exe
     - \\pcictlui.exe
@@ -445,6 +447,7 @@ detection:
     - \\prl_deskctl_agent.exe
     - \\prl_deskctl_wizard.exe
     - \\prl_pm_service.exe
+    - \\pservice.exe
     - \\psexec.exe
     - \\psexecsvc.exe
     - \\pstlaunch.exe
