@@ -37,15 +37,18 @@ Artifacts:
     - File: 'C:\Program Files\Parsec\parsecd.exe'
       Description: 'Main parsec executable'
       OS: Windows
-      Example: 'SHA256: 38011E713B4BE8577576062754CAD03E9899859488932AE4C9C83E5FBB5CB7D2'
+      Example:
+        - 'SHA256: 38011E713B4BE8577576062754CAD03E9899859488932AE4C9C83E5FBB5CB7D2'
     - File: 'C:\Program Files\Parsec\pservice.exe'
       Description: 'Background service managing input devices'
       OS: Windows
-      Example: 'SHA256: CC62D22BF8A082621FA25FDEEE3150C17B09DBC09C9371E3DCDD6EC83967770C'
+      Example:
+        - 'SHA256: CC62D22BF8A082621FA25FDEEE3150C17B09DBC09C9371E3DCDD6EC83967770C'
     - File: 'C:\Program Files\Parsec\teams.exe'
       Description: 'Parsec for teams collaboration and user session management'
       OS: Windows
-      Example: 'SHA256: 6DC71B2E92B770DCFECA4A32C8F1787210311F731F1124754DF193EC22D5D13E'
+      Example:
+        - 'SHA256: 6DC71B2E92B770DCFECA4A32C8F1787210311F731F1124754DF193EC22D5D13E'
   EventLog:
     - EventID: 7045
       ProviderName: 'Service Control Manager'
