@@ -1,5 +1,5 @@
 ---
-description = "Parsec is a remote monitoring and management (RMM) tool.  Remote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency.  Secure, flexible, effortless access to whatever you do, at any time, from wherever you go."
+description = "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration.   Remote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency.  Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.  Parsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access."
 title = "Parsec"
 ---
 
@@ -9,42 +9,67 @@ import {EuiSpacer} from "@elastic/eui"
 
 # Parsec
 
-Parsec is a remote monitoring and management (RMM) tool. 
+Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration. 
+
 Remote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency. 
 Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.
 
+Parsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access.
+
 
 ### Details
-<Details author={"Matt Green - @mgreen27"}
+<Details author={"Luca Di Bartolomeo & Matt Green"}
          category={""}
-         created={"2025-5-16"}
-         website={"https://parsec.app"}
+         created={"2025-03-16"}
+         website={"https://parsec.app/"}
          lastModified={"2025-5-16"}
-         privileges={""}
-         free={ "" }
-         verification={""}
+         privileges={"Current User"}
+         free={ true }
+         verification={"False"}
 />
 
 #### Installation Paths
-<Card code={ ["parsecd.exe", "pservice.exe", "C:\\Program Files\\Parsec\\*"] }/>
+<Card code={ ["C:\\Program Files\\Parsec\\*", "parsecd.exe", "pservice.exe"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "macOS", "Android"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "GUI Support"] }/>
 
 
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Parsec\\parsecd.exe", "Description": "Main parsec executable", "OS": "Windows", "Example": ["SHA256: 38011E713B4BE8577576062754CAD03E9899859488932AE4C9C83E5FBB5CB7D2"]}, {"File": "C:\\Program Files\\Parsec\\pservice.exe", "Description": "Background service managing input devices", "OS": "Windows", "Example": ["SHA256: CC62D22BF8A082621FA25FDEEE3150C17B09DBC09C9371E3DCDD6EC83967770C"]}, {"File": "C:\\Program Files\\Parsec\\teams.exe", "Description": "Parsec for teams collaboration and user session management", "OS": "Windows", "Example": ["SHA256: 6DC71B2E92B770DCFECA4A32C8F1787210311F731F1124754DF193EC22D5D13E"]}] }/>
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "parsecvirtualds", "ImagePath": "\"\\SystemRoot\\System32\\drivers\\parsecvirtualds.sys\"", "ServiceType": "kernel mode driver", "StartType": "demand start", "AccountName": "System", "Description": "Parsec service installation event", "Example": "<Event xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\"><System><Provider Name=\"Service Control Manager\" Guid=\"{555908d1-a6d7-4695-8e1e-26931d2012f4}\"EventSourceName=\"Service Control Manager\" /><EventID Qualifiers=\"16384\">7045</EventID><Version>0</Version><Level>4</Level><Task>0</Task><Opcode>0</Opcode><Keywords>0x8080000000000000</Keywords><TimeCreated SystemTime=\"2025-03-16T23:16:53.5897766Z\" /><EventRecordID>596</EventRecordID><Correlation /><Execution ProcessID=\"804\" ThreadID=\"912\" /><Channel>System</Channel><Computer>Computer</Computer><Security UserID=\"S-1-5-18\" /></System><EventData><Data Name=\"ServiceName\">parsecvirtualds</Data><Data Name=\"ImagePath\">\\SystemRoot\\System32\\drivers\\parsecvirtualds.sys</Data><Data Name=\"ServiceType\">kernel mode driver</Data><Data Name=\"StartType\">demand start</Data><Data Name=\"AccountName\"></Data></EventData></Event>"}] }/>
 
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.parsec.app"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known domains used by Parsec", "Domains": ["parsec.app", "parsec.gg", "*.parsec.app"], "Ports": [443, 3478]}] }/>
 
 
 
 
+### Detections
+- Detects Potential Parsec RMM Tool Network Activity
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yaml)
+- Detects Potential Parsec RMM Tool Process Activity
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yaml)
+- Detects Potential Sigma RMM Tool Registry Activity
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_registry_sigma.yaml)
 
 ### References
+- [https://parsec.app/](https://parsec.app/)
+- [https://www.virustotal.com/gui/file/206cd186aaa431d3975eb30f682b83851ef4f81125d2004f53b681117da23ec6/behavior](https://www.virustotal.com/gui/file/206cd186aaa431d3975eb30f682b83851ef4f81125d2004f53b681117da23ec6/behavior)
 - [https://x.com/malmoeb/status/1923255362318196951](https://x.com/malmoeb/status/1923255362318196951)
 
+### Acknowledgements
+- Luca Di Bartolomeo (@LucaInfoSec)
+- Matt Green (@mgreen27)
