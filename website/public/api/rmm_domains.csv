@@ -238,7 +238,6 @@ au.pcmag.com/utilities/21470/webex-pcnow,Pcnow
 *.itsupport247.net,ITSupport247 (ConnectWise)
 *.optitune.us,OptiTune
 *.opti-tune.com,OptiTune
-*.nate.com,NateOn-desktop sharing
 *.islonline.com,ISL Online
 *.islonline.net,ISL Online
 ivanti.com/,RES Automation Manager
@@ -344,7 +343,7 @@ realvnc.com/en/connect/download/vnc,VNC
 *.mikogo4.com,Mikogo
 *.mikogo.com,Mikogo
 mikogo.com,Mikogo
-* .ultraviewer.net,UltraViewer
+*.ultraviewer.net,UltraViewer
 ultraviewer.net,UltraViewer
 *search.namequery.com,Absolute (Computrace)
 *server.absolute.com,Absolute (Computrace)
