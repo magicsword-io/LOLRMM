@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+    - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
