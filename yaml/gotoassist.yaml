@@ -13,13 +13,18 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - gotoassist.exe
   - g2a*.exe
   - GoTo Assist Opener.exe
+  - g2mcomm.exe
+  - g2mupdate.com
+  - goto opener.exe
+  - g2ax_comm_customer.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -35,6 +40,7 @@ Artifacts:
     - '*.gotoassist.me'
     - '*.gotoassist.at'
     - '*.desktopstreaming.com'
+    - '*.cdn.getgo.com'
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_network_sigma.yml
