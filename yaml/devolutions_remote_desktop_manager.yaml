@@ -31,10 +31,10 @@ Artifacts:
     Description: Log file showing connections, disconnections, actions on saved passwords and attachments, and other changes
     OS: Windows
     Example:
-    - [5/20/2025 12:48:58 PM] Entry added - '192.168.0.xx' (RDP (Microsoft Remote Desktop))
-    - [5/20/2025 12:49:02 PM] Connecting - '192.168.0.xx' (RDP (Microsoft Remote Desktop))
-    - [5/20/2025 12:49:58 PM] Disconnected - '192.168.0.xx' (RDP (Microsoft Remote Desktop))
-    - [5/22/2025 11:07:39 AM] Password viewed - '192.168.0.xx' (RDP (Microsoft Remote Desktop))
+    - "[5/20/2025 12:48:58 PM] Entry added - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
+    - "[5/20/2025 12:49:02 PM] Connecting - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
+    - "[5/20/2025 12:49:58 PM] Disconnected - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
+    - "[5/22/2025 11:07:39 AM] Password viewed - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
   - File: '%localappdata%\Devolutions\RemoteDesktopManager[GUID]\Mru.xml'
     Description: Most recently used Connections
     OS: Windows
