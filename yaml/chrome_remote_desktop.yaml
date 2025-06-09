@@ -32,6 +32,9 @@ Artifacts:
     - '*remotedesktop.google.com'
     - '*remotedesktop-pa.googleapis.com'
     - remotedesktop.google.com
+    - chromoting-client.talkgadget.google.com
+    - chromoting-host.talkgadget.google.com
+    - chromoting-oauth.talkgadget.google.com
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml
