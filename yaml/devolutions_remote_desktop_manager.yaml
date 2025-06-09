@@ -26,7 +26,7 @@ Details:
   - C:\Program Files\Devolutions\Remote Desktop Manager
   - '*\RemoteDesktopManager.exe'
 Artifacts:
-  Disk: 
+  Disk:
   - File: '%localappdata%\Devolutions\RemoteDesktopManager\Connections.log'
     Description: Log file showing connections, disconnections, actions on saved passwords and attachments, and other changes
     OS: Windows
