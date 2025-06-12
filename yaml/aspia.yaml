@@ -5,11 +5,11 @@ Created: '2025-05-09'
 Details:
   Website: https://aspia.org/
   PEMetadata:
-  - Filename:aspia_client.exe
-    Description:Aspia Client
-    Product:Aspia
-    Company:Dmitry Chapyshev
-    OriginalFileName:aspia_client.exe
+  - Filename: aspia_client.exe
+    OriginalFileName: aspia_client.exe
+    Description: Aspia Client
+    Product: Aspia
+    Company: Dmitry Chapyshev
   Privileges: SYSTEM
   SupportedOS:
   - Windows
