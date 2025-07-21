@@ -15374,7 +15374,7 @@
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "nomachine*.exe",
-                "nxservice*.ese",
+                "nxservice*.exe",
                 "nxd.exe"
             ]
         },
