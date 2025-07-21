@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -29,6 +30,8 @@ Artifacts:
     - rustdesk.com
     - user_managed
     - web.rustdesk.com
+    - api.rustdesk.com
+    - rs-ny.rustdesk.com
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml
