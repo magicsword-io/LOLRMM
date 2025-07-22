@@ -21,8 +21,10 @@ Details:
   InstallationPaths:
   - NetLock_RMM_Agent_Installer.exe
   - NetLock_RMM_Agent_Installer
-  - /var/
-  - /Library/Application Support/
+  - /var/0x101_Cyber_Security/*
+  - /Library/Application Support/0x101_Cyber_Security/*
+  - /usr/local/bin/0x101_Cyber_Security/Netlock_RMM/*
+  - /usr/0x101_Cyber_Security/Netlock_RMM/*
   - C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
   - C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_Process.exe
   - C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_UAC.exe
@@ -34,6 +36,15 @@ Artifacts:
   - File: C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\server_config.json
     Description: Server Configuration File
     OS: Windows
+  - File: /etc/systemd/system/netlock-rmm-agent-comm.service
+    Description: Netlock RMM Agent comm agent service
+    OS: Linux
+  - File: /Library/LaunchDaemons/com.netlock.rmm.agentcomm.plist
+    Description: macOS LaunchDaemon plist File
+    OS: macOS
+  - File: /var/log/netlock-rmm-agent-comm.log
+    Description: RMM agent comm log (Non-Windows)
+    OS: Linux
   EventLog: []
   Registry: []
   Network: []
