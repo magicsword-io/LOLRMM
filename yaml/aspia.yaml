@@ -2,6 +2,7 @@ Name: Aspia
 Description: |
   Aspia is an open-source Remote Desktop, file transfer and system information tool.
 Created: '2025-05-09'
+LastModified: '2025-07-21'
 Details:
   Website: https://aspia.org/
   PEMetadata:
@@ -53,7 +54,7 @@ Artifacts:
     LogFile: Application.evtx
     Data: 'Product: Aspia Client -- Installation completed successfully.'
     Description:  Aspia Client installation event.
-  Registry:
+  Registry: []
   Network:
   - Description: Aspia can be downloaded from the official github repository.
     Domains:
