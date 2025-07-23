@@ -37,6 +37,7 @@ Details:
   InstallationPaths:
   - C:\Program Files (x86)\AnyDesk\*
   - C:\Program Files\AnyDesk\*
+  - /Applications/AnyDesk.app
 Artifacts:
   Disk:
   - File: '%programdata%\AnyDesk\ad_svc.trace'
