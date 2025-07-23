@@ -39,6 +39,7 @@ Artifacts:
     - user_managed
     - web.rustdesk.com
     - api.rustdesk.com
+    - rs-ny.rustdesk.com
     Ports:
     - 443
     - 21115
