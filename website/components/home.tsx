@@ -325,7 +325,13 @@ function Contents() {
 let ApprovedRMM = dynamic(["nomachine.com", "ivanti.com", "getgo.com"]); // Your approved RMM domains
 let RMMList = externaldata(URI: string, RMMTool: string)
     [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];
-let RMMUrl = RMMList | project URI;
+let RMMUrl = RMMList
+| project URIClean = case(
+    URI startswith "*.", replace_string(URI, "*.", ""),
+    URI startswith "*", replace_string(URI, "*", ""),
+    URI !startswith "*" and URI contains "*", replace_regex(URI, @".+?\*", ""),
+    URI
+    );
 DeviceNetworkEvents
 | where TimeGenerated > ago(1h)
 | where ActionType == @"ConnectionSuccess"
