@@ -222,15 +222,15 @@ function Contents() {
 				<EuiToast
 					title={
 						<>
-							Feel free to open a{" "}
+							Want to contribute? You can{" "}
 							<EuiLink href="https://github.com/magicsword-io/lolrmm/pulls">
-								PR
+								submit a pull request
 							</EuiLink>
-							, raise an{" "}
+							{" "}to add features,{" "}
 							<EuiLink href="https://github.com/magicsword-io/lolrmm/issues/new/choose">
-								issue
+								create an issue
 							</EuiLink>
-							, or suggest new RMM tools to be added.
+							{" "}to report bugs, or suggest new RMM tools for our database.
 						</>
 					}
 					color="warning"
