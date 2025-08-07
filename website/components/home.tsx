@@ -327,11 +327,11 @@ let RMMList = externaldata(URI: string, RMMTool: string)
     [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];
 let RMMUrl = RMMList | project URI;
 DeviceNetworkEvents
-| where TimeGenerated > ago(1h)
+| where Timestamp > ago(1h)
 | where ActionType == @"ConnectionSuccess"
 | where RemoteUrl has_any(RMMUrl)
 | where not (RemoteUrl has_any(ApprovedRMM))
-| summarize arg_max(TimeGenerated, *) by DeviceId`}								
+| summarize arg_max(Timestamp, *) by DeviceId`}								
 									</EuiCodeBlock>
 									<EuiSpacer size="s" />
 									<EuiText size="s">
