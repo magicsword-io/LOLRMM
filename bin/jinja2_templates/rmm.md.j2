@@ -18,8 +18,8 @@ import {EuiSpacer} from "@elastic/eui"
          website={"{{rmm.Details.Website}}"}
          lastModified={"{{rmm.LastModified}}"}
          privileges={"{{rmm.Details.Privileges}}"}
-         free={ {{dump(rmm.Details.Free)}} }
-         verification={"{{rmm.Details.Verification}}"}
+         free={ {{dump(rmm.Details.Free | default(false, true))}} }
+         verification={ {{dump(rmm.Details.Verification | default(false, true))}} }
 />
 
 {% if rmm.Details.InstallationPaths %}
