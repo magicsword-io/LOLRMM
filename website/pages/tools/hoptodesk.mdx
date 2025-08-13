@@ -1,0 +1,58 @@
+---
+description = "HopToDesk is a free Remote Management and Monitoring tool."
+title = "HopToDesk"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# HopToDesk
+
+HopToDesk is a free Remote Management and Monitoring tool.
+
+### Details
+<Details author={"Tyler Schultz"}
+         category={""}
+         created={"7/17/2025"}
+         website={"https://www.hoptodesk.com/"}
+         lastModified={"7/17/2025"}
+         privileges={""}
+         free={ "Yes" }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["hoptodesk.exe", "C:\\Program Files (x86)\\HopToDesk\\*", "/Applications/HopToDesk.app"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "MacOS"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\HopToDesk\\HopToDesk.exe", "Description": "Program Binary File", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\privacyhelper.exe", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\PrivacyMode.dll", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\sciter.dll", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\HopToDesk\\config\\HopToDesk.toml", "Description": "Configuration File", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Temp\\privacyhelper.exe", "Description": "N/A", "OS": "Windows"}, {"FIle": "/System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log", "Description": "N/A", "OS": "MacOS"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKEY_USERS\\*_Classes\\HopToDesk\\*", "Description": null}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["signal.hoptodesk.com", "api.hoptodesk.com", "turn.hoptodesk.com"], "Ports": [443, 3478, 80]}] }/>
+
+
+
+
+
+### References
+- [https://www.hoptodesk.com/#faqlink](https://www.hoptodesk.com/#faqlink)
+- [https://gitlab.com/hoptodesk/hoptodesk](https://gitlab.com/hoptodesk/hoptodesk)
+
+### Acknowledgements
+- Tyler Schultz (@shockwave_ts)

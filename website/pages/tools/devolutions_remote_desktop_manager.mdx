@@ -12,23 +12,32 @@ import {EuiSpacer} from "@elastic/eui"
 Devolutions Remote Desktop Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
 ### Details
-<Details author={""}
+<Details author={"ogmini"}
          category={""}
-         created={""}
-         website={""}
-         lastModified={""}
+         created={"2025-06-02"}
+         website={"https://devolutions.net/remote-desktop-manager/"}
+         lastModified={"2025-06-02"}
          privileges={""}
-         free={ "" }
-         verification={""}
+         free={ false }
+         verification={ false }
 />
 
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Devolutions\\Remote Desktop Manager", "*\\RemoteDesktopManager.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "Android", "Mac", "IOS"] }/>
 
 
-
+#### Known Vulnerabilities
+- [https://www.cvedetails.com/version-list/22913/177721/1/Devolutions-Remote-Desktop-Manager-Powershell.html](https://www.cvedetails.com/version-list/22913/177721/1/Devolutions-Remote-Desktop-Manager-Powershell.html)
 
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "%localappdata%\\Devolutions\\RemoteDesktopManager\\Connections.log", "Description": "Log file showing connections, disconnections, actions on saved passwords and attachments, and other changes", "OS": "Windows", "Example": ["[5/20/2025 12:48:58 PM] Entry added - '192.168.0.xx' (RDP (Microsoft Remote Desktop))", "[5/20/2025 12:49:02 PM] Connecting - '192.168.0.xx' (RDP (Microsoft Remote Desktop))", "[5/20/2025 12:49:58 PM] Disconnected - '192.168.0.xx' (RDP (Microsoft Remote Desktop))", "[5/22/2025 11:07:39 AM] Password viewed - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"]}, {"File": "%localappdata%\\Devolutions\\RemoteDesktopManager[GUID]\\Mru.xml", "Description": "Most recently used Connections", "OS": "Windows"}, {"File": "%localappdata%\\Devolutions\\RemoteDesktopManager\\Connections.db", "Description": "Default connections database. There can be others. Holds information and configuration about the connections", "OS": "Windows"}] }/>
 
 
 
@@ -37,4 +46,9 @@ Devolutions Remote Desktop Manager is a remote monitoring and management (RMM) t
 
 
 
+### References
+- [https://devolutions.net/remote-desktop-manager/](https://devolutions.net/remote-desktop-manager/)
+- [https://ogmini.github.io/research#remote-desktop-manager](https://ogmini.github.io/research#remote-desktop-manager)
 
+### Acknowledgements
+- ogmini (https://ogmini.github.io/)

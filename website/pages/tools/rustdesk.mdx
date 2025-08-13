@@ -15,28 +15,33 @@ RustDesk is a remote monitoring and management (RMM) tool. More information will
 <Details author={""}
          category={""}
          created={""}
-         website={""}
-         lastModified={"2/9/2024"}
+         website={"https://rustdesk.com/"}
+         lastModified={"7/17/2025"}
          privileges={""}
-         free={ "" }
-         verification={""}
+         free={ "Yes" }
+         verification={ false }
 />
 
 #### Installation Paths
-<Card code={ ["rustdesk*.exe", "rustdesk.exe"] }/>
+<Card code={ ["rustdesk*.exe", "rustdesk.exe", "C:\\Users\\*\\AppData\\Local\\rustdesk\\rustdesk.exe", "C:\\Users\\*\\AppData\\Local\\rustdesk\\*", "C:\\Program Files\\RustDesk"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "MacOS"] }/>
 
 
 
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Windows\\ServiceProfiles\\LocalService\\AppData\\Roaming\\RustDesk\\*", "Description": "N/A", "OS": "Windows"}] }/>
 
 
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["rustdesk.com", "user_managed", "web.rustdesk.com"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["rustdesk.com", "user_managed", "web.rustdesk.com", "api.rustdesk.com", "rs-ny.rustdesk.com"], "Ports": [443, 21115, 21116]}] }/>
 
 
 
