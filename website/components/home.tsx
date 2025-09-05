@@ -259,16 +259,26 @@ function Contents() {
 				<EuiToast
 					title={
 						<>
-							Interested in learning how to <span style={{ color: 'red' }}>block</span> these remote management tools natively on Windows?
+							Interested in learning how to <EuiLink href="https://www.magicsword.io/" style={{ color: 'red', fontWeight: 'bold' }}>block</EuiLink> these remote management tools natively on Windows?
 							<br />
-							<EuiLink href="https://www.magicsword.io/premium">
-								<EuiImage
-									alt="MagicSword Logo"
-									src="/images/magicsword.png"
-									style={{ width: '110px', height: '110px', verticalAlign: 'middle', display: 'inline-block', marginRight: '10px', marginTop: '10px' }}
-								/>
-								Explore MagicSword Premium
-							</EuiLink>
+							<div style={{ textAlign: 'center', marginTop: '10px' }}>
+								<EuiLink href="https://www.magicsword.io/">
+									<EuiImage
+										alt="MagicSword Logo"
+										src="/images/magicsword.png"
+										style={{ 
+											width: '240px', 
+											height: 'auto', 
+											display: 'block', 
+											margin: '0 auto',
+											objectFit: 'contain',
+											cursor: 'pointer',
+											borderRadius: '8px',
+											transition: 'transform 0.2s ease'
+										}}
+									/>
+								</EuiLink>
+							</div>
 						</>
 					}
 					color="warning"
@@ -325,18 +335,27 @@ function Contents() {
 let ApprovedRMM = dynamic(["nomachine.com", "ivanti.com", "getgo.com"]); // Your approved RMM domains
 let RMMList = externaldata(URI: string, RMMTool: string)
     [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];
-let RMMUrl = RMMList | project URI;
+let RMMUrl = RMMList
+| project URIClean = case(
+    URI startswith "*.", replace_string(URI, "*.", ""),
+    URI startswith "*", replace_string(URI, "*", ""),
+    URI !startswith "*" and URI contains "*", replace_regex(URI, @".+?\*", ""),
+    URI
+    );
 DeviceNetworkEvents
-| where TimeGenerated > ago(1h)
+| where Timestamp > ago(1h)
 | where ActionType == @"ConnectionSuccess"
-| where RemoteUrl has_any(RMMUrl)
+| where RemoteUrl has_any(RMMUrl.URIClean)
 | where not (RemoteUrl has_any(ApprovedRMM))
-| summarize arg_max(TimeGenerated, *) by DeviceId`}								
+| summarize arg_max(Timestamp, *) by DeviceId`}								
 									</EuiCodeBlock>
 									<EuiSpacer size="s" />
 									<EuiText size="s">
 										<p>
 											Replace <code>YOUR_APPROVED_RMM_DOMAINS</code> with your organization's approved RMM domains to exclude them from the detection.
+										</p>
+										<p>
+											<strong>Note for Microsoft Sentinel users:</strong> If you're using this query in Microsoft Sentinel, replace <code>Timestamp</code> with <code>TimeGenerated</code> in both the WHERE clause and the summarize function.
 										</p>
 									</EuiText>
 								</div>

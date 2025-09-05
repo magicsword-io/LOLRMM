@@ -1,0 +1,62 @@
+---
+description = "Aspia is an open-source Remote Desktop, file transfer and system information tool."
+title = "Aspia"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Aspia
+
+Aspia is an open-source Remote Desktop, file transfer and system information tool.
+
+
+### Details
+<Details author={""}
+         category={""}
+         created={"2025-05-09"}
+         website={"https://aspia.org/"}
+         lastModified={"2025-07-21"}
+         privileges={"SYSTEM"}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["*\\aspia_client.exe", "C:\\Program Files\\Aspia\\", "C:\\Program Files (x86)\\Aspia\\"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "MacOS", "Linux"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote desktop management", "Remote desktop view", "File transfer", "System information", "Text chat", "Task manager", "Encryption", "Authorization (it is possible to add users with different access rights)", "Address book with encryption and master-password", "NAT traversal with connection by ID (with using Aspia Router and Aspia Relay)", "Direct connections", "Audio support", "Video recording", "Client and Console for Windows, MacOSX and Linux", "Host for Windows only", "Router/Relay for Windows and Linux"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Users\\*\\AppData\\Roaming\\aspia\\client.ini", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Temp\\aspia\\aspia_client-*.log", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Program Files\\Aspia\\Client\\qt.conf", "Description": "N/A", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 11707, "ProviderName": "MsiInstaller", "LogFile": "Application.evtx", "Data": "Product: Aspia Client -- Installation completed successfully.", "Description": "Aspia Client installation event."}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Aspia can be downloaded from the official github repository.", "Domains": ["https://github.com/dchapyshev/aspia"], "Ports": ["N/A"]}] }/>
+
+
+
+
+
+### References
+- [https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/](https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/)
+- [https://www.aspia.org/](https://www.aspia.org/)
+- [https://github.com/dchapyshev/aspia](https://github.com/dchapyshev/aspia)
+
+### Acknowledgements
+- Swachchhanda Shrawan Poudel (@_swachchhanda_)
