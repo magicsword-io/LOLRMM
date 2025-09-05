@@ -3,7 +3,7 @@ Description: DW Service is a remote monitoring and management (RMM) tool. More i
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2-7-2024
+LastModified: '2024-02-07'
 Details:
   Website: ''
   PEMetadata:
@@ -14,7 +14,7 @@ Details:
   Free: ''
   Verification: ''
   SupportedOS:
-    - Windows
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:

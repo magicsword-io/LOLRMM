@@ -1,8 +1,8 @@
 Name: HopToDesk
-Description: HopToDesk is a free Remote Management and Monitoring tool. 
-Author: 'Tyler Schultz'
-Created: 7/17/2025
-LastModified: 7/17/2025
+Description: HopToDesk is a free Remote Management and Monitoring tool.
+Author: Tyler Schultz
+Created: '2025-07-17'
+LastModified: '2025-07-17'
 Details:
   Website: https://www.hoptodesk.com/
   PEMetadata:
@@ -12,7 +12,7 @@ Details:
   Privileges: ''
   Free: 'Yes'
   Verification: ''
-  SupportedOS: 
+  SupportedOS:
   - Windows
   - Linux
   - MacOS
@@ -46,9 +46,9 @@ Artifacts:
     Description: N/A
     OS: MacOS
   EventLog: []
-  Registry: 
-    - Path: HKEY_USERS\*_Classes\HopToDesk\*
-      Description: null
+  Registry:
+  - Path: HKEY_USERS\*_Classes\HopToDesk\*
+    Description: null
   Network:
   - Description: Known remote domains
     Domains:
@@ -64,5 +64,5 @@ References:
 - https://www.hoptodesk.com/#faqlink
 - https://gitlab.com/hoptodesk/hoptodesk
 Acknowledgement:
-  - Person: 'Tyler Schultz'
-    Handle: '@shockwave_ts'
+- Person: Tyler Schultz
+  Handle: '@shockwave_ts'

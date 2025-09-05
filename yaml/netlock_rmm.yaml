@@ -1,8 +1,9 @@
 Name: NetLock RMM
-Description: NetLock RMM is an open source Remote Management and Monitoring tool with a paid support and cloud offering.
-Author: 'Tyler Schultz'
-Created: 7/18/2025
-LastModified: 7/18/2025
+Description: NetLock RMM is an open source Remote Management and Monitoring tool with
+  a paid support and cloud offering.
+Author: Tyler Schultz
+Created: '2025-07-18'
+LastModified: '2025-07-18'
 Details:
   Website: https://www.netlockrmm.com/
   PEMetadata:
@@ -12,7 +13,7 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: 
+  SupportedOS:
   - Windows
   - Linux
   - MacOS
@@ -53,5 +54,5 @@ References:
 - https://www.netlockrmm.com
 - https://github.com/0x101-Cyber-Security/NetLock-RMM
 Acknowledgement:
-  - Person: 'Tyler Schultz'
-    Handle: '@shockwave_ts'
+- Person: Tyler Schultz
+  Handle: '@shockwave_ts'

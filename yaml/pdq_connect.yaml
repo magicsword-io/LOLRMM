@@ -3,7 +3,7 @@ Description: PDQ Connect is a remote monitoring and management (RMM) tool. More 
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2-26-2024
+LastModified: '2024-02-26'
 Details:
   Website: ''
   PEMetadata:
@@ -22,8 +22,9 @@ Details:
 Artifacts:
   Disk:
   - File: C:\ProgramData\PDQ\PDQConnectAgent\PDQConnectAgent.db-journal
-    Description: Journal file that is part of the database system used by the PDQ Connect Agent to manage and store data related to its operations
-    OS: Windows  
+    Description: Journal file that is part of the database system used by the PDQ
+      Connect Agent to manage and store data related to its operations
+    OS: Windows
   EventLog: []
   Registry: []
   Network:
