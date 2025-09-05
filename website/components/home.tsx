@@ -338,6 +338,9 @@ DeviceNetworkEvents
 										<p>
 											Replace <code>YOUR_APPROVED_RMM_DOMAINS</code> with your organization's approved RMM domains to exclude them from the detection.
 										</p>
+										<p>
+											<strong>Note for Microsoft Sentinel users:</strong> If you're using this query in Microsoft Sentinel, replace <code>Timestamp</code> with <code>TimeGenerated</code> in both the WHERE clause and the summarize function.
+										</p>
 									</EuiText>
 								</div>
 							) : selectedTabId === 'splunk' ? (
