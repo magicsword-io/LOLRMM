@@ -424,6 +424,10 @@ beamyourscreen.com,BeamYourScreen
 *.beamyourscreen.com,BeamYourScreen
 *.netsupportmanager.com,NetSupport Manager
 netsupportmanager.com,NetSupport Manager
+cloud.acronis.com,Acronis Cyber Protect (Remotix)
+agents*-cloud.acronis.com,Acronis Cyber Protect (Remotix)
+gw.remotix.com,Acronis Cyber Protect (Remotix)
+connect.acronis.com,Acronis Cyber Protect (Remotix)
 *.anyviewer.com,AnyViewer
 *.aomeisoftware.com,AnyViewer
 meshcentral.com,MeshCentral
@@ -454,10 +458,6 @@ download.cnet.com/Net-Viewer/3000-2370_4-10034828.html,Netviewer
 weezo.net,Weezo
 *.weezo.net,Weezo
 weezo.en.softonic.com,Weezo
-cloud.acronis.com,Acronis Cyber Protect (Remotix)
-agents*-cloud.acronis.com,Acronis Cyber Protect (Remotix)
-gw.remotix.com,Acronis Cyber Protect (Remotix)
-connect.acronis.com,Acronis Cyber Protect (Remotix)
 live.screenconnect.com,ConnectWise Control
 control.connectwise.com,ConnectWise Control
 github.com/V-E-O/rdp2tcp,rdp2tcp

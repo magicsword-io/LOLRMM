@@ -14248,6 +14248,64 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Acronis Cyber Protect (Remotix)",
+        "Description": "Acronis Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Author": "",
+        "Created": "",
+        "LastModified": "2/26/2024",
+        "Details": {
+            "Website": "",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "",
+            "Free": "",
+            "Verification": "",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "AcronisCyberProtectConnectQuickAssist*.exe",
+                "AcronisCyberProtectConnectAgent.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Known remote domains",
+                    "Domains": [
+                        "cloud.acronis.com",
+                        "agents*-cloud.acronis.com",
+                        "gw.remotix.com",
+                        "connect.acronis.com"
+                    ],
+                    "Ports": []
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__network_sigma.yml",
+                "Description": "Detects potential network activity of Acronic Cyber Protect (Remotix) RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Acronic Cyber Protect (Remotix) RMM tool"
+            }
+        ],
+        "References": [
+            "https://kb.acronis.com/content/47189"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "AnyViewer",
         "Description": "AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
         "Author": "@kostastsale",
@@ -15348,64 +15406,6 @@
         ],
         "References": [
             "weezo.en.softonic.com"
-        ],
-        "Acknowledgement": []
-    },
-    {
-        "Name": "Acronis Cyber Protect (Remotix)",
-        "Description": "Acronis Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "",
-        "LastModified": "2/26/2024",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [
-                "Windows"
-            ],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "AcronisCyberProtectConnectQuickAssist*.exe",
-                "AcronisCyberProtectConnectAgent.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "cloud.acronis.com",
-                        "agents*-cloud.acronis.com",
-                        "gw.remotix.com",
-                        "connect.acronis.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__network_sigma.yml",
-                "Description": "Detects potential network activity of Acronic Cyber Protect (Remotix) RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__processes_sigma.yml",
-                "Description": "Detects potential processes activity of Acronic Cyber Protect (Remotix) RMM tool"
-            }
-        ],
-        "References": [
-            "https://kb.acronis.com/content/47189"
         ],
         "Acknowledgement": []
     },
