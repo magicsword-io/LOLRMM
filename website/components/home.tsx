@@ -335,7 +335,7 @@ let RMMUrl = RMMList
 DeviceNetworkEvents
 | where TimeGenerated > ago(1h)
 | where ActionType == @"ConnectionSuccess"
-| where RemoteUrl has_any(RMMUrl)
+| where RemoteUrl has_any(RMMUrl.URIClean)
 | where not (RemoteUrl has_any(ApprovedRMM))
 | summarize arg_max(TimeGenerated, *) by DeviceId`}								
 									</EuiCodeBlock>
