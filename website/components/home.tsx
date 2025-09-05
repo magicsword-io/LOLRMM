@@ -259,16 +259,26 @@ function Contents() {
 				<EuiToast
 					title={
 						<>
-							Interested in learning how to <span style={{ color: 'red' }}>block</span> these remote management tools natively on Windows?
+							Interested in learning how to <EuiLink href="https://www.magicsword.io/" style={{ color: 'red', fontWeight: 'bold' }}>block</EuiLink> these remote management tools natively on Windows?
 							<br />
-							<EuiLink href="https://www.magicsword.io/premium">
-								<EuiImage
-									alt="MagicSword Logo"
-									src="/images/magicsword.png"
-									style={{ width: '110px', height: '110px', verticalAlign: 'middle', display: 'inline-block', marginRight: '10px', marginTop: '10px' }}
-								/>
-								Explore MagicSword Premium
-							</EuiLink>
+							<div style={{ textAlign: 'center', marginTop: '10px' }}>
+								<EuiLink href="https://www.magicsword.io/">
+									<EuiImage
+										alt="MagicSword Logo"
+										src="/images/magicsword.png"
+										style={{ 
+											width: '240px', 
+											height: 'auto', 
+											display: 'block', 
+											margin: '0 auto',
+											objectFit: 'contain',
+											cursor: 'pointer',
+											borderRadius: '8px',
+											transition: 'transform 0.2s ease'
+										}}
+									/>
+								</EuiLink>
+							</div>
 						</>
 					}
 					color="warning"
