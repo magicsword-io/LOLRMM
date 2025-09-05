@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2025-08-13'
+modified: '2025-09-05'
 tags:
 - attack.lateral-movement
 - attack.t1219
