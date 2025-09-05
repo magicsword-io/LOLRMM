@@ -42,7 +42,7 @@ Artifacts:
   - File: C:\Users\*\AppData\Local\Temp\privacyhelper.exe
     Description: N/A
     OS: Windows
-  - FIle: /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
+  - File: /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
     Description: N/A
     OS: MacOS
   EventLog: []
