@@ -1,27 +1,32 @@
 Name: Ammyy Admin
-Description: Ammyy Admin is a remote monitoring and management (RMM) tool. Ammyy admin has been used by scammers to gain remote access to victims' computers. The tool is legitimate and is used by IT professionals for remote management. However, it has been abused by scammers to gain unauthorized access to victims' computers. The tool is free for personal use, but a license is required for commercial use. The tool allows for remote desktop control, file transfer, voice chat, and more. The tool is available for Windows only.
-  will be added as it becomes available.
+Description: Ammyy Admin is a remote monitoring and management (RMM) tool. Ammyy admin
+  has been used by scammers to gain remote access to victims' computers. The tool
+  is legitimate and is used by IT professionals for remote management. However, it
+  has been abused by scammers to gain unauthorized access to victims' computers. The
+  tool is free for personal use, but a license is required for commercial use. The
+  tool allows for remote desktop control, file transfer, voice chat, and more. The
+  tool is available for Windows only. will be added as it becomes available.
 Author: '@kostsatsale'
-Created: '2024/05/08'
-LastModified:
+Created: '2024-05-08'
+LastModified: null
 Details:
-  Website: 'https://www.ammyy.com'
+  Website: https://www.ammyy.com
   PEMetadata:
-    Filename: 'AA_v3.exe'
+    Filename: AA_v3.exe
     OriginalFileName: ''
-    Description: 'Ammyy Admin'
-  Privileges: 'Curent User'
-  Free: 'Yes/1 active session at a time'
-  Verification: 'None'
+    Description: Ammyy Admin
+  Privileges: Curent User
+  Free: Yes/1 active session at a time
+  Verification: None
   SupportedOS:
-  - 'Windows'
-  Capabilities: 
-    - 'Remote Management session'
-    - 'RDP Connection'
-    - 'File Transfer'
-    - 'Voice Chat'
+  - Windows
+  Capabilities:
+  - Remote Management session
+  - RDP Connection
+  - File Transfer
+  - Voice Chat
   Vulnerabilities:
-    - CVE-2013-5582
+  - CVE-2013-5582
   InstallationPaths:
   - C:\\ProgramData\\AMMYY\\*
   - AMMYY_Admin.exe
@@ -30,60 +35,64 @@ Details:
   - '*\AMMYY_Admin.exe'
 Artifacts:
   Disk:
-    - File: '%programdata%\\AMMYY\\access.log'
-      Description: 'Ammyy Admin access log file. Contains information about the remote
-        IP address, the time of connection, bytes recv/send, and the ID of the remote machine.'
-      OS: Windows
-      Example:
-        - '20240805-22:20:45.962000 00000D98 - [0] PASSED authorization remoteId=XXXXXXXX; TCP by router 136.243.104.235:443'
-        - '20240805-22:22:34.139000 00000710 - [1] FAILED authorization remoteId=XXXXXXXX; TCP by router 136.243.104.235:443'
-        - '20240805-22:23:10.648000 00000D98 - [0] ENDED  authorized session, bytes recv/send = 1164 / 115378'
-    - File: '%Binary_path%\\AA_v3.log'
-      Description: 'Ammyy Admin log file. Contains application related logs.'
-      OS: Windows
-      Example:
-        - '20240805-22:19:52.455000 00001318 - ERROR: ERROR: 2 RLEvent::TryToOpen(Global\AANS_FvwjZ_CHI)'
-        - '20240805-22:23:10.648000 00000D98 - ERROR: ERROR SetThreadDesktop(200) 170'
-
+  - File: '%programdata%\\AMMYY\\access.log'
+    Description: Ammyy Admin access log file. Contains information about the remote
+      IP address, the time of connection, bytes recv/send, and the ID of the remote
+      machine.
+    OS: Windows
+    Example:
+    - 20240805-22:20:45.962000 00000D98 - [0] PASSED authorization remoteId=XXXXXXXX;
+      TCP by router 136.243.104.235:443
+    - 20240805-22:22:34.139000 00000710 - [1] FAILED authorization remoteId=XXXXXXXX;
+      TCP by router 136.243.104.235:443
+    - 20240805-22:23:10.648000 00000D98 - [0] ENDED  authorized session, bytes recv/send
+      = 1164 / 115378
+  - File: '%Binary_path%\\AA_v3.log'
+    Description: Ammyy Admin log file. Contains application related logs.
+    OS: Windows
+    Example:
+    - '20240805-22:19:52.455000 00001318 - ERROR: ERROR: 2 RLEvent::TryToOpen(Global\AANS_FvwjZ_CHI)'
+    - '20240805-22:23:10.648000 00000D98 - ERROR: ERROR SetThreadDesktop(200) 170'
   EventLog:
-      - EventID: 4688
-        ProviderName: Microsoft-Security-Auditing
-        LogFile: Security.evtx
-        CommandLine: 'rundll32.exe "C:\ProgramData\AMMYY\aa_nts.dll",run'
-        Description: Execution of Ammyy Admin
-      - EventID: 7045
-        ProviderName: Service Control Manager
-        LogFile: System.evtx
-        ServiceName: Ammyy Admin
-        ImagePath: "C:\\*\\AA_v3.exe"
-        Description: Ammyy Admin service installation event
+  - EventID: 4688
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: rundll32.exe "C:\ProgramData\AMMYY\aa_nts.dll",run
+    Description: Execution of Ammyy Admin
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: Ammyy Admin
+    ImagePath: C:\*\AA_v3.exe
+    Description: Ammyy Admin service installation event
   Registry:
-      - Path: HKU\.DEFAULT\Software\Ammyy\Admin
-        Key: 'hr3'
-        Type: 'Reg_Binary'
-        Description: 'Writing the hr3 binary in the registry. The hr3 is likely used to store admin-related information.'
-      - Path: HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Network\AmmyyAdmin
-        Description: 'Ammyy Admin service allows AMMYY admin to run in safe mode.'
+  - Path: HKU\.DEFAULT\Software\Ammyy\Admin
+    Key: hr3
+    Type: Reg_Binary
+    Description: Writing the hr3 binary in the registry. The hr3 is likely used to
+      store admin-related information.
+  - Path: HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Network\AmmyyAdmin
+    Description: Ammyy Admin service allows AMMYY admin to run in safe mode.
   Network:
   - Description: Known remote domains
     Domains:
     - ammyy.com
     - '*ammyy.com'
-    - '136.243.104.235'
-    - '136.243.104.242'
-    - '136.243.18.122'
-    Ports: 
-      - 5931 # Incoming
-      - 80 # Outgoing
-      - 443 # Outgoing
-      - 8080 # Outgoing
+    - 136.243.104.235
+    - 136.243.104.242
+    - 136.243.18.122
+    Ports:
+    - 5931
+    - 80
+    - 443
+    - 8080
 Detections:
-  - Sigma: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/ammyy_admin.yml
-    Name: Detecting Ammy Admin RMM Agent Execution
-    Description: Detects the execution of the Ammy Admin RMM agent for remote management.
+- Sigma: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/ammyy_admin.yml
+  Name: Detecting Ammy Admin RMM Agent Execution
+  Description: Detects the execution of the Ammy Admin RMM agent for remote management.
 References:
 - https://www.ammyy.com/en/admin_security.html
 - https://www.ammyy.com/en/admin_mu.html
 Acknowledgement:
-    - Person: "Kostas"
-      Handle: "@kostastsale"
+- Person: Kostas
+  Handle: '@kostastsale'

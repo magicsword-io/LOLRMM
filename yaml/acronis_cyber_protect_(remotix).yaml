@@ -3,7 +3,7 @@ Description: Acronis Cyber Protect (Remotix) is a remote monitoring and manageme
   (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/26/2024
+LastModified: '2024-02-26'
 Details:
   Website: ''
   PEMetadata:
@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -32,11 +33,11 @@ Artifacts:
     - connect.acronis.com
     Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__network_sigma.yml
-  Description: Detects potential network activity of Acronic Cyber Protect (Remotix)
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronis_cyber_protect__remotix__network_sigma.yml
+  Description: Detects potential network activity of Acronis Cyber Protect (Remotix)
     RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronic_cyber_protect__remotix__processes_sigma.yml
-  Description: Detects potential processes activity of Acronic Cyber Protect (Remotix)
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronis_cyber_protect__remotix__processes_sigma.yml
+  Description: Detects potential processes activity of Acronis Cyber Protect (Remotix)
     RMM tool
 References:
 - https://kb.acronis.com/content/47189

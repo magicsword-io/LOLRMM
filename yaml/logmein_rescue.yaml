@@ -3,7 +3,7 @@ Description: LogMeIn rescue is a remote monitoring and management (RMM) tool. Mo
   information will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/8/2024
+LastModified: '2024-02-08'
 Details:
   Website: ''
   PEMetadata:
@@ -20,6 +20,9 @@ Details:
   - support-logmeinrescue*.exe
   - support-logmeinrescue.exe
   - lmi_rescue.exe
+  - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
+  - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
+  - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
 Artifacts:
   Disk: []
   EventLog: []
@@ -30,6 +33,8 @@ Artifacts:
     - '*.logmeinrescue.com'
     - '*.logmeinrescue.eu'
     - logmeinrescue.com
+    - rescue-list.*.logmein-gateway.com
+    - rescue-data-cetner.logmein-gateway.com
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_network_sigma.yml

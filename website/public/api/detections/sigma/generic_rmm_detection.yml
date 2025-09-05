@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2025-03-24'
+modified: '2025-09-05'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -27,6 +27,7 @@ detection:
     - \\AgentSetup-*.exe
     - \\Agent_*_RW.exe
     - \\AgentlessRC.exe
+    - \\AnyDesk.app
     - \\ArcUI.exe
     - \\AweSun.exe
     - \\BASEClient.exe
@@ -52,6 +53,7 @@ detection:
     - \\C:\Program Files (x86)\Almageste\DragonDisk\*
     - \\C:\Program Files (x86)\AnyDesk\*
     - \\C:\Program Files (x86)\AnyViewer\*
+    - \\C:\Program Files (x86)\Aspia\
     - \\C:\Program Files (x86)\Atera Networks
     - \\C:\Program Files (x86)\Bitvise SSH Client\*
     - \\C:\Program Files (x86)\Bluetrait Agent\*
@@ -59,6 +61,7 @@ detection:
     - \\C:\Program Files (x86)\GoTo Opener
     - \\C:\Program Files (x86)\GoToMyPC\*
     - \\C:\Program Files (x86)\Google\Chrome Remote Desktop\*
+    - \\C:\Program Files (x86)\HopToDesk\*
     - \\C:\Program Files (x86)\ISL Online\ISL Light*
     - \\C:\Program Files (x86)\Kaseya\
     - \\C:\Program Files (x86)\LANDesk\*
@@ -76,16 +79,22 @@ detection:
     - \\C:\Program Files (x86)\Xpra\*
     - \\C:\Program Files (x86)\Yandex\*
     - \\C:\Program Files (x86)\mRemoteNG\*
+    - \\C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_Process.exe
+    - \\C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_UAC.exe
     - \\C:\Program Files\ATERA Networks\AteraAgent\*
     - \\C:\Program Files\AnyDesk\*
+    - \\C:\Program Files\Aspia\
     - \\C:\Program Files\Atera Networks
     - \\C:\Program Files\Bitvise SSH Server\*
     - \\C:\Program Files\Danware Data\NetOp Packn Deploy\*
+    - \\C:\Program Files\Devolutions\Remote Desktop Manager
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
+    - \\C:\Program Files\Parsec\*
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Utilities\*
+    - \\C:\Program Files\RustDesk
     - \\C:\Program Files\Solar-Putty-v4\*
     - \\C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
     - \\C:\Program Files\SysAidServer\*
@@ -93,11 +102,16 @@ detection:
     - \\C:\Program Files\TightVNC\*
     - \\C:\Program Files\ZOC8\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
+    - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
     - \\C:\ProgramData\Kaseya\
     - \\C:\ProgramData\Total Software Deployment\*
     - \\C:\ProgramFiles*\GoTo Machine Installer\*
     - \\C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
+    - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
+    - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
     - \\C:\Users\*\AppData\Local\MEGAsync\*
+    - \\C:\Users\*\AppData\Local\rustdesk\*
+    - \\C:\Users\*\AppData\Local\rustdesk\rustdesk.exe
     - \\C:\Users\*\AppData\Roaming\Mikogo\*
     - \\C:\Users\*\AppData\Roaming\SyncTrayzor\*
     - \\C:\Users\*\Downloads\AMMYY_Admin.exe
@@ -150,6 +164,7 @@ detection:
     - \\GovReachClient.exe
     - \\HelpuManager.exe
     - \\HelpuUpdater.exe
+    - \\HopToDesk.app
     - \\I'm InTouch Go Installer.exe
     - \\ISLLight.exe
     - \\ISLLightClient.exe
@@ -176,6 +191,8 @@ detection:
     - \\Microsoft Remote Desktop
     - \\MonitoringAgent.exe
     - \\NTRsupportPro_EN.exe
+    - \\NetLock_RMM_Agent_Installer
+    - \\NetLock_RMM_Agent_Installer.exe
     - \\Netop Ondemand.exe
     - \\NinjaRMMAgenPatcher.exe
     - \\NinjaRMMAgent.exe
@@ -293,6 +310,7 @@ detection:
     - \\client32.exe
     - \\clientmrinit.exe
     - \\cloudflared.exe
+    - \\connect.exe
     - \\connectwise*.exe
     - \\connectwisechat-customer.exe
     - \\connectwisecontrol.client.exe
@@ -337,7 +355,11 @@ detection:
     - \\fleetdeck_commander_svc.exe
     - \\fleetdeck_installer.exe
     - \\g2a*.exe
+    - \\g2ax_comm_customer.exe
+    - \\g2mcomm.exe
+    - \\g2mupdate.com
     - \\getscreen.exe
+    - \\goto opener.exe
     - \\gotoassist.exe
     - \\gotohttp.exe
     - \\goverrmc.exe
@@ -350,6 +372,7 @@ detection:
     - \\guacd.exe
     - \\helpbeam*.exe
     - \\helpu_install.exe
+    - \\hoptodesk.exe
     - \\hsloader.exe
     - \\iadmin.exe
     - \\idrive.RemotePCAgent
@@ -428,6 +451,7 @@ detection:
     - \\p9agent*.exe
     - \\paexec.exe
     - \\parallelsaccess-*.exe
+    - \\parsecd.exe
     - \\pcaquickconnect.exe
     - \\pcicfgui.exe
     - \\pcictlui.exe
@@ -445,6 +469,7 @@ detection:
     - \\prl_deskctl_agent.exe
     - \\prl_deskctl_wizard.exe
     - \\prl_pm_service.exe
+    - \\pservice.exe
     - \\psexec.exe
     - \\psexecsvc.exe
     - \\pstlaunch.exe

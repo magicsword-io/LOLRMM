@@ -1,0 +1,52 @@
+---
+description = "NetLock RMM is an open source Remote Management and Monitoring tool with a paid support and cloud offering."
+title = "NetLock RMM"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# NetLock RMM
+
+NetLock RMM is an open source Remote Management and Monitoring tool with a paid support and cloud offering.
+
+### Details
+<Details author={"Tyler Schultz"}
+         category={""}
+         created={"7/18/2025"}
+         website={"https://www.netlockrmm.com/"}
+         lastModified={"7/18/2025"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["NetLock_RMM_Agent_Installer.exe", "NetLock_RMM_Agent_Installer", "/var/0x101_Cyber_Security/*", "/Library/Application Support/0x101_Cyber_Security/*", "/usr/local/bin/0x101_Cyber_Security/Netlock_RMM/*", "/usr/0x101_Cyber_Security/Netlock_RMM/*", "C:\\ProgramData\\0x101 Cyber Security\\NetLock RMM\\Comm Agent\\*", "C:\\Program Files\\0x101 Cyber Security\\NetLock RMM\\UserAgent\\NetLock_RMM_User_Process.exe", "C:\\Program Files\\0x101 Cyber Security\\NetLock RMM\\UserAgent\\NetLock_RMM_User_UAC.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "MacOS"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\temp\\netlock rmm\\installer\\logs\\*", "Description": "Debug and error logs related to installation", "OS": "Windows"}, {"File": "C:\\ProgramData\\0x101 Cyber Security\\NetLock RMM\\Comm Agent\\server_config.json", "Description": "Server Configuration File", "OS": "Windows"}, {"File": "/etc/systemd/system/netlock-rmm-agent-comm.service", "Description": "Netlock RMM Agent comm agent service", "OS": "Linux"}, {"File": "/Library/LaunchDaemons/com.netlock.rmm.agentcomm.plist", "Description": "macOS LaunchDaemon plist File", "OS": "macOS"}, {"File": "/var/log/netlock-rmm-agent-comm.log", "Description": "RMM agent comm log (Non-Windows)", "OS": "Linux"}] }/>
+
+
+
+
+
+
+
+
+### References
+- [https://www.netlockrmm.com](https://www.netlockrmm.com)
+- [https://github.com/0x101-Cyber-Security/NetLock-RMM](https://github.com/0x101-Cyber-Security/NetLock-RMM)
+
+### Acknowledgements
+- Tyler Schultz (@shockwave_ts)

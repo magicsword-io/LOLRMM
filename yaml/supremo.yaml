@@ -3,7 +3,7 @@ Description: Supremo is a remote monitoring and management (RMM) tool. More info
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/13/2024
+LastModified: '2024-02-13'
 Details:
   Website: ''
   PEMetadata:
@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:

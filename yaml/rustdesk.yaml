@@ -3,24 +3,33 @@ Description: RustDesk is a remote monitoring and management (RMM) tool. More inf
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/9/2024
+LastModified: '2024-02-09'
 Details:
-  Website: ''
+  Website: https://rustdesk.com/
   PEMetadata:
     Filename: ''
     OriginalFileName: ''
     Description: ''
   Privileges: ''
-  Free: ''
+  Free: 'Yes'
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
+  - Linux
+  - MacOS
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
   - rustdesk*.exe
   - rustdesk.exe
+  - C:\Users\*\AppData\Local\rustdesk\rustdesk.exe
+  - C:\Users\*\AppData\Local\rustdesk\*
+  - C:\Program Files\RustDesk
 Artifacts:
-  Disk: []
+  Disk:
+  - File: C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\*
+    Description: N/A
+    OS: Windows
   EventLog: []
   Registry: []
   Network:
@@ -29,7 +38,12 @@ Artifacts:
     - rustdesk.com
     - user_managed
     - web.rustdesk.com
-    Ports: []
+    - api.rustdesk.com
+    - rs-ny.rustdesk.com
+    Ports:
+    - 443
+    - 21115
+    - 21116
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml
   Description: Detects potential network activity of RustDesk RMM tool

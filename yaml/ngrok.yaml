@@ -1,9 +1,9 @@
 Name: ngrok
 Description: ngrok is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: 2/9/2024
+Author: Jose Hernandez
+Created: '2024-07-19'
+LastModified: '2025-06-19'
 Details:
   Website: ''
   PEMetadata:
@@ -27,7 +27,14 @@ Artifacts:
   Network:
   - Description: Known remote domains
     Domains:
-    - user_managed
+    - connect.ngrok-agent.com
+    - connect.us.ngrok-agent.com
+    - connect.eu.ngrok-agent.com
+    - connect.ap.ngrok-agent.com
+    - connect.au.ngrok-agent.com
+    - connect.sa.ngrok-agent.com
+    - connect.jp.ngrok-agent.com
+    - connect.in.ngrok-agent.com
     - ngrok.com
     Ports: []
 Detections:

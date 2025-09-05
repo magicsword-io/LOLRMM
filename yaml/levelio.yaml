@@ -3,7 +3,7 @@ Description: Level.io is a remote monitoring and management (RMM) tool. More inf
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/8/2024
+LastModified: '2024-02-08'
 Details:
   Website: ''
   PEMetadata:
@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -21,7 +22,16 @@ Details:
   - level.exe
   - level-remote-control-ffmpeg.exe
 Artifacts:
-  Disk: []
+  Disk:
+  - File: C:\Program Files\Level\level.exe
+    Description: Level Binary
+    OS: Windows
+  - File: C:\Program Files\Level\osqueryi.exe
+    Description: A tool used by level to collect machine state information.
+    OS: Windows
+  - File: C:\Program Files\Level\level.log
+    Description: Client log file for Level.
+    OS: Windows
   EventLog: []
   Registry: []
   Network:

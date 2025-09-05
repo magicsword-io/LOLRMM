@@ -60,23 +60,23 @@ def check_network_structure(object):
     return None
 
 # Add this function to validate ISO 8601 format for Created
-def check_created_iso8601(object):
+def check_created_iso8601(object, filename):
     created = object.get('Created', None)
     if created:
         try:
             datetime.datetime.fromisoformat(created)
         except ValueError:
-            return f"ERROR: Created field is not valid ISO 8601 format for object: {object.get('Id', 'Unknown')}"
+            return f"ERROR: Created field is not valid ISO 8601 format in file {filename}: '{created}' (object: {object.get('Name', 'Unknown')})"
     return None
     
 # Add this function to validate ISO 8601 format for LastModified
-def check_last_modified_iso8601(object):
+def check_last_modified_iso8601(object, filename):
     last_modified = object.get('LastModified', None)
     if last_modified:
         try:
             datetime.datetime.fromisoformat(last_modified)
         except ValueError:
-            return f"ERROR: LastModified field is not valid ISO 8601 format for object: {object.get('Id', 'Unknown')}"
+            return f"ERROR: LastModified field is not valid ISO 8601 format in file {filename}: '{last_modified}' (object: {object.get('Name', 'Unknown')})"
     return None
 
 def validate_schema(yaml_dir, schema_file, verbose):
@@ -117,8 +117,8 @@ def validate_schema(yaml_dir, schema_file, verbose):
             check_sha1_length(yaml_data),
             check_sha256_length(yaml_data),
             check_network_structure(yaml_data),
-            check_created_iso8601(yaml_data),        # ISO 8601 check for Created
-            check_last_modified_iso8601(yaml_data),  # ISO 8601 check for LastModified
+            check_created_iso8601(yaml_data, yaml_file),        # ISO 8601 check for Created
+            check_last_modified_iso8601(yaml_data, yaml_file),  # ISO 8601 check for LastModified
         ]
 
         for check_error in check_errors:

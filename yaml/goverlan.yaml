@@ -3,7 +3,7 @@ Description: Goverlan is a remote monitoring and management (RMM) tool. More inf
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/8/2024
+LastModified: '2024-02-08'
 Details:
   Website: ''
   PEMetadata:
@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:

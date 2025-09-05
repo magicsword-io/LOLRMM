@@ -3,7 +3,7 @@ Description: Xeox is a remote monitoring and management (RMM) tool. More informa
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/14/2024
+LastModified: '2024-02-14'
 Details:
   Website: ''
   PEMetadata:
@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:

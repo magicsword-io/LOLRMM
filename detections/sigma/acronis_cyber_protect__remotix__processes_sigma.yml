@@ -1,4 +1,4 @@
-title: Potential Acronic Cyber Protect (Remotix) RMM Tool Process Activity
+title: Potential Acronis Cyber Protect (Remotix) RMM Tool Process Activity
 logsource:
   product: windows
   category: process_creation
@@ -10,7 +10,7 @@ detection:
   condition: selection
 id: 9b9647ab-97cc-4c7c-8540-5c1c1c8000c4
 status: experimental
-description: Detects potential processes activity of Acronic Cyber Protect (Remotix)
+description: Detects potential processes activity of Acronis Cyber Protect (Remotix)
   RMM tool
 author: LOLRMM Project
 date: 2024/08/07
@@ -18,5 +18,5 @@ tags:
 - attack.execution
 - attack.t1219
 falsepositives:
-- Legitimate use of Acronic Cyber Protect (Remotix)
+- Legitimate use of Acronis Cyber Protect (Remotix)
 level: medium
