@@ -337,16 +337,19 @@ let RMMList = externaldata(URI: string, RMMTool: string)
     [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];
 let RMMUrl = RMMList | project URI;
 DeviceNetworkEvents
-| where TimeGenerated > ago(1h)
+| where Timestamp > ago(1h)
 | where ActionType == @"ConnectionSuccess"
 | where RemoteUrl has_any(RMMUrl)
 | where not (RemoteUrl has_any(ApprovedRMM))
-| summarize arg_max(TimeGenerated, *) by DeviceId`}								
+| summarize arg_max(Timestamp, *) by DeviceId`}								
 									</EuiCodeBlock>
 									<EuiSpacer size="s" />
 									<EuiText size="s">
 										<p>
 											Replace <code>YOUR_APPROVED_RMM_DOMAINS</code> with your organization's approved RMM domains to exclude them from the detection.
+										</p>
+										<p>
+											<strong>Note for Microsoft Sentinel users:</strong> If you're using this query in Microsoft Sentinel, replace <code>Timestamp</code> with <code>TimeGenerated</code> in both the WHERE clause and the summarize function.
 										</p>
 									</EuiText>
 								</div>
