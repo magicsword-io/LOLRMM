@@ -3,7 +3,7 @@ Description: PDQ Connect is a remote monitoring and management (RMM) tool. More 
   will be added as it becomes available.
 Author: ''
 Created: ''
-LastModified: 2/26/2024
+LastModified: 2-26-2024
 Details:
   Website: ''
   PEMetadata:
@@ -18,8 +18,12 @@ Details:
   Vulnerabilities: []
   InstallationPaths:
   - pdq-connect*.exe
+  - PDQConnectUpdater-*.msi
 Artifacts:
-  Disk: []
+  Disk:
+  - File: C:\ProgramData\PDQ\PDQConnectAgent\PDQConnectAgent.db-journal
+    Description: Journal file that is part of the database system used by the PDQ Connect Agent to manage and store data related to its operations
+    OS: Windows  
   EventLog: []
   Registry: []
   Network:
@@ -27,6 +31,7 @@ Artifacts:
     Domains:
     - app.pdq.com
     - cfcdn.pdq.com
+    - pdqinstallers.*.r2.cloudflarestorage.com
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_network_sigma.yml
@@ -34,5 +39,7 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_processes_sigma.yml
   Description: Detects potential processes activity of PDQ Connect RMM tool
 References:
+- https://connect.pdq.com/hc/en-us/articles/12489014928667-Collect-PDQ-Connect-Event-Logs
+- https://connect.pdq.com/hc/en-us/articles/19197321496219-PDQ-Connect-Output-Logs
 - https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
 Acknowledgement: []

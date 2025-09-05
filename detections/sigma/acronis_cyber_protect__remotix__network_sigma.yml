@@ -1,4 +1,4 @@
-title: Potential Acronic Cyber Protect (Remotix) RMM Tool Network Activity
+title: Potential Acronis Cyber Protect (Remotix) RMM Tool Network Activity
 logsource:
   product: windows
   category: network_connection
@@ -12,7 +12,7 @@ detection:
   condition: selection
 id: a7ed0eb9-3d99-47ee-a335-3162430f519c
 status: experimental
-description: Detects potential network activity of Acronic Cyber Protect (Remotix)
+description: Detects potential network activity of Acronis Cyber Protect (Remotix)
   RMM tool
 author: LOLRMM Project
 date: 2024/08/07
@@ -20,5 +20,5 @@ tags:
 - attack.execution
 - attack.t1219
 falsepositives:
-- Legitimate use of Acronic Cyber Protect (Remotix)
+- Legitimate use of Acronis Cyber Protect (Remotix)
 level: medium
