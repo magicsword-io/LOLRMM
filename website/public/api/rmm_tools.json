@@ -4,7 +4,7 @@
         "Description": "Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -243,7 +243,7 @@
         "Description": "VNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -302,7 +302,7 @@
         "Description": "Fortra is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -348,7 +348,7 @@
         "Description": "Laplink Gold is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -401,8 +401,8 @@
         "Name": "NetLock RMM",
         "Description": "NetLock RMM is an open source Remote Management and Monitoring tool with a paid support and cloud offering.",
         "Author": "Tyler Schultz",
-        "Created": "7/18/2025",
-        "LastModified": "7/18/2025",
+        "Created": "2025-07-18",
+        "LastModified": "2025-07-18",
         "Details": {
             "Website": "https://www.netlockrmm.com/",
             "PEMetadata": {
@@ -520,7 +520,7 @@
         "Description": "ToDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -577,7 +577,7 @@
         "Description": "Zoho Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -653,7 +653,7 @@
         "Description": "Auvik is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -774,7 +774,7 @@
         "Description": "Laplink Everywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -833,7 +833,7 @@
         "Description": "ServerEye is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -950,7 +950,7 @@
         "Description": "SkyFex is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1005,7 +1005,7 @@
         "Description": "ZeroTier is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1094,7 +1094,7 @@
         "Description": "NinjaRMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1126,7 +1126,19 @@
                         "*.ninjarmm.com",
                         "*.ninjaone.com",
                         "resources.ninjarmm.com",
-                        "ninjaone.com"
+                        "ninjaone.com",
+                        "ninjarmm.net",
+                        "*.ninjarmm.net",
+                        "rmmservice.eu",
+                        "*.rmmservice.eu",
+                        "rmmservice.eu",
+                        "*.rmmservice.eu",
+                        "rmmservice.com.au",
+                        "*.rmmservice.com.au",
+                        "rmmservice.ca",
+                        "*.rmmservice.ca",
+                        "ninja-backup.com",
+                        "*.ninja-backup.com"
                     ],
                     "Ports": []
                 }
@@ -1222,7 +1234,7 @@
         "Description": "LiteManager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1526,7 +1538,7 @@
         "Description": "Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1581,7 +1593,7 @@
         "Description": "MyGreenPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1633,7 +1645,7 @@
         "Description": "Any Support is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-27-2024",
+        "LastModified": "2024-02-27",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1687,7 +1699,7 @@
         "Description": "Zabbix Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1740,7 +1752,7 @@
         "Description": "BeInSync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1933,7 +1945,7 @@
         "Description": "HelpBeam is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -1985,7 +1997,7 @@
         "Description": "CruzControl is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2052,7 +2064,7 @@
         "Description": "N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2119,7 +2131,7 @@
         "Description": "UltraVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2172,7 +2184,7 @@
         "Description": "DW Service is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2228,7 +2240,7 @@
         "Description": "Jump Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2488,7 +2500,7 @@
         "Description": "AweRay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2542,7 +2554,7 @@
         "Description": "Panorama9 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2596,7 +2608,7 @@
         "Description": "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration. \n\nRemote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency. \nSecure, flexible, effortless access to whatever you do, at any time, from wherever you go.\n\nParsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access.\n",
         "Author": "Luca Di Bartolomeo & Matt Green",
         "Created": "2025-03-16",
-        "LastModified": "2025-5-16",
+        "LastModified": "2025-05-16",
         "Details": {
             "Website": "https://parsec.app/",
             "PEMetadata": {
@@ -2717,7 +2729,7 @@
         "Description": "Apple Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-24-2024",
+        "LastModified": "2024-02-24",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2765,7 +2777,7 @@
         "Description": "DameWare is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2826,7 +2838,7 @@
         "Description": "pcAnywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2881,7 +2893,7 @@
         "Description": "ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -2935,7 +2947,7 @@
         "Description": "CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -3157,7 +3169,7 @@
         "Description": "ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -3212,7 +3224,7 @@
         "Description": "ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -3272,7 +3284,7 @@
         "Description": "Netreo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -3321,7 +3333,7 @@
         "Description": "DeskDay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -3831,7 +3843,7 @@
         "Description": "GoToAssist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -3952,7 +3964,7 @@
         "Description": "DeskNets is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4026,7 +4038,7 @@
         "Description": "LANDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4089,7 +4101,7 @@
         "Description": "247ithelp.com (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4176,7 +4188,7 @@
         "Description": "Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4280,7 +4292,7 @@
         "Description": "Naverisk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4333,7 +4345,7 @@
         "Description": "rdpwrap is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4462,7 +4474,7 @@
         "Description": "Kabuto is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4515,7 +4527,7 @@
         "Description": "Domotz is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4574,7 +4586,7 @@
         "Description": "ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4661,7 +4673,7 @@
         "Description": "Jump Cloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4710,7 +4722,7 @@
         "Description": "Electric AI (Kaseya) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4756,7 +4768,7 @@
         "Description": "CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4808,7 +4820,7 @@
         "Description": "RPort is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4861,7 +4873,7 @@
         "Description": "Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4919,7 +4931,7 @@
         "Description": "Pcnow is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -4973,7 +4985,7 @@
         "Description": "MSP360 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5038,7 +5050,7 @@
         "Description": "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5095,7 +5107,7 @@
         "Description": "Pocket Controller (Soti Xsight) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5182,7 +5194,7 @@
         "Description": "Sophos-Remote Management System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5391,7 +5403,7 @@
         "Description": "Guacamole is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5488,7 +5500,7 @@
         "Description": "Remote.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5546,7 +5558,7 @@
         "Description": "Goverlan is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5608,7 +5620,7 @@
         "Description": "Syncro is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-13-2024",
+        "LastModified": "2024-02-13",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5679,7 +5691,7 @@
         "Description": "Encapto is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5725,7 +5737,7 @@
         "Description": "AliWangWang-remote-control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5875,7 +5887,7 @@
         "Description": "OCS inventory is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -5970,7 +5982,7 @@
         "Description": "Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6051,7 +6063,7 @@
         "Description": "Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6107,7 +6119,7 @@
         "Description": "Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6161,7 +6173,7 @@
         "Description": "Sorillus is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6215,7 +6227,7 @@
         "Description": "Ericom AccessNow is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6269,7 +6281,7 @@
         "Description": "NTR Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6420,7 +6432,7 @@
         "Description": "Netop Remote Control (Impero Connect) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6481,7 +6493,7 @@
         "Description": "GatherPlace-desktop sharing is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6537,7 +6549,7 @@
         "Description": "NoMachine is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6592,7 +6604,7 @@
         "Description": "ShowMyPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6648,7 +6660,7 @@
         "Description": "Ivanti Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6702,7 +6714,7 @@
         "Description": "RemoteCall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6764,7 +6776,7 @@
         "Description": "RDPView is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6817,7 +6829,7 @@
         "Description": "BeAnyWhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6918,7 +6930,7 @@
         "Description": "PDQ Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6981,7 +6993,7 @@
         "Description": "SuperOps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7038,7 +7050,7 @@
         "Description": "Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7111,7 +7123,7 @@
         "Description": "MioNet (WD Anywhere Access) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7152,7 +7164,7 @@
         "Description": "EMCO Remote Console is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7203,7 +7215,7 @@
         "Description": "Pcvisit is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7310,8 +7322,8 @@
         "Name": "ngrok",
         "Description": "ngrok is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "Jose Hernandez",
-        "Created": "7/19/2024",
-        "LastModified": "6/19/2025",
+        "Created": "2024-07-19",
+        "LastModified": "2025-06-19",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7417,7 +7429,7 @@
         "Description": "AeroAdmin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7471,7 +7483,7 @@
         "Description": "BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7529,7 +7541,7 @@
         "Description": "N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7680,7 +7692,7 @@
         "Description": "RuDesktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7734,7 +7746,7 @@
         "Description": "TigerVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7790,7 +7802,7 @@
         "Description": "CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7844,7 +7856,7 @@
         "Description": "ScreenMeet is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7929,7 +7941,7 @@
         "Description": "WebEx (Remote Access) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -7962,7 +7974,7 @@
         "Description": "RemotePC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -8028,7 +8040,7 @@
         "Description": "Pulseway is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -8112,7 +8124,7 @@
         "Description": "Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -8198,7 +8210,7 @@
         "Description": "I'm InTouch is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -8253,7 +8265,7 @@
         "Description": "Synergy is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -8466,7 +8478,7 @@
         "Description": "HelpU is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -8875,7 +8887,7 @@
         "Description": "ESET Remote Administrator is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -8932,7 +8944,7 @@
         "Description": "Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9031,7 +9043,7 @@
         "Description": "QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9134,7 +9146,7 @@
         "Description": "Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9192,7 +9204,7 @@
         "Description": "Comodo RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9249,7 +9261,7 @@
         "Description": "Remote Desktop Plus is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9301,7 +9313,7 @@
         "Description": "Rapid7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9356,7 +9368,7 @@
         "Description": "Echoware is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9395,7 +9407,7 @@
         "Description": "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "Phyo Paing Htun",
         "Created": "",
-        "LastModified": "16/10/2024",
+        "LastModified": "2024-10-16",
         "Details": {
             "Website": "https://simple-help.com/",
             "PEMetadata": {
@@ -9462,7 +9474,7 @@
         "Description": "GotoHTTP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9517,7 +9529,7 @@
         "Description": "TightVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9647,7 +9659,7 @@
         "Description": "FastViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9926,7 +9938,7 @@
         "Description": "SpyAnywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -9979,7 +9991,7 @@
         "Description": "OptiTune is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10033,7 +10045,7 @@
         "Description": "Pilixo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10445,7 +10457,7 @@
         "Description": "KHelpDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10497,7 +10509,7 @@
         "Description": "RemoteView is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10554,7 +10566,7 @@
         "Description": "Basecamp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10600,7 +10612,7 @@
         "Description": "Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-13-2024",
+        "LastModified": "2024-02-13",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10659,7 +10671,7 @@
         "Description": "Neturo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10756,7 +10768,7 @@
         "Description": "FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10822,7 +10834,7 @@
         "Description": "ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10883,7 +10895,7 @@
         "Description": "RES Automation Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10939,7 +10951,7 @@
         "Description": "LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11043,7 +11055,7 @@
         "Description": "WebRDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11146,7 +11158,7 @@
         "Description": "NetSupport Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11202,7 +11214,7 @@
         "Description": "Pandora RC (eHorus) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11255,7 +11267,7 @@
         "Description": "Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11310,8 +11322,8 @@
         "Name": "HopToDesk",
         "Description": "HopToDesk is a free Remote Management and Monitoring tool.",
         "Author": "Tyler Schultz",
-        "Created": "7/17/2025",
-        "LastModified": "7/17/2025",
+        "Created": "2025-07-17",
+        "LastModified": "2025-07-17",
         "Details": {
             "Website": "https://www.hoptodesk.com/",
             "PEMetadata": {
@@ -11413,7 +11425,7 @@
         "Description": "GetScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11470,7 +11482,7 @@
         "Description": "Tanium is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11527,7 +11539,7 @@
         "Description": "PSEXEC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11580,7 +11592,7 @@
         "Description": "CrossLoop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11635,7 +11647,7 @@
         "Description": "Pocket Cloud (Wyse) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11676,7 +11688,7 @@
         "Description": "Remobo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11731,7 +11743,7 @@
         "Description": "Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11775,7 +11787,7 @@
         "Description": "Absolute (Computrace) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "6-18-2024",
+        "LastModified": "2024-06-18",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -11831,8 +11843,8 @@
         "Name": "Level",
         "Description": "Level is a remote monitoring and management (RMM) tool. Threat actors ...",
         "Author": "Christian Henriksen, ITM8 | Improsec",
-        "Created": "11/02-2024",
-        "LastModified": "03/11-2025",
+        "Created": "2024-02-11",
+        "LastModified": "2025-11-03",
         "Details": {
             "Website": "https://level.io/",
             "PEMetadata": {
@@ -12283,7 +12295,7 @@
         "Description": "Addigy is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-27-2024",
+        "LastModified": "2024-02-27",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -12333,7 +12345,7 @@
         "Description": "Iperius Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -12389,7 +12401,7 @@
         "Description": "Parallels Access is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -12612,7 +12624,7 @@
         "Name": "Ammyy Admin",
         "Description": "Ammyy Admin is a remote monitoring and management (RMM) tool. Ammyy admin has been used by scammers to gain remote access to victims' computers. The tool is legitimate and is used by IT professionals for remote management. However, it has been abused by scammers to gain unauthorized access to victims' computers. The tool is free for personal use, but a license is required for commercial use. The tool allows for remote desktop control, file transfer, voice chat, and more. The tool is available for Windows only. will be added as it becomes available.",
         "Author": "@kostsatsale",
-        "Created": "2024/05/08",
+        "Created": "2024-05-08",
         "LastModified": null,
         "Details": {
             "Website": "https://www.ammyy.com",
@@ -12771,7 +12783,7 @@
         "Description": "MyIVO is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -12824,7 +12836,7 @@
         "Description": "Barracuda is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -12872,7 +12884,7 @@
         "Description": "UltraViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -12936,7 +12948,7 @@
         "Description": "Anyplace Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -12990,7 +13002,7 @@
         "Description": "Distant Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13045,7 +13057,7 @@
         "Description": "Remote Utilities is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13138,7 +13150,7 @@
         "Description": "Connectwise Automate (LabTech) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13192,7 +13204,7 @@
         "Description": "TeleDesktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13381,7 +13393,7 @@
         "Description": "Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13471,7 +13483,7 @@
         "Description": "Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13811,7 +13823,7 @@
         "Description": "Microsoft TSC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13852,7 +13864,7 @@
         "Description": "RustDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "https://rustdesk.com/",
             "PEMetadata": {
@@ -13926,7 +13938,7 @@
         "Description": "Mikogo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -13988,7 +14000,7 @@
         "Description": "SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14043,7 +14055,7 @@
         "Description": "PSEXEC (Clone) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14101,7 +14113,7 @@
         "Description": "DesktopNow is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14153,7 +14165,7 @@
         "Description": "BeamYourScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14207,7 +14219,7 @@
         "Description": "NetSupport Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14262,7 +14274,7 @@
         "Description": "Acronis Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14642,7 +14654,7 @@
         "Description": "KickIdler is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14692,7 +14704,7 @@
         "Description": "Syspectr is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14780,7 +14792,7 @@
         "Description": "Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-27-2024",
+        "LastModified": "2024-02-27",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -14835,7 +14847,7 @@
         "Description": "Tailscale is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15041,7 +15053,7 @@
         "Description": "Splashtop Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15102,7 +15114,7 @@
         "Description": "IntelliAdmin Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15160,7 +15172,7 @@
         "Description": "Visual Studio Dev Tunnel is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15208,7 +15220,7 @@
         "Description": "TurboMeeting is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15263,7 +15275,7 @@
         "Description": "DeskShare is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-26-2024",
+        "LastModified": "2024-02-26",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15367,7 +15379,7 @@
         "Description": "Weezo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-14-2024",
+        "LastModified": "2024-02-14",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15556,7 +15568,7 @@
         "Description": "rdp2tcp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15612,7 +15624,7 @@
         "Description": "Senso.cloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15667,7 +15679,7 @@
         "Description": "mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-9-2024",
+        "LastModified": "2024-02-09",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15747,7 +15759,7 @@
         "Description": "Centurion is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-7-2024",
+        "LastModified": "2024-02-07",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15799,7 +15811,7 @@
         "Description": "Site24x7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-13-2024",
+        "LastModified": "2024-02-13",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -15986,7 +15998,7 @@
         "Description": "Itarian is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "",
-        "LastModified": "2-8-2024",
+        "LastModified": "2024-02-08",
         "Details": {
             "Website": "",
             "PEMetadata": {
