@@ -13,7 +13,8 @@ Details:
   Privileges: ''
   Free: ''
   Verification: ''
-  SupportedOS: []
+  SupportedOS:
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -27,6 +28,7 @@ Details:
   - '*\ZA_Access.exe'
   - Zaservice.exe
   - za_connect.exe
+  - connect.exe
 Artifacts:
   Disk: []
   EventLog: []

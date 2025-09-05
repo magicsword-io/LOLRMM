@@ -17,14 +17,14 @@ MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used alo
          category={""}
          created={"2024-09-20"}
          website={"https://meshcentral.com/"}
-         lastModified={"2024-09-20"}
+         lastModified={"2025-07-18"}
          privileges={"SYSTEM"}
          free={ "Yes" }
-         verification={"N/A"}
+         verification={ "N/A" }
 />
 
 #### Installation Paths
-<Card code={ ["meshcentral*.exe", "meshagent*.exe"] }/>
+<Card code={ ["meshcentral*.exe", "meshagent*.exe", "/usr/local/mesh_services/meshagent/meshagent/*", "/usr/local/mesh_services/meshagent/*"] }/>
 
 #### Supported OS
 <Badges color="warning" badges={ ["Windows", "Linux", "MacOS", "FreeBSD"] }/>
@@ -40,7 +40,7 @@ MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used alo
 
 #### Disk Artifacts
 <EuiSpacer size="xl"/>
-<DiskArtifacts data={ [{"File": "C:\\Program Files\\Mesh Agent\\MeshAgent.exe", "Description": "Local MeshAgent service binary after installation", "OS": "Windows"}, {"File": "C:\\Program Files\\Mesh Agent\\MeshAgent.msh", "Description": "Local MeshAgent service configuration file. Contains configuration settings including the MeshCentral server address, port, and other settings. If the MeshAgent is run without being installed, the configuration file is created in the same directory as the MeshAgent binary.", "OS": "Windows"}] }/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Mesh Agent\\MeshAgent.exe", "Description": "Local MeshAgent service binary after installation", "OS": "Windows"}, {"File": "C:\\Program Files\\Mesh Agent\\MeshAgent.msh", "Description": "Local MeshAgent service configuration file. Contains configuration settings including the MeshCentral server address, port, and other settings. If the MeshAgent is run without being installed, the configuration file is created in the same directory as the MeshAgent binary.", "OS": "Windows"}, {"File": "/usr/local/mesh_services/meshagent/meshagent/meshagent", "Description": "Local MeshAgent service binary after installation", "OS": "MacOS"}, {"File": "/usr/local/mesh_services/meshagent/meshagent/meshagent.db", "Description": "Local Meshagent database after installation", "OS": "MacOS"}, {"File": "/usr/local/mesh_services/meshagent/meshagent/meshagent.msh", "Description": "Local Meshagent databconfiguration file after installation", "OS": "MacOS"}, {"File": "/usr/local/mesh_services/meshagent/meshagent", "Description": "Local MeshAgent service binary after installation", "OS": "Linux"}, {"File": "/usr/local/mesh_services/meshagent/meshagent.db", "Description": "Local Meshagent database after installation", "OS": "Linux"}, {"File": "/usr/local/mesh_services/meshagent/meshagent.msh", "Description": "Local Meshagent databconfiguration file after installation", "OS": "Linux"}] }/>
 
 #### Event Log Artifacts
 <EuiSpacer size="xl"/>

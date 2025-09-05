@@ -7,9 +7,9 @@ query: "// Detecting Unauthorized RMM Instances in Your MDE Environment\n\nlet S
   \ = dynamic(\"YOUR_APPROVED_RMM_DOMAINS\"); // E.g. \"bomgarcloud.com\" - Replace\
   \ with your approved RMM domains\nlet RMMList = externaldata(URI: string, RMMTool:\
   \ string)\n    [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];\n\
-  let RMMUrl = RMMList | project URI;\n\nDeviceNetworkEvents\n| where TimeGenerated\
+  let RMMUrl = RMMList | project URI;\n\nDeviceNetworkEvents\n| where Timestamp\
   \ > ago(1h)\n| where ActionType == @\"ConnectionSuccess\"\n| where RemoteUrl has_any(RMMUrl)\n\
-  | where not (RemoteUrl has_any(SanctionRMM))\n| summarize arg_max(TimeGenerated,\
+  | where not (RemoteUrl has_any(SanctionRMM))\n| summarize arg_max(Timestamp,\
   \ *) by DeviceId"
 references:
 - https://github.com/magicsword-io/LOLRMM

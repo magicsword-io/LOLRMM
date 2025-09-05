@@ -1,5 +1,5 @@
 ---
-description = "Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. The tool is using OSQuery to collect basic machine information, and will also spawn osqueri.exe."
+description = "Level is a remote monitoring and management (RMM) tool. Threat actors ..."
 title = "Level"
 ---
 
@@ -9,17 +9,17 @@ import {EuiSpacer} from "@elastic/eui"
 
 # Level
 
-Level is a remote monitoring and management (RMM) tool. Threat actors has been seen using the automation feature of it. The tool is using OSQuery to collect basic machine information, and will also spawn osqueri.exe.
+Level is a remote monitoring and management (RMM) tool. Threat actors ...
 
 ### Details
 <Details author={"Christian Henriksen, ITM8 | Improsec"}
          category={""}
          created={"11/02-2024"}
          website={"https://level.io/"}
-         lastModified={"11/02-2024"}
+         lastModified={"03/11-2025"}
          privileges={"User"}
          free={ "Free" }
-         verification={""}
+         verification={ "True" }
 />
 
 #### Installation Paths
@@ -35,7 +35,13 @@ Level is a remote monitoring and management (RMM) tool. Threat actors has been s
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Level\\level.exe", "Description": "Level Binary", "OS": "Windows"}, {"File": "C:\\Program Files\\Level\\osqueryi.exe", "Description": "A tool used by level to collect machine state information.", "OS": "Windows"}, {"File": "C:\\Program Files\\Level\\level.log", "Description": "Client log file for Level.", "OS": "Windows"}] }/>
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 4698, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "TaskName": "Level Watchdog", "Location": "\\Level", "Description": "To ensure the Level agent is always running, a scheduled task..."}, {"EventID": 4697, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "ServiceName": "Level", "ServiceFileName": "C:\\Program Files\\Level\\level.exe --key <KEY> --action=run", "ServiceAccount": "LocalSystem", "ServiceStartType": 2, "Description": "The Level Agent Service ..."}, {"EventID": 4798, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CallerProcessName": "C:\\Program Files\\Level\\osqueri.exe", "Description": "Evidence of osqueryi doing automatic user/group enumeration."}] }/>
 
 
 #### Network Artifacts
@@ -51,4 +57,5 @@ Level is a remote monitoring and management (RMM) tool. Threat actors has been s
 
 ### References
 - [https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/](https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/)
+- [https://docs.level.io/en/articles/9926456-level-watchdog-task](https://docs.level.io/en/articles/9926456-level-watchdog-task)
 
