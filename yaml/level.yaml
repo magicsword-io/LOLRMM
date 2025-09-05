@@ -25,10 +25,13 @@ Artifacts:
   Disk:
     - File: 'C:\Program Files\Level\level.exe'
       Description: 'Level Binary'
+      OS: Windows
     - File: 'C:\Program Files\Level\osqueryi.exe'
       Description: 'A tool used by level to collect machine state information.'
+      OS: Windows
     - File: 'C:\Program Files\Level\level.log'
       Description: 'Client log file for Level.'
+      OS: Windows
   EventLog:
     - EventID: 4698
       ProviderName: 'Microsoft-Windows-Security-Auditing'

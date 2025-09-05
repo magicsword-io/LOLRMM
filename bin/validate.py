@@ -59,6 +59,22 @@ def check_network_structure(object):
             return f"ERROR: 'Ports' is not a list for object: {object['Name']}"
     return None
 
+def check_disk_structure(object):
+    artifacts = object.get('Artifacts', {})
+    disk = artifacts.get('Disk', [])
+    for item in disk:
+        if not isinstance(item, dict):
+            return f"ERROR: Disk item is not a dictionary for object: {object['Name']}"
+        if 'File' not in item:
+            return f"ERROR: Disk item is missing 'File' for object: {object['Name']}"
+        if 'Description' not in item:
+            return f"ERROR: Disk item is missing 'Description' for object: {object['Name']}"
+        if 'OS' not in item:
+            return f"ERROR: Disk item is missing 'OS' property for object: {object['Name']} - this will cause runtime errors in the frontend"
+        if not isinstance(item['OS'], str):
+            return f"ERROR: 'OS' property is not a string for object: {object['Name']}"
+    return None
+
 
 def validate_schema(yaml_dir, schema_file, verbose):
 
@@ -98,6 +114,7 @@ def validate_schema(yaml_dir, schema_file, verbose):
             check_sha1_length(yaml_data),
             check_sha256_length(yaml_data),
             check_network_structure(yaml_data),
+            check_disk_structure(yaml_data),
         ]
 
         for check_error in check_errors:
