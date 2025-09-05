@@ -206,6 +206,7 @@ detection:
     - \\PAExec-*.exe
     - \\PCIVIDEO.EXE
     - \\PCMonitorManager.exe
+    - \\PDQConnectUpdater-*.msi
     - \\Pilixo_Installer*.exe
     - \\QQProtect.exe
     - \\RAccess.exe

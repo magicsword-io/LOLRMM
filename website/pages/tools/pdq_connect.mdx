@@ -16,14 +16,14 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
          category={""}
          created={""}
          website={""}
-         lastModified={"2/26/2024"}
+         lastModified={"2-26-2024"}
          privileges={""}
          free={ false }
          verification={ false }
 />
 
 #### Installation Paths
-<Card code={ ["pdq-connect*.exe"] }/>
+<Card code={ ["pdq-connect*.exe", "PDQConnectUpdater-*.msi"] }/>
 
 
 
@@ -31,12 +31,15 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\ProgramData\\PDQ\\PDQConnectAgent\\PDQConnectAgent.db-journal", "Description": "Journal file that is part of the database system used by the PDQ Connect Agent to manage and store data related to its operations", "OS": "Windows"}] }/>
 
 
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["app.pdq.com", "cfcdn.pdq.com"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["app.pdq.com", "cfcdn.pdq.com", "pdqinstallers.*.r2.cloudflarestorage.com"], "Ports": []}] }/>
 
 
 
@@ -48,5 +51,7 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_processes_sigma.yml)
 
 ### References
+- [https://connect.pdq.com/hc/en-us/articles/12489014928667-Collect-PDQ-Connect-Event-Logs](https://connect.pdq.com/hc/en-us/articles/12489014928667-Collect-PDQ-Connect-Event-Logs)
+- [https://connect.pdq.com/hc/en-us/articles/19197321496219-PDQ-Connect-Output-Logs](https://connect.pdq.com/hc/en-us/articles/19197321496219-PDQ-Connect-Output-Logs)
 - [https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements](https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements)
 
