@@ -9,6 +9,18 @@ detection:
     - '*.ninjaone.com'
     - resources.ninjarmm.com
     - ninjaone.com
+    - ninjarmm.net
+    - '*.ninjarmm.net'
+    - rmmservice.eu
+    - '*.rmmservice.eu'
+    - rmmservice.eu
+    - '*.rmmservice.eu'
+    - rmmservice.com.au
+    - '*.rmmservice.com.au'
+    - rmmservice.ca
+    - '*.rmmservice.ca'
+    - ninja-backup.com
+    - '*.ninja-backup.com'
   condition: selection
 id: 36fd47e6-13f9-4eb0-a826-8f34e3e1dc0e
 status: experimental
