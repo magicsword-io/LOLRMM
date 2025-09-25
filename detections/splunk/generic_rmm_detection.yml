@@ -3,7 +3,7 @@ id: splunk-rmm-001
 description: Detects usage of Remote Monitoring and Management (RMM) tools via network
   traffic
 author: LOLRMM Project
-date: 2025/03/17
+date: 2025/09/25
 query: "| tstats `security_content_summariesonly` count min(_time) as firstTime max(_time)\
   \ as lastTime values(All_Traffic.dest_port) as dest_port latest(user) as user from\
   \ datamodel=Network_Traffic by All_Traffic.src All_Traffic.dest, All_Traffic.app\

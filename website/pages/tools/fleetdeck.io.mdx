@@ -12,22 +12,24 @@ import {EuiSpacer} from "@elastic/eui"
 FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
 ### Details
-<Details author={""}
+<Details author={"default1337"}
          category={""}
-         created={""}
-         website={""}
-         lastModified={""}
-         privileges={""}
+         created={"2025/09/25"}
+         website={"https://fleetdeck.io"}
+         lastModified={"2025/09/25"}
+         privileges={"None"}
          free={ false }
          verification={ false }
 />
 
 #### Installation Paths
-<Card code={ ["fleetdeck_agent_svc.exe", "fleetdeck_commander_svc.exe", "fleetdeck_installer.exe", "fleetdeck_commander_launcher.exe", "fleetdeck_agent.exe"] }/>
+<Card code={ ["C:\\Program Files (x86)\\FleetDeck Agent\\fleetdeck_agent_svc.exe", "%systemroot%\\temp\\FleetDeck", "fleetdeck_agent_svc.exe", "fleetdeck_commander_svc.exe", "fleetdeck_installer.exe", "fleetdeck_commander_launcher.exe", "fleetdeck_agent.exe"] }/>
 
 #### Supported OS
 <Badges color="warning" badges={ ["Windows"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Reboot", "Shutdown", "Safe Mode Actions"] }/>
 
 
 
@@ -38,13 +40,13 @@ FleetDeck.io is a remote monitoring and management (RMM) tool. More information 
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.fleetdeck.io", "cognito-idp.us-west-2.amazonaws.com", "fleetdeck.io"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.fleetdeck.io", "cognito-idp.us-west-2.amazonaws.com", "fleetdeck.io", "agentmqtt.fleetdeck.io"], "Ports": []}] }/>
 
 
 
 
 ### Detections
-- Detects potential network activity of FleetDesk.io RMM tool
+- Detects potential network activity of FleetDeck.io RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml)
 - Detects potential processes activity of FleetDesk.io RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml)
@@ -52,3 +54,6 @@ FleetDeck.io is a remote monitoring and management (RMM) tool. More information 
 ### References
 - [https://fleetdeck.io/faq/](https://fleetdeck.io/faq/)
 
+### Acknowledgements
+- Josh Brunty (https://www.linkedin.com/in/joshbrunty/)
+- default1337 (https://github.com/magicsword-io/LOLRMM/issues/112)

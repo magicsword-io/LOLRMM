@@ -193,7 +193,7 @@ if __name__ == "__main__":
     try:
         # Run the generate_domains_csv.py script
         script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "generate_domains_csv.py")
-        result = subprocess.run(["python3", script_path], capture_output=True, text=True)
+        result = subprocess.run(["python", script_path], capture_output=True, text=True)
         if result.returncode == 0:
             if VERBOSE:
                 print(result.stdout)
@@ -208,7 +208,7 @@ if __name__ == "__main__":
     try:
         # Run the generate_detections.py script 
         script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "generate_detections.py")
-        result = subprocess.run(["python3", script_path], capture_output=True, text=True)
+        result = subprocess.run(["python", script_path], capture_output=True, text=True)
         if result.returncode == 0:
             if VERBOSE:
                 print(result.stdout)

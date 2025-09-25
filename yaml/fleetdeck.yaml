@@ -1,23 +1,28 @@
 Name: FleetDeck.io
 Description: FleetDeck.io is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: ''
+Author: default1337
+Created: 2025/09/25
+LastModified: 2025/09/25
 Details:
-  Website: ''
+  Website: https://fleetdeck.io
   PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
+    Filename: 
+    OriginalFileName: 
+    Description: 
+  Privileges: 
+  Free: 
+  Verification: 
   SupportedOS:
     - Windows
-  Capabilities: []
+  Capabilities:
+  - Reboot
+  - Shutdown
+  - Safe Mode Actions
   Vulnerabilities: []
   InstallationPaths:
+  - C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe
+  - '%systemroot%\temp\FleetDeck'
   - fleetdeck_agent_svc.exe
   - fleetdeck_commander_svc.exe
   - fleetdeck_installer.exe
@@ -33,12 +38,17 @@ Artifacts:
     - '*.fleetdeck.io'
     - cognito-idp.us-west-2.amazonaws.com
     - fleetdeck.io
+    - agentmqtt.fleetdeck.io
     Ports: []
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml
-  Description: Detects potential network activity of FleetDesk.io RMM tool
+  Description: Detects potential network activity of FleetDeck.io RMM tool
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml
   Description: Detects potential processes activity of FleetDesk.io RMM tool
 References:
 - https://fleetdeck.io/faq/
-Acknowledgement: []
+Acknowledgement:
+- Person: Josh Brunty
+  Handle: https://www.linkedin.com/in/joshbrunty/
+- Person: default1337
+  Handle: https://github.com/magicsword-io/LOLRMM/issues/112
