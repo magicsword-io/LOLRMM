@@ -1,0 +1,61 @@
+---
+description = "Mouse Without Borders is a Microsoft Garage utility that lets you control up to four Windows computers with a single keyboard and mouse, with clipboard sharing and simple drag-and-drop file transfers."
+title = "Mouse Without Borders"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Mouse Without Borders
+
+Mouse Without Borders is a Microsoft Garage utility that lets you control up to four Windows computers with a single keyboard and mouse, with clipboard sharing and simple drag-and-drop file transfers.
+
+### Details
+<Details author={"Microsoft"}
+         category={"RMM"}
+         created={"2011-09-12"}
+         website={"https://www.microsoft.com/en-us/download/details.aspx?id=35460"}
+         lastModified={"2025-09-25"}
+         privileges={"User; optional Service Mode for elevated apps"}
+         free={ true }
+         verification={ true }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\Microsoft Garage\\Mouse without Borders\\*"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Multi-computer input sharing", "Clipboard sharing", "Drag-and-drop file transfer (up to 100 MB)", "Optional service for elevated app control"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\Microsoft Garage\\Mouse without Borders\\MouseWithoutBorders.exe", "Description": "Main application binary", "OS": "Windows", "Example": ["SHA256: 0DE3E5D76E1359EEA6AAAD2A37F8D787CF4E1D686C4AB45C8221556CF5982BA1"]}, {"File": "C:\\Program Files (x86)\\Microsoft Garage\\Mouse without Borders\\MouseWithoutBordersSvc.exe", "Description": "Optional service binary when Service Mode is enabled", "OS": "Windows", "Example": ["SHA256: D65D44126E2327891BA426A09471DF0564456A9B37AAD8B3453D2D5B06F6AEF3"]}, {"File": "C:\\Program Files (x86)\\Microsoft Garage\\Mouse without Borders\\MouseWithoutBordersHelper.exe", "Description": "Helper executable used by Mouse Without Borders", "OS": "Windows", "Example": ["SHA256: D7E8F30B3F87373E89E8DEC1273F161C478E621E2450279A01A3D0914D754B4F"]}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "Mouse without Borders Service", "ImagePath": "C:\\Program Files (x86)\\Microsoft Garage\\Mouse without Borders\\MouseWithoutBordersSvc.exe", "Description": "Service installed (user mode service), auto start, account LocalSystem"}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Peer discovery and control traffic", "Domains": [], "Ports": ["15100/tcp", "15101/tcp"]}] }/>
+
+
+
+
+
+### References
+- [https://www.microsoft.com/en-us/download/details.aspx?id=35460](https://www.microsoft.com/en-us/download/details.aspx?id=35460)
+- [https://learn.microsoft.com/windows/powertoys/mouse-without-borders](https://learn.microsoft.com/windows/powertoys/mouse-without-borders)
+- [https://github.com/microsoft/PowerToys/issues/29700](https://github.com/microsoft/PowerToys/issues/29700)
+
+### Acknowledgements
+- Michael Haag

@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2025-09-05'
+modified: '2025-10-01'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -65,6 +65,7 @@ detection:
     - \\C:\Program Files (x86)\ISL Online\ISL Light*
     - \\C:\Program Files (x86)\Kaseya\
     - \\C:\Program Files (x86)\LANDesk\*
+    - \\C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
     - \\C:\Program Files (x86)\NetSarang\xShell\*
     - \\C:\Program Files (x86)\OnionShare\*
     - \\C:\Program Files (x86)\PJ Technologies\GOVsrv\*
