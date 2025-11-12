@@ -1,30 +1,53 @@
 Name: GoToAssist (GoTo Resolve)
-Description: GoToAssist (GoTo Resolve) is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
-Author: ''
-Created: ''
-LastModified: ''
+Description: 'GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remote monitoring and management (RMM) solution designed for small and midsize businesses (SMBs) and managed service providers (MSPs). It combines remote monitoring and management capabilities with remote support and access, ticketing, automation, and helpdesk functionality in a unified platform.'
+Author: 'Daniel Koifman (KoifSec)'
+Created: '2025-11-12'
+LastModified: '2025-11-12'
 Details:
-  Website: ''
+  Website: https://www.logmein.com/products/resolve
   PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
+    Filename: 'GoToResolveUnattended.exe'
+    OriginalFileName: 'GoToResolveUnattended.exe'
     Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
+  Privileges: User
+  Free: false
+  Verification: true
+  SupportedOS:
+    - Android
+    - Windows
+    - Mac
+  Capabilities:
+  - File Transfer
+  - File System Access
+  - Remote Control
+  - GUI Support
+  - Command line Support
   Vulnerabilities: []
   InstallationPaths:
-  - C:\ProgramFiles*\GoTo Machine Installer\*
-  - '*\GoTo Machine Installer\*'
-  - '*\GoTo\*'
+  - 'C:\Program Files (x86)\GoTo Resolve Unattended\*'
+  - 'C:\Program Files\GoTo Resolve Unattended\*'
+  - '*\GoTo Resolve Unattended\*'
 Artifacts:
   Disk: []
-  EventLog: []
-  Registry: []
+  EventLog:
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: GoToResolve_*
+    ImagePath: '"C:\Program Files (x86)\GoTo Resolve Unattended\*\GoToResolveProcessChecker.exe" -Service -WorkFolder "C:\Program Files (x86)\GoTo Resolve Unattended\*" -ApplicationType "4"'
+    Description: Service installation event as result of GoTo Resolve installation.
+  - EventID: 4688
+    ProviderName: Microsoft Windows security auditing
+    LogFile: Security.evtx
+    NewProcessName: 'C:\Windows\System32\sc.exe'
+    CreatorProcessName: 'C:\Windows\System32\svchost.exe'
+    CommandLine: '"C:\Windows\system32\sc.exe" start GoToResolve_*'
+    Description: Process creation event as result of GoTo Resolve installation.
+  Registry: 
+  - Path: HKLM\SOFTWARE\GoTo Resolve Unattended\
+    Description: N/A
   Network: []
 Detections: []
-References: []
+References:
+- https://asec.ahnlab.com/en/90968/
 Acknowledgement: []
