@@ -42,4 +42,5 @@ Detections:
   Description: Detects potential processes activity of eHorus RMM tool
 References: []
 Acknowledgement:
-- 'Daniel Koifman (KoifSec)'
+- Person: 'Daniel Koifman'
+  Handle: x/KoifSec
