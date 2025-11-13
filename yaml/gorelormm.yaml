@@ -1,0 +1,72 @@
+Name: Gorelo RMM
+Category: RMM
+Description: ''
+Author: Jean-Marc ALBERT
+Created: '2025-11-13'
+LastModified: '2025-11-13'
+Details:
+  Website: https://www.gorelo.io/remote-management/
+  PEMetadata:
+  - Filename: Gorelo.Rmm.Setup.exe
+    OriginalFileName: Gorelo.Rmm.Setup.exe
+    Description: Gorelo RMM
+    Product: Gorelo RMM
+  Privileges: User
+  Free: false
+  Verification: false
+  SupportedOS:
+  - Windows
+  - Mac
+  Capabilities:
+  - File Transfer
+  - File System Access
+  - Remote Control
+  - GUI Support
+  - Command line Support
+Artifacts:
+  Network:
+  - Description: Called during access to remote control WebGUI access
+    Domains:
+    - 'app.gorelo.io'
+    Ports:
+    - 443
+  - Description: Called during setup
+    Domains:
+    - 'gorelo-rmm.azurewebsites.net'
+    Ports:
+    - 443
+  - Description: Called during setup
+    Domains:
+    - 'gw.usw.gorelo.tech'
+    Ports:
+    - 443
+  - Description: Called during setup
+    Domains:
+    - 'lr.rmm.pod1.usw.gorelo.tech'
+    Ports:
+    - 443
+  - Description: Called during setup
+    Domains:
+    - 'public.rmm.pod1.usw.gorelo.tech'
+    Ports:
+    - 443
+      - Description: Called during setup
+    Domains:
+    - 'r1.rmm.uw.gorelo.tech'
+    Ports:
+    - 443
+      - Description: Called during setup
+    Domains:
+    - 'sr.rmm.pod1.usw.gorelo.tech'
+    Ports:
+    - 443
+    
+References:
+- https://github.com/magicsword-io/LOLRMM/issues/117
+- https://www.linkedin.com/posts/magicswordio_new-to-lolrmmio-gorelormm-gorelormm-activity-7394482892422393856-BtKl/
+- https://app.any.run/tasks/8b12557e-8c76-41e8-a3c7-e491f32a0b11
+Acknowledgement:
+- Person: "Squiblydoo"
+  Handle: https://github.com/Squiblydoo
+- Person: Jean-Marc ALBERT
+  Handle: in/jeanmarcalbert
