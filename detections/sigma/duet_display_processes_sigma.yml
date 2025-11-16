@@ -1,0 +1,22 @@
+title: Potential duetdisplay.com (Duet Display) RMM Tool Process Activity
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    ParentImage|endswith:
+    - *duet.exe
+    - DuetDisp.exe
+    - DuetSetup.exe
+  condition: selection
+id: 3e8993bd-6104-4f2c-9c26-64544b4f748e
+status: experimental
+description: Detects potential processes activity of duetdisplay.com (Duet Display) RMM Tool
+author: @Syndikalist
+date: 2025/11/16
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of duetdisplay.com (Duet Display) RMM Tool
+level: medium
