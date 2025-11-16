@@ -1,0 +1,23 @@
+title: Potential duetdisplay.com (Duet Display) RMM Tool Network Activity
+logsource:
+  product: windows, mac
+  category: network_connection
+detection:
+  selection:
+    DestinationHostname|endswith:
+      - rdp.duetdisplay.com
+      - *.duetdisplay.com
+      - *.itagent.com
+  condition: selection
+id: 2d6133a0-87e5-4217-9167-eefdd461db13
+status: experimental
+description: Detects potential network activity of duetdisplay.com (Duet Display) RMM
+  tool
+author: @Syndikalist
+date: 2025/11/17
+tags:
+- attack.execution
+- attack.t1219
+falsepositives:
+- Legitimate use of duetdisplay.com (Duet Display) RMM tool
+level: medium
