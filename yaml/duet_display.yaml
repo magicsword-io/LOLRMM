@@ -1,0 +1,43 @@
+Name: Duet Display
+Description: duetdisplay.com (Duet Display) is a remote monitoring and management (RMM)
+  tool. More information will be added as it becomes available.
+Author: ''
+Created: '2025-11-16'
+LastModified: '2025-11-16'
+Details:
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - duet*.exe
+  - DuetDisp.exe
+  - DuetSetup.exe
+Artifacts:
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - 'rdp.duetdisplay.com'
+    - '*.duetdisplay.com'
+    - '*.itagent.com'
+    Ports: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/duet_display_network_sigma.yml
+  Description: Detects potential network activity of duetdisplay.com (Duet Display) RMM
+    tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/duet_display_processes_sigma.yml
+  Description: Detects potential processes activity of duetdisplay.com (Duet Display)
+    RMM tool
+References:
+- https://www.duetdisplay.com/remote-desktop-access-software
+Acknowledgement: []
