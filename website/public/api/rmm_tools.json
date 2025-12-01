@@ -1618,12 +1618,12 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_network_sigma.yml",
-                "Description": "Detects potential network activity of FixMe RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml",
+                "Description": "Detects potential network activity of FixMe.it RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FixMe RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FixMe.it RMM tool"
             }
         ],
         "References": [],
@@ -2603,7 +2603,12 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mouse_without_borders_files_sigma.yml",
+                "Description": "Detects potential files activity of Mouse Without Borders RMM tool"
+            }
+        ],
         "References": [
             "https://www.microsoft.com/en-us/download/details.aspx?id=35460",
             "https://learn.microsoft.com/windows/powertoys/mouse-without-borders",
@@ -2995,7 +3000,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/putty_processes_sigma.yml",
+                "Description": "Detects potential processes activity of PuTTY RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -3103,6 +3113,10 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml",
                 "Description": "Detects potential network activity of RustDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_files_sigma.yml",
+                "Description": "Detects potential files activity of RustDesk RMM tool"
             },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml",
@@ -3775,7 +3789,12 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/lite_manager_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Lite Manager RMM tool"
+            }
+        ],
         "References": [],
         "Acknowledgement": []
     },
@@ -4965,8 +4984,8 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml",
-                "Description": "Detects potential network activity of Dameware-mini remote control Protocol RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_network_sigma.yml",
+                "Description": "Detects potential network activity of DameWare RMM tool"
             },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_processes_sigma.yml",
@@ -5072,6 +5091,10 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml",
                 "Description": "Detects potential network activity of Level RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml",
+                "Description": "Detects potential files activity of Level RMM tool"
             }
         ],
         "References": [
@@ -8179,16 +8202,20 @@
         },
         "Detections": [
             {
+                "Sigma": "https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/proc_creation_windows_meshagent.yml",
+                "Description": "Detects MeshAgent Command Execution via MeshCentral"
+            },
+            {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml",
                 "Description": "Detects potential network activity of MeshCentral RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml",
-                "Description": "Detects potential processes activity of MeshCentral RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_files_sigma.yml",
+                "Description": "Detects potential files activity of MeshCentral RMM tool"
             },
             {
-                "Sigma": "https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/proc_creation_windows_meshagent.yml",
-                "Description": "Detects MeshAgent Command Execution via MeshCentral"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml",
+                "Description": "Detects potential processes activity of MeshCentral RMM tool"
             }
         ],
         "References": [
@@ -8269,7 +8296,16 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netlock_rmm_files_sigma.yml",
+                "Description": "Detects potential files activity of NetLock RMM RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netlock_rmm_processes_sigma.yml",
+                "Description": "Detects potential processes activity of NetLock RMM RMM tool"
+            }
+        ],
         "References": [
             "https://www.netlockrmm.com",
             "https://github.com/0x101-Cyber-Security/NetLock-RMM"
@@ -8492,7 +8528,16 @@
             "Registry": [],
             "Network": []
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/devolutions_remote_desktop_manager_files_sigma.yml",
+                "Description": "Detects potential files activity of Devolutions Remote Desktop Manager RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/devolutions_remote_desktop_manager_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Devolutions Remote Desktop Manager RMM tool"
+            }
+        ],
         "References": [
             "https://devolutions.net/remote-desktop-manager/",
             "https://ogmini.github.io/research#remote-desktop-manager"
@@ -9124,6 +9169,14 @@
                 "Description": "Detects execution of Bluetrait agent executable by monitoring process creation events",
                 "author": "",
                 "Link": ""
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bluetrait_network_sigma.yml",
+                "Description": "Detects potential network activity of Bluetrait RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bluetrait_files_sigma.yml",
+                "Description": "Detects potential files activity of Bluetrait RMM tool"
             }
         ],
         "References": [
@@ -9544,6 +9597,22 @@
                 "Sigma": "https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/ammyy_admin.yml",
                 "Name": "Detecting Ammy Admin RMM Agent Execution",
                 "Description": "Detects the execution of the Ammy Admin RMM agent for remote management."
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Ammyy Admin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_network_sigma.yml",
+                "Description": "Detects potential network activity of Ammyy Admin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_files_sigma.yml",
+                "Description": "Detects potential files activity of Ammyy Admin RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Ammyy Admin RMM tool"
             }
         ],
         "References": [
@@ -10007,6 +10076,16 @@
                 "Person": "Jean-Marc ALBERT",
                 "Handle": "in/jeanmarcalbert"
             }
+        ],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_network_sigma.yml",
+                "Description": "Detects potential network activity of Gorelo RMM RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_files_sigma.yml",
+                "Description": "Detects potential files activity of Gorelo RMM RMM tool"
+            }
         ]
     },
     {
@@ -10179,7 +10258,24 @@
                 }
             ]
         },
-        "Detections": [],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_registry_sigma.yml",
+                "Description": "Detects potential registry activity of HopToDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_network_sigma.yml",
+                "Description": "Detects potential network activity of HopToDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_files_sigma.yml",
+                "Description": "Detects potential files activity of HopToDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_processes_sigma.yml",
+                "Description": "Detects potential processes activity of HopToDesk RMM tool"
+            }
+        ],
         "References": [
             "https://www.hoptodesk.com/#faqlink",
             "https://gitlab.com/hoptodesk/hoptodesk"
@@ -10616,7 +10712,7 @@
     },
     {
         "Name": "Parsec",
-        "Description": "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration. \n\nRemote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency. \nSecure, flexible, effortless access to whatever you do, at any time, from wherever you go.\n\nParsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access.\n",
+        "Description": "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration. \n\nRemote desktop reimagined â€“ a seamless 4k experience at up to 60 frames per second with near-zero latency. \nSecure, flexible, effortless access to whatever you do, at any time, from wherever you go.\n\nParsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access.\n",
         "Author": "Luca Di Bartolomeo & Matt Green",
         "Created": "2025-03-16",
         "LastModified": "2025-05-16",
@@ -10707,16 +10803,16 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yaml",
-                "Description": "Detects Potential Parsec RMM Tool Network Activity"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yml",
+                "Description": "Detects potential network activity of Parsec RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yaml",
-                "Description": "Detects Potential Parsec RMM Tool Process Activity"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_files_sigma.yml",
+                "Description": "Detects potential files activity of Parsec RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_registry_sigma.yaml",
-                "Description": "Detects Potential Sigma RMM Tool Registry Activity"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Parsec RMM tool"
             }
         ],
         "References": [
@@ -11505,12 +11601,12 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml",
-                "Description": "Detects potential network activity of FleetDesk.io RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_network_sigma.yml",
+                "Description": "Detects potential network activity of FleetDeck.io RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml",
-                "Description": "Detects potential processes activity of FleetDesk.io RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_processes_sigma.yml",
+                "Description": "Detects potential processes activity of FleetDeck.io RMM tool"
             }
         ],
         "References": [
@@ -11772,6 +11868,10 @@
                 "Description": "Detects potential network activity of PDQ Connect RMM tool"
             },
             {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_files_sigma.yml",
+                "Description": "Detects potential files activity of PDQ Connect RMM tool"
+            },
+            {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_processes_sigma.yml",
                 "Description": "Detects potential processes activity of PDQ Connect RMM tool"
             }
@@ -12013,6 +12113,20 @@
             {
                 "Person": "Swachchhanda Shrawan Poudel",
                 "Handle": "@_swachchhanda_"
+            }
+        ],
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml",
+                "Description": "Detects potential network activity of Aspia RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml",
+                "Description": "Detects potential files activity of Aspia RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Aspia RMM tool"
             }
         ]
     },
@@ -12777,12 +12891,12 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml",
-                "Description": "Detects potential network activity of Desktop Central RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml",
+                "Description": "Detects potential network activity of Manage Engine (Desktop Central) RMM tool"
             },
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Desktop Central RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml",
+                "Description": "Detects potential processes activity of Manage Engine (Desktop Central) RMM tool"
             }
         ],
         "References": [],
@@ -12873,8 +12987,8 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/access_remote_pc_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Access Remote PC RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/access_remote_pc_files_sigma.yml",
+                "Description": "Detects potential files activity of Access Remote PC RMM tool"
             }
         ],
         "References": [],
@@ -13179,6 +13293,10 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml",
                 "Description": "Detects potential network activity of Level.io RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_files_sigma.yml",
+                "Description": "Detects potential files activity of Level.io RMM tool"
             },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml",
@@ -14832,8 +14950,8 @@
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_network_sigma.yml",
-                "Description": "Detects potential network activity of Electric RMM tool"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_ai__kaseya__network_sigma.yml",
+                "Description": "Detects potential network activity of Electric AI (Kaseya) RMM tool"
             }
         ],
         "References": [
