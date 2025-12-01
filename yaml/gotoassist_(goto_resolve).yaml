@@ -1,5 +1,6 @@
 Name: GoToAssist (GoTo Resolve)
-Description: 'GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remote monitoring and management (RMM) solution designed for small and midsize businesses (SMBs) and managed service providers (MSPs). It combines remote monitoring and management capabilities with remote support and access, ticketing, automation, and helpdesk functionality in a unified platform.'
+Description: |
+    GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remote monitoring and management (RMM) solution designed for small and midsize businesses (SMBs) and managed service providers (MSPs). It combines remote monitoring and management capabilities with remote support and access, ticketing, automation, and helpdesk functionality in a unified platform.
 Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'
@@ -17,16 +18,15 @@ Details:
         - Windows
         - Mac
     Capabilities:
-        - File Transfer
-        - File System Access
-        - Remote Control
-        - GUI Support
         - Command line Support
+        - File System Access
+        - File Transfer
+        - GUI Support
+        - Remote Control
     Vulnerabilities: []
     InstallationPaths:
         - 'C:\Program Files (x86)\GoTo Resolve Unattended\*'
         - 'C:\Program Files\GoTo Resolve Unattended\*'
-        - '*\GoTo Resolve Unattended\*'
         - 'GoToResolveExternalModuleHandler.exe'
         - 'GoToResolveFileManager.exe'
         - 'GoToResolveLoggerProcess.exe'

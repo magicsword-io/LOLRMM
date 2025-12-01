@@ -20,12 +20,12 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - ehorus standalone.exe
-        - ehorus_agent.exe
-        - ehorus_cmd.exe
-        - ehorus_launcher.exe
-        - ehorus_uit.exe
         - 'C:\Program Files\ehorus_agent\*'
+        - 'ehorus standalone.exe'
+        - 'ehorus_agent.exe'
+        - 'ehorus_cmd.exe'
+        - 'ehorus_launcher.exe'
+        - 'ehorus_uit.exe'
 Artifacts:
     Disk: []
     EventLog: []

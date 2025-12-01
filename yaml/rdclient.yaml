@@ -1,6 +1,7 @@
 Name: RdClient
 Category: RMM
-Description: 'RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote desktops in a tree view similar to the Windows Explorer.'
+Description: |
+    RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote desktops in a tree view similar to the Windows Explorer.
 Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'
@@ -17,10 +18,10 @@ Details:
         - Connection Management
     Vulnerabilities: []
     InstallationPaths:
-        - 'C:\Program Files\RdClient\*'
         - 'C:\Program Files (x86)\RdClient\*'
-        - 'RdClientInstaller.exe'
+        - 'C:\Program Files\RdClient\*'
         - 'rdclient.exe'
+        - 'RdClientInstaller.exe'
         - 'SupportTool.exe'
 Artifacts:
     Disk:
@@ -39,5 +40,5 @@ References:
     - https://rdclient.en.softonic.com/
     - https://geekflare.com/software/remote-desktop-client-software/
 Acknowledgement:
-    - Person: Dan Koifman
-      Handle: '@Koifman'
+    - Person: 'Daniel Koifman'
+      Handle: '@KoifSec'

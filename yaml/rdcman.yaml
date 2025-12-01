@@ -1,6 +1,7 @@
 Name: RDCMan
 Category: RMM
-Description: 'Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently.'
+Description: |
+    Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently.
 Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'

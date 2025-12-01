@@ -1,6 +1,7 @@
 Name: PChelpware
 Category: RMM
-Description: 'PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop software developed by the UltraVNC team. Built on VNC technology and following the RFB protocol, PChelpware is designed specifically for remote technical support scenarios, virtual training, and helpdesk operations.'
+Description: |
+    PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop software developed by the UltraVNC team. Built on VNC technology and following the RFB protocol, PChelpware is designed specifically for remote technical support scenarios, virtual training, and helpdesk operations.
 Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'

@@ -1,6 +1,7 @@
 Name: Remmon
 Category: RMM
-Description: 'Remote monitoring tool for Windows and Linux written in Go.'
+Description: |
+    Remote monitoring tool for Windows and Linux written in Go.
 Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'
