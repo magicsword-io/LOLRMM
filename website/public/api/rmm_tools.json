@@ -14073,7 +14073,7 @@
     {
         "Name": "Action1",
         "Category": "RMM",
-        "Description": "Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries. \nThrough the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.\n",
+        "Description": "Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries.\nThrough the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.\n",
         "Author": "@kostastsale",
         "Created": "2024-08-03",
         "LastModified": "2024-08-03",
