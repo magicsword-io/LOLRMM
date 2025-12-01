@@ -90,6 +90,14 @@ Detections:
 - Sigma: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/ammyy_admin.yml
   Name: Detecting Ammy Admin RMM Agent Execution
   Description: Detects the execution of the Ammy Admin RMM agent for remote management.
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_registry_sigma.yml
+  Description: Detects potential registry activity of Ammyy Admin RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_network_sigma.yml
+  Description: Detects potential network activity of Ammyy Admin RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_files_sigma.yml
+  Description: Detects potential files activity of Ammyy Admin RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ammyy_admin_processes_sigma.yml
+  Description: Detects potential processes activity of Ammyy Admin RMM tool
 References:
 - https://www.ammyy.com/en/admin_security.html
 - https://www.ammyy.com/en/admin_mu.html

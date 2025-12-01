@@ -1,6 +1,6 @@
 Name: Kaseya (VSA)
-Description: 'Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.'
+Description: Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool.
+  More information will be added as it becomes available.
 Author: Nasreddine Bencherchali
 Created: '2024-08-05'
 LastModified: '2024-08-05'
@@ -16,7 +16,7 @@ Details:
   Free: ''
   Verification: ''
   SupportedOS:
-    - Windows
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:

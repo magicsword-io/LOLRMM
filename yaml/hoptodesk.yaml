@@ -59,7 +59,15 @@ Artifacts:
     - 443
     - 3478
     - 80
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_registry_sigma.yml
+  Description: Detects potential registry activity of HopToDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_network_sigma.yml
+  Description: Detects potential network activity of HopToDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_files_sigma.yml
+  Description: Detects potential files activity of HopToDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_processes_sigma.yml
+  Description: Detects potential processes activity of HopToDesk RMM tool
 References:
 - https://www.hoptodesk.com/#faqlink
 - https://gitlab.com/hoptodesk/hoptodesk

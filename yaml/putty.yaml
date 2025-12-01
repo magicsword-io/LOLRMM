@@ -16,13 +16,15 @@ Details:
   SupportedOS: []
   Capabilities: []
   Vulnerabilities: []
-  InstallationPaths: 
+  InstallationPaths:
   - '*\putty.exe'
 Artifacts:
   Disk: []
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/putty_processes_sigma.yml
+  Description: Detects potential processes activity of PuTTY RMM tool
 References: []
 Acknowledgement: []

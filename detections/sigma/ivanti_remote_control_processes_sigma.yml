@@ -1,22 +1,30 @@
 title: Potential Ivanti Remote Control RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - IvantiRemoteControl.exe
-    - ArcUI.exe
-    - AgentlessRC.exe
-  condition: selection
-id: 3036c733-577f-4cc4-ab1c-2d67cc133328
+id: ee98c832-56bc-4162-97fd-4963cd37f428
 status: experimental
-description: Detects potential processes activity of Ivanti Remote Control RMM tool
+description: |
+    Detects potential processes activity of Ivanti Remote Control RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - IvantiRemoteControl.exe
+            - ArcUI.exe
+            - AgentlessRC.exe
+    selection_image:
+        Image|endswith:
+            - IvantiRemoteControl.exe
+            - ArcUI.exe
+            - AgentlessRC.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of Ivanti Remote Control
+    - Legitimate use of Ivanti Remote Control
 level: medium

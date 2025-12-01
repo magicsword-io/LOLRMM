@@ -1,22 +1,30 @@
 title: Potential TurboMeeting RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - pcstarter.exe
-    - turbomeeting.exe
-    - turbomeetingstarter.exe
-  condition: selection
-id: 65fa645d-2346-4959-b096-ce2c0c8910c2
+id: e228610d-452a-4cbb-b5ea-03680f210ff0
 status: experimental
-description: Detects potential processes activity of TurboMeeting RMM tool
+description: |
+    Detects potential processes activity of TurboMeeting RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - pcstarter.exe
+            - turbomeeting.exe
+            - turbomeetingstarter.exe
+    selection_image:
+        Image|endswith:
+            - pcstarter.exe
+            - turbomeeting.exe
+            - turbomeetingstarter.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of TurboMeeting
+    - Legitimate use of TurboMeeting
 level: medium

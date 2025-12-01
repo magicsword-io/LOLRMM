@@ -1,23 +1,32 @@
 title: Potential pcAnywhere RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - awhost32.exe
-    - awrem32.exe
-    - pcaquickconnect.exe
-    - winaw32.exe
-  condition: selection
-id: b46a081f-220d-44bc-b6d7-56151c414478
+id: ab6317ad-0d76-4778-9e9b-1dc463be1307
 status: experimental
-description: Detects potential processes activity of pcAnywhere RMM tool
+description: |
+    Detects potential processes activity of pcAnywhere RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - awhost32.exe
+            - awrem32.exe
+            - pcaquickconnect.exe
+            - winaw32.exe
+    selection_image:
+        Image|endswith:
+            - awhost32.exe
+            - awrem32.exe
+            - pcaquickconnect.exe
+            - winaw32.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of pcAnywhere
+    - Legitimate use of pcAnywhere
 level: medium

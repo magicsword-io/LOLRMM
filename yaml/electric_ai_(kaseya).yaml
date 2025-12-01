@@ -27,8 +27,8 @@ Artifacts:
     - electric.ai
     Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_network_sigma.yml
-  Description: Detects potential network activity of Electric RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/electric_ai__kaseya__network_sigma.yml
+  Description: Detects potential network activity of Electric AI (Kaseya) RMM tool
 References:
 - https://www.electric.ai/product/device-management-solutions - Usess Kaseya/jamf
 Acknowledgement: []

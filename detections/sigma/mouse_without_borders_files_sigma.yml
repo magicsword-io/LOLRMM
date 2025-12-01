@@ -1,0 +1,25 @@
+title: Potential Mouse Without Borders RMM Tool File Activity
+id: 1d638377-3e99-4f7c-8d9e-9dcf1d441e66
+status: experimental
+description: |
+    Detects potential files activity of Mouse Without Borders RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2025-12-01
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBorders.exe
+            - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
+            - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersHelper.exe
+    condition: selection
+falsepositives:
+    - Legitimate use of Mouse Without Borders
+level: medium

@@ -1,20 +1,24 @@
 title: Potential HelpBeam RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - helpbeam*.exe
-  condition: selection
-id: a79a8449-d2a8-4d4e-9050-3e1fb530f790
+id: a1f0aa0b-82ac-483f-8cad-c725eb5d1840
 status: experimental
-description: Detects potential processes activity of HelpBeam RMM tool
+description: |
+    Detects potential processes activity of HelpBeam RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith: helpbeam*.exe
+    selection_image:
+        Image|endswith: helpbeam*.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of HelpBeam
+    - Legitimate use of HelpBeam
 level: medium

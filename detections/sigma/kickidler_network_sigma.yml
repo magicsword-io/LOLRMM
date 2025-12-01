@@ -1,21 +1,24 @@
 title: Potential KickIdler RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - kickidler.com
-    - my.kickidler.com
-  condition: selection
-id: c20767f9-ddf7-44af-84dc-1c2731c69665
+id: 7ebb5c84-5afb-4681-93eb-a021f4c2afd8
 status: experimental
-description: Detects potential network activity of KickIdler RMM tool
+description: |
+    Detects potential network activity of KickIdler RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - kickidler.com
+            - my.kickidler.com
+    condition: selection
 falsepositives:
-- Legitimate use of KickIdler
+    - Legitimate use of KickIdler
 level: medium

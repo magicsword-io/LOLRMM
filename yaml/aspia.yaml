@@ -1,6 +1,8 @@
 Name: Aspia
-Description: |
-  Aspia is an open-source Remote Desktop, file transfer and system information tool.
+Description: 'Aspia is an open-source Remote Desktop, file transfer and system information
+  tool.
+
+  '
 Created: '2025-05-09'
 LastModified: '2025-07-21'
 Details:
@@ -39,13 +41,13 @@ Details:
   - C:\Program Files (x86)\Aspia\
 Artifacts:
   Disk:
-  - File: 'C:\Users\*\AppData\Roaming\aspia\client.ini'
+  - File: C:\Users\*\AppData\Roaming\aspia\client.ini
     Description: N/A
     OS: Windows
-  - File: 'C:\Users\*\AppData\Local\Temp\aspia\aspia_client-*.log'
+  - File: C:\Users\*\AppData\Local\Temp\aspia\aspia_client-*.log
     Description: N/A
     OS: Windows
-  - File: 'C:\Program Files\Aspia\Client\qt.conf'
+  - File: C:\Program Files\Aspia\Client\qt.conf
     Description: N/A
     OS: Windows
   EventLog:
@@ -53,7 +55,7 @@ Artifacts:
     ProviderName: MsiInstaller
     LogFile: Application.evtx
     Data: 'Product: Aspia Client -- Installation completed successfully.'
-    Description:  Aspia Client installation event.
+    Description: Aspia Client installation event.
   Registry: []
   Network:
   - Description: Aspia can be downloaded from the official github repository.
@@ -66,6 +68,12 @@ References:
 - https://www.aspia.org/
 - https://github.com/dchapyshev/aspia
 Acknowledgement:
-- Person: "Swachchhanda Shrawan Poudel"
+- Person: Swachchhanda Shrawan Poudel
   Handle: '@_swachchhanda_'
-  
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml
+  Description: Detects potential network activity of Aspia RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml
+  Description: Detects potential files activity of Aspia RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml
+  Description: Detects potential processes activity of Aspia RMM tool
