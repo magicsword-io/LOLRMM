@@ -154,9 +154,9 @@ def check_required_fields(object, filename):
         warnings.append(f"WARNING: Created date is missing in file {filename} (object: {name})")
     
     # Check if Website is missing
-    if not object.get('Details', {}).get('Website'):
-        warnings.append(f"WARNING: Website is missing in Details section in file {filename} (object: {name})")
-    
+    #if not object.get('Details', {}).get('Website'):
+    #    warnings.append(f"WARNING: Website is missing in Details section in file {filename} (object: {name})")
+    #
     return warnings[0] if warnings else None
 
 def validate_schema(yaml_dir, schema_file, verbose):

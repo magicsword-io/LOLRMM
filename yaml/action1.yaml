@@ -1,4 +1,5 @@
 Name: Action1
+Category: 'RMM'
 Description: "Action1 is a powerful Remote Monitoring and Management(RMM) tool that\
   \ enables users to execute commands, scripts, and binaries. \nThrough the web interface\
   \ of action1, the administrator must create a new policy or an app to establish\
