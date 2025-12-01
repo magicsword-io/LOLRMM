@@ -1,11 +1,10 @@
 Name: AnyDesk
 Category: RMM
-Description: 'AnyDesk is a popular remote desktop software that enables users to access
+Description: |
+  AnyDesk is a popular remote desktop software that enables users to access
   and control a computer or device from a remote location. It was developed with the
   primary goal of facilitating remote work, technical support, and collaboration between
   individuals and teams.
-
-  '
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-09-29'
 LastModified: '2024-10-06'
