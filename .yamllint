@@ -4,6 +4,7 @@ extends: default
 ignore:
     - .github/
     - bin/
+    - detections/ # Exclude detections for now
     - website/
 
 rules:
