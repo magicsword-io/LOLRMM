@@ -79,6 +79,8 @@ detection:
     - \\C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
     - \\C:\Program Files (x86)\Xpra\*
     - \\C:\Program Files (x86)\Yandex\*
+    - \\C:\Program Files (x86)\bsag\*
+    - \\C:\Program Files (x86)\bsag\bma\*
     - \\C:\Program Files (x86)\mRemoteNG\*
     - \\C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_Process.exe
     - \\C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_UAC.exe
@@ -102,6 +104,8 @@ detection:
     - \\C:\Program Files\TeamViewer\
     - \\C:\Program Files\TightVNC\*
     - \\C:\Program Files\ZOC8\*
+    - \\C:\Program Files\bsag\*
+    - \\C:\Program Files\bsag\bma\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
     - \\C:\ProgramData\Kaseya\
