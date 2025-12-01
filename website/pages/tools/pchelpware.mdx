@@ -1,0 +1,54 @@
+---
+description = "PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop software developed by the UltraVNC team. Built on VNC technology and following the RFB protocol, PChelpware is designed specifically for remote technical support scenarios, virtual training, and helpdesk operations."
+title = "PChelpware"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# PChelpware
+
+PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop software developed by the UltraVNC team. Built on VNC technology and following the RFB protocol, PChelpware is designed specifically for remote technical support scenarios, virtual training, and helpdesk operations.
+
+
+### Details
+<Details author={"Daniel Koifman (KoifSec)"}
+         category={"RMM"}
+         created={"2025-11-12"}
+         website={"https://uvnc.com/downloads/pchelpware/"}
+         lastModified={"2025-11-12"}
+         privileges={"User"}
+         free={ true }
+         verification={ true }
+/>
+
+#### Installation Paths
+<Card code={ ["*\\PcHelpWare_viewer.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Desktop Control", "Remote Support", "Screen Sharing", "File Transfer"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\temp_phw", "Description": "Folder that is created upon PcHelpWare execution", "OS": "Windows"}] }/>
+
+
+
+
+
+
+
+### Detections
+- Splunk SPL query detecting PChelpware activity through Sysmon EventCode 1 (process creation).
+
+### References
+- [https://uvnc.com/downloads/pchelpware/](https://uvnc.com/downloads/pchelpware/)
+

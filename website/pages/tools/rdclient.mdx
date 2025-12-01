@@ -1,0 +1,60 @@
+---
+description = "RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote desktops in a tree view similar to the Windows Explorer."
+title = "RdClient"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RdClient
+
+RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote desktops in a tree view similar to the Windows Explorer.
+
+
+### Details
+<Details author={"Daniel Koifman (KoifSec)"}
+         category={"RMM"}
+         created={"2025-11-12"}
+         website={"https://www.pierschel.com/en/software-blog/28-rdclient-en"}
+         lastModified={"2025-11-12"}
+         privileges={"User"}
+         free={ true }
+         verification={ true }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\RdClient\\*", "C:\\Program Files\\RdClient\\*", "rdclient.exe", "RdClientInstaller.exe", "SupportTool.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Desktop Access", "Multiple Protocol Support", "Connection Management"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "%APPDATA%\\RdClient\\*", "Description": null, "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\RdClient", "Description": "RdClient Installation"}] }/>
+
+
+
+
+
+### Detections
+- QRadar AQL query detecting RdClient activity through process creation (EventID 4688) for rdclient.exe and supporttool.exe, and registry modifications (EventID 4657) to SOFTWARE\RdClient registry path
+
+### References
+- [https://rdclient.en.softonic.com/](https://rdclient.en.softonic.com/)
+- [https://geekflare.com/software/remote-desktop-client-software/](https://geekflare.com/software/remote-desktop-client-software/)
+
+### Acknowledgements
+- Daniel Koifman (@KoifSec)

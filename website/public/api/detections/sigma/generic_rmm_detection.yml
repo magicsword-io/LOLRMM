@@ -59,6 +59,7 @@ detection:
     - \\C:\Program Files (x86)\Bluetrait Agent\*
     - \\C:\Program Files (x86)\DesktopCentral_Agent\bin\*
     - \\C:\Program Files (x86)\GoTo Opener
+    - \\C:\Program Files (x86)\GoTo Resolve Unattended\*
     - \\C:\Program Files (x86)\GoToMyPC\*
     - \\C:\Program Files (x86)\Google\Chrome Remote Desktop\*
     - \\C:\Program Files (x86)\HopToDesk\*
@@ -70,6 +71,8 @@ detection:
     - \\C:\Program Files (x86)\OnionShare\*
     - \\C:\Program Files (x86)\PJ Technologies\GOVsrv\*
     - \\C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe
+    - \\C:\Program Files (x86)\RdClient\*
+    - \\C:\Program Files (x86)\Remote Ripple\*
     - \\C:\Program Files (x86)\RemotePC\*
     - \\C:\Program Files (x86)\S3 Browser\*
     - \\C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
@@ -77,6 +80,7 @@ detection:
     - \\C:\Program Files (x86)\SmartFTP Client\en-US\
     - \\C:\Program Files (x86)\Splashtop\*
     - \\C:\Program Files (x86)\UltraViewer\UltraViewer_Desktop.exe
+    - \\C:\Program Files (x86)\Veyon\*
     - \\C:\Program Files (x86)\Xpra\*
     - \\C:\Program Files (x86)\Yandex\*
     - \\C:\Program Files (x86)\bsag\*
@@ -91,11 +95,14 @@ detection:
     - \\C:\Program Files\Bitvise SSH Server\*
     - \\C:\Program Files\Danware Data\NetOp Packn Deploy\*
     - \\C:\Program Files\Devolutions\Remote Desktop Manager
+    - \\C:\Program Files\GoTo Resolve Unattended\*
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
     - \\C:\Program Files\Parsec\*
+    - \\C:\Program Files\RdClient\*
     - \\C:\Program Files\RealVNC\VNC Server\*
+    - \\C:\Program Files\Remote Ripple\*
     - \\C:\Program Files\Remote Utilities\*
     - \\C:\Program Files\RustDesk
     - \\C:\Program Files\Solar-Putty-v4\*
@@ -103,14 +110,15 @@ detection:
     - \\C:\Program Files\SysAidServer\*
     - \\C:\Program Files\TeamViewer\
     - \\C:\Program Files\TightVNC\*
+    - \\C:\Program Files\Veyon\*
     - \\C:\Program Files\ZOC8\*
     - \\C:\Program Files\bsag\*
     - \\C:\Program Files\bsag\bma\*
+    - \\C:\Program Files\ehorus_agent\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
     - \\C:\ProgramData\Kaseya\
     - \\C:\ProgramData\Total Software Deployment\*
-    - \\C:\ProgramFiles*\GoTo Machine Installer\*
     - \\C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
@@ -162,6 +170,23 @@ detection:
     - \\FixMeitClient*.exe
     - \\GetScreen.exe
     - \\GoTo Assist Opener.exe
+    - \\GoToResolveExternalModuleHandler.exe
+    - \\GoToResolveFileManager.exe
+    - \\GoToResolveLoggerProcess.exe
+    - \\GoToResolveNetworkChecker.exe
+    - \\GoToResolveProcessChecker.exe
+    - \\GoToResolveQuickView.exe
+    - \\GoToResolveRegistryEditor.exe
+    - \\GoToResolveRemoteControl.exe
+    - \\GoToResolveService.exe
+    - \\GoToResolveServiceManager.exe
+    - \\GoToResolveTerminal.exe
+    - \\GoToResolveTools32.exe
+    - \\GoToResolveTools64.exe
+    - \\GoToResolveUi.exe
+    - \\GoToResolveUnattended.exe
+    - \\GoToResolveUnattendedRemover.exe
+    - \\GoToResolveUnattendedUi.exe
     - \\GotoHTTP*.exe
     - \\GotoHTTP_x64.exe
     - \\GovAgentInstallHelper.exe
@@ -224,10 +249,12 @@ detection:
     - \\ROMFUSClient.exe
     - \\ROMServer.exe
     - \\RViewer.exe
+    - \\RdClientInstaller.exe
     - \\Remote Desktop.exe
     - \\Remote Workforce Client.exe
     - \\RemotePC.exe
     - \\RemotePCService.exe
+    - \\RemoteRipple.exe
     - \\RmmService.exe
     - \\RocketRemoteDesktop_Setup.exe
     - \\SMPCSetup.exe
@@ -246,6 +273,7 @@ detection:
     - \\Sorillus-Launcher*.exe
     - \\SplashtopSOS.exe
     - \\Splashtop_Streamer_Windows*.exe
+    - \\SupportTool.exe
     - \\Syncro.App.Runner.exe
     - \\Syncro.Installer.exe
     - \\Syncro.Overmind.Service.exe
@@ -344,6 +372,9 @@ detection:
     - \\echoware.dll
     - \\ehorus standalone.exe
     - \\ehorus_agent.exe
+    - \\ehorus_cmd.exe
+    - \\ehorus_launcher.exe
+    - \\ehorus_uit.exe
     - \\einstaller.exe
     - \\era.exe
     - \\eratool.exe
@@ -491,6 +522,7 @@ detection:
     - \\rcmgrsvc.exe
     - \\rcstartsupport.exe
     - \\rd.exe
+    - \\rdclient.exe
     - \\rdp.exe
     - \\rdp2tcp.py
     - \\remcom.exe
@@ -592,6 +624,11 @@ detection:
     - \\ultraviewer.exe
     - \\ultraviewer_desktop.exe
     - \\ultraviewer_service.exe
+    - \\veyon-master.exe
+    - \\veyon-server.exe
+    - \\veyon-service.exe
+    - \\veyon-wcli.exe
+    - \\veyon-worker.exe
     - \\vncserver.exe
     - \\vncserverui.exe
     - \\vncviewer.exe

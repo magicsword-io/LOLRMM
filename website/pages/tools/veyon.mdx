@@ -1,0 +1,62 @@
+---
+description = "Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management software designed for educational environments and remote support scenarios. It enables monitoring and controlling computers across multiple platforms, allowing administrators and teachers to view and control computer labs, interact with students, and provide remote technical support."
+title = "Veyon"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Veyon
+
+Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management software designed for educational environments and remote support scenarios. It enables monitoring and controlling computers across multiple platforms, allowing administrators and teachers to view and control computer labs, interact with students, and provide remote technical support.
+
+
+### Details
+<Details author={"Daniel Koifman (KoifSec)"}
+         category={"RMM"}
+         created={"2025-11-12"}
+         website={"https://veyon.io"}
+         lastModified={"2025-11-12"}
+         privileges={"User"}
+         free={ true }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Veyon\\*", "C:\\Program Files (x86)\\Veyon\\*", "veyon-wcli.exe", "veyon-worker.exe", "veyon-server.exe", "veyon-service.exe", "veyon-master.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Linux", "Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Screen Monitoring", "Screen Broadcasting (Demo Mode)", "Remote Command Execution", "File Transfer", "Power Management", "Screen Lock", "User Messaging", "Application Launching", "Screenshot Capture", "Clipboard Synchronization"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Windows\\Temp\\VeyonServer.log", "Description": "VeyonServer log file", "OS": "Windows"}, {"File": "C:\\Windows\\Temp\\VeyonService.log", "Description": "VeyonService log file", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\VeyonCLI.log", "Description": "Veyon command-line interface utility log", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "Veyon Service", "ImagePath": "\"C:\\\\Program Files\\\\Veyon\\\\veyon-service.exe\"", "Description": "Service installation event for Veyon Service"}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\Veyon Solutions", "Description": "Main Veyon configuration registry key containing all service and application settings"}, {"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VeyonService", "Description": "Veyon service registration and configuration"}] }/>
+
+
+
+
+
+### Detections
+- Detects Veyon RMM activity through registry modifications (EventCode 13), process creation (EventCode 1), and service installation (EventCode 4697)
+
+### References
+- [https://veyon.io](https://veyon.io)
+- [https://github.com/veyon/veyon](https://github.com/veyon/veyon)
+- [https://docs.veyon.io/en/latest/](https://docs.veyon.io/en/latest/)
+

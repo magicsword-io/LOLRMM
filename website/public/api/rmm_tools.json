@@ -4340,12 +4340,21 @@
             },
             "Privileges": "",
             "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
+            "Verification": "true",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "Mac"
+            ],
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "ehorus standalone.exe"
+                "C:\\Program Files\\ehorus_agent\\*",
+                "ehorus standalone.exe",
+                "ehorus_agent.exe",
+                "ehorus_cmd.exe",
+                "ehorus_launcher.exe",
+                "ehorus_uit.exe"
             ]
         },
         "Artifacts": {
@@ -4373,7 +4382,12 @@
             }
         ],
         "References": [],
-        "Acknowledgement": []
+        "Acknowledgement": [
+            {
+                "Person": "Daniel Koifman",
+                "Handle": "@KoifSec"
+            }
+        ]
     },
     {
         "Name": "Xpra",
@@ -8159,6 +8173,118 @@
         "Acknowledgement": []
     },
     {
+        "Name": "PChelpware",
+        "Category": "RMM",
+        "Description": "PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop software developed by the UltraVNC team. Built on VNC technology and following the RFB protocol, PChelpware is designed specifically for remote technical support scenarios, virtual training, and helpdesk operations.\n",
+        "Author": "Daniel Koifman (KoifSec)",
+        "Created": "2025-11-12",
+        "LastModified": "2025-11-12",
+        "Details": {
+            "Website": "https://uvnc.com/downloads/pchelpware/",
+            "Privileges": "User",
+            "Free": true,
+            "Verification": true,
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Remote Desktop Control",
+                "Remote Support",
+                "Screen Sharing",
+                "File Transfer"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "*\\PcHelpWare_viewer.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\temp_phw",
+                    "Description": "Folder that is created upon PcHelpWare execution",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": []
+        },
+        "Detections": [
+            {
+                "Splunk": "https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/pchelpware/spl.spl",
+                "Description": "Splunk SPL query detecting PChelpware activity through Sysmon EventCode 1 (process creation)."
+            }
+        ],
+        "References": [
+            "https://uvnc.com/downloads/pchelpware/"
+        ],
+        "Acknowledgement": []
+    },
+    {
+        "Name": "RdClient",
+        "Category": "RMM",
+        "Description": "RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote desktops in a tree view similar to the Windows Explorer.\n",
+        "Author": "Daniel Koifman (KoifSec)",
+        "Created": "2025-11-12",
+        "LastModified": "2025-11-12",
+        "Details": {
+            "Website": "https://www.pierschel.com/en/software-blog/28-rdclient-en",
+            "Privileges": "User",
+            "Free": true,
+            "Verification": true,
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Remote Desktop Access",
+                "Multiple Protocol Support",
+                "Connection Management"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files (x86)\\RdClient\\*",
+                "C:\\Program Files\\RdClient\\*",
+                "rdclient.exe",
+                "RdClientInstaller.exe",
+                "SupportTool.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "%APPDATA%\\RdClient\\*",
+                    "Description": null,
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\RdClient",
+                    "Description": "RdClient Installation"
+                }
+            ],
+            "Network": []
+        },
+        "Detections": [
+            {
+                "AQL": "https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/rdclient/aql.aql",
+                "Description": "QRadar AQL query detecting RdClient activity through process creation (EventID 4688) for rdclient.exe and supporttool.exe, and registry modifications (EventID 4657) to SOFTWARE\\RdClient registry path"
+            }
+        ],
+        "References": [
+            "https://rdclient.en.softonic.com/",
+            "https://geekflare.com/software/remote-desktop-client-software/"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Daniel Koifman",
+                "Handle": "@KoifSec"
+            }
+        ]
+    },
+    {
         "Name": "Free Ping Tool",
         "Category": "RMM",
         "Description": "Free Ping Tool is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -9584,6 +9710,66 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Remote Ripple",
+        "Category": "RMM",
+        "Description": "Remote Ripple is a free VNC viewer client developed by GlavSoft (the creators of TightVNC) for remote desktop access and control. It is a modern, lightweight viewer based on TightVNC technology that allows users to remotely access and control.\n",
+        "Author": "Daniel Koifman (KoifSec)",
+        "Created": "2025-11-12",
+        "LastModified": "2025-11-12",
+        "Details": {
+            "Website": "https://remoteripple.com",
+            "Privileges": "User",
+            "Free": true,
+            "Verification": false,
+            "SupportedOS": [
+                "Windows",
+                "Mac",
+                "Android",
+                "iOS"
+            ],
+            "Capabilities": [
+                "Remote Control",
+                "Remote View",
+                "Clipboard Exchange",
+                "File Transfer",
+                "Screen Capture"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Remote Ripple\\*",
+                "C:\\Program Files (x86)\\Remote Ripple\\*",
+                "RemoteRipple.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "%APPDATA%\\GlavSoft\\RemoteRipple\\*",
+                    "Description": "Log files for RemoteRipple",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "%TEMP%\\Remote_Ripple_*",
+                    "Description": "Temporary files/logs for RemoteRipple",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": []
+        },
+        "Detections": [
+            {
+                "AQL": "https://github.com/Koifman/Deathcon25/blob/main/rmm_rodeo/remoteripple/aql.aql",
+                "Description": "QRadar AQL query for detecting Remote Ripple RMM activity"
+            }
+        ],
+        "References": [
+            "https://remoteripple.com"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "VNC Connect",
         "Category": "RMM",
         "Description": "VNC Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -10752,38 +10938,88 @@
     },
     {
         "Name": "GoToAssist (GoTo Resolve)",
-        "Category": "RMM",
-        "Description": "GoToAssist (GoTo Resolve) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "Description": "GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remote monitoring and management (RMM) solution designed for small and midsize businesses (SMBs) and managed service providers (MSPs). It combines remote monitoring and management capabilities with remote support and access, ticketing, automation, and helpdesk functionality in a unified platform.\n",
+        "Author": "Daniel Koifman (KoifSec)",
+        "Created": "2025-11-12",
+        "LastModified": "2025-11-12",
         "Details": {
-            "Website": "",
+            "Website": "https://www.logmein.com/products/resolve",
             "PEMetadata": {
                 "Filename": "",
                 "OriginalFileName": "",
                 "Description": ""
             },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
+            "Privileges": "User",
+            "Free": false,
+            "Verification": true,
+            "SupportedOS": [
+                "Android",
+                "Windows",
+                "Mac"
+            ],
+            "Capabilities": [
+                "Command line Support",
+                "File System Access",
+                "File Transfer",
+                "GUI Support",
+                "Remote Control"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "C:\\ProgramFiles*\\GoTo Machine Installer\\*",
-                "*\\GoTo Machine Installer\\*",
-                "*\\GoTo\\*"
+                "C:\\Program Files (x86)\\GoTo Resolve Unattended\\*",
+                "C:\\Program Files\\GoTo Resolve Unattended\\*",
+                "GoToResolveExternalModuleHandler.exe",
+                "GoToResolveFileManager.exe",
+                "GoToResolveLoggerProcess.exe",
+                "GoToResolveNetworkChecker.exe",
+                "GoToResolveProcessChecker.exe",
+                "GoToResolveQuickView.exe",
+                "GoToResolveRegistryEditor.exe",
+                "GoToResolveRemoteControl.exe",
+                "GoToResolveService.exe",
+                "GoToResolveServiceManager.exe",
+                "GoToResolveTerminal.exe",
+                "GoToResolveTools32.exe",
+                "GoToResolveTools64.exe",
+                "GoToResolveUi.exe",
+                "GoToResolveUnattended.exe",
+                "GoToResolveUnattendedRemover.exe",
+                "GoToResolveUnattendedUi.exe"
             ]
         },
         "Artifacts": {
             "Disk": [],
-            "EventLog": [],
-            "Registry": [],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "GoToResolve_*",
+                    "ImagePath": "\"C:\\Program Files (x86)\\GoTo Resolve Unattended\\*\\GoToResolveProcessChecker.exe\" -Service -WorkFolder \"C:\\Program Files (x86)\\GoTo Resolve Unattended\\*\" -ApplicationType \"4\"",
+                    "Description": "Service installation event as result of GoTo Resolve installation."
+                },
+                {
+                    "EventID": 4688,
+                    "ProviderName": "Microsoft Windows security auditing",
+                    "LogFile": "Security.evtx",
+                    "NewProcessName": "C:\\Windows\\System32\\sc.exe",
+                    "CreatorProcessName": "C:\\Windows\\System32\\svchost.exe",
+                    "CommandLine": "\"C:\\Windows\\system32\\sc.exe\" start GoToResolve_*",
+                    "Description": "Process creation event as result of GoTo Resolve installation."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\GoTo Resolve Unattended\\",
+                    "Description": "N/A"
+                }
+            ],
             "Network": []
         },
         "Detections": [],
-        "References": [],
+        "References": [
+            "https://asec.ahnlab.com/en/90968/"
+        ],
         "Acknowledgement": []
     },
     {
@@ -14078,6 +14314,105 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Veyon",
+        "Category": "RMM",
+        "Description": "Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management software designed for educational environments and remote support scenarios. It enables monitoring and controlling computers across multiple platforms, allowing administrators and teachers to view and control computer labs, interact with students, and provide remote technical support.\n",
+        "Author": "Daniel Koifman (KoifSec)",
+        "Created": "2025-11-12",
+        "LastModified": "2025-11-12",
+        "Details": {
+            "Website": "https://veyon.io",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": "",
+                "Product": ""
+            },
+            "Privileges": "User",
+            "Free": true,
+            "Verification": false,
+            "SupportedOS": [
+                "Linux",
+                "Windows"
+            ],
+            "Capabilities": [
+                "Remote Control",
+                "Screen Monitoring",
+                "Screen Broadcasting (Demo Mode)",
+                "Remote Command Execution",
+                "File Transfer",
+                "Power Management",
+                "Screen Lock",
+                "User Messaging",
+                "Application Launching",
+                "Screenshot Capture",
+                "Clipboard Synchronization"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Veyon\\*",
+                "C:\\Program Files (x86)\\Veyon\\*",
+                "veyon-wcli.exe",
+                "veyon-worker.exe",
+                "veyon-server.exe",
+                "veyon-service.exe",
+                "veyon-master.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Windows\\Temp\\VeyonServer.log",
+                    "Description": "VeyonServer log file",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\Temp\\VeyonService.log",
+                    "Description": "VeyonService log file",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Local\\VeyonCLI.log",
+                    "Description": "Veyon command-line interface utility log",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "Veyon Service",
+                    "ImagePath": "\"C:\\\\Program Files\\\\Veyon\\\\veyon-service.exe\"",
+                    "Description": "Service installation event for Veyon Service"
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Veyon Solutions",
+                    "Description": "Main Veyon configuration registry key containing all service and application settings"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\VeyonService",
+                    "Description": "Veyon service registration and configuration"
+                }
+            ],
+            "Network": []
+        },
+        "Detections": [
+            {
+                "Splunk": "https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/veyon/spl.spl",
+                "Description": "Detects Veyon RMM activity through registry modifications (EventCode 13), process creation (EventCode 1), and service installation (EventCode 4697)"
+            }
+        ],
+        "References": [
+            "https://veyon.io",
+            "https://github.com/veyon/veyon",
+            "https://docs.veyon.io/en/latest/"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "CentraStage (Now Datto)",
         "Category": "RMM",
         "Description": "CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -16616,6 +16951,93 @@
         },
         "Detections": [],
         "References": [],
+        "Acknowledgement": []
+    },
+    {
+        "Name": "Remmon",
+        "Category": "RMM",
+        "Description": "Remote monitoring tool for Windows and Linux written in Go.\n",
+        "Author": "Daniel Koifman (KoifSec)",
+        "Created": "2025-11-12",
+        "LastModified": "2025-11-12",
+        "Details": {
+            "Website": "https://github.com/Netzwerkfehler/remmon",
+            "Privileges": "User",
+            "Free": true,
+            "Verification": false,
+            "SupportedOS": [
+                "Windows",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Remote Monitoring"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "*\\\\Remmon.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [],
+            "EventLog": [],
+            "Registry": [],
+            "Network": []
+        },
+        "Detections": [
+            {
+                "AQL": "https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/remmon/aql.aql",
+                "Description": "QRadar AQL query for detecting Remmon process execution via EventID 4688, tracking parent process name, process name, and command-line arguments"
+            }
+        ],
+        "References": [
+            "https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0"
+        ],
+        "Acknowledgement": []
+    },
+    {
+        "Name": "RDCMan",
+        "Category": "RMM",
+        "Description": "Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently.\n",
+        "Author": "Daniel Koifman (KoifSec)",
+        "Created": "2025-11-12",
+        "LastModified": "2025-11-12",
+        "Details": {
+            "Website": "https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman",
+            "Privileges": "User",
+            "Free": true,
+            "Verification": true,
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Remote Desktop Management",
+                "Multiple RDP Sessions"
+            ],
+            "Vulnerabilities": [
+                "CVE-2020-0765"
+            ],
+            "InstallationPaths": [
+                "*\\RDCMan.exe",
+                "*\\RDCMan-x86.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [],
+            "EventLog": [],
+            "Registry": [],
+            "Network": []
+        },
+        "Detections": [
+            {
+                "KQL": "https://github.com/Koifman/Deathcon25/blob/main/rmm_rodeo/rdcman/kql.kql",
+                "Description": "KQL query for detecting RDCMan activity in Microsoft Sentinel"
+            }
+        ],
+        "References": [
+            "https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman",
+            "https://dirteam.com/sander/2021/06/24/remote-desktop-connection-manager-rdcman-is-back/",
+            "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0765"
+        ],
         "Acknowledgement": []
     },
     {

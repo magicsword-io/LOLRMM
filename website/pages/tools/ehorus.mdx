@@ -19,12 +19,14 @@ eHorus is a remote monitoring and management (RMM) tool. More information will b
          lastModified={"2024-08-02"}
          privileges={""}
          free={ false }
-         verification={ false }
+         verification={ "true" }
 />
 
 #### Installation Paths
-<Card code={ ["ehorus standalone.exe"] }/>
+<Card code={ ["C:\\Program Files\\ehorus_agent\\*", "ehorus standalone.exe", "ehorus_agent.exe", "ehorus_cmd.exe", "ehorus_launcher.exe", "ehorus_uit.exe"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "Mac"] }/>
 
 
 
@@ -48,3 +50,5 @@ eHorus is a remote monitoring and management (RMM) tool. More information will b
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_processes_sigma.yml)
 
 
+### Acknowledgements
+- Daniel Koifman (@KoifSec)

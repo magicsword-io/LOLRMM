@@ -1,0 +1,54 @@
+---
+description = "Remote Ripple is a free VNC viewer client developed by GlavSoft (the creators of TightVNC) for remote desktop access and control. It is a modern, lightweight viewer based on TightVNC technology that allows users to remotely access and control."
+title = "Remote Ripple"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Remote Ripple
+
+Remote Ripple is a free VNC viewer client developed by GlavSoft (the creators of TightVNC) for remote desktop access and control. It is a modern, lightweight viewer based on TightVNC technology that allows users to remotely access and control.
+
+
+### Details
+<Details author={"Daniel Koifman (KoifSec)"}
+         category={"RMM"}
+         created={"2025-11-12"}
+         website={"https://remoteripple.com"}
+         lastModified={"2025-11-12"}
+         privileges={"User"}
+         free={ true }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Remote Ripple\\*", "C:\\Program Files (x86)\\Remote Ripple\\*", "RemoteRipple.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Mac", "Android", "iOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Remote View", "Clipboard Exchange", "File Transfer", "Screen Capture"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "%APPDATA%\\GlavSoft\\RemoteRipple\\*", "Description": "Log files for RemoteRipple", "OS": "Windows"}, {"File": "%TEMP%\\Remote_Ripple_*", "Description": "Temporary files/logs for RemoteRipple", "OS": "Windows"}] }/>
+
+
+
+
+
+
+
+### Detections
+- QRadar AQL query for detecting Remote Ripple RMM activity
+
+### References
+- [https://remoteripple.com](https://remoteripple.com)
+

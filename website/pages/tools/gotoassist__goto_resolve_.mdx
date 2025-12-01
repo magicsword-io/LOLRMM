@@ -1,5 +1,5 @@
 ---
-description = "GoToAssist (GoTo Resolve) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description = "GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remote monitoring and management (RMM) solution designed for small and midsize businesses (SMBs) and managed service providers (MSPs). It combines remote monitoring and management capabilities with remote support and access, ticketing, automation, and helpdesk functionality in a unified platform."
 title = "GoToAssist (GoTo Resolve)"
 ---
 
@@ -9,34 +9,47 @@ import {EuiSpacer} from "@elastic/eui"
 
 # GoToAssist (GoTo Resolve)
 
-GoToAssist (GoTo Resolve) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remote monitoring and management (RMM) solution designed for small and midsize businesses (SMBs) and managed service providers (MSPs). It combines remote monitoring and management capabilities with remote support and access, ticketing, automation, and helpdesk functionality in a unified platform.
+
 
 ### Details
-<Details author={""}
-         category={"RMM"}
-         created={"2024-08-02"}
-         website={""}
-         lastModified={"2024-08-02"}
-         privileges={""}
+<Details author={"Daniel Koifman (KoifSec)"}
+         category={""}
+         created={"2025-11-12"}
+         website={"https://www.logmein.com/products/resolve"}
+         lastModified={"2025-11-12"}
+         privileges={"User"}
          free={ false }
-         verification={ false }
+         verification={ true }
 />
 
 #### Installation Paths
-<Card code={ ["C:\\ProgramFiles*\\GoTo Machine Installer\\*", "*\\GoTo Machine Installer\\*", "*\\GoTo\\*"] }/>
+<Card code={ ["C:\\Program Files (x86)\\GoTo Resolve Unattended\\*", "C:\\Program Files\\GoTo Resolve Unattended\\*", "GoToResolveExternalModuleHandler.exe", "GoToResolveFileManager.exe", "GoToResolveLoggerProcess.exe", "GoToResolveNetworkChecker.exe", "GoToResolveProcessChecker.exe", "GoToResolveQuickView.exe", "GoToResolveRegistryEditor.exe", "GoToResolveRemoteControl.exe", "GoToResolveService.exe", "GoToResolveServiceManager.exe", "GoToResolveTerminal.exe", "GoToResolveTools32.exe", "GoToResolveTools64.exe", "GoToResolveUi.exe", "GoToResolveUnattended.exe", "GoToResolveUnattendedRemover.exe", "GoToResolveUnattendedUi.exe"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Android", "Windows", "Mac"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Command line Support", "File System Access", "File Transfer", "GUI Support", "Remote Control"] }/>
 
 
 
 ### Forensic Artifacts
 
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "GoToResolve_*", "ImagePath": "\"C:\\Program Files (x86)\\GoTo Resolve Unattended\\*\\GoToResolveProcessChecker.exe\" -Service -WorkFolder \"C:\\Program Files (x86)\\GoTo Resolve Unattended\\*\" -ApplicationType \"4\"", "Description": "Service installation event as result of GoTo Resolve installation."}, {"EventID": 4688, "ProviderName": "Microsoft Windows security auditing", "LogFile": "Security.evtx", "NewProcessName": "C:\\Windows\\System32\\sc.exe", "CreatorProcessName": "C:\\Windows\\System32\\svchost.exe", "CommandLine": "\"C:\\Windows\\system32\\sc.exe\" start GoToResolve_*", "Description": "Process creation event as result of GoTo Resolve installation."}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\GoTo Resolve Unattended\\", "Description": "N/A"}] }/>
 
 
 
 
 
 
-
+### References
+- [https://asec.ahnlab.com/en/90968/](https://asec.ahnlab.com/en/90968/)
 

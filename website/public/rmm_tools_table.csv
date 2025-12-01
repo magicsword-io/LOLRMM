@@ -144,6 +144,8 @@ Name,Category,Description,Author
 [MobaXterm](/rmm_tools/mobaxterm),RMM,MobaXterm is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Xeox](/rmm_tools/xeox),RMM,Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes ...,
 [RemoteView](/rmm_tools/remoteview),RMM,RemoteView is a remote monitoring and management (RMM) tool. More information will be added as it be...,
+[PChelpware](/rmm_tools/pchelpware),RMM,PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop so...,Daniel Koifman (KoifSec)
+[RdClient](/rmm_tools/rdclient),RMM,"RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote d...",Daniel Koifman (KoifSec)
 [Free Ping Tool](/rmm_tools/free_ping_tool),RMM,Free Ping Tool is a remote monitoring and management (RMM) tool. More information will be added as i...,
 [Remote Manipulator System](/rmm_tools/remote_manipulator_system),RMM,Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be...,
 [Pandora RC (eHorus)](/rmm_tools/pandora_rc__ehorus_),RMM,Pandora RC (eHorus) is a remote monitoring and management (RMM) tool. More information will be added...,
@@ -166,6 +168,7 @@ Name,Category,Description,Author
 [Bluetrait](/rmm_tools/bluetrait),RMM,Bluetrait is a Remote Monitoring and Management (RMM) tool designed to provide IT administrators and...,The Haag
 [BeAnyWhere](/rmm_tools/beanywhere),RMM,BeAnyWhere is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Microsoft Quick Assist](/rmm_tools/microsoft_quick_assist),RMM,Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be ad...,
+[Remote Ripple](/rmm_tools/remote_ripple),RMM,Remote Ripple is a free VNC viewer client developed by GlavSoft (the creators of TightVNC) for remot...,Daniel Koifman (KoifSec)
 [VNC Connect](/rmm_tools/vnc_connect),RMM,VNC Connect is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [Seetrol](/rmm_tools/seetrol),RMM,Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [SecureCRT](/rmm_tools/securecrt),RMM,SecureCRT is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
@@ -183,7 +186,7 @@ Name,Category,Description,Author
 [GatherPlace-desktop sharing](/rmm_tools/gatherplace-desktop_sharing),RMM,GatherPlace-desktop sharing is a remote monitoring and management (RMM) tool. More information will ...,
 [Syncro](/rmm_tools/syncro),RMM,Syncro is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Onionshare](/rmm_tools/onionshare),RMM,Onionshare is a remote monitoring and management (RMM) tool. More information will be added as it be...,
-[GoToAssist (GoTo Resolve)](/rmm_tools/gotoassist__goto_resolve_),RMM,GoToAssist (GoTo Resolve) is a remote monitoring and management (RMM) tool. More information will be...,
+[GoToAssist (GoTo Resolve)](/rmm_tools/gotoassist__goto_resolve_),,GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remote monitoring and man...,Daniel Koifman (KoifSec)
 [SkyFex](/rmm_tools/skyfex),RMM,SkyFex is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [OCS inventory](/rmm_tools/ocs_inventory),RMM,OCS inventory is a remote monitoring and management (RMM) tool. More information will be added as it...,
 [RES Automation Manager](/rmm_tools/res_automation_manager),RMM,RES Automation Manager is a remote monitoring and management (RMM) tool. More information will be ad...,
@@ -237,6 +240,7 @@ Name,Category,Description,Author
 [Connectwise Automate (LabTech)](/rmm_tools/connectwise_automate__labtech_),RMM,Connectwise Automate (LabTech) is a remote monitoring and management (RMM) tool. More information wi...,
 [RuDesktop](/rmm_tools/rudesktop),RMM,RuDesktop is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [MyIVO](/rmm_tools/myivo),RMM,MyIVO is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
+[Veyon](/rmm_tools/veyon),RMM,Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management...,Daniel Koifman (KoifSec)
 [CentraStage (Now Datto)](/rmm_tools/centrastage__now_datto_),RMM,CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be a...,
 [Pcvisit](/rmm_tools/pcvisit),RMM,Pcvisit is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [Action1](/rmm_tools/action1),RMM,Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute comma...,@kostastsale
@@ -274,6 +278,9 @@ and control a computer or ...","Ali Alwashali, Nasreddine Bencherchali"
 [VNC](/rmm_tools/vnc),RMM,VNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes a...,
 [Ericom Connect](/rmm_tools/ericom_connect),RMM,Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as i...,
 [Netop](/rmm_tools/netop),RMM,Netop is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
+[Remmon](/rmm_tools/remmon),RMM,"Remote monitoring tool for Windows and Linux written in Go.
+...",Daniel Koifman (KoifSec)
+[RDCMan](/rmm_tools/rdcman),RMM,Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for m...,Daniel Koifman (KoifSec)
 [ToDesk](/rmm_tools/todesk),RMM,ToDesk is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [NTR Remote](/rmm_tools/ntr_remote),RMM,NTR Remote is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Domotz](/rmm_tools/domotz),RMM,Domotz is a remote monitoring and management (RMM) tool. More information will be added as it become...,

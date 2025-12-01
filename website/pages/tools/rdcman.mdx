@@ -1,0 +1,55 @@
+---
+description = "Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently."
+title = "RDCMan"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RDCMan
+
+Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently.
+
+
+### Details
+<Details author={"Daniel Koifman (KoifSec)"}
+         category={"RMM"}
+         created={"2025-11-12"}
+         website={"https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman"}
+         lastModified={"2025-11-12"}
+         privileges={"User"}
+         free={ true }
+         verification={ true }
+/>
+
+#### Installation Paths
+<Card code={ ["*\\RDCMan.exe", "*\\RDCMan-x86.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Desktop Management", "Multiple RDP Sessions"] }/>
+
+#### Known Vulnerabilities
+- [CVE-2020-0765](CVE-2020-0765)
+
+
+### Forensic Artifacts
+
+
+
+
+
+
+
+
+### Detections
+- KQL query for detecting RDCMan activity in Microsoft Sentinel
+
+### References
+- [https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman](https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman)
+- [https://dirteam.com/sander/2021/06/24/remote-desktop-connection-manager-rdcman-is-back/](https://dirteam.com/sander/2021/06/24/remote-desktop-connection-manager-rdcman-is-back/)
+- [https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0765](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0765)
+

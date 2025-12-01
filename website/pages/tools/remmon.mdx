@@ -1,0 +1,51 @@
+---
+description = "Remote monitoring tool for Windows and Linux written in Go."
+title = "Remmon"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Remmon
+
+Remote monitoring tool for Windows and Linux written in Go.
+
+
+### Details
+<Details author={"Daniel Koifman (KoifSec)"}
+         category={"RMM"}
+         created={"2025-11-12"}
+         website={"https://github.com/Netzwerkfehler/remmon"}
+         lastModified={"2025-11-12"}
+         privileges={"User"}
+         free={ true }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["*\\\\Remmon.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Monitoring"] }/>
+
+
+
+### Forensic Artifacts
+
+
+
+
+
+
+
+
+### Detections
+- QRadar AQL query for detecting Remmon process execution via EventID 4688, tracking parent process name, process name, and command-line arguments
+
+### References
+- [https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0](https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0)
+
