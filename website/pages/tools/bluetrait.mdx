@@ -15,7 +15,7 @@ However, Proofpoint's research has highlighted how threat actors are increasingl
 
 ### Details
 <Details author={"The Haag"}
-         category={""}
+         category={"RMM"}
          created={"2025-03-13"}
          website={"https://bluetrait.io/"}
          lastModified={"2025-03-13"}
@@ -56,6 +56,10 @@ However, Proofpoint's research has highlighted how threat actors are increasingl
 ### Detections
 - Detects execution of Bluetrait agent executable by monitoring process creation events
   - **Detect Bluetrait Agent Execution**
+- Detects potential network activity of Bluetrait RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bluetrait_network_sigma.yml)
+- Detects potential files activity of Bluetrait RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bluetrait_files_sigma.yml)
 
 ### References
 - [https://bluetrait.io/](https://bluetrait.io/)

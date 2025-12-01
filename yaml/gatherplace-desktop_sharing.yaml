@@ -1,43 +1,41 @@
 Name: GatherPlace-desktop sharing
-Description: GatherPlace-desktop sharing is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: GatherPlace-desktop sharing is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - gp3.exe
-  - gp4.exe
-  - gp5.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - gp3.exe
+        - gp4.exe
+        - gp5.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.gatherplace.com'
-    - '*.gatherplace.net'
-    - gatherplace.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.gatherplace.com'
+              - '*.gatherplace.net'
+              - gatherplace.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_network_sigma.yml
-  Description: Detects potential network activity of GatherPlace-desktop sharing RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_processes_sigma.yml
-  Description: Detects potential processes activity of GatherPlace-desktop sharing
-    RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_network_sigma.yml
+      Description: Detects potential network activity of GatherPlace-desktop sharing RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gatherplace-desktop_sharing_processes_sigma.yml
+      Description: Detects potential processes activity of GatherPlace-desktop sharing RMM tool
 References:
-- https://www.gatherplace.com/kb?id=136377
+    - https://www.gatherplace.com/kb?id=136377
 Acknowledgement: []

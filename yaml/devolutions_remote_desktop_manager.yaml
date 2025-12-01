@@ -1,53 +1,57 @@
 Name: Devolutions Remote Desktop Manager
-Description: Devolutions Remote Desktop Manager is a remote monitoring and management
-  (RMM) tool. More information will be added as it becomes available.
-Author: 'ogmini'
+Category: 'RMM'
+Description: Devolutions Remote Desktop Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Author: ogmini
 Created: '2025-06-02'
 LastModified: '2025-06-02'
 Details:
-  Website: 'https://devolutions.net/remote-desktop-manager/'
-  PEMetadata:
-    Filename: 'RemoteDesktopManager.exe'
-    OriginalFileName: 'RemoteDesktopManager'
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  - Linux
-  - Android
-  - Mac
-  - IOS
-  Capabilities: []
-  Vulnerabilities: 
-  - https://www.cvedetails.com/version-list/22913/177721/1/Devolutions-Remote-Desktop-Manager-Powershell.html
-  InstallationPaths:
-  - C:\Program Files\Devolutions\Remote Desktop Manager
-  - '*\RemoteDesktopManager.exe'
+    Website: https://devolutions.net/remote-desktop-manager/
+    PEMetadata:
+        Filename: RemoteDesktopManager.exe
+        OriginalFileName: RemoteDesktopManager
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - Linux
+        - Android
+        - Mac
+        - IOS
+    Capabilities: []
+    Vulnerabilities:
+        - https://www.cvedetails.com/version-list/22913/177721/1/Devolutions-Remote-Desktop-Manager-Powershell.html
+    InstallationPaths:
+        - C:\Program Files\Devolutions\Remote Desktop Manager
+        - '*\RemoteDesktopManager.exe'
 Artifacts:
-  Disk:
-  - File: '%localappdata%\Devolutions\RemoteDesktopManager\Connections.log'
-    Description: Log file showing connections, disconnections, actions on saved passwords and attachments, and other changes
-    OS: Windows
-    Example:
-    - "[5/20/2025 12:48:58 PM] Entry added - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
-    - "[5/20/2025 12:49:02 PM] Connecting - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
-    - "[5/20/2025 12:49:58 PM] Disconnected - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
-    - "[5/22/2025 11:07:39 AM] Password viewed - '192.168.0.xx' (RDP (Microsoft Remote Desktop))"
-  - File: '%localappdata%\Devolutions\RemoteDesktopManager[GUID]\Mru.xml'
-    Description: Most recently used Connections
-    OS: Windows
-  - File: '%localappdata%\Devolutions\RemoteDesktopManager\Connections.db'
-    Description: Default connections database. There can be others. Holds information and configuration about the connections
-    OS: Windows
-  EventLog: []
-  Registry: []
-  Network: []
-Detections: []
-References: 
-- 'https://devolutions.net/remote-desktop-manager/'
-- 'https://ogmini.github.io/research#remote-desktop-manager'
+    Disk:
+        - File: '%localappdata%\Devolutions\RemoteDesktopManager\Connections.log'
+          Description: Log file showing connections, disconnections, actions on saved passwords and attachments, and other changes
+          OS: Windows
+          Example:
+              - '[5/20/2025 12:48:58 PM] Entry added - ''192.168.0.xx'' (RDP (Microsoft Remote Desktop))'
+              - '[5/20/2025 12:49:02 PM] Connecting - ''192.168.0.xx'' (RDP (Microsoft Remote Desktop))'
+              - '[5/20/2025 12:49:58 PM] Disconnected - ''192.168.0.xx'' (RDP (Microsoft Remote Desktop))'
+              - '[5/22/2025 11:07:39 AM] Password viewed - ''192.168.0.xx'' (RDP (Microsoft Remote Desktop))'
+        - File: '%localappdata%\Devolutions\RemoteDesktopManager[GUID]\Mru.xml'
+          Description: Most recently used Connections
+          OS: Windows
+        - File: '%localappdata%\Devolutions\RemoteDesktopManager\Connections.db'
+          Description: Default connections database. There can be others. Holds information and configuration about the connections
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/devolutions_remote_desktop_manager_files_sigma.yml
+      Description: Detects potential files activity of Devolutions Remote Desktop Manager RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/devolutions_remote_desktop_manager_processes_sigma.yml
+      Description: Detects potential processes activity of Devolutions Remote Desktop Manager RMM tool
+References:
+    - https://devolutions.net/remote-desktop-manager/
+    - https://ogmini.github.io/research#remote-desktop-manager
 Acknowledgement:
-- Person: 'ogmini'
-  Handle: 'https://ogmini.github.io/'
+    - Person: ogmini
+      Handle: https://ogmini.github.io/

@@ -1,68 +1,68 @@
 Name: LogMeIn
-Description: 'LogMeIn is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: 'LogMeIn is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
-  '
+    '
 Author: Nasreddine Bencherchali
 Created: '2024-08-05'
 LastModified: '2024-08-05'
 Details:
-  Website: https://www.logmein.com/
-  PEMetadata:
-  - Filename: lmiguardiansvc.exe
-  - Filename: lmiignition.exe
-  - Filename: logmeinsystray.exe
-  - Filename: logmein.exe
-    OriginalFileName: ''
-    Company: LogMeIn, Inc.
-    Description: LMIGuardianSvc
-    Product: LMIGuardianSvc
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths: null
+    Website: https://www.logmein.com/
+    PEMetadata:
+        - Filename: lmiguardiansvc.exe
+        - Filename: lmiignition.exe
+        - Filename: logmeinsystray.exe
+        - Filename: logmein.exe
+          OriginalFileName: ''
+          Company: LogMeIn, Inc.
+          Description: LMIGuardianSvc
+          Product: LMIGuardianSvc
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: N/A
-    Domains:
-    - logmein-gateway.com
-    Ports:
-    - 443
-  - Description: N/A
-    Domains:
-    - '*.logmein.com'
-    Ports:
-    - 443
-  - Description: N/A
-    Domains:
-    - '*.logmein.eu'
-    Ports:
-    - 443
-  - Description: N/A
-    Domains:
-    - logmeinrescue.com
-    Ports:
-    - 443
-  - Description: N/A
-    Domains:
-    - '*.logmeininc.com'
-    Ports:
-    - 443
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: N/A
+          Domains:
+              - logmein-gateway.com
+          Ports:
+              - 443
+        - Description: N/A
+          Domains:
+              - '*.logmein.com'
+          Ports:
+              - 443
+        - Description: N/A
+          Domains:
+              - '*.logmein.eu'
+          Ports:
+              - 443
+        - Description: N/A
+          Domains:
+              - logmeinrescue.com
+          Ports:
+              - 443
+        - Description: N/A
+          Domains:
+              - '*.logmeininc.com'
+          Ports:
+              - 443
 Detections:
-- Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/dns_query/dns_query_win_remote_access_software_domains_non_browsers.yml
-  Description: DNS Query To Remote Access Software Domain From Non-Browser App
-- Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_logmein.yml
-  Description: Remote Access Tool - LogMeIn Execution
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_network_sigma.yml
-  Description: Detects potential network activity of LogMeIn RMM tool
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/dns_query/dns_query_win_remote_access_software_domains_non_browsers.yml
+      Description: DNS Query To Remote Access Software Domain From Non-Browser App
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_logmein.yml
+      Description: Remote Access Tool - LogMeIn Execution
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_network_sigma.yml
+      Description: Detects potential network activity of LogMeIn RMM tool
 References:
-- https://support.logmeininc.com/central/help/allowlisting-and-firewall-configuration
+    - https://support.logmeininc.com/central/help/allowlisting-and-firewall-configuration
 Acknowledgement:
-- Person: Nasreddine Bencherchali
-  Handle: '@nas_bench'
+    - Person: Nasreddine Bencherchali
+      Handle: '@nas_bench'

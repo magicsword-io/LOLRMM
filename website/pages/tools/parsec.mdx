@@ -1,5 +1,5 @@
 ---
-description = "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration.   Remote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency.  Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.  Parsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access."
+description = "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration.   Remote desktop reimagined â€“ a seamless 4k experience at up to 60 frames per second with near-zero latency.  Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.  Parsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access."
 title = "Parsec"
 ---
 
@@ -11,7 +11,7 @@ import {EuiSpacer} from "@elastic/eui"
 
 Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration. 
 
-Remote desktop reimagined – a seamless 4k experience at up to 60 frames per second with near-zero latency. 
+Remote desktop reimagined â€“ a seamless 4k experience at up to 60 frames per second with near-zero latency. 
 Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.
 
 Parsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access.
@@ -19,10 +19,10 @@ Parsec focuses on real-time graphical interaction rather than system administrat
 
 ### Details
 <Details author={"Luca Di Bartolomeo & Matt Green"}
-         category={""}
+         category={"RMM"}
          created={"2025-03-16"}
          website={"https://parsec.app/"}
-         lastModified={"2025-05-16"}
+         lastModified={"2025-03-16"}
          privileges={"Current User"}
          free={ true }
          verification={ false }
@@ -58,12 +58,12 @@ Parsec focuses on real-time graphical interaction rather than system administrat
 
 
 ### Detections
-- Detects Potential Parsec RMM Tool Network Activity
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yaml)
-- Detects Potential Parsec RMM Tool Process Activity
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yaml)
-- Detects Potential Sigma RMM Tool Registry Activity
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_registry_sigma.yaml)
+- Detects potential network activity of Parsec RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yml)
+- Detects potential files activity of Parsec RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_files_sigma.yml)
+- Detects potential processes activity of Parsec RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yml)
 
 ### References
 - [https://parsec.app/](https://parsec.app/)

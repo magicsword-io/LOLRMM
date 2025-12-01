@@ -1,32 +1,32 @@
 Name: FreeNX
-Description: FreeNX is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: FreeNX is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-    - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\*\nxplayer.exe
-  - '*\nxplayer.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\*\nxplayer.exe
+        - '*\nxplayer.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/freenx_processes_sigma.yml
-  Description: Detects potential processes activity of FreeNX RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/freenx_processes_sigma.yml
+      Description: Detects potential processes activity of FreeNX RMM tool
 References: []
 Acknowledgement: []

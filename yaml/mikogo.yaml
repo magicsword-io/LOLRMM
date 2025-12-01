@@ -1,47 +1,47 @@
 Name: Mikogo
-Description: Mikogo is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Mikogo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - mikogo.exe
-  - mikogo-starter.exe
-  - mikogo-service.exe
-  - mikogolauncher.exe
-  - C:\Users\*\AppData\Roaming\Mikogo\*
-  - '*Users\*\AppData\Roaming\Mikogo\*'
-  - '*\Mikogo-Service.exe'
-  - '*\Mikogo-Screen-Service.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - mikogo.exe
+        - mikogo-starter.exe
+        - mikogo-service.exe
+        - mikogolauncher.exe
+        - C:\Users\*\AppData\Roaming\Mikogo\*
+        - '*Users\*\AppData\Roaming\Mikogo\*'
+        - '*\Mikogo-Service.exe'
+        - '*\Mikogo-Screen-Service.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.real-time-collaboration.com'
-    - '*.mikogo4.com'
-    - '*.mikogo.com'
-    - mikogo.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.real-time-collaboration.com'
+              - '*.mikogo4.com'
+              - '*.mikogo.com'
+              - mikogo.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_network_sigma.yml
-  Description: Detects potential network activity of Mikogo RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_processes_sigma.yml
-  Description: Detects potential processes activity of Mikogo RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_network_sigma.yml
+      Description: Detects potential network activity of Mikogo RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mikogo_processes_sigma.yml
+      Description: Detects potential processes activity of Mikogo RMM tool
 References:
-- https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services
+    - https://mikogo.zendesk.com/hc/en-us/articles/214072478-Which-IP-addresses-do-we-use-for-our-services
 Acknowledgement: []

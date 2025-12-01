@@ -1,0 +1,62 @@
+---
+description = "Gorelo RMM is a remote monitoring and management tool facilitating remote access and control of devices for support and administration."
+title = "Gorelo RMM"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Gorelo RMM
+
+Gorelo RMM is a remote monitoring and management tool facilitating remote access and control of devices for support and administration.
+
+### Details
+<Details author={"Jean-Marc ALBERT"}
+         category={"RMM"}
+         created={"2025-11-13"}
+         website={"https://www.gorelo.io/remote-management/"}
+         lastModified={"2025-11-13"}
+         privileges={"User"}
+         free={ false }
+         verification={ false }
+/>
+
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Mac"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["File Transfer", "File System Access", "Remote Control", "GUI Support", "Command line Support"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.AppManagement.zip", "Description": "Gorelo Agent Plugin - App Management", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.DeviceChat.zip", "Description": "Gorelo Agent Plugin - Device Chat", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.IpAddressDetector.zip", "Description": "Gorelo Agent Plugin - IpAddress Detector", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.ScreenCapture.zip", "Description": "Gorelo Agent Plugin - Screen Capture", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.ScriptRunner.zip", "Description": "Gorelo Agent Plugin - Script Runner", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.ServerMonitor.zip", "Description": "Gorelo Agent Plugin - Server Monitor", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.ShellCommand.zip", "Description": "Gorelo Agent Plugin - Shell Command", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.SystemProfiler.zip", "Description": "Gorelo Agent Plugin - System Profiler", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.SystemSecurityManagement.zip", "Description": "Gorelo Agent Plugin - System Security Management", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.WindowsChecker.zip", "Description": "Gorelo Agent Plugin - Windows Checker", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Plugins\\Downloads\\Gorelo.RemoteManagement.WindowsPatchManagement.zip", "Description": "Gorelo Agent Plugin - Windows Patch Management", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\RMMAgent\\Gorelo.RemoteManagement.Agent\\Gorelo.RemoteManagement.Agent.exe", "Description": "Gorelo RMM Agent executable", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Agent\\Shell\\Gorelo.RemoteManagement.Shell\\Gorelo.RemoteManagement.Shell.exe", "Description": "Gorelo RMM Shell executable", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Installer\\Downloads\\Gorelo.RemoteManagement.Agent.zip", "Description": "Installer Download - Agent package", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Installer\\Downloads\\Gorelo.RemoteManagement.Shell.zip", "Description": "Installer Download - Shell package", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Installer\\Downloads\\Gorelo.Rmm.Installer.Handler.zip", "Description": "Installer Download - Handler package", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Installer\\Downloads\\Gorelo.Rmm.Installer.zip", "Description": "Installer Download - Installer package", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Installer\\Gorelo.Rmm.Installer.Handler\\Gorelo.Rmm.Installer.Handler.exe", "Description": "RMM Installer Handler executable", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\Installer\\Gorelo.Rmm.Installer\\Gorelo.Rmm.Installer.exe", "Description": "RMM Installer executable", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\LogFiles\\Agent\\diagnostics-*.txt", "Description": "Diagnostics logs for the Agent component", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\LogFiles\\Installer\\diagnostics-*.txt", "Description": "Diagnostics logs for the Installer component", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\LogFiles\\InstallerHandler\\diagnostics-*.txt", "Description": "Diagnostics logs for the InstallerHandler component", "OS": "Windows"}, {"File": "C:\\Program Files\\Gorelo\\LogFiles\\Shell\\diagnostics-*.txt", "Description": "Diagnostics logs for the Shell component", "OS": "Windows"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Called during access to remote control WebGUI access", "Domains": ["app.gorelo.io"], "Ports": [443]}, {"Description": "Called during setup", "Domains": ["gorelo-rmm.azurewebsites.net"], "Ports": [443]}, {"Description": "Called during setup", "Domains": ["gw.usw.gorelo.tech"], "Ports": [443]}, {"Description": "Called during setup", "Domains": ["lr.rmm.pod1.usw.gorelo.tech"], "Ports": [443]}, {"Description": "Called during setup", "Domains": ["public.rmm.pod1.usw.gorelo.tech"], "Ports": [443]}, {"Description": "Called during setup", "Domains": ["r1.rmm.uw.gorelo.tech"], "Ports": [443]}, {"Description": "Called during setup", "Domains": ["sr.rmm.pod1.usw.gorelo.tech"], "Ports": [443]}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Gorelo RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_network_sigma.yml)
+- Detects potential files activity of Gorelo RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_files_sigma.yml)
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/117](https://github.com/magicsword-io/LOLRMM/issues/117)
+- [https://www.linkedin.com/posts/magicswordio_new-to-lolrmmio-gorelormm-gorelormm-activity-7394482892422393856-BtKl/](https://www.linkedin.com/posts/magicswordio_new-to-lolrmmio-gorelormm-gorelormm-activity-7394482892422393856-BtKl/)
+- [https://app.any.run/tasks/8b12557e-8c76-41e8-a3c7-e491f32a0b11](https://app.any.run/tasks/8b12557e-8c76-41e8-a3c7-e491f32a0b11)
+
+### Acknowledgements
+- Squiblydoo (https://github.com/Squiblydoo)
+- Jean-Marc ALBERT (in/jeanmarcalbert)

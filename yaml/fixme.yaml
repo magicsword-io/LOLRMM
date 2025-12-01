@@ -1,51 +1,51 @@
 Name: FixMe.it
-Description: FixMe.it is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - FixMeit Client.exe
-  - TiExpertStandalone.exe
-  - FixMeitClient*.exe
-  - TiExpertCore.exe
-  - FixMeit Unattended Access Setup.exe
-  - FixMeit Expert Setup.exe
-  - TiExpertCore.exe
-  - fixmeitclient.exe
-  - TiClientCore.exe
-  - TiClientHelper*.exe
-  - 9380CC75B872221A7425D7503565B67580407F60
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - FixMeit Client.exe
+        - TiExpertStandalone.exe
+        - FixMeitClient*.exe
+        - TiExpertCore.exe
+        - FixMeit Unattended Access Setup.exe
+        - FixMeit Expert Setup.exe
+        - TiExpertCore.exe
+        - fixmeitclient.exe
+        - TiClientCore.exe
+        - TiClientHelper*.exe
+        - 9380CC75B872221A7425D7503565B67580407F60
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.fixme.it'
-    - '*.techinline.net'
-    - fixme.it
-    - '*set.me'
-    - '*setme.net'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.fixme.it'
+              - '*.techinline.net'
+              - fixme.it
+              - '*set.me'
+              - '*setme.net'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_network_sigma.yml
-  Description: Detects potential network activity of FixMe RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme_processes_sigma.yml
-  Description: Detects potential processes activity of FixMe RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml
+      Description: Detects potential network activity of FixMe.it RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml
+      Description: Detects potential processes activity of FixMe.it RMM tool
 References: []
 Acknowledgement: []

@@ -1,54 +1,52 @@
 Name: N-Able Advanced Monitoring Agent
-Description: N-Able Advanced Monitoring Agent is a remote monitoring and management
-  (RMM) tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - Agent_*_RW.exe
-  - BASEClient.exe
-  - BASupApp.exe
-  - BASupSrvc.exe
-  - BASupSrvcCnfg.exe
-  - BASupTSHelper.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - Agent_*_RW.exe
+        - BASEClient.exe
+        - BASupApp.exe
+        - BASupSrvc.exe
+        - BASupSrvcCnfg.exe
+        - BASupTSHelper.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*remote.management'
-    - '*.logicnow.com'
-    - '*systemmonitor.us'
-    - '*systemmonitor.eu.com'
-    - '*system-monitor.com'
-    - systemmonitor.us.cdn.cloudflare.net
-    - '*cloudbackup.management'
-    - '*systemmonitor.co.uk'
-    - '*.n-able.com'
-    - '*.beanywhere.com '
-    - '*.swi-tc.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*remote.management'
+              - '*.logicnow.com'
+              - '*systemmonitor.us'
+              - '*systemmonitor.eu.com'
+              - '*system-monitor.com'
+              - systemmonitor.us.cdn.cloudflare.net
+              - '*cloudbackup.management'
+              - '*systemmonitor.co.uk'
+              - '*.n-able.com'
+              - '*.beanywhere.com '
+              - '*.swi-tc.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml
-  Description: Detects potential network activity of N-Able Advanced Monitoring Agent
-    RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml
-  Description: Detects potential processes activity of N-Able Advanced Monitoring
-    Agent RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml
+      Description: Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml
+      Description: Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool
 References:
-- https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
+    - https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm
 Acknowledgement: []

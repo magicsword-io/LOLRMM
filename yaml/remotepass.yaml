@@ -1,40 +1,40 @@
 Name: RemotePass
-Description: RemotePass is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: RemotePass is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-    - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - remotepass-access.exe
-  - rpaccess.exe
-  - rpwhostscr.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - remotepass-access.exe
+        - rpaccess.exe
+        - rpwhostscr.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - remotepass.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - remotepass.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_network_sigma.yml
-  Description: Detects potential network activity of RemotePass RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_processes_sigma.yml
-  Description: Detects potential processes activity of RemotePass RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_network_sigma.yml
+      Description: Detects potential network activity of RemotePass RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepass_processes_sigma.yml
+      Description: Detects potential processes activity of RemotePass RMM tool
 References:
-- https://www.remotepass.com/rpaccess.html - DOA as of 2024
+    - https://www.remotepass.com/rpaccess.html - DOA as of 2024
 Acknowledgement: []

@@ -1,39 +1,39 @@
 Name: BeamYourScreen
-Description: BeamYourScreen is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Category: 'RMM'
+Description: BeamYourScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - beamyourscreen.exe
-  - beamyourscreen-host.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - beamyourscreen.exe
+        - beamyourscreen-host.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - beamyourscreen.com
-    - '*.beamyourscreen.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - beamyourscreen.com
+              - '*.beamyourscreen.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_network_sigma.yml
-  Description: Detects potential network activity of BeamYourScreen RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_processes_sigma.yml
-  Description: Detects potential processes activity of BeamYourScreen RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_network_sigma.yml
+      Description: Detects potential network activity of BeamYourScreen RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_processes_sigma.yml
+      Description: Detects potential processes activity of BeamYourScreen RMM tool
 References:
-- beamyourscreen redirects to https://www.mikogo.com/
+    - https://www.mikogo.com/
 Acknowledgement: []

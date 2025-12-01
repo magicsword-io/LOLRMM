@@ -1,41 +1,39 @@
 Name: Remote Manipulator System
-Description: Remote Manipulator System is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - rfusclient.exe
-  - rutserv.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - rfusclient.exe
+        - rutserv.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.internetid.ru'
-    - rmansys.ru
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.internetid.ru'
+              - rmansys.ru
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml
-  Description: Detects potential network activity of Remote Manipulator System RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml
-  Description: Detects potential processes activity of Remote Manipulator System RMM
-    tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml
+      Description: Detects potential network activity of Remote Manipulator System RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml
+      Description: Detects potential processes activity of Remote Manipulator System RMM tool
 References:
-- https://rmansys.ru/files/
+    - https://rmansys.ru/files/
 Acknowledgement: []

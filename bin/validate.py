@@ -14,31 +14,20 @@ from pathlib import Path
 from os import path, walk
 import datetime
 
-def check_md5_length(object):
-    md5_len = 32
+def check_hash_lengths(object):
+    """Validate hash lengths for MD5, SHA1, and SHA256."""
+    hash_specs = {
+        'MD5': 32,
+        'SHA1': 40,
+        'SHA256': 64
+    }
+    
     known_vulnerable_samples = object.get('KnownVulnerableSamples', [])
     for sample in known_vulnerable_samples:
-        md5 = sample.get('MD5', '')
-        if md5 and len(md5) != md5_len:
-            return f"ERROR: MD5 length is not {md5_len} characters for object: {object['Id']}"
-    return None
-
-def check_sha1_length(object):
-    sha1_len = 40
-    known_vulnerable_samples = object.get('KnownVulnerableSamples', [])
-    for sample in known_vulnerable_samples:
-        sha1 = sample.get('SHA1', '')
-        if sha1 and len(sha1) != sha1_len:
-            return f"ERROR: SHA1 length is not {sha1_len} characters for object: {object['Id']}"
-    return None
-
-def check_sha256_length(object):
-    sha256_len = 64
-    known_vulnerable_samples = object.get('KnownVulnerableSamples', [])
-    for sample in known_vulnerable_samples:
-        sha256 = sample.get('SHA256', '')
-        if sha256 and len(sha256) != sha256_len:
-            return f"ERROR: SHA256 length is not {sha256_len} characters for object: {object['Id']}"
+        for hash_type, expected_len in hash_specs.items():
+            hash_value = sample.get(hash_type, '')
+            if hash_value and len(hash_value) != expected_len:
+                return f"ERROR: {hash_type} length is not {expected_len} characters for object: {object['Id']}"
     return None
 
 def check_network_structure(object):
@@ -59,28 +48,139 @@ def check_network_structure(object):
             return f"ERROR: 'Ports' is not a list for object: {object['Name']}"
     return None
 
-# Add this function to validate ISO 8601 format for Created
-def check_created_iso8601(object, filename):
-    created = object.get('Created', None)
-    if created:
-        try:
-            datetime.datetime.fromisoformat(created)
-        except ValueError:
-            return f"ERROR: Created field is not valid ISO 8601 format in file {filename}: '{created}' (object: {object.get('Name', 'Unknown')})"
-    return None
+def check_date_iso8601(object, filename):
+    """Validate ISO 8601 format for Created and LastModified fields."""
+    date_fields = ['Created', 'LastModified']
     
-# Add this function to validate ISO 8601 format for LastModified
-def check_last_modified_iso8601(object, filename):
-    last_modified = object.get('LastModified', None)
-    if last_modified:
-        try:
-            datetime.datetime.fromisoformat(last_modified)
-        except ValueError:
-            return f"ERROR: LastModified field is not valid ISO 8601 format in file {filename}: '{last_modified}' (object: {object.get('Name', 'Unknown')})"
+    for field in date_fields:
+        date_value = object.get(field)
+        if date_value:
+            try:
+                datetime.datetime.fromisoformat(date_value)
+            except ValueError:
+                return f"ERROR: {field} field is not valid ISO 8601 format in file {filename}: '{date_value}' (object: {object.get('Name', 'Unknown')})"
     return None
+
+def check_date_chronology(object, filename):
+    """Validate that LastModified is equal to or newer than Created."""
+    name = object.get('Name', 'Unknown')
+    created = object.get('Created')
+    last_modified = object.get('LastModified')
+    
+    # Both dates must be present and valid for comparison
+    if created and last_modified:
+        try:
+            created_date = datetime.datetime.fromisoformat(created)
+            modified_date = datetime.datetime.fromisoformat(last_modified)
+            
+            if modified_date < created_date:
+                return f"ERROR: LastModified ({last_modified}) is older than Created ({created}) in file {filename} (object: {name})"
+        except ValueError:
+            # If dates are invalid, they'll be caught by check_date_iso8601
+            pass
+    
+    return None
+
+def check_url_format(object, filename):
+    """Validate URL format in various fields."""
+    name = object.get('Name', 'Unknown')
+    invalid_urls = []
+    
+    def validate_url(url, url_type):
+        """Helper function to validate a single URL."""
+        if url and not (url.startswith('http://') or url.startswith('https://')):
+            invalid_urls.append(f"  - {url_type}: '{url}'")
+    
+    # Check Website URL
+    website = object.get('Details', {}).get('Website')
+    validate_url(website, 'Website')
+    
+    # Check References URLs
+    references = object.get('References', [])
+    if references:
+        for idx, ref in enumerate(references, 1):
+            validate_url(ref, f'Reference #{idx}')
+    
+    # Return consolidated error message if any invalid URLs found
+    if invalid_urls:
+        urls_str = '\n'.join(invalid_urls)
+        return f"ERROR: Invalid URL format(s) in file {filename} (object: {name}):\n{urls_str}\n  URLs must start with http:// or https://"
+    
+    return None
+
+
+
+def check_duplicate_detections(object, filename):
+    """Check for duplicate detection entries."""
+    name = object.get('Name', 'Unknown')
+    detections = object.get('Detections', [])
+    
+    if not detections:
+        return None
+    
+    seen_links = {}
+    for idx, detection in enumerate(detections):
+        if not isinstance(detection, dict):
+            continue
+        
+        # Check for Sigma/Link field (both are used)
+        link = detection.get('Sigma') or detection.get('Link')
+        if link:
+            if link in seen_links:
+                return f"ERROR: Duplicate detection link found in file {filename}: '{link}' (object: {name})"
+            seen_links[link] = idx
+    
+    return None
+
+def check_port_format(object, filename):
+    """Validate port numbers in Network artifacts."""
+    name = object.get('Name', 'Unknown')
+    artifacts = object.get('Artifacts', {})
+    network = artifacts.get('Network', [])
+    
+    for item in network:
+        if not isinstance(item, dict):
+            continue
+        
+        ports = item.get('Ports', [])
+        for port in ports:
+            # Port can be string or integer according to spec
+            if isinstance(port, int):
+                if port < 0 or port > 65535:
+                    return f"ERROR: Invalid port number {port} in file {filename}. Must be between 0-65535 (object: {name})"
+            elif isinstance(port, str):
+                # Try to parse if it's a numeric string
+                try:
+                    port_num = int(port)
+                    if port_num < 0 or port_num > 65535:
+                        return f"ERROR: Invalid port number {port} in file {filename}. Must be between 0-65535 (object: {name})"
+                except ValueError:
+                    # It's a string like "80-443" or "any", which is acceptable
+                    pass
+    
+    return None
+
+def check_required_fields(object, filename):
+    """Check for important fields that should be present."""
+    name = object.get('Name', 'Unknown')
+    warnings = []
+    
+    # Check if Category is missing
+    if not object.get('Category'):
+        warnings.append(f"WARNING: Category field is missing or empty in file {filename} (object: {name})")
+    
+    # Check if Created date is missing
+    if not object.get('Created'):
+        warnings.append(f"WARNING: Created date is missing in file {filename} (object: {name})")
+    
+    # Check if Website is missing
+    #if not object.get('Details', {}).get('Website'):
+    #    warnings.append(f"WARNING: Website is missing in Details section in file {filename} (object: {name})")
+    #
+    return warnings[0] if warnings else None
 
 def validate_schema(yaml_dir, schema_file, verbose):
-
+    """Validate YAML files against schema and perform additional checks."""
     error = False
     errors = []
 
@@ -88,7 +188,8 @@ def validate_schema(yaml_dir, schema_file, verbose):
         with open(schema_file, 'rb') as f:
             schema = json.load(f)
     except IOError:
-        print("ERROR: reading schema file {0}".format(schema_file))
+        print(f"ERROR: reading schema file {schema_file}")
+        return True, [f"ERROR: reading schema file {schema_file}"]
 
     yaml_files = glob.glob(f"{yaml_dir}/*.yaml") + glob.glob(f"{yaml_dir}/*.yml")
 
@@ -108,23 +209,28 @@ def validate_schema(yaml_dir, schema_file, verbose):
 
         validator = jsonschema.Draft7Validator(schema, format_checker=jsonschema.FormatChecker())
         for schema_error in validator.iter_errors(yaml_data):
-            errors.append("ERROR: {0} at file {1}:\n\t{2}".format(json.dumps(schema_error.message), yaml_file, schema_error.path))
+            errors.append(f"ERROR: {json.dumps(schema_error.message)} at file {yaml_file}:\n\t{schema_error.path}")
             error = True
 
         # Additional YAML checks
-        check_errors = [
-            check_md5_length(yaml_data),
-            check_sha1_length(yaml_data),
-            check_sha256_length(yaml_data),
-            check_network_structure(yaml_data),
-            check_created_iso8601(yaml_data, yaml_file),        # ISO 8601 check for Created
-            check_last_modified_iso8601(yaml_data, yaml_file),  # ISO 8601 check for LastModified
+        check_functions = [
+            (check_hash_lengths, yaml_data),
+            (check_network_structure, yaml_data),
+            (check_date_iso8601, yaml_data, yaml_file),
+            (check_date_chronology, yaml_data, yaml_file),
+            (check_url_format, yaml_data, yaml_file),
+            (check_duplicate_detections, yaml_data, yaml_file),
+            (check_port_format, yaml_data, yaml_file),
+            (check_required_fields, yaml_data, yaml_file),
         ]
 
-        for check_error in check_errors:
+        for check_func, *args in check_functions:
+            check_error = check_func(*args)
             if check_error:
                 errors.append(check_error)
-                error = True
+                # Only set error flag for ERROR messages, not WARNING
+                if check_error.startswith('ERROR'):
+                    error = True
 
     return error, errors
 

@@ -1,42 +1,42 @@
 Name: Remote.it
-Description: Remote.it is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Remote.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - remote-it-installer.exe
-  - remote.it.exe
-  - remoteit.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - remote-it-installer.exe
+        - remote.it.exe
+        - remoteit.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - auth.api.remote.it
-    - api.remote.it
-    - remote.it
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - auth.api.remote.it
+              - api.remote.it
+              - remote.it
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_network_sigma.yml
-  Description: Detects potential network activity of Remote.it RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_processes_sigma.yml
-  Description: Detects potential processes activity of Remote.it RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_network_sigma.yml
+      Description: Detects potential network activity of Remote.it RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_processes_sigma.yml
+      Description: Detects potential processes activity of Remote.it RMM tool
 References:
-- https://docs.remote.it/introduction/get-started
+    - https://docs.remote.it/introduction/get-started
 Acknowledgement: []

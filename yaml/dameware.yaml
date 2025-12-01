@@ -1,47 +1,46 @@
 Name: DameWare
-Description: DameWare is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: DameWare is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - SolarWinds-Dameware-DRS*.exe
-  - DameWare Mini Remote Control*.exe
-  - C:\Windows\dwrcs\*
-  - C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
-  - dntus*.exe
-  - dwrcs.exe
-  - '*\dwrcs\*'
-  - '*\dwrcst.exe'
-  - DameWare Remote Support.exe
-  - SolarWinds-Dameware-MRC*.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - SolarWinds-Dameware-DRS*.exe
+        - DameWare Mini Remote Control*.exe
+        - C:\Windows\dwrcs\*
+        - C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
+        - dntus*.exe
+        - dwrcs.exe
+        - '*\dwrcs\*'
+        - '*\dwrcst.exe'
+        - DameWare Remote Support.exe
+        - SolarWinds-Dameware-MRC*.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - dameware.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - dameware.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware-mini_remote_control_protocol_network_sigma.yml
-  Description: Detects potential network activity of Dameware-mini remote control
-    Protocol RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_processes_sigma.yml
-  Description: Detects potential processes activity of DameWare RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_network_sigma.yml
+      Description: Detects potential network activity of DameWare RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dameware_processes_sigma.yml
+      Description: Detects potential processes activity of DameWare RMM tool
 References:
-- https://documentation.solarwinds.com/en/success_center/dameware/content/install-standalone-port-requirements.htm
+    - https://documentation.solarwinds.com/en/success_center/dameware/content/install-standalone-port-requirements.htm
 Acknowledgement: []

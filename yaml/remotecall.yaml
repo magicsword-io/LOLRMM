@@ -1,46 +1,46 @@
 Name: RemoteCall
-Description: RemoteCall is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: RemoteCall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - rcengmgru.exe
-  - rcmgrsvc.exe
-  - rxstartsupport.exe
-  - rcstartsupport.exe
-  - raautoup.exe
-  - agentu.exe
-  - remotesupportplayeru.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - rcengmgru.exe
+        - rcmgrsvc.exe
+        - rxstartsupport.exe
+        - rcstartsupport.exe
+        - raautoup.exe
+        - agentu.exe
+        - remotesupportplayeru.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.remotecall.com'
-    - '*.startsupport.com'
-    - remotecall.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.remotecall.com'
+              - '*.startsupport.com'
+              - remotecall.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_network_sigma.yml
-  Description: Detects potential network activity of RemoteCall RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_processes_sigma.yml
-  Description: Detects potential processes activity of RemoteCall RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_network_sigma.yml
+      Description: Detects potential network activity of RemoteCall RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotecall_processes_sigma.yml
+      Description: Detects potential processes activity of RemoteCall RMM tool
 References:
-- https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall
+    - https://help.remotecall.com/hc/en-us/articles/360005128814--RemoteCall-Server-List-For-Firewall
 Acknowledgement: []

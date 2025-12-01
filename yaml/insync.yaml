@@ -1,32 +1,32 @@
 Name: Insync
-Description: Insync is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Insync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
-  - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
-  - '*\Insync.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+        - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
+        - '*\Insync.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/insync_processes_sigma.yml
-  Description: Detects potential processes activity of Insync RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/insync_processes_sigma.yml
+      Description: Detects potential processes activity of Insync RMM tool
 References: []
 Acknowledgement: []

@@ -1,50 +1,50 @@
 Name: MSP360
-Description: MSP360 is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: MSP360 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - Online Backup.exe
-  - CBBackupPlan.exe
-  - Cloud.Backup.Scheduler.exe
-  - Cloud.Backup.RM.Service.exe
-  - cbb.exe
-  - CloudRaService.exe
-  - CloudRaSd.exe
-  - CloudRaCmd.exe
-  - CloudRaUtilities.exe
-  - Remote Desktop.exe
-  - Connect.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - Online Backup.exe
+        - CBBackupPlan.exe
+        - Cloud.Backup.Scheduler.exe
+        - Cloud.Backup.RM.Service.exe
+        - cbb.exe
+        - CloudRaService.exe
+        - CloudRaSd.exe
+        - CloudRaCmd.exe
+        - CloudRaUtilities.exe
+        - Remote Desktop.exe
+        - Connect.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.cloudberrylab.com'
-    - '*.msp360.com'
-    - '*.mspbackups.com'
-    - msp360.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.cloudberrylab.com'
+              - '*.msp360.com'
+              - '*.mspbackups.com'
+              - msp360.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_network_sigma.yml
-  Description: Detects potential network activity of MSP360 RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_processes_sigma.yml
-  Description: Detects potential processes activity of MSP360 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_network_sigma.yml
+      Description: Detects potential network activity of MSP360 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/msp360_processes_sigma.yml
+      Description: Detects potential processes activity of MSP360 RMM tool
 References:
-- https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#
+    - https://kb.msp360.com/managed-backup-service/mbs-tcp-ports-configuration#
 Acknowledgement: []

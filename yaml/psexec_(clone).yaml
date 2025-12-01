@@ -1,43 +1,43 @@
 Name: PSEXEC (Clone)
-Description: PSEXEC (Clone) is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Category: 'RMM'
+Description: PSEXEC (Clone) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - paexec.exe
-  - PAExec-*.exe
-  - 'csexec.exe '
-  - remcom.exe
-  - remcomsvc.exe
-  - xcmd.exe
-  - xcmdsvc.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - paexec.exe
+        - PAExec-*.exe
+        - 'csexec.exe '
+        - remcom.exe
+        - remcomsvc.exe
+        - xcmd.exe
+        - xcmdsvc.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__network_sigma.yml
-  Description: Detects potential network activity of PSEXEC (Clone) RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__processes_sigma.yml
-  Description: Detects potential processes activity of PSEXEC (Clone) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__network_sigma.yml
+      Description: Detects potential network activity of PSEXEC (Clone) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__processes_sigma.yml
+      Description: Detects potential processes activity of PSEXEC (Clone) RMM tool
 References:
-- https://www.poweradmin.com/paexec/
+    - https://www.poweradmin.com/paexec/
 Acknowledgement: []

@@ -1,95 +1,83 @@
 Name: Parsec
-Description: "Parsec is a remote desktop streaming tool for remote access and monitoring,\
-  \ mainly used for gaming and collaboration. \n\nRemote desktop reimagined – a seamless\
-  \ 4k experience at up to 60 frames per second with near-zero latency. \nSecure,\
-  \ flexible, effortless access to whatever you do, at any time, from wherever you\
-  \ go.\n\nParsec focuses on real-time graphical interaction rather than system administration\
-  \ but can still be abused for lateral movement and initial access.\n"
+Category: 'RMM'
+Description: "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration. \n\nRemote desktop reimagined â€“ a seamless 4k experience at up to 60 frames per second with near-zero latency. \nSecure, flexible, effortless access to whatever you do, at any time, from wherever you go.\n\nParsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access.\n"
 Author: Luca Di Bartolomeo & Matt Green
 Created: '2025-03-16'
-LastModified: '2025-05-16'
+LastModified: '2025-03-16'
 Details:
-  Website: https://parsec.app/
-  PEMetadata:
-    Filename: parsecd.exe
-    OriginalFileName: ''
-    Description: Parsec
-    Product: Parsec
-  Privileges: Current User
-  Free: true
-  Verification: false
-  SupportedOS:
-  - Windows
-  - Linux
-  - macOS
-  - Android
-  Capabilities:
-  - Remote Control
-  - GUI Support
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files\Parsec\*
-  - parsecd.exe
-  - pservice.exe
+    Website: https://parsec.app/
+    PEMetadata:
+        Filename: parsecd.exe
+        OriginalFileName: ''
+        Description: Parsec
+        Product: Parsec
+    Privileges: Current User
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+        - Android
+    Capabilities:
+        - Remote Control
+        - GUI Support
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Parsec\*
+        - parsecd.exe
+        - pservice.exe
 Artifacts:
-  Disk:
-  - File: C:\Program Files\Parsec\parsecd.exe
-    Description: Main parsec executable
-    OS: Windows
-    Example:
-    - 'SHA256: 38011E713B4BE8577576062754CAD03E9899859488932AE4C9C83E5FBB5CB7D2'
-  - File: C:\Program Files\Parsec\pservice.exe
-    Description: Background service managing input devices
-    OS: Windows
-    Example:
-    - 'SHA256: CC62D22BF8A082621FA25FDEEE3150C17B09DBC09C9371E3DCDD6EC83967770C'
-  - File: C:\Program Files\Parsec\teams.exe
-    Description: Parsec for teams collaboration and user session management
-    OS: Windows
-    Example:
-    - 'SHA256: 6DC71B2E92B770DCFECA4A32C8F1787210311F731F1124754DF193EC22D5D13E'
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: parsecvirtualds
-    ImagePath: '"\SystemRoot\System32\drivers\parsecvirtualds.sys"'
-    ServiceType: kernel mode driver
-    StartType: demand start
-    AccountName: System
-    Description: Parsec service installation event
-    Example: <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event"><System><Provider
-      Name="Service Control Manager" Guid="{555908d1-a6d7-4695-8e1e-26931d2012f4}"EventSourceName="Service
-      Control Manager" /><EventID Qualifiers="16384">7045</EventID><Version>0</Version><Level>4</Level><Task>0</Task><Opcode>0</Opcode><Keywords>0x8080000000000000</Keywords><TimeCreated
-      SystemTime="2025-03-16T23:16:53.5897766Z" /><EventRecordID>596</EventRecordID><Correlation
-      /><Execution ProcessID="804" ThreadID="912" /><Channel>System</Channel><Computer>Computer</Computer><Security
-      UserID="S-1-5-18" /></System><EventData><Data Name="ServiceName">parsecvirtualds</Data><Data
-      Name="ImagePath">\SystemRoot\System32\drivers\parsecvirtualds.sys</Data><Data
-      Name="ServiceType">kernel mode driver</Data><Data Name="StartType">demand start</Data><Data
-      Name="AccountName"></Data></EventData></Event>
-  Registry: []
-  Network:
-  - Description: Known domains used by Parsec
-    Domains:
-    - parsec.app
-    - parsec.gg
-    - '*.parsec.app'
-    Ports:
-    - 443
-    - 3478
+    Disk:
+        - File: C:\Program Files\Parsec\parsecd.exe
+          Description: Main parsec executable
+          OS: Windows
+          Example:
+              - 'SHA256: 38011E713B4BE8577576062754CAD03E9899859488932AE4C9C83E5FBB5CB7D2'
+        - File: C:\Program Files\Parsec\pservice.exe
+          Description: Background service managing input devices
+          OS: Windows
+          Example:
+              - 'SHA256: CC62D22BF8A082621FA25FDEEE3150C17B09DBC09C9371E3DCDD6EC83967770C'
+        - File: C:\Program Files\Parsec\teams.exe
+          Description: Parsec for teams collaboration and user session management
+          OS: Windows
+          Example:
+              - 'SHA256: 6DC71B2E92B770DCFECA4A32C8F1787210311F731F1124754DF193EC22D5D13E'
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: parsecvirtualds
+          ImagePath: '"\SystemRoot\System32\drivers\parsecvirtualds.sys"'
+          ServiceType: kernel mode driver
+          StartType: demand start
+          AccountName: System
+          Description: Parsec service installation event
+          Example: <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event"><System><Provider Name="Service Control Manager" Guid="{555908d1-a6d7-4695-8e1e-26931d2012f4}"EventSourceName="Service Control Manager" /><EventID Qualifiers="16384">7045</EventID><Version>0</Version><Level>4</Level><Task>0</Task><Opcode>0</Opcode><Keywords>0x8080000000000000</Keywords><TimeCreated SystemTime="2025-03-16T23:16:53.5897766Z" /><EventRecordID>596</EventRecordID><Correlation /><Execution ProcessID="804" ThreadID="912" /><Channel>System</Channel><Computer>Computer</Computer><Security UserID="S-1-5-18" /></System><EventData><Data Name="ServiceName">parsecvirtualds</Data><Data Name="ImagePath">\SystemRoot\System32\drivers\parsecvirtualds.sys</Data><Data Name="ServiceType">kernel mode driver</Data><Data Name="StartType">demand start</Data><Data Name="AccountName"></Data></EventData></Event>
+    Registry: []
+    Network:
+        - Description: Known domains used by Parsec
+          Domains:
+              - parsec.app
+              - parsec.gg
+              - '*.parsec.app'
+          Ports:
+              - 443
+              - 3478
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yaml
-  Description: Detects Potential Parsec RMM Tool Network Activity
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yaml
-  Description: Detects Potential Parsec RMM Tool Process Activity
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_registry_sigma.yaml
-  Description: Detects Potential Sigma RMM Tool Registry Activity
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yml
+      Description: Detects potential network activity of Parsec RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_files_sigma.yml
+      Description: Detects potential files activity of Parsec RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yml
+      Description: Detects potential processes activity of Parsec RMM tool
 References:
-- https://parsec.app/
-- https://www.virustotal.com/gui/file/206cd186aaa431d3975eb30f682b83851ef4f81125d2004f53b681117da23ec6/behavior
-- https://x.com/malmoeb/status/1923255362318196951
+    - https://parsec.app/
+    - https://www.virustotal.com/gui/file/206cd186aaa431d3975eb30f682b83851ef4f81125d2004f53b681117da23ec6/behavior
+    - https://x.com/malmoeb/status/1923255362318196951
 Acknowledgement:
-- Person: Luca Di Bartolomeo
-  Handle: '@LucaInfoSec'
-- Person: Matt Green
-  Handle: '@mgreen27'
+    - Person: Luca Di Bartolomeo
+      Handle: '@LucaInfoSec'
+    - Person: Matt Green
+      Handle: '@mgreen27'

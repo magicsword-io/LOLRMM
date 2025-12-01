@@ -1,22 +1,30 @@
 title: Potential GotoHTTP RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - GotoHTTP_x64.exe
-    - gotohttp.exe
-    - GotoHTTP*.exe
-  condition: selection
-id: e2dde6a3-0330-48e1-9b80-73ec40a9201c
+id: 1cf1f017-5afb-4383-b9ba-dbd94949a8ac
 status: experimental
-description: Detects potential processes activity of GotoHTTP RMM tool
+description: |
+    Detects potential processes activity of GotoHTTP RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - GotoHTTP_x64.exe
+            - gotohttp.exe
+            - GotoHTTP*.exe
+    selection_image:
+        Image|endswith:
+            - GotoHTTP_x64.exe
+            - gotohttp.exe
+            - GotoHTTP*.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of GotoHTTP
+    - Legitimate use of GotoHTTP
 level: medium
