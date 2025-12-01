@@ -39,5 +39,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_processes_sigma.yml
   Description: Detects potential processes activity of Weezo RMM tool
 References:
-- weezo.en.softonic.com
+- https://weezo.en.softonic.com
 Acknowledgement: []

@@ -34,6 +34,5 @@ Detections:
   Description: Detects potential network activity of RDPView RMM tool
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpview_processes_sigma.yml
   Description: Detects potential processes activity of RDPView RMM tool
-References:
-- systemmanager.ru/dntu.en/rdp_view.htm - Same as Damware
+References: []
 Acknowledgement: []

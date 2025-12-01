@@ -37,5 +37,5 @@ Detections:
   Description: Detects potential processes activity of CrossTec Remote Control RMM
     tool
 References:
-- www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
+- https://www.crosstecsoftware.com/supporthome.html # Domain DOA 2/1/2024
 Acknowledgement: []

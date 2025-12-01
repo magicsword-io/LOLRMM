@@ -35,5 +35,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/guacamole_processes_sigma.yml
   Description: Detects potential processes activity of Guacamole RMM tool
 References:
-- guacamole.apache.org
+- https://guacamole.apache.org
 Acknowledgement: []

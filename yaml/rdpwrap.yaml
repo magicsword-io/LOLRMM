@@ -37,5 +37,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpwrap_processes_sigma.yml
   Description: Detects potential processes activity of rdpwrap RMM tool
 References:
-- github.com/stascorp/rdpwrap
+- https://github.com/stascorp/rdpwrap
 Acknowledgement: []

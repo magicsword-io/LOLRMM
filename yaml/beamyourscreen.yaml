@@ -36,5 +36,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beamyourscreen_processes_sigma.yml
   Description: Detects potential processes activity of BeamYourScreen RMM tool
 References:
-- beamyourscreen redirects to https://www.mikogo.com/
+- https://www.mikogo.com/
 Acknowledgement: []

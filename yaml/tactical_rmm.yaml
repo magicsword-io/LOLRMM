@@ -37,5 +37,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml
   Description: Detects potential processes activity of Tactical RMM RMM tool
 References:
-- docs.tacticalrmm.com
+- https://docs.tacticalrmm.com
 Acknowledgement: []

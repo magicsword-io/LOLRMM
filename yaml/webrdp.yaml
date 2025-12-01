@@ -35,5 +35,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/webrdp_processes_sigma.yml
   Description: Detects potential processes activity of WebRDP RMM tool
 References:
-- github.com/Mikej81/WebRDP
+- https://github.com/Mikej81/WebRDP
 Acknowledgement: []

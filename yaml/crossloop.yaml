@@ -36,6 +36,5 @@ Detections:
   Description: Detects potential network activity of CrossLoop RMM tool
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crossloop_processes_sigma.yml
   Description: Detects potential processes activity of CrossLoop RMM tool
-References:
-- www.CrossLoop.com -> redirects to avast.com
+References: []
 Acknowledgement: []

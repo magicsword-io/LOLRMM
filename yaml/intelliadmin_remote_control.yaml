@@ -42,5 +42,5 @@ Detections:
   Description: Detects potential processes activity of IntelliAdmin Remote Control
     RMM tool
 References:
-- intelliadmin.com/remote-control
+- http://www.intelliadmin.com/index.php/remote-control/
 Acknowledgement: []

@@ -37,5 +37,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_processes_sigma.yml
   Description: Detects potential processes activity of rdp2tcp RMM tool
 References:
-- github.com/V-E-O/rdp2tcp
+- https://github.com/V-E-O/rdp2tcp
 Acknowledgement: []

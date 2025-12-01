@@ -41,5 +41,5 @@ Detections:
   Description: Detects potential processes activity of ESET Remote Administrator RMM
     tool
 References:
-- eset.com/me/business/remote-management/remote-administrator/
+- https://eset.com/me/business/remote-management/remote-administrator/
 Acknowledgement: []

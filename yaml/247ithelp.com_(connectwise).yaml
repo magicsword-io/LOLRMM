@@ -35,6 +35,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__processes_sigma.yml
   Description: Detects potential processes activity of 247ithelp.com (ConnectWise)
     RMM tool
-References:
-- Similar / replaced by ScreenConnect
+References: []
 Acknowledgement: []

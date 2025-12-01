@@ -34,6 +34,5 @@ Detections:
   Description: Detects potential network activity of NTR Remote RMM tool
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_processes_sigma.yml
   Description: Detects potential processes activity of NTR Remote RMM tool
-References:
-- DOA as of 2024
+References: []
 Acknowledgement: []

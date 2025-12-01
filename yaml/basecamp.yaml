@@ -30,6 +30,5 @@ Artifacts:
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/basecamp_network_sigma.yml
   Description: Detects potential network activity of Basecamp RMM tool
-References:
-- basecamp.com - No specific RMM tool listed
+References: []
 Acknowledgement: []

@@ -29,5 +29,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml
   Description: Detects potential processes activity of Netviewer (GoToMeet) RMM tool
 References:
-- 'Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html'
+- https://www.enviolet.com/en/service/online-consultant.html
 Acknowledgement: []
