@@ -1,9 +1,10 @@
 Name: Neturo
+Category: 'RMM'
 Description: Neturo is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -36,5 +37,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_processes_sigma.yml
   Description: Detects potential processes activity of Neturo RMM tool
 References:
-- 'Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2'
+- http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2
 Acknowledgement: []

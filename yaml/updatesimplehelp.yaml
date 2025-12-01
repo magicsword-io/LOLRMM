@@ -1,9 +1,10 @@
 Name: SimpleHelp
+Category: 'RMM'
 Description: SimpleHelp is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: Phyo Paing Htun
-Created: ''
-LastModified: '2024-10-16'
+Created: '2025-03-05'
+LastModified: '2025-03-05'
 Details:
   Website: https://simple-help.com/
   PEMetadata:

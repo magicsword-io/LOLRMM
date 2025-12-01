@@ -1,9 +1,10 @@
 Name: 247ithelp.com (ConnectWise)
+Category: 'RMM'
 Description: 247ithelp.com (ConnectWise) is a remote monitoring and management (RMM)
   tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-08'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -34,6 +35,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__processes_sigma.yml
   Description: Detects potential processes activity of 247ithelp.com (ConnectWise)
     RMM tool
-References:
-- Similar / replaced by ScreenConnect
+References: []
 Acknowledgement: []

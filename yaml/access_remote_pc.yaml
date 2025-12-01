@@ -1,9 +1,10 @@
 Name: Access Remote PC
+Category: 'RMM'
 Description: Access Remote PC is a remote monitoring and management (RMM) tool. More
   information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-10-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: https://www.remotedesktop.com/
   PEMetadata:

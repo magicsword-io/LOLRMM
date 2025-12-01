@@ -1,9 +1,10 @@
 Name: Basecamp
+Category: 'RMM'
 Description: Basecamp is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -29,6 +30,5 @@ Artifacts:
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/basecamp_network_sigma.yml
   Description: Detects potential network activity of Basecamp RMM tool
-References:
-- basecamp.com - No specific RMM tool listed
+References: []
 Acknowledgement: []

@@ -1,9 +1,10 @@
 Name: Sophos-Remote Management System
+Category: 'RMM'
 Description: Sophos-Remote Management System is a remote monitoring and management
   (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -40,5 +41,5 @@ Detections:
   Description: Detects potential processes activity of Sophos-Remote Management System
     RMM tool
 References:
-- community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+- https://community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
 Acknowledgement: []

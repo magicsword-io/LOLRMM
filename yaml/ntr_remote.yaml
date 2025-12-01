@@ -1,9 +1,10 @@
 Name: NTR Remote
+Category: 'RMM'
 Description: NTR Remote is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-26'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -33,6 +34,5 @@ Detections:
   Description: Detects potential network activity of NTR Remote RMM tool
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_processes_sigma.yml
   Description: Detects potential processes activity of NTR Remote RMM tool
-References:
-- DOA as of 2024
+References: []
 Acknowledgement: []

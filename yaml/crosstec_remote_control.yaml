@@ -1,9 +1,10 @@
 Name: CrossTec Remote Control
+Category: 'RMM'
 Description: CrossTec Remote Control is a remote monitoring and management (RMM) tool.
   More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -36,5 +37,5 @@ Detections:
   Description: Detects potential processes activity of CrossTec Remote Control RMM
     tool
 References:
-- www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
+- https://www.crosstecsoftware.com/supporthome.html # Domain DOA 2/1/2024
 Acknowledgement: []

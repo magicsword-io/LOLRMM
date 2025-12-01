@@ -1,9 +1,10 @@
 Name: Weezo
+Category: 'RMM'
 Description: Weezo is a remote monitoring and management (RMM) tool. More information
   will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-14'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -38,5 +39,5 @@ Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_processes_sigma.yml
   Description: Detects potential processes activity of Weezo RMM tool
 References:
-- weezo.en.softonic.com
+- https://weezo.en.softonic.com
 Acknowledgement: []

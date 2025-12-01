@@ -1,10 +1,11 @@
 Name: Aspia
+Category: 'RMM'
 Description: 'Aspia is an open-source Remote Desktop, file transfer and system information
   tool.
 
   '
 Created: '2025-05-09'
-LastModified: '2025-07-21'
+LastModified: '2025-05-09'
 Details:
   Website: https://aspia.org/
   PEMetadata:
