@@ -1,106 +1,101 @@
 Name: Bluetrait
-Description: 'Bluetrait is a Remote Monitoring and Management (RMM) tool designed
-  to provide IT administrators and Managed Service Providers (MSPs) with remote access,
-  system monitoring, and automation capabilities across Windows, Linux, and macOS
-  devices. Like many RMM solutions, Bluetrait enables seamless remote management,
-  allowing administrators to execute commands, install software, and troubleshoot
-  issues without direct user intervention.
+Category: 'RMM'
+Description: 'Bluetrait is a Remote Monitoring and Management (RMM) tool designed to provide IT administrators and Managed Service Providers (MSPs) with remote access, system monitoring, and automation capabilities across Windows, Linux, and macOS devices. Like many RMM solutions, Bluetrait enables seamless remote management, allowing administrators to execute commands, install software, and troubleshoot issues without direct user intervention.
 
 
-  However, Proofpoint''s research has highlighted how threat actors are increasingly
-  abusing RMM tools, including Bluetrait, for malicious purposes. Attackers leverage
-  Bluetrait as part of their post-exploitation strategy, often deploying it through
-  phishing or social engineering techniques. Once installed, Bluetrait allows attackers
-  to establish persistent remote access, circumvent traditional security controls,
-  and execute malicious payloads under the guise of legitimate administrative activity.'
-Author: 'The Haag'
+    However, Proofpoint''s research has highlighted how threat actors are increasingly abusing RMM tools, including Bluetrait, for malicious purposes. Attackers leverage Bluetrait as part of their post-exploitation strategy, often deploying it through phishing or social engineering techniques. Once installed, Bluetrait allows attackers to establish persistent remote access, circumvent traditional security controls, and execute malicious payloads under the guise of legitimate administrative activity.'
+Author: The Haag
 Created: '2025-03-13'
 LastModified: '2025-03-13'
 Details:
-  Website: https://bluetrait.io/
-  PEMetadata:
-    Filename: 'Bluetrait MSP Agent.exe'
-    OriginalFileName: 'Bluetrait MSP Agent.exe'
-    Description: 'Bluetrait MSP Agent'
-    Product: 'Bluetrait'
-  Privileges: 'Current User'
-  Free: true
-  Verification: false
-  SupportedOS: 
-    - Windows
-    - Linux
-    - macOS
-  Capabilities: 
-    - Remote Monitoring
-    - Remote Management
-    - File Transfer
-    - PowerShell Execution
-  Vulnerabilities: []
-  InstallationPaths: 
-    - 'C:\Program Files (x86)\Bluetrait Agent\*'
+    Website: https://bluetrait.io/
+    PEMetadata:
+        Filename: Bluetrait MSP Agent.exe
+        OriginalFileName: Bluetrait MSP Agent.exe
+        Description: Bluetrait MSP Agent
+        Product: Bluetrait
+    Privileges: Current User
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Remote Monitoring
+        - Remote Management
+        - File Transfer
+        - PowerShell Execution
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Bluetrait Agent\*
 Artifacts:
-  Disk:
-    - File: 'C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe'
-      Description: 'Main Bluetrait agent executable file'
-      OS: Windows
-      Example:
-        - 'MD5: 1999018A77A57B3DE1CEECEF2FD2E555'
-        - 'SHA256: 7DA12D344456FB5B285AD358D7EC7C256A5C1F2163D312BE63FFCEA61BDA668B'
-    - File: 'C:\Program Files (x86)\Bluetrait Agent\BluetraitUserAgent.exe'
-      Description: 'Bluetrait User Agent executable file'
-      OS: Windows
-      Example:
-        - 'MD5: CA8DCB7C71FE31AF9F4A99667428702B'
-        - 'SHA256: 1A00E50CB1086CBE4C2F0E65A290FDA8FCFAC1A56C5DBFA2248E4D7BED44939F'
-    - File: 'C:\Program Files (x86)\Bluetrait Agent\config.db'
-      Description: 'Bluetrait configuration database file'
-      OS: Windows
-      Example:
-        - 'MD5: D24A10B86F80238D3D5627438DE665EF'
-    - File: 'C:\Program Files (x86)\Bluetrait Agent\config.json'
-      Description: 'Bluetrait JSON configuration file'
-      OS: Windows
-      Example:
-        - 'MD5: 417D447C221BC58B33BDBF3B67C049BC'
-    - File: 'C:\Program Files (x86)\Bluetrait Agent\libraries\paexec.exe'
-      Description: 'PAExec utility used by Bluetrait for remote execution'
-      OS: Windows
-      Example:
-        - 'MD5: A8283F82F258A5577FE39FE24650A880'
-        - 'SHA256: 1398D653106A68E31DBB1DA06141A1809A65E92A45F021EDF6BE220265957225'
-  EventLog:
-    - EventID: 4688
-      ProviderName: 'Microsoft-Windows-Security-Auditing'
-      LogFile: 'Security.evtx'
-      CommandLine: 'C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe'
-      Description: 'Execution of Bluetrait MSP Agent'
-    - EventID: 7045
-      ProviderName: 'Service Control Manager'
-      LogFile: 'System.evtx'
-      ServiceName: 'Bluetrait Agent'
-      ImagePath: '"C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe"'
-      ServiceType: 'user mode service'
-      StartType: 'auto start'
-      AccountName: 'LocalSystem'
-      Description: 'Bluetrait service installation event'
-      Example: '<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event"><System><Provider Name="Service Control Manager" Guid="{555908d1-a6d7-4695-8e1e-26931d2012f4}" EventSourceName="Service Control Manager"/><EventID Qualifiers="16384">7045</EventID><Version>0</Version><Level>4</Level><Task>0</Task><Opcode>0</Opcode><Keywords>0x8080000000000000</Keywords><TimeCreated SystemTime="2025-03-13T16:08:59.994503700Z"/><EventRecordID>170044</EventRecordID><Correlation/><Execution ProcessID="600" ThreadID="4652"/><Channel>System</Channel><Computer>ar-win-3</Computer><Security UserID="S-1-5-18"/></System><EventData><Data Name="ServiceName">Bluetrait Agent</Data><Data Name="ImagePath">"C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe"</Data><Data Name="ServiceType">user mode service</Data><Data Name="StartType">auto start</Data><Data Name="AccountName">LocalSystem</Data></EventData></Event>'
-  Network:
-    - Description: 'Known domains used by Bluetrait'
-      Domains:
-        - 'bluetrait.io'
-        - '*.bluetrait.io'
-      Ports: 
-        - 443
-        - 8080
+    Disk:
+        - File: C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe
+          Description: Main Bluetrait agent executable file
+          OS: Windows
+          Example:
+              - 'MD5: 1999018A77A57B3DE1CEECEF2FD2E555'
+              - 'SHA256: 7DA12D344456FB5B285AD358D7EC7C256A5C1F2163D312BE63FFCEA61BDA668B'
+        - File: C:\Program Files (x86)\Bluetrait Agent\BluetraitUserAgent.exe
+          Description: Bluetrait User Agent executable file
+          OS: Windows
+          Example:
+              - 'MD5: CA8DCB7C71FE31AF9F4A99667428702B'
+              - 'SHA256: 1A00E50CB1086CBE4C2F0E65A290FDA8FCFAC1A56C5DBFA2248E4D7BED44939F'
+        - File: C:\Program Files (x86)\Bluetrait Agent\config.db
+          Description: Bluetrait configuration database file
+          OS: Windows
+          Example:
+              - 'MD5: D24A10B86F80238D3D5627438DE665EF'
+        - File: C:\Program Files (x86)\Bluetrait Agent\config.json
+          Description: Bluetrait JSON configuration file
+          OS: Windows
+          Example:
+              - 'MD5: 417D447C221BC58B33BDBF3B67C049BC'
+        - File: C:\Program Files (x86)\Bluetrait Agent\libraries\paexec.exe
+          Description: PAExec utility used by Bluetrait for remote execution
+          OS: Windows
+          Example:
+              - 'MD5: A8283F82F258A5577FE39FE24650A880'
+              - 'SHA256: 1398D653106A68E31DBB1DA06141A1809A65E92A45F021EDF6BE220265957225'
+    EventLog:
+        - EventID: 4688
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe
+          Description: Execution of Bluetrait MSP Agent
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Bluetrait Agent
+          ImagePath: '"C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe"'
+          ServiceType: user mode service
+          StartType: auto start
+          AccountName: LocalSystem
+          Description: Bluetrait service installation event
+          Example: <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event"><System><Provider Name="Service Control Manager" Guid="{555908d1-a6d7-4695-8e1e-26931d2012f4}" EventSourceName="Service Control Manager"/><EventID Qualifiers="16384">7045</EventID><Version>0</Version><Level>4</Level><Task>0</Task><Opcode>0</Opcode><Keywords>0x8080000000000000</Keywords><TimeCreated SystemTime="2025-03-13T16:08:59.994503700Z"/><EventRecordID>170044</EventRecordID><Correlation/><Execution ProcessID="600" ThreadID="4652"/><Channel>System</Channel><Computer>ar-win-3</Computer><Security UserID="S-1-5-18"/></System><EventData><Data Name="ServiceName">Bluetrait Agent</Data><Data Name="ImagePath">"C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe"</Data><Data Name="ServiceType">user mode service</Data><Data Name="StartType">auto start</Data><Data Name="AccountName">LocalSystem</Data></EventData></Event>
+    Network:
+        - Description: Known domains used by Bluetrait
+          Domains:
+              - bluetrait.io
+              - '*.bluetrait.io'
+          Ports:
+              - 443
+              - 8080
 Detections:
-  - Name: 'Detect Bluetrait Agent Execution'
-    Description: 'Detects execution of Bluetrait agent executable by monitoring process creation events'
-    author: ''
-    Link: ''
+    - Name: Detect Bluetrait Agent Execution
+      Description: Detects execution of Bluetrait agent executable by monitoring process creation events
+      author: ''
+      Link: ''
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bluetrait_network_sigma.yml
+      Description: Detects potential network activity of Bluetrait RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bluetrait_files_sigma.yml
+      Description: Detects potential files activity of Bluetrait RMM tool
 References:
-  - 'https://bluetrait.io/'
-  - 'https://www.proofpoint.com/us/blog/threat-insight/ta575-targets-organizations-with-rmm-tools'
-  - 'https://any.run/report/62446e7258b20b64c058ae723b5f38b82f0b6214c5e8b9f015bf971be061eeb0/66a67ccf-36bc-46d8-bff1-cb8305b94501'
+    - https://bluetrait.io/
+    - https://www.proofpoint.com/us/blog/threat-insight/ta575-targets-organizations-with-rmm-tools
+    - https://any.run/report/62446e7258b20b64c058ae723b5f38b82f0b6214c5e8b9f015bf971be061eeb0/66a67ccf-36bc-46d8-bff1-cb8305b94501
 Acknowledgement:
-  - Person: 'The Haag'
-    Handle: '@M_haggis'
+    - Person: The Haag
+      Handle: '@M_haggis'

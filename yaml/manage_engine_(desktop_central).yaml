@@ -1,42 +1,42 @@
 Name: Manage Engine (Desktop Central)
-Description: Manage Engine (Desktop Central) is a remote monitoring and management
-  (RMM) tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-08'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - dcagentservice.exe
-  - dcagentregister.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - dcagentservice.exe
+        - dcagentregister.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - desktopcentral.manageengine.com
-    - desktopcentral.manageengine.com.eu
-    - desktopcentral.manageengine.cn
-    - '*.dms.zoho.com'
-    - '*.dms.zoho.com.eu'
-    - '*.-dms.zoho.com.cn'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - desktopcentral.manageengine.com
+              - desktopcentral.manageengine.com.eu
+              - desktopcentral.manageengine.cn
+              - '*.dms.zoho.com'
+              - '*.dms.zoho.com.eu'
+              - '*.-dms.zoho.com.cn'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_network_sigma.yml
-  Description: Detects potential network activity of Desktop Central RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/desktop_central_processes_sigma.yml
-  Description: Detects potential processes activity of Desktop Central RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml
+      Description: Detects potential network activity of Manage Engine (Desktop Central) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml
+      Description: Detects potential processes activity of Manage Engine (Desktop Central) RMM tool
 References: []
 Acknowledgement: []

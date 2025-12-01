@@ -1,32 +1,32 @@
 Name: Netviewer (GoToMeet)
-Description: Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Category: 'RMM'
+Description: Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - nvClient.exe
-  - netviewer.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - nvClient.exe
+        - netviewer.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml
-  Description: Detects potential processes activity of Netviewer (GoToMeet) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml
+      Description: Detects potential processes activity of Netviewer (GoToMeet) RMM tool
 References:
-- 'Obsolute - found copy here: https://www.enviolet.com/en/service/online-consultant.html'
+    - https://www.enviolet.com/en/service/online-consultant.html
 Acknowledgement: []

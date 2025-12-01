@@ -1,58 +1,62 @@
 Name: NetLock RMM
-Description: NetLock RMM is an open source Remote Management and Monitoring tool with
-  a paid support and cloud offering.
+Category: 'RMM'
+Description: NetLock RMM is an open source Remote Management and Monitoring tool with a paid support and cloud offering.
 Author: Tyler Schultz
 Created: '2025-07-18'
 LastModified: '2025-07-18'
 Details:
-  Website: https://www.netlockrmm.com/
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  - Linux
-  - MacOS
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - NetLock_RMM_Agent_Installer.exe
-  - NetLock_RMM_Agent_Installer
-  - /var/0x101_Cyber_Security/*
-  - /Library/Application Support/0x101_Cyber_Security/*
-  - /usr/local/bin/0x101_Cyber_Security/Netlock_RMM/*
-  - /usr/0x101_Cyber_Security/Netlock_RMM/*
-  - C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
-  - C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_Process.exe
-  - C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_UAC.exe
+    Website: https://www.netlockrmm.com/
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - Linux
+        - MacOS
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - NetLock_RMM_Agent_Installer.exe
+        - NetLock_RMM_Agent_Installer
+        - /var/0x101_Cyber_Security/*
+        - /Library/Application Support/0x101_Cyber_Security/*
+        - /usr/local/bin/0x101_Cyber_Security/Netlock_RMM/*
+        - /usr/0x101_Cyber_Security/Netlock_RMM/*
+        - C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
+        - C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_Process.exe
+        - C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_UAC.exe
 Artifacts:
-  Disk:
-  - File: C:\temp\netlock rmm\installer\logs\*
-    Description: Debug and error logs related to installation
-    OS: Windows
-  - File: C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\server_config.json
-    Description: Server Configuration File
-    OS: Windows
-  - File: /etc/systemd/system/netlock-rmm-agent-comm.service
-    Description: Netlock RMM Agent comm agent service
-    OS: Linux
-  - File: /Library/LaunchDaemons/com.netlock.rmm.agentcomm.plist
-    Description: macOS LaunchDaemon plist File
-    OS: macOS
-  - File: /var/log/netlock-rmm-agent-comm.log
-    Description: RMM agent comm log (Non-Windows)
-    OS: Linux
-  EventLog: []
-  Registry: []
-  Network: []
-Detections: []
+    Disk:
+        - File: C:\temp\netlock rmm\installer\logs\*
+          Description: Debug and error logs related to installation
+          OS: Windows
+        - File: C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\server_config.json
+          Description: Server Configuration File
+          OS: Windows
+        - File: /etc/systemd/system/netlock-rmm-agent-comm.service
+          Description: Netlock RMM Agent comm agent service
+          OS: Linux
+        - File: /Library/LaunchDaemons/com.netlock.rmm.agentcomm.plist
+          Description: macOS LaunchDaemon plist File
+          OS: macOS
+        - File: /var/log/netlock-rmm-agent-comm.log
+          Description: RMM agent comm log (Non-Windows)
+          OS: Linux
+    EventLog: []
+    Registry: []
+    Network: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netlock_rmm_files_sigma.yml
+      Description: Detects potential files activity of NetLock RMM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netlock_rmm_processes_sigma.yml
+      Description: Detects potential processes activity of NetLock RMM RMM tool
 References:
-- https://www.netlockrmm.com
-- https://github.com/0x101-Cyber-Security/NetLock-RMM
+    - https://www.netlockrmm.com
+    - https://github.com/0x101-Cyber-Security/NetLock-RMM
 Acknowledgement:
-- Person: Tyler Schultz
-  Handle: '@shockwave_ts'
+    - Person: Tyler Schultz
+      Handle: '@shockwave_ts'

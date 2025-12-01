@@ -14,10 +14,10 @@ MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used alo
 
 ### Details
 <Details author={"@kostastsale"}
-         category={""}
+         category={"RMM"}
          created={"2024-09-20"}
          website={"https://meshcentral.com/"}
-         lastModified={"2025-07-18"}
+         lastModified={"2024-09-20"}
          privileges={"SYSTEM"}
          free={ "Yes" }
          verification={ "N/A" }
@@ -55,12 +55,14 @@ MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used alo
 
 
 ### Detections
-- Detects potential network activity of MeshCentral RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml)
-- Detects potential processes activity of MeshCentral RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml)
 - Detects MeshAgent Command Execution via MeshCentral
   - [Sigma Rule](https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/proc_creation_windows_meshagent.yml)
+- Detects potential network activity of MeshCentral RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml)
+- Detects potential files activity of MeshCentral RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_files_sigma.yml)
+- Detects potential processes activity of MeshCentral RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml)
 
 ### References
 - [https://ylianst.github.io/MeshCentral/meshcentral/](https://ylianst.github.io/MeshCentral/meshcentral/)

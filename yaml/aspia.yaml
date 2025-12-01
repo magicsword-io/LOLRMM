@@ -1,71 +1,79 @@
 Name: Aspia
-Description: |
-  Aspia is an open-source Remote Desktop, file transfer and system information tool.
+Category: 'RMM'
+Description: 'Aspia is an open-source Remote Desktop, file transfer and system information tool.
+
+    '
 Created: '2025-05-09'
-LastModified: '2025-07-21'
+LastModified: '2025-05-09'
 Details:
-  Website: https://aspia.org/
-  PEMetadata:
-  - Filename: aspia_client.exe
-    OriginalFileName: aspia_client.exe
-    Description: Aspia Client
-    Product: Aspia
-    Company: Dmitry Chapyshev
-  Privileges: SYSTEM
-  SupportedOS:
-  - Windows
-  - MacOS
-  - Linux
-  Capabilities:
-  - Remote desktop management
-  - Remote desktop view
-  - File transfer
-  - System information
-  - Text chat
-  - Task manager
-  - Encryption
-  - Authorization (it is possible to add users with different access rights)
-  - Address book with encryption and master-password
-  - NAT traversal with connection by ID (with using Aspia Router and Aspia Relay)
-  - Direct connections
-  - Audio support
-  - Video recording
-  - Client and Console for Windows, MacOSX and Linux
-  - Host for Windows only
-  - Router/Relay for Windows and Linux
-  InstallationPaths:
-  - '*\aspia_client.exe'
-  - C:\Program Files\Aspia\
-  - C:\Program Files (x86)\Aspia\
+    Website: https://aspia.org/
+    PEMetadata:
+        - Filename: aspia_client.exe
+          OriginalFileName: aspia_client.exe
+          Description: Aspia Client
+          Product: Aspia
+          Company: Dmitry Chapyshev
+    Privileges: SYSTEM
+    SupportedOS:
+        - Windows
+        - MacOS
+        - Linux
+    Capabilities:
+        - Remote desktop management
+        - Remote desktop view
+        - File transfer
+        - System information
+        - Text chat
+        - Task manager
+        - Encryption
+        - Authorization (it is possible to add users with different access rights)
+        - Address book with encryption and master-password
+        - NAT traversal with connection by ID (with using Aspia Router and Aspia Relay)
+        - Direct connections
+        - Audio support
+        - Video recording
+        - Client and Console for Windows, MacOSX and Linux
+        - Host for Windows only
+        - Router/Relay for Windows and Linux
+    InstallationPaths:
+        - '*\aspia_client.exe'
+        - C:\Program Files\Aspia\
+        - C:\Program Files (x86)\Aspia\
 Artifacts:
-  Disk:
-  - File: 'C:\Users\*\AppData\Roaming\aspia\client.ini'
-    Description: N/A
-    OS: Windows
-  - File: 'C:\Users\*\AppData\Local\Temp\aspia\aspia_client-*.log'
-    Description: N/A
-    OS: Windows
-  - File: 'C:\Program Files\Aspia\Client\qt.conf'
-    Description: N/A
-    OS: Windows
-  EventLog:
-  - EventID: 11707
-    ProviderName: MsiInstaller
-    LogFile: Application.evtx
-    Data: 'Product: Aspia Client -- Installation completed successfully.'
-    Description:  Aspia Client installation event.
-  Registry: []
-  Network:
-  - Description: Aspia can be downloaded from the official github repository.
-    Domains:
-    - https://github.com/dchapyshev/aspia
-    Ports:
-    - N/A
+    Disk:
+        - File: C:\Users\*\AppData\Roaming\aspia\client.ini
+          Description: N/A
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\aspia\aspia_client-*.log
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\Aspia\Client\qt.conf
+          Description: N/A
+          OS: Windows
+    EventLog:
+        - EventID: 11707
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Product: Aspia Client -- Installation completed successfully.'
+          Description: Aspia Client installation event.
+    Registry: []
+    Network:
+        - Description: Aspia can be downloaded from the official github repository.
+          Domains:
+              - https://github.com/dchapyshev/aspia
+          Ports:
+              - N/A
 References:
-- https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/
-- https://www.aspia.org/
-- https://github.com/dchapyshev/aspia
+    - https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/
+    - https://www.aspia.org/
+    - https://github.com/dchapyshev/aspia
 Acknowledgement:
-- Person: "Swachchhanda Shrawan Poudel"
-  Handle: '@_swachchhanda_'
-  
+    - Person: Swachchhanda Shrawan Poudel
+      Handle: '@_swachchhanda_'
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml
+      Description: Detects potential network activity of Aspia RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml
+      Description: Detects potential files activity of Aspia RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml
+      Description: Detects potential processes activity of Aspia RMM tool

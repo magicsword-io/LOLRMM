@@ -1,20 +1,22 @@
 title: Potential GoToMyPC RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - '*.GoToMyPC.com'
-  condition: selection
-id: a500441d-2754-4a91-8ce1-016086b78b26
+id: 54facc7d-0726-4e7e-ab2b-b2aa5936b281
 status: experimental
-description: Detects potential network activity of GoToMyPC RMM tool
+description: |
+    Detects potential network activity of GoToMyPC RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith: *.GoToMyPC.com
+    condition: selection
 falsepositives:
-- Legitimate use of GoToMyPC
+    - Legitimate use of GoToMyPC
 level: medium

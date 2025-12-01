@@ -1,35 +1,38 @@
 title: Potential TeamViewer RMM Tool Registry Activity
-logsource:
-  product: windows
-  category: registry_event
-detection:
-  selection:
-    TargetObject|contains:
-    - HKLM\SOFTWARE\TeamViewer\*
-    - HKU\<SID>\SOFTWARE\TeamViewer\*
-    - HKLM\SYSTEM\CurrentControlSet\Services\TeamViewer\*
-    - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
-    - HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TeamViewer\*
-    - HKU\SID\SOFTWARE\TeamViewer\MainWindowHandle
-    - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImage
-    - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePath
-    - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePosition
-    - HKU\SID\SOFTWARE\TeamViewer\MinimizeToTray
-    - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedCapturingEndpoint
-    - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioSendingVolumeV2
-    - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedRenderingEndpoint
-    - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
-    - HKU\SID\SOFTWARE\TeamViewer\ClientWindow_Mode
-    - HKU\SID\SOFTWARE\TeamViewer\ClientWindowPositions
-  condition: selection
-id: 8bc53048-ffad-4f92-9b66-a75d19e9dde9
+id: 6673bb39-482d-4b90-8ab2-a3ad594eb5eb
 status: experimental
-description: Detects potential registry activity of TeamViewer RMM tool
+description: |
+    Detects potential registry activity of TeamViewer RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        TargetObject|contains:
+            - HKLM\SOFTWARE\TeamViewer\*
+            - HKU\<SID>\SOFTWARE\TeamViewer\*
+            - HKLM\SYSTEM\CurrentControlSet\Services\TeamViewer\*
+            - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
+            - HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TeamViewer\*
+            - HKU\SID\SOFTWARE\TeamViewer\MainWindowHandle
+            - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImage
+            - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePath
+            - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePosition
+            - HKU\SID\SOFTWARE\TeamViewer\MinimizeToTray
+            - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedCapturingEndpoint
+            - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioSendingVolumeV2
+            - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedRenderingEndpoint
+            - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
+            - HKU\SID\SOFTWARE\TeamViewer\ClientWindow_Mode
+            - HKU\SID\SOFTWARE\TeamViewer\ClientWindowPositions
+    condition: selection
 falsepositives:
-- Legitimate use of TeamViewer
+    - Legitimate use of TeamViewer
 level: medium

@@ -1,71 +1,73 @@
 Name: Level
-Description: Level is a remote monitoring and management (RMM) tool. Threat actors
-  ...
+Category: 'RMM'
+Description: Level is a remote monitoring and management (RMM) tool. Threat actors ...
 Author: Christian Henriksen, ITM8 | Improsec
 Created: '2024-02-11'
-LastModified: '2025-11-03'
+LastModified: '2024-02-11'
 Details:
-  Website: https://level.io/
-  PEMetadata:
-    Filename: level.exe
-    OriginalFileName: ''
-    Description: ''
-  Privileges: User
-  Free: Free
-  Verification: 'True'
-  SupportedOS:
-  - Windows
-  Capabilities:
-  - File Transfer
-  - File System Access
-  - Remote Control
-  - Automation & Scripting
-  InstallationPaths:
-  - C:\Program Files\Level\*
+    Website: https://level.io/
+    PEMetadata:
+        Filename: level.exe
+        OriginalFileName: ''
+        Description: ''
+    Privileges: User
+    Free: Free
+    Verification: 'True'
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - File Transfer
+        - File System Access
+        - Remote Control
+        - Automation & Scripting
+    InstallationPaths:
+        - C:\Program Files\Level\*
 Artifacts:
-  Disk:
-  - File: C:\Program Files\Level\level.exe
-    Description: Level Binary
-    OS: Windows
-  - File: C:\Program Files\Level\osqueryi.exe
-    Description: A tool used by level to collect machine state information.
-    OS: Windows
-  - File: C:\Program Files\Level\level.log
-    Description: Client log file for Level.
-    OS: Windows
-  EventLog:
-  - EventID: 4698
-    ProviderName: Microsoft-Windows-Security-Auditing
-    LogFile: Security.evtx
-    TaskName: Level Watchdog
-    Location: \Level
-    Description: To ensure the Level agent is always running, a scheduled task...
-  - EventID: 4697
-    ProviderName: Microsoft-Windows-Security-Auditing
-    LogFile: Security.evtx
-    ServiceName: Level
-    ServiceFileName: C:\Program Files\Level\level.exe --key <KEY> --action=run
-    ServiceAccount: LocalSystem
-    ServiceStartType: 2
-    Description: The Level Agent Service ...
-  - EventID: 4798
-    ProviderName: Microsoft-Windows-Security-Auditing
-    LogFile: Security.evtx
-    CallerProcessName: C:\Program Files\Level\osqueri.exe
-    Description: Evidence of osqueryi doing automatic user/group enumeration.
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - level.io
-    - builds.level.io
-    - agents.level.io
-    - online.level.io
-    - downloads.io
-    Ports:
-    - 443
+    Disk:
+        - File: C:\Program Files\Level\level.exe
+          Description: Level Binary
+          OS: Windows
+        - File: C:\Program Files\Level\osqueryi.exe
+          Description: A tool used by level to collect machine state information.
+          OS: Windows
+        - File: C:\Program Files\Level\level.log
+          Description: Client log file for Level.
+          OS: Windows
+    EventLog:
+        - EventID: 4698
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          TaskName: Level Watchdog
+          Location: \Level
+          Description: To ensure the Level agent is always running, a scheduled task...
+        - EventID: 4697
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          ServiceName: Level
+          ServiceFileName: C:\Program Files\Level\level.exe --key <KEY> --action=run
+          ServiceAccount: LocalSystem
+          ServiceStartType: 2
+          Description: The Level Agent Service ...
+        - EventID: 4798
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          CallerProcessName: C:\Program Files\Level\osqueri.exe
+          Description: Evidence of osqueryi doing automatic user/group enumeration.
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - level.io
+              - builds.level.io
+              - agents.level.io
+              - online.level.io
+              - downloads.io
+          Ports:
+              - 443
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
-  Description: Detects potential network activity of Level RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
+      Description: Detects potential network activity of Level RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml
+      Description: Detects potential files activity of Level RMM tool
 References:
-- https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
-- https://docs.level.io/en/articles/9926456-level-watchdog-task
+    - https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
+    - https://docs.level.io/en/articles/9926456-level-watchdog-task

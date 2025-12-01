@@ -1,38 +1,38 @@
 Name: BeInSync
-Description: BeInSync is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: BeInSync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-26'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - Beinsync*.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - Beinsync*.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.beinsync.net'
-    - '*.beinsync.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.beinsync.net'
+              - '*.beinsync.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_network_sigma.yml
-  Description: Detects potential network activity of BeInSync RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_processes_sigma.yml
-  Description: Detects potential processes activity of BeInSync RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_network_sigma.yml
+      Description: Detects potential network activity of BeInSync RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beinsync_processes_sigma.yml
+      Description: Detects potential processes activity of BeInSync RMM tool
 References:
-- https://en.wikipedia.org/wiki/Phoenix_Technologies
+    - https://en.wikipedia.org/wiki/Phoenix_Technologies
 Acknowledgement: []

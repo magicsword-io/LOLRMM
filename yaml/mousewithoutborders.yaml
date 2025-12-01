@@ -1,65 +1,65 @@
 Name: Mouse Without Borders
 Category: RMM
-Description: Mouse Without Borders is a Microsoft Garage utility that lets you control
-  up to four Windows computers with a single keyboard and mouse, with clipboard sharing
-  and simple drag-and-drop file transfers.
+Description: Mouse Without Borders is a Microsoft Garage utility that lets you control up to four Windows computers with a single keyboard and mouse, with clipboard sharing and simple drag-and-drop file transfers.
 Author: Microsoft
 Created: '2011-09-12'
-LastModified: '2025-09-25'
+LastModified: '2011-09-12'
 Details:
-  Website: https://www.microsoft.com/en-us/download/details.aspx?id=35460
-  PEMetadata:
-    Filename: MouseWithoutBorders.exe
-    OriginalFileName: MouseWithoutBorders.exe
-    Description: Mouse Without Borders
-    Product: Mouse Without Borders
-  Privileges: User; optional Service Mode for elevated apps
-  Free: true
-  Verification: true
-  SupportedOS:
-  - Windows
-  Capabilities:
-  - Multi-computer input sharing
-  - Clipboard sharing
-  - Drag-and-drop file transfer (up to 100 MB)
-  - Optional service for elevated app control
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
+    Website: https://www.microsoft.com/en-us/download/details.aspx?id=35460
+    PEMetadata:
+        Filename: MouseWithoutBorders.exe
+        OriginalFileName: MouseWithoutBorders.exe
+        Description: Mouse Without Borders
+        Product: Mouse Without Borders
+    Privileges: User; optional Service Mode for elevated apps
+    Free: true
+    Verification: true
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Multi-computer input sharing
+        - Clipboard sharing
+        - Drag-and-drop file transfer (up to 100 MB)
+        - Optional service for elevated app control
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
 Artifacts:
-  Disk:
-  - File: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBorders.exe'
-    Description: Main application binary
-    OS: Windows
-    Example:
-    - 'SHA256: 0DE3E5D76E1359EEA6AAAD2A37F8D787CF4E1D686C4AB45C8221556CF5982BA1'
-  - File: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe'
-    Description: Optional service binary when Service Mode is enabled
-    OS: Windows
-    Example:
-    - 'SHA256: D65D44126E2327891BA426A09471DF0564456A9B37AAD8B3453D2D5B06F6AEF3'
-  - File: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersHelper.exe'
-    Description: Helper executable used by Mouse Without Borders
-    OS: Windows
-    Example:
-    - 'SHA256: D7E8F30B3F87373E89E8DEC1273F161C478E621E2450279A01A3D0914D754B4F'
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: Mouse without Borders Service
-    ImagePath: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe'
-    Description: Service installed (user mode service), auto start, account LocalSystem
-  Network:
-  - Description: Peer discovery and control traffic
-    Domains: []
-    Ports:
-    - 15100/tcp
-    - 15101/tcp
-Detections: []
+    Disk:
+        - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBorders.exe
+          Description: Main application binary
+          OS: Windows
+          Example:
+              - 'SHA256: 0DE3E5D76E1359EEA6AAAD2A37F8D787CF4E1D686C4AB45C8221556CF5982BA1'
+        - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
+          Description: Optional service binary when Service Mode is enabled
+          OS: Windows
+          Example:
+              - 'SHA256: D65D44126E2327891BA426A09471DF0564456A9B37AAD8B3453D2D5B06F6AEF3'
+        - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersHelper.exe
+          Description: Helper executable used by Mouse Without Borders
+          OS: Windows
+          Example:
+              - 'SHA256: D7E8F30B3F87373E89E8DEC1273F161C478E621E2450279A01A3D0914D754B4F'
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Mouse without Borders Service
+          ImagePath: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
+          Description: Service installed (user mode service), auto start, account LocalSystem
+    Network:
+        - Description: Peer discovery and control traffic
+          Domains: []
+          Ports:
+              - 15100/tcp
+              - 15101/tcp
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mouse_without_borders_files_sigma.yml
+      Description: Detects potential files activity of Mouse Without Borders RMM tool
 References:
-- https://www.microsoft.com/en-us/download/details.aspx?id=35460
-- https://learn.microsoft.com/windows/powertoys/mouse-without-borders
-- https://github.com/microsoft/PowerToys/issues/29700
-Acknowledgement: 
-- Person: Michael Haag
+    - https://www.microsoft.com/en-us/download/details.aspx?id=35460
+    - https://learn.microsoft.com/windows/powertoys/mouse-without-borders
+    - https://github.com/microsoft/PowerToys/issues/29700
+Acknowledgement:
+    - Person: Michael Haag

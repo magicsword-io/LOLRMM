@@ -1,110 +1,107 @@
 Name: Action1
-Description: "Action1 is a powerful Remote Monitoring and Management(RMM) tool that\
-  \ enables users to execute commands, scripts, and binaries. \nThrough the web interface\
-  \ of action1, the administrator must create a new policy or an app to establish\
-  \ remote execution and then points that the agent is installed.\n"
+Category: 'RMM'
+Description: |
+    Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries.
+    Through the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.
 Author: '@kostastsale'
 Created: '2024-08-03'
-LastModified: '2024-10-06'
+LastModified: '2024-08-03'
 Details:
-  Website: https://www.action1.com/
-  PEMetadata:
-  - Filename: action1_connector.exe
-  - Filename: action1_remote.exe
-  - Filename: action1_update.exe
-  - Filename: action1_agent.exe
-    OriginalFileName: action1_agent.exe
-    Description: Endpoint Agent
-  Privileges: SYSTEM
-  Free: 'Yes'
-  Verification: Corporate email required although temporary email services are accepted
-  SupportedOS:
-  - Windows
-  Capabilities:
-  - Backup and disaster recovery
-  - Billing and invoicing
-  - Customer portal
-  - HelpDesk and ticketing
-  - Mobile app
-  - Network discovery
-  - Patch management
-  - Remote monitoring and management
-  - Reporting and analytics
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Windows\Action1\*
+    Website: https://www.action1.com/
+    PEMetadata:
+        - Filename: action1_connector.exe
+        - Filename: action1_remote.exe
+        - Filename: action1_update.exe
+        - Filename: action1_agent.exe
+          OriginalFileName: action1_agent.exe
+          Description: Endpoint Agent
+    Privileges: SYSTEM
+    Free: 'Yes'
+    Verification: Corporate email required although temporary email services are accepted
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Backup and disaster recovery
+        - Billing and invoicing
+        - Customer portal
+        - HelpDesk and ticketing
+        - Mobile app
+        - Network discovery
+        - Patch management
+        - Remote monitoring and management
+        - Reporting and analytics
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Windows\Action1\*
 Artifacts:
-  Disk:
-  - File: C:\Windows\Action1\action1_agent.exe
-    Description: Action1 service binary
-    OS: Windows
-  - File: C:\Windows\Action1\*
-    Description: Multiple files and binaries related to Action1 installation
-    OS: Windows
-  - File: C:\Windows\Action1\scripts\*
-    Description: Multiple scripts related to Action1 installation
-    OS: Windows
-  - File: C:\Windows\Action1\rule_data\*
-    Description: Files related to Action1 rules
-    OS: Windows
-  - File: C:\Windows\Action1\action1_log_*.log
-    Description: Contains history, errors, system notifications. Incoming and outgoing
-      connections.
-    OS: Windows
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: A1Agent
-    ImagePath: '"C:\\Windows\\Action1\\action1_agent.exe"'
-    Description: Service installation event as result of Action1 installation.
-  - EventID: 4697
-    ProviderName: Microsoft-Security-Auditing
-    LogFile: Security.evtx
-    ServiceName: A1Agent
-    CommandLine: C:\Windows\Action1\action1_agent.exe service
-    Description: Service installation event as result of Action1 installation.
-  - EventID: 4688
-    ProviderName: Microsoft-Security-Auditing
-    LogFile: Security.evtx
-    CommandLine: C:\Windows\Action1\action1_agent.exe loggedonuser
-    Description: Executing command to get logged on user.
-  Registry:
-  - Path: HKLM\System\CurrentControlSet\Services\A1Agent
-    Description: Service installation event as result of Action1 installation.
-  - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe
-    Description: Ensures that detailed crash information is available for analysis,
-      which aids in maintaining the stability and reliability of the software.
-  - Path: HKLM\SOFTWARE\WOW6432Node\Action1
-    Description: Storing its configuration settings and other relevant information
-  Network:
-  - Description: N/A
-    Domains:
-    - '*.action1.com'
-    Ports:
-    - 443
-  - Description: N/A
-    Domains:
-    - a1-backend-packages.s3.amazonaws.com
-    Ports:
-    - 443
+    Disk:
+        - File: C:\Windows\Action1\action1_agent.exe
+          Description: Action1 service binary
+          OS: Windows
+        - File: C:\Windows\Action1\*
+          Description: Multiple files and binaries related to Action1 installation
+          OS: Windows
+        - File: C:\Windows\Action1\scripts\*
+          Description: Multiple scripts related to Action1 installation
+          OS: Windows
+        - File: C:\Windows\Action1\rule_data\*
+          Description: Files related to Action1 rules
+          OS: Windows
+        - File: C:\Windows\Action1\action1_log_*.log
+          Description: Contains history, errors, system notifications. Incoming and outgoing connections.
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: A1Agent
+          ImagePath: '"C:\\Windows\\Action1\\action1_agent.exe"'
+          Description: Service installation event as result of Action1 installation.
+        - EventID: 4697
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          ServiceName: A1Agent
+          CommandLine: C:\Windows\Action1\action1_agent.exe service
+          Description: Service installation event as result of Action1 installation.
+        - EventID: 4688
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: C:\Windows\Action1\action1_agent.exe loggedonuser
+          Description: Executing command to get logged on user.
+    Registry:
+        - Path: HKLM\System\CurrentControlSet\Services\A1Agent
+          Description: Service installation event as result of Action1 installation.
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe
+          Description: Ensures that detailed crash information is available for analysis, which aids in maintaining the stability and reliability of the software.
+        - Path: HKLM\SOFTWARE\WOW6432Node\Action1
+          Description: Storing its configuration settings and other relevant information
+    Network:
+        - Description: N/A
+          Domains:
+              - '*.action1.com'
+          Ports:
+              - 443
+        - Description: N/A
+          Domains:
+              - a1-backend-packages.s3.amazonaws.com
+          Ports:
+              - 443
 Detections:
-- Name: Arbitrary code execution and remote sessions via Action1 RMM
-  Description: Threat hunting rule for detecting the execution of arbitrary code and
-    remote sessions via Action1 RMM
-  author: '@kostastsale'
-  Link: https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_registry_sigma.yml
-  Description: Detects potential registry activity of Action1 RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_network_sigma.yml
-  Description: Detects potential network activity of Action1 RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_files_sigma.yml
-  Description: Detects potential files activity of Action1 RMM tool
+    - Name: Arbitrary code execution and remote sessions via Action1 RMM
+      Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+      author: '@kostastsale'
+      Link: https://github.com/tsale/Sigma_rules/blob/ea87e4fc851207ca0f002ec043624f2b3bf1b2da/Threat%20Hunting%20Queries/Action1_RMM.yml
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_registry_sigma.yml
+      Description: Detects potential registry activity of Action1 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_network_sigma.yml
+      Description: Detects potential network activity of Action1 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/action1_files_sigma.yml
+      Description: Detects potential files activity of Action1 RMM tool
 References:
-- https://www.action1.com/documentation/firewall-configuration/
-- https://www.action1.com/documentation/
-- https://twitter.com/Kostastsale/status/1646256901506605063?s=20
-- https://ruler-project.github.io/ruler-project/RULER/remote/Action1/
+    - https://www.action1.com/documentation/firewall-configuration/
+    - https://www.action1.com/documentation/
+    - https://twitter.com/Kostastsale/status/1646256901506605063?s=20
+    - https://ruler-project.github.io/ruler-project/RULER/remote/Action1/
 Acknowledgement:
-- Person: Kostas
-  Handle: '@kostastsale'
+    - Person: Kostas
+      Handle: '@kostastsale'

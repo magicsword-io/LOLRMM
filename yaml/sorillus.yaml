@@ -1,39 +1,39 @@
 Name: Sorillus
-Description: Sorillus is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Sorillus is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - Sorillus-Launcher*.exe
-  - Sorillus Launcher.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - Sorillus-Launcher*.exe
+        - Sorillus Launcher.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.sorillus.com'
-    - sorillus.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.sorillus.com'
+              - sorillus.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_network_sigma.yml
-  Description: Detects potential network activity of Sorillus RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_processes_sigma.yml
-  Description: Detects potential processes activity of Sorillus RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_network_sigma.yml
+      Description: Detects potential network activity of Sorillus RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sorillus_processes_sigma.yml
+      Description: Detects potential processes activity of Sorillus RMM tool
 References:
-- https://sorillus.com/
+    - https://sorillus.com/
 Acknowledgement: []

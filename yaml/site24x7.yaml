@@ -1,45 +1,45 @@
 Name: Site24x7
-Description: Site24x7 is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Site24x7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-13'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - MEAgentHelper.exe
-  - MonitoringAgent.exe
-  - Site24x7WindowsAgentTrayIcon.exe
-  - Site24x7PluginAgent.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - MEAgentHelper.exe
+        - MonitoringAgent.exe
+        - Site24x7WindowsAgentTrayIcon.exe
+        - Site24x7PluginAgent.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - plus*.site24x7.com
-    - plus*.site24x7.eu
-    - plus*.site24x7.in
-    - plus*.site24x7.cn
-    - plus*.site24x7.net.au
-    - site24x7.com/msp
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - plus*.site24x7.com
+              - plus*.site24x7.eu
+              - plus*.site24x7.in
+              - plus*.site24x7.cn
+              - plus*.site24x7.net.au
+              - site24x7.com/msp
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_network_sigma.yml
-  Description: Detects potential network activity of Site24x7 RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_processes_sigma.yml
-  Description: Detects potential processes activity of Site24x7 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_network_sigma.yml
+      Description: Detects potential network activity of Site24x7 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_processes_sigma.yml
+      Description: Detects potential processes activity of Site24x7 RMM tool
 References:
-- https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent
+    - https://support.site24x7.com/portal/en/kb/articles/which-ports-do-i-need-to-allow-access-in-my-firewall-to-use-site24x7-agent
 Acknowledgement: []

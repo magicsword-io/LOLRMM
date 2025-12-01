@@ -1,39 +1,37 @@
 Name: AliWangWang-remote-control
-Description: AliWangWang-remote-control is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: AliWangWang-remote-control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - alitask.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - alitask.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - wangwang.taobao.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - wangwang.taobao.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_network_sigma.yml
-  Description: Detects potential network activity of AliWangWang-remote-control RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_processes_sigma.yml
-  Description: Detects potential processes activity of AliWangWang-remote-control
-    RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_network_sigma.yml
+      Description: Detects potential network activity of AliWangWang-remote-control RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aliwangwang-remote-control_processes_sigma.yml
+      Description: Detects potential processes activity of AliWangWang-remote-control RMM tool
 References:
-- https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale
+    - https://github.com/KKomarov/AliWangWangEng/blob/master/chs.locale
 Acknowledgement: []

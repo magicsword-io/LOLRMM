@@ -1,9 +1,9 @@
 Name: eHorus
-Description: eHorus is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: eHorus is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
   Website: ''
   PEMetadata:
@@ -27,20 +27,20 @@ Details:
   - ehorus_uit.exe
   - 'C:\Program Files\ehorus_agent\*'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - ehorus.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - ehorus.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_network_sigma.yml
-  Description: Detects potential network activity of eHorus RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_processes_sigma.yml
-  Description: Detects potential processes activity of eHorus RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_network_sigma.yml
+      Description: Detects potential network activity of eHorus RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_processes_sigma.yml
+      Description: Detects potential processes activity of eHorus RMM tool
 References: []
 Acknowledgement:
 - Person: 'Daniel Koifman'
-  Handle: x/KoifSec
+  Handle: '@KoifSec'

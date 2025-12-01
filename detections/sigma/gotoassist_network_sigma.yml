@@ -1,27 +1,31 @@
 title: Potential GoToAssist RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - goto.com
-    - '*.getgo.com'
-    - '*.fastsupport.com'
-    - '*.gotoassist.com'
-    - helpme.net
-    - '*.gotoassist.me'
-    - '*.gotoassist.at'
-    - '*.desktopstreaming.com'
-  condition: selection
-id: 35baa228-9b56-416d-9652-d696f35ca87b
+id: db374856-a793-461e-a33a-648ee4468d7e
 status: experimental
-description: Detects potential network activity of GoToAssist RMM tool
+description: |
+    Detects potential network activity of GoToAssist RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - goto.com
+            - *.getgo.com
+            - *.fastsupport.com
+            - *.gotoassist.com
+            - helpme.net
+            - *.gotoassist.me
+            - *.gotoassist.at
+            - *.desktopstreaming.com
+            - *.cdn.getgo.com
+    condition: selection
 falsepositives:
-- Legitimate use of GoToAssist
+    - Legitimate use of GoToAssist
 level: medium

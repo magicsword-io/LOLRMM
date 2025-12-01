@@ -1,29 +1,29 @@
 Name: GoToAssist Agent Desktop Console
-Description: GoToAssist Agent Desktop Console is a remote monitoring and management
-  (RMM) tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: GoToAssist Agent Desktop Console is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\*\G2RDesktopConsole-x64.msi
-  - '*\G2RDesktopConsole-x64.msi'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\*\G2RDesktopConsole-x64.msi
+        - '*\G2RDesktopConsole-x64.msi'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections: []
 References: []
 Acknowledgement: []

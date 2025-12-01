@@ -14,10 +14,10 @@ Aspia is an open-source Remote Desktop, file transfer and system information too
 
 ### Details
 <Details author={""}
-         category={""}
+         category={"RMM"}
          created={"2025-05-09"}
          website={"https://aspia.org/"}
-         lastModified={"2025-07-21"}
+         lastModified={"2025-05-09"}
          privileges={"SYSTEM"}
          free={ false }
          verification={ false }
@@ -52,6 +52,13 @@ Aspia is an open-source Remote Desktop, file transfer and system information too
 
 
 
+### Detections
+- Detects potential network activity of Aspia RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml)
+- Detects potential files activity of Aspia RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml)
+- Detects potential processes activity of Aspia RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml)
 
 ### References
 - [https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/](https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/)

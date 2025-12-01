@@ -1,68 +1,77 @@
 Name: HopToDesk
+Category: 'RMM'
 Description: HopToDesk is a free Remote Management and Monitoring tool.
 Author: Tyler Schultz
 Created: '2025-07-17'
 LastModified: '2025-07-17'
 Details:
-  Website: https://www.hoptodesk.com/
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: 'Yes'
-  Verification: ''
-  SupportedOS:
-  - Windows
-  - Linux
-  - MacOS
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - hoptodesk.exe
-  - C:\Program Files (x86)\HopToDesk\*
-  - /Applications/HopToDesk.app
+    Website: https://www.hoptodesk.com/
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: 'Yes'
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - Linux
+        - MacOS
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - hoptodesk.exe
+        - C:\Program Files (x86)\HopToDesk\*
+        - /Applications/HopToDesk.app
 Artifacts:
-  Disk:
-  - File: C:\Program Files (x86)\HopToDesk\HopToDesk.exe
-    Description: Program Binary File
-    OS: Windows
-  - File: C:\Program Files (x86)\HopToDesk\privacyhelper.exe
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files (x86)\HopToDesk\PrivacyMode.dll
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files (x86)\HopToDesk\sciter.dll
-    Description: N/A
-    OS: Windows
-  - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml
-    Description: Configuration File
-    OS: Windows
-  - File: C:\Users\*\AppData\Local\Temp\privacyhelper.exe
-    Description: N/A
-    OS: Windows
-  - File: /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
-    Description: N/A
-    OS: MacOS
-  EventLog: []
-  Registry:
-  - Path: HKEY_USERS\*_Classes\HopToDesk\*
-    Description: null
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - signal.hoptodesk.com
-    - api.hoptodesk.com
-    - turn.hoptodesk.com
-    Ports:
-    - 443
-    - 3478
-    - 80
-Detections: []
+    Disk:
+        - File: C:\Program Files (x86)\HopToDesk\HopToDesk.exe
+          Description: Program Binary File
+          OS: Windows
+        - File: C:\Program Files (x86)\HopToDesk\privacyhelper.exe
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files (x86)\HopToDesk\PrivacyMode.dll
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files (x86)\HopToDesk\sciter.dll
+          Description: N/A
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml
+          Description: Configuration File
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\privacyhelper.exe
+          Description: N/A
+          OS: Windows
+        - File: /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
+          Description: N/A
+          OS: MacOS
+    EventLog: []
+    Registry:
+        - Path: HKEY_USERS\*_Classes\HopToDesk\*
+          Description:
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - signal.hoptodesk.com
+              - api.hoptodesk.com
+              - turn.hoptodesk.com
+          Ports:
+              - 443
+              - 3478
+              - 80
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_registry_sigma.yml
+      Description: Detects potential registry activity of HopToDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_network_sigma.yml
+      Description: Detects potential network activity of HopToDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_files_sigma.yml
+      Description: Detects potential files activity of HopToDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_processes_sigma.yml
+      Description: Detects potential processes activity of HopToDesk RMM tool
 References:
-- https://www.hoptodesk.com/#faqlink
-- https://gitlab.com/hoptodesk/hoptodesk
+    - https://www.hoptodesk.com/#faqlink
+    - https://gitlab.com/hoptodesk/hoptodesk
 Acknowledgement:
-- Person: Tyler Schultz
-  Handle: '@shockwave_ts'
+    - Person: Tyler Schultz
+      Handle: '@shockwave_ts'

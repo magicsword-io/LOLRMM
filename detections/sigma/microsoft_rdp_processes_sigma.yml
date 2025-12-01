@@ -1,20 +1,28 @@
 title: Potential Microsoft RDP RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - mstsc.exe
-  condition: selection
-id: 1865354f-ee9f-4e21-a959-490ef6cce164
+id: 4122da1c-0f56-4d24-bcb4-afc2dc3f82b3
 status: experimental
-description: Detects potential processes activity of Microsoft RDP RMM tool
+description: |
+    Detects potential processes activity of Microsoft RDP RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - termsrv.exe
+            - mstsc.exe
+    selection_image:
+        Image|endswith:
+            - termsrv.exe
+            - mstsc.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of Microsoft RDP
+    - Legitimate use of Microsoft RDP
 level: medium

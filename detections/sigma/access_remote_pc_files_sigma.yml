@@ -1,0 +1,24 @@
+title: Potential Access Remote PC RMM Tool File Activity
+id: 1a263981-f6d4-4ba8-8ae3-16525d97c9b9
+status: experimental
+description: |
+    Detects potential files activity of Access Remote PC RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2025-12-01
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - C:\Program Files (x86)\RemotePC\RemotePCUIU.exe
+            - C:\Program Files (x86)\RemotePC\*
+    condition: selection
+falsepositives:
+    - Legitimate use of Access Remote PC
+level: medium

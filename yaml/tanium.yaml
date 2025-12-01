@@ -1,42 +1,42 @@
 Name: Tanium
-Description: Tanium is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Tanium is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-14'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - TaniumClient.exe
-  - TaniumCX.exe
-  - TaniumExecWrapper.exe
-  - TaniumFileInfo.exe
-  - TPowerShell.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - TaniumClient.exe
+        - TaniumCX.exe
+        - TaniumExecWrapper.exe
+        - TaniumFileInfo.exe
+        - TPowerShell.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - cloud.tanium.com
-    - '*.cloud.tanium.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - cloud.tanium.com
+              - '*.cloud.tanium.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_network_sigma.yml
-  Description: Detects potential network activity of Tanium RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_processes_sigma.yml
-  Description: Detects potential processes activity of Tanium RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_network_sigma.yml
+      Description: Detects potential network activity of Tanium RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_processes_sigma.yml
+      Description: Detects potential processes activity of Tanium RMM tool
 References:
-- https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
+    - https://help.tanium.com/bundle/ug_client_cloud/page/client/platform_connections.html
 Acknowledgement: []

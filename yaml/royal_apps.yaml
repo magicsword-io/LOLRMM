@@ -1,39 +1,39 @@
 Name: Royal Apps
-Description: Royal Apps is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - royalserver.exe
-  - royalts.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - royalserver.exe
+        - royalts.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_network_sigma.yml
-  Description: Detects potential network activity of Royal Apps RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_processes_sigma.yml
-  Description: Detects potential processes activity of Royal Apps RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_network_sigma.yml
+      Description: Detects potential network activity of Royal Apps RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_processes_sigma.yml
+      Description: Detects potential processes activity of Royal Apps RMM tool
 References:
-- https://www.royalapps.com/ts/win/download
+    - https://www.royalapps.com/ts/win/download
 Acknowledgement: []

@@ -1,31 +1,31 @@
 Name: Netop
-Description: Netop is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Netop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-    - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files\Danware Data\NetOp Packn Deploy\*
-  - '*\Danware Data\NetOp Packn Deploy\*'
-  - '*\Netop Remote Control\*'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Danware Data\NetOp Packn Deploy\*
+        - '*\Danware Data\NetOp Packn Deploy\*'
+        - '*\Netop Remote Control\*'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections: []
 References: []
 Acknowledgement: []

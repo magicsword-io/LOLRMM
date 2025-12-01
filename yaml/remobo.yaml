@@ -1,40 +1,40 @@
 Name: Remobo
-Description: Remobo is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Remobo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - remobo.exe
-  - remobo_client.exe
-  - remobo_tracker.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - remobo.exe
+        - remobo_client.exe
+        - remobo_tracker.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - remobo.en.softonic.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - remobo.en.softonic.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remobo_network_sigma.yml
-  Description: Detects potential network activity of Remobo RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remobo_processes_sigma.yml
-  Description: Detects potential processes activity of Remobo RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remobo_network_sigma.yml
+      Description: Detects potential network activity of Remobo RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remobo_processes_sigma.yml
+      Description: Detects potential processes activity of Remobo RMM tool
 References:
-- https://www.remobo.com - DOA as of 2024
+    - https://www.remobo.com - DOA as of 2024
 Acknowledgement: []

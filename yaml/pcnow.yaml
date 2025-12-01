@@ -1,39 +1,39 @@
 Name: Pcnow
-Description: Pcnow is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Pcnow is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - mwcliun.exe
-  - pcnmgr.exe
-  - webexpcnow.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - mwcliun.exe
+        - pcnmgr.exe
+        - webexpcnow.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - au.pcmag.com/utilities/21470/webex-pcnow
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - au.pcmag.com/utilities/21470/webex-pcnow
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml
-  Description: Detects potential network activity of Pcnow RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml
-  Description: Detects potential processes activity of Pcnow RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml
+      Description: Detects potential network activity of Pcnow RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml
+      Description: Detects potential processes activity of Pcnow RMM tool
 References:
-- http://pcnow.webex.com/ - DOA as of 2024
+    - http://pcnow.webex.com/ - DOA as of 2024
 Acknowledgement: []

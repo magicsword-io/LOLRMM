@@ -1,0 +1,88 @@
+Name: baramundi Management Suite
+Category: RMM
+Description: |
+    baramundi Management Suite is a comprehensive Unified Endpoint Management (UEM) platform designed for automated endpoint management across Windows, macOS, iOS, Linux, and Android devices. It provides features for inventory and network discovery, endpoint security, patch management, mobile device management (MDM), IT automation, operating system deployment and configuration, remote access service, digital employee experience (DEX), and license management. The baramundi Management Agent (bma.exe) operates as a Windows service named BARAAGNT and is used for remote monitoring and management of enterprise systems. The suite is available for on-premises, hybrid, or fully hosted deployment. baramundi also offers the Proactive Hub, a cloud-based platform for proactive IT management.
+Author: '@m_haggis'
+Created: '2025-10-28'
+LastModified: '2025-10-28'
+Details:
+    Website: https://www.baramundi.com/en-us/
+    PEMetadata:
+        - Filename: bma.exe
+          OriginalFileName: bma.exe
+          Description: baramundi Management Agent
+          Product: baramundi Management Suite
+    Privileges: System
+    Free: false
+    Verification: true
+    SupportedOS:
+        - Windows
+        - Linux
+        - Mac
+        - Android
+        - IOS
+    Capabilities:
+        - Remote Management
+        - Inventory and Network Discovery
+        - Endpoint Security
+        - Patch Management
+        - Mobile Device Management
+        - IT Automation
+        - OS Deployment and Configuration
+        - Remote Access Service
+        - Digital Employee Experience
+        - License Management
+        - File Transfer
+        - Software Distribution
+        - Vulnerability Scanning
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\bsag\bma\*
+        - C:\Program Files\bsag\*
+        - C:\Program Files (x86)\bsag\bma\*
+        - C:\Program Files (x86)\bsag\*
+Artifacts:
+    Disk:
+        - File: C:\Program Files\bsag\bma\bma.exe
+          Description: |
+            baramundi Management Agent executable. Main service binary for the baramundi Management Suite agent that runs as a Windows service (BARAAGNT). Depends on RpcSs service.
+          OS: Windows
+          Example:
+              - C:\Program Files\bsag\bma\bma.exe
+    Network:
+        - Description: Primary communication with baramundi Management Server over HTTPS
+          Domains:
+              - '*.baramundi.com'
+              - www.baramundi.com
+              - docs.baramundi.com
+              - isodownload.baramundi.com
+          Ports:
+              - 443
+              - 2608
+        - Description: HTTP communication for updates and downloads
+          Domains:
+              - '*.baramundi.com'
+          Ports:
+              - 80
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/baramundi_registry_sigma.yml
+      Description: Detects potential registry activity of baramundi Management Suite RMM tool
+      Name: baramundi Management Suite Registry Detection
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/baramundi_network_sigma.yml
+      Description: Detects potential network activity of baramundi Management Suite RMM tool
+      Name: baramundi Management Suite Network Detection
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/baramundi_files_sigma.yml
+      Description: Detects potential file activity of baramundi Management Suite RMM tool
+      Name: baramundi Management Suite File Detection
+References:
+    - https://www.baramundi.com/en-us/management-suite/
+    - https://www.baramundi.com/en-us/resources/demo-trial-version/
+    - https://www.herdprotect.com/bma.exe-fcf742c1a764b713f94e0e377e4e4089c1274dfc.aspx
+    - https://docs.baramundi.com/
+    - https://www.virustotal.com/gui/file/465a46c2677345cadf578623c69755cefd45320bd5cc2094af11ba642a357026
+    - https://www.virustotal.com/gui/file/47d9dbd0296aa8321b3f7fd99cd40ffabc8d11c5bd7a1d08e2f9c0f7ce87a64a/details
+    - https://www.virustotal.com/gui/file/c7b570d3c52f67cd557cb76f54fc7e329a7f4429b2eaf652e871389701e61e62/details
+    - https://www.virustotal.com/gui/file/1bd486d84ae929a501f2488e95ef51dc4e28bdac645beac06277092487568093/details
+Acknowledgement:
+    - Person: Michael Haag
+      Handle: '@M_haggis'

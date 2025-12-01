@@ -1,28 +1,28 @@
 Name: WebEx (Remote Access)
-Description: WebEx (Remote Access) is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Category: 'RMM'
+Description: WebEx (Remote Access) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-14'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths: []
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths: []
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections: []
 References:
-- https://help.webex.com/en-us/article/nyc3q0b/Set-Up-a-Computer-for-Remote-Access
+    - https://help.webex.com/en-us/article/nyc3q0b/Set-Up-a-Computer-for-Remote-Access
 Acknowledgement: []

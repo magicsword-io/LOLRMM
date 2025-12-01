@@ -1,25 +1,36 @@
 title: Potential PSEXEC (Clone) RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - paexec.exe
-    - PAExec-*.exe
-    - remcom.exe
-    - remcomsvc.exe
-    - xcmd.exe
-    - xcmdsvc.exe
-  condition: selection
-id: ce875247-1a7a-4679-8fdd-23736f66fbf7
+id: 598933f0-cccc-4996-9706-b5664854dbed
 status: experimental
-description: Detects potential processes activity of PSEXEC (Clone) RMM tool
+description: |
+    Detects potential processes activity of PSEXEC (Clone) RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - paexec.exe
+            - PAExec-*.exe
+            - remcom.exe
+            - remcomsvc.exe
+            - xcmd.exe
+            - xcmdsvc.exe
+    selection_image:
+        Image|endswith:
+            - paexec.exe
+            - PAExec-*.exe
+            - remcom.exe
+            - remcomsvc.exe
+            - xcmd.exe
+            - xcmdsvc.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of PSEXEC (Clone)
+    - Legitimate use of PSEXEC (Clone)
 level: medium

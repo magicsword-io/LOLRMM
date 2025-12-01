@@ -1,40 +1,39 @@
 Name: CrossTec Remote Control
-Description: CrossTec Remote Control is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Category: 'RMM'
+Description: CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - PCIVIDEO.EXE
-  - supporttool.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - PCIVIDEO.EXE
+        - supporttool.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - crosstecsoftware.com/remotecontrol
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - crosstecsoftware.com/remotecontrol
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_network_sigma.yml
-  Description: Detects potential network activity of CrossTec Remote Control RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_processes_sigma.yml
-  Description: Detects potential processes activity of CrossTec Remote Control RMM
-    tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_network_sigma.yml
+      Description: Detects potential network activity of CrossTec Remote Control RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_processes_sigma.yml
+      Description: Detects potential processes activity of CrossTec Remote Control RMM tool
 References:
-- www.crosstecsoftware.com/supporthome.html - domain DOA 2/1/2024
+    - https://www.crosstecsoftware.com/supporthome.html # Domain DOA 2/1/2024
 Acknowledgement: []

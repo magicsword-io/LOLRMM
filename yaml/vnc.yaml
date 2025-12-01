@@ -1,44 +1,44 @@
 Name: VNC
-Description: VNC is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: VNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-14'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - winvnc*.exe
-  - vncserver.exe
-  - winwvc.exe
-  - winvncsc.exe
-  - vncserverui.exe
-  - vncviewer.exe
-  - winvnc.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - winvnc*.exe
+        - vncserver.exe
+        - winwvc.exe
+        - winvncsc.exe
+        - vncserverui.exe
+        - vncviewer.exe
+        - winvnc.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - realvnc.com/en/connect/download/vnc
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - realvnc.com/en/connect/download/vnc
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_network_sigma.yml
-  Description: Detects potential network activity of VNC RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_processes_sigma.yml
-  Description: Detects potential processes activity of VNC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_network_sigma.yml
+      Description: Detects potential network activity of VNC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vnc_processes_sigma.yml
+      Description: Detects potential processes activity of VNC RMM tool
 References:
-- https://realvnc.com/en/connect/download/vnc
+    - https://realvnc.com/en/connect/download/vnc
 Acknowledgement: []

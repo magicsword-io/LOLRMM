@@ -1,40 +1,40 @@
 Name: GotoHTTP
-Description: GotoHTTP is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: GotoHTTP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-08'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - GotoHTTP_x64.exe
-  - gotohttp.exe
-  - GotoHTTP*.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - GotoHTTP_x64.exe
+        - gotohttp.exe
+        - GotoHTTP*.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.gotohttp.com'
-    - gotohttp.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.gotohttp.com'
+              - gotohttp.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_network_sigma.yml
-  Description: Detects potential network activity of GotoHTTP RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_processes_sigma.yml
-  Description: Detects potential processes activity of GotoHTTP RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_network_sigma.yml
+      Description: Detects potential network activity of GotoHTTP RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_processes_sigma.yml
+      Description: Detects potential processes activity of GotoHTTP RMM tool
 References:
-- https://gotohttp.com/goto/help.12x
+    - https://gotohttp.com/goto/help.12x
 Acknowledgement: []

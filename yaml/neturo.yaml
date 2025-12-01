@@ -1,40 +1,40 @@
 Name: Neturo
-Description: Neturo is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: Neturo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - neturo*.exe
-  - ntrntservice.exe
-  - neturo.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - neturo*.exe
+        - ntrntservice.exe
+        - neturo.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - neturo.uplus.co.kr
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - neturo.uplus.co.kr
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_network_sigma.yml
-  Description: Detects potential network activity of Neturo RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_processes_sigma.yml
-  Description: Detects potential processes activity of Neturo RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_network_sigma.yml
+      Description: Detects potential network activity of Neturo RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/neturo_processes_sigma.yml
+      Description: Detects potential processes activity of Neturo RMM tool
 References:
-- 'Obscure, located an older copy here: http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2'
+    - http://www.iconpos.com/pos/home/iconpos/bbs.php?id=file&q=view&uid=2
 Acknowledgement: []

@@ -1,42 +1,40 @@
 Name: Pocket Controller (Soti Xsight)
-Description: Pocket Controller (Soti Xsight) is a remote monitoring and management
-  (RMM) tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: Pocket Controller (Soti Xsight) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - pocketcontroller.exe
-  - wysebrowser.exe
-  - XSightService.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - pocketcontroller.exe
+        - wysebrowser.exe
+        - XSightService.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*soti.net'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*soti.net'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__network_sigma.yml
-  Description: Detects potential network activity of Pocket Controller (Soti Xsight)
-    RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__processes_sigma.yml
-  Description: Detects potential processes activity of Pocket Controller (Soti Xsight)
-    RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__network_sigma.yml
+      Description: Detects potential network activity of Pocket Controller (Soti Xsight) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__processes_sigma.yml
+      Description: Detects potential processes activity of Pocket Controller (Soti Xsight) RMM tool
 References:
-- https://pulse.soti.net/support/soti-xsight/help/
+    - https://pulse.soti.net/support/soti-xsight/help/
 Acknowledgement: []

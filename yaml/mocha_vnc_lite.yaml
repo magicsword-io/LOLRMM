@@ -1,30 +1,30 @@
 Name: Mocha VNC Lite
-Description: Mocha VNC Lite is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Category: 'RMM'
+Description: Mocha VNC Lite is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - This installs a modified VNC and cannot be blocked by path separate from VNC
-  - This installs a modified VNC and cannot be blocked by path separate from VNC
-  - '*\RealVNC\VNC4\*'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - This installs a modified VNC and cannot be blocked by path separate from VNC
+        - This installs a modified VNC and cannot be blocked by path separate from VNC
+        - '*\RealVNC\VNC4\*'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections: []
 References: []
 Acknowledgement: []

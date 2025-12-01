@@ -1,21 +1,24 @@
 title: Potential TeleDesktop RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - user_managed
-    - tele-desk.com
-  condition: selection
-id: 81a1ee71-af2f-4190-8402-8f48876a11fa
+id: 6d77f583-7194-495b-af7c-9190730aaa31
 status: experimental
-description: Detects potential network activity of TeleDesktop RMM tool
+description: |
+    Detects potential network activity of TeleDesktop RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - user_managed
+            - tele-desk.com
+    condition: selection
 falsepositives:
-- Legitimate use of TeleDesktop
+    - Legitimate use of TeleDesktop
 level: medium

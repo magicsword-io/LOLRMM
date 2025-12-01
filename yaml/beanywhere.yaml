@@ -1,45 +1,45 @@
 Name: BeAnyWhere
-Description: BeAnyWhere is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: BeAnyWhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-07'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - basuptshelper.exe
-  - basupsrvcupdate.exe
-  - BASupApp.exe
-  - BASupSysInf.exe
-  - BASupAppSrvc.exe
-  - TakeControl.exe
-  - BASupAppElev.exe
-  - basupsrvc.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - basuptshelper.exe
+        - basupsrvcupdate.exe
+        - BASupApp.exe
+        - BASupSysInf.exe
+        - BASupAppSrvc.exe
+        - TakeControl.exe
+        - BASupAppElev.exe
+        - basupsrvc.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - beanywhere.en.uptodown.com/windows
-    - beanywhere.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - beanywhere.en.uptodown.com/windows
+              - beanywhere.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_network_sigma.yml
-  Description: Detects potential network activity of BeAnyWhere RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_processes_sigma.yml
-  Description: Detects potential processes activity of BeAnyWhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_network_sigma.yml
+      Description: Detects potential network activity of BeAnyWhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_processes_sigma.yml
+      Description: Detects potential processes activity of BeAnyWhere RMM tool
 References:
-- https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx
+    - https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx
 Acknowledgement: []

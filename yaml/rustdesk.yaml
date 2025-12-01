@@ -1,54 +1,56 @@
 Name: RustDesk
-Description: RustDesk is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: RustDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-09'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: https://rustdesk.com/
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: 'Yes'
-  Verification: ''
-  SupportedOS:
-  - Windows
-  - Linux
-  - MacOS
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - rustdesk*.exe
-  - rustdesk.exe
-  - C:\Users\*\AppData\Local\rustdesk\rustdesk.exe
-  - C:\Users\*\AppData\Local\rustdesk\*
-  - C:\Program Files\RustDesk
+    Website: https://rustdesk.com/
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: 'Yes'
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - Linux
+        - MacOS
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - rustdesk*.exe
+        - rustdesk.exe
+        - C:\Users\*\AppData\Local\rustdesk\rustdesk.exe
+        - C:\Users\*\AppData\Local\rustdesk\*
+        - C:\Program Files\RustDesk
 Artifacts:
-  Disk:
-  - File: C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\*
-    Description: N/A
-    OS: Windows
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - rustdesk.com
-    - user_managed
-    - web.rustdesk.com
-    - api.rustdesk.com
-    - rs-ny.rustdesk.com
-    Ports:
-    - 443
-    - 21115
-    - 21116
+    Disk:
+        - File: C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\*
+          Description: N/A
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - rustdesk.com
+              - user_managed
+              - web.rustdesk.com
+              - api.rustdesk.com
+              - rs-ny.rustdesk.com
+          Ports:
+              - 443
+              - 21115
+              - 21116
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml
-  Description: Detects potential network activity of RustDesk RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml
-  Description: Detects potential processes activity of RustDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml
+      Description: Detects potential network activity of RustDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_files_sigma.yml
+      Description: Detects potential files activity of RustDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml
+      Description: Detects potential processes activity of RustDesk RMM tool
 References:
-- https://rustdesk.com/docs/en/
+    - https://rustdesk.com/docs/en/
 Acknowledgement: []

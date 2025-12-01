@@ -1,47 +1,47 @@
 Name: ngrok
-Description: ngrok is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Category: 'RMM'
+Description: ngrok is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: Jose Hernandez
 Created: '2024-07-19'
-LastModified: '2025-06-19'
+LastModified: '2024-07-19'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - ngrok.exe
-  - C:\*\ngrok.zip
-  - '*\ngrok*'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - ngrok.exe
+        - C:\*\ngrok.zip
+        - '*\ngrok*'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - connect.ngrok-agent.com
-    - connect.us.ngrok-agent.com
-    - connect.eu.ngrok-agent.com
-    - connect.ap.ngrok-agent.com
-    - connect.au.ngrok-agent.com
-    - connect.sa.ngrok-agent.com
-    - connect.jp.ngrok-agent.com
-    - connect.in.ngrok-agent.com
-    - ngrok.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - connect.ngrok-agent.com
+              - connect.us.ngrok-agent.com
+              - connect.eu.ngrok-agent.com
+              - connect.ap.ngrok-agent.com
+              - connect.au.ngrok-agent.com
+              - connect.sa.ngrok-agent.com
+              - connect.jp.ngrok-agent.com
+              - connect.in.ngrok-agent.com
+              - ngrok.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_network_sigma.yml
-  Description: Detects potential network activity of ngrok RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_processes_sigma.yml
-  Description: Detects potential processes activity of ngrok RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_network_sigma.yml
+      Description: Detects potential network activity of ngrok RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_processes_sigma.yml
+      Description: Detects potential processes activity of ngrok RMM tool
 References:
-- https://ngrok.com/docs/guides/running-behind-firewalls/
+    - https://ngrok.com/docs/guides/running-behind-firewalls/
 Acknowledgement: []

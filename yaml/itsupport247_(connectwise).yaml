@@ -1,40 +1,38 @@
 Name: ITSupport247 (ConnectWise)
-Description: ITSupport247 (ConnectWise) is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Category: 'RMM'
+Description: ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: '2024-02-08'
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - saazapsc.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - saazapsc.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.itsupport247.net'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.itsupport247.net'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml
-  Description: Detects potential network activity of ITSupport247 (ConnectWise) RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__processes_sigma.yml
-  Description: Detects potential processes activity of ITSupport247 (ConnectWise)
-    RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml
+      Description: Detects potential network activity of ITSupport247 (ConnectWise) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__processes_sigma.yml
+      Description: Detects potential processes activity of ITSupport247 (ConnectWise) RMM tool
 References:
-- https://control.itsupport247.net/
+    - https://control.itsupport247.net/
 Acknowledgement: []

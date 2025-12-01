@@ -1,36 +1,36 @@
 Name: Impero Connect
-Description: Impero Connect is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Category: 'RMM'
+Description: Impero Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
-Created: ''
-LastModified: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - ImperoClientSVC.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - ImperoClientSVC.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - imperosoftware.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - imperosoftware.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_network_sigma.yml
-  Description: Detects potential network activity of Impero Connect RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_processes_sigma.yml
-  Description: Detects potential processes activity of Impero Connect RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_network_sigma.yml
+      Description: Detects potential network activity of Impero Connect RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/impero_connect_processes_sigma.yml
+      Description: Detects potential processes activity of Impero Connect RMM tool
 References: []
 Acknowledgement: []
