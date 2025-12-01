@@ -5,30 +5,30 @@ Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'
 Details:
-  Website: https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman
-  Privileges: User
-  Free: true
-  Verification: true
-  SupportedOS:
-  - Windows
-  Capabilities:
-  - Remote Desktop Management
-  - Multiple RDP Sessions
-  Vulnerabilities:
-  - CVE-2020-0765
-  InstallationPaths:
-  - '*\RDCMan.exe'
-  - '*\RDCMan-x86.exe'
+    Website: https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman
+    Privileges: User
+    Free: true
+    Verification: true
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote Desktop Management
+        - Multiple RDP Sessions
+    Vulnerabilities:
+        - CVE-2020-0765
+    InstallationPaths:
+        - '*\RDCMan.exe'
+        - '*\RDCMan-x86.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- KQL: https://github.com/Koifman/Deathcon25/blob/main/rmm_rodeo/rdcman/kql.kql
-  Description: KQL query for detecting RDCMan activity in Microsoft Sentinel
+    - KQL: https://github.com/Koifman/Deathcon25/blob/main/rmm_rodeo/rdcman/kql.kql
+      Description: KQL query for detecting RDCMan activity in Microsoft Sentinel
 References:
-- https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman
-- https://dirteam.com/sander/2021/06/24/remote-desktop-connection-manager-rdcman-is-back/
-- https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0765
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman
+    - https://dirteam.com/sander/2021/06/24/remote-desktop-connection-manager-rdcman-is-back/
+    - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0765
 Acknowledgement: []

@@ -5,27 +5,27 @@ Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: 'true'
-  SupportedOS:
-  - Windows
-  - Linux
-  - Mac
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - ehorus standalone.exe
-  - ehorus_agent.exe
-  - ehorus_cmd.exe
-  - ehorus_launcher.exe
-  - ehorus_uit.exe
-  - 'C:\Program Files\ehorus_agent\*'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: 'true'
+    SupportedOS:
+        - Windows
+        - Linux
+        - Mac
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - ehorus standalone.exe
+        - ehorus_agent.exe
+        - ehorus_cmd.exe
+        - ehorus_launcher.exe
+        - ehorus_uit.exe
+        - 'C:\Program Files\ehorus_agent\*'
 Artifacts:
     Disk: []
     EventLog: []
@@ -42,5 +42,5 @@ Detections:
       Description: Detects potential processes activity of eHorus RMM tool
 References: []
 Acknowledgement:
-- Person: 'Daniel Koifman'
-  Handle: '@KoifSec'
+    - Person: 'Daniel Koifman'
+      Handle: '@KoifSec'

@@ -4,67 +4,67 @@ Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'
 Details:
-  Website: https://www.logmein.com/products/resolve
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: User
-  Free: false
-  Verification: true
-  SupportedOS:
-    - Android
-    - Windows
-    - Mac
-  Capabilities:
-  - File Transfer
-  - File System Access
-  - Remote Control
-  - GUI Support
-  - Command line Support
-  Vulnerabilities: []
-  InstallationPaths:
-  - 'C:\Program Files (x86)\GoTo Resolve Unattended\*'
-  - 'C:\Program Files\GoTo Resolve Unattended\*'
-  - '*\GoTo Resolve Unattended\*'
-  - 'GoToResolveExternalModuleHandler.exe'
-  - 'GoToResolveFileManager.exe'
-  - 'GoToResolveLoggerProcess.exe'
-  - 'GoToResolveNetworkChecker.exe'
-  - 'GoToResolveProcessChecker.exe'
-  - 'GoToResolveQuickView.exe'
-  - 'GoToResolveRegistryEditor.exe'
-  - 'GoToResolveRemoteControl.exe'
-  - 'GoToResolveService.exe'
-  - 'GoToResolveServiceManager.exe'
-  - 'GoToResolveTerminal.exe'
-  - 'GoToResolveTools32.exe'
-  - 'GoToResolveTools64.exe'
-  - 'GoToResolveUi.exe'
-  - 'GoToResolveUnattended.exe'
-  - 'GoToResolveUnattendedRemover.exe'
-  - 'GoToResolveUnattendedUi.exe'
+    Website: https://www.logmein.com/products/resolve
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: User
+    Free: false
+    Verification: true
+    SupportedOS:
+        - Android
+        - Windows
+        - Mac
+    Capabilities:
+        - File Transfer
+        - File System Access
+        - Remote Control
+        - GUI Support
+        - Command line Support
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'C:\Program Files (x86)\GoTo Resolve Unattended\*'
+        - 'C:\Program Files\GoTo Resolve Unattended\*'
+        - '*\GoTo Resolve Unattended\*'
+        - 'GoToResolveExternalModuleHandler.exe'
+        - 'GoToResolveFileManager.exe'
+        - 'GoToResolveLoggerProcess.exe'
+        - 'GoToResolveNetworkChecker.exe'
+        - 'GoToResolveProcessChecker.exe'
+        - 'GoToResolveQuickView.exe'
+        - 'GoToResolveRegistryEditor.exe'
+        - 'GoToResolveRemoteControl.exe'
+        - 'GoToResolveService.exe'
+        - 'GoToResolveServiceManager.exe'
+        - 'GoToResolveTerminal.exe'
+        - 'GoToResolveTools32.exe'
+        - 'GoToResolveTools64.exe'
+        - 'GoToResolveUi.exe'
+        - 'GoToResolveUnattended.exe'
+        - 'GoToResolveUnattendedRemover.exe'
+        - 'GoToResolveUnattendedUi.exe'
 Artifacts:
-  Disk: []
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: GoToResolve_*
-    ImagePath: '"C:\Program Files (x86)\GoTo Resolve Unattended\*\GoToResolveProcessChecker.exe" -Service -WorkFolder "C:\Program Files (x86)\GoTo Resolve Unattended\*" -ApplicationType "4"'
-    Description: Service installation event as result of GoTo Resolve installation.
-  - EventID: 4688
-    ProviderName: Microsoft Windows security auditing
-    LogFile: Security.evtx
-    NewProcessName: 'C:\Windows\System32\sc.exe'
-    CreatorProcessName: 'C:\Windows\System32\svchost.exe'
-    CommandLine: '"C:\Windows\system32\sc.exe" start GoToResolve_*'
-    Description: Process creation event as result of GoTo Resolve installation.
-  Registry: 
-  - Path: HKLM\SOFTWARE\GoTo Resolve Unattended\
-    Description: N/A
-  Network: []
+    Disk: []
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: GoToResolve_*
+          ImagePath: '"C:\Program Files (x86)\GoTo Resolve Unattended\*\GoToResolveProcessChecker.exe" -Service -WorkFolder "C:\Program Files (x86)\GoTo Resolve Unattended\*" -ApplicationType "4"'
+          Description: Service installation event as result of GoTo Resolve installation.
+        - EventID: 4688
+          ProviderName: Microsoft Windows security auditing
+          LogFile: Security.evtx
+          NewProcessName: 'C:\Windows\System32\sc.exe'
+          CreatorProcessName: 'C:\Windows\System32\svchost.exe'
+          CommandLine: '"C:\Windows\system32\sc.exe" start GoToResolve_*'
+          Description: Process creation event as result of GoTo Resolve installation.
+    Registry:
+        - Path: HKLM\SOFTWARE\GoTo Resolve Unattended\
+          Description: N/A
+    Network: []
 Detections: []
 References:
-- https://asec.ahnlab.com/en/90968/
+    - https://asec.ahnlab.com/en/90968/
 Acknowledgement: []

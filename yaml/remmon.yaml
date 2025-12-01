@@ -5,26 +5,26 @@ Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'
 Details:
-  Website: 'https://github.com/Netzwerkfehler/remmon'
-  Privileges: User
-  Free: true
-  Verification: false
-  SupportedOS:
-  - Windows
-  - Linux
-  Capabilities:
-  - Remote Monitoring
-  Vulnerabilities: []
-  InstallationPaths:
-  - '*\\Remmon.exe'
+    Website: 'https://github.com/Netzwerkfehler/remmon'
+    Privileges: User
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Windows
+        - Linux
+    Capabilities:
+        - Remote Monitoring
+    Vulnerabilities: []
+    InstallationPaths:
+        - '*\\Remmon.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- AQL: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/remmon/aql.aql
-  Description: QRadar AQL query for detecting Remmon process execution via EventID 4688, tracking parent process name, process name, and command-line arguments
+    - AQL: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/remmon/aql.aql
+      Description: QRadar AQL query for detecting Remmon process execution via EventID 4688, tracking parent process name, process name, and command-line arguments
 References:
-- https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0
+    - https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0
 Acknowledgement: []

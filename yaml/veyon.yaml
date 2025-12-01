@@ -5,69 +5,69 @@ Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
 LastModified: '2025-11-12'
 Details:
-  Website: 'https://veyon.io'
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-    Product: ''
-  Privileges: User
-  Free: true
-  Verification: false
-  SupportedOS:
-  - Linux
-  - Windows
-  Capabilities:
-  - Remote Control
-  - Screen Monitoring
-  - Screen Broadcasting (Demo Mode)
-  - Remote Command Execution
-  - File Transfer
-  - Power Management
-  - Screen Lock
-  - User Messaging
-  - Application Launching
-  - Screenshot Capture
-  - Clipboard Synchronization
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files\Veyon\*
-  - C:\Program Files (x86)\Veyon\*
-  - veyon-wcli.exe
-  - veyon-worker.exe
-  - veyon-server.exe
-  - veyon-service.exe
-  - veyon-master.exe
-  
+    Website: 'https://veyon.io'
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+        Product: ''
+    Privileges: User
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Linux
+        - Windows
+    Capabilities:
+        - Remote Control
+        - Screen Monitoring
+        - Screen Broadcasting (Demo Mode)
+        - Remote Command Execution
+        - File Transfer
+        - Power Management
+        - Screen Lock
+        - User Messaging
+        - Application Launching
+        - Screenshot Capture
+        - Clipboard Synchronization
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Veyon\*
+        - C:\Program Files (x86)\Veyon\*
+        - veyon-wcli.exe
+        - veyon-worker.exe
+        - veyon-server.exe
+        - veyon-service.exe
+        - veyon-master.exe
+
 Artifacts:
-  Disk:
-  - File: 'C:\Windows\Temp\VeyonServer.log'
-    Description: VeyonServer log file
-    OS: Windows
-  - File: 'C:\Windows\Temp\VeyonService.log'
-    Description: VeyonService log file
-    OS: Windows
-  - File: 'C:\Users\*\AppData\Local\VeyonCLI.log'
-    Description: Veyon command-line interface utility log
-    OS: Windows
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: Veyon Service
-    ImagePath: '"C:\\Program Files\\Veyon\\veyon-service.exe"'
-    Description: Service installation event for Veyon Service
-  Registry:
-  - Path: HKLM\SOFTWARE\Veyon Solutions
-    Description: Main Veyon configuration registry key containing all service and application settings
-  - Path: HKLM\SYSTEM\CurrentControlSet\Services\VeyonService
-    Description: Veyon service registration and configuration
-  Network: []
+    Disk:
+        - File: 'C:\Windows\Temp\VeyonServer.log'
+          Description: VeyonServer log file
+          OS: Windows
+        - File: 'C:\Windows\Temp\VeyonService.log'
+          Description: VeyonService log file
+          OS: Windows
+        - File: 'C:\Users\*\AppData\Local\VeyonCLI.log'
+          Description: Veyon command-line interface utility log
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Veyon Service
+          ImagePath: '"C:\\Program Files\\Veyon\\veyon-service.exe"'
+          Description: Service installation event for Veyon Service
+    Registry:
+        - Path: HKLM\SOFTWARE\Veyon Solutions
+          Description: Main Veyon configuration registry key containing all service and application settings
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\VeyonService
+          Description: Veyon service registration and configuration
+    Network: []
 Detections:
-- Splunk: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/veyon/spl.spl
-  Description: Detects Veyon RMM activity through registry modifications (EventCode 13), process creation (EventCode 1), and service installation (EventCode 4697)
+    - Splunk: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/veyon/spl.spl
+      Description: Detects Veyon RMM activity through registry modifications (EventCode 13), process creation (EventCode 1), and service installation (EventCode 4697)
 References:
-- https://veyon.io
-- https://github.com/veyon/veyon
-- https://docs.veyon.io/en/latest/
+    - https://veyon.io
+    - https://github.com/veyon/veyon
+    - https://docs.veyon.io/en/latest/
 Acknowledgement: []
