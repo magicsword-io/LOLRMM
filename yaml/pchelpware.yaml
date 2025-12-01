@@ -1,0 +1,36 @@
+Name: PChelpware
+Category: RMM
+Description: |
+    PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop software developed by the UltraVNC team. Built on VNC technology and following the RFB protocol, PChelpware is designed specifically for remote technical support scenarios, virtual training, and helpdesk operations.
+Author: 'Daniel Koifman (KoifSec)'
+Created: '2025-11-12'
+LastModified: '2025-11-12'
+Details:
+    Website: https://uvnc.com/downloads/pchelpware/
+    Privileges: User
+    Free: true
+    Verification: true
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote Desktop Control
+        - Remote Support
+        - Screen Sharing
+        - File Transfer
+    Vulnerabilities: []
+    InstallationPaths:
+        - '*\PcHelpWare_viewer.exe'
+Artifacts:
+    Disk:
+        - File: 'C:\temp_phw'
+          Description: Folder that is created upon PcHelpWare execution
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network: []
+Detections:
+    - Splunk: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/pchelpware/spl.spl
+      Description: Splunk SPL query detecting PChelpware activity through Sysmon EventCode 1 (process creation).
+References:
+    - https://uvnc.com/downloads/pchelpware/
+Acknowledgement: []

@@ -1,0 +1,45 @@
+Name: Remote Ripple
+Category: RMM
+Description: |
+    Remote Ripple is a free VNC viewer client developed by GlavSoft (the creators of TightVNC) for remote desktop access and control. It is a modern, lightweight viewer based on TightVNC technology that allows users to remotely access and control.
+Author: 'Daniel Koifman (KoifSec)'
+Created: '2025-11-12'
+LastModified: '2025-11-12'
+Details:
+    Website: https://remoteripple.com
+    Privileges: User
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Windows
+        - Mac
+        - Android
+        - iOS
+    Capabilities:
+        - Remote Control
+        - Remote View
+        - Clipboard Exchange
+        - File Transfer
+        - Screen Capture
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'C:\Program Files\Remote Ripple\*'
+        - 'C:\Program Files (x86)\Remote Ripple\*'
+        - 'RemoteRipple.exe'
+Artifacts:
+    Disk:
+        - File: '%APPDATA%\GlavSoft\RemoteRipple\*'
+          Description: Log files for RemoteRipple
+          OS: Windows
+        - File: '%TEMP%\Remote_Ripple_*'
+          Description: Temporary files/logs for RemoteRipple
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network: []
+Detections:
+    - AQL: https://github.com/Koifman/Deathcon25/blob/main/rmm_rodeo/remoteripple/aql.aql
+      Description: QRadar AQL query for detecting Remote Ripple RMM activity
+References:
+    - https://remoteripple.com
+Acknowledgement: []

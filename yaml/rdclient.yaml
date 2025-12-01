@@ -1,0 +1,44 @@
+Name: RdClient
+Category: RMM
+Description: |
+    RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote desktops in a tree view similar to the Windows Explorer.
+Author: 'Daniel Koifman (KoifSec)'
+Created: '2025-11-12'
+LastModified: '2025-11-12'
+Details:
+    Website: https://www.pierschel.com/en/software-blog/28-rdclient-en
+    Privileges: User
+    Free: true
+    Verification: true
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote Desktop Access
+        - Multiple Protocol Support
+        - Connection Management
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'C:\Program Files (x86)\RdClient\*'
+        - 'C:\Program Files\RdClient\*'
+        - 'rdclient.exe'
+        - 'RdClientInstaller.exe'
+        - 'SupportTool.exe'
+Artifacts:
+    Disk:
+        - File: '%APPDATA%\RdClient\*'
+          Description:
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SOFTWARE\RdClient
+          Description: RdClient Installation
+    Network: []
+Detections:
+    - AQL: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/rdclient/aql.aql
+      Description: QRadar AQL query detecting RdClient activity through process creation (EventID 4688) for rdclient.exe and supporttool.exe, and registry modifications (EventID 4657) to SOFTWARE\RdClient registry path
+References:
+    - https://rdclient.en.softonic.com/
+    - https://geekflare.com/software/remote-desktop-client-software/
+Acknowledgement:
+    - Person: 'Daniel Koifman'
+      Handle: '@KoifSec'

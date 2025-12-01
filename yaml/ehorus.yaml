@@ -12,12 +12,20 @@ Details:
         Description: ''
     Privileges: ''
     Free: ''
-    Verification: ''
-    SupportedOS: []
+    Verification: 'true'
+    SupportedOS:
+        - Windows
+        - Linux
+        - Mac
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - ehorus standalone.exe
+        - 'C:\Program Files\ehorus_agent\*'
+        - 'ehorus standalone.exe'
+        - 'ehorus_agent.exe'
+        - 'ehorus_cmd.exe'
+        - 'ehorus_launcher.exe'
+        - 'ehorus_uit.exe'
 Artifacts:
     Disk: []
     EventLog: []
@@ -33,4 +41,6 @@ Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ehorus_processes_sigma.yml
       Description: Detects potential processes activity of eHorus RMM tool
 References: []
-Acknowledgement: []
+Acknowledgement:
+    - Person: 'Daniel Koifman'
+      Handle: '@KoifSec'
