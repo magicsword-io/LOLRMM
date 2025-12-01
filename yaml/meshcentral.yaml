@@ -1,32 +1,36 @@
 Name: MeshCentral
-Description: >
-  MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used along with MeshCentral to remotely manage computers. MeshAgent can execute commands on the target host by leveraging win-console to obscure their activities and win-dispatcher to run malicious code through IPC with child processes.
+Description: 'MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent
+  used along with MeshCentral to remotely manage computers. MeshAgent can execute
+  commands on the target host by leveraging win-console to obscure their activities
+  and win-dispatcher to run malicious code through IPC with child processes.
+
+  '
 Author: '@kostastsale'
 Created: '2024-09-20'
 LastModified: '2025-07-18'
 Details:
-  Website: 'https://meshcentral.com/'
+  Website: https://meshcentral.com/
   PEMetadata:
-    Filename: 'MeshAgent.exe'
+    Filename: MeshAgent.exe
     OriginalFileName: ''
-    Description: 'MeshCentral Background Service Agent'
-  Privileges: 'SYSTEM'
+    Description: MeshCentral Background Service Agent
+  Privileges: SYSTEM
   Free: 'Yes'
-  Verification: 'N/A'
+  Verification: N/A
   SupportedOS:
-    - Windows
-    - Linux
-    - MacOS
-    - FreeBSD
-  Capabilities: 
-    - Remote Desktop & Terminal
-    - Remote File Access
-    - Text and Voice Chat
-    - Server File Storage
-    - Real-time User interface
-    - Port Forwarding
+  - Windows
+  - Linux
+  - MacOS
+  - FreeBSD
+  Capabilities:
+  - Remote Desktop & Terminal
+  - Remote File Access
+  - Text and Voice Chat
+  - Server File Storage
+  - Real-time User interface
+  - Port Forwarding
   Vulnerabilities:
-    - CVE-2024-26135
+  - CVE-2024-26135
   InstallationPaths:
   - meshcentral*.exe
   - meshagent*.exe
@@ -38,7 +42,10 @@ Artifacts:
     Description: Local MeshAgent service binary after installation
     OS: Windows
   - File: C:\Program Files\Mesh Agent\MeshAgent.msh
-    Description: Local MeshAgent service configuration file. Contains configuration settings including the MeshCentral server address, port, and other settings. If the MeshAgent is run without being installed, the configuration file is created in the same directory as the MeshAgent binary.
+    Description: Local MeshAgent service configuration file. Contains configuration
+      settings including the MeshCentral server address, port, and other settings.
+      If the MeshAgent is run without being installed, the configuration file is created
+      in the same directory as the MeshAgent binary.
     OS: Windows
   - File: /usr/local/mesh_services/meshagent/meshagent/meshagent
     Description: Local MeshAgent service binary after installation
@@ -72,12 +79,14 @@ Artifacts:
     - meshcentral.com
     Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml
-  Description: Detects potential network activity of MeshCentral RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml
-  Description: Detects potential processes activity of MeshCentral RMM tool
 - Sigma: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/proc_creation_windows_meshagent.yml
   Description: Detects MeshAgent Command Execution via MeshCentral
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_network_sigma.yml
+  Description: Detects potential network activity of MeshCentral RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_files_sigma.yml
+  Description: Detects potential files activity of MeshCentral RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/meshcentral_processes_sigma.yml
+  Description: Detects potential processes activity of MeshCentral RMM tool
 References:
 - https://ylianst.github.io/MeshCentral/meshcentral/
 - https://github.com/Ylianst/MeshAgent

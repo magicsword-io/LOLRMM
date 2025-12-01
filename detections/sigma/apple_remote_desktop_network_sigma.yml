@@ -1,20 +1,22 @@
 title: Potential Apple Remote Desktop RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - user_managed
-  condition: selection
-id: 3354bc61-36e7-463d-a0cd-8de668b2d0b8
+id: b6f5a66a-ed37-429a-8488-c196186726ca
 status: experimental
-description: Detects potential network activity of Apple Remote Desktop RMM tool
+description: |
+    Detects potential network activity of Apple Remote Desktop RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith: user_managed
+    condition: selection
 falsepositives:
-- Legitimate use of Apple Remote Desktop
+    - Legitimate use of Apple Remote Desktop
 level: medium

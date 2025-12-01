@@ -1,10 +1,10 @@
 Name: Parsec
 Description: "Parsec is a remote desktop streaming tool for remote access and monitoring,\
-  \ mainly used for gaming and collaboration. \n\nRemote desktop reimagined – a seamless\
-  \ 4k experience at up to 60 frames per second with near-zero latency. \nSecure,\
-  \ flexible, effortless access to whatever you do, at any time, from wherever you\
-  \ go.\n\nParsec focuses on real-time graphical interaction rather than system administration\
-  \ but can still be abused for lateral movement and initial access.\n"
+  \ mainly used for gaming and collaboration. \n\nRemote desktop reimagined \xE2\u20AC\
+  \u201C a seamless 4k experience at up to 60 frames per second with near-zero latency.\
+  \ \nSecure, flexible, effortless access to whatever you do, at any time, from wherever\
+  \ you go.\n\nParsec focuses on real-time graphical interaction rather than system\
+  \ administration but can still be abused for lateral movement and initial access.\n"
 Author: Luca Di Bartolomeo & Matt Green
 Created: '2025-03-16'
 LastModified: '2025-05-16'
@@ -78,12 +78,12 @@ Artifacts:
     - 443
     - 3478
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yaml
-  Description: Detects Potential Parsec RMM Tool Network Activity
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yaml
-  Description: Detects Potential Parsec RMM Tool Process Activity
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_registry_sigma.yaml
-  Description: Detects Potential Sigma RMM Tool Registry Activity
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_network_sigma.yml
+  Description: Detects potential network activity of Parsec RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_files_sigma.yml
+  Description: Detects potential files activity of Parsec RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parsec_processes_sigma.yml
+  Description: Detects potential processes activity of Parsec RMM tool
 References:
 - https://parsec.app/
 - https://www.virustotal.com/gui/file/206cd186aaa431d3975eb30f682b83851ef4f81125d2004f53b681117da23ec6/behavior

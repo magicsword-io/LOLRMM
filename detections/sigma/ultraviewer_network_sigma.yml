@@ -1,21 +1,24 @@
 title: Potential UltraViewer RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - '* .ultraviewer.net'
-    - ultraviewer.net
-  condition: selection
-id: c0e39e37-f563-46a1-90a7-2a1736c1165c
+id: 44060525-be85-4a53-8211-7592a6ea394d
 status: experimental
-description: Detects potential network activity of UltraViewer RMM tool
+description: |
+    Detects potential network activity of UltraViewer RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - *.ultraviewer.net
+            - ultraviewer.net
+    condition: selection
 falsepositives:
-- Legitimate use of UltraViewer
+    - Legitimate use of UltraViewer
 level: medium

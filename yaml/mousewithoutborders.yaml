@@ -28,17 +28,17 @@ Details:
   - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
 Artifacts:
   Disk:
-  - File: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBorders.exe'
+  - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBorders.exe
     Description: Main application binary
     OS: Windows
     Example:
     - 'SHA256: 0DE3E5D76E1359EEA6AAAD2A37F8D787CF4E1D686C4AB45C8221556CF5982BA1'
-  - File: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe'
+  - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
     Description: Optional service binary when Service Mode is enabled
     OS: Windows
     Example:
     - 'SHA256: D65D44126E2327891BA426A09471DF0564456A9B37AAD8B3453D2D5B06F6AEF3'
-  - File: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersHelper.exe'
+  - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersHelper.exe
     Description: Helper executable used by Mouse Without Borders
     OS: Windows
     Example:
@@ -48,7 +48,7 @@ Artifacts:
     ProviderName: Service Control Manager
     LogFile: System.evtx
     ServiceName: Mouse without Borders Service
-    ImagePath: 'C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe'
+    ImagePath: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
     Description: Service installed (user mode service), auto start, account LocalSystem
   Network:
   - Description: Peer discovery and control traffic
@@ -56,10 +56,12 @@ Artifacts:
     Ports:
     - 15100/tcp
     - 15101/tcp
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mouse_without_borders_files_sigma.yml
+  Description: Detects potential files activity of Mouse Without Borders RMM tool
 References:
 - https://www.microsoft.com/en-us/download/details.aspx?id=35460
 - https://learn.microsoft.com/windows/powertoys/mouse-without-borders
 - https://github.com/microsoft/PowerToys/issues/29700
-Acknowledgement: 
+Acknowledgement:
 - Person: Michael Haag

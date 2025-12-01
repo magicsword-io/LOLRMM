@@ -1,20 +1,22 @@
 title: Potential Royal TS RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - royalapps.com
-  condition: selection
-id: 6b0eb373-eb26-4648-84e3-cfd0259bbd8e
+id: 17763b87-0675-4d9d-95ef-0fb00bb0aa0b
 status: experimental
-description: Detects potential network activity of Royal TS RMM tool
+description: |
+    Detects potential network activity of Royal TS RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith: royalapps.com
+    condition: selection
 falsepositives:
-- Legitimate use of Royal TS
+    - Legitimate use of Royal TS
 level: medium

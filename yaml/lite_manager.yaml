@@ -25,6 +25,8 @@ Artifacts:
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/lite_manager_processes_sigma.yml
+  Description: Detects potential processes activity of Lite Manager RMM tool
 References: []
 Acknowledgement: []

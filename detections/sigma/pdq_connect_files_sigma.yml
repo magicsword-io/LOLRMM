@@ -1,0 +1,22 @@
+title: Potential PDQ Connect RMM Tool File Activity
+id: 03c294e2-f70b-4ed7-9e0c-ce140ee787a3
+status: experimental
+description: |
+    Detects potential files activity of PDQ Connect RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2025-12-01
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith: C:\ProgramData\PDQ\PDQConnectAgent\PDQConnectAgent.db-journal
+    condition: selection
+falsepositives:
+    - Legitimate use of PDQ Connect
+level: medium

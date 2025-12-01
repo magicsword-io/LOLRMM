@@ -1,0 +1,22 @@
+title: Potential RustDesk RMM Tool File Activity
+id: 08f48f25-fcee-48af-b7c3-8d8d128c7f64
+status: experimental
+description: |
+    Detects potential files activity of RustDesk RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2025-12-01
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith: C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\*
+    condition: selection
+falsepositives:
+    - Legitimate use of RustDesk
+level: medium

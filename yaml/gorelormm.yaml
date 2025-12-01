@@ -1,6 +1,7 @@
 Name: Gorelo RMM
 Category: RMM
-Description: 'Gorelo RMM is a remote monitoring and management tool facilitating remote access and control of devices for support and administration.'
+Description: Gorelo RMM is a remote monitoring and management tool facilitating remote
+  access and control of devices for support and administration.
 Author: Jean-Marc ALBERT
 Created: '2025-11-13'
 LastModified: '2025-11-14'
@@ -24,7 +25,7 @@ Details:
   - GUI Support
   - Command line Support
 InstallationPaths:
-  - C:\Program Files\Gorelo\*
+- C:\Program Files\Gorelo\*
 Artifacts:
   Disk:
   - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.AppManagement.zip
@@ -139,7 +140,12 @@ References:
 - https://www.linkedin.com/posts/magicswordio_new-to-lolrmmio-gorelormm-gorelormm-activity-7394482892422393856-BtKl/
 - https://app.any.run/tasks/8b12557e-8c76-41e8-a3c7-e491f32a0b11
 Acknowledgement:
-- Person: "Squiblydoo"
+- Person: Squiblydoo
   Handle: https://github.com/Squiblydoo
 - Person: Jean-Marc ALBERT
   Handle: in/jeanmarcalbert
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_network_sigma.yml
+  Description: Detects potential network activity of Gorelo RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_files_sigma.yml
+  Description: Detects potential files activity of Gorelo RMM RMM tool

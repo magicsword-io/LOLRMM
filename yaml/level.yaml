@@ -66,6 +66,8 @@ Artifacts:
 Detections:
 - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
   Description: Detects potential network activity of Level RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml
+  Description: Detects potential files activity of Level RMM tool
 References:
 - https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
 - https://docs.level.io/en/articles/9926456-level-watchdog-task

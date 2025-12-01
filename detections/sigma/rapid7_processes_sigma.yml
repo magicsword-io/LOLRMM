@@ -1,22 +1,30 @@
 title: Potential Rapid7 RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - ir_agent.exe
-    - rapid7_agent_core.exe
-    - rapid7_endpoint_broker.exe
-  condition: selection
-id: 020a798c-246d-45fb-85bf-5df3be0cbf06
+id: 9de5aaf3-eb1c-4641-b646-f1d525b85244
 status: experimental
-description: Detects potential processes activity of Rapid7 RMM tool
+description: |
+    Detects potential processes activity of Rapid7 RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - ir_agent.exe
+            - rapid7_agent_core.exe
+            - rapid7_endpoint_broker.exe
+    selection_image:
+        Image|endswith:
+            - ir_agent.exe
+            - rapid7_agent_core.exe
+            - rapid7_endpoint_broker.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of Rapid7
+    - Legitimate use of Rapid7
 level: medium

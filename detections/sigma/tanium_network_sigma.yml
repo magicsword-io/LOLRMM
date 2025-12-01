@@ -1,21 +1,24 @@
 title: Potential Tanium RMM Tool Network Activity
-logsource:
-  product: windows
-  category: network_connection
-detection:
-  selection:
-    DestinationHostname|endswith:
-    - cloud.tanium.com
-    - '*.cloud.tanium.com'
-  condition: selection
-id: baa01bb8-f609-4d18-9831-dce77aa66a16
+id: b0d305ba-1065-4f38-8b5d-9bac2121faad
 status: experimental
-description: Detects potential network activity of Tanium RMM tool
+description: |
+    Detects potential network activity of Tanium RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - cloud.tanium.com
+            - *.cloud.tanium.com
+    condition: selection
 falsepositives:
-- Legitimate use of Tanium
+    - Legitimate use of Tanium
 level: medium

@@ -1,21 +1,28 @@
 title: Potential AeroAdmin RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - aeroadmin.exe
-    - AeroAdmin.exe
-  condition: selection
-id: bc9952c3-2d21-418e-9eed-a1d0450ee0c1
+id: 42b71d87-e5da-4468-94d3-a086e8648f41
 status: experimental
-description: Detects potential processes activity of AeroAdmin RMM tool
+description: |
+    Detects potential processes activity of AeroAdmin RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - aeroadmin.exe
+            - AeroAdmin.exe
+    selection_image:
+        Image|endswith:
+            - aeroadmin.exe
+            - AeroAdmin.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of AeroAdmin
+    - Legitimate use of AeroAdmin
 level: medium

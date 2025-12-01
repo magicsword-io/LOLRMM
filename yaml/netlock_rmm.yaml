@@ -49,7 +49,11 @@ Artifacts:
   EventLog: []
   Registry: []
   Network: []
-Detections: []
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netlock_rmm_files_sigma.yml
+  Description: Detects potential files activity of NetLock RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netlock_rmm_processes_sigma.yml
+  Description: Detects potential processes activity of NetLock RMM RMM tool
 References:
 - https://www.netlockrmm.com
 - https://github.com/0x101-Cyber-Security/NetLock-RMM

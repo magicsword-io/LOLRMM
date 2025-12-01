@@ -14,7 +14,7 @@ Details:
   Free: ''
   Verification: ''
   SupportedOS:
-    - Windows
+  - Windows
   Capabilities: []
   Vulnerabilities: []
   InstallationPaths:
@@ -35,10 +35,10 @@ Artifacts:
     - fleetdeck.io
     Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_network_sigma.yml
-  Description: Detects potential network activity of FleetDesk.io RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdesk.io_processes_sigma.yml
-  Description: Detects potential processes activity of FleetDesk.io RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_network_sigma.yml
+  Description: Detects potential network activity of FleetDeck.io RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_processes_sigma.yml
+  Description: Detects potential processes activity of FleetDeck.io RMM tool
 References:
 - https://fleetdeck.io/faq/
 Acknowledgement: []

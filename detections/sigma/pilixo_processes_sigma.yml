@@ -1,21 +1,28 @@
 title: Potential Pilixo RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - rdp.exe
-    - Pilixo_Installer*.exe
-  condition: selection
-id: c2649604-3b30-47b0-ae8b-aaea69ccdf9b
+id: 9c373007-c7ca-443e-a4fd-cc6d77d6f745
 status: experimental
-description: Detects potential processes activity of Pilixo RMM tool
+description: |
+    Detects potential processes activity of Pilixo RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - rdp.exe
+            - Pilixo_Installer*.exe
+    selection_image:
+        Image|endswith:
+            - rdp.exe
+            - Pilixo_Installer*.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of Pilixo
+    - Legitimate use of Pilixo
 level: medium

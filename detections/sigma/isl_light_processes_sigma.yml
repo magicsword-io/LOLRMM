@@ -1,22 +1,30 @@
 title: Potential ISL Light RMM Tool Process Activity
-logsource:
-  product: windows
-  category: process_creation
-detection:
-  selection:
-    ParentImage|endswith:
-    - islalwaysonmonitor.exe
-    - isllight.exe
-    - isllightservice.exe
-  condition: selection
-id: 28dff07b-24d9-454b-a219-d096ed081c61
+id: e825422e-f5da-4849-b0d1-47698c45ee7a
 status: experimental
-description: Detects potential processes activity of ISL Light RMM tool
+description: |
+    Detects potential processes activity of ISL Light RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2024/08/07
+date: 2025-12-01
 tags:
-- attack.execution
-- attack.t1219
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - islalwaysonmonitor.exe
+            - isllight.exe
+            - isllightservice.exe
+    selection_image:
+        Image|endswith:
+            - islalwaysonmonitor.exe
+            - isllight.exe
+            - isllightservice.exe
+    condition: 1 of selection_*
 falsepositives:
-- Legitimate use of ISL Light
+    - Legitimate use of ISL Light
 level: medium
