@@ -8,7 +8,7 @@ Description: "Parsec is a remote desktop streaming tool for remote access and mo
   \ administration but can still be abused for lateral movement and initial access.\n"
 Author: Luca Di Bartolomeo & Matt Green
 Created: '2025-03-16'
-LastModified: '2025-05-16'
+LastModified: '2025-03-16'
 Details:
   Website: https://parsec.app/
   PEMetadata:

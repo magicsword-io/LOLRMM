@@ -61,6 +61,26 @@ def check_date_iso8601(object, filename):
                 return f"ERROR: {field} field is not valid ISO 8601 format in file {filename}: '{date_value}' (object: {object.get('Name', 'Unknown')})"
     return None
 
+def check_date_chronology(object, filename):
+    """Validate that LastModified is equal to or newer than Created."""
+    name = object.get('Name', 'Unknown')
+    created = object.get('Created')
+    last_modified = object.get('LastModified')
+    
+    # Both dates must be present and valid for comparison
+    if created and last_modified:
+        try:
+            created_date = datetime.datetime.fromisoformat(created)
+            modified_date = datetime.datetime.fromisoformat(last_modified)
+            
+            if modified_date < created_date:
+                return f"ERROR: LastModified ({last_modified}) is older than Created ({created}) in file {filename} (object: {name})"
+        except ValueError:
+            # If dates are invalid, they'll be caught by check_date_iso8601
+            pass
+    
+    return None
+
 def check_url_format(object, filename):
     """Validate URL format in various fields."""
     name = object.get('Name', 'Unknown')
@@ -197,6 +217,7 @@ def validate_schema(yaml_dir, schema_file, verbose):
             (check_hash_lengths, yaml_data),
             (check_network_structure, yaml_data),
             (check_date_iso8601, yaml_data, yaml_file),
+            (check_date_chronology, yaml_data, yaml_file),
             (check_url_format, yaml_data, yaml_file),
             (check_duplicate_detections, yaml_data, yaml_file),
             (check_port_format, yaml_data, yaml_file),

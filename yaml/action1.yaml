@@ -6,7 +6,7 @@ Description: "Action1 is a powerful Remote Monitoring and Management(RMM) tool t
   \ remote execution and then points that the agent is installed.\n"
 Author: '@kostastsale'
 Created: '2024-08-03'
-LastModified: '2024-10-06'
+LastModified: '2024-08-03'
 Details:
   Website: https://www.action1.com/
   PEMetadata:
