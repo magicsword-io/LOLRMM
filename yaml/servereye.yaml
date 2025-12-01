@@ -1,39 +1,38 @@
 Name: ServerEye
 Category: 'RMM'
-Description: ServerEye is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: ServerEye is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - servereye*.exe
-  - ServiceProxyLocalSys.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - servereye*.exe
+        - ServiceProxyLocalSys.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.server-eye.de'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.server-eye.de'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_network_sigma.yml
-  Description: Detects potential network activity of ServerEye RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_processes_sigma.yml
-  Description: Detects potential processes activity of ServerEye RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_network_sigma.yml
+      Description: Detects potential network activity of ServerEye RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/servereye_processes_sigma.yml
+      Description: Detects potential processes activity of ServerEye RMM tool
 References:
-- https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf
+    - https://www.servereye.de/wp-content/uploads/Anleitung-zur-Erstinstallation_aktuell.pdf
 Acknowledgement: []

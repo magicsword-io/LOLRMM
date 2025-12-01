@@ -1,41 +1,40 @@
 Name: rdp2tcp
 Category: 'RMM'
-Description: rdp2tcp is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: rdp2tcp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - tdp2tcp.exe
-  - rdp2tcp.py
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - tdp2tcp.exe
+        - rdp2tcp.py
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - github.com/V-E-O/rdp2tcp
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - github.com/V-E-O/rdp2tcp
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_network_sigma.yml
-  Description: Detects potential network activity of rdp2tcp RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_processes_sigma.yml
-  Description: Detects potential processes activity of rdp2tcp RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_network_sigma.yml
+      Description: Detects potential network activity of rdp2tcp RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_processes_sigma.yml
+      Description: Detects potential processes activity of rdp2tcp RMM tool
 References:
-- https://github.com/V-E-O/rdp2tcp
+    - https://github.com/V-E-O/rdp2tcp
 Acknowledgement: []

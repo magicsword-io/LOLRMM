@@ -1,49 +1,46 @@
 Name: Netop Remote Control (Impero Connect)
 Category: 'RMM'
-Description: Netop Remote Control (Impero Connect) is a remote monitoring and management
-  (RMM) tool. More information will be added as it becomes available.
+Description: Netop Remote Control (Impero Connect) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - nhostsvc.exe
-  - nhstw32.exe
-  - ngstw32.exe
-  - Netop Ondemand.exe
-  - nldrw32.exe
-  - rmserverconsolemediator.exe
-  - ImperoInit.exe
-  - Connect.Backdrop.cloud*.exe
-  - ImperoClientSVC.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - nhostsvc.exe
+        - nhstw32.exe
+        - ngstw32.exe
+        - Netop Ondemand.exe
+        - nldrw32.exe
+        - rmserverconsolemediator.exe
+        - ImperoInit.exe
+        - Connect.Backdrop.cloud*.exe
+        - ImperoClientSVC.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.connect.backdrop.cloud'
-    - '*.netop.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.connect.backdrop.cloud'
+              - '*.netop.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__impero_connect__network_sigma.yml
-  Description: Detects potential network activity of Netop Remote Control (Impero
-    Connect) RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__impero_connect__processes_sigma.yml
-  Description: Detects potential processes activity of Netop Remote Control (Impero
-    Connect) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__impero_connect__network_sigma.yml
+      Description: Detects potential network activity of Netop Remote Control (Impero Connect) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__impero_connect__processes_sigma.yml
+      Description: Detects potential processes activity of Netop Remote Control (Impero Connect) RMM tool
 References:
-- https://kb.netop.com/article/firewall-and-proxy-server-considerations-when-using-netop-portal-communication-373.html
+    - https://kb.netop.com/article/firewall-and-proxy-server-considerations-when-using-netop-portal-communication-373.html
 Acknowledgement: []

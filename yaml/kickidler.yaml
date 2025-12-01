@@ -1,38 +1,37 @@
 Name: KickIdler
 Category: 'RMM'
-Description: KickIdler is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: KickIdler is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - grabberEM.*msi
-  - grabberTT*.msi
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - grabberEM.*msi
+        - grabberTT*.msi
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - kickidler.com
-    - my.kickidler.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - kickidler.com
+              - my.kickidler.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kickidler_network_sigma.yml
-  Description: Detects potential network activity of KickIdler RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kickidler_network_sigma.yml
+      Description: Detects potential network activity of KickIdler RMM tool
 References:
-- https://www.kickidler.com/for-it/faq/
+    - https://www.kickidler.com/for-it/faq/
 Acknowledgement: []

@@ -1,35 +1,34 @@
 Name: ManageEngine
 Category: 'RMM'
-Description: ManageEngine is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: ManageEngine is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - InstallShield Setup.exe
-  - ManageEngine_Remote_Access_Plus.exe
-  - '*\dcagentservice.exe'
-  - C:\Program Files (x86)\DesktopCentral_Agent\bin\*
-  - '*\DesktopCentral_Agent\bin\*'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - InstallShield Setup.exe
+        - ManageEngine_Remote_Access_Plus.exe
+        - '*\dcagentservice.exe'
+        - C:\Program Files (x86)\DesktopCentral_Agent\bin\*
+        - '*\DesktopCentral_Agent\bin\*'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_processes_sigma.yml
-  Description: Detects potential processes activity of ManageEngine RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_processes_sigma.yml
+      Description: Detects potential processes activity of ManageEngine RMM tool
 References: []
 Acknowledgement: []

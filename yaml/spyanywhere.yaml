@@ -1,39 +1,38 @@
 Name: SpyAnywhere
 Category: 'RMM'
-Description: SpyAnywhere is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: SpyAnywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - sysdiag.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - sysdiag.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.spytech-web.com'
-    - spyanywhere.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.spytech-web.com'
+              - spyanywhere.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_network_sigma.yml
-  Description: Detects potential network activity of SpyAnywhere RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_processes_sigma.yml
-  Description: Detects potential processes activity of SpyAnywhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_network_sigma.yml
+      Description: Detects potential network activity of SpyAnywhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/spyanywhere_processes_sigma.yml
+      Description: Detects potential processes activity of SpyAnywhere RMM tool
 References:
-- https://www.spyanywhere.com/support.shtml
+    - https://www.spyanywhere.com/support.shtml
 Acknowledgement: []

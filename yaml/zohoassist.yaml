@@ -1,61 +1,60 @@
 Name: Zoho Assist
 Category: 'RMM'
-Description: Zoho Assist is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Zoho Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - zaservice.exe
-  - ZMAgent.exe
-  - C:\*\ZA_Access.exe
-  - ZohoMeeting.exe
-  - Zohours.exe
-  - zohotray.exe
-  - ZohoURSService.exe
-  - '*\ZA_Access.exe'
-  - Zaservice.exe
-  - za_connect.exe
-  - connect.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - zaservice.exe
+        - ZMAgent.exe
+        - C:\*\ZA_Access.exe
+        - ZohoMeeting.exe
+        - Zohours.exe
+        - zohotray.exe
+        - ZohoURSService.exe
+        - '*\ZA_Access.exe'
+        - Zaservice.exe
+        - za_connect.exe
+        - connect.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.zoho.com.au'
-    - '*.zohoassist.jp'
-    - assist.zoho.com
-    - zoho.com/assist/
-    - '*.zoho.in'
-    - downloads.zohodl.com.cn
-    - '*.zohoassist.com'
-    - downloads.zohocdn.com
-    - gateway.zohoassist.com
-    - '*.zohoassist.com.cn'
-    - '*.zoho.com.cn'
-    - '*.zoho.com'
-    - '*.zoho.eu'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.zoho.com.au'
+              - '*.zohoassist.jp'
+              - assist.zoho.com
+              - zoho.com/assist/
+              - '*.zoho.in'
+              - downloads.zohodl.com.cn
+              - '*.zohoassist.com'
+              - downloads.zohocdn.com
+              - gateway.zohoassist.com
+              - '*.zohoassist.com.cn'
+              - '*.zoho.com.cn'
+              - '*.zoho.com'
+              - '*.zoho.eu'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_network_sigma.yml
-  Description: Detects potential network activity of Zoho Assist RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_processes_sigma.yml
-  Description: Detects potential processes activity of Zoho Assist RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_network_sigma.yml
+      Description: Detects potential network activity of Zoho Assist RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoho_assist_processes_sigma.yml
+      Description: Detects potential processes activity of Zoho Assist RMM tool
 References:
-- https://www.zoho.com/assist/kb/firewall-configuration.html
+    - https://www.zoho.com/assist/kb/firewall-configuration.html
 Acknowledgement: []

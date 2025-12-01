@@ -1,33 +1,32 @@
 Name: Lite Manager
 Category: 'RMM'
-Description: Lite Manager is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Lite Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - "C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
-  - "*\\LiteManager Pro \u2013 Viewer\\*"
-  - '*\LMNoIpServer.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - "C:\\Program Files\\LiteManager Pro – Viewer\\*"
+        - "*\\LiteManager Pro – Viewer\\*"
+        - '*\LMNoIpServer.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/lite_manager_processes_sigma.yml
-  Description: Detects potential processes activity of Lite Manager RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/lite_manager_processes_sigma.yml
+      Description: Detects potential processes activity of Lite Manager RMM tool
 References: []
 Acknowledgement: []

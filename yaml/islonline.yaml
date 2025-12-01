@@ -1,46 +1,45 @@
 Name: ISL Online
 Category: 'RMM'
-Description: ISL Online is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - '*\ISLLight.exe'
-  - isllight.exe
-  - ISLLightClient.exe
-  - C:\Program Files (x86)\ISL Online\ISL Light*
-  - '*\ISL Online\ISL Light*'
-  - ISLLight.exe
-  - isllightservice.exe
-  - islalwaysonmonitor.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - '*\ISLLight.exe'
+        - isllight.exe
+        - ISLLightClient.exe
+        - C:\Program Files (x86)\ISL Online\ISL Light*
+        - '*\ISL Online\ISL Light*'
+        - ISLLight.exe
+        - isllightservice.exe
+        - islalwaysonmonitor.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.islonline.com'
-    - '*.islonline.net'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.islonline.com'
+              - '*.islonline.net'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_network_sigma.yml
-  Description: Detects potential network activity of ISL Online RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_processes_sigma.yml
-  Description: Detects potential processes activity of ISL Online RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_network_sigma.yml
+      Description: Detects potential network activity of ISL Online RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/isl_online_processes_sigma.yml
+      Description: Detects potential processes activity of ISL Online RMM tool
 References:
-- https://help.islonline.com/19818/165940
+    - https://help.islonline.com/19818/165940
 Acknowledgement: []

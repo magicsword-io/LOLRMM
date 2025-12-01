@@ -1,35 +1,34 @@
 Name: Microsoft RDP
 Category: 'RMM'
-Description: Microsoft RDP is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Description: Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - termsrv.exe
-  - mstsc.exe
-  - Microsoft Remote Desktop
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - termsrv.exe
+        - mstsc.exe
+        - Microsoft Remote Desktop
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml
-  Description: Detects potential processes activity of Microsoft RDP RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml
+      Description: Detects potential processes activity of Microsoft RDP RMM tool
 References:
-- https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows
+    - https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows
 Acknowledgement: []

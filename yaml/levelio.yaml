@@ -1,53 +1,52 @@
 Name: Level.io
 Category: 'RMM'
-Description: Level.io is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - level-windows-amd64.exe
-  - level.exe
-  - level-remote-control-ffmpeg.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - level-windows-amd64.exe
+        - level.exe
+        - level-remote-control-ffmpeg.exe
 Artifacts:
-  Disk:
-  - File: C:\Program Files\Level\level.exe
-    Description: Level Binary
-    OS: Windows
-  - File: C:\Program Files\Level\osqueryi.exe
-    Description: A tool used by level to collect machine state information.
-    OS: Windows
-  - File: C:\Program Files\Level\level.log
-    Description: Client log file for Level.
-    OS: Windows
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - level.io
-    - '*.level.io'
-    Ports: []
+    Disk:
+        - File: C:\Program Files\Level\level.exe
+          Description: Level Binary
+          OS: Windows
+        - File: C:\Program Files\Level\osqueryi.exe
+          Description: A tool used by level to collect machine state information.
+          OS: Windows
+        - File: C:\Program Files\Level\level.log
+          Description: Client log file for Level.
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - level.io
+              - '*.level.io'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml
-  Description: Detects potential network activity of Level.io RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_files_sigma.yml
-  Description: Detects potential files activity of Level.io RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml
-  Description: Detects potential processes activity of Level.io RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml
+      Description: Detects potential network activity of Level.io RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_files_sigma.yml
+      Description: Detects potential files activity of Level.io RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml
+      Description: Detects potential processes activity of Level.io RMM tool
 References:
-- https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues
+    - https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues
 Acknowledgement: []

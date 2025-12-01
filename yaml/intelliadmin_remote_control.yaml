@@ -1,46 +1,43 @@
 Name: IntelliAdmin Remote Control
 Category: 'RMM'
-Description: IntelliAdmin Remote Control is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Description: IntelliAdmin Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - iadmin.exe
-  - intelliadmin.exe
-  - agent32.exe
-  - agent64.exe
-  - agent_setup_5.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - iadmin.exe
+        - intelliadmin.exe
+        - agent32.exe
+        - agent64.exe
+        - agent_setup_5.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - '*.intelliadmin.com'
-    - intelliadmin.com/remote-control
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - '*.intelliadmin.com'
+              - intelliadmin.com/remote-control
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_network_sigma.yml
-  Description: Detects potential network activity of IntelliAdmin Remote Control RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_processes_sigma.yml
-  Description: Detects potential processes activity of IntelliAdmin Remote Control
-    RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_network_sigma.yml
+      Description: Detects potential network activity of IntelliAdmin Remote Control RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_processes_sigma.yml
+      Description: Detects potential processes activity of IntelliAdmin Remote Control RMM tool
 References:
-- http://www.intelliadmin.com/index.php/remote-control/
+    - http://www.intelliadmin.com/index.php/remote-control/
 Acknowledgement: []

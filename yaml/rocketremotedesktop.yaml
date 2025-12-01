@@ -1,33 +1,32 @@
 Name: Rocket Remote Desktop
 Category: 'RMM'
-Description: Rocket Remote Desktop is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Description: Rocket Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - RDConsole.exe
-  - RocketRemoteDesktop_Setup.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - RDConsole.exe
+        - RocketRemoteDesktop_Setup.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rocket_remote_desktop_processes_sigma.yml
-  Description: Detects potential processes activity of Rocket Remote Desktop RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rocket_remote_desktop_processes_sigma.yml
+      Description: Detects potential processes activity of Rocket Remote Desktop RMM tool
 References: []
 Acknowledgement: []

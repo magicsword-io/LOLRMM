@@ -1,33 +1,32 @@
 Name: S3 Browser
 Category: 'RMM'
-Description: S3 Browser is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: S3 Browser is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files (x86)\S3 Browser\*
-  - '*\S3 Browser\*'
-  - '*\s3browser*.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\S3 Browser\*
+        - '*\S3 Browser\*'
+        - '*\s3browser*.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/s3_browser_processes_sigma.yml
-  Description: Detects potential processes activity of S3 Browser RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/s3_browser_processes_sigma.yml
+      Description: Detects potential processes activity of S3 Browser RMM tool
 References: []
 Acknowledgement: []

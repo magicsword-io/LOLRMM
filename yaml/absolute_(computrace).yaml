@@ -1,43 +1,42 @@
 Name: Absolute (Computrace)
 Category: 'RMM'
-Description: Absolute (Computrace) is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Description: Absolute (Computrace) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - rpcnet.exe
-  - ctes.exe
-  - ctespersitence.exe
-  - cteshostsvc.exe
-  - rpcld.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - rpcnet.exe
+        - ctes.exe
+        - ctespersitence.exe
+        - cteshostsvc.exe
+        - rpcld.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*search.namequery.com'
-    - '*server.absolute.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*search.namequery.com'
+              - '*server.absolute.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__network_sigma.yml
-  Description: Detects potential network activity of Absolute (Computrace) RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__processes_sigma.yml
-  Description: Detects potential processes activity of Absolute (Computrace) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__network_sigma.yml
+      Description: Detects potential network activity of Absolute (Computrace) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__processes_sigma.yml
+      Description: Detects potential processes activity of Absolute (Computrace) RMM tool
 References:
-- https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com
+    - https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com
 Acknowledgement: []

@@ -1,44 +1,43 @@
 Name: Instant Housecall
 Category: 'RMM'
-Description: Instant Housecall is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Description: Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - hsloader.exe
-  - InstantHousecall.exe
-  - ihcserver.exe
-  - instanthousecall.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - hsloader.exe
+        - InstantHousecall.exe
+        - ihcserver.exe
+        - instanthousecall.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.instanthousecall.com'
-    - secure.instanthousecall.com
-    - '*.instanthousecall.net'
-    - instanthousecall.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.instanthousecall.com'
+              - secure.instanthousecall.com
+              - '*.instanthousecall.net'
+              - instanthousecall.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml
-  Description: Detects potential network activity of Instant Housecall RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml
-  Description: Detects potential processes activity of Instant Housecall RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml
+      Description: Detects potential network activity of Instant Housecall RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml
+      Description: Detects potential processes activity of Instant Housecall RMM tool
 References:
-- https://instanthousecall.com/features/
+    - https://instanthousecall.com/features/
 Acknowledgement: []

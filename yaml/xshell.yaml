@@ -1,33 +1,32 @@
 Name: Xshell
 Category: 'RMM'
-Description: Xshell is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Xshell is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files (x86)\NetSarang\xShell\*
-  - '*\NetSarang\xShell\*'
-  - '*\xShell.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\NetSarang\xShell\*
+        - '*\NetSarang\xShell\*'
+        - '*\xShell.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xshell_processes_sigma.yml
-  Description: Detects potential processes activity of Xshell RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xshell_processes_sigma.yml
+      Description: Detects potential processes activity of Xshell RMM tool
 References: []
 Acknowledgement: []

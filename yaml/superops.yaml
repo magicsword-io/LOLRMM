@@ -1,43 +1,42 @@
 Name: SuperOps
 Category: 'RMM'
-Description: SuperOps is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: SuperOps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - superopsticket.exe
-  - superops.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - superopsticket.exe
+        - superops.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.superopsbeta.com'
-    - superops.ai
-    - serv.superopsalpha.com
-    - '*.superops.ai'
-    - '*.superopsalpha.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.superopsbeta.com'
+              - superops.ai
+              - serv.superopsalpha.com
+              - '*.superops.ai'
+              - '*.superopsalpha.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_network_sigma.yml
-  Description: Detects potential network activity of SuperOps RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_processes_sigma.yml
-  Description: Detects potential processes activity of SuperOps RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_network_sigma.yml
+      Description: Detects potential network activity of SuperOps RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_processes_sigma.yml
+      Description: Detects potential processes activity of SuperOps RMM tool
 References:
-- https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
+    - https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
 Acknowledgement: []

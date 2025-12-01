@@ -1,39 +1,36 @@
 Name: 247ithelp.com (ConnectWise)
 Category: 'RMM'
-Description: 247ithelp.com (ConnectWise) is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Description: 247ithelp.com (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - Remote Workforce Client.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - Remote Workforce Client.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.247ithelp.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.247ithelp.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__network_sigma.yml
-  Description: Detects potential network activity of 247ithelp.com (ConnectWise) RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__processes_sigma.yml
-  Description: Detects potential processes activity of 247ithelp.com (ConnectWise)
-    RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__network_sigma.yml
+      Description: Detects potential network activity of 247ithelp.com (ConnectWise) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/247ithelp.com__connectwise__processes_sigma.yml
+      Description: Detects potential processes activity of 247ithelp.com (ConnectWise) RMM tool
 References: []
 Acknowledgement: []

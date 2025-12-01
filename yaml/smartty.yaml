@@ -1,33 +1,32 @@
 Name: SmarTTY
 Category: 'RMM'
-Description: SmarTTY is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: SmarTTY is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - c:\Program Files (x86)\Sysprogs\SmarTTY\*
-  - '*\Sysprogs\SmarTTY\*'
-  - '*\SmarTTY.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - c:\Program Files (x86)\Sysprogs\SmarTTY\*
+        - '*\Sysprogs\SmarTTY\*'
+        - '*\SmarTTY.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/smartty_processes_sigma.yml
-  Description: Detects potential processes activity of SmarTTY RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/smartty_processes_sigma.yml
+      Description: Detects potential processes activity of SmarTTY RMM tool
 References: []
 Acknowledgement: []
