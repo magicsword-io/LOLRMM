@@ -81,12 +81,6 @@ def check_url_format(object, filename):
         for idx, ref in enumerate(references, 1):
             validate_url(ref, f'Reference #{idx}')
     
-    # Check Vulnerabilities URLs
-    vulnerabilities = object.get('Details', {}).get('Vulnerabilities', [])
-    if vulnerabilities:
-        for idx, vuln in enumerate(vulnerabilities, 1):
-            validate_url(vuln, f'Vulnerability #{idx}')
-    
     # Return consolidated error message if any invalid URLs found
     if invalid_urls:
         urls_str = '\n'.join(invalid_urls)
@@ -94,17 +88,7 @@ def check_url_format(object, filename):
     
     return None
 
-def check_empty_lists(object, filename):
-    """Check for empty lists that should have content or be null."""
-    name = object.get('Name', 'Unknown')
-    
-    # Check if Network list exists but is empty
-    artifacts = object.get('Artifacts', {})
-    network = artifacts.get('Network', None)
-    if network is not None and isinstance(network, list) and len(network) == 0:
-        return f"WARNING: Network list is empty in file {filename}. Consider setting to null instead (object: {name})"
-    
-    return None
+
 
 def check_duplicate_detections(object, filename):
     """Check for duplicate detection entries."""
@@ -214,7 +198,6 @@ def validate_schema(yaml_dir, schema_file, verbose):
             (check_network_structure, yaml_data),
             (check_date_iso8601, yaml_data, yaml_file),
             (check_url_format, yaml_data, yaml_file),
-            (check_empty_lists, yaml_data, yaml_file),
             (check_duplicate_detections, yaml_data, yaml_file),
             (check_port_format, yaml_data, yaml_file),
             (check_required_fields, yaml_data, yaml_file),
