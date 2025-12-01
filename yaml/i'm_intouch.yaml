@@ -1,41 +1,40 @@
 Name: I'm InTouch
 Category: 'RMM'
-Description: I'm InTouch is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: I'm InTouch is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - iit.exe
-  - intouch.exe
-  - I'm InTouch Go Installer.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - iit.exe
+        - intouch.exe
+        - I'm InTouch Go Installer.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.01com.com'
-    - 01com.com/imintouch-remote-pc-desktop
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.01com.com'
+              - 01com.com/imintouch-remote-pc-desktop
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_network_sigma.yml
-  Description: Detects potential network activity of I'm InTouch RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_processes_sigma.yml
-  Description: Detects potential processes activity of I'm InTouch RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_network_sigma.yml
+      Description: Detects potential network activity of I'm InTouch RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_processes_sigma.yml
+      Description: Detects potential processes activity of I'm InTouch RMM tool
 References:
-- https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
+    - https://www.01com.com/mobile/imintouch-remote-pc-desktop/faqs/remote-access/
 Acknowledgement: []

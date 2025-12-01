@@ -1,42 +1,40 @@
 Name: CentraStage (Now Datto)
 Category: 'RMM'
-Description: CentraStage (Now Datto) is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Description: CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - CagService.exe
-  - AEMAgent.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - CagService.exe
+        - AEMAgent.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.rmm.datto.com'
-    - '*cc.centrastage.net'
-    - datto.com/au/products/rmm/
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.rmm.datto.com'
+              - '*cc.centrastage.net'
+              - datto.com/au/products/rmm/
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__network_sigma.yml
-  Description: Detects potential network activity of CentraStage (Now Datto) RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__processes_sigma.yml
-  Description: Detects potential processes activity of CentraStage (Now Datto) RMM
-    tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__network_sigma.yml
+      Description: Detects potential network activity of CentraStage (Now Datto) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__processes_sigma.yml
+      Description: Detects potential processes activity of CentraStage (Now Datto) RMM tool
 References:
-- https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm
+    - https://rmm.datto.com/help/de/Content/1INTRODUCTION/Requirements/AllowListRequirements.htm
 Acknowledgement: []

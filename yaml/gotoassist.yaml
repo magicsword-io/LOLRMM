@@ -1,53 +1,52 @@
 Name: GoToAssist
 Category: 'RMM'
-Description: GoToAssist is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: GoToAssist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - gotoassist.exe
-  - g2a*.exe
-  - GoTo Assist Opener.exe
-  - g2mcomm.exe
-  - g2mupdate.com
-  - goto opener.exe
-  - g2ax_comm_customer.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - gotoassist.exe
+        - g2a*.exe
+        - GoTo Assist Opener.exe
+        - g2mcomm.exe
+        - g2mupdate.com
+        - goto opener.exe
+        - g2ax_comm_customer.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - goto.com
-    - '*.getgo.com'
-    - '*.fastsupport.com'
-    - '*.gotoassist.com'
-    - helpme.net
-    - '*.gotoassist.me'
-    - '*.gotoassist.at'
-    - '*.desktopstreaming.com'
-    - '*.cdn.getgo.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - goto.com
+              - '*.getgo.com'
+              - '*.fastsupport.com'
+              - '*.gotoassist.com'
+              - helpme.net
+              - '*.gotoassist.me'
+              - '*.gotoassist.at'
+              - '*.desktopstreaming.com'
+              - '*.cdn.getgo.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_network_sigma.yml
-  Description: Detects potential network activity of GoToAssist RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_processes_sigma.yml
-  Description: Detects potential processes activity of GoToAssist RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_network_sigma.yml
+      Description: Detects potential network activity of GoToAssist RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotoassist_processes_sigma.yml
+      Description: Detects potential processes activity of GoToAssist RMM tool
 References:
-- https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5
+    - https://help.gotoassist.com/remote-support/help/what-should-i-allow-on-my-firewall-for-gotoassist-remote-support-v5
 Acknowledgement: []

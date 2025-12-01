@@ -1,40 +1,39 @@
 Name: OptiTune
 Category: 'RMM'
-Description: OptiTune is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: OptiTune is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - OTService.exe
-  - OTPowerShell.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - OTService.exe
+        - OTPowerShell.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.optitune.us'
-    - '*.opti-tune.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.optitune.us'
+              - '*.opti-tune.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/optitune_network_sigma.yml
-  Description: Detects potential network activity of OptiTune RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/optitune_processes_sigma.yml
-  Description: Detects potential processes activity of OptiTune RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/optitune_network_sigma.yml
+      Description: Detects potential network activity of OptiTune RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/optitune_processes_sigma.yml
+      Description: Detects potential processes activity of OptiTune RMM tool
 References:
-- https://www.bravurasoftware.com/optitune/support/faq.aspx
+    - https://www.bravurasoftware.com/optitune/support/faq.aspx
 Acknowledgement: []

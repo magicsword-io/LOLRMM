@@ -1,35 +1,34 @@
 Name: Ultra VNC
 Category: 'RMM'
-Description: Ultra VNC is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Ultra VNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files\uvnc bvba\UltraVNC\*
-  - '*\uvnc bvba\UltraVNC\*'
-  - '*\UVNC_Launch.exe'
-  - '*\winvnc.exe'
-  - '*\vncviewer.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\uvnc bvba\UltraVNC\*
+        - '*\uvnc bvba\UltraVNC\*'
+        - '*\UVNC_Launch.exe'
+        - '*\winvnc.exe'
+        - '*\vncviewer.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultra_vnc_processes_sigma.yml
-  Description: Detects potential processes activity of Ultra VNC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ultra_vnc_processes_sigma.yml
+      Description: Detects potential processes activity of Ultra VNC RMM tool
 References: []
 Acknowledgement: []

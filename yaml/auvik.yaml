@@ -1,41 +1,40 @@
 Name: Auvik
 Category: 'RMM'
-Description: Auvik is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Auvik is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - auvik.engine.exe
-  - auvik.agent.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - auvik.engine.exe
+        - auvik.agent.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.my.auvik.com'
-    - '*.auvik.com'
-    - auvik.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.my.auvik.com'
+              - '*.auvik.com'
+              - auvik.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/auvik_network_sigma.yml
-  Description: Detects potential network activity of Auvik RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/auvik_processes_sigma.yml
-  Description: Detects potential processes activity of Auvik RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/auvik_network_sigma.yml
+      Description: Detects potential network activity of Auvik RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/auvik_processes_sigma.yml
+      Description: Detects potential processes activity of Auvik RMM tool
 References:
-- https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use
+    - https://support.auvik.com/hc/en-us/articles/204315700-What-protocols-and-ports-does-the-Auvik-collector-use
 Acknowledgement: []

@@ -1,224 +1,220 @@
 Name: Atera
 Category: 'RMM'
-Description: 'Atera is a remote monitoring and management (RMM) tool. It is used by
-  threat actors to deploy ransomware or facilitate command execution and lateral movement.
+Description: 'Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.
 
-  '
+    '
 Created: '2024-08-03'
 LastModified: '2024-08-03'
 Details:
-  Website: https://www.atera.com/
-  PEMetadata:
-  - Filename: AteraAgent.exe
-    OriginalFileName: AteraAgent.exe
-    Description: AteraAgent
-  Privileges: SYSTEM
-  Free: 30 day trial
-  Verification: None
-  SupportedOS:
-  - Windows
-  - MacOS
-  - Linux
-  Capabilities:
-  - Integrated remote access with Splashtop and AnyDesk
-  - Remote monitoring and management
-  - Patch management
-  - Network discovery
-  - Backup and disaster recovery
-  - Helpdesk and ticketing
-  - Reporting and analytics
-  - Billing and invoicing
-  - Customer portal
-  - Mobile app
-  Vulnerabilities:
-  - CVE-2023-26078
-  - CVE-2023-26077
-  InstallationPaths:
-  - '*\AgentPackageNetworkDiscovery.exe'
-  - '*\AgentPackageTaskScheduler.exe'
-  - '*\ATERA Networks\AteraAgent\*'
-  - '*\AteraAgent.exe'
-  - atera_agent.exe
-  - atera_agent.exe
-  - ateraagent.exe
-  - C:\Program Files\ATERA Networks\AteraAgent\*
-  - C:\Program Files\Atera Networks
-  - C:\Program Files (x86)\Atera Networks
-  - syncrosetup.exe
+    Website: https://www.atera.com/
+    PEMetadata:
+        - Filename: AteraAgent.exe
+          OriginalFileName: AteraAgent.exe
+          Description: AteraAgent
+    Privileges: SYSTEM
+    Free: 30 day trial
+    Verification: None
+    SupportedOS:
+        - Windows
+        - MacOS
+        - Linux
+    Capabilities:
+        - Integrated remote access with Splashtop and AnyDesk
+        - Remote monitoring and management
+        - Patch management
+        - Network discovery
+        - Backup and disaster recovery
+        - Helpdesk and ticketing
+        - Reporting and analytics
+        - Billing and invoicing
+        - Customer portal
+        - Mobile app
+    Vulnerabilities:
+        - CVE-2023-26078
+        - CVE-2023-26077
+    InstallationPaths:
+        - '*\AgentPackageNetworkDiscovery.exe'
+        - '*\AgentPackageTaskScheduler.exe'
+        - '*\ATERA Networks\AteraAgent\*'
+        - '*\AteraAgent.exe'
+        - atera_agent.exe
+        - atera_agent.exe
+        - ateraagent.exe
+        - C:\Program Files\ATERA Networks\AteraAgent\*
+        - C:\Program Files\Atera Networks
+        - C:\Program Files (x86)\Atera Networks
+        - syncrosetup.exe
 Artifacts:
-  Disk:
-  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\*
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe
-    Description: Atera service binary
-    OS: Windows
-  - File: C:\Program Files\Atera Networks\AlphaAgent.exe
-    Description: Atera service binary
-    OS: Windows
-  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe
-    Description: N/A
-    OS: Windows
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: AteraAgent
-    ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\AteraAgent.exe"'
-    Description: Service installation event as result of AteraAgent installation.
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: WinRing0_1_2_0
-    ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageMonitoring\\OpenHardwareMonitorLib.sys"'
-    Description: Service installation event as result of Atera pakcage manager installation.
-  - EventID: 11707
-    ProviderName: MsiInstaller
-    LogFile: Application.evtx
-    Data: 'Product: AteraAgent -- Installation completed successfully.'
-    Description: Service installation event as result of AteraAgent installation.
-  - EventID: 4697
-    ProviderName: Microsoft-Security-Auditing
-    LogFile: Security.evtx
-    CommandLine: C:\\Program Files\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageFileExplorer\\AgentPackageFileExplorer.exe
-      XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX agent-api.atera.com/Production
-      443 [BASE64BLOB]
-    Description: Service installation event as result of AteraAgent installation.
-  Registry:
-  - Path: HKLM\SOFTWARE\ATERA Networks\AlphaAgent
-    Description: null
-  - Path: HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent
-    Description: null
-  - Path: KLM\SOFTWARE\WOW6432Node\Splashtop Inc.
-    Description: null
-  - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop
-      Software Updater
-    Description: null
-  - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AlphaAgent
-    Description: null
-  - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AteraAgent
-    Description: null
-  - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASAPI32
-    Description: null
-  - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS
-    Description: null
-  - Path: HKLM\SOFTWARE\ATERA Networks\*
-    Description: null
-  Network:
-  - Description: N/A
-    Domains:
-    - pubsub.atera.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - pubsub.pubnub.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - agentreporting.atera.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - getalphacontrol.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - app.atera.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - agenthb.atera.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - packagesstore.blob.core.windows.net
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - ps.pndsn.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - agent-api.atera.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - cacerts.thawte.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - agentreportingstore.blob.core.windows.net
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - atera-agent-heartbeat.servicebus.windows.net
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - ps.atera.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - atera.pubnubapi.com
-    Ports:
-    - N/A
-  - Description: N/A
-    Domains:
-    - appcdn.atera.com
-    Ports:
-    - N/A
+    Disk:
+        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\*
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe
+          Description: Atera service binary
+          OS: Windows
+        - File: C:\Program Files\Atera Networks\AlphaAgent.exe
+          Description: Atera service binary
+          OS: Windows
+        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe
+          Description: N/A
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: AteraAgent
+          ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\AteraAgent.exe"'
+          Description: Service installation event as result of AteraAgent installation.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: WinRing0_1_2_0
+          ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageMonitoring\\OpenHardwareMonitorLib.sys"'
+          Description: Service installation event as result of Atera pakcage manager installation.
+        - EventID: 11707
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Product: AteraAgent -- Installation completed successfully.'
+          Description: Service installation event as result of AteraAgent installation.
+        - EventID: 4697
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: C:\\Program Files\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageFileExplorer\\AgentPackageFileExplorer.exe XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX agent-api.atera.com/Production 443 [BASE64BLOB]
+          Description: Service installation event as result of AteraAgent installation.
+    Registry:
+        - Path: HKLM\SOFTWARE\ATERA Networks\AlphaAgent
+          Description:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent
+          Description:
+        - Path: KLM\SOFTWARE\WOW6432Node\Splashtop Inc.
+          Description:
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater
+          Description:
+        - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AlphaAgent
+          Description:
+        - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AteraAgent
+          Description:
+        - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASAPI32
+          Description:
+        - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS
+          Description:
+        - Path: HKLM\SOFTWARE\ATERA Networks\*
+          Description:
+    Network:
+        - Description: N/A
+          Domains:
+              - pubsub.atera.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - pubsub.pubnub.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - agentreporting.atera.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - getalphacontrol.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - app.atera.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - agenthb.atera.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - packagesstore.blob.core.windows.net
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - ps.pndsn.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - agent-api.atera.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - cacerts.thawte.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - agentreportingstore.blob.core.windows.net
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - atera-agent-heartbeat.servicebus.windows.net
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - ps.atera.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - atera.pubnubapi.com
+          Ports:
+              - N/A
+        - Description: N/A
+          Domains:
+              - appcdn.atera.com
+          Ports:
+              - N/A
 Detections:
-- Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml
-  Name: AteraAgent malicious installations
-  Description: Detects AteraAgent installations with suspicious command line arguments.
-- Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml
-  Name: Atera Agent Installation
-  Description: Detects Atera Agent installation.
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_registry_sigma.yml
-  Description: Detects potential registry activity of Atera RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_network_sigma.yml
-  Description: Detects potential network activity of Atera RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_files_sigma.yml
-  Description: Detects potential files activity of Atera RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_processes_sigma.yml
-  Description: Detects potential processes activity of Atera RMM tool
+    - Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml
+      Name: AteraAgent malicious installations
+      Description: Detects AteraAgent installations with suspicious command line arguments.
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml
+      Name: Atera Agent Installation
+      Description: Detects Atera Agent installation.
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_registry_sigma.yml
+      Description: Detects potential registry activity of Atera RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_network_sigma.yml
+      Description: Detects potential network activity of Atera RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_files_sigma.yml
+      Description: Detects potential files activity of Atera RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_processes_sigma.yml
+      Description: Detects potential processes activity of Atera RMM tool
 References:
-- https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
-- https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
-- https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018
-- https://thedfirreport.com/?s=ateraagent
+    - https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
+    - https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
+    - https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018
+    - https://thedfirreport.com/?s=ateraagent
 Acknowledgement:
-- Person: "Th\xE9o Letailleur"
-  Handle: in/theosyn
-- Person: Nasreddine Bencherchali
-  Handle: '@nas_bench'
-- Person: Kostas
-  Handle: '@kostastsale'
+    - Person: "Théo Letailleur"
+      Handle: in/theosyn
+    - Person: Nasreddine Bencherchali
+      Handle: '@nas_bench'
+    - Person: Kostas
+      Handle: '@kostastsale'

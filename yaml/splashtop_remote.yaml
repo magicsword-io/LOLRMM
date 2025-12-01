@@ -1,47 +1,46 @@
 Name: Splashtop Remote
 Category: 'RMM'
-Description: Splashtop Remote is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Description: Splashtop Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - strwinclt.exe
-  - Splashtop_Streamer_Windows*.exe
-  - SplashtopSOS.exe
-  - sragent.exe
-  - srmanager.exe
-  - srserver.exe
-  - srservice.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - strwinclt.exe
+        - Splashtop_Streamer_Windows*.exe
+        - SplashtopSOS.exe
+        - sragent.exe
+        - srmanager.exe
+        - srserver.exe
+        - srservice.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - splashtop.com
-    - '*.api.splashtop.com'
-    - '*.relay.splashtop.com'
-    - '*.api.splashtop.eu'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - splashtop.com
+              - '*.api.splashtop.com'
+              - '*.relay.splashtop.com'
+              - '*.api.splashtop.eu'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_network_sigma.yml
-  Description: Detects potential network activity of Splashtop Remote RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_processes_sigma.yml
-  Description: Detects potential processes activity of Splashtop Remote RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_network_sigma.yml
+      Description: Detects potential network activity of Splashtop Remote RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_remote_processes_sigma.yml
+      Description: Detects potential processes activity of Splashtop Remote RMM tool
 References:
-- https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services
+    - https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001811966-What-are-the-Firewall-Exceptions-and-IP-addresses-of-Splashtop-servers-Services
 Acknowledgement: []

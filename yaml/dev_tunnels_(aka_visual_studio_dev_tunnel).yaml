@@ -1,35 +1,33 @@
 Name: Dev Tunnels (aka Visual Studio Dev Tunnel)
 Category: 'RMM'
-Description: Dev Tunnels (aka Visual Studio Dev Tunnel) is a remote monitoring and
-  management (RMM) tool. More information will be added as it becomes available.
+Description: Dev Tunnels (aka Visual Studio Dev Tunnel) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths: []
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths: []
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dev_tunnels__aka_visual_studio_dev_tunnel__network_sigma.yml
-  Description: Detects potential network activity of Dev Tunnels (aka Visual Studio
-    Dev Tunnel) RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dev_tunnels__aka_visual_studio_dev_tunnel__network_sigma.yml
+      Description: Detects potential network activity of Dev Tunnels (aka Visual Studio Dev Tunnel) RMM tool
 References: []
 Acknowledgement: []

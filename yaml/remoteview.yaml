@@ -1,43 +1,42 @@
 Name: RemoteView
 Category: 'RMM'
-Description: RemoteView is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: RemoteView is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - remoteview.exe
-  - rv.exe
-  - rvagent.exe
-  - rvagtray.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - remoteview.exe
+        - rv.exe
+        - rvagent.exe
+        - rvagtray.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*content.rview.com'
-    - '*.rview.com'
-    - content.rview.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*content.rview.com'
+              - '*.rview.com'
+              - content.rview.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_network_sigma.yml
-  Description: Detects potential network activity of RemoteView RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_processes_sigma.yml
-  Description: Detects potential processes activity of RemoteView RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_network_sigma.yml
+      Description: Detects potential network activity of RemoteView RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remoteview_processes_sigma.yml
+      Description: Detects potential processes activity of RemoteView RMM tool
 References:
-- https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall
+    - https://help.rview.com/hc/en-us/articles/360005175994--RemoteView-Server-list-for-firewall
 Acknowledgement: []

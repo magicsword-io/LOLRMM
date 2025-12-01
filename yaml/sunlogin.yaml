@@ -1,41 +1,40 @@
 Name: SunLogin
 Category: 'RMM'
-Description: SunLogin is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - OrayRemoteShell.exe
-  - OrayRemoteService.exe
-  - sunlogin*.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - OrayRemoteShell.exe
+        - OrayRemoteService.exe
+        - sunlogin*.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - sunlogin.oray.com
-    - client.oray.net
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - sunlogin.oray.com
+              - client.oray.net
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_network_sigma.yml
-  Description: Detects potential network activity of SunLogin RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_processes_sigma.yml
-  Description: Detects potential processes activity of SunLogin RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_network_sigma.yml
+      Description: Detects potential network activity of SunLogin RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_processes_sigma.yml
+      Description: Detects potential processes activity of SunLogin RMM tool
 References:
-- https://sunlogin.oray.com/en/embed/software.html
+    - https://sunlogin.oray.com/en/embed/software.html
 Acknowledgement: []

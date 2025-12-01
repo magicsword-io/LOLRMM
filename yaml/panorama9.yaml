@@ -1,40 +1,39 @@
 Name: Panorama9
 Category: 'RMM'
-Description: Panorama9 is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Panorama9 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - p9agent*.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - p9agent*.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - trusted.panorama9.com
-    - changes.panorama9.com
-    - panorama9.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - trusted.panorama9.com
+              - changes.panorama9.com
+              - panorama9.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/panorama9_network_sigma.yml
-  Description: Detects potential network activity of Panorama9 RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/panorama9_processes_sigma.yml
-  Description: Detects potential processes activity of Panorama9 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/panorama9_network_sigma.yml
+      Description: Detects potential network activity of Panorama9 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/panorama9_processes_sigma.yml
+      Description: Detects potential processes activity of Panorama9 RMM tool
 References:
-- https://support.panorama9.com/en/articles/1859605-what-ports-and-hosts-does-the-p9-agent-communicate-with
+    - https://support.panorama9.com/en/articles/1859605-what-ports-and-hosts-does-the-p9-agent-communicate-with
 Acknowledgement: []

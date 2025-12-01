@@ -1,41 +1,40 @@
 Name: ezHelp
 Category: 'RMM'
-Description: ezHelp is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - ezhelpclientmanager.exe
-  - ezHelpManager.exe
-  - ezhelpclient.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - ezhelpclientmanager.exe
+        - ezHelpManager.exe
+        - ezhelpclient.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.ezhelp.co.kr'
-    - ezhelp.co.kr
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.ezhelp.co.kr'
+              - ezhelp.co.kr
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_network_sigma.yml
-  Description: Detects potential network activity of ezHelp RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_processes_sigma.yml
-  Description: Detects potential processes activity of ezHelp RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_network_sigma.yml
+      Description: Detects potential network activity of ezHelp RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ezhelp_processes_sigma.yml
+      Description: Detects potential processes activity of ezHelp RMM tool
 References:
-- https://www.exhelp.co.kr
+    - https://www.exhelp.co.kr
 Acknowledgement: []

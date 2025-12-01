@@ -1,41 +1,40 @@
 Name: Rapid7
 Category: 'RMM'
-Description: Rapid7 is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Rapid7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - ir_agent.exe
-  - rapid7_agent_core.exe
-  - rapid7_endpoint_broker.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - ir_agent.exe
+        - rapid7_agent_core.exe
+        - rapid7_endpoint_broker.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.analytics.insight.rapid7.com'
-    - '*.endpoint.ingress.rapid7.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.analytics.insight.rapid7.com'
+              - '*.endpoint.ingress.rapid7.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_network_sigma.yml
-  Description: Detects potential network activity of Rapid7 RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_processes_sigma.yml
-  Description: Detects potential processes activity of Rapid7 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_network_sigma.yml
+      Description: Detects potential network activity of Rapid7 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_processes_sigma.yml
+      Description: Detects potential processes activity of Rapid7 RMM tool
 References:
-- https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
+    - https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
 Acknowledgement: []

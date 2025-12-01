@@ -1,34 +1,33 @@
 Name: ExtraPuTTY
 Category: 'RMM'
-Description: ExtraPuTTY is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: ExtraPuTTY is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
-  - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
-  - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
+        - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+        - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/extraputty_processes_sigma.yml
-  Description: Detects potential processes activity of ExtraPuTTY RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/extraputty_processes_sigma.yml
+      Description: Detects potential processes activity of ExtraPuTTY RMM tool
 References: []
 Acknowledgement: []

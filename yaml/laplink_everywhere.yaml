@@ -1,45 +1,44 @@
 Name: Laplink Everywhere
 Category: 'RMM'
-Description: Laplink Everywhere is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Description: Laplink Everywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - laplink.exe
-  - laplink-everywhere-setup*.exe
-  - laplinkeverywhere.exe
-  - llrcservice.exe
-  - serverproxyservice.exe
-  - OOSysAgent.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - laplink.exe
+        - laplink-everywhere-setup*.exe
+        - laplinkeverywhere.exe
+        - llrcservice.exe
+        - serverproxyservice.exe
+        - OOSysAgent.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - everywhere.laplink.com
-    - le.laplink.com
-    - atled.syspectr.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - everywhere.laplink.com
+              - le.laplink.com
+              - atled.syspectr.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_network_sigma.yml
-  Description: Detects potential network activity of Laplink Everywhere RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_processes_sigma.yml
-  Description: Detects potential processes activity of Laplink Everywhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_network_sigma.yml
+      Description: Detects potential network activity of Laplink Everywhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_everywhere_processes_sigma.yml
+      Description: Detects potential processes activity of Laplink Everywhere RMM tool
 References:
-- https://everywhere.laplink.com/docs
+    - https://everywhere.laplink.com/docs
 Acknowledgement: []

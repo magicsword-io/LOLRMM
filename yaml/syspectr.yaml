@@ -1,40 +1,39 @@
 Name: Syspectr
 Category: 'RMM'
-Description: Syspectr is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Syspectr is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - oo-syspectr*.exe
-  - OOSysAgent.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - oo-syspectr*.exe
+        - OOSysAgent.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - atled.syspectr.com
-    - app.syspectr.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - atled.syspectr.com
+              - app.syspectr.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_network_sigma.yml
-  Description: Detects potential network activity of Syspectr RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_processes_sigma.yml
-  Description: Detects potential processes activity of Syspectr RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_network_sigma.yml
+      Description: Detects potential network activity of Syspectr RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_processes_sigma.yml
+      Description: Detects potential processes activity of Syspectr RMM tool
 References:
-- https://www.syspectr.com/en/installation-in-a-network
+    - https://www.syspectr.com/en/installation-in-a-network
 Acknowledgement: []

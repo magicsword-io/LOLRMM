@@ -1,41 +1,40 @@
 Name: FastViewer
 Category: 'RMM'
-Description: FastViewer is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: FastViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - fastclient.exe
-  - fastmaster.exe
-  - FastViewer.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - fastclient.exe
+        - fastmaster.exe
+        - FastViewer.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.fastviewer.com'
-    - fastviewer.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.fastviewer.com'
+              - fastviewer.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_network_sigma.yml
-  Description: Detects potential network activity of FastViewer RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_processes_sigma.yml
-  Description: Detects potential processes activity of FastViewer RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_network_sigma.yml
+      Description: Detects potential network activity of FastViewer RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fastviewer_processes_sigma.yml
+      Description: Detects potential processes activity of FastViewer RMM tool
 References:
-- https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf
+    - https://fastviewer.com/demo/EN_FastViewer_Server%20Installation%20Configuration.pdf
 Acknowledgement: []
