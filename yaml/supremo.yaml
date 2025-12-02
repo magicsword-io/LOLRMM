@@ -1,27 +1,34 @@
 Name: Supremo
 Category: 'RMM'
-Description: Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
-Author: ''
+Description: |
+    Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Author: '@KyawPyiytHtet'
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2024-12-02'
 Details:
-    Website: ''
+    Website: https://www.supremocontrol.com/
     PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
+        - Filename: SupremoSystem.exe
+          OriginalFileName: ''
+          Description: ''
+    Privileges: Current User
     Free: ''
-    Verification: ''
+    Verification: 'None'
     SupportedOS:
         - Windows
-    Capabilities: []
+        - Linux
+        - MacOS
+    Capabilities:
+        - Remote Management session
     Vulnerabilities: []
     InstallationPaths:
-        - supremo.exe
-        - supremoservice.exe
-        - supremosystem.exe
-        - supremohelper.exe
+        - '*\\supremoremotedesktop\\supremosystem.exe'
+        - '%USERPROFILE%\\AppData\\Local\\Temp\\SupremoRemoteDesktop\\'
+        - 'C:\\ProgramData\\SupremoRemoteDesktop\\'
+        - 'supremo.exe'
+        - 'supremohelper.exe'
+        - 'supremoservice.exe'
+        - 'SupremoSystem.exe'
 Artifacts:
     Disk: []
     EventLog: []
@@ -29,9 +36,7 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - supremocontrol.com
               - '*.supremocontrol.com'
-              - '* .nanosystems.it'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_network_sigma.yml
@@ -39,5 +44,5 @@ Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/supremo_processes_sigma.yml
       Description: Detects potential processes activity of Supremo RMM tool
 References:
-    - https://www.supremocontrol.com/frequently-asked-questions/
+    - https://www.supremocontrol.com/
 Acknowledgement: []
