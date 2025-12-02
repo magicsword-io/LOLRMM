@@ -16,6 +16,13 @@ jobs:
       uses: ibiqlik/action-yamllint@v3
       with:
         strict: true # fail on warnings as well
+    - name: Suggest fix on failure
+      if: failure()
+      run: |
+        echo "::error::yamllint validation failed. To fix formatting issues locally, run:"
+        echo "::error::    python bin/fix_yaml_formatting.py"
+        echo "::error::Or to fix a specific file:"
+        echo "::error::    python bin/fix_yaml_formatting.py yaml/yourfile.yaml"
   validate-yaml:
     runs-on: ubuntu-latest
     needs: yamllint
