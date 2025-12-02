@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2025-12-01'
+modified: '2025-12-02'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -17,6 +17,7 @@ logsource:
 detection:
   selection:
     Image|endswith:
+    - \\%USERPROFILE%\\AppData\\Local\\Temp\\SupremoRemoteDesktop\\
     - \\9380CC75B872221A7425D7503565B67580407F60
     - \\AEMAgent.exe
     - \\AMMYY_Admin.exe
@@ -138,6 +139,7 @@ detection:
     - \\C:\Windows\System32\mstsc.exe
     - \\C:\Windows\dwrcs\*
     - \\C:\\ProgramData\\AMMYY\\*
+    - \\C:\\ProgramData\\SupremoRemoteDesktop\\
     - \\CBBackupPlan.exe
     - \\CagService.exe
     - \\Cloud.Backup.RM.Service.exe
@@ -274,6 +276,7 @@ detection:
     - \\SplashtopSOS.exe
     - \\Splashtop_Streamer_Windows*.exe
     - \\SupportTool.exe
+    - \\SupremoSystem.exe
     - \\Syncro.App.Runner.exe
     - \\Syncro.Installer.exe
     - \\Syncro.Overmind.Service.exe
@@ -601,7 +604,6 @@ detection:
     - \\supremo.exe
     - \\supremohelper.exe
     - \\supremoservice.exe
-    - \\supremosystem.exe
     - \\syncrosetup.exe
     - \\sysdiag.exe
     - \\tacticalrmm.exe

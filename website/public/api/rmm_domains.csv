@@ -335,9 +335,7 @@ parsec.app,Parsec
 parsec.gg,Parsec
 *.parsec.app,Parsec
 crosstecsoftware.com/remotecontrol,CrossTec Remote Control
-supremocontrol.com,Supremo
 *.supremocontrol.com,Supremo
-* .nanosystems.it,Supremo
 geo.netsupportsoftware.com,NetSupport Manager
 netsupportmanager.com,NetSupport Manager
 *.netsupportmanager.com,NetSupport Manager
