@@ -1,0 +1,56 @@
+Name: Duet Display
+Category: 'RMM'
+Description: Duet Display is a screen sharing and remote desktop software product that ships with RMM capability. The tool includes remote desktop access functionality and is part of the broader itagent product family which features system management and automation functions. Duet Display has been observed being used for remote access capabilities beyond its primary screen-sharing purpose.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://www.duetdisplay.com/remote-desktop-access-software
+    PEMetadata:
+        - Filename: duet.exe
+          OriginalFileName: DuetDisp.exe
+          Description: Duet Display executable (observed in threat intelligence)
+        - Filename: DuetSetup.exe
+          OriginalFileName: ''
+          Description: Duet Display installer (verified via VirusTotal)
+    Privileges: User/SYSTEM
+    Free: Trial Available
+    Verification: Code-signed
+    SupportedOS:
+        - Windows
+        - Mac
+        - iOS
+        - Android
+    Capabilities:
+        - Remote Control
+        - Remote Access
+        - Screen Sharing
+        - Remote Desktop
+        - System Management
+    Vulnerabilities: []
+    InstallationPaths:
+        - duet.exe
+        - DuetSetup.exe
+        - DuetDisp.exe
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.duetdisplay.com'
+              - rdp.duetdisplay.com
+              - duetdisplay.com
+              - '*.itagent.com'
+              - itagent.com
+          Ports:
+              - 443
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/125
+    - https://www.duetdisplay.com/remote-desktop-access-software
+    - https://www.itagent.com/it-agent-remote-access
+Acknowledgement:
+    - Person: Syndikalist
+      Handle: '@Syndikalist'
