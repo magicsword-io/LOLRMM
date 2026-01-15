@@ -1,0 +1,88 @@
+Name: NetBird
+Category: 'RMM'
+Description: NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being leveraged in spear phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting financial executives and CFOs. The tool was deployed as part of multi-stage phishing attacks by threat actors including APT MuddyWater.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://netbird.io/
+    PEMetadata:
+        - Filename: netbird.exe
+          OriginalFileName: ''
+          Description: NetBird client executable for Windows
+        - Filename: netbird-ui.exe
+          OriginalFileName: ''
+          Description: NetBird UI executable for Windows
+        - Filename: netbird
+          OriginalFileName: ''
+          Description: NetBird client binary for Linux/macOS
+    Privileges: User
+    Free: Yes (Open Source)
+    Verification: Open Source
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+        - Android
+        - iOS
+    Capabilities:
+        - Remote Access
+        - VPN Connectivity
+        - Peer-to-Peer Networking
+        - Secure Tunneling
+        - Network Management
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Netbird\netbird.exe
+        - C:\Program Files\Netbird\netbird-ui.exe
+        - C:\ProgramData\Netbird\*
+        - /usr/bin/netbird
+        - /usr/local/bin/netbird
+        - /opt/netbird/*
+        - netbird.exe
+        - netbird-ui.exe
+        - netbird
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Netbird\netbird.exe
+          Description: NetBird client installation directory
+          OS: Windows
+        - File: C:\ProgramData\Netbird\config.json
+          Description: NetBird configuration file
+          OS: Windows
+        - File: /etc/netbird/config.json
+          Description: NetBird configuration file
+          OS: Linux
+        - File: /var/log/netbird/*
+          Description: NetBird log files
+          OS: Linux
+    EventLog:
+        - EventID: 4688
+          Description: Process creation event for netbird.exe
+          OS: Windows
+        - EventID: 7045
+          Description: Service installation event for NetBird
+          OS: Windows
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - netbird.io
+              - '*.netbird.io'
+              - api.netbird.io
+              - signal.netbird.io
+          Ports:
+              - 443
+              - 51820
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/81
+    - https://www.trellix.com/en-in/blogs/research/a-flyby-on-the-cfos-inbox-spear-phishing-campaign-targeting-financial-executives-with-netbird-deployment/
+    - https://hunt.io/blog/apt-muddywater-deploys-multi-stage-phishing-to-target-cfos
+    - https://netbird.io/use-cases/remote-access
+    - https://github.com/netbirdio/netbird
+Acknowledgement:
+    - Person: jacobholtz
+      Handle: '@jacobholtz'
+    - Person: ruppde
+      Handle: '@ruppde'

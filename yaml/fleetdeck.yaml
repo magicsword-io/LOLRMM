@@ -1,44 +1,91 @@
 Name: FleetDeck.io
 Category: 'RMM'
-Description: FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
-Author: ''
-Created: '2024-08-02'
-LastModified: '2024-08-02'
+Description: FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop access and system management capabilities. The software supports remote desktop access, reboot/shutdown capabilities including safe mode, and virtual terminal support. FleetDeck agents report system information and enable remote access to managed endpoints. The tool can be deployed via MSI, MST, or shared link installations.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
 Details:
-    Website: ''
+    Website: https://fleetdeck.io/
     PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
+        - Filename: fleetdeck-agent.exe
+          OriginalFileName: fleetdeck_installer
+          Description: FleetDeck agent installer (verified via official documentation)
+        - Filename: fleetdeck_agent_svc.exe
+          OriginalFileName: ''
+          Description: FleetDeck agent service executable (verified via official documentation)
+        - Filename: fleetdeck-agent.msi
+          OriginalFileName: ''
+          Description: FleetDeck MSI installer (verified via official documentation)
+        - Filename: fd_agent.dll
+          OriginalFileName: ''
+          Description: FleetDeck agent DLL component (reported in GitHub issue)
+    Privileges: SYSTEM
+    Free: Trial and Paid
+    Verification: Code-signed
     SupportedOS:
         - Windows
-    Capabilities: []
+    Capabilities:
+        - Remote Control
+        - Remote Access
+        - Remote Desktop
+        - System Reboot
+        - Safe Mode Access
+        - Remote Shutdown
+        - Virtual Terminal
+        - System Monitoring
     Vulnerabilities: []
     InstallationPaths:
+        - C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe
+        - C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe
+        - C:\Program Files (x86)\FleetDeck Agent\*\fd_agent.dll
+        - C:\Windows\Temp\FleetDeck\*
+        - fleetdeck-agent.exe
         - fleetdeck_agent_svc.exe
         - fleetdeck_commander_svc.exe
         - fleetdeck_installer.exe
         - fleetdeck_commander_launcher.exe
         - fleetdeck_agent.exe
+        - fleetdeck-agent.msi
+        - fleetdeck-agent.mst
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
+    Disk:
+        - File: C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe
+          Description: FleetDeck agent service executable (verified via official documentation)
+          OS: Windows
+        - File: C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe
+          Description: FleetDeck agent executable (verified via official documentation)
+          OS: Windows
+        - File: C:\Program Files (x86)\FleetDeck Agent\*\fd_agent.dll
+          Description: FleetDeck agent DLL (reported in GitHub issue)
+          OS: Windows
+        - File: C:\Windows\Temp\FleetDeck\*
+          Description: FleetDeck temporary files directory (verified via official documentation)
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          Description: Service installation event for FleetDeck Agent Service
+          OS: Windows
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\FleetDeck Agent Service
+          Description: FleetDeck service registry key
+          OS: Windows
     Network:
         - Description: Known remote domains
           Domains:
               - '*.fleetdeck.io'
-              - cognito-idp.us-west-2.amazonaws.com
               - fleetdeck.io
-          Ports: []
+              - agentmqtt.fleetdeck.io
+              - checkip.zmazonaws.com
+          Ports:
+              - 443
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_network_sigma.yml
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_network_sigma.yml
       Description: Detects potential network activity of FleetDeck.io RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_processes_sigma.yml
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_processes_sigma.yml
       Description: Detects potential processes activity of FleetDeck.io RMM tool
 References:
+    - https://github.com/magicsword-io/LOLRMM/issues/112
     - https://fleetdeck.io/faq/
-Acknowledgement: []
+Acknowledgement:
+    - Person: default1337
+      Handle: '@default1337'

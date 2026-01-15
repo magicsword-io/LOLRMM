@@ -1,0 +1,68 @@
+Name: NVDA (Non-Visual Desktop Access)
+Category: 'RMM'
+Description: NVDA (Non-Visual Desktop Access) is a free, open-source screen reader that allows blind and vision impaired people to access and interact with the Windows operating system and many third party applications. Recent versions include a "Remote Access" feature that enables remote support and assistance capabilities.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://www.nvaccess.org/
+    PEMetadata:
+        - Filename: nvda.exe
+          OriginalFileName: ''
+          Description: NVDA screen reader executable
+        - Filename: nvda_service.exe
+          OriginalFileName: ''
+          Description: NVDA service executable for secure screens
+    Privileges: User
+    Free: true
+    Verification: Open Source
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Screen Reading
+        - Remote Access
+        - Remote Support
+        - Accessibility Features
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\NVDA\nvda.exe
+        - C:\Program Files\NVDA\nvda.exe
+        - C:\Users\*\AppData\Roaming\nvda\*
+        - C:\Users\*\AppData\Local\Temp\nvda_*\*
+        - nvda.exe
+        - nvda_service.exe
+        - nvda_*.exe
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\NVDA\nvda.exe
+          Description: NVDA installation directory
+          OS: Windows
+        - File: C:\Program Files\NVDA\nvda.exe
+          Description: NVDA installation directory (64-bit)
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\nvda\nvda.log
+          Description: NVDA log file
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\nvda\nvda.ini
+          Description: NVDA configuration file
+          OS: Windows
+    EventLog:
+        - EventID: 4688
+          Description: Process creation event for nvda.exe
+          OS: Windows
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - nvaccess.org
+              - '*.nvaccess.org'
+          Ports:
+              - 443
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/89
+    - https://www.nvaccess.org/
+    - https://github.com/nvaccess/nvda/pull/17580
+Acknowledgement:
+    - Person: 59e5aaf4
+      Handle: '@59e5aaf4'

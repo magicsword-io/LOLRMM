@@ -1,0 +1,64 @@
+Name: Miradore
+Category: 'RMM'
+Description: Miradore is a mobile device management (MDM) and remote monitoring and management (RMM) tool founded in 2006 as a Finnish software company. In 2022, Miradore was acquired by GoTo and is now part of the LogMeIn portfolio of IT solutions. The tool is trusted by over 2,700 customers in more than 100 countries, managing over 900,000 devices globally. Miradore has been observed being used in cyber incidents, including phishing campaigns where the installer was renamed and delivered to establish unauthorized remote access.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://www.miradore.com/
+    PEMetadata:
+        - Filename: StatementView.msi
+          OriginalFileName: ''
+          Description: Miradore installer MSI (observed renamed in phishing campaigns - verified via VirusTotal)
+    Privileges: SYSTEM
+    Free: Free tier available
+    Verification: Code-signed by Sectigo
+    SupportedOS:
+        - Windows
+        - Mac
+        - Linux
+        - iOS
+        - Android
+    Capabilities:
+        - Remote Control
+        - Remote Access
+        - Device Management
+        - Software Deployment
+        - Patch Management
+        - Inventory Management
+        - Mobile Device Management
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Miradore\OnlineClient\bin\*
+        - '*\Miradore\*'
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Miradore\OnlineClient\bin\*
+          Description: Miradore client installation directory (verified via VirusTotal sandbox analysis)
+          OS: Windows
+        - File: C:\Program Files\Miradore\OnlineClient\bin\7z.dll
+          Description: Miradore compression library (verified via VirusTotal sandbox analysis)
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          Description: Service installation event for Miradore Online Client
+          OS: Windows
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - gateway.miradore.com
+              - '*.miradore.com'
+              - miradore.com
+              - gerwconline.blob.core.windows.net
+          Ports:
+              - 443
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/118
+    - https://www.virustotal.com/gui/file/fedf9d82fb1349a5eecf0fad4a9d9eac7e160130e563b9bd3328b5f04891bbd6/details
+    - https://app.any.run/tasks/5d088796-fb67-45bb-9ee0-369b502522fc
+    - https://www.miradore.com/
+Acknowledgement:
+    - Person: Squiblydoo
+      Handle: '@Squiblydoo'

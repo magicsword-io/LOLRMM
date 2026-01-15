@@ -32,5 +32,8 @@ Detections:
       Description: Detects potential network activity of Quick Assist RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml
       Description: Detects potential processes activity of Quick Assist RMM tool
-References: []
-Acknowledgement: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/46
+Acknowledgement:
+    - Person: bittib010
+      Handle: '@bittib010'
