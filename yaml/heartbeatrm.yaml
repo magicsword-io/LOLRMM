@@ -1,0 +1,65 @@
+Name: HeartbeatRM
+Category: 'RMM'
+Description: HeartbeatRM is a remote monitoring and management (RMM) tool that has been observed being leveraged in social engineering campaigns, including invitation-themed and Social Security–related phishing lures, to establish unauthorised remote access on victim endpoints prior to the deployment of ScreenConnect. The tool installs as a Windows service and serves as an initial access mechanism and staging point for secondary RMM deployment. Note - Specific binary names and paths reported in threat intelligence could not be independently verified via VirusTotal or official documentation.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://heartbeatrm.com/
+    PEMetadata:
+        - Filename: agent-installer-any.exe
+          OriginalFileName: ''
+          Description: Official HeartbeatRM installer (verified via VirusTotal)
+        - Filename: hbrm-x64.exe
+          OriginalFileName: ''
+          Description: Reported HeartbeatRM executable (unverified - from threat intelligence report)
+        - Filename: hbrm-updater-x64.exe
+          OriginalFileName: ''
+          Description: Reported HeartbeatRM updater executable (unverified - from threat intelligence report)
+    Privileges: SYSTEM
+    Free: Unknown
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote Control
+        - Remote Access
+        - File Transfer
+        - Command Line Support
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\HeartbeatRM\*
+        - C:\Program Files\HeartbeatRM\*
+        - '*\HeartbeatRM\*'
+        - agent-installer-any.exe
+        - hbrm-x64.exe
+        - hbrm-updater-x64.exe
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\HeartbeatRM\*
+          Description: HeartbeatRM official installation directory (verified via vendor documentation)
+          OS: Windows
+        - File: C:\Program Files\HeartbeatRM\*
+          Description: HeartbeatRM reported installation directory (unverified - from threat intelligence)
+          OS: Windows
+        - File: '*\agent-installer-any.exe'
+          Description: HeartbeatRM official installer (verified via VirusTotal)
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          Description: Service installation event for HeartbeatRM
+          OS: Windows
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.heartbeatrm.com'
+              - heartbeatrm.com
+          Ports: []
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/136
+    - https://heartbeatrm.com/
+Acknowledgement:
+    - Person: 0xburgers
+      Handle: '@0xburgers'
