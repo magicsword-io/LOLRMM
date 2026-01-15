@@ -14,7 +14,7 @@ Details:
           OriginalFileName: ''
           Description: NVDA service executable for secure screens
     Privileges: User
-    Free: Yes
+    Free: true
     Verification: Open Source
     SupportedOS:
         - Windows
