@@ -1,40 +1,164 @@
 Name: Tactical RMM
-Category: 'RMM'
+Category: RMM
 Description: Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - tacticalrmm.exe
-        - tacticalrmm.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - tacticalrmm.exe
+  - tacticalrmm.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - login.tailscale.com
-              - login.tailscale.com
-              - docs.tacticalrmm.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - login.tailscale.com
+    - login.tailscale.com
+    - docs.tacticalrmm.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_network_sigma.yml
-      Description: Detects potential network activity of Tactical RMM RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml
-      Description: Detects potential processes activity of Tactical RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_network_sigma.yml
+  Description: Detects potential network activity of Tactical RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml
+  Description: Detects potential processes activity of Tactical RMM RMM tool
 References:
-    - https://docs.tacticalrmm.com
+- https://docs.tacticalrmm.com
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - 2025-12-14_3570cdbcb1a442eb605fb2b5f3d7aef7_cobalt-strike_coinminer_dosia_frostygoop_glassworm_luca-stealer_poet-rat_quasar-rat_sliver_snatch
+  - 7v04zvtl.exe
+  - ft38y1rpx.exe
+  - is-mp1io.tmp
+  - l0ahm9y.exe
+  - m7i0z.exe
+  - nhvs68.exe
+  - tacticalagent-v2.9.1-windows-amd64.exe
+  - tacticalrmm.exe
+  - vz4exk32z.exe
+  company_names: []
+  signer_names:
+  - Christopher West
+  certificates:
+  - signer_name: Christopher West
+    certificate_thumbprint: F73B1F0CA2D3B9FCC00D4CD9B379C9FF9DB518A2
+    tbs_sha256: EA02531BA6EEAE043DFCDBEAC2A5C520567FC566AB5C2D75AA0DEAD4E2F6414D
+    tbs_sha1: ''
+    certificate_der_base64: MIIFADCCA+igAwIBAgIQQICHQw+Cr45aT34Bn0LB/DANBgkqhkiG9w0BAQsFADB1MQswCQYDVQQGEwJJTDEWMBQGA1UEChMNU3RhcnRDb20gTHRkLjEpMCcGA1UECxMgU3RhcnRDb20gQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxIzAhBgNVBAMTGlN0YXJ0Q29tIENsYXNzIDIgT2JqZWN0IENBMB4XDTE2MDQxOTIyMzcwNVoXDTE4MDQxOTIyMzcwNVowbTELMAkGA1UEBhMCR0IxFzAVBgNVBAgMDkdyZWF0ZXIgTG9uZG9uMQ8wDQYDVQQHDAZMb25kb24xGTAXBgNVBAoMEENocmlzdG9waGVyIFdlc3QxGTAXBgNVBAMMEENocmlzdG9waGVyIFdlc3QwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC5hL38SleO3luj57cDjooMmS1jPUrGBXWZa61NZ+O3edzrQW4ojCyE81DLwmG50guUgy5KvSgBGStn9Vwh4rZa9HCJuuMQ5xwddy5OMbRJAnVXctRwi21lsmS/NblToo3yKg5AN0/S9ad3xoWipzOPV1MAUF9U0NZowlQqD5v/FMiyJXtH5BFjAHx4cUV9om7IhbD2LLoKqjloV/dygVW28C8we5yXHDwvAhyoE6MDw4sb/qQ3IfhMSeeDC37FZvnQElM+W+2lRPskx3tDEVEespZxBUwYZxPiDi3vptzGJf0hYY6mbTEJQHD5SUaubHP9ldeUbvS5vW2SAR1gwDNRAgMBAAGjggGSMIIBjjAOBgNVHQ8BAf8EBAMCB4AwEwYDVR0lBAwwCgYIKwYBBQUHAwMwCQYDVR0TBAIwADAdBgNVHQ4EFgQUJ91DNENlOALLRG1cjTUVVKnTLwYwHwYDVR0jBBgwFoAUPmKTmtfHGe4+j0kQhVUVIOOUhBwwbQYIKwYBBQUHAQEEYTBfMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5zdGFydHNzbC5jb20wNwYIKwYBBQUHMAKGK2h0dHA6Ly9haWEuc3RhcnRzc2wuY29tL2NlcnRzL3NjYS5jb2RlMi5jcnQwNgYDVR0fBC8wLTAroCmgJ4YlaHR0cDovL2NybC5zdGFydHNzbC5jb20vc2NhLWNvZGUyLmNybDAjBgNVHRIEHDAahhhodHRwOi8vd3d3LnN0YXJ0c3NsLmNvbS8wUAYDVR0gBEkwRzAIBgZngQwBBAEwOwYLKwYBBAGBtTcBAgUwLDAqBggrBgEFBQcCARYeaHR0cDovL3d3dy5zdGFydHNzbC5jb20vcG9saWN5MA0GCSqGSIb3DQEBCwUAA4IBAQCmCLyw6Ca8APwJrEyy5nUgkD79aMdE1yMP+2yPARqYs1byhS1L5k9FUPYut2CTFEKi39IlCxOpUCfK47Tulwmy6VFCChuzjJ65W482RdnZ6tI808YYgOuE5eQ3Kw5cE0e1WdxTELiXzya8Yt8FBJhUShfK7ODewYTr5B2dtm2TSpSFZd3ck58WpRFl7Y3u9KG6QRjMFvCqUQWAKK2HsBGDdLjxrXj0zZ6r06vGl553W5nOF41/G0SGtrbyD6IZeLFOL2tpCuBDUftjwnv+PVMvL3+EBk3rLN12QvT/CNZM3iFCzTMlYJ5SOGTv+bDd1ZaUbfpN4vpzUZBXZH7ss6tR
+  - signer_name: Christopher West
+    certificate_thumbprint: N/A
+    tbs_sha256: ''
+    tbs_sha1: A306499CEC6AF8C46C2F959731D0D41C6090D06C
+FileHashes:
+  authenticode:
+  - file_name: ft38y1rpx.exe
+    sha256: 3CC4C9D00DF29DC51A64A41DEB93CB4B010669D0571040700DFB4D15D3768A90
+    sha1: EFB8FFC4CB40D47A668CA38DA98CECE3AA3B8902
+  - file_name: vz4exk32z.exe
+    sha256: 1615799D0036FA60E74689E45F45EA9DC9047065BD37339BEE9CB37D92E48F22
+    sha1: 16780328DEC2D7A10B9168A11F073169667125BE
+  - file_name: tacticalrmm.exe
+    sha256: 252F57B824BC488FE635391E0E6F554077F530952992618D11DD8D15E2D7AEC4
+    sha1: 7DD42D637F3BAF82CF8CA9551CDA2E62D57EB1A1
+  - file_name: 2025-12-14_3570cdbcb1a442eb605fb2b5f3d7aef7_cobalt-strike_coinminer_dosia_frostygoop_glassworm_luca-stealer_poet-rat_quasar-rat_sliver_snatch
+    sha256: 02BF4D99FE81A2C92A28EFF02A8EEEE93B79C2B019185326917E77A07B5D1640
+    sha1: 0D476F7C7F536242B3003EECAE64E1A223CB56E1
+  - file_name: tacticalrmm.exe
+    sha256: 3026E8C0E61B78884F5AA1777527B233F3CF4BE14AF6E257BAB50ADB0B4EADAE
+    sha1: E6A620B83B6C860AECAE59412DF26ECB0331D39F
+  - file_name: tacticalrmm.exe
+    sha256: F2835C54CB6E24A0598D74D5A13C110DB84F05D1BE6863280C1BB09E74F207E2
+    sha1: AC61A1CC25EB933635599AFB6D0B80D9B0C50E7C
+  - file_name: tacticalrmm.exe
+    sha256: 7ED4D76A0A62329691D4FCBA076F63F09CD60CEF156484328E5AE83956E8F32C
+    sha1: 54179578313D5C13935AF83314F752EEC5385DD7
+  - file_name: tacticalrmm.exe
+    sha256: E142022630AB18A1EB2007027FCF4320FBE3E537FA1784E079DF5E0454C95FFA
+    sha1: 7F7D7AB9DB11F142D9CA5B8200784B01416AFC9E
+  - file_name: 7v04zvtl.exe
+    sha256: 9D2FA4720EAA8FC77FD769475D9692628CE231D09B68D3F262A71B6A9918B7A3
+    sha1: 46AC3162F3F78C00B895FF590381B7B13F180B98
+  - file_name: nhvs68.exe
+    sha256: EB9F6F96ECE167D782885D01620D5ADCEAE51D69D73BAAC922F0C9F4BB64F8AB
+    sha1: 128666F81B3F8554D58DF76AB84B619A42799FC7
+  - file_name: tacticalrmm.exe
+    sha256: 11CC8798C52FA3C656A1A584DDE09144E690F62620D3B54295D469952C63D4B4
+    sha1: C67383FBEC97D9CD08D8F04629DC767D9A435E3D
+  - file_name: tacticalrmm.exe
+    sha256: 3970FF0BD8B081A6D880D23DE6C2932874B41D6E91F0C77D7A39B5A9E54DB785
+    sha1: BD871C91B00BF1101B727C1A0E69EA4CF568A3F1
+  - file_name: l0ahm9y.exe
+    sha256: AEDFE445946EC94FD2C7CEFD6C4A4C33771134A2AE487FCC4BDB27781328C4BA
+    sha1: D1C60D1C1C738C3EB45DC3D74155A6E7BB060A22
+  - file_name: tacticalagent-v2.9.1-windows-amd64.exe
+    sha256: 268CAC5F97338DC5541EB517AE75CFBAB0E5E9E52AD66817129EAFD55DA1BE05
+    sha1: 9BC42B4C6B68724825EB5F0067FD59191853EF9D
+  - file_name: tacticalrmm.exe
+    sha256: 500C2081B4F2E76DDFB9D30F2794D29FF0BE627F8D81D4A32076B427550E92E1
+    sha1: B47446613A26F6B5550DD0D8776B94070F82F4BC
+  - file_name: tacticalrmm.exe
+    sha256: DDD7083C8595F7A3CB7516DA58320F09121C7DBD3628930FAACF82CA55CC315B
+    sha1: 90AEE3D7A12A420915B13874CA8952FFB33AA067
+  - file_name: is-MP1IO.tmp
+    sha256: 8CD03F59DB7C549DFEFD239DDB7B6EB4BFD8AB518FBFBE9518C6F004E3BE4C25
+    sha1: 793EAC66DDB705E4DB63BB3116EDF02B0F28918B
+  - file_name: m7i0z.exe
+    sha256: FD5E369822E6CF4BC12A342F9A8109CEDEB86781DA411D4C3E64B934BC398058
+    sha1: 96D8C6A59C6B7DA0C3107D988DD94278C95E1EAA
+  page:
+  - file_name: ft38y1rpx.exe
+    sha256: 5D36E860BC011D2A937A2C04D33C41AC22DE22DEC3B10FD229E54F8AB7FF9FC9
+    sha1: 6E489AEB60857D065FD25AFE949B163EE441CE31
+  - file_name: vz4exk32z.exe
+    sha256: 2C04EF69FB5DFAA678575E4241DB560735A9AD0CDB0B1BA52CC80595279F4EDD
+    sha1: 355CB1AEDF005F6335EEACA302CE00F268F05D90
+  - file_name: 2025-12-14_3570cdbcb1a442eb605fb2b5f3d7aef7_cobalt-strike_coinminer_dosia_frostygoop_glassworm_luca-stealer_poet-rat_quasar-rat_sliver_snatch
+    sha256: 38169383E87CA8B9C0442F6B8AD64BF76C61D41D7C11512640700F29426DCAFF
+    sha1: 9582072F90C99E0337027C542B18E30E63AFE0F2
+  - file_name: tacticalrmm.exe
+    sha256: D45072B2EAD3E6F841A59086A0F3FCF63CA4C0667A6C20F16ABEEF26773309C0
+    sha1: 2A2E6E7259A52DAB61D7E077AFD09FB859FFF627
+  - file_name: tacticalrmm.exe
+    sha256: BF9797B468D297FA41DE2E6879B0C0450203F99055AA45DF28FC11787852142A
+    sha1: 342D95593FA22B134557C777DB81BB51C47AF6E0
+  - file_name: tacticalrmm.exe
+    sha256: 4C3AD685700D6703369133F0DD0A13DCCBC1FF8368929ABDE9646DCB673DEB5B
+    sha1: 7B108289E162A6BE86F0E2F81C97357D3D11AC69
+  - file_name: 7v04zvtl.exe
+    sha256: ACAF8E991A83A50D0B091F2E1C9DECED141C20080CEF8D9F54C0340BCE7F68CC
+    sha1: 745DB9C6B127428E1FBA63547851A4F696A24A91
+  - file_name: nhvs68.exe
+    sha256: 5F3BA1EE7CB45424DCB04DC4D9C99C399A684AAEB8A227308E8DF60CB5A957B1
+    sha1: 04D53C28F7385E3F46DC02060AF9C8A792CBCDCE
+  - file_name: tacticalrmm.exe
+    sha256: 94A64F4250C4A199083FCAF98F1B077543DA8964EBCBDE7A4F2223052D68238C
+    sha1: 03458F61391A87208AF29AE560349B91CEEF6F69
+  - file_name: tacticalrmm.exe
+    sha256: 90022B3F951ECF60130AD47D278150A62F4DAFD84139C3EAD97D0DFFFA08CDFE
+    sha1: 9698BB51C7DC33D8C53F9ECDFD94CBEC588E089A
+  - file_name: l0ahm9y.exe
+    sha256: BFF28767946B8ED7C3C1217548F742967637052F6CC5DF7B75BA2922B5ED4A1F
+    sha1: 53C592BFBBDF90EF286512BEDD084CB3A4CBD996
+  - file_name: tacticalagent-v2.9.1-windows-amd64.exe
+    sha256: C7E2AEC782798DB83645BFFE14820ED47B035182681B224D262CE11FD1A6D703
+    sha1: 435D9C4486FAEAB61FC0C1681C47347D74ABEA04
+  - file_name: tacticalrmm.exe
+    sha256: A628305383B398F760933ABB5AC219F21782AB3E3E677A74444A8E203FB1E0F2
+    sha1: 76F628C73887BA1B00245C6CD374B5B747157A2E
+  - file_name: is-MP1IO.tmp
+    sha256: 88E768CB07E4E56900325D6A3DC4966CA43B47E0D5F35AEBA6756218459F4EBC
+    sha1: E180813967854F98734AE14FA2164A2D59FA6C8F

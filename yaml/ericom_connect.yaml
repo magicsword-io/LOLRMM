@@ -1,39 +1,52 @@
 Name: Ericom Connect
-Category: 'RMM'
-Description: Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes
+  available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - EricomConnectRemoteHost*.exe
-        - ericomconnnectconfigurationtool.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - EricomConnectRemoteHost*.exe
+  - ericomconnnectconfigurationtool.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - user_managed
-              - ericom.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - ericom.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_network_sigma.yml
-      Description: Detects potential network activity of Ericom Connect RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_processes_sigma.yml
-      Description: Detects potential processes activity of Ericom Connect RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_network_sigma.yml
+  Description: Detects potential network activity of Ericom Connect RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_processes_sigma.yml
+  Description: Detects potential processes activity of Ericom Connect RMM tool
 References:
-    - https://www.ericom.com/connect-accessnow/
+- https://www.ericom.com/connect-accessnow/
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - setupsuite
+  company_names: []
+  signer_names: []
+  certificates: []
+FileHashes:
+  authenticode:
+  - file_name: SetupSuite
+    sha256: 8192BE693F725A6894110756A4AC198EA9D7A9A206FA0AAB4B6D550631469DEE
+    sha1: B7FA745F634101966C7806CAEFC503546D10D42F
+  page: []

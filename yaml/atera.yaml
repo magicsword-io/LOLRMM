@@ -1,220 +1,253 @@
 Name: Atera
-Category: 'RMM'
-Description: 'Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.
+Category: RMM
+Description: 'Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or
+  facilitate command execution and lateral movement.
 
-    '
+  '
 Created: '2024-08-03'
-LastModified: '2024-08-03'
+LastModified: '2025-12-14'
 Details:
-    Website: https://www.atera.com/
-    PEMetadata:
-        - Filename: AteraAgent.exe
-          OriginalFileName: AteraAgent.exe
-          Description: AteraAgent
-    Privileges: SYSTEM
-    Free: 30 day trial
-    Verification: None
-    SupportedOS:
-        - Windows
-        - MacOS
-        - Linux
-    Capabilities:
-        - Integrated remote access with Splashtop and AnyDesk
-        - Remote monitoring and management
-        - Patch management
-        - Network discovery
-        - Backup and disaster recovery
-        - Helpdesk and ticketing
-        - Reporting and analytics
-        - Billing and invoicing
-        - Customer portal
-        - Mobile app
-    Vulnerabilities:
-        - CVE-2023-26078
-        - CVE-2023-26077
-    InstallationPaths:
-        - '*\AgentPackageNetworkDiscovery.exe'
-        - '*\AgentPackageTaskScheduler.exe'
-        - '*\ATERA Networks\AteraAgent\*'
-        - '*\AteraAgent.exe'
-        - atera_agent.exe
-        - atera_agent.exe
-        - ateraagent.exe
-        - C:\Program Files\ATERA Networks\AteraAgent\*
-        - C:\Program Files\Atera Networks
-        - C:\Program Files (x86)\Atera Networks
-        - syncrosetup.exe
+  Website: https://www.atera.com/
+  PEMetadata:
+  - Filename: AteraAgent.exe
+    OriginalFileName: AteraAgent.exe
+    Description: AteraAgent
+  Privileges: SYSTEM
+  Free: 30 day trial
+  Verification: None
+  SupportedOS:
+  - Windows
+  - MacOS
+  - Linux
+  Capabilities:
+  - Integrated remote access with Splashtop and AnyDesk
+  - Remote monitoring and management
+  - Patch management
+  - Network discovery
+  - Backup and disaster recovery
+  - Helpdesk and ticketing
+  - Reporting and analytics
+  - Billing and invoicing
+  - Customer portal
+  - Mobile app
+  Vulnerabilities:
+  - CVE-2023-26078
+  - CVE-2023-26077
+  InstallationPaths:
+  - '*\AgentPackageNetworkDiscovery.exe'
+  - '*\AgentPackageTaskScheduler.exe'
+  - '*\ATERA Networks\AteraAgent\*'
+  - '*\AteraAgent.exe'
+  - atera_agent.exe
+  - atera_agent.exe
+  - ateraagent.exe
+  - C:\Program Files\ATERA Networks\AteraAgent\*
+  - C:\Program Files\Atera Networks
+  - C:\Program Files (x86)\Atera Networks
+  - syncrosetup.exe
 Artifacts:
-    Disk:
-        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt
-          Description: N/A
-          OS: Windows
-        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\*
-          Description: N/A
-          OS: Windows
-        - File: C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe
-          Description: Atera service binary
-          OS: Windows
-        - File: C:\Program Files\Atera Networks\AlphaAgent.exe
-          Description: Atera service binary
-          OS: Windows
-        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe
-          Description: N/A
-          OS: Windows
-        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe
-          Description: N/A
-          OS: Windows
-        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe
-          Description: N/A
-          OS: Windows
-        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe
-          Description: N/A
-          OS: Windows
-        - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe
-          Description: N/A
-          OS: Windows
-    EventLog:
-        - EventID: 7045
-          ProviderName: Service Control Manager
-          LogFile: System.evtx
-          ServiceName: AteraAgent
-          ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\AteraAgent.exe"'
-          Description: Service installation event as result of AteraAgent installation.
-        - EventID: 7045
-          ProviderName: Service Control Manager
-          LogFile: System.evtx
-          ServiceName: WinRing0_1_2_0
-          ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageMonitoring\\OpenHardwareMonitorLib.sys"'
-          Description: Service installation event as result of Atera pakcage manager installation.
-        - EventID: 11707
-          ProviderName: MsiInstaller
-          LogFile: Application.evtx
-          Data: 'Product: AteraAgent -- Installation completed successfully.'
-          Description: Service installation event as result of AteraAgent installation.
-        - EventID: 4697
-          ProviderName: Microsoft-Security-Auditing
-          LogFile: Security.evtx
-          CommandLine: C:\\Program Files\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageFileExplorer\\AgentPackageFileExplorer.exe XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX agent-api.atera.com/Production 443 [BASE64BLOB]
-          Description: Service installation event as result of AteraAgent installation.
-    Registry:
-        - Path: HKLM\SOFTWARE\ATERA Networks\AlphaAgent
-          Description:
-        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent
-          Description:
-        - Path: KLM\SOFTWARE\WOW6432Node\Splashtop Inc.
-          Description:
-        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater
-          Description:
-        - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AlphaAgent
-          Description:
-        - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AteraAgent
-          Description:
-        - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASAPI32
-          Description:
-        - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS
-          Description:
-        - Path: HKLM\SOFTWARE\ATERA Networks\*
-          Description:
-    Network:
-        - Description: N/A
-          Domains:
-              - pubsub.atera.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - pubsub.pubnub.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - agentreporting.atera.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - getalphacontrol.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - app.atera.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - agenthb.atera.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - packagesstore.blob.core.windows.net
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - ps.pndsn.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - agent-api.atera.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - cacerts.thawte.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - agentreportingstore.blob.core.windows.net
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - atera-agent-heartbeat.servicebus.windows.net
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - ps.atera.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - atera.pubnubapi.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - appcdn.atera.com
-          Ports:
-              - N/A
+  Disk:
+  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt
+    Description: N/A
+    OS: Windows
+  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\*
+    Description: N/A
+    OS: Windows
+  - File: C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe
+    Description: Atera service binary
+    OS: Windows
+  - File: C:\Program Files\Atera Networks\AlphaAgent.exe
+    Description: Atera service binary
+    OS: Windows
+  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe
+    Description: N/A
+    OS: Windows
+  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe
+    Description: N/A
+    OS: Windows
+  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe
+    Description: N/A
+    OS: Windows
+  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe
+    Description: N/A
+    OS: Windows
+  - File: C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe
+    Description: N/A
+    OS: Windows
+  EventLog:
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: AteraAgent
+    ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\AteraAgent.exe"'
+    Description: Service installation event as result of AteraAgent installation.
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: WinRing0_1_2_0
+    ImagePath: '"C:\\Program Files (x86)\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageMonitoring\\OpenHardwareMonitorLib.sys"'
+    Description: Service installation event as result of Atera pakcage manager installation.
+  - EventID: 11707
+    ProviderName: MsiInstaller
+    LogFile: Application.evtx
+    Data: 'Product: AteraAgent -- Installation completed successfully.'
+    Description: Service installation event as result of AteraAgent installation.
+  - EventID: 4697
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: C:\\Program Files\\ATERA Networks\\AteraAgent\\Packages\\AgentPackageFileExplorer\\AgentPackageFileExplorer.exe
+      XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX agent-api.atera.com/Production 443 [BASE64BLOB]
+    Description: Service installation event as result of AteraAgent installation.
+  Registry:
+  - Path: HKLM\SOFTWARE\ATERA Networks\AlphaAgent
+    Description: null
+  - Path: HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent
+    Description: null
+  - Path: KLM\SOFTWARE\WOW6432Node\Splashtop Inc.
+    Description: null
+  - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater
+    Description: null
+  - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AlphaAgent
+    Description: null
+  - Path: HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AteraAgent
+    Description: null
+  - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASAPI32
+    Description: null
+  - Path: HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS
+    Description: null
+  - Path: HKLM\SOFTWARE\ATERA Networks\*
+    Description: null
+  Network:
+  - Description: N/A
+    Domains:
+    - pubsub.atera.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - pubsub.pubnub.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - agentreporting.atera.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - getalphacontrol.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - app.atera.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - agenthb.atera.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - packagesstore.blob.core.windows.net
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - ps.pndsn.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - agent-api.atera.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - cacerts.thawte.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - agentreportingstore.blob.core.windows.net
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - atera-agent-heartbeat.servicebus.windows.net
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - ps.atera.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - atera.pubnubapi.com
+    Ports:
+    - N/A
+  - Description: N/A
+    Domains:
+    - appcdn.atera.com
+    Ports:
+    - N/A
 Detections:
-    - Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml
-      Name: AteraAgent malicious installations
-      Description: Detects AteraAgent installations with suspicious command line arguments.
-    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml
-      Name: Atera Agent Installation
-      Description: Detects Atera Agent installation.
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_registry_sigma.yml
-      Description: Detects potential registry activity of Atera RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_network_sigma.yml
-      Description: Detects potential network activity of Atera RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_files_sigma.yml
-      Description: Detects potential files activity of Atera RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_processes_sigma.yml
-      Description: Detects potential processes activity of Atera RMM tool
+- Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml
+  Name: AteraAgent malicious installations
+  Description: Detects AteraAgent installations with suspicious command line arguments.
+- Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/builtin/application/msiinstaller/win_software_atera_rmm_agent_install.yml
+  Name: Atera Agent Installation
+  Description: Detects Atera Agent installation.
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_registry_sigma.yml
+  Description: Detects potential registry activity of Atera RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_network_sigma.yml
+  Description: Detects potential network activity of Atera RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_files_sigma.yml
+  Description: Detects potential files activity of Atera RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/atera_processes_sigma.yml
+  Description: Detects potential processes activity of Atera RMM tool
 References:
-    - https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
-    - https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
-    - https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018
-    - https://thedfirreport.com/?s=ateraagent
+- https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations
+- https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
+- https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018
+- https://thedfirreport.com/?s=ateraagent
 Acknowledgement:
-    - Person: "Théo Letailleur"
-      Handle: in/theosyn
-    - Person: Nasreddine Bencherchali
-      Handle: '@nas_bench'
-    - Person: Kostas
-      Handle: '@kostastsale'
+- Person: Théo Letailleur
+  Handle: in/theosyn
+- Person: Nasreddine Bencherchali
+  Handle: '@nas_bench'
+- Person: Kostas
+  Handle: '@kostastsale'
+CodeSigning:
+  search_names:
+  - agentpackagenetworkdiscovery.exe
+  - agentpackagetaskscheduler.exe
+  - atera_agent.exe
+  - ateraagent.exe
+  - syncrosetup.exe
+  company_names: []
+  signer_names:
+  - .NET
+  - Atera Networks Ltd
+  certificates:
+  - signer_name: Atera Networks Ltd
+    certificate_thumbprint: E2D5CC46541C8FC8E9E619175516C5616B84D8D8
+    tbs_sha256: C81C87870D6F0DD87F6E02E5D6EE09886DE73BECB81B06A3C92626E24F174A3D
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: Atera Networks Ltd
+    certificate_thumbprint: 7908DDC749BBCA22273E8CB58101BAC915E9B8D9
+    tbs_sha256: 97D2940D1BA0DBAF84280371A267A1BC689DEC0E224010EC7963D9DE45A5BCD1
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: .NET
+    issuer: CN=Microsoft Code Signing PCA 2011
+    certificate_thumbprint: 860AB2B78578D8EF61F692CF81AE4B1198CCBC94
+    tbs_sha256: 7F0D0E92811AC3A99C25B3DDA0BDDEFA767475CF8FD22D3496CBF79F92B11878
+    tbs_sha1: 3D04A28E763E746DBBE3D2F8485AA3A6D114E1F4
+    valid_from: '2025-09-18T17:58:59+00:00'
+    valid_to: '2026-07-06T17:58:59+00:00'
+    certificate_der_base64: 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
+    src_file_sha256: 33000004AC762FFE6ED28C84680000000004AC

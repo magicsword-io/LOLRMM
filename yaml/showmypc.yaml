@@ -1,41 +1,79 @@
 Name: ShowMyPC
-Category: 'RMM'
+Category: RMM
 Description: ShowMyPC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - SMPCSetup.exe
-        - showmypc*.exe
-        - showmypc.exe
-        - smpcsetup.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - SMPCSetup.exe
+  - showmypc*.exe
+  - showmypc.exe
+  - smpcsetup.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.showmypc.com'
-              - showmypc.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.showmypc.com'
+    - showmypc.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_network_sigma.yml
-      Description: Detects potential network activity of ShowMyPC RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_processes_sigma.yml
-      Description: Detects potential processes activity of ShowMyPC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_network_sigma.yml
+  Description: Detects potential network activity of ShowMyPC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/showmypc_processes_sigma.yml
+  Description: Detects potential processes activity of ShowMyPC RMM tool
 References:
-    - https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf
+- https://showmypc.com/service/faq/ShowMyPCSecurityOverview1.pdf
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - icsharpcode.sharpziplib.dll
+  - showmypc.exe
+  - smpcsetup.exe
+  company_names: []
+  signer_names:
+  - ShowMyPC INC
+  - philandro Software GmbH
+  certificates:
+  - signer_name: philandro Software GmbH
+    certificate_thumbprint: 8F2DE7E770A8B1E412C2DE131064D7A52DA62287
+    tbs_sha256: DCB8261FA22C834B1FFB69470C0CC7BAFF034B5C656A6C297259ADDFBF73F1E3
+    tbs_sha1: ''
+    certificate_der_base64: MIIFKDCCBBCgAwIBAgIQA+nrTf9n1PmlVKQi1e2G8zANBgkqhkiG9w0BAQsFADByMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMTEwLwYDVQQDEyhEaWdpQ2VydCBTSEEyIEFzc3VyZWQgSUQgQ29kZSBTaWduaW5nIENBMB4XDTE4MTAyNDAwMDAwMFoXDTIyMDEwNTEyMDAwMFowZTELMAkGA1UEBhMCREUxEjAQBgNVBAcTCVN0dXR0Z2FydDEgMB4GA1UEChMXcGhpbGFuZHJvIFNvZnR3YXJlIEdtYkgxIDAeBgNVBAMTF3BoaWxhbmRybyBTb2Z0d2FyZSBHbWJIMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxnCg1/2RtqWgYIQ1ApNl0R5Smi1D31RoA1etg9+07my/VNdMS8kgX7vKO0NtD+M3CzIA2MZV4kLJK0sqL6YEDIHlMPzBpg2EnVKIa/PinFC1JBPioyH3VrMU87y8R+VQ6ktuz4lRMq5vmalH6prQCYK4brzgzWoZi8ZfHMG7ahY4kxy2MMJso0PrfyuzlPNsswK+yT84KNzxZXAOegBxLMkUzl9LbGlF8gHXacov/+Emi2z1eWW9jVxBd6LRdvMsnJ5gp6lsP3deZLhHNDlJg3kPVnAdG4+WFAKMoYDn0D/6+jC7URSQWa5Nk9i2lsEWAxnplFp2CmQN1r0TTObbJwIDAQABo4IBxTCCAcEwHwYDVR0jBBgwFoAUWsS5eyoKo6XqcQPAYPkt9mV1DlgwHQYDVR0OBBYEFDdWZhXwsmb/L1KV0a6DxOBlMw5DMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzB3BgNVHR8EcDBuMDWgM6Axhi9odHRwOi8vY3JsMy5kaWdpY2VydC5jb20vc2hhMi1hc3N1cmVkLWNzLWcxLmNybDA1oDOgMYYvaHR0cDovL2NybDQuZGlnaWNlcnQuY29tL3NoYTItYXNzdXJlZC1jcy1nMS5jcmwwTAYDVR0gBEUwQzA3BglghkgBhv1sAwEwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAIBgZngQwBBAEwgYQGCCsGAQUFBwEBBHgwdjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3AuZGlnaWNlcnQuY29tME4GCCsGAQUFBzAChkJodHRwOi8vY2FjZXJ0cy5kaWdpY2VydC5jb20vRGlnaUNlcnRTSEEyQXNzdXJlZElEQ29kZVNpZ25pbmdDQS5jcnQwDAYDVR0TAQH/BAIwADANBgkqhkiG9w0BAQsFAAOCAQEAgfjnuUXWhhC6tAV/IyWYQ/RU/Zx6rEGA3sk2eU5KZk3aJVswZEKIU4Eh4wpp1ER9vATC2iHkT1xLpB5wbJ3gy1HGeTHjEge6OsEXkfnlUd6xqj/u4qbhmaTRCwzXHAUUP0Rm1shHR9m8MSfkcQLZCiSHRA6huajnMX3e7uOg9Cwpa/AzFPpuhvN0O5pKbnVqVOZ7BRPDQ+np98cwr58ArLMqJ/cH09BPItWMu7WIwvxy1aN8SsqqtlDJUz6WqnoL9Tpg2G+27oyYLsSbSRMJVrBk1i4BDainXnhqREXP97UG6sSkCrZy2R3SOicsfij7Zwy1Av8PVXLYjYcGWAxcrw==
+  - signer_name: ShowMyPC INC
+    certificate_thumbprint: 6ABC950F7C33A7975667C20B2E7DF8F1CF15C05B
+    tbs_sha256: F9DBC445B6F1DCD3290171F8078F8B8728C7E33740EDE901C5F8B3609F13729A
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: ShowMyPC INC
+    issuer: CN=Sectigo RSA Code Signing CA
+    certificate_thumbprint: 08EAACC8774F72E77E8DA8CCC6D14FD8DD41BA18
+    tbs_sha256: 1A76493B74AA1DB9F61663C57AE3346BD30CAA5AB6AD6F153A139F32B7DD47CE
+    tbs_sha1: 7CAA5A676AB833200EDFDB46C06CFDC04340B51A
+    valid_from: '2020-08-11T00:00:00+00:00'
+    valid_to: '2023-11-10T23:59:59+00:00'
+    certificate_der_base64: MIIFYDCCBEigAwIBAgIRAKMJ8O3zNB/QDmXvd2YslcowDQYJKoZIhvcNAQELBQAwfDELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMSQwIgYDVQQDExtTZWN0aWdvIFJTQSBDb2RlIFNpZ25pbmcgQ0EwHhcNMjAwODExMDAwMDAwWhcNMjMxMTEwMjM1OTU5WjCBpTELMAkGA1UEBhMCVVMxDjAMBgNVBBEMBTk1MTI4MRMwEQYDVQQIDApDYWxpZm9ybmlhMREwDwYDVQQHDAhTYW4gSm9zZTEXMBUGA1UECQwOMTEwIFBsYXphIFdlc3QxFzAVBgNVBAkMDjMwMzEgVGlzY2ggV2F5MRUwEwYDVQQKDAxTaG93TXlQQyBJTkMxFTATBgNVBAMMDFNob3dNeVBDIElOQzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJD4R34veCdIr/6/4fZLUdLPM0I+BzmCCcarH4u3OkhzLl7jIpgHifHezk023mgPyva2ZggaqfpSLPykLCk9itzljFID0th8cV1ZuuIEnEfpjtPYzFG0AspVC5dOqiHKIhkKYUap8rzWvvfzOHDT7Po/+P48NzagsqCeXaRywNC852yejZoEcP5oPQhB7RkpZXU3TDQEuAGoVlTsj8+fvOlmXmi3pQag3X6+e/vAw0LZzpjD6zg5ICW57+NhaFJuWSYrQph6SSJ7Qucp74ycLBT3orYNcdzrY/ptGyuCCgRLCWOItSemEb2isx9hU+xbT4ggBj3wwT1b8ZaQIivbhBECAwEAAaOCAbEwggGtMB8GA1UdIwQYMBaAFA7hOqhTOjHVir7Bu61nGgOFrTQOMB0GA1UdDgQWBBTCAhDsnR+SXnz/Lav43o7X12d1cTAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADATBgNVHSUEDDAKBggrBgEFBQcDAzARBglghkgBhvhCAQEEBAMCBBAwSgYDVR0gBEMwQTA1BgwrBgEEAbIxAQIBAwIwJTAjBggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQQBMEMGA1UdHwQ8MDowOKA2oDSGMmh0dHA6Ly9jcmwuc2VjdGlnby5jb20vU2VjdGlnb1JTQUNvZGVTaWduaW5nQ0EuY3JsMHMGCCsGAQUFBwEBBGcwZTA+BggrBgEFBQcwAoYyaHR0cDovL2NydC5zZWN0aWdvLmNvbS9TZWN0aWdvUlNBQ29kZVNpZ25pbmdDQS5jcnQwIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLnNlY3RpZ28uY29tMB8GA1UdEQQYMBaBFHN1cHBvcnRAc2hvd215cGMuY29tMA0GCSqGSIb3DQEBCwUAA4IBAQBCVSAQ1Qbreof1s2kqXgj2zoOOgnpL5asFzOCxqRal8O4Nw29Px4RR4eI13WKaSHqlomSZx5hwlvFHrEG4GnhjhPOG9jT9BTMslVdO5686ofstj/70cZcUqhlvro97oY+Vn8fnng/AZETTIJjjq/uSXQ97ORC+ExWW/736pYHYpH7KtO6kLcK7ndT6VAUzZ3gJqkZqOYbjWlEvoJntuY4wSHnS8KK3DYVkzsBtKT3gdDgZOzoi7amum+zhcL5LQpj/9NzpykXiGXhCG18Sxnj1jmrQ4llzAhaVZEh0zBQ8u1+xzBc95ALt86RvceVXVtieKHNZ600IapDXqwgE0i4A
+    src_file_sha256: A309F0EDF3341FD00E65EF77662C95CA
+FileHashes:
+  authenticode:
+  - file_name: ICSharpCode.SharpZipLib.dll
+    sha256: 605933754954DD1BDFAFF5C34791C0687B437DA2F0933E8354CB8ED31B7BEF62
+    sha1: 99D32FFF6F4AE962A936D90A4ECF30FD91165DAF
+  page:
+  - file_name: ICSharpCode.SharpZipLib.dll
+    sha256: 02988E0DECCE455D792FCDB367C51FDB4FD99478E13A5E3F2719540AC686DD17
+    sha1: 43B1C5E432B431D9F40448B8906AAC1E65B85807

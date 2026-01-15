@@ -1,43 +1,99 @@
 Name: Instant Housecall
-Category: 'RMM'
-Description: Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes
+  available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - hsloader.exe
-        - ihcserver.exe
-        - instanthousecall.exe
-        - instanthousecall.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - hsloader.exe
+  - ihcserver.exe
+  - instanthousecall.exe
+  - instanthousecall.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.instanthousecall.com'
-              - '*.instanthousecall.net'
-              - instanthousecall.com
-              - secure.instanthousecall.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.instanthousecall.com'
+    - '*.instanthousecall.net'
+    - instanthousecall.com
+    - secure.instanthousecall.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml
-      Description: Detects potential network activity of Instant Housecall RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml
-      Description: Detects potential processes activity of Instant Housecall RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_network_sigma.yml
+  Description: Detects potential network activity of Instant Housecall RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/instant_housecall_processes_sigma.yml
+  Description: Detects potential processes activity of Instant Housecall RMM tool
 References:
-    - https://instanthousecall.com/features/
+- https://instanthousecall.com/features/
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - '5'
+  - hsloader.exe
+  - ihcserver.exe
+  - instanthousecall.dll
+  - instanthousecall.exe
+  company_names: []
+  signer_names:
+  - Instant Housecall
+  - Symantec Corporation
+  certificates:
+  - signer_name: Symantec Corporation
+    certificate_thumbprint: N/A
+    tbs_sha256: ''
+    tbs_sha1: CAED29AAEF995E16501D02FFC4252AA98CFAECD2
+  - signer_name: Symantec Corporation
+    issuer: CN=VeriSign Class 3 Code Signing 2004 CA
+    certificate_thumbprint: 508E846523E1B131438B220694BE91793886508E
+    tbs_sha256: D9C0278CD8DF5E610B66C1AE3E48ABBA1249A60CD6512108C85E1BF70EACEC04
+    tbs_sha1: CAED29AAEF995E16501D02FFC4252AA98CFAECD2
+    valid_from: '2007-10-31T00:00:00+00:00'
+    valid_to: '2010-11-24T23:59:59+00:00'
+    certificate_der_base64: MIIFFTCCA/2gAwIBAgIQdY9e6CY7ZpRxnYQ065mGCDANBgkqhkiG9w0BAQUFADCBtDELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTswOQYDVQQLEzJUZXJtcyBvZiB1c2UgYXQgaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYSAoYykwNDEuMCwGA1UEAxMlVmVyaVNpZ24gQ2xhc3MgMyBDb2RlIFNpZ25pbmcgMjAwNCBDQTAeFw0wNzEwMzEwMDAwMDBaFw0xMDExMjQyMzU5NTlaMIHYMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEVMBMGA1UEBxMMU2FudGEgTW9uaWNhMR0wGwYDVQQKFBRTeW1hbnRlYyBDb3Jwb3JhdGlvbjE+MDwGA1UECxM1RGlnaXRhbCBJRCBDbGFzcyAzIC0gTWljcm9zb2Z0IFNvZnR3YXJlIFZhbGlkYXRpb24gdjIxHzAdBgNVBAsUFlN5bWFudGVjIFJlc2VhcmNoIExhYnMxHTAbBgNVBAMUFFN5bWFudGVjIENvcnBvcmF0aW9uMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDRb9wjRjdsUm6e5b9EXS2JwrOHqGoKJNMCLUZ7NLlPaX9B9LtaWJ1atiwaEoJL9+bKU3SYt3cD3ybw5dj/JpuZ6LnPc4rmJq709Aozy0LwIEW7oSscav+zO2ycsIq6MC5E1bYPBehBKFffP4BG6+Xzn+GmBJL9qebbfQ6J0WavXwIDAQABo4IBfzCCAXswCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCB4AwQAYDVR0fBDkwNzA1oDOgMYYvaHR0cDovL0NTQzMtMjAwNC1jcmwudmVyaXNpZ24uY29tL0NTQzMtMjAwNC5jcmwwRAYDVR0gBD0wOzA5BgtghkgBhvhFAQcXAzAqMCgGCCsGAQUFBwIBFhxodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhMBMGA1UdJQQMMAoGCCsGAQUFBwMDMHUGCCsGAQUFBwEBBGkwZzAkBggrBgEFBQcwAYYYaHR0cDovL29jc3AudmVyaXNpZ24uY29tMD8GCCsGAQUFBzAChjNodHRwOi8vQ1NDMy0yMDA0LWFpYS52ZXJpc2lnbi5jb20vQ1NDMy0yMDA0LWFpYS5jZXIwHwYDVR0jBBgwFoAUCPVR6Pv+PT1kNnxoz1t4qN+5xTcwEQYJYIZIAYb4QgEBBAQDAgQQMBYGCisGAQQBgjcCARsECDAGAQEAAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQB0xt4C6DwFJW/dJ/Muef8RaxWTVYwjKUm4SXM0j2D3SpuYr1LFUDL05qp+mGBokiPIvYiy2i/BQNteWOrm2+qbXRYJVzESk4RVT3ygNwPPHcJbrQ8d5XdWwGViYpGNkXMlS5rn9qIFqIQJ6ghMOtSAYHOSigrcokJTWrRxxayzfc1yuCaCKlwCY2+5OpL4PCSg8sL/s2tNx1Nmiu/uOVRqNeO4iAZb2/BtHt4hXEhy/C9jRRkoo4UkWUWhmFeGON1IZDFuert9uXiPtsu6pnerm8cWQ2eV9gmxwmSj2u6VFgudVHpd7N83bYHbOUxL8+qwbnBRVHFOFekSHhIXWaYD
+    src_file_sha256: 758F5EE8263B6694719D8434EB998608
+  - signer_name: Instant Housecall
+    issuer: CN=Sectigo Public Code Signing CA R36
+    certificate_thumbprint: 1DF407D385DFA8D8F6BB16D6EC0754FA9BD54F48
+    tbs_sha256: 4C81C4E3313FEF18B2106498DD09790C78128126F405205166A154E80704C1F0
+    tbs_sha1: B9C066C75BB1498E9B1AB560187B737C9C6D8FE9
+    valid_from: '2022-03-21T00:00:00+00:00'
+    valid_to: '2025-03-20T23:59:59+00:00'
+    certificate_der_base64: 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
+    src_file_sha256: 9378A439D5CA4108E98F5C3DBAF1C45D
+FileHashes:
+  authenticode:
+  - file_name: InstantHousecall.dll
+    sha256: 902C794600376416A01D2B3F6A9F8159E5DBB536E36CEEA67DAD941770A89CC5
+    sha1: A1ED89927773EEF30426FF2F385473D7CD200FE6
+  - file_name: '5'
+    sha256: 1B9641E4F011A1E772B24A5467442E64A17753669C10BD2816F22514B9AFFCB8
+    sha1: 29BB81E28D2923CB3DAC30CAB14B8E76EA7A4C76
+  - file_name: InstantHousecall.exe
+    sha256: 32475B40BEFE076BA5FF9BDC51C8622F8F7C115EF33E370EECCC3E5826F0DAC9
+    sha1: 3AF4471CE66DD61ADBFC65DE16999A5C3CE52074
+  page:
+  - file_name: InstantHousecall.dll
+    sha256: 4A6EE4B14651961AF7B60957706810BB773B5E2E60BF6E17D17A9874E30FB157
+    sha1: A3D8271F0626135DDBB2FFAE5904896F0381CC5D
+  - file_name: '5'
+    sha256: 163C56D8918C14F83F8890180C902AC3AFA098E16E275A5605C00E0EE6E1BC11
+    sha1: E94FE28C67229F0E393F649CACBFC7F0D2D81559
+  - file_name: InstantHousecall.exe
+    sha256: F77A7D194FA5A35FB99746877C8A21CD722E0D6BB8222EF2C5E1FFE129ACFF32
+    sha1: ED8A1754F50E59B112BEFFF6F3ED470F54DDB399

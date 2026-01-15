@@ -1,46 +1,57 @@
 Name: LogMeIn rescue
-Category: 'RMM'
-Description: LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as it becomes
+  available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - support-logmeinrescue*.exe
-        - support-logmeinrescue.exe
-        - lmi_rescue.exe
-        - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
-        - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
-        - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - support-logmeinrescue*.exe
+  - support-logmeinrescue.exe
+  - lmi_rescue.exe
+  - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
+  - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
+  - C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.logmeinrescue.com'
-              - '*.logmeinrescue.eu'
-              - logmeinrescue.com
-              - rescue-list.*.logmein-gateway.com
-              - rescue-data-cetner.logmein-gateway.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.logmeinrescue.com'
+    - '*.logmeinrescue.eu'
+    - logmeinrescue.com
+    - rescue-list.*.logmein-gateway.com
+    - rescue-data-cetner.logmein-gateway.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_network_sigma.yml
-      Description: Detects potential network activity of LogMeIn rescue RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_processes_sigma.yml
-      Description: Detects potential processes activity of LogMeIn rescue RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_network_sigma.yml
+  Description: Detects potential network activity of LogMeIn rescue RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_processes_sigma.yml
+  Description: Detects potential processes activity of LogMeIn rescue RMM tool
 References:
-    - https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue
+- https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue
 Acknowledgement: []
+CodeSigning:
+  search_names: []
+  company_names: []
+  signer_names:
+  - LogMeIn, Inc.
+  certificates:
+  - signer_name: LogMeIn, Inc.
+    certificate_thumbprint: N/A
+    tbs_sha256: 67C14D5CC02D94BB4380C3473FC9100FA8567975638F84D82B58773A2AE74DEE
+    tbs_sha1: ''

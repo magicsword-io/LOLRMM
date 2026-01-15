@@ -1,56 +1,113 @@
 Name: mRemoteNG
-Category: 'RMM'
+Category: RMM
 Description: mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - mRemoteNG.exe
-        - C:\Program Files (x86)\mRemoteNG\*
-        - '*\mRemoteNG\*'
-        - '*\mRemoteNG.exe'
-        - c:\Program Files (x86)%\mRemoteNG
-        - '*%\mRemoteNG'
-        - mRemoteNG-Installer-*.msi
-        - '*\mRemoteNG.exe'
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - mRemoteNG.exe
+  - C:\Program Files (x86)\mRemoteNG\*
+  - '*\mRemoteNG\*'
+  - '*\mRemoteNG.exe'
+  - c:\Program Files (x86)%\mRemoteNG
+  - '*%\mRemoteNG'
+  - mRemoteNG-Installer-*.msi
+  - '*\mRemoteNG.exe'
 Artifacts:
-    Disk:
-        - File: C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
-          Description: mRemoteNG log file
-          OS: Windows
-        - File: C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
-          Description: mRemoteNG configuration file
-          OS: Windows
-        - File: C:\Users\*\AppData\*\mRemoteNG\**10\user.config
-          Description: mRemoteNG user configuration file
-          OS: Windows
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - user_managed
-              - mremoteng.org
-          Ports: []
+  Disk:
+  - File: C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
+    Description: mRemoteNG log file
+    OS: Windows
+  - File: C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
+    Description: mRemoteNG configuration file
+    OS: Windows
+  - File: C:\Users\*\AppData\*\mRemoteNG\**10\user.config
+    Description: mRemoteNG user configuration file
+    OS: Windows
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - mremoteng.org
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_network_sigma.yml
-      Description: Detects potential network activity of mRemoteNG RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_files_sigma.yml
-      Description: Detects potential files activity of mRemoteNG RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_processes_sigma.yml
-      Description: Detects potential processes activity of mRemoteNG RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_network_sigma.yml
+  Description: Detects potential network activity of mRemoteNG RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_files_sigma.yml
+  Description: Detects potential files activity of mRemoteNG RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mremoteng_processes_sigma.yml
+  Description: Detects potential processes activity of mRemoteNG RMM tool
 References:
-    - https://github.com/mRemoteNG/mRemoteNG
+- https://github.com/mRemoteNG/mRemoteNG
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - 7zip.exe
+  - mremoteng.dll
+  - mremoteng.exe
+  company_names: []
+  signer_names:
+  - David Sparer
+  - Open Source Developer, Dimitrij Gorodeckij
+  - Simon Tatham
+  certificates:
+  - signer_name: David Sparer
+    certificate_thumbprint: DEFFB77C09F5ADC3691A0EA8A36E2617577AF8AB
+    tbs_sha256: 80840828E6440160B4977E9AA21613D0452E7B272AF7D32B5007AB419E61CD25
+    tbs_sha1: ''
+    certificate_der_base64: MIIFJTCCBA2gAwIBAgIQDB/dLd04rMmv5iAJf7s7ZTANBgkqhkiG9w0BAQsFADByMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMTEwLwYDVQQDEyhEaWdpQ2VydCBTSEEyIEFzc3VyZWQgSUQgQ29kZSBTaWduaW5nIENBMB4XDTE3MTEyNDAwMDAwMFoXDTIxMDEyNjEyMDAwMFowYjELMAkGA1UEBhMCVVMxEjAQBgNVBAgTCVdpc2NvbnNpbjERMA8GA1UEBxMIUHJlc2NvdHQxFTATBgNVBAoTDERhdmlkIFNwYXJlcjEVMBMGA1UEAxMMRGF2aWQgU3BhcmVyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsCjrfsUtDpXjWviVJEYW/6Uikc4vrJ/zlGFesw6Zn7yjD00TMagnTBLUFSMKVuW69nZqn2+bOUodSp6aS/rWGlJdWDa63osceIbc/KzMDAOTA2kkaj+kc5PcuLjUvsDw3HNcswYX4jLCWXxE1eVub0Vw0BAhHsNhPnaGHXpnRfTrFNdLJXa7ALfZqYMIin8NlLrXN5vkiTALotWCSpoHjkARhhhH16Rmggz3TN6GHWb1183iMhRfo03LdI2N48HTfwj6EnuvZeLa5HJbncgP1+9bTy05ZlS71ax4gd6I+8aybX/q1aOvevlicfglhi2/UZvPVKHkvSmkqwh4GlGaLQIDAQABo4IBxTCCAcEwHwYDVR0jBBgwFoAUWsS5eyoKo6XqcQPAYPkt9mV1DlgwHQYDVR0OBBYEFEQIYZEwi+1NbR9GW+elDVEJknGIMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzB3BgNVHR8EcDBuMDWgM6Axhi9odHRwOi8vY3JsMy5kaWdpY2VydC5jb20vc2hhMi1hc3N1cmVkLWNzLWcxLmNybDA1oDOgMYYvaHR0cDovL2NybDQuZGlnaWNlcnQuY29tL3NoYTItYXNzdXJlZC1jcy1nMS5jcmwwTAYDVR0gBEUwQzA3BglghkgBhv1sAwEwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAIBgZngQwBBAEwgYQGCCsGAQUFBwEBBHgwdjAkBggrBgEFBQcwAYYYaHR0cDovL29jc3AuZGlnaWNlcnQuY29tME4GCCsGAQUFBzAChkJodHRwOi8vY2FjZXJ0cy5kaWdpY2VydC5jb20vRGlnaUNlcnRTSEEyQXNzdXJlZElEQ29kZVNpZ25pbmdDQS5jcnQwDAYDVR0TAQH/BAIwADANBgkqhkiG9w0BAQsFAAOCAQEAThIOrbamaTVN7voPim94pJGL0jIwB1DHhJ4mTUkF90Fw9OX96i3fSAbMy/GYsrnsywiGODxLk9WN7IniApuIkaqMIurLybtbUQywsWSxhFn2SyPvYa4It+JolexST1+rgYOS2/z44U8W9JsxH+0ct4dR2X2yz5TJiLJhYuVDqk7+ZGuXc8EiBfZYnR3qR9cmWQh4kE95Bjss6iGZiX5ehiz0HRZrerMmCDTs0QTjy/8Opi7ExY5BEUXwQM1ORyFOhPdkTt/BlNSAxKz4s2WtBzcT3qVNWk9J6ezOJMypVwP7uMvjK4YCe1AQquD1EpJN11cKyOKiILH2BHK1/KM04Q==
+  - signer_name: Open Source Developer, Dimitrij Gorodeckij
+    certificate_thumbprint: 93F35DA1E0F1E59DB3455D29AF83CE90FAC249F4
+    tbs_sha256: C85CE1021CB17FCD3C004433B22F1018A75AEBCD8413CD4BBC2D78AE8C8878EB
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: David Sparer
+    certificate_thumbprint: N/A
+    tbs_sha256: 99443F90AB887671A05644A2E854F307E68508B3E7BCB7852EF6AC1DDFBA55FA
+    tbs_sha1: ''
+  - signer_name: Simon Tatham
+    certificate_thumbprint: N/A
+    tbs_sha256: ''
+    tbs_sha1: ''
+    tbs_sha384: 47D33AA6FC96754AAB657A6EC79291F7D98D12E39010E6060EF3770042343B1C2BADA6B732510F090C1A592CAE653579
+FileHashes:
+  authenticode:
+  - file_name: mRemoteNG.dll
+    sha256: 482D78559F3E0A3AEC8BF79B0E0C168F800F6B139E4128479C41193EAFAAC1AF
+    sha1: 1C317C6177EE99D84C5D563C8C3A960F73CD6096
+  - file_name: 7zip.exe
+    sha256: 4EF18639D8D70955EC4820948FEBF02C4B7716B3048172955AB164CD562894C1
+    sha1: E8BDC8FF6F566BDE26438CB2D0507FAEFB1939C5
+  - file_name: mRemoteNG.dll
+    sha256: AE488CB60C974C072DB559BF3145D17C4D7F552720CA8F0AA7D2662E9849A3EB
+    sha1: BA2020535A1E6BAE3594A019AEF3D72479FA2D52
+  - file_name: mRemoteNG.exe
+    sha256: 0AF3EE69684F0BAAFC16E77385D39FAE0FA67C71F92CF39680F1FB28C3F1EDBB
+    sha1: E2D90B145DBD83902D7181F084A200B76E2554A0
+  page:
+  - file_name: mRemoteNG.dll
+    sha256: 8CA9E203261D960AB18E6328B80BDF8B9BCAE8CC33DAFA3604C146BD0CB28184
+    sha1: 892C5F2F52D2560173B0A18292FE7C3F23554F47
+  - file_name: 7zip.exe
+    sha256: 81D39F11817B00E1A7C3C4A231D0F194CB28B71FA2858E1801CCB043479D2B1E
+    sha1: C832238CE751692DFF2664A475C601694BEB8E4B
+  - file_name: mRemoteNG.dll
+    sha256: 03DA1F5410534F288B3D67C251576555BACB4DA3FF22DC46012C18524412A3F9
+    sha1: 6D818BA71DAA614966A19A0CC215B3A9523BB8A0
+  - file_name: mRemoteNG.exe
+    sha256: F41D38027B95545762BE5F7C19193235D6BAF39E20D2F9C9AFAD70BFBA9E8944
+    sha1: 86779603005DCA848CF51C10E48B086EC11159C6

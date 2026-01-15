@@ -1,44 +1,108 @@
 Name: Domotz
-Category: 'RMM'
+Category: RMM
 Description: Domotz is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - domotz.exe
-        - Domotz Pro Desktop App.exe
-        - domotz_bash.exe
-        - domotz*.exe
-        - Domotz Pro Desktop App Setup*.exe
-        - domotz-windows*.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - domotz.exe
+  - Domotz Pro Desktop App.exe
+  - domotz_bash.exe
+  - domotz*.exe
+  - Domotz Pro Desktop App Setup*.exe
+  - domotz-windows*.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.domotz.co'
-              - domotz.com
-              - '*cell-1.domotz.com'
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.domotz.co'
+    - domotz.com
+    - '*cell-1.domotz.com'
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_network_sigma.yml
-      Description: Detects potential network activity of Domotz RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_processes_sigma.yml
-      Description: Detects potential processes activity of Domotz RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_network_sigma.yml
+  Description: Detects potential network activity of Domotz RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_processes_sigma.yml
+  Description: Detects potential processes activity of Domotz RMM tool
 References:
-    - https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
+- https://help.domotz.com/tips-tricks/unblock-outgoing-connections-on-firewall/
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - exmtweaksservice.exe
+  - libegl.dll
+  - libglesv2.dll
+  - vk_swiftshader.dll
+  - vulkan-1.dll
+  company_names: []
+  signer_names:
+  - Domotz Inc
+  - OpenVPN Inc.
+  certificates:
+  - signer_name: Domotz Inc
+    certificate_thumbprint: 2361B8924DF61C7A57B4B77CAAD6BF3968E7DCD3
+    tbs_sha256: 25457BE25A9D546CC3189A234EA5D84FAEC54C46D15B9E04AB08BDFC26AD513E
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: Domotz Inc
+    certificate_thumbprint: 0034E538D1FE10D11AEDB19820917F8455375F59
+    tbs_sha256: 1F28243E790F8A14833AD151223E08AE287F8938156E2BD2809D91EB1B872EAD
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: OpenVPN Inc.
+    certificate_thumbprint: 478646B53E3F991A02E8A04D36B178DB1AFFF851
+    tbs_sha256: 5AA2294423E61B2EA4278E048CE26663264439CEFCE9E19B82F7829BA1579A31
+    tbs_sha1: ''
+    certificate_der_base64: MIIFsDCCBJigAwIBAgIQCy3tkBteg/fWDOrC2nic7DANBgkqhkiG9w0BAQsFADBsMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSswKQYDVQQDEyJEaWdpQ2VydCBFViBDb2RlIFNpZ25pbmcgQ0EgKFNIQTIpMB4XDTE5MDIxMzAwMDAwMFoXDTIyMDIyMzEyMDAwMFowgcYxEzARBgsrBgEEAYI3PAIBAxMCVVMxGTAXBgsrBgEEAYI3PAIBAhMIRGVsYXdhcmUxHTAbBgNVBA8MFFByaXZhdGUgT3JnYW5pemF0aW9uMRAwDgYDVQQFEwczNzYxMjU2MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTETMBEGA1UEBxMKUGxlYXNhbnRvbjEVMBMGA1UEChMMT3BlblZQTiBJbmMuMRUwEwYDVQQDEwxPcGVuVlBOIEluYy4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBkcQPXtX3PvdzLk1FN0K9CdtMdfVtXFUSU8IR2ksKqSBn3AKfQbdHFAHVVb46TjXzIdstAdUoBLxZ3JBJ63IR74taRZdtuXFJTd2y3pBlUEjbXhZjsMpmcTIvMM9NAbWZKndrBwyMzqlnwdURgLlP29KivTNcctSCWmD95yhQ6SW6U8zAmk6ttSJJIPPCdDmY8m6qzgByOQ7KFxH+y1IupAqimtIed+vZxjPZYHEDEzE20n1hoIS2avVL96zN9zlLRQTwO5uRABgmNtI0s3Ln4nM9M/am0cTYMribKKjXkPvXlhHnbyqCTaD2mgZo4DzjvBK8g/GciEwYrnJ7hEW5AgMBAAGjggHxMIIB7TAfBgNVHSMEGDAWgBSP6H7wbTJqAAUjx3CXajqQ/2vq1DAdBgNVHQ4EFgQU/mOc7P1ax1MKxuNY4QrWDGR85cAwLgYDVR0RBCcwJaAjBggrBgEFBQcIA6AXMBUME1VTLURFTEFXQVJFLTM3NjEyNTYwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMHsGA1UdHwR0MHIwN6A1oDOGMWh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9FVkNvZGVTaWduaW5nU0hBMi1nMS5jcmwwN6A1oDOGMWh0dHA6Ly9jcmw0LmRpZ2ljZXJ0LmNvbS9FVkNvZGVTaWduaW5nU0hBMi1nMS5jcmwwSwYDVR0gBEQwQjA3BglghkgBhv1sAwIwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAHBgVngQwBAzB+BggrBgEFBQcBAQRyMHAwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBIBggrBgEFBQcwAoY8aHR0cDovL2NhY2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0RVZDb2RlU2lnbmluZ0NBLVNIQTIuY3J0MAwGA1UdEwEB/wQCMAAwDQYJKoZIhvcNAQELBQADggEBABnMHBLp/++Urgq2bogoGr85oks8Rtqq6Ok2z5R83eVfULu82kUSYZruD6yTY5QnwRRLrHEopGLmmVKeW0Sx268pHmA0oIj4BWpP26MvGV9tu94iOKeE0q6gGF3B24Y+Q6OLme5vt4HbhEgO/VYR3/1y8gJC36Up08jovxYA3Tgp4TfDbheF4di9SwFKUeIsOG/TTQZc83e7oaBjfNmCx6apNR3C6AgcB7dDpx4GaD45Sw47ugXCrUA08Whc4rmPa9tcClJFzXec1NQQHlCVCKE6l4fahsWiZ0jCLi6tBvwvnyfLQr1nmDnMBizfrJOVTw+ay+C0xRbp9MNfnprsrEY=
+  - signer_name: OpenVPN Inc.
+    certificate_thumbprint: N/A
+    tbs_sha256: BD4325E2A812983153FFB4CE0484AE9638E38647106BD1DAB419733022006EB9
+    tbs_sha1: ''
+FileHashes:
+  authenticode:
+  - file_name: libGLESv2.dll
+    sha256: 8B3CA207456B73048B14401D514A218F91E3AC362DA380D5F42846871390950A
+    sha1: DEB3F4BF111F08EDD21CD45236980F9BAAEE8674
+  - file_name: exmtweaksservice.exe
+    sha256: 0BCF88B46DD1EC5DBAB3C7A93AA71935485D2301410060DFAE037A131CF40174
+    sha1: 6BF09D1CF379E7812E77949A52E4A44424FC2E71
+  - file_name: libEGL.dll
+    sha256: 959410DBEA458A73A2DFEF4126D8AE86A05AAA51918EF622479D96A80C58C97A
+    sha1: 0356E88D072931B1A2EEB49BD6AD7023C8D83EBA
+  - file_name: vulkan-1.dll
+    sha256: DFFB91B009F255C9AC0521B4357539F9E774009BD7840F42144F1322B37D9F9C
+    sha1: A48555CF8ACEC1490EA62B6E9F43D72D9EB4E29B
+  - file_name: vk_swiftshader.dll
+    sha256: 0DC03434E216CC1AFC474A4546D5191F48C54725CAC435288C5D678D0289976E
+    sha1: 47768556FF79EF9EA281FC0926C474F583B20077
+  page:
+  - file_name: libGLESv2.dll
+    sha256: CEB843E1186242264FBAB170AF4ADF3298B7ADF6169A80C21D885CC742C87700
+    sha1: AB54BF0739C16C996CDE7F98192868A0F156E6F2
+  - file_name: exmtweaksservice.exe
+    sha256: B962D7066212CB69934B5A7320645493F158FF50CE693D96285E1BFCC69450A6
+    sha1: FFFACB71C5CB6393D3B7EBF05EEC991167B2793D
+  - file_name: libEGL.dll
+    sha256: D81FE4599903910759C1F65F3A1B4974D827C653A2C89C95D786F60A0243929B
+    sha1: 9DEFE71AC3B38EE3B64A495148F13D789BDE2BAB
+  - file_name: vulkan-1.dll
+    sha256: A647D0D274F88A36F6ACC2A75C22DA8039A4C92602756DC386FFC1742D61939D
+    sha1: 9653B310379320E3E83C767BAAB6A7C3D741D707
+  - file_name: vk_swiftshader.dll
+    sha256: B879F1472F766619BCA6A8482E71909ADB417A7939A2B87E1FE6E1E09464208C
+    sha1: 05261154E5FA4E88FDC4B244B6FAD9F27C204D44

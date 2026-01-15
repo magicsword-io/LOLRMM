@@ -1,41 +1,68 @@
 Name: Comodo RMM
-Category: 'RMM'
+Category: RMM
 Description: Comodo RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS:
-        - Windows
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - itsmagent.exe
-        - rviewer.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS:
+  - Windows
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - itsmagent.exe
+  - rviewer.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.itsm-us1.comodo.com'
-              - '*mdmsupport.comodo.com'
-              - one.comodo.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.itsm-us1.comodo.com'
+    - '*mdmsupport.comodo.com'
+    - one.comodo.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_network_sigma.yml
-      Description: Detects potential network activity of Comodo RMM RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_processes_sigma.yml
-      Description: Detects potential processes activity of Comodo RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_network_sigma.yml
+  Description: Detects potential network activity of Comodo RMM RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_processes_sigma.yml
+  Description: Detects potential processes activity of Comodo RMM RMM tool
 References:
-    - https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
+- https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - itsmagent.exe
+  company_names: []
+  signer_names:
+  - Comodo Security Solutions
+  - Comodo Security Solutions, Inc.
+  certificates:
+  - signer_name: Comodo Security Solutions
+    certificate_thumbprint: AA6FF933D493EFC39685AC523B7A60748CA98E5C
+    tbs_sha256: 45A11A719D1C128EF2666BFE946DB88E2C7ED0AC7B58974D7CAB7EE19D397309
+    tbs_sha1: ''
+    certificate_der_base64: MIIFXzCCBEegAwIBAgIRAIkGXDwQv2jsUAIhSLaOrqkwDQYJKoZIhvcNAQELBQAwfDELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMSQwIgYDVQQDExtTZWN0aWdvIFJTQSBDb2RlIFNpZ25pbmcgQ0EwHhcNMTkxMjExMDAwMDAwWhcNMjIxMjEwMjM1OTU5WjCBrjELMAkGA1UEBhMCVVMxDjAMBgNVBBEMBTA3MDEzMRMwEQYDVQQIDApOZXcgSmVyc2V5MRAwDgYDVQQHDAdDbGlmdG9uMSAwHgYDVQQJDBcxMjU1IEJyb2FkIFN0IFN1aXRlIDEwMDEiMCAGA1UECgwZQ29tb2RvIFNlY3VyaXR5IFNvbHV0aW9uczEiMCAGA1UEAwwZQ29tb2RvIFNlY3VyaXR5IFNvbHV0aW9uczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOI3+PMfMqEQ2ztP8ooXdE4Z0TyZeo/ZE/kTARWBjVXHrtEc7Opsa1R2KcXCwdDrMN1BjnbY67jB2tWxp2OCN5RiEBW4nEhorCMGOqGBEEvuNiy1wsFE70LBsqO7PDe9lCA9olJ76vDfMOYYhbd1UYZfZzGSP1HAKimIi5Q/PVmYRWw4aRUiiGB8OlGSNfEH+8ic7+SdkayG1U3L7qEYcVydc/Ad8CXHajSGnIwWWavl4dp8LinV7k2VnZHPRj1RnEJp8IzO9K0hs0PM3AvyRTi1tO11kxD5SvsaKx8iIKdVNWYZy0icMhcqs7b+bdagVOwn9HImwvQZhJPUx5U4qmUCAwEAAaOCAacwggGjMB8GA1UdIwQYMBaAFA7hOqhTOjHVir7Bu61nGgOFrTQOMB0GA1UdDgQWBBQpwE0G/kBFN5ef4z9BngSpdHqp8DAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADATBgNVHSUEDDAKBggrBgEFBQcDAzARBglghkgBhvhCAQEEBAMCBBAwQAYDVR0gBDkwNzA1BgwrBgEEAbIxAQIBAwIwJTAjBggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwQwYDVR0fBDwwOjA4oDagNIYyaHR0cDovL2NybC5zZWN0aWdvLmNvbS9TZWN0aWdvUlNBQ29kZVNpZ25pbmdDQS5jcmwwcwYIKwYBBQUHAQEEZzBlMD4GCCsGAQUFBzAChjJodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29SU0FDb2RlU2lnbmluZ0NBLmNydDAjBggrBgEFBQcwAYYXaHR0cDovL29jc3Auc2VjdGlnby5jb20wHwYDVR0RBBgwFoEUc2NvdC53ZWlyQGNvbW9kby5jb20wDQYJKoZIhvcNAQELBQADggEBAC334tj59lO099CoPhJY4be4CfN0BS85uDVYAVr29zXZYm6AG4NgfdxJ2sUh9wA3zRG8XK7Vd7SaQQ8RfU1Ltfbncsj9G/8Cjdikh/rrYzo3+KtmdRP+5EA87wDczwHAg3WENkdad/Kbg0g44EpT9FGbCTOqObtJBSxg6c8q6/CQLZN2W/g7DdZUaPJdGa8j1UDHGb0eYBxrYB0j6Zu6dGDitq+QsqIfG3KhzabtoA54owQfUSPd+739QMSR3A7fRp4Gnob58rNl4y6ypKR/gS96eh7+zTDVqicHrmHAMtoyuga6GIoz62yLhZIVw0qJnH7aiVf9n4OA5pNONrDwH6w=
+  - signer_name: Comodo Security Solutions, Inc.
+    certificate_thumbprint: N/A
+    tbs_sha256: ''
+    tbs_sha1: ''
+    tbs_sha384: C9FB3AF5B1058E28F4D4B8C8BF07E975C3C4937B20854E7F2E87AD84B5EEC40304851C772118061825EFC49655B77114
+FileHashes:
+  authenticode:
+  - file_name: ITSMAgent.exe
+    sha256: 84BC91D460B280B8A6972B8F777277EDC82395D96E665F32FC2242F752EAC37D
+    sha1: CA2D7EE17FC633F70DB33D24F48DEE3A9C3DA20F
+  - file_name: ITSMAgent.exe
+    sha256: B75AB2F03350834B9EC34C06CA0A2358CA6B99A708ADEC745680C6E790E82F01
+    sha1: ADA914BBC7166300C4C8942F4339C1E945A946F6
+  page: []

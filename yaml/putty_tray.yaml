@@ -1,31 +1,64 @@
 Name: PuTTY Tray
-Category: 'RMM'
+Category: RMM
 Description: PuTTY Tray is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - C:\*\puttytray.exe
-        - '*\puttytray.exe'
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\*\puttytray.exe
+  - '*\puttytray.exe'
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/putty_tray_processes_sigma.yml
-      Description: Detects potential processes activity of PuTTY Tray RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/putty_tray_processes_sigma.yml
+  Description: Detects potential processes activity of PuTTY Tray RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - putty
+  - putty.exe
+  - puttytray.exe
+  company_names: []
+  signer_names:
+  - Christopher West
+  certificates:
+  - signer_name: Christopher West
+    issuer: CN=StartCom Class 2 Primary Intermediate Object CA
+    certificate_thumbprint: 83191137CDEEF81C30E354873FECF014729C2FDF
+    tbs_sha256: BF98620649A90682F39538F9A9DB76B90CD49FFD11AE96385A9D7113E1F70099
+    tbs_sha1: A306499CEC6AF8C46C2F959731D0D41C6090D06C
+    valid_from: '2014-02-25T22:22:24+00:00'
+    valid_to: '2016-02-26T05:05:17+00:00'
+    certificate_der_base64: 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
+    src_file_sha256: D3B
+FileHashes:
+  authenticode:
+  - file_name: PuTTY
+    sha256: 264444C790AF00AA0830BE764FE3EC4613B0F16D9AEEA9C480C27D418679650A
+    sha1: 1CF0A22F3C317E7D53ABC5003ECC7136768F4F1F
+  - file_name: putty.exe
+    sha256: A342E96AA7631BCC98AF33E781C239B486E5417C7CB665A79F66841B41C50360
+    sha1: D9494272E8A7EE2A491D3C57E059A7A7F6EE7017
+  page:
+  - file_name: PuTTY
+    sha256: 75CA90063D40A7B88F9092A7DF12017592266CF4BC9F2FBEA0E96E8333AD7A53
+    sha1: 3444BD923A9B08273DBE3F302B2A569A210E44DA
+  - file_name: putty.exe
+    sha256: 69C73E6DD1F2460762962DCE98774CED99AFF86E1FC715103114A004816FF4A1
+    sha1: 5249C8F956D087A90A5BDA1E3149F4E90BCA59C1

@@ -1,42 +1,80 @@
 Name: Manage Engine (Desktop Central)
-Category: 'RMM'
-Description: Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool. More information will be added
+  as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - dcagentservice.exe
-        - dcagentregister.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - dcagentservice.exe
+  - dcagentregister.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - desktopcentral.manageengine.com
-              - desktopcentral.manageengine.com.eu
-              - desktopcentral.manageengine.cn
-              - '*.dms.zoho.com'
-              - '*.dms.zoho.com.eu'
-              - '*.-dms.zoho.com.cn'
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - desktopcentral.manageengine.com
+    - desktopcentral.manageengine.com.eu
+    - desktopcentral.manageengine.cn
+    - '*.dms.zoho.com'
+    - '*.dms.zoho.com.eu'
+    - '*.-dms.zoho.com.cn'
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml
-      Description: Detects potential network activity of Manage Engine (Desktop Central) RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml
-      Description: Detects potential processes activity of Manage Engine (Desktop Central) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__network_sigma.yml
+  Description: Detects potential network activity of Manage Engine (Desktop Central) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manage_engine__desktop_central__processes_sigma.yml
+  Description: Detects potential processes activity of Manage Engine (Desktop Central) RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - 8k1qq1.exe
+  - dcagentregister.exe
+  - dcagentservice.exe
+  - m6hufo2as.exe
+  company_names: []
+  signer_names:
+  - ZOHO Corporation Private Limited
+  certificates:
+  - signer_name: ZOHO Corporation Private Limited
+    issuer: CN=GlobalSign GCC R45 CodeSigning CA 2020
+    certificate_thumbprint: 03498B4CC5B51DB6CE80699F23CAC1724BB36B69
+    tbs_sha256: 48D169144280CEF6AF2316D3DD3BD8B8790D35B71601A48BD77C2A5F1E1E860B
+    tbs_sha1: 89D154D8D97B4FAF3E0B6427731BFC935939895E
+    valid_from: '2023-12-11T17:00:36+00:00'
+    valid_to: '2026-10-09T07:40:58+00:00'
+    certificate_der_base64: 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
+    src_file_sha256: 448559E8D59FE056299E6E8F
+FileHashes:
+  authenticode:
+  - file_name: dcagentregister.exe
+    sha256: 120EF91BB2F6959566EF75D1266F244846BD87F3EC14B847A37D009585C41356
+    sha1: B3867DA794285F5191181FC59A6F7BFA5AD9FDDC
+  - file_name: m6hufo2as.exe
+    sha256: 44549C403246C5ACFC715E13D0C08ED825459E5E6CE18A74663AE9167EC18AD8
+    sha1: 0ECA79ED2B35A87FE1081424E1E753A3CDB6CB31
+  - file_name: dcagentregister.exe
+    sha256: 53815CA5A4F05B9A44C3D2CE6E53D5DF7E5B2DFDAA4B179C417858CADB6890A6
+    sha1: F873CDF10AC35644062667F8BB65DA822667CF42
+  - file_name: 8k1qq1.exe
+    sha256: 8557CC97E13D38181061BD1B9534DAA79BEE75641F66902547F976F371754616
+    sha1: 52022906A6BFA29D99D4FA5C9BC91CD45293B0E4
+  - file_name: dcagentregister.exe
+    sha256: FE8B12417CE05763B55D31710428AF0D87847716577201390ACAD71965883C30
+    sha1: 4DFDDF8496E5AAA9EEE15359D915D4F1F14BAFA9
+  page: []

@@ -1,42 +1,107 @@
 Name: Weezo
-Category: 'RMM'
+Category: RMM
 Description: Weezo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - weezohttpd.exe
-        - weezo.exe
-        - weezo setup*.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - weezohttpd.exe
+  - weezo.exe
+  - weezo setup*.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.weezo.me'
-              - weezo.net
-              - '*.weezo.net'
-              - weezo.en.softonic.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.weezo.me'
+    - weezo.net
+    - '*.weezo.net'
+    - weezo.en.softonic.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_network_sigma.yml
-      Description: Detects potential network activity of Weezo RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_processes_sigma.yml
-      Description: Detects potential processes activity of Weezo RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_network_sigma.yml
+  Description: Detects potential network activity of Weezo RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/weezo_processes_sigma.yml
+  Description: Detects potential processes activity of Weezo RMM tool
 References:
-    - https://weezo.en.softonic.com
+- https://weezo.en.softonic.com
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - 22ba2e94e332dfa49e9bd0b0ab6f3d1e42f22208ce1866be50b1c7d1407ffb97bfadd7e2a9b9590607b41b8308e618a605146236626523b9dbecfdd40e90bdb9
+  - httpd.exe
+  - php_pdo_sqlite.dll
+  - weezo setup.3.0.0.exe
+  - weezo setup.4.0.0.exe
+  - weezo setup.exe
+  - weezo-2078.exe
+  - weezo_setup.4.2.3.exe
+  - weezo_setup.exe
+  company_names: []
+  signer_names: []
+  certificates: []
+FileHashes:
+  authenticode:
+  - file_name: Weezo setup.exe
+    sha256: 70153918280FF279DCB2EAB03104C12F33A9F2AD29330678748C995F885054A7
+    sha1: A3AA5A8472D4FCE6AEEB0C3C6A58B471DEC44887
+  - file_name: httpd.exe
+    sha256: F92798421EB3136148AB795A510591A9CD3AFAF1B4EAD752B7A5FF8C7E421C1D
+    sha1: D479542528FE38FA947C56F82445718EB0B0FCB1
+  - file_name: httpd.exe
+    sha256: F8D1006EBE038F77F8E5127E4C9B8AE91FE6E1CE1A59D91B50784238E488BF81
+    sha1: 120E09023DD24BBBF9D78449AE10DB86710EAC3B
+  - file_name: weezo-2078.exe
+    sha256: 4D8346AE025FA55B9CE791B0599872E6E5F874EAB07CD032AF81483139B04A8D
+    sha1: F4F5831576488FA505D5895CD815874746B514AD
+  - file_name: weezo_setup.exe
+    sha256: 390E8BB86207AC87225F19C80985E7C6372B13652D069ACC39FC47FC446B5D6B
+    sha1: E686A6E3AFE3D4062B53F35918B2067E95EF212C
+  - file_name: php_pdo_sqlite.dll
+    sha256: 0964ED16207FF7D7AD033D5756FB00A85F0A0B6A1EE85C76AABB935F457349CA
+    sha1: F3A64A833B7A989AF92E6649AAAE1EEACA49E04F
+  - file_name: Weezo setup.3.0.0.exe
+    sha256: 84E6C57533BB118A09CE342802AED3D7590AB3DD45BBA8542EC871ADA48D59EF
+    sha1: 1BDAE866AE253944649A7B7F234500B8F9423155
+  - file_name: 22ba2e94e332dfa49e9bd0b0ab6f3d1e42f22208ce1866be50b1c7d1407ffb97bfadd7e2a9b9590607b41b8308e618a605146236626523b9dbecfdd40e90bdb9
+    sha256: 8C86DAACCAEB8E10DE2A4FF9D05A1D0DD3AC7E59BBC9537ED566163D34DA0605
+    sha1: 7EFCBAACF0E9B64B583DDD5824ACA05235FE7F2D
+  - file_name: Weezo_setup.exe
+    sha256: C372AF01469F554B94B1DB3EAFD4124637A6BF956C7B205C290E1951F5265C28
+    sha1: 0D0D544C25B0B3827BE50A1BDB07805FB7C6C21D
+  - file_name: weezo setup.4.0.0.exe
+    sha256: 7B38E039497F699DC85E017C7197A425A05CCFEA36F2101A7F0B170F714683C0
+    sha1: E409F3910AD3DFF75F01FCE143F010827A7509A7
+  - file_name: Weezo_setup.4.2.3.exe
+    sha256: B6776EB6DD8526B1F439362CF663B202CC785EF71F12E0C51AB4254C7902CCC3
+    sha1: 22DA7242E3410C92529A73BF7FA91F89380970BD
+  page:
+  - file_name: Weezo setup.exe
+    sha256: 170E12BD1F8D7BDDBEA3D2577D295381164CCC77555B512DD7F3954F3F2FFD01
+    sha1: 19153EE1E3B98ADDE8274F2424D3E6754D524FF5
+  - file_name: httpd.exe
+    sha256: E75B4580FE76F6A437834A54ED0A50F60BBD86BACC31E67408034736660F5E32
+    sha1: 42BA1DADB56670FF19B0B92561AB8AB1B370F93C
+  - file_name: httpd.exe
+    sha256: A4748835DB826958A06BA34225568CFD564D4CDA45E0980A73252B57E20A3B71
+    sha1: 01240166AE1CAB12E9825D5D5D429BBE81D34872
+  - file_name: weezo-2078.exe
+    sha256: 01D419D9CA58F743AF87967A2BBDF81C10F41E24FD06B55A0FE6BBB73AAC6786
+    sha1: 103CC504DD34E8DFABFC8ADC3D2185C5F5619E84
+  - file_name: php_pdo_sqlite.dll
+    sha256: 390FC2610FA33AD6D8062437E44E1CBE2FFF8B5BA92B6AAC4D67F4A5C08BB258
+    sha1: 3FC6C03D1D68694F26773E8979BB4A99DCD7BB79

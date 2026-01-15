@@ -1,47 +1,105 @@
 Name: PDQ Connect
-Category: 'RMM'
+Category: RMM
 Description: PDQ Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - pdq-connect*.exe
-        - PDQConnectUpdater-*.msi
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - pdq-connect*.exe
+  - PDQConnectUpdater-*.msi
 Artifacts:
-    Disk:
-        - File: C:\ProgramData\PDQ\PDQConnectAgent\PDQConnectAgent.db-journal
-          Description: Journal file that is part of the database system used by the PDQ Connect Agent to manage and store data related to its operations
-          OS: Windows
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - app.pdq.com
-              - cfcdn.pdq.com
-              - pdqinstallers.*.r2.cloudflarestorage.com
-          Ports: []
+  Disk:
+  - File: C:\ProgramData\PDQ\PDQConnectAgent\PDQConnectAgent.db-journal
+    Description: Journal file that is part of the database system used by the PDQ Connect Agent to manage and store data related
+      to its operations
+    OS: Windows
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - app.pdq.com
+    - cfcdn.pdq.com
+    - pdqinstallers.*.r2.cloudflarestorage.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_network_sigma.yml
-      Description: Detects potential network activity of PDQ Connect RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_files_sigma.yml
-      Description: Detects potential files activity of PDQ Connect RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_processes_sigma.yml
-      Description: Detects potential processes activity of PDQ Connect RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_network_sigma.yml
+  Description: Detects potential network activity of PDQ Connect RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_files_sigma.yml
+  Description: Detects potential files activity of PDQ Connect RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pdq_connect_processes_sigma.yml
+  Description: Detects potential processes activity of PDQ Connect RMM tool
 References:
-    - https://connect.pdq.com/hc/en-us/articles/12489014928667-Collect-PDQ-Connect-Event-Logs
-    - https://connect.pdq.com/hc/en-us/articles/19197321496219-PDQ-Connect-Output-Logs
-    - https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
+- https://connect.pdq.com/hc/en-us/articles/12489014928667-Collect-PDQ-Connect-Event-Logs
+- https://connect.pdq.com/hc/en-us/articles/19197321496219-PDQ-Connect-Output-Logs
+- https://connect.pdq.com/hc/en-us/articles/9518992071707-Network-Requirements
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - msi8c70.tmp
+  - pdq-connect-agent.exe
+  - pdq-connect.exe
+  - pdqconnectupdater-.msi
+  - pdqconnectupdater-setup.exe
+  company_names: []
+  signer_names:
+  - PDQ.com Corporation
+  certificates:
+  - signer_name: PDQ.com Corporation
+    certificate_thumbprint: 8AB2A176E3B80545CE2E15ED12D186B9EF53C108
+    tbs_sha256: 4C3ADBB8A2662E65EC5C714632D015950295E0F8383D25FD125D1EA4994525B5
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: PDQ.com Corporation
+    certificate_thumbprint: E706901A2E7EB16DA4D420BF61BBC47BFBBF8CE6
+    tbs_sha256: 6D661EF88C0FAA44D96DD73137EE50A09E9A1BA9180A8A850A6A6D708DA2004E
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: PDQ.com Corporation
+    issuer: CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+    certificate_thumbprint: 7B4313B6CDB8176DFAAB4125E51651E2A813AB74
+    tbs_sha256: 476A0D993DE124D3925AD602D11F294C1D374A3ACF50567A5928D269840993E4
+    tbs_sha1: 7C423168C986239661A17B2199D0ADFF457188CA
+    valid_from: '2025-08-07T00:00:00+00:00'
+    valid_to: '2028-09-21T23:59:59+00:00'
+    certificate_der_base64: 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
+    src_file_sha256: 67804E0AB0AA6F03D5381E3C238A748
+FileHashes:
+  authenticode:
+  - file_name: pdqconnectupdater-setup.exe
+    sha256: DC91E1507E9DDD1FDB6089204745D1A5DC34B58AD1C8971B91D1F8DE91A9097F
+    sha1: CF2244E33899080106C9600EBFBB400DB956C0B2
+  - file_name: pdqconnectupdater-setup.exe
+    sha256: 8B589F83D7DDA927AF5A37EC16620C2818475A59B26BFDF8C385B6A01B9411A2
+    sha1: 66861A75A8F1C70B91B1A7D8067B88E218561963
+  - file_name: pdqconnectupdater-setup.exe
+    sha256: 3311BCD8BCFCEF75A8E28058ABEB468115EE2AA89E914A07DDF7F09C36205166
+    sha1: A201099C0708137F1904CA0C32AF369568FA3502
+  - file_name: pdq-connect-agent.exe
+    sha256: DAD414979334FA5F5BCD41AFA38AEC1CEB73AF35067233C16C6CEE468C57CBFE
+    sha1: B73678A32046FCC1CC7FDDF51D25EF362D14BDBC
+  - file_name: pdqconnectupdater-setup.exe
+    sha256: FA4B54628A7EB0D2E00121E7C9E99599D0C5D4753C3B7FC94D44DB0C5FA08652
+    sha1: 78EDE3F92667D17CF74B5968DD0CB5093DC97AF3
+  - file_name: MSI8C70.tmp
+    sha256: F795EA98AA00776AEC80D2B71E791BC0A46E973E9CFDF4C8DE29D3696CDDBA1B
+    sha1: 110B1C819D1967B94026C0E8E8ECCFAB7060E14F
+  page:
+  - file_name: pdqconnectupdater-setup.exe
+    sha256: B010BBBD1F47F82F875DFAD737728B2BD986E7948389A8EDF770CD20249D5B19
+    sha1: 69FEC87441B8D54397E018F9464A087F21EBC03D
+  - file_name: pdqconnectupdater-setup.exe
+    sha256: 0795852574BC4CFA156C5D687EEE420CEF4F085ADAD5F3CEDB234E0D320D98C9
+    sha1: F66BDF0363ADFC41A5F67250B66C9A9618E0BB88

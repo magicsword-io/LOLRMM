@@ -1,32 +1,91 @@
 Name: Netviewer (GoToMeet)
-Category: 'RMM'
-Description: Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes
+  available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - nvClient.exe
-        - netviewer.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - nvClient.exe
+  - netviewer.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml
-      Description: Detects potential processes activity of Netviewer (GoToMeet) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml
+  Description: Detects potential processes activity of Netviewer (GoToMeet) RMM tool
 References:
-    - https://www.enviolet.com/en/service/online-consultant.html
+- https://www.enviolet.com/en/service/online-consultant.html
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - netviewer
+  - netviewer.exe
+  - nvclient.exe
+  - streamreader.dll
+  - velo.exe
+  - wlcbthg.exe
+  company_names: []
+  signer_names:
+  - Microsoft Corporation
+  - Netviewer GmbH
+  certificates:
+  - signer_name: Microsoft Corporation
+    issuer: CN=Microsoft Code Signing PCA
+    certificate_thumbprint: D57FAC60F1A8D34877AEB350E83F46F6EFC9E5F1
+    tbs_sha256: 222934EA5C8F0DBC5EDC62F760AB6EB0DDCEED0A70F9DF0FDAD0C430EE4D3D97
+    tbs_sha1: F69F65A5922C5493113591FF69C1FE1A235F2370
+    valid_from: '2007-08-23T00:23:13+00:00'
+    valid_to: '2009-02-23T00:33:13+00:00'
+    certificate_der_base64: MIIEajCCA1KgAwIBAgIKYQ94TQAAAAAAAzANBgkqhkiG9w0BAQUFADB5MQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSMwIQYDVQQDExpNaWNyb3NvZnQgQ29kZSBTaWduaW5nIFBDQTAeFw0wNzA4MjMwMDIzMTNaFw0wOTAyMjMwMDMzMTNaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdSZWRtb25kMR4wHAYDVQQKExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xHjAcBgNVBAMTFU1pY3Jvc29mdCBDb3Jwb3JhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKLbCo3PwsFJm82qOjStI1lr22y+ISK3lMjqrr/G1SbCMhGLvNpdLPs2Vh4VK66PDd0Uo24oTH8WP0GsjUCxRogN2YGUrZcG0FdEdlzq8fwO4n90ozPLdOXv42GhfgO3Rf/VPhLVsMpeDdB78rcTDfxgaiiFdYy3rbyF6Be0kL71FrZiXe0R3zruIVuLr4Bzw0XjlYl3YJvnrXfBN40zFC8T22LJrhqpT5hnrdQgOTBx4I1nRuLGHPQNUHRBL+gFJGoha0mwksSyOcdCpW1cGEqrj9eOgz54CkfYpLKEI8Pi8ntmsUp0vSZBS5xhFGBOMMiC89ALcHzuVU130ghVdoECAwEAAaOB+DCB9TAOBgNVHQ8BAf8EBAMCBsAwHQYDVR0OBBYEFPMhQI58UfhUS5jlF9dqgzQFLiboMBMGA1UdJQQMMAoGCCsGAQUFBwMDMB8GA1UdIwQYMBaAFMwdznYAcFuv8drETppRRC6jRGPwMEQGA1UdHwQ9MDswOaA3oDWGM2h0dHA6Ly9jcmwubWljcm9zb2Z0LmNvbS9wa2kvY3JsL3Byb2R1Y3RzL0NTUENBLmNybDBIBggrBgEFBQcBAQQ8MDowOAYIKwYBBQUHMAKGLGh0dHA6Ly93d3cubWljcm9zb2Z0LmNvbS9wa2kvY2VydHMvQ1NQQ0EuY3J0MA0GCSqGSIb3DQEBBQUAA4IBAQBAV29TZ54ggzQBDuYXSzyt69iBf+4NeXR3T5dHGPMAFWl+22KQov1noZzkKCn6VdeZ/lC/XgmzuabtgvOYHm9Z+vXx4QzTiwg+Fhcg0cC1RUcIJmBXCUuU8AjMuk1u8OJIEig1iyFy31+2r2kSJJTu6TQJ235ub5IKUsoqTEmqMiyG6KHMXSa8vDzgW7KDC7o1HE+ERUf/u5ShWQeplt14vVd/padOzPKtnJpB4stcJD7cfzRHTvbPyHud67bJnGMUU6+tmu/Xv8+goauVynorhyzAx9n8bAPavzit8dFcGRcPwPfKgKYQCBrdkCPnsKFMPuqwESZ4DsEsuaRrx488
+    src_file_sha256: 610F784D000000000003
+  - signer_name: Netviewer GmbH
+    issuer: CN=VeriSign Class 3 Code Signing 2004 CA
+    certificate_thumbprint: B1CE88EB14025F074EFD0962307EF25BE9E4DB3C
+    tbs_sha256: 78BBAD2003B24C77331E0A888D7C9B683E56162BDCB9449EFC2290EA80FF21E2
+    tbs_sha1: E99023578C3807E88B3E2D2575E279ED9E1CF6AF
+    valid_from: '2006-03-02T00:00:00+00:00'
+    valid_to: '2008-03-17T23:59:59+00:00'
+    certificate_der_base64: MIIE7TCCA9WgAwIBAgIQOpoIux2LvmsLeo206zGe0TANBgkqhkiG9w0BAQUFADCBtDELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTswOQYDVQQLEzJUZXJtcyBvZiB1c2UgYXQgaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYSAoYykwNDEuMCwGA1UEAxMlVmVyaVNpZ24gQ2xhc3MgMyBDb2RlIFNpZ25pbmcgMjAwNCBDQTAeFw0wNjAzMDIwMDAwMDBaFw0wODAzMTcyMzU5NTlaMIGwMQswCQYDVQQGEwJERTEbMBkGA1UECBMSQmFkZW4tV3VlcnR0ZW1iZXJnMRIwEAYDVQQHEwlLYXJsc3J1aGUxFzAVBgNVBAoUDk5ldHZpZXdlciBHbWJIMT4wPAYDVQQLEzVEaWdpdGFsIElEIENsYXNzIDMgLSBNaWNyb3NvZnQgU29mdHdhcmUgVmFsaWRhdGlvbiB2MjEXMBUGA1UEAxQOTmV0dmlld2VyIEdtYkgwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAL1tHlnAFs1O61w4O2kUsMDtMa87IS7a6rKI5SocZCtfS8KwgXgdI3uUK7vWEzEe4ZFgqCG3Tr0zlYFP40UDeIEBjIu3PfbYY7dJAtss8g9Llp4+X9rhs6Nr1TlWM5X9y/bv1sYOcUuMzRnJOUqR10Zaqp6DeNyg6lKunDGtT18lAgMBAAGjggF/MIIBezAJBgNVHRMEAjAAMA4GA1UdDwEB/wQEAwIHgDBABgNVHR8EOTA3MDWgM6Axhi9odHRwOi8vQ1NDMy0yMDA0LWNybC52ZXJpc2lnbi5jb20vQ1NDMy0yMDA0LmNybDBEBgNVHSAEPTA7MDkGC2CGSAGG+EUBBxcDMCowKAYIKwYBBQUHAgEWHGh0dHBzOi8vd3d3LnZlcmlzaWduLmNvbS9ycGEwEwYDVR0lBAwwCgYIKwYBBQUHAwMwdQYIKwYBBQUHAQEEaTBnMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC52ZXJpc2lnbi5jb20wPwYIKwYBBQUHMAKGM2h0dHA6Ly9DU0MzLTIwMDQtYWlhLnZlcmlzaWduLmNvbS9DU0MzLTIwMDQtYWlhLmNlcjAfBgNVHSMEGDAWgBQI9VHo+/49PWQ2fGjPW3io37nFNzARBglghkgBhvhCAQEEBAMCBBAwFgYKKwYBBAGCNwIBGwQIMAYBAQABAf8wDQYJKoZIhvcNAQEFBQADggEBAJHILOn5ar9yLcWTfT7nC+yPHf64gXRu7VpG5j7kWCxdyfD0dzfMiFferj8rzWad1g7M8Yfdm3nqflh+76K/HfWJVybnOsQt0ScpEDjC/dVEZySvjlu5dmpJlvedR1ZpnKhvI+RbRF6R0nONw6y4yIz6sTQ11wz3EsVnVHxO2s1BFH6bvLFCFHrjkuifQFPfUNCmyFeipe0snDPlGINyb7NePtQ27n0RsEX2h9rWWPjKh/dJNYdvHtKkf5CBUK7zV/tewfJDgYLoYwPlnlbNXJHtxkrWrw39lFg4p3t8M4EdH7aeS8eBjakEKeE25Zx4OTNtjN7FYbFsamf40AXDT0o=
+    src_file_sha256: 3A9A08BB1D8BBE6B0B7A8DB4EB319ED1
+FileHashes:
+  authenticode:
+  - file_name: Netviewer
+    sha256: 1EFF86A16BBF0FC43756DBDACCE9D63AE379CA594A07D601CF289B14A0D42D51
+    sha1: EC45A7F37745C0EF7A457407CF0B753217B4ED99
+  - file_name: wlcbthg.exe
+    sha256: DBA3E7A72CBCEEFE3CE50188B40605678EB23AD559E6179F778A37B3FDBC7AE9
+    sha1: EA3D2AD20918BA55D0DE9CFBA8242EDA211A5701
+  - file_name: velo.exe
+    sha256: 574A207E273001DF3946A568FA58C84666EB53410EEC62396D2134BD6109F7FE
+    sha1: 330E6B2421C61928A4D4BB33882CFEF8EF8ED9F0
+  - file_name: StreamReader.dll
+    sha256: F5BD8FC620204CD8C764843B5BE6E0ED097701FF25B51AA843A13DFCAE2DBE4D
+    sha1: 7D263EA4357B658C1F9BC3D6834E4274FA5581BF
+  page:
+  - file_name: Netviewer
+    sha256: EEF7D05123BC50A7171B4C068FB8A7005F4D3F7FC05A9B4ECF5968D850198B5B
+    sha1: 798486A9EB66100A27D414B6E162DFD2A024E70F
+  - file_name: wlcbthg.exe
+    sha256: 2D44CA9EC8FBC93990DD3339BAC1C3D5B4300CE0B6DFE5387198747A02C487DA
+    sha1: 8D518344A94E67991FE2BDF31C52845F73AA10F7
+  - file_name: velo.exe
+    sha256: 47D5B20AAB73246888E56CC4A5CE2D19433EEA882AF6CB7DB5EFFCA1777DCD24
+    sha1: 64E67274CB237BD9EC4358F6FFD9B9A1EF2EC678
+  - file_name: StreamReader.dll
+    sha256: 3CA21A563B46AA68116E6EB3FCF665337AA52675C6FFEF89C6F8C2D4BC4FC10D
+    sha1: 43B63DCEC6F18E5A38C3A3169DB3923AA7FEDCE4

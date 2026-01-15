@@ -1,39 +1,63 @@
 Name: ConnectWise Control
-Category: 'RMM'
-Description: ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes
+  available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - connectwisechat-customer.exe
-        - connectwisecontrol.client.exe
-        - screenconnect.windowsclient.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - connectwisechat-customer.exe
+  - connectwisecontrol.client.exe
+  - screenconnect.windowsclient.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - live.screenconnect.com
-              - control.connectwise.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - live.screenconnect.com
+    - control.connectwise.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml
-      Description: Detects potential network activity of ConnectWise Control RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml
-      Description: Detects potential processes activity of ConnectWise Control RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml
+  Description: Detects potential network activity of ConnectWise Control RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml
+  Description: Detects potential processes activity of ConnectWise Control RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+  search_names: []
+  company_names: []
+  signer_names:
+  - ConnectWise, Inc.
+  - ConnectWise, LLC
+  - Connectwise, LLC
+  certificates:
+  - signer_name: ConnectWise, Inc.
+    certificate_thumbprint: 07290735CAC17E851C608F28C3C03F68B94DDC35
+    tbs_sha256: 2536E3C682B73B99B516CDEEE24FCB828C84CBDA003E3C3075CA771717B4CEBA
+    tbs_sha1: ''
+    certificate_der_base64: MIIFkjCCBHqgAwIBAgIMFZy9YdRoNYJ6CJvQMA0GCSqGSIb3DQEBCwUAMG4xCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMUQwQgYDVQQDEztHbG9iYWxTaWduIEV4dGVuZGVkIFZhbGlkYXRpb24gQ29kZVNpZ25pbmcgQ0EgLSBTSEEyNTYgLSBHMzAeFw0xOTAxMTEyMDAzNDFaFw0yMjA0MDcyMTU4NTVaMIHmMR0wGwYDVQQPDBRQcml2YXRlIE9yZ2FuaXphdGlvbjEVMBMGA1UEBRMMRjE2MDAwMDAwMzA4MRMwEQYLKwYBBAGCNzwCAQMTAlVTMRgwFgYLKwYBBAGCNzwCAQITB0Zsb3JpZGExCzAJBgNVBAYTAlVTMRAwDgYDVQQIEwdGbG9yaWRhMQ4wDAYDVQQHEwVUYW1wYTEYMBYGA1UECRMPNDExMCBHZW9yZ2UgUmQuMRowGAYDVQQKExFDb25uZWN0V2lzZSwgSW5jLjEaMBgGA1UEAxMRQ29ubmVjdFdpc2UsIEluYy4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwamu+xMZ1KHNjtyNMzlJIdUVxKRrfkxLE95RlT0UqNUTLQluB3ORJdZyqFH29xmM6ZKksq0FmB3MqiZTFcn8hsl5h44IoD6TP87XySHmKAT5RMnzL4Fw0AbS7w1xE7aRvPAOI6r2IBld3hPaR6zI79qy4NkULsZWHyBfTYxRW9YrTJgvtZv6L8S0BBzTqSQWZL83aEpmQT7duNU+Okvpo5NZA1sO9jFuGF2o4mqEWduwxnoWeVkF8ISTUVd/bT2Bl0Wle8yzWbQI8n7lf59SMyJGvUxtrf0BXI7bpq3QDbXiEa0wwej+dGMemrELXbBgUlbhgdE2DCVn0wFNLQCblAgMBAAGjggG1MIIBsTAOBgNVHQ8BAf8EBAMCB4AwgaAGCCsGAQUFBwEBBIGTMIGQME4GCCsGAQUFBzAChkJodHRwOi8vc2VjdXJlLmdsb2JhbHNpZ24uY29tL2NhY2VydC9nc2V4dGVuZGNvZGVzaWduc2hhMmczb2NzcC5jcnQwPgYIKwYBBQUHMAGGMmh0dHA6Ly9vY3NwMi5nbG9iYWxzaWduLmNvbS9nc2V4dGVuZGNvZGVzaWduc2hhMmczMFUGA1UdIAROMEwwQQYJKwYBBAGgMgECMDQwMgYIKwYBBQUHAgEWJmh0dHBzOi8vd3d3Lmdsb2JhbHNpZ24uY29tL3JlcG9zaXRvcnkvMAcGBWeBDAEDMAkGA1UdEwQCMAAwRQYDVR0fBD4wPDA6oDigNoY0aHR0cDovL2NybC5nbG9iYWxzaWduLmNvbS9nc2V4dGVuZGNvZGVzaWduc2hhMmczLmNybDATBgNVHSUEDDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUnK+sWt3Pg30GOFuEWDNm5DXMfXMwHwYDVR0jBBgwFoAU3CxYLCpvNS2feZWoSF3EbT5Tv7kwDQYJKoZIhvcNAQELBQADggEBAGQNB5koBqGLMM4Cd/l1ALVESVSs5AoueNHiJL9p9its1i0cGwdvrQwBDIylhLnxFdrj2m9xoB4nYy5aU7DcdzMha/TRaCSv1e1DhWqxNSAAoKacXjof425ZxAY/ZKlPrjyo7YjLgLTcMc3cVDEbgtAZshr1AgsW8/XJ3uRZ9FcgeCAnd0yy8IMuRtyrXq99oo+6r97kvTeXk6CakMRrJhc1uN9MSEHZLGSwVR33Az6C67Wt/rPO5i+jMDRF0PO/bVaNrwA7gxYqysrUHMzL/ra7Wwh44kkyYudSDGwLvWCYTAxrZNL7BjLPGjyOLn/C9dWekw+y0sKTkNp/7/eEDZQ=
+  - signer_name: Connectwise, LLC
+    certificate_thumbprint: FF8BFAFA697459874FB9843B1EFDA5C91871A44C
+    tbs_sha256: 46135C0D0BC2714588E2E99AEB2BBC714F972F50D46C4C6D084F9D9CF9E485A4
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: ConnectWise, LLC
+    certificate_thumbprint: DC69069188D5CBC5FE18B7D035C90061C8741E21
+    tbs_sha256: EE87E0B6968C49806887874C952D0F6C1DAABA50D699FE8C5524103D7A3A82D1
+    tbs_sha1: ''
+    certificate_der_base64: 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

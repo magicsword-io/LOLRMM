@@ -1,39 +1,63 @@
 Name: Syspectr
-Category: 'RMM'
+Category: RMM
 Description: Syspectr is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - oo-syspectr*.exe
-        - OOSysAgent.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - oo-syspectr*.exe
+  - OOSysAgent.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - atled.syspectr.com
-              - app.syspectr.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - atled.syspectr.com
+    - app.syspectr.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_network_sigma.yml
-      Description: Detects potential network activity of Syspectr RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_processes_sigma.yml
-      Description: Detects potential processes activity of Syspectr RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_network_sigma.yml
+  Description: Detects potential network activity of Syspectr RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_processes_sigma.yml
+  Description: Detects potential processes activity of Syspectr RMM tool
 References:
-    - https://www.syspectr.com/en/installation-in-a-network
+- https://www.syspectr.com/en/installation-in-a-network
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - px824.exe
+  company_names: []
+  signer_names:
+  - O&O Software GmbH
+  certificates:
+  - signer_name: O&O Software GmbH
+    certificate_thumbprint: N/A
+    tbs_sha256: 8791B07107ACA0012FCD994D0988F656001E85CB308AFEF1357DA5B667799DA1
+    tbs_sha1: ''
+  - signer_name: O&O Software GmbH
+    certificate_thumbprint: N/A
+    tbs_sha256: ''
+    tbs_sha1: 2DD9E1A20CAE354C095FB794EEBE947F71A4DF50
+FileHashes:
+  authenticode:
+  - file_name: px824.exe
+    sha256: A11D5835F12F9AF066B32FD45E60FAE0556D124AAA10122E56ECE671FE0AB3ED
+    sha1: 2B435B39CD356582D0260A957E22467613A0E62C
+  page:
+  - file_name: px824.exe
+    sha256: 8E3D839C4A8BF7A285A5145B05AB70C5A2437A648542C99180DB9AEF0CA38FEF
+    sha1: A4F8259FAB3AA05DF4DCCF2DC71A8590994719E8

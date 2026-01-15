@@ -1,44 +1,102 @@
 Name: Jump Desktop
-Category: 'RMM'
+Category: RMM
 Description: Jump Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - jumpclient.exe
-        - jumpdesktop.exe
-        - jumpservice.exe
-        - jumpconnect.exe
-        - jumpupdater.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - jumpclient.exe
+  - jumpdesktop.exe
+  - jumpservice.exe
+  - jumpconnect.exe
+  - jumpupdater.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.jumpdesktop.com'
-              - jumpdesktop.com
-              - jumpto.me
-              - '*.jumpto.me'
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.jumpdesktop.com'
+    - jumpdesktop.com
+    - jumpto.me
+    - '*.jumpto.me'
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_network_sigma.yml
-      Description: Detects potential network activity of Jump Desktop RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_processes_sigma.yml
-      Description: Detects potential processes activity of Jump Desktop RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_network_sigma.yml
+  Description: Detects potential network activity of Jump Desktop RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/jump_desktop_processes_sigma.yml
+  Description: Detects potential processes activity of Jump Desktop RMM tool
 References:
-    - https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
+- https://support.jumpdesktop.com/hc/en-us/articles/360042490351-Administrators-Guide-For-Jump-Desktop-Connect
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - jumpconnect.exe
+  - jumpconnectcore.dll
+  - jumpupdater
+  - vespra.exe
+  - winkill.exe
+  company_names: []
+  signer_names:
+  - Phase Five Systems LLC
+  - PhaseFive Systems LLC
+  certificates:
+  - signer_name: PhaseFive Systems LLC
+    certificate_thumbprint: N/A
+    tbs_sha256: 1BF55DAA063110C36CA3667802D5FAB3FC46D99873BB470CE1E0DD395354BEB6
+    tbs_sha1: ''
+  - signer_name: Phase Five Systems LLC
+    certificate_thumbprint: N/A
+    tbs_sha256: 603F50F6A334218C4ED384ACF9AA88190B3DFC029D54453C27D3167E48C152A0
+    tbs_sha1: ''
+  - signer_name: PhaseFive Systems LLC
+    certificate_thumbprint: N/A
+    tbs_sha256: ''
+    tbs_sha1: ''
+    tbs_sha384: 427CA734B98DF79C7BB95E4520DBFA6A12155FA52D1F7358A60F15A9904BDC6A95EA04123C2C81437EF981F89E5351CC
+FileHashes:
+  authenticode:
+  - file_name: WinKill.exe
+    sha256: D22A7440AC93F2ED3857F99AF0740E8F4038D061B8D33928F952B5DD1DF6D9BA
+    sha1: 37339CE3C4B94F5E583ACA18E06620BE26C3AD94
+  - file_name: JumpUpdater
+    sha256: 0E3F9202416DA42E7223E9FD77792996BE56A7A6F1169FEF3F1CA96B7D534312
+    sha1: 900CE766130609452A35EBA3251CB6B0992F080B
+  - file_name: JumpConnectCore.dll
+    sha256: EBB553A616BBB7BEFA8C0ED0B72BDE1E8CED079786357ADCA5F48F80FD187418
+    sha1: A1155A615AC27185AC8C2359C85C9A51971515E4
+  - file_name: JumpConnect.exe
+    sha256: 0E4949B1752AABCA178C61784766B69F2FF1631B4F7745DB0A9C792F22DDC34C
+    sha1: 8DA38187F5511E9FB1493D767CD543E15D787CCE
+  - file_name: JumpConnect.exe
+    sha256: C8E05EDECC32DC21156B150DDAA607068129968518876BCC98E6E75A4A628B99
+    sha1: B24F381CB79CEE27A5B62BAFBF016CB03A8E9E0F
+  - file_name: vespra.exe
+    sha256: D9DBAD65C7AF9F04B890B18A080604A632BE2B9A8F4896E526470C8BA3919C42
+    sha1: C920B9DDAC8CCE83BC5B316261D16A9FBD2B1408
+  page:
+  - file_name: WinKill.exe
+    sha256: 41898FDA5DA79105D2BA6A06348F36258156D905B2215F201F91727D104E72BA
+    sha1: 4777BF27ABE31CBDF780EC83411A167BB7264500
+  - file_name: JumpUpdater
+    sha256: D42825615C9AA55BC1952E578C904F01528D6E8F60C5A1CD4CACDEA255D57B8D
+    sha1: 501900D68D3C7C05A8A7781E4C92B9862B16A538
+  - file_name: JumpConnectCore.dll
+    sha256: 0D59525F58B5228DFEBFF7A4FF8AE2EF69D8F6B21A29A902CBC4DF09C349C196
+    sha1: 2212678443DAF27CDAA473E85F6C728D18E9DD18
+  - file_name: JumpConnect.exe
+    sha256: EBAC7E547E2DECA642BFC0D4950E8D56F3474B67CDCB397F01E88E6667219C6E
+    sha1: D8CBB63766CD6196AAFA7988B1F15F74450D9E61

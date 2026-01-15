@@ -1,40 +1,99 @@
 Name: Distant Desktop
-Category: 'RMM'
-Description: Distant Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Distant Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes
+  available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - ddsystem.exe
-        - dd.exe
-        - distant-desktop.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ddsystem.exe
+  - dd.exe
+  - distant-desktop.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.distantdesktop.com'
-              - '*signalserver.xyz'
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.distantdesktop.com'
+    - '*signalserver.xyz'
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml
-      Description: Detects potential network activity of Distant Desktop RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_processes_sigma.yml
-      Description: Detects potential processes activity of Distant Desktop RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml
+  Description: Detects potential network activity of Distant Desktop RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_processes_sigma.yml
+  Description: Detects potential processes activity of Distant Desktop RMM tool
 References:
-    - https://www.distantdesktop.com/manual/first-start.htm
+- https://www.distantdesktop.com/manual/first-start.htm
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - dd.exe
+  - ddsystem.dll
+  - ddsystem.exe
+  - distant-desktop.exe
+  - libeay32.dll.new
+  - ssleay32.dll.new
+  company_names: []
+  signer_names:
+  - German Gorodokuplya
+  - Proton AG
+  certificates:
+  - signer_name: Proton AG
+    certificate_thumbprint: DC21FB8188FB9D2115B73C20C754267C752C6AA2
+    tbs_sha256: 60001F29663CAA9409226FEBDAB2E6568C02D4CDAD31E38E7C39CC46830D3930
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: German Gorodokuplya
+    certificate_thumbprint: N/A
+    tbs_sha256: ''
+    tbs_sha1: ''
+    tbs_sha384: C49152AAECA8DD2E9DD9303841943FE3DAF928279EB91519384EE7FA3739FFF97C1C0774A22D6533ECD733AF6BB93E3B
+  - signer_name: German Gorodokuplya
+    certificate_thumbprint: 466EA85529563FBB9281F62ACACB2BF76BFAC8C8
+    tbs_sha256: CAC987503463329054D8FB9982183743455440D61DAA8EC8747F885D51F338F3
+    tbs_sha1: ''
+    certificate_der_base64: MIIFMzCCBBugAwIBAgIQcpc3wnjY0bpzorX6voDrdzANBgkqhkiG9w0BAQsFADB8MQswCQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRlciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdTYWxmb3JkMRgwFgYDVQQKEw9TZWN0aWdvIExpbWl0ZWQxJDAiBgNVBAMTG1NlY3RpZ28gUlNBIENvZGUgU2lnbmluZyBDQTAeFw0yMTAzMjUwMDAwMDBaFw0yNDAzMjQyMzU5NTlaMIGaMQswCQYDVQQGEwJVQTEOMAwGA1UEEQwFNjkwMDAxEzARBgNVBAgMClphcG9yaXpoa2ExFTATBgNVBAcMDFphcG9yaXpoemh5YTETMBEGA1UECQwKTnl6aG55YSwgMzEcMBoGA1UECgwTR2VybWFuIEdvcm9kb2t1cGx5YTEcMBoGA1UEAwwTR2VybWFuIEdvcm9kb2t1cGx5YTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL+2fvZD4nF8w3h1APLXMndP9oS/OPBzWljkYURn1Gt71CqInZFGUINOmxNRu26l6a1V2vAm54aB5nw2/kFKm6UXzNEnhjxhbGGtSImghDHifc7f9FoW45XJxFMcmWMvHCrVp7FEiOaRCWRemcDwKhRJxlzrAohV9fPuACLMdB6UW4DrU6w3RTlaQW9/lj2Ho6ZmI9ebsOqpU1o1t864erc7euQ8Cmdn3eWFPU2FZ3P2uozAjAW3mmSF7QIwXdaib7lSTxQ0xPvL8YQVgfgAm0faErlfYuLvgdm7W/zflTDexXhWtacC6szAkEvkN74iTCRynHvKSqKrvb1Kp60QlWECAwEAAaOCAZAwggGMMB8GA1UdIwQYMBaAFA7hOqhTOjHVir7Bu61nGgOFrTQOMB0GA1UdDgQWBBT4YLIit5EhrDde5ZC/xAxxdgE8fzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADATBgNVHSUEDDAKBggrBgEFBQcDAzARBglghkgBhvhCAQEEBAMCBBAwSgYDVR0gBEMwQTA1BgwrBgEEAbIxAQIBAwIwJTAjBggrBgEFBQcCARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQQBMEMGA1UdHwQ8MDowOKA2oDSGMmh0dHA6Ly9jcmwuc2VjdGlnby5jb20vU2VjdGlnb1JTQUNvZGVTaWduaW5nQ0EuY3JsMHMGCCsGAQUFBwEBBGcwZTA+BggrBgEFBQcwAoYyaHR0cDovL2NydC5zZWN0aWdvLmNvbS9TZWN0aWdvUlNBQ29kZVNpZ25pbmdDQS5jcnQwIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLnNlY3RpZ28uY29tMA0GCSqGSIb3DQEBCwUAA4IBAQB0KG/udb7Wuk7uxjhR9/GXOzrtoQ4k+XuQqHIKGfBJccFC7B1WmsC3/jB6aEie1a5iRvGzN8oMAOb4Wqzx4txbaiWS85faEUV3hK7RjLQa3PaWKKmhn2CO8bPYnGOqv4tWMAg+3iGC1tV1DoXkLlWLQk9O3RTdXf/W857tjWU3sw8a3Jk6U08B27jUYqxdJ/CtNagR8M+qATCYGPAdNoTpFYubctKi0HujcOkZIPNnq3Ko1RADbqZpA2iA28b39BCmz4TK9IjlAl3uekUFVlgO4M+LofTU6kBdQlGIR5dKSxzReSFQ73M87Fl+fm/g2/c+7SPM0VZTaGXQr7905dIF
+  - signer_name: German Gorodokuplya
+    issuer: CN=Sectigo Public Code Signing CA R36
+    certificate_thumbprint: D571803FCC76DC3EF25ED787987EB0FD5789862E
+    tbs_sha256: F795F5CF2D8454A16BCFA69623F9E818C7842E95963B474AFE2EE98F4BF8BA19
+    tbs_sha1: 9CFD618C0A6472C5A84A84E800FF1D5BF43067DE
+    valid_from: '2024-05-24T00:00:00+00:00'
+    valid_to: '2027-05-24T23:59:59+00:00'
+    certificate_der_base64: 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
+    src_file_sha256: F5BF9289D84FE184E22B8E8EA70E9F7
+FileHashes:
+  authenticode:
+  - file_name: DDSystem.dll
+    sha256: 21C8780C87EB9431C9F1D173A4215FC97FBEFDD3988BBC5D02199BBBCFE73234
+    sha1: AF3B73938C4443FD8D67EC3A4FAC5E914BD8B3E9
+  - file_name: libeay32.dll.new
+    sha256: 763AF340A4272185915E522B4F9340560C79345B2501FE1A25CC2B74A87CA141
+    sha1: C72EF4746D0B3FEC41F8395794B30375A135809C
+  - file_name: ssleay32.dll.new
+    sha256: 708A2D9035FA57A48F30781E688A54049265F86F0D8547C76D5EEF3D54687F87
+    sha1: 0C6C2F2AB813181D6C1A072FE77BD2135BCE9596
+  page:
+  - file_name: DDSystem.dll
+    sha256: D262B531FC29AB3C488C0ACA627BE845BF8654A65B9404FD9920E00927A74589
+    sha1: 99F5547D467CFC6EA080550BDC491CBF46D35228
+  - file_name: libeay32.dll.new
+    sha256: 2638533908000F4B7C9F7D7028CDB616960A7CD9FCF95B9B4511907A4C62B439
+    sha1: 715B957282FDD559B60246B1ACE9662FD260328D
+  - file_name: ssleay32.dll.new
+    sha256: 7B188C58DFB5F2D5CCA2E092334571193D4879BA196DFC13D0185472F2FE95B0
+    sha1: 9FA9211D0417F696B2CDF4CE8F105AAC2F656AE6

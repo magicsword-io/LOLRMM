@@ -1,41 +1,80 @@
 Name: TigerVNC
-Category: 'RMM'
+Category: RMM
 Description: TigerVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - tigervnc*.exe
-        - winvnc4.exe
-        - C:\Program Files\TightVNC\*
-        - '*\TightVNC\*'
-        - '*\tvnserver.exe'
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - tigervnc*.exe
+  - winvnc4.exe
+  - C:\Program Files\TightVNC\*
+  - '*\TightVNC\*'
+  - '*\tvnserver.exe'
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - user_managed
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_network_sigma.yml
-      Description: Detects potential network activity of TigerVNC RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_processes_sigma.yml
-      Description: Detects potential processes activity of TigerVNC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_network_sigma.yml
+  Description: Detects potential network activity of TigerVNC RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tigervnc_processes_sigma.yml
+  Description: Detects potential processes activity of TigerVNC RMM tool
 References:
-    - https://github.com/TigerVNC/tigervnc/releases
+- https://github.com/TigerVNC/tigervnc/releases
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - tigervnc安装程序
+  - tvnserver.exe
+  - uninstall tigervnc安装程序.exe
+  - w550i.exe
+  company_names: []
+  signer_names:
+  - GlavSoft OOO
+  certificates:
+  - signer_name: GlavSoft OOO
+    certificate_thumbprint: 4D125BF09EDE5BD690DC600A1D849087B7FCBC74
+    tbs_sha256: 687427614AC6017CCAE245AEBBB411816E3BB7896D4C1E2623E07CAD904156E3
+    tbs_sha1: ''
+    certificate_der_base64: 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
+FileHashes:
+  authenticode:
+  - file_name: w550i.exe
+    sha256: 2FB49C85F4249D2AEC35D08FBB549827DB9DEE21F68EC07FA63EC2D351906B0B
+    sha1: C33A1F29CF366E1DF1D73585FBD57B62C2FD80F3
+  - file_name: TigerVNC安装程序
+    sha256: 1ADBDE19CD6A8394737D07ED87597C944548C9708B4437C88FD35FD649EA5A69
+    sha1: EAC9EF3009775CC6A986A9FF7B355A839AAF7FF7
+  - file_name: Uninstall TigerVNC安装程序.exe
+    sha256: 32B15D2D6EC99877144B7E1E23B8B00C6F8758E52506B8E40E030278A2FFA839
+    sha1: 3BD045A8D22FF3AE448BCC3EB954C658A44C352C
+  - file_name: tvnserver.exe
+    sha256: DD19BE28A0DEE5F55BC8AC5DBA6946EA99697360B1AA9E4D13266B09BE7A5F2A
+    sha1: 0F58FBB24DEE106D8A464C64D286CA891D8650E4
+  page:
+  - file_name: TigerVNC安装程序
+    sha256: B949BF4BAF183EF39760A8263F5F0A41EE0E648EF2B9992542646F751DF97D2A
+    sha1: 46129A6E4386B9EA56B621D2FE80E77D56D04705
+  - file_name: Uninstall TigerVNC安装程序.exe
+    sha256: 02B8ED94BB9C10E1932E457AA26761EE429C737DCDC4D071E535FCDA690ADCE9
+    sha1: 4A8B1127448C391B025ECE198187DBE5E42918A2
+  - file_name: tvnserver.exe
+    sha256: D37B319299B8CF82EAA4210C2CE04FF6AD219EC84C4BAF04C01594CB738A3054
+    sha1: 1C281895401862EC701AF99DAE29E1A72E8759FE

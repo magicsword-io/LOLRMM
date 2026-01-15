@@ -126,6 +126,119 @@
         }
       }
     },
+    "FileHashes": {
+      "type": ["object", "null"],
+      "description": "WDAC-compatible file hashes (Authenticode and Page hashes)",
+      "properties": {
+        "authenticode": {
+          "type": "array",
+          "description": "Authenticode hashes of signed binaries",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file_name": { "type": "string", "description": "Original filename" },
+              "sha256": { "type": ["string", "null"], "description": "Authenticode SHA256" },
+              "sha1": { "type": ["string", "null"], "description": "Authenticode SHA1" }
+            },
+            "required": ["file_name"]
+          }
+        },
+        "page": {
+          "type": "array",
+          "description": "Page hashes for fine-grained WDAC control",
+          "items": {
+            "type": "object",
+            "properties": {
+              "file_name": { "type": "string", "description": "Original filename" },
+              "sha256": { "type": ["string", "null"], "description": "Page hash SHA256" },
+              "sha1": { "type": ["string", "null"], "description": "Page hash SHA1" }
+            },
+            "required": ["file_name"]
+          }
+        }
+      }
+    },
+    "CodeSigning": {
+      "type": ["object", "null"],
+      "description": "Code signing certificate information for this RMM tool",
+      "properties": {
+        "search_names": {
+          "type": "array",
+          "description": "Filenames used to search for signed binaries",
+          "items": { "type": "string" }
+        },
+        "company_names": {
+          "type": "array",
+          "description": "Known company names from PE metadata",
+          "items": { "type": "string" }
+        },
+        "signer_names": {
+          "type": "array",
+          "description": "Known code signing certificate signer names",
+          "items": { "type": "string" }
+        },
+        "ignored_company_names": {
+          "type": ["array", "null"],
+          "description": "Company names to ignore (false positives)",
+          "items": { "type": "string" }
+        },
+        "ignored_signer_names": {
+          "type": ["array", "null"],
+          "description": "Signer names to ignore (false positives)",
+          "items": { "type": "string" }
+        },
+        "certificates": {
+          "type": "array",
+          "description": "List of code signing certificates found",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src_file_sha256": { 
+                "type": "string",
+                "description": "SHA256 hash of the binary the certificate was extracted from"
+              },
+              "src_file_company": { 
+                "type": ["string", "null"],
+                "description": "Company name from PE metadata"
+              },
+              "signer_name": { 
+                "type": "string",
+                "description": "Certificate signer/subject name"
+              },
+              "issuer": {
+                "type": ["string", "null"],
+                "description": "Certificate issuer"
+              },
+              "certificate_thumbprint": { 
+                "type": "string",
+                "description": "Certificate SHA1 thumbprint"
+              },
+              "tbs_sha256": {
+                "type": ["string", "null"],
+                "description": "TBS (To Be Signed) SHA256 hash for WDAC policies"
+              },
+              "tbs_sha1": {
+                "type": ["string", "null"],
+                "description": "TBS (To Be Signed) SHA1 hash for WDAC policies"
+              },
+              "valid_from": {
+                "type": ["string", "null"],
+                "description": "Certificate validity start date"
+              },
+              "valid_to": {
+                "type": ["string", "null"],
+                "description": "Certificate validity end date"
+              },
+              "certificate_der_base64": { 
+                "type": ["string", "null"],
+                "description": "Certificate in DER format, base64 encoded"
+              }
+            },
+            "required": ["signer_name", "certificate_thumbprint"]
+          }
+        }
+      }
+    },
     "Detections": {
       "type": ["array", "null"],
       "items": {

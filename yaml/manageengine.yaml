@@ -1,34 +1,93 @@
 Name: ManageEngine
-Category: 'RMM'
+Category: RMM
 Description: ManageEngine is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - InstallShield Setup.exe
-        - ManageEngine_Remote_Access_Plus.exe
-        - '*\dcagentservice.exe'
-        - C:\Program Files (x86)\DesktopCentral_Agent\bin\*
-        - '*\DesktopCentral_Agent\bin\*'
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - InstallShield Setup.exe
+  - ManageEngine_Remote_Access_Plus.exe
+  - '*\dcagentservice.exe'
+  - C:\Program Files (x86)\DesktopCentral_Agent\bin\*
+  - '*\DesktopCentral_Agent\bin\*'
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_processes_sigma.yml
-      Description: Detects potential processes activity of ManageEngine RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_processes_sigma.yml
+  Description: Detects potential processes activity of ManageEngine RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - 2025-12-12_dc91d52bc3085602a97b2b29dd90279d_amadey_elex_floxif_hijackloader_mafia_remcos_smoke-loader
+  - dcagentservice.exe
+  - installshield setup.exe
+  - manageengine_remote_access_plus.exe
+  - mulkstg.exe
+  - n047693i.exe
+  - setup
+  - vayrcy.exe
+  company_names: []
+  signer_names:
+  - Tuxera Inc
+  certificates:
+  - signer_name: Tuxera Inc
+    issuer: CN=DigiCert Global G3 Code Signing ECC SHA384 2021 CA1
+    certificate_thumbprint: F840AB496D3000D82535C05C73C89E761ABD572C
+    tbs_sha256: 849E9128B875986C17452F7AA428A3BC1A515A541D1FD2A60AB5531363CFA594
+    tbs_sha1: 140AFBF2F401470E6320CA647E8068D733BF4480
+    valid_from: '2022-11-04T00:00:00+00:00'
+    valid_to: '2026-01-28T23:59:59+00:00'
+    certificate_der_base64: MIIEUDCCA9WgAwIBAgIQCMf6pXnLjwH1dLHdjgoMpjAKBggqhkjOPQQDAzBkMQswCQYDVQQGEwJVUzEXMBUGA1UEChMORGlnaUNlcnQsIEluYy4xPDA6BgNVBAMTM0RpZ2lDZXJ0IEdsb2JhbCBHMyBDb2RlIFNpZ25pbmcgRUNDIFNIQTM4NCAyMDIxIENBMTAeFw0yMjExMDQwMDAwMDBaFw0yNjAxMjgyMzU5NTlaMIGPMRMwEQYLKwYBBAGCNzwCAQMTAkZJMR0wGwYDVQQPDBRQcml2YXRlIE9yZ2FuaXphdGlvbjESMBAGA1UEBRMJMjIxNTUxMS04MQswCQYDVQQGEwJGSTEOMAwGA1UEBxMFRXNwb28xEzARBgNVBAoTClR1eGVyYSBJbmMxEzARBgNVBAMTClR1eGVyYSBJbmMwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAAQKndNqvED3EPjM/ZP0HAFPMTMPenxT8AFbi7/czz2nRUedXh1EB0ZcJ5ouW18eHMJF3ACT8yB0qBJlnySBUeCZ7pXE3ewSB3mXYG6npKFC9K/REw7EnYyIVlgq8fZEeL+jggIeMIICGjAfBgNVHSMEGDAWgBSbX7A2up0GrhknvcCgIsCLizh37TAdBgNVHQ4EFgQU1tC/ix9U4d9tktaPScG2GfgA4hAwJwYDVR0RBCAwHqAcBggrBgEFBQcIA6AQMA4MDEZJLTIyMTU1MTEtODAOBgNVHQ8BAf8EBAMCB4AwEwYDVR0lBAwwCgYIKwYBBQUHAwMwgasGA1UdHwSBozCBoDBOoEygSoZIaHR0cDovL2NybDMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0R2xvYmFsRzNDb2RlU2lnbmluZ0VDQ1NIQTM4NDIwMjFDQTEuY3JsME6gTKBKhkhodHRwOi8vY3JsNC5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9iYWxHM0NvZGVTaWduaW5nRUNDU0hBMzg0MjAyMUNBMS5jcmwwPQYDVR0gBDYwNDAyBgVngQwBAzApMCcGCCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwgY4GCCsGAQUFBwEBBIGBMH8wJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBXBggrBgEFBQcwAoZLaHR0cDovL2NhY2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0R2xvYmFsRzNDb2RlU2lnbmluZ0VDQ1NIQTM4NDIwMjFDQTEuY3J0MAwGA1UdEwEB/wQCMAAwCgYIKoZIzj0EAwMDaQAwZgIxALTk9p9Wv7gHy6/Ex9hXeVgbi6USS4OwBCgF5IWxnfzFlE0vABR2omFkVaIY8IUXqAIxAPRrPuxTM7mkBSocOn9UckEp5r9fMH4xUL9GW3KeqdYttDrVqBdHXvu4qudzAiahJA==
+    src_file_sha256: 8C7FAA579CB8F01F574B1DD8E0A0CA6
+FileHashes:
+  authenticode:
+  - file_name: dcagentservice.exe
+    sha256: 1F901E09874DAEFF644B3D52E11A442C27505A59216BC4F6F5A6914AA80C80C4
+    sha1: 49AE897644CA33AF6CDAA8D5FFAC221041C6E56D
+  - file_name: 2025-12-12_dc91d52bc3085602a97b2b29dd90279d_amadey_elex_floxif_hijackloader_mafia_remcos_smoke-loader
+    sha256: 5EA43E39C87E336D81625DBFE42F99F89729E0C7F380B57841D913D506BA80A1
+    sha1: 3E52E9FAE6E7EFDC1192621EA16E92FC2C984E45
+  - file_name: dcagentservice.exe
+    sha256: 6EA8901D44764DC7EB419BFD59B78EC33DBDF25012D3EEB5445B04AB11EF4A19
+    sha1: 9D0F7EF001D56D766FDA676321C35FC1B3E8D562
+  - file_name: dcagentservice.exe
+    sha256: 9136E16ED61B0898551B87CA5B0695FFF4F19FE32A7A8257F526A5BBE9A73475
+    sha1: 5887DAB0F98C4FC3E2BCC708A03624CECD7FBF92
+  - file_name: Setup
+    sha256: C0D97469E968F9201270C3CA1E8E0E0C31537314A057FC54B57818D07BADBCA5
+    sha1: 22AB91E8CBC234A8385610189F806906EE41CB19
+  - file_name: n047693i.exe
+    sha256: C47843292B3E243B57769B1E9AB6CF1E963A8F5033EFD2E5885E1845A3346741
+    sha1: 77D74B6353A3AEF30F71BBAF5D1EB8E282A3C18A
+  - file_name: mulkstg.exe
+    sha256: CF0DF68F8693252EE995CF2B099E36B0DD8CD07E73584E68DEF37A1D478B03B7
+    sha1: E176ECA952CB8B7A9062D87FC99FE18EAE463C18
+  - file_name: vayrcy.exe
+    sha256: DE82A9AF1D3B3CAA39EFFEE0C0E35D4A91A035FAB8F69BC0E6C9EC10A5BD5A60
+    sha1: A90D71968349B8DF153D96FBA9C3D79923B74246
+  - file_name: dcagentservice.exe
+    sha256: EE4E96929D07BB1954B0B37364EF5BC5D2C3D41F47B7897E5DE936800E7D7A51
+    sha1: 7257D2C06233626819EDE26CB942A295F2973134
+  - file_name: dcagentservice.exe
+    sha256: F4DE6C3DA0EEBE57B3ADA9BE216D84ACCF9B46370563D4A25A726DE0F43D9F51
+    sha1: B51FE873A01463AE15A836D57478155510916B7C
+  - file_name: dcagentservice.exe
+    sha256: F84433207EE3C130F493904241457FA59D1EC746355F6D62624FB97C9F9C0E5F
+    sha1: 4DAD43D616035CA1613C9BD5577EA7BFD0C8D295
+  page: []

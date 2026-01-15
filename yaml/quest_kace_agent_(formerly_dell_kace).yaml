@@ -1,38 +1,50 @@
 Name: Quest KACE Agent (formerly Dell KACE)
-Category: 'RMM'
-Description: Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM) tool. More information will
+  be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - konea.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - konea.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.kace.com'
-              - www.quest.com/kace/
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.kace.com'
+    - www.quest.com/kace/
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__network_sigma.yml
-      Description: Detects potential network activity of Quest KACE Agent (formerly Dell KACE) RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__processes_sigma.yml
-      Description: Detects potential processes activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__network_sigma.yml
+  Description: Detects potential network activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__processes_sigma.yml
+  Description: Detects potential processes activity of Quest KACE Agent (formerly Dell KACE) RMM tool
 References:
-    - https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function
+- https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function
 Acknowledgement: []
+CodeSigning:
+  search_names: []
+  company_names: []
+  signer_names:
+  - Quest Software Inc.
+  certificates:
+  - signer_name: Quest Software Inc.
+    certificate_thumbprint: 41D7B56D7E8A181A954AA35A3A0FDF178FAAE01A
+    tbs_sha256: C7638A5AF56C9F4AE902251705B2E370E209E7A9218605628995AD73469E0F53
+    tbs_sha1: ''
+    certificate_der_base64: MIIFDjCCA/agAwIBAgIQEfKQonSQc9jEZMzfkxO3rTANBgkqhkiG9w0BAQsFADB9MQswCQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRlciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdTYWxmb3JkMRowGAYDVQQKExFDT01PRE8gQ0EgTGltaXRlZDEjMCEGA1UEAxMaQ09NT0RPIFJTQSBDb2RlIFNpZ25pbmcgQ0EwHhcNMjEwNTE5MDAwMDAwWhcNMjQwNTE4MjM1OTU5WjB0MQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEUMBIGA1UEBwwLQWxpc28gVmllam8xHDAaBgNVBAoME1F1ZXN0IFNvZnR3YXJlIEluYy4xHDAaBgNVBAMME1F1ZXN0IFNvZnR3YXJlIEluYy4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0l6j3a7y55QHCxXRddxsu0/kxDHpEQNa7TJpJQOs/Q8cgc/Qvss1j00xc5Sxrt6YBm1jNQg7Q06ihCls6hvU4IxxzeuDLwhGjF0M4gj4pQnZ7jcoHD7iak2RvRWVl+6bn4n6q/W0mYv9qsIvpYgBjIAz3fyYrSNDvjCUK4g7u9CfnaY2Vgfjj6pWn/G5pS/svptnZeCgpuFGyPIK36Civ26q6fvCoY+3EP/TZGhVM655t5t5AKM+gtaSHtbwOXTvFcywKFTMJV0tzmi7kPUnV9w+7xr3m87uTcrQjRq6Mw8YMQ3FkzusNbFRTOs7vw1X2OeMoz5OHrBQEQjbeuEQXAgMBAAGjggGRMIIBjTAfBgNVHSMEGDAWgBQpkWD/ik366/mmarjP+eZLvUnOEjAdBgNVHQ4EFgQUBgvRF5oqO6cm0XdELhdZ1w3qiTAwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwEwYDVR0lBAwwCgYIKwYBBQUHAwMwEQYJYIZIAYb4QgEBBAQDAgQQMEoGA1UdIARDMEEwNQYMKwYBBAGyMQECAQMCMCUwIwYIKwYBBQUHAgEWF2h0dHBzOi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAEEATBDBgNVHR8EPDA6MDigNqA0hjJodHRwOi8vY3JsLmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDb2RlU2lnbmluZ0NBLmNybDB0BggrBgEFBQcBAQRoMGYwPgYIKwYBBQUHMAKGMmh0dHA6Ly9jcnQuY29tb2RvY2EuY29tL0NPTU9ET1JTQUNvZGVTaWduaW5nQ0EuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wDQYJKoZIhvcNAQELBQADggEBABvAXlNe+h4e8jWN9JG37CAUhS7maC1C3SQN7DfpVuYBVmcbOAd81jLixoU8HbbwVhXgLxrgO8kdPEz8MiJtACAcfTbqgghTHyXmDi69NwfPzmQySDcvvjsW88IDJmYi/pT6JQQCUCeQ09Yb/8DSdpmwdg31CuKwHGe6aB6T4pOdJ4u+Ry4DLTf82m3BFUG1oLR++7fiOK9X8nsmrM8NsTXvxbFvJm3wGeFWJbZcOwkaXkFmhU7OVukvdR64saXcx7O9MUtxQ01hT3tC3R2pxy5ZzR5gc5WUJ/jjzqBGr6ZtepAhN1pUBicLRGd8EhCwO+CvCEDQWlRzlC2+0eTAoGM=

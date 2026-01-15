@@ -1,27 +1,41 @@
 Name: BeyondTrust
-Category: 'RMM'
+Category: RMM
 Description: BeyondTrust is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths: []
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths: []
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
 Detections: []
 References: []
 Acknowledgement: []
+CodeSigning:
+  search_names: []
+  company_names: []
+  signer_names:
+  - Bomgar Corporation
+  certificates:
+  - signer_name: Bomgar Corporation
+    certificate_thumbprint: N/A
+    tbs_sha256: 285DEE21A4A5A2DC9738A10949F1BA1D3A900B28D293A388EC3CA6BC03E5C51E
+    tbs_sha1: ''
+  - signer_name: Bomgar Corporation
+    certificate_thumbprint: N/A
+    tbs_sha256: B4473DB8F320305470070B00181E2276B68CEE95E11C3612DF22036ED2A0C15C
+    tbs_sha1: ''

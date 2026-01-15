@@ -1,44 +1,78 @@
 Name: LiteManager
-Category: 'RMM'
+Category: RMM
 Description: LiteManager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - lmnoipserver.exe
-        - ROMFUSClient.exe
-        - romfusclient.exe
-        - romviewer.exe
-        - romserver.exe
-        - ROMServer.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - lmnoipserver.exe
+  - ROMFUSClient.exe
+  - romfusclient.exe
+  - romviewer.exe
+  - romserver.exe
+  - ROMServer.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.litemanager.ru'
-              - '*.litemanager.com'
-              - litemanager.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.litemanager.ru'
+    - '*.litemanager.com'
+    - litemanager.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_network_sigma.yml
-      Description: Detects potential network activity of LiteManager RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_processes_sigma.yml
-      Description: Detects potential processes activity of LiteManager RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_network_sigma.yml
+  Description: Detects potential network activity of LiteManager RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/litemanager_processes_sigma.yml
+  Description: Detects potential processes activity of LiteManager RMM tool
 References:
-    - https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/
+- https://www.litemanager.com/articles/LiteManager_remote_access_to_a_desktop_via_the_Internet_or_LAN/
 Acknowledgement: []
+CodeSigning:
+  search_names:
+  - icon.romserver.exe_9d09b2bc25a2414cbd848e2b75898676.exe
+  - romviewer.exe
+  company_names: []
+  signer_names:
+  - Code Systems Corporation
+  - IP Ter-Osipov Aleksey Vladimirovich
+  certificates:
+  - signer_name: IP Ter-Osipov Aleksey Vladimirovich
+    certificate_thumbprint: 1753913DC00AE0D1B1BF1CE2D6F4C5A2C1156316
+    tbs_sha256: FA04F43A5443C28C589D120DFE944F4DD92B88B1A6E16E70BF56E0E02A5039D6
+    tbs_sha1: ''
+    certificate_der_base64: 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
+  - signer_name: Code Systems Corporation
+    certificate_thumbprint: EF0A05002CC732836970199A252B6827473DEA2A
+    tbs_sha256: 0DA5953E7C81C4E3BCF9F8F886BE715C1DE8E896FD8407BA765E793C1422494C
+    tbs_sha1: ''
+    certificate_der_base64: MIIFRjCCBC6gAwIBAgIRAJsmDukUf00N+N7/27sKVkIwDQYJKoZIhvcNAQELBQAwfTELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQxIzAhBgNVBAMTGkNPTU9ETyBSU0EgQ29kZSBTaWduaW5nIENBMB4XDTE1MTIzMDAwMDAwMFoXDTE4MTIyOTIzNTk1OVowga4xCzAJBgNVBAYTAlVTMQ4wDAYDVQQRDAU5ODEwOTETMBEGA1UECAwKV2FzaGluZ3RvbjEQMA4GA1UEBwwHU2VhdHRsZTEiMCAGA1UECQwZMTAwMCBERVhURVIgQVZFIE4gU1RFIDUwMjEhMB8GA1UECgwYQ29kZSBTeXN0ZW1zIENvcnBvcmF0aW9uMSEwHwYDVQQDDBhDb2RlIFN5c3RlbXMgQ29ycG9yYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDRvbjV2XkYJnyVgaxQzjGFyX3gsdrLDWBjrJIj2B+i1TvFF5YmKwe0Bb0ZBeghB134dPEgkBkkyYqxbrrzL5NjDdnwMaVOH88FV5y+o3L2YdzDif3DAAEE4dHFvK+ZQNaYjlxcp0JBHdwwC0vp5tOfRCPrncX0u/1dX1TgIB6nZhCgQz1f2ZyfVVKeep4k6mw4hAGk20+StWKUjPYP03g7fdrqkxv5ZPPf4npoDbuvD6BRg0kkIpVNcLp+qDcRZfO9e5945/BeDR4uN365i6w4q+/v9uxv4fmnVYeF4JNwwRROZI6RJP3gpNAPMacUCHrgdKQdFtFrmN7APES9BCEvAgMBAAGjggGNMIIBiTAfBgNVHSMEGDAWgBQpkWD/ik366/mmarjP+eZLvUnOEjAdBgNVHQ4EFgQUmcwIPza8I9Yv43ZPT0FtB65I7kkwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwEwYDVR0lBAwwCgYIKwYBBQUHAwMwEQYJYIZIAYb4QgEBBAQDAgQQMEYGA1UdIAQ/MD0wOwYMKwYBBAGyMQECAQMCMCswKQYIKwYBBQUHAgEWHWh0dHBzOi8vc2VjdXJlLmNvbW9kby5uZXQvQ1BTMEMGA1UdHwQ8MDowOKA2oDSGMmh0dHA6Ly9jcmwuY29tb2RvY2EuY29tL0NPTU9ET1JTQUNvZGVTaWduaW5nQ0EuY3JsMHQGCCsGAQUFBwEBBGgwZjA+BggrBgEFBQcwAoYyaHR0cDovL2NydC5jb21vZG9jYS5jb20vQ09NT0RPUlNBQ29kZVNpZ25pbmdDQS5jcnQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNvbW9kb2NhLmNvbTANBgkqhkiG9w0BAQsFAAOCAQEAFUCOPMotozw6GdKKouDc8yOCQ80RrPgAjHw9rdsjXKJRVGBvsE/OvJZG/ifqj7uYy9ERn+JhicomUjbayJvrxARLzIzIpNZHM+RYWGilMEFQTAxUyFqLiLYRAP9HuTYzLpI1kjQ5psrGloSMRMOfenlWtvsrPwNB7N8SAXn+xAeM6661z36+4GnQLrfZStIrW81UCFEyHTvdBalBSXs7vYArJIsp+CP8FMJ1yd5yiDgBZzVu8OaWbFpnZXarB1H3szSpzAgz4A7O8h40xoHdzToNg3OkbC0dI7fFfSVmMn9vwoeXUQgW6G+R/9sQtC6Pw2f0jKRba14y0jJyD5M5+g==
+FileHashes:
+  authenticode:
+  - file_name: Icon.ROMServer.exe_9D09B2BC25A2414CBD848E2B75898676.exe
+    sha256: 0DC1AF90A9607BA86AC3EB8B69B1ACBF32F0E89DB334A69801B6761A6CAAFCD6
+    sha1: CECF0B4A7859C3C213B2580082F2BB82CF6EA2F1
+  - file_name: romviewer.exe
+    sha256: 2AE6058EDBE24F59C030F8D4D5A21049B1FA898B8485ADA335D8AE3EA158CB98
+    sha1: C37F2641883C53B3C3DC57F3A881B30C8440A12C
+  page:
+  - file_name: Icon.ROMServer.exe_9D09B2BC25A2414CBD848E2B75898676.exe
+    sha256: 2A8F61D028D9BED7922BA760935B8FAEC0E5DCA2BA029D003754E4C0C0CC5387
+    sha1: D30D13E50313F05AEEDF2CB1886AFB4E7478C840
+  - file_name: romviewer.exe
+    sha256: C87417440342A91967A01093110588029A4DE28AFBF36216ABDB3248FA24BF11
+    sha1: 10212C86D20754AF60A23BBA507A071503B30DAE
