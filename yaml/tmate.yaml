@@ -1,0 +1,67 @@
+Name: tmate
+Category: 'RMM'
+Description: tmate is an open-source terminal sharing tool for Linux and Unix-like systems, built on tmux. It enables instant terminal sharing over SSH, allowing remote terminal access and collaboration. The tool creates a unique session that can be shared with others for remote access, making it a legitimate tool for system administration but also potentially useful for unauthorized remote access.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://tmate.io/
+    PEMetadata:
+        - Filename: tmate
+          OriginalFileName: ''
+          Description: tmate terminal sharing binary
+    Privileges: User
+    Free: Open Source
+    Verification: Open source project
+    SupportedOS:
+        - Linux
+        - Mac
+        - FreeBSD
+    Capabilities:
+        - Remote Terminal Access
+        - Terminal Sharing
+        - SSH-based Connection
+        - Session Collaboration
+    Vulnerabilities: []
+    InstallationPaths:
+        - /usr/bin/tmate
+        - /usr/local/bin/tmate
+        - tmate
+        - tmate.sock
+        - tmate-ready
+        - tmate.bashrc
+Artifacts:
+    Disk:
+        - File: /tmp/tmate*
+          Description: tmate socket files for terminal sharing sessions
+          OS: Linux
+        - File: ~/.tmate.conf
+          Description: tmate configuration file
+          OS: Linux
+        - File: tmate.sock
+          Description: tmate socket file for session communication
+          OS: Linux
+        - File: tmate-ready
+          Description: tmate readiness indicator file
+          OS: Linux
+        - File: tmate.bashrc
+          Description: tmate bash configuration file
+          OS: Linux
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - tmate.io
+              - '*.tmate.io'
+          Ports:
+              - 22
+              - 443
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/106
+    - https://github.com/tmate-io/tmate
+    - https://tmate.io/
+Acknowledgement:
+    - Person: rcKillam
+      Handle: '@rcKillam'
