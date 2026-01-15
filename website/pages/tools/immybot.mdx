@@ -1,0 +1,63 @@
+---
+description = "ImmyBot is a remote monitoring and management (RMM) and automation tool designed for MSPs, focusing on workstation configuration, software deployment, and patch management. The tool has been reported in private threat intelligence as being delivered via phishing campaigns to establish unauthorized remote access, though no public references are currently available. ImmyBot uses signed agents and operates over secure websockets to managed endpoints."
+title = "ImmyBot"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ImmyBot
+
+ImmyBot is a remote monitoring and management (RMM) and automation tool designed for MSPs, focusing on workstation configuration, software deployment, and patch management. The tool has been reported in private threat intelligence as being delivered via phishing campaigns to establish unauthorized remote access, though no public references are currently available. ImmyBot uses signed agents and operates over secure websockets to managed endpoints.
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-01-15"}
+         website={"https://www.immy.bot/"}
+         lastModified={"2026-01-15"}
+         privileges={"SYSTEM"}
+         free={ "Trial Available" }
+         verification={ "Code-signed with EV certificate" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\ImmyBot\\ImmyAgent.exe", "C:\\Program Files\\ImmyBot\\ImmyUpdater.exe", "C:\\Program Files (x86)\\ImmyBot\\ImmyAgent.exe", "C:\\Program Files (x86)\\ImmyBot\\ImmyUpdater.exe", "*\\ImmyBot\\*", "C:\\Windows\\Temp\\ImmyBot\\*", "ImmyAgent.exe", "ImmyUpdater.exe", "ImmyBot.Agent.Ephemeral.exe", "ImmyBot.msi"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Remote Access", "File Transfer", "Command Line Support", "Software Deployment", "Patch Management", "Script Execution", "Automated Configuration"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\ImmyBot\\*", "Description": "ImmyBot installation directory (verified via official documentation)", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\ImmyBot\\*", "Description": "ImmyBot installation directory for 32-bit (verified via official documentation)", "OS": "Windows"}, {"File": "C:\\ProgramData\\ImmyBot\\Logs\\*", "Description": "ImmyBot agent logs (verified via official documentation)", "OS": "Windows"}, {"File": "C:\\ProgramData\\ImmyBot\\Scripts\\*", "Description": "ImmyBot script execution directory (verified via official documentation)", "OS": "Windows"}, {"File": "C:\\ProgramData\\ImmyBotAgentService\\config.json", "Description": "ImmyBot agent configuration file (verified via official documentation)", "OS": "Windows"}, {"File": "C:\\Windows\\Temp\\ImmyBot\\*", "Description": "ImmyBot temporary files directory", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "Description": "Service installation event for ImmyBot Agent", "OS": "Windows"}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.immy.bot", "immy.bot"], "Ports": [443]}] }/>
+
+
+
+
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/135](https://github.com/magicsword-io/LOLRMM/issues/135)
+- [https://www.immy.bot/](https://www.immy.bot/)
+- [https://docs.immy.bot/Documentation/HowToGuides/agent-installation](https://docs.immy.bot/Documentation/HowToGuides/agent-installation)
+- [https://docs.immy.bot/Documentation/Troubleshooting/security-software.html](https://docs.immy.bot/Documentation/Troubleshooting/security-software.html)
+- [https://docs.immy.bot/troubleshooting](https://docs.immy.bot/troubleshooting)
+
+### Acknowledgements
+- boredchilada (@boredchilada)

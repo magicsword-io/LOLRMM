@@ -396,6 +396,8 @@ docs.tacticalrmm.com,Tactical RMM
 *mdmsupport.comodo.com,Comodo RMM
 one.comodo.com,Comodo RMM
 *.ivanticloud.com,Ivanti Remote Control
+*.immy.bot,ImmyBot
+immy.bot,ImmyBot
 desktopcentral.manageengine.com,Manage Engine (Desktop Central)
 desktopcentral.manageengine.com.eu,Manage Engine (Desktop Central)
 desktopcentral.manageengine.cn,Manage Engine (Desktop Central)
@@ -470,6 +472,8 @@ app.deskday.ai,DeskDay
 *.ivanticloud.com,LANDesk
 *.ivanti.com,LANDesk
 ivanti.com,LANDesk
+*.heartbeatrm.com,HeartbeatRM
+heartbeatrm.com,HeartbeatRM
 *.247ithelp.com,247ithelp.com (ConnectWise)
 zabbix.com,Zabbix Agent
 simple-help.com,SimpleHelp

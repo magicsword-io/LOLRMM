@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2025-12-02'
+modified: '2026-01-15'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -63,8 +63,11 @@ detection:
     - \\C:\Program Files (x86)\GoTo Resolve Unattended\*
     - \\C:\Program Files (x86)\GoToMyPC\*
     - \\C:\Program Files (x86)\Google\Chrome Remote Desktop\*
+    - \\C:\Program Files (x86)\HeartbeatRM\*
     - \\C:\Program Files (x86)\HopToDesk\*
     - \\C:\Program Files (x86)\ISL Online\ISL Light*
+    - \\C:\Program Files (x86)\ImmyBot\ImmyAgent.exe
+    - \\C:\Program Files (x86)\ImmyBot\ImmyUpdater.exe
     - \\C:\Program Files (x86)\Kaseya\
     - \\C:\Program Files (x86)\LANDesk\*
     - \\C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
@@ -97,6 +100,9 @@ detection:
     - \\C:\Program Files\Danware Data\NetOp Packn Deploy\*
     - \\C:\Program Files\Devolutions\Remote Desktop Manager
     - \\C:\Program Files\GoTo Resolve Unattended\*
+    - \\C:\Program Files\HeartbeatRM\*
+    - \\C:\Program Files\ImmyBot\ImmyAgent.exe
+    - \\C:\Program Files\ImmyBot\ImmyUpdater.exe
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
@@ -137,6 +143,7 @@ detection:
     - \\C:\Windows\SysWOW64\rserver30\FamItrfc
     - \\C:\Windows\SysWOW64\rserver30\rserver3.exe
     - \\C:\Windows\System32\mstsc.exe
+    - \\C:\Windows\Temp\ImmyBot\*
     - \\C:\Windows\dwrcs\*
     - \\C:\\ProgramData\\AMMYY\\*
     - \\C:\\ProgramData\\SupremoRemoteDesktop\\
@@ -204,6 +211,10 @@ detection:
     - \\ITSMService.exe
     - \\ITarianRemoteAccessSetup.exe
     - \\Idrive.File-Transfer
+    - \\ImmyAgent.exe
+    - \\ImmyBot.Agent.Ephemeral.exe
+    - \\ImmyBot.msi
+    - \\ImmyUpdater.exe
     - \\ImperoClientSVC.exe
     - \\ImperoInit.exe
     - \\InstallShield Setup.exe
@@ -316,6 +327,7 @@ detection:
     - \\accessserver.exe
     - \\addigy-*.pkg
     - \\aeroadmin.exe
+    - \\agent-installer-any.exe
     - \\agent32.exe
     - \\agent64.exe
     - \\agent_setup_5.exe
@@ -410,6 +422,8 @@ detection:
     - \\grabberEM.*msi
     - \\grabberTT*.msi
     - \\guacd.exe
+    - \\hbrm-updater-x64.exe
+    - \\hbrm-x64.exe
     - \\helpbeam*.exe
     - \\helpu_install.exe
     - \\hoptodesk.exe
