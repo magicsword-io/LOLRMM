@@ -1,0 +1,64 @@
+---
+description = "NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being leveraged in spear phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting financial executives and CFOs. The tool was deployed as part of multi-stage phishing attacks by threat actors including APT MuddyWater."
+title = "NetBird"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# NetBird
+
+NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being leveraged in spear phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting financial executives and CFOs. The tool was deployed as part of multi-stage phishing attacks by threat actors including APT MuddyWater.
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-01-15"}
+         website={"https://netbird.io/"}
+         lastModified={"2026-01-15"}
+         privileges={"User"}
+         free={ "Yes (Open Source)" }
+         verification={ "Open Source" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Netbird\\netbird.exe", "C:\\Program Files\\Netbird\\netbird-ui.exe", "C:\\ProgramData\\Netbird\\*", "/usr/bin/netbird", "/usr/local/bin/netbird", "/opt/netbird/*", "netbird.exe", "netbird-ui.exe", "netbird"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "macOS", "Android", "iOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Access", "VPN Connectivity", "Peer-to-Peer Networking", "Secure Tunneling", "Network Management"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Netbird\\netbird.exe", "Description": "NetBird client installation directory", "OS": "Windows"}, {"File": "C:\\ProgramData\\Netbird\\config.json", "Description": "NetBird configuration file", "OS": "Windows"}, {"File": "/etc/netbird/config.json", "Description": "NetBird configuration file", "OS": "Linux"}, {"File": "/var/log/netbird/*", "Description": "NetBird log files", "OS": "Linux"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 4688, "Description": "Process creation event for netbird.exe", "OS": "Windows"}, {"EventID": 7045, "Description": "Service installation event for NetBird", "OS": "Windows"}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["netbird.io", "*.netbird.io", "api.netbird.io", "signal.netbird.io"], "Ports": [443, 51820]}] }/>
+
+
+
+
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/81](https://github.com/magicsword-io/LOLRMM/issues/81)
+- [https://www.trellix.com/en-in/blogs/research/a-flyby-on-the-cfos-inbox-spear-phishing-campaign-targeting-financial-executives-with-netbird-deployment/](https://www.trellix.com/en-in/blogs/research/a-flyby-on-the-cfos-inbox-spear-phishing-campaign-targeting-financial-executives-with-netbird-deployment/)
+- [https://hunt.io/blog/apt-muddywater-deploys-multi-stage-phishing-to-target-cfos](https://hunt.io/blog/apt-muddywater-deploys-multi-stage-phishing-to-target-cfos)
+- [https://netbird.io/use-cases/remote-access](https://netbird.io/use-cases/remote-access)
+- [https://github.com/netbirdio/netbird](https://github.com/netbirdio/netbird)
+
+### Acknowledgements
+- jacobholtz (@jacobholtz)
+- ruppde (@ruppde)

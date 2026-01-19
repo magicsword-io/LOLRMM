@@ -1,0 +1,55 @@
+---
+description = "Duet Display is a screen sharing and remote desktop software product that ships with RMM capability. The tool includes remote desktop access functionality and is part of the broader itagent product family which features system management and automation functions. Duet Display has been observed being used for remote access capabilities beyond its primary screen-sharing purpose."
+title = "Duet Display"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Duet Display
+
+Duet Display is a screen sharing and remote desktop software product that ships with RMM capability. The tool includes remote desktop access functionality and is part of the broader itagent product family which features system management and automation functions. Duet Display has been observed being used for remote access capabilities beyond its primary screen-sharing purpose.
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-01-15"}
+         website={"https://www.duetdisplay.com/remote-desktop-access-software"}
+         lastModified={"2026-01-15"}
+         privileges={"User/SYSTEM"}
+         free={ "Trial Available" }
+         verification={ "Code-signed" }
+/>
+
+#### Installation Paths
+<Card code={ ["duet.exe", "DuetSetup.exe", "DuetDisp.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Mac", "iOS", "Android"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Remote Access", "Screen Sharing", "Remote Desktop", "System Management"] }/>
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.duetdisplay.com", "rdp.duetdisplay.com", "duetdisplay.com", "*.itagent.com", "itagent.com"], "Ports": [443]}] }/>
+
+
+
+
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/125](https://github.com/magicsword-io/LOLRMM/issues/125)
+- [https://www.duetdisplay.com/remote-desktop-access-software](https://www.duetdisplay.com/remote-desktop-access-software)
+- [https://www.itagent.com/it-agent-remote-access](https://www.itagent.com/it-agent-remote-access)
+
+### Acknowledgements
+- Syndikalist (@Syndikalist)

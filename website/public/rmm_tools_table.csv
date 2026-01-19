@@ -18,6 +18,7 @@ Name,Category,Description,Author
 [Guacamole](/rmm_tools/guacamole),RMM,Guacamole is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Adobe Connect](/rmm_tools/adobe_connect),RMM,Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it...,
 [rdp2tcp](/rmm_tools/rdp2tcp),RMM,rdp2tcp is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
+[NetBird](/rmm_tools/netbird),RMM,NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectiv...,Michael Haag
 [Rocket Remote Desktop](/rmm_tools/rocket_remote_desktop),RMM,Rocket Remote Desktop is a remote monitoring and management (RMM) tool. More information will be add...,
 [Pulseway](/rmm_tools/pulseway),RMM,Pulseway is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [KickIdler](/rmm_tools/kickidler),RMM,KickIdler is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
@@ -25,6 +26,7 @@ Name,Category,Description,Author
 [FreeNX](/rmm_tools/freenx),RMM,FreeNX is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [LogMeIn rescue](/rmm_tools/logmein_rescue),RMM,LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as i...,
 [QQ IM-remote assistance](/rmm_tools/qq_im-remote_assistance),RMM,QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More information will be a...,
+[Miradore](/rmm_tools/miradore),RMM,Miradore is a mobile device management (MDM) and remote monitoring and management (RMM) tool founded...,Michael Haag
 [DeskNets](/rmm_tools/desknets),RMM,DeskNets is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Basecamp](/rmm_tools/basecamp),RMM,Basecamp is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [GoTo Opener](/rmm_tools/goto_opener),RMM,GoTo Opener is a remote monitoring and management (RMM) tool. More information will be added as it b...,
@@ -46,6 +48,7 @@ Name,Category,Description,Author
 [Syncthing](/rmm_tools/syncthing),RMM,Syncthing is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [RAdmin](/rmm_tools/radmin),RMM,RAdmin is a remote monitoring and management (RMM) tool. More information will be added as it become...,Nasreddine Bencherchali
 [Terminals](/rmm_tools/terminals),RMM,Terminals is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
+[NVDA (Non-Visual Desktop Access)](/rmm_tools/nvda__non-visual_desktop_access_),RMM,"NVDA (Non-Visual Desktop Access) is a free, open-source screen reader that allows blind and vision i...",Michael Haag
 [Addigy](/rmm_tools/addigy),RMM,Addigy is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [SunLogin](/rmm_tools/sunlogin),RMM,SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [WebRDP](/rmm_tools/webrdp),RMM,WebRDP is a remote monitoring and management (RMM) tool. More information will be added as it become...,
@@ -65,6 +68,7 @@ Name,Category,Description,Author
 [Sophos-Remote Management System](/rmm_tools/sophos-remote_management_system),RMM,Sophos-Remote Management System is a remote monitoring and management (RMM) tool. More information w...,
 [AeroAdmin](/rmm_tools/aeroadmin),RMM,AeroAdmin is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Netop Remote Control (Impero Connect)](/rmm_tools/netop_remote_control__impero_connect_),RMM,Netop Remote Control (Impero Connect) is a remote monitoring and management (RMM) tool. More informa...,
+[Duet Display](/rmm_tools/duet_display),RMM,Duet Display is a screen sharing and remote desktop software product that ships with RMM capability....,Michael Haag
 [RemoteUtilities](/rmm_tools/remoteutilities),RMM,RemoteUtilities is a remote monitoring and management (RMM) tool. More information will be added as ...,
 [Naverisk](/rmm_tools/naverisk),RMM,Naverisk is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Iperius Remote](/rmm_tools/iperius_remote),RMM,Iperius Remote is a remote monitoring and management (RMM) tool. More information will be added as i...,
@@ -124,6 +128,7 @@ Name,Category,Description,Author
 [Kaseya (VSA)](/rmm_tools/kaseya__vsa_),RMM,Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More information will be a...,Nasreddine Bencherchali
 [Free Tools Launcher](/rmm_tools/free_tools_launcher),RMM,Free Tools Launcher is a remote monitoring and management (RMM) tool. More information will be added...,
 [Panorama9](/rmm_tools/panorama9),RMM,Panorama9 is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
+[tmate](/rmm_tools/tmate),RMM,"tmate is an open-source terminal sharing tool for Linux and Unix-like systems, built on tmux. It ena...",Michael Haag
 [RemotePC](/rmm_tools/remotepc),RMM,RemotePC is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Royal Server](/rmm_tools/royal_server),RMM,Royal Server is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [Pocket Cloud (Wyse)](/rmm_tools/pocket_cloud__wyse_),RMM,Pocket Cloud (Wyse) is a remote monitoring and management (RMM) tool. More information will be added...,
@@ -166,6 +171,7 @@ Name,Category,Description,Author
 [Tailscale](/rmm_tools/tailscale),RMM,Tailscale is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [UltraVNC](/rmm_tools/ultravnc),RMM,UltraVNC is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Bluetrait](/rmm_tools/bluetrait),RMM,Bluetrait is a Remote Monitoring and Management (RMM) tool designed to provide IT administrators and...,The Haag
+[ManageEngine ServiceDesk Plus](/rmm_tools/manageengine_servicedesk_plus),RMM,ManageEngine ServiceDesk Plus is an IT service management (ITSM) and help desk software that include...,Michael Haag
 [BeAnyWhere](/rmm_tools/beanywhere),RMM,BeAnyWhere is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Microsoft Quick Assist](/rmm_tools/microsoft_quick_assist),RMM,Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be ad...,
 [Remote Ripple](/rmm_tools/remote_ripple),RMM,Remote Ripple is a free VNC viewer client developed by GlavSoft (the creators of TightVNC) for remot...,Daniel Koifman (KoifSec)
@@ -182,7 +188,7 @@ Name,Category,Description,Author
 [Gorelo RMM](/rmm_tools/gorelo_rmm),RMM,Gorelo RMM is a remote monitoring and management tool facilitating remote access and control of devi...,Jean-Marc ALBERT
 [LabTeach (Connectwise Automate)](/rmm_tools/labteach__connectwise_automate_),RMM,LabTeach (Connectwise Automate) is a remote monitoring and management (RMM) tool. More information w...,
 [S3 Browser](/rmm_tools/s3_browser),RMM,S3 Browser is a remote monitoring and management (RMM) tool. More information will be added as it be...,
-[HopToDesk](/rmm_tools/hoptodesk),RMM,HopToDesk is a free Remote Management and Monitoring tool....,Tyler Schultz
+[HopToDesk](/rmm_tools/hoptodesk),RMM,HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed bein...,Michael Haag
 [GatherPlace-desktop sharing](/rmm_tools/gatherplace-desktop_sharing),RMM,GatherPlace-desktop sharing is a remote monitoring and management (RMM) tool. More information will ...,
 [Syncro](/rmm_tools/syncro),RMM,Syncro is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Onionshare](/rmm_tools/onionshare),RMM,Onionshare is a remote monitoring and management (RMM) tool. More information will be added as it be...,
@@ -203,7 +209,7 @@ Name,Category,Description,Author
 [ZeroTier](/rmm_tools/zerotier),RMM,ZeroTier is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [RunSmart](/rmm_tools/runsmart),RMM,RunSmart is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [WebEx (Remote Access)](/rmm_tools/webex__remote_access_),RMM,WebEx (Remote Access) is a remote monitoring and management (RMM) tool. More information will be add...,
-[FleetDeck.io](/rmm_tools/fleetdeck.io),RMM,FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it ...,
+[FleetDeck.io](/rmm_tools/fleetdeck.io),RMM,FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop ...,Michael Haag
 [Pcnow](/rmm_tools/pcnow),RMM,Pcnow is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
 [MSP360](/rmm_tools/msp360),RMM,MSP360 is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [PuTTY Tray](/rmm_tools/putty_tray),RMM,PuTTY Tray is a remote monitoring and management (RMM) tool. More information will be added as it be...,

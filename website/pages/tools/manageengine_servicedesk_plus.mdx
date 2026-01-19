@@ -1,0 +1,64 @@
+---
+description = "ManageEngine ServiceDesk Plus is an IT service management (ITSM) and help desk software that includes remote control capabilities for IT support teams. The software provides comprehensive IT service management features including incident management, asset management, and remote desktop support."
+title = "ManageEngine ServiceDesk Plus"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ManageEngine ServiceDesk Plus
+
+ManageEngine ServiceDesk Plus is an IT service management (ITSM) and help desk software that includes remote control capabilities for IT support teams. The software provides comprehensive IT service management features including incident management, asset management, and remote desktop support.
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-01-15"}
+         website={"https://www.manageengine.com/products/service-desk/"}
+         lastModified={"2026-01-15"}
+         privileges={"SYSTEM"}
+         free={ "Trial Available" }
+         verification={ "Code-signed" }
+/>
+
+#### Installation Paths
+<Card code={ ["ManageEngine_ServiceDesk_Plus.exe", "ManageEngine_ServiceDesk_Plus.bin", "ISBEW64.exe", "C:\\Program Files\\ManageEngine\\ServiceDesk\\*", "C:\\Program Files (x86)\\ManageEngine\\ServiceDesk\\*"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Remote Desktop", "IT Service Management", "Incident Management", "Asset Management", "Help Desk"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\ManageEngine\\ServiceDesk\\*", "Description": "ManageEngine ServiceDesk Plus installation directory (verified via VirusTotal sandbox)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Temp\\{*}\\ManageEngine_ServiceDesk_Plus.exe", "Description": "ManageEngine ServiceDesk Plus temporary installer files (verified via VirusTotal sandbox)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Temp\\{*}\\ISBEW64.exe", "Description": "InstallShield wrapper temporary files (verified via VirusTotal sandbox)", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 4688, "Description": "Process creation event for ManageEngine_ServiceDesk_Plus.exe", "OS": "Windows"}, {"EventID": 7045, "Description": "Service installation event for ManageEngine ServiceDesk", "OS": "Windows"}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{*}", "Description": "ManageEngine ServiceDesk Plus uninstall registry keys (verified via VirusTotal sandbox)", "OS": "Windows"}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.manageengine.com", "manageengine.com"], "Ports": [443, 8080]}] }/>
+
+
+
+
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/50](https://github.com/magicsword-io/LOLRMM/issues/50)
+- [https://www.manageengine.com/products/service-desk/download.html](https://www.manageengine.com/products/service-desk/download.html)
+- [https://www.virustotal.com/gui/file/177bfdbe81bb4756d1d324ddf1bff4350252f0efd8a7f5c8b60a3a8e882affbd/details](https://www.virustotal.com/gui/file/177bfdbe81bb4756d1d324ddf1bff4350252f0efd8a7f5c8b60a3a8e882affbd/details)
+
+### Acknowledgements
+- fuzzybug (@fuzzybug)

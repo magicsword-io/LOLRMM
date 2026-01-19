@@ -1,5 +1,5 @@
 ---
-description = "HopToDesk is a free Remote Management and Monitoring tool."
+description = "HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed being used by ransomware actors as a fallback when Quick Assist is blocked. HopToDesk creates firewall rules automatically and installs itself in Program Files. The tool communicates with signal servers and uses TURN servers for connectivity."
 title = "HopToDesk"
 ---
 
@@ -9,25 +9,27 @@ import {EuiSpacer} from "@elastic/eui"
 
 # HopToDesk
 
-HopToDesk is a free Remote Management and Monitoring tool.
+HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed being used by ransomware actors as a fallback when Quick Assist is blocked. HopToDesk creates firewall rules automatically and installs itself in Program Files. The tool communicates with signal servers and uses TURN servers for connectivity.
 
 ### Details
-<Details author={"Tyler Schultz"}
+<Details author={"Michael Haag"}
          category={"RMM"}
-         created={"2025-07-17"}
+         created={"2026-01-15"}
          website={"https://www.hoptodesk.com/"}
-         lastModified={"2025-07-17"}
-         privileges={""}
-         free={ "Yes" }
-         verification={ false }
+         lastModified={"2026-01-15"}
+         privileges={"User/SYSTEM"}
+         free={ "Open Source" }
+         verification={ "Code-signed by Sectigo" }
 />
 
 #### Installation Paths
-<Card code={ ["hoptodesk.exe", "C:\\Program Files (x86)\\HopToDesk\\*", "/Applications/HopToDesk.app"] }/>
+<Card code={ ["C:\\Program Files (x86)\\HopToDesk\\HopToDesk.exe", "HopToDesk.exe", "HopToDesk-Standalone.exe"] }/>
 
 #### Supported OS
-<Badges color="warning" badges={ ["Windows", "Linux", "MacOS"] }/>
+<Badges color="warning" badges={ ["Windows", "Mac", "Linux", "Android"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Remote Desktop", "Screen Sharing", "File Transfer"] }/>
 
 
 
@@ -35,23 +37,24 @@ HopToDesk is a free Remote Management and Monitoring tool.
 
 #### Disk Artifacts
 <EuiSpacer size="xl"/>
-<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\HopToDesk\\HopToDesk.exe", "Description": "Program Binary File", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\privacyhelper.exe", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\PrivacyMode.dll", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\sciter.dll", "Description": "N/A", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\HopToDesk\\config\\HopToDesk.toml", "Description": "Configuration File", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Temp\\privacyhelper.exe", "Description": "N/A", "OS": "Windows"}, {"File": "/System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log", "Description": "N/A", "OS": "MacOS"}] }/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\HopToDesk\\HopToDesk.exe", "Description": "HopToDesk application executable (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\privacyhelper.exe", "Description": "HopToDesk privacy helper executable (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\PrivacyMode.dll", "Description": "HopToDesk privacy mode library (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\HopToDesk\\sciter.dll", "Description": "HopToDesk Sciter UI library (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Temp\\sciter.dll", "Description": "HopToDesk UI library (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Temp\\privacyhelper.exe", "Description": "HopToDesk privacy helper (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\HopToDesk\\config\\*", "Description": "HopToDesk configuration files (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\HopToDesk\\config\\hoptodesk.toml", "Description": "HopToDesk configuration file (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\HopToDesk\\config\\HopToDesk.toml", "Description": "HopToDesk configuration file (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\HopToDesk\\config\\HopToDesk_rCURRENT.log", "Description": "HopToDesk log file (verified via VirusTotal sandbox analysis)", "OS": "Windows"}, {"File": "/System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log", "Description": "HopToDesk log file (verified via VirusTotal sandbox analysis)", "OS": "MacOS"}] }/>
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "Description": "Service installation event for HopToDesk", "OS": "Windows"}] }/>
 
 #### Registry Artifacts
 <EuiSpacer size="xl"/>
-<RegistryTable data={ [{"Path": "HKEY_USERS\\*_Classes\\HopToDesk\\*", "Description": null}] }/>
+<RegistryTable data={ [{"Path": "HKEY_CURRENT_USER\\Software\\Classes\\HopToDesk\\shell\\open\\command", "Description": "HopToDesk URL protocol handler", "OS": "Windows"}, {"Path": "HKEY_LOCAL_MACHINE\\Software\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\HopToDesk", "Description": "HopToDesk uninstall registry key", "OS": "Windows"}] }/>
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["signal.hoptodesk.com", "api.hoptodesk.com", "turn.hoptodesk.com"], "Ports": [443, 3478, 80]}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["hoptodesk.com", "api.hoptodesk.com", "signal.hoptodesk.com", "turn.hoptodesk.com", "download.hoptodesk.com", "www.hoptodesk.com"], "Ports": [443]}] }/>
 
 
 
 
 ### Detections
-- Detects potential registry activity of HopToDesk RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_registry_sigma.yml)
 - Detects potential network activity of HopToDesk RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_network_sigma.yml)
 - Detects potential files activity of HopToDesk RMM tool
@@ -62,6 +65,11 @@ HopToDesk is a free Remote Management and Monitoring tool.
 ### References
 - [https://www.hoptodesk.com/#faqlink](https://www.hoptodesk.com/#faqlink)
 - [https://gitlab.com/hoptodesk/hoptodesk](https://gitlab.com/hoptodesk/hoptodesk)
+- [https://github.com/magicsword-io/LOLRMM/issues/92](https://github.com/magicsword-io/LOLRMM/issues/92)
+- [https://www.hoptodesk.com/](https://www.hoptodesk.com/)
+- [https://www.virustotal.com/gui/file/ebd2c015cc43e0fedf0122768d65e3256d78c57422111a3ad21efe7663507ee5/details](https://www.virustotal.com/gui/file/ebd2c015cc43e0fedf0122768d65e3256d78c57422111a3ad21efe7663507ee5/details)
+- [https://gitlab.com/hoptodesk/hoptodesk/](https://gitlab.com/hoptodesk/hoptodesk/)
 
 ### Acknowledgements
 - Tyler Schultz (@shockwave_ts)
+- rcKillam (@rcKillam)

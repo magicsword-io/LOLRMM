@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-01-15'
+modified: '2026-01-19'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -59,18 +59,23 @@ detection:
     - \\C:\Program Files (x86)\Bitvise SSH Client\*
     - \\C:\Program Files (x86)\Bluetrait Agent\*
     - \\C:\Program Files (x86)\DesktopCentral_Agent\bin\*
+    - \\C:\Program Files (x86)\FleetDeck Agent\*\fd_agent.dll
+    - \\C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe
+    - \\C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe
     - \\C:\Program Files (x86)\GoTo Opener
     - \\C:\Program Files (x86)\GoTo Resolve Unattended\*
     - \\C:\Program Files (x86)\GoToMyPC\*
     - \\C:\Program Files (x86)\Google\Chrome Remote Desktop\*
     - \\C:\Program Files (x86)\HeartbeatRM\*
-    - \\C:\Program Files (x86)\HopToDesk\*
+    - \\C:\Program Files (x86)\HopToDesk\HopToDesk.exe
     - \\C:\Program Files (x86)\ISL Online\ISL Light*
     - \\C:\Program Files (x86)\ImmyBot\ImmyAgent.exe
     - \\C:\Program Files (x86)\ImmyBot\ImmyUpdater.exe
     - \\C:\Program Files (x86)\Kaseya\
     - \\C:\Program Files (x86)\LANDesk\*
+    - \\C:\Program Files (x86)\ManageEngine\ServiceDesk\*
     - \\C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
+    - \\C:\Program Files (x86)\NVDA\nvda.exe
     - \\C:\Program Files (x86)\NetSarang\xShell\*
     - \\C:\Program Files (x86)\OnionShare\*
     - \\C:\Program Files (x86)\PJ Technologies\GOVsrv\*
@@ -106,6 +111,11 @@ detection:
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
+    - \\C:\Program Files\ManageEngine\ServiceDesk\*
+    - \\C:\Program Files\Miradore\OnlineClient\bin\*
+    - \\C:\Program Files\NVDA\nvda.exe
+    - \\C:\Program Files\Netbird\netbird-ui.exe
+    - \\C:\Program Files\Netbird\netbird.exe
     - \\C:\Program Files\Parsec\*
     - \\C:\Program Files\RdClient\*
     - \\C:\Program Files\RealVNC\VNC Server\*
@@ -125,15 +135,18 @@ detection:
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
     - \\C:\ProgramData\Kaseya\
+    - \\C:\ProgramData\Netbird\*
     - \\C:\ProgramData\Total Software Deployment\*
     - \\C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
     - \\C:\Users\*\AppData\Local\MEGAsync\*
+    - \\C:\Users\*\AppData\Local\Temp\nvda_*\*
     - \\C:\Users\*\AppData\Local\rustdesk\*
     - \\C:\Users\*\AppData\Local\rustdesk\rustdesk.exe
     - \\C:\Users\*\AppData\Roaming\Mikogo\*
     - \\C:\Users\*\AppData\Roaming\SyncTrayzor\*
+    - \\C:\Users\*\AppData\Roaming\nvda\*
     - \\C:\Users\*\Downloads\AMMYY_Admin.exe
     - \\C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
     - \\C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
@@ -143,6 +156,7 @@ detection:
     - \\C:\Windows\SysWOW64\rserver30\FamItrfc
     - \\C:\Windows\SysWOW64\rserver30\rserver3.exe
     - \\C:\Windows\System32\mstsc.exe
+    - \\C:\Windows\Temp\FleetDeck\*
     - \\C:\Windows\Temp\ImmyBot\*
     - \\C:\Windows\dwrcs\*
     - \\C:\\ProgramData\\AMMYY\\*
@@ -170,6 +184,8 @@ detection:
     - \\Deskroll.exe
     - \\Domotz Pro Desktop App Setup*.exe
     - \\Domotz Pro Desktop App.exe
+    - \\DuetDisp.exe
+    - \\DuetSetup.exe
     - \\ERAAgent.exe
     - \\EricomConnectRemoteHost*.exe
     - \\FastViewer.exe
@@ -203,8 +219,10 @@ detection:
     - \\GovReachClient.exe
     - \\HelpuManager.exe
     - \\HelpuUpdater.exe
-    - \\HopToDesk.app
+    - \\HopToDesk-Standalone.exe
+    - \\HopToDesk.exe
     - \\I'm InTouch Go Installer.exe
+    - \\ISBEW64.exe
     - \\ISLLight.exe
     - \\ISLLightClient.exe
     - \\ITSMAgent.exe
@@ -230,6 +248,8 @@ detection:
     - \\LANDeskPortalManager.exe
     - \\MEAgentHelper.exe
     - \\ManageEngine_Remote_Access_Plus.exe
+    - \\ManageEngine_ServiceDesk_Plus.bin
+    - \\ManageEngine_ServiceDesk_Plus.exe
     - \\ManualLauncher.exe
     - \\Microsoft Remote Desktop
     - \\MonitoringAgent.exe
@@ -380,6 +400,7 @@ detection:
     - \\domotz-windows*.exe
     - \\domotz.exe
     - \\domotz_bash.exe
+    - \\duet.exe
     - \\dwagent.exe
     - \\dwagsvc.exe
     - \\dwrcs.exe
@@ -401,6 +422,9 @@ detection:
     - \\fastclient.exe
     - \\fastmaster.exe
     - \\fixmeitclient.exe
+    - \\fleetdeck-agent.exe
+    - \\fleetdeck-agent.msi
+    - \\fleetdeck-agent.mst
     - \\fleetdeck_agent.exe
     - \\fleetdeck_agent_svc.exe
     - \\fleetdeck_commander_launcher.exe
@@ -426,7 +450,6 @@ detection:
     - \\hbrm-x64.exe
     - \\helpbeam*.exe
     - \\helpu_install.exe
-    - \\hoptodesk.exe
     - \\hsloader.exe
     - \\iadmin.exe
     - \\idrive.RemotePCAgent
@@ -483,6 +506,9 @@ detection:
     - \\nateon*.exe
     - \\nateon.exe
     - \\nateonmain.exe
+    - \\netbird
+    - \\netbird-ui.exe
+    - \\netbird.exe
     - \\neturo*.exe
     - \\neturo.exe
     - \\netviewer*.exe
@@ -497,6 +523,9 @@ detection:
     - \\nomachine*.exe
     - \\ntrntservice.exe
     - \\nvClient.exe
+    - \\nvda.exe
+    - \\nvda_*.exe
+    - \\nvda_service.exe
     - \\nxd.exe
     - \\nxservice*.ese
     - \\ocsinventory.exe
@@ -630,6 +659,10 @@ detection:
     - \\teamviewerhost
     - \\termsrv.exe
     - \\tigervnc*.exe
+    - \\tmate
+    - \\tmate-ready
+    - \\tmate.bashrc
+    - \\tmate.sock
     - \\todesk.exe
     - \\tsircusr.exe
     - \\turbomeeting.exe
