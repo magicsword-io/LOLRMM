@@ -63,18 +63,22 @@ Artifacts:
         - Path: HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Network\AmmyyAdmin
           Description: Ammyy Admin service allows AMMYY admin to run in safe mode.
     Network:
-        - Description: Known remote domains
+        - Description: Known remote domains and router IP addresses
           Domains:
               - ammyy.com
               - '*ammyy.com'
-              - 136.243.104.235
-              - 136.243.104.242
-              - 136.243.18.122
           Ports:
               - 5931
               - 80
               - 443
               - 8080
+        - Description: Known router IP addresses (TCP connections)
+          Domains:
+              - 136.243.104.235
+              - 136.243.104.242
+              - 136.243.18.122
+          Ports:
+              - 443
 Detections:
     - Sigma: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/ammyy_admin.yml
       Name: Detecting Ammy Admin RMM Agent Execution

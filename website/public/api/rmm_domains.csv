@@ -18,6 +18,10 @@ connectwise.com,LabTech RMM (Now ConnectWise Automate)
 guacamole.apache.org,Guacamole
 *.adobeconnect.com,Adobe Connect
 github.com/V-E-O/rdp2tcp,rdp2tcp
+netbird.io,NetBird
+*.netbird.io,NetBird
+api.netbird.io,NetBird
+signal.netbird.io,NetBird
 pulseway.com,Pulseway
 kickidler.com,KickIdler
 my.kickidler.com,KickIdler
@@ -33,6 +37,10 @@ rescue-data-cetner.logmein-gateway.com,LogMeIn rescue
 *.desktop.qq.com,QQ IM-remote assistance
 upload_data.qq.com,QQ IM-remote assistance
 qq-messenger.en.softonic.com,QQ IM-remote assistance
+gateway.miradore.com,Miradore
+*.miradore.com,Miradore
+miradore.com,Miradore
+gerwconline.blob.core.windows.net,Miradore
 basecamp.com,Basecamp
 *.islonline.com,ISL Online
 *.islonline.net,ISL Online
@@ -52,6 +60,8 @@ simple-help.com,SimpleHelp
 51.255.19.178,SimpleHelp
 51.255.19.179,SimpleHelp
 radmin.com,RAdmin
+nvaccess.org,NVDA (Non-Visual Desktop Access)
+*.nvaccess.org,NVDA (Non-Visual Desktop Access)
 prod.addigy.com,Addigy
 grtmprod.addigy.com,Addigy
 agents.addigy.com,Addigy
@@ -80,6 +90,11 @@ auth*.aeroadmin.com,AeroAdmin
 aeroadmin.com,AeroAdmin
 *.connect.backdrop.cloud,Netop Remote Control (Impero Connect)
 *.netop.com,Netop Remote Control (Impero Connect)
+*.duetdisplay.com,Duet Display
+rdp.duetdisplay.com,Duet Display
+duetdisplay.com,Duet Display
+*.itagent.com,Duet Display
+itagent.com,Duet Display
 remoteutilities.com,RemoteUtilities
 naverisk.com,Naverisk
 *.iperiusremote.com,Iperius Remote
@@ -208,6 +223,8 @@ kaseya.com,Kaseya (VSA)
 trusted.panorama9.com,Panorama9
 changes.panorama9.com,Panorama9
 panorama9.com,Panorama9
+tmate.io,tmate
+*.tmate.io,tmate
 *.remotedesktop.com,RemotePC
 *.remotepc.com,RemotePC
 www.remotepc.com,RemotePC
@@ -290,6 +307,8 @@ tailscale.com,Tailscale
 ultravnc.com,UltraVNC
 bluetrait.io,Bluetrait
 *.bluetrait.io,Bluetrait
+*.manageengine.com,ManageEngine ServiceDesk Plus
+manageengine.com,ManageEngine ServiceDesk Plus
 beanywhere.en.uptodown.com/windows,BeAnyWhere
 beanywhere.com,BeAnyWhere
 *.support.services.microsoft.com,Microsoft Quick Assist
@@ -308,9 +327,12 @@ lr.rmm.pod1.usw.gorelo.tech,Gorelo RMM
 public.rmm.pod1.usw.gorelo.tech,Gorelo RMM
 r1.rmm.uw.gorelo.tech,Gorelo RMM
 sr.rmm.pod1.usw.gorelo.tech,Gorelo RMM
-signal.hoptodesk.com,HopToDesk
+hoptodesk.com,HopToDesk
 api.hoptodesk.com,HopToDesk
+signal.hoptodesk.com,HopToDesk
 turn.hoptodesk.com,HopToDesk
+download.hoptodesk.com,HopToDesk
+www.hoptodesk.com,HopToDesk
 *.gatherplace.com,GatherPlace-desktop sharing
 *.gatherplace.net,GatherPlace-desktop sharing
 gatherplace.com,GatherPlace-desktop sharing
@@ -351,8 +373,9 @@ zerotier.com,ZeroTier
 *.zerotier.com,ZeroTier
 runsmart.io,RunSmart
 *.fleetdeck.io,FleetDeck.io
-cognito-idp.us-west-2.amazonaws.com,FleetDeck.io
 fleetdeck.io,FleetDeck.io
+agentmqtt.fleetdeck.io,FleetDeck.io
+checkip.zmazonaws.com,FleetDeck.io
 au.pcmag.com/utilities/21470/webex-pcnow,Pcnow
 *.cloudberrylab.com,MSP360
 *.msp360.com,MSP360
@@ -396,6 +419,8 @@ docs.tacticalrmm.com,Tactical RMM
 *mdmsupport.comodo.com,Comodo RMM
 one.comodo.com,Comodo RMM
 *.ivanticloud.com,Ivanti Remote Control
+*.immy.bot,ImmyBot
+immy.bot,ImmyBot
 desktopcentral.manageengine.com,Manage Engine (Desktop Central)
 desktopcentral.manageengine.com.eu,Manage Engine (Desktop Central)
 desktopcentral.manageengine.cn,Manage Engine (Desktop Central)
@@ -470,6 +495,8 @@ app.deskday.ai,DeskDay
 *.ivanticloud.com,LANDesk
 *.ivanti.com,LANDesk
 ivanti.com,LANDesk
+*.heartbeatrm.com,HeartbeatRM
+heartbeatrm.com,HeartbeatRM
 *.247ithelp.com,247ithelp.com (ConnectWise)
 zabbix.com,Zabbix Agent
 simple-help.com,SimpleHelp

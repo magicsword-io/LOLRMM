@@ -1,0 +1,61 @@
+---
+description = "NVDA (Non-Visual Desktop Access) is a free, open-source screen reader that allows blind and vision impaired people to access and interact with the Windows operating system and many third party applications. Recent versions include a "Remote Access" feature that enables remote support and assistance capabilities."
+title = "NVDA (Non-Visual Desktop Access)"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# NVDA (Non-Visual Desktop Access)
+
+NVDA (Non-Visual Desktop Access) is a free, open-source screen reader that allows blind and vision impaired people to access and interact with the Windows operating system and many third party applications. Recent versions include a "Remote Access" feature that enables remote support and assistance capabilities.
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-01-15"}
+         website={"https://www.nvaccess.org/"}
+         lastModified={"2026-01-15"}
+         privileges={"User"}
+         free={ true }
+         verification={ "Open Source" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\NVDA\\nvda.exe", "C:\\Program Files\\NVDA\\nvda.exe", "C:\\Users\\*\\AppData\\Roaming\\nvda\\*", "C:\\Users\\*\\AppData\\Local\\Temp\\nvda_*\\*", "nvda.exe", "nvda_service.exe", "nvda_*.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Screen Reading", "Remote Access", "Remote Support", "Accessibility Features"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\NVDA\\nvda.exe", "Description": "NVDA installation directory", "OS": "Windows"}, {"File": "C:\\Program Files\\NVDA\\nvda.exe", "Description": "NVDA installation directory (64-bit)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\nvda\\nvda.log", "Description": "NVDA log file", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\nvda\\nvda.ini", "Description": "NVDA configuration file", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 4688, "Description": "Process creation event for nvda.exe", "OS": "Windows"}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["nvaccess.org", "*.nvaccess.org"], "Ports": [443]}] }/>
+
+
+
+
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/89](https://github.com/magicsword-io/LOLRMM/issues/89)
+- [https://www.nvaccess.org/](https://www.nvaccess.org/)
+- [https://github.com/nvaccess/nvda/pull/17580](https://github.com/nvaccess/nvda/pull/17580)
+
+### Acknowledgements
+- 59e5aaf4 (@59e5aaf4)

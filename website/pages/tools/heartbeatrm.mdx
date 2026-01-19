@@ -1,0 +1,60 @@
+---
+description = "HeartbeatRM is a remote monitoring and management (RMM) tool that has been observed being leveraged in social engineering campaigns, including invitation-themed and Social Security–related phishing lures, to establish unauthorised remote access on victim endpoints prior to the deployment of ScreenConnect. The tool installs as a Windows service and serves as an initial access mechanism and staging point for secondary RMM deployment. Note - Specific binary names and paths reported in threat intelligence could not be independently verified via VirusTotal or official documentation."
+title = "HeartbeatRM"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# HeartbeatRM
+
+HeartbeatRM is a remote monitoring and management (RMM) tool that has been observed being leveraged in social engineering campaigns, including invitation-themed and Social Security–related phishing lures, to establish unauthorised remote access on victim endpoints prior to the deployment of ScreenConnect. The tool installs as a Windows service and serves as an initial access mechanism and staging point for secondary RMM deployment. Note - Specific binary names and paths reported in threat intelligence could not be independently verified via VirusTotal or official documentation.
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-01-15"}
+         website={"https://heartbeatrm.com/"}
+         lastModified={"2026-01-15"}
+         privileges={"SYSTEM"}
+         free={ "Unknown" }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\HeartbeatRM\\*", "C:\\Program Files\\HeartbeatRM\\*", "*\\HeartbeatRM\\*", "agent-installer-any.exe", "hbrm-x64.exe", "hbrm-updater-x64.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Remote Access", "File Transfer", "Command Line Support"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\HeartbeatRM\\*", "Description": "HeartbeatRM official installation directory (verified via vendor documentation)", "OS": "Windows"}, {"File": "C:\\Program Files\\HeartbeatRM\\*", "Description": "HeartbeatRM reported installation directory (unverified - from threat intelligence)", "OS": "Windows"}, {"File": "*\\agent-installer-any.exe", "Description": "HeartbeatRM official installer (verified via VirusTotal)", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "Description": "Service installation event for HeartbeatRM", "OS": "Windows"}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.heartbeatrm.com", "heartbeatrm.com"], "Ports": []}] }/>
+
+
+
+
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/136](https://github.com/magicsword-io/LOLRMM/issues/136)
+- [https://heartbeatrm.com/](https://heartbeatrm.com/)
+
+### Acknowledgements
+- 0xburgers (@0xburgers)

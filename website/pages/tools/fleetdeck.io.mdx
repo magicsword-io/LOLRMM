@@ -1,5 +1,5 @@
 ---
-description = "FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description = "FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop access and system management capabilities. The software supports remote desktop access, reboot/shutdown capabilities including safe mode, and virtual terminal support. FleetDeck agents report system information and enable remote access to managed endpoints. The tool can be deployed via MSI, MST, or shared link installations."
 title = "FleetDeck.io"
 ---
 
@@ -9,46 +9,60 @@ import {EuiSpacer} from "@elastic/eui"
 
 # FleetDeck.io
 
-FleetDeck.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop access and system management capabilities. The software supports remote desktop access, reboot/shutdown capabilities including safe mode, and virtual terminal support. FleetDeck agents report system information and enable remote access to managed endpoints. The tool can be deployed via MSI, MST, or shared link installations.
 
 ### Details
-<Details author={""}
+<Details author={"Michael Haag"}
          category={"RMM"}
-         created={"2024-08-02"}
-         website={""}
-         lastModified={"2024-08-02"}
-         privileges={""}
-         free={ false }
-         verification={ false }
+         created={"2026-01-15"}
+         website={"https://fleetdeck.io/"}
+         lastModified={"2026-01-15"}
+         privileges={"SYSTEM"}
+         free={ "Trial and Paid" }
+         verification={ "Code-signed" }
 />
 
 #### Installation Paths
-<Card code={ ["fleetdeck_agent_svc.exe", "fleetdeck_commander_svc.exe", "fleetdeck_installer.exe", "fleetdeck_commander_launcher.exe", "fleetdeck_agent.exe"] }/>
+<Card code={ ["C:\\Program Files (x86)\\FleetDeck Agent\\fleetdeck_agent_svc.exe", "C:\\Program Files (x86)\\FleetDeck Agent\\*\\fleetdeck_agent.exe", "C:\\Program Files (x86)\\FleetDeck Agent\\*\\fd_agent.dll", "C:\\Windows\\Temp\\FleetDeck\\*", "fleetdeck-agent.exe", "fleetdeck_agent_svc.exe", "fleetdeck_commander_svc.exe", "fleetdeck_installer.exe", "fleetdeck_commander_launcher.exe", "fleetdeck_agent.exe", "fleetdeck-agent.msi", "fleetdeck-agent.mst"] }/>
 
 #### Supported OS
 <Badges color="warning" badges={ ["Windows"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Control", "Remote Access", "Remote Desktop", "System Reboot", "Safe Mode Access", "Remote Shutdown", "Virtual Terminal", "System Monitoring"] }/>
 
 
 
 ### Forensic Artifacts
 
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\FleetDeck Agent\\fleetdeck_agent_svc.exe", "Description": "FleetDeck agent service executable (verified via official documentation)", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\FleetDeck Agent\\*\\fleetdeck_agent.exe", "Description": "FleetDeck agent executable (verified via official documentation)", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\FleetDeck Agent\\*\\fd_agent.dll", "Description": "FleetDeck agent DLL (reported in GitHub issue)", "OS": "Windows"}, {"File": "C:\\Windows\\Temp\\FleetDeck\\*", "Description": "FleetDeck temporary files directory (verified via official documentation)", "OS": "Windows"}] }/>
 
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "Description": "Service installation event for FleetDeck Agent Service", "OS": "Windows"}] }/>
 
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\FleetDeck Agent Service", "Description": "FleetDeck service registry key", "OS": "Windows"}] }/>
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.fleetdeck.io", "cognito-idp.us-west-2.amazonaws.com", "fleetdeck.io"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.fleetdeck.io", "fleetdeck.io", "agentmqtt.fleetdeck.io", "checkip.zmazonaws.com"], "Ports": [443]}] }/>
 
 
 
 
 ### Detections
 - Detects potential network activity of FleetDeck.io RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_network_sigma.yml)
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_network_sigma.yml)
 - Detects potential processes activity of FleetDeck.io RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck.io_processes_sigma.yml)
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_processes_sigma.yml)
 
 ### References
+- [https://github.com/magicsword-io/LOLRMM/issues/112](https://github.com/magicsword-io/LOLRMM/issues/112)
 - [https://fleetdeck.io/faq/](https://fleetdeck.io/faq/)
 
+### Acknowledgements
+- default1337 (@default1337)

@@ -1,0 +1,76 @@
+Name: ManageEngine ServiceDesk Plus
+Category: 'RMM'
+Description: ManageEngine ServiceDesk Plus is an IT service management (ITSM) and help desk software that includes remote control capabilities for IT support teams. The software provides comprehensive IT service management features including incident management, asset management, and remote desktop support.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://www.manageengine.com/products/service-desk/
+    PEMetadata:
+        - Filename: ManageEngine_ServiceDesk_Plus.exe
+          OriginalFileName: InstallShield Setup.exe
+          Description: ManageEngine ServiceDesk Plus installer (verified via VirusTotal)
+        - Filename: ManageEngine_ServiceDesk_Plus.bin
+          OriginalFileName: ''
+          Description: ManageEngine ServiceDesk Plus binary installer component
+        - Filename: ISBEW64.exe
+          OriginalFileName: ''
+          Description: InstallShield wrapper executable (observed in VT sandbox)
+    Privileges: SYSTEM
+    Free: Trial Available
+    Verification: Code-signed
+    SupportedOS:
+        - Windows
+        - Linux
+    Capabilities:
+        - Remote Control
+        - Remote Desktop
+        - IT Service Management
+        - Incident Management
+        - Asset Management
+        - Help Desk
+    Vulnerabilities: []
+    InstallationPaths:
+        - ManageEngine_ServiceDesk_Plus.exe
+        - ManageEngine_ServiceDesk_Plus.bin
+        - ISBEW64.exe
+        - C:\Program Files\ManageEngine\ServiceDesk\*
+        - C:\Program Files (x86)\ManageEngine\ServiceDesk\*
+Artifacts:
+    Disk:
+        - File: C:\Program Files\ManageEngine\ServiceDesk\*
+          Description: ManageEngine ServiceDesk Plus installation directory (verified via VirusTotal sandbox)
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\{*}\ManageEngine_ServiceDesk_Plus.exe
+          Description: ManageEngine ServiceDesk Plus temporary installer files (verified via VirusTotal sandbox)
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\{*}\ISBEW64.exe
+          Description: InstallShield wrapper temporary files (verified via VirusTotal sandbox)
+          OS: Windows
+    EventLog:
+        - EventID: 4688
+          Description: Process creation event for ManageEngine_ServiceDesk_Plus.exe
+          OS: Windows
+        - EventID: 7045
+          Description: Service installation event for ManageEngine ServiceDesk
+          OS: Windows
+    Registry:
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{*}
+          Description: ManageEngine ServiceDesk Plus uninstall registry keys (verified via VirusTotal sandbox)
+          OS: Windows
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.manageengine.com'
+              - manageengine.com
+          Ports:
+              - 443
+              - 8080
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/50
+    - https://www.manageengine.com/products/service-desk/download.html
+    - https://www.virustotal.com/gui/file/177bfdbe81bb4756d1d324ddf1bff4350252f0efd8a7f5c8b60a3a8e882affbd/details
+Acknowledgement:
+    - Person: fuzzybug
+      Handle: '@fuzzybug'

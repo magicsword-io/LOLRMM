@@ -64,3 +64,93 @@ CodeSigning:
     tbs_sha256: 2B558A81F2AE1CFC91FBC2B16A79BBACE77FA34F140C3418D6CF7DC4502AFCBE
     tbs_sha1: ''
     certificate_der_base64: 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
+Category: 'RMM'
+Description: FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop access and system management capabilities. The software supports remote desktop access, reboot/shutdown capabilities including safe mode, and virtual terminal support. FleetDeck agents report system information and enable remote access to managed endpoints. The tool can be deployed via MSI, MST, or shared link installations.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
+Details:
+    Website: https://fleetdeck.io/
+    PEMetadata:
+        - Filename: fleetdeck-agent.exe
+          OriginalFileName: fleetdeck_installer
+          Description: FleetDeck agent installer (verified via official documentation)
+        - Filename: fleetdeck_agent_svc.exe
+          OriginalFileName: ''
+          Description: FleetDeck agent service executable (verified via official documentation)
+        - Filename: fleetdeck-agent.msi
+          OriginalFileName: ''
+          Description: FleetDeck MSI installer (verified via official documentation)
+        - Filename: fd_agent.dll
+          OriginalFileName: ''
+          Description: FleetDeck agent DLL component (reported in GitHub issue)
+    Privileges: SYSTEM
+    Free: Trial and Paid
+    Verification: Code-signed
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote Control
+        - Remote Access
+        - Remote Desktop
+        - System Reboot
+        - Safe Mode Access
+        - Remote Shutdown
+        - Virtual Terminal
+        - System Monitoring
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe
+        - C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe
+        - C:\Program Files (x86)\FleetDeck Agent\*\fd_agent.dll
+        - C:\Windows\Temp\FleetDeck\*
+        - fleetdeck-agent.exe
+        - fleetdeck_agent_svc.exe
+        - fleetdeck_commander_svc.exe
+        - fleetdeck_installer.exe
+        - fleetdeck_commander_launcher.exe
+        - fleetdeck_agent.exe
+        - fleetdeck-agent.msi
+        - fleetdeck-agent.mst
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe
+          Description: FleetDeck agent service executable (verified via official documentation)
+          OS: Windows
+        - File: C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe
+          Description: FleetDeck agent executable (verified via official documentation)
+          OS: Windows
+        - File: C:\Program Files (x86)\FleetDeck Agent\*\fd_agent.dll
+          Description: FleetDeck agent DLL (reported in GitHub issue)
+          OS: Windows
+        - File: C:\Windows\Temp\FleetDeck\*
+          Description: FleetDeck temporary files directory (verified via official documentation)
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          Description: Service installation event for FleetDeck Agent Service
+          OS: Windows
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\FleetDeck Agent Service
+          Description: FleetDeck service registry key
+          OS: Windows
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.fleetdeck.io'
+              - fleetdeck.io
+              - agentmqtt.fleetdeck.io
+              - checkip.zmazonaws.com
+          Ports:
+              - 443
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_network_sigma.yml
+      Description: Detects potential network activity of FleetDeck.io RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fleetdeck_processes_sigma.yml
+      Description: Detects potential processes activity of FleetDeck.io RMM tool
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/112
+    - https://fleetdeck.io/faq/
+Acknowledgement:
+    - Person: default1337
+      Handle: '@default1337'

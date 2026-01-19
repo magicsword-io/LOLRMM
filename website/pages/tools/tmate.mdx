@@ -1,0 +1,58 @@
+---
+description = "tmate is an open-source terminal sharing tool for Linux and Unix-like systems, built on tmux. It enables instant terminal sharing over SSH, allowing remote terminal access and collaboration. The tool creates a unique session that can be shared with others for remote access, making it a legitimate tool for system administration but also potentially useful for unauthorized remote access."
+title = "tmate"
+---
+
+
+import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# tmate
+
+tmate is an open-source terminal sharing tool for Linux and Unix-like systems, built on tmux. It enables instant terminal sharing over SSH, allowing remote terminal access and collaboration. The tool creates a unique session that can be shared with others for remote access, making it a legitimate tool for system administration but also potentially useful for unauthorized remote access.
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-01-15"}
+         website={"https://tmate.io/"}
+         lastModified={"2026-01-15"}
+         privileges={"User"}
+         free={ "Open Source" }
+         verification={ "Open source project" }
+/>
+
+#### Installation Paths
+<Card code={ ["/usr/bin/tmate", "/usr/local/bin/tmate", "tmate", "tmate.sock", "tmate-ready", "tmate.bashrc"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Linux", "Mac", "FreeBSD"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote Terminal Access", "Terminal Sharing", "SSH-based Connection", "Session Collaboration"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "/tmp/tmate*", "Description": "tmate socket files for terminal sharing sessions", "OS": "Linux"}, {"File": "~/.tmate.conf", "Description": "tmate configuration file", "OS": "Linux"}, {"File": "tmate.sock", "Description": "tmate socket file for session communication", "OS": "Linux"}, {"File": "tmate-ready", "Description": "tmate readiness indicator file", "OS": "Linux"}, {"File": "tmate.bashrc", "Description": "tmate bash configuration file", "OS": "Linux"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["tmate.io", "*.tmate.io"], "Ports": [22, 443]}] }/>
+
+
+
+
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/106](https://github.com/magicsword-io/LOLRMM/issues/106)
+- [https://github.com/tmate-io/tmate](https://github.com/tmate-io/tmate)
+- [https://tmate.io/](https://tmate.io/)
+
+### Acknowledgements
+- rcKillam (@rcKillam)
