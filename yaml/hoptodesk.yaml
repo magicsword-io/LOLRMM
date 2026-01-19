@@ -1,68 +1,91 @@
 Name: HopToDesk
 Category: 'RMM'
-Description: HopToDesk is a free Remote Management and Monitoring tool.
-Author: Tyler Schultz
-Created: '2025-07-17'
-LastModified: '2025-07-17'
+Description: HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed being used by ransomware actors as a fallback when Quick Assist is blocked. HopToDesk creates firewall rules automatically and installs itself in Program Files. The tool communicates with signal servers and uses TURN servers for connectivity.
+Author: Michael Haag
+Created: '2026-01-15'
+LastModified: '2026-01-15'
 Details:
     Website: https://www.hoptodesk.com/
     PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: 'Yes'
-    Verification: ''
+        - Filename: HopToDesk.exe
+          OriginalFileName: ''
+          Description: HopToDesk remote desktop application (verified via VirusTotal)
+    Privileges: User/SYSTEM
+    Free: Open Source
+    Verification: Code-signed by Sectigo
     SupportedOS:
         - Windows
+        - Mac
         - Linux
-        - MacOS
-    Capabilities: []
+        - Android
+    Capabilities:
+        - Remote Control
+        - Remote Desktop
+        - Screen Sharing
+        - File Transfer
     Vulnerabilities: []
     InstallationPaths:
-        - hoptodesk.exe
-        - C:\Program Files (x86)\HopToDesk\*
-        - /Applications/HopToDesk.app
+        - C:\Program Files (x86)\HopToDesk\HopToDesk.exe
+        - HopToDesk.exe
+        - HopToDesk-Standalone.exe
 Artifacts:
     Disk:
         - File: C:\Program Files (x86)\HopToDesk\HopToDesk.exe
-          Description: Program Binary File
+          Description: HopToDesk application executable (verified via VirusTotal sandbox analysis)
           OS: Windows
         - File: C:\Program Files (x86)\HopToDesk\privacyhelper.exe
-          Description: N/A
+          Description: HopToDesk privacy helper executable (verified via VirusTotal sandbox analysis)
           OS: Windows
         - File: C:\Program Files (x86)\HopToDesk\PrivacyMode.dll
-          Description: N/A
+          Description: HopToDesk privacy mode library (verified via VirusTotal sandbox analysis)
           OS: Windows
         - File: C:\Program Files (x86)\HopToDesk\sciter.dll
-          Description: N/A
+          Description: HopToDesk Sciter UI library (verified via VirusTotal sandbox analysis)
           OS: Windows
-        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml
-          Description: Configuration File
+        - File: C:\Users\*\AppData\Local\Temp\sciter.dll
+          Description: HopToDesk UI library (verified via VirusTotal sandbox analysis)
           OS: Windows
         - File: C:\Users\*\AppData\Local\Temp\privacyhelper.exe
-          Description: N/A
+          Description: HopToDesk privacy helper (verified via VirusTotal sandbox analysis)
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\*
+          Description: HopToDesk configuration files (verified via VirusTotal sandbox analysis)
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\hoptodesk.toml
+          Description: HopToDesk configuration file (verified via VirusTotal sandbox analysis)
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml
+          Description: HopToDesk configuration file (verified via VirusTotal sandbox analysis)
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk_rCURRENT.log
+          Description: HopToDesk log file (verified via VirusTotal sandbox analysis)
           OS: Windows
         - File: /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
-          Description: N/A
+          Description: HopToDesk log file (verified via VirusTotal sandbox analysis)
           OS: MacOS
-    EventLog: []
+    EventLog:
+        - EventID: 7045
+          Description: Service installation event for HopToDesk
+          OS: Windows
     Registry:
-        - Path: HKEY_USERS\*_Classes\HopToDesk\*
-          Description:
+        - Path: HKEY_CURRENT_USER\Software\Classes\HopToDesk\shell\open\command
+          Description: HopToDesk URL protocol handler
+          OS: Windows
+        - Path: HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\HopToDesk
+          Description: HopToDesk uninstall registry key
+          OS: Windows
     Network:
         - Description: Known remote domains
           Domains:
-              - signal.hoptodesk.com
+              - hoptodesk.com
               - api.hoptodesk.com
+              - signal.hoptodesk.com
               - turn.hoptodesk.com
+              - download.hoptodesk.com
+              - www.hoptodesk.com
           Ports:
               - 443
-              - 3478
-              - 80
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_registry_sigma.yml
-      Description: Detects potential registry activity of HopToDesk RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_network_sigma.yml
       Description: Detects potential network activity of HopToDesk RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_files_sigma.yml
@@ -72,6 +95,12 @@ Detections:
 References:
     - https://www.hoptodesk.com/#faqlink
     - https://gitlab.com/hoptodesk/hoptodesk
+    - https://github.com/magicsword-io/LOLRMM/issues/92
+    - https://www.hoptodesk.com/
+    - https://www.virustotal.com/gui/file/ebd2c015cc43e0fedf0122768d65e3256d78c57422111a3ad21efe7663507ee5/details
+    - https://gitlab.com/hoptodesk/hoptodesk/
 Acknowledgement:
     - Person: Tyler Schultz
       Handle: '@shockwave_ts'
+    - Person: rcKillam
+      Handle: '@rcKillam'
