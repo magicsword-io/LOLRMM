@@ -1,117 +1,38 @@
 Name: Remmon
 Category: RMM
-Description: 'Remote monitoring tool for Windows and Linux written in Go.
-
-    '
-Author: Daniel Koifman (KoifSec)
-Created: '2025-11-12'
-LastModified: '2025-12-14'
+Description: Remmon is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-    Website: https://github.com/Netzwerkfehler/remmon
-    Privileges: User
-    Free: true
-    Verification: false
-    SupportedOS:
-        - Windows
-        - Linux
-    Capabilities:
-        - Remote Monitoring
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - '*\\Remmon.exe'
+        - remmon.exe
 Artifacts:
     Disk: []
     EventLog: []
     Registry: []
-    Network: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.remmon.hu'
+              - remmon.hu
+          Ports: []
 Detections:
-    - AQL: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/remmon/aql.aql
-      Description: QRadar AQL query for detecting Remmon process execution via EventID 4688, tracking parent process name, process name, and command-line arguments
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remmon_network_sigma.yml
+      Description: Detects potential network activity of Remmon RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remmon_processes_sigma.yml
+      Description: Detects potential processes activity of Remmon RMM tool
 References:
-    - https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0
+    - https://remmon.hu
 Acknowledgement: []
-CodeSigning:
-    search_names:
-        - backup.exe
-        - music.exe
-        - musicvn
-        - system restore.exe
-        - xhko2.exe
-    company_names: []
-    signer_names: []
-    certificates: []
-FileHashes:
-    authenticode:
-        - file_name: backup.exe
-          sha256: DA9B37F348EA1E2C91B55EF4A6D571919782C415E88AAD2742A4FA663FEF28C3
-          sha1: BD873C7F77EBE2ED87343C5FC061E00E98672236
-        - file_name: backup.exe
-          sha256: F24D34F32FFD52B0D0375090D1AD3D3F8E8DE072C6AB610EFCC20CFB47630286
-          sha1: 26E72D588D19D29C7567A9D9CAAE7FC30EB2DADC
-        - file_name: System Restore.exe
-          sha256: E53D4790CFBC55122F3059B1000E0E0105272319AA23B2368CB3484102E53B7A
-          sha1: 9F965D028A175B69719644F7C147B1E8BCE659F0
-        - file_name: backup.exe
-          sha256: A35A3ED2E8350EFE57CF7DB4A435EF908B27FA7BD9BFA7ACC2B0DA77DF06FA81
-          sha1: 98CB4EC8FCBCC81C2AED3B11329C6E8AA9461726
-        - file_name: backup.exe
-          sha256: EC2EA85C57548AAC3B26EC39E480B941E0C6DE91F7140E4007BEF43AB633C4F7
-          sha1: 0642F19727C8813A0A57889761953EE08032CFB6
-        - file_name: backup.exe
-          sha256: 97F162EF281AD12846F37D940290F63104C4F9A4B5191C48EE6217DA9B509A57
-          sha1: 83EC803F0F783B1FA43673A1259076ED889DAD9C
-        - file_name: music.exe
-          sha256: ECC7C23DBA94BC3D2266A42EFE907D4F369D8A2AE764378A56E72755C83CB0F4
-          sha1: 30DB5E0093816911A03CAAEE5F431F00DB33EE99
-        - file_name: System Restore.exe
-          sha256: 95AA3CBAE23994D4171E48D2455EBA7A8B3CA499813897528E75DDE6FF62A6BB
-          sha1: A27849F297FA7DBEDB584001FB40787502923F8A
-        - file_name: backup.exe
-          sha256: 6534A90018912124806BC39603DC526A2AA9C478933FEA8AC335E736134CF830
-          sha1: A76577AD8D9F118C572C64CBDD99DBC6B7FE9C24
-        - file_name: backup.exe
-          sha256: A9BAD4F936102EB18779430BBB79FABE3B2D812FE067EE9C748CE6E6D2F1302C
-          sha1: 8C6297E92D29FAC49893D757D6F4690F1BD4E83F
-        - file_name: backup.exe
-          sha256: 11537E70390033C2D77EAF5F46CEAF4CA0C73B23BD8D21CEF177124FA4475C70
-          sha1: E1A15630FC334B523214F5E41BC0CF0423FC8C43
-        - file_name: backup.exe
-          sha256: 960428D20941989E4A09280D8601EEB50C3F8A0A946F603A2CBE34F662E98398
-          sha1: 0DA3F1D7687E809A9A625253FDADD1B5D062BCFE
-        - file_name: System Restore.exe
-          sha256: 97AAAE89648362CC9131CC0CA5D8A9F1A703C718B7B05C63627622FC2A37FD7A
-          sha1: 47FD0ED9F353DE71756275362478F67C076CAC41
-        - file_name: xhko2.exe
-          sha256: 8DBE0AB8EFA8369B01D6CBA028C0FD37B2F38890546F56BBF7D059C4D996E462
-          sha1: D1A0045420F8BE0BE6E2CA3387D96C1219E8D81D
-        - file_name: backup.exe
-          sha256: 7D8FD9E245541BFEB7733F749B4C69EF918D3271C034BAB224324631599A4532
-          sha1: 39DBB6E48C9199D1683A48E9261F7B5CF90E6E2F
-        - file_name: musicvn
-          sha256: 28E29FB09B093F0C61077181B10A03B4E1DBB51A406B30CF6FB4D90EB9051381
-          sha1: F188479B5B500B36BC455167DF27A844708146FE
-        - file_name: backup.exe
-          sha256: BA35A3AA34A6E4CC2855BAEB62565C4E84AD3362FB74F8C3A711D6B540D3C6DE
-          sha1: D88DD26A5121F9725FB467DA283A38043D95BC0C
-    page:
-        - file_name: backup.exe
-          sha256: E9AF2344782FE3F9061049FAE16EC8D8074342B6702A955DB9A8C4B81AA041B5
-          sha1: 2FF8643368DC1FD0F02DF61F65095A18291CE039
-        - file_name: backup.exe
-          sha256: 8B3101AF4F6B36BD0C1D097E1739F4CB43199C4195ACC7E9134D947EE5A84F77
-          sha1: DFA0115DFD70E146CAFBB951F0D9C2002C292BF8
-        - file_name: System Restore.exe
-          sha256: F498FF43E322246F9CC7DA4BF9DD4A21F0F68E7A042E2089AF66E954BCC2C304
-          sha1: F6F1C4E77D01375A0DBDC0C4E11FF70DFFB74785
-        - file_name: backup.exe
-          sha256: 5DD3FAFE381417A85305CC9D5AB35C1F532A2AFE379E3834D2E02AF20B873A66
-          sha1: 67E836C7E37F79A3B3D5FC1E7CD005CB5D6FAFFE
-        - file_name: backup.exe
-          sha256: CDE8EC79E2F66FF0850A161A754B1048719F10FC738253A783301EC5E5A786F0
-          sha1: 915207AE171650F7DAB8C47CF7E7B11A2D5D7801
-        - file_name: System Restore.exe
-          sha256: 7575B48AF5B5633DE00DBEC9DD4EC81E26FF1ADF22F749FEFDBD47B320E1C046
-          sha1: CCEEAD35C399F3EA046ADBBCE2373A1D8F4B88EE
-        - file_name: backup.exe
-          sha256: 202F132CC8C4D8C24454E483D5E75FF231DBB9B1EBED8DBEDEE48DEAA1655230
-          sha1: F554117E5F4411F779E6182D88FCCE42F897EABB

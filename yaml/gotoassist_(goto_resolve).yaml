@@ -54,13 +54,6 @@ Artifacts:
           ServiceName: GoToResolve_*
           ImagePath: '"C:\Program Files (x86)\GoTo Resolve Unattended\*\GoToResolveProcessChecker.exe" -Service -WorkFolder "C:\Program Files (x86)\GoTo Resolve Unattended\*" -ApplicationType "4"'
           Description: Service installation event as result of GoTo Resolve installation.
-        - EventID: 4688
-          ProviderName: Microsoft Windows security auditing
-          LogFile: Security.evtx
-          NewProcessName: C:\Windows\System32\sc.exe
-          CreatorProcessName: C:\Windows\System32\svchost.exe
-          CommandLine: '"C:\Windows\system32\sc.exe" start GoToResolve_*'
-          Description: Process creation event as result of GoTo Resolve installation.
     Registry:
         - Path: HKLM\SOFTWARE\GoTo Resolve Unattended\
           Description: N/A

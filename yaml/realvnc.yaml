@@ -3,7 +3,7 @@ Category: RMM
 Description: RealVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2025-12-14'
+LastModified: '2024-08-02'
 Details:
     Website: ''
     PEMetadata:
@@ -16,31 +16,34 @@ Details:
     SupportedOS: []
     Capabilities: []
     Vulnerabilities: []
-    InstallationPaths: []
+    InstallationPaths:
+        - RealVNC.exe
+        - vncserver.exe
+        - vncviewer.exe
+        - vncserver-x11-serviced
+        - vncserver-virtuald
+        - vncserverui.exe
+        - vncviewer*
+        - C:\Program Files\RealVNC\*
+        - '*\VNC Server\*'
+        - '*\VNC Viewer\*'
+        - '*\RealVNC\*'
+        - '*\vncviewer.exe'
 Artifacts:
     Disk: []
     EventLog: []
     Registry: []
-    Network: []
-Detections: []
-References: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.realvnc.com'
+              - realvnc.com
+          Ports: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/realvnc_network_sigma.yml
+      Description: Detects potential network activity of RealVNC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/realvnc_processes_sigma.yml
+      Description: Detects potential processes activity of RealVNC RMM tool
+References:
+    - https://www.realvnc.com/en/connect/download/vnc/
 Acknowledgement: []
-CodeSigning:
-    search_names:
-        - setup.exe
-        - winvnc
-    company_names: []
-    signer_names: []
-    certificates: []
-FileHashes:
-    authenticode:
-        - file_name: Setup.exe
-          sha256: 7DE40AE72A84359565A6119442901F755C3935495B0547EF51C507CAD48FB1CB
-          sha1: 89F17E14AD1791197F8EFE9D4182CBB63B059FC9
-        - file_name: winvnc
-          sha256: AD1DC351B3566E65C338DD4BD3872096AD0C7631F4EF628425B0486470667A7A
-          sha1: 60756CB256B69A3A1D88A65A273BF8255CEBF2AA
-    page:
-        - file_name: Setup.exe
-          sha256: EEAF4739ED94AA6B576ACC6F0BFEEB7749014F58331E37ED41EEBFC932835030
-          sha1: 3C60C2575DC20B51DE6A5D8A728EACFDC8DC605C

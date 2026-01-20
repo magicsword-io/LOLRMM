@@ -31,10 +31,7 @@ Detections:
 References: []
 Acknowledgement: []
 CodeSigning:
-    search_names:
-        - breakout.exe
-        - nyotaikashitadakenanoni.exe
-        - setup.exe
+    search_names: []
     company_names: []
     signer_names: []
     certificates:
@@ -44,24 +41,3 @@ CodeSigning:
           src_file_sha256: a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
           src_file_path: downloaded_files/zoc/a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
           src_file_company: EmTec Innovative Software
-FileHashes:
-    authenticode:
-        - file_name: nyotaikashitadakenanoni.exe
-          sha256: 6D28FF0ADD7AD3A40CBCFBD0929A83A4D73ED18650A06E8EABD837670E5558F4
-          sha1: 1E538E559479B344297B30F29721DED29CE4830F
-        - file_name: setup.exe
-          sha256: 28311BF0DF9D1168B53BDF6EA8E23C253B1EEDCF937CD1A7C18829FCD8849F60
-          sha1: D6BC93F0B8E3DF97F51899E45541F591B0348825
-        - file_name: Breakout.exe
-          sha256: C625251B6D300580A1E37E506F0757AF3828F5EC532F8C231B5F838067F5ED25
-          sha1: 27386EADA2DC313F96E1FA22B18C25BC15A8E2B0
-    page:
-        - file_name: nyotaikashitadakenanoni.exe
-          sha256: 508532322BD09F2E6B2F05B0AC16E34F3AC5BE1BA5F3D80E09171C485EE2CD92
-          sha1: 6DF4BA6E2248DF1C51F5408F6A6B609AE44FCC25
-        - file_name: setup.exe
-          sha256: 50C9B1627C5AAE706BA2F6F2F942260A04D192206F2C3E76200C85F51995BBC5
-          sha1: 7D709AFDECB87D5CDD01DB1CC4939BA2C71FE405
-        - file_name: Breakout.exe
-          sha256: 36FB654E8040B98EFB8EC61F20EF5C548E3B3C90FA4284EC02C04992F90EBE86
-          sha1: FCDAF83B0A1275068B408D3A48271FF07AF997CC
