@@ -1,6 +1,7 @@
 Name: ZeroTier
 Category: RMM
-Description: ZeroTier is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: ZeroTier is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2025-12-14'
@@ -61,6 +62,11 @@ CodeSigning:
     certificate_thumbprint: N/A
     tbs_sha256: 585313F1B71C57E3383163625CB74104DEB13C9DCE97B7F03CF2FBE6353D4C98
     tbs_sha1: ''
+  - signer_name: System Utility Code Signing
+    certificate_thumbprint: 0A10A1E7428F3968986F24AD0D7B385B40FEA22E
+    certificate_der_base64: MIIDHDCCAgSgAwIBAgIQO9McJAaMdYdGiFZAUB9OtzANBgkqhkiG9w0BAQsFADAmMSQwIgYDVQQDDBtTeXN0ZW0gVXRpbGl0eSBDb2RlIFNpZ25pbmcwHhcNMjUwOTE3MTczMTA3WhcNMjYwOTE3MTc0MTA3WjAmMSQwIgYDVQQDDBtTeXN0ZW0gVXRpbGl0eSBDb2RlIFNpZ25pbmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCiUm1e4e4aDvMnoxRReqiYpruMhNhSRXKFtulMj95b7mSG82H2+jheZ9e9cnFzPpHNa1ixpI1fS03SCJawNlW/bIOXzgl8aj2M1GSb9E5p/yU3mEuyL66zgHLzDI7TPXktsJwfOFSJ5NNeHIO1FPimAaqQYvMqiPOgk5q/LXVs+W6YYqDkjuOZIk5bLS6A7TMZcJsEAxpY0GVOi6vTc99yMWPTf8flfr4nvfQSbN8G+S7RDDaljl7X45WGwgJkkf7rsQBnPCFEvmj89bd+3Zr6dBgliNw9SHhQ1MpcEsRl4aniGs2d+2kpVa1h1Z6v/grX5A4xzKL4TFnl4ZG+3eY5AgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUvCXIv/CU2C3owqwMV3ezz0nUm0QwDQYJKoZIhvcNAQELBQADggEBAGrtzMrwr8qJJHjcF/tH5tUuCdoxG7tAr/6OgSyRSixORaFBhYevdnw1m8MgbyQbw/ln7Lcctd14T+/pMR5fpGytYzq+j6AOAfVgohz1pyaUH63FUFRhhdarEavVlOsPT41Av1zSTg+iH2PDiT5tpNkCyrQCPZxFIZcFej8dRqZ5EachhI+ZPjgIofYVFEw771fp+ejcfEnXUFzrZlksUJDmXqIcM0WXcRagTYNx8i2xLwM/gWVZdNGePMHkV1CVXXdMugr2JsBj//eh7mHC764kD/6xMyk2Te3M7MuUtax5ijs61u27q0hdjEUjEoLdIygXYX55lc7HhypU5ZuOOVI=
+    src_file_sha256: 64ac1a63ff86713545830026d296406525d0ddef35eacc836dcf85ec7752d864
+    src_file_path: downloaded_files/zerotier/64ac1a63ff86713545830026d296406525d0ddef35eacc836dcf85ec7752d864
 FileHashes:
   authenticode:
   - file_name: KKManager.exe

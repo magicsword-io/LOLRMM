@@ -1,42 +1,51 @@
 Name: SimpleHelp
-Category: 'RMM'
-Description: SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: SimpleHelp is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - simplehelpcustomer.exe
-        - simpleservice.exe
-        - simplegatewayservice.exe
-        - remote access.exe
-        - windowslauncher.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - simplehelpcustomer.exe
+  - simpleservice.exe
+  - simplegatewayservice.exe
+  - remote access.exe
+  - windowslauncher.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - user_managed
-              - simple-help.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - simple-help.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml
-      Description: Detects potential network activity of SimpleHelp RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml
-      Description: Detects potential processes activity of SimpleHelp RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml
+  Description: Detects potential network activity of SimpleHelp RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml
+  Description: Detects potential processes activity of SimpleHelp RMM tool
 References:
-    - https://simple-help.com/remote-support
+- https://simple-help.com/remote-support
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: SimpleHelp Ltd
+    certificate_thumbprint: 40F61D013FE82F45E7B01D040B4653E8AE80E041
+    certificate_der_base64: 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
+    src_file_sha256: 77b8f597b7d20d4f7ae84caa5c22b94a8d9e09051f7cdaa17f41890ccf8c77a2
+    src_file_path: downloaded_files/simplehelp/77b8f597b7d20d4f7ae84caa5c22b94a8d9e09051f7cdaa17f41890ccf8c77a2
+    src_file_company: 'SimpleHelp Ltd                          '

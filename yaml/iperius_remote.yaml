@@ -1,41 +1,50 @@
 Name: Iperius Remote
-Category: 'RMM'
-Description: Iperius Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Iperius Remote is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - iperius.exe
-        - iperiusremote.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - iperius.exe
+  - iperiusremote.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.iperiusremote.com'
-              - '*.iperius.com'
-              - '*.iperius-rs.com'
-              - iperiusremote.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.iperiusremote.com'
+    - '*.iperius.com'
+    - '*.iperius-rs.com'
+    - iperiusremote.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_network_sigma.yml
-      Description: Detects potential network activity of Iperius Remote RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_processes_sigma.yml
-      Description: Detects potential processes activity of Iperius Remote RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_network_sigma.yml
+  Description: Detects potential network activity of Iperius Remote RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/iperius_remote_processes_sigma.yml
+  Description: Detects potential processes activity of Iperius Remote RMM tool
 References:
-    - https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx
+- https://www.iperiusremote.com/download-iperius-remote-desktop-windows.aspx
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: ENTER S.R.L.
+    certificate_thumbprint: B2D3CCC3D2B287A63C7B382C3D69C2A6146D124E
+    certificate_der_base64: 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
+    src_file_sha256: c712f3e5c62b2c46ba753e1f9f9e437d3049173f8fec45c6fd476318994a3dcc
+    src_file_path: downloaded_files/iperius_remote/c712f3e5c62b2c46ba753e1f9f9e437d3049173f8fec45c6fd476318994a3dcc
+    src_file_company: Enter Srl

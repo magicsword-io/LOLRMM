@@ -1,34 +1,43 @@
 Name: MEGAsync
-Category: 'RMM'
-Description: MEGAsync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: MEGAsync is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - C:\Users\*\AppData\Local\MEGAsync\*
-        - '*Users\*\AppData\Local\MEGAsync\*'
-        - '*ProgramData\MEGAsync\*'
-        - '*\MEGAsyncSetup64.exe'
-        - '*\MEGAupdater.exe'
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Users\*\AppData\Local\MEGAsync\*
+  - '*Users\*\AppData\Local\MEGAsync\*'
+  - '*ProgramData\MEGAsync\*'
+  - '*\MEGAsyncSetup64.exe'
+  - '*\MEGAupdater.exe'
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/megasync_processes_sigma.yml
-      Description: Detects potential processes activity of MEGAsync RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/megasync_processes_sigma.yml
+  Description: Detects potential processes activity of MEGAsync RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: Mega Limited
+    certificate_thumbprint: E65A1FC65C29578B54AA826AFF6E2310C5255EF9
+    certificate_der_base64: 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
+    src_file_sha256: 6ffa84575a19e64a21e26f6a752854212b5c73555db1e20cee78ee44efe7781d
+    src_file_path: downloaded_files/megasync/6ffa84575a19e64a21e26f6a752854212b5c73555db1e20cee78ee44efe7781d
+    src_file_company: MEGA Limited

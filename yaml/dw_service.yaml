@@ -1,40 +1,48 @@
 Name: DW Service
-Category: 'RMM'
-Description: DW Service is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: DW Service is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS:
-        - Windows
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - dwagsvc.exe
-        - dwagent.exe
-        - dwagsvc.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS:
+  - Windows
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - dwagsvc.exe
+  - dwagent.exe
+  - dwagsvc.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.dwservice.net'
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.dwservice.net'
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_network_sigma.yml
-      Description: Detects potential network activity of DW Service RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_processes_sigma.yml
-      Description: Detects potential processes activity of DW Service RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_network_sigma.yml
+  Description: Detects potential network activity of DW Service RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_processes_sigma.yml
+  Description: Detects potential processes activity of DW Service RMM tool
 References:
-    - https://news.dwservice.net/dwservice-security-infrastructure/
+- https://news.dwservice.net/dwservice-security-infrastructure/
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: DWSNET srl
+    certificate_thumbprint: 4A13F46DEF2C9427898A46A88A6A2122ED106B37
+    certificate_der_base64: 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
+    src_file_sha256: cd098eddb23f2d2f6c42271ca82803b0d5ac950cb82a9b8ae0928e83945a53df
+    src_file_path: downloaded_files/dw_service/cd098eddb23f2d2f6c42271ca82803b0d5ac950cb82a9b8ae0928e83945a53df

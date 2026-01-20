@@ -1,42 +1,51 @@
 Name: Xeox
-Category: 'RMM'
-Description: Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Xeox is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS:
-        - Windows
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - xeox-agent_x64.exe
-        - xeox_service_windows.exe
-        - xeox-agent_*.exe
-        - xeox-agent_x86.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS:
+  - Windows
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - xeox-agent_x64.exe
+  - xeox_service_windows.exe
+  - xeox-agent_*.exe
+  - xeox-agent_x86.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.xeox.com'
-              - xeox.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.xeox.com'
+    - xeox.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_network_sigma.yml
-      Description: Detects potential network activity of Xeox RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_processes_sigma.yml
-      Description: Detects potential processes activity of Xeox RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_network_sigma.yml
+  Description: Detects potential network activity of Xeox RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/xeox_processes_sigma.yml
+  Description: Detects potential processes activity of Xeox RMM tool
 References:
-    - https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW
+- https://help.xeox.com/knowledge-base/gSuyNfDH6u79M82utnswf2/firewall-settings-xeox-agent-and-integrations/47T7S9tZJ2L1Z2W5gwuXoW
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: hs2n Informationstechnologie GmbH
+    certificate_thumbprint: 437B1AF6A59B63BCA9F070A90C2D92D527B96598
+    certificate_der_base64: MIID5TCCA4ygAwIBAgIQftXp/wUFPCkRi3oB86O6YjAKBggqhkjOPQQDAjBXMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMS4wLAYDVQQDEyVTZWN0aWdvIFB1YmxpYyBDb2RlIFNpZ25pbmcgQ0EgRVYgRTM2MB4XDTI1MDMwNDAwMDAwMFoXDTI4MDMwMzIzNTk1OVowgb4xEDAOBgNVBAUTBzI2MjUwNnAxEzARBgsrBgEEAYI3PAIBAxMCQVQxHTAbBgNVBA8TFFByaXZhdGUgT3JnYW5pemF0aW9uMQswCQYDVQQGEwJBVDERMA8GA1UECAwIS8Okcm50ZW4xKjAoBgNVBAoMIWhzMm4gSW5mb3JtYXRpb25zdGVjaG5vbG9naWUgR21iSDEqMCgGA1UEAwwhaHMybiBJbmZvcm1hdGlvbnN0ZWNobm9sb2dpZSBHbWJIMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEirubACd4pyg2wV7NMP4w3+MwwyGvYYyKfRRsyhJ040AE9GKAFzvTU+HZz16MjuoSF/9yw+bIhAZv+VN9snNGEXToDxZGHn5fWIIAjPmPHeOfdEf5vLmpcj+d7U69q+Tto4IBszCCAa8wHwYDVR0jBBgwFoAUGnSkONe5tg6zW/rcXq4/tvBzPYgwHQYDVR0OBBYEFM6/Jt8Xj5AXu0+mc2HCh7oVBDsTMA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMEkGA1UdIARCMEAwNQYMKwYBBAGyMQECAQYBMCUwIwYIKwYBBQUHAgEWF2h0dHBzOi8vc2VjdGlnby5jb20vQ1BTMAcGBWeBDAEDMEsGA1UdHwREMEIwQKA+oDyGOmh0dHA6Ly9jcmwuc2VjdGlnby5jb20vU2VjdGlnb1B1YmxpY0NvZGVTaWduaW5nQ0FFVkUzNi5jcmwwewYIKwYBBQUHAQEEbzBtMEYGCCsGAQUFBzAChjpodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29QdWJsaWNDb2RlU2lnbmluZ0NBRVZFMzYuY3J0MCMGCCsGAQUFBzABhhdodHRwOi8vb2NzcC5zZWN0aWdvLmNvbTAlBgNVHREEHjAcoBoGCCsGAQUFBwgDoA4wDAwKQVQtMjYyNTA2cDAKBggqhkjOPQQDAgNHADBEAiBjIGGhtTj7jqHG/QCtcbUnkpKupg1pXsVrZZiWt0lauwIgQCLMQg7g4hk9dgOG1PWYUsiKhrwmDaBbo7LV92prdv8=
+    src_file_sha256: d0bad90ead3f283a5914042d497613c522f61513c0a63005cb0e86d3297d1f40
+    src_file_path: downloaded_files/xeox/d0bad90ead3f283a5914042d497613c522f61513c0a63005cb0e86d3297d1f40
+    src_file_company: hs2n Informationstechnologie GmbH

@@ -1,178 +1,208 @@
 Name: AnyDesk
 Category: RMM
-Description: |
-    AnyDesk is a popular remote desktop software that enables users to access
-    and control a computer or device from a remote location. It was developed with the
-    primary goal of facilitating remote work, technical support, and collaboration between
-    individuals and teams.
+Description: 'AnyDesk is a popular remote desktop software that enables users to access
+
+  and control a computer or device from a remote location. It was developed with the
+
+  primary goal of facilitating remote work, technical support, and collaboration between
+
+  individuals and teams.
+
+  '
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-09-29'
 LastModified: '2023-09-29'
 Details:
-    Website: https://anydesk.com/en
-    PEMetadata:
-        - Filename: anydesk.exe
-          OriginalFileName: AnyDesk.exe
-          Description: AnyDesk
-          Product: AnyDesk
-    Privileges: User
-    Free: true
-    Verification: false
-    SupportedOS:
-        - Android
-        - ChromeOS
-        - IOS
-        - Linux
-        - Mac
-        - Windows
-    Capabilities:
-        - File Transfer
-        - File System Access
-        - Remote Control
-        - GUI Support
-        - Command line Support
-    Vulnerabilities:
-        - https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html
-    InstallationPaths:
-        - C:\Program Files (x86)\AnyDesk\*
-        - C:\Program Files\AnyDesk\*
-        - /Applications/AnyDesk.app
+  Website: https://anydesk.com/en
+  PEMetadata:
+  - Filename: anydesk.exe
+    OriginalFileName: AnyDesk.exe
+    Description: AnyDesk
+    Product: AnyDesk
+  Privileges: User
+  Free: true
+  Verification: false
+  SupportedOS:
+  - Android
+  - ChromeOS
+  - IOS
+  - Linux
+  - Mac
+  - Windows
+  Capabilities:
+  - File Transfer
+  - File System Access
+  - Remote Control
+  - GUI Support
+  - Command line Support
+  Vulnerabilities:
+  - https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html
+  InstallationPaths:
+  - C:\Program Files (x86)\AnyDesk\*
+  - C:\Program Files\AnyDesk\*
+  - /Applications/AnyDesk.app
 Artifacts:
-    Disk:
-        - File: '%programdata%\AnyDesk\ad_svc.trace'
-          Description: AnyDesk service log file. As well as ad.trace, we can determine the IP address of the other participant and its AnyDesk ID when a connection is established.
-          OS: Windows
-          Example:
-              - 'info 2022-08-23 10:20:11.969       gsvc   4628   3528    3                anynet.relay_conn - External address: 34.xx.xx.123:46798'
-        - File: '%programdata%\AnyDesk\connection_trace.txt'
-          Description: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)
-          OS: Windows
-          Example:
-              - Incoming 2022-08-23, 10:23 Passwd 547911884 547911884
-              - Incoming 2022-09-28, 12:39 User 442226597 442226597
-        - File: '%APPDATA%\AnyDesk\connection_trace.txt'
-          Description: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)
-          OS: Windows
-          Example:
-              - Incoming 2022-08-23, 10:23 Passwd 547911884 547911884
-              - Incoming 2022-09-28, 12:39 User 442226597 442226597
-        - File: '%APPDATA%\AnyDesk\ad.trace'
-          Description: AnyDesk user interface log file. In this log file, we can determine the IP address of the other participant and its AnyDesk ID. It is also possible to track events of file transfer. Below is the Client ID and external IP address of the remote participant.
-          OS: Windows
-          Example:
-              - 'info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Client-ID: 442226597 (FPR: 8e28a2a25b30).'
-              - info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Logged in from 12.xx.xx.21:59562 on relay 80e496c0.
-        - File: '%APPDATA%\AnyDesk\chat\*.txt'
-          Description: If the chat functionality is used, its entries will be printed in a text file in this folder.
-          OS: Windows
-        - File: '%APPDATA%\AnyDesk\user.conf'
-          Description: N/A
-          OS: Windows
-        - File: '%PROGRAMDATA%\AnyDesk\service.conf'
-          Description: Password can be set to auto-validate the session. The password will be saved in a salted hash format.
-          OS: Windows
-        - File: '%APPDATA%\AnyDesk\service.conf'
-          Description: N/A
-          OS: Windows
-        - File: '%APPDATA%\AnyDesk\system.conf'
-          Description: N/A
-          OS: Windows
-        - File: '%PROGRAMDATA%\AnyDesk\system.conf'
-          Description: N/A
-          OS: Windows
-        - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk.lnk'
-          Description: N/A
-          OS: Windows
-        - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk'
-          Description: N/A
-          OS: Windows
-        - File: C:\Users\*\Videos\AnyDesk\*.anydesk
-          Description: N/A
-          OS: Windows
-        - File: C:\Windows\SysWOW64\config\systemprofile\AppData\Roaming\AnyDesk\*
-          Description: N/A
-          OS: Windows
-        - File: ~/Library/Application Support/AnyDesk/Logs/
-          Description: N/A
-          OS: Mac
-        - File: ~/.config/AnyDesk/Logs/
-          Description: N/A
-          OS: Linux
-    EventLog:
-        - EventID: 7045
-          ProviderName: Service Control Manager
-          LogFile: System.evtx
-          ServiceName: AnyDesk Service
-          ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
-          Description: Service installation event as result of AnyDesk installation.
-        - EventID: 4697
-          ProviderName: Microsoft-Security-Auditing
-          LogFile: Security.evtx
-          ServiceName: AnyDesk Service
-          ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
-          Description: Service installation event as result of AnyDesk installation.
-    Registry:
-        - Path: HKLM\SOFTWARE\Clients\Media\AnyDesk
-          Description: N/A
-        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk
-          Description: N/A
-        - Path: HKLM\SOFTWARE\Classes\.anydesk\shell\open\command
-          Description: N/A
-        - Path: HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command
-          Description: N/A
-        - Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*
-          Description: N/A
-        - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk
-          Description: N/A
-        - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk
-          Description: N/A
-        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
-          Description: N/A
-    Network:
-        - Description: During setup the boot.net.anydesk.com domain is request over port 443
-          Domains:
-              - boot.net.anydesk.com
-          Ports:
-              - 443
-        - Description: N/A
-          Domains:
-              - relay-[a-f0-9]{8}.net.anydesk.com:443
-          Ports:
-              - 443
-        - Description: N/A
-          Domains:
-              - '*.anydesk.com'
-          Ports:
-              - 443
-    Other:
-        - Type: User-Agent
-          Value: AnyDesk/*
-        - Type: NamedPipe
-          Value: adprinterpipe
+  Disk:
+  - File: '%programdata%\AnyDesk\ad_svc.trace'
+    Description: AnyDesk service log file. As well as ad.trace, we can determine the
+      IP address of the other participant and its AnyDesk ID when a connection is
+      established.
+    OS: Windows
+    Example:
+    - 'info 2022-08-23 10:20:11.969       gsvc   4628   3528    3                anynet.relay_conn
+      - External address: 34.xx.xx.123:46798'
+  - File: '%programdata%\AnyDesk\connection_trace.txt'
+    Description: Incoming connection logs, contains IP Address of the remote machine
+      and file transfer activity. Only generated on target side. The content indicates
+      how the connection was approved (e.g. the local user authorized it, or a password
+      was used)
+    OS: Windows
+    Example:
+    - Incoming 2022-08-23, 10:23 Passwd 547911884 547911884
+    - Incoming 2022-09-28, 12:39 User 442226597 442226597
+  - File: '%APPDATA%\AnyDesk\connection_trace.txt'
+    Description: Incoming connection logs, contains IP Address of the remote machine
+      and file transfer activity. Only generated on target side. The content indicates
+      how the connection was approved (e.g. the local user authorized it, or a password
+      was used)
+    OS: Windows
+    Example:
+    - Incoming 2022-08-23, 10:23 Passwd 547911884 547911884
+    - Incoming 2022-09-28, 12:39 User 442226597 442226597
+  - File: '%APPDATA%\AnyDesk\ad.trace'
+    Description: AnyDesk user interface log file. In this log file, we can determine
+      the IP address of the other participant and its AnyDesk ID. It is also possible
+      to track events of file transfer. Below is the Client ID and external IP address
+      of the remote participant.
+    OS: Windows
+    Example:
+    - 'info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket
+      - Client-ID: 442226597 (FPR: 8e28a2a25b30).'
+    - info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket
+      - Logged in from 12.xx.xx.21:59562 on relay 80e496c0.
+  - File: '%APPDATA%\AnyDesk\chat\*.txt'
+    Description: If the chat functionality is used, its entries will be printed in
+      a text file in this folder.
+    OS: Windows
+  - File: '%APPDATA%\AnyDesk\user.conf'
+    Description: N/A
+    OS: Windows
+  - File: '%PROGRAMDATA%\AnyDesk\service.conf'
+    Description: Password can be set to auto-validate the session. The password will
+      be saved in a salted hash format.
+    OS: Windows
+  - File: '%APPDATA%\AnyDesk\service.conf'
+    Description: N/A
+    OS: Windows
+  - File: '%APPDATA%\AnyDesk\system.conf'
+    Description: N/A
+    OS: Windows
+  - File: '%PROGRAMDATA%\AnyDesk\system.conf'
+    Description: N/A
+    OS: Windows
+  - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk.lnk'
+    Description: N/A
+    OS: Windows
+  - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk'
+    Description: N/A
+    OS: Windows
+  - File: C:\Users\*\Videos\AnyDesk\*.anydesk
+    Description: N/A
+    OS: Windows
+  - File: C:\Windows\SysWOW64\config\systemprofile\AppData\Roaming\AnyDesk\*
+    Description: N/A
+    OS: Windows
+  - File: ~/Library/Application Support/AnyDesk/Logs/
+    Description: N/A
+    OS: Mac
+  - File: ~/.config/AnyDesk/Logs/
+    Description: N/A
+    OS: Linux
+  EventLog:
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: AnyDesk Service
+    ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
+    Description: Service installation event as result of AnyDesk installation.
+  - EventID: 4697
+    ProviderName: Microsoft-Security-Auditing
+    LogFile: Security.evtx
+    ServiceName: AnyDesk Service
+    ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
+    Description: Service installation event as result of AnyDesk installation.
+  Registry:
+  - Path: HKLM\SOFTWARE\Clients\Media\AnyDesk
+    Description: N/A
+  - Path: HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk
+    Description: N/A
+  - Path: HKLM\SOFTWARE\Classes\.anydesk\shell\open\command
+    Description: N/A
+  - Path: HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command
+    Description: N/A
+  - Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk
+      Printer\*
+    Description: N/A
+  - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk
+    Description: N/A
+  - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk
+    Description: N/A
+  - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
+    Description: N/A
+  Network:
+  - Description: During setup the boot.net.anydesk.com domain is request over port
+      443
+    Domains:
+    - boot.net.anydesk.com
+    Ports:
+    - 443
+  - Description: N/A
+    Domains:
+    - relay-[a-f0-9]{8}.net.anydesk.com:443
+    Ports:
+    - 443
+  - Description: N/A
+    Domains:
+    - '*.anydesk.com'
+    Ports:
+    - 443
+  Other:
+  - Type: User-Agent
+    Value: AnyDesk/*
+  - Type: NamedPipe
+    Value: adprinterpipe
 Detections:
-    - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/builtin/system/service_control_manager/win_system_service_install_anydesk.yml
-      Description: Anydesk Remote Access Software Service Installation
-    - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/file/file_event/file_event_win_anydesk_artefact.yml
-      Description: N/A
-    - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk.yml
-      Description: N/A
-    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml
-      Description: Remote Access Tool - AnyDesk Silent Installation
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_registry_sigma.yml
-      Description: Detects potential registry activity of AnyDesk RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_network_sigma.yml
-      Description: Detects potential network activity of AnyDesk RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_files_sigma.yml
-      Description: Detects potential files activity of AnyDesk RMM tool
+- Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/builtin/system/service_control_manager/win_system_service_install_anydesk.yml
+  Description: Anydesk Remote Access Software Service Installation
+- Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/file/file_event/file_event_win_anydesk_artefact.yml
+  Description: N/A
+- Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk.yml
+  Description: N/A
+- Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_silent_install.yml
+  Description: Remote Access Tool - AnyDesk Silent Installation
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_registry_sigma.yml
+  Description: Detects potential registry activity of AnyDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_network_sigma.yml
+  Description: Detects potential network activity of AnyDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_files_sigma.yml
+  Description: Detects potential files activity of AnyDesk RMM tool
 References:
-    - https://support.anydesk.com/knowledge/firewall
-    - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
-    - https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk
-    - https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/
+- https://support.anydesk.com/knowledge/firewall
+- https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
+- https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk
+- https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/
 Acknowledgement:
-    - Person: "Théo Letailleur"
-      Handle: in/theosyn
-    - Person: Ali Alwashali
-      Handle: '@ali_alwashali'
-    - Person: Nasreddine Bencherchali
-      Handle: '@nas_bench'
+- Person: Théo Letailleur
+  Handle: in/theosyn
+- Person: Ali Alwashali
+  Handle: '@ali_alwashali'
+- Person: Nasreddine Bencherchali
+  Handle: '@nas_bench'
+CodeSigning:
+  certificates:
+  - signer_name: AnyDesk Software GmbH
+    certificate_thumbprint: E5ABE8D3CEA37B45F3D3896B49FB91920B4A4E9D
+    certificate_der_base64: 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
+    src_file_sha256: 864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803
+    src_file_path: downloaded_files/anydesk/864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803
+    src_file_company: AnyDesk Software GmbH

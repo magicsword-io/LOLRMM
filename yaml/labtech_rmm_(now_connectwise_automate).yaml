@@ -1,38 +1,55 @@
 Name: LabTech RMM (Now ConnectWise Automate)
-Category: 'RMM'
-Description: LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management
+  (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - ltsvc.exe
-        - ltsvcmon.exe
-        - lttray.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ltsvc.exe
+  - ltsvcmon.exe
+  - lttray.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - connectwise.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - connectwise.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__network_sigma.yml
-      Description: Detects potential network activity of LabTech RMM (Now ConnectWise Automate) RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__processes_sigma.yml
-      Description: Detects potential processes activity of LabTech RMM (Now ConnectWise Automate) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__network_sigma.yml
+  Description: Detects potential network activity of LabTech RMM (Now ConnectWise
+    Automate) RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__processes_sigma.yml
+  Description: Detects potential processes activity of LabTech RMM (Now ConnectWise
+    Automate) RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: ConnectWise, LLC
+    certificate_thumbprint: DC69069188D5CBC5FE18B7D035C90061C8741E21
+    certificate_der_base64: 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
+    src_file_sha256: 66b1ef65896e9f91efd1e3347e70eb2cf1708e1ce2ca267fb4704858aa3ee028
+    src_file_path: downloaded_files/labtech_rmm_(now_connectwise_automate)/66b1ef65896e9f91efd1e3347e70eb2cf1708e1ce2ca267fb4704858aa3ee028
+    src_file_company: LabTech Software
+  - signer_name: ConnectWise, LLC
+    certificate_thumbprint: 70644D15A9833AE7E85FCC0D2146831978BEEFF4
+    certificate_der_base64: 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
+    src_file_sha256: 532d20a37c6493fae3144fa8aae0a2c3510f6bdc0a2683e9ce7970d6a22d65c2
+    src_file_path: downloaded_files/labtech_rmm_(now_connectwise_automate)/532d20a37c6493fae3144fa8aae0a2c3510f6bdc0a2683e9ce7970d6a22d65c2
+    src_file_company: LabTech Software

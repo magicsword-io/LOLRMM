@@ -1,42 +1,63 @@
 Name: SuperOps
-Category: 'RMM'
-Description: SuperOps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: SuperOps is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - superopsticket.exe
-        - superops.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - superopsticket.exe
+  - superops.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.superopsbeta.com'
-              - superops.ai
-              - serv.superopsalpha.com
-              - '*.superops.ai'
-              - '*.superopsalpha.com'
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.superopsbeta.com'
+    - superops.ai
+    - serv.superopsalpha.com
+    - '*.superops.ai'
+    - '*.superopsalpha.com'
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_network_sigma.yml
-      Description: Detects potential network activity of SuperOps RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_processes_sigma.yml
-      Description: Detects potential processes activity of SuperOps RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_network_sigma.yml
+  Description: Detects potential network activity of SuperOps RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/superops_processes_sigma.yml
+  Description: Detects potential processes activity of SuperOps RMM tool
 References:
-    - https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
+- https://support.superops.com/en/articles/6632028-how-to-download-and-deploy-the-agent
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: Superops Inc.
+    certificate_thumbprint: CBF98AFF4D4BD00B83018D60ABE11DDF95C34664
+    certificate_der_base64: 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
+    src_file_sha256: f086241d446a5898c068fcd684e90be3fa7a758dbfb8be9464660012ea4f63e6
+    src_file_path: downloaded_files/superops/f086241d446a5898c068fcd684e90be3fa7a758dbfb8be9464660012ea4f63e6
+    src_file_company: superopsticket
+  - signer_name: ISL Online Ltd.
+    certificate_thumbprint: FD412CA692ED576E5FA7723CB06ABE14077A2C67
+    certificate_der_base64: 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
+    src_file_sha256: eb2be7658c833c4abec241cd57c10ff12abe3af726f801c42894d0e541183871
+    src_file_path: downloaded_files/superops/eb2be7658c833c4abec241cd57c10ff12abe3af726f801c42894d0e541183871
+    src_file_company: XLAB d.o.o.
+  - signer_name: ISL Online Ltd.
+    certificate_thumbprint: 69D863EBB31F6E58D1511DE618489AB47BB0B361
+    certificate_der_base64: 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
+    src_file_sha256: 15576575fceb3ea566339e0a9c4baffbad3899adff992165d11834943dbc1d3d
+    src_file_path: downloaded_files/superops/15576575fceb3ea566339e0a9c4baffbad3899adff992165d11834943dbc1d3d
+    src_file_company: ISL Online Ltd.

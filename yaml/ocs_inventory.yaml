@@ -1,39 +1,48 @@
 Name: OCS inventory
-Category: 'RMM'
-Description: OCS inventory is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: OCS inventory is a remote monitoring and management (RMM) tool. More
+  information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - ocsinventory.exe
-        - ocsservice.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ocsinventory.exe
+  - ocsservice.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - user_managed
-              - ocsinventory-ng.org
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - user_managed
+    - ocsinventory-ng.org
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_network_sigma.yml
-      Description: Detects potential network activity of OCS inventory RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_processes_sigma.yml
-      Description: Detects potential processes activity of OCS inventory RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_network_sigma.yml
+  Description: Detects potential network activity of OCS inventory RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ocs_inventory_processes_sigma.yml
+  Description: Detects potential processes activity of OCS inventory RMM tool
 References:
-    - https://ocsinventory-ng.org/?page_id=878&lang=en
+- https://ocsinventory-ng.org/?page_id=878&lang=en
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: EZ Web Enterprises Inc.
+    certificate_thumbprint: 8E0F648B184E52B121958F5A043F6A7E9A27F8B1
+    certificate_der_base64: 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
+    src_file_sha256: 5040a28ce56fdf1d3cb6719e2a13dd641c7455bd3cb85383e8ee66f17290f8d4
+    src_file_path: downloaded_files/ocs_inventory/5040a28ce56fdf1d3cb6719e2a13dd641c7455bd3cb85383e8ee66f17290f8d4
+    src_file_company: OCS Inventory

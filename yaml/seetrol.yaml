@@ -1,41 +1,50 @@
 Name: Seetrol
-Category: 'RMM'
-Description: Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Seetrol is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - seetrolcenter.exe
-        - seetrolclient.exe
-        - seetrolmyservice.exe
-        - seetrolremote.exe
-        - seetrolsetting.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - seetrolcenter.exe
+  - seetrolclient.exe
+  - seetrolmyservice.exe
+  - seetrolremote.exe
+  - seetrolsetting.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - seetrol.co.kr
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - seetrol.co.kr
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_network_sigma.yml
-      Description: Detects potential network activity of Seetrol RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_processes_sigma.yml
-      Description: Detects potential processes activity of Seetrol RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_network_sigma.yml
+  Description: Detects potential network activity of Seetrol RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/seetrol_processes_sigma.yml
+  Description: Detects potential processes activity of Seetrol RMM tool
 References:
-    - http://www.seetrol.com/en/features/features3.php
+- http://www.seetrol.com/en/features/features3.php
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: Knowhow Electel Inc.
+    certificate_thumbprint: 205E6A6C500F8B5E36DDA0FBF791D96EF55FCB03
+    certificate_der_base64: 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
+    src_file_sha256: d3aadff853f04dd787a094f8237e23f86f0909c87f2507d759036c2f35816190
+    src_file_path: downloaded_files/seetrol/d3aadff853f04dd787a094f8237e23f86f0909c87f2507d759036c2f35816190
+    src_file_company: Knowhow Electel Inc.

@@ -1,40 +1,49 @@
 Name: GotoHTTP
-Category: 'RMM'
-Description: GotoHTTP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: GotoHTTP is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - GotoHTTP_x64.exe
-        - gotohttp.exe
-        - GotoHTTP*.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - GotoHTTP_x64.exe
+  - gotohttp.exe
+  - GotoHTTP*.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.gotohttp.com'
-              - gotohttp.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.gotohttp.com'
+    - gotohttp.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_network_sigma.yml
-      Description: Detects potential network activity of GotoHTTP RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_processes_sigma.yml
-      Description: Detects potential processes activity of GotoHTTP RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_network_sigma.yml
+  Description: Detects potential network activity of GotoHTTP RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotohttp_processes_sigma.yml
+  Description: Detects potential processes activity of GotoHTTP RMM tool
 References:
-    - https://gotohttp.com/goto/help.12x
+- https://gotohttp.com/goto/help.12x
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: 合肥屏播网络科技有限公司
+    certificate_thumbprint: 9B4608217ED049C33A9D76184479BCAB06D957DC
+    certificate_der_base64: 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
+    src_file_sha256: baa575f60e834659befcce4a23c2be4ab5e2d8267f9e6558e01f8e915ccb0247
+    src_file_path: downloaded_files/gotohttp/baa575f60e834659befcce4a23c2be4ab5e2d8267f9e6558e01f8e915ccb0247
+    src_file_company: Pingbo Inc

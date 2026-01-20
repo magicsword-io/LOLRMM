@@ -1,106 +1,120 @@
 Name: HopToDesk
-Category: 'RMM'
-Description: HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed being used by ransomware actors as a fallback when Quick Assist is blocked. HopToDesk creates firewall rules automatically and installs itself in Program Files. The tool communicates with signal servers and uses TURN servers for connectivity.
+Category: RMM
+Description: HopToDesk is an open-source remote desktop tool similar to RustDesk.
+  The tool has been observed being used by ransomware actors as a fallback when Quick
+  Assist is blocked. HopToDesk creates firewall rules automatically and installs itself
+  in Program Files. The tool communicates with signal servers and uses TURN servers
+  for connectivity.
 Author: Michael Haag
 Created: '2026-01-15'
 LastModified: '2026-01-15'
 Details:
-    Website: https://www.hoptodesk.com/
-    PEMetadata:
-        - Filename: HopToDesk.exe
-          OriginalFileName: ''
-          Description: HopToDesk remote desktop application (verified via VirusTotal)
-    Privileges: User/SYSTEM
-    Free: Open Source
-    Verification: Code-signed by Sectigo
-    SupportedOS:
-        - Windows
-        - Mac
-        - Linux
-        - Android
-    Capabilities:
-        - Remote Control
-        - Remote Desktop
-        - Screen Sharing
-        - File Transfer
-    Vulnerabilities: []
-    InstallationPaths:
-        - C:\Program Files (x86)\HopToDesk\HopToDesk.exe
-        - HopToDesk.exe
-        - HopToDesk-Standalone.exe
+  Website: https://www.hoptodesk.com/
+  PEMetadata:
+  - Filename: HopToDesk.exe
+    OriginalFileName: ''
+    Description: HopToDesk remote desktop application (verified via VirusTotal)
+  Privileges: User/SYSTEM
+  Free: Open Source
+  Verification: Code-signed by Sectigo
+  SupportedOS:
+  - Windows
+  - Mac
+  - Linux
+  - Android
+  Capabilities:
+  - Remote Control
+  - Remote Desktop
+  - Screen Sharing
+  - File Transfer
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Program Files (x86)\HopToDesk\HopToDesk.exe
+  - HopToDesk.exe
+  - HopToDesk-Standalone.exe
 Artifacts:
-    Disk:
-        - File: C:\Program Files (x86)\HopToDesk\HopToDesk.exe
-          Description: HopToDesk application executable (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Program Files (x86)\HopToDesk\privacyhelper.exe
-          Description: HopToDesk privacy helper executable (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Program Files (x86)\HopToDesk\PrivacyMode.dll
-          Description: HopToDesk privacy mode library (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Program Files (x86)\HopToDesk\sciter.dll
-          Description: HopToDesk Sciter UI library (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Users\*\AppData\Local\Temp\sciter.dll
-          Description: HopToDesk UI library (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Users\*\AppData\Local\Temp\privacyhelper.exe
-          Description: HopToDesk privacy helper (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\*
-          Description: HopToDesk configuration files (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\hoptodesk.toml
-          Description: HopToDesk configuration file (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml
-          Description: HopToDesk configuration file (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk_rCURRENT.log
-          Description: HopToDesk log file (verified via VirusTotal sandbox analysis)
-          OS: Windows
-        - File: /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
-          Description: HopToDesk log file (verified via VirusTotal sandbox analysis)
-          OS: MacOS
-    EventLog:
-        - EventID: 7045
-          Description: Service installation event for HopToDesk
-          OS: Windows
-    Registry:
-        - Path: HKEY_CURRENT_USER\Software\Classes\HopToDesk\shell\open\command
-          Description: HopToDesk URL protocol handler
-          OS: Windows
-        - Path: HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\HopToDesk
-          Description: HopToDesk uninstall registry key
-          OS: Windows
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - hoptodesk.com
-              - api.hoptodesk.com
-              - signal.hoptodesk.com
-              - turn.hoptodesk.com
-              - download.hoptodesk.com
-              - www.hoptodesk.com
-          Ports:
-              - 443
+  Disk:
+  - File: C:\Program Files (x86)\HopToDesk\HopToDesk.exe
+    Description: HopToDesk application executable (verified via VirusTotal sandbox
+      analysis)
+    OS: Windows
+  - File: C:\Program Files (x86)\HopToDesk\privacyhelper.exe
+    Description: HopToDesk privacy helper executable (verified via VirusTotal sandbox
+      analysis)
+    OS: Windows
+  - File: C:\Program Files (x86)\HopToDesk\PrivacyMode.dll
+    Description: HopToDesk privacy mode library (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: C:\Program Files (x86)\HopToDesk\sciter.dll
+    Description: HopToDesk Sciter UI library (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: C:\Users\*\AppData\Local\Temp\sciter.dll
+    Description: HopToDesk UI library (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: C:\Users\*\AppData\Local\Temp\privacyhelper.exe
+    Description: HopToDesk privacy helper (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: C:\Users\*\AppData\Roaming\HopToDesk\config\*
+    Description: HopToDesk configuration files (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: C:\Users\*\AppData\Roaming\HopToDesk\config\hoptodesk.toml
+    Description: HopToDesk configuration file (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml
+    Description: HopToDesk configuration file (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk_rCURRENT.log
+    Description: HopToDesk log file (verified via VirusTotal sandbox analysis)
+    OS: Windows
+  - File: /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
+    Description: HopToDesk log file (verified via VirusTotal sandbox analysis)
+    OS: MacOS
+  EventLog:
+  - EventID: 7045
+    Description: Service installation event for HopToDesk
+    OS: Windows
+  Registry:
+  - Path: HKEY_CURRENT_USER\Software\Classes\HopToDesk\shell\open\command
+    Description: HopToDesk URL protocol handler
+    OS: Windows
+  - Path: HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\HopToDesk
+    Description: HopToDesk uninstall registry key
+    OS: Windows
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - hoptodesk.com
+    - api.hoptodesk.com
+    - signal.hoptodesk.com
+    - turn.hoptodesk.com
+    - download.hoptodesk.com
+    - www.hoptodesk.com
+    Ports:
+    - 443
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_network_sigma.yml
-      Description: Detects potential network activity of HopToDesk RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_files_sigma.yml
-      Description: Detects potential files activity of HopToDesk RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_processes_sigma.yml
-      Description: Detects potential processes activity of HopToDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_network_sigma.yml
+  Description: Detects potential network activity of HopToDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_files_sigma.yml
+  Description: Detects potential files activity of HopToDesk RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hoptodesk_processes_sigma.yml
+  Description: Detects potential processes activity of HopToDesk RMM tool
 References:
-    - https://www.hoptodesk.com/#faqlink
-    - https://gitlab.com/hoptodesk/hoptodesk
-    - https://github.com/magicsword-io/LOLRMM/issues/92
-    - https://www.hoptodesk.com/
-    - https://www.virustotal.com/gui/file/ebd2c015cc43e0fedf0122768d65e3256d78c57422111a3ad21efe7663507ee5/details
-    - https://gitlab.com/hoptodesk/hoptodesk/
+- https://www.hoptodesk.com/#faqlink
+- https://gitlab.com/hoptodesk/hoptodesk
+- https://github.com/magicsword-io/LOLRMM/issues/92
+- https://www.hoptodesk.com/
+- https://www.virustotal.com/gui/file/ebd2c015cc43e0fedf0122768d65e3256d78c57422111a3ad21efe7663507ee5/details
+- https://gitlab.com/hoptodesk/hoptodesk/
 Acknowledgement:
-    - Person: Tyler Schultz
-      Handle: '@shockwave_ts'
-    - Person: rcKillam
-      Handle: '@rcKillam'
+- Person: Tyler Schultz
+  Handle: '@shockwave_ts'
+- Person: rcKillam
+  Handle: '@rcKillam'
+CodeSigning:
+  certificates:
+  - signer_name: Begonia Holdings LLC
+    certificate_thumbprint: 127CAC9785F8C5F1A88CE70CE1109A4CA3A4CA01
+    certificate_der_base64: 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
+    src_file_sha256: 99b2948fd10b23b6d36e035b60cb92b9b82fb0bd4003e6d28f950f0b227cae2d
+    src_file_path: downloaded_files/hoptodesk/99b2948fd10b23b6d36e035b60cb92b9b82fb0bd4003e6d28f950f0b227cae2d
+    src_file_company: Begonia Holdings

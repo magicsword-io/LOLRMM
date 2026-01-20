@@ -1,65 +1,88 @@
 Name: Mouse Without Borders
 Category: RMM
-Description: Mouse Without Borders is a Microsoft Garage utility that lets you control up to four Windows computers with a single keyboard and mouse, with clipboard sharing and simple drag-and-drop file transfers.
+Description: 'Mouse Without Borders is a Microsoft Garage utility that lets you control
+  up to four Windows computers with a single keyboard and mouse, with clipboard sharing
+  and simple drag-and-drop file transfers.
+
+  
+  **IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates
+  that are also used to sign numerous other Microsoft products and Windows components.
+  Do NOT blindly block these certificate thumbprints as doing so will likely break
+  essential Windows functionality and other Microsoft applications in your environment.
+  Use certificate data for detection, hunting, and analysis purposes only.'
 Author: Microsoft
 Created: '2011-09-12'
 LastModified: '2011-09-12'
 Details:
-    Website: https://www.microsoft.com/en-us/download/details.aspx?id=35460
-    PEMetadata:
-        Filename: MouseWithoutBorders.exe
-        OriginalFileName: MouseWithoutBorders.exe
-        Description: Mouse Without Borders
-        Product: Mouse Without Borders
-    Privileges: User; optional Service Mode for elevated apps
-    Free: true
-    Verification: true
-    SupportedOS:
-        - Windows
-    Capabilities:
-        - Multi-computer input sharing
-        - Clipboard sharing
-        - Drag-and-drop file transfer (up to 100 MB)
-        - Optional service for elevated app control
-    Vulnerabilities: []
-    InstallationPaths:
-        - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
+  Website: https://www.microsoft.com/en-us/download/details.aspx?id=35460
+  PEMetadata:
+    Filename: MouseWithoutBorders.exe
+    OriginalFileName: MouseWithoutBorders.exe
+    Description: Mouse Without Borders
+    Product: Mouse Without Borders
+  Privileges: User; optional Service Mode for elevated apps
+  Free: true
+  Verification: true
+  SupportedOS:
+  - Windows
+  Capabilities:
+  - Multi-computer input sharing
+  - Clipboard sharing
+  - Drag-and-drop file transfer (up to 100 MB)
+  - Optional service for elevated app control
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
 Artifacts:
-    Disk:
-        - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBorders.exe
-          Description: Main application binary
-          OS: Windows
-          Example:
-              - 'SHA256: 0DE3E5D76E1359EEA6AAAD2A37F8D787CF4E1D686C4AB45C8221556CF5982BA1'
-        - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
-          Description: Optional service binary when Service Mode is enabled
-          OS: Windows
-          Example:
-              - 'SHA256: D65D44126E2327891BA426A09471DF0564456A9B37AAD8B3453D2D5B06F6AEF3'
-        - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersHelper.exe
-          Description: Helper executable used by Mouse Without Borders
-          OS: Windows
-          Example:
-              - 'SHA256: D7E8F30B3F87373E89E8DEC1273F161C478E621E2450279A01A3D0914D754B4F'
-    EventLog:
-        - EventID: 7045
-          ProviderName: Service Control Manager
-          LogFile: System.evtx
-          ServiceName: Mouse without Borders Service
-          ImagePath: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
-          Description: Service installed (user mode service), auto start, account LocalSystem
-    Network:
-        - Description: Peer discovery and control traffic
-          Domains: []
-          Ports:
-              - 15100/tcp
-              - 15101/tcp
+  Disk:
+  - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBorders.exe
+    Description: Main application binary
+    OS: Windows
+    Example:
+    - 'SHA256: 0DE3E5D76E1359EEA6AAAD2A37F8D787CF4E1D686C4AB45C8221556CF5982BA1'
+  - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
+    Description: Optional service binary when Service Mode is enabled
+    OS: Windows
+    Example:
+    - 'SHA256: D65D44126E2327891BA426A09471DF0564456A9B37AAD8B3453D2D5B06F6AEF3'
+  - File: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersHelper.exe
+    Description: Helper executable used by Mouse Without Borders
+    OS: Windows
+    Example:
+    - 'SHA256: D7E8F30B3F87373E89E8DEC1273F161C478E621E2450279A01A3D0914D754B4F'
+  EventLog:
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: Mouse without Borders Service
+    ImagePath: C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\MouseWithoutBordersSvc.exe
+    Description: Service installed (user mode service), auto start, account LocalSystem
+  Network:
+  - Description: Peer discovery and control traffic
+    Domains: []
+    Ports:
+    - 15100/tcp
+    - 15101/tcp
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mouse_without_borders_files_sigma.yml
-      Description: Detects potential files activity of Mouse Without Borders RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mouse_without_borders_files_sigma.yml
+  Description: Detects potential files activity of Mouse Without Borders RMM tool
 References:
-    - https://www.microsoft.com/en-us/download/details.aspx?id=35460
-    - https://learn.microsoft.com/windows/powertoys/mouse-without-borders
-    - https://github.com/microsoft/PowerToys/issues/29700
+- https://www.microsoft.com/en-us/download/details.aspx?id=35460
+- https://learn.microsoft.com/windows/powertoys/mouse-without-borders
+- https://github.com/microsoft/PowerToys/issues/29700
 Acknowledgement:
-    - Person: Michael Haag
+- Person: Michael Haag
+CodeSigning:
+  certificates:
+  - signer_name: Microsoft Corporation
+    certificate_thumbprint: F5877012FBD62FABCBDC8D8CEE9C9585BA30DF79
+    certificate_der_base64: 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
+    src_file_sha256: bf283be664cacfb08009f3996a7907fccebf7e0502652ef40582d64238fdfe22
+    src_file_path: downloaded_files/mouse_without_borders/bf283be664cacfb08009f3996a7907fccebf7e0502652ef40582d64238fdfe22
+    src_file_company: Microsoft Corporation
+  - signer_name: Microsoft Corporation
+    certificate_thumbprint: 3F56A45111684D454E231CFDC4DA5C8D370F9816
+    certificate_der_base64: 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
+    src_file_sha256: f4b2e2dac7ba4458f79e7333d093b5259c18300ad201bfcb9b4674c00109815d
+    src_file_path: downloaded_files/mouse_without_borders/f4b2e2dac7ba4458f79e7333d093b5259c18300ad201bfcb9b4674c00109815d
+    src_file_company: Microsoft Corporation

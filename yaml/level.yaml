@@ -1,73 +1,87 @@
 Name: Level
-Category: 'RMM'
-Description: Level is a remote monitoring and management (RMM) tool. Threat actors ...
+Category: RMM
+Description: Level is a remote monitoring and management (RMM) tool. Threat actors
+  ...
 Author: Christian Henriksen, ITM8 | Improsec
 Created: '2024-02-11'
 LastModified: '2024-02-11'
 Details:
-    Website: https://level.io/
-    PEMetadata:
-        Filename: level.exe
-        OriginalFileName: ''
-        Description: ''
-    Privileges: User
-    Free: Free
-    Verification: 'True'
-    SupportedOS:
-        - Windows
-    Capabilities:
-        - File Transfer
-        - File System Access
-        - Remote Control
-        - Automation & Scripting
-    InstallationPaths:
-        - C:\Program Files\Level\*
+  Website: https://level.io/
+  PEMetadata:
+    Filename: level.exe
+    OriginalFileName: ''
+    Description: ''
+  Privileges: User
+  Free: Free
+  Verification: 'True'
+  SupportedOS:
+  - Windows
+  Capabilities:
+  - File Transfer
+  - File System Access
+  - Remote Control
+  - Automation & Scripting
+  InstallationPaths:
+  - C:\Program Files\Level\*
 Artifacts:
-    Disk:
-        - File: C:\Program Files\Level\level.exe
-          Description: Level Binary
-          OS: Windows
-        - File: C:\Program Files\Level\osqueryi.exe
-          Description: A tool used by level to collect machine state information.
-          OS: Windows
-        - File: C:\Program Files\Level\level.log
-          Description: Client log file for Level.
-          OS: Windows
-    EventLog:
-        - EventID: 4698
-          ProviderName: Microsoft-Windows-Security-Auditing
-          LogFile: Security.evtx
-          TaskName: Level Watchdog
-          Location: \Level
-          Description: To ensure the Level agent is always running, a scheduled task...
-        - EventID: 4697
-          ProviderName: Microsoft-Windows-Security-Auditing
-          LogFile: Security.evtx
-          ServiceName: Level
-          ServiceFileName: C:\Program Files\Level\level.exe --key <KEY> --action=run
-          ServiceAccount: LocalSystem
-          ServiceStartType: 2
-          Description: The Level Agent Service ...
-        - EventID: 4798
-          ProviderName: Microsoft-Windows-Security-Auditing
-          LogFile: Security.evtx
-          CallerProcessName: C:\Program Files\Level\osqueri.exe
-          Description: Evidence of osqueryi doing automatic user/group enumeration.
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - level.io
-              - builds.level.io
-              - agents.level.io
-              - online.level.io
-              - downloads.io
-          Ports:
-              - 443
+  Disk:
+  - File: C:\Program Files\Level\level.exe
+    Description: Level Binary
+    OS: Windows
+  - File: C:\Program Files\Level\osqueryi.exe
+    Description: A tool used by level to collect machine state information.
+    OS: Windows
+  - File: C:\Program Files\Level\level.log
+    Description: Client log file for Level.
+    OS: Windows
+  EventLog:
+  - EventID: 4698
+    ProviderName: Microsoft-Windows-Security-Auditing
+    LogFile: Security.evtx
+    TaskName: Level Watchdog
+    Location: \Level
+    Description: To ensure the Level agent is always running, a scheduled task...
+  - EventID: 4697
+    ProviderName: Microsoft-Windows-Security-Auditing
+    LogFile: Security.evtx
+    ServiceName: Level
+    ServiceFileName: C:\Program Files\Level\level.exe --key <KEY> --action=run
+    ServiceAccount: LocalSystem
+    ServiceStartType: 2
+    Description: The Level Agent Service ...
+  - EventID: 4798
+    ProviderName: Microsoft-Windows-Security-Auditing
+    LogFile: Security.evtx
+    CallerProcessName: C:\Program Files\Level\osqueri.exe
+    Description: Evidence of osqueryi doing automatic user/group enumeration.
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - level.io
+    - builds.level.io
+    - agents.level.io
+    - online.level.io
+    - downloads.io
+    Ports:
+    - 443
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
-      Description: Detects potential network activity of Level RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml
-      Description: Detects potential files activity of Level RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_network_sigma.yml
+  Description: Detects potential network activity of Level RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml
+  Description: Detects potential files activity of Level RMM tool
 References:
-    - https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
-    - https://docs.level.io/en/articles/9926456-level-watchdog-task
+- https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
+- https://docs.level.io/en/articles/9926456-level-watchdog-task
+CodeSigning:
+  certificates:
+  - signer_name: win.rar GmbH
+    certificate_thumbprint: 729AE1F8B489DE176CC099FF49937F85F9E412F7
+    certificate_der_base64: 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
+    src_file_sha256: 9ce73bf30a1b85bb85dc02b0177ec362b39587e48b968b411a9ae5cc0557a7c6
+    src_file_path: downloaded_files/level/9ce73bf30a1b85bb85dc02b0177ec362b39587e48b968b411a9ae5cc0557a7c6
+    src_file_company: Alexander Roshal
+  - signer_name: Level Software, Inc.
+    certificate_thumbprint: 3C002DCBBCB603AE08699F4CEF973864AEB16860
+    certificate_der_base64: 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
+    src_file_sha256: 075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83
+    src_file_path: downloaded_files/level/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83

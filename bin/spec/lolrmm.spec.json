@@ -193,8 +193,12 @@
           "items": {
             "type": "object",
             "properties": {
+              "src_file_path": { 
+                "type": ["string", "null"],
+                "description": "Path to the binary the certificate was extracted from"
+              },
               "src_file_sha256": { 
-                "type": "string",
+                "type": ["string", "null"],
                 "description": "SHA256 hash of the binary the certificate was extracted from"
               },
               "src_file_company": { 

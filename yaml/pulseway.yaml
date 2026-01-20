@@ -1,38 +1,47 @@
 Name: Pulseway
-Category: 'RMM'
-Description: Pulseway is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Pulseway is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - PCMonitorManager.exe
-        - pcmonitorsrv.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - PCMonitorManager.exe
+  - pcmonitorsrv.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - pulseway.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - pulseway.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_network_sigma.yml
-      Description: Detects potential network activity of Pulseway RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_processes_sigma.yml
-      Description: Detects potential processes activity of Pulseway RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_network_sigma.yml
+  Description: Detects potential network activity of Pulseway RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pulseway_processes_sigma.yml
+  Description: Detects potential processes activity of Pulseway RMM tool
 References:
-    - https://intercom.help/pulseway/en/
+- https://intercom.help/pulseway/en/
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: Kaseya Holdings Inc.
+    certificate_thumbprint: A5C8E6B60B46C4BAE41E1D353873A0A587F11CD5
+    certificate_der_base64: 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
+    src_file_sha256: f6f60040d1adeaa011f8a2459e58ac3dfb59c190f45a45fb4ed1f9717ad4ec47
+    src_file_path: downloaded_files/pulseway/f6f60040d1adeaa011f8a2459e58ac3dfb59c190f45a45fb4ed1f9717ad4ec47
+    src_file_company: MMSOFT Design Ltd.

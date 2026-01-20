@@ -1,40 +1,49 @@
 Name: SunLogin
-Category: 'RMM'
-Description: SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: SunLogin is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - OrayRemoteShell.exe
-        - OrayRemoteService.exe
-        - sunlogin*.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - OrayRemoteShell.exe
+  - OrayRemoteService.exe
+  - sunlogin*.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - sunlogin.oray.com
-              - client.oray.net
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - sunlogin.oray.com
+    - client.oray.net
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_network_sigma.yml
-      Description: Detects potential network activity of SunLogin RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_processes_sigma.yml
-      Description: Detects potential processes activity of SunLogin RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_network_sigma.yml
+  Description: Detects potential network activity of SunLogin RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/sunlogin_processes_sigma.yml
+  Description: Detects potential processes activity of SunLogin RMM tool
 References:
-    - https://sunlogin.oray.com/en/embed/software.html
+- https://sunlogin.oray.com/en/embed/software.html
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: 上海贝锐信息科技股份有限公司
+    certificate_thumbprint: CD22D7228E666132008B90BB8D2D143BFD36D4EF
+    certificate_der_base64: MIIH8DCCBdigAwIBAgIQBKWhM+f+21PI8WaHz7xO2zANBgkqhkiG9w0BAQsFADBpMQswCQYDVQQGEwJVUzEXMBUGA1UEChMORGlnaUNlcnQsIEluYy4xQTA/BgNVBAMTOERpZ2lDZXJ0IFRydXN0ZWQgRzQgQ29kZSBTaWduaW5nIFJTQTQwOTYgU0hBMzg0IDIwMjEgQ0ExMB4XDTIzMDQwNDAwMDAwMFoXDTI2MDQwNDIzNTk1OVowgfgxEzARBgsrBgEEAYI3PAIBAxMCQ04xGjAYBgsrBgEEAYI3PAIBAgwJ5LiK5rW35biCMR0wGwYDVQQPDBRQcml2YXRlIE9yZ2FuaXphdGlvbjEbMBkGA1UEBRMSOTEzMTAxMTA3ODc4NjI0MTJCMQswCQYDVQQGEwJDTjESMBAGA1UECAwJ5LiK5rW35biCMTMwMQYDVQQKDCrkuIrmtbfotJ3plJDkv6Hmga/np5HmioDogqHku73mnInpmZDlhazlj7gxMzAxBgNVBAMMKuS4iua1t+i0nemUkOS/oeaBr+enkeaKgOiCoeS7veaciemZkOWFrOWPuDCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAOJopQDuM9BxJ5WQmgHCz7fs1zZChUYjOW19C+SUsKAgy3cRP/Bfm2KeJtbXig4TDnFVdv09k2+MjqDAO1lferKQcm8wc2vKG6Ft2r+AS0eUhz+IdmxvVsPUUCpFbsAkHt5uHtb8LBJyXqFrYeyhVccRbcxZHTAeyHCzHcUOkSUxckEBj6CT94xzWxN/idh96ldDWWf8vrJmlSRtLXJFhSWUtMyuXbz6xydd1R8xE185F1AWNRgGXb8IEkrYcaqdj84nzzDnCJoPvcc0pPBxPG+YWucmid0JFO6E+Vvdmd6Sk/IHk3eyYTUJwQ5CuJJ/B2DgtZQdIFZdjDGuIBOPXqXGj2orusB2wBW4iJiJqRYSL4MVwsO8EGPofzecAXBuXx73cj0M+LI4NOpFOlBTKKBVSd7PsD4epEqUev2HbGQSsIZm3I6NFk78duAqK1hAfBwdyq9QuvczQkECOcQYnfAXoWRRmfUDl5dRyn/ahjJT+oUTbykufgGSWgOWEvf8hRFyakKo2w/Xn19GEjYHTN5spJu7xsisLdSVUN2jUU0bk1UX0AnvAiUcX7h4g/L4pATsOsLl9ON6GGP0nDsDI4GGKnlCabDDzla2/lMv+tScLZ+niEg8dK+/g0diLol0NVtyq6oaouCVWYlRoLKcBBbYhBtVvb5gFM1sqUsi/aTbAgMBAAGjggICMIIB/jAfBgNVHSMEGDAWgBRoN+Drtjv4XxGG+/5hewiIZfROQjAdBgNVHQ4EFgQUt9sRSy3XECe+vKv4UsxMowQ74twwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMIG1BgNVHR8Ega0wgaowU6BRoE+GTWh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydFRydXN0ZWRHNENvZGVTaWduaW5nUlNBNDA5NlNIQTM4NDIwMjFDQTEuY3JsMFOgUaBPhk1odHRwOi8vY3JsNC5kaWdpY2VydC5jb20vRGlnaUNlcnRUcnVzdGVkRzRDb2RlU2lnbmluZ1JTQTQwOTZTSEEzODQyMDIxQ0ExLmNybDA9BgNVHSAENjA0MDIGBWeBDAEDMCkwJwYIKwYBBQUHAgEWG2h0dHA6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzCBlAYIKwYBBQUHAQEEgYcwgYQwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBcBggrBgEFBQcwAoZQaHR0cDovL2NhY2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0VHJ1c3RlZEc0Q29kZVNpZ25pbmdSU0E0MDk2U0hBMzg0MjAyMUNBMS5jcnQwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAgEAwAPmorGMuQZuc8m3oJbb01jgyxLubzW7DKTFBouZO+NzB/i8UceGCK6/F03YgMHsp2Q8+a7P9fhxfOUlAzE11cSL69JPX7z9Vk5rZmbbWiH0TqpcxdFt9MI8RvRXAkM9wcAUIjmH8KxLAFeCDEzknH2JlyH+IBQZutAtEBm+o52qiUPyvhcR/rMNYuXSR7qbuReSApg3PpwCzgQEYojzrxMHcN8jl85lgOJvC1VLARjWijwVomArA3ep2aiMWyZEuGq6qBFxeUkyTxbJ+LIA4UTYuNv3b65s1M9tKFJk9yjhGaJNEkhfoxl1gwix1Z7/s47rktEy2SbPFila7n1ONs6mPiKC/QR6lfEgLk332ikLJw16zlx9bfst5wwd+tpxSNwvJP0uOGkK8+7/0pgjjip7M2bO2+jn9xmJ5xZA65QOloM/ldvbO4D0jjIXchSEj56UaDYxTGQOXcRo/8j+ZTkT5BKrwYni48fEyLWuKNYH/u3QgtfQHWmrCwMm8qgLPNUO4K7OtGDKWgOPIaUIIx9paJmu8vm+gTi8x0dsnYAPFgnTeiqeYf7+FMYlUAMdrcxfcHw/avsC62/v59nwopRMNASljjHjuhiCKnsapK/U2ClZxIhCEzyw1zD6PnukZDgkm1Vy8uOfa2FkHqEuAMA4ICbeFt8OKwLWTYeA1Uo=
+    src_file_sha256: 9dc5b48a39bb21f43f89130c69e25db29f832843f2cd1f0e6cc33b19a962079f
+    src_file_path: downloaded_files/sunlogin/9dc5b48a39bb21f43f89130c69e25db29f832843f2cd1f0e6cc33b19a962079f
+    src_file_company: Shanghai Best Oray Information Technology Co., Ltd.

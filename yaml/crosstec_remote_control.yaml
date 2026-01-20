@@ -1,7 +1,14 @@
 Name: CrossTec Remote Control
 Category: RMM
-Description: CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it
+Description: 'CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it
   becomes available.
+
+  
+  **IMPORTANT**: Some components of this tool may be signed with legitimate Microsoft
+  Windows Component Publisher certificates that are used to sign Windows system components.
+  Do NOT blindly block Microsoft certificate thumbprints as doing so will break Windows
+  functionality in your environment. Use certificate data for detection, hunting,
+  and analysis purposes only.'
 Author: ''
 Created: '2024-08-02'
 LastModified: '2025-12-14'

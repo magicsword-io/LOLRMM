@@ -1,7 +1,15 @@
 Name: Netviewer (GoToMeet)
 Category: RMM
-Description: Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes
+Description: 'Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes
   available.
+
+  
+  **IMPORTANT**: Some components of this tool may be signed with legitimate Microsoft
+  Corporation certificates that are also used to sign numerous other Microsoft products
+  and Windows components. Do NOT blindly block Microsoft certificate thumbprints
+  as doing so will likely break essential Windows functionality and other Microsoft
+  applications in your environment. Use certificate data for detection, hunting,
+  and analysis purposes only.'
 Author: ''
 Created: '2024-08-02'
 LastModified: '2025-12-14'

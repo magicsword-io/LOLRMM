@@ -1,40 +1,55 @@
 Name: Rapid7
-Category: 'RMM'
-Description: Rapid7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Rapid7 is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - ir_agent.exe
-        - rapid7_agent_core.exe
-        - rapid7_endpoint_broker.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - ir_agent.exe
+  - rapid7_agent_core.exe
+  - rapid7_endpoint_broker.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - '*.analytics.insight.rapid7.com'
-              - '*.endpoint.ingress.rapid7.com'
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - '*.analytics.insight.rapid7.com'
+    - '*.endpoint.ingress.rapid7.com'
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_network_sigma.yml
-      Description: Detects potential network activity of Rapid7 RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_processes_sigma.yml
-      Description: Detects potential processes activity of Rapid7 RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_network_sigma.yml
+  Description: Detects potential network activity of Rapid7 RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rapid7_processes_sigma.yml
+  Description: Detects potential processes activity of Rapid7 RMM tool
 References:
-    - https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
+- https://docs.rapid7.com/insightvm/configure-communications-with-the-insight-platform/
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: Rapid7 LLC
+    certificate_thumbprint: 8DD67269B148092AC5A14A4982C920C9FDCA3B91
+    certificate_der_base64: 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
+    src_file_sha256: 62d7cb45c4635b60faee5dcfab0e5562a7cf7745c26a8288575e67a7024a683c
+    src_file_path: downloaded_files/rapid7/62d7cb45c4635b60faee5dcfab0e5562a7cf7745c26a8288575e67a7024a683c
+    src_file_company: Rapid7, LLC.
+  - signer_name: rapid7Company
+    certificate_thumbprint: 8A16C123080A1960C144D483FF333261726E2B51
+    certificate_der_base64: MIIC/zCCAeugAwIBAgIQPo/dt8Fa/bhOQ7uLCuxEjTAJBgUrDgMCHQUAMBgxFjAUBgNVBAMTDXJhcGlkN0NvbXBhbnkwHhcNMjQwMzIxMDgzNDA4WhcNMzkxMjMxMjM1OTU5WjAYMRYwFAYDVQQDEw1yYXBpZDdDb21wYW55MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuBZO2RbKbkbj37lh8/54e67ee1XN1EHFfDuOg4a4lQfhjvMCpFGsqLsQy+xBvwOiGtcqUUFAHrVOaA+knPsP4uX88JD8YrSDiyT0b0SAHdreRTJtiGUI0cHuR/autX3gNv3e2OibUk1ZCZPAinZp3tlqKW0TxJ8XJdRRjTNzJ3rTkxo7TUjYs9jSNr/3SfeeC3qC0vEaY8P6GQwbLx4jyaldhqOEBffLq/Zx27kVdUud7Udi5E5cfVXleVZ0D9pkT49h/ikPi+yHgJHNdDgsHEg1XP3AWFgputpN9EsaBp8tsrnItLTTzT4f8V6oaI3QtWDOt17hL/V/U9v8ZCxfsQIDAQABo00wSzBJBgNVHQEEQjBAgBDHDhk3GRjYfhR3YaKFQdpZoRowGDEWMBQGA1UEAxMNcmFwaWQ3Q29tcGFueYIQPo/dt8Fa/bhOQ7uLCuxEjTAJBgUrDgMCHQUAA4IBAQCrh7lxiRLMaNIQzPOkJKyUFJ5UhuAaliliNXA/pF24P6Vs/VNTBrfAriDU2sp4wT/yRip1G8+QPnhpcislKpiEPVN/OzEJL3AjxdmG+Lun5FjKwusKME9AqP3jJgU/1UfhvqiM40l1uIPGbsD4FlSLeVSdPb5pcVZGztjsDLaCM8hEwh+en7wo+c4lX2pYJAnPfh6uHXO3zFhnSfcFmCTKUUxZQhuuWW7UZnKJ2sZQD+OU+ZBOmucGqv5IAfb17X1EyLTLtidqLUSxKAwIOVRrShjfOZZ/DWF2wik9JA3JPF5uveoaKoqOj9vUR7LwEInidLQfBIrkC0gOECcGrAsb
+    src_file_sha256: 0fb44b024e3df56e73db61782a022eeed5126adb850105d9355cff243c1ceab5
+    src_file_path: downloaded_files/rapid7/0fb44b024e3df56e73db61782a022eeed5126adb850105d9355cff243c1ceab5
+    src_file_company: rapid7

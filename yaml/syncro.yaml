@@ -1,56 +1,65 @@
 Name: Syncro
-Category: 'RMM'
-Description: Syncro is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RMM
+Description: Syncro is a remote monitoring and management (RMM) tool. More information
+  will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
-    PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
-    Vulnerabilities: []
-    InstallationPaths:
-        - Syncro.Installer.exe
-        - Kabuto.App.Runner.exe
-        - Syncro.Overmind.Service.exe
-        - Kabuto.Installer.exe
-        - KabutoSetup.exe
-        - Syncro.Service.exe
-        - Kabuto.Service.Runner.exe
-        - Syncro.App.Runner.exe
-        - SyncroLive.Service.exe
-        - SyncroLive.Agent.exe
+  Website: ''
+  PEMetadata:
+    Filename: ''
+    OriginalFileName: ''
+    Description: ''
+  Privileges: ''
+  Free: ''
+  Verification: ''
+  SupportedOS: []
+  Capabilities: []
+  Vulnerabilities: []
+  InstallationPaths:
+  - Syncro.Installer.exe
+  - Kabuto.App.Runner.exe
+  - Syncro.Overmind.Service.exe
+  - Kabuto.Installer.exe
+  - KabutoSetup.exe
+  - Syncro.Service.exe
+  - Kabuto.Service.Runner.exe
+  - Syncro.App.Runner.exe
+  - SyncroLive.Service.exe
+  - SyncroLive.Agent.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
-    Network:
-        - Description: Known remote domains
-          Domains:
-              - kabuto.io
-              - '*.syncromsp.com'
-              - '*.syncroapi.com'
-              - syncromsp.com
-              - servably.com
-              - ld.aurelius.host
-              - 'app.kabuto.io '
-              - '*.kabutoservices.com'
-              - repairshopr.com
-              - kabutoservices.com
-              - attachments.servably.com
-          Ports: []
+  Disk: []
+  EventLog: []
+  Registry: []
+  Network:
+  - Description: Known remote domains
+    Domains:
+    - kabuto.io
+    - '*.syncromsp.com'
+    - '*.syncroapi.com'
+    - syncromsp.com
+    - servably.com
+    - ld.aurelius.host
+    - 'app.kabuto.io '
+    - '*.kabutoservices.com'
+    - repairshopr.com
+    - kabutoservices.com
+    - attachments.servably.com
+    Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_network_sigma.yml
-      Description: Detects potential network activity of Syncro RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_processes_sigma.yml
-      Description: Detects potential processes activity of Syncro RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_network_sigma.yml
+  Description: Detects potential network activity of Syncro RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syncro_processes_sigma.yml
+  Description: Detects potential processes activity of Syncro RMM tool
 References:
-    - https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004
+- https://community.syncromsp.com/t/syncro-exceptions-and-allowlists/2004
 Acknowledgement: []
+CodeSigning:
+  certificates:
+  - signer_name: Servably Inc.
+    certificate_thumbprint: F358811B0C1EF911D4E3C9AA60056FC93FA5DB2C
+    certificate_der_base64: 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
+    src_file_sha256: de8c1b54a83ffdeba275cac978af0d0e4cefb4b03686d28db5558b33e7e6106a
+    src_file_path: downloaded_files/syncro/de8c1b54a83ffdeba275cac978af0d0e4cefb4b03686d28db5558b33e7e6106a
+    src_file_company: Servably, Inc.
