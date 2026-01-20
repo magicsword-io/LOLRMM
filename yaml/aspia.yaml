@@ -2,93 +2,93 @@ Name: Aspia
 Category: RMM
 Description: 'Aspia is an open-source Remote Desktop, file transfer and system information tool.
 
-  '
+    '
 Created: '2025-05-09'
 LastModified: '2025-12-14'
 Details:
-  Website: https://aspia.org/
-  PEMetadata:
-  - Filename: aspia_client.exe
-    OriginalFileName: aspia_client.exe
-    Description: Aspia Client
-    Product: Aspia
-    Company: Dmitry Chapyshev
-  Privileges: SYSTEM
-  SupportedOS:
-  - Windows
-  - MacOS
-  - Linux
-  Capabilities:
-  - Remote desktop management
-  - Remote desktop view
-  - File transfer
-  - System information
-  - Text chat
-  - Task manager
-  - Encryption
-  - Authorization (it is possible to add users with different access rights)
-  - Address book with encryption and master-password
-  - NAT traversal with connection by ID (with using Aspia Router and Aspia Relay)
-  - Direct connections
-  - Audio support
-  - Video recording
-  - Client and Console for Windows, MacOSX and Linux
-  - Host for Windows only
-  - Router/Relay for Windows and Linux
-  InstallationPaths:
-  - '*\aspia_client.exe'
-  - C:\Program Files\Aspia\
-  - C:\Program Files (x86)\Aspia\
+    Website: https://aspia.org/
+    PEMetadata:
+        - Filename: aspia_client.exe
+          OriginalFileName: aspia_client.exe
+          Description: Aspia Client
+          Product: Aspia
+          Company: Dmitry Chapyshev
+    Privileges: SYSTEM
+    SupportedOS:
+        - Windows
+        - MacOS
+        - Linux
+    Capabilities:
+        - Remote desktop management
+        - Remote desktop view
+        - File transfer
+        - System information
+        - Text chat
+        - Task manager
+        - Encryption
+        - Authorization (it is possible to add users with different access rights)
+        - Address book with encryption and master-password
+        - NAT traversal with connection by ID (with using Aspia Router and Aspia Relay)
+        - Direct connections
+        - Audio support
+        - Video recording
+        - Client and Console for Windows, MacOSX and Linux
+        - Host for Windows only
+        - Router/Relay for Windows and Linux
+    InstallationPaths:
+        - '*\aspia_client.exe'
+        - C:\Program Files\Aspia\
+        - C:\Program Files (x86)\Aspia\
 Artifacts:
-  Disk:
-  - File: C:\Users\*\AppData\Roaming\aspia\client.ini
-    Description: N/A
-    OS: Windows
-  - File: C:\Users\*\AppData\Local\Temp\aspia\aspia_client-*.log
-    Description: N/A
-    OS: Windows
-  - File: C:\Program Files\Aspia\Client\qt.conf
-    Description: N/A
-    OS: Windows
-  EventLog:
-  - EventID: 11707
-    ProviderName: MsiInstaller
-    LogFile: Application.evtx
-    Data: 'Product: Aspia Client -- Installation completed successfully.'
-    Description: Aspia Client installation event.
-  Registry: []
-  Network:
-  - Description: Aspia can be downloaded from the official github repository.
-    Domains:
-    - https://github.com/dchapyshev/aspia
-    Ports:
-    - N/A
+    Disk:
+        - File: C:\Users\*\AppData\Roaming\aspia\client.ini
+          Description: N/A
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\aspia\aspia_client-*.log
+          Description: N/A
+          OS: Windows
+        - File: C:\Program Files\Aspia\Client\qt.conf
+          Description: N/A
+          OS: Windows
+    EventLog:
+        - EventID: 11707
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Product: Aspia Client -- Installation completed successfully.'
+          Description: Aspia Client installation event.
+    Registry: []
+    Network:
+        - Description: Aspia can be downloaded from the official github repository.
+          Domains:
+              - https://github.com/dchapyshev/aspia
+          Ports:
+              - N/A
 References:
-- https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/
-- https://www.aspia.org/
-- https://github.com/dchapyshev/aspia
+    - https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/
+    - https://www.aspia.org/
+    - https://github.com/dchapyshev/aspia
 Acknowledgement:
-- Person: Swachchhanda Shrawan Poudel
-  Handle: '@_swachchhanda_'
+    - Person: Swachchhanda Shrawan Poudel
+      Handle: '@_swachchhanda_'
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml
-  Description: Detects potential network activity of Aspia RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml
-  Description: Detects potential files activity of Aspia RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml
-  Description: Detects potential processes activity of Aspia RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml
+      Description: Detects potential network activity of Aspia RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml
+      Description: Detects potential files activity of Aspia RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml
+      Description: Detects potential processes activity of Aspia RMM tool
 CodeSigning:
-  search_names:
-  - aspia_client.exe
-  company_names: []
-  signer_names: []
-  certificates: []
+    search_names:
+        - aspia_client.exe
+    company_names: []
+    signer_names: []
+    certificates: []
 FileHashes:
-  authenticode:
-  - file_name: aspia_client.exe
-    sha256: A968363E26D030CB0997244ED626F0A8AA9137CC6F7EA7AFC15B61B74E83B500
-    sha1: DF6D3915876560EF33EFFD754A0305E0B0036D4B
-  page:
-  - file_name: aspia_client.exe
-    sha256: 3087D8002051D7CD12BFDEF5CAEC4FA2E2DAEF4CF5363FAA2638FD784B4E659D
-    sha1: A6FC35BA84C36E8646FE839D561A5C7F797470C3
+    authenticode:
+        - file_name: aspia_client.exe
+          sha256: A968363E26D030CB0997244ED626F0A8AA9137CC6F7EA7AFC15B61B74E83B500
+          sha1: DF6D3915876560EF33EFFD754A0305E0B0036D4B
+    page:
+        - file_name: aspia_client.exe
+          sha256: 3087D8002051D7CD12BFDEF5CAEC4FA2E2DAEF4CF5363FAA2638FD784B4E659D
+          sha1: A6FC35BA84C36E8646FE839D561A5C7F797470C3

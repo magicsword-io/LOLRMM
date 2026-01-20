@@ -1,119 +1,115 @@
 Name: Veyon
 Category: RMM
-Description: 'Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management software
-  designed for educational environments and remote support scenarios. It enables monitoring and controlling computers across
-  multiple platforms, allowing administrators and teachers to view and control computer labs, interact with students, and
-  provide remote technical support.
+Description: 'Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management software designed for educational environments and remote support scenarios. It enables monitoring and controlling computers across multiple platforms, allowing administrators and teachers to view and control computer labs, interact with students, and provide remote technical support.
 
-  '
+    '
 Author: Daniel Koifman (KoifSec)
 Created: '2025-11-12'
 LastModified: '2025-12-14'
 Details:
-  Website: https://veyon.io
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-    Product: ''
-  Privileges: User
-  Free: true
-  Verification: false
-  SupportedOS:
-  - Linux
-  - Windows
-  Capabilities:
-  - Remote Control
-  - Screen Monitoring
-  - Screen Broadcasting (Demo Mode)
-  - Remote Command Execution
-  - File Transfer
-  - Power Management
-  - Screen Lock
-  - User Messaging
-  - Application Launching
-  - Screenshot Capture
-  - Clipboard Synchronization
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files\Veyon\*
-  - C:\Program Files (x86)\Veyon\*
-  - veyon-wcli.exe
-  - veyon-worker.exe
-  - veyon-server.exe
-  - veyon-service.exe
-  - veyon-master.exe
+    Website: https://veyon.io
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+        Product: ''
+    Privileges: User
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Linux
+        - Windows
+    Capabilities:
+        - Remote Control
+        - Screen Monitoring
+        - Screen Broadcasting (Demo Mode)
+        - Remote Command Execution
+        - File Transfer
+        - Power Management
+        - Screen Lock
+        - User Messaging
+        - Application Launching
+        - Screenshot Capture
+        - Clipboard Synchronization
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Veyon\*
+        - C:\Program Files (x86)\Veyon\*
+        - veyon-wcli.exe
+        - veyon-worker.exe
+        - veyon-server.exe
+        - veyon-service.exe
+        - veyon-master.exe
 Artifacts:
-  Disk:
-  - File: C:\Windows\Temp\VeyonServer.log
-    Description: VeyonServer log file
-    OS: Windows
-  - File: C:\Windows\Temp\VeyonService.log
-    Description: VeyonService log file
-    OS: Windows
-  - File: C:\Users\*\AppData\Local\VeyonCLI.log
-    Description: Veyon command-line interface utility log
-    OS: Windows
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: Veyon Service
-    ImagePath: '"C:\\Program Files\\Veyon\\veyon-service.exe"'
-    Description: Service installation event for Veyon Service
-  Registry:
-  - Path: HKLM\SOFTWARE\Veyon Solutions
-    Description: Main Veyon configuration registry key containing all service and application settings
-  - Path: HKLM\SYSTEM\CurrentControlSet\Services\VeyonService
-    Description: Veyon service registration and configuration
-  Network: []
+    Disk:
+        - File: C:\Windows\Temp\VeyonServer.log
+          Description: VeyonServer log file
+          OS: Windows
+        - File: C:\Windows\Temp\VeyonService.log
+          Description: VeyonService log file
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\VeyonCLI.log
+          Description: Veyon command-line interface utility log
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Veyon Service
+          ImagePath: '"C:\\Program Files\\Veyon\\veyon-service.exe"'
+          Description: Service installation event for Veyon Service
+    Registry:
+        - Path: HKLM\SOFTWARE\Veyon Solutions
+          Description: Main Veyon configuration registry key containing all service and application settings
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\VeyonService
+          Description: Veyon service registration and configuration
+    Network: []
 Detections:
-- Splunk: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/veyon/spl.spl
-  Description: Detects Veyon RMM activity through registry modifications (EventCode 13), process creation (EventCode 1), and
-    service installation (EventCode 4697)
+    - Splunk: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/veyon/spl.spl
+      Description: Detects Veyon RMM activity through registry modifications (EventCode 13), process creation (EventCode 1), and service installation (EventCode 4697)
 References:
-- https://veyon.io
-- https://github.com/veyon/veyon
-- https://docs.veyon.io/en/latest/
+    - https://veyon.io
+    - https://github.com/veyon/veyon
+    - https://docs.veyon.io/en/latest/
 Acknowledgement: []
 CodeSigning:
-  search_names:
-  - veyon-server.exe
-  - veyon-service.exe
-  - veyon-wcli.exe
-  - veyon-worker.exe
-  company_names: []
-  signer_names:
-  - Tobias Junghans
-  certificates:
-  - signer_name: Tobias Junghans
-    certificate_thumbprint: 8F892D81447CDC2964F118C7DC45CA9759C222E9
-    tbs_sha256: A505895C8E2222B5DE687B0BDAB5C3BF49E247C85E4FDF8779C028D31F00A376
-    tbs_sha1: ''
-    certificate_der_base64: MIIFKTCCBBGgAwIBAgIQR3BTB9yaNiE0t6ReA4sRpjANBgkqhkiG9w0BAQsFADCBgDELMAkGA1UEBhMCUEwxIjAgBgNVBAoMGVVuaXpldG8gVGVjaG5vbG9naWVzIFMuQS4xJzAlBgNVBAsMHkNlcnR1bSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTEkMCIGA1UEAwwbQ2VydHVtIENvZGUgU2lnbmluZyBDQSBTSEEyMB4XDTIxMDIwOTEzNDcxOVoXDTIzMDIwOTEzMDI0MlowgYUxCzAJBgNVBAYTAkRFMQ8wDQYDVQQIDAZTYXhvbnkxETAPBgNVBAcMCENoZW1uaXR6MRgwFgYDVQQKDA9Ub2JpYXMgSnVuZ2hhbnMxGDAWBgNVBAMMD1RvYmlhcyBKdW5naGFuczEeMBwGCSqGSIb3DQEJARYPb2ZmaWNlQHZleW9uLmlvMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgHFqeiXl6xqKfE/fDe35X8eT7k61M7EpV1xk96CU9TotN7NABBymGOllZOBk6dS9fJr6jfhlWr1VBto3w//k470cj4DWaNZP/sZAzjY6gP5ios6r/JrOjU1iz0ZF1BFOQaW/J9UAwg9TSlD5Yo0iZfGx+GDir0LHn80y3KqEx/qMmyptCs7YG9BGLDQLTd/GvecnXpzg8OrBCdjH1PJfWnzmCV6o46/9eLUB84cB9JpvwTf6woi9nsn3io+0Xe9q0pbOlfl8Wjp51Xhtkw42hyy+3vdEpGQql9Xy9rlXTOR37BAfjG3hJcCeik7R4zM4j4LKKE1nquoQZEk6O3oMIwIDAQABo4IBljCCAZIwDAYDVR0TAQH/BAIwADAyBgNVHR8EKzApMCegJaAjhiFodHRwOi8vY3JsLmNlcnR1bS5wbC9jc2Nhc2hhMi5jcmwwcQYIKwYBBQUHAQEEZTBjMCsGCCsGAQUFBzABhh9odHRwOi8vY3NjYXNoYTIub2NzcC1jZXJ0dW0uY29tMDQGCCsGAQUFBzAChihodHRwOi8vcmVwb3NpdG9yeS5jZXJ0dW0ucGwvY3NjYXNoYTIuY2VyMB8GA1UdIwQYMBaAFMB7tMi3blanCUia+HJP19ckLDY+MB0GA1UdDgQWBBTl0jdhh8XOie9aUtAzjvcbpgZ3hjAdBgNVHRIEFjAUgRJjc2Nhc2hhMkBjZXJ0dW0ucGwwSwYDVR0gBEQwQjAIBgZngQwBBAEwNgYLKoRoAYb2dwIFAQQwJzAlBggrBgEFBQcCARYZaHR0cHM6Ly93d3cuY2VydHVtLnBsL0NQUzAfBgNVHSUEGDAWBggrBgEFBQcDAwYKKwYBBAGCNz0BATAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBADb/wYe7mIu/flFdvbeL/iYZZKNyw6X2X+rriUoc85EwpixV0skxS/EnH9WoQ4piOXd5tdSnk3ob3MSz7fsdST86/sxkWnoUzH1Ny6e3cc51wLUaXqS6lXgLqDApF/mKltc832e0xiKLnOAwi9rzysSzbGpmDEpQ790B3b2Zpsjjakd+t6rKBzc6rulzrYIaThW5Ro5Zn8fN8tSg0yT1KFvSbg85rbxD2CsalKb4xDkk5aWeStOZ3s08DIh1HWQO/yfWP+17D+s1NaWyA5RWP1GZxKb/utAGE9wzoCx4ToqAbAQTPqaEyI2CCCvadWNUokZAVabnBWoZPs+IaEfPbss=
-  - signer_name: Tobias Junghans
-    certificate_thumbprint: EBB8477300D089B339FECB224835A0A0B87EFEA0
-    tbs_sha256: 8EF0D8B0EA4B35008C88AA54CA6787E2F4140361D0B193CDB5481EB49B32355D
-    tbs_sha1: ''
-    certificate_der_base64: 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
+    search_names:
+        - veyon-server.exe
+        - veyon-service.exe
+        - veyon-wcli.exe
+        - veyon-worker.exe
+    company_names: []
+    signer_names:
+        - Tobias Junghans
+    certificates:
+        - signer_name: Tobias Junghans
+          certificate_thumbprint: 8F892D81447CDC2964F118C7DC45CA9759C222E9
+          tbs_sha256: A505895C8E2222B5DE687B0BDAB5C3BF49E247C85E4FDF8779C028D31F00A376
+          tbs_sha1: ''
+          certificate_der_base64: MIIFKTCCBBGgAwIBAgIQR3BTB9yaNiE0t6ReA4sRpjANBgkqhkiG9w0BAQsFADCBgDELMAkGA1UEBhMCUEwxIjAgBgNVBAoMGVVuaXpldG8gVGVjaG5vbG9naWVzIFMuQS4xJzAlBgNVBAsMHkNlcnR1bSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTEkMCIGA1UEAwwbQ2VydHVtIENvZGUgU2lnbmluZyBDQSBTSEEyMB4XDTIxMDIwOTEzNDcxOVoXDTIzMDIwOTEzMDI0MlowgYUxCzAJBgNVBAYTAkRFMQ8wDQYDVQQIDAZTYXhvbnkxETAPBgNVBAcMCENoZW1uaXR6MRgwFgYDVQQKDA9Ub2JpYXMgSnVuZ2hhbnMxGDAWBgNVBAMMD1RvYmlhcyBKdW5naGFuczEeMBwGCSqGSIb3DQEJARYPb2ZmaWNlQHZleW9uLmlvMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgHFqeiXl6xqKfE/fDe35X8eT7k61M7EpV1xk96CU9TotN7NABBymGOllZOBk6dS9fJr6jfhlWr1VBto3w//k470cj4DWaNZP/sZAzjY6gP5ios6r/JrOjU1iz0ZF1BFOQaW/J9UAwg9TSlD5Yo0iZfGx+GDir0LHn80y3KqEx/qMmyptCs7YG9BGLDQLTd/GvecnXpzg8OrBCdjH1PJfWnzmCV6o46/9eLUB84cB9JpvwTf6woi9nsn3io+0Xe9q0pbOlfl8Wjp51Xhtkw42hyy+3vdEpGQql9Xy9rlXTOR37BAfjG3hJcCeik7R4zM4j4LKKE1nquoQZEk6O3oMIwIDAQABo4IBljCCAZIwDAYDVR0TAQH/BAIwADAyBgNVHR8EKzApMCegJaAjhiFodHRwOi8vY3JsLmNlcnR1bS5wbC9jc2Nhc2hhMi5jcmwwcQYIKwYBBQUHAQEEZTBjMCsGCCsGAQUFBzABhh9odHRwOi8vY3NjYXNoYTIub2NzcC1jZXJ0dW0uY29tMDQGCCsGAQUFBzAChihodHRwOi8vcmVwb3NpdG9yeS5jZXJ0dW0ucGwvY3NjYXNoYTIuY2VyMB8GA1UdIwQYMBaAFMB7tMi3blanCUia+HJP19ckLDY+MB0GA1UdDgQWBBTl0jdhh8XOie9aUtAzjvcbpgZ3hjAdBgNVHRIEFjAUgRJjc2Nhc2hhMkBjZXJ0dW0ucGwwSwYDVR0gBEQwQjAIBgZngQwBBAEwNgYLKoRoAYb2dwIFAQQwJzAlBggrBgEFBQcCARYZaHR0cHM6Ly93d3cuY2VydHVtLnBsL0NQUzAfBgNVHSUEGDAWBggrBgEFBQcDAwYKKwYBBAGCNz0BATAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBADb/wYe7mIu/flFdvbeL/iYZZKNyw6X2X+rriUoc85EwpixV0skxS/EnH9WoQ4piOXd5tdSnk3ob3MSz7fsdST86/sxkWnoUzH1Ny6e3cc51wLUaXqS6lXgLqDApF/mKltc832e0xiKLnOAwi9rzysSzbGpmDEpQ790B3b2Zpsjjakd+t6rKBzc6rulzrYIaThW5Ro5Zn8fN8tSg0yT1KFvSbg85rbxD2CsalKb4xDkk5aWeStOZ3s08DIh1HWQO/yfWP+17D+s1NaWyA5RWP1GZxKb/utAGE9wzoCx4ToqAbAQTPqaEyI2CCCvadWNUokZAVabnBWoZPs+IaEfPbss=
+        - signer_name: Tobias Junghans
+          certificate_thumbprint: EBB8477300D089B339FECB224835A0A0B87EFEA0
+          tbs_sha256: 8EF0D8B0EA4B35008C88AA54CA6787E2F4140361D0B193CDB5481EB49B32355D
+          tbs_sha1: ''
+          certificate_der_base64: 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
 FileHashes:
-  authenticode:
-  - file_name: veyon-service.exe
-    sha256: 85D48AC33F718DBBA7295A6FA3C8A05BD6B39B402566709BDA6FE3E94986899B
-    sha1: 1F4C1A5FDCE602D67F41F55D30E4ED015B9B10E5
-  - file_name: veyon-server.exe
-    sha256: 7EF0076A6B0FDBE0EBB0266D59EC916424DB9F236F5B4D78AF79DB14532A47B5
-    sha1: 5367689376BDF0F7E9BA4418BE06F0DE0BB91328
-  - file_name: veyon-service.exe
-    sha256: 9C8311F37078C8EB6D132FFC89094E2E352A53F0E36B73019696134819DC775D
-    sha1: 64A8685F7DCE2AC2597F95133F930D0AA618187A
-  - file_name: veyon-worker.exe
-    sha256: BBF57D6E6FDC601E1F31A8221F0FD7845DBB32689DCB670654A0FB421F2C5195
-    sha1: F2D58832DBB0E38B544045AC8DD2FDE078BA3CF0
-  - file_name: veyon-server.exe
-    sha256: D530C5CE3875986E46F3985915C6DAFB149C9FE7362DE7548B8E53A904167F1F
-    sha1: 0FB7B3A7F9A53CDE64E09F7897B12974B637F2F6
-  - file_name: veyon-wcli.exe
-    sha256: DE0EC89B5BE9D22B6A28EFC4BA4C9D102E9A8430007D6DE91E2A24F0F6EBEA42
-    sha1: A2B2A1CD78B2975357906E0D65BB638423C0FAF2
-  page: []
+    authenticode:
+        - file_name: veyon-service.exe
+          sha256: 85D48AC33F718DBBA7295A6FA3C8A05BD6B39B402566709BDA6FE3E94986899B
+          sha1: 1F4C1A5FDCE602D67F41F55D30E4ED015B9B10E5
+        - file_name: veyon-server.exe
+          sha256: 7EF0076A6B0FDBE0EBB0266D59EC916424DB9F236F5B4D78AF79DB14532A47B5
+          sha1: 5367689376BDF0F7E9BA4418BE06F0DE0BB91328
+        - file_name: veyon-service.exe
+          sha256: 9C8311F37078C8EB6D132FFC89094E2E352A53F0E36B73019696134819DC775D
+          sha1: 64A8685F7DCE2AC2597F95133F930D0AA618187A
+        - file_name: veyon-worker.exe
+          sha256: BBF57D6E6FDC601E1F31A8221F0FD7845DBB32689DCB670654A0FB421F2C5195
+          sha1: F2D58832DBB0E38B544045AC8DD2FDE078BA3CF0
+        - file_name: veyon-server.exe
+          sha256: D530C5CE3875986E46F3985915C6DAFB149C9FE7362DE7548B8E53A904167F1F
+          sha1: 0FB7B3A7F9A53CDE64E09F7897B12974B637F2F6
+        - file_name: veyon-wcli.exe
+          sha256: DE0EC89B5BE9D22B6A28EFC4BA4C9D102E9A8430007D6DE91E2A24F0F6EBEA42
+          sha1: A2B2A1CD78B2975357906E0D65BB638423C0FAF2
+    page: []

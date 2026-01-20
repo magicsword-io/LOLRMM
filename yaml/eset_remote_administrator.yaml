@@ -1,53 +1,50 @@
 Name: ESET Remote Administrator
 Category: RMM
-Description: ESET Remote Administrator is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Description: ESET Remote Administrator is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - era.exe
-  - einstaller.exe
-  - ezhelp*.exe
-  - eratool.exe
-  - ERAAgent.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - era.exe
+        - einstaller.exe
+        - ezhelp*.exe
+        - eratool.exe
+        - ERAAgent.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - eset.com/me/business/remote-management/remote-administrator/
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - eset.com/me/business/remote-management/remote-administrator/
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_network_sigma.yml
-  Description: Detects potential network activity of ESET Remote Administrator RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_processes_sigma.yml
-  Description: Detects potential processes activity of ESET Remote Administrator RMM
-    tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_network_sigma.yml
+      Description: Detects potential network activity of ESET Remote Administrator RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/eset_remote_administrator_processes_sigma.yml
+      Description: Detects potential processes activity of ESET Remote Administrator RMM tool
 References:
-- https://eset.com/me/business/remote-management/remote-administrator/
+    - https://eset.com/me/business/remote-management/remote-administrator/
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: ESET, spol. s r.o.
-    certificate_thumbprint: 87A8825374628D1F6E27117EDD09DB089C9509DB
-    certificate_der_base64: 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
-    src_file_sha256: 0c8ced779a4b7dca7ba034de52c524d911f9abbb89d885f31a7edde0f015764a
-    src_file_path: downloaded_files/eset_remote_administrator/0c8ced779a4b7dca7ba034de52c524d911f9abbb89d885f31a7edde0f015764a
-    src_file_company: ESET
+    certificates:
+        - signer_name: ESET, spol. s r.o.
+          certificate_thumbprint: 87A8825374628D1F6E27117EDD09DB089C9509DB
+          certificate_der_base64: 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
+          src_file_sha256: 0c8ced779a4b7dca7ba034de52c524d911f9abbb89d885f31a7edde0f015764a
+          src_file_path: downloaded_files/eset_remote_administrator/0c8ced779a4b7dca7ba034de52c524d911f9abbb89d885f31a7edde0f015764a
+          src_file_company: ESET

@@ -1,55 +1,54 @@
 Name: Goverlan
 Category: RMM
-Description: Goverlan is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Goverlan is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - goverrmc.exe
-  - govsrv*.exe
-  - GovAgentInstallHelper.exe
-  - GovAgentx64.exe
-  - GovReachClient.exe
-  - C:\Program Files (x86)\PJ Technologies\GOVsrv\*
-  - '*\PJ Technologies\GOVsrv\*'
-  - '*\GovSrv.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - goverrmc.exe
+        - govsrv*.exe
+        - GovAgentInstallHelper.exe
+        - GovAgentx64.exe
+        - GovReachClient.exe
+        - C:\Program Files (x86)\PJ Technologies\GOVsrv\*
+        - '*\PJ Technologies\GOVsrv\*'
+        - '*\GovSrv.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - goverlan.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - goverlan.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_network_sigma.yml
-  Description: Detects potential network activity of Goverlan RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_processes_sigma.yml
-  Description: Detects potential processes activity of Goverlan RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_network_sigma.yml
+      Description: Detects potential network activity of Goverlan RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/goverlan_processes_sigma.yml
+      Description: Detects potential processes activity of Goverlan RMM tool
 References:
-- https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf
+    - https://www.goverlan.com/pdf/Goverlan-Remote-Control-Software.pdf
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: EASYVISTA SAS
-    certificate_thumbprint: 2AEEBB150801E156594DFD89A474F5A8C6D3EAE2
-    certificate_der_base64: MIIHbTCCBVWgAwIBAgIQDMXEltxtmNdaKbrONd1jzDANBgkqhkiG9w0BAQsFADBpMQswCQYDVQQGEwJVUzEXMBUGA1UEChMORGlnaUNlcnQsIEluYy4xQTA/BgNVBAMTOERpZ2lDZXJ0IFRydXN0ZWQgRzQgQ29kZSBTaWduaW5nIFJTQTQwOTYgU0hBMzg0IDIwMjEgQ0ExMB4XDTI0MTEwMTAwMDAwMFoXDTI3MTAzMDIzNTk1OVowdTELMAkGA1UEBhMCRlIxFzAVBgNVBAcTDk5PSVNZIExFIEdSQU5EMRYwFAYDVQQKEw1FQVNZVklTVEEgU0FTMR0wGwYDVQQLExRFbmdpbmVlcmluZyBzZXJ2aWNlczEWMBQGA1UEAxMNRUFTWVZJU1RBIFNBUzCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBANUg/kU+TvFLlDgozHc5Nmp85gB5MEL74r9b0bmw7Tg+Nuo7Jq3nBVViL4geCVyL/FKl+FLKw5iGU5T16lJuIksBhRsehKxL9QbL4IbBlHKR1IugrF5jUlXl6MzxzPRGrQwfZIXthI2pZvNhu5CFE7cnDbB/YTBBV1J7YceKlrzeRVA/VUHSLVId4DHFMGYExDSlUo3yGG9BfqzQ7P4OKMXRgX/LghMLV/JHK1J+vghq2MnND/GLmJjiSLfW5Nrl7oa0DHrIS1SGpuAZrTUxbpWMExT6ucFOVfN5J5+hpyIKLQlF13Lhb+GfZ0od3vT2vsHTZus1yXXmWFMXCSJVZPkD6pXMCTwpwZtbLIav/MKnhT5FVuCvOyA7L4gT/LEi7Xczh7ulRzWTPPpNZcQ93pwvSgiLgIfc5zf+/bVRxZ79AJxbwWYMlOGt5YNG+Qhbj8iui6AbEBowpJdOJfr8ahY5P8UNI5aC0yZ7c+yKUBTjtATjTTCCXraQshzzB+uMs3GbfcZ7wUCo1NlH5i4fc+GPN0/p8UYfO50OjmukexZqVyWc8JIVeKcJnBrwZeeOhpCN94cTfNqRijmEhoH8/zKOA6sg6adnTE+dlHrpYS8jZCo8QowO+Q+Wz/s5+MRWTQRhobsw0FWtf1ol5hNnV3bUr/6aAYZHKVOPAP2CqCqZAgMBAAGjggIDMIIB/zAfBgNVHSMEGDAWgBRoN+Drtjv4XxGG+/5hewiIZfROQjAdBgNVHQ4EFgQUCsfbi+EIEK0KXV1HLKxu8Eb4JNMwPgYDVR0gBDcwNTAzBgZngQwBBAEwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdpY2VydC5jb20vQ1BTMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzCBtQYDVR0fBIGtMIGqMFOgUaBPhk1odHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRUcnVzdGVkRzRDb2RlU2lnbmluZ1JTQTQwOTZTSEEzODQyMDIxQ0ExLmNybDBToFGgT4ZNaHR0cDovL2NybDQuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0VHJ1c3RlZEc0Q29kZVNpZ25pbmdSU0E0MDk2U0hBMzg0MjAyMUNBMS5jcmwwgZQGCCsGAQUFBwEBBIGHMIGEMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wXAYIKwYBBQUHMAKGUGh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydFRydXN0ZWRHNENvZGVTaWduaW5nUlNBNDA5NlNIQTM4NDIwMjFDQTEuY3J0MAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBALMBDffcYRU0N9kafAdWYoDW7YZRodkIfeQtKGTJh14RYMs7fkftJh+AHxNhjTE/NmrVaBPasetlNu48MCc3tavUBbgZUJ0Zm1c7pvNsO7awjI5tvFmSLqLudQGqMMtIBCNiNpdvmiOSedPra3CfxbbBAiNlI0grA1ufCrrcak0vecJKS2venEAjhqZy9JAO5euc2qOz1rmEDM11ZWWMoBat3UuJHXX9DWEJjJ9AafLd/yIKGx+KwO7lANvpprp/ThfSI7XEqnoAou0iEi24AXAUgYSiEbBf3d0stM60+Ewxvfi9xlDFljceM/2VQOVDNHRalOq667LGDZza+dS+lua3c9YZcpe5bQusbFZqMOAaASvq+AzdiAo7hZMTK047YgJ8fXMVCeoJr6CXoU6FZmycVOcLhXpT+wltbvaQWytHLM1U0c0hHmfGCPPgpQWOxwhSpSwnS0UiFC74YXCWhNHmp6Lp/g7xTciuakjp6Dwe2WyQ5b/e0GLoEVwYNwclIsuizS/1J3v7WgZ99yhAJjPCW36DdqevKhSAuBwDIyQmC6pXN1AY3nZxmLL1aGx3zUOmdH6iLeqiCxXm0ioNFdFiTQ9KROQG3sxlbvYpCovKYhgfDnsoNOfxfezDiSMPVn4c/rU0zs8CiPTHkggNee2Jftd47w+LcEk5iZdJ/ojs
-    src_file_sha256: 086207248872cecd4d338c0aa26f69aaff779c7c88f02d13fe5e004df85bdece
-    src_file_path: downloaded_files/goverlan/086207248872cecd4d338c0aa26f69aaff779c7c88f02d13fe5e004df85bdece
-    src_file_company: EasyVista, Inc.
+    certificates:
+        - signer_name: EASYVISTA SAS
+          certificate_thumbprint: 2AEEBB150801E156594DFD89A474F5A8C6D3EAE2
+          certificate_der_base64: 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
+          src_file_sha256: 086207248872cecd4d338c0aa26f69aaff779c7c88f02d13fe5e004df85bdece
+          src_file_path: downloaded_files/goverlan/086207248872cecd4d338c0aa26f69aaff779c7c88f02d13fe5e004df85bdece
+          src_file_company: EasyVista, Inc.

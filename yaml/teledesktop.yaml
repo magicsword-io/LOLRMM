@@ -5,58 +5,58 @@ Author: ''
 Created: '2024-08-02'
 LastModified: '2025-12-14'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - pstlaunch.exe
-  - ptdskclient.exe
-  - ptdskhost.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - pstlaunch.exe
+        - ptdskclient.exe
+        - ptdskhost.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - tele-desk.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - tele-desk.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_network_sigma.yml
-  Description: Detects potential network activity of TeleDesktop RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_processes_sigma.yml
-  Description: Detects potential processes activity of TeleDesktop RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_network_sigma.yml
+      Description: Detects potential network activity of TeleDesktop RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teledesktop_processes_sigma.yml
+      Description: Detects potential processes activity of TeleDesktop RMM tool
 References:
-- http://potomacsoft.com/ - DOA as of 2024
+    - http://potomacsoft.com/ - DOA as of 2024
 Acknowledgement: []
 CodeSigning:
-  search_names:
-  - teledesktop (client)
-  - teledesktop (host)
-  company_names: []
-  signer_names: []
-  certificates: []
+    search_names:
+        - teledesktop (client)
+        - teledesktop (host)
+    company_names: []
+    signer_names: []
+    certificates: []
 FileHashes:
-  authenticode:
-  - file_name: TeleDesktop (Client)
-    sha256: D3CAC55FFBFFD3E4470CD656C7E95BEAC70F1D2C93E76F18DAEA398222061084
-    sha1: EC3B660A5975F7CA25860118C74C2CA92B5C2BA2
-  - file_name: TeleDesktop (Host)
-    sha256: 933CDF254052CC5E8485E887F742DC0B043223DBC61FA7210FA3C1A5C425C1E3
-    sha1: EFEB2AB0EAE1075239D8A4F1BD91B379FD7DA68D
-  page:
-  - file_name: TeleDesktop (Client)
-    sha256: BEDD267A97281B4E63B693474CF9E36CE0F83173265FA490B4D6249359E0E767
-    sha1: EEF00F1F6F1DF3C52CF0056A44EBDD3FDC6F3B69
-  - file_name: TeleDesktop (Host)
-    sha256: A23A76F0EC3ADBAF7A7AB01D72EE9876D5C6DEB4BBC234328927229C94776397
-    sha1: 35078CDFD3CE62CCEC5AF9BBDE1B18D3006B838C
+    authenticode:
+        - file_name: TeleDesktop (Client)
+          sha256: D3CAC55FFBFFD3E4470CD656C7E95BEAC70F1D2C93E76F18DAEA398222061084
+          sha1: EC3B660A5975F7CA25860118C74C2CA92B5C2BA2
+        - file_name: TeleDesktop (Host)
+          sha256: 933CDF254052CC5E8485E887F742DC0B043223DBC61FA7210FA3C1A5C425C1E3
+          sha1: EFEB2AB0EAE1075239D8A4F1BD91B379FD7DA68D
+    page:
+        - file_name: TeleDesktop (Client)
+          sha256: BEDD267A97281B4E63B693474CF9E36CE0F83173265FA490B4D6249359E0E767
+          sha1: EEF00F1F6F1DF3C52CF0056A44EBDD3FDC6F3B69
+        - file_name: TeleDesktop (Host)
+          sha256: A23A76F0EC3ADBAF7A7AB01D72EE9876D5C6DEB4BBC234328927229C94776397
+          sha1: 35078CDFD3CE62CCEC5AF9BBDE1B18D3006B838C

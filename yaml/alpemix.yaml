@@ -1,107 +1,106 @@
 Name: Alpemix
 Category: RMM
-Description: 'Alpemix is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: 'Alpemix is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
-  '
+    '
 Author: Nasreddine Bencherchali
 Created: '2024-08-05'
 LastModified: '2024-08-05'
 Details:
-  Website: https://www.alpemix.com/en/Home
-  PEMetadata:
-  - Filename: Alpemix.exe
-    OriginalFileName: Alpemix
-    Description: Alpemix
-    Product: Alpemix
-    InternalName: Alpemix
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  - Linux
-  - Android
-  - Mac
-  - IOS
-  Capabilities:
-  - 5 Different Solutions for Remote Support
-  - Access to Unattended Computers
-  - Access to User Account Control (UAC) Screens
-  - Add Your Own Logo
-  - Auto Sizing
-  - Automatic Update
-  - Clipboard Transfer
-  - Computer Independent Licensing
-  - Contact List and Groups
-  - Encrypted Communication
-  - External Communication Barrier
-  - File Transfer
-  - Instant Messaging
-  - Multi-Platform Support
-  - Multiple Chat
-  - Multiple Connections
-  - No Port Forwarding Required
-  - Peer to Peer Connection (p2p)
-  - Receiving Offline Message
-  - Remote Restart
-  - ReportingRestricting The Authority
-  - Screen Sharing
-  - Sending Announcement Message
-  - Sharing a certain part of the screen
-  - Video Recording
-  - Voice Communication
-  - Who is currently supporting?
-  - Working in Black Screen Mode
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\AlpemixService.exe
-  - C:\AlpemixSrvc\
+    Website: https://www.alpemix.com/en/Home
+    PEMetadata:
+        - Filename: Alpemix.exe
+          OriginalFileName: Alpemix
+          Description: Alpemix
+          Product: Alpemix
+          InternalName: Alpemix
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - Linux
+        - Android
+        - Mac
+        - IOS
+    Capabilities:
+        - 5 Different Solutions for Remote Support
+        - Access to Unattended Computers
+        - Access to User Account Control (UAC) Screens
+        - Add Your Own Logo
+        - Auto Sizing
+        - Automatic Update
+        - Clipboard Transfer
+        - Computer Independent Licensing
+        - Contact List and Groups
+        - Encrypted Communication
+        - External Communication Barrier
+        - File Transfer
+        - Instant Messaging
+        - Multi-Platform Support
+        - Multiple Chat
+        - Multiple Connections
+        - No Port Forwarding Required
+        - Peer to Peer Connection (p2p)
+        - Receiving Offline Message
+        - Remote Restart
+        - ReportingRestricting The Authority
+        - Screen Sharing
+        - Sending Announcement Message
+        - Sharing a certain part of the screen
+        - Video Recording
+        - Voice Communication
+        - Who is currently supporting?
+        - Working in Black Screen Mode
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\AlpemixService.exe
+        - C:\AlpemixSrvc\
 Artifacts:
-  Disk:
-  - File: '%localappdata%\Alpemix\Alpemix.ini'
-    Description: N/A
-    OS: Windows
-  EventLog:
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: AlpemixSrvc
-    ImagePath: '*\Alpemix.exe servicestartxxx'
-    Description: Service installation event as result of Alpemix installation.
-  Registry:
-  - Path: HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx
-    Description: N/A
-  Network:
-  - Domains:
-    - '*.alpemix.com'
-    Ports:
-    - 443
-    Description: N/A
-  - Domains:
-    - '*.teknopars.com'
-    Ports:
-    - 80
-    Description: N/A
+    Disk:
+        - File: '%localappdata%\Alpemix\Alpemix.ini'
+          Description: N/A
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: AlpemixSrvc
+          ImagePath: '*\Alpemix.exe servicestartxxx'
+          Description: Service installation event as result of Alpemix installation.
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx
+          Description: N/A
+    Network:
+        - Domains:
+              - '*.alpemix.com'
+          Ports:
+              - 443
+          Description: N/A
+        - Domains:
+              - '*.teknopars.com'
+          Ports:
+              - 80
+          Description: N/A
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_registry_sigma.yml
-  Description: Detects potential registry activity of Alpemix RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_network_sigma.yml
-  Description: Detects potential network activity of Alpemix RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_files_sigma.yml
-  Description: Detects potential files activity of Alpemix RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_processes_sigma.yml
-  Description: Detects potential processes activity of Alpemix RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_registry_sigma.yml
+      Description: Detects potential registry activity of Alpemix RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_network_sigma.yml
+      Description: Detects potential network activity of Alpemix RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_files_sigma.yml
+      Description: Detects potential files activity of Alpemix RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/alpemix_processes_sigma.yml
+      Description: Detects potential processes activity of Alpemix RMM tool
 References:
-- https://www.alpemix.com/en/remote-access
+    - https://www.alpemix.com/en/remote-access
 Acknowledgement:
-- Person: Nasreddine Bencherchali
-  Handle: '@nas_bench'
+    - Person: Nasreddine Bencherchali
+      Handle: '@nas_bench'
 CodeSigning:
-  certificates:
-  - signer_name: TEKNOPARS BİLİŞİM TEKNOLOJİLERİ SANAYİ VE TİCARET LTD.ŞTİ.
-    certificate_thumbprint: 791EEC3C65240BFC4C6C3BE5469516A468DB61E9
-    certificate_der_base64: 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
-    src_file_sha256: 6893d9ca56c9a8ff7f40cabb737996ed419b288f5bb571d6c1cc6effa9e888d9
-    src_file_path: downloaded_files/alpemix/6893d9ca56c9a8ff7f40cabb737996ed419b288f5bb571d6c1cc6effa9e888d9
-    src_file_company: Teknopars Bilisim
+    certificates:
+        - signer_name: TEKNOPARS BİLİŞİM TEKNOLOJİLERİ SANAYİ VE TİCARET LTD.ŞTİ.
+          certificate_thumbprint: 791EEC3C65240BFC4C6C3BE5469516A468DB61E9
+          certificate_der_base64: MIIHqDCCBZCgAwIBAgIMcTfZEE9wX96SBP4aMA0GCSqGSIb3DQEBCwUAMFkxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMS8wLQYDVQQDEyZHbG9iYWxTaWduIEdDQyBSNDUgQ29kZVNpZ25pbmcgQ0EgMjAyMDAeFw0yNTA1MjcxMTA4MjZaFw0yNjA2MjcxMTA4MjZaMIH1MQswCQYDVQQGEwJUUjESMBAGA1UECAwJxLBTVEFOQlVMMRAwDgYDVQQHEwdFU0VOTEVSMU0wSwYDVQQKDERURUtOT1BBUlMgQsSwTMSwxZ7EsE0gVEVLTk9MT0rEsExFUsSwIFNBTkFZxLAgVkUgVMSwQ0FSRVQgTFRELsWeVMSwLjFNMEsGA1UEAwxEVEVLTk9QQVJTIELEsEzEsMWexLBNIFRFS05PTE9KxLBMRVLEsCBTQU5BWcSwIFZFIFTEsENBUkVUIExURC7FnlTEsC4xIjAgBgkqhkiG9w0BCQEWE2JpbGdpQHRla25vcGFycy5jb20wggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCvIq1VAfHQabDNxnyHUdy1T647Hh2a21D3/AxGQoxHNv8eeCdqUkKiEBnxZd8jRQvq1MqKBXsWSV0M9Kj5jI3MXuMHMtCPSW+7xGI1toT4Fgz/jYiqmO0wVMTArVCj7pbfkc8B+Lc2oDEMSiS0Bg5WFR9Rw9iBT+nyuChLb/7nQyrk/pDwY1W7u3uhU55q75n7M+mXyJbV3Om8liPVCdmNIeYkZaSlfxezZPbZR/exYAFGc9S4uPqXym36rITMnz+jJ7ZCStWktMjQXeynwDPCbaPYwmFTf8vXJOOdWY4zAd0o0oX5n0fNDn8m8Z3Z+N31g70kREhdtS813TPRJ2B3DSFe2djjk5lWcMVNJPzr/HVJ+wANRpTitLqLyJrn/UYxySnURGvebWjSsJs2SXoonU83n8janpV0mLQ4tQZKhMi/6MwZRtONq6vvuNWJgzCQhWaSrbeNlKwGYW5gBPYRSFALIuMsXx3GmwbF7Is6ejNZuksKpdhDqAN+DvDTHfog228mfFE5dIArN0AA1XtMboC/Ks7D//wFqs6S83S/9sSszoFIbESCl/8N7qggja+GZkW62Q75iCay7GDkbsFopG6x07KbKk0iJfEMcjVhQ5eVgwKtmmE4r1JXce6V7NE0vyInngz/QVv4RYY0e0kSkUd3KR6IAv0Wvk3tdZOl7QIDAQABo4IB0TCCAc0wDgYDVR0PAQH/BAQDAgeAMIGbBggrBgEFBQcBAQSBjjCBizBKBggrBgEFBQcwAoY+aHR0cDovL3NlY3VyZS5nbG9iYWxzaWduLmNvbS9jYWNlcnQvZ3NnY2NyNDVjb2Rlc2lnbmNhMjAyMC5jcnQwPQYIKwYBBQUHMAGGMWh0dHA6Ly9vY3NwLmdsb2JhbHNpZ24uY29tL2dzZ2NjcjQ1Y29kZXNpZ25jYTIwMjAwVgYDVR0gBE8wTTBBBgkrBgEEAaAyATIwNDAyBggrBgEFBQcCARYmaHR0cHM6Ly93d3cuZ2xvYmFsc2lnbi5jb20vcmVwb3NpdG9yeS8wCAYGZ4EMAQQBMAkGA1UdEwQCMAAwRQYDVR0fBD4wPDA6oDigNoY0aHR0cDovL2NybC5nbG9iYWxzaWduLmNvbS9nc2djY3I0NWNvZGVzaWduY2EyMDIwLmNybDAeBgNVHREEFzAVgRNiaWxnaUB0ZWtub3BhcnMuY29tMBMGA1UdJQQMMAoGCCsGAQUFBwMDMB8GA1UdIwQYMBaAFNqzjcAkkKNrd9MMoFndIWdkdgt4MB0GA1UdDgQWBBQgO7N1BwCVXmzrWKqj/zvz1abz0jANBgkqhkiG9w0BAQsFAAOCAgEAIwj6b/4mw2RCqr/TD1zYIi/5Kjc1k/U6T/pR3d3VELkg5u9v9NgXbihpE8RyoFQIVzGfdwRG7lfTJbk3oTXCQ2ebx3O7ea1GpPOOeD7UTBEmb/7yUVFjVaf54v8sJ6cLjBAgxJGlSaCdV27LojwZgBiH1t1P87Y3Ew9ZgvB8zDQkuvoa5V23UYpGc14EPJ5sFYmr9qVbvtih5lmbnPrjPtA8MeiT9ZVyMhjtaBbFEQac3jT/hktpN2BFCyV91tCjWawWOD48OaBdt8F/VFEkBXcQoIawJPhVSlsbAVMotmUedndfpSjVlwKLWgH9Vx2I5isWm3r/vYnqmdm3Qh4hT81VrbrmvF/z8nu2a4xhSg8X8bPkD9xZWYLaC/9qyRyT5bXR+czlHlaJxM5MEui3M+HZte4dIGDorpfDkvIQ3JOEZg0dkppRPA6UrhKDF6CUHAegwXcUkg0/BikXdTN8ho9MYzAdxsgyFv4AHnsODZNiqDuTVwJqwyzJiEqFfsyydXXJrnSLBnfAGd1NDSycQX5FBNRBN1fnQYxA1VqEIVOcFSUJE3G5VHpRQoAPYIq29qvnHvdRO005psVDkJALY7A1rgJR9IHm3BDzS1c9yp/SyYcaMwaVQAufFITg3D9SSwaG0BHlRIPKgc0RWR4cfaKmChykBFFuKj+xSmtQcW0=
+          src_file_sha256: 6893d9ca56c9a8ff7f40cabb737996ed419b288f5bb571d6c1cc6effa9e888d9
+          src_file_path: downloaded_files/alpemix/6893d9ca56c9a8ff7f40cabb737996ed419b288f5bb571d6c1cc6effa9e888d9
+          src_file_company: Teknopars Bilisim

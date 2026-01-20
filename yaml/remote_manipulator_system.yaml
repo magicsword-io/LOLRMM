@@ -1,50 +1,47 @@
 Name: Remote Manipulator System
 Category: RMM
-Description: Remote Manipulator System is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Description: Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - rfusclient.exe
-  - rutserv.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - rfusclient.exe
+        - rutserv.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.internetid.ru'
-    - rmansys.ru
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.internetid.ru'
+              - rmansys.ru
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml
-  Description: Detects potential network activity of Remote Manipulator System RMM
-    tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml
-  Description: Detects potential processes activity of Remote Manipulator System RMM
-    tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml
+      Description: Detects potential network activity of Remote Manipulator System RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml
+      Description: Detects potential processes activity of Remote Manipulator System RMM tool
 References:
-- https://rmansys.ru/files/
+    - https://rmansys.ru/files/
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: REMOTE UTILITIES PTE. LTD.
-    certificate_thumbprint: 902CC2BB628B651954A5F7A1D68C6CDE84707A54
-    certificate_der_base64: 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
-    src_file_sha256: 7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6
-    src_file_path: downloaded_files/remote_manipulator_system/7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6
-    src_file_company: Remote Utilities Pte. Ltd.
+    certificates:
+        - signer_name: REMOTE UTILITIES PTE. LTD.
+          certificate_thumbprint: 902CC2BB628B651954A5F7A1D68C6CDE84707A54
+          certificate_der_base64: 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
+          src_file_sha256: 7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6
+          src_file_path: downloaded_files/remote_manipulator_system/7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6
+          src_file_company: Remote Utilities Pte. Ltd.

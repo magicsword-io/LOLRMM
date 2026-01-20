@@ -1,90 +1,88 @@
 Name: RAdmin
 Category: RMM
-Description: 'RAdmin is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: 'RAdmin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
-  '
+    '
 Author: Nasreddine Bencherchali
 Created: '2024-08-05'
 LastModified: '2024-08-05'
 Details:
-  Website: https://www.radmin.com/
-  PEMetadata:
-  - Filename: RServer3.exe
-    OriginalFileName: RServer3.exe
-    InternalName: RServer3
-    Description: Radmin Server
-    Product: Radmin Server
-    Comments: Radmin - Remote Control Server
-  - Filename: Radmin.exe
-    OriginalFileName: Radmin.exe
-    InternalName: Radmin
-    Description: Radmin Viewer
-    Product: Radmin Viewer
-    Comments: Radmin Viewer
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe
-  - C:\Windows\SysWOW64\rserver30\rserver3.exe
-  - C:\Windows\SysWOW64\rserver30\FamItrfc
-  - C:\Windows\SysWOW64\rserver30\FamItrf2
+    Website: https://www.radmin.com/
+    PEMetadata:
+        - Filename: RServer3.exe
+          OriginalFileName: RServer3.exe
+          InternalName: RServer3
+          Description: Radmin Server
+          Product: Radmin Server
+          Comments: Radmin - Remote Control Server
+        - Filename: Radmin.exe
+          OriginalFileName: Radmin.exe
+          InternalName: Radmin
+          Description: Radmin Viewer
+          Product: Radmin Viewer
+          Comments: Radmin Viewer
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe
+        - C:\Windows\SysWOW64\rserver30\rserver3.exe
+        - C:\Windows\SysWOW64\rserver30\FamItrfc
+        - C:\Windows\SysWOW64\rserver30\FamItrf2
 Artifacts:
-  Disk:
-  - File: C:\Windows\SysWOW64\rserver30\Radm_log.htm
-    Description: RAdmin log file (32-bit)
-    OS: Windows
-  - File: C:\Windows\System32\rserver30\Radm_log.htm
-    Description: RAdmin log file (64-bit)
-    OS: Windows
-  - File: C:\Windows\System32\rserver30\CHATLOGS\*\*.htm
-    Description: RAdmin chat logs
-    OS: Windows
-  - File: C:\Users\*\Documents\ChatLogs\*\*.htm
-    Description: RAdmin user chat logs
-    OS: Windows
-  EventLog: []
-  Registry:
-  - Path: HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin
-      Security
-    Description: N/A
-  Network:
-  - Description: N/A
-    Domains:
-    - radmin.com
-    Ports:
-    - 443
+    Disk:
+        - File: C:\Windows\SysWOW64\rserver30\Radm_log.htm
+          Description: RAdmin log file (32-bit)
+          OS: Windows
+        - File: C:\Windows\System32\rserver30\Radm_log.htm
+          Description: RAdmin log file (64-bit)
+          OS: Windows
+        - File: C:\Windows\System32\rserver30\CHATLOGS\*\*.htm
+          Description: RAdmin chat logs
+          OS: Windows
+        - File: C:\Users\*\Documents\ChatLogs\*\*.htm
+          Description: RAdmin user chat logs
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin Security
+          Description: N/A
+    Network:
+        - Description: N/A
+          Domains:
+              - radmin.com
+          Ports:
+              - 443
 Detections:
-- Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_pua_radmin.yml
-  Description: PUA - Radmin Viewer Utility Execution
-- Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml
-  Description: Enumeration for 3rd Party Creds From CLI
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_registry_sigma.yml
-  Description: Detects potential registry activity of RAdmin RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_network_sigma.yml
-  Description: Detects potential network activity of RAdmin RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_files_sigma.yml
-  Description: Detects potential files activity of RAdmin RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_processes_sigma.yml
-  Description: Detects potential processes activity of RAdmin RMM tool
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_pua_radmin.yml
+      Description: PUA - Radmin Viewer Utility Execution
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/782f0f524e6f797ea114fe0d87b22cb4abaa6b7c/rules/windows/process_creation/proc_creation_win_registry_enumeration_for_credentials_cli.yml
+      Description: Enumeration for 3rd Party Creds From CLI
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_registry_sigma.yml
+      Description: Detects potential registry activity of RAdmin RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_network_sigma.yml
+      Description: Detects potential network activity of RAdmin RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_files_sigma.yml
+      Description: Detects potential files activity of RAdmin RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/radmin_processes_sigma.yml
+      Description: Detects potential processes activity of RAdmin RMM tool
 References:
-- https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/
-- https://helpdesk.radmin.com/radmin3help/
-- https://helpdesk.radmin.com/radmin3help/files/viewercmd.htm
-- https://helpdesk.radmin.com/radmin3help/files/cmd.htm
+    - https://radmin-club.com/radmin/how-to-establish-a-connection-outside-of-lan/
+    - https://helpdesk.radmin.com/radmin3help/
+    - https://helpdesk.radmin.com/radmin3help/files/viewercmd.htm
+    - https://helpdesk.radmin.com/radmin3help/files/cmd.htm
 Acknowledgement:
-- Person: Nasreddine Bencherchali
-  Handle: '@nas_bench'
+    - Person: Nasreddine Bencherchali
+      Handle: '@nas_bench'
 CodeSigning:
-  certificates:
-  - signer_name: Famatech Corp.
-    certificate_thumbprint: 9DC1CD24C50424A2BF993D8350F7A0F62DE34823
-    certificate_der_base64: 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
-    src_file_sha256: 839153d334bd3fb89488f1499cece43e7d1077f35fe0b0f79c2bd413bc3a9aaa
-    src_file_path: downloaded_files/radmin/839153d334bd3fb89488f1499cece43e7d1077f35fe0b0f79c2bd413bc3a9aaa
-    src_file_company: 'Famatech Corp.                                              '
+    certificates:
+        - signer_name: Famatech Corp.
+          certificate_thumbprint: 9DC1CD24C50424A2BF993D8350F7A0F62DE34823
+          certificate_der_base64: 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
+          src_file_sha256: 839153d334bd3fb89488f1499cece43e7d1077f35fe0b0f79c2bd413bc3a9aaa
+          src_file_path: downloaded_files/radmin/839153d334bd3fb89488f1499cece43e7d1077f35fe0b0f79c2bd413bc3a9aaa
+          src_file_company: 'Famatech Corp.                                              '

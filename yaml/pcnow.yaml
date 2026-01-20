@@ -5,69 +5,69 @@ Author: ''
 Created: '2024-08-02'
 LastModified: '2025-12-14'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - mwcliun.exe
-  - pcnmgr.exe
-  - webexpcnow.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - mwcliun.exe
+        - pcnmgr.exe
+        - webexpcnow.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - au.pcmag.com/utilities/21470/webex-pcnow
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - au.pcmag.com/utilities/21470/webex-pcnow
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml
-  Description: Detects potential network activity of Pcnow RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml
-  Description: Detects potential processes activity of Pcnow RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml
+      Description: Detects potential network activity of Pcnow RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml
+      Description: Detects potential processes activity of Pcnow RMM tool
 References:
-- http://pcnow.webex.com/ - DOA as of 2024
+    - http://pcnow.webex.com/ - DOA as of 2024
 Acknowledgement: []
 CodeSigning:
-  search_names:
-  - mwcliun.exe
-  - pcnmgr.exe
-  - setup
-  - webexpcnow.exe
-  company_names: []
-  signer_names:
-  - WebEx Communications Inc.
-  certificates:
-  - signer_name: WebEx Communications Inc.
-    issuer: CN=VeriSign Class 3 Code Signing 2004 CA
-    certificate_thumbprint: 0759E419527C28EA0A8265D410F024805DB5C36A
-    tbs_sha256: C2A6A5BD0A9C6EB5941B6E50962E93B05B6F392B885C234EB186E815B760923F
-    tbs_sha1: E26BC65DDB51BA643146F05F9C4D2D7367CEC3C5
-    valid_from: '2009-01-16T00:00:00+00:00'
-    valid_to: '2012-04-06T23:59:59+00:00'
-    certificate_der_base64: MIIFEzCCA/ugAwIBAgIQRDFW1LwYGhXJrYXpX6YchTANBgkqhkiG9w0BAQUFADCBtDELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTswOQYDVQQLEzJUZXJtcyBvZiB1c2UgYXQgaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYSAoYykwNDEuMCwGA1UEAxMlVmVyaVNpZ24gQ2xhc3MgMyBDb2RlIFNpZ25pbmcgMjAwNCBDQTAeFw0wOTAxMTYwMDAwMDBaFw0xMjA0MDYyMzU5NTlaMIHWMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExIjAgBgNVBAoUGVdlYkV4IENvbW11bmljYXRpb25zIEluYy4xPjA8BgNVBAsTNURpZ2l0YWwgSUQgQ2xhc3MgMyAtIE1pY3Jvc29mdCBTb2Z0d2FyZSBWYWxpZGF0aW9uIHYyMRQwEgYDVQQLFAtFbmdpbmVlcmluZzEiMCAGA1UEAxQZV2ViRXggQ29tbXVuaWNhdGlvbnMgSW5jLjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAsxqS19REKKTD/ud3XrFtIcub35IkjxAERfkt4aysy6PPyAxOKB/2vuMWU7PDrQzNeJ9lRRncH6koWe+kA3njHfYwfWd0qDWOAcX/gaYbKM9Un7rmbBgOuEYavU8FKEpO7SXoJZWYhbtxJbvbeyAZwfha2+Ck2KQZrFKxXVNJl7kCAwEAAaOCAX8wggF7MAkGA1UdEwQCMAAwDgYDVR0PAQH/BAQDAgeAMEAGA1UdHwQ5MDcwNaAzoDGGL2h0dHA6Ly9DU0MzLTIwMDQtY3JsLnZlcmlzaWduLmNvbS9DU0MzLTIwMDQuY3JsMEQGA1UdIAQ9MDswOQYLYIZIAYb4RQEHFwMwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYTATBgNVHSUEDDAKBggrBgEFBQcDAzB1BggrBgEFBQcBAQRpMGcwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLnZlcmlzaWduLmNvbTA/BggrBgEFBQcwAoYzaHR0cDovL0NTQzMtMjAwNC1haWEudmVyaXNpZ24uY29tL0NTQzMtMjAwNC1haWEuY2VyMB8GA1UdIwQYMBaAFAj1Uej7/j09ZDZ8aM9beKjfucU3MBEGCWCGSAGG+EIBAQQEAwIEEDAWBgorBgEEAYI3AgEbBAgwBgEBAAEB/zANBgkqhkiG9w0BAQUFAAOCAQEAF1yGbFmkZzzi53DfC5XH/0YCv0VXQtAhkHkY6DQVboXEKAXk8yF/e3gpXsoHBo3rB1Apm8Im1+PVmC1Apz9XZPeCWU98159uCBmU3KDbiAhUn+M1xkYwFcyoVHhpuHXU0tK0fREO8xbJtskNO774UU8gxgHGnBS+1kFrqbPmSvwJjlDECsKS80jSdj/DoPPXVUNGi3sdeEHa/kXXrPBPk1Z/0T9D4nP1XgzjyzusUlPwViFmQbQGvLC23RZZgoIaosQ3+LExecemgR9mm2pNm5sYRB7XQ2XhW70vxJfAbhiTE417zlT62OEAydZKImF9f/WeIS+QHh4iin7V3OkUAg==
-    src_file_sha256: 443156D4BC181A15C9AD85E95FA61C85
+    search_names:
+        - mwcliun.exe
+        - pcnmgr.exe
+        - setup
+        - webexpcnow.exe
+    company_names: []
+    signer_names:
+        - WebEx Communications Inc.
+    certificates:
+        - signer_name: WebEx Communications Inc.
+          issuer: CN=VeriSign Class 3 Code Signing 2004 CA
+          certificate_thumbprint: 0759E419527C28EA0A8265D410F024805DB5C36A
+          tbs_sha256: C2A6A5BD0A9C6EB5941B6E50962E93B05B6F392B885C234EB186E815B760923F
+          tbs_sha1: E26BC65DDB51BA643146F05F9C4D2D7367CEC3C5
+          valid_from: '2009-01-16T00:00:00+00:00'
+          valid_to: '2012-04-06T23:59:59+00:00'
+          certificate_der_base64: MIIFEzCCA/ugAwIBAgIQRDFW1LwYGhXJrYXpX6YchTANBgkqhkiG9w0BAQUFADCBtDELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTswOQYDVQQLEzJUZXJtcyBvZiB1c2UgYXQgaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYSAoYykwNDEuMCwGA1UEAxMlVmVyaVNpZ24gQ2xhc3MgMyBDb2RlIFNpZ25pbmcgMjAwNCBDQTAeFw0wOTAxMTYwMDAwMDBaFw0xMjA0MDYyMzU5NTlaMIHWMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEUMBIGA1UEBxMLU2FudGEgQ2xhcmExIjAgBgNVBAoUGVdlYkV4IENvbW11bmljYXRpb25zIEluYy4xPjA8BgNVBAsTNURpZ2l0YWwgSUQgQ2xhc3MgMyAtIE1pY3Jvc29mdCBTb2Z0d2FyZSBWYWxpZGF0aW9uIHYyMRQwEgYDVQQLFAtFbmdpbmVlcmluZzEiMCAGA1UEAxQZV2ViRXggQ29tbXVuaWNhdGlvbnMgSW5jLjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAsxqS19REKKTD/ud3XrFtIcub35IkjxAERfkt4aysy6PPyAxOKB/2vuMWU7PDrQzNeJ9lRRncH6koWe+kA3njHfYwfWd0qDWOAcX/gaYbKM9Un7rmbBgOuEYavU8FKEpO7SXoJZWYhbtxJbvbeyAZwfha2+Ck2KQZrFKxXVNJl7kCAwEAAaOCAX8wggF7MAkGA1UdEwQCMAAwDgYDVR0PAQH/BAQDAgeAMEAGA1UdHwQ5MDcwNaAzoDGGL2h0dHA6Ly9DU0MzLTIwMDQtY3JsLnZlcmlzaWduLmNvbS9DU0MzLTIwMDQuY3JsMEQGA1UdIAQ9MDswOQYLYIZIAYb4RQEHFwMwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYTATBgNVHSUEDDAKBggrBgEFBQcDAzB1BggrBgEFBQcBAQRpMGcwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLnZlcmlzaWduLmNvbTA/BggrBgEFBQcwAoYzaHR0cDovL0NTQzMtMjAwNC1haWEudmVyaXNpZ24uY29tL0NTQzMtMjAwNC1haWEuY2VyMB8GA1UdIwQYMBaAFAj1Uej7/j09ZDZ8aM9beKjfucU3MBEGCWCGSAGG+EIBAQQEAwIEEDAWBgorBgEEAYI3AgEbBAgwBgEBAAEB/zANBgkqhkiG9w0BAQUFAAOCAQEAF1yGbFmkZzzi53DfC5XH/0YCv0VXQtAhkHkY6DQVboXEKAXk8yF/e3gpXsoHBo3rB1Apm8Im1+PVmC1Apz9XZPeCWU98159uCBmU3KDbiAhUn+M1xkYwFcyoVHhpuHXU0tK0fREO8xbJtskNO774UU8gxgHGnBS+1kFrqbPmSvwJjlDECsKS80jSdj/DoPPXVUNGi3sdeEHa/kXXrPBPk1Z/0T9D4nP1XgzjyzusUlPwViFmQbQGvLC23RZZgoIaosQ3+LExecemgR9mm2pNm5sYRB7XQ2XhW70vxJfAbhiTE417zlT62OEAydZKImF9f/WeIS+QHh4iin7V3OkUAg==
+          src_file_sha256: 443156D4BC181A15C9AD85E95FA61C85
 FileHashes:
-  authenticode:
-  - file_name: Setup
-    sha256: 3C236514460068A18CFF946290ADAD638CEA45CF095CF197B67F794343755864
-    sha1: 8D2C6E3D8EB37DA5CD87D1AE49DA1D233A35A70C
-  - file_name: mwcliun.exe
-    sha256: 17121D3285904AEA75E3BDAE87F3E5C65CCB28E8BE37F0E1DC4DD6A65C3A7E0E
-    sha1: 8169DB079B3F8F1ECAF32AB31473F409C0E984CD
-  page:
-  - file_name: Setup
-    sha256: 899CCFF9D01CAF0D4CCEA9959295F106A053E15009B77612C84E85CC656F97BE
-    sha1: 21C1A64D1B9D9E27F45979D62C4DEC2C2E4CC219
-  - file_name: mwcliun.exe
-    sha256: A9A7D8D06FACF8D7CC1BE980E39FEB01F87938BC3AF04C7294E2DA0377C5C75E
-    sha1: A789BA3603A48DD6CAB5F421E2484379966F4B69
+    authenticode:
+        - file_name: Setup
+          sha256: 3C236514460068A18CFF946290ADAD638CEA45CF095CF197B67F794343755864
+          sha1: 8D2C6E3D8EB37DA5CD87D1AE49DA1D233A35A70C
+        - file_name: mwcliun.exe
+          sha256: 17121D3285904AEA75E3BDAE87F3E5C65CCB28E8BE37F0E1DC4DD6A65C3A7E0E
+          sha1: 8169DB079B3F8F1ECAF32AB31473F409C0E984CD
+    page:
+        - file_name: Setup
+          sha256: 899CCFF9D01CAF0D4CCEA9959295F106A053E15009B77612C84E85CC656F97BE
+          sha1: 21C1A64D1B9D9E27F45979D62C4DEC2C2E4CC219
+        - file_name: mwcliun.exe
+          sha256: A9A7D8D06FACF8D7CC1BE980E39FEB01F87938BC3AF04C7294E2DA0377C5C75E
+          sha1: A789BA3603A48DD6CAB5F421E2484379966F4B69

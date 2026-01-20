@@ -1,64 +1,63 @@
 Name: RemotePC
 Category: RMM
-Description: RemotePC is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: RemotePC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files (x86)\RemotePC\*
-  - Idrive.File-Transfer
-  - '*\RemotePC\*'
-  - remotepcservice.exe
-  - RemotePC.exe
-  - remotepchost.exe
-  - idrive.RemotePCAgent
-  - rpcsuite.exe
-  - '*\RemotePCService.exe'
-  - RemotePCService.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\RemotePC\*
+        - Idrive.File-Transfer
+        - '*\RemotePC\*'
+        - remotepcservice.exe
+        - RemotePC.exe
+        - remotepchost.exe
+        - idrive.RemotePCAgent
+        - rpcsuite.exe
+        - '*\RemotePCService.exe'
+        - RemotePCService.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.remotedesktop.com'
-    - '*.remotepc.com'
-    - www.remotepc.com
-    - remotepc.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.remotedesktop.com'
+              - '*.remotepc.com'
+              - www.remotepc.com
+              - remotepc.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_network_sigma.yml
-  Description: Detects potential network activity of RemotePC RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_processes_sigma.yml
-  Description: Detects potential processes activity of RemotePC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_network_sigma.yml
+      Description: Detects potential network activity of RemotePC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotepc_processes_sigma.yml
+      Description: Detects potential processes activity of RemotePC RMM tool
 References:
-- https://www.remotedesktop.com/helpdesk/faq-firewall
+    - https://www.remotedesktop.com/helpdesk/faq-firewall
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: IDrive, Inc.
-    certificate_thumbprint: 17792230278CDBA9F4A0ACFC0BCCA9F259286A73
-    certificate_der_base64: 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
-    src_file_sha256: f330dd1b146522594b5920b2edf2c66f5566e75fb31959919fed0926bcaec794
-    src_file_path: downloaded_files/remotepc/f330dd1b146522594b5920b2edf2c66f5566e75fb31959919fed0926bcaec794
-  - signer_name: IDrive, Inc.
-    certificate_thumbprint: 491640FE02B0F0A1E298191326D2F72527C5DCF7
-    certificate_der_base64: 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
-    src_file_sha256: 8156cbcbdc4e2eeedcb4ddbabc0052d2e4898ca27280160c396639bb39d561e4
-    src_file_path: downloaded_files/remotepc/8156cbcbdc4e2eeedcb4ddbabc0052d2e4898ca27280160c396639bb39d561e4
-    src_file_company: 'IDrive Inc                                                  '
+    certificates:
+        - signer_name: IDrive, Inc.
+          certificate_thumbprint: 17792230278CDBA9F4A0ACFC0BCCA9F259286A73
+          certificate_der_base64: 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
+          src_file_sha256: f330dd1b146522594b5920b2edf2c66f5566e75fb31959919fed0926bcaec794
+          src_file_path: downloaded_files/remotepc/f330dd1b146522594b5920b2edf2c66f5566e75fb31959919fed0926bcaec794
+        - signer_name: IDrive, Inc.
+          certificate_thumbprint: 491640FE02B0F0A1E298191326D2F72527C5DCF7
+          certificate_der_base64: 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
+          src_file_sha256: 8156cbcbdc4e2eeedcb4ddbabc0052d2e4898ca27280160c396639bb39d561e4
+          src_file_path: downloaded_files/remotepc/8156cbcbdc4e2eeedcb4ddbabc0052d2e4898ca27280160c396639bb39d561e4
+          src_file_company: 'IDrive Inc                                                  '

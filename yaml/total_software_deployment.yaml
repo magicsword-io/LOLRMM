@@ -1,43 +1,41 @@
 Name: Total Software Deployment
 Category: RMM
-Description: Total Software Deployment is a remote monitoring and management (RMM)
-  tool. More information will be added as it becomes available.
+Description: Total Software Deployment is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\ProgramData\Total Software Deployment\*
-  - '*\Total Software Deployment\*'
-  - '*\tniwinagent.exe'
-  - '*\Tsdservice.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\ProgramData\Total Software Deployment\*
+        - '*\Total Software Deployment\*'
+        - '*\tniwinagent.exe'
+        - '*\Tsdservice.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/total_software_deployment_processes_sigma.yml
-  Description: Detects potential processes activity of Total Software Deployment RMM
-    tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/total_software_deployment_processes_sigma.yml
+      Description: Detects potential processes activity of Total Software Deployment RMM tool
 References: []
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: Softinventive Lab
-    certificate_thumbprint: 0A4F216B5E8FD8B7906F05B71609F002984A9456
-    certificate_der_base64: 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
-    src_file_sha256: 2c3979c76cccc59b5240053a226374f89be4a7f4c58e29b04efd849cb6465575
-    src_file_path: downloaded_files/total_software_deployment/2c3979c76cccc59b5240053a226374f89be4a7f4c58e29b04efd849cb6465575
-    src_file_company: Softinventive Lab
+    certificates:
+        - signer_name: Softinventive Lab
+          certificate_thumbprint: 0A4F216B5E8FD8B7906F05B71609F002984A9456
+          certificate_der_base64: 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
+          src_file_sha256: 2c3979c76cccc59b5240053a226374f89be4a7f4c58e29b04efd849cb6465575
+          src_file_path: downloaded_files/total_software_deployment/2c3979c76cccc59b5240053a226374f89be4a7f4c58e29b04efd849cb6465575
+          src_file_company: Softinventive Lab

@@ -1,54 +1,52 @@
 Name: Microsoft Quick Assist
 Category: RMM
-Description: Microsoft Quick Assist is a remote monitoring and management (RMM) tool.
-  More information will be added as it becomes available.
+Description: Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - quickassist.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - quickassist.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    - '*.support.services.microsoft.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+              - '*.support.services.microsoft.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_network_sigma.yml
-  Description: Detects potential network activity of Microsoft Quick Assist RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_processes_sigma.yml
-  Description: Detects potential processes activity of Microsoft Quick Assist RMM
-    tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_network_sigma.yml
+      Description: Detects potential network activity of Microsoft Quick Assist RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_processes_sigma.yml
+      Description: Detects potential processes activity of Microsoft Quick Assist RMM tool
 References:
-- https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca
+    - https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: GlobalSigningDig
-    certificate_thumbprint: DE523085FB77B3D8B78E80EF14BC627772C6E1D0
-    certificate_der_base64: MIIDBjCCAe6gAwIBAgIQc+jN31/yRqxBNamgs3AXfDANBgkqhkiG9w0BAQsFADAbMRkwFwYDVQQDDBBHbG9iYWxTaWduaW5nRGlnMB4XDTI1MTAzMDA4MTE0N1oXDTI2MTAzMDA4MzE0N1owGzEZMBcGA1UEAwwQR2xvYmFsU2lnbmluZ0RpZzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMx/Ld3o0K7RMJtTr0DHt1pMqrpNzLFQZja9ZPTPmYvRw4JF8gu5Sb/apCpz//BIAQJQ0N9D4C8bkoeVxsmlcuNzjaiCTBOeEHKC/epZiVvOC8OWjwoQxZcInovFiv0PS6V8cl1kM6S/4FXpVDCn2uqpxKFQHQeTrxsZa07VMyVvAKcx0u8mTFHEgiuNvgcbPZ959V+BRZ+siyzWJyzS/UmoyXO8jkkArwMybcKYVvK40FLH1t/S8teERp6iiyke2YB2eAC+EmKnkG9+HSB3NFb7Q1pOu5YrD3ieUMoNJPrpb5amUfW2fKhRAElSJD9oYW0OtA6XoROiQb3A89I6An0CAwEAAaNGMEQwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMB0GA1UdDgQWBBQbfXHoPs6WtHehmqYdqtanuiy+QTANBgkqhkiG9w0BAQsFAAOCAQEAIEJubEC/2gOkiYK6yjzfXip17fJSviz/wJ4O69XOKpHLTL0Nx9WjmqUAFUTQG46+xYOx5FU5Zvq76RmOtKfWXOXVyRgSnJVk5FYA9B+3dO4bsD6i16rRrnlGmTdWJx8WRRZBFTYhmJ24CSJtrnd5BU4Cl9Y6XYNNFOG5tsQRtGYPK1JGWJ+PVUxnZYkQC0hT4SX0mKhQQfrB1gZTySTnM2qaHkmeOOewgYzfFfkYSUn8QLiqwlrPrssU0xntqvk9PAbeRv+J+laYFDHPg/Cl1OcS8uwk4/VOInniSLQnLoDGbtQIIPOAmxezDu1l5eaT90E1TAC+sopyTOyrR8UeLw==
-    src_file_sha256: 0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3
-    src_file_path: downloaded_files/microsoft_quick_assist/0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3
-    src_file_company: Microsoft Corporation
-  - signer_name: CodeSigningMico
-    certificate_thumbprint: 6116BB0D666C358E66E8E18E25B8C147B9C0F2F6
-    certificate_der_base64: MIIDBDCCAeygAwIBAgIQb/mz6VvfdIVCveBrem6XCTANBgkqhkiG9w0BAQsFADAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wHhcNMjUxMDI4MjExMzI3WhcNMjYxMDI4MjEzMzI3WjAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDZuvZi1Hj4Jm1u++tpo5pREUTd8ryNRtZA8EXsQhRgLc8P65gfpg5owobw8rgpEgoVB2WWhREVotBzt9cdsHNECmQb30HXuVQdeGjsFu+cvTy0+l+EN5M8tHHdfXEv4b04O45KsHiivKWTFM/MRQVI5iY5u+4vOimrUnH70c2KPmvqKIvaDqQz2XReMe5JBG3UguVdn2IL4Csmg9kL++oM8wIEoP4mj8gG3+5pHeoPSLKEIxolkascHIl6WGeNd7T4fvu8KNSDhNAYzS84x3el2HvRCBqwJ/Xqhesp2WCYFmmzOJbv1mIICPT29qbGO5pYTSmDZZsGWPmdJE3jgah5AgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUvozeOtjQSswck1CbmPJnPd9mAXcwDQYJKoZIhvcNAQELBQADggEBAFvjyqepTkG5dST/G10jUjgLwmnTC27dImW5mcG4B3VZLWGzYH1Wh8HnXCn8y9hHFqhIWqr1j22paxDeNm9biasfFvyJ/4WQqxoi/cBY/niIIP08IqlMCakJPqfZYlEw3krYeDmtXAIAuJyWeEwlG2mFfxf+TOLhUoOKwnBtN+CoSE7+TP1+83HHT0hR+i2Lt6pNdqJQENy1lxZRYkTdSKVglZMwASLnCfVtslhmnFTMabrADWUWNtpZRrP7+5fUYQ/h3xUFy8aQ7hOHRPpyjs9M0vh6c+qr0xXl7qpHHcLad8NLZzuICoA7wKBc7uKuDyjvk24cVoSpc2pV6vbBC8M=
-    src_file_sha256: 9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b
-    src_file_path: downloaded_files/microsoft_quick_assist/9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b
-    src_file_company: Microsoft Corporation
+    certificates:
+        - signer_name: GlobalSigningDig
+          certificate_thumbprint: DE523085FB77B3D8B78E80EF14BC627772C6E1D0
+          certificate_der_base64: MIIDBjCCAe6gAwIBAgIQc+jN31/yRqxBNamgs3AXfDANBgkqhkiG9w0BAQsFADAbMRkwFwYDVQQDDBBHbG9iYWxTaWduaW5nRGlnMB4XDTI1MTAzMDA4MTE0N1oXDTI2MTAzMDA4MzE0N1owGzEZMBcGA1UEAwwQR2xvYmFsU2lnbmluZ0RpZzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMx/Ld3o0K7RMJtTr0DHt1pMqrpNzLFQZja9ZPTPmYvRw4JF8gu5Sb/apCpz//BIAQJQ0N9D4C8bkoeVxsmlcuNzjaiCTBOeEHKC/epZiVvOC8OWjwoQxZcInovFiv0PS6V8cl1kM6S/4FXpVDCn2uqpxKFQHQeTrxsZa07VMyVvAKcx0u8mTFHEgiuNvgcbPZ959V+BRZ+siyzWJyzS/UmoyXO8jkkArwMybcKYVvK40FLH1t/S8teERp6iiyke2YB2eAC+EmKnkG9+HSB3NFb7Q1pOu5YrD3ieUMoNJPrpb5amUfW2fKhRAElSJD9oYW0OtA6XoROiQb3A89I6An0CAwEAAaNGMEQwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMB0GA1UdDgQWBBQbfXHoPs6WtHehmqYdqtanuiy+QTANBgkqhkiG9w0BAQsFAAOCAQEAIEJubEC/2gOkiYK6yjzfXip17fJSviz/wJ4O69XOKpHLTL0Nx9WjmqUAFUTQG46+xYOx5FU5Zvq76RmOtKfWXOXVyRgSnJVk5FYA9B+3dO4bsD6i16rRrnlGmTdWJx8WRRZBFTYhmJ24CSJtrnd5BU4Cl9Y6XYNNFOG5tsQRtGYPK1JGWJ+PVUxnZYkQC0hT4SX0mKhQQfrB1gZTySTnM2qaHkmeOOewgYzfFfkYSUn8QLiqwlrPrssU0xntqvk9PAbeRv+J+laYFDHPg/Cl1OcS8uwk4/VOInniSLQnLoDGbtQIIPOAmxezDu1l5eaT90E1TAC+sopyTOyrR8UeLw==
+          src_file_sha256: 0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3
+          src_file_path: downloaded_files/microsoft_quick_assist/0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3
+          src_file_company: Microsoft Corporation
+        - signer_name: CodeSigningMico
+          certificate_thumbprint: 6116BB0D666C358E66E8E18E25B8C147B9C0F2F6
+          certificate_der_base64: MIIDBDCCAeygAwIBAgIQb/mz6VvfdIVCveBrem6XCTANBgkqhkiG9w0BAQsFADAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wHhcNMjUxMDI4MjExMzI3WhcNMjYxMDI4MjEzMzI3WjAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDZuvZi1Hj4Jm1u++tpo5pREUTd8ryNRtZA8EXsQhRgLc8P65gfpg5owobw8rgpEgoVB2WWhREVotBzt9cdsHNECmQb30HXuVQdeGjsFu+cvTy0+l+EN5M8tHHdfXEv4b04O45KsHiivKWTFM/MRQVI5iY5u+4vOimrUnH70c2KPmvqKIvaDqQz2XReMe5JBG3UguVdn2IL4Csmg9kL++oM8wIEoP4mj8gG3+5pHeoPSLKEIxolkascHIl6WGeNd7T4fvu8KNSDhNAYzS84x3el2HvRCBqwJ/Xqhesp2WCYFmmzOJbv1mIICPT29qbGO5pYTSmDZZsGWPmdJE3jgah5AgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUvozeOtjQSswck1CbmPJnPd9mAXcwDQYJKoZIhvcNAQELBQADggEBAFvjyqepTkG5dST/G10jUjgLwmnTC27dImW5mcG4B3VZLWGzYH1Wh8HnXCn8y9hHFqhIWqr1j22paxDeNm9biasfFvyJ/4WQqxoi/cBY/niIIP08IqlMCakJPqfZYlEw3krYeDmtXAIAuJyWeEwlG2mFfxf+TOLhUoOKwnBtN+CoSE7+TP1+83HHT0hR+i2Lt6pNdqJQENy1lxZRYkTdSKVglZMwASLnCfVtslhmnFTMabrADWUWNtpZRrP7+5fUYQ/h3xUFy8aQ7hOHRPpyjs9M0vh6c+qr0xXl7qpHHcLad8NLZzuICoA7wKBc7uKuDyjvk24cVoSpc2pV6vbBC8M=
+          src_file_sha256: 9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b
+          src_file_path: downloaded_files/microsoft_quick_assist/9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b
+          src_file_company: Microsoft Corporation

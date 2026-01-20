@@ -1,47 +1,46 @@
 Name: PSEXEC
 Category: RMM
-Description: PSEXEC is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: PSEXEC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - psexec.exe
-  - psexecsvc.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - psexec.exe
+        - psexecsvc.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - user_managed
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - user_managed
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec_network_sigma.yml
-  Description: Detects potential network activity of PSEXEC RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec_processes_sigma.yml
-  Description: Detects potential processes activity of PSEXEC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec_network_sigma.yml
+      Description: Detects potential network activity of PSEXEC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec_processes_sigma.yml
+      Description: Detects potential processes activity of PSEXEC RMM tool
 References:
-- https://learn.microsoft.com/en-us/sysinternals/downloads/psexec
+    - https://learn.microsoft.com/en-us/sysinternals/downloads/psexec
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: KNOWLEDGE CENTRIC SOLUTIONS SL.
-    certificate_thumbprint: 1EEBC8C25FE20B6AF6317FBE9B849EC0CCF9233B
-    certificate_der_base64: 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
-    src_file_sha256: 046b0719f9659ad368515035768ae5be3599621af5ed1916785239711b898be8
-    src_file_path: downloaded_files/psexec/046b0719f9659ad368515035768ae5be3599621af5ed1916785239711b898be8
-    src_file_company: Sysinternals - www.sysinternals.com
+    certificates:
+        - signer_name: KNOWLEDGE CENTRIC SOLUTIONS SL.
+          certificate_thumbprint: 1EEBC8C25FE20B6AF6317FBE9B849EC0CCF9233B
+          certificate_der_base64: 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
+          src_file_sha256: 046b0719f9659ad368515035768ae5be3599621af5ed1916785239711b898be8
+          src_file_path: downloaded_files/psexec/046b0719f9659ad368515035768ae5be3599621af5ed1916785239711b898be8
+          src_file_company: Sysinternals - www.sysinternals.com

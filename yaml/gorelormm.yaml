@@ -1,159 +1,158 @@
 Name: Gorelo RMM
 Category: RMM
-Description: Gorelo RMM is a remote monitoring and management tool facilitating remote
-  access and control of devices for support and administration.
+Description: Gorelo RMM is a remote monitoring and management tool facilitating remote access and control of devices for support and administration.
 Author: Jean-Marc ALBERT
 Created: '2025-11-13'
 LastModified: '2025-11-13'
 Details:
-  Website: https://www.gorelo.io/remote-management/
-  PEMetadata:
-  - Filename: Gorelo.Rmm.Setup.exe
-    OriginalFileName: Gorelo.Rmm.Setup.exe
-    Description: Gorelo RMM
-    Product: Gorelo RMM
-  Privileges: User
-  Free: false
-  Verification: false
-  SupportedOS:
-  - Windows
-  - Mac
-  Capabilities:
-  - File Transfer
-  - File System Access
-  - Remote Control
-  - GUI Support
-  - Command line Support
+    Website: https://www.gorelo.io/remote-management/
+    PEMetadata:
+        - Filename: Gorelo.Rmm.Setup.exe
+          OriginalFileName: Gorelo.Rmm.Setup.exe
+          Description: Gorelo RMM
+          Product: Gorelo RMM
+    Privileges: User
+    Free: false
+    Verification: false
+    SupportedOS:
+        - Windows
+        - Mac
+    Capabilities:
+        - File Transfer
+        - File System Access
+        - Remote Control
+        - GUI Support
+        - Command line Support
 InstallationPaths:
-- C:\Program Files\Gorelo\*
+    - C:\Program Files\Gorelo\*
 Artifacts:
-  Disk:
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.AppManagement.zip
-    Description: Gorelo Agent Plugin - App Management
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.DeviceChat.zip
-    Description: Gorelo Agent Plugin - Device Chat
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.IpAddressDetector.zip
-    Description: Gorelo Agent Plugin - IpAddress Detector
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ScreenCapture.zip
-    Description: Gorelo Agent Plugin - Screen Capture
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ScriptRunner.zip
-    Description: Gorelo Agent Plugin - Script Runner
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ServerMonitor.zip
-    Description: Gorelo Agent Plugin - Server Monitor
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ShellCommand.zip
-    Description: Gorelo Agent Plugin - Shell Command
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.SystemProfiler.zip
-    Description: Gorelo Agent Plugin - System Profiler
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.SystemSecurityManagement.zip
-    Description: Gorelo Agent Plugin - System Security Management
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.WindowsChecker.zip
-    Description: Gorelo Agent Plugin - Windows Checker
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.WindowsPatchManagement.zip
-    Description: Gorelo Agent Plugin - Windows Patch Management
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\RMMAgent\Gorelo.RemoteManagement.Agent\Gorelo.RemoteManagement.Agent.exe
-    Description: Gorelo RMM Agent executable
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Agent\Shell\Gorelo.RemoteManagement.Shell\Gorelo.RemoteManagement.Shell.exe
-    Description: Gorelo RMM Shell executable
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.RemoteManagement.Agent.zip
-    Description: Installer Download - Agent package
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.RemoteManagement.Shell.zip
-    Description: Installer Download - Shell package
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.Rmm.Installer.Handler.zip
-    Description: Installer Download - Handler package
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.Rmm.Installer.zip
-    Description: Installer Download - Installer package
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Installer\Gorelo.Rmm.Installer.Handler\Gorelo.Rmm.Installer.Handler.exe
-    Description: RMM Installer Handler executable
-    OS: Windows
-  - File: C:\Program Files\Gorelo\Installer\Gorelo.Rmm.Installer\Gorelo.Rmm.Installer.exe
-    Description: RMM Installer executable
-    OS: Windows
-  - File: C:\Program Files\Gorelo\LogFiles\Agent\diagnostics-*.txt
-    Description: Diagnostics logs for the Agent component
-    OS: Windows
-  - File: C:\Program Files\Gorelo\LogFiles\Installer\diagnostics-*.txt
-    Description: Diagnostics logs for the Installer component
-    OS: Windows
-  - File: C:\Program Files\Gorelo\LogFiles\InstallerHandler\diagnostics-*.txt
-    Description: Diagnostics logs for the InstallerHandler component
-    OS: Windows
-  - File: C:\Program Files\Gorelo\LogFiles\Shell\diagnostics-*.txt
-    Description: Diagnostics logs for the Shell component
-    OS: Windows
-  InstallationPaths:
-  - C:\Program Files\Gorelo\Agent\*
-  Network:
-  - Description: Called during access to remote control WebGUI access
-    Domains:
-    - app.gorelo.io
-    Ports:
-    - 443
-  - Description: Called during setup
-    Domains:
-    - gorelo-rmm.azurewebsites.net
-    Ports:
-    - 443
-  - Description: Called during setup
-    Domains:
-    - gw.usw.gorelo.tech
-    Ports:
-    - 443
-  - Description: Called during setup
-    Domains:
-    - lr.rmm.pod1.usw.gorelo.tech
-    Ports:
-    - 443
-  - Description: Called during setup
-    Domains:
-    - public.rmm.pod1.usw.gorelo.tech
-    Ports:
-    - 443
-  - Description: Called during setup
-    Domains:
-    - r1.rmm.uw.gorelo.tech
-    Ports:
-    - 443
-  - Description: Called during setup
-    Domains:
-    - sr.rmm.pod1.usw.gorelo.tech
-    Ports:
-    - 443
+    Disk:
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.AppManagement.zip
+          Description: Gorelo Agent Plugin - App Management
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.DeviceChat.zip
+          Description: Gorelo Agent Plugin - Device Chat
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.IpAddressDetector.zip
+          Description: Gorelo Agent Plugin - IpAddress Detector
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ScreenCapture.zip
+          Description: Gorelo Agent Plugin - Screen Capture
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ScriptRunner.zip
+          Description: Gorelo Agent Plugin - Script Runner
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ServerMonitor.zip
+          Description: Gorelo Agent Plugin - Server Monitor
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.ShellCommand.zip
+          Description: Gorelo Agent Plugin - Shell Command
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.SystemProfiler.zip
+          Description: Gorelo Agent Plugin - System Profiler
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.SystemSecurityManagement.zip
+          Description: Gorelo Agent Plugin - System Security Management
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.WindowsChecker.zip
+          Description: Gorelo Agent Plugin - Windows Checker
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Plugins\Downloads\Gorelo.RemoteManagement.WindowsPatchManagement.zip
+          Description: Gorelo Agent Plugin - Windows Patch Management
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\RMMAgent\Gorelo.RemoteManagement.Agent\Gorelo.RemoteManagement.Agent.exe
+          Description: Gorelo RMM Agent executable
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Agent\Shell\Gorelo.RemoteManagement.Shell\Gorelo.RemoteManagement.Shell.exe
+          Description: Gorelo RMM Shell executable
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.RemoteManagement.Agent.zip
+          Description: Installer Download - Agent package
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.RemoteManagement.Shell.zip
+          Description: Installer Download - Shell package
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.Rmm.Installer.Handler.zip
+          Description: Installer Download - Handler package
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Installer\Downloads\Gorelo.Rmm.Installer.zip
+          Description: Installer Download - Installer package
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Installer\Gorelo.Rmm.Installer.Handler\Gorelo.Rmm.Installer.Handler.exe
+          Description: RMM Installer Handler executable
+          OS: Windows
+        - File: C:\Program Files\Gorelo\Installer\Gorelo.Rmm.Installer\Gorelo.Rmm.Installer.exe
+          Description: RMM Installer executable
+          OS: Windows
+        - File: C:\Program Files\Gorelo\LogFiles\Agent\diagnostics-*.txt
+          Description: Diagnostics logs for the Agent component
+          OS: Windows
+        - File: C:\Program Files\Gorelo\LogFiles\Installer\diagnostics-*.txt
+          Description: Diagnostics logs for the Installer component
+          OS: Windows
+        - File: C:\Program Files\Gorelo\LogFiles\InstallerHandler\diagnostics-*.txt
+          Description: Diagnostics logs for the InstallerHandler component
+          OS: Windows
+        - File: C:\Program Files\Gorelo\LogFiles\Shell\diagnostics-*.txt
+          Description: Diagnostics logs for the Shell component
+          OS: Windows
+    InstallationPaths:
+        - C:\Program Files\Gorelo\Agent\*
+    Network:
+        - Description: Called during access to remote control WebGUI access
+          Domains:
+              - app.gorelo.io
+          Ports:
+              - 443
+        - Description: Called during setup
+          Domains:
+              - gorelo-rmm.azurewebsites.net
+          Ports:
+              - 443
+        - Description: Called during setup
+          Domains:
+              - gw.usw.gorelo.tech
+          Ports:
+              - 443
+        - Description: Called during setup
+          Domains:
+              - lr.rmm.pod1.usw.gorelo.tech
+          Ports:
+              - 443
+        - Description: Called during setup
+          Domains:
+              - public.rmm.pod1.usw.gorelo.tech
+          Ports:
+              - 443
+        - Description: Called during setup
+          Domains:
+              - r1.rmm.uw.gorelo.tech
+          Ports:
+              - 443
+        - Description: Called during setup
+          Domains:
+              - sr.rmm.pod1.usw.gorelo.tech
+          Ports:
+              - 443
 References:
-- https://github.com/magicsword-io/LOLRMM/issues/117
-- https://www.linkedin.com/posts/magicswordio_new-to-lolrmmio-gorelormm-gorelormm-activity-7394482892422393856-BtKl/
-- https://app.any.run/tasks/8b12557e-8c76-41e8-a3c7-e491f32a0b11
+    - https://github.com/magicsword-io/LOLRMM/issues/117
+    - https://www.linkedin.com/posts/magicswordio_new-to-lolrmmio-gorelormm-gorelormm-activity-7394482892422393856-BtKl/
+    - https://app.any.run/tasks/8b12557e-8c76-41e8-a3c7-e491f32a0b11
 Acknowledgement:
-- Person: Squiblydoo
-  Handle: https://github.com/Squiblydoo
-- Person: Jean-Marc ALBERT
-  Handle: in/jeanmarcalbert
+    - Person: Squiblydoo
+      Handle: https://github.com/Squiblydoo
+    - Person: Jean-Marc ALBERT
+      Handle: in/jeanmarcalbert
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_network_sigma.yml
-  Description: Detects potential network activity of Gorelo RMM RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_files_sigma.yml
-  Description: Detects potential files activity of Gorelo RMM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_network_sigma.yml
+      Description: Detects potential network activity of Gorelo RMM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gorelo_rmm_files_sigma.yml
+      Description: Detects potential files activity of Gorelo RMM RMM tool
 CodeSigning:
-  certificates:
-  - signer_name: GORELO TECH, INC.
-    certificate_thumbprint: A607C45B264B698F88B0CFBB40553D223E8B7032
-    certificate_der_base64: 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
-    src_file_sha256: caa0721604c85d2779f2d5dfebd2a1f3203d11585231288f254d84d9544c7ce0
-    src_file_path: downloaded_files/gorelo_rmm/caa0721604c85d2779f2d5dfebd2a1f3203d11585231288f254d84d9544c7ce0
-    src_file_company: Gorelo.Rmm.Setup
+    certificates:
+        - signer_name: GORELO TECH, INC.
+          certificate_thumbprint: A607C45B264B698F88B0CFBB40553D223E8B7032
+          certificate_der_base64: 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
+          src_file_sha256: caa0721604c85d2779f2d5dfebd2a1f3203d11585231288f254d84d9544c7ce0
+          src_file_path: downloaded_files/gorelo_rmm/caa0721604c85d2779f2d5dfebd2a1f3203d11585231288f254d84d9544c7ce0
+          src_file_company: Gorelo.Rmm.Setup

@@ -1,53 +1,52 @@
 Name: BeAnyWhere
 Category: RMM
-Description: BeAnyWhere is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: BeAnyWhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - basuptshelper.exe
-  - basupsrvcupdate.exe
-  - BASupApp.exe
-  - BASupSysInf.exe
-  - BASupAppSrvc.exe
-  - TakeControl.exe
-  - BASupAppElev.exe
-  - basupsrvc.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - basuptshelper.exe
+        - basupsrvcupdate.exe
+        - BASupApp.exe
+        - BASupSysInf.exe
+        - BASupAppSrvc.exe
+        - TakeControl.exe
+        - BASupAppElev.exe
+        - basupsrvc.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - beanywhere.en.uptodown.com/windows
-    - beanywhere.com
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - beanywhere.en.uptodown.com/windows
+              - beanywhere.com
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_network_sigma.yml
-  Description: Detects potential network activity of BeAnyWhere RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_processes_sigma.yml
-  Description: Detects potential processes activity of BeAnyWhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_network_sigma.yml
+      Description: Detects potential network activity of BeAnyWhere RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/beanywhere_processes_sigma.yml
+      Description: Detects potential processes activity of BeAnyWhere RMM tool
 References:
-- https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx
+    - https://www.shouldiremoveit.com/beanywhere-support-service-40908-program.aspx
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: N-ABLE TECHNOLOGIES LTD
-    certificate_thumbprint: 069C1914D45A50A709E2D71F36EC2F56CB202995
-    certificate_der_base64: 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
-    src_file_sha256: 6a054444b16470b59c0ff13ada9e9cab8268631112507b6973d7e6d62f3b9fc4
-    src_file_path: downloaded_files/beanywhere/6a054444b16470b59c0ff13ada9e9cab8268631112507b6973d7e6d62f3b9fc4
+    certificates:
+        - signer_name: N-ABLE TECHNOLOGIES LTD
+          certificate_thumbprint: 069C1914D45A50A709E2D71F36EC2F56CB202995
+          certificate_der_base64: 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
+          src_file_sha256: 6a054444b16470b59c0ff13ada9e9cab8268631112507b6973d7e6d62f3b9fc4
+          src_file_path: downloaded_files/beanywhere/6a054444b16470b59c0ff13ada9e9cab8268631112507b6973d7e6d62f3b9fc4

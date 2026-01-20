@@ -1,51 +1,50 @@
 Name: Remote.it
 Category: RMM
-Description: Remote.it is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Remote.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS:
-  - Windows
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - remote-it-installer.exe
-  - remote.it.exe
-  - remoteit.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - remote-it-installer.exe
+        - remote.it.exe
+        - remoteit.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - auth.api.remote.it
-    - api.remote.it
-    - remote.it
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - auth.api.remote.it
+              - api.remote.it
+              - remote.it
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_network_sigma.yml
-  Description: Detects potential network activity of Remote.it RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_processes_sigma.yml
-  Description: Detects potential processes activity of Remote.it RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_network_sigma.yml
+      Description: Detects potential network activity of Remote.it RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote.it_processes_sigma.yml
+      Description: Detects potential processes activity of Remote.it RMM tool
 References:
-- https://docs.remote.it/introduction/get-started
+    - https://docs.remote.it/introduction/get-started
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: remot3.it, Inc.
-    certificate_thumbprint: 73D3AC1C006DFE32FBE856011288D9C3AC7F245A
-    certificate_der_base64: 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
-    src_file_sha256: 8689c6ca4c29d0b2f71f7f0df5e37a19fbc1dfd7653eb4f5331e0887d3704471
-    src_file_path: downloaded_files/remote.it/8689c6ca4c29d0b2f71f7f0df5e37a19fbc1dfd7653eb4f5331e0887d3704471
-    src_file_company: Remote.It
+    certificates:
+        - signer_name: remot3.it, Inc.
+          certificate_thumbprint: 73D3AC1C006DFE32FBE856011288D9C3AC7F245A
+          certificate_der_base64: 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
+          src_file_sha256: 8689c6ca4c29d0b2f71f7f0df5e37a19fbc1dfd7653eb4f5331e0887d3704471
+          src_file_path: downloaded_files/remote.it/8689c6ca4c29d0b2f71f7f0df5e37a19fbc1dfd7653eb4f5331e0887d3704471
+          src_file_company: Remote.It

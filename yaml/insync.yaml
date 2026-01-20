@@ -1,47 +1,46 @@
 Name: Insync
 Category: RMM
-Description: Insync is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: Insync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
-  - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
-  - '*\Insync.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+        - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
+        - '*\Insync.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/insync_processes_sigma.yml
-  Description: Detects potential processes activity of Insync RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/insync_processes_sigma.yml
+      Description: Detects potential processes activity of Insync RMM tool
 References: []
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: Druva Inc
-    certificate_thumbprint: 69D87180D72B8E218BDBC28D21879BC136184929
-    certificate_der_base64: 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
-    src_file_sha256: 1f8d76ad0fcbe5fadd066b0a332a58ccd96438dff55c63d90d14dbd96ab7e98f
-    src_file_path: downloaded_files/insync/1f8d76ad0fcbe5fadd066b0a332a58ccd96438dff55c63d90d14dbd96ab7e98f
-    src_file_company: GitHub, Inc.
-  - signer_name: Druva Data Solutions Pvt. Ltd
-    certificate_thumbprint: F6ED487C109762F9A3E91DBCEF6EA41AD1EC5B87
-    certificate_der_base64: MIIDUTCCAvagAwIBAgIQH8H4Wi8qCNO2/ZIZf/gf4jAKBggqhkjOPQQDAjBUMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMSswKQYDVQQDEyJTZWN0aWdvIFB1YmxpYyBDb2RlIFNpZ25pbmcgQ0EgRTM2MB4XDTI1MDIwNzAwMDAwMFoXDTI4MDIwNzIzNTk1OVowczELMAkGA1UEBhMCSU4xFDASBgNVBAgMC01haGFyYXNodHJhMSYwJAYDVQQKDB1EcnV2YSBEYXRhIFNvbHV0aW9ucyBQdnQuIEx0ZDEmMCQGA1UEAwwdRHJ1dmEgRGF0YSBTb2x1dGlvbnMgUHZ0LiBMdGQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASmpF3OP18tER+KcVZccItYnhh7moPiyTngzhfIsPyZZhxOdaDEEU2dJxzQtW0eCPq0kOgIRBaWsr6iPYc3v7iMo4IBiTCCAYUwHwYDVR0jBBgwFoAUJQ2bbdgYd7eKwzhRVuXH8rX/g2owHQYDVR0OBBYEFMTZnoQRuVOOKiAu2MHyodkWxC36MA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMEoGA1UdIARDMEEwNQYMKwYBBAGyMQECAQMCMCUwIwYIKwYBBQUHAgEWF2h0dHBzOi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAEEATBJBgNVHR8EQjBAMD6gPKA6hjhodHRwOi8vY3JsLnNlY3RpZ28uY29tL1NlY3RpZ29QdWJsaWNDb2RlU2lnbmluZ0NBRTM2LmNybDB5BggrBgEFBQcBAQRtMGswRAYIKwYBBQUHMAKGOGh0dHA6Ly9jcnQuc2VjdGlnby5jb20vU2VjdGlnb1B1YmxpY0NvZGVTaWduaW5nQ0FFMzYuY3J0MCMGCCsGAQUFBzABhhdodHRwOi8vb2NzcC5zZWN0aWdvLmNvbTAKBggqhkjOPQQDAgNJADBGAiEA+OrerE0Xn3QW0vrmZAIQ3fDchfQ74KIM5uLAMv8ORBsCIQCJQ7bA0zDC4DsE1mIY4nTwu+Ju1fseWNqRWSSrjESSCA==
-    src_file_sha256: bcc7ed09d03e12c6e2e8889f08c5056ffc9eb1b5fe47bc199ae9e4965415b86b
-    src_file_path: downloaded_files/insync/bcc7ed09d03e12c6e2e8889f08c5056ffc9eb1b5fe47bc199ae9e4965415b86b
-    src_file_company: GitHub, Inc.
+    certificates:
+        - signer_name: Druva Inc
+          certificate_thumbprint: 69D87180D72B8E218BDBC28D21879BC136184929
+          certificate_der_base64: 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
+          src_file_sha256: 1f8d76ad0fcbe5fadd066b0a332a58ccd96438dff55c63d90d14dbd96ab7e98f
+          src_file_path: downloaded_files/insync/1f8d76ad0fcbe5fadd066b0a332a58ccd96438dff55c63d90d14dbd96ab7e98f
+          src_file_company: GitHub, Inc.
+        - signer_name: Druva Data Solutions Pvt. Ltd
+          certificate_thumbprint: F6ED487C109762F9A3E91DBCEF6EA41AD1EC5B87
+          certificate_der_base64: MIIDUTCCAvagAwIBAgIQH8H4Wi8qCNO2/ZIZf/gf4jAKBggqhkjOPQQDAjBUMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMSswKQYDVQQDEyJTZWN0aWdvIFB1YmxpYyBDb2RlIFNpZ25pbmcgQ0EgRTM2MB4XDTI1MDIwNzAwMDAwMFoXDTI4MDIwNzIzNTk1OVowczELMAkGA1UEBhMCSU4xFDASBgNVBAgMC01haGFyYXNodHJhMSYwJAYDVQQKDB1EcnV2YSBEYXRhIFNvbHV0aW9ucyBQdnQuIEx0ZDEmMCQGA1UEAwwdRHJ1dmEgRGF0YSBTb2x1dGlvbnMgUHZ0LiBMdGQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASmpF3OP18tER+KcVZccItYnhh7moPiyTngzhfIsPyZZhxOdaDEEU2dJxzQtW0eCPq0kOgIRBaWsr6iPYc3v7iMo4IBiTCCAYUwHwYDVR0jBBgwFoAUJQ2bbdgYd7eKwzhRVuXH8rX/g2owHQYDVR0OBBYEFMTZnoQRuVOOKiAu2MHyodkWxC36MA4GA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMEoGA1UdIARDMEEwNQYMKwYBBAGyMQECAQMCMCUwIwYIKwYBBQUHAgEWF2h0dHBzOi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAEEATBJBgNVHR8EQjBAMD6gPKA6hjhodHRwOi8vY3JsLnNlY3RpZ28uY29tL1NlY3RpZ29QdWJsaWNDb2RlU2lnbmluZ0NBRTM2LmNybDB5BggrBgEFBQcBAQRtMGswRAYIKwYBBQUHMAKGOGh0dHA6Ly9jcnQuc2VjdGlnby5jb20vU2VjdGlnb1B1YmxpY0NvZGVTaWduaW5nQ0FFMzYuY3J0MCMGCCsGAQUFBzABhhdodHRwOi8vb2NzcC5zZWN0aWdvLmNvbTAKBggqhkjOPQQDAgNJADBGAiEA+OrerE0Xn3QW0vrmZAIQ3fDchfQ74KIM5uLAMv8ORBsCIQCJQ7bA0zDC4DsE1mIY4nTwu+Ju1fseWNqRWSSrjESSCA==
+          src_file_sha256: bcc7ed09d03e12c6e2e8889f08c5056ffc9eb1b5fe47bc199ae9e4965415b86b
+          src_file_path: downloaded_files/insync/bcc7ed09d03e12c6e2e8889f08c5056ffc9eb1b5fe47bc199ae9e4965415b86b
+          src_file_company: GitHub, Inc.

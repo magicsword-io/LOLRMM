@@ -1,64 +1,63 @@
 Name: NinjaRMM
 Category: RMM
-Description: NinjaRMM is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: NinjaRMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - ninjarmmagent.exe
-  - NinjaRMMAgent.exe
-  - NinjaRMMAgenPatcher.exe
-  - ninjarmm-cli.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - ninjarmmagent.exe
+        - NinjaRMMAgent.exe
+        - NinjaRMMAgenPatcher.exe
+        - ninjarmm-cli.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.ninjarmm.com'
-    - '*.ninjaone.com'
-    - resources.ninjarmm.com
-    - ninjaone.com
-    - ninjarmm.net
-    - '*.ninjarmm.net'
-    - rmmservice.eu
-    - '*.rmmservice.eu'
-    - rmmservice.eu
-    - '*.rmmservice.eu'
-    - rmmservice.com.au
-    - '*.rmmservice.com.au'
-    - rmmservice.ca
-    - '*.rmmservice.ca'
-    - ninja-backup.com
-    - '*.ninja-backup.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.ninjarmm.com'
+              - '*.ninjaone.com'
+              - resources.ninjarmm.com
+              - ninjaone.com
+              - ninjarmm.net
+              - '*.ninjarmm.net'
+              - rmmservice.eu
+              - '*.rmmservice.eu'
+              - rmmservice.eu
+              - '*.rmmservice.eu'
+              - rmmservice.com.au
+              - '*.rmmservice.com.au'
+              - rmmservice.ca
+              - '*.rmmservice.ca'
+              - ninja-backup.com
+              - '*.ninja-backup.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_network_sigma.yml
-  Description: Detects potential network activity of NinjaRMM RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_processes_sigma.yml
-  Description: Detects potential processes activity of NinjaRMM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_network_sigma.yml
+      Description: Detects potential network activity of NinjaRMM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ninjarmm_processes_sigma.yml
+      Description: Detects potential processes activity of NinjaRMM RMM tool
 References:
-- https://www.ninjaone.com/faq/
+    - https://www.ninjaone.com/faq/
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: NinjaOne LLC
-    certificate_thumbprint: 5F4F53C903859C0BDEFD456789D9C517F9F68C06
-    certificate_der_base64: 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
-    src_file_sha256: 61e3d7e1235c0f6d5318721715ce5fb136c8e03783f0d3d75aa026c845958032
-    src_file_path: downloaded_files/ninjarmm/61e3d7e1235c0f6d5318721715ce5fb136c8e03783f0d3d75aa026c845958032
-    src_file_company: NinjaRMM, LLC
+    certificates:
+        - signer_name: NinjaOne LLC
+          certificate_thumbprint: 5F4F53C903859C0BDEFD456789D9C517F9F68C06
+          certificate_der_base64: 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
+          src_file_sha256: 61e3d7e1235c0f6d5318721715ce5fb136c8e03783f0d3d75aa026c845958032
+          src_file_path: downloaded_files/ninjarmm/61e3d7e1235c0f6d5318721715ce5fb136c8e03783f0d3d75aa026c845958032
+          src_file_company: NinjaRMM, LLC

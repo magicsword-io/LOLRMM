@@ -1,83 +1,81 @@
 Name: AnyViewer
 Category: RMM
-Description: 'AnyViewer is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: 'AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
-  '
+    '
 Author: '@kostastsale'
 Created: '2024-08-03'
 LastModified: '2024-08-03'
 Details:
-  Website: https://www.anyviewer.com/
-  PEMetadata:
-  - Filename: AnyViewer.exe
-    OriginalFileName: AnyViewer
-    Description: Splash Window
-  - Filename: RCClient.exe
-    OriginalFileName: RCClient.exe
-    Description: AnyViewer Core
-  - Filename: ScreanCap.exe
-    Description: Screan capture
-  - Filename: AVCore.exe
-  - Filename: RCService.exe
-  Privileges: System
-  Free: up to 10 devices
-  Verification: None
-  SupportedOS:
-  - Windows
-  Capabilities:
-  - Remote desktop
-  - Remote file transfer
-  - Remote monitoring and management
-  - Remote shell open
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files (x86)\AnyViewer\*
+    Website: https://www.anyviewer.com/
+    PEMetadata:
+        - Filename: AnyViewer.exe
+          OriginalFileName: AnyViewer
+          Description: Splash Window
+        - Filename: RCClient.exe
+          OriginalFileName: RCClient.exe
+          Description: AnyViewer Core
+        - Filename: ScreanCap.exe
+          Description: Screan capture
+        - Filename: AVCore.exe
+        - Filename: RCService.exe
+    Privileges: System
+    Free: up to 10 devices
+    Verification: None
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote desktop
+        - Remote file transfer
+        - Remote monitoring and management
+        - Remote shell open
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\AnyViewer\*
 Artifacts:
-  Disk: []
-  EventLog:
-  - EventID: 4688
-    ProviderName: Microsoft-Security-Auditing
-    LogFile: Security.evtx
-    CommandLine: '"C:\\Program Files (x86)\\AnyViewer\\AVCore.exe" -d'
-    Description: Taking actions on the remote machine such as opening a command prompt.
-  - EventID: 7045
-    ProviderName: Service Control Manager
-    LogFile: System.evtx
-    ServiceName: RCService
-    ImagePath: C:\\Program Files (x86)\\AnyViewer\\RCService.exe
-    Description: AnyViewer service installation service.
-  Registry: []
-  Network:
-  - Description: N/A
-    Domains:
-    - '*.anyviewer.com'
-    Ports:
-    - 443
-  - Description: N/A
-    Domains:
-    - '*.aomeisoftware.com'
-    Ports:
-    - 443
+    Disk: []
+    EventLog:
+        - EventID: 4688
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: '"C:\\Program Files (x86)\\AnyViewer\\AVCore.exe" -d'
+          Description: Taking actions on the remote machine such as opening a command prompt.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: RCService
+          ImagePath: C:\\Program Files (x86)\\AnyViewer\\RCService.exe
+          Description: AnyViewer service installation service.
+    Registry: []
+    Network:
+        - Description: N/A
+          Domains:
+              - '*.anyviewer.com'
+          Ports:
+              - 443
+        - Description: N/A
+          Domains:
+              - '*.aomeisoftware.com'
+          Ports:
+              - 443
 Detections:
-- Name: Arbitrary code execution and remote sessions via Action1 RMM
-  Description: Threat hunting rule for detecting the execution of arbitrary code and
-    remote sessions via Action1 RMM
-  author: '@kostastsale'
-  Link: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyviewer_network_sigma.yml
-  Description: Detects potential network activity of AnyViewer RMM tool
+    - Name: Arbitrary code execution and remote sessions via Action1 RMM
+      Description: Threat hunting rule for detecting the execution of arbitrary code and remote sessions via Action1 RMM
+      author: '@kostastsale'
+      Link: https://github.com/tsale/Sigma_rules/blob/main/Threat%20Hunting%20Queries/Anyviewer.yml
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyviewer_network_sigma.yml
+      Description: Detects potential network activity of AnyViewer RMM tool
 References:
-- https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
-- https://www.anyviewer.com/help/remote-technical-support.html
+    - https://www.anyviewer.com/how-to/how-to-open-firewall-ports-for-remote-desktop-0427-gc.html
+    - https://www.anyviewer.com/help/remote-technical-support.html
 Acknowledgement:
-- Person: Kostas
-  Handle: '@kostastsale'
+    - Person: Kostas
+      Handle: '@kostastsale'
 CodeSigning:
-  certificates:
-  - signer_name: AOMEI International Network Limited
-    certificate_thumbprint: E5132FC7E6BD90602C81BBE92FB064B2CBC73853
-    certificate_der_base64: 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
-    src_file_sha256: 4ef164fbedfbd439584d7c692f6ebb9bd9d937af436882c762483303531c5f8d
-    src_file_path: downloaded_files/anyviewer/4ef164fbedfbd439584d7c692f6ebb9bd9d937af436882c762483303531c5f8d
-    src_file_company: AOMEI International Network Limited
+    certificates:
+        - signer_name: AOMEI International Network Limited
+          certificate_thumbprint: E5132FC7E6BD90602C81BBE92FB064B2CBC73853
+          certificate_der_base64: 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
+          src_file_sha256: 4ef164fbedfbd439584d7c692f6ebb9bd9d937af436882c762483303531c5f8d
+          src_file_path: downloaded_files/anyviewer/4ef164fbedfbd439584d7c692f6ebb9bd9d937af436882c762483303531c5f8d
+          src_file_company: AOMEI International Network Limited

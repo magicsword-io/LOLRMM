@@ -1,68 +1,67 @@
 Name: ZOC
 Category: RMM
-Description: ZOC is a remote monitoring and management (RMM) tool. More information
-  will be added as it becomes available.
+Description: ZOC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2025-12-14'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - C:\Program Files\ZOC8\*
-  - '*\ZOC?\*'
-  - '*\zoc.exe'
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\ZOC8\*
+        - '*\ZOC?\*'
+        - '*\zoc.exe'
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoc_processes_sigma.yml
-  Description: Detects potential processes activity of ZOC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/zoc_processes_sigma.yml
+      Description: Detects potential processes activity of ZOC RMM tool
 References: []
 Acknowledgement: []
 CodeSigning:
-  search_names:
-  - breakout.exe
-  - nyotaikashitadakenanoni.exe
-  - setup.exe
-  company_names: []
-  signer_names: []
-  certificates:
-  - signer_name: Markus Schmidt
-    certificate_thumbprint: DDE8807409ED3EB4B52D49146DB4B6510AC054F4
-    certificate_der_base64: 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
-    src_file_sha256: a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
-    src_file_path: downloaded_files/zoc/a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
-    src_file_company: EmTec Innovative Software
+    search_names:
+        - breakout.exe
+        - nyotaikashitadakenanoni.exe
+        - setup.exe
+    company_names: []
+    signer_names: []
+    certificates:
+        - signer_name: Markus Schmidt
+          certificate_thumbprint: DDE8807409ED3EB4B52D49146DB4B6510AC054F4
+          certificate_der_base64: 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
+          src_file_sha256: a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
+          src_file_path: downloaded_files/zoc/a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
+          src_file_company: EmTec Innovative Software
 FileHashes:
-  authenticode:
-  - file_name: nyotaikashitadakenanoni.exe
-    sha256: 6D28FF0ADD7AD3A40CBCFBD0929A83A4D73ED18650A06E8EABD837670E5558F4
-    sha1: 1E538E559479B344297B30F29721DED29CE4830F
-  - file_name: setup.exe
-    sha256: 28311BF0DF9D1168B53BDF6EA8E23C253B1EEDCF937CD1A7C18829FCD8849F60
-    sha1: D6BC93F0B8E3DF97F51899E45541F591B0348825
-  - file_name: Breakout.exe
-    sha256: C625251B6D300580A1E37E506F0757AF3828F5EC532F8C231B5F838067F5ED25
-    sha1: 27386EADA2DC313F96E1FA22B18C25BC15A8E2B0
-  page:
-  - file_name: nyotaikashitadakenanoni.exe
-    sha256: 508532322BD09F2E6B2F05B0AC16E34F3AC5BE1BA5F3D80E09171C485EE2CD92
-    sha1: 6DF4BA6E2248DF1C51F5408F6A6B609AE44FCC25
-  - file_name: setup.exe
-    sha256: 50C9B1627C5AAE706BA2F6F2F942260A04D192206F2C3E76200C85F51995BBC5
-    sha1: 7D709AFDECB87D5CDD01DB1CC4939BA2C71FE405
-  - file_name: Breakout.exe
-    sha256: 36FB654E8040B98EFB8EC61F20EF5C548E3B3C90FA4284EC02C04992F90EBE86
-    sha1: FCDAF83B0A1275068B408D3A48271FF07AF997CC
+    authenticode:
+        - file_name: nyotaikashitadakenanoni.exe
+          sha256: 6D28FF0ADD7AD3A40CBCFBD0929A83A4D73ED18650A06E8EABD837670E5558F4
+          sha1: 1E538E559479B344297B30F29721DED29CE4830F
+        - file_name: setup.exe
+          sha256: 28311BF0DF9D1168B53BDF6EA8E23C253B1EEDCF937CD1A7C18829FCD8849F60
+          sha1: D6BC93F0B8E3DF97F51899E45541F591B0348825
+        - file_name: Breakout.exe
+          sha256: C625251B6D300580A1E37E506F0757AF3828F5EC532F8C231B5F838067F5ED25
+          sha1: 27386EADA2DC313F96E1FA22B18C25BC15A8E2B0
+    page:
+        - file_name: nyotaikashitadakenanoni.exe
+          sha256: 508532322BD09F2E6B2F05B0AC16E34F3AC5BE1BA5F3D80E09171C485EE2CD92
+          sha1: 6DF4BA6E2248DF1C51F5408F6A6B609AE44FCC25
+        - file_name: setup.exe
+          sha256: 50C9B1627C5AAE706BA2F6F2F942260A04D192206F2C3E76200C85F51995BBC5
+          sha1: 7D709AFDECB87D5CDD01DB1CC4939BA2C71FE405
+        - file_name: Breakout.exe
+          sha256: 36FB654E8040B98EFB8EC61F20EF5C548E3B3C90FA4284EC02C04992F90EBE86
+          sha1: FCDAF83B0A1275068B408D3A48271FF07AF997CC

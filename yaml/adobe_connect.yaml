@@ -1,49 +1,48 @@
 Name: Adobe Connect
 Category: RMM
-Description: Adobe Connect is a remote monitoring and management (RMM) tool. More
-  information will be added as it becomes available.
+Description: Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-  Website: ''
-  PEMetadata:
-    Filename: ''
-    OriginalFileName: ''
-    Description: ''
-  Privileges: ''
-  Free: ''
-  Verification: ''
-  SupportedOS: []
-  Capabilities: []
-  Vulnerabilities: []
-  InstallationPaths:
-  - ConnectAppSetup*.exe
-  - ConnectShellSetup*.exe
-  - Connect.exe
-  - ConnectDetector.exe
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - ConnectAppSetup*.exe
+        - ConnectShellSetup*.exe
+        - Connect.exe
+        - ConnectDetector.exe
 Artifacts:
-  Disk: []
-  EventLog: []
-  Registry: []
-  Network:
-  - Description: Known remote domains
-    Domains:
-    - '*.adobeconnect.com'
-    Ports: []
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.adobeconnect.com'
+          Ports: []
 Detections:
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_network_sigma.yml
-  Description: Detects potential network activity of Adobe Connect RMM tool
-- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_processes_sigma.yml
-  Description: Detects potential processes activity of Adobe Connect RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_network_sigma.yml
+      Description: Detects potential network activity of Adobe Connect RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_processes_sigma.yml
+      Description: Detects potential processes activity of Adobe Connect RMM tool
 References:
-- https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html
+    - https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html
 Acknowledgement: []
 CodeSigning:
-  certificates:
-  - signer_name: The Anti-Cloud Corporation
-    certificate_thumbprint: 013371A3E52D87E59DA1C93A305732B1501FFE5A
-    certificate_der_base64: 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
-    src_file_sha256: 4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d
-    src_file_path: downloaded_files/adobe_connect/4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d
-    src_file_company: WireSock Foundation
+    certificates:
+        - signer_name: The Anti-Cloud Corporation
+          certificate_thumbprint: 013371A3E52D87E59DA1C93A305732B1501FFE5A
+          certificate_der_base64: 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
+          src_file_sha256: 4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d
+          src_file_path: downloaded_files/adobe_connect/4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d
+          src_file_company: WireSock Foundation
