@@ -1,0 +1,92 @@
+Name: iDrive
+Category: 'RMM'
+Description: iDrive is a cloud backup and remote management software that has recently been observed being leveraged in social engineering campaigns, including invitation-themed and Social Security-related phishing lures, to establish unauthorized remote access on victim endpoints prior to the deployment of ScreenConnect. The tool installs as a Windows Scheduled Task and has been used as an initial access mechanism and staging point for secondary RMM deployment.
+Author: Michael Haag
+Created: '2026-01-21'
+LastModified: '2026-01-21'
+Details:
+    Website: https://www.idrive.com/
+    PEMetadata:
+        - Filename: IDriveWinSetup.exe
+          OriginalFileName: ''
+          Description: iDrive Windows installer executable (observed in phishing campaigns)
+        - Filename: IDriveEClassic.exe
+          OriginalFileName: ''
+          Description: iDrive Classic client executable
+        - Filename: id_tray.exe
+          OriginalFileName: ''
+          Description: iDrive system tray application
+        - Filename: IDComponent.dll
+          OriginalFileName: ''
+          Description: iDrive component library
+    Privileges: User
+    Free: false
+    Verification: Commercial
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+        - Android
+        - iOS
+    Capabilities:
+        - Cloud Backup
+        - Remote Access
+        - File Synchronization
+        - Remote Desktop (BMR)
+        - System Management
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\ProgramData\IDrive\*
+        - C:\Program Files\IDrive\*
+        - C:\Program Files (x86)\IDrive\*
+        - C:\Users\*\AppData\Local\IDrive\*
+        - C:\Users\*\Downloads\IDriveWinSetup.exe
+        - IDriveWinSetup.exe
+        - IDriveEClassic.exe
+        - id_tray.exe
+        - IDComponent.dll
+Artifacts:
+    Disk:
+        - File: C:\ProgramData\IDrive\*
+          Description: iDrive installation and data directory (observed in threat intelligence)
+          OS: Windows
+        - File: C:\Program Files\IDrive\*
+          Description: iDrive program files directory
+          OS: Windows
+        - File: C:\Program Files (x86)\IDrive\*
+          Description: iDrive program files directory (32-bit)
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\IDrive\*
+          Description: iDrive user data and configuration
+          OS: Windows
+    EventLog:
+        - EventID: 4688
+          Description: Process creation event for IDrive executables
+          OS: Windows
+        - EventID: 4698
+          Description: Scheduled task creation event for iDrive
+          OS: Windows
+    Registry:
+        - Path: HKEY_LOCAL_MACHINE\SOFTWARE\IDrive\*
+          Description: iDrive configuration registry keys
+          OS: Windows
+        - Path: HKEY_CURRENT_USER\SOFTWARE\IDrive\*
+          Description: iDrive user configuration registry keys
+          OS: Windows
+    Network:
+        - Description: Known remote domains and API endpoints
+          Domains:
+              - idrive.com
+              - '*.idrive.com'
+              - api.idrive.com
+          Ports:
+              - 443
+              - 80
+Detections: []
+References:
+    - https://github.com/magicsword-io/LOLRMM/issues/142
+    - https://www.idrive.com/reseller/bmr-partner-management
+    - https://www.idrive.com/
+Acknowledgement:
+    - Person: 0xburgers
+      Handle: '@0xburgers'
