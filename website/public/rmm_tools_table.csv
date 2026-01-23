@@ -222,6 +222,7 @@ Name,Category,Description,Author
 ...",
 [FreeRDP](/rmm_tools/freerdp),RMM,FreeRDP is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [Itarian](/rmm_tools/itarian),RMM,Itarian is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
+[iDrive](/rmm_tools/idrive),RMM,iDrive is a cloud backup and remote management software that has recently been observed being levera...,Michael Haag
 [TeleDesktop](/rmm_tools/teledesktop),RMM,TeleDesktop is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [CloudFlare Tunnel](/rmm_tools/cloudflare_tunnel),RMM,CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added a...,
 [Splashtop Remote](/rmm_tools/splashtop_remote),RMM,Splashtop Remote is a remote monitoring and management (RMM) tool. More information will be added as...,

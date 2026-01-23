@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-01-19'
+modified: '2026-01-23'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -68,6 +68,7 @@ detection:
     - \\C:\Program Files (x86)\Google\Chrome Remote Desktop\*
     - \\C:\Program Files (x86)\HeartbeatRM\*
     - \\C:\Program Files (x86)\HopToDesk\HopToDesk.exe
+    - \\C:\Program Files (x86)\IDrive\*
     - \\C:\Program Files (x86)\ISL Online\ISL Light*
     - \\C:\Program Files (x86)\ImmyBot\ImmyAgent.exe
     - \\C:\Program Files (x86)\ImmyBot\ImmyUpdater.exe
@@ -106,6 +107,7 @@ detection:
     - \\C:\Program Files\Devolutions\Remote Desktop Manager
     - \\C:\Program Files\GoTo Resolve Unattended\*
     - \\C:\Program Files\HeartbeatRM\*
+    - \\C:\Program Files\IDrive\*
     - \\C:\Program Files\ImmyBot\ImmyAgent.exe
     - \\C:\Program Files\ImmyBot\ImmyUpdater.exe
     - \\C:\Program Files\Level\*
@@ -134,10 +136,12 @@ detection:
     - \\C:\Program Files\ehorus_agent\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
+    - \\C:\ProgramData\IDrive\*
     - \\C:\ProgramData\Kaseya\
     - \\C:\ProgramData\Netbird\*
     - \\C:\ProgramData\Total Software Deployment\*
     - \\C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
+    - \\C:\Users\*\AppData\Local\IDrive\*
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
     - \\C:\Users\*\AppData\Local\MEGAsync\*
@@ -148,6 +152,7 @@ detection:
     - \\C:\Users\*\AppData\Roaming\SyncTrayzor\*
     - \\C:\Users\*\AppData\Roaming\nvda\*
     - \\C:\Users\*\Downloads\AMMYY_Admin.exe
+    - \\C:\Users\*\Downloads\IDriveWinSetup.exe
     - \\C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
     - \\C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
     - \\C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
@@ -222,6 +227,9 @@ detection:
     - \\HopToDesk-Standalone.exe
     - \\HopToDesk.exe
     - \\I'm InTouch Go Installer.exe
+    - \\IDComponent.dll
+    - \\IDriveEClassic.exe
+    - \\IDriveWinSetup.exe
     - \\ISBEW64.exe
     - \\ISLLight.exe
     - \\ISLLightClient.exe
@@ -452,6 +460,7 @@ detection:
     - \\helpu_install.exe
     - \\hsloader.exe
     - \\iadmin.exe
+    - \\id_tray.exe
     - \\idrive.RemotePCAgent
     - \\ihcserver.exe
     - \\iit.exe
