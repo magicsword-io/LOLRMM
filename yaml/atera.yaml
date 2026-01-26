@@ -163,11 +163,6 @@ Artifacts:
               - N/A
         - Description: N/A
           Domains:
-              - cacerts.thawte.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
               - agentreportingstore.blob.core.windows.net
           Ports:
               - N/A
