@@ -339,14 +339,15 @@ let RMMUrl = RMMList
 | project URIClean = case(
     URI startswith "*.", replace_string(URI, "*.", ""),
     URI startswith "*", replace_string(URI, "*", ""),
-    URI !startswith "*" and URI contains "*", replace_regex(URI, @".+?\*", ""),
+    URI !startswith "*" and URI contains "*", replace_string(URI, "*", ""), 
     URI
     );
 DeviceNetworkEvents
-| where Timestamp > ago(1h)
+| where Timestamp > ago(1hr)
 | where ActionType == @"ConnectionSuccess"
-| where RemoteUrl has_any(RMMUrl.URIClean)
-| where not (RemoteUrl has_any(ApprovedRMM))
+// Use double parentheses to reference the tabular variable
+| where RemoteUrl has_any ((RMMUrl)) 
+| where not (RemoteUrl has_any (ApprovedRMM))
 | summarize arg_max(Timestamp, *) by DeviceId`}								
 									</EuiCodeBlock>
 									<EuiSpacer size="s" />
