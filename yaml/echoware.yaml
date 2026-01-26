@@ -1,9 +1,9 @@
 Name: Echoware
-Category: 'RMM'
+Category: RMM
 Description: Echoware is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: ''
     PEMetadata:
@@ -29,3 +29,43 @@ Detections:
       Description: Detects potential processes activity of Echoware RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+    search_names:
+        - echoserver
+        - echoserver_1.65_setup.exe
+    company_names: []
+    signer_names: []
+    certificates: []
+FileHashes:
+    authenticode:
+        - file_name: EchoServer
+          sha256: 7EF380FAEAB1598E2512A0CEE910D2257F1A0E7240F7EF1DEC473030C303C900
+          sha1: 0B3ABD2E4602AF64C3679491BA4EE7B24E79853A
+        - file_name: echoserver_1.65_setup.exe
+          sha256: C39291B633997A8C22873C20BE165D557083D9315D60957C6208C55B08F0A5B6
+          sha1: A70042F29715722E12C645DB86116DE69752B6D0
+        - file_name: EchoServer
+          sha256: DB6CB26F70AF00F6941C03C80DF5F12C28F7AB52A42245395FA4A35D1E04449C
+          sha1: 5EBA8A591839F6DF7812FBEA4BAD15943ABABB2C
+        - file_name: EchoServer
+          sha256: 452A11B1989B43FB6B5577031A8485ABFEC0145DAF92FE1A6116BB4E142E10D2
+          sha1: EB3378089AC2AD8BA39E9A174A4A58629906EA26
+        - file_name: EchoServer
+          sha256: C12A293470B42028F1688F768926426AD62D0CA264C7EA9F65AC3010E520250E
+          sha1: 5C9FBCEA424747DFF39396A0C2A6ECB8974BD95C
+    page:
+        - file_name: EchoServer
+          sha256: 1953C682EDD721C59EBA16197719FE8B6851A44477F30972749ABC7462240052
+          sha1: 2CB088337ABF6D69B14E01A1F1FFE6F287A75E82
+        - file_name: echoserver_1.65_setup.exe
+          sha256: 6B592D4CA92B7F66009744EF4366E7F7DEBD309AF5F77CC24FBBB00865CC6E95
+          sha1: 37D2313B94090DBE461F73F99BD6FCA68622D161
+        - file_name: EchoServer
+          sha256: 45A1FD5844F846C64148C6D8BC3BF5EBB3F4DC23505116230013D3E069B74530
+          sha1: 7ECD337A8BFE22DCBC633A4E2BFE1A878560D9CF
+        - file_name: EchoServer
+          sha256: 9E3F14C90EB1786AAF5FB72B264339365BF3C85477909742E7B6A1C393D5A6C9
+          sha1: 68653D0E6A6C71EC72862CBBF3C9B1A3ABBBA73B
+        - file_name: EchoServer
+          sha256: 4D720555D438B76FF224EA9A94DF2D2D1985A917945FF33F5E6F133D492E1048
+          sha1: D4D3BCBF8C6FC79C5E582847F730F6E0BAEBD033

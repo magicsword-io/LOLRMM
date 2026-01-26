@@ -1,9 +1,9 @@
 Name: NTR Remote
-Category: 'RMM'
+Category: RMM
 Description: NTR Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: ''
     PEMetadata:
@@ -35,3 +35,27 @@ Detections:
       Description: Detects potential processes activity of NTR Remote RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+    search_names:
+        - ntrsupportpro_en.exe
+    company_names: []
+    signer_names:
+        - Net Transmit & Receive SL
+    certificates:
+        - signer_name: Net Transmit & Receive SL
+          issuer: CN=VeriSign Class 3 Code Signing 2009-2 CA
+          certificate_thumbprint: 73F02A06F37D5CF65D1040FABE9EFE6188B29BEB
+          tbs_sha256: C78E601CC64E39E0738B6889874052EBE0FD261B65491106E350AF0CFF3C086E
+          tbs_sha1: CEA0DE18000EA92E942B8542864C3E0E917AA829
+          valid_from: '2009-10-23T00:00:00+00:00'
+          valid_to: '2012-10-22T23:59:59+00:00'
+          certificate_der_base64: MIIFhDCCBGygAwIBAgIQFB9KwPsrSkmTD8GXU67gTDANBgkqhkiG9w0BAQUFADCBtjELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQLExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTswOQYDVQQLEzJUZXJtcyBvZiB1c2UgYXQgaHR0cHM6Ly93d3cudmVyaXNpZ24uY29tL3JwYSAoYykwOTEwMC4GA1UEAxMnVmVyaVNpZ24gQ2xhc3MgMyBDb2RlIFNpZ25pbmcgMjAwOS0yIENBMB4XDTA5MTAyMzAwMDAwMFoXDTEyMTAyMjIzNTk1OVowgb0xCzAJBgNVBAYTAkVTMRIwEAYDVQQIEwlCYXJjZWxvbmExEjAQBgNVBAcTCUJhcmNlbG9uYTEiMCAGA1UEChQZTmV0IFRyYW5zbWl0ICYgUmVjZWl2ZSBTTDE+MDwGA1UECxM1RGlnaXRhbCBJRCBDbGFzcyAzIC0gTWljcm9zb2Z0IFNvZnR3YXJlIFZhbGlkYXRpb24gdjIxIjAgBgNVBAMUGU5ldCBUcmFuc21pdCAmIFJlY2VpdmUgU0wwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDHmIFmYGi25Wjj7OvhjmgiEvzXY0n1aN+jWwtndgGdgwyqB7E8YXpTf6TijenZS8ijL0bKoMCsYvGhjSWJxXwJyQ/clY4Yl+SvvHOnblvA+wZ3Emn3J63hYN6yftVWg96HoGU/FMlBP14IlMoW+ajXDZre6eLzKUUlI7cKZD1SdAortXXXBLlaBaMAND6muGQjezkm0CjftAjE4vhaLzFjWruWqi+l29sno8y8frRtAV/inQaxp4IviBbuDk4z+o10MrdocGMZQHs0iya1yxGNaj3nexyp0oDfHocCog5jvcHVogs1SCM3fDv3EgnltG67tUbaVTs7Lgltse93QNqHAgMBAAGjggGDMIIBfzAJBgNVHRMEAjAAMA4GA1UdDwEB/wQEAwIHgDBEBgNVHR8EPTA7MDmgN6A1hjNodHRwOi8vY3NjMy0yMDA5LTItY3JsLnZlcmlzaWduLmNvbS9DU0MzLTIwMDktMi5jcmwwRAYDVR0gBD0wOzA5BgtghkgBhvhFAQcXAzAqMCgGCCsGAQUFBwIBFhxodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhMBMGA1UdJQQMMAoGCCsGAQUFBwMDMHUGCCsGAQUFBwEBBGkwZzAkBggrBgEFBQcwAYYYaHR0cDovL29jc3AudmVyaXNpZ24uY29tMD8GCCsGAQUFBzAChjNodHRwOi8vY3NjMy0yMDA5LTItYWlhLnZlcmlzaWduLmNvbS9DU0MzLTIwMDktMi5jZXIwHwYDVR0jBBgwFoAUl9BrqCZwyKE/lB8ILcQ1m6ShHvIwEQYJYIZIAYb4QgEBBAQDAgQQMBYGCisGAQQBgjcCARsECDAGAQEAAQH/MA0GCSqGSIb3DQEBBQUAA4IBAQCrFEvhyM+lYpZMcm0IIm12GZVkVp4I5GwoL0tGV3sfsiAtXebz173UezN+Llrdfm+nxoZ5Bq84Sa5m+2FQNIXUjJebBSRjtFI/dsQTE+1qLoxQsZXPeGtPWiVyZMnearKHhNz+z0zPeAtADALTE8AnLQ8m2AzusDNCDmbmjdmeHbz+5mtRlPmHGNiS0w5fGS/dtGzwDXVOghY6z/plB7thyDAuxMvLWyTQLRFHZeuTDnLrW0ZUv61CezZwjNkdOItZcnTfAYO6yJpmcpDiFl6bG58r9YohQ/zCevkRkUXa7SBzxCY2YSTGdFGDToSWOJMVz2iL852v97bDK9aCK/QX
+FileHashes:
+    authenticode:
+        - file_name: NTRsupportPro_EN.exe
+          sha256: DC9D1CC5A6D90136D114B2BAF82DE0A8A35737FB3E9DF7E541099BE72C803D1B
+          sha1: E9D33FA96A65CD32C9FCA147AF02A8A3E06859AE
+    page:
+        - file_name: NTRsupportPro_EN.exe
+          sha256: 811849CBC486CDDB8AF253E329E822E40ADA561577FA0795111CF8772459CEF1
+          sha1: 1455B4007B9FBCD228050C8F30A9BFD7DA2FA217

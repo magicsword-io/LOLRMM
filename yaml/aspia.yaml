@@ -1,10 +1,10 @@
 Name: Aspia
-Category: 'RMM'
+Category: RMM
 Description: 'Aspia is an open-source Remote Desktop, file transfer and system information tool.
 
     '
 Created: '2025-05-09'
-LastModified: '2025-05-09'
+LastModified: '2025-12-14'
 Details:
     Website: https://aspia.org/
     PEMetadata:
@@ -77,3 +77,18 @@ Detections:
       Description: Detects potential files activity of Aspia RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml
       Description: Detects potential processes activity of Aspia RMM tool
+CodeSigning:
+    search_names:
+        - aspia_client.exe
+    company_names: []
+    signer_names: []
+    certificates: []
+FileHashes:
+    authenticode:
+        - file_name: aspia_client.exe
+          sha256: A968363E26D030CB0997244ED626F0A8AA9137CC6F7EA7AFC15B61B74E83B500
+          sha1: DF6D3915876560EF33EFFD754A0305E0B0036D4B
+    page:
+        - file_name: aspia_client.exe
+          sha256: 3087D8002051D7CD12BFDEF5CAEC4FA2E2DAEF4CF5363FAA2638FD784B4E659D
+          sha1: A6FC35BA84C36E8646FE839D561A5C7F797470C3

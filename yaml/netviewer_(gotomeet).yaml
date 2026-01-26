@@ -1,5 +1,5 @@
 Name: Netviewer (GoToMeet)
-Category: 'RMM'
+Category: RMM
 Description: Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
@@ -17,16 +17,24 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
+        - NetViewer.exe
         - nvClient.exe
-        - netviewer.exe
+        - nvConsole.exe
 Artifacts:
     Disk: []
     EventLog: []
     Registry: []
-    Network: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.netviewer.com'
+              - netviewer.com
+          Ports: []
 Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__network_sigma.yml
+      Description: Detects potential network activity of Netviewer (GoToMeet) RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml
       Description: Detects potential processes activity of Netviewer (GoToMeet) RMM tool
 References:
-    - https://www.enviolet.com/en/service/online-consultant.html
+    - https://www.netviewer.com/de/support/download/
 Acknowledgement: []

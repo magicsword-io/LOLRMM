@@ -1,5 +1,5 @@
 Name: Syspectr
-Category: 'RMM'
+Category: RMM
 Description: Syspectr is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
@@ -17,8 +17,9 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - oo-syspectr*.exe
-        - OOSysAgent.exe
+        - oolocker.exe
+        - oosyspectr.exe
+        - syspectr.exe
 Artifacts:
     Disk: []
     EventLog: []
@@ -26,8 +27,8 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - atled.syspectr.com
-              - app.syspectr.com
+              - '*.syspectr.com'
+              - syspectr.com
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_network_sigma.yml
@@ -35,5 +36,5 @@ Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/syspectr_processes_sigma.yml
       Description: Detects potential processes activity of Syspectr RMM tool
 References:
-    - https://www.syspectr.com/en/installation-in-a-network
+    - https://syspectr.com
 Acknowledgement: []

@@ -1,31 +1,38 @@
 Name: Remmon
 Category: RMM
-Description: |
-    Remote monitoring tool for Windows and Linux written in Go.
-Author: 'Daniel Koifman (KoifSec)'
-Created: '2025-11-12'
-LastModified: '2025-11-12'
+Description: Remmon is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Author: ''
+Created: '2024-08-02'
+LastModified: '2024-08-02'
 Details:
-    Website: 'https://github.com/Netzwerkfehler/remmon'
-    Privileges: User
-    Free: true
-    Verification: false
-    SupportedOS:
-        - Windows
-        - Linux
-    Capabilities:
-        - Remote Monitoring
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - '*\\Remmon.exe'
+        - remmon.exe
 Artifacts:
     Disk: []
     EventLog: []
     Registry: []
-    Network: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.remmon.hu'
+              - remmon.hu
+          Ports: []
 Detections:
-    - AQL: https://raw.githubusercontent.com/Koifman/Deathcon25/refs/heads/main/rmm_rodeo/remmon/aql.aql
-      Description: QRadar AQL query for detecting Remmon process execution via EventID 4688, tracking parent process name, process name, and command-line arguments
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remmon_network_sigma.yml
+      Description: Detects potential network activity of Remmon RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remmon_processes_sigma.yml
+      Description: Detects potential processes activity of Remmon RMM tool
 References:
-    - https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0
+    - https://remmon.hu
 Acknowledgement: []
