@@ -3,7 +3,7 @@ Category: 'RMM'
 Description: NinjaRMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-01-27'
 Details:
     Website: ''
     PEMetadata:
@@ -17,9 +17,8 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - ninjarmmagent.exe
         - NinjaRMMAgent.exe
-        - NinjaRMMAgenPatcher.exe
+        - NinjaRMMAgentPatcher.exe
         - ninjarmm-cli.exe
 Artifacts:
     Disk: []
