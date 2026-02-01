@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-01-23'
+modified: '2026-02-01'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -265,8 +265,8 @@ detection:
     - \\NetLock_RMM_Agent_Installer
     - \\NetLock_RMM_Agent_Installer.exe
     - \\Netop Ondemand.exe
-    - \\NinjaRMMAgenPatcher.exe
     - \\NinjaRMMAgent.exe
+    - \\NinjaRMMAgentPatcher.exe
     - \\OOSysAgent.exe
     - \\OTPowerShell.exe
     - \\OTService.exe
@@ -527,7 +527,6 @@ detection:
     - \\nhostsvc.exe
     - \\nhstw32.exe
     - \\ninjarmm-cli.exe
-    - \\ninjarmmagent.exe
     - \\nldrw32.exe
     - \\nomachine*.exe
     - \\ntrntservice.exe
