@@ -396,6 +396,9 @@ mdmsupport.comodo.com,Itarian
 *.cmdm.comodo.com,Itarian
 remoteaccess.itarian.com,Itarian
 servicedesk.itarian.com,Itarian
+idrive.com,iDrive
+*.idrive.com,iDrive
+api.idrive.com,iDrive
 tele-desk.com,TeleDesktop
 cloudflare.com/products/tunnel/,CloudFlare Tunnel
 splashtop.com,Splashtop Remote
