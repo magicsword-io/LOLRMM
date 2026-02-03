@@ -6973,7 +6973,7 @@
         "Description": "NinjaRMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-01-27",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -6988,9 +6988,8 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "ninjarmmagent.exe",
                 "NinjaRMMAgent.exe",
-                "NinjaRMMAgenPatcher.exe",
+                "NinjaRMMAgentPatcher.exe",
                 "ninjarmm-cli.exe"
             ]
         },
@@ -17761,15 +17760,6 @@
                     "Description": "N/A",
                     "Domains": [
                         "agent-api.atera.com"
-                    ],
-                    "Ports": [
-                        "N/A"
-                    ]
-                },
-                {
-                    "Description": "N/A",
-                    "Domains": [
-                        "cacerts.thawte.com"
                     ],
                     "Ports": [
                         "N/A"
