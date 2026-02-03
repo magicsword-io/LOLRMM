@@ -1,12 +1,12 @@
 title: Potential MSP360 RMM Tool Process Activity
-id: 14954416-e9cf-4b77-abf3-fc08526a7319
+id: c6652a7c-dfd8-5e13-8d4e-7a150157b708
 status: experimental
 description: |
     Detects potential processes activity of MSP360 RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,30 +16,30 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Online Backup.exe
-            - CBBackupPlan.exe
-            - Cloud.Backup.Scheduler.exe
-            - Cloud.Backup.RM.Service.exe
-            - cbb.exe
-            - CloudRaService.exe
-            - CloudRaSd.exe
-            - CloudRaCmd.exe
-            - CloudRaUtilities.exe
-            - Remote Desktop.exe
-            - Connect.exe
+            - 'Online Backup.exe'
+            - 'CBBackupPlan.exe'
+            - 'Cloud.Backup.Scheduler.exe'
+            - 'Cloud.Backup.RM.Service.exe'
+            - 'cbb.exe'
+            - 'CloudRaService.exe'
+            - 'CloudRaSd.exe'
+            - 'CloudRaCmd.exe'
+            - 'CloudRaUtilities.exe'
+            - 'Remote Desktop.exe'
+            - 'Connect.exe'
     selection_image:
         Image|endswith:
-            - Online Backup.exe
-            - CBBackupPlan.exe
-            - Cloud.Backup.Scheduler.exe
-            - Cloud.Backup.RM.Service.exe
-            - cbb.exe
-            - CloudRaService.exe
-            - CloudRaSd.exe
-            - CloudRaCmd.exe
-            - CloudRaUtilities.exe
-            - Remote Desktop.exe
-            - Connect.exe
+            - 'Online Backup.exe'
+            - 'CBBackupPlan.exe'
+            - 'Cloud.Backup.Scheduler.exe'
+            - 'Cloud.Backup.RM.Service.exe'
+            - 'cbb.exe'
+            - 'CloudRaService.exe'
+            - 'CloudRaSd.exe'
+            - 'CloudRaCmd.exe'
+            - 'CloudRaUtilities.exe'
+            - 'Remote Desktop.exe'
+            - 'Connect.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of MSP360

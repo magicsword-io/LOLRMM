@@ -1,12 +1,12 @@
 title: Potential Neturo RMM Tool Process Activity
-id: f29ed784-7458-4c4a-ab7a-564d5a45baea
+id: 177f4658-710b-5435-b765-bf43e3b721e6
 status: experimental
 description: |
     Detects potential processes activity of Neturo RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - neturo*.exe
-            - ntrntservice.exe
-            - neturo.exe
+            - 'neturo*.exe'
+            - 'ntrntservice.exe'
+            - 'neturo.exe'
     selection_image:
         Image|endswith:
-            - neturo*.exe
-            - ntrntservice.exe
-            - neturo.exe
+            - 'neturo*.exe'
+            - 'ntrntservice.exe'
+            - 'neturo.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Neturo

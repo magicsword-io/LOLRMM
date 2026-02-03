@@ -1,12 +1,12 @@
 title: Potential Remote Desktop Plus RMM Tool Network Activity
-id: 97b1200b-aaa8-4202-b99c-778ae2b6daba
+id: fcc9a415-0d84-53e1-9dd3-0db18f281ea5
 status: experimental
 description: |
     Detects potential network activity of Remote Desktop Plus RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: donkz.nl
+        DestinationHostname|endswith: 'donkz.nl'
     condition: selection
 falsepositives:
     - Legitimate use of Remote Desktop Plus

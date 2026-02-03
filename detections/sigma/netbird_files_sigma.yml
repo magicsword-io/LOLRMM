@@ -1,0 +1,26 @@
+title: Potential NetBird RMM Tool File Activity
+id: d7450e11-72aa-57b4-b835-9afeaa6eb423
+status: experimental
+description: |
+    Detects potential files activity of NetBird RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'C:\Program Files\Netbird\netbird.exe'
+            - 'C:\ProgramData\Netbird\config.json'
+            - '/etc/netbird/config.json'
+            - '/var/log/netbird/*'
+    condition: selection
+falsepositives:
+    - Legitimate use of NetBird
+level: medium

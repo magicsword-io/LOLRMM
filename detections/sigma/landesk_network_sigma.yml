@@ -1,12 +1,12 @@
 title: Potential LANDesk RMM Tool Network Activity
-id: 6f8b6b90-e98a-4915-a977-f4e829e9bef6
+id: a6b3f45d-59b7-5c65-9a63-9ecda59571d7
 status: experimental
 description: |
     Detects potential network activity of LANDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.ivanticloud.com
-            - *.ivanti.com
-            - ivanti.com
+            - '*.ivanticloud.com'
+            - '*.ivanti.com'
+            - 'ivanti.com'
     condition: selection
 falsepositives:
     - Legitimate use of LANDesk

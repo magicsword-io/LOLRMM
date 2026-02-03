@@ -1,12 +1,12 @@
 title: Potential KHelpDesk RMM Tool Network Activity
-id: 90775381-4d54-44e5-a6b5-d10cbef7b9c6
+id: 7fcb8e36-d01f-57b2-9d4a-6589f6b4a6ae
 status: experimental
 description: |
     Detects potential network activity of KHelpDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.khelpdesk.com.br
+        DestinationHostname|endswith: '*.khelpdesk.com.br'
     condition: selection
 falsepositives:
     - Legitimate use of KHelpDesk

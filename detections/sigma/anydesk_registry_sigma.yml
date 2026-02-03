@@ -1,12 +1,12 @@
 title: Potential AnyDesk RMM Tool Registry Activity
-id: 3313d179-78b1-41d3-afe0-40dfc5dc794f
+id: 8ec90487-32c3-5776-91ae-4b2effe2ad25
 status: experimental
 description: |
     Detects potential registry activity of AnyDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - HKLM\SOFTWARE\Clients\Media\AnyDesk
-            - HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk
-            - HKLM\SOFTWARE\Classes\.anydesk\shell\open\command
-            - HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command
-            - HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*
-            - HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk
-            - HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk
-            - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
+            - 'HKLM\SOFTWARE\Clients\Media\AnyDesk'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk'
+            - 'HKLM\SOFTWARE\Classes\.anydesk\shell\open\command'
+            - 'HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command'
+            - 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*'
+            - 'HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk'
+            - 'HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk'
+            - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk'
     condition: selection
 falsepositives:
     - Legitimate use of AnyDesk

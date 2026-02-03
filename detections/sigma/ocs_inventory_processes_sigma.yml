@@ -1,12 +1,12 @@
 title: Potential OCS inventory RMM Tool Process Activity
-id: 7751f589-527f-4ada-ad90-ac026b8e6183
+id: 363fe317-cbbd-5f02-b435-48f411fb98fe
 status: experimental
 description: |
     Detects potential processes activity of OCS inventory RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ocsinventory.exe
-            - ocsservice.exe
+            - 'ocsinventory.exe'
+            - 'ocsservice.exe'
     selection_image:
         Image|endswith:
-            - ocsinventory.exe
-            - ocsservice.exe
+            - 'ocsinventory.exe'
+            - 'ocsservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of OCS inventory

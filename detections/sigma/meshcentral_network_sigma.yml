@@ -1,12 +1,12 @@
 title: Potential MeshCentral RMM Tool Network Activity
-id: 1ce87195-1117-42e9-b017-4bb59a1b5528
+id: 2989a1a0-ade8-5594-8ec5-50b685b21b3c
 status: experimental
 description: |
     Detects potential network activity of MeshCentral RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - meshcentral.com
+            - 'user_managed'
+            - 'meshcentral.com'
     condition: selection
 falsepositives:
     - Legitimate use of MeshCentral

@@ -1,12 +1,12 @@
 title: Potential Centurion RMM Tool Network Activity
-id: 4edb8177-08d8-4d5f-8cf6-cb488b87f729
+id: 0ad4624d-7f8c-57e3-9983-5c8afd6300ed
 status: experimental
 description: |
     Detects potential network activity of Centurion RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: centuriontech.com
+        DestinationHostname|endswith: 'centuriontech.com'
     condition: selection
 falsepositives:
     - Legitimate use of Centurion

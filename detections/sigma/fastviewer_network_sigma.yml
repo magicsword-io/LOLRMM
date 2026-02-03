@@ -1,12 +1,12 @@
 title: Potential FastViewer RMM Tool Network Activity
-id: ef6971eb-c3e3-4b4c-9187-aff39b218339
+id: b5fc2355-8eed-5627-9e29-50c8fa8b670f
 status: experimental
 description: |
     Detects potential network activity of FastViewer RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.fastviewer.com
-            - fastviewer.com
+            - '*.fastviewer.com'
+            - 'fastviewer.com'
     condition: selection
 falsepositives:
     - Legitimate use of FastViewer

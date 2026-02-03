@@ -1,12 +1,12 @@
 title: Potential Connectwise Automate (LabTech) RMM Tool Network Activity
-id: a964c1ea-0038-41c0-ba27-346c80e7e31c
+id: 293db247-2294-592f-b891-d9684d5e0282
 status: experimental
 description: |
     Detects potential network activity of Connectwise Automate (LabTech) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.hostedrmm.com
+        DestinationHostname|endswith: '*.hostedrmm.com'
     condition: selection
 falsepositives:
     - Legitimate use of Connectwise Automate (LabTech)

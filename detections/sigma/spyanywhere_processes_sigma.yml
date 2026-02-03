@@ -1,12 +1,12 @@
 title: Potential SpyAnywhere RMM Tool Process Activity
-id: 278b1ae9-f847-42e7-b3d6-38a349c1542b
+id: 5760bb62-cabc-5fc9-b5f7-1b0eb352d67c
 status: experimental
 description: |
     Detects potential processes activity of SpyAnywhere RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: sysdiag.exe
+        ParentImage|endswith: 'sysdiag.exe'
     selection_image:
-        Image|endswith: sysdiag.exe
+        Image|endswith: 'sysdiag.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SpyAnywhere

@@ -1,12 +1,12 @@
 title: Potential Domotz RMM Tool Process Activity
-id: cdebd910-7dad-4923-a4db-c40e4ae85d80
+id: d8380a02-7d07-5be1-8d33-be5762487a84
 status: experimental
 description: |
     Detects potential processes activity of Domotz RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,20 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - domotz.exe
-            - Domotz Pro Desktop App.exe
-            - domotz_bash.exe
-            - domotz*.exe
-            - Domotz Pro Desktop App Setup*.exe
-            - domotz-windows*.exe
+            - 'domotz.exe'
+            - 'Domotz Pro Desktop App.exe'
+            - 'domotz_bash.exe'
+            - 'domotz*.exe'
+            - 'Domotz Pro Desktop App Setup*.exe'
+            - 'domotz-windows*.exe'
     selection_image:
         Image|endswith:
-            - domotz.exe
-            - Domotz Pro Desktop App.exe
-            - domotz_bash.exe
-            - domotz*.exe
-            - Domotz Pro Desktop App Setup*.exe
-            - domotz-windows*.exe
+            - 'domotz.exe'
+            - 'Domotz Pro Desktop App.exe'
+            - 'domotz_bash.exe'
+            - 'domotz*.exe'
+            - 'Domotz Pro Desktop App Setup*.exe'
+            - 'domotz-windows*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Domotz

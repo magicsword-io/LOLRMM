@@ -1,12 +1,12 @@
 title: Potential Splashtop RMM Tool Process Activity
-id: 68675e5b-9b70-4883-8467-3598cb91279c
+id: 6b196f14-02ea-526c-99fd-0e4f1c7beab4
 status: experimental
 description: |
     Detects potential processes activity of Splashtop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: strwinclt.exe
+        ParentImage|endswith: 'strwinclt.exe'
     selection_image:
-        Image|endswith: strwinclt.exe
+        Image|endswith: 'strwinclt.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Splashtop

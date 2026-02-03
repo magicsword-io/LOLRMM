@@ -1,12 +1,12 @@
 title: Potential ShowMyPC RMM Tool Process Activity
-id: bab7a004-50d6-47b6-93f5-5edaa30001b5
+id: 00c07d8e-ee88-5c2c-b7fe-af0caf9920d2
 status: experimental
 description: |
     Detects potential processes activity of ShowMyPC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - SMPCSetup.exe
-            - showmypc*.exe
-            - showmypc.exe
-            - smpcsetup.exe
+            - 'SMPCSetup.exe'
+            - 'showmypc*.exe'
+            - 'showmypc.exe'
+            - 'smpcsetup.exe'
     selection_image:
         Image|endswith:
-            - SMPCSetup.exe
-            - showmypc*.exe
-            - showmypc.exe
-            - smpcsetup.exe
+            - 'SMPCSetup.exe'
+            - 'showmypc*.exe'
+            - 'showmypc.exe'
+            - 'smpcsetup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ShowMyPC

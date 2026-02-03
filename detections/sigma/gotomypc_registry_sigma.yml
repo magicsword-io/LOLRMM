@@ -1,12 +1,12 @@
 title: Potential GoToMyPC RMM Tool Registry Activity
-id: beb98caf-9df0-4cc4-a8b8-80bc6a7e7e31
+id: bf5607f8-3121-5127-baef-5ea54ebfb2ca
 status: experimental
 description: |
     Detects potential registry activity of GoToMyPC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc
-            - HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc\GuestInvite
-            - HKEY_CURRENT_USER\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history
-            - HKEY_USERS\<SID>\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history
+            - 'HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc'
+            - 'HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc\GuestInvite'
+            - 'HKEY_CURRENT_USER\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history'
+            - 'HKEY_USERS\<SID>\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history'
     condition: selection
 falsepositives:
     - Legitimate use of GoToMyPC

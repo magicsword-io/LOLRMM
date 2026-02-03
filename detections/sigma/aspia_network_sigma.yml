@@ -1,12 +1,12 @@
 title: Potential Aspia RMM Tool Network Activity
-id: 413afa8d-3ea2-4561-814a-b77f4d9d652c
+id: e03486e4-0c5d-5337-8ff5-3ffe8cf32f66
 status: experimental
 description: |
     Detects potential network activity of Aspia RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: https://github.com/dchapyshev/aspia
+        DestinationHostname|endswith: 'https://github.com/dchapyshev/aspia'
     condition: selection
 falsepositives:
     - Legitimate use of Aspia

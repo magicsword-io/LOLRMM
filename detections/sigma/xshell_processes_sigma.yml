@@ -1,12 +1,12 @@
 title: Potential Xshell RMM Tool Process Activity
-id: 0ee932d7-49d1-47f8-83ef-a4845e8f4031
+id: 7145888a-b84f-5a6b-8fdf-3f4beb00de5b
 status: experimental
 description: |
     Detects potential processes activity of Xshell RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: xShell.exe
+        ParentImage|endswith: '*\xShell.exe'
     selection_image:
-        Image|endswith: xShell.exe
+        Image|endswith: '*\xShell.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Xshell

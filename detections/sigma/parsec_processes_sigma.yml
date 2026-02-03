@@ -1,12 +1,12 @@
 title: Potential Parsec RMM Tool Process Activity
-id: 80d9a3ec-c90e-4402-95c8-bd014975625e
+id: 09915fc9-1fc4-59e2-a878-cfaa0b1a8218
 status: experimental
 description: |
     Detects potential processes activity of Parsec RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - parsecd.exe
-            - pservice.exe
+            - 'parsecd.exe'
+            - 'pservice.exe'
     selection_image:
         Image|endswith:
-            - parsecd.exe
-            - pservice.exe
+            - 'parsecd.exe'
+            - 'pservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Parsec

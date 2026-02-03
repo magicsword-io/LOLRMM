@@ -1,12 +1,12 @@
 title: Potential ESET Remote Administrator RMM Tool Network Activity
-id: 1f07c61b-b329-4814-af2a-de7c4bf3e993
+id: d7182391-7192-5549-8695-9693099b144f
 status: experimental
 description: |
     Detects potential network activity of ESET Remote Administrator RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - eset.com/me/business/remote-management/remote-administrator/
+            - 'user_managed'
+            - 'eset.com/me/business/remote-management/remote-administrator/'
     condition: selection
 falsepositives:
     - Legitimate use of ESET Remote Administrator

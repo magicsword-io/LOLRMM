@@ -1,12 +1,12 @@
 title: Potential Sorillus RMM Tool Network Activity
-id: 6e25b481-210b-4807-b66e-5d00b1d3fed7
+id: a45ed3ee-1dae-56ba-8b67-cc34308dc924
 status: experimental
 description: |
     Detects potential network activity of Sorillus RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.sorillus.com
-            - sorillus.com
+            - '*.sorillus.com'
+            - 'sorillus.com'
     condition: selection
 falsepositives:
     - Legitimate use of Sorillus

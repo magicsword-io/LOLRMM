@@ -1,12 +1,12 @@
 title: Potential Parsec RMM Tool File Activity
-id: 4bf000d7-7a91-470b-b42b-5593cf3307ed
+id: 92d45705-b47b-574b-934d-b0fd41ae1488
 status: experimental
 description: |
     Detects potential files activity of Parsec RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Program Files\Parsec\parsecd.exe
-            - C:\Program Files\Parsec\pservice.exe
-            - C:\Program Files\Parsec\teams.exe
+            - 'C:\Program Files\Parsec\parsecd.exe'
+            - 'C:\Program Files\Parsec\pservice.exe'
+            - 'C:\Program Files\Parsec\teams.exe'
     condition: selection
 falsepositives:
     - Legitimate use of Parsec

@@ -1,12 +1,12 @@
 title: Potential Sophos-Remote Management System RMM Tool Network Activity
-id: a6e96201-a321-468f-9600-829c7a4a8b9c
+id: 56570b61-4b48-57e7-afd5-834d6eaa37d4
 status: experimental
 description: |
     Detects potential network activity of Sophos-Remote Management System RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.sophos.com
-            - *.sophosupd.com
-            - *.sophosupd.net
-            - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+            - '*.sophos.com'
+            - '*.sophosupd.com'
+            - '*.sophosupd.net'
+            - 'community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system'
     condition: selection
 falsepositives:
     - Legitimate use of Sophos-Remote Management System

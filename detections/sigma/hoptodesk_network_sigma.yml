@@ -1,12 +1,12 @@
 title: Potential HopToDesk RMM Tool Network Activity
-id: 68fd1e88-4536-42ee-8517-cd8fbc3df925
+id: 2c282894-f61a-5f05-ac32-2dc6b1f20859
 status: experimental
 description: |
     Detects potential network activity of HopToDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,12 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - signal.hoptodesk.com
-            - api.hoptodesk.com
-            - turn.hoptodesk.com
+            - 'hoptodesk.com'
+            - 'api.hoptodesk.com'
+            - 'signal.hoptodesk.com'
+            - 'turn.hoptodesk.com'
+            - 'download.hoptodesk.com'
+            - 'www.hoptodesk.com'
     condition: selection
 falsepositives:
     - Legitimate use of HopToDesk

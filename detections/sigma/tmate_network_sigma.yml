@@ -1,0 +1,24 @@
+title: Potential tmate RMM Tool Network Activity
+id: ae1b648e-5cd4-50b6-931f-5f162038354b
+status: experimental
+description: |
+    Detects potential network activity of tmate RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'tmate.io'
+            - '*.tmate.io'
+    condition: selection
+falsepositives:
+    - Legitimate use of tmate
+level: medium

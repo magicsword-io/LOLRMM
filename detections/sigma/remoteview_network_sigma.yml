@@ -1,12 +1,12 @@
 title: Potential RemoteView RMM Tool Network Activity
-id: 7159c8eb-d7b8-4802-a204-19b6c1983f38
+id: 6a280fcd-e104-5801-b142-c1fb8d5f69e2
 status: experimental
 description: |
     Detects potential network activity of RemoteView RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *content.rview.com
-            - *.rview.com
-            - content.rview.com
+            - '*content.rview.com'
+            - '*.rview.com'
+            - 'content.rview.com'
     condition: selection
 falsepositives:
     - Legitimate use of RemoteView

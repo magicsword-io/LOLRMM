@@ -1,12 +1,12 @@
 title: Potential Royal Server RMM Tool Network Activity
-id: 1ab09382-e7a9-4623-ad46-85d55a04ee6e
+id: 00b0e261-540e-5a67-bda5-36bca12ff5d7
 status: experimental
 description: |
     Detects potential network activity of Royal Server RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: royalapps.com
+        DestinationHostname|endswith: 'royalapps.com'
     condition: selection
 falsepositives:
     - Legitimate use of Royal Server

@@ -1,12 +1,12 @@
 title: Potential FleetDeck.io RMM Tool Network Activity
-id: 3a490684-6f45-489b-9941-0848466c09d6
+id: e001f555-c144-52c6-8e35-16d0d74d9556
 status: experimental
 description: |
     Detects potential network activity of FleetDeck.io RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.fleetdeck.io
-            - cognito-idp.us-west-2.amazonaws.com
-            - fleetdeck.io
+            - '*.fleetdeck.io'
+            - 'fleetdeck.io'
+            - 'agentmqtt.fleetdeck.io'
+            - 'checkip.zmazonaws.com'
     condition: selection
 falsepositives:
     - Legitimate use of FleetDeck.io

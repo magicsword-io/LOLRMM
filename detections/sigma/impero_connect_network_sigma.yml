@@ -1,12 +1,12 @@
 title: Potential Impero Connect RMM Tool Network Activity
-id: 5842e2f4-7e26-4f0e-a65d-3f3abffe279a
+id: 3477a96e-8bba-5e90-ad9a-0112aaeac735
 status: experimental
 description: |
     Detects potential network activity of Impero Connect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: imperosoftware.com
+        DestinationHostname|endswith: 'imperosoftware.com'
     condition: selection
 falsepositives:
     - Legitimate use of Impero Connect

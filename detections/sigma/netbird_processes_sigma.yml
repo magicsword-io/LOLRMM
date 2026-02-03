@@ -1,0 +1,32 @@
+title: Potential NetBird RMM Tool Process Activity
+id: 48b0db99-b021-5bd7-9a73-7a2733099102
+status: experimental
+description: |
+    Detects potential processes activity of NetBird RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'C:\Program Files\Netbird\netbird.exe'
+            - 'C:\Program Files\Netbird\netbird-ui.exe'
+            - 'netbird.exe'
+            - 'netbird-ui.exe'
+    selection_image:
+        Image|endswith:
+            - 'C:\Program Files\Netbird\netbird.exe'
+            - 'C:\Program Files\Netbird\netbird-ui.exe'
+            - 'netbird.exe'
+            - 'netbird-ui.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of NetBird
+level: medium

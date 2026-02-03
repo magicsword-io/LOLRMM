@@ -1,12 +1,12 @@
 title: Potential Alpemix RMM Tool Process Activity
-id: e48f7b65-5748-4e0e-a12d-7dcbc08a5065
+id: 8f623bd9-633c-5f56-af26-7c4148a35e9f
 status: experimental
 description: |
     Detects potential processes activity of Alpemix RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: AlpemixService.exe
+        ParentImage|endswith: 'C:\AlpemixService.exe'
     selection_image:
-        Image|endswith: AlpemixService.exe
+        Image|endswith: 'C:\AlpemixService.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Alpemix

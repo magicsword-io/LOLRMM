@@ -1,12 +1,12 @@
 title: Potential SuperOps RMM Tool Process Activity
-id: a7d2caf4-7fed-4e47-9a33-34f59c288d3c
+id: a5b88b5e-4ee5-59fe-be77-a9dff94a4401
 status: experimental
 description: |
     Detects potential processes activity of SuperOps RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - superopsticket.exe
-            - superops.exe
+            - 'superopsticket.exe'
+            - 'superops.exe'
     selection_image:
         Image|endswith:
-            - superopsticket.exe
-            - superops.exe
+            - 'superopsticket.exe'
+            - 'superops.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SuperOps

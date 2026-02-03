@@ -1,12 +1,12 @@
 title: Potential N-Able Advanced Monitoring Agent RMM Tool Network Activity
-id: 343b65e8-9f87-4009-9649-fb77db5d1e7f
+id: d0163483-f60a-55b7-9870-ede5e4ae5a9c
 status: experimental
 description: |
     Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,17 +16,25 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *remote.management
-            - *.logicnow.com
-            - *systemmonitor.us
-            - *systemmonitor.eu.com
-            - *system-monitor.com
-            - systemmonitor.us.cdn.cloudflare.net
-            - *cloudbackup.management
-            - *systemmonitor.co.uk
-            - *.n-able.com
-            - *.beanywhere.com 
-            - *.swi-tc.com
+            - '*.beanywhere.com '
+            - 'systemmonitor.co.uk'
+            - '*system-monitor.com'
+            - 'cloudbackup.management'
+            - '*systemmonitor.co.uk'
+            - 'n-able.com'
+            - 'systemmonitor.us'
+            - '*systemmonitor.eu.com'
+            - '*.logicnow.com'
+            - '*.swi-tc.com'
+            - '*remote.management'
+            - 'systemmonitor.us.cdn.cloudflare.net'
+            - '*cloudbackup.management'
+            - 'remote.management'
+            - 'logicnow.com'
+            - 'system-monitor.com'
+            - '*systemmonitor.us'
+            - 'systemmonitor.eu.com'
+            - '*.n-able.com'
     condition: selection
 falsepositives:
     - Legitimate use of N-Able Advanced Monitoring Agent

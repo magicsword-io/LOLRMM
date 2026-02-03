@@ -1,12 +1,12 @@
 title: Potential PDQ Connect RMM Tool Network Activity
-id: 89443d65-866c-4fde-8873-7e740f53c46a
+id: 80d333e4-54cb-5d5e-bff6-58996d85a8d6
 status: experimental
 description: |
     Detects potential network activity of PDQ Connect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - app.pdq.com
-            - cfcdn.pdq.com
-            - pdqinstallers.*.r2.cloudflarestorage.com
+            - 'app.pdq.com'
+            - 'cfcdn.pdq.com'
+            - 'pdqinstallers.*.r2.cloudflarestorage.com'
     condition: selection
 falsepositives:
     - Legitimate use of PDQ Connect

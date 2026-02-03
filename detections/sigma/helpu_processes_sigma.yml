@@ -1,12 +1,12 @@
 title: Potential HelpU RMM Tool Process Activity
-id: b9d644d3-dc40-49ce-a18f-c54025834c5d
+id: ab8363c3-a027-59f6-9e5a-49021fad7794
 status: experimental
 description: |
     Detects potential processes activity of HelpU RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - helpu_install.exe
-            - HelpuUpdater.exe
-            - HelpuManager.exe
+            - 'helpu_install.exe'
+            - 'HelpuUpdater.exe'
+            - 'HelpuManager.exe'
     selection_image:
         Image|endswith:
-            - helpu_install.exe
-            - HelpuUpdater.exe
-            - HelpuManager.exe
+            - 'helpu_install.exe'
+            - 'HelpuUpdater.exe'
+            - 'HelpuManager.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of HelpU

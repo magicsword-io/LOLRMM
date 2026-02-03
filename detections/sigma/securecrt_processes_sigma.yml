@@ -1,12 +1,12 @@
 title: Potential SecureCRT RMM Tool Process Activity
-id: 4931f903-150d-43b3-bed7-1772dbdbd8e3
+id: 00be54dd-11bc-5f95-bb4b-b8db1e9ffb0f
 status: experimental
 description: |
     Detects potential processes activity of SecureCRT RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - SecureCRT.EXE
-            - SecureCRT.EXE
+            - 'C:\*\SecureCRT.EXE'
+            - '*\SecureCRT.EXE'
     selection_image:
         Image|endswith:
-            - SecureCRT.EXE
-            - SecureCRT.EXE
+            - 'C:\*\SecureCRT.EXE'
+            - '*\SecureCRT.EXE'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SecureCRT

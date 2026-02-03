@@ -1,12 +1,12 @@
 title: Potential CloudFlare Tunnel RMM Tool Network Activity
-id: e04b9b34-e501-49d9-89f4-f9ae4534131f
+id: 75494e1e-0ddc-5086-966d-475c6ef35243
 status: experimental
 description: |
     Detects potential network activity of CloudFlare Tunnel RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: cloudflare.com/products/tunnel/
+        DestinationHostname|endswith: 'cloudflare.com/products/tunnel/'
     condition: selection
 falsepositives:
     - Legitimate use of CloudFlare Tunnel

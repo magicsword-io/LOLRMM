@@ -1,12 +1,12 @@
 title: Potential BeamYourScreen RMM Tool Network Activity
-id: 5c6428ad-4e34-4c26-9459-ecd2ac372496
+id: 95c5c4fa-841d-5c6d-8c6d-41c8d3a36de1
 status: experimental
 description: |
     Detects potential network activity of BeamYourScreen RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - beamyourscreen.com
-            - *.beamyourscreen.com
+            - 'beamyourscreen.com'
+            - '*.beamyourscreen.com'
     condition: selection
 falsepositives:
     - Legitimate use of BeamYourScreen

@@ -1,12 +1,12 @@
 title: Potential DeskDay RMM Tool Process Activity
-id: 0ab77c50-f1f2-4427-8e18-5c30e7b97351
+id: 731b379c-a7fe-5630-9149-561e6955a908
 status: experimental
 description: |
     Detects potential processes activity of DeskDay RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: ultimate_*.exe
+        ParentImage|endswith: 'ultimate_*.exe'
     selection_image:
-        Image|endswith: ultimate_*.exe
+        Image|endswith: 'ultimate_*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DeskDay

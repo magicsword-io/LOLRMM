@@ -1,12 +1,12 @@
 title: Potential Level.io RMM Tool File Activity
-id: 283bfff1-1163-4f7f-89bb-7858dcc4c5de
+id: cb4aef36-7b73-575d-9cf8-94a31f80a8b0
 status: experimental
 description: |
     Detects potential files activity of Level.io RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Program Files\Level\level.exe
-            - C:\Program Files\Level\osqueryi.exe
-            - C:\Program Files\Level\level.log
+            - 'C:\Program Files\Level\level.exe'
+            - 'C:\Program Files\Level\osqueryi.exe'
+            - 'C:\Program Files\Level\level.log'
     condition: selection
 falsepositives:
     - Legitimate use of Level.io

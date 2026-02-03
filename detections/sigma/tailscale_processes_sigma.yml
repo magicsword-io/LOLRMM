@@ -1,12 +1,12 @@
 title: Potential Tailscale RMM Tool Process Activity
-id: 9e0cab82-8204-40d4-85ce-73915b1c7c61
+id: dab9913c-44e8-5ccd-8d37-11b9311059a4
 status: experimental
 description: |
     Detects potential processes activity of Tailscale RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tailscale-*.exe
-            - tailscaled.exe
-            - tailscale-ipn.exe
+            - 'tailscale-*.exe'
+            - 'tailscaled.exe'
+            - 'tailscale-ipn.exe'
     selection_image:
         Image|endswith:
-            - tailscale-*.exe
-            - tailscaled.exe
-            - tailscale-ipn.exe
+            - 'tailscale-*.exe'
+            - 'tailscaled.exe'
+            - 'tailscale-ipn.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Tailscale

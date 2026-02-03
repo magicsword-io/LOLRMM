@@ -1,12 +1,12 @@
 title: Potential Atera RMM Tool Network Activity
-id: 674787f1-97f4-4b3f-ae3a-361e909e800d
+id: d59b2d4e-0991-559c-9c9c-27b4038191be
 status: experimental
 description: |
     Detects potential network activity of Atera RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,21 +16,20 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - pubsub.atera.com
-            - pubsub.pubnub.com
-            - agentreporting.atera.com
-            - getalphacontrol.com
-            - app.atera.com
-            - agenthb.atera.com
-            - packagesstore.blob.core.windows.net
-            - ps.pndsn.com
-            - agent-api.atera.com
-            - cacerts.thawte.com
-            - agentreportingstore.blob.core.windows.net
-            - atera-agent-heartbeat.servicebus.windows.net
-            - ps.atera.com
-            - atera.pubnubapi.com
-            - appcdn.atera.com
+            - 'pubsub.atera.com'
+            - 'pubsub.pubnub.com'
+            - 'agentreporting.atera.com'
+            - 'getalphacontrol.com'
+            - 'app.atera.com'
+            - 'agenthb.atera.com'
+            - 'packagesstore.blob.core.windows.net'
+            - 'ps.pndsn.com'
+            - 'agent-api.atera.com'
+            - 'agentreportingstore.blob.core.windows.net'
+            - 'atera-agent-heartbeat.servicebus.windows.net'
+            - 'ps.atera.com'
+            - 'atera.pubnubapi.com'
+            - 'appcdn.atera.com'
     condition: selection
 falsepositives:
     - Legitimate use of Atera

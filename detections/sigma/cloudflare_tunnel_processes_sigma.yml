@@ -1,12 +1,12 @@
 title: Potential CloudFlare Tunnel RMM Tool Process Activity
-id: 74702f51-ec4a-4823-af3e-f883ce33e8f8
+id: 9f95ff4f-7088-5e70-88b0-95f6c1818720
 status: experimental
 description: |
     Detects potential processes activity of CloudFlare Tunnel RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: cloudflared.exe
+        ParentImage|endswith: 'cloudflared.exe'
     selection_image:
-        Image|endswith: cloudflared.exe
+        Image|endswith: 'cloudflared.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of CloudFlare Tunnel

@@ -1,12 +1,12 @@
 title: Potential Acronis Cyber Protect (Remotix) RMM Tool Network Activity
-id: 9e6372f6-47e7-4a2b-9306-2d7f2347cb62
+id: 09b5684f-5571-5607-9051-07f2b11e4fbe
 status: experimental
 description: |
     Detects potential network activity of Acronis Cyber Protect (Remotix) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - cloud.acronis.com
-            - agents*-cloud.acronis.com
-            - gw.remotix.com
-            - connect.acronis.com
+            - 'cloud.acronis.com'
+            - 'agents*-cloud.acronis.com'
+            - 'gw.remotix.com'
+            - 'connect.acronis.com'
     condition: selection
 falsepositives:
     - Legitimate use of Acronis Cyber Protect (Remotix)

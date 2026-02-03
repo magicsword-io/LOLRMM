@@ -1,12 +1,12 @@
 title: Potential EMCO Remote Console RMM Tool Network Activity
-id: 44e12795-672a-4e2d-9507-820c799bbb4e
+id: 0a625550-f7bb-501f-a966-c0ba16d3f217
 status: experimental
 description: |
     Detects potential network activity of EMCO Remote Console RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - emcosoftware.com
+            - 'user_managed'
+            - 'emcosoftware.com'
     condition: selection
 falsepositives:
     - Legitimate use of EMCO Remote Console

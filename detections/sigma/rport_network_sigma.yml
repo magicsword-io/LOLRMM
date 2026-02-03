@@ -1,12 +1,12 @@
 title: Potential RPort RMM Tool Network Activity
-id: b958832e-79f5-406d-832a-d3da5ea9163a
+id: 4730b65b-1328-5c9e-a8f8-1868a100bb24
 status: experimental
 description: |
     Detects potential network activity of RPort RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - rport.io
+            - 'user_managed'
+            - 'rport.io'
     condition: selection
 falsepositives:
     - Legitimate use of RPort

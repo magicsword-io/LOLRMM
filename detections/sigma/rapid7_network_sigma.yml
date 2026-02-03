@@ -1,12 +1,12 @@
 title: Potential Rapid7 RMM Tool Network Activity
-id: 4df2f4fe-07ea-4b8e-a942-dae22b02f59f
+id: f299760a-aa77-5e23-8140-72319112b7a1
 status: experimental
 description: |
     Detects potential network activity of Rapid7 RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.analytics.insight.rapid7.com
-            - *.endpoint.ingress.rapid7.com
+            - '*.analytics.insight.rapid7.com'
+            - '*.endpoint.ingress.rapid7.com'
     condition: selection
 falsepositives:
     - Legitimate use of Rapid7

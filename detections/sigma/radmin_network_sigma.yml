@@ -1,12 +1,12 @@
 title: Potential RAdmin RMM Tool Network Activity
-id: 9a07344a-5d8e-482e-bdf0-2cd3242165e7
+id: 3290858e-d681-59b4-b138-ab417db5aad1
 status: experimental
 description: |
     Detects potential network activity of RAdmin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: radmin.com
+        DestinationHostname|endswith: 'radmin.com'
     condition: selection
 falsepositives:
     - Legitimate use of RAdmin

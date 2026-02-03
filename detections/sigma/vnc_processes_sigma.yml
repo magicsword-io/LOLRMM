@@ -1,12 +1,12 @@
 title: Potential VNC RMM Tool Process Activity
-id: 09723726-df0c-4154-bb05-7b810b6c6c40
+id: a6780978-91a6-5984-8f8b-ac0a878172c4
 status: experimental
 description: |
     Detects potential processes activity of VNC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,22 +16,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - winvnc*.exe
-            - vncserver.exe
-            - winwvc.exe
-            - winvncsc.exe
-            - vncserverui.exe
-            - vncviewer.exe
-            - winvnc.exe
+            - 'winvnc*.exe'
+            - 'vncserver.exe'
+            - 'winwvc.exe'
+            - 'winvncsc.exe'
+            - 'vncserverui.exe'
+            - 'vncviewer.exe'
+            - 'winvnc.exe'
     selection_image:
         Image|endswith:
-            - winvnc*.exe
-            - vncserver.exe
-            - winwvc.exe
-            - winvncsc.exe
-            - vncserverui.exe
-            - vncviewer.exe
-            - winvnc.exe
+            - 'winvnc*.exe'
+            - 'vncserver.exe'
+            - 'winwvc.exe'
+            - 'winvncsc.exe'
+            - 'vncserverui.exe'
+            - 'vncviewer.exe'
+            - 'winvnc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of VNC

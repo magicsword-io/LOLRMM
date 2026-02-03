@@ -1,12 +1,12 @@
 title: Potential Iperius Remote RMM Tool Process Activity
-id: 96613482-d916-418a-a12e-bf8511d25706
+id: 1d49e8d5-39d0-5eb9-94a3-35041cf802ef
 status: experimental
 description: |
     Detects potential processes activity of Iperius Remote RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - iperius.exe
-            - iperiusremote.exe
+            - 'iperius.exe'
+            - 'iperiusremote.exe'
     selection_image:
         Image|endswith:
-            - iperius.exe
-            - iperiusremote.exe
+            - 'iperius.exe'
+            - 'iperiusremote.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Iperius Remote

@@ -1,12 +1,12 @@
 title: Potential SkyFex RMM Tool Network Activity
-id: c7d7cb02-e36f-4f83-8927-acacbc54db0a
+id: f9d72ac6-b274-556b-9dff-53aa7877015e
 status: experimental
 description: |
     Detects potential network activity of SkyFex RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - skyfex.com
-            - deskroll.com
-            - *.deskroll.com
+            - 'skyfex.com'
+            - 'deskroll.com'
+            - '*.deskroll.com'
     condition: selection
 falsepositives:
     - Legitimate use of SkyFex

@@ -1,12 +1,12 @@
 title: Potential Iperius Remote RMM Tool Network Activity
-id: ae72a6f3-4916-4519-89e7-f372c5626a87
+id: 32437e12-e41b-5dfb-8774-fd9e6d32ef19
 status: experimental
 description: |
     Detects potential network activity of Iperius Remote RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.iperiusremote.com
-            - *.iperius.com
-            - *.iperius-rs.com
-            - iperiusremote.com
+            - '*.iperiusremote.com'
+            - '*.iperius.com'
+            - '*.iperius-rs.com'
+            - 'iperiusremote.com'
     condition: selection
 falsepositives:
     - Legitimate use of Iperius Remote

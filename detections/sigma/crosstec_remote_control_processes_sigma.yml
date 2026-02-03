@@ -1,12 +1,12 @@
 title: Potential CrossTec Remote Control RMM Tool Process Activity
-id: 453cefc5-e656-4b6f-a421-03969acdeddd
+id: 3658e4fb-2277-5c96-af7d-66c4519250b7
 status: experimental
 description: |
     Detects potential processes activity of CrossTec Remote Control RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - PCIVIDEO.EXE
-            - supporttool.exe
+            - 'PCIVIDEO.EXE'
+            - 'supporttool.exe'
     selection_image:
         Image|endswith:
-            - PCIVIDEO.EXE
-            - supporttool.exe
+            - 'PCIVIDEO.EXE'
+            - 'supporttool.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of CrossTec Remote Control

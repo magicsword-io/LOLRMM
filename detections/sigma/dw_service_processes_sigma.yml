@@ -1,12 +1,12 @@
 title: Potential DW Service RMM Tool Process Activity
-id: 41c78cb0-6366-4b2d-9e34-1caf2811f857
+id: e7d85314-f06d-55d5-95d2-4f26c0e5c6df
 status: experimental
 description: |
     Detects potential processes activity of DW Service RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - dwagsvc.exe
-            - dwagent.exe
-            - dwagsvc.exe
+            - 'dwagsvc.exe'
+            - 'dwagent.exe'
+            - 'dwagsvc.exe'
     selection_image:
         Image|endswith:
-            - dwagsvc.exe
-            - dwagent.exe
-            - dwagsvc.exe
+            - 'dwagsvc.exe'
+            - 'dwagent.exe'
+            - 'dwagsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DW Service

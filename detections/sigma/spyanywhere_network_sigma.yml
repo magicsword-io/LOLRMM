@@ -1,12 +1,12 @@
 title: Potential SpyAnywhere RMM Tool Network Activity
-id: 45151543-012c-4875-b809-cd3878b63def
+id: a15d9463-7800-5896-8afb-f4806ca852d3
 status: experimental
 description: |
     Detects potential network activity of SpyAnywhere RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.spytech-web.com
-            - spyanywhere.com
+            - '*.spytech-web.com'
+            - 'spyanywhere.com'
     condition: selection
 falsepositives:
     - Legitimate use of SpyAnywhere

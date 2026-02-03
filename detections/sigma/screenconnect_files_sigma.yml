@@ -1,12 +1,12 @@
 title: Potential ScreenConnect RMM Tool File Activity
-id: fa0f2b6a-8f96-470e-b699-82e4c1bce912
+id: 1461da7e-2712-5195-9d57-86c6ef02ff2e
 status: experimental
 description: |
     Detects potential files activity of ScreenConnect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Program Files*\ScreenConnect\App_Data\Session.db
-            - C:\Program Files*\ScreenConnect\App_Data\User.xml
-            - C:\ProgramData\ScreenConnect Client*\user.config
+            - 'C:\Program Files*\ScreenConnect\App_Data\Session.db'
+            - 'C:\Program Files*\ScreenConnect\App_Data\User.xml'
+            - 'C:\ProgramData\ScreenConnect Client*\user.config'
     condition: selection
 falsepositives:
     - Legitimate use of ScreenConnect

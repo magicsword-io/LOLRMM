@@ -1,12 +1,12 @@
 title: Potential BeInSync RMM Tool Network Activity
-id: 815a3008-1333-4d9d-a475-99dab884d493
+id: 38d0538c-31b6-5b86-8499-d2c790eb868b
 status: experimental
 description: |
     Detects potential network activity of BeInSync RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.beinsync.net
-            - *.beinsync.com
+            - '*.beinsync.net'
+            - '*.beinsync.com'
     condition: selection
 falsepositives:
     - Legitimate use of BeInSync

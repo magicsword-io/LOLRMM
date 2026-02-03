@@ -1,12 +1,12 @@
 title: Potential Site24x7 RMM Tool Process Activity
-id: 8ad21b7a-7b49-4680-8547-ba306fed6bc6
+id: 1d84c0b1-2770-5362-9fe8-98ca095d312a
 status: experimental
 description: |
     Detects potential processes activity of Site24x7 RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - MEAgentHelper.exe
-            - MonitoringAgent.exe
-            - Site24x7WindowsAgentTrayIcon.exe
-            - Site24x7PluginAgent.exe
+            - 'MEAgentHelper.exe'
+            - 'MonitoringAgent.exe'
+            - 'Site24x7WindowsAgentTrayIcon.exe'
+            - 'Site24x7PluginAgent.exe'
     selection_image:
         Image|endswith:
-            - MEAgentHelper.exe
-            - MonitoringAgent.exe
-            - Site24x7WindowsAgentTrayIcon.exe
-            - Site24x7PluginAgent.exe
+            - 'MEAgentHelper.exe'
+            - 'MonitoringAgent.exe'
+            - 'Site24x7WindowsAgentTrayIcon.exe'
+            - 'Site24x7PluginAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Site24x7

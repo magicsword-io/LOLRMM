@@ -1,12 +1,12 @@
 title: Potential PuTTY RMM Tool Process Activity
-id: 261c0863-b00c-4413-8339-23372e480275
+id: ff7f2dab-281d-5631-88b6-4ade4ec79ea9
 status: experimental
 description: |
     Detects potential processes activity of PuTTY RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: putty.exe
+        ParentImage|endswith: '*\putty.exe'
     selection_image:
-        Image|endswith: putty.exe
+        Image|endswith: '*\putty.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of PuTTY

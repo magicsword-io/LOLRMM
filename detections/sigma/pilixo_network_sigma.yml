@@ -1,12 +1,12 @@
 title: Potential Pilixo RMM Tool Network Activity
-id: 292ad909-5053-4e59-a922-af160a9f3c97
+id: e16838f9-d906-5bc8-a747-77b624715806
 status: experimental
 description: |
     Detects potential network activity of Pilixo RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - pilixo.com
-            - download.pilixo.com
-            - *.pilixo.com
+            - 'pilixo.com'
+            - 'download.pilixo.com'
+            - '*.pilixo.com'
     condition: selection
 falsepositives:
     - Legitimate use of Pilixo

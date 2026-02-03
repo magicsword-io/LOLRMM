@@ -1,12 +1,12 @@
 title: Potential RemoteUtilities RMM Tool Network Activity
-id: 3b420f86-5285-40a3-829e-a86532bb4c65
+id: f8b97599-a738-5a59-9596-ae7339a1d686
 status: experimental
 description: |
     Detects potential network activity of RemoteUtilities RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: remoteutilities.com
+        DestinationHostname|endswith: 'remoteutilities.com'
     condition: selection
 falsepositives:
     - Legitimate use of RemoteUtilities

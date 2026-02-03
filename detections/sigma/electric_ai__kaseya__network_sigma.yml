@@ -1,12 +1,12 @@
 title: Potential Electric AI (Kaseya) RMM Tool Network Activity
-id: bef256ea-20de-413d-86c4-c6b6c825b233
+id: 117eec80-86b3-5705-b69e-742638940486
 status: experimental
 description: |
     Detects potential network activity of Electric AI (Kaseya) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: electric.ai
+        DestinationHostname|endswith: 'electric.ai'
     condition: selection
 falsepositives:
     - Legitimate use of Electric AI (Kaseya)

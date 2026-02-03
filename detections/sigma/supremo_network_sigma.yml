@@ -1,12 +1,12 @@
 title: Potential Supremo RMM Tool Network Activity
-id: 5f271e68-5abd-4da5-ac04-e534e222b913
+id: 8d3aa038-ebac-5535-97f5-fb2216b9c9d6
 status: experimental
 description: |
     Detects potential network activity of Supremo RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,10 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - supremocontrol.com
-            - *.supremocontrol.com
-            - * .nanosystems.it
+        DestinationHostname|endswith: '*.supremocontrol.com'
     condition: selection
 falsepositives:
     - Legitimate use of Supremo

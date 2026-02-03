@@ -1,12 +1,12 @@
 title: Potential FastViewer RMM Tool Process Activity
-id: 1832aa5d-1fb7-44c3-93df-af4e7e9c62b8
+id: 27b99c31-cc0f-5e88-85a0-3569eece8e34
 status: experimental
 description: |
     Detects potential processes activity of FastViewer RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - fastclient.exe
-            - fastmaster.exe
-            - FastViewer.exe
+            - 'fastclient.exe'
+            - 'fastmaster.exe'
+            - 'FastViewer.exe'
     selection_image:
         Image|endswith:
-            - fastclient.exe
-            - fastmaster.exe
-            - FastViewer.exe
+            - 'fastclient.exe'
+            - 'fastmaster.exe'
+            - 'FastViewer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of FastViewer

@@ -1,0 +1,22 @@
+title: Potential FleetDeck.io RMM Tool Registry Activity
+id: 8dc300f4-b2b7-5e29-81e9-01791b62187b
+status: experimental
+description: |
+    Detects potential registry activity of FleetDeck.io RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        TargetObject|contains: 'HKLM\SYSTEM\CurrentControlSet\Services\FleetDeck Agent Service'
+    condition: selection
+falsepositives:
+    - Legitimate use of FleetDeck.io
+level: medium

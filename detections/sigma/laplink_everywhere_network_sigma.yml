@@ -1,12 +1,12 @@
 title: Potential Laplink Everywhere RMM Tool Network Activity
-id: 4a81a286-94d4-442d-9f11-0977a0c1a80c
+id: bf3a6a41-397f-5601-96c3-81d1279eadf8
 status: experimental
 description: |
     Detects potential network activity of Laplink Everywhere RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - everywhere.laplink.com
-            - le.laplink.com
-            - atled.syspectr.com
+            - 'everywhere.laplink.com'
+            - 'le.laplink.com'
+            - 'atled.syspectr.com'
     condition: selection
 falsepositives:
     - Legitimate use of Laplink Everywhere

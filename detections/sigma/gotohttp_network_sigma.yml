@@ -1,12 +1,12 @@
 title: Potential GotoHTTP RMM Tool Network Activity
-id: 1b6aea94-3773-4566-9ad5-073e438c94a8
+id: dd61a817-e828-53c3-92f0-5b661a6000e2
 status: experimental
 description: |
     Detects potential network activity of GotoHTTP RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.gotohttp.com
-            - gotohttp.com
+            - '*.gotohttp.com'
+            - 'gotohttp.com'
     condition: selection
 falsepositives:
     - Legitimate use of GotoHTTP

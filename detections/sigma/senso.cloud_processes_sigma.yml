@@ -1,12 +1,12 @@
 title: Potential Senso.cloud RMM Tool Process Activity
-id: eae4036c-86e7-429d-bd5a-49dc2b2884c7
+id: 990e846e-260c-5725-b6f2-8f67ac449667
 status: experimental
 description: |
     Detects potential processes activity of Senso.cloud RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - SensoClient.exe
-            - SensoService.exe
-            - aadg.exe
+            - 'SensoClient.exe'
+            - 'SensoService.exe'
+            - 'aadg.exe'
     selection_image:
         Image|endswith:
-            - SensoClient.exe
-            - SensoService.exe
-            - aadg.exe
+            - 'SensoClient.exe'
+            - 'SensoService.exe'
+            - 'aadg.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Senso.cloud

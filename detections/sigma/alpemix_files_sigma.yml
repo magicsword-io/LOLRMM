@@ -1,12 +1,12 @@
 title: Potential Alpemix RMM Tool File Activity
-id: 48635891-4740-4323-9654-0c950f7129a0
+id: 59f6d5ac-c4f1-5e23-bdca-0637a851df51
 status: experimental
 description: |
     Detects potential files activity of Alpemix RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: file_event
 detection:
     selection:
-        TargetFilename|endswith: %localappdata%\Alpemix\Alpemix.ini
+        TargetFilename|endswith: '%localappdata%\Alpemix\Alpemix.ini'
     condition: selection
 falsepositives:
     - Legitimate use of Alpemix

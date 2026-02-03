@@ -1,12 +1,12 @@
 title: Potential mRemoteNG RMM Tool File Activity
-id: 453adbd6-da18-4d1f-b7f6-ef5cdbc43684
+id: 7d5db791-0b23-555d-acfc-6e01cd81795f
 status: experimental
 description: |
     Detects potential files activity of mRemoteNG RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
-            - C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml
-            - C:\Users\*\AppData\*\mRemoteNG\**10\user.config
+            - 'C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log'
+            - 'C:\Users\*\AppData\Roaming\mRemoteNG\confCons.xml'
+            - 'C:\Users\*\AppData\*\mRemoteNG\**10\user.config'
     condition: selection
 falsepositives:
     - Legitimate use of mRemoteNG

@@ -1,0 +1,25 @@
+title: Potential Veyon RMM Tool File Activity
+id: 28734a12-8256-5f31-93cb-71bf1188207c
+status: experimental
+description: |
+    Detects potential files activity of Veyon RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'C:\Windows\Temp\VeyonServer.log'
+            - 'C:\Windows\Temp\VeyonService.log'
+            - 'C:\Users\*\AppData\Local\VeyonCLI.log'
+    condition: selection
+falsepositives:
+    - Legitimate use of Veyon
+level: medium

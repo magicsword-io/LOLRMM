@@ -1,12 +1,12 @@
 title: Potential Anyplace Control RMM Tool Network Activity
-id: 6db5caaa-93ad-406b-a8b0-e652033f91a9
+id: fd43f5b7-5a26-5176-8cd6-4c24f3a33c32
 status: experimental
 description: |
     Detects potential network activity of Anyplace Control RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: anyplace-control.com
+        DestinationHostname|endswith: 'anyplace-control.com'
     condition: selection
 falsepositives:
     - Legitimate use of Anyplace Control

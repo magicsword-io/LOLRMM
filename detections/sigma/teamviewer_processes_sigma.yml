@@ -1,12 +1,12 @@
 title: Potential TeamViewer RMM Tool Process Activity
-id: 42c7fcb9-0379-4b81-b03e-1bcfe16f27af
+id: fb9bb911-7eac-5670-86ee-e90f1d9c80b3
 status: experimental
 description: |
     Detects potential processes activity of TeamViewer RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - teamviewer_desktop.exe
-            - teamviewer_service.exe
+            - 'teamviewer_desktop.exe'
+            - 'teamviewer_service.exe'
     selection_image:
         Image|endswith:
-            - teamviewer_desktop.exe
-            - teamviewer_service.exe
+            - 'teamviewer_desktop.exe'
+            - 'teamviewer_service.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TeamViewer

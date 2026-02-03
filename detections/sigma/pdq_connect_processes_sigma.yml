@@ -1,12 +1,12 @@
 title: Potential PDQ Connect RMM Tool Process Activity
-id: b78b2eea-dd91-4d3d-8486-9a9cfde212b0
+id: 5bc9c821-407c-5600-8632-62401c4fba32
 status: experimental
 description: |
     Detects potential processes activity of PDQ Connect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: pdq-connect*.exe
+        ParentImage|endswith: 'pdq-connect*.exe'
     selection_image:
-        Image|endswith: pdq-connect*.exe
+        Image|endswith: 'pdq-connect*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of PDQ Connect

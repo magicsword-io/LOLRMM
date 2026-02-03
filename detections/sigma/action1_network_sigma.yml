@@ -1,12 +1,12 @@
 title: Potential Action1 RMM Tool Network Activity
-id: 22015403-2881-4c36-ba1b-aff8da000ae6
+id: 4f70ef33-917d-5993-bd3c-e8511ac16c9d
 status: experimental
 description: |
     Detects potential network activity of Action1 RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.action1.com
-            - a1-backend-packages.s3.amazonaws.com
+            - '*.action1.com'
+            - 'a1-backend-packages.s3.amazonaws.com'
     condition: selection
 falsepositives:
     - Legitimate use of Action1

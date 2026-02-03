@@ -1,12 +1,12 @@
 title: Potential Parallels Access RMM Tool Process Activity
-id: ddf0f6b8-619e-4d58-bf43-b6f52a396f6e
+id: eb432fc1-db5e-5606-8676-b23da7c1e3d0
 status: experimental
 description: |
     Detects potential processes activity of Parallels Access RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - parallelsaccess-*.exe
-            - TSClient.exe
-            - prl_deskctl_agent.exe
-            - prl_deskctl_wizard.exe
-            - prl_pm_service.exe
+            - 'parallelsaccess-*.exe'
+            - 'TSClient.exe'
+            - 'prl_deskctl_agent.exe'
+            - 'prl_deskctl_wizard.exe'
+            - 'prl_pm_service.exe'
     selection_image:
         Image|endswith:
-            - parallelsaccess-*.exe
-            - TSClient.exe
-            - prl_deskctl_agent.exe
-            - prl_deskctl_wizard.exe
-            - prl_pm_service.exe
+            - 'parallelsaccess-*.exe'
+            - 'TSClient.exe'
+            - 'prl_deskctl_agent.exe'
+            - 'prl_deskctl_wizard.exe'
+            - 'prl_pm_service.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Parallels Access

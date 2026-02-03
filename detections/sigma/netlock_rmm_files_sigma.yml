@@ -1,12 +1,12 @@
 title: Potential NetLock RMM RMM Tool File Activity
-id: 60d10413-e93a-4f1a-b1cc-eb5d0cb861ca
+id: 82c10301-9a7b-5116-9066-5e36877f8a7f
 status: experimental
 description: |
     Detects potential files activity of NetLock RMM RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,11 +16,11 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\temp\netlock rmm\installer\logs\*
-            - C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\server_config.json
-            - /etc/systemd/system/netlock-rmm-agent-comm.service
-            - /Library/LaunchDaemons/com.netlock.rmm.agentcomm.plist
-            - /var/log/netlock-rmm-agent-comm.log
+            - 'C:\temp\netlock rmm\installer\logs\*'
+            - 'C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\server_config.json'
+            - '/etc/systemd/system/netlock-rmm-agent-comm.service'
+            - '/Library/LaunchDaemons/com.netlock.rmm.agentcomm.plist'
+            - '/var/log/netlock-rmm-agent-comm.log'
     condition: selection
 falsepositives:
     - Legitimate use of NetLock RMM

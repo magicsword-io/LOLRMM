@@ -1,12 +1,12 @@
 title: Potential Tanium Deploy RMM Tool Network Activity
-id: f93aa9bc-cbc4-436d-89be-617d57b96db7
+id: 2c179bfe-afdd-5daf-9dee-fb29f55b4e6d
 status: experimental
 description: |
     Detects potential network activity of Tanium Deploy RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: tanium.com/products/tanium-deploy
+        DestinationHostname|endswith: 'tanium.com/products/tanium-deploy'
     condition: selection
 falsepositives:
     - Legitimate use of Tanium Deploy

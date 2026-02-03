@@ -1,12 +1,12 @@
 title: Potential Rocket Remote Desktop RMM Tool Process Activity
-id: 51cd69de-ebc1-43a8-8d7d-86d4e2a837cb
+id: c925421c-80e2-5284-8602-7ac6554fd0c4
 status: experimental
 description: |
     Detects potential processes activity of Rocket Remote Desktop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - RDConsole.exe
-            - RocketRemoteDesktop_Setup.exe
+            - 'RDConsole.exe'
+            - 'RocketRemoteDesktop_Setup.exe'
     selection_image:
         Image|endswith:
-            - RDConsole.exe
-            - RocketRemoteDesktop_Setup.exe
+            - 'RDConsole.exe'
+            - 'RocketRemoteDesktop_Setup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Rocket Remote Desktop

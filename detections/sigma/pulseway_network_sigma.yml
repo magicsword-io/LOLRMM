@@ -1,12 +1,12 @@
 title: Potential Pulseway RMM Tool Network Activity
-id: 7fcd5e3b-db33-4acc-b432-de03c31105b5
+id: 9f3debb0-52b8-5702-973c-96e787828291
 status: experimental
 description: |
     Detects potential network activity of Pulseway RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: pulseway.com
+        DestinationHostname|endswith: 'pulseway.com'
     condition: selection
 falsepositives:
     - Legitimate use of Pulseway

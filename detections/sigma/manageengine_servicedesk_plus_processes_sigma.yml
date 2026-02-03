@@ -1,0 +1,28 @@
+title: Potential ManageEngine ServiceDesk Plus RMM Tool Process Activity
+id: ae1e12fd-17ee-567b-909e-08b137050836
+status: experimental
+description: |
+    Detects potential processes activity of ManageEngine ServiceDesk Plus RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'ManageEngine_ServiceDesk_Plus.exe'
+            - 'ISBEW64.exe'
+    selection_image:
+        Image|endswith:
+            - 'ManageEngine_ServiceDesk_Plus.exe'
+            - 'ISBEW64.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of ManageEngine ServiceDesk Plus
+level: medium

@@ -1,12 +1,12 @@
 title: Potential IntelliAdmin Remote Control RMM Tool Process Activity
-id: 75a46f4a-38f7-4d29-bcb4-56311293bbbc
+id: dd332b60-bd1f-5155-9dbb-c6f9219e71ff
 status: experimental
 description: |
     Detects potential processes activity of IntelliAdmin Remote Control RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - iadmin.exe
-            - intelliadmin.exe
-            - agent32.exe
-            - agent64.exe
-            - agent_setup_5.exe
+            - 'iadmin.exe'
+            - 'intelliadmin.exe'
+            - 'agent32.exe'
+            - 'agent64.exe'
+            - 'agent_setup_5.exe'
     selection_image:
         Image|endswith:
-            - iadmin.exe
-            - intelliadmin.exe
-            - agent32.exe
-            - agent64.exe
-            - agent_setup_5.exe
+            - 'iadmin.exe'
+            - 'intelliadmin.exe'
+            - 'agent32.exe'
+            - 'agent64.exe'
+            - 'agent_setup_5.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of IntelliAdmin Remote Control

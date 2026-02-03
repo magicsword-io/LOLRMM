@@ -1,12 +1,12 @@
 title: Potential AweRay RMM Tool Network Activity
-id: 4bcb82fa-7d77-4720-948a-c445b9fb7976
+id: 59c68e6a-acfa-54df-9ad5-7371e311ad96
 status: experimental
 description: |
     Detects potential network activity of AweRay RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - asapi*.aweray.net
-            - client-api.aweray.com
+            - 'asapi*.aweray.net'
+            - 'client-api.aweray.com'
     condition: selection
 falsepositives:
     - Legitimate use of AweRay

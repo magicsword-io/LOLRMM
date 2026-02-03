@@ -1,12 +1,12 @@
 title: Potential RAdmin RMM Tool File Activity
-id: 1dbf8a1b-b0a9-41dd-bffc-550ccf0968c9
+id: ff40caa8-c3b3-59ae-9853-502ebc39e7a8
 status: experimental
 description: |
     Detects potential files activity of RAdmin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Windows\SysWOW64\rserver30\Radm_log.htm
-            - C:\Windows\System32\rserver30\Radm_log.htm
-            - C:\Windows\System32\rserver30\CHATLOGS\*\*.htm
-            - C:\Users\*\Documents\ChatLogs\*\*.htm
+            - 'C:\Windows\SysWOW64\rserver30\Radm_log.htm'
+            - 'C:\Windows\System32\rserver30\Radm_log.htm'
+            - 'C:\Windows\System32\rserver30\CHATLOGS\*\*.htm'
+            - 'C:\Users\*\Documents\ChatLogs\*\*.htm'
     condition: selection
 falsepositives:
     - Legitimate use of RAdmin

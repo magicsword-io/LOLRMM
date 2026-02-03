@@ -1,12 +1,12 @@
 title: Potential RAdmin RMM Tool Process Activity
-id: c1830a71-6799-4206-98f6-225a833a569c
+id: 6148f84e-eced-5f70-b0bd-fd11e9b54127
 status: experimental
 description: |
     Detects potential processes activity of RAdmin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Radmin.exe
-            - rserver3.exe
+            - 'C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe'
+            - 'C:\Windows\SysWOW64\rserver30\rserver3.exe'
     selection_image:
         Image|endswith:
-            - Radmin.exe
-            - rserver3.exe
+            - 'C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe'
+            - 'C:\Windows\SysWOW64\rserver30\rserver3.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RAdmin

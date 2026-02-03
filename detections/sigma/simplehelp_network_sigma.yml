@@ -1,12 +1,12 @@
 title: Potential SimpleHelp RMM Tool Network Activity
-id: 5664ef88-4683-4f3c-9147-506eb5416d5e
+id: 876dfc34-8e93-570e-b3a9-84bd2f9355ff
 status: experimental
 description: |
     Detects potential network activity of SimpleHelp RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - simple-help.com
-            - 51.255.19.178
-            - 51.255.19.179
+            - 'user_managed'
+            - 'simple-help.com'
+            - '51.255.19.178'
+            - '51.255.19.179'
     condition: selection
 falsepositives:
     - Legitimate use of SimpleHelp

@@ -1,12 +1,12 @@
 title: Potential TeleDesktop RMM Tool Process Activity
-id: b76c775d-8892-4845-9f6b-cc206b73321e
+id: e5eb90c4-d5a4-524c-8fcd-71339367b55e
 status: experimental
 description: |
     Detects potential processes activity of TeleDesktop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pstlaunch.exe
-            - ptdskclient.exe
-            - ptdskhost.exe
+            - 'pstlaunch.exe'
+            - 'ptdskclient.exe'
+            - 'ptdskhost.exe'
     selection_image:
         Image|endswith:
-            - pstlaunch.exe
-            - ptdskclient.exe
-            - ptdskhost.exe
+            - 'pstlaunch.exe'
+            - 'ptdskclient.exe'
+            - 'ptdskhost.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TeleDesktop

@@ -1,12 +1,12 @@
 title: Potential BeAnyWhere RMM Tool Network Activity
-id: e68427eb-6abc-4dbe-85b9-0ca93e3742ed
+id: d4357bf4-139a-51ea-97b5-5700251446f6
 status: experimental
 description: |
     Detects potential network activity of BeAnyWhere RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - beanywhere.en.uptodown.com/windows
-            - beanywhere.com
+            - 'beanywhere.en.uptodown.com/windows'
+            - 'beanywhere.com'
     condition: selection
 falsepositives:
     - Legitimate use of BeAnyWhere

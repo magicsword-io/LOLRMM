@@ -1,12 +1,12 @@
 title: Potential LogMeIn rescue RMM Tool Network Activity
-id: 4eaa85dd-e3db-4410-bd7f-89c855f69d39
+id: 61756274-30fa-514d-bb2f-81834a209c8b
 status: experimental
 description: |
     Detects potential network activity of LogMeIn rescue RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,11 +16,11 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.logmeinrescue.com
-            - *.logmeinrescue.eu
-            - logmeinrescue.com
-            - rescue-list.*.logmein-gateway.com
-            - rescue-data-cetner.logmein-gateway.com
+            - '*.logmeinrescue.com'
+            - '*.logmeinrescue.eu'
+            - 'logmeinrescue.com'
+            - 'rescue-list.*.logmein-gateway.com'
+            - 'rescue-data-cetner.logmein-gateway.com'
     condition: selection
 falsepositives:
     - Legitimate use of LogMeIn rescue

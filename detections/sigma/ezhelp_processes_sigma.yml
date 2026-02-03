@@ -1,12 +1,12 @@
 title: Potential ezHelp RMM Tool Process Activity
-id: 2c222c93-0da9-42b1-9e95-66f095c16abd
+id: c732e963-0046-590e-8794-0da34f0c7745
 status: experimental
 description: |
     Detects potential processes activity of ezHelp RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ezhelpclientmanager.exe
-            - ezHelpManager.exe
-            - ezhelpclient.exe
+            - 'ezhelpclientmanager.exe'
+            - 'ezHelpManager.exe'
+            - 'ezhelpclient.exe'
     selection_image:
         Image|endswith:
-            - ezhelpclientmanager.exe
-            - ezHelpManager.exe
-            - ezhelpclient.exe
+            - 'ezhelpclientmanager.exe'
+            - 'ezHelpManager.exe'
+            - 'ezhelpclient.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ezHelp

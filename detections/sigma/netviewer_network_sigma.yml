@@ -1,12 +1,12 @@
 title: Potential Netviewer RMM Tool Network Activity
-id: 486d8388-79a5-4f53-91ee-a815559c5a9e
+id: 931fd1e9-6e0b-560d-994e-bb9476787a6c
 status: experimental
 description: |
     Detects potential network activity of Netviewer RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: download.cnet.com/Net-Viewer/3000-2370_4-10034828.html
+        DestinationHostname|endswith: 'download.cnet.com/Net-Viewer/3000-2370_4-10034828.html'
     condition: selection
 falsepositives:
     - Legitimate use of Netviewer

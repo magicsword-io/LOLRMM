@@ -1,12 +1,12 @@
 title: Potential Auvik RMM Tool Network Activity
-id: 6184c193-a07b-43e8-b72e-6e62b4ec73c9
+id: 5ebf1127-b3c1-53e9-9760-e542a5e326d9
 status: experimental
 description: |
     Detects potential network activity of Auvik RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.my.auvik.com
-            - *.auvik.com
-            - auvik.com
+            - '*.my.auvik.com'
+            - '*.auvik.com'
+            - 'auvik.com'
     condition: selection
 falsepositives:
     - Legitimate use of Auvik

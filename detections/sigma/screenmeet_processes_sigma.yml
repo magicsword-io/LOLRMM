@@ -1,12 +1,12 @@
 title: Potential ScreenMeet RMM Tool Process Activity
-id: 67448f35-4a27-4c04-ab31-3b05d5090b4d
+id: bca8c37a-9a08-575c-b23c-419384cacc82
 status: experimental
 description: |
     Detects potential processes activity of ScreenMeet RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ScreenMeetSupport.exe
-            - ScreenMeet.Support.exe
+            - 'ScreenMeetSupport.exe'
+            - 'ScreenMeet.Support.exe'
     selection_image:
         Image|endswith:
-            - ScreenMeetSupport.exe
-            - ScreenMeet.Support.exe
+            - 'ScreenMeetSupport.exe'
+            - 'ScreenMeet.Support.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ScreenMeet

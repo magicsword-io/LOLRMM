@@ -1,12 +1,12 @@
 title: Potential Royal Apps RMM Tool Process Activity
-id: 11d5df2c-21ac-4493-9ee7-d3b851c792bd
+id: 3d572f57-1a49-5ab7-8448-ddabefd61cfd
 status: experimental
 description: |
     Detects potential processes activity of Royal Apps RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - royalserver.exe
-            - royalts.exe
+            - 'royalserver.exe'
+            - 'royalts.exe'
     selection_image:
         Image|endswith:
-            - royalserver.exe
-            - royalts.exe
+            - 'royalserver.exe'
+            - 'royalts.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Royal Apps

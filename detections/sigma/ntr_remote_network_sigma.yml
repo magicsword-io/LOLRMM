@@ -1,12 +1,12 @@
 title: Potential NTR Remote RMM Tool Network Activity
-id: 2b92af57-0b89-44bd-a475-fe3afb7ba388
+id: f3169743-070d-5bb1-aaea-47c766214cdd
 status: experimental
 description: |
     Detects potential network activity of NTR Remote RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.ntrsupport.com
+        DestinationHostname|endswith: '*.ntrsupport.com'
     condition: selection
 falsepositives:
     - Legitimate use of NTR Remote

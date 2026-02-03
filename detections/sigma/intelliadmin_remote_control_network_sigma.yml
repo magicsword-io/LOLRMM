@@ -1,12 +1,12 @@
 title: Potential IntelliAdmin Remote Control RMM Tool Network Activity
-id: 9fcf8472-8fab-4b74-8074-aae4143ddfa3
+id: eca70842-1e98-5233-83d3-3e272938d7e4
 status: experimental
 description: |
     Detects potential network activity of IntelliAdmin Remote Control RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - *.intelliadmin.com
-            - intelliadmin.com/remote-control
+            - 'user_managed'
+            - '*.intelliadmin.com'
+            - 'intelliadmin.com/remote-control'
     condition: selection
 falsepositives:
     - Legitimate use of IntelliAdmin Remote Control

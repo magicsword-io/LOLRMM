@@ -1,12 +1,12 @@
 title: Potential BeyondTrust (Bomgar) RMM Tool Process Activity
-id: 208d9aea-6137-4310-bd7c-2db02f30eb8a
+id: 9125d93a-b5a7-5991-aa96-48ccfe3b08ff
 status: experimental
 description: |
     Detects potential processes activity of BeyondTrust (Bomgar) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - bomgar-scc-*.exe
-            - bomgar-scc.exe
-            - bomgar-pac-*.exe
-            - bomgar-pac.exe
-            - bomgar-rdp.exe
+            - 'bomgar-scc-*.exe'
+            - 'bomgar-scc.exe'
+            - 'bomgar-pac-*.exe'
+            - 'bomgar-pac.exe'
+            - 'bomgar-rdp.exe'
     selection_image:
         Image|endswith:
-            - bomgar-scc-*.exe
-            - bomgar-scc.exe
-            - bomgar-pac-*.exe
-            - bomgar-pac.exe
-            - bomgar-rdp.exe
+            - 'bomgar-scc-*.exe'
+            - 'bomgar-scc.exe'
+            - 'bomgar-pac-*.exe'
+            - 'bomgar-pac.exe'
+            - 'bomgar-rdp.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of BeyondTrust (Bomgar)

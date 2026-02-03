@@ -1,12 +1,12 @@
 title: Potential Tanium RMM Tool Process Activity
-id: 3ed81efb-a88a-48df-a65e-eeae644b4dd9
+id: bfb48114-5a65-56de-91dd-b561a663a442
 status: experimental
 description: |
     Detects potential processes activity of Tanium RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - TaniumClient.exe
-            - TaniumCX.exe
-            - TaniumExecWrapper.exe
-            - TaniumFileInfo.exe
-            - TPowerShell.exe
+            - 'TaniumClient.exe'
+            - 'TaniumCX.exe'
+            - 'TaniumExecWrapper.exe'
+            - 'TaniumFileInfo.exe'
+            - 'TPowerShell.exe'
     selection_image:
         Image|endswith:
-            - TaniumClient.exe
-            - TaniumCX.exe
-            - TaniumExecWrapper.exe
-            - TaniumFileInfo.exe
-            - TPowerShell.exe
+            - 'TaniumClient.exe'
+            - 'TaniumCX.exe'
+            - 'TaniumExecWrapper.exe'
+            - 'TaniumFileInfo.exe'
+            - 'TPowerShell.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Tanium

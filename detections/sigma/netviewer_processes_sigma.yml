@@ -1,12 +1,12 @@
 title: Potential Netviewer RMM Tool Process Activity
-id: c79e9209-c485-45bf-af98-777c7b1040a2
+id: 95cd51e4-0c54-59b0-8794-dea403d2cc7f
 status: experimental
 description: |
     Detects potential processes activity of Netviewer RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - netviewer*.exe
-            - netviewer.exe
+            - 'netviewer*.exe'
+            - 'netviewer.exe'
     selection_image:
         Image|endswith:
-            - netviewer*.exe
-            - netviewer.exe
+            - 'netviewer*.exe'
+            - 'netviewer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Netviewer

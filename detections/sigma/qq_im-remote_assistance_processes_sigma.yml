@@ -1,12 +1,12 @@
 title: Potential QQ IM-remote assistance RMM Tool Process Activity
-id: f4d512cf-aa4a-4eaf-a4a2-fa4a037fcb71
+id: 5a12d2a7-336d-58ea-833c-9656eae3a393
 status: experimental
 description: |
     Detects potential processes activity of QQ IM-remote assistance RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - qq.exe
-            - QQProtect.exe
-            - qqpcmgr.exe
+            - 'qq.exe'
+            - 'QQProtect.exe'
+            - 'qqpcmgr.exe'
     selection_image:
         Image|endswith:
-            - qq.exe
-            - QQProtect.exe
-            - qqpcmgr.exe
+            - 'qq.exe'
+            - 'QQProtect.exe'
+            - 'qqpcmgr.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of QQ IM-remote assistance

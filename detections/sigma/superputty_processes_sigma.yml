@@ -1,12 +1,12 @@
 title: Potential SuperPuTTY RMM Tool Process Activity
-id: 2c6cea3b-3a7e-466a-8a63-1d56929da07e
+id: fae01e7f-2500-5086-b6cb-a1f14a24bcda
 status: experimental
 description: |
     Detects potential processes activity of SuperPuTTY RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: superputty.exe
+        ParentImage|endswith: '*\superputty.exe'
     selection_image:
-        Image|endswith: superputty.exe
+        Image|endswith: '*\superputty.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SuperPuTTY

@@ -1,12 +1,12 @@
 title: Potential ezHelp RMM Tool Network Activity
-id: c2b0145b-04ca-4d20-9601-782f90628b95
+id: 1db1db8e-1c97-5ce9-9fcc-d7fdc6b7a9f6
 status: experimental
 description: |
     Detects potential network activity of ezHelp RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.ezhelp.co.kr
-            - ezhelp.co.kr
+            - '*.ezhelp.co.kr'
+            - 'ezhelp.co.kr'
     condition: selection
 falsepositives:
     - Legitimate use of ezHelp

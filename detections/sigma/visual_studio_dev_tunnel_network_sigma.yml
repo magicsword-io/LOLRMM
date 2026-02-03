@@ -1,12 +1,12 @@
 title: Potential Visual Studio Dev Tunnel RMM Tool Network Activity
-id: e6eb8f0f-6307-498d-87d1-4f008c6c92f5
+id: d38c740a-a7a2-54c5-b130-757a272e4c68
 status: experimental
 description: |
     Detects potential network activity of Visual Studio Dev Tunnel RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - global.rel.tunnels.api.visualstudio.com
-            - *.rel.tunnels.api.visualstudio.com
-            - *.devtunnels.ms
+            - 'global.rel.tunnels.api.visualstudio.com'
+            - '*.rel.tunnels.api.visualstudio.com'
+            - '*.devtunnels.ms'
     condition: selection
 falsepositives:
     - Legitimate use of Visual Studio Dev Tunnel

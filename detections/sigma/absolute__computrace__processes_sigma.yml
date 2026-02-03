@@ -1,12 +1,12 @@
 title: Potential Absolute (Computrace) RMM Tool Process Activity
-id: 6633e0fe-00b0-4441-a635-35318721392f
+id: 4dc903cb-205b-516a-88cb-e4dc5181561f
 status: experimental
 description: |
     Detects potential processes activity of Absolute (Computrace) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rpcnet.exe
-            - ctes.exe
-            - ctespersitence.exe
-            - cteshostsvc.exe
-            - rpcld.exe
+            - 'rpcnet.exe'
+            - 'ctes.exe'
+            - 'ctespersitence.exe'
+            - 'cteshostsvc.exe'
+            - 'rpcld.exe'
     selection_image:
         Image|endswith:
-            - rpcnet.exe
-            - ctes.exe
-            - ctespersitence.exe
-            - cteshostsvc.exe
-            - rpcld.exe
+            - 'rpcnet.exe'
+            - 'ctes.exe'
+            - 'ctespersitence.exe'
+            - 'cteshostsvc.exe'
+            - 'rpcld.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Absolute (Computrace)

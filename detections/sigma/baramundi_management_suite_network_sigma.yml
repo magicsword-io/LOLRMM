@@ -1,0 +1,27 @@
+title: Potential baramundi Management Suite RMM Tool Network Activity
+id: 6a3f6976-7dc0-5aaa-a981-b4f18b374b6d
+status: experimental
+description: |
+    Detects potential network activity of baramundi Management Suite RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - '*.baramundi.com'
+            - 'www.baramundi.com'
+            - 'docs.baramundi.com'
+            - 'isodownload.baramundi.com'
+            - '*.baramundi.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of baramundi Management Suite
+level: medium

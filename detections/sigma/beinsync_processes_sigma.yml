@@ -1,12 +1,12 @@
 title: Potential BeInSync RMM Tool Process Activity
-id: 608f00ea-10b2-49c6-8b5f-7a0ca2c31d4f
+id: 52b76eb2-977f-5b1c-9414-0bde6a679e4e
 status: experimental
 description: |
     Detects potential processes activity of BeInSync RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: Beinsync*.exe
+        ParentImage|endswith: 'Beinsync*.exe'
     selection_image:
-        Image|endswith: Beinsync*.exe
+        Image|endswith: 'Beinsync*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of BeInSync

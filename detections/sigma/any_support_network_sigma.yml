@@ -1,12 +1,12 @@
 title: Potential Any Support RMM Tool Network Activity
-id: 2266db74-38c4-40ab-b8b2-c3bf041ae11f
+id: af4bf192-fda9-5e3a-b41f-c4228a2abced
 status: experimental
 description: |
     Detects potential network activity of Any Support RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.anysupport.net
+        DestinationHostname|endswith: '*.anysupport.net'
     condition: selection
 falsepositives:
     - Legitimate use of Any Support

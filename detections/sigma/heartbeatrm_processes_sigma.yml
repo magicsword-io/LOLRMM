@@ -1,0 +1,30 @@
+title: Potential HeartbeatRM RMM Tool Process Activity
+id: ca4f3aa9-5178-578f-9c94-12231e521d9f
+status: experimental
+description: |
+    Detects potential processes activity of HeartbeatRM RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'agent-installer-any.exe'
+            - 'hbrm-x64.exe'
+            - 'hbrm-updater-x64.exe'
+    selection_image:
+        Image|endswith:
+            - 'agent-installer-any.exe'
+            - 'hbrm-x64.exe'
+            - 'hbrm-updater-x64.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of HeartbeatRM
+level: medium

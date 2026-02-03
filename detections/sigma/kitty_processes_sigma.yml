@@ -1,12 +1,12 @@
 title: Potential KiTTY RMM Tool Process Activity
-id: 16f59187-85fc-4f5f-8701-0f7bec8dfcc7
+id: 832b997b-ade9-576d-b12a-1b8b0b703d49
 status: experimental
 description: |
     Detects potential processes activity of KiTTY RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - kitty.exe
-            - kitty.exe
+            - 'C:\*\kitty.exe'
+            - '*\kitty.exe'
     selection_image:
         Image|endswith:
-            - kitty.exe
-            - kitty.exe
+            - 'C:\*\kitty.exe'
+            - '*\kitty.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of KiTTY

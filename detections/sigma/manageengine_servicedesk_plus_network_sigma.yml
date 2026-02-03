@@ -1,0 +1,24 @@
+title: Potential ManageEngine ServiceDesk Plus RMM Tool Network Activity
+id: 491304ad-942a-5be3-8678-62efa8c09743
+status: experimental
+description: |
+    Detects potential network activity of ManageEngine ServiceDesk Plus RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - '*.manageengine.com'
+            - 'manageengine.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of ManageEngine ServiceDesk Plus
+level: medium

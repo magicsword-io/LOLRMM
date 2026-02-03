@@ -1,12 +1,12 @@
 title: Potential Tactical RMM RMM Tool Network Activity
-id: 1bd55201-587b-4d91-8c96-aac7b71b4086
+id: 25637f98-28c9-5675-829c-d78718f12acf
 status: experimental
 description: |
     Detects potential network activity of Tactical RMM RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - login.tailscale.com
-            - login.tailscale.com
-            - docs.tacticalrmm.com
+            - 'login.tailscale.com'
+            - 'login.tailscale.com'
+            - 'docs.tacticalrmm.com'
     condition: selection
 falsepositives:
     - Legitimate use of Tactical RMM

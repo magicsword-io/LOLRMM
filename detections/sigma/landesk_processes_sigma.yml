@@ -1,12 +1,12 @@
 title: Potential LANDesk RMM Tool Process Activity
-id: ee604e54-ca2b-4b4c-a6c8-1136da7601ce
+id: 747e2541-2d4b-50f5-a101-7274dcfb6cbf
 status: experimental
 description: |
     Detects potential processes activity of LANDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,24 +16,24 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - issuser.exe
-            - landeskagentbootstrap.exe
-            - LANDeskPortalManager.exe
-            - ldinv32.exe
-            - ldsensors.exe
-            - issuser.exe
-            - softmon.exe
-            - tmcsvc.exe
+            - 'issuser.exe'
+            - 'landeskagentbootstrap.exe'
+            - 'LANDeskPortalManager.exe'
+            - 'ldinv32.exe'
+            - 'ldsensors.exe'
+            - '*\issuser.exe'
+            - '*\softmon.exe'
+            - '*\tmcsvc.exe'
     selection_image:
         Image|endswith:
-            - issuser.exe
-            - landeskagentbootstrap.exe
-            - LANDeskPortalManager.exe
-            - ldinv32.exe
-            - ldsensors.exe
-            - issuser.exe
-            - softmon.exe
-            - tmcsvc.exe
+            - 'issuser.exe'
+            - 'landeskagentbootstrap.exe'
+            - 'LANDeskPortalManager.exe'
+            - 'ldinv32.exe'
+            - 'ldsensors.exe'
+            - '*\issuser.exe'
+            - '*\softmon.exe'
+            - '*\tmcsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LANDesk

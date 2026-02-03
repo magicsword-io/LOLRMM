@@ -1,12 +1,12 @@
 title: Potential TigerVNC RMM Tool Process Activity
-id: 0ccac845-e3f8-4479-86da-765ff423cf0e
+id: 5157bfb1-f83b-5542-89a3-248bc11d602f
 status: experimental
 description: |
     Detects potential processes activity of TigerVNC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tigervnc*.exe
-            - winvnc4.exe
-            - tvnserver.exe
+            - 'tigervnc*.exe'
+            - 'winvnc4.exe'
+            - '*\tvnserver.exe'
     selection_image:
         Image|endswith:
-            - tigervnc*.exe
-            - winvnc4.exe
-            - tvnserver.exe
+            - 'tigervnc*.exe'
+            - 'winvnc4.exe'
+            - '*\tvnserver.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TigerVNC

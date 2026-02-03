@@ -1,12 +1,12 @@
 title: Potential Ammyy Admin RMM Tool Registry Activity
-id: b467222e-2511-4dc8-b7f2-6512e51f010f
+id: cea54c85-6d56-51b6-8dd2-ba04f37a71b2
 status: experimental
 description: |
     Detects potential registry activity of Ammyy Admin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - HKU\.DEFAULT\Software\Ammyy\Admin
-            - HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Network\AmmyyAdmin
+            - 'HKU\.DEFAULT\Software\Ammyy\Admin'
+            - 'HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Network\AmmyyAdmin'
     condition: selection
 falsepositives:
     - Legitimate use of Ammyy Admin

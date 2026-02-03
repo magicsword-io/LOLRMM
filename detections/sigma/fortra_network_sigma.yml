@@ -1,12 +1,12 @@
 title: Potential Fortra RMM Tool Network Activity
-id: b3f40b79-9a7a-4d17-9f43-cd0bb0de7e55
+id: 5b1f81b3-2746-5c4a-883c-8127fae1a2ee
 status: experimental
 description: |
     Detects potential network activity of Fortra RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: fortra.com
+        DestinationHostname|endswith: 'fortra.com'
     condition: selection
 falsepositives:
     - Legitimate use of Fortra

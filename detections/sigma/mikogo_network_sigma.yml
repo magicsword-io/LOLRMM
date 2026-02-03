@@ -1,12 +1,12 @@
 title: Potential Mikogo RMM Tool Network Activity
-id: 8a8e4fac-2c46-4833-b0ef-aa845317ffc6
+id: a370bb98-6f65-5491-bb2b-d8c98a99b9c5
 status: experimental
 description: |
     Detects potential network activity of Mikogo RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.real-time-collaboration.com
-            - *.mikogo4.com
-            - *.mikogo.com
-            - mikogo.com
+            - '*.real-time-collaboration.com'
+            - '*.mikogo4.com'
+            - '*.mikogo.com'
+            - 'mikogo.com'
     condition: selection
 falsepositives:
     - Legitimate use of Mikogo

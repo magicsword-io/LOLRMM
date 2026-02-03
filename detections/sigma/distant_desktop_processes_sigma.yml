@@ -1,12 +1,12 @@
 title: Potential Distant Desktop RMM Tool Process Activity
-id: 9184b9f8-a983-4e99-a729-8a3b0c4d8b17
+id: b567fd28-af59-5ca8-9dd3-1de918bd52d4
 status: experimental
 description: |
     Detects potential processes activity of Distant Desktop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ddsystem.exe
-            - dd.exe
-            - distant-desktop.exe
+            - 'ddsystem.exe'
+            - 'dd.exe'
+            - 'distant-desktop.exe'
     selection_image:
         Image|endswith:
-            - ddsystem.exe
-            - dd.exe
-            - distant-desktop.exe
+            - 'ddsystem.exe'
+            - 'dd.exe'
+            - 'distant-desktop.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Distant Desktop

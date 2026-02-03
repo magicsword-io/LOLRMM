@@ -1,12 +1,12 @@
 title: Potential Remote Manipulator System RMM Tool Process Activity
-id: 57f19ead-e923-4b3e-a9e8-772ba2ad56dc
+id: e0daa6fe-97e2-53c1-8fd3-90d046748f75
 status: experimental
 description: |
     Detects potential processes activity of Remote Manipulator System RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rfusclient.exe
-            - rutserv.exe
+            - 'rfusclient.exe'
+            - 'rutserv.exe'
     selection_image:
         Image|endswith:
-            - rfusclient.exe
-            - rutserv.exe
+            - 'rfusclient.exe'
+            - 'rutserv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remote Manipulator System

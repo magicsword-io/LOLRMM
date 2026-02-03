@@ -1,12 +1,12 @@
 title: Potential Bluetrait RMM Tool Network Activity
-id: 93108072-c01a-49c7-ae19-bf3730ac5f86
+id: 7b82b4eb-1d6e-5858-8a4e-138a57840c66
 status: experimental
 description: |
     Detects potential network activity of Bluetrait RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - bluetrait.io
-            - *.bluetrait.io
+            - 'bluetrait.io'
+            - '*.bluetrait.io'
     condition: selection
 falsepositives:
     - Legitimate use of Bluetrait
