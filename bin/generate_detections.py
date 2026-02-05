@@ -1,50 +1,113 @@
 #!/usr/bin/env python3
-"""
-Generate detection files for different SIEM platforms.
-This script creates Sigma, Splunk, and KQL detection rules.
+
+"""Generate detection files for different SIEM platforms.
+
+This module creates detection rules in multiple formats (Sigma, Splunk, KQL)
+from LOLRMM YAML data, enabling security teams to deploy RMM detection
+rules across heterogeneous SIEM environments.
+
+Functionality:
+    - Sigma rule generation (process creation and DNS queries)
+    - Splunk detection queries (requires Enterprise Security)
+    - KQL queries for Microsoft Defender for Endpoint
+    - Tool count tracking and export
+    - Multi-directory output support (local + website API)
+
+Usage:
+    python generate_detections.py
+
+Examples:
+    Generate all detection formats:
+        python generate_detections.py
+
+Output:
+    - detections/sigma/*.yml (Sigma rules)
+    - detections/splunk/*.yml (Splunk detection)
+    - detections/kql/*.yml (KQL queries)
+    - website/public/api/rmm_tools_count.json (Tool count)
 """
 
 import os
 import json
 import yaml
 import glob
+import csv
+from pathlib import Path
 from datetime import datetime
+from typing import Dict, List, Optional, Any
 
 
-def generate_sigma_rule():
-    """Generate a generic Sigma rule for RMM detection"""
+def _resolve_base_dir() -> str:
+    """Resolve the project base directory from script location.
+    
+    Returns:
+        Absolute path to the project root directory.
+    """
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    # Get a list of common RMM executables from YAML files
-    yaml_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "yaml"
-    )
+
+def _ensure_dir_exists(directory: str) -> None:
+    """Ensure a directory exists, creating it if necessary.
+    
+    Args:
+        directory: Path to the directory to create.
+        
+    Raises:
+        OSError: If directory creation fails.
+    """
+    try:
+        os.makedirs(directory, exist_ok=True)
+    except OSError as e:
+        raise OSError(f"Failed to create directory {directory}: {e}") from e
+
+
+def generate_sigma_rule() -> None:
+    """Generate a generic Sigma rule for RMM process detection.
+    
+    Extracts executable names from YAML files and creates a Sigma detection
+    rule targeting process creation events. Rule is written to both local
+    and website API directories.
+    
+    Raises:
+        FileNotFoundError: If YAML directory cannot be accessed.
+        OSError: If output directory creation fails.
+        yaml.YAMLError: If YAML parsing fails on a file.
+    """
+    base_dir = _resolve_base_dir()
+    yaml_dir = os.path.join(base_dir, "yaml")
+    
+    if not os.path.isdir(yaml_dir):
+        raise FileNotFoundError(f"YAML directory not found: {yaml_dir}")
+    
     yaml_files = glob.glob(os.path.join(yaml_dir, "*.y*ml"))
+    if not yaml_files:
+        raise FileNotFoundError(f"No YAML files found in {yaml_dir}")
 
-    exe_list = []
+    exe_list: List[str] = []
     for yaml_file in yaml_files:
         try:
             with open(yaml_file, "r", encoding="utf-8") as file:
                 data = yaml.safe_load(file)
-
+            
+            if not isinstance(data, dict):
+                continue
+                
             if "Details" in data and "InstallationPaths" in data["Details"]:
-                for path in data["Details"]["InstallationPaths"]:
-                    # Extract executable name
-                    exe_name = os.path.basename(path)
-                    if exe_name and not exe_name.startswith("*"):
-                        exe_list.append(f"\\\\{exe_name}")
-        except Exception as e:
-            print(f"Error processing {yaml_file}: {e}")
+                paths = data["Details"]["InstallationPaths"]
+                if isinstance(paths, list):
+                    for path in paths:
+                        if isinstance(path, str):
+                            exe_name = os.path.basename(path)
+                            if exe_name and not exe_name.startswith("*"):
+                                exe_list.append(f"\\\\{exe_name}")
+        except (yaml.YAMLError, IOError) as e:
+            print(f"Warning: Failed to process {yaml_file}: {e}")
 
-    # Deduplicate the executable list
-    exe_list = list(set(exe_list))
-
-    # Sort the list for better readability
-    exe_list.sort()
-
-    # Print the number of executables found
+    # Deduplicate and sort
+    exe_list = sorted(list(set(exe_list)))
     print(f"Found {len(exe_list)} unique RMM executables for Sigma rule")
 
-    sigma_rule = {
+    sigma_rule: Dict[str, Any] = {
         "title": "Generic RMM Tool Detection",
         "id": "ba1e3a37-6751-48e8-9f7a-73d9062f137c",
         "status": "experimental",
@@ -63,60 +126,56 @@ def generate_sigma_rule():
         "level": "medium",
     }
 
-    dirs = [
-        os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            "detections",
-            "sigma",
-        ),
-        os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            "website",
-            "public",
-            "api",
-            "detections",
-            "sigma",
-        ),
+    output_dirs = [
+        os.path.join(base_dir, "detections", "sigma"),
+        os.path.join(base_dir, "website", "public", "api", "detections", "sigma"),
     ]
-    for output_dir in dirs:
-        # Ensure the directory exists
-        os.makedirs(output_dir, exist_ok=True)
+    
+    for output_dir in output_dirs:
+        try:
+            _ensure_dir_exists(output_dir)
+            output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
+            with open(output_file, "w", encoding="utf-8") as file:
+                yaml.dump(sigma_rule, file, default_flow_style=False, sort_keys=False)
+            print(f"Generated Sigma rule at {output_file}")
+        except OSError as e:
+            print(f"Error writing Sigma rule to {output_dir}: {e}")
 
-        # Write the Sigma rule to a file
-        output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
-        with open(output_file, "w", encoding="utf-8") as file:
-            yaml.dump(sigma_rule, file, default_flow_style=False, sort_keys=False)
 
-        print(f"Generated Sigma rule at {output_file}")
-
-
-def generate_sigma_domains_rule():
-    """Generate a Sigma rule for detecting DNS queries to RMM domains"""
-
-    # Get a list of RMM domains from the domains.csv file
-    api_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "website",
-        "public",
-        "api",
-    )
+def generate_sigma_domains_rule() -> None:
+    """Generate a Sigma rule for detecting DNS queries to RMM domains.
+    
+    Reads domains from rmm_domains.csv and creates a Sigma DNS detection rule.
+    Falls back to hardcoded common RMM domains if CSV is unavailable.
+    
+    Raises:
+        OSError: If output directory creation fails.
+    """
+    base_dir = _resolve_base_dir()
+    api_dir = os.path.join(base_dir, "website", "public", "api")
     domains_file = os.path.join(api_dir, "rmm_domains.csv")
 
-    domain_list = []
-    try:
-        import csv
-
-        with open(domains_file, "r", encoding="utf-8") as file:
-            csv_reader = csv.reader(file)
-            next(csv_reader)  # Skip header
-            for row in csv_reader:
-                if row and len(row) >= 1:
-                    domain = row[0].strip()
-                    if domain and "." in domain:
-                        domain_list.append(f".{domain}")
-    except Exception as e:
-        print(f"Error processing domains file {domains_file}: {e}")
-        # Add some common RMM domains as fallback
+    domain_list: List[str] = []
+    
+    # Try to read from CSV file
+    if os.path.isfile(domains_file):
+        try:
+            with open(domains_file, "r", encoding="utf-8") as file:
+                csv_reader = csv.reader(file)
+                next(csv_reader, None)  # Skip header safely
+                for row in csv_reader:
+                    if row and len(row) >= 1:
+                        domain = row[0].strip()
+                        if domain and "." in domain:
+                            domain_list.append(f".{domain}")
+        except (IOError, csv.Error) as e:
+            print(f"Warning: Failed to read domains file {domains_file}: {e}")
+            print("Using fallback domain list...")
+    else:
+        print(f"Warning: Domains file not found at {domains_file}. Using fallback list.")
+    
+    # Fallback to common RMM domains if CSV unavailable
+    if not domain_list:
         domain_list = [
             ".anydesk.com",
             ".teamviewer.com",
@@ -133,9 +192,9 @@ def generate_sigma_domains_rule():
         ]
 
     # Deduplicate
-    domain_list = list(set(domain_list))
+    domain_list = sorted(list(set(domain_list)))
 
-    sigma_domains_rule = {
+    sigma_domains_rule: Dict[str, Any] = {
         "title": "DNS Queries to Known RMM Domains",
         "id": "9fa68c28-79b2-4ab5-af95-0c7b2f706c63",
         "status": "experimental",
@@ -157,39 +216,35 @@ def generate_sigma_domains_rule():
         "level": "medium",
     }
 
-    dirs = [
-        os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            "detections",
-            "sigma",
-        ),
-        os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            "website",
-            "public",
-            "api",
-            "detections",
-            "sigma",
-        ),
+    output_dirs = [
+        os.path.join(base_dir, "detections", "sigma"),
+        os.path.join(base_dir, "website", "public", "api", "detections", "sigma"),
     ]
-    for output_dir in dirs:
-        # Ensure the directory exists
-        os.makedirs(output_dir, exist_ok=True)
-
-        # Write the Sigma rule to a file
-        output_file = os.path.join(output_dir, "rmm_domains_dns_queries.yml")
-        with open(output_file, "w", encoding="utf-8") as file:
-            yaml.dump(
-                sigma_domains_rule, file, default_flow_style=False, sort_keys=False
-            )
-
-        print(f"Generated RMM domains Sigma rule at {output_file}")
+    
+    for output_dir in output_dirs:
+        try:
+            _ensure_dir_exists(output_dir)
+            output_file = os.path.join(output_dir, "rmm_domains_dns_queries.yml")
+            with open(output_file, "w", encoding="utf-8") as file:
+                yaml.dump(sigma_domains_rule, file, default_flow_style=False, sort_keys=False)
+            print(f"Generated RMM domains Sigma rule at {output_file}")
+        except OSError as e:
+            print(f"Error writing Sigma domains rule to {output_dir}: {e}")
 
 
-def generate_splunk_detection():
-    """Generate a Splunk detection for RMM tools"""
-
-    splunk_detection = {
+def generate_splunk_detection() -> None:
+    """Generate a Splunk detection query for RMM tool usage.
+    
+    Creates a Splunk query that leverages Network Traffic datamodel and
+    the remote access software lookup table to detect RMM tool usage.
+    Requires Splunk Enterprise Security.
+    
+    Raises:
+        OSError: If output directory creation or file write fails.
+    """
+    base_dir = _resolve_base_dir()
+    
+    splunk_detection: Dict[str, Any] = {
         "name": "Generic RMM Tool Detection for Splunk",
         "id": "splunk-rmm-001",
         "description": "Detects usage of Remote Monitoring and Management (RMM) tools via network traffic",
@@ -214,26 +269,30 @@ def generate_splunk_detection():
         ],
     }
 
-    # Ensure the detections/splunk directory exists
-    output_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "detections",
-        "splunk",
-    )
-    os.makedirs(output_dir, exist_ok=True)
-
-    # Write the Splunk detection to a file
-    output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
-    with open(output_file, "w", encoding="utf-8") as file:
-        yaml.dump(splunk_detection, file, default_flow_style=False, sort_keys=False)
-
-    print(f"Generated Splunk detection at {output_file}")
+    output_dir = os.path.join(base_dir, "detections", "splunk")
+    
+    try:
+        _ensure_dir_exists(output_dir)
+        output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
+        with open(output_file, "w", encoding="utf-8") as file:
+            yaml.dump(splunk_detection, file, default_flow_style=False, sort_keys=False)
+        print(f"Generated Splunk detection at {output_file}")
+    except OSError as e:
+        print(f"Error writing Splunk detection to {output_dir}: {e}")
 
 
-def generate_kql_detection():
-    """Generate a KQL detection for Microsoft Defender for Endpoint"""
-
-    kql_detection = {
+def generate_kql_detection() -> None:
+    """Generate a KQL detection query for Microsoft Defender for Endpoint.
+    
+    Creates a KQL query that detects network connections to known RMM domains
+    using the DeviceNetworkEvents table. Supports allowlisting approved RMM tools.
+    
+    Raises:
+        OSError: If output directory creation or file write fails.
+    """
+    base_dir = _resolve_base_dir()
+    
+    kql_detection: Dict[str, Any] = {
         "name": "Generic RMM Domain Detection for Microsoft Defender for Endpoint",
         "id": "kql-rmm-001",
         "description": "Detects network connections to known RMM domains",
@@ -259,50 +318,91 @@ DeviceNetworkEvents
         ],
     }
 
-    # Ensure the detections/kql directory exists
-    output_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "detections", "kql"
-    )
-    os.makedirs(output_dir, exist_ok=True)
-
-    # Write the KQL detection to a file
-    output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
-    with open(output_file, "w", encoding="utf-8") as file:
-        yaml.dump(kql_detection, file, default_flow_style=False, sort_keys=False)
-
-    print(f"Generated KQL detection at {output_file}")
+    output_dir = os.path.join(base_dir, "detections", "kql")
+    
+    try:
+        _ensure_dir_exists(output_dir)
+        output_file = os.path.join(output_dir, "generic_rmm_detection.yml")
+        with open(output_file, "w", encoding="utf-8") as file:
+            yaml.dump(kql_detection, file, default_flow_style=False, sort_keys=False)
+        print(f"Generated KQL detection at {output_file}")
+    except OSError as e:
+        print(f"Error writing KQL detection to {output_dir}: {e}")
 
 
-def count_rmm_tools():
-    """Count the number of YAML files and save as JSON"""
-    yaml_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "yaml"
-    )
+def count_rmm_tools() -> int:
+    """Count the number of RMM tools in YAML files and export count.
+    
+    Scans the yaml/ directory for all YAML files and exports the count
+    as JSON for use by the website API.
+    
+    Returns:
+        Total count of YAML files found.
+        
+    Raises:
+        FileNotFoundError: If YAML directory cannot be accessed.
+        OSError: If output file cannot be written.
+    """
+    base_dir = _resolve_base_dir()
+    yaml_dir = os.path.join(base_dir, "yaml")
+    
+    if not os.path.isdir(yaml_dir):
+        raise FileNotFoundError(f"YAML directory not found: {yaml_dir}")
+    
     yaml_files = glob.glob(os.path.join(yaml_dir, "*.y*ml"))
     count = len(yaml_files)
 
+    if count == 0:
+        print(f"Warning: No YAML files found in {yaml_dir}")
+
     # Save count to JSON file for website to use
-    output_dir = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "website",
-        "public",
-        "api",
-    )
-    output_file = os.path.join(output_dir, "rmm_tools_count.json")
-
-    with open(output_file, "w", encoding="utf-8") as file:
-        json.dump({"count": count}, file)
-
-    print(f"Generated RMM tools count JSON with {count} tools at {output_file}")
+    output_dir = os.path.join(base_dir, "website", "public", "api")
+    
+    try:
+        _ensure_dir_exists(output_dir)
+        output_file = os.path.join(output_dir, "rmm_tools_count.json")
+        with open(output_file, "w", encoding="utf-8") as file:
+            json.dump({"count": count}, file)
+        print(f"Generated RMM tools count JSON with {count} tools at {output_file}")
+    except OSError as e:
+        raise OSError(f"Failed to write count to {output_dir}: {e}") from e
+    
     return count
 
 
+def main() -> None:
+    """Main entry point for detection file generation.
+    
+    Orchestrates the generation of detection rules in all supported formats
+    (Sigma, Splunk, KQL) and exports RMM tool count statistics.
+    
+    Exits with status 1 on fatal errors, 0 on success.
+    """
+    try:
+        print("Generating detection files...")
+        print()
+        
+        generate_sigma_rule()
+        print()
+        
+        generate_sigma_domains_rule()
+        print()
+        
+        generate_splunk_detection()
+        print()
+        
+        generate_kql_detection()
+        print()
+        
+        count = count_rmm_tools()
+        print()
+        print(f"Successfully generated detection files for {count} RMM tools")
+        print("Detection files generation complete!")
+        
+    except (FileNotFoundError, OSError, yaml.YAMLError) as e:
+        print(f"Error: {e}", file=__import__("sys").stderr)
+        __import__("sys").exit(1)
+
+
 if __name__ == "__main__":
-    print("Generating detection files...")
-    generate_sigma_rule()
-    generate_sigma_domains_rule()
-    generate_splunk_detection()
-    generate_kql_detection()
-    count = count_rmm_tools()
-    print(f"Found {count} RMM tools")
-    print("Detection files generation complete!")
+    main()
