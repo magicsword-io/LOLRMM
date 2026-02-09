@@ -21,13 +21,11 @@ Details:
         - toolsiq.exe
         - zaservice.exe
         - ZMAgent.exe
-        - C:\*\ZA_Access.exe
         - ZohoMeeting.exe
         - Zohours.exe
         - zohotray.exe
         - ZohoURSService.exe
         - '*\ZA_Access.exe'
-        - Zaservice.exe
         - za_connect.exe
         - connect.exe
 Artifacts:
