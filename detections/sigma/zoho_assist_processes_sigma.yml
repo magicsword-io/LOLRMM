@@ -5,6 +5,7 @@ description: |
     Detects potential processes activity of Zoho Assist RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
+    - https://www.huntress.com/blog/active-exploitation-solarwinds-web-help-desk-cve-2025-26399
 author: LOLRMM Project
 date: 2025-12-01
 tags:
@@ -16,6 +17,7 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
+            - toolsiq.exe
             - zaservice.exe
             - ZMAgent.exe
             - ZA_Access.exe
@@ -29,6 +31,7 @@ detection:
             - connect.exe
     selection_image:
         Image|endswith:
+            - toolsiq.exe
             - zaservice.exe
             - ZMAgent.exe
             - ZA_Access.exe
