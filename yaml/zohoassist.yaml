@@ -58,4 +58,6 @@ Detections:
       Description: Detects potential processes activity of Zoho Assist RMM tool
 References:
     - https://www.zoho.com/assist/kb/firewall-configuration.html
-Acknowledgement: [Daniel Koifman]
+Acknowledgement:
+    - Person: Daniel Koifman
+      Handle: '@koifsec'
