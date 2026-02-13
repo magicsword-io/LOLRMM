@@ -1,12 +1,12 @@
 title: Potential AeroAdmin RMM Tool Process Activity
-id: 42b71d87-e5da-4468-94d3-a086e8648f41
+id: 95672471-6203-5935-814e-ea51994e5212
 status: experimental
 description: |
     Detects potential processes activity of AeroAdmin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - aeroadmin.exe
-            - AeroAdmin.exe
+            - 'aeroadmin.exe'
+            - 'AeroAdmin.exe'
     selection_image:
         Image|endswith:
-            - aeroadmin.exe
-            - AeroAdmin.exe
+            - 'aeroadmin.exe'
+            - 'AeroAdmin.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of AeroAdmin

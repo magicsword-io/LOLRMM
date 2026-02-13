@@ -1,12 +1,12 @@
 title: Potential Synergy RMM Tool Network Activity
-id: d6093ed7-06f5-4c92-80d6-05478bc70c2d
+id: 019bec4c-7356-533b-ae47-096857196607
 status: experimental
 description: |
     Detects potential network activity of Synergy RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: user_managed
+        DestinationHostname|endswith: 'user_managed'
     condition: selection
 falsepositives:
     - Legitimate use of Synergy

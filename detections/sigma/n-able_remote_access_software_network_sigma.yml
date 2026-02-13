@@ -1,12 +1,12 @@
 title: Potential N-ABLE Remote Access Software RMM Tool Network Activity
-id: f1771336-2160-4937-bea2-fe9f0c18bb87
+id: 59b992b5-26ec-5c13-8d1e-38cddb73111b
 status: experimental
 description: |
     Detects potential network activity of N-ABLE Remote Access Software RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: n-able.com
+        DestinationHostname|endswith: 'n-able.com'
     condition: selection
 falsepositives:
     - Legitimate use of N-ABLE Remote Access Software

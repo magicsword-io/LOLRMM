@@ -1,12 +1,12 @@
 title: Potential NinjaRMM RMM Tool Network Activity
-id: ff3c27a2-b2d4-4e65-820f-739b97e658de
+id: 91ec854e-788e-5231-8365-bee358110458
 status: experimental
 description: |
     Detects potential network activity of NinjaRMM RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,22 +16,22 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.ninjarmm.com
-            - *.ninjaone.com
-            - resources.ninjarmm.com
-            - ninjaone.com
-            - ninjarmm.net
-            - *.ninjarmm.net
-            - rmmservice.eu
-            - *.rmmservice.eu
-            - rmmservice.eu
-            - *.rmmservice.eu
-            - rmmservice.com.au
-            - *.rmmservice.com.au
-            - rmmservice.ca
-            - *.rmmservice.ca
-            - ninja-backup.com
-            - *.ninja-backup.com
+            - '*.ninjarmm.com'
+            - '*.ninjaone.com'
+            - 'resources.ninjarmm.com'
+            - 'ninjaone.com'
+            - 'ninjarmm.net'
+            - '*.ninjarmm.net'
+            - 'rmmservice.eu'
+            - '*.rmmservice.eu'
+            - 'rmmservice.eu'
+            - '*.rmmservice.eu'
+            - 'rmmservice.com.au'
+            - '*.rmmservice.com.au'
+            - 'rmmservice.ca'
+            - '*.rmmservice.ca'
+            - 'ninja-backup.com'
+            - '*.ninja-backup.com'
     condition: selection
 falsepositives:
     - Legitimate use of NinjaRMM

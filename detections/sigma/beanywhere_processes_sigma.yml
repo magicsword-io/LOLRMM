@@ -1,12 +1,12 @@
 title: Potential BeAnyWhere RMM Tool Process Activity
-id: 4838d652-76f6-4171-b998-1943633ffbc3
+id: 0ca8ec9d-d4e6-56fe-afa4-9ec032c65a97
 status: experimental
 description: |
     Detects potential processes activity of BeAnyWhere RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,24 +16,24 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - basuptshelper.exe
-            - basupsrvcupdate.exe
-            - BASupApp.exe
-            - BASupSysInf.exe
-            - BASupAppSrvc.exe
-            - TakeControl.exe
-            - BASupAppElev.exe
-            - basupsrvc.exe
+            - 'basuptshelper.exe'
+            - 'basupsrvcupdate.exe'
+            - 'BASupApp.exe'
+            - 'BASupSysInf.exe'
+            - 'BASupAppSrvc.exe'
+            - 'TakeControl.exe'
+            - 'BASupAppElev.exe'
+            - 'basupsrvc.exe'
     selection_image:
         Image|endswith:
-            - basuptshelper.exe
-            - basupsrvcupdate.exe
-            - BASupApp.exe
-            - BASupSysInf.exe
-            - BASupAppSrvc.exe
-            - TakeControl.exe
-            - BASupAppElev.exe
-            - basupsrvc.exe
+            - 'basuptshelper.exe'
+            - 'basupsrvcupdate.exe'
+            - 'BASupApp.exe'
+            - 'BASupSysInf.exe'
+            - 'BASupAppSrvc.exe'
+            - 'TakeControl.exe'
+            - 'BASupAppElev.exe'
+            - 'basupsrvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of BeAnyWhere

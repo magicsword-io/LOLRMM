@@ -1,12 +1,12 @@
 title: Potential Syspectr RMM Tool Network Activity
-id: 7f19fc2c-6952-4582-84c7-70d1e19171f9
+id: 4518883d-c2f5-54db-89b5-f0c8fecee3a9
 status: experimental
 description: |
     Detects potential network activity of Syspectr RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - atled.syspectr.com
-            - app.syspectr.com
+            - 'atled.syspectr.com'
+            - 'app.syspectr.com'
     condition: selection
 falsepositives:
     - Legitimate use of Syspectr

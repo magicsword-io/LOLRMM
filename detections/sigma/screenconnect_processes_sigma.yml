@@ -1,12 +1,12 @@
 title: Potential ScreenConnect RMM Tool Process Activity
-id: 3c95a0d7-14e3-4464-90a1-234b5a686fac
+id: 62934508-3b42-59ab-9030-02c83348d16c
 status: experimental
 description: |
     Detects potential processes activity of ScreenConnect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,32 +16,32 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ScreenConnect.ClientService.exe
-            - Remote Workforce Client.exe
-            - ScreenConnect.ClientService.exe
-            - ScreenConnect.WindowsClient.exe
-            - screenconnect*.exe
-            - screenconnect.windowsclient.exe
-            - Remote Workforce Client.exe
-            - screenconnect*.exe
-            - ConnectWiseControl*.exe
-            - connectwise*.exe
-            - screenconnect.windowsclient.exe
-            - screenconnect.clientservice.exe
+            - 'C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe'
+            - 'Remote Workforce Client.exe'
+            - '*\*\ScreenConnect.ClientService.exe'
+            - '*\*\ScreenConnect.WindowsClient.exe'
+            - 'screenconnect*.exe'
+            - 'screenconnect.windowsclient.exe'
+            - 'Remote Workforce Client.exe'
+            - 'screenconnect*.exe'
+            - 'ConnectWiseControl*.exe'
+            - 'connectwise*.exe'
+            - 'screenconnect.windowsclient.exe'
+            - 'screenconnect.clientservice.exe'
     selection_image:
         Image|endswith:
-            - ScreenConnect.ClientService.exe
-            - Remote Workforce Client.exe
-            - ScreenConnect.ClientService.exe
-            - ScreenConnect.WindowsClient.exe
-            - screenconnect*.exe
-            - screenconnect.windowsclient.exe
-            - Remote Workforce Client.exe
-            - screenconnect*.exe
-            - ConnectWiseControl*.exe
-            - connectwise*.exe
-            - screenconnect.windowsclient.exe
-            - screenconnect.clientservice.exe
+            - 'C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe'
+            - 'Remote Workforce Client.exe'
+            - '*\*\ScreenConnect.ClientService.exe'
+            - '*\*\ScreenConnect.WindowsClient.exe'
+            - 'screenconnect*.exe'
+            - 'screenconnect.windowsclient.exe'
+            - 'Remote Workforce Client.exe'
+            - 'screenconnect*.exe'
+            - 'ConnectWiseControl*.exe'
+            - 'connectwise*.exe'
+            - 'screenconnect.windowsclient.exe'
+            - 'screenconnect.clientservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ScreenConnect

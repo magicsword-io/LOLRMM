@@ -1,12 +1,12 @@
 title: Potential ISL Online RMM Tool Network Activity
-id: 8c13bf9e-e7c7-4b8d-a52d-959b916f58f0
+id: 462deddf-73d4-5b5e-8935-77612a0a93e1
 status: experimental
 description: |
     Detects potential network activity of ISL Online RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.islonline.com
-            - *.islonline.net
+            - '*.islonline.com'
+            - '*.islonline.net'
     condition: selection
 falsepositives:
     - Legitimate use of ISL Online

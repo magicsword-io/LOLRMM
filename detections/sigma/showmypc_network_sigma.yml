@@ -1,12 +1,12 @@
 title: Potential ShowMyPC RMM Tool Network Activity
-id: eb3a9193-fd54-4d1e-a1c0-f36ee26c651c
+id: 05dc597f-7f50-5a47-ba49-5e83cfb8124f
 status: experimental
 description: |
     Detects potential network activity of ShowMyPC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.showmypc.com
-            - showmypc.com
+            - '*.showmypc.com'
+            - 'showmypc.com'
     condition: selection
 falsepositives:
     - Legitimate use of ShowMyPC

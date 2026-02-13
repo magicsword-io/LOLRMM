@@ -1,12 +1,12 @@
 title: Potential Adobe Connect RMM Tool Network Activity
-id: c32a974a-ab36-4e6d-862f-e36c129dd140
+id: 43bfb949-54e0-5a67-bbb6-d208dd02c8c4
 status: experimental
 description: |
     Detects potential network activity of Adobe Connect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.adobeconnect.com
+        DestinationHostname|endswith: '*.adobeconnect.com'
     condition: selection
 falsepositives:
     - Legitimate use of Adobe Connect

@@ -1,12 +1,12 @@
 title: Potential Royal Apps RMM Tool Network Activity
-id: 2048c611-6c70-4af6-a59b-282bf57a7dc9
+id: ad600cb3-bfe7-51a3-87cd-d95f5f131b65
 status: experimental
 description: |
     Detects potential network activity of Royal Apps RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: user_managed
+        DestinationHostname|endswith: 'user_managed'
     condition: selection
 falsepositives:
     - Legitimate use of Royal Apps

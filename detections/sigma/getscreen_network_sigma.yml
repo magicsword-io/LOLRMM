@@ -1,12 +1,12 @@
 title: Potential GetScreen RMM Tool Network Activity
-id: c428ba60-3aba-4069-b9df-793995564173
+id: edcf66bd-9925-5361-a76d-9942e093e228
 status: experimental
 description: |
     Detects potential network activity of GetScreen RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - getscreen.me
-            - GetScreen.me
-            - *.getscreen.me
+            - 'getscreen.me'
+            - 'GetScreen.me'
+            - '*.getscreen.me'
     condition: selection
 falsepositives:
     - Legitimate use of GetScreen

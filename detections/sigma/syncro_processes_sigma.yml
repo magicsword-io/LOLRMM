@@ -1,12 +1,12 @@
 title: Potential Syncro RMM Tool Process Activity
-id: cf4cd05a-5d37-4008-8783-ca04c7bc488d
+id: b2477c9a-96ad-5bf0-8f04-c7bb5a2d59e8
 status: experimental
 description: |
     Detects potential processes activity of Syncro RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,28 +16,28 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Syncro.Installer.exe
-            - Kabuto.App.Runner.exe
-            - Syncro.Overmind.Service.exe
-            - Kabuto.Installer.exe
-            - KabutoSetup.exe
-            - Syncro.Service.exe
-            - Kabuto.Service.Runner.exe
-            - Syncro.App.Runner.exe
-            - SyncroLive.Service.exe
-            - SyncroLive.Agent.exe
+            - 'Syncro.Installer.exe'
+            - 'Kabuto.App.Runner.exe'
+            - 'Syncro.Overmind.Service.exe'
+            - 'Kabuto.Installer.exe'
+            - 'KabutoSetup.exe'
+            - 'Syncro.Service.exe'
+            - 'Kabuto.Service.Runner.exe'
+            - 'Syncro.App.Runner.exe'
+            - 'SyncroLive.Service.exe'
+            - 'SyncroLive.Agent.exe'
     selection_image:
         Image|endswith:
-            - Syncro.Installer.exe
-            - Kabuto.App.Runner.exe
-            - Syncro.Overmind.Service.exe
-            - Kabuto.Installer.exe
-            - KabutoSetup.exe
-            - Syncro.Service.exe
-            - Kabuto.Service.Runner.exe
-            - Syncro.App.Runner.exe
-            - SyncroLive.Service.exe
-            - SyncroLive.Agent.exe
+            - 'Syncro.Installer.exe'
+            - 'Kabuto.App.Runner.exe'
+            - 'Syncro.Overmind.Service.exe'
+            - 'Kabuto.Installer.exe'
+            - 'KabutoSetup.exe'
+            - 'Syncro.Service.exe'
+            - 'Kabuto.Service.Runner.exe'
+            - 'Syncro.App.Runner.exe'
+            - 'SyncroLive.Service.exe'
+            - 'SyncroLive.Agent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Syncro

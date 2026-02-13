@@ -1,12 +1,12 @@
 title: Potential Action1 RMM Tool Registry Activity
-id: 641f0d60-932c-45c2-8feb-03143209c7ee
+id: 2841f3b2-7212-5b7c-83a8-f301ccb46d6f
 status: experimental
 description: |
     Detects potential registry activity of Action1 RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - HKLM\System\CurrentControlSet\Services\A1Agent
-            - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe
-            - HKLM\SOFTWARE\WOW6432Node\Action1
+            - 'HKLM\System\CurrentControlSet\Services\A1Agent'
+            - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\Windows Error Reporting\LocalDumps\action1_agent.exe'
+            - 'HKLM\SOFTWARE\WOW6432Node\Action1'
     condition: selection
 falsepositives:
     - Legitimate use of Action1

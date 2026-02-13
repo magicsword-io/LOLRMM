@@ -1,12 +1,12 @@
 title: Potential Sorillus RMM Tool Process Activity
-id: cb2e9d91-8fe8-424f-8b99-bcba5dba14c2
+id: a7651dd4-cca9-568d-8dc2-b1ad0f501cc6
 status: experimental
 description: |
     Detects potential processes activity of Sorillus RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Sorillus-Launcher*.exe
-            - Sorillus Launcher.exe
+            - 'Sorillus-Launcher*.exe'
+            - 'Sorillus Launcher.exe'
     selection_image:
         Image|endswith:
-            - Sorillus-Launcher*.exe
-            - Sorillus Launcher.exe
+            - 'Sorillus-Launcher*.exe'
+            - 'Sorillus Launcher.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Sorillus

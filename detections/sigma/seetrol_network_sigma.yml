@@ -1,12 +1,12 @@
 title: Potential Seetrol RMM Tool Network Activity
-id: 03eaba5a-6077-4d7e-a431-1a72cb0c49ba
+id: 867418ba-c0ab-5d7b-92be-73eddc096385
 status: experimental
 description: |
     Detects potential network activity of Seetrol RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: seetrol.co.kr
+        DestinationHostname|endswith: 'seetrol.co.kr'
     condition: selection
 falsepositives:
     - Legitimate use of Seetrol

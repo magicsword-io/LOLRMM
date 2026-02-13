@@ -1,12 +1,12 @@
 title: Potential Tailscale RMM Tool Network Activity
-id: 6998cd3a-3c73-4211-9215-55a53ece55b6
+id: 5dcbc2c1-106f-5850-b055-ceb648d24f99
 status: experimental
 description: |
     Detects potential network activity of Tailscale RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.tailscale.com
-            - *.tailscale.io
-            - tailscale.com
+            - '*.tailscale.com'
+            - '*.tailscale.io'
+            - 'tailscale.com'
     condition: selection
 falsepositives:
     - Legitimate use of Tailscale

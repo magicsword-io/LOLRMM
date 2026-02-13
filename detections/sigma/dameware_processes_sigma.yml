@@ -1,12 +1,12 @@
 title: Potential DameWare RMM Tool Process Activity
-id: 9c274b89-fa4c-4030-903b-129f013ecee6
+id: b79fd824-6056-5227-b17f-3cbf8c729d67
 status: experimental
 description: |
     Detects potential processes activity of DameWare RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,22 +16,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - SolarWinds-Dameware-DRS*.exe
-            - DameWare Mini Remote Control*.exe
-            - dntus*.exe
-            - dwrcs.exe
-            - dwrcst.exe
-            - DameWare Remote Support.exe
-            - SolarWinds-Dameware-MRC*.exe
+            - 'SolarWinds-Dameware-DRS*.exe'
+            - 'DameWare Mini Remote Control*.exe'
+            - 'dntus*.exe'
+            - 'dwrcs.exe'
+            - '*\dwrcst.exe'
+            - 'DameWare Remote Support.exe'
+            - 'SolarWinds-Dameware-MRC*.exe'
     selection_image:
         Image|endswith:
-            - SolarWinds-Dameware-DRS*.exe
-            - DameWare Mini Remote Control*.exe
-            - dntus*.exe
-            - dwrcs.exe
-            - dwrcst.exe
-            - DameWare Remote Support.exe
-            - SolarWinds-Dameware-MRC*.exe
+            - 'SolarWinds-Dameware-DRS*.exe'
+            - 'DameWare Mini Remote Control*.exe'
+            - 'dntus*.exe'
+            - 'dwrcs.exe'
+            - '*\dwrcst.exe'
+            - 'DameWare Remote Support.exe'
+            - 'SolarWinds-Dameware-MRC*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DameWare

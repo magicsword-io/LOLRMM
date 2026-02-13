@@ -1,12 +1,12 @@
 title: Potential PSEXEC RMM Tool Process Activity
-id: 411e84d4-b1af-418c-b1b0-83b09e8ada35
+id: dc1e6fbd-5122-59c5-9052-faab3db8acfa
 status: experimental
 description: |
     Detects potential processes activity of PSEXEC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - psexec.exe
-            - psexecsvc.exe
+            - 'psexec.exe'
+            - 'psexecsvc.exe'
     selection_image:
         Image|endswith:
-            - psexec.exe
-            - psexecsvc.exe
+            - 'psexec.exe'
+            - 'psexecsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of PSEXEC

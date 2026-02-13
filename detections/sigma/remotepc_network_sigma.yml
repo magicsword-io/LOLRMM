@@ -1,12 +1,12 @@
 title: Potential RemotePC RMM Tool Network Activity
-id: e86ca73e-3392-4338-901e-03cd1fc5c2e2
+id: d04fb49c-3d9c-5d74-bfd0-5bee8d60adc3
 status: experimental
 description: |
     Detects potential network activity of RemotePC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.remotedesktop.com
-            - *.remotepc.com
-            - www.remotepc.com
-            - remotepc.com
+            - '*.remotedesktop.com'
+            - '*.remotepc.com'
+            - 'www.remotepc.com'
+            - 'remotepc.com'
     condition: selection
 falsepositives:
     - Legitimate use of RemotePC

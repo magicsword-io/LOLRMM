@@ -1,12 +1,12 @@
 title: Potential Splashtop Remote RMM Tool Network Activity
-id: 95772d6f-0c1d-4515-9779-85824ee59269
+id: 4c8438ac-87b3-51d9-9a2b-a46adb5dedff
 status: experimental
 description: |
     Detects potential network activity of Splashtop Remote RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - splashtop.com
-            - *.api.splashtop.com
-            - *.relay.splashtop.com
-            - *.api.splashtop.eu
+            - 'splashtop.com'
+            - '*.api.splashtop.com'
+            - '*.relay.splashtop.com'
+            - '*.api.splashtop.eu'
     condition: selection
 falsepositives:
     - Legitimate use of Splashtop Remote

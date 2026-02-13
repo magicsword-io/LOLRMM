@@ -1,0 +1,38 @@
+title: Potential ImmyBot RMM Tool Process Activity
+id: cb300985-1903-52c0-8d14-f514636826a5
+status: experimental
+description: |
+    Detects potential processes activity of ImmyBot RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'C:\Program Files\ImmyBot\ImmyAgent.exe'
+            - 'C:\Program Files\ImmyBot\ImmyUpdater.exe'
+            - 'C:\Program Files (x86)\ImmyBot\ImmyAgent.exe'
+            - 'C:\Program Files (x86)\ImmyBot\ImmyUpdater.exe'
+            - 'ImmyAgent.exe'
+            - 'ImmyUpdater.exe'
+            - 'ImmyBot.Agent.Ephemeral.exe'
+    selection_image:
+        Image|endswith:
+            - 'C:\Program Files\ImmyBot\ImmyAgent.exe'
+            - 'C:\Program Files\ImmyBot\ImmyUpdater.exe'
+            - 'C:\Program Files (x86)\ImmyBot\ImmyAgent.exe'
+            - 'C:\Program Files (x86)\ImmyBot\ImmyUpdater.exe'
+            - 'ImmyAgent.exe'
+            - 'ImmyUpdater.exe'
+            - 'ImmyBot.Agent.Ephemeral.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of ImmyBot
+level: medium

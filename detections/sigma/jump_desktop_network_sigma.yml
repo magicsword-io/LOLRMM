@@ -1,12 +1,12 @@
 title: Potential Jump Desktop RMM Tool Network Activity
-id: dece7c90-f789-4724-a787-e65445e232b2
+id: 8e92ecf4-39f1-5247-ba79-209fca410e73
 status: experimental
 description: |
     Detects potential network activity of Jump Desktop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.jumpdesktop.com
-            - jumpdesktop.com
-            - jumpto.me
-            - *.jumpto.me
+            - '*.jumpdesktop.com'
+            - 'jumpdesktop.com'
+            - 'jumpto.me'
+            - '*.jumpto.me'
     condition: selection
 falsepositives:
     - Legitimate use of Jump Desktop

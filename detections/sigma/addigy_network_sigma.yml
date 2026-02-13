@@ -1,12 +1,12 @@
 title: Potential Addigy RMM Tool Network Activity
-id: 43757bb8-b54f-41be-9e96-8099c0dc9a16
+id: 19353241-8add-5556-8a66-870cdecfa84d
 status: experimental
 description: |
     Detects potential network activity of Addigy RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - prod.addigy.com
-            - grtmprod.addigy.com
-            - agents.addigy.com
+            - 'prod.addigy.com'
+            - 'grtmprod.addigy.com'
+            - 'agents.addigy.com'
     condition: selection
 falsepositives:
     - Legitimate use of Addigy

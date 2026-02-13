@@ -1,12 +1,12 @@
 title: Potential S3 Browser RMM Tool Process Activity
-id: 45e32160-b7aa-4cc3-9bd8-5e2e6cce0b57
+id: f58a2f0a-6b05-55d0-8f1c-60effb0c6d6e
 status: experimental
 description: |
     Detects potential processes activity of S3 Browser RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: s3browser*.exe
+        ParentImage|endswith: '*\s3browser*.exe'
     selection_image:
-        Image|endswith: s3browser*.exe
+        Image|endswith: '*\s3browser*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of S3 Browser

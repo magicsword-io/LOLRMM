@@ -1,12 +1,12 @@
 title: Potential Insync RMM Tool Process Activity
-id: bf409b31-7807-4329-b3f9-2e94d3447a68
+id: cbcf273c-7cf3-5374-bd3b-92f6970c1c81
 status: experimental
 description: |
     Detects potential processes activity of Insync RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Insync.exe
-            - Insync.exe
-            - Insync.exe
+            - 'C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe'
+            - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
+            - '*\Insync.exe'
     selection_image:
         Image|endswith:
-            - Insync.exe
-            - Insync.exe
-            - Insync.exe
+            - 'C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe'
+            - '*Users\*\AppData\Roaming\Insync\App\Insync.exe'
+            - '*\Insync.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Insync

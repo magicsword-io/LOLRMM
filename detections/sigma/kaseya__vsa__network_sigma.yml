@@ -1,12 +1,12 @@
 title: Potential Kaseya (VSA) RMM Tool Network Activity
-id: b50291cd-fc39-4416-af8e-e53be7c6eb51
+id: 17e5ca30-80b3-5197-bb20-e7ae2ac4ada8
 status: experimental
 description: |
     Detects potential network activity of Kaseya (VSA) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - deploy01.kaseya.com
-            - *managedsupport.kaseya.net
-            - *.kaseya.net
-            - kaseya.com
+            - 'deploy01.kaseya.com'
+            - '*managedsupport.kaseya.net'
+            - '*.kaseya.net'
+            - 'kaseya.com'
     condition: selection
 falsepositives:
     - Legitimate use of Kaseya (VSA)

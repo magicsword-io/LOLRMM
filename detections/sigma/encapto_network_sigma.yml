@@ -1,12 +1,12 @@
 title: Potential Encapto RMM Tool Network Activity
-id: e4ebc834-c565-481c-9738-403e98cf56ff
+id: cd3a032c-19f6-5ccd-bb5b-a250d977c0ff
 status: experimental
 description: |
     Detects potential network activity of Encapto RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: encapto.com
+        DestinationHostname|endswith: 'encapto.com'
     condition: selection
 falsepositives:
     - Legitimate use of Encapto

@@ -1,12 +1,12 @@
 title: Potential Royal TS RMM Tool Network Activity
-id: 17763b87-0675-4d9d-95ef-0fb00bb0aa0b
+id: 70e858bf-d80d-5989-9d80-8688001be27d
 status: experimental
 description: |
     Detects potential network activity of Royal TS RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: royalapps.com
+        DestinationHostname|endswith: 'royalapps.com'
     condition: selection
 falsepositives:
     - Legitimate use of Royal TS

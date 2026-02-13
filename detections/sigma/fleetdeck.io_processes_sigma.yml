@@ -1,12 +1,12 @@
 title: Potential FleetDeck.io RMM Tool Process Activity
-id: a0ba751b-8a05-491c-8063-c296a877a803
+id: d9764e9b-4c04-5024-af8d-83a5a869cf23
 status: experimental
 description: |
     Detects potential processes activity of FleetDeck.io RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,18 +16,24 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - fleetdeck_agent_svc.exe
-            - fleetdeck_commander_svc.exe
-            - fleetdeck_installer.exe
-            - fleetdeck_commander_launcher.exe
-            - fleetdeck_agent.exe
+            - 'C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe'
+            - 'C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe'
+            - 'fleetdeck-agent.exe'
+            - 'fleetdeck_agent_svc.exe'
+            - 'fleetdeck_commander_svc.exe'
+            - 'fleetdeck_installer.exe'
+            - 'fleetdeck_commander_launcher.exe'
+            - 'fleetdeck_agent.exe'
     selection_image:
         Image|endswith:
-            - fleetdeck_agent_svc.exe
-            - fleetdeck_commander_svc.exe
-            - fleetdeck_installer.exe
-            - fleetdeck_commander_launcher.exe
-            - fleetdeck_agent.exe
+            - 'C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe'
+            - 'C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe'
+            - 'fleetdeck-agent.exe'
+            - 'fleetdeck_agent_svc.exe'
+            - 'fleetdeck_commander_svc.exe'
+            - 'fleetdeck_installer.exe'
+            - 'fleetdeck_commander_launcher.exe'
+            - 'fleetdeck_agent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of FleetDeck.io

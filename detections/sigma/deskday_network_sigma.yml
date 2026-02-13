@@ -1,12 +1,12 @@
 title: Potential DeskDay RMM Tool Network Activity
-id: d4cfe618-7477-44c2-a9b1-34e0add888fe
+id: ec7f887d-a13e-5e5b-8491-ab6bed87a1e7
 status: experimental
 description: |
     Detects potential network activity of DeskDay RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - deskday.ai
-            - app.deskday.ai
+            - 'deskday.ai'
+            - 'app.deskday.ai'
     condition: selection
 falsepositives:
     - Legitimate use of DeskDay

@@ -1,12 +1,12 @@
 title: Potential ZeroTier RMM Tool Network Activity
-id: 13a878f9-2674-401d-9b1b-f2028c440910
+id: d9b12e95-f361-533b-8d97-38997338228e
 status: experimental
 description: |
     Detects potential network activity of ZeroTier RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - zerotier.com
-            - *.zerotier.com
+            - 'zerotier.com'
+            - '*.zerotier.com'
     condition: selection
 falsepositives:
     - Legitimate use of ZeroTier

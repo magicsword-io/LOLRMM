@@ -1,12 +1,12 @@
 title: Potential ngrok RMM Tool Network Activity
-id: 36b3490a-8cac-4611-bfad-82f3f4c74ad6
+id: cfdb0abb-2923-5206-b15f-51ddcae9991d
 status: experimental
 description: |
     Detects potential network activity of ngrok RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,15 +16,15 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - connect.ngrok-agent.com
-            - connect.us.ngrok-agent.com
-            - connect.eu.ngrok-agent.com
-            - connect.ap.ngrok-agent.com
-            - connect.au.ngrok-agent.com
-            - connect.sa.ngrok-agent.com
-            - connect.jp.ngrok-agent.com
-            - connect.in.ngrok-agent.com
-            - ngrok.com
+            - 'connect.ngrok-agent.com'
+            - 'connect.us.ngrok-agent.com'
+            - 'connect.eu.ngrok-agent.com'
+            - 'connect.ap.ngrok-agent.com'
+            - 'connect.au.ngrok-agent.com'
+            - 'connect.sa.ngrok-agent.com'
+            - 'connect.jp.ngrok-agent.com'
+            - 'connect.in.ngrok-agent.com'
+            - 'ngrok.com'
     condition: selection
 falsepositives:
     - Legitimate use of ngrok

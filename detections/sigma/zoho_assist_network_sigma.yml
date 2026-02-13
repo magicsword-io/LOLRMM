@@ -1,12 +1,12 @@
 title: Potential Zoho Assist RMM Tool Network Activity
-id: 3ae241e0-ab8f-4e0a-8d6b-02f6687866cd
+id: 6007dfb3-033e-50dd-a637-20dd48fc12eb
 status: experimental
 description: |
     Detects potential network activity of Zoho Assist RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,19 +16,19 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.zoho.com.au
-            - *.zohoassist.jp
-            - assist.zoho.com
-            - zoho.com/assist/
-            - *.zoho.in
-            - downloads.zohodl.com.cn
-            - *.zohoassist.com
-            - downloads.zohocdn.com
-            - gateway.zohoassist.com
-            - *.zohoassist.com.cn
-            - *.zoho.com.cn
-            - *.zoho.com
-            - *.zoho.eu
+            - '*.zoho.com.au'
+            - '*.zohoassist.jp'
+            - 'assist.zoho.com'
+            - 'zoho.com/assist/'
+            - '*.zoho.in'
+            - 'downloads.zohodl.com.cn'
+            - '*.zohoassist.com'
+            - 'downloads.zohocdn.com'
+            - 'gateway.zohoassist.com'
+            - '*.zohoassist.com.cn'
+            - '*.zoho.com.cn'
+            - '*.zoho.com'
+            - '*.zoho.eu'
     condition: selection
 falsepositives:
     - Legitimate use of Zoho Assist

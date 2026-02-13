@@ -1,12 +1,12 @@
 title: Potential Duplicati RMM Tool Process Activity
-id: 9246a25b-e2de-4756-ad67-a9d3f2f798e6
+id: 8cc7086b-ff45-5b34-978c-32a7b65e5da3
 status: experimental
 description: |
     Detects potential processes activity of Duplicati RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Duplicati.Server.exe
-            - Duplicati.Server.exe
+            - 'c:\Program Files\*\Duplicati.Server.exe'
+            - '*\*\Duplicati.Server.exe'
     selection_image:
         Image|endswith:
-            - Duplicati.Server.exe
-            - Duplicati.Server.exe
+            - 'c:\Program Files\*\Duplicati.Server.exe'
+            - '*\*\Duplicati.Server.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Duplicati

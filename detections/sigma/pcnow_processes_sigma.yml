@@ -1,12 +1,12 @@
 title: Potential Pcnow RMM Tool Process Activity
-id: bbb73e66-a04a-4d8c-92bd-7973dd8f33e0
+id: 3e244db5-ab73-5143-855d-00f5eb161c13
 status: experimental
 description: |
     Detects potential processes activity of Pcnow RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - mwcliun.exe
-            - pcnmgr.exe
-            - webexpcnow.exe
+            - 'mwcliun.exe'
+            - 'pcnmgr.exe'
+            - 'webexpcnow.exe'
     selection_image:
         Image|endswith:
-            - mwcliun.exe
-            - pcnmgr.exe
-            - webexpcnow.exe
+            - 'mwcliun.exe'
+            - 'pcnmgr.exe'
+            - 'webexpcnow.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pcnow

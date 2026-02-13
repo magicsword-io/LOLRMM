@@ -1,12 +1,12 @@
 title: Potential Alpemix RMM Tool Registry Activity
-id: bc21f832-b65a-428e-9692-764f20b24731
+id: 7ea38b5e-00fd-5919-b1a6-7ac3b8b361a4
 status: experimental
 description: |
     Detects potential registry activity of Alpemix RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: registry_event
 detection:
     selection:
-        TargetObject|contains: HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx
+        TargetObject|contains: 'HKLM\SYSTEM\CurrentControlSet\Services\AlpemixSrvcx'
     condition: selection
 falsepositives:
     - Legitimate use of Alpemix

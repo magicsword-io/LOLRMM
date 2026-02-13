@@ -1,0 +1,22 @@
+title: Potential baramundi Management Suite RMM Tool File Activity
+id: 999f157a-b11a-5b19-bde9-4dd581031cb2
+status: experimental
+description: |
+    Detects potential files activity of baramundi Management Suite RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith: 'C:\Program Files\bsag\bma\bma.exe'
+    condition: selection
+falsepositives:
+    - Legitimate use of baramundi Management Suite
+level: medium

@@ -1,12 +1,12 @@
 title: Potential ITSupport247 (ConnectWise) RMM Tool Network Activity
-id: 2966b368-1e5b-4abb-9cde-30a84e747b6f
+id: 149e5ada-ee4b-5243-949f-4d202109e786
 status: experimental
 description: |
     Detects potential network activity of ITSupport247 (ConnectWise) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,9 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.itsupport247.net
+        DestinationHostname|endswith:
+            - '*.itsupport247.net'
+            - 'itsupport247.net'
     condition: selection
 falsepositives:
     - Legitimate use of ITSupport247 (ConnectWise)

@@ -1,12 +1,12 @@
 title: Potential Netviewer (GoToMeet) RMM Tool Process Activity
-id: a6346afe-86d5-4f01-aada-e9b2f19cba58
+id: 231c6658-a998-5285-b41e-f29160ff9712
 status: experimental
 description: |
     Detects potential processes activity of Netviewer (GoToMeet) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - nvClient.exe
-            - netviewer.exe
+            - 'nvClient.exe'
+            - 'netviewer.exe'
     selection_image:
         Image|endswith:
-            - nvClient.exe
-            - netviewer.exe
+            - 'nvClient.exe'
+            - 'netviewer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Netviewer (GoToMeet)

@@ -1,12 +1,12 @@
 title: Potential RES Automation Manager RMM Tool Network Activity
-id: 89b8bfe3-ba0a-4a8a-aee1-6059ccdd1daa
+id: 9edc915d-f70e-5dc7-897c-4fbf03bfa374
 status: experimental
 description: |
     Detects potential network activity of RES Automation Manager RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - ivanti.com/
+            - 'user_managed'
+            - 'ivanti.com/'
     condition: selection
 falsepositives:
     - Legitimate use of RES Automation Manager

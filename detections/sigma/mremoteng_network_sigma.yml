@@ -1,12 +1,12 @@
 title: Potential mRemoteNG RMM Tool Network Activity
-id: c7ae64c2-1850-4c69-8831-ca9221bb0165
+id: 67bf7932-14c6-5b7d-bad2-e37d66dd94d4
 status: experimental
 description: |
     Detects potential network activity of mRemoteNG RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - mremoteng.org
+            - 'user_managed'
+            - 'mremoteng.org'
     condition: selection
 falsepositives:
     - Legitimate use of mRemoteNG

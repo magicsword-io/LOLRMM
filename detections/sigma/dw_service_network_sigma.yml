@@ -1,12 +1,12 @@
 title: Potential DW Service RMM Tool Network Activity
-id: ac97424e-1da4-4940-9535-19a8d20c992a
+id: fa86ead5-e0f6-5dfa-8889-c598457cd8fd
 status: experimental
 description: |
     Detects potential network activity of DW Service RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.dwservice.net
+        DestinationHostname|endswith: '*.dwservice.net'
     condition: selection
 falsepositives:
     - Legitimate use of DW Service

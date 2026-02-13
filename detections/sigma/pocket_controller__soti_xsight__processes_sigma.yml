@@ -1,12 +1,12 @@
 title: Potential Pocket Controller (Soti Xsight) RMM Tool Process Activity
-id: e2c69ebb-436c-41d7-ae09-f5ec7d4e1db5
+id: c444b1f7-6f03-5e85-8f34-57aa4beda63a
 status: experimental
 description: |
     Detects potential processes activity of Pocket Controller (Soti Xsight) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pocketcontroller.exe
-            - wysebrowser.exe
-            - XSightService.exe
+            - 'pocketcontroller.exe'
+            - 'wysebrowser.exe'
+            - 'XSightService.exe'
     selection_image:
         Image|endswith:
-            - pocketcontroller.exe
-            - wysebrowser.exe
-            - XSightService.exe
+            - 'pocketcontroller.exe'
+            - 'wysebrowser.exe'
+            - 'XSightService.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pocket Controller (Soti Xsight)

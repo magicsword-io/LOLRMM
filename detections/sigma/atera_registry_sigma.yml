@@ -1,12 +1,12 @@
 title: Potential Atera RMM Tool Registry Activity
-id: b69b6b57-5522-4407-8ea1-a74632142f81
+id: 3ab147be-c8db-5c67-a3fc-836c5772273e
 status: experimental
 description: |
     Detects potential registry activity of Atera RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,15 +16,15 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - HKLM\SOFTWARE\ATERA Networks\AlphaAgent
-            - HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent
-            - KLM\SOFTWARE\WOW6432Node\Splashtop Inc.
-            - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater
-            - HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AlphaAgent
-            - HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AteraAgent
-            - HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASAPI32
-            - HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS
-            - HKLM\SOFTWARE\ATERA Networks\*
+            - 'HKLM\SOFTWARE\ATERA Networks\AlphaAgent'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\AteraAgent'
+            - 'KLM\SOFTWARE\WOW6432Node\Splashtop Inc.'
+            - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater'
+            - 'HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AlphaAgent'
+            - 'HKLM\SYSTEM\ControlSet\Services\EventLog\Application\AteraAgent'
+            - 'HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASAPI32'
+            - 'HKLM\SOFTWARE\Microsoft\Tracing\AteraAgent_RASMANCS'
+            - 'HKLM\SOFTWARE\ATERA Networks\*'
     condition: selection
 falsepositives:
     - Legitimate use of Atera

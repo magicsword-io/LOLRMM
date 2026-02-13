@@ -1,12 +1,12 @@
 title: Potential Remote Manipulator System RMM Tool Network Activity
-id: 4ab8f777-1476-417d-8ac4-9c70c46a79ee
+id: 7f6770a9-c881-59d7-82cc-91aa187c4dea
 status: experimental
 description: |
     Detects potential network activity of Remote Manipulator System RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.internetid.ru
-            - rmansys.ru
+            - '*.internetid.ru'
+            - 'rmansys.ru'
     condition: selection
 falsepositives:
     - Legitimate use of Remote Manipulator System

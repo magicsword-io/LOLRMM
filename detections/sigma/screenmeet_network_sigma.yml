@@ -1,12 +1,12 @@
 title: Potential ScreenMeet RMM Tool Network Activity
-id: 7c429563-cd6e-499e-9256-e3ef9fd65ebc
+id: eb5441dd-9519-5e03-bd14-210c712aa4d1
 status: experimental
 description: |
     Detects potential network activity of ScreenMeet RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.screenmeet.com
-            - *.scrn.mt
+            - '*.screenmeet.com'
+            - '*.scrn.mt'
     condition: selection
 falsepositives:
     - Legitimate use of ScreenMeet

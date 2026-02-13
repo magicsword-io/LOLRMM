@@ -1,12 +1,12 @@
 title: Potential Pulseway RMM Tool Process Activity
-id: fddf0980-b359-442b-83f7-65e3e0a165cd
+id: 05ce6735-42bd-591e-aceb-666947d99b7e
 status: experimental
 description: |
     Detects potential processes activity of Pulseway RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - PCMonitorManager.exe
-            - pcmonitorsrv.exe
+            - 'PCMonitorManager.exe'
+            - 'pcmonitorsrv.exe'
     selection_image:
         Image|endswith:
-            - PCMonitorManager.exe
-            - pcmonitorsrv.exe
+            - 'PCMonitorManager.exe'
+            - 'pcmonitorsrv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pulseway

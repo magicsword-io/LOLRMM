@@ -1,0 +1,25 @@
+title: Potential iDrive RMM Tool Network Activity
+id: 0a2dacc5-f6e5-57ee-bd53-cbd15c182bf8
+status: experimental
+description: |
+    Detects potential network activity of iDrive RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'idrive.com'
+            - '*.idrive.com'
+            - 'api.idrive.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of iDrive
+level: medium

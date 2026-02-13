@@ -1,12 +1,12 @@
 title: Potential Xeox RMM Tool Process Activity
-id: 5ea7cf79-3d87-4576-a46d-793783a0acb7
+id: 4b8c6f35-35ec-5acb-a290-2bff5acf4466
 status: experimental
 description: |
     Detects potential processes activity of Xeox RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - xeox-agent_x64.exe
-            - xeox_service_windows.exe
-            - xeox-agent_*.exe
-            - xeox-agent_x86.exe
+            - 'xeox-agent_x64.exe'
+            - 'xeox_service_windows.exe'
+            - 'xeox-agent_*.exe'
+            - 'xeox-agent_x86.exe'
     selection_image:
         Image|endswith:
-            - xeox-agent_x64.exe
-            - xeox_service_windows.exe
-            - xeox-agent_*.exe
-            - xeox-agent_x86.exe
+            - 'xeox-agent_x64.exe'
+            - 'xeox_service_windows.exe'
+            - 'xeox-agent_*.exe'
+            - 'xeox-agent_x86.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Xeox

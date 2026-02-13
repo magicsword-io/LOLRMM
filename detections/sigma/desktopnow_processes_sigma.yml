@@ -1,12 +1,12 @@
 title: Potential DesktopNow RMM Tool Process Activity
-id: 89659168-cbba-4db8-8e19-bf82dca35a04
+id: 0a645493-88e9-534d-9c54-3e5698ae8301
 status: experimental
 description: |
     Detects potential processes activity of DesktopNow RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: desktopnow.exe
+        ParentImage|endswith: 'desktopnow.exe'
     selection_image:
-        Image|endswith: desktopnow.exe
+        Image|endswith: 'desktopnow.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DesktopNow

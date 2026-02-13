@@ -1,12 +1,12 @@
 title: Potential Pcnow RMM Tool Network Activity
-id: cddaeacc-ee3f-416f-96b9-48966475dd25
+id: 678c2c96-cbe5-556b-96ab-4d8539e1dde6
 status: experimental
 description: |
     Detects potential network activity of Pcnow RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: au.pcmag.com/utilities/21470/webex-pcnow
+        DestinationHostname|endswith: 'au.pcmag.com/utilities/21470/webex-pcnow'
     condition: selection
 falsepositives:
     - Legitimate use of Pcnow

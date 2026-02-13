@@ -1,12 +1,12 @@
 title: Potential Quick Assist RMM Tool Network Activity
-id: 6203a300-6eb8-4263-923e-8d4720702d58
+id: 9b2e974b-7045-5eab-9c3d-61970bd29ccb
 status: experimental
 description: |
     Detects potential network activity of Quick Assist RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.support.services.microsoft.com
+        DestinationHostname|endswith: '*.support.services.microsoft.com'
     condition: selection
 falsepositives:
     - Legitimate use of Quick Assist

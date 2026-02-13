@@ -1,12 +1,12 @@
 title: Potential UltraVNC RMM Tool Network Activity
-id: c607606c-d7ad-4954-835e-eb32122885fb
+id: 28a15bcc-889d-5471-8d62-bd8db1b07e65
 status: experimental
 description: |
     Detects potential network activity of UltraVNC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - ultravnc.com
-            - user_managed
+            - 'ultravnc.com'
+            - 'user_managed'
     condition: selection
 falsepositives:
     - Legitimate use of UltraVNC

@@ -1,12 +1,12 @@
 title: Potential Level RMM Tool Network Activity
-id: ed6be521-b6af-47df-b0c9-7474d10f328f
+id: c60f5a02-2d63-5efc-aa55-1d74fae56f5e
 status: experimental
 description: |
     Detects potential network activity of Level RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,11 +16,11 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - level.io
-            - builds.level.io
-            - agents.level.io
-            - online.level.io
-            - downloads.io
+            - 'level.io'
+            - 'builds.level.io'
+            - 'agents.level.io'
+            - 'online.level.io'
+            - 'downloads.io'
     condition: selection
 falsepositives:
     - Legitimate use of Level

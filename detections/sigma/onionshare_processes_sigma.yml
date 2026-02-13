@@ -1,12 +1,12 @@
 title: Potential Onionshare RMM Tool Process Activity
-id: 3de011f3-7406-423a-b202-a39cd44327d0
+id: 81a87be7-d52b-5931-a1b8-3bf4bb169b1d
 status: experimental
 description: |
     Detects potential processes activity of Onionshare RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: onionshare*.exe
+        ParentImage|endswith: '*\onionshare*.exe'
     selection_image:
-        Image|endswith: onionshare*.exe
+        Image|endswith: '*\onionshare*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Onionshare

@@ -1,12 +1,12 @@
 title: Potential Remcos RMM Tool Process Activity
-id: 0e9a8ef3-1de8-4246-acaf-95f96963a300
+id: 72118c92-97ad-588f-aae7-5acacff5f05e
 status: experimental
 description: |
     Detects potential processes activity of Remcos RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: remcos*.exe
+        ParentImage|endswith: 'remcos*.exe'
     selection_image:
-        Image|endswith: remcos*.exe
+        Image|endswith: 'remcos*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remcos

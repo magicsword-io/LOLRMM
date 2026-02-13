@@ -1,12 +1,12 @@
 title: Potential Action1 RMM Tool File Activity
-id: 0e4ac9ba-0f84-4437-b952-3a5ff816eef3
+id: ecb5ed8f-5729-51f5-9a54-3a6557cd7d9e
 status: experimental
 description: |
     Detects potential files activity of Action1 RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,11 +16,11 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Windows\Action1\action1_agent.exe
-            - C:\Windows\Action1\*
-            - C:\Windows\Action1\scripts\*
-            - C:\Windows\Action1\rule_data\*
-            - C:\Windows\Action1\action1_log_*.log
+            - 'C:\Windows\Action1\action1_agent.exe'
+            - 'C:\Windows\Action1\*'
+            - 'C:\Windows\Action1\scripts\*'
+            - 'C:\Windows\Action1\rule_data\*'
+            - 'C:\Windows\Action1\action1_log_*.log'
     condition: selection
 falsepositives:
     - Legitimate use of Action1

@@ -1,12 +1,12 @@
 title: Potential RAdmin RMM Tool Registry Activity
-id: d713ab8a-cd9e-47b5-b66f-1a436ddd3f0c
+id: 1d775e8b-5449-5110-a676-9357b5e128ef
 status: experimental
 description: |
     Detects potential registry activity of RAdmin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: registry_event
 detection:
     selection:
-        TargetObject|contains: HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin Security
+        TargetObject|contains: 'HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Radmin\v3.0\Server\Parameters\Radmin Security'
     condition: selection
 falsepositives:
     - Legitimate use of RAdmin

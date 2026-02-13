@@ -1,0 +1,58 @@
+title: Potential GoToAssist (GoTo Resolve) RMM Tool Process Activity
+id: 4e0ef8de-247d-5a7c-ac54-5d48051ad3fc
+status: experimental
+description: |
+    Detects potential processes activity of GoToAssist (GoTo Resolve) RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'GoToResolveExternalModuleHandler.exe'
+            - 'GoToResolveFileManager.exe'
+            - 'GoToResolveLoggerProcess.exe'
+            - 'GoToResolveNetworkChecker.exe'
+            - 'GoToResolveProcessChecker.exe'
+            - 'GoToResolveQuickView.exe'
+            - 'GoToResolveRegistryEditor.exe'
+            - 'GoToResolveRemoteControl.exe'
+            - 'GoToResolveService.exe'
+            - 'GoToResolveServiceManager.exe'
+            - 'GoToResolveTerminal.exe'
+            - 'GoToResolveTools32.exe'
+            - 'GoToResolveTools64.exe'
+            - 'GoToResolveUi.exe'
+            - 'GoToResolveUnattended.exe'
+            - 'GoToResolveUnattendedRemover.exe'
+            - 'GoToResolveUnattendedUi.exe'
+    selection_image:
+        Image|endswith:
+            - 'GoToResolveExternalModuleHandler.exe'
+            - 'GoToResolveFileManager.exe'
+            - 'GoToResolveLoggerProcess.exe'
+            - 'GoToResolveNetworkChecker.exe'
+            - 'GoToResolveProcessChecker.exe'
+            - 'GoToResolveQuickView.exe'
+            - 'GoToResolveRegistryEditor.exe'
+            - 'GoToResolveRemoteControl.exe'
+            - 'GoToResolveService.exe'
+            - 'GoToResolveServiceManager.exe'
+            - 'GoToResolveTerminal.exe'
+            - 'GoToResolveTools32.exe'
+            - 'GoToResolveTools64.exe'
+            - 'GoToResolveUi.exe'
+            - 'GoToResolveUnattended.exe'
+            - 'GoToResolveUnattendedRemover.exe'
+            - 'GoToResolveUnattendedUi.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of GoToAssist (GoTo Resolve)
+level: medium

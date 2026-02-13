@@ -1,12 +1,12 @@
 title: Potential SunLogin RMM Tool Network Activity
-id: 3e298919-e799-44b3-8122-35d2b02baa51
+id: ae9c3430-7e86-57bc-833e-0c2a33b8a544
 status: experimental
 description: |
     Detects potential network activity of SunLogin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - sunlogin.oray.com
-            - client.oray.net
+            - 'sunlogin.oray.com'
+            - 'client.oray.net'
     condition: selection
 falsepositives:
     - Legitimate use of SunLogin

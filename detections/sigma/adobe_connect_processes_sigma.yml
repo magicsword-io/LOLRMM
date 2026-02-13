@@ -1,12 +1,12 @@
 title: Potential Adobe Connect RMM Tool Process Activity
-id: e8f2d33b-025e-47aa-be08-fe034fb8373f
+id: 88477682-dd8c-5d99-be68-7e890fbbe847
 status: experimental
 description: |
     Detects potential processes activity of Adobe Connect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ConnectAppSetup*.exe
-            - ConnectShellSetup*.exe
-            - Connect.exe
-            - ConnectDetector.exe
+            - 'ConnectAppSetup*.exe'
+            - 'ConnectShellSetup*.exe'
+            - 'Connect.exe'
+            - 'ConnectDetector.exe'
     selection_image:
         Image|endswith:
-            - ConnectAppSetup*.exe
-            - ConnectShellSetup*.exe
-            - Connect.exe
-            - ConnectDetector.exe
+            - 'ConnectAppSetup*.exe'
+            - 'ConnectShellSetup*.exe'
+            - 'Connect.exe'
+            - 'ConnectDetector.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Adobe Connect

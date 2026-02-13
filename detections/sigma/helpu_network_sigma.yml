@@ -1,12 +1,12 @@
 title: Potential HelpU RMM Tool Network Activity
-id: 85125665-6aba-478b-8d22-614dbfd48625
+id: bc2449da-6eba-5500-8b78-6a4a57ccf6f1
 status: experimental
 description: |
     Detects potential network activity of HelpU RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - helpu.co.kr
-            - *.helpu.co.kr
+            - 'helpu.co.kr'
+            - '*.helpu.co.kr'
     condition: selection
 falsepositives:
     - Legitimate use of HelpU

@@ -1,12 +1,12 @@
 title: Potential Total Software Deployment RMM Tool Process Activity
-id: 86a70a18-65cd-4cc9-a61f-7da595dbc84d
+id: 199ce180-45e1-5711-a9b5-13f2adcc655e
 status: experimental
 description: |
     Detects potential processes activity of Total Software Deployment RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tniwinagent.exe
-            - Tsdservice.exe
+            - '*\tniwinagent.exe'
+            - '*\Tsdservice.exe'
     selection_image:
         Image|endswith:
-            - tniwinagent.exe
-            - Tsdservice.exe
+            - '*\tniwinagent.exe'
+            - '*\Tsdservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Total Software Deployment

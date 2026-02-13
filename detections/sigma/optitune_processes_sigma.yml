@@ -1,12 +1,12 @@
 title: Potential OptiTune RMM Tool Process Activity
-id: 7d5d3bff-8d0f-4a03-adca-6638af47a37a
+id: fd36d5bd-60ff-54e4-b0c1-fd0babcc4d2a
 status: experimental
 description: |
     Detects potential processes activity of OptiTune RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - OTService.exe
-            - OTPowerShell.exe
+            - 'OTService.exe'
+            - 'OTPowerShell.exe'
     selection_image:
         Image|endswith:
-            - OTService.exe
-            - OTPowerShell.exe
+            - 'OTService.exe'
+            - 'OTPowerShell.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of OptiTune

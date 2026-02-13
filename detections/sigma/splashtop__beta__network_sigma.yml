@@ -1,12 +1,12 @@
 title: Potential Splashtop (Beta) RMM Tool Network Activity
-id: ec58aea4-96d6-46ff-851b-7afd1cbaa8f1
+id: d24f3c61-2827-5c5a-8692-830731d4ab72
 status: experimental
 description: |
     Detects potential network activity of Splashtop (Beta) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: splashtop.com
+        DestinationHostname|endswith: 'splashtop.com'
     condition: selection
 falsepositives:
     - Legitimate use of Splashtop (Beta)

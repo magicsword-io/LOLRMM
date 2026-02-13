@@ -1,12 +1,12 @@
 title: Potential Site24x7 RMM Tool Network Activity
-id: 5524bfef-3644-44dd-84a9-0e6116a35e78
+id: 28aa1aa8-bdd0-54ac-8651-925c4b54a0f1
 status: experimental
 description: |
     Detects potential network activity of Site24x7 RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - plus*.site24x7.com
-            - plus*.site24x7.eu
-            - plus*.site24x7.in
-            - plus*.site24x7.cn
-            - plus*.site24x7.net.au
-            - site24x7.com/msp
+            - 'plus*.site24x7.com'
+            - 'plus*.site24x7.eu'
+            - 'plus*.site24x7.in'
+            - 'plus*.site24x7.cn'
+            - 'plus*.site24x7.net.au'
+            - 'site24x7.com/msp'
     condition: selection
 falsepositives:
     - Legitimate use of Site24x7

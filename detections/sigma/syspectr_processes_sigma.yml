@@ -1,12 +1,12 @@
 title: Potential Syspectr RMM Tool Process Activity
-id: 791169bf-9cc5-4962-a177-a4dd9d5efd07
+id: ca9a0bbb-2e6f-5a21-abea-25a0acdb5fef
 status: experimental
 description: |
     Detects potential processes activity of Syspectr RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - oo-syspectr*.exe
-            - OOSysAgent.exe
+            - 'oo-syspectr*.exe'
+            - 'OOSysAgent.exe'
     selection_image:
         Image|endswith:
-            - oo-syspectr*.exe
-            - OOSysAgent.exe
+            - 'oo-syspectr*.exe'
+            - 'OOSysAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Syspectr

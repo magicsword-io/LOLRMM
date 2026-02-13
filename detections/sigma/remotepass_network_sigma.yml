@@ -1,12 +1,12 @@
 title: Potential RemotePass RMM Tool Network Activity
-id: f4461751-f222-4de0-9993-9f6b7c4a2e8b
+id: 52e9a124-141f-5be7-851f-f3f0f7d877f8
 status: experimental
 description: |
     Detects potential network activity of RemotePass RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: remotepass.com
+        DestinationHostname|endswith: 'remotepass.com'
     condition: selection
 falsepositives:
     - Legitimate use of RemotePass

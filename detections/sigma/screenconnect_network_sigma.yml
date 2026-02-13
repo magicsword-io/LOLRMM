@@ -1,12 +1,12 @@
 title: Potential ScreenConnect RMM Tool Network Activity
-id: 74f512be-1adb-411e-962f-9f759996e8fe
+id: 14bfeeea-00c1-5827-967d-8fde5b719a84
 status: experimental
 description: |
     Detects potential network activity of ScreenConnect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - control.connectwise.com
-            - *.connectwise.com
-            - *.screenconnect.com
+            - 'control.connectwise.com'
+            - '*.connectwise.com'
+            - '*.screenconnect.com'
     condition: selection
 falsepositives:
     - Legitimate use of ScreenConnect

@@ -1,12 +1,12 @@
 title: Potential Kaseya (VSA) RMM Tool File Activity
-id: 946d8fc9-9de3-40d6-b9dd-ffbfcf803f06
+id: 559d9ade-0adc-5304-9907-146feb748945
 status: experimental
 description: |
     Detects potential files activity of Kaseya (VSA) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,22 +16,22 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - %localappdata%\Kaseya\Log\KaseyaLiveConnect\*
-            - ~/Library/Logs/com.kaseya/KaseyaLiveConnect/*
-            - C:\ProgramData\Kaseya\Log\Endpoint\*
-            - C:\Program Files*\Kaseya\*\agentmon.log
-            - /var/log/system.log
-            -  ~/opt/kaseya/*/logs*
-            - C:\Users\*\AppData\Local\Temp\KASetup.log
-            - C:\Windows\Temp\KASetup.log
-            - C:\ProgramData\Kaseya\Log\KaseyaEdgeServices\*
-            - C:\Kaseya\api\v1.0\logs\
-            - C:\Kaseya\api\v1.5\endpoint\logs
-            - C:\Kaseya\api\v1.5\endpoints\logs
-            - C:\Windows\System32\config\systemprofile\AppData\Local\Kaseya\Log\MakeSelfSignedCert.exe\
-            - C:\Kaseya\WebPages\install\makecert.txt
-            - C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\KaseyaEndpoint*
-            - C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\Session_*
+            - '%localappdata%\Kaseya\Log\KaseyaLiveConnect\*'
+            - '~/Library/Logs/com.kaseya/KaseyaLiveConnect/*'
+            - 'C:\ProgramData\Kaseya\Log\Endpoint\*'
+            - 'C:\Program Files*\Kaseya\*\agentmon.log'
+            - '/var/log/system.log'
+            - ' ~/opt/kaseya/*/logs*'
+            - 'C:\Users\*\AppData\Local\Temp\KASetup.log'
+            - 'C:\Windows\Temp\KASetup.log'
+            - 'C:\ProgramData\Kaseya\Log\KaseyaEdgeServices\*'
+            - 'C:\Kaseya\api\v1.0\logs\'
+            - 'C:\Kaseya\api\v1.5\endpoint\logs'
+            - 'C:\Kaseya\api\v1.5\endpoints\logs'
+            - 'C:\Windows\System32\config\systemprofile\AppData\Local\Kaseya\Log\MakeSelfSignedCert.exe\'
+            - 'C:\Kaseya\WebPages\install\makecert.txt'
+            - 'C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\KaseyaEndpoint*'
+            - 'C:\ProgramData\Kaseya\Log\Endpoint\Instance_*\Session_*'
     condition: selection
 falsepositives:
     - Legitimate use of Kaseya (VSA)

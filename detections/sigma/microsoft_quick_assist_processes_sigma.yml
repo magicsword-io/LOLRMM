@@ -1,12 +1,12 @@
 title: Potential Microsoft Quick Assist RMM Tool Process Activity
-id: 51d6179e-e5f6-4553-b0ae-5df8566b758b
+id: 1ac34313-5efa-5fad-b056-4c9b336e6e35
 status: experimental
 description: |
     Detects potential processes activity of Microsoft Quick Assist RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: quickassist.exe
+        ParentImage|endswith: 'quickassist.exe'
     selection_image:
-        Image|endswith: quickassist.exe
+        Image|endswith: 'quickassist.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Microsoft Quick Assist

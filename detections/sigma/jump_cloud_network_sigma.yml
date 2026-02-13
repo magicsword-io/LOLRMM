@@ -1,12 +1,12 @@
 title: Potential Jump Cloud RMM Tool Network Activity
-id: 16b4a42b-f942-4593-bb05-442d1cce60ef
+id: c98b5b05-3393-5678-9240-43f2866de11b
 status: experimental
 description: |
     Detects potential network activity of Jump Cloud RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.api.jumpcloud.com
-            - *.assist.jumpcloud.com
+            - '*.api.jumpcloud.com'
+            - '*.assist.jumpcloud.com'
     condition: selection
 falsepositives:
     - Legitimate use of Jump Cloud

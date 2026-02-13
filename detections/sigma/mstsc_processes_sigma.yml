@@ -1,12 +1,12 @@
 title: Potential mstsc RMM Tool Process Activity
-id: 62ff9712-e354-40f9-91ad-f2983a08b301
+id: f42a99f1-6dcf-5f12-9a07-4e740ed9e79f
 status: experimental
 description: |
     Detects potential processes activity of mstsc RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - mstsc.exe
-            - mstsc.exe
+            - 'C:\Windows\System32\mstsc.exe'
+            - '*Windows\System32\mstsc.exe'
     selection_image:
         Image|endswith:
-            - mstsc.exe
-            - mstsc.exe
+            - 'C:\Windows\System32\mstsc.exe'
+            - '*Windows\System32\mstsc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of mstsc

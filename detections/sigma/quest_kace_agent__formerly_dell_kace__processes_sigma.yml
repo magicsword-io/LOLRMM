@@ -1,12 +1,12 @@
 title: Potential Quest KACE Agent (formerly Dell KACE) RMM Tool Process Activity
-id: 70edbdd3-5114-47ba-83de-f6b87609473b
+id: d21690ff-ce70-5b88-aca6-b0133e33c615
 status: experimental
 description: |
     Detects potential processes activity of Quest KACE Agent (formerly Dell KACE) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: konea.exe
+        ParentImage|endswith: 'konea.exe'
     selection_image:
-        Image|endswith: konea.exe
+        Image|endswith: 'konea.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Quest KACE Agent (formerly Dell KACE)

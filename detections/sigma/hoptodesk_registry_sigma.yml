@@ -1,12 +1,12 @@
 title: Potential HopToDesk RMM Tool Registry Activity
-id: 5a643580-395d-4456-87d1-9a6055651987
+id: 4c0dbbe6-33c5-5268-aed0-aaf0c3344071
 status: experimental
 description: |
     Detects potential registry activity of HopToDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,9 @@ logsource:
     category: registry_event
 detection:
     selection:
-        TargetObject|contains: HKEY_USERS\*_Classes\HopToDesk\*
+        TargetObject|contains:
+            - 'HKEY_CURRENT_USER\Software\Classes\HopToDesk\shell\open\command'
+            - 'HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\HopToDesk'
     condition: selection
 falsepositives:
     - Legitimate use of HopToDesk

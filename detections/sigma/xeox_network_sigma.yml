@@ -1,12 +1,12 @@
 title: Potential Xeox RMM Tool Network Activity
-id: 8505dded-1605-4b90-bcd4-c6d833c816c4
+id: 91c5e5d7-2754-59c5-b742-e014118d333d
 status: experimental
 description: |
     Detects potential network activity of Xeox RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.xeox.com
-            - xeox.com
+            - '*.xeox.com'
+            - 'xeox.com'
     condition: selection
 falsepositives:
     - Legitimate use of Xeox

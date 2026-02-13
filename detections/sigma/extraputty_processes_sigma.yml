@@ -1,12 +1,12 @@
 title: Potential ExtraPuTTY RMM Tool Process Activity
-id: 8b630c38-e054-4ece-b4f9-fd5c36e31300
+id: c192fe2b-80af-529f-8073-59107307b310
 status: experimental
 description: |
     Detects potential processes activity of ExtraPuTTY RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
+            - 'C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
     selection_image:
         Image|endswith:
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
+            - 'C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '*Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '*\ExtraPuTTY-0.30-2016-01-28-installer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ExtraPuTTY

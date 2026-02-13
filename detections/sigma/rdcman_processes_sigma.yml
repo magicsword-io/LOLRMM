@@ -1,0 +1,28 @@
+title: Potential RDCMan RMM Tool Process Activity
+id: 9827602b-aa1f-5988-a1ff-a49e592818b7
+status: experimental
+description: |
+    Detects potential processes activity of RDCMan RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-02-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - '*\RDCMan.exe'
+            - '*\RDCMan-x86.exe'
+    selection_image:
+        Image|endswith:
+            - '*\RDCMan.exe'
+            - '*\RDCMan-x86.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of RDCMan
+level: medium

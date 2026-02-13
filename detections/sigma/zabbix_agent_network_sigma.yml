@@ -1,12 +1,12 @@
 title: Potential Zabbix Agent RMM Tool Network Activity
-id: 7f5b4e26-420b-46dd-a3c4-226256c4d84a
+id: 7b136dc7-374f-58a6-9bc5-3b6d3aa08064
 status: experimental
 description: |
     Detects potential network activity of Zabbix Agent RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - zabbix.com
+            - 'user_managed'
+            - 'zabbix.com'
     condition: selection
 falsepositives:
     - Legitimate use of Zabbix Agent

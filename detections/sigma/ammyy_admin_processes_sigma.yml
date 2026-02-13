@@ -1,12 +1,12 @@
 title: Potential Ammyy Admin RMM Tool Process Activity
-id: 295131f7-4740-4607-9ce2-551e8c96096d
+id: 39aec77e-6757-56c8-8f78-794838727fdb
 status: experimental
 description: |
     Detects potential processes activity of Ammyy Admin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - AMMYY_Admin.exe
-            - aa_v*.exe
-            - AMMYY_Admin.exe
-            - AMMYY_Admin.exe
+            - 'AMMYY_Admin.exe'
+            - 'aa_v*.exe'
+            - 'C:\Users\*\Downloads\AMMYY_Admin.exe'
+            - '*\AMMYY_Admin.exe'
     selection_image:
         Image|endswith:
-            - AMMYY_Admin.exe
-            - aa_v*.exe
-            - AMMYY_Admin.exe
-            - AMMYY_Admin.exe
+            - 'AMMYY_Admin.exe'
+            - 'aa_v*.exe'
+            - 'C:\Users\*\Downloads\AMMYY_Admin.exe'
+            - '*\AMMYY_Admin.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Ammyy Admin

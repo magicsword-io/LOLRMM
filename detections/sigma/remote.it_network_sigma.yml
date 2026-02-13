@@ -1,12 +1,12 @@
 title: Potential Remote.it RMM Tool Network Activity
-id: d8ff159e-cd67-4295-9f1a-26db32b2ab06
+id: 717930c5-0cd3-5204-987a-a15f36972ee5
 status: experimental
 description: |
     Detects potential network activity of Remote.it RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - auth.api.remote.it
-            - api.remote.it
-            - remote.it
+            - 'auth.api.remote.it'
+            - 'api.remote.it'
+            - 'remote.it'
     condition: selection
 falsepositives:
     - Legitimate use of Remote.it

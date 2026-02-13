@@ -1,12 +1,12 @@
 title: Potential RemoteCall RMM Tool Network Activity
-id: 6a1fe908-f6e3-47ab-8b62-fbd02f3a0128
+id: bf467a07-e7dd-5a81-9fa6-5fdc1ac073fd
 status: experimental
 description: |
     Detects potential network activity of RemoteCall RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.remotecall.com
-            - *.startsupport.com
-            - remotecall.com
+            - '*.remotecall.com'
+            - '*.startsupport.com'
+            - 'remotecall.com'
     condition: selection
 falsepositives:
     - Legitimate use of RemoteCall

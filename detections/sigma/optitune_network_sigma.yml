@@ -1,12 +1,12 @@
 title: Potential OptiTune RMM Tool Network Activity
-id: 8991fa78-30c2-4504-9503-6b5d9d55878a
+id: be3dd400-8dad-5cf3-a9dd-c96f4ac0da8d
 status: experimental
 description: |
     Detects potential network activity of OptiTune RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.optitune.us
-            - *.opti-tune.com
+            - '*.optitune.us'
+            - '*.opti-tune.com'
     condition: selection
 falsepositives:
     - Legitimate use of OptiTune

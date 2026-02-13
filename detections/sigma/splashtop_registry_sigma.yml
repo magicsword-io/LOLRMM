@@ -1,12 +1,12 @@
 title: Potential Splashtop RMM Tool Registry Activity
-id: 8c1fc139-d98a-4930-b6ea-46508bb60cc5
+id: db2f5b01-c1eb-5a92-8b64-cae5a68bfebe
 status: experimental
 description: |
     Detects potential registry activity of Splashtop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,17 +16,17 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - KLM\SOFTWARE\WOW6432Node\Splashtop Inc.\*
-            - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater
-            - HKLM\SYSTEM\CurrentControlSet\Services\SplashtopRemoteService
-            - HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Remote Session/Operational
-            - HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Status/Operational
-            - HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater\InstallRefCount
-            - HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SplashtopRemoteService
-            - HKU\.DEFAULT\Software\Splashtop Inc.\*
-            - HKU\SID\Software\Splashtop Inc.\*
-            - HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\Splashtop PDF Remote Printer
-            - HKLM\SOFTWARE\WOW6432Node\Splashtop Inc.\Splashtop Remote Server\ClientInfo\*
+            - 'KLM\SOFTWARE\WOW6432Node\Splashtop Inc.\*'
+            - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\SplashtopRemoteService'
+            - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Remote Session/Operational'
+            - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Splashtop-Splashtop Streamer-Status/Operational'
+            - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater\InstallRefCount'
+            - 'HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SplashtopRemoteService'
+            - 'HKU\.DEFAULT\Software\Splashtop Inc.\*'
+            - 'HKU\SID\Software\Splashtop Inc.\*'
+            - 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\Splashtop PDF Remote Printer'
+            - 'HKLM\SOFTWARE\WOW6432Node\Splashtop Inc.\Splashtop Remote Server\ClientInfo\*'
     condition: selection
 falsepositives:
     - Legitimate use of Splashtop

@@ -1,12 +1,12 @@
 title: Potential LiteManager RMM Tool Network Activity
-id: 6e3e81a5-8133-4a43-ba08-31d8279ba7f1
+id: ecd3a3e3-d649-537d-b024-3afd70f6f621
 status: experimental
 description: |
     Detects potential network activity of LiteManager RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.litemanager.ru
-            - *.litemanager.com
-            - litemanager.com
+            - '*.litemanager.ru'
+            - '*.litemanager.com'
+            - 'litemanager.com'
     condition: selection
 falsepositives:
     - Legitimate use of LiteManager

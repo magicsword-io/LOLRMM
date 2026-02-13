@@ -1,12 +1,12 @@
 title: Potential rdpwrap RMM Tool Process Activity
-id: e193726e-dd20-4e5a-ac47-79169375390c
+id: 7616e922-5463-5fa3-bbec-8e9a589e2d4c
 status: experimental
 description: |
     Detects potential processes activity of rdpwrap RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - RDPWInst.exe
-            - RDPCheck.exe
-            - RDPConf.exe
+            - 'RDPWInst.exe'
+            - 'RDPCheck.exe'
+            - 'RDPConf.exe'
     selection_image:
         Image|endswith:
-            - RDPWInst.exe
-            - RDPCheck.exe
-            - RDPConf.exe
+            - 'RDPWInst.exe'
+            - 'RDPCheck.exe'
+            - 'RDPConf.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of rdpwrap

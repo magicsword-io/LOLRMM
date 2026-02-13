@@ -1,12 +1,12 @@
 title: Potential HopToDesk RMM Tool File Activity
-id: f396f6d4-3cd9-4419-bc8f-01bfe3784c12
+id: 59d4a339-5201-5468-b224-3621cbd7cc4b
 status: experimental
 description: |
     Detects potential files activity of HopToDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,13 +16,17 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Program Files (x86)\HopToDesk\HopToDesk.exe
-            - C:\Program Files (x86)\HopToDesk\privacyhelper.exe
-            - C:\Program Files (x86)\HopToDesk\PrivacyMode.dll
-            - C:\Program Files (x86)\HopToDesk\sciter.dll
-            - C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml
-            - C:\Users\*\AppData\Local\Temp\privacyhelper.exe
-            - /System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log
+            - 'C:\Program Files (x86)\HopToDesk\HopToDesk.exe'
+            - 'C:\Program Files (x86)\HopToDesk\privacyhelper.exe'
+            - 'C:\Program Files (x86)\HopToDesk\PrivacyMode.dll'
+            - 'C:\Program Files (x86)\HopToDesk\sciter.dll'
+            - 'C:\Users\*\AppData\Local\Temp\sciter.dll'
+            - 'C:\Users\*\AppData\Local\Temp\privacyhelper.exe'
+            - 'C:\Users\*\AppData\Roaming\HopToDesk\config\*'
+            - 'C:\Users\*\AppData\Roaming\HopToDesk\config\hoptodesk.toml'
+            - 'C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml'
+            - 'C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk_rCURRENT.log'
+            - '/System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log'
     condition: selection
 falsepositives:
     - Legitimate use of HopToDesk

@@ -1,12 +1,12 @@
 title: Potential Pandora RC (eHorus) RMM Tool Network Activity
-id: 25478da8-31ae-46a8-8002-2844a02a9517
+id: 359ba59f-ef84-5395-9d5a-9f4e34890ea0
 status: experimental
 description: |
     Detects potential network activity of Pandora RC (eHorus) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: portal.ehorus.com
+        DestinationHostname|endswith: 'portal.ehorus.com'
     condition: selection
 falsepositives:
     - Legitimate use of Pandora RC (eHorus)

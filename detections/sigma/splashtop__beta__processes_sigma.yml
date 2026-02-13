@@ -1,12 +1,12 @@
 title: Potential Splashtop (Beta) RMM Tool Process Activity
-id: 5781e4e7-4a75-42d9-a600-f0df3bad10cc
+id: a0accb06-f66f-5221-a52e-31412c14a54c
 status: experimental
 description: |
     Detects potential processes activity of Splashtop (Beta) RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - SRServer.exe
-            - SplashtopSOS.exe
-            - Splashtop_Streamer_Windows*.exe
-            - SRManager.exe
+            - 'SRServer.exe'
+            - 'SplashtopSOS.exe'
+            - 'Splashtop_Streamer_Windows*.exe'
+            - 'SRManager.exe'
     selection_image:
         Image|endswith:
-            - SRServer.exe
-            - SplashtopSOS.exe
-            - Splashtop_Streamer_Windows*.exe
-            - SRManager.exe
+            - 'SRServer.exe'
+            - 'SplashtopSOS.exe'
+            - 'Splashtop_Streamer_Windows*.exe'
+            - 'SRManager.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Splashtop (Beta)

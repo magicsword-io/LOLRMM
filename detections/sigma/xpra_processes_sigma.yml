@@ -1,12 +1,12 @@
 title: Potential Xpra RMM Tool Process Activity
-id: 5f62f298-5f92-4bea-b9e1-dc6b01658142
+id: 24075721-f908-5404-9be8-b768d35a1479
 status: experimental
 description: |
     Detects potential processes activity of Xpra RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Xpra-Launcher.exe
-            - Xpra-x86_64_Setup.exe
+            - '*\Xpra-Launcher.exe'
+            - '*\Xpra-x86_64_Setup.exe'
     selection_image:
         Image|endswith:
-            - Xpra-Launcher.exe
-            - Xpra-x86_64_Setup.exe
+            - '*\Xpra-Launcher.exe'
+            - '*\Xpra-x86_64_Setup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Xpra

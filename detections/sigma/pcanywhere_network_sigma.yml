@@ -1,12 +1,12 @@
 title: Potential pcAnywhere RMM Tool Network Activity
-id: ed673768-6a23-4b61-994e-b410b2c36b65
+id: 7685e6b9-2dec-5e64-ba87-6d0fb871c8b7
 status: experimental
 description: |
     Detects potential network activity of pcAnywhere RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: user_managed
+        DestinationHostname|endswith: 'user_managed'
     condition: selection
 falsepositives:
     - Legitimate use of pcAnywhere

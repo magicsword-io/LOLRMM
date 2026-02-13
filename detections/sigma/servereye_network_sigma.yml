@@ -1,12 +1,12 @@
 title: Potential ServerEye RMM Tool Network Activity
-id: 595143f2-0bc4-4e43-be6b-ed77c6d60afc
+id: 73f14021-fba7-5cb6-b111-12e624b99392
 status: experimental
 description: |
     Detects potential network activity of ServerEye RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.server-eye.de
+        DestinationHostname|endswith: '*.server-eye.de'
     condition: selection
 falsepositives:
     - Legitimate use of ServerEye

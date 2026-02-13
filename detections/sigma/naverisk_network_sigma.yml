@@ -1,12 +1,12 @@
 title: Potential Naverisk RMM Tool Network Activity
-id: d7052972-17c6-441e-aeb1-23a29bf9897f
+id: 16288440-a197-5f45-a5d9-ea7ac8b99b7b
 status: experimental
 description: |
     Detects potential network activity of Naverisk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - naverisk.com
+            - 'user_managed'
+            - 'naverisk.com'
     condition: selection
 falsepositives:
     - Legitimate use of Naverisk

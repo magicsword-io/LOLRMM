@@ -1,12 +1,12 @@
 title: Potential Any Support RMM Tool Process Activity
-id: 7799e615-745e-4cd7-948c-b21d032345d2
+id: d31dfc2d-dcac-5d04-96e7-276e60de36a0
 status: experimental
 description: |
     Detects potential processes activity of Any Support RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: ManualLauncher.exe
+        ParentImage|endswith: 'ManualLauncher.exe'
     selection_image:
-        Image|endswith: ManualLauncher.exe
+        Image|endswith: 'ManualLauncher.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Any Support

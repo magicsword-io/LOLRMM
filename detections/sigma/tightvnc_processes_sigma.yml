@@ -1,12 +1,12 @@
 title: Potential TightVNC RMM Tool Process Activity
-id: 0317447a-dc8d-4703-94b5-9404cdef80e9
+id: 5c52bdbd-fab1-5774-bcd8-ad8436091215
 status: experimental
 description: |
     Detects potential processes activity of TightVNC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tvnviewer.exe
-            - TightVNCViewerPortable*.exe
-            - tvnserver.exe
+            - 'tvnviewer.exe'
+            - 'TightVNCViewerPortable*.exe'
+            - 'tvnserver.exe'
     selection_image:
         Image|endswith:
-            - tvnviewer.exe
-            - TightVNCViewerPortable*.exe
-            - tvnserver.exe
+            - 'tvnviewer.exe'
+            - 'TightVNCViewerPortable*.exe'
+            - 'tvnserver.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TightVNC

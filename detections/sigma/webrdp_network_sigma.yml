@@ -1,12 +1,12 @@
 title: Potential WebRDP RMM Tool Network Activity
-id: d6cf8756-43e2-4fa0-adfa-31a51dbf7602
+id: 7f1a2a6d-dd4f-5271-ba85-ee66faae9a5b
 status: experimental
 description: |
     Detects potential network activity of WebRDP RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - github.com/Mikej81/WebRDP
+            - 'user_managed'
+            - 'github.com/Mikej81/WebRDP'
     condition: selection
 falsepositives:
     - Legitimate use of WebRDP

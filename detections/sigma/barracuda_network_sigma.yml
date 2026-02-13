@@ -1,12 +1,12 @@
 title: Potential Barracuda RMM Tool Network Activity
-id: f15d23a0-b1aa-4e74-afe5-4c500848a66d
+id: 3d84d486-cefd-5a6a-89e3-cbf41838f8e2
 status: experimental
 description: |
     Detects potential network activity of Barracuda RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.islonline.net
-            - rmm.barracudamsp.com
-            - barracudamsp.com
+            - '*.islonline.net'
+            - 'rmm.barracudamsp.com'
+            - 'barracudamsp.com'
     condition: selection
 falsepositives:
     - Legitimate use of Barracuda

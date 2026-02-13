@@ -1,12 +1,12 @@
 title: Potential Weezo RMM Tool Network Activity
-id: e7a74923-a27d-4ac5-a165-c0a11b4ca4dc
+id: 7fa8cbd5-7314-5a37-a70d-391dcd140e88
 status: experimental
 description: |
     Detects potential network activity of Weezo RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.weezo.me
-            - weezo.net
-            - *.weezo.net
-            - weezo.en.softonic.com
+            - '*.weezo.me'
+            - 'weezo.net'
+            - '*.weezo.net'
+            - 'weezo.en.softonic.com'
     condition: selection
 falsepositives:
     - Legitimate use of Weezo

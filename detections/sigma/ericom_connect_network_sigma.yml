@@ -1,12 +1,12 @@
 title: Potential Ericom Connect RMM Tool Network Activity
-id: 61428f56-15e4-4f39-8aed-8d2b027024e0
+id: 0e1ba511-f87f-59af-a058-01efb0b57e5c
 status: experimental
 description: |
     Detects potential network activity of Ericom Connect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - ericom.com
+            - 'user_managed'
+            - 'ericom.com'
     condition: selection
 falsepositives:
     - Legitimate use of Ericom Connect

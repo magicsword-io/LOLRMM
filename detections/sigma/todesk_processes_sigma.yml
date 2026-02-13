@@ -1,12 +1,12 @@
 title: Potential ToDesk RMM Tool Process Activity
-id: 4a1e51ee-e208-4281-8977-492e0b98097a
+id: 3c5eb466-4f0e-5099-8ebe-d003dbca2fb1
 status: experimental
 description: |
     Detects potential processes activity of ToDesk RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - todesk.exe
-            - ToDesk_Service.exe
-            - ToDesk_Setup.exe
+            - 'todesk.exe'
+            - 'ToDesk_Service.exe'
+            - 'ToDesk_Setup.exe'
     selection_image:
         Image|endswith:
-            - todesk.exe
-            - ToDesk_Service.exe
-            - ToDesk_Setup.exe
+            - 'todesk.exe'
+            - 'ToDesk_Service.exe'
+            - 'ToDesk_Setup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ToDesk

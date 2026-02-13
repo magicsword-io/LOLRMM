@@ -1,12 +1,12 @@
 title: Potential Ericom Connect RMM Tool Process Activity
-id: cf91f3b2-c602-46db-a818-561fb133d981
+id: be98e39d-09bf-5678-aa72-78672b5c2ddd
 status: experimental
 description: |
     Detects potential processes activity of Ericom Connect RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - EricomConnectRemoteHost*.exe
-            - ericomconnnectconfigurationtool.exe
+            - 'EricomConnectRemoteHost*.exe'
+            - 'ericomconnnectconfigurationtool.exe'
     selection_image:
         Image|endswith:
-            - EricomConnectRemoteHost*.exe
-            - ericomconnnectconfigurationtool.exe
+            - 'EricomConnectRemoteHost*.exe'
+            - 'ericomconnnectconfigurationtool.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Ericom Connect

@@ -1,12 +1,12 @@
 title: Potential LogMeIn rescue RMM Tool Process Activity
-id: 10e05dda-0352-4bd9-a415-00d7cb5791e7
+id: 30ad9cfb-af50-58ba-a878-b08e7b080a94
 status: experimental
 description: |
     Detects potential processes activity of LogMeIn rescue RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,20 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - support-logmeinrescue*.exe
-            - support-logmeinrescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue_srv.exe
-            - lmi_rescue.exe
+            - 'support-logmeinrescue*.exe'
+            - 'support-logmeinrescue.exe'
+            - 'lmi_rescue.exe'
+            - 'C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe'
+            - 'C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe'
+            - 'C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe'
     selection_image:
         Image|endswith:
-            - support-logmeinrescue*.exe
-            - support-logmeinrescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue_srv.exe
-            - lmi_rescue.exe
+            - 'support-logmeinrescue*.exe'
+            - 'support-logmeinrescue.exe'
+            - 'lmi_rescue.exe'
+            - 'C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe'
+            - 'C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe'
+            - 'C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LogMeIn rescue

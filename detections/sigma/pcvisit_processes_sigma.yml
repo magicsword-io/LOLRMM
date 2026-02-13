@@ -1,12 +1,12 @@
 title: Potential Pcvisit RMM Tool Process Activity
-id: 257a4755-f13b-48c6-bab0-f2566315df94
+id: 69795c8e-afe5-51d8-92ca-0ac51ab59fa7
 status: experimental
 description: |
     Detects potential processes activity of Pcvisit RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pcvisit.exe
-            - pcvisit_client.exe
-            - pcvisit-easysupport.exe
-            - pcvisit_service_client.exe
+            - 'pcvisit.exe'
+            - 'pcvisit_client.exe'
+            - 'pcvisit-easysupport.exe'
+            - 'pcvisit_service_client.exe'
     selection_image:
         Image|endswith:
-            - pcvisit.exe
-            - pcvisit_client.exe
-            - pcvisit-easysupport.exe
-            - pcvisit_service_client.exe
+            - 'pcvisit.exe'
+            - 'pcvisit_client.exe'
+            - 'pcvisit-easysupport.exe'
+            - 'pcvisit_service_client.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pcvisit

@@ -1,12 +1,12 @@
 title: Potential Auvik RMM Tool Process Activity
-id: 5e122c70-c7cd-4f0d-ab0b-c5d0ba91ffab
+id: 41f0444d-6d10-536a-95f3-09a0c8bdec06
 status: experimental
 description: |
     Detects potential processes activity of Auvik RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - auvik.engine.exe
-            - auvik.agent.exe
+            - 'auvik.engine.exe'
+            - 'auvik.agent.exe'
     selection_image:
         Image|endswith:
-            - auvik.engine.exe
-            - auvik.agent.exe
+            - 'auvik.engine.exe'
+            - 'auvik.agent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Auvik

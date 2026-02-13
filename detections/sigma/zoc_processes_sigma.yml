@@ -1,12 +1,12 @@
 title: Potential ZOC RMM Tool Process Activity
-id: 0f2f8d37-6bf4-4d16-ba82-1634921d95c4
+id: 29a8c43e-86f1-5a56-bc98-b0535f3f4481
 status: experimental
 description: |
     Detects potential processes activity of ZOC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: zoc.exe
+        ParentImage|endswith: '*\zoc.exe'
     selection_image:
-        Image|endswith: zoc.exe
+        Image|endswith: '*\zoc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ZOC

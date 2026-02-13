@@ -1,12 +1,12 @@
 title: Potential SuperOps RMM Tool Network Activity
-id: 79d52531-1c2f-4ca7-9625-c5bb6c5db1e2
+id: 7f604aa8-b2fd-5b59-9e74-c6591082cccb
 status: experimental
 description: |
     Detects potential network activity of SuperOps RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,11 +16,11 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.superopsbeta.com
-            - superops.ai
-            - serv.superopsalpha.com
-            - *.superops.ai
-            - *.superopsalpha.com
+            - '*.superopsbeta.com'
+            - 'superops.ai'
+            - 'serv.superopsalpha.com'
+            - '*.superops.ai'
+            - '*.superopsalpha.com'
     condition: selection
 falsepositives:
     - Legitimate use of SuperOps

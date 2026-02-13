@@ -1,12 +1,12 @@
 title: Potential VNC RMM Tool Network Activity
-id: 9daee246-13b9-49b9-b68b-520b55b2eea8
+id: 577684d7-0362-5e0f-a75c-feafc46e1468
 status: experimental
 description: |
     Detects potential network activity of VNC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - realvnc.com/en/connect/download/vnc
+            - 'user_managed'
+            - 'realvnc.com/en/connect/download/vnc'
     condition: selection
 falsepositives:
     - Legitimate use of VNC

@@ -1,12 +1,12 @@
 title: Potential Splashtop RMM Tool File Activity
-id: 47990f7f-bd65-4bb1-bf63-2614df261554
+id: 74f4ab6b-0930-5d18-925f-7f12c17703bd
 status: experimental
 description: |
     Detects potential files activity of Splashtop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,19 +16,19 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Status%4Operational.evtx
-            - C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Remote Session%4Operational.evtx
-            - %PROGRAMDATA%\Splashtop\Temp\log\FTCLog.txt
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\agent_log.txt
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\SPLog.txt
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\svcinfo.txt
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\sysinfo.txt
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRService.exe
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRAgent.exe
-            - C:\Program Files (x86)\Splashtop\Splashtop Software Updater\SSUAgent.exe
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRUtility.exe
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRFeature.exe
-            - C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\db\SRAgent.sqlite3
+            - 'C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Status%4Operational.evtx'
+            - 'C:\windows\System32\winevt\Logs\Splashtop-Splashtop Streamer-Remote Session%4Operational.evtx'
+            - '%PROGRAMDATA%\Splashtop\Temp\log\FTCLog.txt'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\agent_log.txt'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\SPLog.txt'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\svcinfo.txt'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\log\sysinfo.txt'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRService.exe'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRAgent.exe'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Software Updater\SSUAgent.exe'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRUtility.exe'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\SRFeature.exe'
+            - 'C:\Program Files (x86)\Splashtop\Splashtop Remote\Server\db\SRAgent.sqlite3'
     condition: selection
 falsepositives:
     - Legitimate use of Splashtop

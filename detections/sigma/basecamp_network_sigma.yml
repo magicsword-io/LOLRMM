@@ -1,12 +1,12 @@
 title: Potential Basecamp RMM Tool Network Activity
-id: 890f9d7c-6d30-468e-aee2-2b10c767fff6
+id: 7b84e0c7-ca69-51df-ab26-b1a83afae31c
 status: experimental
 description: |
     Detects potential network activity of Basecamp RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: basecamp.com
+        DestinationHostname|endswith: 'basecamp.com'
     condition: selection
 falsepositives:
     - Legitimate use of Basecamp

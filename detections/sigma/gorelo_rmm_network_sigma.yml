@@ -1,12 +1,12 @@
 title: Potential Gorelo RMM RMM Tool Network Activity
-id: aa9c32ed-6c98-4c9f-9512-7f55c993872e
+id: f81ba29a-1bd3-5edb-9a5c-6e90e2fc90d5
 status: experimental
 description: |
     Detects potential network activity of Gorelo RMM RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,13 +16,13 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - app.gorelo.io
-            - gorelo-rmm.azurewebsites.net
-            - gw.usw.gorelo.tech
-            - lr.rmm.pod1.usw.gorelo.tech
-            - public.rmm.pod1.usw.gorelo.tech
-            - r1.rmm.uw.gorelo.tech
-            - sr.rmm.pod1.usw.gorelo.tech
+            - 'app.gorelo.io'
+            - 'gorelo-rmm.azurewebsites.net'
+            - 'gw.usw.gorelo.tech'
+            - 'lr.rmm.pod1.usw.gorelo.tech'
+            - 'public.rmm.pod1.usw.gorelo.tech'
+            - 'r1.rmm.uw.gorelo.tech'
+            - 'sr.rmm.pod1.usw.gorelo.tech'
     condition: selection
 falsepositives:
     - Legitimate use of Gorelo RMM

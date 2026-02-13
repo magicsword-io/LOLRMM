@@ -1,12 +1,12 @@
 title: Potential Ericom AccessNow RMM Tool Process Activity
-id: d690f9fc-4a5d-44e6-8a1a-b9ffe1704d80
+id: f77f551f-7c4f-58c4-85cb-af7d8cf941ed
 status: experimental
 description: |
     Detects potential processes activity of Ericom AccessNow RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - accessserver*.exe
-            - accessserver.exe
+            - 'accessserver*.exe'
+            - 'accessserver.exe'
     selection_image:
         Image|endswith:
-            - accessserver*.exe
-            - accessserver.exe
+            - 'accessserver*.exe'
+            - 'accessserver.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Ericom AccessNow

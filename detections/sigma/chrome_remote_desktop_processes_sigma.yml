@@ -1,12 +1,12 @@
 title: Potential Chrome Remote Desktop RMM Tool Process Activity
-id: bc915205-3ead-4c5b-9cfc-5858b9370aeb
+id: ea591f30-b9c4-510f-a485-719096f06a0f
 status: experimental
 description: |
     Detects potential processes activity of Chrome Remote Desktop RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - remote_host.exe
-            - remoting_host.exe
-            - remoting_host.exe
+            - 'remote_host.exe'
+            - 'remoting_host.exe'
+            - '*\remoting_host.exe'
     selection_image:
         Image|endswith:
-            - remote_host.exe
-            - remoting_host.exe
-            - remoting_host.exe
+            - 'remote_host.exe'
+            - 'remoting_host.exe'
+            - '*\remoting_host.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Chrome Remote Desktop

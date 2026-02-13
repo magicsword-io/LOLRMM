@@ -1,12 +1,12 @@
 title: Potential Ammyy Admin RMM Tool Network Activity
-id: 68d4c11a-9996-4883-aeda-c081efffa7c7
+id: b039d751-e0ca-5a6d-a45d-6d832f7d4cc4
 status: experimental
 description: |
     Detects potential network activity of Ammyy Admin RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,11 +16,11 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - ammyy.com
-            - *ammyy.com
-            - 136.243.104.235
-            - 136.243.104.242
-            - 136.243.18.122
+            - 'ammyy.com'
+            - '*ammyy.com'
+            - '136.243.104.235'
+            - '136.243.104.242'
+            - '136.243.18.122'
     condition: selection
 falsepositives:
     - Legitimate use of Ammyy Admin

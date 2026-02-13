@@ -1,12 +1,12 @@
 title: Potential TeamViewer RMM Tool File Activity
-id: fe921b8e-7f8f-4e35-a91e-a4579aa4fd09
+id: b6d63ccd-6c8c-5afd-b750-79aeb7542dea
 status: experimental
 description: |
     Detects potential files activity of TeamViewer RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,23 +16,23 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Users\<username>\AppData\Local\Temp\TeamViewer\TV15Install.log
-            - TeamViewer\d\d_Logfile\.log
-            - C:\Program Files\TeamViewer\Connections_incoming.txt
-            - C:\Program Files\TeamViewer\TVNetwork.log
-            - %LOCALAPPDATA%\Temp\TeamViewer\TV15Install.log
-            - %APPDATA%\\TeamViewer\\TeamViewer\d\d_Logfile\.log
-            - teamviewerqs.exe
-            - tv_w32.exe
-            - tv_w64.exe
-            - tv_x64.exe
-            - teamviewer.exe
-            - teamviewer_service.exe
-            - %LOCALAPPDATA%\TeamViewer\Database\tvchatfilecache.db
-            - %LOCALAPPDATA%\TeamViewer\RemotePrinting\tvprint.db
-            - %PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\TeamViewer.lnk
-            - C:\Program Files*\TeamViewer\connections*.txt
-            - C:\Users\*\AppData\Roaming\TeamViewer\MRU\RemoteSupport\*tvc
+            - 'C:\Users\<username>\AppData\Local\Temp\TeamViewer\TV15Install.log'
+            - 'TeamViewer\d\d_Logfile\.log'
+            - 'C:\Program Files\TeamViewer\Connections_incoming.txt'
+            - 'C:\Program Files\TeamViewer\TVNetwork.log'
+            - '%LOCALAPPDATA%\Temp\TeamViewer\TV15Install.log'
+            - '%APPDATA%\\TeamViewer\\TeamViewer\d\d_Logfile\.log'
+            - 'teamviewerqs.exe'
+            - 'tv_w32.exe'
+            - 'tv_w64.exe'
+            - 'tv_x64.exe'
+            - 'teamviewer.exe'
+            - 'teamviewer_service.exe'
+            - '%LOCALAPPDATA%\TeamViewer\Database\tvchatfilecache.db'
+            - '%LOCALAPPDATA%\TeamViewer\RemotePrinting\tvprint.db'
+            - '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\TeamViewer.lnk'
+            - 'C:\Program Files*\TeamViewer\connections*.txt'
+            - 'C:\Users\*\AppData\Roaming\TeamViewer\MRU\RemoteSupport\*tvc'
     condition: selection
 falsepositives:
     - Legitimate use of TeamViewer

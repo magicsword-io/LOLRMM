@@ -1,12 +1,12 @@
 title: Potential Goverlan RMM Tool Network Activity
-id: a74bcadf-a635-4c4b-a522-f685abb84b3d
+id: c0b88393-a1e8-5b95-8f5d-f9e583f22585
 status: experimental
 description: |
     Detects potential network activity of Goverlan RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - goverlan.com
+            - 'user_managed'
+            - 'goverlan.com'
     condition: selection
 falsepositives:
     - Legitimate use of Goverlan

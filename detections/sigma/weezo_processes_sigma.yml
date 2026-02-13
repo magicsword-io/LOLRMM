@@ -1,12 +1,12 @@
 title: Potential Weezo RMM Tool Process Activity
-id: 8689f4e9-dfa2-491c-ab69-4c128db3bd35
+id: 5fbb569a-d96f-5136-a4af-b8d065c73189
 status: experimental
 description: |
     Detects potential processes activity of Weezo RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - weezohttpd.exe
-            - weezo.exe
-            - weezo setup*.exe
+            - 'weezohttpd.exe'
+            - 'weezo.exe'
+            - 'weezo setup*.exe'
     selection_image:
         Image|endswith:
-            - weezohttpd.exe
-            - weezo.exe
-            - weezo setup*.exe
+            - 'weezohttpd.exe'
+            - 'weezo.exe'
+            - 'weezo setup*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Weezo

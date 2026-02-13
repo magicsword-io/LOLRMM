@@ -1,12 +1,12 @@
 title: Potential Guacamole RMM Tool Process Activity
-id: 3b8ab621-493a-4aaf-bdd0-d6080dcde19f
+id: 8095d495-5970-5b25-8d8b-3767d37eee2b
 status: experimental
 description: |
     Detects potential processes activity of Guacamole RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: guacd.exe
+        ParentImage|endswith: 'guacd.exe'
     selection_image:
-        Image|endswith: guacd.exe
+        Image|endswith: 'guacd.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Guacamole

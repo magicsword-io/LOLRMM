@@ -1,12 +1,12 @@
 title: Potential DameWare RMM Tool Network Activity
-id: 58145224-11b2-4a3e-8d37-1f7769459ece
+id: 3c6b800b-0504-5583-9396-02b4defb8181
 status: experimental
 description: |
     Detects potential network activity of DameWare RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: dameware.com
+        DestinationHostname|endswith: 'dameware.com'
     condition: selection
 falsepositives:
     - Legitimate use of DameWare

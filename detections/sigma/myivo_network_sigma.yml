@@ -1,12 +1,12 @@
 title: Potential MyIVO RMM Tool Network Activity
-id: 85f1f9d1-1cf6-4adf-bd87-b0a66390ce4d
+id: d66ae447-2499-5096-9072-1bcf707db32b
 status: experimental
 description: |
     Detects potential network activity of MyIVO RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: myivo-server.software.informer.com
+        DestinationHostname|endswith: 'myivo-server.software.informer.com'
     condition: selection
 falsepositives:
     - Legitimate use of MyIVO

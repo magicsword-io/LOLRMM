@@ -1,12 +1,12 @@
 title: Potential Comodo RMM RMM Tool Network Activity
-id: cd536a9b-4222-4866-9df4-a5d43aaf88bf
+id: d083615c-4f20-53a6-b19f-342e62825f96
 status: experimental
 description: |
     Detects potential network activity of Comodo RMM RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.itsm-us1.comodo.com
-            - *mdmsupport.comodo.com
-            - one.comodo.com
+            - '*.itsm-us1.comodo.com'
+            - '*mdmsupport.comodo.com'
+            - 'one.comodo.com'
     condition: selection
 falsepositives:
     - Legitimate use of Comodo RMM

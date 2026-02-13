@@ -1,12 +1,12 @@
 title: Potential UltraVNC RMM Tool Process Activity
-id: 5d95a95f-430b-49da-881c-01b48b6615da
+id: 771adda6-1d4b-5b1a-8db1-2c6cf26c168c
 status: experimental
 description: |
     Detects potential processes activity of UltraVNC RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: UltraVNC*.exe
+        ParentImage|endswith: 'UltraVNC*.exe'
     selection_image:
-        Image|endswith: UltraVNC*.exe
+        Image|endswith: 'UltraVNC*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of UltraVNC

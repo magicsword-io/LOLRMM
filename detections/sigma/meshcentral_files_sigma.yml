@@ -1,12 +1,12 @@
 title: Potential MeshCentral RMM Tool File Activity
-id: 1bb123a1-a6df-4f6f-88ac-35881e1ba861
+id: f5ca3e14-c521-568f-84d2-eb99fee701f7
 status: experimental
 description: |
     Detects potential files activity of MeshCentral RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,14 +16,14 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Program Files\Mesh Agent\MeshAgent.exe
-            - C:\Program Files\Mesh Agent\MeshAgent.msh
-            - /usr/local/mesh_services/meshagent/meshagent/meshagent
-            - /usr/local/mesh_services/meshagent/meshagent/meshagent.db
-            - /usr/local/mesh_services/meshagent/meshagent/meshagent.msh
-            - /usr/local/mesh_services/meshagent/meshagent
-            - /usr/local/mesh_services/meshagent/meshagent.db
-            - /usr/local/mesh_services/meshagent/meshagent.msh
+            - 'C:\Program Files\Mesh Agent\MeshAgent.exe'
+            - 'C:\Program Files\Mesh Agent\MeshAgent.msh'
+            - '/usr/local/mesh_services/meshagent/meshagent/meshagent'
+            - '/usr/local/mesh_services/meshagent/meshagent/meshagent.db'
+            - '/usr/local/mesh_services/meshagent/meshagent/meshagent.msh'
+            - '/usr/local/mesh_services/meshagent/meshagent'
+            - '/usr/local/mesh_services/meshagent/meshagent.db'
+            - '/usr/local/mesh_services/meshagent/meshagent.msh'
     condition: selection
 falsepositives:
     - Legitimate use of MeshCentral

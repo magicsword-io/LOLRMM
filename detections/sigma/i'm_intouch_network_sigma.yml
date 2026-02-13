@@ -1,12 +1,12 @@
 title: Potential I'm InTouch RMM Tool Network Activity
-id: 62eafab4-705e-4fe8-af20-975cf9ef229b
+id: e8cfa90a-be6a-5f6e-a719-38d7ff697f36
 status: experimental
 description: |
     Detects potential network activity of I'm InTouch RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.01com.com
-            - 01com.com/imintouch-remote-pc-desktop
+            - '*.01com.com'
+            - '01com.com/imintouch-remote-pc-desktop'
     condition: selection
 falsepositives:
     - Legitimate use of I'm InTouch

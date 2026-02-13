@@ -1,12 +1,12 @@
 title: Potential HelpBeam RMM Tool Network Activity
-id: 858bb23e-4c2b-45b7-9fa5-aae194a58eb1
+id: 25b396bb-34a6-543b-809c-b6693514a244
 status: experimental
 description: |
     Detects potential network activity of HelpBeam RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: helpbeam.software.informer.com
+        DestinationHostname|endswith: 'helpbeam.software.informer.com'
     condition: selection
 falsepositives:
     - Legitimate use of HelpBeam

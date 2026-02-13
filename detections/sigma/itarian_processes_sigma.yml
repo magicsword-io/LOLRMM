@@ -1,12 +1,12 @@
 title: Potential Itarian RMM Tool Process Activity
-id: c3e4f4a8-5086-404b-a03c-4e679e12125d
+id: b9a56429-bc01-5884-8531-ec5aa1bb89a9
 status: experimental
 description: |
     Detects potential processes activity of Itarian RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,28 +16,28 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ITSMAgent.exe
-            - RViewer.exe
-            - ItsmRsp.exe
-            - RAccess.exe
-            - RmmService.exe
-            - ITarianRemoteAccessSetup.exe
-            - RDesktop.exe
-            - ComodoRemoteControl.exe
-            - ITSMService.exe
-            - RHost.exe
+            - 'ITSMAgent.exe'
+            - 'RViewer.exe'
+            - 'ItsmRsp.exe'
+            - 'RAccess.exe'
+            - 'RmmService.exe'
+            - 'ITarianRemoteAccessSetup.exe'
+            - 'RDesktop.exe'
+            - 'ComodoRemoteControl.exe'
+            - 'ITSMService.exe'
+            - 'RHost.exe'
     selection_image:
         Image|endswith:
-            - ITSMAgent.exe
-            - RViewer.exe
-            - ItsmRsp.exe
-            - RAccess.exe
-            - RmmService.exe
-            - ITarianRemoteAccessSetup.exe
-            - RDesktop.exe
-            - ComodoRemoteControl.exe
-            - ITSMService.exe
-            - RHost.exe
+            - 'ITSMAgent.exe'
+            - 'RViewer.exe'
+            - 'ItsmRsp.exe'
+            - 'RAccess.exe'
+            - 'RmmService.exe'
+            - 'ITarianRemoteAccessSetup.exe'
+            - 'RDesktop.exe'
+            - 'ComodoRemoteControl.exe'
+            - 'ITSMService.exe'
+            - 'RHost.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Itarian

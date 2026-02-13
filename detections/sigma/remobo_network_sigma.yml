@@ -1,12 +1,12 @@
 title: Potential Remobo RMM Tool Network Activity
-id: 346c9a37-5f2b-4fc8-90eb-7a547780a29d
+id: 0ea3cb85-3ba6-52d7-bcde-aeaf59720860
 status: experimental
 description: |
     Detects potential network activity of Remobo RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-02-03
 tags:
     - attack.execution
     - attack.t1219
@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - remobo.en.softonic.com
+            - 'user_managed'
+            - 'remobo.en.softonic.com'
     condition: selection
 falsepositives:
     - Legitimate use of Remobo
