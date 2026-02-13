@@ -5,7 +5,7 @@ Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
 Details:
-    Website: ''
+    Website: 'https://web.laplink.com/product/laplink-gold'
     PEMetadata:
         Filename: ''
         OriginalFileName: ''
@@ -27,7 +27,7 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - wen.laplink.com/product/laplink-gold
+              - web.laplink.com/product/laplink-gold
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_network_sigma.yml
