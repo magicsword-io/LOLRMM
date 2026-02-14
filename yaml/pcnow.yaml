@@ -1,6 +1,6 @@
-Name: Pcnow
-Category: 'RMM'
-Description: Pcnow is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Name: PCNow
+Category: RMM
+Description: PCNow is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
 LastModified: '2024-08-02'
@@ -17,9 +17,7 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - mwcliun.exe
-        - pcnmgr.exe
-        - webexpcnow.exe
+        - pcnow.exe
 Artifacts:
     Disk: []
     EventLog: []
@@ -27,13 +25,13 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - au.pcmag.com/utilities/21470/webex-pcnow
+              - pcnow.com
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml
-      Description: Detects potential network activity of Pcnow RMM tool
+      Description: Detects potential network activity of PCNow RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml
-      Description: Detects potential processes activity of Pcnow RMM tool
+      Description: Detects potential processes activity of PCNow RMM tool
 References:
-    - http://pcnow.webex.com/ - DOA as of 2024
+    - https://www.pcnow.com
 Acknowledgement: []

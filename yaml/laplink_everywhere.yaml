@@ -1,9 +1,9 @@
 Name: Laplink Everywhere
-Category: 'RMM'
+Category: RMM
 Description: Laplink Everywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: 'https://everywhere.laplink.com/'
     PEMetadata:
@@ -42,3 +42,26 @@ Detections:
 References:
     - https://everywhere.laplink.com/docs
 Acknowledgement: []
+CodeSigning:
+    search_names: []
+    company_names: []
+    signer_names:
+        - Laplink Software
+        - Laplink Software Inc.
+    certificates:
+        - signer_name: Laplink Software
+          certificate_thumbprint: N/A
+          tbs_sha256: ''
+          tbs_sha1: 57A69DC3D72F650E411223F24397C7634C077254
+        - signer_name: Laplink Software
+          certificate_thumbprint: N/A
+          tbs_sha256: ''
+          tbs_sha1: AA448E02273F6B653CBE0607D6F5DE3EAEBC0263
+        - signer_name: Laplink Software Inc.
+          certificate_thumbprint: N/A
+          tbs_sha256: ''
+          tbs_sha1: B7F6BD9F60F2001B96075AF1E8E9B5F684890B10
+        - signer_name: Laplink Software
+          certificate_thumbprint: N/A
+          tbs_sha256: ''
+          tbs_sha1: 01EEA5225BFBE91579EB0753382E4D87A4765D8D

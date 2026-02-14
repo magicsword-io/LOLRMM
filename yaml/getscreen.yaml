@@ -1,9 +1,9 @@
 Name: GetScreen
-Category: 'RMM'
+Category: RMM
 Description: GetScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: 'https://getscreen.me/'
     PEMetadata:
@@ -39,3 +39,35 @@ Detections:
 References:
     - https://docs.getscreen.me/self-hosted/system-requirements/
 Acknowledgement: []
+CodeSigning:
+    search_names:
+        - 2025-12-14_6f3bd1ad8919f9cd6ab1752009741a86_amadey_darkgate_elex_glassworm_helldown_hijackloader_luca-stealer_lynx_njrat
+        - getscreen.me
+        - rfbhr3zzo.exe
+    company_names: []
+    signer_names:
+        - Kopetra Ltd.
+    certificates:
+        - signer_name: Kopetra Ltd.
+          certificate_thumbprint: 8371992440D77154BB64BF0872E861D6372F70E8
+          tbs_sha256: 18450D4DFF502326C24240AA0A1A1971DA4DC7C96D3613B64180FDCE318A710A
+          tbs_sha1: ''
+          certificate_der_base64: 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
+FileHashes:
+    authenticode:
+        - file_name: rfbhr3zzo.exe
+          sha256: 05C954C3A8FB10AAA661264282C52975EA1C74A32B8433CED2555B2CF25EFF60
+          sha1: 92AFA21260BC69868A680E6052BC572A19FC88EC
+        - file_name: Getscreen.me
+          sha256: 925EF1C48B8179F2623519434DBB7CD72E5CA92633EDB7841449AC415B61AB49
+          sha1: 0CE759DD9ACC3250F8D237E10DACB6FEA5A1C3F3
+        - file_name: 2025-12-14_6f3bd1ad8919f9cd6ab1752009741a86_amadey_darkgate_elex_glassworm_helldown_hijackloader_luca-stealer_lynx_njrat
+          sha256: 35E306C5BA02B38E3E693E1EEBEEEE44144606DFB68A4C6E516319958EDD907B
+          sha1: 2379071527D41E23C58CE5CED0344DD3C220C4EA
+    page:
+        - file_name: Getscreen.me
+          sha256: 4ABE10F84D0F58D30A0D8EAE3092987E72507D63253A1D3B190FE7A65263B0BF
+          sha1: 10B8E5D5EE6A573F000233DEF7E7C42136B6BE58
+        - file_name: 2025-12-14_6f3bd1ad8919f9cd6ab1752009741a86_amadey_darkgate_elex_glassworm_helldown_hijackloader_luca-stealer_lynx_njrat
+          sha256: CAC3DA59CBE1207100FCF9DD22A16756767EBA54AAE765BBE760C0E929A5C27B
+          sha1: C73D2C372F8DDB0A11F1AFD84E7CF1D529DD8786

@@ -1,9 +1,9 @@
 Name: Laplink Gold
-Category: 'RMM'
+Category: RMM
 Description: Laplink Gold is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: 'https://web.laplink.com/product/laplink-gold'
     PEMetadata:
@@ -37,3 +37,37 @@ Detections:
 References:
     - https://web.laplink.com/product/laplink-gold
 Acknowledgement: []
+CodeSigning:
+    search_names:
+        - tsircusr
+        - welcome.exe
+        - welcres.dll
+    company_names: []
+    signer_names:
+        - Outbyte Computing Pty Ltd
+    certificates:
+        - signer_name: Outbyte Computing Pty Ltd
+          certificate_thumbprint: N/A
+          tbs_sha256: 20AEF3F8CE217A4F1CBBE73321B97DC97E7DA76A82ED88FD3F21E5AAB91719B0
+          tbs_sha1: ''
+FileHashes:
+    authenticode:
+        - file_name: welcres.dll
+          sha256: 253526E0D9CA962CF1C63A2393E4080A4CAB40109368F87535C47A1924BBC8E1
+          sha1: 410A8E54B9F666FBD3926E5F84627496C85464EF
+        - file_name: TSIRCUSR
+          sha256: 5727381CC72576FF024CD9D8AC2DDF319BFBE8C0BA047978168983EF5A46D8A0
+          sha1: A75A8804DDC2FEC98338CB9983A4DBD744CF6C8C
+        - file_name: welcome.exe
+          sha256: 9A2E54A5FECA1884D72A92C023873D67A11BC8E03B5285782B08D78794544BD3
+          sha1: 3F36B10BD8EE626C268217136E6D9C05AC9B61CB
+    page:
+        - file_name: welcres.dll
+          sha256: 806FF080BA028A0534F58FF28588DE123BDDC6BA44F13674751B5C614FC96653
+          sha1: 2735A89D5EAB557343F510376C01461ECF8F277B
+        - file_name: TSIRCUSR
+          sha256: ABE4604DCE28077419994EBC8165C80F2D300452CFB74AF1BAAFA0E39F04854C
+          sha1: 5DCA73F709D8408E7F41C0851C3D0AD8CCC8F779
+        - file_name: welcome.exe
+          sha256: C75C7DCCD6B8525EC3C5D90B4A667DF052FF25A80DE8F4FCF8411E75BF2F5555
+          sha1: 689F8DBC71F9A152B1716206ABFED15C80F2AD80

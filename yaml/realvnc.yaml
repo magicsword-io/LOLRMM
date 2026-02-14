@@ -1,5 +1,5 @@
 Name: RealVNC
-Category: 'RMM'
+Category: RMM
 Description: RealVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
@@ -16,12 +16,34 @@ Details:
     SupportedOS: []
     Capabilities: []
     Vulnerabilities: []
-    InstallationPaths: []
+    InstallationPaths:
+        - RealVNC.exe
+        - vncserver.exe
+        - vncviewer.exe
+        - vncserver-x11-serviced
+        - vncserver-virtuald
+        - vncserverui.exe
+        - vncviewer*
+        - C:\Program Files\RealVNC\*
+        - '*\VNC Server\*'
+        - '*\VNC Viewer\*'
+        - '*\RealVNC\*'
+        - '*\vncviewer.exe'
 Artifacts:
     Disk: []
     EventLog: []
     Registry: []
-    Network: []
-Detections: []
-References: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.realvnc.com'
+              - realvnc.com
+          Ports: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/realvnc_network_sigma.yml
+      Description: Detects potential network activity of RealVNC RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/realvnc_processes_sigma.yml
+      Description: Detects potential processes activity of RealVNC RMM tool
+References:
+    - https://www.realvnc.com/en/connect/download/vnc/
 Acknowledgement: []

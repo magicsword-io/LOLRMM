@@ -1,9 +1,9 @@
 Name: Ericom Connect
-Category: 'RMM'
+Category: RMM
 Description: Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: 'https://www.ericom.com/connect-accessnow/'
     PEMetadata:
@@ -37,3 +37,15 @@ Detections:
 References:
     - https://www.ericom.com/connect-accessnow/
 Acknowledgement: []
+CodeSigning:
+    search_names:
+        - setupsuite
+    company_names: []
+    signer_names: []
+    certificates: []
+FileHashes:
+    authenticode:
+        - file_name: SetupSuite
+          sha256: 8192BE693F725A6894110756A4AC198EA9D7A9A206FA0AAB4B6D550631469DEE
+          sha1: B7FA745F634101966C7806CAEFC503546D10D42F
+    page: []

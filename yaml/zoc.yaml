@@ -1,9 +1,9 @@
 Name: ZOC
-Category: 'RMM'
+Category: RMM
 Description: ZOC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: 'https://www.emtec.com/zoc/index.html'
     PEMetadata:
@@ -30,3 +30,14 @@ Detections:
       Description: Detects potential processes activity of ZOC RMM tool
 References: []
 Acknowledgement: []
+CodeSigning:
+    search_names: []
+    company_names: []
+    signer_names: []
+    certificates:
+        - signer_name: Markus Schmidt
+          certificate_thumbprint: DDE8807409ED3EB4B52D49146DB4B6510AC054F4
+          certificate_der_base64: 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
+          src_file_sha256: a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
+          src_file_path: downloaded_files/zoc/a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d
+          src_file_company: EmTec Innovative Software

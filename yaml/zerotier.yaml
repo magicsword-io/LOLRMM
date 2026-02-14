@@ -1,9 +1,9 @@
 Name: ZeroTier
-Category: 'RMM'
+Category: RMM
 Description: ZeroTier is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-12-14'
 Details:
     Website: 'https://www.zerotier.com/'
     PEMetadata:
@@ -38,3 +38,18 @@ Detections:
 References:
     - https://my.zerotier.com/
 Acknowledgement: []
+CodeSigning:
+    search_names: []
+    company_names: []
+    signer_names:
+        - ZEROTIER, INC.
+        - ZeroTier, Inc.
+    certificates:
+        - signer_name: ZEROTIER, INC.
+          certificate_thumbprint: N/A
+          tbs_sha256: 767BDA9E3E8B2241DEB7825AACE32C92793E753F7AD3DDCDFAEBC1F4AD9F28C9
+          tbs_sha1: ''
+        - signer_name: ZeroTier, Inc.
+          certificate_thumbprint: N/A
+          tbs_sha256: 585313F1B71C57E3383163625CB74104DEB13C9DCE97B7F03CF2FBE6353D4C98
+          tbs_sha1: ''
