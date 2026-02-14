@@ -1,4 +1,16 @@
 import yaml
+import re
+
+def slugify(text):
+    text = str(text).lower()
+    # Replace single quotes (apostrophes) with nothing (or hyphen if appropriate for specific cases)
+    # The existing .mdx have i'm_intouch.mdx
+    # I will be conservative first, and only focus on space and ()
+    text = re.sub(r'[^a-z0-9\s-]', '', text) # Remove all non-alphanumeric chars except spaces and hyphens
+    text = re.sub(r'[\s_-]+', '-', text)    # Replace spaces, underscores with a single hyphen
+    text = text.strip('-')                  # Remove leading/trailing hyphens
+    return text
+
 import argparse
 import sys
 import os
@@ -123,7 +135,7 @@ def write_rmm_tools_table_csv(rmm_tools, output_dir, VERBOSE):
                 print(f"Writing RMM tool table CSV: {rmm_tool['Name']}")
 
             # Replace parentheses with underscores in the link
-            name_link = f"[{rmm_tool['Name']}](/rmm_tools/{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')})"
+            name_link = f"[{rmm_tool['Name']}](/rmm_tools/{slugify(rmm_tool['Name'])})"
 
             row = {
                 "Name": name_link,
@@ -183,7 +195,7 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
     template = j2_env.get_template("rmm.md.j2")
     for rmm_tool in rmm_tools:
         # Replace parentheses with underscores in the file name
-        file_name = f"{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')}.mdx"
+        file_name = f"{slugify(rmm_tool['Name'])}.mdx"
         output_path = os.path.join(tools_dir, file_name)
         output = template.render(rmm=rmm_tool, time=str(d.strftime("%Y-%m-%d")))
         with open(output_path, "w", encoding="utf-8") as f:
