@@ -153,6 +153,8 @@ Artifacts:
           Value: TeamViewerHooks_DynamicMemMutex
         - Type: Mutex
           Value: TeamViewer3_Win32_Instance_Mutex
+        - Type: User-Agent
+          Value: Mozilla/4.0 (compatible; MSIE 6.0; DynGate)
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teamviewer_registry_sigma.yml
       Description: Detects potential registry activity of TeamViewer RMM tool
