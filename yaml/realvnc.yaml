@@ -16,7 +16,8 @@ Details:
     SupportedOS: []
     Capabilities: []
     Vulnerabilities: []
-    InstallationPaths: []
+    InstallationPaths:
+	- *\realvnc\*\vncviewer.exe
 Artifacts:
     Disk: []
     EventLog: []
