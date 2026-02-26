@@ -3,7 +3,7 @@ Category: 'RMM'
 Description: Zoho Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-02-09'
 Details:
     Website: 'https://www.zoho.com/assist/'
     PEMetadata:
@@ -18,15 +18,14 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
+        - toolsiq.exe
         - zaservice.exe
         - ZMAgent.exe
-        - C:\*\ZA_Access.exe
         - ZohoMeeting.exe
         - Zohours.exe
         - zohotray.exe
         - ZohoURSService.exe
         - '*\ZA_Access.exe'
-        - Zaservice.exe
         - za_connect.exe
         - connect.exe
 Artifacts:
@@ -57,4 +56,6 @@ Detections:
       Description: Detects potential processes activity of Zoho Assist RMM tool
 References:
     - https://www.zoho.com/assist/kb/firewall-configuration.html
-Acknowledgement: []
+Acknowledgement:
+    - Person: Daniel Koifman
+      Handle: '@koifsec'
