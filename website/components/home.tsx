@@ -287,6 +287,45 @@ function Contents() {
 				color="warning"
 				iconType="lock"
 			/>
+					<>
+						<EuiLink href="https://x.com/shotgunner101" target="_blank">Dodge This Security</EuiLink> created a comprehensive{" "}
+						<EuiLink href="https://github.com/shotgunner101/Sysmon-LOLRMM" target="_blank">
+							Sysmon configuration
+						</EuiLink>{" "}
+						for the LOLRMM framework — covering ProcessCreate, FileCreate, NetworkConnect, DNSQuery, and more to help hunt RMMs in your environment.
+					</>
+				}
+				color="success"
+				iconType="logstashFilter"
+			/>
+			<EuiToast
+				title={
+					<>
+						Interested in learning how to <EuiLink href="https://www.magicsword.io/" style={{ color: 'red', fontWeight: 'bold' }}>block</EuiLink> these remote management tools natively on Windows?
+							<br />
+							<div style={{ textAlign: 'center', marginTop: '10px' }}>
+								<EuiLink href="https://www.magicsword.io/">
+									<EuiImage
+										alt="MagicSword Logo"
+										src="/images/magicsword.png"
+										style={{ 
+											width: '240px', 
+											height: 'auto', 
+											display: 'block', 
+											margin: '0 auto',
+											objectFit: 'contain',
+											cursor: 'pointer',
+											borderRadius: '8px',
+											transition: 'transform 0.2s ease'
+										}}
+									/>
+								</EuiLink>
+							</div>
+						</>
+					}
+					color="warning"
+					iconType="lock"
+					/>
 			</EuiFlexGroup>
 			<EuiSpacer size="xxl" />
 			
