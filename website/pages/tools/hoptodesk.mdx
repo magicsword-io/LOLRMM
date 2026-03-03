@@ -4,12 +4,14 @@ title = "HopToDesk"
 ---
 
 
-import {Card, Badges, Details, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # HopToDesk
 
 HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed being used by ransomware actors as a fallback when Quick Assist is blocked. HopToDesk creates firewall rules automatically and installs itself in Program Files. The tool communicates with signal servers and uses TURN servers for connectivity.
+
+<BlockBanner name={"HopToDesk"}/>
 
 ### Details
 <Details author={"Michael Haag"}
