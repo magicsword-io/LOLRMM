@@ -451,6 +451,57 @@ export function Card({ code }: { code: string | string[] }) {
 	);
 }
 
+export function BlockBanner({ name }: { name: string }) {
+	return (
+		<div
+			style={{
+				background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+				border: "1px solid #2a2a4a",
+				borderLeft: "4px solid #e6c300",
+				borderRadius: "12px",
+				padding: "24px 28px",
+				margin: "24px 0",
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				gap: "16px",
+			}}
+		>
+			<div
+				style={{
+					display: "flex",
+					alignItems: "flex-start",
+					gap: "12px",
+					width: "100%",
+				}}
+			>
+				<EuiIcon type="lock" size="l" color="#e6c300" />
+				<span
+					style={{
+						color: "#e0e0e0",
+						fontSize: "1.1rem",
+						lineHeight: "1.5",
+					}}
+				>
+					Prevent <strong style={{ color: "#fff" }}>{name}</strong> from loading
+					on your endpoints natively on Windows using{" "}
+					<strong style={{ color: "#fff" }}>WDAC</strong> — for free.
+				</span>
+			</div>
+			<EuiButton
+				href="https://www.magicsword.io/plan"
+				target="_blank"
+				color="warning"
+				fill={true}
+				iconType="arrowRight"
+				iconSide="right"
+			>
+				Get Started Free with MagicSword
+			</EuiButton>
+		</div>
+	);
+}
+
 export function Accordion({
 	title,
 	children,
