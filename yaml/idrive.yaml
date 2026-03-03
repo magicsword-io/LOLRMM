@@ -1,5 +1,5 @@
 Name: iDrive
-Category: 'RMM'
+Category: RAT
 Description: iDrive is a cloud backup and remote management software that has recently been observed being leveraged in social engineering campaigns, including invitation-themed and Social Security-related phishing lures, to establish unauthorized remote access on victim endpoints prior to the deployment of ScreenConnect. The tool installs as a Windows Scheduled Task and has been used as an initial access mechanism and staging point for secondary RMM deployment.
 Author: Michael Haag
 Created: '2026-01-21'

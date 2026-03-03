@@ -1,5 +1,5 @@
 Name: MeshCentral
-Category: 'RMM'
+Category: RMM
 Description: 'MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used along with MeshCentral to remotely manage computers. MeshAgent can execute commands on the target host by leveraging win-console to obscure their activities and win-dispatcher to run malicious code through IPC with child processes.
 
     '

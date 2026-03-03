@@ -1,5 +1,5 @@
 Name: HopToDesk
-Category: 'RMM'
+Category: RMM
 Description: HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed being used by ransomware actors as a fallback when Quick Assist is blocked. HopToDesk creates firewall rules automatically and installs itself in Program Files. The tool communicates with signal servers and uses TURN servers for connectivity.
 Author: Michael Haag
 Created: '2026-01-15'

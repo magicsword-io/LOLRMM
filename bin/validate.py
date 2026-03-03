@@ -171,25 +171,18 @@ def check_port_format(object, filename):
 def check_required_fields(object, filename):
     """Check for important fields that should be present."""
     name = object.get("Name", "Unknown")
-    warnings = []
+    valid_categories = ["RMM", "RAT"]
 
-    # Check if Category is missing
-    if not object.get("Category"):
-        warnings.append(
-            f"WARNING: Category field is missing or empty in file {filename} (object: {name})"
-        )
+    category = object.get("Category")
+    if not category:
+        return f"ERROR: Category field is missing or empty in file {filename} (object: {name}). Must be one of {valid_categories}"
+    if category not in valid_categories:
+        return f"ERROR: Invalid Category '{category}' in file {filename} (object: {name}). Must be one of {valid_categories}"
 
-    # Check if Created date is missing
     if not object.get("Created"):
-        warnings.append(
-            f"WARNING: Created date is missing in file {filename} (object: {name})"
-        )
+        return f"WARNING: Created date is missing in file {filename} (object: {name})"
 
-    # Check if Website is missing
-    # if not object.get('Details', {}).get('Website'):
-    #    warnings.append(f"WARNING: Website is missing in Details section in file {filename} (object: {name})")
-    #
-    return warnings[0] if warnings else None
+    return None
 
 
 def validate_schema(yaml_dir, schema_file, verbose):

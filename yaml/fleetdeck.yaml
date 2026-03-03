@@ -1,5 +1,5 @@
 Name: FleetDeck.io
-Category: 'RMM'
+Category: RMM
 Description: FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop access and system management capabilities. The software supports remote desktop access, reboot/shutdown capabilities including safe mode, and virtual terminal support. FleetDeck agents report system information and enable remote access to managed endpoints. The tool can be deployed via MSI, MST, or shared link installations.
 Author: Michael Haag
 Created: '2026-01-15'
