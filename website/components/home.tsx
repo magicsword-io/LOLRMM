@@ -286,8 +286,8 @@ function Contents() {
 				}
 				color="warning"
 				iconType="lock"
-			/>
-					<>
+			/>			<EuiToast
+				title={					<>
 						<EuiLink href="https://x.com/shotgunner101" target="_blank">Dodge This Security</EuiLink> created a comprehensive{" "}
 						<EuiLink href="https://github.com/shotgunner101/Sysmon-LOLRMM" target="_blank">
 							Sysmon configuration
