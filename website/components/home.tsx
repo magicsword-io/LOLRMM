@@ -256,34 +256,37 @@ function Contents() {
 					color="primary"
 					iconType="iInCircle"
 				/>
-				<EuiToast
-					title={
-						<>
-							Interested in learning how to <EuiLink href="https://www.magicsword.io/" style={{ color: 'red', fontWeight: 'bold' }}>block</EuiLink> these remote management tools natively on Windows?
-							<br />
-							<div style={{ textAlign: 'center', marginTop: '10px' }}>
-								<EuiLink href="https://www.magicsword.io/">
-									<EuiImage
-										alt="MagicSword Logo"
-										src="/images/magicsword.png"
-										style={{ 
-											width: '240px', 
-											height: 'auto', 
-											display: 'block', 
-											margin: '0 auto',
-											objectFit: 'contain',
-											cursor: 'pointer',
-											borderRadius: '8px',
-											transition: 'transform 0.2s ease'
-										}}
-									/>
-								</EuiLink>
-							</div>
-						</>
-					}
-					color="warning"
-					iconType="lock"
-					/>
+			<EuiToast
+				title={
+					<div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+						<span>
+							Prevent these RMM tools from loading on your endpoints natively on Windows using{' '}
+							<strong>WDAC</strong> —{' '}
+							<EuiLink href="https://www.magicsword.io/plan" target="_blank" style={{ color: '#e6c300', fontWeight: 'bold' }}>
+								for free
+							</EuiLink>.
+						</span>
+						<div style={{ textAlign: 'center' }}>
+							<EuiLink href="https://www.magicsword.io/plan" target="_blank">
+								<EuiImage
+									alt="MagicSword Logo"
+									src="/images/magicsword.png"
+									style={{ 
+										width: '200px', 
+										height: 'auto', 
+										display: 'block', 
+										margin: '0 auto',
+										objectFit: 'contain',
+										cursor: 'pointer',
+									}}
+								/>
+							</EuiLink>
+						</div>
+					</div>
+				}
+				color="warning"
+				iconType="lock"
+			/>
 			</EuiFlexGroup>
 			<EuiSpacer size="xxl" />
 			

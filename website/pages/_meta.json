@@ -8,10 +8,10 @@
 			"layout": "raw"
 		}
 	},
-	"premium": {
-		"title": "Premium",
+	"prevention": {
+		"title": "Free Prevention",
 		"type": "page",
-		"href": "https://www.magicsword.io/premium",
+		"href": "https://www.magicsword.io/plan",
 		"newWindow": true
 	},
 	"about": {
