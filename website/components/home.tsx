@@ -292,7 +292,7 @@ function Contents() {
 						<EuiLink href="https://github.com/shotgunner101/Sysmon-LOLRMM" target="_blank">
 							Sysmon configuration
 						</EuiLink>{" "}
-						for the LOLRMM framework — covering ProcessCreate, FileCreate, NetworkConnect, DNSQuery, and more to help hunt RMMs in your environment.
+						for hunting down RMMs in your environment.
 					</>
 				}
 				color="success"
