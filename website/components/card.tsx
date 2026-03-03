@@ -48,73 +48,48 @@ type DetailProps = {
 };
 
 export function Details(props: DetailProps) {
+	const leftItems = [
+		!isEmpty(props.author) && { title: "Author", description: props.author },
+		!isEmpty(props.category) && { title: "Category", description: props.category },
+		!isEmpty(props.created) && { title: "Created", description: props.created },
+		!isEmpty(props.lastModified) && { title: "Last Modified", description: props.lastModified },
+	].filter(Boolean);
+
+	const rightItems = [
+		!isEmpty(props.website) && {
+			title: "Website",
+			description: <EuiLink href={props.website}>{props.website}</EuiLink>,
+		},
+		!isEmpty(props.privileges) && { title: "Privileges", description: props.privileges },
+		{
+			title: "Pricing",
+			description: isBoolean(props.free) ? (props.free ? "Free" : "Paid") : "Unknown",
+		},
+		{
+			title: "Verification",
+			description: (
+				<EuiIcon
+					type={props.verification ? "checkInCircleFilled" : "minusInCircleFilled"}
+					color={props.verification ? "success" : "danger"}
+				/>
+			),
+		},
+	].filter(Boolean);
+
 	return (
 		<>
 			<EuiSpacer size="m" />
 			<EuiFlexGroup>
-				<EuiFlexItem>
-					<EuiDescriptionList
-						compressed={true}
-						listItems={[
-							{
-								title: "Author",
-								description: checkEmptyOrDefaultValue(props.author),
-							},
-							{
-								title: "Category",
-								description: checkEmptyOrDefaultValue(props.category),
-							},
-							{
-								title: "Created",
-								description: checkEmptyOrDefaultValue(props.created),
-							},
-							{
-								title: "Last Modified",
-								description: checkEmptyOrDefaultValue(props.lastModified),
-							},
-						]}
-					/>
-				</EuiFlexItem>
-				<EuiFlexItem>
-					<EuiDescriptionList
-						compressed={true}
-						listItems={[
-							{
-								title: "Website",
-								description: isEmpty(props.website) ? (
-									"--"
-								) : (
-									<EuiLink href={props.website}>{props.website}</EuiLink>
-								),
-							},
-							{
-								title: "Privileges",
-								description: checkEmptyOrDefaultValue(props.privileges),
-							},
-							{
-								title: "Pricing",
-								description: isBoolean(props.free)
-									? props.free
-										? "Free"
-										: "Paid"
-									: "Unknown",
-							},
-							{
-								title: "Verification",
-								description: (
-									<EuiIcon
-										type={
-											props.verification
-												? "checkInCircleFilled"
-												: "minusInCircleFilled"
-										}
-										color={props.verification ? "success" : "danger"}
-									/>
-								),
-							},
-						]}
-					/>
-				</EuiFlexItem>
+				{leftItems.length > 0 && (
+					<EuiFlexItem>
+						<EuiDescriptionList compressed={true} listItems={leftItems} />
+					</EuiFlexItem>
+				)}
+				{rightItems.length > 0 && (
+					<EuiFlexItem>
+						<EuiDescriptionList compressed={true} listItems={rightItems} />
+					</EuiFlexItem>
+				)}
 			</EuiFlexGroup>
 		</>
 	);
