@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "Name": { "type": "string" },
-    "Category": { "type": ["string", "null"] },
+    "Category": { "type": "string", "enum": ["RMM", "RAT"] },
     "Description": { "type": "string" },
     "Author": { "type": ["string", "null"] },
     "Created": { "type": ["string", "null"] },
@@ -150,5 +150,5 @@
       }
     }
   },
-  "required": ["Name", "Description"]
+  "required": ["Name", "Category", "Description"]
 }

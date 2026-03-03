@@ -1,5 +1,5 @@
 Name: RdClient
-Category: RMM
+Category: RAT
 Description: |
     RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote desktops in a tree view similar to the Windows Explorer.
 Author: 'Daniel Koifman (KoifSec)'

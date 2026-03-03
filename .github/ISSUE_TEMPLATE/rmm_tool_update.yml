@@ -18,6 +18,16 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: tool-category
+    attributes:
+      label: Tool Category
+      description: Is this a Remote Monitoring & Management tool or a Remote Access Tool?
+      options:
+        - RMM (Remote Monitoring & Management)
+        - RAT (Remote Access Tool)
+    validations:
+      required: true
+  - type: dropdown
     id: update-type
     attributes:
       label: Type of Update

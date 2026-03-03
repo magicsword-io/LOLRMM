@@ -193,8 +193,10 @@ def main():
                 on_change=update_name,
             )
             st.write(f"Debug: Current name value: {st.session_state.name}")
-            category = st.text_input(
-                "Category", value=template.get("Category", ""), key="category"
+            category_options = ["RMM", "RAT"]
+            category_index = category_options.index(template.get("Category", "RMM")) if template.get("Category") in category_options else 0
+            category = st.selectbox(
+                "Category", options=category_options, index=category_index, key="category"
             )
             author = st.text_input(
                 "Author", value=template.get("Author", ""), key="author"

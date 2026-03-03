@@ -1,4 +1,5 @@
 import {
+	EuiBadge,
 	type EuiBasicTableColumn,
 	EuiButtonIcon,
 	EuiDescriptionList,
@@ -90,6 +91,7 @@ type Details = {
 
 type Tool = {
 	Name: string;
+	Category: "RMM" | "RAT";
 	Description: string;
 	Author: string;
 	Created: string;
@@ -156,6 +158,17 @@ export function Table() {
 					</a>
 				);
 			},
+		},
+		{
+			field: "Category",
+			name: "Category",
+			sortable: true,
+			width: "90px",
+			render: (value: string) => (
+				<EuiBadge color={value === "RMM" ? "primary" : "warning"}>
+					{value}
+				</EuiBadge>
+			),
 		},
 		{
 			field: "Author",
@@ -237,6 +250,16 @@ export function Table() {
 			schema: false,
 		},
 		filters: [
+			{
+				type: "field_value_selection",
+				field: "Category",
+				name: "Category",
+				multiSelect: "or",
+				options: [
+					{ value: "RMM", name: "RMM" },
+					{ value: "RAT", name: "RAT" },
+				],
+			},
 			{
 				type: "is",
 				field: "Details.Free",
