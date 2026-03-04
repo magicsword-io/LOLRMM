@@ -460,7 +460,7 @@ export function BlockBanner({ name }: { name: string }) {
 				>
 					Prevent <strong style={{ color: "#fff" }}>{name}</strong> from loading
 					on your endpoints natively on Windows using{" "}
-					<strong style={{ color: "#fff" }}>WDAC</strong> — for free.
+					<strong style={{ color: "#fff" }}>WDAC</strong>.
 				</span>
 			</div>
 			<EuiButton
