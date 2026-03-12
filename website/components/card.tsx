@@ -464,7 +464,7 @@ export function BlockBanner({ name }: { name: string }) {
 				</span>
 			</div>
 			<EuiButton
-				href="https://www.magicsword.io/plan"
+				href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner"
 				target="_blank"
 				color="warning"
 				fill={true}

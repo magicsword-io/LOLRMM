@@ -275,12 +275,12 @@ function Contents() {
 						<span>
 							Prevent these RMM tools from loading on your endpoints natively on Windows using{' '}
 							<strong>WDAC</strong>{' '}
-							<EuiLink href="https://www.magicsword.io/plan" target="_blank" style={{ color: '#e6c300', fontWeight: 'bold' }}>
+							<EuiLink href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=toast_text" target="_blank" style={{ color: '#e6c300', fontWeight: 'bold' }}>
 								for free
 							</EuiLink>.
 						</span>
 						<div style={{ textAlign: 'center' }}>
-							<EuiLink href="https://www.magicsword.io/plan" target="_blank">
+							<EuiLink href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=toast_logo" target="_blank">
 								<EuiImage
 									alt="MagicSword Logo"
 									src="/images/magicsword.png"
