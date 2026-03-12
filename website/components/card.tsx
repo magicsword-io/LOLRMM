@@ -460,11 +460,11 @@ export function BlockBanner({ name }: { name: string }) {
 				>
 					Prevent <strong style={{ color: "#fff" }}>{name}</strong> from loading
 					on your endpoints natively on Windows using{" "}
-					<strong style={{ color: "#fff" }}>WDAC</strong> — for free.
+					<strong style={{ color: "#fff" }}>WDAC</strong>.
 				</span>
 			</div>
 			<EuiButton
-				href="https://www.magicsword.io/plan"
+				href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner"
 				target="_blank"
 				color="warning"
 				fill={true}
