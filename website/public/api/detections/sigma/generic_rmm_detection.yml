@@ -43,7 +43,6 @@ detection:
     - \\C:\*\G2RDesktopConsole-x64.msi
     - \\C:\*\MobaXterm_installer_12.1.msi
     - \\C:\*\SecureCRT.EXE
-    - \\C:\*\ZA_Access.exe
     - \\C:\*\kitty.exe
     - \\C:\*\ngrok.zip
     - \\C:\*\nxplayer.exe
@@ -77,6 +76,7 @@ detection:
     - \\C:\Program Files (x86)\ManageEngine\ServiceDesk\*
     - \\C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
     - \\C:\Program Files (x86)\NVDA\nvda.exe
+    - \\C:\Program Files (x86)\Net Monitor for Employees Pro\*
     - \\C:\Program Files (x86)\NetSarang\xShell\*
     - \\C:\Program Files (x86)\OnionShare\*
     - \\C:\Program Files (x86)\PJ Technologies\GOVsrv\*
@@ -116,6 +116,7 @@ detection:
     - \\C:\Program Files\ManageEngine\ServiceDesk\*
     - \\C:\Program Files\Miradore\OnlineClient\bin\*
     - \\C:\Program Files\NVDA\nvda.exe
+    - \\C:\Program Files\Net Monitor for Employees Pro\*
     - \\C:\Program Files\Netbird\netbird-ui.exe
     - \\C:\Program Files\Netbird\netbird.exe
     - \\C:\Program Files\Parsec\*
@@ -345,7 +346,6 @@ detection:
     - \\WinVNCStub.exe
     - \\XSightService.exe
     - \\ZMAgent.exe
-    - \\Zaservice.exe
     - \\ZohoMeeting.exe
     - \\ZohoURSService.exe
     - \\Zohours.exe
@@ -528,6 +528,9 @@ detection:
     - \\nhstw32.exe
     - \\ninjarmm-cli.exe
     - \\nldrw32.exe
+    - \\nmep_agtconfig.exe
+    - \\nmep_ctrlagent.exe
+    - \\nmep_ctrlagentsvc.exe
     - \\nomachine*.exe
     - \\ntrntservice.exe
     - \\nvClient.exe
@@ -672,6 +675,7 @@ detection:
     - \\tmate.bashrc
     - \\tmate.sock
     - \\todesk.exe
+    - \\toolsiq.exe
     - \\tsircusr.exe
     - \\turbomeeting.exe
     - \\turbomeetingstarter.exe
@@ -697,6 +701,8 @@ detection:
     - \\winagent.exe
     - \\winaw32.exe
     - \\windowslauncher.exe
+    - \\winpty-agent.exe
+    - \\winpty-agent64.exe
     - \\winvnc*.exe
     - \\winvnc.exe
     - \\winvnc4.exe
