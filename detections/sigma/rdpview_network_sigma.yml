@@ -16,8 +16,7 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - systemmanager.ru/dntu.en/rdp_view.htm
+            - systemmanager.ru
     condition: selection
 falsepositives:
     - Legitimate use of RDPView
