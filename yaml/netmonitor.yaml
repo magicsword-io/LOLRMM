@@ -1,0 +1,44 @@
+Name: Net Monitor for Employees
+Category: RMM
+Description: |
+    Net Monitor for Employees Professional is a commercial workforce monitoring tool developed by NetworkLookout. Marketed for employee productivity tracking, the software provides capabilities that extend well beyond passive screen monitoring, including reverse shell connections, remote desktop control, file management, and the ability to customize service and process names during installation. These features, while designed for legitimate administrative use, make it an attractive tool for threat actors seeking to blend into enterprise environments without deploying traditional malware.
+Author: 'Daniel Koifman (KoifSec)'
+Created: '2026-02-12'
+LastModified: '2026-02-12'
+Details:
+    Website: https://networklookout.com/
+    Privileges: User
+    Free: true
+    Verification: true
+    SupportedOS:
+        - Windows
+        - MacOS
+        - Linux
+    Capabilities:
+        - Remote Desktop Access
+        - Screen Management
+        - Remote Shell
+        - Connection Management
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'C:\Program Files (x86)\Net Monitor for Employees Pro\*'
+        - 'C:\Program Files\Net Monitor for Employees Pro\*'
+        - 'nmep_agtconfig.exe'
+        - 'nmep_ctrlagent.exe'
+        - 'nmep_ctrlagentsvc.exe'
+        - 'winpty-agent.exe'
+        - 'winpty-agent64.exe'
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
+Detections:
+    - AQL: https://github.com/Koifman/LOLRMM/tree/main/detections/sigma/netmonitor_process_sigma.yml
+      Description: Detects process activity of Network Monitor for Employees
+References:
+    - https://www.huntress.com/blog/employee-monitoring-simplehelp-abused-in-ransomware-operations
+    - https://networklookout.com/
+Acknowledgement:
+    - Person: 'Daniel Koifman'
+      Handle: '@KoifSec'
