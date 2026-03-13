@@ -4,6 +4,9 @@ from datetime import date
 import uuid
 from typing import Dict, List, Any
 
+# Namespace UUID for generating deterministic rule IDs
+LOLRMM_NAMESPACE = uuid.UUID("a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+
 
 def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     artifacts = {"files": [], "registry": [], "network": [], "processes": []}
@@ -88,13 +91,16 @@ def write_sigma_rule(rule: Dict[str, Any], filepath: str) -> None:
                     if isinstance(subvalue, list):
                         # Single element: write inline, multiple elements: write as list
                         if len(subvalue) == 1:
-                            f.write(f"        {subkey}: {subvalue[0]}\n")
+                            val = subvalue[0].replace("'", "''")
+                            f.write(f"        {subkey}: '{val}'\n")
                         else:
                             f.write(f"        {subkey}:\n")
                             for item in subvalue:
-                                f.write(f"            - {item}\n")
+                                val = item.replace("'", "''")
+                                f.write(f"            - '{val}'\n")
                     else:
-                        f.write(f"        {subkey}: {subvalue}\n")
+                        val = subvalue.replace("'", "''")
+                        f.write(f"        {subkey}: '{val}'\n")
         f.write(f"    condition: {detection['condition']}\n")
 
         # Falsepositives
@@ -161,7 +167,7 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
             # Create rule with proper field order
             rule = {
                 "title": rule_template["title"],
-                "id": str(uuid.uuid4()),
+                "id": str(uuid.uuid5(LOLRMM_NAMESPACE, rule_template["title"])),
                 "status": "experimental",
                 "description": f"Detects potential {artifact_type} activity of {name} RMM tool",
                 "references": ["https://github.com/magicsword-io/LOLRMM"],
