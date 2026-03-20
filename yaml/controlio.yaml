@@ -1,0 +1,93 @@
+Name: Controlio
+Category: RMM
+Description: 'Controlio is a commercial workforce monitoring tool developed by EfficientLab. Marketed for employee productivity tracking, the software provides capabilities that extend well beyond passive screen monitoring, including keylogging features, screen recording, clippboard logging, and email and web search monitoring. These features, while designed for legitimate administrative use, make it an attractive tool for threat actors seeking to blend into enterprise environments without deploying traditional malware.'
+Author: CERT Cwatch Almond
+Created: '2026-03-20'
+LastModified: '2026-03-20'
+Details:
+    Website: https://controlio.net
+    PEMetadata:
+      - Filename: wesvc.exe
+        OriginalFileName: ''
+        Description: 'uploads the recorded data & logs.'
+        Product: Controlio
+    Privileges: user
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Mac
+        - Windows
+    Capabilities:
+        - Reporting and analytics
+        - Remote Monitoring
+        - Clipboard Synchronization
+        - Connection Management
+    InstallationPaths:
+        - C:\ProgramData\{E0E95C6C-F194-4846-928D-E5538022226D}\
+        - weCliboardListener.exe
+        - bbl.exe
+        - weprtct.exe
+        - wemonc.exe
+        - wesvc.exe
+        - libeay32.dll
+        - ssleay32.dll
+        - wec_launcher_[a-Z0-9]*_.exe
+        - wec_launcher_[a-Z0-9]*_.pkg
+        - weInstSvc.exe
+Artifacts:
+    Disk:
+        - File: weClipboardListener.exe	
+          Description: Controlio binary
+          OS: Windows
+        - File: bbl.exe	
+          Description: Controlio binary
+          OS: Windows
+        - File: weprtct.exe	
+          Description: Controlio binary
+          OS: Windows
+        - File: wemonc.exe	
+          Description: Controlio binary
+          OS: Windows
+        - File: wesvc.exe	
+          Description: Controlio binary
+          OS: Windows
+        - File: libeay32.dll	
+          Description: Controlio binary
+          OS: Windows
+        - File: ssleay32.dll	
+          Description: Controlio binary
+          OS: Windows
+        - File: wec_launcher_[a-Z0-9]*_.exe	
+          Description: Controlio windows installer
+          OS: Windows
+          Example:
+              - 'MD5: 2e6f6b62b16904eee7b2de51951f22a8'
+              - 'SHA1: 49dcf901491e60079289732c7291a38f18ed4918'
+              - 'SHA256: 4ad77ebb2fa42dacd375061ec86ea35bb2d003ce057b764a0faff948d8063cc5'
+        - File: wec_launcher_[a-Z0-9]*_.pkg	
+          Description: Controlio macos installer
+          OS: Mac
+          Example:
+              - 'MD5: df66eb79c15937bfe2cdf8774901778e'
+              - 'SHA1: a1f765235010343dd9b25c50de7f6b04e4dd01b5'
+              - 'SHA256: 1591df6f0575fa903481b31122f8be5a2ead8ff75800c57e6324c9ccc1969e0f'
+        - File: weInstSvc.exe	
+          Description: Controlio binary
+          OS: Windows
+          Example:
+              - 'MD5: b290abc61e20d8de07f009348c2c3e2f '
+              - 'SHA1: 3b0412a27fc2f9277c0fb484d3ff7382b0da6e32'
+              - 'SHA256: 2cae3bfd61025f45810c787cfad9b6287882494fa9317ec6725ac65390be254a'
+        - File: C:\ProgramData\{E0E95C6C-F194-4846-928D-E5538022226D}\	
+          Description: Controlio binary
+          OS: Windows    
+    Other:
+        - Type: Service
+          Value: weSvcService
+Detections: []
+References:
+    - https://controlio.net
+    - https://www.knowyouradversary.ru/2026/01/366-adversaries-started-to-abuse.html
+    - https://kb.controlio.net/hc/en-us/articles/360019139977-Which-paths-files-need-to-be-whitelisted-to-avoid-issues-with-the-work-of-Controlio
+    - https://kb.controlio.net/hc/en-us/articles/360019262918-Which-processes-in-the-task-manager-belong-to-Contorlio-s-Client
+Acknowledgement: []
