@@ -430,9 +430,9 @@ export function BlockBanner({ name }: { name: string }) {
 	return (
 		<div
 			style={{
-				background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-				border: "1px solid #2a2a4a",
-				borderLeft: "4px solid #e6c300",
+				background: "linear-gradient(135deg, #0d1117 0%, #101d2b 50%, #0a1a1a 100%)",
+				border: "1px solid #1a3a2a",
+				borderLeft: "4px solid #2ebd6e",
 				borderRadius: "12px",
 				padding: "24px 28px",
 				margin: "24px 0",
@@ -450,10 +450,10 @@ export function BlockBanner({ name }: { name: string }) {
 					width: "100%",
 				}}
 			>
-				<EuiIcon type="lock" size="l" color="#e6c300" />
+				<EuiIcon type="lock" size="l" color="#2ebd6e" />
 				<span
 					style={{
-						color: "#e0e0e0",
+						color: "#c8d6e5",
 						fontSize: "1.1rem",
 						lineHeight: "1.5",
 					}}
@@ -463,15 +463,35 @@ export function BlockBanner({ name }: { name: string }) {
 					<strong style={{ color: "#fff" }}>WDAC</strong>.
 				</span>
 			</div>
+			<a
+				href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner_logo"
+				target="_blank"
+				rel="noopener noreferrer"
+				style={{ textDecoration: 'none' }}
+			>
+				<img
+					alt="MagicSword Logo"
+					src="/images/magicsword_dark.png"
+					style={{
+						width: '180px',
+						height: 'auto',
+						objectFit: 'contain',
+					}}
+				/>
+			</a>
 			<EuiButton
 				href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner"
 				target="_blank"
-				color="warning"
+				style={{
+					backgroundColor: '#2ebd6e',
+					borderColor: '#2ebd6e',
+					color: '#0d1117',
+				}}
 				fill={true}
 				iconType="arrowRight"
 				iconSide="right"
 			>
-				Get Started Free with MagicSword
+				Get Started Free
 			</EuiButton>
 		</div>
 	);

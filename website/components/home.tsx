@@ -283,7 +283,7 @@ function Contents() {
 							<EuiLink href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=toast_logo" target="_blank">
 								<EuiImage
 									alt="MagicSword Logo"
-									src="/images/magicsword.png"
+									src="/images/magicsword_dark.png"
 									style={{
 										width: '200px',
 										height: 'auto',
