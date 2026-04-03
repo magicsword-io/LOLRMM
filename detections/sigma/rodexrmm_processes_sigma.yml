@@ -1,0 +1,19 @@
+title: Potential RodexAgent RMM Tool File Activity
+description: |
+    Detects potential files activity of RodexAgent RMM tool
+author: johnk3r
+date: 2026-04-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - C:\Program Files\Rodex\RodexAgent.exe
+    condition: selection
+falsepositives:
+    - Legitimate use of RodexAgent
+level: medium
