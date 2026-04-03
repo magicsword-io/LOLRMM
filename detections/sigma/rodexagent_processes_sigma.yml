@@ -1,0 +1,20 @@
+title: Potential RodexAgent RMM Tool Process Activity
+description: |
+    Detects potential processes activity of RodexAgent RMM tool
+author: johnk3r
+date: 2026-04-03
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith: RodexAgent.exe
+    selection_image:
+        Image|endswith: RodexAgent.exe
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of RodexAgent
+level: medium
