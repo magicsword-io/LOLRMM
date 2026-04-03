@@ -1,0 +1,34 @@
+Name: Rodex RMM
+Category: RMM
+Description: Rodex RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Author: johnk3r
+Created: '2026-04-03'
+LastModified: '2026-08-03'
+Details:
+    Website: 'https://www.r3v13wd0s.com'
+    PEMetadata:
+        Filename: 'RodexAgent.exe'
+        OriginalFileName: 'RodexAgent.exe'
+        Description: 'Rodex RMM Agent – Remote Monitoring and Management Service'
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS: []
+    Capabilities: []
+    Vulnerabilities: []
+    InstallationPaths:
+        - RodexAgent.exe
+        - rodexagent.exe
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rodexrmm_files_sigma.yml
+      Description: Detects potential files activity of Rodex RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rodexrmm_processes_sigma.yml
+      Description: Detects potential processes activity of Rodex RMM tool
+References:
+    - https://www.r3v13wd0s.com
+Acknowledgement: []
