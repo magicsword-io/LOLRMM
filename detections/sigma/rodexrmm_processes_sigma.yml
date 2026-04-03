@@ -1,6 +1,6 @@
-title: Potential RodexAgent RMM Tool Process Activity
+title: Potential Rodex RMM Tool Process Activity
 description: |
-    Detects potential processes activity of RodexAgent RMM tool
+    Detects potential processes activity of Rodex RMM tool
 author: johnk3r
 date: 2026-04-03
 tags:
@@ -16,5 +16,5 @@ detection:
         Image|endswith: RodexAgent.exe
     condition: 1 of selection_*
 falsepositives:
-    - Legitimate use of RodexAgent
+    - Legitimate use of Rodex RMM
 level: medium
