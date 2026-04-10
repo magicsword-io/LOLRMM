@@ -1,0 +1,86 @@
+Name: RemSupp
+Category: RMM
+Description: 'RemSupp is a remote desktop / remote support tool observed in VMRay analysis. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com.
+    '
+Created: '2026-04-10'
+LastModified: '2026-04-10'
+Details:
+    Website: https://api.remsupp.com
+    PEMetadata:
+        - Filename: RemSupp_Setup_x64.exe
+          OriginalFileName: ''
+          Description: RemSupp - Remote desktop software
+          Product: RemSupp
+    Privileges: User
+    Free: unknown
+    Verification: Installer digitally signed; signer shown in Windows properties as "RemSupp Michał Zarach"
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote desktop
+        - Remote support
+        - Remote control
+        - Screen sharing
+        - File transfer
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Users\*\AppData\Local\remsupp-updater\installer.exe
+        - C:\Users\*\AppData\Local\Programs\RemSupp\RemSupp.exe
+        - C:\Users\*\AppData\Local\Programs\RemSupp\Uninstall RemSupp.exe
+Artifacts:
+    Disk:
+        - File: C:\Users\*\AppData\Local\Programs\RemSupp\RemSupp.exe
+          Description: Main RemSupp executable
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Programs\RemSupp\Uninstall RemSupp.exe
+          Description: RemSupp uninstaller
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\RemSupp.lnk
+          Description: Start menu shortcut
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\Local State
+          Description: Application local state file
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\Preferences
+          Description: Application preferences file
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\chromium.log
+          Description: Chromium log file
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\Crashpad\metadata
+          Description: Crashpad metadata
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\Crashpad\settings.dat
+          Description: Crashpad settings
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\Local Storage\leveldb\*
+          Description: Local storage LevelDB artifacts
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\sentry\queue\queue.json
+          Description: Sentry queue artifact
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\sentry\scope_v3.json
+          Description: Sentry scope artifact
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\sentry\session.json
+          Description: Sentry session artifact
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RemSupp\quitAndInstall.json
+          Description: Updater state artifact
+          OS: Windows
+    Registry:
+        - Path: HKCU\Software\99ac595d-36d0-5122-a860-22a3443073cb
+          Description: Product-specific installer key
+        - Path: HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\99ac595d-36d0-5122-a860-22a3443073cb
+          Description: Per-user uninstall key
+    Network:
+        - Description: RemSupp API endpoint observed during analysis
+          Domains:
+              - api.remsupp.com
+          Ports:
+              - 443
+References:
+    - https://api.remsupp.com
+Acknowledgement:
+    - Person: Martha Sosa
+      Handle: '@marthajsosa'
