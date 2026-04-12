@@ -1,6 +1,6 @@
 Name: RemSupp
 Category: RMM
-Description: 'RemSupp is a remote desktop / remote support tool observed in VMRay analysis. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com.
+Description: 'RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phishing attack. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com.
     '
 Created: '2026-04-10'
 LastModified: '2026-04-10'
