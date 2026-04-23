@@ -1,0 +1,63 @@
+---
+description = "Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures."
+title = "Lunixar"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Lunixar
+
+Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures.
+
+<BlockBanner name={"Lunixar"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-04-23"}
+         website={"https://lunixar.com/en/"}
+         lastModified={"2026-04-23"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Lunixar\\*", "*\\Lunixar\\Lunixar.exe", "*\\Lunixar\\Lunixar.dll", "*\\Lunixar\\Lunixar.Agent.Core.dll", "*\\Lunixar\\LunixarRemote.exe", "*\\Lunixar\\LunixarRemote.dll", "*\\Lunixar\\LunixarUpdater.exe", "*\\Lunixar\\LunixarUpdater.dll", "LunixarRMM*.msi", "Googlemeet.msi", "eDocument-*.msi"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote access (browser and Windows app)", "Script execution and scheduling", "Hardware and software inventory", "Process and service management", "Real-time CPU/RAM/disk alerting"] }/>
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"Description": "Main agent DLL", "File": "C:\\Program Files\\Lunixar\\Lunixar.dll", "Type": "File"}, {"Description": "Agent core library", "File": "C:\\Program Files\\Lunixar\\Lunixar.Agent.Core.dll", "Type": "File"}, {"Description": "Remote access executable", "File": "C:\\Program Files\\Lunixar\\LunixarRemote.exe", "Type": "File"}, {"Description": "Remote access library", "File": "C:\\Program Files\\Lunixar\\LunixarRemote.dll", "Type": "File"}, {"Description": "Auto-updater executable", "File": "C:\\Program Files\\Lunixar\\LunixarUpdater.exe", "Type": "File"}, {"Description": "Auto-updater library", "File": "C:\\Program Files\\Lunixar\\LunixarUpdater.dll", "Type": "File"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"Description": "Service event log source", "EventId": "", "Provider": "Lunixar rmm-client service"}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Description": "Windows service registration", "Path": "HKLM\\System\\CurrentControlSet\\Services\\LunixarRMM", "Key": "ImagePath", "Value": "\"C:\\Program Files\\Lunixar\\Lunixar.exe\""}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.lunixar.com", "lunixar.com", "app.lunixar.com", "socket.lunixar.com", "downloads.lunixar.com", "devrmm.lunixar.com"], "Ports": [23501]}, {"Description": "Known abuse/phishing domains distributing renamed Lunixar MSI", "Domains": ["mymeetinggoogle.com"], "Ports": []}] }/>
+
+
+
+
+
+### References
+- [https://lunixar.com/en/](https://lunixar.com/en/)
+- [https://www.virustotal.com/gui/file/3160414da55882b9f03bae5aa76f0dc3c6cdb9e27e9091d9dac6fa610bd94c33](https://www.virustotal.com/gui/file/3160414da55882b9f03bae5aa76f0dc3c6cdb9e27e9091d9dac6fa610bd94c33)
+

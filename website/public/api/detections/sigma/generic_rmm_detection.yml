@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-03-24'
+modified: '2026-04-23'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -112,6 +112,7 @@ detection:
     - \\C:\Program Files\ImmyBot\ImmyUpdater.exe
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
+    - \\C:\Program Files\Lunixar\*
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
     - \\C:\Program Files\ManageEngine\ServiceDesk\*
     - \\C:\Program Files\Miradore\OnlineClient\bin\*
@@ -218,6 +219,7 @@ detection:
     - \\GoToResolveUnattended.exe
     - \\GoToResolveUnattendedRemover.exe
     - \\GoToResolveUnattendedUi.exe
+    - \\Googlemeet.msi
     - \\GotoHTTP*.exe
     - \\GotoHTTP_x64.exe
     - \\GovAgentInstallHelper.exe
@@ -255,6 +257,7 @@ detection:
     - \\Kabuto.Service.Runner.exe
     - \\KabutoSetup.exe
     - \\LANDeskPortalManager.exe
+    - \\LunixarRMM*.msi
     - \\MEAgentHelper.exe
     - \\ManageEngine_Remote_Access_Plus.exe
     - \\ManageEngine_ServiceDesk_Plus.bin
@@ -412,6 +415,7 @@ detection:
     - \\dwagent.exe
     - \\dwagsvc.exe
     - \\dwrcs.exe
+    - \\eDocument-*.msi
     - \\echoserver*.exe
     - \\echoware.dll
     - \\ehorus standalone.exe
