@@ -1,29 +1,65 @@
 Name: GetScreen
 Category: RMM
-Description: GetScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
-Author: ''
+Description: |
+    GetScreen is a remote monitoring and management (RMM) tool that enables remote
+    desktop access and unattended persistent access via service installation. It can
+    be installed via command line and registers itself as a Windows service named
+    "Getscreen.me".
+Author: 'PixelTommy & Guzzy (SagaLabs & itm8 ARC)'
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2025-04-23'
 Details:
     Website: 'https://getscreen.me/'
     PEMetadata:
-        Filename: ''
+        Filename: getscreen.exe
         OriginalFileName: ''
         Description: ''
-    Privileges: ''
+    Privileges: Admin
     Free: ''
     Verification: ''
     SupportedOS:
         - Windows
-    Capabilities: []
+    Capabilities:
+        - Remote Control
+        - Unattended Access
+        - GUI Support
+        - Command line Support
     Vulnerabilities: []
     InstallationPaths:
-        - GetScreen.exe
-        - getscreen.exe
+        - C:\ProgramData\Getscreen.me\getscreen.exe
+        - C:\Users\*\AppData\Local\Getscreen.me\getscreen.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
+    Disk:
+        - File: 'C:\ProgramData\Getscreen.me\<date>.log'
+          Description: General application log file containing timestamps in UTC. The date and year must be correlated from the filename, as a new log is created for each day.
+          OS: Windows
+        - File: 'C:\ProgramData\Getscreen.me\<date>.gui.log'
+          Description: Operator interaction log. Records all actions performed by the operator on the remote host, including control mode activity and interactive file explorer usage. Timestamps are in UTC and must be correlated with the filename for full date context.
+          OS: Windows
+        - File: 'C:\ProgramData\Getscreen.me\session.inf'
+          Description: Contains a list of previous sessions with source IP, country, region, city and start/end time in epoch format.
+          OS: Windows
+        - File: 'C:\Users\*\AppData\Local\Getscreen.me'
+          Description: Local application data directory.
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Getscreen.me
+          ImagePath: ''
+          Description: Service installation event as a result of GetScreen installation.
+        - EventID: 4697
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          ServiceName: Getscreen.me
+          ImagePath: ''
+          Description: Service installation event as a result of GetScreen installation.
+    Registry:
+        - Path: 'HKU\{SID}\Software\GetScreen'
+          Description: Application settings including language preferences.
+        - Path: 'HKU\{SID}\Software\GetScreen\Getscreen.me'
+          Description: Application-specific settings.
     Network:
         - Description: Known remote domains
           Domains:
@@ -31,6 +67,13 @@ Artifacts:
               - GetScreen.me
               - '*.getscreen.me'
           Ports: []
+    Other:
+        - Type: ServiceName
+          Value: Getscreen.me
+        - Type: NamedPipe
+          Value: PCommand*GetScreen.meout
+        - Type: CommandLine
+          Value: 'getscreen.exe -install -register 87c34ca23sss391@tutamail.com'
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_network_sigma.yml
       Description: Detects potential network activity of GetScreen RMM tool
