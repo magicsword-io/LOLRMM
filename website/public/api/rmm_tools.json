@@ -10399,32 +10399,32 @@
                 {
                     "Description": "Main agent DLL",
                     "File": "C:\\Program Files\\Lunixar\\Lunixar.dll",
-                    "Type": "File"
+                    "OS": "Windows"
                 },
                 {
                     "Description": "Agent core library",
                     "File": "C:\\Program Files\\Lunixar\\Lunixar.Agent.Core.dll",
-                    "Type": "File"
+                    "OS": "Windows"
                 },
                 {
                     "Description": "Remote access executable",
                     "File": "C:\\Program Files\\Lunixar\\LunixarRemote.exe",
-                    "Type": "File"
+                    "OS": "Windows"
                 },
                 {
                     "Description": "Remote access library",
                     "File": "C:\\Program Files\\Lunixar\\LunixarRemote.dll",
-                    "Type": "File"
+                    "OS": "Windows"
                 },
                 {
                     "Description": "Auto-updater executable",
                     "File": "C:\\Program Files\\Lunixar\\LunixarUpdater.exe",
-                    "Type": "File"
+                    "OS": "Windows"
                 },
                 {
                     "Description": "Auto-updater library",
                     "File": "C:\\Program Files\\Lunixar\\LunixarUpdater.dll",
-                    "Type": "File"
+                    "OS": "Windows"
                 }
             ],
             "EventLog": [
