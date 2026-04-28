@@ -104,4 +104,5 @@ Detections:
       Description: Detects potential processes activity of GetScreen RMM tool
 References:
     - https://docs.getscreen.me/self-hosted/system-requirements/
+    - https://sagalabs.dk/blog/getscreen-yet-another-rmm
 Acknowledgement: []
