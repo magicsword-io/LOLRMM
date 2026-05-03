@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-04-24'
+modified: '2026-05-03'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -484,6 +484,10 @@ detection:
     - \\jumpdesktop.exe
     - \\jumpservice.exe
     - \\jumpupdater.exe
+    - \\komari-agent.exe
+    - \\komari-windows-386.exe
+    - \\komari-windows-amd64.exe
+    - \\komari-windows-arm64.exe
     - \\konea.exe
     - \\landeskagentbootstrap.exe
     - \\laplink-everywhere-setup*.exe
