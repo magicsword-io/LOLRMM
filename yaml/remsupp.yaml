@@ -1,9 +1,8 @@
 Name: RemSupp
 Category: RMM
-Description: 'RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phishing attack. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com.
-    '
+Description: 'RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phishing attack. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com. '
 Created: '2026-04-10'
-LastModified: '2026-04-10'
+LastModified: '2026-05-04'
 Details:
     Website: https://api.remsupp.com
     PEMetadata:
@@ -11,9 +10,13 @@ Details:
           OriginalFileName: ''
           Description: RemSupp - Remote desktop software
           Product: RemSupp
+        - Filename: RemSupp.exe
+          OriginalFileName: RemSupp.exe
+          Description: RemSupp - Remote desktop software
+          Product: RemSupp
     Privileges: User
     Free: unknown
-    Verification: Installer digitally signed; signer shown in Windows properties as "RemSupp Michał Zarach"
+    Verification: Installer digitally signed; signer subject "CN=RemSupp Michał Zarach, O=RemSupp Michał Zarach, L=Gdańsk, ST=Pomorskie, C=PL" issued under Microsoft Trusted Signing (CN=Microsoft ID Verified CS EOC CA 0*, O=Microsoft Corporation). Trusted Signing mints ephemeral 3-day leaf certs per signing event, so the leaf TBS hash rotates per release while the publisher subject DN is stable.
     SupportedOS:
         - Windows
     Capabilities:
@@ -30,7 +33,7 @@ Details:
 Artifacts:
     Disk:
         - File: C:\Users\*\AppData\Local\Programs\RemSupp\RemSupp.exe
-          Description: Main RemSupp executable
+          Description: Main RemSupp executable (Electron 36 / Chromium-based)
           OS: Windows
         - File: C:\Users\*\AppData\Local\Programs\RemSupp\Uninstall RemSupp.exe
           Description: RemSupp uninstaller
@@ -70,15 +73,44 @@ Artifacts:
           OS: Windows
     Registry:
         - Path: HKCU\Software\99ac595d-36d0-5122-a860-22a3443073cb
-          Description: Product-specific installer key
+          Description: Product-specific installer key (vendor-assigned GUID)
         - Path: HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\99ac595d-36d0-5122-a860-22a3443073cb
-          Description: Per-user uninstall key
+          Description: Per-user uninstall key (vendor-assigned GUID)
     Network:
         - Description: RemSupp API endpoint observed during analysis
           Domains:
               - api.remsupp.com
           Ports:
               - 443
+        - Description: RemSupp installer / update download endpoint
+          Domains:
+              - download.remsupp.com
+          Ports:
+              - 443
+    Other:
+        - Type: CodeSigningSubject
+          Value: 'CN=RemSupp Michał Zarach, O=RemSupp Michał Zarach, L=Gdańsk, ST=Pomorskie, C=PL'
+        - Type: CodeSigningIssuer
+          Value: 'CN=Microsoft ID Verified CS EOC CA 01, O=Microsoft Corporation, C=US'
+        - Type: CodeSigningIssuer
+          Value: 'CN=Microsoft ID Verified CS EOC CA 02, O=Microsoft Corporation, C=US'
+        - Type: ProcessLineage
+          Value: RemSupp.exe self-check via cmd.exe /c tasklist /FI "USERNAME eq %USERNAME%" /FI "IMAGENAME eq RemSupp.exe" /FO csv | find "RemSupp.exe"
+        - Type: SHA256
+          Value: 994f537e69f555a6aca89db837f260aa31352d6c6bfe435d3ecafff0b8c683ae
+        - Type: SHA256
+          Value: 38a3e51bf0fad50dc3bb08f8ce9aa4e9d3f3c7561312605c6827a81984137532
+        - Type: SHA256
+          Value: 3cad287fbc89c40a4f481aac47d0c2b012388081c9924c09fdb2d29e5455100a
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_files_sigma.yml
+      Description: Detects potential files activity of RemSupp RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_network_sigma.yml
+      Description: Detects potential network activity of RemSupp RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_processes_sigma.yml
+      Description: Detects potential processes activity of RemSupp RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_registry_sigma.yml
+      Description: Detects potential registry activity of RemSupp RMM tool
 References:
     - https://api.remsupp.com
 Acknowledgement:
