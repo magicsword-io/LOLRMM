@@ -1,0 +1,268 @@
+Name: TiFLUX
+Category: RMM
+Description: 'TiFLUX (Tiflux) is a Brazilian SaaS Help Desk / Service Desk platform
+  with an integrated remote monitoring and management (RMM) agent. The agent enables
+  IT asset inventory, screenshot capture, in-tenant chat, command execution and remote
+  access via a bundled UltraVNC stack (and an optional Splashtop integration) from
+  a single web console at app.tiflux.com. The agent registers managed equipment with
+  the tenant via agent.tiflux.com over HTTPS/WSS.
+
+  Threat actors have been observed standing up TiFLUX tenants and abusing the platform''s
+  MSI distribution mechanism to deliver agent installers under decoy names (Adobe
+  Reader, Zoom, DocuSign, etc.) hosted on per-tenant *.tiflux.com subdomains. Once
+  installed, the agent gives remote command execution as SYSTEM, persistent SYSTEM
+  service (TiService), and inbound remote control via the bundled UltraVNC server.
+
+  '
+Author: '@MHaggis'
+Created: '2026-05-04'
+LastModified: '2026-05-04'
+Details:
+  Website: https://tiflux.com/
+  PEMetadata:
+  - Filename: TiAgent.exe
+    OriginalFileName: TiAgent.exe
+    Description: TiAgent (user-mode tray application that registers the equipment
+      and surfaces a browser link to the tenant)
+  - Filename: TiService.exe
+    OriginalFileName: TiService.exe
+    Description: TiFLUX Windows service running as SYSTEM (`TiService`); image path
+      C:\Program Files (x86)\TiFLUX\TiService.exe
+  - Filename: TiUpdateService.exe
+    OriginalFileName: TiUpdateService.exe
+    Description: TiFLUX agent updater binary (.NET — TiUpdateService.exe.config and
+      TiUpdateService.pdb shipped alongside; not directly observed registered as
+      a Windows service)
+  - Filename: si.exe
+    Description: TiFLUX silent helper invoked by the service via cmd.exe /c start
+      /MIN
+  Privileges: SYSTEM
+  Free: Yes (free trial)
+  Verification: Tenant signup required; corporate email accepted but not strictly
+    enforced
+  SupportedOS:
+  - Windows
+  - Linux
+  - MacOS
+  - Android
+  Capabilities:
+  - Remote monitoring and management
+  - Helpdesk and ticketing (N1/N2/N3)
+  - Asset inventory
+  - Screenshot capture
+  - In-tenant chat
+  - Remote command execution
+  - Remote access via bundled UltraVNC (WinVNC.exe, VNCHooks.dll, mv2.dll driver)
+  - Optional Splashtop integration for remote control (Splashtop client installed separately; not bundled in TiFLUX MSI)
+  - Multi-platform agent (Windows, Linux, macOS, Android RemoteAccess app)
+  - Per-tenant MSI distribution from *.tiflux.com subdomains
+  Vulnerabilities: []
+  InstallationPaths:
+  - C:\Program Files (x86)\TiFLUX\*
+  - C:\Program Files (x86)\TiFLUX\desktop\*
+  - C:\Program Files (x86)\TiFLUX\dependencies\*
+  - C:\Program Files (x86)\TiFLUX\dependencies\7zip\*
+  - C:\Program Files (x86)\TiFLUX\dependencies\tar\*
+  - C:\Program Files (x86)\TiFLUX\dependencies\ultravnc\*
+  - C:\Program Files (x86)\TiFLUX\TiService.exe
+  - C:\Program Files (x86)\TiFLUX\TiUpdateService.exe
+  - C:\Program Files (x86)\TiFLUX\si.exe
+  - C:\Program Files (x86)\TiFLUX\desktop\TiAgent.exe
+  - '%ProgramData%\Tiflux\*'
+  - /Applications/TiAgent.app
+Artifacts:
+  Disk:
+  - File: C:\Program Files (x86)\TiFLUX\TiService.exe
+    Description: TiFLUX SYSTEM service binary; persists agent and re-spawns helpers
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\TiUpdateService.exe
+    Description: TiFLUX updater service binary
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\TiUpdateService.exe.config
+    Description: Updater service .NET config file
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\si.exe
+    Description: Silent helper launched from cmd.exe /c start /MIN by the service
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\si.pdb
+    Description: PDB symbol file shipped alongside si.exe (information disclosure)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\TiUpdateService.pdb
+    Description: PDB symbol file shipped alongside TiUpdateService.exe
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\desktop\TiAgent.exe
+    Description: TiAgent user-mode tray application
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\desktop\TiAgent.exe.config
+    Description: TiAgent .NET config file
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\desktop\TiAgent.pdb
+    Description: PDB symbol file shipped alongside TiAgent.exe
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\desktop\en\TiAgent.resources.dll
+    Description: TiAgent localized resources (English)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\desktop\pt-BR\TiAgent.resources.dll
+    Description: TiAgent localized resources (Brazilian Portuguese)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\desktop\es\TiAgent.resources.dll
+    Description: TiAgent localized resources (Spanish)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\ultravnc\*
+    Description: Bundled UltraVNC redistributable used for inbound remote control
+      (WinVNC.exe, VNCHooks.dll, uvnc_set.exe, uvnckeyboardhelper.exe, setupdrvmv.exe
+      observed as bundled files in the TiFLUX MSI; subdirectory layout below)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\ultravnc\driver\xp64\driver\mv2.dll
+    Description: Bundled UltraVNC mirror driver helper (directly observed install
+      path)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\7zip\7z.exe
+    Description: Bundled 7-Zip CLI used by the agent for extraction tasks
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\7zip\7z.dll
+    Description: Bundled 7-Zip library
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\7zip\7zCon.sfx
+    Description: Bundled 7-Zip console SFX module
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\tar\tar.exe
+    Description: Bundled GNU tar binary
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\tar\libiconv-2.dll
+    Description: Dependency of bundled tar.exe
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\tar\libintl-2.dll
+    Description: Dependency of bundled tar.exe
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\sas_generation.reg
+    Description: Registry payload imported during install (SAS generation)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\sas_registry.reg
+    Description: Registry payload imported during install (SAS registry)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\sshHostKey.reg
+    Description: Registry payload imported during install (SSH host key)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\dependencies\safemode_reboot.reg
+    Description: Registry payload imported during install (Safe Mode reboot helper)
+    OS: Windows
+  - File: C:\Program Files (x86)\TiFLUX\scripts\README
+    Description: Bundled scripts README
+    OS: Windows
+  - File: '%ProgramData%\Tiflux\*'
+    Description: TiFLUX runtime data / logs directory; referenced in vendor uninstall
+      guidance
+    OS: Windows
+  EventLog:
+  - EventID: 7045
+    ProviderName: Service Control Manager
+    LogFile: System.evtx
+    ServiceName: TiService
+    ImagePath: '"C:\\Program Files (x86)\\TiFLUX\\TiService.exe"'
+    Description: Service installation event as result of TiFLUX agent installation.
+  - EventID: 4688
+    ProviderName: Microsoft-Windows-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: '"cmd" /c "sc failure TiService reset= 86400 actions= restart/30000"'
+    Description: Process creation observed during TiFLUX install — msiexec spawning
+      cmd.exe to harden TiService auto-restart behaviour.
+  - EventID: 4688
+    ProviderName: Microsoft-Windows-Security-Auditing
+    LogFile: Security.evtx
+    CommandLine: cmd.exe /c start /MIN "" "C:\\Program Files (x86)\\TiFLUX\\si.exe"
+    Description: TiService spawning the silent helper si.exe via cmd.exe with a hidden
+      window.
+  Registry:
+  - Path: HKLM\SYSTEM\CurrentControlSet\Services\TiService
+    Description: TiFLUX SYSTEM service registration
+  - Path: HKLM\SYSTEM\CurrentControlSet\Services\TiService\ImagePath
+    Description: ImagePath = "C:\Program Files (x86)\TiFLUX\TiService.exe"
+  - Path: HKLM\SYSTEM\CurrentControlSet\Services\TiService\Start
+    Description: "Start = 2 (Automatic) \u2014 service launches at boot"
+  - Path: HKLM\SOFTWARE\TiFLUX\*
+    Description: Tenant configuration (id, client_id, org_id, org_token, token, uuid)
+  - Path: HKLM\SOFTWARE\WOW6432Node\TiFLUX\*
+    Description: Tenant configuration on 32-bit-on-64 install (id, client_id, org_id,
+      org_token, token, uuid)
+  - Path: HKLM\SOFTWARE\WOW6432Node\TiFLUX\org_id
+    Description: Tenant org_id value persisted by the agent
+  - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\TiAgent
+    Description: Run-key persistence for TiAgent.exe (per-machine autostart of the
+      tray UI)
+  - Path: HKCU\SOFTWARE\TiFlux
+    Description: Per-user TiFLUX state
+  Network:
+  - Description: "TiFLUX agent control channel \u2014 websocket and equipment registration\
+      \ / triggers JSON endpoints"
+    Domains:
+    - agent.tiflux.com
+    Ports:
+    - 443
+  - Description: TiFLUX tenant web console
+    Domains:
+    - app.tiflux.com
+    Ports:
+    - 443
+  - Description: TiFLUX corporate / marketing site (referenced from agent and installer)
+    Domains:
+    - tiflux.com
+    - www.tiflux.com
+    - tiflux.com.br
+    - www.tiflux.com.br
+    Ports:
+    - 443
+  - Description: TiFLUX per-tenant subdomains used to host the agent MSI installer
+      download (also abused to deliver decoy MSIs named after legitimate software)
+    Domains:
+    - '*.tiflux.com'
+    Ports:
+    - 443
+  - Description: Splashtop infrastructure referenced by the agent only when the optional
+      Splashtop remote-access integration is enabled in the tenant; the Splashtop
+      client itself is not bundled in the TiFLUX MSI and is installed separately
+      (see splashtop.yaml for Splashtop-specific artifacts)
+    Domains:
+    - my.splashtop.com
+    Ports:
+    - 443
+  Other:
+  - Type: URL
+    Value: https://agent.tiflux.com/ws
+  - Type: URL
+    Value: https://agent.tiflux.com/equipment_users/get_or_create.json
+  - Type: URL
+    Value: https://agent.tiflux.com/equipment/equipment_triggers_get.json
+  - Type: URL
+    Value: https://agent.tiflux.com/equipment/equipment_reg.json
+  - Type: URL
+    Value: https://agent.tiflux.com/equipment/services_triggers
+  - Type: URL
+    Value: https://agent.tiflux.com/r/equipment/ticket_list/<equipment_id>/<token>/<seq>
+  - Type: IP
+    Value: 18.229.110.98
+Detections:
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tiflux_registry_sigma.yml
+  Description: Detects potential registry activity of TiFLUX RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tiflux_network_sigma.yml
+  Description: Detects potential network activity of TiFLUX RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tiflux_files_sigma.yml
+  Description: Detects potential files activity of TiFLUX RMM tool
+- Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tiflux_processes_sigma.yml
+  Description: Detects potential processes activity of TiFLUX RMM tool
+References:
+- https://tiflux.com/
+- https://tiflux.com/agente-inteligente-acesso-remoto/
+- https://tiflux.com/blog/configuracao-do-agente-remoto/
+- https://guia-de-uso.tiflux.com/faq/acesso-ao-tiflux/configuracoes-de-agente-remoto/instalacao-e-remocao-do-agente-remoto
+- https://guia-de-uso.tiflux.com/recursos-1/recursos/agente-mac
+- https://www.splashtop.com/partners/integrations/tiflux
+- https://x.com/James_inthe_box/status/2051375312894935077
+- https://app.any.run/tasks/775562f2-b0e5-49ba-9193-0170df9899b9
+- https://www.virustotal.com/gui/file/0528c5935296d99ec3df6806dbd42fa2f43921f36047bbb60bba4de2dfba0ab8
+- https://www.virustotal.com/gui/file/03effaf15e8df6ac014f354babb940a27bb005529197796f262d4eea457bc37d
+Acknowledgement:
+- Person: James_inthe_box
+  Handle: '@James_inthe_box'
+- Person: Michael Haag
+  Handle: '@M_haggis'
