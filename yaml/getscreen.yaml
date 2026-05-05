@@ -7,13 +7,13 @@ Description: |
     "Getscreen.me".
 Author: 'PixelTommy & Guzzy (SagaLabs & itm8 ARC)'
 Created: '2024-08-02'
-LastModified: '2025-04-23'
+LastModified: '2026-05-04'
 Details:
     Website: 'https://getscreen.me/'
     PEMetadata:
         Filename: getscreen.exe
-        OriginalFileName: ''
-        Description: ''
+        OriginalFileName: getscreen.exe
+        Description: 'Getscreen.me agent (ProductName/InternalName: Getscreen.me, CompanyName: Point B Ltd). Distributed as a UPX-packed PE32 (x86) GUI executable from https://getscreen.me/download/getscreen-x86.exe. Current binaries (file version 3.5.0+) are signed by POINT B LTD (Cyprus, registered HE 430957) on a GlobalSign GCC R45 EV CodeSigning chain. Older 2020-2021 era binaries were signed by OOO "GET SKRIN SOFTVER" on a COMODO RSA Extended Validation Code Signing CA chain (now expired).'
     Privileges: Admin
     Free: ''
     Verification: ''
@@ -28,6 +28,9 @@ Details:
     InstallationPaths:
         - C:\ProgramData\Getscreen.me\
         - C:\Users\*\AppData\Local\Getscreen.me\
+        - C:\Program Files\Getscreen.me\
+        - C:\Users\*\Downloads\getscreen-x86.exe
+        - C:\Users\*\Downloads\getscreen.upd.exe
 Artifacts:
     Disk:
         - File: 'C:\ProgramData\Getscreen.me\<date>.log'
@@ -70,33 +73,61 @@ Artifacts:
           ProviderName: Service Control Manager
           LogFile: System.evtx
           ServiceName: Getscreen.me
-          ImagePath: ''
-          Description: Service installation event as a result of GetScreen installation.
+          ImagePath: 'C:\Program Files\Getscreen.me\getscreen.exe'
+          Description: Service installation event as a result of GetScreen installation. The persistent service typically points at the elevation helper under %ProgramData%, e.g. '"C:\ProgramData\Getscreen.me\<random28chars>-elevate.exe" -elevate \\.\pipe\elevateGS512<random28chars>' where the random alpha string is generated per-install.
         - EventID: 4697
           ProviderName: Microsoft-Security-Auditing
           LogFile: Security.evtx
           ServiceName: Getscreen.me
-          ImagePath: ''
-          Description: Service installation event as a result of GetScreen installation.
+          ImagePath: 'C:\Program Files\Getscreen.me\getscreen.exe'
+          Description: Service installation event as a result of GetScreen installation. ImagePath may also reference the elevation helper under %ProgramData% (see EventID 7045 description).
     Registry:
         - Path: 'HKU\{SID}\Software\GetScreen'
           Description: Application settings including language preferences.
         - Path: 'HKU\{SID}\Software\GetScreen\Getscreen.me'
           Description: Application-specific settings.
+        - Path: 'HKLM\System\CurrentControlSet\Services\GetscreenSV'
+          Description: Service registry key created when Getscreen.me installs persistence (SCM service key name is 'GetscreenSV', friendly name 'Getscreen.me'). The ImagePath value typically points at a per-install elevation helper such as '"C:\ProgramData\Getscreen.me\<random28chars>-elevate.exe" -elevate \\.\pipe\elevateGS512<random28chars>'.
     Network:
         - Description: Known remote domains
           Domains:
               - getscreen.me
               - GetScreen.me
               - '*.getscreen.me'
-          Ports: []
+              - go.getscreen.me
+              - image.getscreen.me
+              - 'px-*.getscreen.me'
+          Ports:
+              - 443
     Other:
         - Type: ServiceName
           Value: Getscreen.me
+        - Type: ServiceName
+          Value: GetscreenSV
         - Type: NamedPipe
           Value: PCommand*GetScreen.meout
+        - Type: NamedPipe
+          Value: '\\.\pipe\elevateGS512*'
+        - Type: NamedPipe
+          Value: '\\.\pipe\PCommand*Getscreen.me*'
         - Type: CommandLine
           Value: 'getscreen.exe -install -register 87c34ca23sss391@tutamail.com'
+        - Type: CommandLine
+          Value: 'getscreen-x86.exe -gpipe \\.\pipe\PCommand*Getscreen.me* -gui'
+        - Type: CommandLine
+          Value: '*-elevate.exe -elevate \\.\pipe\elevateGS512*'
+        - Type: SHA256
+          Value: 611835aa02303ffa12762d412882a9fc7249ce1e52b931c0e8e58891c553548c
+        - Type: Authentihash
+          Value: c547fa46ec6345b04fb131b77b918d3aad455701b4dd152f6f4f612ba8fcc545
+        - Type: PublisherCertSubject
+          Value: 'CN=POINT B LTD, O=POINT B LTD, L=Limassol, ST=Limassol, C=CY (jurisdictionC=CY, serialNumber=HE 430957, businessCategory=Private Organization)'
+        - Type: PublisherCertIssuer
+          Value: 'CN=GlobalSign GCC R45 EV CodeSigning CA 2020, O=GlobalSign nv-sa, C=BE'
+        - Type: PublisherCertSerial
+          Value: '7ae0e9c1cfe2dce0e21c4327'
+        - Type: PublisherCertTBSSha256
+          Value: 3696C8A244152307EA16EA1613ED0ECAFD138F3AF475C5A03B5B80A77E5E240C
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_network_sigma.yml
       Description: Detects potential network activity of GetScreen RMM tool
