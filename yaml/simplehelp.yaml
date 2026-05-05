@@ -1,9 +1,9 @@
 Name: SimpleHelp
 Category: RMM
-Description: SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: SimpleHelp is a remote monitoring and management (RMM) tool. It has been observed being abused by threat actors as a persistence and remote-access vector during ransomware operations, including campaigns delivering the "Crazy" ransomware (VoidCrypt family) reported by Huntress in February 2026.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-05-04'
 Details:
     Website: 'https://simple-help.com/'
     PEMetadata:
@@ -13,7 +13,8 @@ Details:
     Privileges: ''
     Free: ''
     Verification: ''
-    SupportedOS: []
+    SupportedOS:
+        - Windows
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
@@ -22,16 +23,41 @@ Details:
         - simplegatewayservice.exe
         - remote access.exe
         - windowslauncher.exe
+        - spsrv.exe
+        - serviceconfig.xml
+        - C:\ProgramData\JWrapper-Remote Access\*
+        - '%APPDATA%\JWrapper-SimpleSetup\*'
+        - vhost.exe
 Artifacts:
-    Disk: []
+    Disk:
+        - File: C:\ProgramData\JWrapper-Remote Access\
+          Description: Default SimpleHelp "Remote Access" service installation directory observed in Huntress reporting on Crazy ransomware operations.
+          OS: Windows
+        - File: '%APPDATA%\JWrapper-SimpleSetup\'
+          Description: SimpleHelp customer-side setup/wrapper directory dropped by the SimpleSetup installer (e.g. windowslauncher.exe, SimpleSetupECompatibility.exe).
+          OS: Windows
     EventLog: []
-    Registry: []
+    Registry:
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\SimpleSetup
+          Description: Uninstall key written by the SimpleHelp SimpleSetup installer; URLUpdateInfo points to https://www.simple-help.com/media/static/SimpleSetup/.
     Network:
         - Description: Known remote domains
           Domains:
               - user_managed
               - simple-help.com
-          Ports: []
+              - 51.255.19.178
+              - 51.255.19.179
+          Ports:
+              - 443
+        - Description: Threat-actor-controlled SimpleHelp / Net Monitor infrastructure observed by Huntress during the "Crazy" (VoidCrypt) ransomware campaign documented in February 2026. NOT vendor-legitimate — these are attacker-operated SimpleHelp gateways and update servers.
+          Domains:
+              - dronemaker.org
+              - telesupportgroup.com
+              - microuptime.com
+              - 192.144.34.42
+              - 160.191.182.41
+          Ports:
+              - 443
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml
       Description: Detects potential network activity of SimpleHelp RMM tool
@@ -39,7 +65,14 @@ Detections:
       Description: Detects potential processes activity of SimpleHelp RMM tool
 References:
     - https://simple-help.com/remote-support
-Acknowledgement: []
+    - https://www.huntress.com/blog/employee-monitoring-simplehelp-abused-in-ransomware-operations
+    - https://www.huntress.com/blog/slashandgrab-screen-connect-post-exploitation-in-the-wild-cve-2024-1709-cve-2024-1708
+    - https://www.group-ib.com/blog/muddywater-infrastructure/
+Acknowledgement:
+    - Person: KapAttack133
+      Handle: KapAttack133
+    - Person: Phyo Paing Htun
+      Handle: ''
 CodeSigning:
     certificates:
         - signer_name: SimpleHelp Ltd
