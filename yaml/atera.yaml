@@ -123,11 +123,6 @@ Artifacts:
               - N/A
         - Description: N/A
           Domains:
-              - pubsub.pubnub.com
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
               - agentreporting.atera.com
           Ports:
               - N/A
@@ -149,11 +144,6 @@ Artifacts:
         - Description: N/A
           Domains:
               - packagesstore.blob.core.windows.net
-          Ports:
-              - N/A
-        - Description: N/A
-          Domains:
-              - ps.pndsn.com
           Ports:
               - N/A
         - Description: N/A
