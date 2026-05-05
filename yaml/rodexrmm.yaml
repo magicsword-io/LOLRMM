@@ -1,34 +1,93 @@
 Name: Rodex RMM
-Category: RMM
-Description: Rodex RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Category: RAT
+Description: |
+    Rodex RMM is marketed at https://www.rodex.cc/ as a self-hostable Remote Monitoring & Management platform — the operator pays in cryptocurrency ($150-$650/mo recurring, $250-$2,200 first-month onboarding) and the vendor's provisioner installs a stack (Node.js + MongoDB + Go relay + Nginx + SSL) onto the operator's own VPS. The agent is a single Go binary (`RodexAgent.exe`, ~7.3 MB) which establishes a WebSocket back to the operator's relay for remote desktop (WebRTC GUI streaming), remote terminal (PowerShell / Bash / Zsh), CPU/RAM/disk/network monitoring, Windows Update orchestration, and arbitrary script execution.
+
+    The marketing positions Rodex as a privacy-preserving alternative to cloud RMMs ("every byte of data stays on your server"), comparable in shape to RustDesk / Tactical RMM / NetLock RMM. **However**, the project profile is materially different from those legitimate self-hostable peers and tracks closer to the TrustConnect / fake-RMM-as-a-service pattern:
+
+    - No public source code (RustDesk, Tactical RMM, NetLock are open-source on GitHub; Rodex is not).
+    - No corporate identity disclosed — no leadership names, no LinkedIn presence, the only contact is `support@rodex.cc`.
+    - The `rodex.cc` domain was registered 2026-03-12 (NameSilo privacy WHOIS, Cloudflare-fronted).
+    - Cryptocurrency-only payment.
+    - Every `RodexAgent.exe` sample observed on VirusTotal is **unsigned** (no Authenticode publisher cert), despite the PE version block claiming `Rodex RMM Suite` / `© 2024-2025 Rodex Technologies Inc.` — that company name is not verifiable in any registry.
+    - In-the-wild RodexAgent.exe samples have antivirus detection ratios ranging 27/76 to 48/76, with several engines applying the `trojan.tedy/misc` label (Tedy is a known stealer family); one sample carries the label `PasswordStealer.Spyware.Stealer.DDS`.
+    - Agent filenames observed in the wild include both random-name `C:\Windows\<6-9-char>.exe` drops (e.g. `airj5.exe`, `ccwojfhc.exe`, `n0y9ytr.exe`) and decoy installers impersonating real organisations (`PROSEGURAgent.exe`, `FundacinAdsisAgent.exe`, `Daleph-Install-Default.exe`, `SifemInstall.exe`, `AdobepluginD3238-Install-Default.exe`, `AccessWinRAR.exe`, `InvitationCard.exe`) — all carrying the same `RodexAgent.exe` PE version-block strings underneath.
+
+      Catalogued here as **Category: RAT** (same precedent as `trustconnect.yaml`) — not because the product is necessarily intended as malware, but because the in-the-wild distribution pattern is indistinguishable from RAT-as-a-service and defenders matching `RodexAgent.exe` will encounter unsigned binaries with malware-class filenames rather than vendor-signed RMM agents.
 Author: johnk3r
 Created: '2026-04-03'
-LastModified: '2026-08-03'
+LastModified: '2026-05-04'
 Details:
-    Website: 'https://www.r3v13wd0s.com'
+    Website: https://www.rodex.cc/
     PEMetadata:
-        Filename: 'RodexAgent.exe'
-        OriginalFileName: 'RodexAgent.exe'
-        Description: 'Rodex RMM Agent – Remote Monitoring and Management Service'
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
+        - Filename: RodexAgent.exe
+          OriginalFileName: RodexAgent.exe
+          Description: Rodex RMM Agent — Go-based WebSocket agent (~7.3 MB). PE version-block strings (Product=`Rodex RMM Suite`, CopyrightHolder=`Rodex Technologies Inc.`) are vendor-claimed but not verifiable in any corporate registry; binary is unsigned.
+    Privileges: User
+    Free: 'No (crypto-only paid plans, $150-$650/mo recurring)'
+    Verification: 'No verification — binaries are unsigned despite PE version-block claiming "Rodex Technologies Inc." copyright'
+    SupportedOS:
+        - Windows
+        - Linux
+        - MacOS
+    Capabilities:
+        - Remote desktop (WebRTC GUI streaming)
+        - Remote terminal (PowerShell / Bash / Zsh)
+        - Endpoint monitoring (CPU / RAM / disk / network)
+        - Windows Update / patch orchestration
+        - Script automation
+        - Self-hosted operator-controlled relay
     Vulnerabilities: []
     InstallationPaths:
         - RodexAgent.exe
         - rodexagent.exe
+        - C:\Program Files\Rodex\RodexAgent.exe
+        - C:\Windows\<random>.exe
 Artifacts:
-    Disk: []
+    Disk:
+        - File: RodexAgent.exe
+          Description: Rodex Go-based agent binary, ~7.3 MB. Unsigned. Multiple decoy filenames observed in the wild — match on the binary's PE version-block strings or authentihash rather than filename.
+          OS: Windows
+          Example:
+              - 'SHA256: e08a097fe259aeca06133b5d1df226f9a2e79e79d7fb44cf5a3503c2b484c21b (det 27/76, freshest sample)'
+              - 'SHA256: 26dfaebeee560a938a572ed387db816c7e5a8415e126115111cd0ed0dbf59c8a (det 48/76)'
+              - 'SHA256: 28b33dddab17f219316079d43f47bb92b587962b608df4ed5c3c9020948b5db4 (det 40/76)'
+              - 'SHA256: 4e2f69b87d108fb58fde72c5e51cc5bf587a7665e4d406693742ae8afca77300 (det 42/76)'
+              - 'SHA256: 20fc3c4eaf48c79a4a2da019135c33be8bc06d80aca68e3d1ce405f76b774857 (det 39/76)'
+        - File: 'C:\Windows\<random-6-9-char>.exe'
+          Description: Stage-1 drop location pattern observed across multiple campaigns delivering RodexAgent.exe under random hex / lowercase filenames.
+          OS: Windows
+        - File: '<impersonated-org>Agent.exe'
+          Description: Decoy installer naming pattern — RodexAgent.exe wrapped or renamed to look like a legitimate organisation's installer (PROSEGURAgent.exe, FundacinAdsisAgent.exe, Daleph-Install-Default.exe, SifemInstall.exe, AdobepluginD3238-Install-Default.exe, AccessWinRAR.exe, InvitationCard.exe observed in VirusTotal corpus).
+          OS: Windows
     EventLog: []
     Registry: []
-    Network: []
+    Network:
+        - Description: Rodex marketing / customer portal — registered 2026-03-12 via NameSilo privacy WHOIS, fronted by Cloudflare. Operators visit this site to purchase a plan and provision a relay onto their VPS.
+          Domains:
+              - rodex.cc
+              - www.rodex.cc
+          Ports:
+              - 443
+        - Description: Per-operator relay — the operator's own VPS hosts the Node.js dashboard / Go relay / MongoDB stack. Network destination is operator-controlled, not vendor-centralised, so per-campaign infrastructure varies. The agent connects back to whatever relay URL was baked in at install time over WebSocket (HTTPS:443 by default).
+          Domains:
+              - <operator-controlled VPS hostname or IP>
+          Ports:
+              - 443
+    Other:
+        - Type: Note
+          Value: 'r3v13wd0s.com — alternate domain referenced in earlier writeups; flagged 14/91 malicious + tagged "dga" on VirusTotal. Likely a previous staging / payload-host name; rodex.cc appears to be the current marketing front.'
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rodexrmm_files_sigma.yml
       Description: Detects potential files activity of Rodex RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rodexrmm_processes_sigma.yml
       Description: Detects potential processes activity of Rodex RMM tool
 References:
-    - https://www.r3v13wd0s.com
-Acknowledgement: []
+    - https://www.rodex.cc/
+    - https://www.virustotal.com/gui/file/e08a097fe259aeca06133b5d1df226f9a2e79e79d7fb44cf5a3503c2b484c21b
+    - https://www.virustotal.com/gui/domain/rodex.cc
+Acknowledgement:
+    - Person: johnk3r
+      Handle: '@johnk3r'
+    - Person: Michael Haag
+      Handle: '@M_haggis'
