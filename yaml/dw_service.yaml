@@ -20,7 +20,7 @@ Details:
     InstallationPaths:
         - dwagsvc.exe
         - dwagent.exe
-        - dwagsvc.exe
+        - dwaglnc.exe
 Artifacts:
     Disk: []
     EventLog: []
@@ -37,4 +37,5 @@ Detections:
       Description: Detects potential processes activity of DW Service RMM tool
 References:
     - https://news.dwservice.net/dwservice-security-infrastructure/
-Acknowledgement: []
+    - https://www.rapid7.com/blog/post/tr-muddying-tracks-state-sponsored-shadow-behind-chaos-ransomware/
+Acknowledgement: [Daniel Koifman (@KoifSec)]
