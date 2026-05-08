@@ -53,8 +53,14 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git config --global push.default simple
         git add .
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update generated site files [skip ci]" && 
-        git push https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git HEAD:main)
+        git diff --quiet && git diff --staged --quiet && exit 0
+        git commit -m "Update generated site files [skip ci]"
+        for attempt in 1 2 3; do
+          git pull --rebase origin main
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git HEAD:main && exit 0
+          sleep $((attempt * 5))
+        done
+        exit 1
       working-directory: website
 
 # Deployment job
