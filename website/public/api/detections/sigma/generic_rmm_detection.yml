@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-05-03'
+modified: '2026-05-08'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -125,6 +125,7 @@ detection:
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Ripple\*
     - \\C:\Program Files\Remote Utilities\*
+    - \\C:\Program Files\Rodex\RodexAgent.exe
     - \\C:\Program Files\RustDesk
     - \\C:\Program Files\Solar-Putty-v4\*
     - \\C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
@@ -142,12 +143,16 @@ detection:
     - \\C:\ProgramData\Kaseya\
     - \\C:\ProgramData\Netbird\*
     - \\C:\ProgramData\Total Software Deployment\*
+    - \\C:\ProgramData\{E0E95C6C-F194-4846-928D-E5538022226D}\
     - \\C:\Users\*\AppData\Local\Google\Chrome\User Data\Default\Extensions\iodihamcpbpeioajjeobimgagajmlibd*
     - \\C:\Users\*\AppData\Local\IDrive\*
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue.exe
     - \\C:\Users\*\AppData\Local\LogMeIn Rescue Applet\LMIR*.tmp\lmi_rescue_srv.exe
     - \\C:\Users\*\AppData\Local\MEGAsync\*
+    - \\C:\Users\*\AppData\Local\Programs\RemSupp\RemSupp.exe
+    - \\C:\Users\*\AppData\Local\Programs\RemSupp\Uninstall RemSupp.exe
     - \\C:\Users\*\AppData\Local\Temp\nvda_*\*
+    - \\C:\Users\*\AppData\Local\remsupp-updater\installer.exe
     - \\C:\Users\*\AppData\Local\rustdesk\*
     - \\C:\Users\*\AppData\Local\rustdesk\rustdesk.exe
     - \\C:\Users\*\AppData\Roaming\Mikogo\*
@@ -158,6 +163,7 @@ detection:
     - \\C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
     - \\C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
     - \\C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+    - \\C:\Windows\<random>.exe
     - \\C:\Windows\Action1\*
     - \\C:\Windows\SysWOW64\rserver30\FamItrf2
     - \\C:\Windows\SysWOW64\rserver30\FamItrfc
@@ -268,6 +274,7 @@ detection:
     - \\NTRsupportPro_EN.exe
     - \\NetLock_RMM_Agent_Installer
     - \\NetLock_RMM_Agent_Installer.exe
+    - \\NetViewer.exe
     - \\Netop Ondemand.exe
     - \\NinjaRMMAgent.exe
     - \\NinjaRMMAgentPatcher.exe
@@ -302,6 +309,7 @@ detection:
     - \\RemoteRipple.exe
     - \\RmmService.exe
     - \\RocketRemoteDesktop_Setup.exe
+    - \\RodexAgent.exe
     - \\SMPCSetup.exe
     - \\SRManager.exe
     - \\SRServer.exe
@@ -375,6 +383,7 @@ detection:
     - \\basupsrvc.exe
     - \\basupsrvcupdate.exe
     - \\basuptshelper.exe
+    - \\bbl.exe
     - \\beamyourscreen-host.exe
     - \\beamyourscreen.exe
     - \\bomgar-pac-*.exe
@@ -498,6 +507,7 @@ detection:
     - \\level-remote-control-ffmpeg.exe
     - \\level-windows-amd64.exe
     - \\level.exe
+    - \\libeay32.dll
     - \\llrcservice.exe
     - \\lmi_rescue.exe
     - \\lmnoipserver.exe
@@ -542,6 +552,7 @@ detection:
     - \\nomachine*.exe
     - \\ntrntservice.exe
     - \\nvClient.exe
+    - \\nvConsole.exe
     - \\nvda.exe
     - \\nvda_*.exe
     - \\nvda_service.exe
@@ -549,7 +560,8 @@ detection:
     - \\nxservice*.ese
     - \\ocsinventory.exe
     - \\ocsservice.exe
-    - \\oo-syspectr*.exe
+    - \\oolocker.exe
+    - \\oosyspectr.exe
     - \\p9agent*.exe
     - \\paexec.exe
     - \\parallelsaccess-*.exe
@@ -593,6 +605,7 @@ detection:
     - \\remcom.exe
     - \\remcomsvc.exe
     - \\remcos*.exe
+    - \\remmon.exe
     - \\remobo.exe
     - \\remobo_client.exe
     - \\remobo_tracker.exe
@@ -611,6 +624,7 @@ detection:
     - \\requires sign up
     - \\rfusclient.exe
     - \\rmserverconsolemediator.exe
+    - \\rodexagent.exe
     - \\romfusclient.exe
     - \\romserver.exe
     - \\romviewer.exe
@@ -656,6 +670,7 @@ detection:
     - \\srmanager.exe
     - \\srserver.exe
     - \\srservice.exe
+    - \\ssleay32.dll
     - \\strwinclt.exe
     - \\sunlogin*.exe
     - \\superops.exe
@@ -668,6 +683,7 @@ detection:
     - \\supremoservice.exe
     - \\syncrosetup.exe
     - \\sysdiag.exe
+    - \\syspectr.exe
     - \\tacticalrmm.exe
     - \\tailscale-*.exe
     - \\tailscale-ipn.exe
@@ -701,11 +717,18 @@ detection:
     - \\vncserver.exe
     - \\vncserverui.exe
     - \\vncviewer.exe
+    - \\weCliboardListener.exe
+    - \\weInstSvc.exe
     - \\webexpcnow.exe
     - \\webrdp.exe
+    - \\wec_launcher_[a-Z0-9]*_.exe
+    - \\wec_launcher_[a-Z0-9]*_.pkg
     - \\weezo setup*.exe
     - \\weezo.exe
     - \\weezohttpd.exe
+    - \\wemonc.exe
+    - \\weprtct.exe
+    - \\wesvc.exe
     - \\winagent.exe
     - \\winaw32.exe
     - \\windowslauncher.exe

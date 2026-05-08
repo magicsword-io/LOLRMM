@@ -1,10 +1,10 @@
 ---
-description = "Tanium is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Tanium"
+description: "Tanium is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Tanium"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Tanium
@@ -18,7 +18,7 @@ Tanium is a remote monitoring and management (RMM) tool. More information will b
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.tanium.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Tanium is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": ["Tanium Inc."], "certificates": [{"signer_name": "Tanium Inc.", "certificate_thumbprint": "A55D7760CF404CA1F4D1F60861302BDE90B21B01", "tbs_sha256": "5285CC0A00FA0FA20FAEB8043102876D147FBBEFDD0A66821991559382370ADA", "tbs_sha1": "", "src_file_sha256": "3be87ff5ce6a9e0104110027478dbc1ce63c97a5cd1324f06d92d97857afbaf3", "src_file_path": "downloaded_files/tanium/3be87ff5ce6a9e0104110027478dbc1ce63c97a5cd1324f06d92d97857afbaf3", "src_file_company": "Tanium Inc."}, {"signer_name": "Tanium Inc.", "certificate_thumbprint": "B1AFC12445071A3724621CDD56A4F1ADC4C67E9E", "tbs_sha256": "C16C5B0D333FA6422E19D0012405C88511A01A6FB272E9C915E18668270710B9", "tbs_sha1": ""}, {"signer_name": "Tanium Inc.", "certificate_thumbprint": "D6A226A8280A4C97C3251B3A7B4D5F17E8C05A08", "tbs_sha256": "81E8FEBE467DE9D69FB9A33AD320613D7BB6AA313E0310568D19FDC05FFD2EFA", "tbs_sha1": ""}, {"signer_name": "Tanium", "certificate_thumbprint": "F092414A2EA9FD375D4DB7D16B81906B522F2E37", "src_file_sha256": "9c25d19ee1ea68a1a4e729dc0fab0bf879e63c4ab599f86f2e9b5ca961671a84", "src_file_path": "downloaded_files/tanium/9c25d19ee1ea68a1a4e729dc0fab0bf879e63c4ab599f86f2e9b5ca961671a84", "src_file_company": "www.tanium.com"}]} }/>
 
 
 ### Forensic Artifacts

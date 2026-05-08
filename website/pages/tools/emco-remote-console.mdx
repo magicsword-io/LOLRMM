@@ -1,0 +1,53 @@
+---
+description: "EMCO Remote Console is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "EMCO Remote Console"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# EMCO Remote Console
+
+EMCO Remote Console is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"EMCO Remote Console"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://emcosoftware.com/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["remoteconsole.exe"] }/>
+
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "emcosoftware.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of EMCO Remote Console RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/emco_remote_console_network_sigma.yml)
+- Detects potential processes activity of EMCO Remote Console RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/emco_remote_console_processes_sigma.yml)
+
+

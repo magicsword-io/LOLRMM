@@ -1,0 +1,62 @@
+---
+description: "Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.  **IMPORTANT**: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome browser and other Google applications. Do NOT blindly block these certificate thumbprints as doing so will break Google Chrome and other Google products in your environment. Use certificate data for detection, hunting, and analysis purposes only."
+title: "Chrome Remote Desktop"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Chrome Remote Desktop
+
+Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+**IMPORTANT**: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome browser and other Google applications. Do NOT blindly block these certificate thumbprints as doing so will break Google Chrome and other Google products in your environment. Use certificate data for detection, hunting, and analysis purposes only.
+
+<BlockBanner name={"Chrome Remote Desktop"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={"https://remotedesktop.google.com/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["remote_host.exe", "remoting_host.exe", "C:\\Program Files (x86)\\Google\\Chrome Remote Desktop\\*", "*\\Google\\Chrome Remote Desktop\\*", "*\\remoting_host.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Google LLC", "certificate_thumbprint": "607A3EDAA64933E94422FC8F0C80388E0590986C", "src_file_sha256": "1e0fbe101bbca4efdfb05c012495265f1db731c97fb82fa8e569c6ab725c0140", "src_file_path": "downloaded_files/chrome_remote_desktop/1e0fbe101bbca4efdfb05c012495265f1db731c97fb82fa8e569c6ab725c0140", "src_file_company": "Google LLC"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*remotedesktop.google.com", "*remotedesktop-pa.googleapis.com", "remotedesktop.google.com", "chromoting-client.talkgadget.google.com", "chromoting-host.talkgadget.google.com", "chromoting-oauth.talkgadget.google.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Chrome Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml)
+- Detects potential processes activity of Chrome Remote Desktop RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_processes_sigma.yml)
+
+### References
+- [https://support.google.com/chrome/a/answer/2799701?hl=en](https://support.google.com/chrome/a/answer/2799701?hl=en)
+

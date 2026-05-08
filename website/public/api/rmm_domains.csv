@@ -51,6 +51,9 @@ pcvisit.de,Pcvisit
 level.io,Level.io
 *.level.io,Level.io
 cloudflare.com/products/tunnel/,CloudFlare Tunnel
+rodex.cc,Rodex RMM
+www.rodex.cc,Rodex RMM
+<operator-controlled VPS hostname or IP>,Rodex RMM
 *.beinsync.net,BeInSync
 *.beinsync.com,BeInSync
 boot.net.anydesk.com,AnyDesk
@@ -61,6 +64,8 @@ immy.bot,ImmyBot
 soti.net/products/soti-pocket-controller,Pocket Controller
 *.islonline.com,ISL Online
 *.islonline.net,ISL Online
+*.remmon.hu,Remmon
+remmon.hu,Remmon
 goverlan.com,Goverlan
 *.GoToMyPC.com,GoToMyPC
 basecamp.com,Basecamp
@@ -161,7 +166,11 @@ xeox.com,Xeox
 login.tailscale.com,Tactical RMM
 login.tailscale.com,Tactical RMM
 docs.tacticalrmm.com,Tactical RMM
+*.netviewer.com,Netviewer (GoToMeet)
+netviewer.com,Netviewer (GoToMeet)
 remobo.en.softonic.com,Remobo
+api.remsupp.com,RemSupp
+download.remsupp.com,RemSupp
 *.beanywhere.com ,N-Able Advanced Monitoring Agent
 systemmonitor.co.uk,N-Able Advanced Monitoring Agent
 *system-monitor.com,N-Able Advanced Monitoring Agent
@@ -487,8 +496,8 @@ rudesktop.ru,RuDesktop
 *.showmypc.com,ShowMyPC
 showmypc.com,ShowMyPC
 web.laplink.com/product/laplink-gold,Laplink Gold
-atled.syspectr.com,Syspectr
-app.syspectr.com,Syspectr
+*.syspectr.com,Syspectr
+syspectr.com,Syspectr
 *.alpemix.com,Alpemix
 *.teknopars.com,Alpemix
 ericom.com,Ericom Connect

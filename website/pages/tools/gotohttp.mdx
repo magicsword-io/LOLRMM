@@ -1,10 +1,10 @@
 ---
-description = "GotoHTTP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "GotoHTTP"
+description: "GotoHTTP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "GotoHTTP"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # GotoHTTP
@@ -29,6 +29,10 @@ GotoHTTP is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "\u5408\u80a5\u5c4f\u64ad\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8", "certificate_thumbprint": "9B4608217ED049C33A9D76184479BCAB06D957DC", "src_file_sha256": "baa575f60e834659befcce4a23c2be4ab5e2d8267f9e6558e01f8e915ccb0247", "src_file_path": "downloaded_files/gotohttp/baa575f60e834659befcce4a23c2be4ab5e2d8267f9e6558e01f8e915ccb0247", "src_file_company": "Pingbo Inc"}]} }/>
 
 
 ### Forensic Artifacts

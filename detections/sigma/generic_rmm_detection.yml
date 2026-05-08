@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-03-03'
+modified: '2026-05-08'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -43,7 +43,6 @@ detection:
     - \\C:\*\G2RDesktopConsole-x64.msi
     - \\C:\*\MobaXterm_installer_12.1.msi
     - \\C:\*\SecureCRT.EXE
-    - \\C:\*\ZA_Access.exe
     - \\C:\*\kitty.exe
     - \\C:\*\ngrok.zip
     - \\C:\*\nxplayer.exe
@@ -77,6 +76,7 @@ detection:
     - \\C:\Program Files (x86)\ManageEngine\ServiceDesk\*
     - \\C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
     - \\C:\Program Files (x86)\NVDA\nvda.exe
+    - \\C:\Program Files (x86)\Net Monitor for Employees Pro\*
     - \\C:\Program Files (x86)\NetSarang\xShell\*
     - \\C:\Program Files (x86)\OnionShare\*
     - \\C:\Program Files (x86)\PJ Technologies\GOVsrv\*
@@ -112,10 +112,12 @@ detection:
     - \\C:\Program Files\ImmyBot\ImmyUpdater.exe
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
+    - \\C:\Program Files\Lunixar\*
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
     - \\C:\Program Files\ManageEngine\ServiceDesk\*
     - \\C:\Program Files\Miradore\OnlineClient\bin\*
     - \\C:\Program Files\NVDA\nvda.exe
+    - \\C:\Program Files\Net Monitor for Employees Pro\*
     - \\C:\Program Files\Netbird\netbird-ui.exe
     - \\C:\Program Files\Netbird\netbird.exe
     - \\C:\Program Files\Parsec\*
@@ -123,6 +125,7 @@ detection:
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Ripple\*
     - \\C:\Program Files\Remote Utilities\*
+    - \\C:\Program Files\Rodex\RodexAgent.exe
     - \\C:\Program Files\RustDesk
     - \\C:\Program Files\Solar-Putty-v4\*
     - \\C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
@@ -156,6 +159,7 @@ detection:
     - \\C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
     - \\C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
     - \\C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+    - \\C:\Windows\<random>.exe
     - \\C:\Windows\Action1\*
     - \\C:\Windows\SysWOW64\rserver30\FamItrf2
     - \\C:\Windows\SysWOW64\rserver30\FamItrfc
@@ -217,6 +221,7 @@ detection:
     - \\GoToResolveUnattended.exe
     - \\GoToResolveUnattendedRemover.exe
     - \\GoToResolveUnattendedUi.exe
+    - \\Googlemeet.msi
     - \\GotoHTTP*.exe
     - \\GotoHTTP_x64.exe
     - \\GovAgentInstallHelper.exe
@@ -254,6 +259,7 @@ detection:
     - \\Kabuto.Service.Runner.exe
     - \\KabutoSetup.exe
     - \\LANDeskPortalManager.exe
+    - \\LunixarRMM*.msi
     - \\MEAgentHelper.exe
     - \\ManageEngine_Remote_Access_Plus.exe
     - \\ManageEngine_ServiceDesk_Plus.bin
@@ -264,6 +270,7 @@ detection:
     - \\NTRsupportPro_EN.exe
     - \\NetLock_RMM_Agent_Installer
     - \\NetLock_RMM_Agent_Installer.exe
+    - \\NetViewer.exe
     - \\Netop Ondemand.exe
     - \\NinjaRMMAgent.exe
     - \\NinjaRMMAgentPatcher.exe
@@ -298,6 +305,7 @@ detection:
     - \\RemoteRipple.exe
     - \\RmmService.exe
     - \\RocketRemoteDesktop_Setup.exe
+    - \\RodexAgent.exe
     - \\SMPCSetup.exe
     - \\SRManager.exe
     - \\SRServer.exe
@@ -345,7 +353,6 @@ detection:
     - \\WinVNCStub.exe
     - \\XSightService.exe
     - \\ZMAgent.exe
-    - \\Zaservice.exe
     - \\ZohoMeeting.exe
     - \\ZohoURSService.exe
     - \\Zohours.exe
@@ -412,6 +419,7 @@ detection:
     - \\dwagent.exe
     - \\dwagsvc.exe
     - \\dwrcs.exe
+    - \\eDocument-*.msi
     - \\echoserver*.exe
     - \\echoware.dll
     - \\ehorus standalone.exe
@@ -480,6 +488,10 @@ detection:
     - \\jumpdesktop.exe
     - \\jumpservice.exe
     - \\jumpupdater.exe
+    - \\komari-agent.exe
+    - \\komari-windows-386.exe
+    - \\komari-windows-amd64.exe
+    - \\komari-windows-arm64.exe
     - \\konea.exe
     - \\landeskagentbootstrap.exe
     - \\laplink-everywhere-setup*.exe
@@ -528,9 +540,13 @@ detection:
     - \\nhstw32.exe
     - \\ninjarmm-cli.exe
     - \\nldrw32.exe
+    - \\nmep_agtconfig.exe
+    - \\nmep_ctrlagent.exe
+    - \\nmep_ctrlagentsvc.exe
     - \\nomachine*.exe
     - \\ntrntservice.exe
     - \\nvClient.exe
+    - \\nvConsole.exe
     - \\nvda.exe
     - \\nvda_*.exe
     - \\nvda_service.exe
@@ -538,7 +554,8 @@ detection:
     - \\nxservice*.ese
     - \\ocsinventory.exe
     - \\ocsservice.exe
-    - \\oo-syspectr*.exe
+    - \\oolocker.exe
+    - \\oosyspectr.exe
     - \\p9agent*.exe
     - \\paexec.exe
     - \\parallelsaccess-*.exe
@@ -582,6 +599,7 @@ detection:
     - \\remcom.exe
     - \\remcomsvc.exe
     - \\remcos*.exe
+    - \\remmon.exe
     - \\remobo.exe
     - \\remobo_client.exe
     - \\remobo_tracker.exe
@@ -600,6 +618,7 @@ detection:
     - \\requires sign up
     - \\rfusclient.exe
     - \\rmserverconsolemediator.exe
+    - \\rodexagent.exe
     - \\romfusclient.exe
     - \\romserver.exe
     - \\romviewer.exe
@@ -657,6 +676,7 @@ detection:
     - \\supremoservice.exe
     - \\syncrosetup.exe
     - \\sysdiag.exe
+    - \\syspectr.exe
     - \\tacticalrmm.exe
     - \\tailscale-*.exe
     - \\tailscale-ipn.exe
@@ -672,6 +692,7 @@ detection:
     - \\tmate.bashrc
     - \\tmate.sock
     - \\todesk.exe
+    - \\toolsiq.exe
     - \\tsircusr.exe
     - \\turbomeeting.exe
     - \\turbomeetingstarter.exe
@@ -697,6 +718,8 @@ detection:
     - \\winagent.exe
     - \\winaw32.exe
     - \\windowslauncher.exe
+    - \\winpty-agent.exe
+    - \\winpty-agent64.exe
     - \\winvnc*.exe
     - \\winvnc.exe
     - \\winvnc4.exe
