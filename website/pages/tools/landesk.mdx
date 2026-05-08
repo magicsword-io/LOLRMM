@@ -1,10 +1,10 @@
 ---
-description = "LANDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "LANDesk"
+description: "LANDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "LANDesk"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # LANDesk
@@ -18,7 +18,7 @@ LANDesk is a remote monitoring and management (RMM) tool. More information will 
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.landesk.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ LANDesk is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["4gycu.exe", "ivanti software monitor", "ivanti \u30bd\u30d5\u30c8\u30a6\u30a7\u30a2\u76e3\u8996", "landeskportalmanager.resources.dll"], "company_names": [], "signer_names": ["LANDesk Software, Inc."], "certificates": [{"signer_name": "LANDesk Software, Inc.", "certificate_thumbprint": "B0DE69573135B60DE734F2E7E3CF7D5CB155F1D9", "tbs_sha256": "31FBDBB7E377A3B5B1B3405549F6616E59F6D89FA31B09B0EA1CED441ACD6EA5", "tbs_sha1": ""}, {"signer_name": "Ivanti, Inc.", "certificate_thumbprint": "B310DCA4816C8E3E41E6C72BBB67A255AD8E0363", "src_file_sha256": "436e028a3072934418d30d4b9ba9a60b00fc6c7546b9134ee2483e8349516b0c", "src_file_path": "downloaded_files/landesk/436e028a3072934418d30d4b9ba9a60b00fc6c7546b9134ee2483e8349516b0c", "src_file_company": "Ivanti"}, {"signer_name": "Ivanti, Inc.", "certificate_thumbprint": "85651505F0D1CC0BA24040F3F8913D94AF316100", "src_file_sha256": "da92f8e474c040a53923cf81dc0d00adb5b3278cdfae039a22ebb2fc21993373", "src_file_path": "downloaded_files/landesk/da92f8e474c040a53923cf81dc0d00adb5b3278cdfae039a22ebb2fc21993373", "src_file_company": "Ivanti"}]} }/>
 
 
 ### Forensic Artifacts

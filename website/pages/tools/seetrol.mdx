@@ -1,10 +1,10 @@
 ---
-description = "Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Seetrol"
+description: "Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Seetrol"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Seetrol
@@ -29,6 +29,10 @@ Seetrol is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Knowhow Electel Inc.", "certificate_thumbprint": "205E6A6C500F8B5E36DDA0FBF791D96EF55FCB03", "src_file_sha256": "d3aadff853f04dd787a094f8237e23f86f0909c87f2507d759036c2f35816190", "src_file_path": "downloaded_files/seetrol/d3aadff853f04dd787a094f8237e23f86f0909c87f2507d759036c2f35816190", "src_file_company": "Knowhow Electel Inc."}]} }/>
 
 
 ### Forensic Artifacts

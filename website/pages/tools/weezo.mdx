@@ -1,10 +1,10 @@
 ---
-description = "Weezo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Weezo"
+description: "Weezo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Weezo"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Weezo
@@ -18,7 +18,7 @@ Weezo is a remote monitoring and management (RMM) tool. More information will be
          category={"RMM"}
          created={"2024-08-02"}
          website={""}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Weezo is a remote monitoring and management (RMM) tool. More information will be
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["22ba2e94e332dfa49e9bd0b0ab6f3d1e42f22208ce1866be50b1c7d1407ffb97bfadd7e2a9b9590607b41b8308e618a605146236626523b9dbecfdd40e90bdb9", "weezo setup.3.0.0.exe", "weezo setup.4.0.0.exe", "weezo setup.exe", "weezo-2078.exe", "weezo_setup.4.2.3.exe", "weezo_setup.exe"], "company_names": [], "signer_names": [], "certificates": []} }/>
 
 
 ### Forensic Artifacts

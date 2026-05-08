@@ -1,10 +1,10 @@
 ---
-description = "Pilixo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Pilixo"
+description: "Pilixo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Pilixo"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Pilixo
@@ -29,6 +29,10 @@ Pilixo is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Plooto Star Inc", "certificate_thumbprint": "2347883329B8455D0A0F0D207A3A2279B339DFE8", "src_file_sha256": "44b8093cc6cee4dc28ac779675983f2cbdc74fc33837a16758f988163794bd97", "src_file_path": "downloaded_files/pilixo/44b8093cc6cee4dc28ac779675983f2cbdc74fc33837a16758f988163794bd97", "src_file_company": "                                                            "}]} }/>
 
 
 ### Forensic Artifacts

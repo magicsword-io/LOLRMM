@@ -1,0 +1,58 @@
+---
+description: "Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Quest KACE Agent (formerly Dell KACE)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Quest KACE Agent (formerly Dell KACE)
+
+Quest KACE Agent (formerly Dell KACE) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Quest KACE Agent (formerly Dell KACE)"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.quest.com/kace/"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["konea.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": ["Quest Software Inc."], "certificates": [{"signer_name": "Quest Software Inc.", "certificate_thumbprint": "41D7B56D7E8A181A954AA35A3A0FDF178FAAE01A", "tbs_sha256": "C7638A5AF56C9F4AE902251705B2E370E209E7A9218605628995AD73469E0F53", "tbs_sha1": ""}, {"signer_name": "Quest Software Inc.", "certificate_thumbprint": "B7DF1291422B3186EE44BFF040931D8788DB63E6", "src_file_sha256": "850a4c24055afc7d293232f250f8ec7cc4bb6971f2fe159512427196e96720eb", "src_file_path": "downloaded_files/quest_kace_agent_(formerly_dell_kace)/850a4c24055afc7d293232f250f8ec7cc4bb6971f2fe159512427196e96720eb", "src_file_company": "Quest Software Inc."}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.kace.com", "www.quest.com/kace/"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__network_sigma.yml)
+- Detects potential processes activity of Quest KACE Agent (formerly Dell KACE) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__processes_sigma.yml)
+
+### References
+- [https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function](https://support.quest.com/kb/4211365/which-network-ports-and-urls-are-required-for-the-kace-sma-appliance-to-function)
+

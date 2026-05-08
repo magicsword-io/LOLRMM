@@ -1,10 +1,10 @@
 ---
-description = "MEGAsync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "MEGAsync"
+description: "MEGAsync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "MEGAsync"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # MEGAsync
@@ -29,6 +29,10 @@ MEGAsync is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Mega Limited", "certificate_thumbprint": "E65A1FC65C29578B54AA826AFF6E2310C5255EF9", "src_file_sha256": "6ffa84575a19e64a21e26f6a752854212b5c73555db1e20cee78ee44efe7781d", "src_file_path": "downloaded_files/megasync/6ffa84575a19e64a21e26f6a752854212b5c73555db1e20cee78ee44efe7781d", "src_file_company": "MEGA Limited"}]} }/>
 
 
 ### Forensic Artifacts

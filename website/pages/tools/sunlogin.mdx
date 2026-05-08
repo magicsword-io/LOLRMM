@@ -1,10 +1,10 @@
 ---
-description = "SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "SunLogin"
+description: "SunLogin is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "SunLogin"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # SunLogin
@@ -29,6 +29,10 @@ SunLogin is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "\u4e0a\u6d77\u8d1d\u9510\u4fe1\u606f\u79d1\u6280\u80a1\u4efd\u6709\u9650\u516c\u53f8", "certificate_thumbprint": "CD22D7228E666132008B90BB8D2D143BFD36D4EF", "src_file_sha256": "9dc5b48a39bb21f43f89130c69e25db29f832843f2cd1f0e6cc33b19a962079f", "src_file_path": "downloaded_files/sunlogin/9dc5b48a39bb21f43f89130c69e25db29f832843f2cd1f0e6cc33b19a962079f", "src_file_company": "Shanghai Best Oray Information Technology Co., Ltd."}]} }/>
 
 
 ### Forensic Artifacts

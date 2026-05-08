@@ -1,15 +1,17 @@
 ---
-description = "Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently."
-title = "RDCMan"
+description: "Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently.  **IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will likely break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only."
+title: "RDCMan"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # RDCMan
 
 Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently.
+
+**IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will likely break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only.
 
 
 <BlockBanner name={"RDCMan"}/>
@@ -36,6 +38,10 @@ Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by
 
 #### Known Vulnerabilities
 - [CVE-2020-0765](CVE-2020-0765)
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["nmk092kb9.exe", "rdcman-x86.dll", "rdcman-x86.exe", "rdcman.exe", "v8yka5.exe"], "company_names": [], "signer_names": ["Microsoft Corporation"], "certificates": [{"signer_name": "Microsoft Corporation", "issuer": "CN=Microsoft Code Signing PCA 2011", "certificate_thumbprint": "3F56A45111684D454E231CFDC4DA5C8D370F9816", "tbs_sha256": "21DC4A8B9890842E51963CE36D3A614C716D2D794AFCF606F73CE12B525F9E6B", "tbs_sha1": "1D04935E420A06C650CB71FB762C0F0E8F90D17C", "valid_from": "2025-06-19T18:21:37+00:00", "valid_to": "2026-06-17T18:21:37+00:00", "src_file_path": "downloaded_files/rdcman/e6067c98e8ffc586d689d1ddb5376f26e1657c15ddafe4eff7b4d231de15770a", "src_file_company": "Microsoft"}, {"signer_name": "Microsoft Corporation", "issuer": "CN=Microsoft Code Signing PCA", "certificate_thumbprint": "67B1757863E3EFF760EA9EBB02849AF07D3A8080", "tbs_sha256": "B4D5162BFE8B7E38196E3C394D21AC408EA0E31A050560AF2909B066526B7207", "tbs_sha1": "85959A020005CF379188739F02E24D0B6031DBC4", "valid_from": "2014-04-22T17:39:00+00:00", "valid_to": "2015-07-22T17:39:00+00:00"}, {"signer_name": "Microsoft Corporation", "certificate_thumbprint": "F5877012FBD62FABCBDC8D8CEE9C9585BA30DF79", "src_file_sha256": "966952d678a8eb7254cf7c024ece8bc47e05a89c760f994db92f5a4309688b25", "src_file_path": "downloaded_files/rdcman/966952d678a8eb7254cf7c024ece8bc47e05a89c760f994db92f5a4309688b25", "src_file_company": "Microsoft"}]} }/>
 
 
 ### Forensic Artifacts

@@ -1,10 +1,10 @@
 ---
-description = "Aspia is an open-source Remote Desktop, file transfer and system information tool."
-title = "Aspia"
+description: "Aspia is an open-source Remote Desktop, file transfer and system information tool."
+title: "Aspia"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Aspia
@@ -19,7 +19,7 @@ Aspia is an open-source Remote Desktop, file transfer and system information too
          category={"RMM"}
          created={"2025-05-09"}
          website={"https://aspia.org/"}
-         lastModified={"2025-05-09"}
+         lastModified={"2025-12-14"}
          privileges={"SYSTEM"}
          free={ false }
          verification={ false }
@@ -34,6 +34,10 @@ Aspia is an open-source Remote Desktop, file transfer and system information too
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Remote desktop management", "Remote desktop view", "File transfer", "System information", "Text chat", "Task manager", "Encryption", "Authorization (it is possible to add users with different access rights)", "Address book with encryption and master-password", "NAT traversal with connection by ID (with using Aspia Router and Aspia Relay)", "Direct connections", "Audio support", "Video recording", "Client and Console for Windows, MacOSX and Linux", "Host for Windows only", "Router/Relay for Windows and Linux"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["aspia_client.exe"], "company_names": [], "signer_names": [], "certificates": []} }/>
 
 
 ### Forensic Artifacts
