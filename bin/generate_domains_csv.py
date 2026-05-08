@@ -70,7 +70,7 @@ def generate_csv(yaml_dir, output_file):
 
     # Write domains to CSV file
     with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
-        writer = csv.writer(csvfile)
+        writer = csv.writer(csvfile, lineterminator="\n")
         writer.writerow(["URI", "RMM_Tool"])
         for domain, tool in all_domains:
             writer.writerow([domain, tool])
