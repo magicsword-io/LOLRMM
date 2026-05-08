@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-05-03'
+modified: '2026-05-08'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -125,6 +125,7 @@ detection:
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Ripple\*
     - \\C:\Program Files\Remote Utilities\*
+    - \\C:\Program Files\Rodex\RodexAgent.exe
     - \\C:\Program Files\RustDesk
     - \\C:\Program Files\Solar-Putty-v4\*
     - \\C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
@@ -158,6 +159,7 @@ detection:
     - \\C:\Users\*\ExtraPuTTY-0.30-2016-01-28-installer.exe
     - \\C:\Users\IEUser\Downloads\WinSCP-5.21.6-Portable\*
     - \\C:\Users\USERNAME\AppData\Roaming\Insync\App\Insync.exe
+    - \\C:\Windows\<random>.exe
     - \\C:\Windows\Action1\*
     - \\C:\Windows\SysWOW64\rserver30\FamItrf2
     - \\C:\Windows\SysWOW64\rserver30\FamItrfc
@@ -302,6 +304,7 @@ detection:
     - \\RemoteRipple.exe
     - \\RmmService.exe
     - \\RocketRemoteDesktop_Setup.exe
+    - \\RodexAgent.exe
     - \\SMPCSetup.exe
     - \\SRManager.exe
     - \\SRServer.exe
@@ -611,6 +614,7 @@ detection:
     - \\requires sign up
     - \\rfusclient.exe
     - \\rmserverconsolemediator.exe
+    - \\rodexagent.exe
     - \\romfusclient.exe
     - \\romserver.exe
     - \\romviewer.exe

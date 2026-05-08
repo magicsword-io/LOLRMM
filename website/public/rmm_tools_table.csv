@@ -23,6 +23,7 @@ Name,Category,Description,Author
 [FreeRDP](/rmm_tools/freerdp),RAT,FreeRDP is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [Level.io](/rmm_tools/level.io),RMM,Level.io is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [CloudFlare Tunnel](/rmm_tools/cloudflare_tunnel),RAT,CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added a...,
+[Rodex RMM](/rmm_tools/rodex_rmm),RAT,Rodex RMM is marketed at https://www.rodex.cc/ as a self-hostable Remote Monitoring & Management pla...,johnk3r
 [Veyon](/rmm_tools/veyon),RAT,Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management...,Daniel Koifman (KoifSec)
 [BeInSync](/rmm_tools/beinsync),RAT,BeInSync is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Echoware](/rmm_tools/echoware),RMM,Echoware is a remote monitoring and management (RMM) tool. More information will be added as it beco...,

@@ -51,6 +51,9 @@ pcvisit.de,Pcvisit
 level.io,Level.io
 *.level.io,Level.io
 cloudflare.com/products/tunnel/,CloudFlare Tunnel
+rodex.cc,Rodex RMM
+www.rodex.cc,Rodex RMM
+<operator-controlled VPS hostname or IP>,Rodex RMM
 *.beinsync.net,BeInSync
 *.beinsync.com,BeInSync
 boot.net.anydesk.com,AnyDesk
