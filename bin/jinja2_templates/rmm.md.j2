@@ -1,6 +1,6 @@
 ---
-description = "{{ rmm.Description | clean_multiline }}"
-title = "{{ rmm.Name }}"
+description: {{ dump(rmm.Description | clean_multiline) }}
+title: {{ dump(rmm.Name) }}
 ---
 
 
