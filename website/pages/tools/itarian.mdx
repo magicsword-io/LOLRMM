@@ -4,7 +4,7 @@ title: "Itarian"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Itarian
@@ -18,7 +18,7 @@ Itarian is a remote monitoring and management (RMM) tool. More information will 
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.itarian.com/rmm/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Itarian is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["itsmagent.exe", "raccess.exe", "rhost.exe", "rmmservice.exe", "rviewer.exe"], "company_names": [], "signer_names": ["Comodo Security Solutions\\", "ITarian LLC"], "certificates": [{"signer_name": "ITarian LLC", "certificate_thumbprint": "9D4297D5CEBB398B79354FA98031FB577884078F", "tbs_sha256": "2B3DE9FC259D3C485E40ED5B31E094B1EB24501EE25E9FCB9D02225E817F0DBE", "tbs_sha1": ""}, {"signer_name": "Comodo Security Solutions\\", "issuer": "CN=Sectigo Public Code Signing CA R36", "certificate_thumbprint": "6A2DD5420C34A602C048F8D79BE52690F101001B", "tbs_sha256": "2E4765F85AE2822A8FAC2C12D791CCC86F74D8478B50D57B17E34B244D02DCC2", "tbs_sha1": "A280740D90D992EBBF302AC397DC06ABBDFB348C", "valid_from": "2023-03-17T00:00:00+00:00", "valid_to": "2024-03-16T23:59:59+00:00"}, {"signer_name": "ITarian LLC", "certificate_thumbprint": "83684997F1ACE5AE105E670E8094EDB2AD0879FD", "src_file_sha256": "aa7edf0e682942968173fd8904f01cae187262e6952c3c8e24dc1f8b4f2377ac", "src_file_path": "downloaded_files/itarian/aa7edf0e682942968173fd8904f01cae187262e6952c3c8e24dc1f8b4f2377ac", "src_file_company": "ITarian"}]} }/>
 
 
 ### Forensic Artifacts

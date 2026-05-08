@@ -4,7 +4,7 @@ title: "TeleDesktop"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # TeleDesktop
@@ -18,7 +18,7 @@ TeleDesktop is a remote monitoring and management (RMM) tool. More information w
          category={"RMM"}
          created={"2024-08-02"}
          website={""}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ TeleDesktop is a remote monitoring and management (RMM) tool. More information w
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["teledesktop (client)", "teledesktop (host)"], "company_names": [], "signer_names": [], "certificates": []} }/>
 
 
 ### Forensic Artifacts

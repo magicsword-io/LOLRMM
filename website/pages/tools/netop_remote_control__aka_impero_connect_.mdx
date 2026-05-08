@@ -4,7 +4,7 @@ title: "Netop Remote Control (aka Impero Connect)"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Netop Remote Control (aka Impero Connect)
@@ -29,6 +29,10 @@ Netop Remote Control (aka Impero Connect) is a remote monitoring and management 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "NETOP TECH SRL", "certificate_thumbprint": "311FD401E4AA27E856311EAE5D80C31CDE46A67C", "src_file_sha256": "c5b98ab84cb24ddcfd5e01928ea959b6af8bb4963a9d1ae10fef3734ba99657d", "src_file_path": "downloaded_files/netop_remote_control_(aka_impero_connect)/c5b98ab84cb24ddcfd5e01928ea959b6af8bb4963a9d1ae10fef3734ba99657d", "src_file_company": "Netop Solutions Limited"}]} }/>
 
 
 ### Forensic Artifacts

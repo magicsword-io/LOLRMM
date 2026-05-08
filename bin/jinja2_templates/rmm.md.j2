@@ -4,7 +4,7 @@ title: {{ dump(rmm.Name) }}
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # {{ rmm.Name }}
@@ -44,6 +44,12 @@ import {EuiSpacer} from "@elastic/eui"
 {% for vulnerability in rmm.Details.Vulnerabilities %}
 - [{{ vulnerability }}]({{ vulnerability }})
 {% endfor %}
+{% endif %}
+
+{% if rmm.CodeSigning %}
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {{dump(rmm.CodeSigning | without_certificate_der)}} }/>
 {% endif %}
 
 

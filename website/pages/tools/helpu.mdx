@@ -4,7 +4,7 @@ title: "HelpU"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # HelpU
@@ -29,6 +29,10 @@ HelpU is a remote monitoring and management (RMM) tool. More information will be
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "helpU Inc.", "certificate_thumbprint": "15102A912051E6360AB9F64B9136B2A399FB6DAC", "src_file_sha256": "759ee372252febb7326a65400e44e377a0f68c8e50b3e06184611ff71357b9e3", "src_file_path": "downloaded_files/helpu/759ee372252febb7326a65400e44e377a0f68c8e50b3e06184611ff71357b9e3", "src_file_company": "HelpU"}]} }/>
 
 
 ### Forensic Artifacts

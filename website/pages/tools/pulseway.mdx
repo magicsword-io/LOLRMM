@@ -4,7 +4,7 @@ title: "Pulseway"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Pulseway
@@ -29,6 +29,10 @@ Pulseway is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Kaseya Holdings Inc.", "certificate_thumbprint": "A5C8E6B60B46C4BAE41E1D353873A0A587F11CD5", "src_file_sha256": "f6f60040d1adeaa011f8a2459e58ac3dfb59c190f45a45fb4ed1f9717ad4ec47", "src_file_path": "downloaded_files/pulseway/f6f60040d1adeaa011f8a2459e58ac3dfb59c190f45a45fb4ed1f9717ad4ec47", "src_file_company": "MMSOFT Design Ltd."}]} }/>
 
 
 ### Forensic Artifacts

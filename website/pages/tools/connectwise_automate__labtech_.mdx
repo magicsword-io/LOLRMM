@@ -4,7 +4,7 @@ title: "Connectwise Automate (LabTech)"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Connectwise Automate (LabTech)
@@ -18,7 +18,7 @@ Connectwise Automate (LabTech) is a remote monitoring and management (RMM) tool.
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.connectwise.com/platform/automate"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Connectwise Automate (LabTech) is a remote monitoring and management (RMM) tool.
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["ltsvc.exe", "ltsvcmon.exe", "lttray.exe"], "company_names": [], "signer_names": ["ConnectWise\\", "Connectwise\\"], "certificates": [{"signer_name": "ConnectWise\\", "issuer": "CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1", "certificate_thumbprint": "DC69069188D5CBC5FE18B7D035C90061C8741E21", "tbs_sha256": "EE87E0B6968C49806887874C952D0F6C1DAABA50D699FE8C5524103D7A3A82D1", "tbs_sha1": "8A97D01B55E4A964BC3379B13A5C8FF616756F98", "valid_from": "2025-06-18T00:00:00+00:00", "valid_to": "2028-06-20T23:59:59+00:00"}, {"signer_name": "Connectwise\\", "issuer": "CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1", "certificate_thumbprint": "FF8BFAFA697459874FB9843B1EFDA5C91871A44C", "tbs_sha256": "46135C0D0BC2714588E2E99AEB2BBC714F972F50D46C4C6D084F9D9CF9E485A4", "tbs_sha1": "8FA64999CB0CB343856CECBA0F7475CD2079B01B", "valid_from": "2022-07-13T00:00:00+00:00", "valid_to": "2025-07-12T23:59:59+00:00"}, {"signer_name": "ConnectWise\\", "issuer": "CN=GlobalSign Extended Validation CodeSigning CA - SHA256 - G3", "certificate_thumbprint": "07290735CAC17E851C608F28C3C03F68B94DDC35", "tbs_sha256": "2536E3C682B73B99B516CDEEE24FCB828C84CBDA003E3C3075CA771717B4CEBA", "tbs_sha1": "50795CA816F444E2EF35E42C95AFC0AD99633491", "valid_from": "2019-01-11T20:03:41+00:00", "valid_to": "2022-04-07T21:58:55+00:00"}, {"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "70644D15A9833AE7E85FCC0D2146831978BEEFF4", "src_file_sha256": "532d20a37c6493fae3144fa8aae0a2c3510f6bdc0a2683e9ce7970d6a22d65c2", "src_file_path": "downloaded_files/connectwise_automate_(labtech)/532d20a37c6493fae3144fa8aae0a2c3510f6bdc0a2683e9ce7970d6a22d65c2", "src_file_company": "LabTech Software"}]} }/>
 
 
 ### Forensic Artifacts

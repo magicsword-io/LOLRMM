@@ -360,6 +360,151 @@ export function OtherArtifactsTable({ data }: { data: OtherArtifact[] }) {
 	);
 }
 
+type CodeSigningCertificate = {
+	src_file_path?: string | null;
+	src_file_sha256?: string | null;
+	src_file_company?: string | null;
+	signer_name: string;
+	issuer?: string | null;
+	certificate_thumbprint: string;
+	tbs_sha256?: string | null;
+	tbs_sha1?: string | null;
+	valid_from?: string | null;
+	valid_to?: string | null;
+};
+
+type CodeSigningData = {
+	search_names?: string[];
+	company_names?: string[];
+	signer_names?: string[];
+	ignored_company_names?: string[] | null;
+	ignored_signer_names?: string[] | null;
+	certificates?: CodeSigningCertificate[];
+};
+
+function CodeValue({ value }: { value?: string | null }) {
+	if (isEmpty(value)) {
+		return <>--</>;
+	}
+
+	return <EuiCode onClick={() => copyToClipboard(value)}>{value}</EuiCode>;
+}
+
+function CodeList({ values }: { values?: string[] | null }) {
+	if (isEmpty(values)) {
+		return <>--</>;
+	}
+
+	return (
+		<EuiFlexGroup wrap={true} responsive={false} gutterSize="s">
+			{values.map((value, index) => (
+				<EuiFlexItem grow={false} key={`${value}-${index}`}>
+					<CodeValue value={value} />
+				</EuiFlexItem>
+			))}
+		</EuiFlexGroup>
+	);
+}
+
+export function CodeSigningTable({ data }: { data: CodeSigningData }) {
+	const certificates = data.certificates ?? [];
+	const summaryItems = [
+		{
+			title: "Search Names",
+			description: <CodeList values={data.search_names} />,
+		},
+		{
+			title: "Company Names",
+			description: <CodeList values={data.company_names} />,
+		},
+		{
+			title: "Signer Names",
+			description: <CodeList values={data.signer_names} />,
+		},
+		{
+			title: "Ignored Company Names",
+			description: <CodeList values={data.ignored_company_names} />,
+		},
+		{
+			title: "Ignored Signer Names",
+			description: <CodeList values={data.ignored_signer_names} />,
+		},
+	];
+	const certificateColumns = [
+		{
+			field: "signer_name",
+			name: "Signer",
+		},
+		{
+			field: "certificate_thumbprint",
+			name: "Thumbprint",
+			render: (value) => <CodeValue value={value} />,
+		},
+		{
+			field: "src_file_company",
+			name: "Source Company",
+		},
+		{
+			field: "src_file_path",
+			name: "Source File",
+			render: (value) => <CodeValue value={value} />,
+		},
+		{
+			field: "src_file_sha256",
+			name: "Source SHA256",
+			render: (value) => <CodeValue value={value} />,
+		},
+		{
+			field: "issuer",
+			name: "Issuer",
+		},
+		{
+			field: "tbs_sha256",
+			name: "TBS SHA256",
+			render: (value) => <CodeValue value={value} />,
+		},
+		{
+			field: "valid_from",
+			name: "Valid From",
+		},
+		{
+			field: "valid_to",
+			name: "Valid To",
+		},
+	];
+
+	return (
+		<>
+			<EuiDescriptionList
+				type="responsiveColumn"
+				compressed={true}
+				listItems={summaryItems}
+			/>
+			{certificates.length > 0 && (
+				<>
+					<EuiSpacer size="m" />
+					<EuiInMemoryTable<CodeSigningCertificate>
+						tableCaption="Code Signing Certificates"
+						items={certificates}
+						columns={certificateColumns}
+						pagination={{
+							pageSizeOptions: [10, 20, 50, 0],
+							initialPageSize: 10,
+							initialPageIndex: 0,
+						}}
+						sorting={{
+							sort: {
+								field: "signer_name",
+								direction: "asc",
+							},
+						}}
+					/>
+				</>
+			)}
+		</>
+	);
+}
+
 type Registry = {
 	Path: string;
 	Description: string;

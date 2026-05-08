@@ -4,7 +4,7 @@ title: "LogMeIn"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # LogMeIn
@@ -28,6 +28,10 @@ LogMeIn is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "33023C0243016946C78CCB9B15AC6C203882E5D9", "src_file_sha256": "9b6f4f5e6f85dfe628f9781e65ab8917bf9f7d3e24bb6c564ab2fc0020a93f32", "src_file_path": "downloaded_files/logmein/9b6f4f5e6f85dfe628f9781e65ab8917bf9f7d3e24bb6c564ab2fc0020a93f32", "src_file_company": "LogMeIn, Inc."}, {"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "8D3FA6EEEBFC68A0FA76CDC4C6AD5982FE07DE91", "src_file_sha256": "71cf94f02a53c2a37976acbb0a87fd8bb0edda247c780ca61fbe4a41a17406a5", "src_file_path": "downloaded_files/logmein/71cf94f02a53c2a37976acbb0a87fd8bb0edda247c780ca61fbe4a41a17406a5", "src_file_company": "LogMeIn, Inc."}]} }/>
 
 
 ### Forensic Artifacts

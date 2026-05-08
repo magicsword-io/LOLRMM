@@ -4,7 +4,7 @@ title: "AeroAdmin"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # AeroAdmin
@@ -29,6 +29,10 @@ AeroAdmin is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Aeroadmin LLC", "certificate_thumbprint": "3D359801E29FCAFAF08983A0FDEA20798CC451A3", "src_file_sha256": "00611ecd71f1db02006e287854f9cb09830d5f06513b7f5964cccd27e4fb81e7", "src_file_path": "downloaded_files/aeroadmin/00611ecd71f1db02006e287854f9cb09830d5f06513b7f5964cccd27e4fb81e7", "src_file_company": "AeroAdmin LLC"}]} }/>
 
 
 ### Forensic Artifacts

@@ -4,7 +4,7 @@ title: "SuperOps"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # SuperOps
@@ -29,6 +29,10 @@ SuperOps is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Superops Inc.", "certificate_thumbprint": "CBF98AFF4D4BD00B83018D60ABE11DDF95C34664", "src_file_sha256": "f086241d446a5898c068fcd684e90be3fa7a758dbfb8be9464660012ea4f63e6", "src_file_path": "downloaded_files/superops/f086241d446a5898c068fcd684e90be3fa7a758dbfb8be9464660012ea4f63e6", "src_file_company": "superopsticket"}, {"signer_name": "ISL Online Ltd.", "certificate_thumbprint": "FD412CA692ED576E5FA7723CB06ABE14077A2C67", "src_file_sha256": "eb2be7658c833c4abec241cd57c10ff12abe3af726f801c42894d0e541183871", "src_file_path": "downloaded_files/superops/eb2be7658c833c4abec241cd57c10ff12abe3af726f801c42894d0e541183871", "src_file_company": "XLAB d.o.o."}, {"signer_name": "ISL Online Ltd.", "certificate_thumbprint": "69D863EBB31F6E58D1511DE618489AB47BB0B361", "src_file_sha256": "15576575fceb3ea566339e0a9c4baffbad3899adff992165d11834943dbc1d3d", "src_file_path": "downloaded_files/superops/15576575fceb3ea566339e0a9c4baffbad3899adff992165d11834943dbc1d3d", "src_file_company": "ISL Online Ltd."}]} }/>
 
 
 ### Forensic Artifacts

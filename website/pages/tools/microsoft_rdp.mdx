@@ -1,15 +1,17 @@
 ---
-description: "Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description: "Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.  **NOTE**: Some samples of this tool may be signed with third-party certificates. Always verify certificate ownership before implementing any blocking rules. Use certificate data for detection, hunting, and analysis purposes only."
 title: "Microsoft RDP"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Microsoft RDP
 
 Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+**NOTE**: Some samples of this tool may be signed with third-party certificates. Always verify certificate ownership before implementing any blocking rules. Use certificate data for detection, hunting, and analysis purposes only.
 
 <BlockBanner name={"Microsoft RDP"}/>
 
@@ -31,6 +33,10 @@ Microsoft RDP is a remote monitoring and management (RMM) tool. More information
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "win.rar GmbH", "certificate_thumbprint": "729AE1F8B489DE176CC099FF49937F85F9E412F7", "src_file_sha256": "39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a", "src_file_path": "downloaded_files/microsoft_rdp/39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a", "src_file_company": "Alexander Roshal"}]} }/>
 
 
 ### Forensic Artifacts

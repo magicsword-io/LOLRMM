@@ -4,7 +4,7 @@ title: "NoteOn-desktop sharing"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # NoteOn-desktop sharing
@@ -29,6 +29,10 @@ NoteOn-desktop sharing is a remote monitoring and management (RMM) tool. More in
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "NATE Communications Corporation", "certificate_thumbprint": "37620F2004EDE612CC3BC49AAA80493FBF908482", "src_file_sha256": "dd6cae30fa01137e95bc035020663bd43077affe942be4624e57bb3ac2922756", "src_file_path": "downloaded_files/noteon-desktop_sharing/dd6cae30fa01137e95bc035020663bd43077affe942be4624e57bb3ac2922756", "src_file_company": "NATE Communications Corporation"}, {"signer_name": "SK COMMUNICATIONS CO.,LTD", "certificate_thumbprint": "40750B075A5704CD382DAF3EC75C720E9F2FF3FA", "src_file_sha256": "fcbd2b2c27c1f53007b16f63b7f611b9cf1499362426b08c26f7a924675dfc5c", "src_file_path": "downloaded_files/noteon-desktop_sharing/fcbd2b2c27c1f53007b16f63b7f611b9cf1499362426b08c26f7a924675dfc5c", "src_file_company": "SK Communications"}]} }/>
 
 
 ### Forensic Artifacts

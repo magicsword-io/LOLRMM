@@ -4,7 +4,7 @@ title: "Any Support"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Any Support
@@ -31,6 +31,10 @@ Any Support is a remote monitoring and management (RMM) tool. More information w
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "LinkMeMine Inc.", "certificate_thumbprint": "BF947F2204865E89C83799764ACA1282E12D25A4", "src_file_sha256": "948e074ca4b5957a3cac40db6b88b6735dd635b841f510ccb50d507783170833", "src_file_path": "downloaded_files/any_support/948e074ca4b5957a3cac40db6b88b6735dd635b841f510ccb50d507783170833", "src_file_company": "Koino Co., Ltd."}, {"signer_name": "KOINO Co., Ltd.", "certificate_thumbprint": "5192D3B41D87514CDF5EFD5649A4307A024E25BD", "src_file_sha256": "6cc5985ad284992d6f59ff3336e5ce9065a01988322b015ae128d0899a75c14b", "src_file_path": "downloaded_files/any_support/6cc5985ad284992d6f59ff3336e5ce9065a01988322b015ae128d0899a75c14b", "src_file_company": "Koino Co., Ltd."}, {"signer_name": "KOINO Co., Ltd.", "certificate_thumbprint": "4E447B576E1A3150D660BD3BCFED61E7F403FEAF", "src_file_sha256": "7ffc8c8f47f3dd18d1d3e51d078093aed7915093c6dadafcd1ada2d1c43a21ad", "src_file_path": "downloaded_files/any_support/7ffc8c8f47f3dd18d1d3e51d078093aed7915093c6dadafcd1ada2d1c43a21ad", "src_file_company": "Koino Co., Ltd."}]} }/>
 
 
 ### Forensic Artifacts

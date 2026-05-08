@@ -4,7 +4,7 @@ title: "GoToAssist (GoTo Resolve)"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # GoToAssist (GoTo Resolve)
@@ -34,6 +34,10 @@ GoTo Resolve (formerly LogMeIn Resolve) is an all-in-one IT management and remot
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Command line Support", "File System Access", "File Transfer", "GUI Support", "Remote Control"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "33023C0243016946C78CCB9B15AC6C203882E5D9", "src_file_sha256": "5e05eb31ab2b234bf34e66703761f6ff3663376eecf2ced7ec16852d037286cb", "src_file_path": "downloaded_files/gotoassist_(goto_resolve)/5e05eb31ab2b234bf34e66703761f6ff3663376eecf2ced7ec16852d037286cb", "src_file_company": "GoTo, Inc."}, {"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "8D3FA6EEEBFC68A0FA76CDC4C6AD5982FE07DE91", "src_file_sha256": "961e704a4d364ee384552af3551bac1de02541d8bcce40d5255fbc8cdea3adb1", "src_file_path": "downloaded_files/gotoassist_(goto_resolve)/961e704a4d364ee384552af3551bac1de02541d8bcce40d5255fbc8cdea3adb1", "src_file_company": "GoTo, Inc."}]} }/>
 
 
 ### Forensic Artifacts

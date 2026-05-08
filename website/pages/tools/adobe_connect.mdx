@@ -4,7 +4,7 @@ title: "Adobe Connect"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Adobe Connect
@@ -29,6 +29,10 @@ Adobe Connect is a remote monitoring and management (RMM) tool. More information
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "The Anti-Cloud Corporation", "certificate_thumbprint": "013371A3E52D87E59DA1C93A305732B1501FFE5A", "src_file_sha256": "4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d", "src_file_path": "downloaded_files/adobe_connect/4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d", "src_file_company": "WireSock Foundation"}]} }/>
 
 
 ### Forensic Artifacts

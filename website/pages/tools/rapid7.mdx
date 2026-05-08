@@ -4,7 +4,7 @@ title: "Rapid7"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Rapid7
@@ -29,6 +29,10 @@ Rapid7 is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Rapid7 LLC", "certificate_thumbprint": "8DD67269B148092AC5A14A4982C920C9FDCA3B91", "src_file_sha256": "62d7cb45c4635b60faee5dcfab0e5562a7cf7745c26a8288575e67a7024a683c", "src_file_path": "downloaded_files/rapid7/62d7cb45c4635b60faee5dcfab0e5562a7cf7745c26a8288575e67a7024a683c", "src_file_company": "Rapid7, LLC."}, {"signer_name": "rapid7Company", "certificate_thumbprint": "8A16C123080A1960C144D483FF333261726E2B51", "src_file_sha256": "0fb44b024e3df56e73db61782a022eeed5126adb850105d9355cff243c1ceab5", "src_file_path": "downloaded_files/rapid7/0fb44b024e3df56e73db61782a022eeed5126adb850105d9355cff243c1ceab5", "src_file_company": "rapid7"}]} }/>
 
 
 ### Forensic Artifacts

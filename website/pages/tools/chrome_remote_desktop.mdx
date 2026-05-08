@@ -1,15 +1,17 @@
 ---
-description: "Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description: "Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.  **IMPORTANT**: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome browser and other Google applications. Do NOT blindly block these certificate thumbprints as doing so will break Google Chrome and other Google products in your environment. Use certificate data for detection, hunting, and analysis purposes only."
 title: "Chrome Remote Desktop"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Chrome Remote Desktop
 
 Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+**IMPORTANT**: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome browser and other Google applications. Do NOT blindly block these certificate thumbprints as doing so will break Google Chrome and other Google products in your environment. Use certificate data for detection, hunting, and analysis purposes only.
 
 <BlockBanner name={"Chrome Remote Desktop"}/>
 
@@ -31,6 +33,10 @@ Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More inf
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Google LLC", "certificate_thumbprint": "607A3EDAA64933E94422FC8F0C80388E0590986C", "src_file_sha256": "1e0fbe101bbca4efdfb05c012495265f1db731c97fb82fa8e569c6ab725c0140", "src_file_path": "downloaded_files/chrome_remote_desktop/1e0fbe101bbca4efdfb05c012495265f1db731c97fb82fa8e569c6ab725c0140", "src_file_company": "Google LLC"}]} }/>
 
 
 ### Forensic Artifacts

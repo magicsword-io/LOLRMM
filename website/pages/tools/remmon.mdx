@@ -1,38 +1,34 @@
 ---
-description: "Remote monitoring tool for Windows and Linux written in Go."
+description: "Remmon is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
 title: "Remmon"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Remmon
 
-Remote monitoring tool for Windows and Linux written in Go.
-
+Remmon is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 
 <BlockBanner name={"Remmon"}/>
 
 ### Details
-<Details author={"Daniel Koifman (KoifSec)"}
+<Details author={""}
          category={"RMM"}
-         created={"2025-11-12"}
-         website={"https://github.com/Netzwerkfehler/remmon"}
-         lastModified={"2025-11-12"}
-         privileges={"User"}
-         free={ true }
+         created={"2024-08-02"}
+         website={""}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
          verification={ false }
 />
 
 #### Installation Paths
-<Card code={ ["*\\\\Remmon.exe"] }/>
+<Card code={ ["remmon.exe"] }/>
 
-#### Supported OS
-<Badges color="warning" badges={ ["Windows", "Linux"] }/>
 
-#### Capabilities
-<Badges color="#FFA500" badges={ ["Remote Monitoring"] }/>
+
 
 
 
@@ -41,13 +37,19 @@ Remote monitoring tool for Windows and Linux written in Go.
 
 
 
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.remmon.hu", "remmon.hu"], "Ports": []}] }/>
 
 
 
 
 ### Detections
-- QRadar AQL query for detecting Remmon process execution via EventID 4688, tracking parent process name, process name, and command-line arguments
+- Detects potential network activity of Remmon RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remmon_network_sigma.yml)
+- Detects potential processes activity of Remmon RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remmon_processes_sigma.yml)
 
 ### References
-- [https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0](https://github.com/Netzwerkfehler/remmon/releases/tag/v1.1.0)
+- [https://remmon.hu](https://remmon.hu)
 

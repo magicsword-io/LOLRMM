@@ -4,7 +4,7 @@ title: "AnyViewer"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # AnyViewer
@@ -34,6 +34,10 @@ AnyViewer is a remote monitoring and management (RMM) tool. More information wil
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Remote desktop", "Remote file transfer", "Remote monitoring and management", "Remote shell open"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "AOMEI International Network Limited", "certificate_thumbprint": "E5132FC7E6BD90602C81BBE92FB064B2CBC73853", "src_file_sha256": "4ef164fbedfbd439584d7c692f6ebb9bd9d937af436882c762483303531c5f8d", "src_file_path": "downloaded_files/anyviewer/4ef164fbedfbd439584d7c692f6ebb9bd9d937af436882c762483303531c5f8d", "src_file_company": "AOMEI International Network Limited"}]} }/>
 
 
 ### Forensic Artifacts

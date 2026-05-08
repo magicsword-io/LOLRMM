@@ -13,6 +13,7 @@ import argparse
 from pathlib import Path
 from os import path, walk
 import datetime
+import re
 
 
 def check_hash_lengths(object):
@@ -168,6 +169,89 @@ def check_port_format(object, filename):
     return None
 
 
+def check_code_signing(object, filename):
+    """Validate CodeSigning certificate metadata."""
+    name = object.get("Name", "Unknown")
+    code_signing = object.get("CodeSigning")
+
+    if not code_signing:
+        return None
+
+    if not isinstance(code_signing, dict):
+        return f"ERROR: CodeSigning must be a dictionary in file {filename} (object: {name})"
+
+    list_fields = [
+        "search_names",
+        "company_names",
+        "signer_names",
+        "ignored_company_names",
+        "ignored_signer_names",
+    ]
+    for field in list_fields:
+        value = code_signing.get(field)
+        if value is None:
+            continue
+        if not isinstance(value, list):
+            return f"ERROR: CodeSigning.{field} must be a list in file {filename} (object: {name})"
+        for idx, item in enumerate(value, 1):
+            if not isinstance(item, str):
+                return f"ERROR: CodeSigning.{field} item #{idx} must be a string in file {filename} (object: {name})"
+
+    certificates = code_signing.get("certificates")
+    if certificates is None:
+        return f"ERROR: CodeSigning.certificates is missing in file {filename} (object: {name})"
+    if not isinstance(certificates, list):
+        return f"ERROR: CodeSigning.certificates must be a list in file {filename} (object: {name})"
+
+    hash_fields = {
+        "certificate_thumbprint": 40,
+        "src_file_sha256": 64,
+        "tbs_sha256": 64,
+        "tbs_sha1": 40,
+    }
+    optional_string_fields = [
+        "src_file_path",
+        "src_file_company",
+        "issuer",
+        "valid_from",
+        "valid_to",
+        "certificate_der_base64",
+    ]
+    seen_thumbprints = set()
+
+    for idx, certificate in enumerate(certificates, 1):
+        if not isinstance(certificate, dict):
+            return f"ERROR: CodeSigning certificate #{idx} must be a dictionary in file {filename} (object: {name})"
+
+        signer_name = certificate.get("signer_name")
+        if not isinstance(signer_name, str) or not signer_name:
+            return f"ERROR: CodeSigning certificate #{idx} is missing signer_name in file {filename} (object: {name})"
+
+        thumbprint = certificate.get("certificate_thumbprint")
+        if not isinstance(thumbprint, str) or not thumbprint:
+            return f"ERROR: CodeSigning certificate #{idx} is missing certificate_thumbprint in file {filename} (object: {name})"
+        if thumbprint != "N/A":
+            if thumbprint in seen_thumbprints:
+                return f"ERROR: Duplicate CodeSigning certificate thumbprint '{thumbprint}' in file {filename} (object: {name})"
+            seen_thumbprints.add(thumbprint)
+
+        for field, expected_len in hash_fields.items():
+            value = certificate.get(field)
+            if value in (None, "", "N/A"):
+                continue
+            if not isinstance(value, str) or not re.fullmatch(
+                rf"[A-Fa-f0-9]{{{expected_len}}}", value
+            ):
+                return f"ERROR: CodeSigning certificate #{idx} field {field} must be a {expected_len}-character hex string in file {filename} (object: {name})"
+
+        for field in optional_string_fields:
+            value = certificate.get(field)
+            if value is not None and not isinstance(value, str):
+                return f"ERROR: CodeSigning certificate #{idx} field {field} must be a string or null in file {filename} (object: {name})"
+
+    return None
+
+
 def check_required_fields(object, filename):
     """Check for important fields that should be present."""
     name = object.get("Name", "Unknown")
@@ -231,6 +315,7 @@ def validate_schema(yaml_dir, schema_file, verbose):
             (check_url_format, yaml_data, yaml_file),
             (check_duplicate_detections, yaml_data, yaml_file),
             (check_port_format, yaml_data, yaml_file),
+            (check_code_signing, yaml_data, yaml_file),
             (check_required_fields, yaml_data, yaml_file),
         ]
 

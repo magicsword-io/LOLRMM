@@ -4,7 +4,7 @@ title: "FastViewer"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # FastViewer
@@ -18,7 +18,7 @@ FastViewer is a remote monitoring and management (RMM) tool. More information wi
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.matrix42.com/en/fastviewer"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ FastViewer is a remote monitoring and management (RMM) tool. More information wi
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": ["FastViewer GmbH"], "certificates": [{"signer_name": "FastViewer GmbH", "certificate_thumbprint": "224026512C56BCE38073813BDB3D3207D88C1172", "tbs_sha256": "AD3D2D1485CAB1E72DD2A0C7228E9467D5A36E93BB3F17C4699882DA901348E0", "tbs_sha1": ""}, {"signer_name": "FastViewer GmbH", "certificate_thumbprint": "634F4B6F419B57A16C8F58054AE9E6DA7D1FC6A4", "tbs_sha256": "FF61DC60973A1DB2A6871C7AF1EEAEDE65EEECE92D36675107592266766149D2", "tbs_sha1": ""}, {"signer_name": "FastViewer GmbH", "certificate_thumbprint": "2F3A90AD6ECFC24F0781D7DFB6815A1D83A1B52E", "tbs_sha256": "5ADD1D07C05E16B75D504C5EB76DFC892888620DF8205D3F23E6068049130510", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts

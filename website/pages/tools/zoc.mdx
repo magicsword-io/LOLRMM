@@ -4,7 +4,7 @@ title: "ZOC"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # ZOC
@@ -29,6 +29,10 @@ ZOC is a remote monitoring and management (RMM) tool. More information will be a
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": [], "certificates": [{"signer_name": "Markus Schmidt", "certificate_thumbprint": "DDE8807409ED3EB4B52D49146DB4B6510AC054F4", "src_file_sha256": "a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d", "src_file_path": "downloaded_files/zoc/a87e256901f94c986acb31fa1b47e0bb13d4cbfcd2d714cd6d09db41babbec5d", "src_file_company": "EmTec Innovative Software"}]} }/>
 
 
 ### Forensic Artifacts

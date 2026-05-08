@@ -4,7 +4,7 @@ title: "ShowMyPC"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # ShowMyPC
@@ -18,7 +18,7 @@ ShowMyPC is a remote monitoring and management (RMM) tool. More information will
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://showmypc.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ ShowMyPC is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["showmypc.exe", "smpcsetup.exe"], "company_names": [], "signer_names": ["ShowMyPC INC"], "certificates": [{"signer_name": "ShowMyPC INC", "certificate_thumbprint": "6ABC950F7C33A7975667C20B2E7DF8F1CF15C05B", "tbs_sha256": "F9DBC445B6F1DCD3290171F8078F8B8728C7E33740EDE901C5F8B3609F13729A", "tbs_sha1": ""}, {"signer_name": "ShowMyPC INC", "issuer": "CN=Sectigo RSA Code Signing CA", "certificate_thumbprint": "08EAACC8774F72E77E8DA8CCC6D14FD8DD41BA18", "tbs_sha256": "1A76493B74AA1DB9F61663C57AE3346BD30CAA5AB6AD6F153A139F32B7DD47CE", "tbs_sha1": "7CAA5A676AB833200EDFDB46C06CFDC04340B51A", "valid_from": "2020-08-11T00:00:00+00:00", "valid_to": "2023-11-10T23:59:59+00:00"}]} }/>
 
 
 ### Forensic Artifacts

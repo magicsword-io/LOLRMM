@@ -4,7 +4,7 @@ title: "Rocket Remote Desktop"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Rocket Remote Desktop
@@ -31,6 +31,10 @@ Rocket Remote Desktop is a remote monitoring and management (RMM) tool. More inf
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Rocket Software, Inc.", "certificate_thumbprint": "13FDCE37AA7B96441374012A9BE4A065C826F87F", "src_file_sha256": "a06ed00b1f3ae4a4dafe15d3e2d4a49ca2aa3e44c92cff8ac4a39b4c32760444", "src_file_path": "downloaded_files/rocket_remote_desktop/a06ed00b1f3ae4a4dafe15d3e2d4a49ca2aa3e44c92cff8ac4a39b4c32760444", "src_file_company": "Rocket Software Inc."}, {"signer_name": "Rocket Software, Inc.", "certificate_thumbprint": "48C97F61CA860422533CD8953EAE30B89B21F782", "src_file_sha256": "b77b82b349b1ae194aef5a41ead566451267f24b5bdd1d4b8a08d2b434cb2837", "src_file_path": "downloaded_files/rocket_remote_desktop/b77b82b349b1ae194aef5a41ead566451267f24b5bdd1d4b8a08d2b434cb2837", "src_file_company": "Rocket Software Inc."}]} }/>
 
 
 ### Forensic Artifacts

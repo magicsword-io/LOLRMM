@@ -4,7 +4,7 @@ title: "Action1"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Action1
@@ -35,6 +35,10 @@ Through the web interface of action1, the administrator must create a new policy
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Backup and disaster recovery", "Billing and invoicing", "Customer portal", "HelpDesk and ticketing", "Mobile app", "Network discovery", "Patch management", "Remote monitoring and management", "Reporting and analytics"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Action1 Corporation", "certificate_thumbprint": "59CE0A286FBDF3F600235A8B7513AE1DC2243A20", "src_file_sha256": "ab6804a23ab76fff5ab63d7be8c3f179fca4154b56759590c27e6fa203e5d1c4", "src_file_path": "downloaded_files/action1/ab6804a23ab76fff5ab63d7be8c3f179fca4154b56759590c27e6fa203e5d1c4", "src_file_company": "Action1 Corporation"}]} }/>
 
 
 ### Forensic Artifacts

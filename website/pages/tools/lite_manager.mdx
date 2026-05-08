@@ -4,7 +4,7 @@ title: "Lite Manager"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Lite Manager
@@ -29,6 +29,10 @@ Lite Manager is a remote monitoring and management (RMM) tool. More information 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "REMOTE UTILITIES PTE. LTD.", "certificate_thumbprint": "902CC2BB628B651954A5F7A1D68C6CDE84707A54", "src_file_sha256": "d2598c8a6e0928716c94825bc2b4736ad530d0de93d83a507332327c4c883cdc", "src_file_path": "downloaded_files/litemanager/d2598c8a6e0928716c94825bc2b4736ad530d0de93d83a507332327c4c883cdc", "src_file_company": "Flexera"}, {"signer_name": "IP Ter-Osipov Aleksey Vladimirovich", "certificate_thumbprint": "1753913DC00AE0D1B1BF1CE2D6F4C5A2C1156316", "src_file_sha256": "a1d75de65bcb6b68bf79d0e826cf5371f5b5df4df02729038aba8d9f0b0f52c8", "src_file_path": "downloaded_files/litemanager/a1d75de65bcb6b68bf79d0e826cf5371f5b5df4df02729038aba8d9f0b0f52c8", "src_file_company": "Flexera"}]} }/>
 
 
 ### Forensic Artifacts

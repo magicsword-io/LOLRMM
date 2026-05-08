@@ -4,7 +4,7 @@ title: "ngrok"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # ngrok
@@ -29,6 +29,10 @@ ngrok is a remote monitoring and management (RMM) tool. More information will be
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Ngrok, Inc.", "certificate_thumbprint": "7A54EB0D199484EB8CAEA931C90A744BCF02A7E0", "src_file_sha256": "c4c1e472823a12e2ee127a64d6ee3de9b31d02bc972baeb8800e6d918dce16a1", "src_file_path": "downloaded_files/ngrok/c4c1e472823a12e2ee127a64d6ee3de9b31d02bc972baeb8800e6d918dce16a1"}]} }/>
 
 
 ### Forensic Artifacts

@@ -4,7 +4,7 @@ title: "KHelpDesk"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # KHelpDesk
@@ -18,7 +18,7 @@ KHelpDesk is a remote monitoring and management (RMM) tool. More information wil
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.khelpdesk.com.br/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ KHelpDesk is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["khelpdesk"], "company_names": [], "signer_names": ["KHELPDESK TECHNOLOGY LTDA"], "certificates": [{"signer_name": "KHELPDESK TECHNOLOGY LTDA", "certificate_thumbprint": "A01E3A1F64E2808F55FDD95EF6E7CED2FEA625EA", "tbs_sha256": "713A432503EF08193FF63C6A06EC2D8E2B7F43D959913CD8FA957E2CEEA74D11", "tbs_sha1": ""}, {"signer_name": "Maicon Luis Ferreira", "certificate_thumbprint": "52127994EDBFE9AA612B016E3CB4ADFF11683717", "src_file_sha256": "712d77f4b1f37367b887ca88c34f41d700f9b684dfaba2cf6856c8d3e1fc7642", "src_file_path": "downloaded_files/khelpdesk/712d77f4b1f37367b887ca88c34f41d700f9b684dfaba2cf6856c8d3e1fc7642", "src_file_company": "Kadoshi Sistemas"}]} }/>
 
 
 ### Forensic Artifacts

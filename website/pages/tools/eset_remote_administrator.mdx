@@ -4,7 +4,7 @@ title: "ESET Remote Administrator"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # ESET Remote Administrator
@@ -29,6 +29,10 @@ ESET Remote Administrator is a remote monitoring and management (RMM) tool. More
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "ESET, spol. s r.o.", "certificate_thumbprint": "87A8825374628D1F6E27117EDD09DB089C9509DB", "src_file_sha256": "0c8ced779a4b7dca7ba034de52c524d911f9abbb89d885f31a7edde0f015764a", "src_file_path": "downloaded_files/eset_remote_administrator/0c8ced779a4b7dca7ba034de52c524d911f9abbb89d885f31a7edde0f015764a", "src_file_company": "ESET"}]} }/>
 
 
 ### Forensic Artifacts

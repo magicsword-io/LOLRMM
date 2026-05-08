@@ -4,7 +4,7 @@ title: "NinjaRMM"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # NinjaRMM
@@ -29,6 +29,10 @@ NinjaRMM is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "NinjaOne LLC", "certificate_thumbprint": "5F4F53C903859C0BDEFD456789D9C517F9F68C06", "src_file_sha256": "61e3d7e1235c0f6d5318721715ce5fb136c8e03783f0d3d75aa026c845958032", "src_file_path": "downloaded_files/ninjarmm/61e3d7e1235c0f6d5318721715ce5fb136c8e03783f0d3d75aa026c845958032", "src_file_company": "NinjaRMM, LLC"}]} }/>
 
 
 ### Forensic Artifacts
