@@ -27,18 +27,16 @@ Level.io is a remote monitoring and management (RMM) tool. More information will
 #### Installation Paths
 <Card code={ ["level-windows-amd64.exe", "level.exe", "level-remote-control-ffmpeg.exe"] }/>
 
-#### Supported OS
-<Badges color="warning" badges={ ["Windows"] }/>
 
 
 
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Level Software, Inc.", "certificate_thumbprint": "3C002DCBBCB603AE08699F4CEF973864AEB16860", "src_file_sha256": "075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83", "src_file_path": "downloaded_files/level.io/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83"}]} }/>
 
 
 ### Forensic Artifacts
 
-#### Disk Artifacts
-<EuiSpacer size="xl"/>
-<DiskArtifacts data={ [{"File": "C:\\Program Files\\Level\\level.exe", "Description": "Level Binary", "OS": "Windows"}, {"File": "C:\\Program Files\\Level\\osqueryi.exe", "Description": "A tool used by level to collect machine state information.", "OS": "Windows"}, {"File": "C:\\Program Files\\Level\\level.log", "Description": "Client log file for Level.", "OS": "Windows"}] }/>
 
 
 
@@ -52,8 +50,6 @@ Level.io is a remote monitoring and management (RMM) tool. More information will
 ### Detections
 - Detects potential network activity of Level.io RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml)
-- Detects potential files activity of Level.io RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_files_sigma.yml)
 - Detects potential processes activity of Level.io RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml)
 
