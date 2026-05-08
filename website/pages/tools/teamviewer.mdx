@@ -4,7 +4,7 @@ title: "TeamViewer"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # TeamViewer
@@ -19,7 +19,7 @@ TeamViewer is a remote monitoring and management (RMM) tool.
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.teamviewer.com/en"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={"user"}
          free={ true }
          verification={ false }
@@ -34,6 +34,10 @@ TeamViewer is a remote monitoring and management (RMM) tool.
 
 #### Known Vulnerabilities
 - [https://www.cvedetails.com/vulnerability-list/vendor_id-11100/product_id-19942/Teamviewer-Teamviewer.html](https://www.cvedetails.com/vulnerability-list/vendor_id-11100/product_id-19942/Teamviewer-Teamviewer.html)
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["teamviewer_desktop.exe", "teamviewer_service.exe"], "company_names": [], "signer_names": ["TeamViewer Germany GmbH", "TeamViewer GmbH"], "certificates": [{"signer_name": "TeamViewer GmbH", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "8A32858C446E0F681927B02BECA029F854B98D31"}, {"signer_name": "TeamViewer Germany GmbH", "certificate_thumbprint": "777A41024CF413CCB49B3434565545C0D78D80E9", "tbs_sha256": "290C3846B4E52E99DD2B7E5FA600BDB51972D7A3CFD37BA67AC1ED362CC1CA93", "tbs_sha1": ""}, {"signer_name": "TeamViewer Germany GmbH", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "EA00EEBFABBB1D7DB243AFE1349D536A812B0EBF"}, {"signer_name": "TeamViewer Germany GmbH", "issuer": "CN=DigiCert Assured ID Code Signing CA-1", "certificate_thumbprint": "05CDF79B0EFFFF361DAC0363ADAA75B066C49DE0", "tbs_sha256": "DFD5337289D8F9FC748CCC9A7DC597EEEFEA7ABEA5AF736AFFD09CAC8145AADB", "tbs_sha1": "EA00EEBFABBB1D7DB243AFE1349D536A812B0EBF", "valid_from": "2019-12-19T00:00:00+00:00", "valid_to": "2020-12-23T12:00:00+00:00"}, {"signer_name": "TeamViewer GmbH", "issuer": "CN=DigiCert Assured ID Code Signing CA-1", "certificate_thumbprint": "7709C8FE112562666C7AC973E43831BA9FADBB54", "tbs_sha256": "454E97CEB89961E5C52E60CC9D4E231DE06BF61747113B90850819EE1EBE19E0", "tbs_sha1": "8A32858C446E0F681927B02BECA029F854B98D31", "valid_from": "2019-02-11T00:00:00+00:00", "valid_to": "2019-12-31T12:00:00+00:00"}]} }/>
 
 
 ### Forensic Artifacts

@@ -4,7 +4,7 @@ title: "Domotz"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Domotz
@@ -18,7 +18,7 @@ Domotz is a remote monitoring and management (RMM) tool. More information will b
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.domotz.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Domotz is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["exmtweaksservice.exe", "libegl.dll", "libglesv2.dll", "vk_swiftshader.dll", "vulkan-1.dll"], "company_names": [], "signer_names": ["Domotz Inc", "OpenVPN Inc."], "certificates": [{"signer_name": "Domotz Inc", "certificate_thumbprint": "2361B8924DF61C7A57B4B77CAAD6BF3968E7DCD3", "tbs_sha256": "25457BE25A9D546CC3189A234EA5D84FAEC54C46D15B9E04AB08BDFC26AD513E", "tbs_sha1": ""}, {"signer_name": "Domotz Inc", "certificate_thumbprint": "0034E538D1FE10D11AEDB19820917F8455375F59", "tbs_sha256": "1F28243E790F8A14833AD151223E08AE287F8938156E2BD2809D91EB1B872EAD", "tbs_sha1": ""}, {"signer_name": "OpenVPN Inc.", "certificate_thumbprint": "478646B53E3F991A02E8A04D36B178DB1AFFF851", "tbs_sha256": "5AA2294423E61B2EA4278E048CE26663264439CEFCE9E19B82F7829BA1579A31", "tbs_sha1": ""}, {"signer_name": "OpenVPN Inc.", "certificate_thumbprint": "N/A", "tbs_sha256": "BD4325E2A812983153FFB4CE0484AE9638E38647106BD1DAB419733022006EB9", "tbs_sha1": ""}, {"signer_name": "DOMOTZ INC.", "certificate_thumbprint": "B306B74F3BB81B3CD057AB400514B0D56D421788", "src_file_sha256": "2761bda50e77e0a0e2a8ac1836281035cd8d3d2c5faf8b41d607519ca22a7bf5", "src_file_path": "downloaded_files/domotz/2761bda50e77e0a0e2a8ac1836281035cd8d3d2c5faf8b41d607519ca22a7bf5"}]} }/>
 
 
 ### Forensic Artifacts

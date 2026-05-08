@@ -4,7 +4,7 @@ title: "Splashtop"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Splashtop
@@ -29,6 +29,10 @@ Splashtop is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Splashtop Inc.", "certificate_thumbprint": "D458B32F6946DBB682A9687076EB9209979BDF76", "src_file_sha256": "31333b18ca5cf8f09bc6a8464b34b17f415afee14b6eed877f48ebb7a7191d57", "src_file_path": "downloaded_files/splashtop/31333b18ca5cf8f09bc6a8464b34b17f415afee14b6eed877f48ebb7a7191d57", "src_file_company": "Splashtop Inc."}]} }/>
 
 
 ### Forensic Artifacts

@@ -4,7 +4,7 @@ title: "Devolutions Remote Desktop Manager"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Devolutions Remote Desktop Manager
@@ -33,6 +33,10 @@ Devolutions Remote Desktop Manager is a remote monitoring and management (RMM) t
 
 #### Known Vulnerabilities
 - [https://www.cvedetails.com/version-list/22913/177721/1/Devolutions-Remote-Desktop-Manager-Powershell.html](https://www.cvedetails.com/version-list/22913/177721/1/Devolutions-Remote-Desktop-Manager-Powershell.html)
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Devolutions Inc", "certificate_thumbprint": "8DB5A43BB8AFE4D2FFB92DA9007D8997A4CC4E13", "src_file_sha256": "b4dc03f646a3212aae9769e146b35bad4d0ddea71807afc97a3494215ecb0219", "src_file_path": "downloaded_files/devolutions_remote_desktop_manager/b4dc03f646a3212aae9769e146b35bad4d0ddea71807afc97a3494215ecb0219", "src_file_company": "Devolutions inc."}]} }/>
 
 
 ### Forensic Artifacts

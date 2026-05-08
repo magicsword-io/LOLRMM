@@ -4,7 +4,7 @@ title: "Goverlan"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Goverlan
@@ -31,6 +31,10 @@ Goverlan is a remote monitoring and management (RMM) tool. More information will
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "EASYVISTA SAS", "certificate_thumbprint": "2AEEBB150801E156594DFD89A474F5A8C6D3EAE2", "src_file_sha256": "086207248872cecd4d338c0aa26f69aaff779c7c88f02d13fe5e004df85bdece", "src_file_path": "downloaded_files/goverlan/086207248872cecd4d338c0aa26f69aaff779c7c88f02d13fe5e004df85bdece", "src_file_company": "EasyVista, Inc."}]} }/>
 
 
 ### Forensic Artifacts

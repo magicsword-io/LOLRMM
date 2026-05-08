@@ -1,15 +1,17 @@
 ---
-description: "CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description: "CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.  **IMPORTANT**: Some components of this tool may be signed with legitimate Microsoft Windows Component Publisher certificates that are used to sign Windows system components. Do NOT blindly block Microsoft certificate thumbprints as doing so will break Windows functionality in your environment. Use certificate data for detection, hunting, and analysis purposes only."
 title: "CrossTec Remote Control"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # CrossTec Remote Control
 
 CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+**IMPORTANT**: Some components of this tool may be signed with legitimate Microsoft Windows Component Publisher certificates that are used to sign Windows system components. Do NOT blindly block Microsoft certificate thumbprints as doing so will break Windows functionality in your environment. Use certificate data for detection, hunting, and analysis purposes only.
 
 <BlockBanner name={"CrossTec Remote Control"}/>
 
@@ -29,6 +31,10 @@ CrossTec Remote Control is a remote monitoring and management (RMM) tool. More i
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["pcivideo.exe", "supporttool.exe"], "company_names": [], "signer_names": ["Microsoft Corporation", "Microsoft Windows Component Publisher"], "certificates": [{"signer_name": "Microsoft Windows Component Publisher", "issuer": "CN=Microsoft Windows Verification Intermediate PCA", "certificate_thumbprint": "5C4D0AED88959C9D30C1B30F9AA916BE57544CF6", "tbs_sha256": "DDFD99125B30665247E714C0B2A4D17908F2228DD04FBA2EC311249F9BFB678D", "tbs_sha1": "2169D040A744D6C45E0214C48517B372289D79AF", "valid_from": "2005-10-11T23:24:57+00:00", "valid_to": "2007-01-11T23:34:57+00:00"}, {"signer_name": "Microsoft Corporation", "issuer": "CN=Microsoft Code Signing PCA 2011", "certificate_thumbprint": "62009AAABDAE749FD47D19150958329BF6FF4B34", "tbs_sha256": "E17764C39F2AFD7114F8528D2F9783D9A591F6679715EECE730A262CF5CFD3B3", "tbs_sha1": "3D07186A55AD7D7691B88AC4D130F2002F664B16", "valid_from": "2019-05-02T21:37:46+00:00", "valid_to": "2020-05-02T21:37:46+00:00"}]} }/>
 
 
 ### Forensic Artifacts

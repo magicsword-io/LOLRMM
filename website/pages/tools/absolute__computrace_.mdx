@@ -4,7 +4,7 @@ title: "Absolute (Computrace)"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Absolute (Computrace)
@@ -29,6 +29,10 @@ Absolute (Computrace) is a remote monitoring and management (RMM) tool. More inf
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Absolute Software Corp.", "certificate_thumbprint": "7F15551E564615F929E65B19B1C695D78DB51810", "src_file_sha256": "76a4272310b3f5151939eee0e63b61cee712d88af5b1606202360147082adbc1", "src_file_path": "downloaded_files/absolute_(computrace)/76a4272310b3f5151939eee0e63b61cee712d88af5b1606202360147082adbc1", "src_file_company": "Absolute Software Corporation"}]} }/>
 
 
 ### Forensic Artifacts

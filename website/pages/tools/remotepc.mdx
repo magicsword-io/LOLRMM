@@ -4,7 +4,7 @@ title: "RemotePC"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # RemotePC
@@ -31,6 +31,10 @@ RemotePC is a remote monitoring and management (RMM) tool. More information will
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "IDrive, Inc.", "certificate_thumbprint": "17792230278CDBA9F4A0ACFC0BCCA9F259286A73", "src_file_sha256": "f330dd1b146522594b5920b2edf2c66f5566e75fb31959919fed0926bcaec794", "src_file_path": "downloaded_files/remotepc/f330dd1b146522594b5920b2edf2c66f5566e75fb31959919fed0926bcaec794"}, {"signer_name": "IDrive, Inc.", "certificate_thumbprint": "491640FE02B0F0A1E298191326D2F72527C5DCF7", "src_file_sha256": "8156cbcbdc4e2eeedcb4ddbabc0052d2e4898ca27280160c396639bb39d561e4", "src_file_path": "downloaded_files/remotepc/8156cbcbdc4e2eeedcb4ddbabc0052d2e4898ca27280160c396639bb39d561e4", "src_file_company": "IDrive Inc                                                  "}]} }/>
 
 
 ### Forensic Artifacts

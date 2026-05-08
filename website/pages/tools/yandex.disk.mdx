@@ -4,7 +4,7 @@ title: "Yandex.Disk"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Yandex.Disk
@@ -29,6 +29,10 @@ Yandex.Disk is a remote monitoring and management (RMM) tool. More information w
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "YANDEX LLC", "certificate_thumbprint": "46E2F09D295573BB09DACC6B209B142C244A30D6", "src_file_sha256": "b4de5a3d4ac1c70fdc0c498e3248389392d80efc4fb3a8fb67435f79da830199", "src_file_path": "downloaded_files/yandex.disk/b4de5a3d4ac1c70fdc0c498e3248389392d80efc4fb3a8fb67435f79da830199", "src_file_company": "Yandex"}]} }/>
 
 
 ### Forensic Artifacts

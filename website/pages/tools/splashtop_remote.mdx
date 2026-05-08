@@ -4,7 +4,7 @@ title: "Splashtop Remote"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Splashtop Remote
@@ -18,7 +18,7 @@ Splashtop Remote is a remote monitoring and management (RMM) tool. More informat
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.splashtop.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Splashtop Remote is a remote monitoring and management (RMM) tool. More informat
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["3irjc74zj.exe", "splashtop_streamer_windows.exe", "splashtopsos.exe", "sragent.exe", "srserver.exe", "srservice.exe"], "company_names": [], "signer_names": ["Splashtop Inc."], "certificates": [{"signer_name": "Splashtop Inc.", "certificate_thumbprint": "D458B32F6946DBB682A9687076EB9209979BDF76", "tbs_sha256": "2E68D3458EA8DF79CAB66FF9E4EB68904491CB6EBF148AFBE49F7FB46761FC20", "tbs_sha1": ""}, {"signer_name": "Splashtop Inc.", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "2978060ECCF9B8AB92257B03117DA21AEA5DA8A1"}, {"signer_name": "Splashtop Inc.", "issuer": "CN=VeriSign Class 3 Code Signing 2010 CA", "certificate_thumbprint": "2D01A46E9147185A5771B5B96675A89659F98C1C", "tbs_sha256": "51ABFD3E018A65BA17A112836881266A247DB48816BB0F49C24DF2E31C64FF7B", "tbs_sha1": "2978060ECCF9B8AB92257B03117DA21AEA5DA8A1", "valid_from": "2013-09-09T00:00:00+00:00", "valid_to": "2015-12-09T23:59:59+00:00"}]} }/>
 
 
 ### Forensic Artifacts

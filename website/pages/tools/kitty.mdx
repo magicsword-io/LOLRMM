@@ -4,7 +4,7 @@ title: "KiTTY"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # KiTTY
@@ -29,6 +29,10 @@ KiTTY is a remote monitoring and management (RMM) tool. More information will be
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Gametop Pte Ltd", "certificate_thumbprint": "AE549749DC0D0DBE947070D130DA2FAF08FEB6A4", "src_file_sha256": "86f4ba4b3eb16c91aac10ad944e2785d08b597b11ba1f938b757c0705f782f37", "src_file_path": "downloaded_files/kitty/86f4ba4b3eb16c91aac10ad944e2785d08b597b11ba1f938b757c0705f782f37", "src_file_company": "GameTop Pte. Ltd.                                           "}]} }/>
 
 
 ### Forensic Artifacts

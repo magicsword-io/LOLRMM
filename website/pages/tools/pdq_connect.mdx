@@ -4,7 +4,7 @@ title: "PDQ Connect"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # PDQ Connect
@@ -18,7 +18,7 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.pdq.com/pdq-connect/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ PDQ Connect is a remote monitoring and management (RMM) tool. More information w
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["msi8c70.tmp", "pdq-connect-agent.exe", "pdq-connect.exe", "pdqconnectupdater-.msi", "pdqconnectupdater-setup.exe"], "company_names": [], "signer_names": ["PDQ.com Corporation"], "certificates": [{"signer_name": "PDQ.com Corporation", "certificate_thumbprint": "8AB2A176E3B80545CE2E15ED12D186B9EF53C108", "tbs_sha256": "4C3ADBB8A2662E65EC5C714632D015950295E0F8383D25FD125D1EA4994525B5", "tbs_sha1": ""}, {"signer_name": "PDQ.com Corporation", "certificate_thumbprint": "E706901A2E7EB16DA4D420BF61BBC47BFBBF8CE6", "tbs_sha256": "6D661EF88C0FAA44D96DD73137EE50A09E9A1BA9180A8A850A6A6D708DA2004E", "tbs_sha1": ""}, {"signer_name": "PDQ.com Corporation", "issuer": "CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1", "certificate_thumbprint": "7B4313B6CDB8176DFAAB4125E51651E2A813AB74", "tbs_sha256": "476A0D993DE124D3925AD602D11F294C1D374A3ACF50567A5928D269840993E4", "tbs_sha1": "7C423168C986239661A17B2199D0ADFF457188CA", "valid_from": "2025-08-07T00:00:00+00:00", "valid_to": "2028-09-21T23:59:59+00:00"}]} }/>
 
 
 ### Forensic Artifacts

@@ -4,7 +4,7 @@ title: "Total Software Deployment"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Total Software Deployment
@@ -29,6 +29,10 @@ Total Software Deployment is a remote monitoring and management (RMM) tool. More
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Softinventive Lab", "certificate_thumbprint": "0A4F216B5E8FD8B7906F05B71609F002984A9456", "src_file_sha256": "2c3979c76cccc59b5240053a226374f89be4a7f4c58e29b04efd849cb6465575", "src_file_path": "downloaded_files/total_software_deployment/2c3979c76cccc59b5240053a226374f89be4a7f4c58e29b04efd849cb6465575", "src_file_company": "Softinventive Lab"}]} }/>
 
 
 ### Forensic Artifacts

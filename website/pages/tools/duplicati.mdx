@@ -4,7 +4,7 @@ title: "Duplicati"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Duplicati
@@ -31,6 +31,10 @@ Duplicati is a remote monitoring and management (RMM) tool. More information wil
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["duplicati.server.dll", "duplicati.server.implementation.dll", "duplicati.server.serialization.dll"], "company_names": [], "signer_names": ["Duplicati Inc."], "certificates": [{"signer_name": "Duplicati Inc.", "certificate_thumbprint": "7812DFC61915A4BFC049834D63DBD2E9340D82FC", "tbs_sha256": "437C2E9C10A4C6176D49821EB04EA42E3AA33A1562071306529B8A5F9620DBF6", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts

@@ -4,7 +4,7 @@ title: "RemoteCall"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # RemoteCall
@@ -31,6 +31,10 @@ RemoteCall is a remote monitoring and management (RMM) tool. More information wi
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Rsupport Co., Ltd.", "certificate_thumbprint": "3E3B0B3E214A4549446257C92C06839F92DCE444", "src_file_sha256": "d8d56802d3a0f12a33a9c014ca5edb075e7272bb38274fdcb0d4a8a95a4147a6", "src_file_path": "downloaded_files/remotecall/d8d56802d3a0f12a33a9c014ca5edb075e7272bb38274fdcb0d4a8a95a4147a6", "src_file_company": "RSUPPORT"}, {"signer_name": "Rsupport Co., Ltd.", "certificate_thumbprint": "D5980651B93ED19EC1DB036FC73024C4761437BC", "src_file_sha256": "47b4ff9f8cda6a49a31e1c1f9b42ed1a574bdb71f42f27c147bce48d1b48ac5d", "src_file_path": "downloaded_files/remotecall/47b4ff9f8cda6a49a31e1c1f9b42ed1a574bdb71f42f27c147bce48d1b48ac5d", "src_file_company": "Rsupport Corporation"}]} }/>
 
 
 ### Forensic Artifacts

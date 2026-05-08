@@ -4,7 +4,7 @@ title: "RAdmin"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # RAdmin
@@ -32,6 +32,10 @@ RAdmin is a remote monitoring and management (RMM) tool. More information will b
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Famatech Corp.", "certificate_thumbprint": "9DC1CD24C50424A2BF993D8350F7A0F62DE34823", "src_file_sha256": "839153d334bd3fb89488f1499cece43e7d1077f35fe0b0f79c2bd413bc3a9aaa", "src_file_path": "downloaded_files/radmin/839153d334bd3fb89488f1499cece43e7d1077f35fe0b0f79c2bd413bc3a9aaa", "src_file_company": "Famatech Corp.                                              "}]} }/>
 
 
 ### Forensic Artifacts

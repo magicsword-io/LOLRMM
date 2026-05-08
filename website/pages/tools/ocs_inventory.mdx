@@ -4,7 +4,7 @@ title: "OCS inventory"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # OCS inventory
@@ -29,6 +29,10 @@ OCS inventory is a remote monitoring and management (RMM) tool. More information
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "EZ Web Enterprises Inc.", "certificate_thumbprint": "8E0F648B184E52B121958F5A043F6A7E9A27F8B1", "src_file_sha256": "5040a28ce56fdf1d3cb6719e2a13dd641c7455bd3cb85383e8ee66f17290f8d4", "src_file_path": "downloaded_files/ocs_inventory/5040a28ce56fdf1d3cb6719e2a13dd641c7455bd3cb85383e8ee66f17290f8d4", "src_file_company": "OCS Inventory"}]} }/>
 
 
 ### Forensic Artifacts

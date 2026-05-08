@@ -4,7 +4,7 @@ title: "MeshCentral"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # MeshCentral
@@ -36,6 +36,10 @@ MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used alo
 
 #### Known Vulnerabilities
 - [CVE-2024-26135](CVE-2024-26135)
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "MOONWHITE TECHNOLOGIES PRIVATE LIMITED", "certificate_thumbprint": "4E5AB3CC60B41C9C9C218B8C272786ED0E6D8990", "src_file_sha256": "729f6286b503b36b45fb86efdf7a2e148713c1999a0a98fb485e72188ae26bdf", "src_file_path": "downloaded_files/meshcentral/729f6286b503b36b45fb86efdf7a2e148713c1999a0a98fb485e72188ae26bdf"}]} }/>
 
 
 ### Forensic Artifacts

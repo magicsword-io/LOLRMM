@@ -4,7 +4,7 @@ title: "RuDesktop"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # RuDesktop
@@ -18,7 +18,7 @@ RuDesktop is a remote monitoring and management (RMM) tool. More information wil
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://rudesktop.ru/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ RuDesktop is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["iastoriconlaunch.exe"], "company_names": [], "signer_names": ["Oculus VR, LLC", "Unity Technologies ApS", "Unity Technologies SF"], "certificates": [{"signer_name": "Oculus VR, LLC", "certificate_thumbprint": "BC09BF25378AD0D469F6B4D2C96EE56F467A9B5B", "tbs_sha256": "5C2E037072A01071AF8F9809143B1B90ADB6063D67497ABECEBEB815E7844D64", "tbs_sha1": ""}, {"signer_name": "Unity Technologies ApS", "certificate_thumbprint": "F7F8A6FE44B74576FE35176685405E0D058A7271", "tbs_sha256": "275E28FDBCB9B0DB2E4C498D07906C09061A77BDB8F6E86A7F085F26F92D93B0", "tbs_sha1": ""}, {"signer_name": "Unity Technologies SF", "certificate_thumbprint": "BFFD800651947878FCD0DC749C16D57B0D5E397D", "tbs_sha256": "BE51932815952B391A497BFE3B782E7990EE050A27744763D0EEBDCC9A0A9380", "tbs_sha1": ""}, {"signer_name": "Advanced Technologies LLC", "certificate_thumbprint": "8365B69A1A2077E392A98F3513DDD5795EF8B5FC", "src_file_sha256": "3f8795be3197df823b599d8bc96ecbf9c7d94079d490c9d94c3239e635332fdd", "src_file_path": "downloaded_files/rudesktop/3f8795be3197df823b599d8bc96ecbf9c7d94079d490c9d94c3239e635332fdd", "src_file_company": "Advanced Technologies, LLC"}]} }/>
 
 
 ### Forensic Artifacts

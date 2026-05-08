@@ -270,6 +270,7 @@ detection:
     - \\NTRsupportPro_EN.exe
     - \\NetLock_RMM_Agent_Installer
     - \\NetLock_RMM_Agent_Installer.exe
+    - \\NetViewer.exe
     - \\Netop Ondemand.exe
     - \\NinjaRMMAgent.exe
     - \\NinjaRMMAgentPatcher.exe
@@ -545,6 +546,7 @@ detection:
     - \\nomachine*.exe
     - \\ntrntservice.exe
     - \\nvClient.exe
+    - \\nvConsole.exe
     - \\nvda.exe
     - \\nvda_*.exe
     - \\nvda_service.exe
@@ -552,7 +554,8 @@ detection:
     - \\nxservice*.ese
     - \\ocsinventory.exe
     - \\ocsservice.exe
-    - \\oo-syspectr*.exe
+    - \\oolocker.exe
+    - \\oosyspectr.exe
     - \\p9agent*.exe
     - \\paexec.exe
     - \\parallelsaccess-*.exe
@@ -596,6 +599,7 @@ detection:
     - \\remcom.exe
     - \\remcomsvc.exe
     - \\remcos*.exe
+    - \\remmon.exe
     - \\remobo.exe
     - \\remobo_client.exe
     - \\remobo_tracker.exe
@@ -672,6 +676,7 @@ detection:
     - \\supremoservice.exe
     - \\syncrosetup.exe
     - \\sysdiag.exe
+    - \\syspectr.exe
     - \\tacticalrmm.exe
     - \\tailscale-*.exe
     - \\tailscale-ipn.exe

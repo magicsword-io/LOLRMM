@@ -4,7 +4,7 @@ title: "Manage Engine (Desktop Central)"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Manage Engine (Desktop Central)
@@ -18,7 +18,7 @@ Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://desktopcentral.manageengine.com"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["8k1qq1.exe", "dcagentregister.exe", "dcagentservice.exe", "m6hufo2as.exe"], "company_names": [], "signer_names": ["ZOHO Corporation Private Limited"], "certificates": [{"signer_name": "ZOHO Corporation Private Limited", "issuer": "CN=GlobalSign GCC R45 CodeSigning CA 2020", "certificate_thumbprint": "03498B4CC5B51DB6CE80699F23CAC1724BB36B69", "tbs_sha256": "48D169144280CEF6AF2316D3DD3BD8B8790D35B71601A48BD77C2A5F1E1E860B", "tbs_sha1": "89D154D8D97B4FAF3E0B6427731BFC935939895E", "valid_from": "2023-12-11T17:00:36+00:00", "valid_to": "2026-10-09T07:40:58+00:00", "src_file_path": "downloaded_files/manage_engine_(desktop_central)/7ac27dd17b4cfa28f37deb6dcb9519b4e7a2dd405134ac881a8c49d32cb904e6", "src_file_company": "ZOHO Corporation"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "9CFE33A8A1FB933BEDF943EF4263D03B6A5F828E", "src_file_sha256": "b9326bd53d5cfd1d1ff72f52e92e776487e206e76363d4c23a3c60143349c790", "src_file_path": "downloaded_files/manage_engine_(desktop_central)/b9326bd53d5cfd1d1ff72f52e92e776487e206e76363d4c23a3c60143349c790", "src_file_company": "Zoho Corporation Pvt. Ltd.,"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "039B7B91AFEFDB68B36E6A2D246545D581D1BF0D", "src_file_sha256": "e65be97dfb0ae62de4bfbfed140aaa1e16e9f4461e8e29c9816fc54dea595694", "src_file_path": "downloaded_files/manage_engine_(desktop_central)/e65be97dfb0ae62de4bfbfed140aaa1e16e9f4461e8e29c9816fc54dea595694", "src_file_company": "Zoho Corporation Pvt. Ltd.,"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "1FFC1D0860B748F0E9D53297B716E497C81D687B", "src_file_sha256": "b51dee244adcf4795db9378e56897a97b48eb2c3d4ed758af98ddab2e6f9967b", "src_file_path": "downloaded_files/manage_engine_(desktop_central)/b51dee244adcf4795db9378e56897a97b48eb2c3d4ed758af98ddab2e6f9967b", "src_file_company": "ZOHO Corporation"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "99869B5E06680A842469CC3DA2F2DFFFE75AC930", "src_file_sha256": "6d7903597fc23baa069da2d0fe6959b0c1f01644461bb9f842e6326f1a49077a", "src_file_path": "downloaded_files/manage_engine_(desktop_central)/6d7903597fc23baa069da2d0fe6959b0c1f01644461bb9f842e6326f1a49077a", "src_file_company": "ZOHO Corp"}]} }/>
 
 
 ### Forensic Artifacts

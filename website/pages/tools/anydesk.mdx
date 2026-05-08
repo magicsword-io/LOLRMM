@@ -4,7 +4,7 @@ title: "AnyDesk"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # AnyDesk
@@ -39,6 +39,10 @@ individuals and teams.
 
 #### Known Vulnerabilities
 - [https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html](https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html)
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "AnyDesk Software GmbH", "certificate_thumbprint": "E5ABE8D3CEA37B45F3D3896B49FB91920B4A4E9D", "src_file_sha256": "864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803", "src_file_path": "downloaded_files/anydesk/864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803", "src_file_company": "AnyDesk Software GmbH"}]} }/>
 
 
 ### Forensic Artifacts

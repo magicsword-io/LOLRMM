@@ -4,7 +4,7 @@ title: "PuTTY Tray"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # PuTTY Tray
@@ -29,6 +29,10 @@ PuTTY Tray is a remote monitoring and management (RMM) tool. More information wi
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["putty", "putty.exe", "puttytray.exe"], "company_names": [], "signer_names": ["Christopher West"], "certificates": [{"signer_name": "Christopher West", "issuer": "CN=StartCom Class 2 Primary Intermediate Object CA", "certificate_thumbprint": "83191137CDEEF81C30E354873FECF014729C2FDF", "tbs_sha256": "BF98620649A90682F39538F9A9DB76B90CD49FFD11AE96385A9D7113E1F70099", "tbs_sha1": "A306499CEC6AF8C46C2F959731D0D41C6090D06C", "valid_from": "2014-02-25T22:22:24+00:00", "valid_to": "2016-02-26T05:05:17+00:00"}]} }/>
 
 
 ### Forensic Artifacts

@@ -4,7 +4,7 @@ title: "HopToDesk"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # HopToDesk
@@ -33,6 +33,10 @@ HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool ha
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Remote Control", "Remote Desktop", "Screen Sharing", "File Transfer"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Begonia Holdings LLC", "certificate_thumbprint": "127CAC9785F8C5F1A88CE70CE1109A4CA3A4CA01", "src_file_sha256": "99b2948fd10b23b6d36e035b60cb92b9b82fb0bd4003e6d28f950f0b227cae2d", "src_file_path": "downloaded_files/hoptodesk/99b2948fd10b23b6d36e035b60cb92b9b82fb0bd4003e6d28f950f0b227cae2d", "src_file_company": "Begonia Holdings"}]} }/>
 
 
 ### Forensic Artifacts

@@ -22,7 +22,7 @@ detection:
             - '\komari-windows-arm64.exe'
             - '\komari-agent.exe'
     selection_image:
-       - Image|endswith: 
+       - Image|endswith:
             - '\komari-windows-386.exe'
             - '\komari-windows-amd64.exe'
             - '\komari-windows-arm64.exe'

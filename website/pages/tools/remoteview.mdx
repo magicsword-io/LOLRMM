@@ -4,7 +4,7 @@ title: "RemoteView"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # RemoteView
@@ -29,6 +29,10 @@ RemoteView is a remote monitoring and management (RMM) tool. More information wi
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Rsupport Co., Ltd.", "certificate_thumbprint": "3E3B0B3E214A4549446257C92C06839F92DCE444", "src_file_sha256": "794ba3c194edc7c953ef39efe01686a5c7e1f996c5c090f12ebc124df6347baf", "src_file_path": "downloaded_files/remoteview/794ba3c194edc7c953ef39efe01686a5c7e1f996c5c090f12ebc124df6347baf", "src_file_company": "RSUPPORT"}]} }/>
 
 
 ### Forensic Artifacts
