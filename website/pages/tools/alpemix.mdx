@@ -1,10 +1,10 @@
 ---
-description = "Alpemix is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Alpemix"
+description: "Alpemix is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Alpemix"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Alpemix
@@ -34,6 +34,10 @@ Alpemix is a remote monitoring and management (RMM) tool. More information will 
 #### Capabilities
 <Badges color="#FFA500" badges={ ["5 Different Solutions for Remote Support", "Access to Unattended Computers", "Access to User Account Control (UAC) Screens", "Add Your Own Logo", "Auto Sizing", "Automatic Update", "Clipboard Transfer", "Computer Independent Licensing", "Contact List and Groups", "Encrypted Communication", "External Communication Barrier", "File Transfer", "Instant Messaging", "Multi-Platform Support", "Multiple Chat", "Multiple Connections", "No Port Forwarding Required", "Peer to Peer Connection (p2p)", "Receiving Offline Message", "Remote Restart", "ReportingRestricting The Authority", "Screen Sharing", "Sending Announcement Message", "Sharing a certain part of the screen", "Video Recording", "Voice Communication", "Who is currently supporting?", "Working in Black Screen Mode"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "TEKNOPARS B\u0130L\u0130\u015e\u0130M TEKNOLOJ\u0130LER\u0130 SANAY\u0130 VE T\u0130CARET LTD.\u015eT\u0130.", "certificate_thumbprint": "791EEC3C65240BFC4C6C3BE5469516A468DB61E9", "src_file_sha256": "6893d9ca56c9a8ff7f40cabb737996ed419b288f5bb571d6c1cc6effa9e888d9", "src_file_path": "downloaded_files/alpemix/6893d9ca56c9a8ff7f40cabb737996ed419b288f5bb571d6c1cc6effa9e888d9", "src_file_company": "Teknopars Bilisim"}]} }/>
 
 
 ### Forensic Artifacts

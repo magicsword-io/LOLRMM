@@ -1,0 +1,58 @@
+---
+description: "Remote Desktop Plus is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Remote Desktop Plus"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Remote Desktop Plus
+
+Remote Desktop Plus is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Remote Desktop Plus"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={"https://www.donkz.nl/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["rdp.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Plooto Star Inc", "certificate_thumbprint": "2347883329B8455D0A0F0D207A3A2279B339DFE8", "src_file_sha256": "44b8093cc6cee4dc28ac779675983f2cbdc74fc33837a16758f988163794bd97", "src_file_path": "downloaded_files/remote_desktop_plus/44b8093cc6cee4dc28ac779675983f2cbdc74fc33837a16758f988163794bd97", "src_file_company": "                                                            "}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["donkz.nl"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Remote Desktop Plus RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_desktop_plus_network_sigma.yml)
+- Detects potential processes activity of Remote Desktop Plus RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_desktop_plus_processes_sigma.yml)
+
+### References
+- [https://www.donkz.nl/](https://www.donkz.nl/)
+

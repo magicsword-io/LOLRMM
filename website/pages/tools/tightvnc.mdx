@@ -1,10 +1,10 @@
 ---
-description = "TightVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "TightVNC"
+description: "TightVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "TightVNC"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # TightVNC
@@ -29,6 +29,10 @@ TightVNC is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "\u6df1\u5733\u5e02\u73a9\u7269\u79d1\u6280\u6709\u9650\u516c\u53f8", "certificate_thumbprint": "2FDFB9DE3C87B8F4D9D4470DEF901FAE290E3CC1", "src_file_sha256": "25cde88b8245866e45f2cb081a817aef1ec179d10030837ac19c3863088aeeeb", "src_file_path": "downloaded_files/tightvnc/25cde88b8245866e45f2cb081a817aef1ec179d10030837ac19c3863088aeeeb", "src_file_company": "GlavSoft LLC."}]} }/>
 
 
 ### Forensic Artifacts

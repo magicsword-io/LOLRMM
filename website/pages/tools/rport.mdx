@@ -1,10 +1,10 @@
 ---
-description = "RPort is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "RPort"
+description: "RPort is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "RPort"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # RPort
@@ -29,6 +29,10 @@ RPort is a remote monitoring and management (RMM) tool. More information will be
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "RealVNC Ltd", "certificate_thumbprint": "58DDE0EC787718FB68974FC2A9391F56B7083D56", "src_file_sha256": "ab62e9e2d06330073f44c019d226c8dfe81f68afe25063866c9ce504a1ba7ace", "src_file_path": "downloaded_files/rport/ab62e9e2d06330073f44c019d226c8dfe81f68afe25063866c9ce504a1ba7ace", "src_file_company": "RealVNC Ltd."}]} }/>
 
 
 ### Forensic Artifacts

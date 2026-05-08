@@ -1,10 +1,10 @@
 ---
-description = "PSEXEC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "PSEXEC"
+description: "PSEXEC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "PSEXEC"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # PSEXEC
@@ -29,6 +29,10 @@ PSEXEC is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "KNOWLEDGE CENTRIC SOLUTIONS SL.", "certificate_thumbprint": "1EEBC8C25FE20B6AF6317FBE9B849EC0CCF9233B", "src_file_sha256": "046b0719f9659ad368515035768ae5be3599621af5ed1916785239711b898be8", "src_file_path": "downloaded_files/psexec/046b0719f9659ad368515035768ae5be3599621af5ed1916785239711b898be8", "src_file_company": "Sysinternals - www.sysinternals.com"}]} }/>
 
 
 ### Forensic Artifacts

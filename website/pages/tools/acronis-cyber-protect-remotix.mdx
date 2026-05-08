@@ -1,0 +1,57 @@
+---
+description: "Acronis Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Acronis Cyber Protect (Remotix)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Acronis Cyber Protect (Remotix)
+
+Acronis Cyber Protect (Remotix) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Acronis Cyber Protect (Remotix)"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2025-09-05"}
+         website={"https://www.acronis.com/en/products/cyber-protect-connect/"}
+         lastModified={"2025-09-05"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["AcronisCyberProtectConnectQuickAssist*.exe", "AcronisCyberProtectConnectAgent.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["cloud.acronis.com", "agents*-cloud.acronis.com", "gw.remotix.com", "connect.acronis.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Acronis Cyber Protect (Remotix) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronis_cyber_protect__remotix__network_sigma.yml)
+- Detects potential processes activity of Acronis Cyber Protect (Remotix) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/acronis_cyber_protect__remotix__processes_sigma.yml)
+
+### References
+- [https://kb.acronis.com/content/47189](https://kb.acronis.com/content/47189)
+

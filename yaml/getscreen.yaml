@@ -1,36 +1,133 @@
 Name: GetScreen
 Category: RMM
-Description: GetScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
-Author: ''
+Description: |
+    GetScreen is a remote monitoring and management (RMM) tool that enables remote
+    desktop access and unattended persistent access via service installation. It can
+    be installed via command line and registers itself as a Windows service named
+    "Getscreen.me".
+Author: 'PixelTommy & Guzzy (SagaLabs & itm8 ARC)'
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-05-04'
 Details:
     Website: 'https://getscreen.me/'
     PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
+        Filename: getscreen.exe
+        OriginalFileName: getscreen.exe
+        Description: 'Getscreen.me agent (ProductName/InternalName: Getscreen.me, CompanyName: Point B Ltd). Distributed as a UPX-packed PE32 (x86) GUI executable from https://getscreen.me/download/getscreen-x86.exe. Current binaries (file version 3.5.0+) are signed by POINT B LTD (Cyprus, registered HE 430957) on a GlobalSign GCC R45 EV CodeSigning chain. Older 2020-2021 era binaries were signed by OOO "GET SKRIN SOFTVER" on a COMODO RSA Extended Validation Code Signing CA chain (now expired).'
+    Privileges: Admin
     Free: ''
     Verification: ''
     SupportedOS:
         - Windows
-    Capabilities: []
+    Capabilities:
+        - Remote Control
+        - Unattended Access
+        - GUI Support
+        - Command line Support
     Vulnerabilities: []
     InstallationPaths:
-        - GetScreen.exe
-        - getscreen.exe
+        - C:\ProgramData\Getscreen.me\
+        - C:\Users\*\AppData\Local\Getscreen.me\
+        - C:\Program Files\Getscreen.me\
+        - C:\Users\*\Downloads\getscreen-x86.exe
+        - C:\Users\*\Downloads\getscreen.upd.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
+    Disk:
+        - File: 'C:\ProgramData\Getscreen.me\<date>.log'
+          Description: General application log file containing timestamps in UTC. The date and year must be correlated from the filename, as a new log is created for each day.
+          OS: Windows
+          Example:
+              - '11:52:18.642    INFO    Capture         capture stopped'
+              - '11:56:05.638    INFO    ConfigStore     loaded config from `C:\ProgramData\Getscreen.me\settings.dat`'
+              - '11:56:06.239    INFO    Signaling       start connection to ''getscreen.me/signal/agent'''
+              - '11:56:06.417    INFO    Socket          connected to getscreen.me:443'
+              - '11:56:06.953    INFO    Signaling       registered as 4895701'
+              - '11:56:07.128    INFO    Signaling       successful register as ''87c34ca23391@tutamail.com'''
+              - '11:56:07.142    INFO    Install         start installation'
+              - '11:56:07.152    INFO    Install         copy file ''C:\Users\Public\Videos\getscreen.exe'' -> ''C:\Program Files\Getscreen.me\getscreen.exe'''
+              - '11:56:07.257    INFO    Service         service ''Getscreen.me'' installed'''
+        - File: 'C:\ProgramData\Getscreen.me\<date>.gui.log'
+          Description: Operator interaction log. Records all actions performed by the operator on the remote host, including control mode activity and interactive file explorer usage. Timestamps are in UTC and must be correlated with the filename for full date context.
+          OS: Windows
+          Example:
+              - '12:42:53.770    INFO    Gui             send event event-application-status: ''{\"value\":\"connect\"}'''
+              - '12:42:53.802    INFO    Gui             send event event-active-session: ''{\"value\":[{\"id\":\"189333\",\"active\":true,\"ip\":\"94.156.14.71\",\"country\":\"Bulgaria\",\"region\":\"Sofia-grad\",\"city\":\"Sofia\",\"browser\":\"Firefox\",\"link\":\"https://go.getscreen.me/j33-l1h-3ib\",\"login\":\"Christian Henriksen\",\"start\":0.0,\"stop\":0.0,\"mode\":\"file\",\"plan\":{\"name\":\"free\",\"status\":\"active\"}}]}'''
+              - '12:42:55.111    INFO    Gui             send event event-application-status: ''{\"value\":\"active\"}'''
+              - '12:45:40.370    INFO    Gui             send event event-notify-dowload: ''{\"value\":\"C:\\\\Users\\\\christian\\\\Downloads\\\\invoice-124513.pdf\"}'''
+              - '12:46:44.115    INFO    Gui             send event event-notify-upload: ''{\"value\":\"C:\\\\Users\\\\christian\\\\Downloads\\\\Advanced_Port_Scanner_2.5.3869.exe\"}'''
+              - '12:50:24.557    INFO    Gui             send event event-session-info: ''{\"active\":false,\"ip\":\"94.156.14.71\",\"country\":\"Bulgaria\",\"region\":\"Sofia-grad\",\"city\":\"Sofia\",\"browser\":\"Firefox\",\"link\":\"https://go.getscreen.me/j33-l1h-3ib\",\"login\":\"Christian Henriksen\",\"start\":1775997775.0,\"stop\":1775998224.0,\"mode\":\"file\"}'''
+              - '12:50:24.583    INFO    Gui             send event event-confirm-request: ''{\"session\":\"189333\",\"mode\":\"connect\",\"status\":\"rejected\",\"name\":\"\",\"email\":\"\",\"company\":\"\",\"location\":\"\",\"ip\":\"\",\"user_agent\":\"\",\"timeout\":0.0,\"path\":\"\"}}'''
+        - File: 'C:\ProgramData\Getscreen.me\session.inf'
+          Description: Contains a list of previous sessions with source IP, country, region, city and start/end time in epoch format.
+          OS: Windows
+          Example:
+              - '94.156.14.105;Bulgaria;Sofia-grad;Sofia;1775995673;1775995861'
+              - '94.156.14.80;Bulgaria;Sofia-grad;Sofia;1775996986;1775996993'
+              - '94.156.14.44;Bulgaria;Sofia-grad;Sofia;1775997614;1775997752'
+              - '94.156.14.71;Bulgaria;Sofia-grad;Sofia;1775997775;1775998224'
+        - File: 'C:\Users\*\AppData\Local\Getscreen.me'
+          Description: Local application data directory.
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Getscreen.me
+          ImagePath: 'C:\Program Files\Getscreen.me\getscreen.exe'
+          Description: Service installation event as a result of GetScreen installation. The persistent service typically points at the elevation helper under %ProgramData%, e.g. '"C:\ProgramData\Getscreen.me\<random28chars>-elevate.exe" -elevate \\.\pipe\elevateGS512<random28chars>' where the random alpha string is generated per-install.
+        - EventID: 4697
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          ServiceName: Getscreen.me
+          ImagePath: 'C:\Program Files\Getscreen.me\getscreen.exe'
+          Description: Service installation event as a result of GetScreen installation. ImagePath may also reference the elevation helper under %ProgramData% (see EventID 7045 description).
+    Registry:
+        - Path: 'HKU\{SID}\Software\GetScreen'
+          Description: Application settings including language preferences.
+        - Path: 'HKU\{SID}\Software\GetScreen\Getscreen.me'
+          Description: Application-specific settings.
+        - Path: 'HKLM\System\CurrentControlSet\Services\GetscreenSV'
+          Description: Service registry key created when Getscreen.me installs persistence (SCM service key name is 'GetscreenSV', friendly name 'Getscreen.me'). The ImagePath value typically points at a per-install elevation helper such as '"C:\ProgramData\Getscreen.me\<random28chars>-elevate.exe" -elevate \\.\pipe\elevateGS512<random28chars>'.
     Network:
         - Description: Known remote domains
           Domains:
               - getscreen.me
               - GetScreen.me
               - '*.getscreen.me'
-          Ports: []
+              - go.getscreen.me
+              - image.getscreen.me
+              - 'px-*.getscreen.me'
+          Ports:
+              - 443
+    Other:
+        - Type: ServiceName
+          Value: Getscreen.me
+        - Type: ServiceName
+          Value: GetscreenSV
+        - Type: NamedPipe
+          Value: PCommand*GetScreen.meout
+        - Type: NamedPipe
+          Value: '\\.\pipe\elevateGS512*'
+        - Type: NamedPipe
+          Value: '\\.\pipe\PCommand*Getscreen.me*'
+        - Type: CommandLine
+          Value: 'getscreen.exe -install -register 87c34ca23sss391@tutamail.com'
+        - Type: CommandLine
+          Value: 'getscreen-x86.exe -gpipe \\.\pipe\PCommand*Getscreen.me* -gui'
+        - Type: CommandLine
+          Value: '*-elevate.exe -elevate \\.\pipe\elevateGS512*'
+        - Type: SHA256
+          Value: 611835aa02303ffa12762d412882a9fc7249ce1e52b931c0e8e58891c553548c
+        - Type: Authentihash
+          Value: c547fa46ec6345b04fb131b77b918d3aad455701b4dd152f6f4f612ba8fcc545
+        - Type: PublisherCertSubject
+          Value: 'CN=POINT B LTD, O=POINT B LTD, L=Limassol, ST=Limassol, C=CY (jurisdictionC=CY, serialNumber=HE 430957, businessCategory=Private Organization)'
+        - Type: PublisherCertIssuer
+          Value: 'CN=GlobalSign GCC R45 EV CodeSigning CA 2020, O=GlobalSign nv-sa, C=BE'
+        - Type: PublisherCertSerial
+          Value: '7ae0e9c1cfe2dce0e21c4327'
+        - Type: PublisherCertTBSSha256
+          Value: 3696C8A244152307EA16EA1613ED0ECAFD138F3AF475C5A03B5B80A77E5E240C
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/getscreen_network_sigma.yml
       Description: Detects potential network activity of GetScreen RMM tool
@@ -38,4 +135,37 @@ Detections:
       Description: Detects potential processes activity of GetScreen RMM tool
 References:
     - https://docs.getscreen.me/self-hosted/system-requirements/
+    - https://sagalabs.dk/blog/getscreen-yet-another-rmm
 Acknowledgement: []
+CodeSigning:
+    search_names:
+        - 2025-12-14_6f3bd1ad8919f9cd6ab1752009741a86_amadey_darkgate_elex_glassworm_helldown_hijackloader_luca-stealer_lynx_njrat
+        - getscreen.me
+        - rfbhr3zzo.exe
+    company_names: []
+    signer_names:
+        - Kopetra Ltd.
+    certificates:
+        - signer_name: Kopetra Ltd.
+          certificate_thumbprint: 8371992440D77154BB64BF0872E861D6372F70E8
+          tbs_sha256: 18450D4DFF502326C24240AA0A1A1971DA4DC7C96D3613B64180FDCE318A710A
+          tbs_sha1: ''
+          certificate_der_base64: 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
+FileHashes:
+    authenticode:
+        - file_name: rfbhr3zzo.exe
+          sha256: 05C954C3A8FB10AAA661264282C52975EA1C74A32B8433CED2555B2CF25EFF60
+          sha1: 92AFA21260BC69868A680E6052BC572A19FC88EC
+        - file_name: Getscreen.me
+          sha256: 925EF1C48B8179F2623519434DBB7CD72E5CA92633EDB7841449AC415B61AB49
+          sha1: 0CE759DD9ACC3250F8D237E10DACB6FEA5A1C3F3
+        - file_name: 2025-12-14_6f3bd1ad8919f9cd6ab1752009741a86_amadey_darkgate_elex_glassworm_helldown_hijackloader_luca-stealer_lynx_njrat
+          sha256: 35E306C5BA02B38E3E693E1EEBEEEE44144606DFB68A4C6E516319958EDD907B
+          sha1: 2379071527D41E23C58CE5CED0344DD3C220C4EA
+    page:
+        - file_name: Getscreen.me
+          sha256: 4ABE10F84D0F58D30A0D8EAE3092987E72507D63253A1D3B190FE7A65263B0BF
+          sha1: 10B8E5D5EE6A573F000233DEF7E7C42136B6BE58
+        - file_name: 2025-12-14_6f3bd1ad8919f9cd6ab1752009741a86_amadey_darkgate_elex_glassworm_helldown_hijackloader_luca-stealer_lynx_njrat
+          sha256: CAC3DA59CBE1207100FCF9DD22A16756767EBA54AAE765BBE760C0E929A5C27B
+          sha1: C73D2C372F8DDB0A11F1AFD84E7CF1D529DD8786

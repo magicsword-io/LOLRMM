@@ -1,0 +1,56 @@
+---
+description: "Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Royal TS"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Royal TS
+
+Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Royal TS"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.royalapps.com/ts/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["royalts.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Royal Apps GmbH", "certificate_thumbprint": "564F13E13238C21A522EAC9D8903CBA13F93D7A4", "src_file_sha256": "4270f73b1e7b4108a5a6b5bec8b0afea15f62c0a3452906ae15fb349dd197336", "src_file_path": "downloaded_files/royal_ts/4270f73b1e7b4108a5a6b5bec8b0afea15f62c0a3452906ae15fb349dd197336", "src_file_company": "Royal Apps GmbH"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["royalapps.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Royal TS RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_ts_network_sigma.yml)
+- Detects potential processes activity of Royal TS RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_ts_processes_sigma.yml)
+
+

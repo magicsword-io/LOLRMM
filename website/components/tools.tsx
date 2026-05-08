@@ -24,6 +24,14 @@ import { capitalize, uniq } from "lodash";
 import { type ReactNode, useState } from "react";
 const queryClient = new QueryClient();
 
+function slugifyToolName(text: string) {
+	return text
+		.toLowerCase()
+		.replace(/[^a-z0-9\s-]/g, "")
+		.replace(/[\s_-]+/g, "-")
+		.replace(/^-+|-+$/g, "");
+}
+
 type Platform =
 	| "Android"
 	| "IOS"
@@ -151,11 +159,7 @@ export function Table() {
 			width: "auto",
 			render: (value: string) => {
 				return (
-					<a
-						href={`/tools/${value.replace(/[^a-zA-Z0-9.]/g, "_").toLowerCase()}`}
-					>
-						{value}
-					</a>
+					<a href={`/tools/${slugifyToolName(value)}`}>{value}</a>
 				);
 			},
 		},

@@ -9,6 +9,20 @@ import csv
 import re
 import shutil
 import subprocess
+import copy
+
+
+def slugify(text):
+    text = str(text).lower()
+    text = re.sub(r"[^a-z0-9\s-]", "", text)
+    text = re.sub(r"[\s_-]+", "-", text)
+    return text.strip("-")
+
+
+def clean_csv_value(value):
+    if isinstance(value, str):
+        return re.sub(r"\s*\n\s*", " ", value).strip()
+    return value
 
 
 def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
@@ -40,7 +54,7 @@ def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
     ]
 
     with open(output_file, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=header)
+        writer = csv.DictWriter(f, fieldnames=header, lineterminator="\n")
         writer.writeheader()
 
         for rmm_tool in rmm_tools:
@@ -52,18 +66,24 @@ def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
                 pe_metadata = pe_metadata[0]  # Take the first item if it's a list
 
             row = {
-                "Name": rmm_tool.get("Name", ""),
-                "Category": rmm_tool.get("Category", ""),
-                "Description": rmm_tool.get("Description", ""),
-                "Author": rmm_tool.get("Author", ""),
-                "Created": rmm_tool.get("Created", ""),
-                "LastModified": rmm_tool.get("LastModified", ""),
-                "Website": rmm_tool.get("Details", {}).get("Website", ""),
-                "Filename": pe_metadata.get("Filename", ""),
-                "OriginalFileName": pe_metadata.get("OriginalFileName", ""),
-                "PEDescription": pe_metadata.get("Description", ""),
-                "Product": pe_metadata.get("Product", ""),
-                "Privileges": rmm_tool.get("Details", {}).get("Privileges", ""),
+                "Name": clean_csv_value(rmm_tool.get("Name", "")),
+                "Category": clean_csv_value(rmm_tool.get("Category", "")),
+                "Description": clean_csv_value(rmm_tool.get("Description", "")),
+                "Author": clean_csv_value(rmm_tool.get("Author", "")),
+                "Created": clean_csv_value(rmm_tool.get("Created", "")),
+                "LastModified": clean_csv_value(rmm_tool.get("LastModified", "")),
+                "Website": clean_csv_value(
+                    rmm_tool.get("Details", {}).get("Website", "")
+                ),
+                "Filename": clean_csv_value(pe_metadata.get("Filename", "")),
+                "OriginalFileName": clean_csv_value(
+                    pe_metadata.get("OriginalFileName", "")
+                ),
+                "PEDescription": clean_csv_value(pe_metadata.get("Description", "")),
+                "Product": clean_csv_value(pe_metadata.get("Product", "")),
+                "Privileges": clean_csv_value(
+                    rmm_tool.get("Details", {}).get("Privileges", "")
+                ),
                 "Free": str(rmm_tool.get("Details", {}).get("Free", "")),
                 "Verification": str(
                     rmm_tool.get("Details", {}).get("Verification", "")
@@ -102,7 +122,7 @@ def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
                     }
                 ),
                 "Detections": json.dumps(rmm_tool.get("Detections", [])),
-                "References": ", ".join(rmm_tool.get("References", [])),
+                "References": clean_csv_value(", ".join(rmm_tool.get("References", []))),
                 "Acknowledgement": json.dumps(rmm_tool.get("Acknowledgement", [])),
             }
 
@@ -115,25 +135,24 @@ def write_rmm_tools_table_csv(rmm_tools, output_dir, VERBOSE):
     header = ["Name", "Category", "Description", "Author"]
 
     with open(output_file, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=header)
+        writer = csv.DictWriter(f, fieldnames=header, lineterminator="\n")
         writer.writeheader()
 
         for rmm_tool in rmm_tools:
             if VERBOSE:
                 print(f"Writing RMM tool table CSV: {rmm_tool['Name']}")
 
-            # Replace parentheses with underscores in the link
-            name_link = f"[{rmm_tool['Name']}](/rmm_tools/{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')})"
+            name_link = f"[{rmm_tool['Name']}](/rmm_tools/{slugify(rmm_tool['Name'])})"
 
             row = {
                 "Name": name_link,
                 "Category": rmm_tool.get("Category", ""),
                 "Description": (
-                    rmm_tool.get("Description", "")[:100] + "..."
+                    clean_csv_value(rmm_tool.get("Description", ""))[:100] + "..."
                     if rmm_tool.get("Description", "")
                     else ""
                 ),
-                "Author": rmm_tool.get("Author", ""),
+                "Author": clean_csv_value(rmm_tool.get("Author", "")),
             }
 
             writer.writerow(row)
@@ -172,7 +191,18 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
             return text.replace("\n", " ").strip()
         return text
 
+    def without_certificate_der(code_signing):
+        if not isinstance(code_signing, dict):
+            return code_signing
+
+        sanitized = copy.deepcopy(code_signing)
+        for certificate in sanitized.get("certificates", []):
+            if isinstance(certificate, dict):
+                certificate.pop("certificate_der_base64", None)
+        return sanitized
+
     j2_env.filters["clean_multiline"] = clean_multiline
+    j2_env.filters["without_certificate_der"] = without_certificate_der
     j2_env.globals.update(dump=json.dumps)
     j2_env.globals.update(escape=re.escape)
 
@@ -182,8 +212,7 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
     d = datetime.datetime.now()
     template = j2_env.get_template("rmm.md.j2")
     for rmm_tool in rmm_tools:
-        # Replace parentheses with underscores in the file name
-        file_name = f"{rmm_tool['Name'].lower().replace(' ', '_').replace('(', '_').replace(')', '_')}.mdx"
+        file_name = f"{slugify(rmm_tool['Name'])}.mdx"
         output_path = os.path.join(tools_dir, file_name)
         output = template.render(rmm=rmm_tool, time=str(d.strftime("%Y-%m-%d")))
         with open(output_path, "w", encoding="utf-8") as f:

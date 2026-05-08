@@ -1,0 +1,56 @@
+---
+description: "Netop Remote Control (aka Impero Connect) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Netop Remote Control (aka Impero Connect)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Netop Remote Control (aka Impero Connect)
+
+Netop Remote Control (aka Impero Connect) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Netop Remote Control (aka Impero Connect)"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://netop.com/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["nhostsvc.exe", "nhstw32.exe", "nldrw32.exe", "rmserverconsolemediator.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "NETOP TECH SRL", "certificate_thumbprint": "311FD401E4AA27E856311EAE5D80C31CDE46A67C", "src_file_sha256": "c5b98ab84cb24ddcfd5e01928ea959b6af8bb4963a9d1ae10fef3734ba99657d", "src_file_path": "downloaded_files/netop_remote_control_(aka_impero_connect)/c5b98ab84cb24ddcfd5e01928ea959b6af8bb4963a9d1ae10fef3734ba99657d", "src_file_company": "Netop Solutions Limited"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["imperosoftware.com/impero-connect/"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Netop Remote Control (aka Impero Connect) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__network_sigma.yml)
+- Detects potential processes activity of Netop Remote Control (aka Impero Connect) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__processes_sigma.yml)
+
+

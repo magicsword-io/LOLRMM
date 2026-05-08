@@ -1,10 +1,10 @@
 ---
-description = "Neturo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Neturo"
+description: "Neturo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Neturo"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Neturo
@@ -31,6 +31,10 @@ Neturo is a remote monitoring and management (RMM) tool. More information will b
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "LG Uplus Corp.", "certificate_thumbprint": "A6AFB7E544982EE2CEE2348C20F90C403973868C", "src_file_sha256": "8f58e4840aba88c7bbf69f86139498f6a6ab92d317491f729a79c5ed12c1d046", "src_file_path": "downloaded_files/neturo/8f58e4840aba88c7bbf69f86139498f6a6ab92d317491f729a79c5ed12c1d046", "src_file_company": "LG Uplus Corp."}]} }/>
 
 
 ### Forensic Artifacts
