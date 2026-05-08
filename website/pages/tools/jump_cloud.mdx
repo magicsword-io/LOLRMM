@@ -1,10 +1,10 @@
 ---
-description = "Jump Cloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Jump Cloud"
+description: "Jump Cloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Jump Cloud"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Jump Cloud
@@ -29,6 +29,10 @@ Jump Cloud is a remote monitoring and management (RMM) tool. More information wi
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "JumpCloud Inc", "certificate_thumbprint": "10DAFAAFE2293D627AE971DAC84B64D33F2B3F80", "src_file_sha256": "be269a8a5a57a4525cf0f4342e864e7a5e307f4aa1246cf52a08a26e0a30b1af", "src_file_path": "downloaded_files/jump_cloud/be269a8a5a57a4525cf0f4342e864e7a5e307f4aa1246cf52a08a26e0a30b1af", "src_file_company": "JumpCloud"}, {"signer_name": "JumpCloud Inc", "certificate_thumbprint": "A4532C9F5D789FE2D6726651339D1D4F9AE6429C", "src_file_sha256": "73afc1ff220df0f407d9db143645dcb15f57c1f95918ab01daa0a96e3824e56e", "src_file_path": "downloaded_files/jump_cloud/73afc1ff220df0f407d9db143645dcb15f57c1f95918ab01daa0a96e3824e56e", "src_file_company": "JumpCloud"}]} }/>
 
 
 ### Forensic Artifacts

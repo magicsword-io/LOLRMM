@@ -1,10 +1,10 @@
 ---
-description = "GoToAssist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "GoToAssist"
+description: "GoToAssist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "GoToAssist"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # GoToAssist
@@ -31,6 +31,10 @@ GoToAssist is a remote monitoring and management (RMM) tool. More information wi
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "33023C0243016946C78CCB9B15AC6C203882E5D9", "src_file_sha256": "a15638d6c615001cc15d1a4d382593dc3ddd62d4ae98691ae43e5845f468c380", "src_file_path": "downloaded_files/gotoassist/a15638d6c615001cc15d1a4d382593dc3ddd62d4ae98691ae43e5845f468c380", "src_file_company": "GoTo, Inc."}, {"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "8D3FA6EEEBFC68A0FA76CDC4C6AD5982FE07DE91", "src_file_sha256": "df63edd5e58d2f1dbefc24dc863eeb3e7b4d8f6002dc9b5cf69a847e831d3cd2", "src_file_path": "downloaded_files/gotoassist/df63edd5e58d2f1dbefc24dc863eeb3e7b4d8f6002dc9b5cf69a847e831d3cd2", "src_file_company": "GoTo"}]} }/>
 
 
 ### Forensic Artifacts

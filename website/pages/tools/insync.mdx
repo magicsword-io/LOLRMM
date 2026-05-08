@@ -1,10 +1,10 @@
 ---
-description = "Insync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Insync"
+description: "Insync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Insync"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Insync
@@ -29,6 +29,10 @@ Insync is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Druva Inc", "certificate_thumbprint": "69D87180D72B8E218BDBC28D21879BC136184929", "src_file_sha256": "1f8d76ad0fcbe5fadd066b0a332a58ccd96438dff55c63d90d14dbd96ab7e98f", "src_file_path": "downloaded_files/insync/1f8d76ad0fcbe5fadd066b0a332a58ccd96438dff55c63d90d14dbd96ab7e98f", "src_file_company": "GitHub, Inc."}, {"signer_name": "Druva Data Solutions Pvt. Ltd", "certificate_thumbprint": "F6ED487C109762F9A3E91DBCEF6EA41AD1EC5B87", "src_file_sha256": "bcc7ed09d03e12c6e2e8889f08c5056ffc9eb1b5fe47bc199ae9e4965415b86b", "src_file_path": "downloaded_files/insync/bcc7ed09d03e12c6e2e8889f08c5056ffc9eb1b5fe47bc199ae9e4965415b86b", "src_file_company": "GitHub, Inc."}]} }/>
 
 
 ### Forensic Artifacts

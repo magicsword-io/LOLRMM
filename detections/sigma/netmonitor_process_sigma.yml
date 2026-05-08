@@ -24,7 +24,7 @@ detection:
             - '\winpty-agent.exe'
             - '\winpty-agent64.exe'
     selection_image:
-        Image|endswith: 
+        Image|endswith:
             - '\nmep_agtconfig.exe'
             - '\nmep_ctrlagent.exe'
             - '\nmep_ctrlagentsvc.exe'

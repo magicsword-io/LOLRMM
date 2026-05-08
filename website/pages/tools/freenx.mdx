@@ -1,10 +1,10 @@
 ---
-description = "FreeNX is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "FreeNX"
+description: "FreeNX is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "FreeNX"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # FreeNX
@@ -31,6 +31,10 @@ FreeNX is a remote monitoring and management (RMM) tool. More information will b
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "NoMachine S.\u00e0 r.l", "certificate_thumbprint": "08E7F3C348651CFEAB2C2F123FCE83AD1E5CA3CD", "src_file_sha256": "a4adfcbab8aa773f1d91116beef5c15605cd855ff9680281ae9d4dcafe7443ee", "src_file_path": "downloaded_files/freenx/a4adfcbab8aa773f1d91116beef5c15605cd855ff9680281ae9d4dcafe7443ee", "src_file_company": "NoMachine"}, {"signer_name": "NoMachine S.a.r.l.", "certificate_thumbprint": "B10BE4C8C9132A19607B268D5176EFCB43A0654E", "src_file_sha256": "338194b2e5e40d0830e6ec55845fd96ca3346d6c1eeafb7b7c5596568b87eff1", "src_file_path": "downloaded_files/freenx/338194b2e5e40d0830e6ec55845fd96ca3346d6c1eeafb7b7c5596568b87eff1", "src_file_company": "NoMachine"}]} }/>
 
 
 ### Forensic Artifacts

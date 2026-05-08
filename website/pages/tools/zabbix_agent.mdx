@@ -1,10 +1,10 @@
 ---
-description = "Zabbix Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Zabbix Agent"
+description: "Zabbix Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Zabbix Agent"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Zabbix Agent
@@ -18,7 +18,7 @@ Zabbix Agent is a remote monitoring and management (RMM) tool. More information 
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.zabbix.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Zabbix Agent is a remote monitoring and management (RMM) tool. More information 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["aga.controls.dll", "librehardwaremonitorlib.dll", "openhardwaremonitorlib.dll", "oxyplot.dll", "oxyplot.windowsforms.dll", "smartctl.exe", "zabbix_agent2.exe"], "company_names": [], "signer_names": ["Zabbix SIA"], "certificates": [{"signer_name": "Zabbix SIA", "certificate_thumbprint": "N/A", "tbs_sha256": "6EA7E157D0630DEDEFA9A840B0BC5C48FA0A5E29AAF10F877AF01D348F5C695E", "tbs_sha1": ""}, {"signer_name": "Zabbix SIA", "certificate_thumbprint": "1E158B87803F8F9B4189C62B762EA6E60340D65C", "src_file_sha256": "0b2070c42e42bfad0fb239a25696e4a734de487dd293135121fa3651cb9e826b", "src_file_path": "downloaded_files/zabbix_agent/0b2070c42e42bfad0fb239a25696e4a734de487dd293135121fa3651cb9e826b", "src_file_company": "Zabbix SIA"}]} }/>
 
 
 ### Forensic Artifacts

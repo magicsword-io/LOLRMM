@@ -1,10 +1,10 @@
 ---
-description = "Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Netviewer (GoToMeet)"
+description: "Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Netviewer (GoToMeet)"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Netviewer (GoToMeet)
@@ -25,7 +25,8 @@ Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More info
 />
 
 #### Installation Paths
-<Card code={ ["nvClient.exe", "netviewer.exe"] }/>
+<Card code={ ["NetViewer.exe", "nvClient.exe", "nvConsole.exe"] }/>
+
 
 
 
@@ -36,14 +37,19 @@ Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More info
 
 
 
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.netviewer.com", "netviewer.com"], "Ports": []}] }/>
 
 
 
 
 ### Detections
+- Detects potential network activity of Netviewer (GoToMeet) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__network_sigma.yml)
 - Detects potential processes activity of Netviewer (GoToMeet) RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer__gotomeet__processes_sigma.yml)
 
 ### References
-- [https://www.enviolet.com/en/service/online-consultant.html](https://www.enviolet.com/en/service/online-consultant.html)
+- [https://www.netviewer.com/de/support/download/](https://www.netviewer.com/de/support/download/)
 

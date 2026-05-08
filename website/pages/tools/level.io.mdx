@@ -1,10 +1,10 @@
 ---
-description = "Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Level.io"
+description: "Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Level.io"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Level.io
@@ -29,6 +29,10 @@ Level.io is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Level Software, Inc.", "certificate_thumbprint": "3C002DCBBCB603AE08699F4CEF973864AEB16860", "src_file_sha256": "075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83", "src_file_path": "downloaded_files/level.io/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83"}]} }/>
 
 
 ### Forensic Artifacts

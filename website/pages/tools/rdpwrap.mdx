@@ -1,10 +1,10 @@
 ---
-description = "rdpwrap is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "rdpwrap"
+description: "rdpwrap is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "rdpwrap"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # rdpwrap
@@ -29,6 +29,10 @@ rdpwrap is a remote monitoring and management (RMM) tool. More information will 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Wide Vision Trade GmbH", "certificate_thumbprint": "6F64E6DF839023E363EC7A375AC7F447AE9DF793", "src_file_sha256": "756c2904db70b5312ee968ec3d8f1d8c1fe403faa9096b809c2900a7a31de8b8", "src_file_path": "downloaded_files/rdpwrap/756c2904db70b5312ee968ec3d8f1d8c1fe403faa9096b809c2900a7a31de8b8", "src_file_company": "Stas'M Corp."}, {"signer_name": "\u4e2d\u79fb\u52a8\u4fe1\u606f\u6280\u672f\u6709\u9650\u516c\u53f8", "certificate_thumbprint": "6705D79EFC937ADD45912EA396E978376126ACBC", "src_file_sha256": "c36e92e4551c6f1db9c8261b9463fa817e67aa16f2e0394eadc6c3dfd165c385", "src_file_path": "downloaded_files/rdpwrap/c36e92e4551c6f1db9c8261b9463fa817e67aa16f2e0394eadc6c3dfd165c385", "src_file_company": "Stas'M Corp."}, {"signer_name": "Certification Authority", "certificate_thumbprint": "070FF09528D3EAFE04798403131D53D30E35C682", "src_file_sha256": "30c22c221f033baf6c52f51f2412cd0aef335703762d5bf19c486e8ee7b8b72f", "src_file_path": "downloaded_files/rdpwrap/30c22c221f033baf6c52f51f2412cd0aef335703762d5bf19c486e8ee7b8b72f", "src_file_company": "Stas'M Corp."}]} }/>
 
 
 ### Forensic Artifacts

@@ -1,10 +1,10 @@
 ---
-description = "Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Remote Manipulator System"
+description: "Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Remote Manipulator System"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Remote Manipulator System
@@ -29,6 +29,10 @@ Remote Manipulator System is a remote monitoring and management (RMM) tool. More
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "REMOTE UTILITIES PTE. LTD.", "certificate_thumbprint": "902CC2BB628B651954A5F7A1D68C6CDE84707A54", "src_file_sha256": "7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6", "src_file_path": "downloaded_files/remote_manipulator_system/7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6", "src_file_company": "Remote Utilities Pte. Ltd."}]} }/>
 
 
 ### Forensic Artifacts

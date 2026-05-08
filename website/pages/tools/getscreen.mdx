@@ -1,10 +1,10 @@
 ---
-description = "GetScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "GetScreen"
+description: "GetScreen is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "GetScreen"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # GetScreen
@@ -18,7 +18,7 @@ GetScreen is a remote monitoring and management (RMM) tool. More information wil
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://getscreen.me/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -31,6 +31,10 @@ GetScreen is a remote monitoring and management (RMM) tool. More information wil
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["2025-12-14_6f3bd1ad8919f9cd6ab1752009741a86_amadey_darkgate_elex_glassworm_helldown_hijackloader_luca-stealer_lynx_njrat", "getscreen.me", "rfbhr3zzo.exe"], "company_names": [], "signer_names": ["Kopetra Ltd."], "certificates": [{"signer_name": "Kopetra Ltd.", "certificate_thumbprint": "8371992440D77154BB64BF0872E861D6372F70E8", "tbs_sha256": "18450D4DFF502326C24240AA0A1A1971DA4DC7C96D3613B64180FDCE318A710A", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts

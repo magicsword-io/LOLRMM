@@ -1,10 +1,10 @@
 ---
-description = "Laplink Gold is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Laplink Gold"
+description: "Laplink Gold is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Laplink Gold"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Laplink Gold
@@ -18,7 +18,7 @@ Laplink Gold is a remote monitoring and management (RMM) tool. More information 
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://web.laplink.com/product/laplink-gold"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Laplink Gold is a remote monitoring and management (RMM) tool. More information 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["tsircusr", "welcome.exe", "welcres.dll"], "company_names": [], "signer_names": ["Outbyte Computing Pty Ltd"], "certificates": [{"signer_name": "Outbyte Computing Pty Ltd", "certificate_thumbprint": "N/A", "tbs_sha256": "20AEF3F8CE217A4F1CBBE73321B97DC97E7DA76A82ED88FD3F21E5AAB91719B0", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts
