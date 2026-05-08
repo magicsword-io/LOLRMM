@@ -1,10 +1,10 @@
 ---
-description = "NoMachine is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "NoMachine"
+description: "NoMachine is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "NoMachine"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # NoMachine
@@ -29,6 +29,10 @@ NoMachine is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "NoMachine S.\u00e0 r.l", "certificate_thumbprint": "08E7F3C348651CFEAB2C2F123FCE83AD1E5CA3CD", "src_file_sha256": "720e5eedeb8c552a0d4ca14414f5e99fd313e4d95d550169b7b4314e75686996", "src_file_path": "downloaded_files/nomachine/720e5eedeb8c552a0d4ca14414f5e99fd313e4d95d550169b7b4314e75686996", "src_file_company": "NoMachine"}, {"signer_name": "NoMachine S.a.r.l.", "certificate_thumbprint": "B10BE4C8C9132A19607B268D5176EFCB43A0654E", "src_file_sha256": "27836f35070f263f487db12cfd34b909678f9049cb0317cf3e64931c7eaad73c", "src_file_path": "downloaded_files/nomachine/27836f35070f263f487db12cfd34b909678f9049cb0317cf3e64931c7eaad73c", "src_file_company": "NoMachine"}]} }/>
 
 
 ### Forensic Artifacts

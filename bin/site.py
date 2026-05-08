@@ -9,6 +9,7 @@ import csv
 import re
 import shutil
 import subprocess
+import copy
 
 
 def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
@@ -172,7 +173,18 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
             return text.replace("\n", " ").strip()
         return text
 
+    def without_certificate_der(code_signing):
+        if not isinstance(code_signing, dict):
+            return code_signing
+
+        sanitized = copy.deepcopy(code_signing)
+        for certificate in sanitized.get("certificates", []):
+            if isinstance(certificate, dict):
+                certificate.pop("certificate_der_base64", None)
+        return sanitized
+
     j2_env.filters["clean_multiline"] = clean_multiline
+    j2_env.filters["without_certificate_der"] = without_certificate_der
     j2_env.globals.update(dump=json.dumps)
     j2_env.globals.update(escape=re.escape)
 

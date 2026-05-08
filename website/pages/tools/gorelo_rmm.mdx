@@ -1,10 +1,10 @@
 ---
-description = "Gorelo RMM is a remote monitoring and management tool facilitating remote access and control of devices for support and administration."
-title = "Gorelo RMM"
+description: "Gorelo RMM is a remote monitoring and management tool facilitating remote access and control of devices for support and administration."
+title: "Gorelo RMM"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Gorelo RMM
@@ -31,6 +31,10 @@ Gorelo RMM is a remote monitoring and management tool facilitating remote access
 #### Capabilities
 <Badges color="#FFA500" badges={ ["File Transfer", "File System Access", "Remote Control", "GUI Support", "Command line Support"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "GORELO TECH, INC.", "certificate_thumbprint": "A607C45B264B698F88B0CFBB40553D223E8B7032", "src_file_sha256": "caa0721604c85d2779f2d5dfebd2a1f3203d11585231288f254d84d9544c7ce0", "src_file_path": "downloaded_files/gorelo_rmm/caa0721604c85d2779f2d5dfebd2a1f3203d11585231288f254d84d9544c7ce0", "src_file_company": "Gorelo.Rmm.Setup"}]} }/>
 
 
 ### Forensic Artifacts

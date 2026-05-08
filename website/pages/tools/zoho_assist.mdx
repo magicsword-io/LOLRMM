@@ -1,10 +1,10 @@
 ---
-description = "Zoho Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Zoho Assist"
+description: "Zoho Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Zoho Assist"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Zoho Assist
@@ -31,6 +31,10 @@ Zoho Assist is a remote monitoring and management (RMM) tool. More information w
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "DF941B5FC512E498D2FE112665AFC5CDCE41EE74", "src_file_sha256": "64ebab9cd1ce291382e37fce92ceb657cbfc3299244d38b8f2e0e7a9268408f7", "src_file_path": "downloaded_files/zoho_assist/64ebab9cd1ce291382e37fce92ceb657cbfc3299244d38b8f2e0e7a9268408f7", "src_file_company": "Zoho Corporation"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "9CFE33A8A1FB933BEDF943EF4263D03B6A5F828E", "src_file_sha256": "98bc528011f7604a558abf379965bcf27c04c728850c7b72f2e9ceca78e5c92d", "src_file_path": "downloaded_files/zoho_assist/98bc528011f7604a558abf379965bcf27c04c728850c7b72f2e9ceca78e5c92d"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "1FFC1D0860B748F0E9D53297B716E497C81D687B", "src_file_sha256": "5b6b51b6b0f94767d5dcbf3bfdda9a98d0a0b98463a791d2f0e7c3acfaebf2e8", "src_file_path": "downloaded_files/zoho_assist/5b6b51b6b0f94767d5dcbf3bfdda9a98d0a0b98463a791d2f0e7c3acfaebf2e8", "src_file_company": "Zoho Corporation"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "99869B5E06680A842469CC3DA2F2DFFFE75AC930", "src_file_sha256": "a9171ebd8d965df5fe889defa1406b345ee6c4bcb444f4d6bdc166f05be47c29", "src_file_path": "downloaded_files/zoho_assist/a9171ebd8d965df5fe889defa1406b345ee6c4bcb444f4d6bdc166f05be47c29"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "C70830D17ABB7119FCE1A1DD2DC9FD0E92E33241", "src_file_sha256": "b769b924c99b3c96c44be6d04bc9af3d9943040269e15bc404b93e389db41303", "src_file_path": "downloaded_files/zoho_assist/b769b924c99b3c96c44be6d04bc9af3d9943040269e15bc404b93e389db41303"}]} }/>
 
 
 ### Forensic Artifacts

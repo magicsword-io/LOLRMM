@@ -1,10 +1,10 @@
 ---
-description = "ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "ITSupport247 (ConnectWise)"
+description: "ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "ITSupport247 (ConnectWise)"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # ITSupport247 (ConnectWise)
@@ -27,6 +27,9 @@ ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. Mor
 #### Installation Paths
 <Card code={ ["saazapsc.exe"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
 
 
 
@@ -38,7 +41,7 @@ ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. Mor
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.itsupport247.net", "itsupport247.net"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.itsupport247.net"], "Ports": []}] }/>
 
 
 

@@ -1,10 +1,10 @@
 ---
-description = "FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop access and system management capabilities. The software supports remote desktop access, reboot/shutdown capabilities including safe mode, and virtual terminal support. FleetDeck agents report system information and enable remote access to managed endpoints. The tool can be deployed via MSI, MST, or shared link installations."
-title = "FleetDeck.io"
+description: "FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop access and system management capabilities. The software supports remote desktop access, reboot/shutdown capabilities including safe mode, and virtual terminal support. FleetDeck agents report system information and enable remote access to managed endpoints. The tool can be deployed via MSI, MST, or shared link installations."
+title: "FleetDeck.io"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # FleetDeck.io
@@ -33,6 +33,10 @@ FleetDeck is a remote monitoring and management (RMM) tool that provides agent-b
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Remote Control", "Remote Access", "Remote Desktop", "System Reboot", "Safe Mode Access", "Remote Shutdown", "Virtual Terminal", "System Monitoring"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": ["FLEETDECK INC.", "FleetDeck Inc"], "certificates": [{"signer_name": "FLEETDECK INC.", "certificate_thumbprint": "CA172BACE97F7C97A6AE9E16CC9360F59E7B9CF4", "tbs_sha256": "10BA0C15DBB8A3DCC97DA22C8EE7ABA6577CD4733356520890518CE115736DFE", "tbs_sha1": ""}, {"signer_name": "FleetDeck Inc", "certificate_thumbprint": "77DAF21A6F30487919801D224AADAE95549DBF7B", "tbs_sha256": "67FB7502C5558CAA36C59E6A08ACCB243C2369C7BB3214A9A321F8CEA5DB16E0", "tbs_sha1": ""}, {"signer_name": "FleetDeck Inc", "certificate_thumbprint": "FD1A886C50EFD9778C8A046967701E34E7A65C12", "tbs_sha256": "2B558A81F2AE1CFC91FBC2B16A79BBACE77FA34F140C3418D6CF7DC4502AFCBE", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts

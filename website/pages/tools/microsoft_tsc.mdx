@@ -1,15 +1,17 @@
 ---
-description = "Microsoft TSC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Microsoft TSC"
+description: "Microsoft TSC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.  **IMPORTANT**: This tool is signed with legitimate Microsoft Windows certificates that are used to sign core Windows operating system components. Do NOT blindly block these certificate thumbprints as doing so will break Windows functionality in your environment. Use certificate data for detection, hunting, and analysis purposes only."
+title: "Microsoft TSC"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Microsoft TSC
 
 Microsoft TSC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+**IMPORTANT**: This tool is signed with legitimate Microsoft Windows certificates that are used to sign core Windows operating system components. Do NOT blindly block these certificate thumbprints as doing so will break Windows functionality in your environment. Use certificate data for detection, hunting, and analysis purposes only.
 
 <BlockBanner name={"Microsoft TSC"}/>
 
@@ -29,6 +31,10 @@ Microsoft TSC is a remote monitoring and management (RMM) tool. More information
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["mstsc.exe", "nssm_origin3al.exe", "rdp.exe", "termsrv.dll", "termsrv.exe"], "company_names": [], "signer_names": ["Microsoft Windows"], "certificates": [{"signer_name": "Microsoft Windows", "issuer": "CN=Microsoft Windows Production PCA 2011", "certificate_thumbprint": "FACDE3D80E99AFCC15E08AC5A69BD22785287F79", "tbs_sha256": "430E0E3126D270FCDD11F65A1694A7997E86EEABFA93DEB45A58B1DD4930033C", "tbs_sha1": "1DB42CE638F6A2B4D7E42CCDB8FEC0EEBECA4782", "valid_from": "2025-06-19T18:11:43+00:00", "valid_to": "2026-06-17T18:11:43+00:00"}, {"signer_name": "win.rar GmbH", "certificate_thumbprint": "729AE1F8B489DE176CC099FF49937F85F9E412F7", "src_file_sha256": "39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a", "src_file_path": "downloaded_files/microsoft_tsc/39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a", "src_file_company": "Alexander Roshal"}]} }/>
 
 
 ### Forensic Artifacts

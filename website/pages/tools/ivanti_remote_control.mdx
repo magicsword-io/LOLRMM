@@ -1,10 +1,10 @@
 ---
-description = "Ivanti Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Ivanti Remote Control"
+description: "Ivanti Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Ivanti Remote Control"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Ivanti Remote Control
@@ -18,7 +18,7 @@ Ivanti Remote Control is a remote monitoring and management (RMM) tool. More inf
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://www.ivanti.com/use-cases/remote-control-all-of-my-devices-worldwide"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Ivanti Remote Control is a remote monitoring and management (RMM) tool. More inf
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["dlgserver"], "company_names": [], "signer_names": ["Ivanti, Inc."], "certificates": [{"signer_name": "Ivanti, Inc.", "certificate_thumbprint": "E059339A3F58FD4AFDB4296E1EDE30FA77136431", "tbs_sha256": "F62F22AE6537E816B945FE23AE925AA41276D9CE50B1C5F619A4FB652D90DC13", "tbs_sha1": ""}, {"signer_name": "Ivanti, Inc.", "certificate_thumbprint": "B310DCA4816C8E3E41E6C72BBB67A255AD8E0363", "tbs_sha256": "48CD3051C77583166A1F530EE0F3DA941183A3A201A7205E76521E9FDB55C9CE", "tbs_sha1": ""}, {"signer_name": "Ivanti, Inc.", "certificate_thumbprint": "85651505F0D1CC0BA24040F3F8913D94AF316100", "tbs_sha256": "B09E0A6BFE645556A89F3B8703C4B496699C3DE4A44819DDC265C2B95672C928", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts

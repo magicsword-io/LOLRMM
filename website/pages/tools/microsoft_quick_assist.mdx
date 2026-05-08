@@ -1,10 +1,10 @@
 ---
-description = "Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Microsoft Quick Assist"
+description: "Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Microsoft Quick Assist"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Microsoft Quick Assist
@@ -29,6 +29,10 @@ Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More in
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "GlobalSigningDig", "certificate_thumbprint": "DE523085FB77B3D8B78E80EF14BC627772C6E1D0", "src_file_sha256": "0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3", "src_file_path": "downloaded_files/microsoft_quick_assist/0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3", "src_file_company": "Microsoft Corporation"}, {"signer_name": "CodeSigningMico", "certificate_thumbprint": "6116BB0D666C358E66E8E18E25B8C147B9C0F2F6", "src_file_sha256": "9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b", "src_file_path": "downloaded_files/microsoft_quick_assist/9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b", "src_file_company": "Microsoft Corporation"}]} }/>
 
 
 ### Forensic Artifacts

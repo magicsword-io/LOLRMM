@@ -1,10 +1,10 @@
 ---
-description = "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "SimpleHelp"
+description: "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "SimpleHelp"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # SimpleHelp
@@ -14,23 +14,25 @@ SimpleHelp is a remote monitoring and management (RMM) tool. More information wi
 <BlockBanner name={"SimpleHelp"}/>
 
 ### Details
-<Details author={"Phyo Paing Htun"}
+<Details author={""}
          category={"RMM"}
-         created={"2025-03-05"}
+         created={"2024-08-02"}
          website={"https://simple-help.com/"}
-         lastModified={"2025-03-05"}
+         lastModified={"2024-08-02"}
          privileges={""}
          free={ false }
          verification={ false }
 />
 
 #### Installation Paths
-<Card code={ ["simplehelpcustomer.exe", "simpleservice.exe", "simplegatewayservice.exe", "remote access.exe", "windowslauncher.exe", "spsrv.exe", "serviceconfig.xml"] }/>
-
-#### Supported OS
-<Badges color="warning" badges={ ["windows"] }/>
+<Card code={ ["simplehelpcustomer.exe", "simpleservice.exe", "simplegatewayservice.exe", "remote access.exe", "windowslauncher.exe"] }/>
 
 
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "SimpleHelp Ltd", "certificate_thumbprint": "40F61D013FE82F45E7B01D040B4653E8AE80E041", "src_file_sha256": "77b8f597b7d20d4f7ae84caa5c22b94a8d9e09051f7cdaa17f41890ccf8c77a2", "src_file_path": "downloaded_files/simplehelp/77b8f597b7d20d4f7ae84caa5c22b94a8d9e09051f7cdaa17f41890ccf8c77a2", "src_file_company": "SimpleHelp Ltd                          "}]} }/>
 
 
 ### Forensic Artifacts
@@ -40,7 +42,7 @@ SimpleHelp is a remote monitoring and management (RMM) tool. More information wi
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "simple-help.com", "51.255.19.178", "51.255.19.179"], "Ports": [443]}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "simple-help.com"], "Ports": []}] }/>
 
 
 
@@ -53,6 +55,4 @@ SimpleHelp is a remote monitoring and management (RMM) tool. More information wi
 
 ### References
 - [https://simple-help.com/remote-support](https://simple-help.com/remote-support)
-- [https://www.huntress.com/blog/slashandgrab-screen-connect-post-exploitation-in-the-wild-cve-2024-1709-cve-2024-1708](https://www.huntress.com/blog/slashandgrab-screen-connect-post-exploitation-in-the-wild-cve-2024-1709-cve-2024-1708)
-- [https://www.group-ib.com/blog/muddywater-infrastructure/](https://www.group-ib.com/blog/muddywater-infrastructure/)
 

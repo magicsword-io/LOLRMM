@@ -1,10 +1,10 @@
 ---
-description = "Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Supremo"
+description: "Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Supremo"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Supremo
@@ -34,6 +34,10 @@ Supremo is a remote monitoring and management (RMM) tool. More information will 
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Remote Management session"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["1ssi28.exe", "supremo.exe", "supremohelper", "supremohelper.exe", "supremoservice.exe", "supremosystem.exe", "xdc6h.exe"], "company_names": [], "signer_names": ["Nanosystems S.r.l."], "certificates": [{"signer_name": "Nanosystems S.r.l.", "certificate_thumbprint": "D16BC32A1444D341CC91025A4D7183AF5EAAD30B", "tbs_sha256": "F437911CEA37149CDE7F297D4086B2C11B2FF9BDCF803EB5217DEBEFF946AFA2", "tbs_sha1": ""}, {"signer_name": "Nanosystems S.r.l.", "issuer": "CN=DigiCert Global G3 Code Signing ECC SHA384 2021 CA1", "certificate_thumbprint": "C96F520883FA154431F134ED7BFAA91C09D22934", "tbs_sha256": "B62C60F9FAEEAC5190D79A9F01E44BB29347738FD23382EC7CD9D09AEF49D859", "tbs_sha1": "3D5BD403031A8328CCE535FF7794A8B62540335F", "valid_from": "2024-12-09T00:00:00+00:00", "valid_to": "2027-12-08T23:59:59+00:00"}]} }/>
 
 
 ### Forensic Artifacts
