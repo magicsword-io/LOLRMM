@@ -1,0 +1,117 @@
+Name: Tiflux
+Category: RMM
+Description: |
+    Tiflux is a Brazilian service desk and remote monitoring and management platform with agent-based remote access capabilities. Huntress reported Tiflux abuse in phishing-led intrusions where the agent was used for persistence, screenshot transmission, command execution, and staging additional remote access tools such as UltraVNC, Splashtop, and ScreenConnect.
+Author: ''
+Created: '2026-05-08'
+LastModified: '2026-05-08'
+Details:
+    Website: https://tiflux.com/
+    PEMetadata:
+        - Filename: TiAgent.exe
+          OriginalFileName: TiAgent.exe
+          Description: TiAgent
+        - Filename: TiService.exe
+          OriginalFileName: TiService.exe
+          Description: Ti Service And Agent
+        - Filename: TiPeerToPeer.exe
+          OriginalFileName: TiPeerToPeer.exe
+          Description: Tiflux peer-to-peer messaging component
+        - Filename: si.exe
+          OriginalFileName: si.exe
+          Description: Tiflux installation completion popup
+    Privileges: Administrator required for installation
+    Free: ''
+    Verification: Technical user login required for agent enrollment
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Remote monitoring
+        - Remote management
+        - Remote access
+        - Inventory management
+        - Ticketing
+        - Command execution
+        - Screen sharing
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Tiflux\*
+        - C:\Program Files (x86)\TiFLUX\*
+        - C:\Program Files\TiFLUX\*
+        - C:\PeopleOne\*
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\TiFLUX\desktop\TiAgent.exe
+          Description: Tiflux desktop agent executable
+          OS: Windows
+        - File: C:\Program Files (x86)\TiFLUX\desktop\TiService.exe
+          Description: Tiflux Windows service executable
+          OS: Windows
+        - File: C:\Program Files\TiFLUX\desktop\TiAgent.exe
+          Description: Tiflux desktop agent executable
+          OS: Windows
+        - File: C:\PeopleOne\dependencies\tightvnc\tvnserver.exe
+          Description: TightVNC service path observed in registry artifacts bundled with abused Tiflux installers
+          OS: Windows
+        - File: '%TEMP%\HwRwDrv.x64'
+          Description: Vulnerable driver observed by Huntress being dropped and registered during Tiflux abuse
+          OS: Windows
+        - File: TiAgent.pkg
+          Description: Tiflux macOS agent installer package
+          OS: macOS
+    EventLog:
+        - EventID: 4688
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: '*\TiAgent.exe'
+          Description: Execution of the Tiflux agent
+        - EventID: 4688
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: '*\TiService.exe'
+          Description: Execution of the Tiflux service
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: TiService
+          ImagePath: '*\TiService.exe'
+          Description: Tiflux service installation event
+    Registry:
+        - Path: HKLM\SOFTWARE\TiFlux
+          Description: Tiflux configuration key referenced by vendor troubleshooting documentation
+        - Path: HKLM\SOFTWARE\Tiflux
+          Description: Tiflux configuration key referenced by vendor troubleshooting documentation
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\TiService
+          Description: Tiflux Windows service registration
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\TiAgent
+          Description: TiAgent autorun value observed in sandboxed MSI behavior
+        - Path: HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\tvnserver
+          Description: TightVNC Safe Mode service registration observed in registry artifacts bundled with abused Tiflux installers
+    Network:
+        - Description: Known Tiflux agent endpoints
+          Domains:
+              - agent.tiflux.com
+              - '*.tiflux.com'
+          Ports:
+              - 443
+              - 5500
+        - Description: PeopleOne SSH endpoint observed in registry artifacts bundled with abused Tiflux installers
+          Domains:
+              - remote1a.peopleone.com.br
+          Ports:
+              - 22
+        - Description: TiPeerToPeer UDP ping traffic observed by Huntress
+          Domains:
+              - user_managed
+          Ports:
+              - 21116/udp
+Detections: []
+References:
+    - https://www.huntress.com/blog/tiflux-rmm-install
+    - https://tiflux.com/
+    - https://tiflux.com/sistema/
+    - https://guia-de-uso.tiflux.com/sistema/recursos/recursos
+    - https://guia-de-uso.tiflux.com/faq/acesso-ao-tiflux/configuracoes-de-agente-remoto/agente-tiflux
+Acknowledgement: []
