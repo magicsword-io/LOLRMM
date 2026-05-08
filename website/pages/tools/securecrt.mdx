@@ -1,10 +1,10 @@
 ---
-description = "SecureCRT is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "SecureCRT"
+description: "SecureCRT is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "SecureCRT"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # SecureCRT
@@ -29,6 +29,10 @@ SecureCRT is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "VanDyke Software, Inc.", "certificate_thumbprint": "57B434C5862F60520A2934E386666DF726CE6284", "src_file_sha256": "85d2ff4ab6928f08dc2295affbf9ba3c125a5071c4d3c8c522bff357d7a2ff77", "src_file_path": "downloaded_files/securecrt/85d2ff4ab6928f08dc2295affbf9ba3c125a5071c4d3c8c522bff357d7a2ff77", "src_file_company": "VanDyke Software, Inc."}]} }/>
 
 
 ### Forensic Artifacts

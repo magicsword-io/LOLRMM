@@ -1,10 +1,10 @@
 ---
-description = "Iperius Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Iperius Remote"
+description: "Iperius Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Iperius Remote"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Iperius Remote
@@ -29,6 +29,10 @@ Iperius Remote is a remote monitoring and management (RMM) tool. More informatio
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "ENTER S.R.L.", "certificate_thumbprint": "B2D3CCC3D2B287A63C7B382C3D69C2A6146D124E", "src_file_sha256": "c712f3e5c62b2c46ba753e1f9f9e437d3049173f8fec45c6fd476318994a3dcc", "src_file_path": "downloaded_files/iperius_remote/c712f3e5c62b2c46ba753e1f9f9e437d3049173f8fec45c6fd476318994a3dcc", "src_file_company": "Enter Srl"}]} }/>
 
 
 ### Forensic Artifacts

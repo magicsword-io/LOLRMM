@@ -1,10 +1,10 @@
 ---
-description = "Remote.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Remote.it"
+description: "Remote.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Remote.it"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Remote.it
@@ -31,6 +31,10 @@ Remote.it is a remote monitoring and management (RMM) tool. More information wil
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "remot3.it, Inc.", "certificate_thumbprint": "73D3AC1C006DFE32FBE856011288D9C3AC7F245A", "src_file_sha256": "8689c6ca4c29d0b2f71f7f0df5e37a19fbc1dfd7653eb4f5331e0887d3704471", "src_file_path": "downloaded_files/remote.it/8689c6ca4c29d0b2f71f7f0df5e37a19fbc1dfd7653eb4f5331e0887d3704471", "src_file_company": "Remote.It"}]} }/>
 
 
 ### Forensic Artifacts

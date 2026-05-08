@@ -1,10 +1,10 @@
 ---
-description = "ISL Light is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "ISL Light"
+description: "ISL Light is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "ISL Light"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # ISL Light
@@ -29,6 +29,10 @@ ISL Light is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "ISL Online Ltd.", "certificate_thumbprint": "69D863EBB31F6E58D1511DE618489AB47BB0B361", "src_file_sha256": "ae6c0e25c5867370a9208f63cecd039779384ca205336f7a8d1635058eb0f759", "src_file_path": "downloaded_files/isl_light/ae6c0e25c5867370a9208f63cecd039779384ca205336f7a8d1635058eb0f759", "src_file_company": "XLAB d.o.o."}, {"signer_name": "PDQ.com Corporation", "certificate_thumbprint": "C215D204EA384B3D85057CB11B4D23B5DC301AE5", "src_file_sha256": "0a52b503f8461b741a50e48bfd47daff299d29ed2dde29dadaffa7398e1db6f6", "src_file_path": "downloaded_files/isl_light/0a52b503f8461b741a50e48bfd47daff299d29ed2dde29dadaffa7398e1db6f6", "src_file_company": "XLAB d.o.o."}, {"signer_name": "ISL Online Ltd.", "certificate_thumbprint": "FD412CA692ED576E5FA7723CB06ABE14077A2C67", "src_file_sha256": "03214d8b41186760f2cf299ba70a22695f4a28be0080551dc582d7a52ac2b96a", "src_file_path": "downloaded_files/isl_light/03214d8b41186760f2cf299ba70a22695f4a28be0080551dc582d7a52ac2b96a", "src_file_company": "XLAB d.o.o."}]} }/>
 
 
 ### Forensic Artifacts

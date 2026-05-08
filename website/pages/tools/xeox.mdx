@@ -1,10 +1,10 @@
 ---
-description = "Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Xeox"
+description: "Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Xeox"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Xeox
@@ -31,6 +31,10 @@ Xeox is a remote monitoring and management (RMM) tool. More information will be 
 <Badges color="warning" badges={ ["Windows"] }/>
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "hs2n Informationstechnologie GmbH", "certificate_thumbprint": "437B1AF6A59B63BCA9F070A90C2D92D527B96598", "src_file_sha256": "d0bad90ead3f283a5914042d497613c522f61513c0a63005cb0e86d3297d1f40", "src_file_path": "downloaded_files/xeox/d0bad90ead3f283a5914042d497613c522f61513c0a63005cb0e86d3297d1f40", "src_file_company": "hs2n Informationstechnologie GmbH"}]} }/>
 
 
 ### Forensic Artifacts

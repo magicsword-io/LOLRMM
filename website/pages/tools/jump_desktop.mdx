@@ -1,10 +1,10 @@
 ---
-description = "Jump Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Jump Desktop"
+description: "Jump Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Jump Desktop"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Jump Desktop
@@ -18,7 +18,7 @@ Jump Desktop is a remote monitoring and management (RMM) tool. More information 
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://jumpdesktop.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ Jump Desktop is a remote monitoring and management (RMM) tool. More information 
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["jumpconnect.exe", "jumpconnectcore.dll", "jumpupdater", "vespra.exe", "winkill.exe"], "company_names": [], "signer_names": ["Phase Five Systems LLC", "PhaseFive Systems LLC"], "certificates": [{"signer_name": "PhaseFive Systems LLC", "certificate_thumbprint": "N/A", "tbs_sha256": "1BF55DAA063110C36CA3667802D5FAB3FC46D99873BB470CE1E0DD395354BEB6", "tbs_sha1": ""}, {"signer_name": "Phase Five Systems LLC", "certificate_thumbprint": "N/A", "tbs_sha256": "603F50F6A334218C4ED384ACF9AA88190B3DFC029D54453C27D3167E48C152A0", "tbs_sha1": ""}, {"signer_name": "PhaseFive Systems LLC", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "", "tbs_sha384": "427CA734B98DF79C7BB95E4520DBFA6A12155FA52D1F7358A60F15A9904BDC6A95EA04123C2C81437EF981F89E5351CC"}, {"signer_name": "PhaseFive Systems LLC", "certificate_thumbprint": "C5FB19F11FEA6AA9A7A61FF4D327ACA054E7145A", "src_file_sha256": "880b3e0e54169ab6e32e9cb9d4c20c234dfc2d0dfeaee6faf68d4257941cf1ed", "src_file_path": "downloaded_files/jump_desktop/880b3e0e54169ab6e32e9cb9d4c20c234dfc2d0dfeaee6faf68d4257941cf1ed", "src_file_company": "Phase Five Systems"}]} }/>
 
 
 ### Forensic Artifacts
