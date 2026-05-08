@@ -1,0 +1,35 @@
+name: Generate Sigma Rules
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'yaml/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-sigma:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4.7.1
+        with:
+          python-version: '3.10'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Generate Sigma rules
+        run: python bin/sigma-gen.py
+
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.15.4
+        with:
+          commit_message: Update Sigma rules [skip ci]
+          file_pattern: detections/sigma/*.yml
