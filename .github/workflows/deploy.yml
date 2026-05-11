@@ -34,9 +34,15 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 22.x
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
     - name: Export site
       run: |
-        npm install
+        for attempt in 1 2 3; do
+          npm install --no-audit --no-fund --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=120000 && break
+          echo "npm install failed (attempt $attempt/3), retrying in 15s..."
+          sleep 15
+        done
         npm run build
       working-directory: website
 
