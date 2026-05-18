@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pcictlui.exe
-            - pcicfgui.exe
-            - client32.exe
+            - 'pcictlui.exe'
+            - 'pcicfgui.exe'
+            - 'client32.exe'
     selection_image:
         Image|endswith:
-            - pcictlui.exe
-            - pcicfgui.exe
-            - client32.exe
+            - 'pcictlui.exe'
+            - 'pcicfgui.exe'
+            - 'client32.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of NetSupport Manager

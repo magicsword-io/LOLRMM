@@ -1,10 +1,10 @@
 ---
-description = "Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement."
-title = "Atera"
+description: "Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement."
+title: "Atera"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Atera
@@ -19,7 +19,7 @@ Atera is a remote monitoring and management (RMM) tool. It is used by threat act
          category={"RMM"}
          created={"2024-08-03"}
          website={"https://www.atera.com/"}
-         lastModified={"2024-08-03"}
+         lastModified={"2025-12-14"}
          privileges={"SYSTEM"}
          free={ "30 day trial" }
          verification={ "None" }
@@ -37,6 +37,10 @@ Atera is a remote monitoring and management (RMM) tool. It is used by threat act
 #### Known Vulnerabilities
 - [CVE-2023-26078](CVE-2023-26078)
 - [CVE-2023-26077](CVE-2023-26077)
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["agentpackagenetworkdiscovery.exe", "agentpackagetaskscheduler.exe", "atera_agent.exe", "ateraagent.exe", "syncrosetup.exe"], "company_names": [], "signer_names": [".NET", "Atera Networks Ltd"], "certificates": [{"signer_name": "Atera Networks Ltd", "certificate_thumbprint": "E2D5CC46541C8FC8E9E619175516C5616B84D8D8", "tbs_sha256": "C81C87870D6F0DD87F6E02E5D6EE09886DE73BECB81B06A3C92626E24F174A3D", "tbs_sha1": ""}, {"signer_name": "Atera Networks Ltd", "certificate_thumbprint": "7908DDC749BBCA22273E8CB58101BAC915E9B8D9", "tbs_sha256": "97D2940D1BA0DBAF84280371A267A1BC689DEC0E224010EC7963D9DE45A5BCD1", "tbs_sha1": ""}, {"signer_name": ".NET", "issuer": "CN=Microsoft Code Signing PCA 2011", "certificate_thumbprint": "860AB2B78578D8EF61F692CF81AE4B1198CCBC94", "tbs_sha256": "7F0D0E92811AC3A99C25B3DDA0BDDEFA767475CF8FD22D3496CBF79F92B11878", "tbs_sha1": "3D04A28E763E746DBBE3D2F8485AA3A6D114E1F4", "valid_from": "2025-09-18T17:58:59+00:00", "valid_to": "2026-07-06T17:58:59+00:00"}]} }/>
 
 
 ### Forensic Artifacts

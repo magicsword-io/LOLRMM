@@ -16,16 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - supremo.exe
-            - supremoservice.exe
-            - supremosystem.exe
-            - supremohelper.exe
+            - 'supremosystem.exe'
+            - 'supremo.exe'
+            - 'supremohelper.exe'
+            - 'supremoservice.exe'
+            - 'SupremoSystem.exe'
     selection_image:
         Image|endswith:
-            - supremo.exe
-            - supremoservice.exe
-            - supremosystem.exe
-            - supremohelper.exe
+            - 'supremosystem.exe'
+            - 'supremo.exe'
+            - 'supremohelper.exe'
+            - 'supremoservice.exe'
+            - 'SupremoSystem.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Supremo

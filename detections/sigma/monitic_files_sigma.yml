@@ -1,0 +1,32 @@
+title: Potential Monitic RMM Tool File Activity
+id: 452612fb-7676-5d3b-bafe-9c5a3393855f
+status: experimental
+description: |
+    Detects potential files activity of Monitic RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'C:\Program Files\Monitic\agent.exe'
+            - 'C:\Program Files\Monitic\amon.exe'
+            - 'C:\Program Files\Monitic\conf.json'
+            - 'C:\Program Files\Monitic\*'
+            - '%USERPROFILE%\Desktop\MoniticInstaller.exe'
+            - '%TEMP%\*\agent_installer.bat'
+            - '%TEMP%\*\amon.exe'
+            - '%TEMP%\*\agent.exe'
+            - '%CD%\installer.zip'
+            - '%CD%\conf.json'
+    condition: selection
+falsepositives:
+    - Legitimate use of Monitic
+level: medium

@@ -16,16 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ninjarmmagent.exe
-            - NinjaRMMAgent.exe
-            - NinjaRMMAgenPatcher.exe
-            - ninjarmm-cli.exe
+            - 'NinjaRMMAgent.exe'
+            - 'NinjaRMMAgentPatcher.exe'
+            - 'ninjarmm-cli.exe'
     selection_image:
         Image|endswith:
-            - ninjarmmagent.exe
-            - NinjaRMMAgent.exe
-            - NinjaRMMAgenPatcher.exe
-            - ninjarmm-cli.exe
+            - 'NinjaRMMAgent.exe'
+            - 'NinjaRMMAgentPatcher.exe'
+            - 'ninjarmm-cli.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of NinjaRMM

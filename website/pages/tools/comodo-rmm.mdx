@@ -1,0 +1,60 @@
+---
+description: "Comodo RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Comodo RMM"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Comodo RMM
+
+Comodo RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Comodo RMM"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://one.comodo.com/"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["itsmagent.exe", "rviewer.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["itsmagent.exe"], "company_names": [], "signer_names": ["Comodo Security Solutions", "Comodo Security Solutions, Inc."], "certificates": [{"signer_name": "Comodo Security Solutions", "certificate_thumbprint": "AA6FF933D493EFC39685AC523B7A60748CA98E5C", "tbs_sha256": "45A11A719D1C128EF2666BFE946DB88E2C7ED0AC7B58974D7CAB7EE19D397309", "tbs_sha1": ""}, {"signer_name": "Comodo Security Solutions, Inc.", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "", "tbs_sha384": "C9FB3AF5B1058E28F4D4B8C8BF07E975C3C4937B20854E7F2E87AD84B5EEC40304851C772118061825EFC49655B77114"}, {"signer_name": "ITarian LLC", "certificate_thumbprint": "83684997F1ACE5AE105E670E8094EDB2AD0879FD", "src_file_sha256": "0104e8d061e84b6038d1ae63bd184c30b648dfcf20f1ccef375038cbf415356e", "src_file_path": "downloaded_files/comodo_rmm/0104e8d061e84b6038d1ae63bd184c30b648dfcf20f1ccef375038cbf415356e", "src_file_company": "ITarian"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.itsm-us1.comodo.com", "*mdmsupport.comodo.com", "one.comodo.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Comodo RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_network_sigma.yml)
+- Detects potential processes activity of Comodo RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/comodo_rmm_processes_sigma.yml)
+
+### References
+- [https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html](https://help.itarian.com/topic-459-1-1005-14776-Appendix-1b---Endpoint-Manager-Services---IP-Nos,-Host-Names-and-Port-Details---US-Customers.html)
+

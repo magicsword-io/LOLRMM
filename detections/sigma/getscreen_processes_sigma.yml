@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - GetScreen.exe
-            - getscreen.exe
+            - 'getscreen-x86.exe'
+            - 'getscreen.upd.exe'
     selection_image:
         Image|endswith:
-            - GetScreen.exe
-            - getscreen.exe
+            - 'getscreen-x86.exe'
+            - 'getscreen.upd.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of GetScreen

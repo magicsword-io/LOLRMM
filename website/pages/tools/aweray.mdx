@@ -1,10 +1,10 @@
 ---
-description = "AweRay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "AweRay"
+description: "AweRay is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "AweRay"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # AweRay
@@ -18,7 +18,7 @@ AweRay is a remote monitoring and management (RMM) tool. More information will b
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://awesun.aweray.com/en"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
@@ -29,6 +29,10 @@ AweRay is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": ["DUC FABULOUS CO.,LTD"], "certificates": [{"signer_name": "DUC FABULOUS CO.,LTD", "certificate_thumbprint": "2C1D12F8BBE0827400A8440AF74FFFA8DCC8097C", "tbs_sha256": "E745D44D154427FA248F601B5C094ACFF07D4D3AB678D5EDB26899FD9114AD46", "tbs_sha1": ""}, {"signer_name": "DUC FABULOUS CO.,LTD", "certificate_thumbprint": "1C8854BCA4E9E8249979957000414E9BBB8DBBEC", "tbs_sha256": "8D5708904EE6AA475A0928A7043E0E0D2B0DC31F559A3DF4FA345763831DC70C", "tbs_sha1": ""}, {"signer_name": "\u4e0a\u6d77\u8d1d\u9510\u4fe1\u606f\u79d1\u6280\u80a1\u4efd\u6709\u9650\u516c\u53f8", "certificate_thumbprint": "CD22D7228E666132008B90BB8D2D143BFD36D4EF", "src_file_sha256": "995cdb276cd21557532b0b73c0ada53415f223400103177be9dd47e42a54e940", "src_file_path": "downloaded_files/aweray/995cdb276cd21557532b0b73c0ada53415f223400103177be9dd47e42a54e940", "src_file_company": "\u4e0a\u6d77\u8c9d\u92b3\u4fe1\u606f\u79d1\u6280\u80a1\u4efd\u6709\u9650\u516c\u53f8"}]} }/>
 
 
 ### Forensic Artifacts

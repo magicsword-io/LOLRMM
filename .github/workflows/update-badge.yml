@@ -29,4 +29,11 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git config --global push.default simple
           git add rmm-tools-count.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update RMM Tools count badge" && git pull --rebase origin main && git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF})
+          git diff --quiet && git diff --staged --quiet && exit 0
+          git commit -m "Update RMM Tools count badge"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF} && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1

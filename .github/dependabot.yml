@@ -5,9 +5,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-  # Maintain dependencies for npm
+  # Maintain dependencies for npm (Next.js site lives in /website)
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/website"
     schedule:
       interval: "weekly"
   - package-ecosystem: "pip"

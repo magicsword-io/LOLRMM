@@ -1,0 +1,51 @@
+---
+description: "Bitvise SSH Server is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Bitvise SSH Server"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Bitvise SSH Server
+
+Bitvise SSH Server is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Bitvise SSH Server"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={"https://bitvise.com/ssh-server"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Bitvise SSH Server\\*", "*\\Bitvise SSH Server\\*", "*\\BvSshServer-Inst.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Bitvise Limited", "certificate_thumbprint": "A6D37D7FDF19B73DB3E3A8D6D77B67DFD423BB22", "src_file_sha256": "5aa0fd8c3c0c50e452569fbaef291f96b2ae3c9a7b52f80ed34bb48d63a8bcec", "src_file_path": "downloaded_files/bitvise_ssh_server/5aa0fd8c3c0c50e452569fbaef291f96b2ae3c9a7b52f80ed34bb48d63a8bcec", "src_file_company": "Bitvise Limited"}, {"signer_name": "Bitvise Limited", "certificate_thumbprint": "37A4D270989616341908354E3542171EAB364159", "src_file_sha256": "821fd942cdfeaf4a5fd2083420ce1e6c743008643fd6aa99d5ae64160dcd33a2", "src_file_path": "downloaded_files/bitvise_ssh_server/821fd942cdfeaf4a5fd2083420ce1e6c743008643fd6aa99d5ae64160dcd33a2", "src_file_company": "Bitvise Limited"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+
+
+
+
+### Detections
+- Detects potential processes activity of Bitvise SSH Server RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bitvise_ssh_server_processes_sigma.yml)
+
+
