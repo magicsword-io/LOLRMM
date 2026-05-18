@@ -166,7 +166,7 @@ Artifacts:
               - ps.atera.com
           Ports:
               - N/A
-        - Description: N/A
+        - Description: Atera-specific PubNub tenant subdomain (CNAME api-tls11.pubnubapi.com) used by the AteraAgent for real-time tenant messaging. Distinct from the generic pubsub.pubnub.com / ps.pndsn.com PubNub multi-tenant infrastructure (shared by thousands of unrelated apps), this `atera.`-prefixed subdomain is reliable Atera-attribution signal.
           Domains:
               - atera.pubnubapi.com
           Ports:
@@ -196,6 +196,7 @@ References:
     - https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent
     - https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018
     - https://thedfirreport.com/?s=ateraagent
+    - https://www.pubnub.com/docs/general/setup/connection-management
 Acknowledgement:
     - Person: Théo Letailleur
       Handle: in/theosyn
