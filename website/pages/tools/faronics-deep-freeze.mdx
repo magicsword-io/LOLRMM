@@ -1,0 +1,81 @@
+---
+description: "Faronics Deep Freeze is a \"reboot-to-restore\" endpoint protection and management product by Faronics Corporation (Vancouver, BC, Canada). Available as Standard, Enterprise, Cloud, and Mac editions. The Deep Freeze workstation agent (DFServ.exe / DFServEx.exe / DFWks.exe / DFC.exe) installs as a SYSTEM service and is managed either locally with a console password, via the on-prem Enterprise Configuration Administrator, or through Deep Freeze Cloud, where the cloud agent (CloudWksInstall.exe / Faronics Cloud Agent) runs alongside Deep Freeze and ties the endpoint to the Faronics Cloud / Deep Freeze Cloud console for remote freeze/thaw, software updater, anti-virus, anti-executable, MDM, and remote-control capabilities. Listed as a Faronics product family per LOLRMM issue 151."
+title: "Faronics Deep Freeze"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Faronics Deep Freeze
+
+Faronics Deep Freeze is a "reboot-to-restore" endpoint protection and management product by Faronics Corporation (Vancouver, BC, Canada). Available as Standard, Enterprise, Cloud, and Mac editions. The Deep Freeze workstation agent (DFServ.exe / DFServEx.exe / DFWks.exe / DFC.exe) installs as a SYSTEM service and is managed either locally with a console password, via the on-prem Enterprise Configuration Administrator, or through Deep Freeze Cloud, where the cloud agent (CloudWksInstall.exe / Faronics Cloud Agent) runs alongside Deep Freeze and ties the endpoint to the Faronics Cloud / Deep Freeze Cloud console for remote freeze/thaw, software updater, anti-virus, anti-executable, MDM, and remote-control capabilities. Listed as a Faronics product family per LOLRMM issue 151.
+
+<BlockBanner name={"Faronics Deep Freeze"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RMM"}
+         created={"2026-05-04"}
+         website={"https://www.faronics.com/products/deep-freeze"}
+         lastModified={"2026-05-04"}
+         privileges={"SYSTEM"}
+         free={ "30 day trial" }
+         verification={ "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert EV Code Signing CA SHA2)" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Faronics\\Deep Freeze\\*", "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\*", "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\Install C-0\\*", "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\Install C-1\\*", "C:\\Program Files\\Faronics Corporation\\Deep Freeze 7.00\\*", "*\\Faronics\\Deep Freeze\\DFServ.exe", "*\\Faronics\\Deep Freeze\\DFServEx.exe", "*\\Faronics\\Deep Freeze\\DFWks.exe", "*\\Faronics\\Deep Freeze\\DFC.exe", "DFServ.exe", "DFServEx.exe", "DFWks.exe", "DFStd.exe", "DFStdInstall.exe", "DFC.exe", "CloudWksInstall.exe", "DFInst.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "MacOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Reboot-to-restore endpoint protection (frozen vs thawed state)", "Centralized management via Deep Freeze Cloud console", "Bundled Software Updater, Anti-Virus, Anti-Executable, MDM, and Remote Connect (remote control) when managed via Faronics Cloud", "Active Directory deployment via MSI Packager", "Silent install / uninstall via DFWks.exe command-line switches"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServ.exe", "Description": "Deep Freeze workstation service binary", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServEx.exe", "Description": "Deep Freeze workstation service host", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFWks.exe", "Description": "Deep Freeze workstation install / control utility", "OS": "Windows"}, {"File": "C:\\Windows\\Temp\\DFServiceInit.log", "Description": "Deep Freeze service initialization log", "OS": "Windows"}, {"File": "C:\\Users\\<USER>\\AppData\\Local\\Temp\\_$Df\\DFStdInstall.sib", "Description": "Deep Freeze Standard installer scratch file", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "DFServ", "ImagePath": "\"C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServ.exe\"", "Description": "Service installation event for Deep Freeze workstation service."}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\Faronics\\Deep Freeze", "Description": "Deep Freeze workstation configuration root key"}, {"Path": "HKLM\\SOFTWARE\\Faronics", "Description": "Top-level Faronics product registry hive"}, {"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\DFServ", "Description": "Deep Freeze workstation Windows service registration"}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Deep Freeze Cloud / Faronics Cloud management console", "Domains": ["deepfreeze.com", "www.deepfreeze.com", "faronicscloud.com", "cloud.faronics.com"], "Ports": [443]}, {"Description": "Faronics legacy update / activation infrastructure embedded in Deep Freeze installers", "Domains": ["upd.faronicslabs.com", "faronics.com", "www.faronics.com"], "Ports": [80, 443]}] }/>
+
+
+
+
+### Detections
+- Detects potential files activity of Faronics Deep Freeze RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_files_sigma.yml)
+- Detects potential network activity of Faronics Deep Freeze RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_network_sigma.yml)
+- Detects potential processes activity of Faronics Deep Freeze RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_processes_sigma.yml)
+- Detects potential registry activity of Faronics Deep Freeze RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_registry_sigma.yml)
+
+### References
+- [https://www.faronics.com/products/deep-freeze](https://www.faronics.com/products/deep-freeze)
+- [https://docs.faronics.com/deep-freeze-cloud](https://docs.faronics.com/deep-freeze-cloud)
+- [https://www.faronics.com/webhelp/DFE/860/EN/Chapter.1.108.html](https://www.faronics.com/webhelp/DFE/860/EN/Chapter.1.108.html)
+- [https://www.faronics.com/document-library/document/deep-freeze-msi-packager](https://www.faronics.com/document-library/document/deep-freeze-msi-packager)
+- [https://faronicscloud.com/blogs/news/what-is-faronics-cloud-a-complete-guide-to-cloud-endpoint-management](https://faronicscloud.com/blogs/news/what-is-faronics-cloud-a-complete-guide-to-cloud-endpoint-management)
+- [https://www.virustotal.com/gui/file/c699e5b33564c03d65e22a272d9164fc8a2e46822d792564fb52d3b45fb5a1e4](https://www.virustotal.com/gui/file/c699e5b33564c03d65e22a272d9164fc8a2e46822d792564fb52d3b45fb5a1e4)
+- [https://www.virustotal.com/gui/file/48f35f01c04192e39b9e51850792e5fbc1a9df31e0f61ab505b1c1c30aaa0b36](https://www.virustotal.com/gui/file/48f35f01c04192e39b9e51850792e5fbc1a9df31e0f61ab505b1c1c30aaa0b36)
+
+### Acknowledgements
+- cbecks2 (cbecks2)
+- Michael Haag (@MHaggis)

@@ -1,28 +1,32 @@
-title: Potential mstsc RMM Tool Process Activity
+title: Potential mstsc.exe Remote Desktop Connection Process Activity
 id: 62ff9712-e354-40f9-91ad-f2983a08b301
 status: experimental
 description: |
-    Detects potential processes activity of mstsc RMM tool
+    Detects potential process activity of the built-in mstsc.exe (Microsoft
+    Remote Desktop Connection) client, which adversaries abuse for interactive
+    lateral movement and living-off-the-land remote access.
 references:
     - https://github.com/magicsword-io/LOLRMM
+    - https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc
 author: LOLRMM Project
 date: 2025-12-01
+modified: 2026-05-04
 tags:
     - attack.execution
+    - attack.lateral-movement
     - attack.t1219
+    - attack.t1021.001
 logsource:
     product: windows
     category: process_creation
 detection:
     selection_parent:
         ParentImage|endswith:
-            - mstsc.exe
-            - mstsc.exe
+            - \mstsc.exe
     selection_image:
         Image|endswith:
-            - mstsc.exe
-            - mstsc.exe
+            - \mstsc.exe
     condition: 1 of selection_*
 falsepositives:
-    - Legitimate use of mstsc
+    - Legitimate use of mstsc.exe by administrators or end users for Remote Desktop sessions
 level: medium

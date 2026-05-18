@@ -24,6 +24,7 @@ Name,Category,Description,Author
 [FastViewer](/rmm_tools/fastviewer),RMM,FastViewer is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Anyplace Control](/rmm_tools/anyplace-control),RMM,Anyplace Control is a remote monitoring and management (RMM) tool. More information will be added as...,
 [CloudFlare Tunnel](/rmm_tools/cloudflare-tunnel),RAT,CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added a...,
+[Faronics Insight](/rmm_tools/faronics-insight),RMM,"Faronics Insight is a classroom / lab management platform by Faronics Corporation (Vancouver, BC, Ca...",@MHaggis
 [Royal Apps](/rmm_tools/royal-apps),RMM,Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Addigy](/rmm_tools/addigy),RMM,Addigy is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [AnyDesk](/rmm_tools/anydesk),RMM,AnyDesk is a popular remote desktop software that enables users to access and control a computer or ...,"Ali Alwashali, Nasreddine Bencherchali"
@@ -151,6 +152,7 @@ Name,Category,Description,Author
 [Controlio](/rmm_tools/controlio),RMM,Controlio is a commercial workforce monitoring tool developed by EfficientLab. Marketed for employee...,CERT Cwatch Almond
 [Ericom Connect](/rmm_tools/ericom-connect),RMM,Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as i...,
 [NetBird](/rmm_tools/netbird),RAT,NetBird is an open-source WireGuard-based VPN and remote access platform that provides secure peer-t...,Michael Haag
+[Faronics Deep Freeze](/rmm_tools/faronics-deep-freeze),RMM,"Faronics Deep Freeze is a ""reboot-to-restore"" endpoint protection and management product by Faronics...",@MHaggis
 [RemSupp](/rmm_tools/remsupp),RMM,RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phish...,
 [ExtraPuTTY](/rmm_tools/extraputty),RAT,ExtraPuTTY is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [AnyViewer](/rmm_tools/anyviewer),RMM,AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it bec...,@kostastsale
@@ -162,7 +164,7 @@ Name,Category,Description,Author
 [Pcvisit](/rmm_tools/pcvisit),RMM,Pcvisit is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [Alpemix](/rmm_tools/alpemix),RMM,Alpemix is a remote monitoring and management (RMM) tool. More information will be added as it becom...,Nasreddine Bencherchali
 [FreeRDP](/rmm_tools/freerdp),RAT,FreeRDP is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
-[mstsc](/rmm_tools/mstsc),RAT,mstsc is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
+[mstsc.exe (Microsoft Remote Desktop Connection)](/rmm_tools/mstscexe-microsoft-remote-desktop-connection),RAT,mstsc.exe is the built-in Microsoft Remote Desktop Connection (RDC) client that ships with all suppo...,
 [RemoteView](/rmm_tools/remoteview),RMM,RemoteView is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Remote Manipulator System](/rmm_tools/remote-manipulator-system),RMM,Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be...,
 [Free Tools Launcher](/rmm_tools/free-tools-launcher),RMM,Free Tools Launcher is a remote monitoring and management (RMM) tool. More information will be added...,
@@ -211,14 +213,15 @@ Name,Category,Description,Author
 [Bluetrait](/rmm_tools/bluetrait),RAT,Bluetrait is a Remote Monitoring and Management (RMM) tool designed to provide IT administrators and...,The Haag
 [Quick Assist](/rmm_tools/quick-assist),RAT,Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [MEGAsync](/rmm_tools/megasync),RAT,MEGAsync is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
-[Microsoft RDP](/rmm_tools/microsoft-rdp),RAT,Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it...,
 [ezHelp](/rmm_tools/ezhelp),RMM,ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [ToDesk](/rmm_tools/todesk),RMM,ToDesk is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Instant Housecall](/rmm_tools/instant-housecall),RMM,Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added a...,
 [Fortra](/rmm_tools/fortra),RMM,Fortra is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [ZeroTier](/rmm_tools/zerotier),RAT,ZeroTier is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [GoToAssist Agent Desktop Console](/rmm_tools/gotoassist-agent-desktop-console),RMM,GoToAssist Agent Desktop Console is a remote monitoring and management (RMM) tool. More information ...,
+[Faronics Deploy](/rmm_tools/faronics-deploy),RMM,Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corpor...,@MHaggis
 [DeskNets](/rmm_tools/desknets),RMM,DeskNets is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
+[Faronics Core](/rmm_tools/faronics-core),RMM,Faronics Core is the legacy on-premises endpoint management platform from Faronics Corporation (Vanc...,@MHaggis
 [Remmina](/rmm_tools/remmina),RAT,Remmina is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [MeshCentral](/rmm_tools/meshcentral),RMM,MeshCentral is a remote monitoring and management (RMM) tool. MeshAgent used along with MeshCentral ...,@kostastsale
 [SpyAnywhere](/rmm_tools/spyanywhere),RMM,SpyAnywhere is a remote monitoring and management (RMM) tool. More information will be added as it b...,
@@ -292,7 +295,6 @@ Name,Category,Description,Author
 [Visual Studio Dev Tunnel](/rmm_tools/visual-studio-dev-tunnel),RAT,Visual Studio Dev Tunnel is a remote monitoring and management (RMM) tool. More information will be ...,
 [Microsoft Quick Assist](/rmm_tools/microsoft-quick-assist),RAT,Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be ad...,
 [FreeNX](/rmm_tools/freenx),RAT,FreeNX is a remote monitoring and management (RMM) tool. More information will be added as it become...,
-[Microsoft TSC](/rmm_tools/microsoft-tsc),RMM,Microsoft TSC is a remote monitoring and management (RMM) tool. More information will be added as it...,
 [Netviewer (GoToMeet)](/rmm_tools/netviewer-gotomeet),RMM,Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be adde...,
 [Impero Connect](/rmm_tools/impero-connect),RMM,Impero Connect is a remote monitoring and management (RMM) tool. More information will be added as i...,
 [Action1](/rmm_tools/action1),RMM,Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute comma...,@kostastsale
