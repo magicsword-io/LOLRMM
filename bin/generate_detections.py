@@ -249,9 +249,8 @@ let RMMList = externaldata(URI: string, RMMTool: string)
     [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv']
     with (ignoreFirstRecord=true);
 let RMMUrl = toscalar(RMMList | summarize make_set(URI));
-
 DeviceNetworkEvents
-| where Timestamp > ago(1h)
+| where Timestamp > ago(24h)
 | where ActionType == \"ConnectionSuccess\"
 | where RemoteUrl has_any(RMMUrl)
 | where not (RemoteUrl has_any(SanctionRMM))
