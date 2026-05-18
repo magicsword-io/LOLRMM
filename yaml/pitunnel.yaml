@@ -1,0 +1,72 @@
+Name: PiTunnel
+Category: RMM
+Description: |
+    PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister product of Dataplicity from Wildfoundry) that exposes local services and a persistent remote shell through the `*.pitunnel.com` tenant infrastructure. The agent installs via a curl|sudo bash one-liner (`curl -s https://pitunnel.com/get/<TOKEN> | sudo bash`) and supports persistent named tunnels via flags like `pitunnel --port=<PORT> --name=vnc --persist`. After install the operator can open arbitrary local TCP listeners (SSH, RDP, VNC, web) to the PiTunnel cloud for inbound interactive access without any firewall change on the victim host. Catalogued by the LOTTunnels project under the "shell access" category.
+Author: '@MHaggis'
+Created: '2026-05-18'
+LastModified: '2026-05-18'
+Details:
+    Website: https://www.pitunnel.com/
+    PEMetadata:
+        - Filename: pitunnel
+          OriginalFileName: pitunnel
+          Description: PiTunnel client binary; invokable as `pitunnel --port=<PORT> --name=<NAME> --persist` to register a persistent named tunnel back to the operator's tenant cloud.
+    Privileges: User or root (installer uses sudo, runtime can be user-level)
+    Free: 'Yes (free + paid subscription)'
+    Verification: Tenant signup required; per-device install token embedded in installer URL
+    SupportedOS:
+        - Linux
+        - MacOS
+    Capabilities:
+        - Persistent named tunnels (`--persist` flag) that auto-reconnect on reboot
+        - TCP exposure of arbitrary local ports (SSH/RDP/VNC/HTTP) through the operator tenant
+        - Custom subdomain routing under `*.pitunnel.com`
+        - Custom Tunnels UI for non-CLI management
+        - Sister product to Dataplicity (same Wildfoundry-style cloud-relay architecture)
+    Vulnerabilities: []
+    InstallationPaths:
+        - /usr/local/bin/pitunnel
+        - /opt/pitunnel/*
+        - /etc/systemd/system/pitunnel.service
+Artifacts:
+    Disk:
+        - File: /usr/local/bin/pitunnel
+          Description: PiTunnel client binary (default install path)
+          OS: Linux
+        - File: /etc/systemd/system/pitunnel.service
+          Description: systemd unit file for PiTunnel persistence (created when `--persist` flag is used)
+          OS: Linux
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: PiTunnel control plane and per-tenant relay endpoints. Operator's named tunnels publish under `*.pitunnel.com` subdomains.
+          Domains:
+              - pitunnel.com
+              - www.pitunnel.com
+              - '*.pitunnel.com'
+          Ports:
+              - 443
+    Other:
+        - Type: URL
+          Value: https://pitunnel.com/get/<TOKEN>
+        - Type: Other
+          Value: 'Install command: curl -s https://pitunnel.com/get/<TOKEN> | sudo bash  (or wget -qO- ... | sudo bash) — high-signal hunt pattern (sudo-piped curl-to-bash from pitunnel.com)'
+        - Type: Other
+          Value: 'Persistent-tunnel command pattern: pitunnel --port=<PORT> --name=<NAME> --persist'
+        - Type: Other
+          Value: 'LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/pitunnel/'
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_files_sigma.yml
+      Description: Detects potential file activity of PiTunnel RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_network_sigma.yml
+      Description: Detects potential network activity of PiTunnel RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_processes_sigma.yml
+      Description: Detects potential process activity of PiTunnel RMM tool
+References:
+    - https://www.pitunnel.com/
+    - https://lottunnels.github.io/lottunnels/Binaries/pitunnel/
+Acknowledgement:
+    - Person: rcKillam
+      Handle: '@rcKillam'
+    - Person: Michael Haag
+      Handle: '@MHaggis'
