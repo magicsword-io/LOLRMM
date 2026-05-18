@@ -1,10 +1,10 @@
 ---
-description = "Syncro is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Syncro"
+description: "Syncro is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Syncro"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Syncro
@@ -29,6 +29,10 @@ Syncro is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Servably Inc.", "certificate_thumbprint": "F358811B0C1EF911D4E3C9AA60056FC93FA5DB2C", "src_file_sha256": "de8c1b54a83ffdeba275cac978af0d0e4cefb4b03686d28db5558b33e7e6106a", "src_file_path": "downloaded_files/syncro/de8c1b54a83ffdeba275cac978af0d0e4cefb4b03686d28db5558b33e7e6106a", "src_file_company": "Servably, Inc."}]} }/>
 
 
 ### Forensic Artifacts

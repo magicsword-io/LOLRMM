@@ -16,9 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.fleetdeck.io
-            - cognito-idp.us-west-2.amazonaws.com
-            - fleetdeck.io
+            - '*.fleetdeck.io'
+            - 'fleetdeck.io'
+            - 'agentmqtt.fleetdeck.io'
+            - 'checkip.zmazonaws.com'
     condition: selection
 falsepositives:
     - Legitimate use of FleetDeck.io

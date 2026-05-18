@@ -1,0 +1,58 @@
+---
+description: "Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Tactical RMM"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Tactical RMM
+
+Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Tactical RMM"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://docs.tacticalrmm.com/"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["tacticalrmm.exe", "tacticalrmm.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["2025-12-14_3570cdbcb1a442eb605fb2b5f3d7aef7_cobalt-strike_coinminer_dosia_frostygoop_glassworm_luca-stealer_poet-rat_quasar-rat_sliver_snatch", "7v04zvtl.exe", "ft38y1rpx.exe", "is-mp1io.tmp", "l0ahm9y.exe", "m7i0z.exe", "nhvs68.exe", "tacticalagent-v2.9.1-windows-amd64.exe", "tacticalrmm.exe", "vz4exk32z.exe"], "company_names": [], "signer_names": ["Christopher West"], "certificates": [{"signer_name": "Christopher West", "certificate_thumbprint": "F73B1F0CA2D3B9FCC00D4CD9B379C9FF9DB518A2", "tbs_sha256": "EA02531BA6EEAE043DFCDBEAC2A5C520567FC566AB5C2D75AA0DEAD4E2F6414D", "tbs_sha1": ""}, {"signer_name": "Christopher West", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "A306499CEC6AF8C46C2F959731D0D41C6090D06C"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["login.tailscale.com", "login.tailscale.com", "docs.tacticalrmm.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Tactical RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_network_sigma.yml)
+- Detects potential processes activity of Tactical RMM RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tactical_rmm_processes_sigma.yml)
+
+### References
+- [https://docs.tacticalrmm.com](https://docs.tacticalrmm.com)
+

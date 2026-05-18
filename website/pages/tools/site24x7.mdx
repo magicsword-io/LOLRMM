@@ -1,10 +1,10 @@
 ---
-description = "Site24x7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "Site24x7"
+description: "Site24x7 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Site24x7"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Site24x7
@@ -29,6 +29,10 @@ Site24x7 is a remote monitoring and management (RMM) tool. More information will
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "039B7B91AFEFDB68B36E6A2D246545D581D1BF0D", "src_file_sha256": "66226654281414efabf4ba96151f1c8c8000f0fe68e6ca0346e3e50635560771", "src_file_path": "downloaded_files/site24x7/66226654281414efabf4ba96151f1c8c8000f0fe68e6ca0346e3e50635560771"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "9CFE33A8A1FB933BEDF943EF4263D03B6A5F828E", "src_file_sha256": "d86a0059fb121516da482deec1e2a56abbb9befe929cd66ff76f9d58fdc17398", "src_file_path": "downloaded_files/site24x7/d86a0059fb121516da482deec1e2a56abbb9befe929cd66ff76f9d58fdc17398"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "03498B4CC5B51DB6CE80699F23CAC1724BB36B69", "src_file_sha256": "b032de2cad86dcd97903552668f292e7ee07a2a6a2bf413ea5dac2f34ffda443", "src_file_path": "downloaded_files/site24x7/b032de2cad86dcd97903552668f292e7ee07a2a6a2bf413ea5dac2f34ffda443"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "99869B5E06680A842469CC3DA2F2DFFFE75AC930", "src_file_sha256": "e9de4c481cdd5eae6f7c6e5b6275dab75f7a19550d878fc7c65671d24e8dea63", "src_file_path": "downloaded_files/site24x7/e9de4c481cdd5eae6f7c6e5b6275dab75f7a19550d878fc7c65671d24e8dea63"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "C70830D17ABB7119FCE1A1DD2DC9FD0E92E33241", "src_file_sha256": "4d1a0fe967d379f6de9fbd8bec1760a1e83e6a4511efdf4238409ca4d60e94fe", "src_file_path": "downloaded_files/site24x7/4d1a0fe967d379f6de9fbd8bec1760a1e83e6a4511efdf4238409ca4d60e94fe"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "1FFC1D0860B748F0E9D53297B716E497C81D687B", "src_file_sha256": "da9ca2544a4e3bfa7468605bfdb44098a07f05517f51c59fc9e98cd5abef4d62", "src_file_path": "downloaded_files/site24x7/da9ca2544a4e3bfa7468605bfdb44098a07f05517f51c59fc9e98cd5abef4d62", "src_file_company": "Zoho Corporation"}]} }/>
 
 
 ### Forensic Artifacts

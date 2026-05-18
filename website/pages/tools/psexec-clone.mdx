@@ -1,0 +1,58 @@
+---
+description: "PSEXEC (Clone) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "PSEXEC (Clone)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# PSEXEC (Clone)
+
+PSEXEC (Clone) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"PSEXEC (Clone)"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={""}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["paexec.exe", "PAExec-*.exe", "csexec.exe ", "remcom.exe", "remcomsvc.exe", "xcmd.exe", "xcmdsvc.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "9CFE33A8A1FB933BEDF943EF4263D03B6A5F828E", "src_file_sha256": "da398afb377c451678b2bc25c13d2ffa160867803f6a6cc29bebeaf1f9b4c625", "src_file_path": "downloaded_files/psexec_(clone)/da398afb377c451678b2bc25c13d2ffa160867803f6a6cc29bebeaf1f9b4c625", "src_file_company": "Talha Tariq - [ talhatariq.wordpress.com ]"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "99869B5E06680A842469CC3DA2F2DFFFE75AC930", "src_file_sha256": "4de5b87554f9ce3af6c0fb466b72cd69400900f2bef83bb5465ec05c8dc6b119", "src_file_path": "downloaded_files/psexec_(clone)/4de5b87554f9ce3af6c0fb466b72cd69400900f2bef83bb5465ec05c8dc6b119", "src_file_company": "Talha Tariq - [ talhatariq.wordpress.com ]"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "03498B4CC5B51DB6CE80699F23CAC1724BB36B69", "src_file_sha256": "7c8ffcc6c5c0233236d75075074bbba95b306f758f12209bf9aec3649f2b2383", "src_file_path": "downloaded_files/psexec_(clone)/7c8ffcc6c5c0233236d75075074bbba95b306f758f12209bf9aec3649f2b2383", "src_file_company": "Talha Tariq - [ talhatariq.wordpress.com ]"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "C70830D17ABB7119FCE1A1DD2DC9FD0E92E33241", "src_file_sha256": "3dc95ecd69c20d1c56b4befd135300f93afcfe12e214d86dbf6a70f05121b377", "src_file_path": "downloaded_files/psexec_(clone)/3dc95ecd69c20d1c56b4befd135300f93afcfe12e214d86dbf6a70f05121b377", "src_file_company": "Talha Tariq - [ talhatariq.wordpress.com ]"}, {"signer_name": "ZOHO Corporation Private Limited", "certificate_thumbprint": "039B7B91AFEFDB68B36E6A2D246545D581D1BF0D", "src_file_sha256": "dd54213527e7c541a12e2df04769f44d0e390229ad0756ab3f3883e2b8b80ebe", "src_file_path": "downloaded_files/psexec_(clone)/dd54213527e7c541a12e2df04769f44d0e390229ad0756ab3f3883e2b8b80ebe", "src_file_company": "Talha Tariq - [ talhatariq.wordpress.com ]"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of PSEXEC (Clone) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__network_sigma.yml)
+- Detects potential processes activity of PSEXEC (Clone) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/psexec__clone__processes_sigma.yml)
+
+### References
+- [https://www.poweradmin.com/paexec/](https://www.poweradmin.com/paexec/)
+

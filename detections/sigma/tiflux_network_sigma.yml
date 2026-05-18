@@ -1,0 +1,30 @@
+title: Potential TiFLUX RMM Tool Network Activity
+id: 52e259fb-2a86-54a9-84ff-db733436e65a
+status: experimental
+description: |
+    Detects potential network activity of TiFLUX RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'agent.tiflux.com'
+            - 'app.tiflux.com'
+            - 'tiflux.com'
+            - 'www.tiflux.com'
+            - 'tiflux.com.br'
+            - 'www.tiflux.com.br'
+            - '*.tiflux.com'
+            - 'my.splashtop.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of TiFLUX
+level: medium

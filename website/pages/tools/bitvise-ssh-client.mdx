@@ -1,0 +1,51 @@
+---
+description: "Bitvise SSH Client is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Bitvise SSH Client"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Bitvise SSH Client
+
+Bitvise SSH Client is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Bitvise SSH Client"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={"https://bitvise.com/ssh-client"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\Bitvise SSH Client\\*", "*\\Bitvise SSH Client\\*", "*\\BvSshClient-Inst.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["bvsshclient-inst.exe"], "company_names": [], "signer_names": ["Bitvise Limited"], "certificates": [{"signer_name": "Bitvise Limited", "certificate_thumbprint": "1BEF6CEC736EF3478E54549018A96C8273ED7C78", "tbs_sha256": "4AA456A8CA2FC6261D9596F2B1E5CB59F3F573F35ECE6B2BBFAD9457E8C76978", "tbs_sha1": ""}, {"signer_name": "Bitvise Limited", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "58502E7360285E16BBD2936E1B393F81BC1D18BF"}, {"signer_name": "Bitvise Limited", "certificate_thumbprint": "A6D37D7FDF19B73DB3E3A8D6D77B67DFD423BB22", "tbs_sha256": "30837BDCFDE3280CB0F47072C70F662E99396CE61F83573854A4107C24D9ACF1", "tbs_sha1": "", "src_file_sha256": "5aa0fd8c3c0c50e452569fbaef291f96b2ae3c9a7b52f80ed34bb48d63a8bcec", "src_file_path": "downloaded_files/bitvise_ssh_client/5aa0fd8c3c0c50e452569fbaef291f96b2ae3c9a7b52f80ed34bb48d63a8bcec", "src_file_company": "Bitvise Limited"}, {"signer_name": "Bitvise Limited", "issuer": "CN=Thawte Code Signing CA - G2", "certificate_thumbprint": "55D8B82CDDE540B5C74614D391CC82E8D281B14C", "tbs_sha256": "91B0725619F5781AE3B4E815758A6B77D61A3A7E252F87272C21325717DA7FFB", "tbs_sha1": "58502E7360285E16BBD2936E1B393F81BC1D18BF", "valid_from": "2013-01-26T00:00:00+00:00", "valid_to": "2015-02-16T23:59:59+00:00"}, {"signer_name": "Bitvise Limited", "certificate_thumbprint": "37A4D270989616341908354E3542171EAB364159", "src_file_sha256": "a68d7fe876f7968127050a8e42049f751ea2cf18f8965dab9b36433111c8d602", "src_file_path": "downloaded_files/bitvise_ssh_client/a68d7fe876f7968127050a8e42049f751ea2cf18f8965dab9b36433111c8d602", "src_file_company": "Bitvise Limited"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+
+
+
+
+### Detections
+- Detects potential processes activity of Bitvise SSH Client RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/bitvise_ssh_client_processes_sigma.yml)
+
+

@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - atled.syspectr.com
-            - app.syspectr.com
+            - '*.syspectr.com'
+            - 'syspectr.com'
     condition: selection
 falsepositives:
     - Legitimate use of Syspectr

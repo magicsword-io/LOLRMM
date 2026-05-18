@@ -25,8 +25,6 @@ jobs:
       run: curl -sSL https://install.python-poetry.org | python -
     - name: Install dependencies with Poetry
       run: poetry install
-    - name: Make scripts executable
-      run: chmod +x bin/*.py
     - name: Generate MDX
       run: poetry run python bin/site.py -v
 
@@ -34,9 +32,15 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 22.x
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
     - name: Export site
       run: |
-        npm install
+        for attempt in 1 2 3; do
+          npm install --no-audit --no-fund --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=120000 && break
+          echo "npm install failed (attempt $attempt/3), retrying in 15s..."
+          sleep 15
+        done
         npm run build
       working-directory: website
 
@@ -52,10 +56,18 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git config --global push.default simple
-        git add .
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update generated site files [skip ci]" && 
-        git push https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git HEAD:main)
-      working-directory: website
+        git add detections/ website/pages/tools/ website/public/
+        git diff --quiet && git diff --staged --quiet && exit 0
+        git commit -m "Update generated site files [skip ci]"
+        for attempt in 1 2 3; do
+          if git pull --rebase origin main \
+            && git push "https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git" HEAD:main; then
+            exit 0
+          fi
+          echo "push attempt $attempt failed, retrying in $((attempt * 5))s..."
+          sleep $((attempt * 5))
+        done
+        exit 1
 
 # Deployment job
   deploy:

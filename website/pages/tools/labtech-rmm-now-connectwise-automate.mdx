@@ -1,0 +1,56 @@
+---
+description: "LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "LabTech RMM (Now ConnectWise Automate)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# LabTech RMM (Now ConnectWise Automate)
+
+LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"LabTech RMM (Now ConnectWise Automate)"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.connectwise.com/platform/automate"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["ltsvc.exe", "ltsvcmon.exe", "lttray.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "DC69069188D5CBC5FE18B7D035C90061C8741E21", "src_file_sha256": "66b1ef65896e9f91efd1e3347e70eb2cf1708e1ce2ca267fb4704858aa3ee028", "src_file_path": "downloaded_files/labtech_rmm_(now_connectwise_automate)/66b1ef65896e9f91efd1e3347e70eb2cf1708e1ce2ca267fb4704858aa3ee028", "src_file_company": "LabTech Software"}, {"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "70644D15A9833AE7E85FCC0D2146831978BEEFF4", "src_file_sha256": "532d20a37c6493fae3144fa8aae0a2c3510f6bdc0a2683e9ce7970d6a22d65c2", "src_file_path": "downloaded_files/labtech_rmm_(now_connectwise_automate)/532d20a37c6493fae3144fa8aae0a2c3510f6bdc0a2683e9ce7970d6a22d65c2", "src_file_company": "LabTech Software"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["connectwise.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of LabTech RMM (Now ConnectWise Automate) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__network_sigma.yml)
+- Detects potential processes activity of LabTech RMM (Now ConnectWise Automate) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/labtech_rmm__now_connectwise_automate__processes_sigma.yml)
+
+

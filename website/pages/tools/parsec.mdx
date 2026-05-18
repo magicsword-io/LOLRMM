@@ -1,10 +1,10 @@
 ---
-description = "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration.   Remote desktop reimagined â€“ a seamless 4k experience at up to 60 frames per second with near-zero latency.  Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.  Parsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access."
-title = "Parsec"
+description: "Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming and collaboration.   Remote desktop reimagined \u00e2\u20ac\u201c a seamless 4k experience at up to 60 frames per second with near-zero latency.  Secure, flexible, effortless access to whatever you do, at any time, from wherever you go.  Parsec focuses on real-time graphical interaction rather than system administration but can still be abused for lateral movement and initial access."
+title: "Parsec"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Parsec
@@ -39,6 +39,10 @@ Parsec focuses on real-time graphical interaction rather than system administrat
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Remote Control", "GUI Support"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Unity Technologies SF", "certificate_thumbprint": "B73664F2AF5A8EF4529F03DB4B2CCD8275A6EC91", "src_file_sha256": "cc62d22bf8a082621fa25fdeee3150c17b09dbc09c9371e3dcdd6ec83967770c", "src_file_path": "downloaded_files/parsec/cc62d22bf8a082621fa25fdeee3150c17b09dbc09c9371e3dcdd6ec83967770c", "src_file_company": "Parsec"}]} }/>
 
 
 ### Forensic Artifacts

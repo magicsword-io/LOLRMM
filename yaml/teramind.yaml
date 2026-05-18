@@ -1,0 +1,261 @@
+Name: Teramind
+Category: RMM
+Description: 'Teramind is a US-based employee/user activity monitoring (UAM), insider-threat and DLP platform that ships with a tightly integrated remote monitoring and management agent for Windows and macOS. The endpoint agent is delivered in two flavours — a "Revealed" agent installed under C:\Program Files / C:\ProgramData\Teramind Agent that surfaces a tray UI, and a "Hidden" / "Stealth" agent installed under C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A} which is intentionally absent from Add/Remove Programs and renames its core processes (default rename: dwm.exe for the agent, clm.exe for the clipboard monitor). The Windows service is registered as tsvchst, with tmagentsvc.exe as the actual on-disk service binary. Cloud tenants reach the platform over TLS/WebSocket on tcp/443 to `<tenant>.teramind.co` plus rt.teramind.co and www.teramind.co; on-premise tenants additionally use TCP 10000 (proprietary TLS) and 10000-11000 to the App Server.
+
+    The hidden agent and renamed binaries make Teramind attractive both as an authorised covert workplace surveillance tool and as a dual-use remote-access capability that threat actors and rogue insiders can plant for persistent monitoring, screen recording and remote command execution. The Teramind Inc. code-signing certificate (issued by DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1) signs every component, which trivially defeats publisher-based allow-listing if the certificate is permitted. Proofpoint Emerging Threats Open ships ET INFO rules covering the teramind.co domain in DNS Lookup and TLS SNI traffic, which is the easiest network-side telemetry to turn on for hunting unauthorised deployments.
+
+    This catalogue entry distinguishes endpoint artifacts (services, on-disk paths, registry, control-plane traffic) from the cloud / SaaS-only features (e.g. AI behaviour analytics, compliance dashboards) which run server-side and produce no endpoint footprint of their own.
+
+    '
+Author: '@MHaggis'
+Created: '2026-05-04'
+LastModified: '2026-05-04'
+Details:
+    Website: https://www.teramind.co/
+    PEMetadata:
+        - Filename: tmagentsvc.exe
+          OriginalFileName: tmagentsvc.exe
+          Description: Teramind Agent Windows service binary (registered under service name tsvchst); embedded URL https://www.teramind.co/d/update-shim.exe
+        - Filename: Teramind.Setup.Updater.exe
+          OriginalFileName: Teramind.Setup.Updater.exe
+          Description: Teramind agent updater shim; renamed to update-shim.exe at runtime; .NET assembly signed by Teramind Inc.
+        - Filename: Teramind.Setup.UI.exe
+          OriginalFileName: Teramind.Setup.UI.exe
+          Description: Teramind installer UI helper (signed by Teramind Inc.)
+        - Filename: Teramind.Setup.UIARM.exe
+          OriginalFileName: Teramind.Setup.UIARM.exe
+          Description: Teramind installer UI helper for ARM64 Windows (signed by Teramind Inc.)
+        - Filename: Teramind.Remover.Executable
+          OriginalFileName: Teramind.Remover.Executable
+          Description: Teramind agent removal utility (signed by Teramind Inc.)
+        - Filename: teramind-remover.exe
+          Description: Teramind agent removal utility variant served from teramind.co
+        - Filename: Teramind.Setup.Remover.exe
+          Description: Teramind agent removal utility variant served from teramind.co
+        - Filename: dwm.exe
+          Description: Default rename target for the Teramind Hidden Agent core executable; configurable via TMAGENTEXE installer parameter — collides intentionally with the legitimate Desktop Window Manager process name
+        - Filename: clm.exe
+          Description: Default rename target for the Teramind clipboard-monitor process; configurable via TMCLIPMONEXE installer parameter
+        - Filename: update-shim.exe
+          Description: Runtime name of Teramind.Setup.Updater.exe; downloaded from https://www.teramind.co/d/update-shim.exe
+    Privileges: SYSTEM
+    Free: 14 day trial; subsequent paid subscription
+    Verification: Tenant signup; Stealth/Hidden agent only available to vetted customers per vendor docs
+    SupportedOS:
+        - Windows
+        - MacOS
+    Capabilities:
+        - User activity monitoring (keystroke, screen, app, web)
+        - Stealth / hidden agent mode (absent from Add/Remove Programs)
+        - Configurable process renaming (default agent rename to dwm.exe; clipboard monitor to clm.exe)
+        - Screen recording and live screen viewing
+        - Audio recording (UDP, random port 1000-65535)
+        - Remote command execution
+        - Remote desktop / live session viewing via WebSocket on tcp/443
+        - File transfer monitoring and DLP
+        - Email / IM / printed document interception
+        - OCR of on-screen content
+        - Windows + macOS endpoint coverage from a single tenant
+        - Cloud (multi-tenant SaaS) and On-Premise deployment topologies
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\*'
+        - 'C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\config'
+        - 'C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\updates\*'
+        - 'C:\ProgramData\Teramind Agent\*'
+        - 'C:\ProgramData\Teramind Agent\config'
+        - 'C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\*'
+        - 'C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\tmagentsvc.exe'
+        - 'C:\ProgramData\Package Cache\.unverified\agent'
+        - /usr/local/teramind/agent/bin/
+        - /usr/local/teramind/agent/bin/tmsysd
+        - /usr/local/teramind/agent/etc/
+        - /Applications/Teramind Agent.app
+        - /Applications/tmagent.app
+Artifacts:
+    Disk:
+        - File: 'C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\*'
+          Description: Teramind Hidden / Stealth agent root install directory; named with a fixed product GUID. Vendor docs explicitly call this the verification path for confirming hidden-agent installation. Override via TMROOTDIR installer parameter.
+          OS: Windows
+        - File: 'C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\config'
+          Description: Teramind Hidden agent configuration directory
+          OS: Windows
+        - File: 'C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\updates\rundll32.exe.config'
+          Description: Teramind agent update staging artifact (.NET app.config sidecar) — directly observed as a Teramind-domain downloaded file in VirusTotal infrastructure data; the rundll32.exe filename is the renamed updater binary, not the legitimate Microsoft rundll32.
+          OS: Windows
+        - File: 'C:\ProgramData\Teramind Agent\*'
+          Description: Teramind Revealed agent root install directory (typical install layout)
+          OS: Windows
+        - File: 'C:\ProgramData\Teramind Agent\config'
+          Description: Teramind Revealed agent configuration directory
+          OS: Windows
+        - File: 'C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\tmagentsvc.exe'
+          Description: Teramind agent Windows service binary; vendor-documented exact image path (version directory varies by release, e.g. 24.12.0). Invoked with --service / -service.
+          OS: Windows
+        - File: 'C:\ProgramData\Package Cache\.unverified\agent'
+          Description: WiX bundle cache copy of the Teramind agent MSI; observed across multiple Teramind MSI submissions in VirusTotal infrastructure data.
+          OS: Windows
+        - File: teramind_agent_*_bundle_noredist_setup.msi
+          Description: Teramind agent installer MSI; vendor enforces a fixed filename pattern and refuses to run if renamed. Observed signed variants include teramind_agent_v25.34.2799_bundle_noredist_setup.msi, teramind_agent_v25.31.2935_bundle_noredist_setup.msi, teramind_agent_v24.13.19_bundle_noredist_setup.msi, teramind_agent_v26.8.183_bundle_noredist_setup.msi.
+          OS: Windows
+        - File: teramind_agent_*_x64.msi
+          Description: Teramind agent installer MSI (x64 variant) — observed naming pattern teramind_agent_x64.msi, teramind_agent_v5.0.0_x64.msi, teramind_agent_x64_s-i(__<hash>).msi where the trailing parenthesised value is the per-tenant install identifier.
+          OS: Windows
+        - File: teramind_agent_*_ARM64.msi
+          Description: Teramind agent installer MSI (ARM64) — observed signed variants include teramind_agent_v26.8.183_ARM64.msi, teramind_agent_v26.8.183_ARM64_popup.msi, teramind_agent_v26.8.183_bundle_drivers_ARM64.msi.
+          OS: Windows
+        - File: 'C:\Windows\Installer\*.msi'
+          Description: Cached MSI in the standard Windows Installer cache (e.g. C:\Windows\Installer\46a573.msi observed for a Teramind install); content-identical to the original teramind_agent_*.msi
+          OS: Windows
+        - File: tmagent-i(__<hash>).pkg
+          Description: Teramind macOS agent PKG installer; vendor enforces a fixed filename pattern. Per-tenant identifier embedded as -i(__<hash>); renamed installers are rejected.
+          OS: MacOS
+        - File: teramind_agent_*_hidden-do(<domain>).pkg
+          Description: Teramind macOS hidden-agent PKG installer with the deployment-domain installer parameter -do(<tenant>) baked into the filename, e.g. teramind_agent_v1.235.4632_hidden-do(acme.com).pkg
+          OS: MacOS
+        - File: /usr/local/teramind/agent/bin/tmsysd
+          Description: Teramind macOS agent daemon binary
+          OS: MacOS
+        - File: /usr/local/teramind/agent/etc/
+          Description: Teramind macOS agent configuration directory
+          OS: MacOS
+        - File: /Applications/Teramind Agent.app
+          Description: Teramind Revealed macOS agent app bundle
+          OS: MacOS
+        - File: /Applications/tmagent.app
+          Description: Teramind Hidden macOS agent app bundle
+          OS: MacOS
+        - File: tmui
+          Description: Teramind Revealed-agent macOS UI component
+          OS: MacOS
+        - File: Teramind.Setup.Updater.exe
+          Description: Teramind agent updater shim binary (.NET, signed by Teramind Inc.); contacts https://www.teramind.co/d/check?v=<version>&s=1&arch=<arch> on launch and downloads update-shim.exe from https://www.teramind.co/d/update-shim.exe
+          OS: Windows
+        - File: tmdiag.zip
+          Description: Teramind diagnostic-bundle archive served from teramind.co; collected by the agent for vendor support
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: tsvchst
+          ImagePath: '"C:\\ProgramData\\Teramind Agent\\<version>\\{6D99445F-F40F-45CB-B433-06302DAE6C70}\\tmagentsvc.exe" --service'
+          Description: Service installation event for the Teramind Agent. The service name is tsvchst (vendor-documented), but the on-disk image is tmagentsvc.exe under the Teramind ProgramData install root. Stealth installs may use the GUID-named ProgramData path C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\ instead.
+        - EventID: 4697
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          ServiceName: tsvchst
+          CommandLine: '"C:\\ProgramData\\Teramind Agent\\<version>\\{6D99445F-F40F-45CB-B433-06302DAE6C70}\\tmagentsvc.exe" --service'
+          Description: Service installation event (security auditing variant) for tsvchst / tmagentsvc.exe.
+        - EventID: 4688
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: 'msiexec.exe /i teramind_agent_*_bundle_noredist_setup.msi'
+          Description: Process creation observed at install time — msiexec invoking a Teramind agent MSI by its fixed filename pattern. The vendor's installer enforces that the MSI must not be renamed.
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\tsvchst
+          Description: Teramind agent Windows service registration (service name = tsvchst)
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\tsvchst\ImagePath
+          Description: 'ImagePath = "C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\tmagentsvc.exe" --service (or equivalent path under the GUID-named hidden-agent root)'
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\tsvchst\Start
+          Description: Start = 2 (Automatic) — service launches at boot
+    Network:
+        - Description: Teramind cloud tenant base domain — wildcard *.teramind.co covers per-tenant subdomains (e.g. acme.teramind.co) used for the agent control channel and the customer web console. Backed by Cloudflare (104.20.25.93, 172.66.155.133). The Teramind agent installer also enforces the deployment-domain via the -do(<domain>) parameter, baking the tenant subdomain into the installer filename.
+          Domains:
+              - '*.teramind.co'
+              - teramind.co
+              - www.teramind.co
+          Ports:
+              - 443
+        - Description: Teramind cloud realtime / WebSocket endpoint — async video upload, live screen, and offline video upload traffic over wss://. Vendor-documented hostname.
+          Domains:
+              - rt.teramind.co
+          Ports:
+              - 443
+        - Description: Teramind agent update / version check endpoint — directly observed as the in-the-wild URL contacted by Teramind.Setup.Updater.exe on launch (https://www.teramind.co/d/check?v=<version>&s=1&arch=<arch>) and as the download URL for the updater shim (https://www.teramind.co/d/update-shim.exe).
+          Domains:
+              - www.teramind.co
+          Ports:
+              - 443
+        - Description: Teramind Sentry telemetry endpoint embedded in signed Teramind binaries; used for crash / error reporting back to Teramind.
+          Domains:
+              - sentry.dev.teramind.co
+          Ports:
+              - 443
+        - Description: Teramind Master Server proprietary TLS protocol (on-premise deployments only). Used for agent ↔ Master Server control plane.
+          Domains:
+              - <on-prem-master-server-host>
+          Ports:
+              - 10000
+        - Description: Teramind App Server traffic in multi-node on-premise deployments. Vendor-documented TCP port range.
+          Domains:
+              - <on-prem-app-server-host>
+          Ports:
+              - 10000
+              - 10001
+              - 10500
+              - 11000
+        - Description: Teramind agent audio recording transport. Vendor-documented UDP, random port from a wide range; tenants commonly punch the entire 1000-65535 range in firewalls.
+          Domains:
+              - '*.teramind.co'
+          Ports:
+              - 1000-65535
+        - Description: Teramind agent deployment / update fetch over plaintext HTTP. Vendor-documented as port 80 for agent deployment / update transport.
+          Domains:
+              - www.teramind.co
+          Ports:
+              - 80
+    Other:
+        - Type: Service Name
+          Value: tsvchst
+        - Type: macOS Daemon
+          Value: tmsysd
+        - Type: URL
+          Value: https://www.teramind.co/d/check?v=<version>&s=1&arch=<arch>
+        - Type: URL
+          Value: https://www.teramind.co/d/update-shim.exe
+        - Type: Code Signing CN
+          Value: Teramind Inc.
+        - Type: Code Signing Issuer
+          Value: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+        - Type: Product GUID
+          Value: '{4CEC2908-5CE4-48F0-A717-8FC833D8017A}'
+        - Type: Product GUID
+          Value: '{6D99445F-F40F-45CB-B433-06302DAE6C70}'
+        - Type: SHA256
+          Value: e3ad70a1c8c540612dce4e90c3c619afafb429e297b5a1c9e1bbd4df985c4d24
+        - Type: SHA256
+          Value: 998b69af0d3af49021d331d2e46a1734f38e28f03fb4dd3425e023ecc0c0a066
+        - Type: SHA256
+          Value: 74e67c6671f6f987f4065e45ddd0cd7785be2330e2e0d273225a2b80bec405b1
+        - Type: Snort/Suricata SID
+          Value: 'ET INFO Teramind RMM Domain (teramind .co) in DNS Lookup (Proofpoint Emerging Threats Open)'
+        - Type: Snort/Suricata SID
+          Value: 'ET INFO Observed Teramind RMM Domain (teramind .co) in TLS SNI (Proofpoint Emerging Threats Open)'
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teramind_files_sigma.yml
+      Description: Detects potential files activity of Teramind RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teramind_network_sigma.yml
+      Description: Detects potential network activity of Teramind RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teramind_processes_sigma.yml
+      Description: Detects potential processes activity of Teramind RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teramind_registry_sigma.yml
+      Description: Detects potential registry activity of Teramind RMM tool
+References:
+    - https://www.teramind.co/
+    - https://kb.teramind.co/en/articles/8791027-which-location-folder-directory-is-teramind-agent-installed-on
+    - https://kb.teramind.co/en/articles/8791087-how-to-download-and-install-the-teramind-agent
+    - https://kb.teramind.co/en/articles/8791095-how-to-verify-if-the-agent-is-installed-uninstalled-running
+    - https://kb.teramind.co/en/articles/9182438-windows-agent-24-13-1482-2024-04-10
+    - https://kb.teramind.co/en/articles/8791054-how-to-check-if-teramind-ip-addresses-hosts-and-ports-are-reachable
+    - https://kb.teramind.co/en/articles/8791053-i-am-having-issues-with-the-firewall-and-proxy
+    - https://www.virustotal.com/gui/file/e3ad70a1c8c540612dce4e90c3c619afafb429e297b5a1c9e1bbd4df985c4d24
+    - https://www.virustotal.com/gui/file/998b69af0d3af49021d331d2e46a1734f38e28f03fb4dd3425e023ecc0c0a066
+    - https://www.virustotal.com/gui/file/74e67c6671f6f987f4065e45ddd0cd7785be2330e2e0d273225a2b80bec405b1
+    - https://www.virustotal.com/gui/domain/teramind.co
+    - https://rules.emergingthreats.net/
+Acknowledgement:
+    - Person: Michael Haag
+      Handle: '@M_haggis'
+    - Person: Proofpoint Emerging Threats Open
+      Handle: '@ET_Labs'

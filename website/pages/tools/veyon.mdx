@@ -1,10 +1,10 @@
 ---
-description = "Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management software designed for educational environments and remote support scenarios. It enables monitoring and controlling computers across multiple platforms, allowing administrators and teachers to view and control computer labs, interact with students, and provide remote technical support."
-title = "Veyon"
+description: "Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management software designed for educational environments and remote support scenarios. It enables monitoring and controlling computers across multiple platforms, allowing administrators and teachers to view and control computer labs, interact with students, and provide remote technical support."
+title: "Veyon"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # Veyon
@@ -34,6 +34,10 @@ Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and 
 #### Capabilities
 <Badges color="#FFA500" badges={ ["Remote Control", "Screen Monitoring", "Screen Broadcasting (Demo Mode)", "Remote Command Execution", "File Transfer", "Power Management", "Screen Lock", "User Messaging", "Application Launching", "Screenshot Capture", "Clipboard Synchronization"] }/>
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["veyon-server.exe", "veyon-service.exe", "veyon-wcli.exe", "veyon-worker.exe"], "company_names": [], "signer_names": ["Tobias Junghans"], "certificates": [{"signer_name": "Tobias Junghans", "certificate_thumbprint": "8F892D81447CDC2964F118C7DC45CA9759C222E9", "tbs_sha256": "A505895C8E2222B5DE687B0BDAB5C3BF49E247C85E4FDF8779C028D31F00A376", "tbs_sha1": ""}, {"signer_name": "Tobias Junghans", "certificate_thumbprint": "EBB8477300D089B339FECB224835A0A0B87EFEA0", "tbs_sha256": "8EF0D8B0EA4B35008C88AA54CA6787E2F4140361D0B193CDB5481EB49B32355D", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts

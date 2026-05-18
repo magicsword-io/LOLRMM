@@ -1,0 +1,116 @@
+Name: OpenEDR
+Category: RMM
+Description: 'OpenEDR is an open source endpoint detection and response platform that provides analytic detection with Mitre ATT&CK visibility for event correlation and root cause analysis of adversarial cyber threat activity and behaviors in real time. This endpoint telemetry platform is a continuous monitoring solution available to all cybersecurity professionals, and every sized organization, to use for defending their organization or business against threat actors and cyber criminals.'
+Author: saltmyhash0x00
+Created: '2026-03-23'
+LastModified: '2026-03-23'
+Details:
+    Website: https://www.openedr.com/
+    PEMetadata:
+      - Filename: ITSMService.exe
+        OriginalFileName: ''
+        Description: 'Primary OpenEDR Windows binary'
+        Product: OpenEDR
+      - Filename: Xcitium Client - Security.app
+        OriginalFileName: ''
+        Description: 'Primary OpenEDR macOS binary'
+    Privileges: user
+    Free: true
+    Verification: true
+    SupportedOS:
+        - Mac
+        - Windows
+    Capabilities:
+        - File explorer and file management
+        - Interactive command execution
+        - Service management
+        - Process explorer
+        - Event log viewing
+        - Reporting and analytics
+        - Remote monitoring
+        - Clipboard synchronization
+        - Connection/fleet management
+        - Detection and response
+    InstallationPaths:
+        - /Applications/Xcitium Client - Security.app
+          Description: 'Xcitium Client'
+          OS: macOS
+        - /Applications/Endpoint Manager Communication Client.app
+          Description: 'Endpoint Manager Client'
+          OS: macOS
+        - C:\Program Files (x86)\COMODO\Endpoint Manager\ITSMService.exe
+          Description: 'Endpoint Manager Client'
+          OS: Windows
+Artifacts:
+    Disk:
+        - File: /Library/LaunchDaemons/com.comodo.cdmdaemon.plist
+          Description: Comodo Daemon Launch Daemon
+          Signer: ITARIAN LLC (5N6273UT98)
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.comodo.cdmrmmd.plist
+          Description: 'RMM Launch Daemon'
+          Signer: ITARIAN LLC (5N6273UT98)
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.comodo.cdmmonitord.plist
+          Description: 'CDM Monitor Launch Daemon'
+          Signer: ITARIAN LLC (5N6273UT98)
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.comodo.osxclient.plist
+          Description: 'OSX Client Launch Daemon'
+          Signer: ITARIAN LLC (5N6273UT98)
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.comodo.osxclient.UninstallAgent.plist
+          Description: 'OSX Uninstall Agent Launch Daemon'
+          Signer: ITARIAN LLC (5N6273UT98)
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.xcitium.xcitiumd.plist
+          Description: 'Xcitium Launch Daemon'
+          Signer: ITARIAN LLC (5N6273UT98)
+          OS: macOS
+        - File: em_0omwleT5_installer_Win7-Win11_x86_x64.msi
+          Description: 'OpenEDR Windows installer'
+          Signer: ITarian LLC
+          Signed with: Sectigo
+          Certificate: 00c5924c0273fe90c912bfe4f50ff11484
+          OS: Windows
+    Network:
+        - DNS: *.itsm-us1.comodo.com
+        - DNS: enterprise-api.platform.xcitium.com
+        - DNS: openedr.platform.xcitium.com
+        - URL: https://<openedr_instance_name>.itsm-us1.comodo.com:443/enroll/device/by/token/<token_name>
+          Description: 'URL to download initial OpenEDR binary'
+    Other:
+        - Type: Service
+          Value: RmmService
+          Path: HKLM\SYSTEM\ControlSet001\Services\RmmService
+          OS: Windows
+        - Type: Service
+          Value: ITSMService
+          Path: HKLM\SYSTEM\ControlSet001\Services\ITSMService
+          OS: Windows
+        -Type: Service
+          Value: ItsmRsp
+          Path: HKLM\SYSTEM\ControlSet001\Services\ItsmRsp
+          OS: Windows
+        -Type: Service
+          Value: edrsvc
+          Path: HKLM\SYSTEM\ControlSet001\Services\edrsvc
+          OS: Windows
+        - Type: Run Registry Key
+          Value: Endpoint Manager
+          Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run\Endpoint Manager
+          OS: Windows
+        - Type: MDM Profile
+          Value: Xcitium Endpoint Manager
+          Description: 'Profile Name'
+          Value: XCITIUM GROUP LTD.
+          Description: 'Profile Publisher'
+          Value: Configuration Endpoint Manager
+          Description: 'MDM configuration description'
+          Value: itsm.comodo.com
+          Description: 'MDM signer'
+Detections: []
+References:
+    - https://medium.com/@kostas-ts/detecting-abuse-of-openedrs-permissive-edr-trial-a-security-researcher-s-perspective-fc55bf53972c
+    - https://www.openedr.com/
+Acknowledgement: []

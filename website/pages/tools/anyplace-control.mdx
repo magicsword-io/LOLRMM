@@ -1,0 +1,60 @@
+---
+description: "Anyplace Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Anyplace Control"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Anyplace Control
+
+Anyplace Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Anyplace Control"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"http://www.anyplace-control.com/"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["apc_host.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["apc_host.exe", "support-ywrtaw5ay29ycg9yyxrllnbsyw4gmtizndu2ideymzq1nibzdxbwb3j0lmj5dgvjahmuynk=.exe"], "company_names": [], "signer_names": ["Anyplace Control Software", "Honcharuk Yuriy", "Yurii Honcharuk"], "certificates": [{"signer_name": "Anyplace Control Software", "certificate_thumbprint": "B25DD2F9459F42C3B60D0BD3045953ABCFAB16D1", "tbs_sha256": "428EDC9D675B66BF9EAE54B03CF5138F10919C2BCC5BEC4FEBED3701313AA6AE", "tbs_sha1": ""}, {"signer_name": "Honcharuk Yuriy", "issuer": "CN=COMODO Code Signing CA 2", "certificate_thumbprint": "225068B11F9A75953D8009822A2649E22EF413B6", "tbs_sha256": "A5D9F123DF7F198FC0EF91D8E05A975B8052FC3FA5A0E99AEA46644E3EE935FB", "tbs_sha1": "40FC7F598113A7B281219F20971FD40D500C8B75", "valid_from": "2012-06-12T00:00:00+00:00", "valid_to": "2015-06-12T23:59:59+00:00"}, {"signer_name": "Yurii Honcharuk", "issuer": "CN=Sectigo Public Code Signing CA R36", "certificate_thumbprint": "645A38036CDCBB22DEB85A952780F8CBE428231F", "tbs_sha256": "950FE76EBEFF3880B7EE411AAF73AF829816B9E666A67BDFA973E75C9527D595", "tbs_sha1": "B1B204E82B1BCA67DF2F918E5090C4071E387749", "valid_from": "2021-11-18T00:00:00+00:00", "valid_to": "2024-11-17T23:59:59+00:00"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["anyplace-control.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Anyplace Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyplace_control_network_sigma.yml)
+- Detects potential processes activity of Anyplace Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anyplace_control_processes_sigma.yml)
+
+### References
+- [http://www.anyplace-control.com/anyplace-control/help/faq.htm](http://www.anyplace-control.com/anyplace-control/help/faq.htm)
+

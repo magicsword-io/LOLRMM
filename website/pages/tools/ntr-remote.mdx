@@ -1,0 +1,58 @@
+---
+description: "NTR Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "NTR Remote"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# NTR Remote
+
+NTR Remote is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"NTR Remote"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={""}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["NTRsupportPro_EN.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["ntrsupportpro_en.exe"], "company_names": [], "signer_names": ["Net Transmit & Receive SL"], "certificates": [{"signer_name": "Net Transmit & Receive SL", "issuer": "CN=VeriSign Class 3 Code Signing 2009-2 CA", "certificate_thumbprint": "73F02A06F37D5CF65D1040FABE9EFE6188B29BEB", "tbs_sha256": "C78E601CC64E39E0738B6889874052EBE0FD261B65491106E350AF0CFF3C086E", "tbs_sha1": "CEA0DE18000EA92E942B8542864C3E0E917AA829", "valid_from": "2009-10-23T00:00:00+00:00", "valid_to": "2012-10-22T23:59:59+00:00"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.ntrsupport.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of NTR Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_network_sigma.yml)
+- Detects potential processes activity of NTR Remote RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ntr_remote_processes_sigma.yml)
+
+
