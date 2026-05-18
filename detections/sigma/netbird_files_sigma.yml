@@ -20,6 +20,13 @@ detection:
             - 'C:\ProgramData\Netbird\config.json'
             - '/etc/netbird/config.json'
             - '/var/log/netbird/*'
+            - '/etc/netbird/install.conf'
+            - '/Applications/NetBird UI.app'
+            - 'C:\bin\netbird.msi'
+            - 'C:\bin\OpenSSH.msi'
+            - 'C:\bin\cis.vbs'
+            - 'C:\bin\trm.zip'
+            - 'C:\temper\trm'
     condition: selection
 falsepositives:
     - Legitimate use of NetBird
