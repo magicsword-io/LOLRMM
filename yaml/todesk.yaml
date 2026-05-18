@@ -29,8 +29,6 @@ Artifacts:
           Domains:
               - todesk.com
               - '*.todesk.com'
-              - '*.todesk.com'
-              - todesktop.com
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/todesk_network_sigma.yml
