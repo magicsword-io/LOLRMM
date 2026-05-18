@@ -16,10 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - todesk.com
-            - *.todesk.com
-            - *.todesk.com
-            - todesktop.com
+            - 'todesk.com'
+            - '*.todesk.com'
     condition: selection
 falsepositives:
     - Legitimate use of ToDesk
