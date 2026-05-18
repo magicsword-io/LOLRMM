@@ -29,8 +29,10 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - '*search.namequery.com'
-              - '*server.absolute.com'
+              - 'search.namequery.com'
+              - '*.search.namequery.com'
+              - 'server.absolute.com'
+              - '*.server.absolute.com'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__network_sigma.yml

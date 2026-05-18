@@ -19,7 +19,7 @@ Details:
     InstallationPaths:
         - paexec.exe
         - PAExec-*.exe
-        - 'csexec.exe '
+        - 'csexec.exe'
         - remcom.exe
         - remcomsvc.exe
         - xcmd.exe

@@ -17,7 +17,7 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - 'JumpCloud*.exe '
+        - 'JumpCloud*.exe'
 Artifacts:
     Disk: []
     EventLog: []

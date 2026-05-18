@@ -30,16 +30,23 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - '*remote.management'
+              - 'remote.management'
+              - '*.remote.management'
               - '*.logicnow.com'
-              - '*systemmonitor.us'
-              - '*systemmonitor.eu.com'
-              - '*system-monitor.com'
+              - 'systemmonitor.us'
+              - '*.systemmonitor.us'
+              - 'systemmonitor.eu.com'
+              - '*.systemmonitor.eu.com'
+              - 'system-monitor.com'
+              - '*.system-monitor.com'
               - systemmonitor.us.cdn.cloudflare.net
-              - '*cloudbackup.management'
-              - '*systemmonitor.co.uk'
+              - 'cloudbackup.management'
+              - '*.cloudbackup.management'
+              - 'systemmonitor.co.uk'
+              - '*.systemmonitor.co.uk'
               - '*.n-able.com'
-              - '*.beanywhere.com '
+              - 'beanywhere.com'
+              - '*.beanywhere.com'
               - '*.swi-tc.com'
           Ports: []
 Detections:

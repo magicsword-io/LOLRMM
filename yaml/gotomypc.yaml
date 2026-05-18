@@ -83,8 +83,7 @@ Artifacts:
         - Description: N/A
           Domains:
               - '*.GoToMyPC.com'
-          Ports:
-              - N/A
+          Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/gotomypc_registry_sigma.yml
       Description: Detects potential registry activity of GoToMyPC RMM tool

@@ -32,7 +32,6 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - beanywhere.en.uptodown.com/windows
               - beanywhere.com
           Ports: []
 Detections:

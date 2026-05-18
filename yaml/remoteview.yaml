@@ -28,7 +28,7 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - '*content.rview.com'
+              - '*.content.rview.com'
               - '*.rview.com'
               - content.rview.com
           Ports: []

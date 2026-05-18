@@ -33,7 +33,6 @@ Artifacts:
               - plus*.site24x7.in
               - plus*.site24x7.cn
               - plus*.site24x7.net.au
-              - site24x7.com/msp
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/site24x7_network_sigma.yml

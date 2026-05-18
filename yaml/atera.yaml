@@ -119,63 +119,51 @@ Artifacts:
         - Description: N/A
           Domains:
               - pubsub.atera.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - agentreporting.atera.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - getalphacontrol.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - app.atera.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - agenthb.atera.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - packagesstore.blob.core.windows.net
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - agent-api.atera.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - agentreportingstore.blob.core.windows.net
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - atera-agent-heartbeat.servicebus.windows.net
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - ps.atera.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: Atera-specific PubNub tenant subdomain (CNAME api-tls11.pubnubapi.com) used by the AteraAgent for real-time tenant messaging. Distinct from the generic pubsub.pubnub.com / ps.pndsn.com PubNub multi-tenant infrastructure (shared by thousands of unrelated apps), this `atera.`-prefixed subdomain is reliable Atera-attribution signal.
           Domains:
               - atera.pubnubapi.com
-          Ports:
-              - N/A
+          Ports: []
         - Description: N/A
           Domains:
               - appcdn.atera.com
-          Ports:
-              - N/A
+          Ports: []
 Detections:
     - Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/d67407d357ad32b247e2a303abc5a38bb30fd576/rules/windows/process_creation/proc_creation_win_ateraagent_malicious_installations.yml
       Name: AteraAgent malicious installations

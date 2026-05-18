@@ -26,7 +26,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.kace.com'
-              - www.quest.com/kace/
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quest_kace_agent__formerly_dell_kace__network_sigma.yml
