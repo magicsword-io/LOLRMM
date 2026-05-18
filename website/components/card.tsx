@@ -213,8 +213,10 @@ type EventLog = {
 	EventID: number;
 	ProviderName: string;
 	LogFile: string;
-	ServiceName: string;
-	ImagePath: string;
+	ServiceName?: string;
+	ImagePath?: string;
+	CommandLine?: string;
+	Data?: string;
 	Description: string;
 };
 
@@ -237,8 +239,19 @@ export function EventLogTable({ data }: { data: EventLog[] }) {
 			name: "Service Name",
 		},
 		{
-			field: "Image Path",
+			field: "ImagePath",
 			name: "Image Path",
+			render: (value) => <CodeValue value={value} />,
+		},
+		{
+			field: "CommandLine",
+			name: "Command Line",
+			render: (value) => <CodeValue value={value} />,
+		},
+		{
+			field: "Data",
+			name: "Data",
+			render: (value) => <CodeValue value={value} />,
 		},
 		{
 			field: "Description",
