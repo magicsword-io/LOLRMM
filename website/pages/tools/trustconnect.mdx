@@ -1,0 +1,82 @@
+---
+description: "TrustConnect (also marketed as TrustConnect Agent) is a commodity Remote Access Trojan distributed as Malware-as-a-Service that masquerades as a legitimate remote management and remote support agent. The operators sell access for approximately $300/month (Bitcoin/USDT) and ship branded installer variants that impersonate legitimate software (Adobe Reader, Microsoft Teams, Zoom, Google Meet, etc.) so victims download what looks like an installer but receive a fully featured RAT. Proofpoint observed TrustConnect delivered through email lures (bid invitations, tax notifications, document shares, government-themed messages) and used as a beachhead to deploy ScreenConnect, Level RMM, and hands-on-keyboard activity within minutes of installation. The operators registered the EV code-signing certificate \"TrustConnect Software PTY LTD\" through Certum (revoked 2026-02-06), and after disruption activity in February 2026 they pivoted to a successor named \"DocConnect\" / \"SHIELD OS\" hosted on networkservice[.]cyou."
+title: "TrustConnect"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# TrustConnect
+
+TrustConnect (also marketed as TrustConnect Agent) is a commodity Remote Access Trojan distributed as Malware-as-a-Service that masquerades as a legitimate remote management and remote support agent. The operators sell access for approximately $300/month (Bitcoin/USDT) and ship branded installer variants that impersonate legitimate software (Adobe Reader, Microsoft Teams, Zoom, Google Meet, etc.) so victims download what looks like an installer but receive a fully featured RAT. Proofpoint observed TrustConnect delivered through email lures (bid invitations, tax notifications, document shares, government-themed messages) and used as a beachhead to deploy ScreenConnect, Level RMM, and hands-on-keyboard activity within minutes of installation. The operators registered the EV code-signing certificate "TrustConnect Software PTY LTD" through Certum (revoked 2026-02-06), and after disruption activity in February 2026 they pivoted to a successor named "DocConnect" / "SHIELD OS" hosted on networkservice[.]cyou.
+
+
+<BlockBanner name={"TrustConnect"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RAT"}
+         created={"2026-05-04"}
+         website={"https://trustconnectsoftware.com/"}
+         lastModified={"2026-05-04"}
+         privileges={"SYSTEM"}
+         free={ "No - sold as Malware-as-a-Service (~$300/month, Bitcoin or USDT)" }
+         verification={ "Code-signed with Certum Extended Validation certificate issued to \"TrustConnect Software PTY LTD\" (revoked 2026-02-06)" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\TrustConnect Agent\\TrustConnectAgent.exe", "C:\\Program Files\\TrustConnect Agent\\*", "C:\\ProgramData\\TrustConnect\\*", "*\\TrustConnectAgent.exe", "TrustConnectAgent.exe", "DocConnect.Agent.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote desktop streaming over WebSocket", "Full keyboard and mouse control", "Screen recording", "File transfer (browse, pull, upload)", "Arbitrary command execution", "PowerShell loader / one-liner deployment", "System information gathering", "Multi-display switching", "Operator activity hiding from victim", "Telegram bot notifications for device connect/disconnect", "Two-factor authentication for operator console", "Used to deploy follow-on RMM tooling (ScreenConnect, Level RMM)"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\TrustConnect Agent\\TrustConnectAgent.exe", "Description": "TrustConnect Agent service binary (default install path)", "OS": "Windows"}, {"File": "C:\\Program Files\\TrustConnect Agent\\config.json", "Description": "TrustConnect Agent configuration file written at install", "OS": "Windows"}, {"File": "C:\\ProgramData\\TrustConnect\\*\\config.json", "Description": "Per-token agent configuration (token subdirectory maps victim to operator org ID)", "OS": "Windows"}, {"File": "C:\\ProgramData\\TrustConnect\\*\\device.id", "Description": "36-byte device GUID file used for C2 registration", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "TrustConnect Agent", "ImagePath": "\"C:\\\\Program Files\\\\TrustConnect Agent\\\\TrustConnectAgent.exe\"", "Description": "Service installation event from `sc.exe create \"TrustConnect Agent\" binPath= \"...\" start= auto DisplayName= \"TrustConnect Agent\"`. The service description is set to \"TrustConnect Agent - Remote Support Agent\". Branded variants register the service under the impersonated product name (e.g., \"Adobe Acrobat Reader\") with the same \"Remote Support Agent\" description suffix."}, {"EventID": 4697, "ProviderName": "Microsoft-Security-Auditing", "LogFile": "Security.evtx", "ServiceName": "TrustConnect Agent", "Description": "Security-audit service installation event corresponding to the TrustConnect Agent service create."}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\TrustConnect Agent", "Description": "Service registration created by the agent installer (Start=2 / auto, ImagePath points at TrustConnectAgent.exe)."}, {"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\TrustConnect Agent", "Description": "Uninstall entry written by the installer (Publisher value reads \"TrustConnect Software Ltd\", InstallLocation is C:\\Program Files\\TrustConnect Agent)."}, {"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\TrustConnectAgent_*", "Description": "Run-key persistence value with a randomized per-token suffix (observed examples include TrustConnectAgent_QBt4muaH and TrustConnectAgent_POOL04-2). Value data is the full path to the agent binary."}, {"Path": "HKLM\\SOFTWARE\\Classes\\AppID\\TrustConnectAgent.exe", "Description": "COM AppID registration created by the agent installer."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Primary command-and-control domain (registered 2026-01-12 via NICENIC; A record 178.128.69.245 then 185.182.187.10).", "Domains": ["trustconnectsoftware.com"], "Ports": [443]}, {"Description": "REST C2 endpoints used by the agent for registration, heartbeat, command pull, command results, file browsing/pull, and binary update. URLs include /api/agents/register, /api/agents/heartbeat, /api/agent-commands/<DEVICE_GUID>, /api/agent-commands/result, /api/files/browse/pull, /api/files/pull, /api/files/upload, /api/devices, /api/commands/run, /api/installer/script, /agent-update.", "Domains": ["trustconnectsoftware.com"], "Ports": [443]}, {"Description": "WebSocket endpoints used for live remote desktop streaming and recording (/ws/screen, /ws/viewer, /api/screen/start, /api/recordings/chunk/<id>).", "Domains": ["trustconnectsoftware.com"], "Ports": [443]}, {"Description": "Operator console / authentication endpoints (/api/auth/login, /api/auth/verify-login, /api/admin/devices/online).", "Domains": ["trustconnectsoftware.com"], "Ports": [443]}, {"Description": "Successor \"DocConnect\" / \"SHIELD OS\" infrastructure observed after February 2026 disruption (React SPA backend, Supabase, SignalR transport).", "Domains": ["networkservice.cyou"], "Ports": [443]}, {"Description": "TrustConnect C2 IP addresses (DigitalOcean and Contabo).", "Domains": [], "Ports": [443]}] }/>
+
+
+
+
+### Detections
+- Detects potential file activity of TrustConnect RAT
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/trustconnect_files_sigma.yml)
+- Detects potential network activity of TrustConnect RAT
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/trustconnect_network_sigma.yml)
+- Detects potential process activity of TrustConnect RAT
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/trustconnect_processes_sigma.yml)
+- Detects potential registry activity of TrustConnect RAT
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/trustconnect_registry_sigma.yml)
+
+### References
+- [https://www.proofpoint.com/us/blog/threat-insight/dont-trustconnect-its-a-rat](https://www.proofpoint.com/us/blog/threat-insight/dont-trustconnect-its-a-rat)
+- [https://github.com/magicsword-io/LOLRMM/issues/157](https://github.com/magicsword-io/LOLRMM/issues/157)
+- [https://github.com/magicsword-io/LOLRMM/issues/150](https://github.com/magicsword-io/LOLRMM/issues/150)
+- [https://www.virustotal.com/gui/file/cee6895f7df01da489c10bf5b83770ceede79ed4e1c8c4f8ea9787a4d035c79b](https://www.virustotal.com/gui/file/cee6895f7df01da489c10bf5b83770ceede79ed4e1c8c4f8ea9787a4d035c79b)
+- [https://www.virustotal.com/gui/file/edde2673becdf84e3b1d823a985c7984fec42cb65c7666e68badce78bd0666c0](https://www.virustotal.com/gui/file/edde2673becdf84e3b1d823a985c7984fec42cb65c7666e68badce78bd0666c0)
+- [https://www.virustotal.com/gui/domain/trustconnectsoftware.com](https://www.virustotal.com/gui/domain/trustconnectsoftware.com)
+
+### Acknowledgements
+- mikehemming (@mikehemming)
+- jaalmaaa (@jaalmaaa)
+- Michael Haag (@MHaggis)

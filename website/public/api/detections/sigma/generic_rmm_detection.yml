@@ -202,6 +202,8 @@ detection:
     - \\C:\Program Files\SysAidServer\*
     - \\C:\Program Files\TeamViewer\
     - \\C:\Program Files\TightVNC\*
+    - \\C:\Program Files\TrustConnect Agent\*
+    - \\C:\Program Files\TrustConnect Agent\TrustConnectAgent.exe
     - \\C:\Program Files\Vector Networks Limited\LANutil32 Suite\*
     - \\C:\Program Files\Vector\Asset Management Client\*
     - \\C:\Program Files\Veyon\*
@@ -224,6 +226,7 @@ detection:
     - \\C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\tmagentsvc.exe
     - \\C:\ProgramData\Teramind Agent\config
     - \\C:\ProgramData\Total Software Deployment\*
+    - \\C:\ProgramData\TrustConnect\*
     - \\C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\*
     - \\C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\config
     - \\C:\ProgramData\{4CEC2908-5CE4-48F0-A717-8FC833D8017A}\updates\*
@@ -296,6 +299,7 @@ detection:
     - \\DameWare Remote Support.exe
     - \\DeskRollUA.exe
     - \\Deskroll.exe
+    - \\DocConnect.Agent.exe
     - \\Domotz Pro Desktop App Setup*.exe
     - \\Domotz Pro Desktop App.exe
     - \\DuetDisp.exe
@@ -467,6 +471,7 @@ detection:
     - \\TightVNCViewerPortable*.exe
     - \\ToDesk_Service.exe
     - \\ToDesk_Setup.exe
+    - \\TrustConnectAgent.exe
     - \\UltraVNC*.exe
     - \\UltraViewer_Desktop.exe
     - \\UltraViewer_Service.exe
