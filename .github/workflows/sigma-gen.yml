@@ -40,8 +40,11 @@ jobs:
           git diff --quiet && git diff --staged --quiet && exit 0
           git commit -m "Update Sigma rules [skip ci]"
           for attempt in 1 2 3; do
-            git pull --rebase origin main
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:${GITHUB_REF} && exit 0
+            if git pull --rebase origin main \
+              && git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF}"; then
+              exit 0
+            fi
+            echo "push attempt $attempt failed, retrying in $((attempt * 5))s..."
             sleep $((attempt * 5))
           done
           exit 1
