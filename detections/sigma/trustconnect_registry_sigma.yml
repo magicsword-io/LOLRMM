@@ -1,0 +1,26 @@
+title: Potential TrustConnect RMM Tool Registry Activity
+id: 71d7cef9-71d4-5899-a2d7-060f639bb807
+status: experimental
+description: |
+    Detects potential registry activity of TrustConnect RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        TargetObject|contains:
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\TrustConnect Agent'
+            - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TrustConnect Agent'
+            - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\TrustConnectAgent_*'
+            - 'HKLM\SOFTWARE\Classes\AppID\TrustConnectAgent.exe'
+    condition: selection
+falsepositives:
+    - Legitimate use of TrustConnect
+level: medium
