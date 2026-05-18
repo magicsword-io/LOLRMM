@@ -19,7 +19,7 @@ detection:
             - 'upd.faronicslabs.com'
             - 'faronics.com'
             - 'www.faronics.com'
-            - '*.local'
+            - 'user_managed'
     condition: selection
 falsepositives:
     - Legitimate use of Faronics Core
