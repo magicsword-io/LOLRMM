@@ -382,7 +382,6 @@ detection:
     - \\ManageEngine_ServiceDesk_Plus.bin
     - \\ManageEngine_ServiceDesk_Plus.exe
     - \\ManualLauncher.exe
-    - \\Microsoft Remote Desktop
     - \\MonitoringAgent.exe
     - \\NTRsupportPro_EN.exe
     - \\NetBird UI.app
@@ -646,7 +645,6 @@ detection:
     - \\mikogolauncher.exe
     - \\mionet.exe
     - \\mionetmanager.exe
-    - \\mstsc.exe
     - \\mwcliun.exe
     - \\mygreenpc.exe
     - \\myivomanager.exe
@@ -814,7 +812,6 @@ detection:
     - \\teamviewer_desktop.exe
     - \\teamviewer_service.exe
     - \\teamviewerhost
-    - \\termsrv.exe
     - \\tigervnc*.exe
     - \\tmagent.app
     - \\tmate
