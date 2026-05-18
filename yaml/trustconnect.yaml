@@ -11,34 +11,7 @@ Details:
     PEMetadata:
         - Filename: TrustConnectAgent.exe
           OriginalFileName: TrustConnectAgent.dll
-          Description: TrustConnect Agent service binary (.NET 8 single-file executable, ~35 MB)
-        - Filename: AdobeReader.exe
-          OriginalFileName: AdobeReader.dll
-          Description: TrustConnect installer masquerading as Adobe Acrobat Reader
-        - Filename: MsTeams.exe
-          OriginalFileName: MsTeams.dll
-          Description: TrustConnect installer masquerading as Microsoft Teams
-        - Filename: GoogleMeet.exe
-          OriginalFileName: GoogleMeet.dll
-          Description: TrustConnect installer masquerading as Google Meet
-        - Filename: ZoomWorkspace.exe
-          OriginalFileName: ZoomWorkspace.dll
-          Description: TrustConnect installer masquerading as Zoom Workspace
-        - Filename: Proposal.exe
-          OriginalFileName: Proposal.dll
-          Description: TrustConnect installer with generic proposal lure branding
-        - Filename: SpecialEvents.exe
-          OriginalFileName: SpecialEvents.dll
-          Description: TrustConnect installer with events lure branding
-        - Filename: Installer.exe
-          OriginalFileName: Installer.dll
-          Description: TrustConnect generic installer variant
-        - Filename: DesktopInstaller.exe
-          OriginalFileName: DesktopInstaller.dll
-          Description: TrustConnect installer variant (VT-confirmed communicating with trustconnectsoftware.com, first seen 2026-02-04)
-        - Filename: Airtable.exe
-          OriginalFileName: Airtable.dll
-          Description: TrustConnect installer masquerading as Airtable (VT-confirmed referrer of trustconnectsoftware.com)
+          Description: TrustConnect Agent service binary (.NET 8 single-file executable, ~35 MB). Operators ship TrustConnect under per-tenant branded installer variants that impersonate legitimate software (Adobe Reader, Microsoft Teams, Zoom Workspace, Google Meet, Airtable, plus generic Installer / Proposal / SpecialEvents lures) — these filenames are NOT listed as detection inputs here because they collide with the legitimate products' binary names and would produce FPs downstream; rely instead on the TrustConnect-specific signer chain ("TrustConnect Software PTY LTD"), Run-key value pattern (TrustConnectAgent_<random>), service description suffix ("… - Remote Support Agent"), and C2 endpoints below.
         - Filename: DocConnect.Agent.exe
           OriginalFileName: ''
           Description: Successor variant ("DocConnect" / "SHIELD OS") observed after February 2026 disruption
@@ -64,7 +37,6 @@ Details:
     InstallationPaths:
         - C:\Program Files\TrustConnect Agent\TrustConnectAgent.exe
         - C:\Program Files\TrustConnect Agent\*
-        - C:\Program Files\Adobe Acrobat Reader\AdobeReader.exe
         - C:\ProgramData\TrustConnect\*
         - '*\TrustConnectAgent.exe'
         - TrustConnectAgent.exe
@@ -82,9 +54,6 @@ Artifacts:
           OS: Windows
         - File: C:\ProgramData\TrustConnect\*\device.id
           Description: 36-byte device GUID file used for C2 registration
-          OS: Windows
-        - File: C:\Program Files\Adobe Acrobat Reader\AdobeReader.exe
-          Description: TrustConnect installer dropped under impersonated Adobe Acrobat Reader install directory
           OS: Windows
     EventLog:
         - EventID: 7045
