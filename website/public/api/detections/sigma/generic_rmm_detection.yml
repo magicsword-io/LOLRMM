@@ -650,6 +650,7 @@ detection:
     - \\prl_pm_service.exe
     - \\pservice.exe
     - \\psexec.exe
+    - \\psexec64.exe
     - \\psexecsvc.exe
     - \\pstlaunch.exe
     - \\ptdskclient.exe

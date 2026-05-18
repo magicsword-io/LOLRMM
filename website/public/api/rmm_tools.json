@@ -15886,15 +15886,6 @@
                 {
                     "Description": "N/A",
                     "Domains": [
-                        "pubsub.pubnub.com"
-                    ],
-                    "Ports": [
-                        "N/A"
-                    ]
-                },
-                {
-                    "Description": "N/A",
-                    "Domains": [
                         "agentreporting.atera.com"
                     ],
                     "Ports": [
@@ -15940,15 +15931,6 @@
                 {
                     "Description": "N/A",
                     "Domains": [
-                        "ps.pndsn.com"
-                    ],
-                    "Ports": [
-                        "N/A"
-                    ]
-                },
-                {
-                    "Description": "N/A",
-                    "Domains": [
                         "agent-api.atera.com"
                     ],
                     "Ports": [
@@ -15983,7 +15965,7 @@
                     ]
                 },
                 {
-                    "Description": "N/A",
+                    "Description": "Atera-specific PubNub tenant subdomain (CNAME api-tls11.pubnubapi.com) used by the AteraAgent for real-time tenant messaging. Distinct from the generic pubsub.pubnub.com / ps.pndsn.com PubNub multi-tenant infrastructure (shared by thousands of unrelated apps), this `atera.`-prefixed subdomain is reliable Atera-attribution signal.",
                     "Domains": [
                         "atera.pubnubapi.com"
                     ],
@@ -16034,7 +16016,8 @@
             "https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations",
             "https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent",
             "https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018",
-            "https://thedfirreport.com/?s=ateraagent"
+            "https://thedfirreport.com/?s=ateraagent",
+            "https://www.pubnub.com/docs/general/setup/connection-management"
         ],
         "Acknowledgement": [
             {
@@ -25662,6 +25645,7 @@
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "psexec.exe",
+                "psexec64.exe",
                 "psexecsvc.exe"
             ]
         },
