@@ -52,7 +52,7 @@ Faronics Insight is a classroom / lab management platform by Faronics Corporatio
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Faronics Insight documentation, support, and update infrastructure", "Domains": ["faronics.com", "www.faronics.com", "support.faronics.com", "docs.faronics.com"], "Ports": [443]}, {"Description": "Insight Connector intermediary host (administrator-supplied; IP, hostname, or FQDN). Default Teacher / Student communication ports are listed by Faronics in the Insight Quick Install Guide.", "Domains": ["insight", "*.local"], "Ports": [1313, 8080]}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Faronics Insight documentation, support, and update infrastructure", "Domains": ["faronics.com", "www.faronics.com", "support.faronics.com", "docs.faronics.com"], "Ports": [443]}, {"Description": "Insight Connector intermediary host. The Connector hostname/IP is administrator-supplied (no fixed vendor domain) \u2014 hunt on TCP/1313 and TCP/8080 to/from on-prem Connector hosts and pair with the FIStudentSvc / FIStudentAgent / FIStudentUI / STAHelper process artifacts above. Default Teacher / Student communication ports are listed by Faronics in the Insight Quick Install Guide.", "Domains": ["user_managed"], "Ports": [1313, 8080]}] }/>
 
 
 

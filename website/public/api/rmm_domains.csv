@@ -60,8 +60,6 @@ faronics.com,Faronics Insight
 www.faronics.com,Faronics Insight
 support.faronics.com,Faronics Insight
 docs.faronics.com,Faronics Insight
-insight,Faronics Insight
-*.local,Faronics Insight
 prod.addigy.com,Addigy
 grtmprod.addigy.com,Addigy
 agents.addigy.com,Addigy
@@ -489,7 +487,6 @@ upd.faronicslabs.com,Faronics Deploy
 upd.faronicslabs.com,Faronics Core
 faronics.com,Faronics Core
 www.faronics.com,Faronics Core
-*.local,Faronics Core
 meshcentral.com,MeshCentral
 *.spytech-web.com,SpyAnywhere
 spyanywhere.com,SpyAnywhere
