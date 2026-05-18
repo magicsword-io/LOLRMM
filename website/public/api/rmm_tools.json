@@ -20646,9 +20646,7 @@
                     "Description": "Known remote domains",
                     "Domains": [
                         "todesk.com",
-                        "*.todesk.com",
-                        "*.todesk.com",
-                        "todesktop.com"
+                        "*.todesk.com"
                     ],
                     "Ports": []
                 }
