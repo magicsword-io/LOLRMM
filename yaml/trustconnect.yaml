@@ -33,6 +33,12 @@ Details:
         - Filename: Installer.exe
           OriginalFileName: Installer.dll
           Description: TrustConnect generic installer variant
+        - Filename: DesktopInstaller.exe
+          OriginalFileName: DesktopInstaller.dll
+          Description: TrustConnect installer variant (VT-confirmed communicating with trustconnectsoftware.com, first seen 2026-02-04)
+        - Filename: Airtable.exe
+          OriginalFileName: Airtable.dll
+          Description: TrustConnect installer masquerading as Airtable (VT-confirmed referrer of trustconnectsoftware.com)
         - Filename: DocConnect.Agent.exe
           OriginalFileName: ''
           Description: Successor variant ("DocConnect" / "SHIELD OS") observed after February 2026 disruption
