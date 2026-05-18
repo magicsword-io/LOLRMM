@@ -1775,6 +1775,209 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Faronics Insight",
+        "Category": "RMM",
+        "Description": "Faronics Insight is a classroom / lab management platform by Faronics Corporation (Vancouver, BC, Canada) that provides Teacher-to-Student remote control, screen monitoring, screen broadcasting, application and web blocking, keylogging, browser-history collection, and remote command execution across managed Student endpoints. The Insight Student agent (FIStudentAgent.exe / FIStudentSvc.exe / FIStudentUI.exe / STAHelper.exe) installs as a SYSTEM service on the managed device, while the Insight Teacher console drives the Students via an Insight Connector intermediary. While marketed for K-12 / EDU classroom management, the same Teacher → Student remote-control, monitoring, and command capabilities meet the LOLRMM RMM-shape definition and are part of the Faronics product family from issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/insight",
+            "PEMetadata": [
+                {
+                    "Filename": "FIStudentSvc.exe",
+                    "OriginalFileName": "FIStudentSvc.exe",
+                    "Description": "Faronics Insight Student Windows service"
+                },
+                {
+                    "Filename": "FIStudentAgent.exe",
+                    "OriginalFileName": "FIStudentAgent.exe",
+                    "Description": "Faronics Insight Student agent"
+                },
+                {
+                    "Filename": "FIStudentUI.exe",
+                    "OriginalFileName": "FIStudentUI.exe",
+                    "Description": "Faronics Insight Student user-interface process"
+                },
+                {
+                    "Filename": "STAHelper.exe",
+                    "OriginalFileName": "STAHelper.exe",
+                    "Description": "Faronics Insight Student / Teacher helper executable (commonly flagged by AV; vendor-recommended whitelist)"
+                },
+                {
+                    "Filename": "StudentSvc.exe",
+                    "OriginalFileName": "StudentSvc.exe",
+                    "Description": "Insight Student service (legacy filename)"
+                },
+                {
+                    "Filename": "InsightInstaller.exe",
+                    "OriginalFileName": "InsightInstaller.exe",
+                    "Description": "Faronics Insight unified installer"
+                },
+                {
+                    "Filename": "InsightInstallerStudent.exe",
+                    "OriginalFileName": "InsightInstallerStudent.exe",
+                    "Description": "Faronics Insight Student installer"
+                },
+                {
+                    "Filename": "InsightInstallerTeacher.exe",
+                    "OriginalFileName": "InsightInstallerTeacher.exe",
+                    "Description": "Faronics Insight Teacher installer"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "30 day trial",
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA)",
+            "SupportedOS": [
+                "Windows",
+                "MacOS",
+                "ChromeOS",
+                "Android",
+                "iOS"
+            ],
+            "Capabilities": [
+                "Remote control of Student endpoints from the Teacher console",
+                "Real-time screen monitoring and screen broadcasting",
+                "Application and website blocking / allow-listing",
+                "Keylogging and browser-history collection",
+                "Remote command execution and file transfer",
+                "Mass deployment via Faronics Deploy / Active Directory MSI"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Faronics\\Insight Student\\*",
+                "C:\\Program Files\\Faronics\\Insight Teacher\\*",
+                "C:\\Program Files (x86)\\Faronics\\Insight Student\\*",
+                "C:\\Program Files (x86)\\Faronics\\Insight Teacher\\*",
+                "*\\Faronics\\Insight Student\\STAHelper.exe",
+                "*\\Faronics\\Insight Teacher\\STAHelper.exe",
+                "*\\Faronics\\Insight Student\\FIStudentSvc.exe",
+                "*\\Faronics\\Insight Student\\FIStudentAgent.exe",
+                "*\\Faronics\\Insight Student\\FIStudentUI.exe",
+                "FIStudentAgent.exe",
+                "FIStudentSvc.exe",
+                "FIStudentUI.exe",
+                "STAHelper.exe",
+                "StudentSvc.exe",
+                "InsightInstaller.exe",
+                "InsightInstallerStudent.exe",
+                "InsightInstallerTeacher.exe",
+                "InsightSetup.msi"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\FIStudentSvc.exe",
+                    "Description": "Faronics Insight Student Windows service",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\FIStudentAgent.exe",
+                    "Description": "Faronics Insight Student agent",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\FIStudentUI.exe",
+                    "Description": "Faronics Insight Student UI host",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\STAHelper.exe",
+                    "Description": "Faronics Insight Student helper executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Teacher\\STAHelper.exe",
+                    "Description": "Faronics Insight Teacher helper executable",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "FIStudentSvc",
+                    "ImagePath": "\"C:\\Program Files\\Faronics\\Insight Student\\FIStudentSvc.exe\"",
+                    "Description": "Service installation event for Insight Student."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive (shared with other Faronics products)"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\FIStudentSvc",
+                    "Description": "Faronics Insight Student Windows service registration"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Faronics Insight documentation, support, and update infrastructure",
+                    "Domains": [
+                        "faronics.com",
+                        "www.faronics.com",
+                        "support.faronics.com",
+                        "docs.faronics.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Insight Connector intermediary host (administrator-supplied; IP, hostname, or FQDN). Default Teacher / Student communication ports are listed by Faronics in the Insight Quick Install Guide.",
+                    "Domains": [
+                        "insight",
+                        "*.local"
+                    ],
+                    "Ports": [
+                        1313,
+                        8080
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Insight RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Insight RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Insight RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Insight RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/insight",
+            "https://docs.faronics.com/faronics-insight-docs",
+            "https://docs.faronics.com/faronics-insight-docs/installation-and-administration/installation/installing-on-windows/installing-the-insight-student",
+            "https://docs.faronics.com/faronics-insight-docs/installation-and-administration/installation/installing-on-windows/installing-the-insight-student/command-line-installation",
+            "https://www.faronics.com/assets/INS_Manual.pdf",
+            "https://www.virustotal.com/gui/file/7c9436a2cb59e4de9dab8b0a72ce874ddae448dce47b5e07d95d221fffba3ba7",
+            "https://www.virustotal.com/gui/file/647a06a3ab62d848ed5f0e5853825dc8c97954b766ed8c710ec0a1608971a61b"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "Royal Apps",
         "Category": "RMM",
         "Description": "Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -13001,10 +13204,10 @@
     {
         "Name": "NetBird",
         "Category": "RAT",
-        "Description": "NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being leveraged in spear phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting financial executives and CFOs. The tool was deployed as part of multi-stage phishing attacks by threat actors including APT MuddyWater.",
+        "Description": "NetBird is an open-source WireGuard-based VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being abused in spear-phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting CFOs and other financial executives at banks, energy companies, insurers, and investment firms. In May 2025, Trellix documented a campaign that impersonated a Rothschild & Co recruiter, leading victims through a deceptive CAPTCHA to download a ZIP containing a malicious VBScript that silently installed NetBird and OpenSSH MSI packages, created a hidden local administrator account, enabled RDP, and persisted the NetBird agent via a scheduled task — granting attackers persistent peer-to-peer remote access. Hunt.io and Trellix link the infrastructure to APT MuddyWater (Earth Vetala) based on overlap with previously documented activity (IP 192.3.95.152 / Gophish on TCP 3333).",
         "Author": "Michael Haag",
         "Created": "2026-01-15",
-        "LastModified": "2026-01-15",
+        "LastModified": "2026-05-04",
         "Details": {
             "Website": "https://netbird.io/",
             "PEMetadata": [
@@ -13022,6 +13225,21 @@
                     "Filename": "netbird",
                     "OriginalFileName": "",
                     "Description": "NetBird client binary for Linux/macOS"
+                },
+                {
+                    "Filename": "netbird_installer_*_windows_amd64.msi",
+                    "OriginalFileName": "",
+                    "Description": "NetBird Windows MSI installer (canonical naming pattern from official GitHub releases, e.g. netbird_installer_0.70.4_windows_amd64.msi). Renamed to netbird.msi in the May 2025 Trellix-reported campaign."
+                },
+                {
+                    "Filename": "netbird_installer_*_windows_amd64.exe",
+                    "OriginalFileName": "netbird_installer.exe",
+                    "Description": "NetBird Windows EXE installer signed by NetBird GmbH (formerly Wiretrustee UG). Description string \"Connect your devices into a secure WireGuard-based overlay network with SSO, MFA, and granular access controls.\" Product \"Netbird\"."
+                },
+                {
+                    "Filename": "wintun.dll",
+                    "OriginalFileName": "wintun.dll",
+                    "Description": "WireGuard Wintun TUN driver shipped with the NetBird Windows client."
                 }
             ],
             "Privileges": "User",
@@ -13049,6 +13267,13 @@
                 "/usr/bin/netbird",
                 "/usr/local/bin/netbird",
                 "/opt/netbird/*",
+                "/Applications/NetBird UI.app",
+                "/etc/netbird/install.conf",
+                "C:\\bin\\netbird.msi",
+                "C:\\bin\\OpenSSH.msi",
+                "C:\\bin\\cis.vbs",
+                "C:\\bin\\trm.zip",
+                "C:\\temper\\trm",
                 "netbird.exe",
                 "netbird-ui.exe",
                 "netbird"
@@ -13075,6 +13300,41 @@
                     "File": "/var/log/netbird/*",
                     "Description": "NetBird log files",
                     "OS": "Linux"
+                },
+                {
+                    "File": "/etc/netbird/install.conf",
+                    "Description": "NetBird installation manifest written by the official install.sh — records the package manager type used.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Applications/NetBird UI.app",
+                    "Description": "NetBird UI application bundle on macOS (installed via .pkg or Homebrew cask).",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "C:\\bin\\netbird.msi",
+                    "Description": "NetBird MSI dropped by the May 2025 Trellix-reported CFO spear-phishing campaign (silently installed by cis.vbs / Stage-2 VBS).",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\bin\\OpenSSH.msi",
+                    "Description": "OpenSSH server MSI dropped alongside NetBird in the May 2025 CFO spear-phishing campaign (used to enable persistent SSH access).",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\bin\\cis.vbs",
+                    "Description": "Stage-2 VBScript dropper that installs NetBird and OpenSSH (May 2025 Trellix-reported campaign).",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\bin\\trm.zip",
+                    "Description": "ZIP staging archive containing NetBird and OpenSSH MSIs (renamed from \"trm\" payload fetched from the C2).",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\temper\\trm",
+                    "Description": "Initial payload staging path used by the Stage-1 VBScript before being renamed to trm.zip (May 2025 campaign).",
+                    "OS": "Windows"
                 }
             ],
             "EventLog": [
@@ -13087,22 +13347,116 @@
                     "EventID": 7045,
                     "Description": "Service installation event for NetBird",
                     "OS": "Windows"
+                },
+                {
+                    "EventID": 4720,
+                    "ProviderName": "Microsoft-Windows-Security-Auditing",
+                    "LogFile": "Security.evtx",
+                    "Description": "A user account was created. Observed during May 2025 CFO spear-phishing campaign — local account \"user\" created with password \"Bs@202122\".",
+                    "OS": "Windows"
+                },
+                {
+                    "EventID": 4732,
+                    "ProviderName": "Microsoft-Windows-Security-Auditing",
+                    "LogFile": "Security.evtx",
+                    "Description": "A member was added to a security-enabled local group. Observed during May 2025 CFO spear-phishing campaign — \"user\" added to Administrators / Administrateurs.",
+                    "OS": "Windows"
+                },
+                {
+                    "EventID": 4698,
+                    "ProviderName": "Microsoft-Windows-Security-Auditing",
+                    "LogFile": "Security.evtx",
+                    "Description": "A scheduled task was created. Observed during May 2025 CFO spear-phishing campaign — task \"ForceNetbirdRestart\" created to restart NetBird one minute after boot.",
+                    "OS": "Windows"
                 }
             ],
-            "Registry": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList\\user",
+                    "Description": "Registry key set to 0 to hide the attacker-created local administrator account \"user\" from the Windows logon screen (May 2025 Trellix-reported CFO spear-phishing campaign)."
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Netbird",
+                    "Description": "Netbird Windows service registration (created by NetBird MSI installer; configured by the campaign for delayed automatic start at boot)."
+                }
+            ],
             "Network": [
                 {
-                    "Description": "Known remote domains",
+                    "Description": "NetBird control-plane and client endpoints (canonical, from official documentation)",
                     "Domains": [
                         "netbird.io",
                         "*.netbird.io",
                         "api.netbird.io",
-                        "signal.netbird.io"
+                        "app.netbird.io",
+                        "signal.netbird.io",
+                        "relay.netbird.io",
+                        "login.netbird.io",
+                        "pkgs.netbird.io"
                     ],
                     "Ports": [
                         443,
+                        33073,
                         51820
                     ]
+                },
+                {
+                    "Description": "Threat actor C2 / staging infrastructure observed in the May 2025 Trellix-reported CFO spear-phishing campaign and Hunt.io follow-up. Overlaps with APT MuddyWater (Earth Vetala) infrastructure.",
+                    "Domains": [
+                        "192.3.95.152",
+                        "198.46.178.135",
+                        "googl-6c11f.firebaseapp.com",
+                        "googl-6c11f.web.app",
+                        "googl-165a0.web.app",
+                        "cloud-ed980.firebaseapp.com",
+                        "cloud-233f9.firebaseapp.com",
+                        "my-sharepoint-inc.com",
+                        "my1cloudlive.com",
+                        "my2cloudlive.com",
+                        "web-16fe.app"
+                    ],
+                    "Ports": [
+                        80,
+                        443,
+                        3333
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "NetworkInterface",
+                    "Value": "wt0"
+                },
+                {
+                    "Type": "NetworkInterface",
+                    "Value": "utun100"
+                },
+                {
+                    "Type": "ServiceName",
+                    "Value": "Netbird"
+                },
+                {
+                    "Type": "SetupKey",
+                    "Value": "E48E4A70-4CF4-4A77-946B-C8E50A60855A"
+                },
+                {
+                    "Type": "ScheduledTask",
+                    "Value": "ForceNetbirdRestart"
+                },
+                {
+                    "Type": "LocalUser",
+                    "Value": "user"
+                },
+                {
+                    "Type": "SHA256",
+                    "Value": "b8c84e7047080589cc2e1dc955c78349f8d37d0e79160a040096e1ffcf89d869"
+                },
+                {
+                    "Type": "SignerSubject",
+                    "Value": "NetBird GmbH (current; chain GlobalSign GCC R45 EV CodeSigning CA 2020 -> GlobalSign Code Signing Root R45)"
+                },
+                {
+                    "Type": "SignerSubject",
+                    "Value": "Wiretrustee UG (haftungsbeschränkt) (legacy; chain SSL.com EV Code Signing Intermediate CA RSA R3 -> SSL.com EV Root Certification Authority RSA R2)"
                 }
             ]
         },
@@ -13111,8 +13465,13 @@
             "https://github.com/magicsword-io/LOLRMM/issues/81",
             "https://www.trellix.com/en-in/blogs/research/a-flyby-on-the-cfos-inbox-spear-phishing-campaign-targeting-financial-executives-with-netbird-deployment/",
             "https://hunt.io/blog/apt-muddywater-deploys-multi-stage-phishing-to-target-cfos",
+            "https://netbird.io/knowledge-hub/netbird-response-to-spear-phishing-campaign-targeting-financial-executives",
+            "https://www.centripetal.ai/threat-research/threat-actors-abuse-netbird-in-spear-phishing-campaign-targeting-finance-executives",
+            "https://thehackernews.com/2025/06/fake-recruiter-emails-target-cfos-using.html",
             "https://netbird.io/use-cases/remote-access",
-            "https://github.com/netbirdio/netbird"
+            "https://docs.netbird.io/how-to/installation",
+            "https://github.com/netbirdio/netbird",
+            "https://github.com/netbirdio/netbird/releases/latest"
         ],
         "Acknowledgement": [
             {
@@ -13122,6 +13481,204 @@
             {
                 "Person": "ruppde",
                 "Handle": "@ruppde"
+            }
+        ]
+    },
+    {
+        "Name": "Faronics Deep Freeze",
+        "Category": "RMM",
+        "Description": "Faronics Deep Freeze is a \"reboot-to-restore\" endpoint protection and management product by Faronics Corporation (Vancouver, BC, Canada). Available as Standard, Enterprise, Cloud, and Mac editions. The Deep Freeze workstation agent (DFServ.exe / DFServEx.exe / DFWks.exe / DFC.exe) installs as a SYSTEM service and is managed either locally with a console password, via the on-prem Enterprise Configuration Administrator, or through Deep Freeze Cloud, where the cloud agent (CloudWksInstall.exe / Faronics Cloud Agent) runs alongside Deep Freeze and ties the endpoint to the Faronics Cloud / Deep Freeze Cloud console for remote freeze/thaw, software updater, anti-virus, anti-executable, MDM, and remote-control capabilities. Listed as a Faronics product family per LOLRMM issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/deep-freeze",
+            "PEMetadata": [
+                {
+                    "Filename": "DFServ.exe",
+                    "OriginalFileName": "DFServ.exe",
+                    "Description": "Deep Freeze workstation service"
+                },
+                {
+                    "Filename": "DFServEx.exe",
+                    "OriginalFileName": "DFServEx.exe",
+                    "Description": "Deep Freeze workstation service (extended host)"
+                },
+                {
+                    "Filename": "DFWks.exe",
+                    "OriginalFileName": "DFWks.exe",
+                    "Description": "Deep Freeze Workstation install program"
+                },
+                {
+                    "Filename": "DFStd.exe",
+                    "OriginalFileName": "DFStd.exe",
+                    "Description": "Deep Freeze Standard runtime"
+                },
+                {
+                    "Filename": "DFStdInstall.exe",
+                    "OriginalFileName": "DFStdInstall.exe",
+                    "Description": "Deep Freeze Standard installer"
+                },
+                {
+                    "Filename": "DFC.exe",
+                    "OriginalFileName": "DFC.exe",
+                    "Description": "Deep Freeze Console / configuration utility"
+                },
+                {
+                    "Filename": "CloudWksInstall.exe",
+                    "OriginalFileName": "CloudWksInstall.exe",
+                    "Description": "Faronics Cloud / Deep Freeze Cloud workstation installer"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "30 day trial",
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert EV Code Signing CA SHA2)",
+            "SupportedOS": [
+                "Windows",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Reboot-to-restore endpoint protection (frozen vs thawed state)",
+                "Centralized management via Deep Freeze Cloud console",
+                "Bundled Software Updater, Anti-Virus, Anti-Executable, MDM, and Remote Connect (remote control) when managed via Faronics Cloud",
+                "Active Directory deployment via MSI Packager",
+                "Silent install / uninstall via DFWks.exe command-line switches"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Faronics\\Deep Freeze\\*",
+                "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\*",
+                "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\Install C-0\\*",
+                "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\Install C-1\\*",
+                "C:\\Program Files\\Faronics Corporation\\Deep Freeze 7.00\\*",
+                "*\\Faronics\\Deep Freeze\\DFServ.exe",
+                "*\\Faronics\\Deep Freeze\\DFServEx.exe",
+                "*\\Faronics\\Deep Freeze\\DFWks.exe",
+                "*\\Faronics\\Deep Freeze\\DFC.exe",
+                "DFServ.exe",
+                "DFServEx.exe",
+                "DFWks.exe",
+                "DFStd.exe",
+                "DFStdInstall.exe",
+                "DFC.exe",
+                "CloudWksInstall.exe",
+                "DFInst.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServ.exe",
+                    "Description": "Deep Freeze workstation service binary",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServEx.exe",
+                    "Description": "Deep Freeze workstation service host",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFWks.exe",
+                    "Description": "Deep Freeze workstation install / control utility",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\Temp\\DFServiceInit.log",
+                    "Description": "Deep Freeze service initialization log",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\<USER>\\AppData\\Local\\Temp\\_$Df\\DFStdInstall.sib",
+                    "Description": "Deep Freeze Standard installer scratch file",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "DFServ",
+                    "ImagePath": "\"C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServ.exe\"",
+                    "Description": "Service installation event for Deep Freeze workstation service."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics\\Deep Freeze",
+                    "Description": "Deep Freeze workstation configuration root key"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\DFServ",
+                    "Description": "Deep Freeze workstation Windows service registration"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Deep Freeze Cloud / Faronics Cloud management console",
+                    "Domains": [
+                        "deepfreeze.com",
+                        "www.deepfreeze.com",
+                        "faronicscloud.com",
+                        "cloud.faronics.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics legacy update / activation infrastructure embedded in Deep Freeze installers",
+                    "Domains": [
+                        "upd.faronicslabs.com",
+                        "faronics.com",
+                        "www.faronics.com"
+                    ],
+                    "Ports": [
+                        80,
+                        443
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Deep Freeze RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Deep Freeze RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Deep Freeze RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Deep Freeze RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/deep-freeze",
+            "https://docs.faronics.com/deep-freeze-cloud",
+            "https://www.faronics.com/webhelp/DFE/860/EN/Chapter.1.108.html",
+            "https://www.faronics.com/document-library/document/deep-freeze-msi-packager",
+            "https://faronicscloud.com/blogs/news/what-is-faronics-cloud-a-complete-guide-to-cloud-endpoint-management",
+            "https://www.virustotal.com/gui/file/c699e5b33564c03d65e22a272d9164fc8a2e46822d792564fb52d3b45fb5a1e4",
+            "https://www.virustotal.com/gui/file/48f35f01c04192e39b9e51850792e5fbc1a9df31e0f61ab505b1c1c30aaa0b36"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
             }
         ]
     },
@@ -14495,24 +15052,31 @@
         "Acknowledgement": []
     },
     {
-        "Name": "mstsc",
+        "Name": "mstsc.exe (Microsoft Remote Desktop Connection)",
         "Category": "RAT",
-        "Description": "mstsc is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n\n**IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will likely break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only.",
+        "Description": "mstsc.exe is the built-in Microsoft Remote Desktop Connection (RDC) client\nthat ships with all supported Windows versions. The \"MSTSC\" name is a\nhistorical acronym for \"Microsoft Terminal Services Client\" — the product\nwas renamed from Terminal Services to Remote Desktop Services, but the\nbinary kept the original name. It is signed by Microsoft and located in\n%SystemRoot%\\System32\\mstsc.exe. Adversaries abuse the native RDP client\nfor interactive lateral movement (T1021.001) and as a living-off-the-land\nremote-access pathway because it is present, signed, and frequently\nallow-listed in enterprise environments. This entry consolidates the\nprevious duplicate entries \"Microsoft RDP\" and \"Microsoft TSC\", which\ndescribed the same binary under different names.\n\n**IMPORTANT**: This tool is signed with legitimate Microsoft Corporation\ncertificates that are also used to sign numerous other Microsoft products\nand Windows components. Do NOT blindly block these certificate thumbprints\nas doing so will break essential Windows functionality and other Microsoft\napplications in your environment. Use certificate data for detection,\nhunting, and analysis purposes only.\n",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-05-04",
         "Details": {
-            "Website": "",
+            "Website": "https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc",
             "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
+                "Filename": "mstsc.exe",
+                "OriginalFileName": "mstsc.exe",
+                "Description": "Remote Desktop Connection"
             },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
+            "Privileges": "User",
+            "Free": true,
+            "Verification": true,
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Interactive remote desktop session over RDP",
+                "Connection profile management via .rdp files",
+                "Session shadowing (/shadow, /control)",
+                "Restricted Admin and Remote Guard credential-protection modes"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "C:\\Windows\\System32\\mstsc.exe",
@@ -14520,18 +15084,52 @@
             ]
         },
         "Artifacts": {
-            "Disk": [],
+            "Disk": [
+                {
+                    "File": "%USERPROFILE%\\Documents\\Default.rdp",
+                    "Description": "Hidden default RDP connection profile created by mstsc.exe.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "%SystemRoot%\\System32\\termsrv.exe",
+                    "Description": "Server-side Terminal Services / Remote Desktop Services host service that listens for inbound mstsc.exe sessions on TCP/3389. Present on the destination, not the client originating the connection.",
+                    "OS": "Windows"
+                }
+            ],
             "EventLog": [],
-            "Registry": [],
-            "Network": []
+            "Registry": [
+                {
+                    "Path": "HKCU\\Software\\Microsoft\\Terminal Server Client\\Default",
+                    "Description": "Most-recently-used (MRU) list of remote hosts connected to via mstsc.exe."
+                },
+                {
+                    "Path": "HKCU\\Software\\Microsoft\\Terminal Server Client\\Servers",
+                    "Description": "Per-host subkeys recording usernames and gateway hints used by mstsc.exe."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "RDP traffic initiated by mstsc.exe to a Remote Desktop Session Host or RD Gateway",
+                    "Domains": [],
+                    "Ports": [
+                        3389
+                    ]
+                }
+            ]
         },
         "Detections": [
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mstsc_processes_sigma.yml",
-                "Description": "Detects potential processes activity of mstsc RMM tool"
+                "Description": "Detects potential process activity of the mstsc.exe Remote Desktop Connection client."
             }
         ],
-        "References": [],
+        "References": [
+            "https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc",
+            "https://learn.microsoft.com/windows-server/administration/windows-commands/remote-desktop-services-terminal-services-command-reference",
+            "https://learn.microsoft.com/troubleshoot/windows-server/remote/terminal-server-startup-connection-application",
+            "https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/remote-desktop-windows-urdc",
+            "https://attack.mitre.org/techniques/T1021/001/"
+        ],
         "Acknowledgement": [],
         "CodeSigning": {
             "search_names": [
@@ -15441,11 +16039,6 @@
                     "Filename": "ManageEngine_ServiceDesk_Plus.bin",
                     "OriginalFileName": "",
                     "Description": "ManageEngine ServiceDesk Plus binary installer component"
-                },
-                {
-                    "Filename": "ISBEW64.exe",
-                    "OriginalFileName": "",
-                    "Description": "InstallShield wrapper executable (observed in VT sandbox)"
                 }
             ],
             "Privileges": "SYSTEM",
@@ -15467,7 +16060,6 @@
             "InstallationPaths": [
                 "ManageEngine_ServiceDesk_Plus.exe",
                 "ManageEngine_ServiceDesk_Plus.bin",
-                "ISBEW64.exe",
                 "C:\\Program Files\\ManageEngine\\ServiceDesk\\*",
                 "C:\\Program Files (x86)\\ManageEngine\\ServiceDesk\\*"
             ]
@@ -15482,11 +16074,6 @@
                 {
                     "File": "C:\\Users\\*\\AppData\\Local\\Temp\\{*}\\ManageEngine_ServiceDesk_Plus.exe",
                     "Description": "ManageEngine ServiceDesk Plus temporary installer files (verified via VirusTotal sandbox)",
-                    "OS": "Windows"
-                },
-                {
-                    "File": "C:\\Users\\*\\AppData\\Local\\Temp\\{*}\\ISBEW64.exe",
-                    "Description": "InstallShield wrapper temporary files (verified via VirusTotal sandbox)",
                     "OS": "Windows"
                 }
             ],
@@ -15886,15 +16473,6 @@
                 {
                     "Description": "N/A",
                     "Domains": [
-                        "pubsub.pubnub.com"
-                    ],
-                    "Ports": [
-                        "N/A"
-                    ]
-                },
-                {
-                    "Description": "N/A",
-                    "Domains": [
                         "agentreporting.atera.com"
                     ],
                     "Ports": [
@@ -15940,15 +16518,6 @@
                 {
                     "Description": "N/A",
                     "Domains": [
-                        "ps.pndsn.com"
-                    ],
-                    "Ports": [
-                        "N/A"
-                    ]
-                },
-                {
-                    "Description": "N/A",
-                    "Domains": [
                         "agent-api.atera.com"
                     ],
                     "Ports": [
@@ -15983,7 +16552,7 @@
                     ]
                 },
                 {
-                    "Description": "N/A",
+                    "Description": "Atera-specific PubNub tenant subdomain (CNAME api-tls11.pubnubapi.com) used by the AteraAgent for real-time tenant messaging. Distinct from the generic pubsub.pubnub.com / ps.pndsn.com PubNub multi-tenant infrastructure (shared by thousands of unrelated apps), this `atera.`-prefixed subdomain is reliable Atera-attribution signal.",
                     "Domains": [
                         "atera.pubnubapi.com"
                     ],
@@ -16034,7 +16603,8 @@
             "https://support.atera.com/hc/en-us/articles/360015461139-Firewall-Settings-for-Atera-s-Integrations",
             "https://support.atera.com/hc/en-us/articles/215955967-Troubleshoot-Atera-s-Windows-agent",
             "https://support.atera.com/hc/en-us/articles/115015619747-Release-Notes-February-2018",
-            "https://thedfirreport.com/?s=ateraagent"
+            "https://thedfirreport.com/?s=ateraagent",
+            "https://www.pubnub.com/docs/general/setup/connection-management"
         ],
         "Acknowledgement": [
             {
@@ -19396,63 +19966,6 @@
         }
     },
     {
-        "Name": "Microsoft RDP",
-        "Category": "RAT",
-        "Description": "Microsoft RDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n\n**NOTE**: Some samples of this tool may be signed with third-party certificates. Always verify certificate ownership before implementing any blocking rules. Use certificate data for detection, hunting, and analysis purposes only.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
-        "Details": {
-            "Website": "https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/remote-desktop-windows-urdc",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [
-                "Windows"
-            ],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "termsrv.exe",
-                "mstsc.exe",
-                "Microsoft Remote Desktop"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_rdp_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Microsoft RDP RMM tool"
-            }
-        ],
-        "References": [
-            "https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/windows"
-        ],
-        "Acknowledgement": [],
-        "CodeSigning": {
-            "certificates": [
-                {
-                    "signer_name": "win.rar GmbH",
-                    "certificate_thumbprint": "729AE1F8B489DE176CC099FF49937F85F9E412F7",
-                    "certificate_der_base64": "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",
-                    "src_file_sha256": "39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a",
-                    "src_file_path": "downloaded_files/microsoft_rdp/39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a",
-                    "src_file_company": "Alexander Roshal"
-                }
-            ]
-        }
-    },
-    {
         "Name": "ezHelp",
         "Category": "RMM",
         "Description": "ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -19786,6 +20299,260 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Faronics Deploy",
+        "Category": "RMM",
+        "Description": "Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session (\"Remote Pro\"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/deploy",
+            "PEMetadata": [
+                {
+                    "Filename": "FaronicsDeployAgent.exe",
+                    "OriginalFileName": "FaronicsDeployAgent.exe",
+                    "Description": "Faronics Deploy Agent (full installer)"
+                },
+                {
+                    "Filename": "FWAService.exe",
+                    "OriginalFileName": "FWAService.exe",
+                    "Description": "Faronics Deploy / Cloud Agent service host (FWASvc)"
+                },
+                {
+                    "Filename": "FWA_UI_Agent.exe",
+                    "OriginalFileName": "FWA_UI_Agent.exe",
+                    "Description": "Faronics Deploy user-interface agent"
+                },
+                {
+                    "Filename": "FRCServer.exe",
+                    "OriginalFileName": "FRCServer.exe",
+                    "Description": "Faronics Remote Control server component"
+                },
+                {
+                    "Filename": "FaronicsSA.exe",
+                    "OriginalFileName": "FaronicsSA.exe",
+                    "Description": "Faronics Standalone helper"
+                },
+                {
+                    "Filename": "FSSInstaller.exe",
+                    "OriginalFileName": "FSSInstaller.exe",
+                    "Description": "Faronics Storage Spaces installer"
+                },
+                {
+                    "Filename": "NotificationHelper.exe",
+                    "OriginalFileName": "NotificationHelper.exe",
+                    "Description": "Faronics Deploy notification helper"
+                },
+                {
+                    "Filename": "ModulesUpgradeMgr.exe",
+                    "OriginalFileName": "ModulesUpgradeMgr.exe",
+                    "Description": "Faronics Deploy module upgrade manager"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "30 day trial",
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA)",
+            "SupportedOS": [
+                "Windows",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Cloud-hosted RMM console (deploy.faronics.com)",
+                "Software / OS / patch deployment",
+                "Application install, uninstall, and update",
+                "Hardware and software inventory",
+                "Integrated remote control via Remote Pro (browser), RDP, and VNC",
+                "Custom application packaging",
+                "Active Directory MSI deployment"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\*",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsDeployAgent.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWA_UI_Agent.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FRCServer.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsSA.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FSSInstaller.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\ModulesUpgradeMgr.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\NotificationHelper.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\UserNotificationHelper.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\MigrationHelper_32.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\MigrationHelper_64.exe",
+                "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\*",
+                "FaronicsDeployAgent.exe",
+                "FWAWebInstaller_*.exe",
+                "FWAService.exe",
+                "FWA_UI_Agent.exe",
+                "CloudWksInstall.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsDeployAgent.exe",
+                    "Description": "Faronics Deploy Agent main executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe",
+                    "Description": "Faronics Deploy Cloud Agent service (registered as FWASvc)",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWA_UI_Agent.exe",
+                    "Description": "Faronics Deploy user-interface agent",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FRCServer.exe",
+                    "Description": "Faronics Remote Control server component",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\CloudAgentLogs.LOG",
+                    "Description": "Faronics Deploy / Cloud Agent activity log",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\Logs\\FWASvc.log",
+                    "Description": "Faronics Deploy service log (FWASvc)",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "FWASvc",
+                    "ImagePath": "\"C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe\"",
+                    "Description": "Service installation event for the Faronics Deploy / Cloud Agent service."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive (shared with other Faronics products; presence of Faronics Deploy subkeys confirms install)"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\WOW6432Node\\Faronics\\Faronics Core 3\\Storage Spaces\\Spaces\\FWA",
+                    "Description": "Faronics Deploy / Cloud Agent storage-space configuration"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Classes\\AppID\\FWAService.exe",
+                    "Description": "COM AppID registration for the FWAService.exe service host"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Classes\\{359C24F1-51B5-44CE-8F2D-2FBB1A0FE4EA}\\FWA_GUI_Agent",
+                    "Description": "COM CLSID for the Faronics Deploy GUI agent (FWA_GUI_Agent)"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{581F69E6-A5D1-48C7-9F6F-CC333007F7EB}",
+                    "Description": "Faronics Deploy Agent uninstall entry"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Faronics Deploy console / endpoint sign-up (web)",
+                    "Domains": [
+                        "deploy.faronics.com",
+                        "www.faronicsdeploy.com",
+                        "faronicscloud.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Deploy / Cloud agent management API (AWS API Gateway, us-west-2 and eu-west-1)",
+                    "Domains": [
+                        "nv0mddxkh7.execute-api.us-west-2.amazonaws.com",
+                        "29qoj3q0yf.execute-api.us-west-2.amazonaws.com",
+                        "8z5x4rqbxi.execute-api.eu-west-1.amazonaws.com",
+                        "1wuccjc4a3.execute-api.eu-west-1.amazonaws.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Deploy installer / artifact storage (S3, us-west-2 and eu-west-1)",
+                    "Domains": [
+                        "faronics-deploy-na-production-installers.s3.us-west-2.amazonaws.com",
+                        "faronics-deploy-int-production-installers.s3.eu-west-1.amazonaws.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Deploy Remote Pro browser-based remote-control regional endpoints",
+                    "Domains": [
+                        "remotepro-us-west-2.faronics.com",
+                        "remotepro-us-east-1.faronics.com",
+                        "remotepro-ca-central-1.faronics.com",
+                        "remotepro-eu-west-1.faronicsdeploy.com",
+                        "remotepro-ap-southeast-1.faronicsdeploy.com",
+                        "remotepro-sa-east-1.faronicsdeploy.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics support / corporate domains contacted by signed agent binaries",
+                    "Domains": [
+                        "faronics.com",
+                        "support.faronics.com",
+                        "docs.faronics.com",
+                        "upd.faronicslabs.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Deploy RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Deploy RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Deploy RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Deploy RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/deploy",
+            "https://docs.faronics.com/faronicsdeploy",
+            "https://docs.faronics.com/faronicsdeploy/get-started-1/quick-start/pre-requisites/install-deploy-agents/windows-install-guide",
+            "https://support.faronics.com/help/en-ca/6-faronics-deploy/77-what-port-numbers-and-host-names-are-used-by-faronics-deploy",
+            "https://www.faronics.com/deploy/remote-control",
+            "https://www.virustotal.com/gui/file/b38229e9ce3a249ff7ac06ee9158e744c023338b570ffaf9bed8fc9b94b944f4",
+            "https://www.virustotal.com/gui/file/eee04dd4e7dd58d33ffb503686cdac07f88f8bea7bb29dbcd48d6715c198cea9"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "DeskNets",
         "Category": "RMM",
         "Description": "DeskNets is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -19818,6 +20585,164 @@
             "https://www.desknets.com/en/download.html"
         ],
         "Acknowledgement": []
+    },
+    {
+        "Name": "Faronics Core",
+        "Category": "RMM",
+        "Description": "Faronics Core is the legacy on-premises endpoint management platform from Faronics Corporation (Vancouver, BC, Canada). It uses a four-tier architecture - Core Console (admin UI), Core Server (logic), Core Database (workstation inventory), and Core Agent (endpoint). The Core Agent (FaronicsCoreAgent.exe / CoreAgentService.exe) installs as a SYSTEM service on managed workstations and brokers communication between the Core Console / Server and the workstation, allowing remote task execution, software inventory, and loadout of Faronics modules (Deep Freeze, Anti-Executable, Anti-Virus, Power Save, WINSelect). Although mostly superseded by Faronics Deploy / Faronics Cloud, the Core Agent is still seen on long-running enterprise / education fleets and is part of the Faronics product family per LOLRMM issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/faronics-core",
+            "PEMetadata": [
+                {
+                    "Filename": "FaronicsCoreAgent.exe",
+                    "OriginalFileName": "FaronicsCoreAgent.exe",
+                    "Description": "Faronics Core Agent (workstation)"
+                },
+                {
+                    "Filename": "CoreAgentService.exe",
+                    "OriginalFileName": "CoreAgentService.exe",
+                    "Description": "Faronics Core Agent service host"
+                },
+                {
+                    "Filename": "FCAForStartupMonitor.msi",
+                    "OriginalFileName": "FCAForStartupMonitor.msi",
+                    "Description": "Faronics Core Agent startup-monitor MSI"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": false,
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA / VeriSign Class 3 Code Signing 2010 CA)",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Centralized workstation management (legacy on-prem console)",
+                "Software / hardware inventory",
+                "Task and command execution against managed workstations",
+                "Loadouts for Deep Freeze, Anti-Executable, Anti-Virus, Power Save, WINSelect, Insight, and other Faronics modules",
+                "MSI-based mass deployment of the Core Agent"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Faronics\\Faronics Core\\*",
+                "C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\*",
+                "C:\\Program Files\\Faronics\\Core\\Console\\*",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Core\\*",
+                "*\\Faronics\\Faronics Core\\Workstation Agent\\FaronicsCoreAgent.exe",
+                "*\\Faronics\\Faronics Core\\Workstation Agent\\CoreAgentService.exe",
+                "C:\\ProgramData\\Faronics\\FCAForStartupMonitor.msi",
+                "FaronicsCoreAgent.exe",
+                "CoreAgentService.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\FaronicsCoreAgent.exe",
+                    "Description": "Faronics Core Agent main executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\CoreAgentService.exe",
+                    "Description": "Faronics Core Agent service host",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Faronics\\FCAForStartupMonitor.msi",
+                    "Description": "Faronics Core Agent startup-monitor MSI installer",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "FaronicsCoreAgent",
+                    "ImagePath": "\"C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\FaronicsCoreAgent.exe\"",
+                    "Description": "Service installation event for the Faronics Core Agent."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\FaronicsCoreAgent",
+                    "Description": "Faronics Core Agent Windows service registration"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics\\Faronics Core 3",
+                    "Description": "Faronics Core 3 product configuration root"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\WOW6432Node\\Faronics\\Faronics Core 3",
+                    "Description": "Faronics Core 3 product configuration root (32-bit on 64-bit hosts)"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Faronics Core legacy update / activation infrastructure",
+                    "Domains": [
+                        "upd.faronicslabs.com",
+                        "faronics.com",
+                        "www.faronics.com"
+                    ],
+                    "Ports": [
+                        80,
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Core Server <-> Core Agent on-prem communication (administrator-supplied Core Server hostname / IP). Default Faronics Core Server listener and Core Agent ports are documented by Faronics.",
+                    "Domains": [
+                        "*.local"
+                    ],
+                    "Ports": [
+                        7751,
+                        7752
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Core RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Core RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Core RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Core RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/faronics-core",
+            "https://www.faronics.com/assets/FCC_Manual.pdf",
+            "https://www.faronics.com/document-library/document/faronics-core-release-notes",
+            "https://www.virustotal.com/gui/file/6f78a2dc13eaf007bd83cdda91ff4d53e737e0b7205d1ae9e38f2bfd831fdb6d"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
     },
     {
         "Name": "Remmina",
@@ -25662,6 +26587,7 @@
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "psexec.exe",
+                "psexec64.exe",
                 "psexecsvc.exe"
             ]
         },
@@ -26668,257 +27594,6 @@
                     "src_file_sha256": "338194b2e5e40d0830e6ec55845fd96ca3346d6c1eeafb7b7c5596568b87eff1",
                     "src_file_path": "downloaded_files/freenx/338194b2e5e40d0830e6ec55845fd96ca3346d6c1eeafb7b7c5596568b87eff1",
                     "src_file_company": "NoMachine"
-                }
-            ]
-        }
-    },
-    {
-        "Name": "Microsoft TSC",
-        "Category": "RMM",
-        "Description": "Microsoft TSC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n\n**IMPORTANT**: This tool is signed with legitimate Microsoft Windows certificates that are used to sign core Windows operating system components. Do NOT blindly block these certificate thumbprints as doing so will break Windows functionality in your environment. Use certificate data for detection, hunting, and analysis purposes only.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
-        "Details": {
-            "Website": "",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "termsrv.exe",
-                "mstsc.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_tsc_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Microsoft TSC RMM tool"
-            }
-        ],
-        "References": [
-            "https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/terminal-server-startup-connection-application"
-        ],
-        "Acknowledgement": [],
-        "CodeSigning": {
-            "search_names": [
-                "mstsc.exe",
-                "nssm_origin3al.exe",
-                "rdp.exe",
-                "termsrv.dll",
-                "termsrv.exe"
-            ],
-            "company_names": [],
-            "signer_names": [
-                "Microsoft Windows"
-            ],
-            "certificates": [
-                {
-                    "signer_name": "Microsoft Windows",
-                    "issuer": "CN=Microsoft Windows Production PCA 2011",
-                    "certificate_thumbprint": "FACDE3D80E99AFCC15E08AC5A69BD22785287F79",
-                    "tbs_sha256": "430E0E3126D270FCDD11F65A1694A7997E86EEABFA93DEB45A58B1DD4930033C",
-                    "tbs_sha1": "1DB42CE638F6A2B4D7E42CCDB8FEC0EEBECA4782",
-                    "valid_from": "2025-06-19T18:11:43+00:00",
-                    "valid_to": "2026-06-17T18:11:43+00:00",
-                    "certificate_der_base64": "MIIFCTCCA/GgAwIBAgITMwAABRhBhBmty60pTwAAAAAFGDANBgkqhkiG9w0BAQsFADCBhDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jvc29mdCBDb3Jwb3JhdGlvbjEuMCwGA1UEAxMlTWljcm9zb2Z0IFdpbmRvd3MgUHJvZHVjdGlvbiBQQ0EgMjAxMTAeFw0yNTA2MTkxODExNDNaFw0yNjA2MTcxODExNDNaMHAxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdSZWRtb25kMR4wHAYDVQQKExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xGjAYBgNVBAMTEU1pY3Jvc29mdCBXaW5kb3dzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA13mqBajcSzGIQ7kqJCIE6oxXJVfqr0iUnSh2fDN9r18wuHPIlLeHyatPsH1rArFXUyj1IoPlkAbP8shArkP0m3AOlDZv8eH2Dw13ICwabGPn4SgKrY2+HlQtXtv7w+T05JCnEZHNjYXM05FkxvDOp7XlDH+t7trr7jFwtjjt1GSyp/e1la0D5bprFgrZd+idRKV3f0InKTtqr3/3QPgm6AGgcsV6djsk1zCxsbCa2mPbSv2Z0iyjPzdInLsOb/mQF7MuLaG7KcnrpnI8hgr3ce4G0gZTJGp80n8HjEFdpkdfzRJaxhGKyeCziaFukwCJxQvRLdfPyfdzDbibuZUy5QIDAQABo4IBhTCCAYEwHwYDVR0lBBgwFgYKKwYBBAGCNwoDBgYIKwYBBQUHAwMwHQYDVR0OBBYEFOF41I/R69R+LhZJ5/DUoIJ88kCTMFQGA1UdEQRNMEukSTBHMS0wKwYDVQQLEyRNaWNyb3NvZnQgSXJlbGFuZCBPcGVyYXRpb25zIExpbWl0ZWQxFjAUBgNVBAUTDTIyOTg3OSs1MDUzMzYwHwYDVR0jBBgwFoAUqSkCOY4WxJd4zZD5nk+a4XxVr1MwVwYDVR0fBFAwTjBMoEqgSIZGaHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3BraW9wcy9jcmwvTWljV2luUHJvUENBMjAxMV8yMDExLTEwLTE5LmNybCUyMDBhBggrBgEFBQcBAQRVMFMwUQYIKwYBBQUHMAKGRWh0dHA6Ly93d3cubWljcm9zb2Z0LmNvbS9wa2lvcHMvY2VydHMvTWljV2luUHJvUENBMjAxMV8yMDExLTEwLTE5LmNydDAMBgNVHRMBAf8EAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQA73LToVzb48EsyNktWyWo+IGLgB2p9kuAEQkU+8hLq0rA9WZonC9cODucqsbIMr1+hdczYWea7HVahHNh1e1l/t8UyFkJvbpIlr8SZV+RlV4s+WtBJzI6I85EjEBBNDiz26s/HTuK3hb0mOFTzRZLih4OBnpKR4+lid/Ptj6Vpz1LtTxLX7PrwIntLTvTe2HiJPSJ0kphhrHebSBArR0IRqtHbz/wcx1MMtBSPgjiKI1id83Hyj7Y604D5Z/Dak+1qcCo77G1Inkm39qAtvE5R+jt5TxTZgwWL9DmIjGbP0dqouGyc5FYPoqW6WBsdtBPaL/sxdDGWM77U4g14/8UJ"
-                },
-                {
-                    "signer_name": "win.rar GmbH",
-                    "certificate_thumbprint": "729AE1F8B489DE176CC099FF49937F85F9E412F7",
-                    "certificate_der_base64": "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",
-                    "src_file_sha256": "39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a",
-                    "src_file_path": "downloaded_files/microsoft_tsc/39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a",
-                    "src_file_company": "Alexander Roshal"
-                }
-            ]
-        },
-        "FileHashes": {
-            "authenticode": [
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "1E05B521C8BD52401F43E5CC7091FF2A9A7949E73733DAB73AF83A3D480C9569",
-                    "sha1": "4286324C3C04C102352FD16E453D9BC4B01967E2"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "6D6C0969243DC45F0EBC8308007C6E5CEE1C8FAA858DB813F1DB2CF9C35AFDD7",
-                    "sha1": "7A3937C5A1CD28F6D0BB5D4481F892AB6F3B64F2"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "E45A1E54300B7365004406463E7B849FB1ACA1F4733FFD6DB347166D72DA7800",
-                    "sha1": "4B934DD90329E3200CF3122ACF26CB4CBC5A4D5C"
-                },
-                {
-                    "file_name": "Mstsc.exe",
-                    "sha256": "A7F9DA5D3ED97F2C1E6DAD4EEEBC0075498B18FF55EF3A866657629EABE424CD",
-                    "sha1": "D8D112E22A0D884694BFB9B848BD82DD0BF63F2C"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "3A47B638C27A6DE7E24AF8A04B5DD963AD4EE3B3CDC65170B643F1D1103ED767",
-                    "sha1": "AFC1118D8DCA54648DE9205EB36AD48B57881CBD"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "F7FF5D5419F6B310098870E4F30B9BE386E93BFBC1BC7E4073D01307D2F6C70D",
-                    "sha1": "942B91A5F8D3712F0EEF476C5646FF10BA6D60CD"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "72B1695F661DFE020E8B162A38522BD8BC85BD37CEBDA2F2085A2BBB3BAFA302",
-                    "sha1": "E6E0978F1B6BE303ADA88A42BB1B0E6CD8D70A19"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "3C67B7131057947726C4316BC74936A4B02AB7B26C000EFE8E89B679F704E5E6",
-                    "sha1": "752086DC394C148EB840CCDA68981B553E3DFA0A"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "C3C71349BA6B28753A7CA70B9D154951A784D7A7E2AACFE95D1C0E29E4EC52C3",
-                    "sha1": "2B6335CA72BF5AEDB45EB1F549962A906EDCBF83"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "5C1DFCD62C50CBC1A39F000971541BB819421040D616DF55B08B5DE78B8754DF",
-                    "sha1": "C908976E4926358EE1DDA0BCE7A01A796FFF1C1C"
-                },
-                {
-                    "file_name": "rdp.exe",
-                    "sha256": "D2A858E81F72E209885D2AAA4F8BFF951B9EB6FEAA359F0D2216B6A1F45E4E81",
-                    "sha1": "262D9A15A27C2ECD6A8334C4DCE8A596C0EA9C9F"
-                },
-                {
-                    "file_name": "nssm_origin3al.exe",
-                    "sha256": "809D787C3EA0714C821AAE5CBBEB3085472451CCE7EFB1066DDAAB1B67D6474E",
-                    "sha1": "67D21A4D233AAF375A6AA6AF67092EDAFFABDB7E"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "EC711CB50A252B974FD2135B22E31A6B4191EF42B882367CC2B027A50727D01A",
-                    "sha1": "68F0D251703CF6F2A9823F57301111CE2EBA445A"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "798851F484337E95B55C779753040A48FB8EE8CDCDEEC699B8853B1A2FF79D45",
-                    "sha1": "A97B4E9FAF034BAD1D1634654A1A4E7EA8CC7CAC"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "84280E8B7014DC3AC3E7CF924ABD2E5341D3B0199AFC617ADB4F3A7EEAC68E2E",
-                    "sha1": "C0348A51494D21A25F8804EE83FD85968F7AE9C5"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "8B5688946010528DDD238EE9B37E441124CFDD89F0954CA795AE7DA28444A1AF",
-                    "sha1": "2024069E97B4F6043E8C0CC9D9A7CC9CBD2A74BD"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "40322286C92F04B90D5947A474524D03A149867D2BC60A81388A580FA76623F9",
-                    "sha1": "78C9BB304099DD09DAFAB2399EDA3EF4A26C1881"
-                }
-            ],
-            "page": [
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "EFB23B84D5DD32038A2807A32773D9765B6A5431A689BA5FF2981CAF66C07D21",
-                    "sha1": "B3C6E5A83D35D3E24857FF749357C9D3302B0CC4"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "CE34A0598DF732AE70CADF7D638014787178FDFF8A6F2FDD97507045C7C33845",
-                    "sha1": "A663AA6C71708322723BF28A6DD86FAC1EAD48B9"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "60A78ACE6FC4FEC67AF7B4A0BB44C9A3C6CD68BF69D98D49C8FC0793089A3897",
-                    "sha1": "917801524CC23AD8E061A20D1FB20464E8AADE76"
-                },
-                {
-                    "file_name": "Mstsc.exe",
-                    "sha256": "42D3873C07F355FC8B886E55F86266E7C68A9EBE8A131FE2A2E97A5A1CD14A1E",
-                    "sha1": "BB505AE2BEEBA8C26A701BD622485C021634B8C4"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "7E9C0CDC7BE9DAA9AE3C1BD7CAA63275ECA836DDB53BFE7DC610456CA79FD690",
-                    "sha1": "54E6DB7A5765956EC6E5D30BDE4DF2E8EEC2C98F"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "F34F64D5B43B7E7A99463A2C7FC4B19AFBF23CD45D4F744D8787C1BBDACDC3B1",
-                    "sha1": "78175CED1BD06F77C10655B92B14C639B7591B69"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "3164518FED9BF478CF06B9127A27118E018201853AF7D1A25D07E3868BA876AB",
-                    "sha1": "733A9423AE44CB172BF499F01582E59D6C74EC47"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "AE303E1FF86C1E2EF03956CECDD09D55FCC29625CD9BC68FAE8C6AF9A1112228",
-                    "sha1": "25A4DB45870F5ED1AA6436CF1C58697A037032D0"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "743B64F1B4B53C9E8FBE6093CEDF1E2F35DAD8A8F266C826048F2DAB02B0E56F",
-                    "sha1": "E3B41D88051001C6BBA5797BC8F6CA324F09F39C"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "38BFFA279D7247269F2F59739E0538AB7262D6A17CB152D0AEDF3E951C4598F2",
-                    "sha1": "6D085579F114BF10FCB93F7FF91D327080195C19"
-                },
-                {
-                    "file_name": "rdp.exe",
-                    "sha256": "AD7A7B8BAF1901FC01CF94025BCF327FD02F71334052D8B4BEC6CE1710C6C504",
-                    "sha1": "5D29ECF5B8979B4DF3F3605849332F7AF62918FF"
-                },
-                {
-                    "file_name": "nssm_origin3al.exe",
-                    "sha256": "27712F2684560BEE5BB534179F520AFB4126B30D2958E111117407413A16C23E",
-                    "sha1": "DBDB15E637E2D7FF77E76364C50BF6869BF236F9"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "43E6D5CE75F9AB0F400039DFA3F75294314C29E574ACE702A48A1271FE6D6F00",
-                    "sha1": "A9B8DD69B9AB37D7CE9F3EA81B1E90B47AFA83BD"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "F48D429CB43221DBCF4768FEAECD2FFD292C09C338FE85FD2A5ABF838C9FF1A4",
-                    "sha1": "D226F80E6D62E1C8F7F7A9ED0CD26B09E9D607C7"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "D6FB9388BDA4C7977C1E3C39B5B1F8FABAE585A22F8532D210DFF2C36DDA1968",
-                    "sha1": "F0641E0352301570CABDA8AE4F07935515A92623"
-                },
-                {
-                    "file_name": "termsrv.dll",
-                    "sha256": "2FD6F9DB743476A1534D27D76AF678430D37C3E4E0DD99954834D31CA22A8BD3",
-                    "sha1": "58BFC5D10E6624C1A1C81388843BA7F0A93C4E93"
-                },
-                {
-                    "file_name": "mstsc.exe",
-                    "sha256": "B15A573DF850D7E79B8765B72CC6168BC2A46ABE35438FAB880CCBECF1F401BB",
-                    "sha1": "D7B71FC64C8EDC31F02BDDD689FAF0DC84F4C9C0"
                 }
             ]
         }

@@ -1,0 +1,101 @@
+Name: Faronics Core
+Category: RMM
+Description: Faronics Core is the legacy on-premises endpoint management platform from Faronics Corporation (Vancouver, BC, Canada). It uses a four-tier architecture - Core Console (admin UI), Core Server (logic), Core Database (workstation inventory), and Core Agent (endpoint). The Core Agent (FaronicsCoreAgent.exe / CoreAgentService.exe) installs as a SYSTEM service on managed workstations and brokers communication between the Core Console / Server and the workstation, allowing remote task execution, software inventory, and loadout of Faronics modules (Deep Freeze, Anti-Executable, Anti-Virus, Power Save, WINSelect). Although mostly superseded by Faronics Deploy / Faronics Cloud, the Core Agent is still seen on long-running enterprise / education fleets and is part of the Faronics product family per LOLRMM issue 151.
+Author: '@MHaggis'
+Created: '2026-05-04'
+LastModified: '2026-05-04'
+Details:
+    Website: 'https://www.faronics.com/products/faronics-core'
+    PEMetadata:
+        - Filename: FaronicsCoreAgent.exe
+          OriginalFileName: FaronicsCoreAgent.exe
+          Description: Faronics Core Agent (workstation)
+        - Filename: CoreAgentService.exe
+          OriginalFileName: CoreAgentService.exe
+          Description: Faronics Core Agent service host
+        - Filename: FCAForStartupMonitor.msi
+          OriginalFileName: FCAForStartupMonitor.msi
+          Description: Faronics Core Agent startup-monitor MSI
+    Privileges: SYSTEM
+    Free: false
+    Verification: Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA / VeriSign Class 3 Code Signing 2010 CA)
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Centralized workstation management (legacy on-prem console)
+        - Software / hardware inventory
+        - Task and command execution against managed workstations
+        - Loadouts for Deep Freeze, Anti-Executable, Anti-Virus, Power Save, WINSelect, Insight, and other Faronics modules
+        - MSI-based mass deployment of the Core Agent
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Faronics\Faronics Core\*
+        - C:\Program Files\Faronics\Faronics Core\Workstation Agent\*
+        - C:\Program Files\Faronics\Core\Console\*
+        - C:\Program Files (x86)\Faronics\Faronics Core\*
+        - '*\Faronics\Faronics Core\Workstation Agent\FaronicsCoreAgent.exe'
+        - '*\Faronics\Faronics Core\Workstation Agent\CoreAgentService.exe'
+        - C:\ProgramData\Faronics\FCAForStartupMonitor.msi
+        - FaronicsCoreAgent.exe
+        - CoreAgentService.exe
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Faronics\Faronics Core\Workstation Agent\FaronicsCoreAgent.exe
+          Description: Faronics Core Agent main executable
+          OS: Windows
+        - File: C:\Program Files\Faronics\Faronics Core\Workstation Agent\CoreAgentService.exe
+          Description: Faronics Core Agent service host
+          OS: Windows
+        - File: C:\ProgramData\Faronics\FCAForStartupMonitor.msi
+          Description: Faronics Core Agent startup-monitor MSI installer
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: FaronicsCoreAgent
+          ImagePath: '"C:\Program Files\Faronics\Faronics Core\Workstation Agent\FaronicsCoreAgent.exe"'
+          Description: Service installation event for the Faronics Core Agent.
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\FaronicsCoreAgent
+          Description: Faronics Core Agent Windows service registration
+        - Path: HKLM\SOFTWARE\Faronics\Faronics Core 3
+          Description: Faronics Core 3 product configuration root
+        - Path: HKLM\SOFTWARE\WOW6432Node\Faronics\Faronics Core 3
+          Description: Faronics Core 3 product configuration root (32-bit on 64-bit hosts)
+        - Path: HKLM\SOFTWARE\Faronics
+          Description: Top-level Faronics product registry hive
+    Network:
+        - Description: Faronics Core legacy update / activation infrastructure
+          Domains:
+              - upd.faronicslabs.com
+              - faronics.com
+              - www.faronics.com
+          Ports:
+              - 80
+              - 443
+        - Description: Faronics Core Server <-> Core Agent on-prem communication (administrator-supplied Core Server hostname / IP). Default Faronics Core Server listener and Core Agent ports are documented by Faronics.
+          Domains:
+              - '*.local'
+          Ports:
+              - 7751
+              - 7752
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_files_sigma.yml
+      Description: Detects potential files activity of Faronics Core RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_network_sigma.yml
+      Description: Detects potential network activity of Faronics Core RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_processes_sigma.yml
+      Description: Detects potential processes activity of Faronics Core RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_registry_sigma.yml
+      Description: Detects potential registry activity of Faronics Core RMM tool
+References:
+    - https://www.faronics.com/products/faronics-core
+    - https://www.faronics.com/assets/FCC_Manual.pdf
+    - https://www.faronics.com/document-library/document/faronics-core-release-notes
+    - https://www.virustotal.com/gui/file/6f78a2dc13eaf007bd83cdda91ff4d53e737e0b7205d1ae9e38f2bfd831fdb6d
+Acknowledgement:
+    - Person: cbecks2
+      Handle: cbecks2
+    - Person: Michael Haag
+      Handle: '@MHaggis'

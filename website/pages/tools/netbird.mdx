@@ -1,5 +1,5 @@
 ---
-description: "NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being leveraged in spear phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting financial executives and CFOs. The tool was deployed as part of multi-stage phishing attacks by threat actors including APT MuddyWater."
+description: "NetBird is an open-source WireGuard-based VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being abused in spear-phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting CFOs and other financial executives at banks, energy companies, insurers, and investment firms. In May 2025, Trellix documented a campaign that impersonated a Rothschild & Co recruiter, leading victims through a deceptive CAPTCHA to download a ZIP containing a malicious VBScript that silently installed NetBird and OpenSSH MSI packages, created a hidden local administrator account, enabled RDP, and persisted the NetBird agent via a scheduled task \u2014 granting attackers persistent peer-to-peer remote access. Hunt.io and Trellix link the infrastructure to APT MuddyWater (Earth Vetala) based on overlap with previously documented activity (IP 192.3.95.152 / Gophish on TCP 3333)."
 title: "NetBird"
 ---
 
@@ -9,7 +9,7 @@ import {EuiSpacer} from "@elastic/eui"
 
 # NetBird
 
-NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being leveraged in spear phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting financial executives and CFOs. The tool was deployed as part of multi-stage phishing attacks by threat actors including APT MuddyWater.
+NetBird is an open-source WireGuard-based VPN and remote access platform that provides secure peer-to-peer connectivity. It has been observed being abused in spear-phishing campaigns across Europe, Africa, Canada, the Middle East, and South Asia, targeting CFOs and other financial executives at banks, energy companies, insurers, and investment firms. In May 2025, Trellix documented a campaign that impersonated a Rothschild & Co recruiter, leading victims through a deceptive CAPTCHA to download a ZIP containing a malicious VBScript that silently installed NetBird and OpenSSH MSI packages, created a hidden local administrator account, enabled RDP, and persisted the NetBird agent via a scheduled task — granting attackers persistent peer-to-peer remote access. Hunt.io and Trellix link the infrastructure to APT MuddyWater (Earth Vetala) based on overlap with previously documented activity (IP 192.3.95.152 / Gophish on TCP 3333).
 
 <BlockBanner name={"NetBird"}/>
 
@@ -18,14 +18,14 @@ NetBird is an open-source VPN and remote access platform that provides secure pe
          category={"RAT"}
          created={"2026-01-15"}
          website={"https://netbird.io/"}
-         lastModified={"2026-01-15"}
+         lastModified={"2026-05-04"}
          privileges={"User"}
          free={ "Yes (Open Source)" }
          verification={ "Open Source" }
 />
 
 #### Installation Paths
-<Card code={ ["C:\\Program Files\\Netbird\\netbird.exe", "C:\\Program Files\\Netbird\\netbird-ui.exe", "C:\\ProgramData\\Netbird\\*", "/usr/bin/netbird", "/usr/local/bin/netbird", "/opt/netbird/*", "netbird.exe", "netbird-ui.exe", "netbird"] }/>
+<Card code={ ["C:\\Program Files\\Netbird\\netbird.exe", "C:\\Program Files\\Netbird\\netbird-ui.exe", "C:\\ProgramData\\Netbird\\*", "/usr/bin/netbird", "/usr/local/bin/netbird", "/opt/netbird/*", "/Applications/NetBird UI.app", "/etc/netbird/install.conf", "C:\\bin\\netbird.msi", "C:\\bin\\OpenSSH.msi", "C:\\bin\\cis.vbs", "C:\\bin\\trm.zip", "C:\\temper\\trm", "netbird.exe", "netbird-ui.exe", "netbird"] }/>
 
 #### Supported OS
 <Badges color="warning" badges={ ["Windows", "Linux", "macOS", "Android", "iOS"] }/>
@@ -40,17 +40,23 @@ NetBird is an open-source VPN and remote access platform that provides secure pe
 
 #### Disk Artifacts
 <EuiSpacer size="xl"/>
-<DiskArtifacts data={ [{"File": "C:\\Program Files\\Netbird\\netbird.exe", "Description": "NetBird client installation directory", "OS": "Windows"}, {"File": "C:\\ProgramData\\Netbird\\config.json", "Description": "NetBird configuration file", "OS": "Windows"}, {"File": "/etc/netbird/config.json", "Description": "NetBird configuration file", "OS": "Linux"}, {"File": "/var/log/netbird/*", "Description": "NetBird log files", "OS": "Linux"}] }/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Netbird\\netbird.exe", "Description": "NetBird client installation directory", "OS": "Windows"}, {"File": "C:\\ProgramData\\Netbird\\config.json", "Description": "NetBird configuration file", "OS": "Windows"}, {"File": "/etc/netbird/config.json", "Description": "NetBird configuration file", "OS": "Linux"}, {"File": "/var/log/netbird/*", "Description": "NetBird log files", "OS": "Linux"}, {"File": "/etc/netbird/install.conf", "Description": "NetBird installation manifest written by the official install.sh \u2014 records the package manager type used.", "OS": "Linux"}, {"File": "/Applications/NetBird UI.app", "Description": "NetBird UI application bundle on macOS (installed via .pkg or Homebrew cask).", "OS": "macOS"}, {"File": "C:\\bin\\netbird.msi", "Description": "NetBird MSI dropped by the May 2025 Trellix-reported CFO spear-phishing campaign (silently installed by cis.vbs / Stage-2 VBS).", "OS": "Windows"}, {"File": "C:\\bin\\OpenSSH.msi", "Description": "OpenSSH server MSI dropped alongside NetBird in the May 2025 CFO spear-phishing campaign (used to enable persistent SSH access).", "OS": "Windows"}, {"File": "C:\\bin\\cis.vbs", "Description": "Stage-2 VBScript dropper that installs NetBird and OpenSSH (May 2025 Trellix-reported campaign).", "OS": "Windows"}, {"File": "C:\\bin\\trm.zip", "Description": "ZIP staging archive containing NetBird and OpenSSH MSIs (renamed from \"trm\" payload fetched from the C2).", "OS": "Windows"}, {"File": "C:\\temper\\trm", "Description": "Initial payload staging path used by the Stage-1 VBScript before being renamed to trm.zip (May 2025 campaign).", "OS": "Windows"}] }/>
 
 #### Event Log Artifacts
 <EuiSpacer size="xl"/>
-<EventLogTable data={ [{"EventID": 4688, "Description": "Process creation event for netbird.exe", "OS": "Windows"}, {"EventID": 7045, "Description": "Service installation event for NetBird", "OS": "Windows"}] }/>
+<EventLogTable data={ [{"EventID": 4688, "Description": "Process creation event for netbird.exe", "OS": "Windows"}, {"EventID": 7045, "Description": "Service installation event for NetBird", "OS": "Windows"}, {"EventID": 4720, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "Description": "A user account was created. Observed during May 2025 CFO spear-phishing campaign \u2014 local account \"user\" created with password \"Bs@202122\".", "OS": "Windows"}, {"EventID": 4732, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "Description": "A member was added to a security-enabled local group. Observed during May 2025 CFO spear-phishing campaign \u2014 \"user\" added to Administrators / Administrateurs.", "OS": "Windows"}, {"EventID": 4698, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "Description": "A scheduled task was created. Observed during May 2025 CFO spear-phishing campaign \u2014 task \"ForceNetbirdRestart\" created to restart NetBird one minute after boot.", "OS": "Windows"}] }/>
 
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList\\user", "Description": "Registry key set to 0 to hide the attacker-created local administrator account \"user\" from the Windows logon screen (May 2025 Trellix-reported CFO spear-phishing campaign)."}, {"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Netbird", "Description": "Netbird Windows service registration (created by NetBird MSI installer; configured by the campaign for delayed automatic start at boot)."}] }/>
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["netbird.io", "*.netbird.io", "api.netbird.io", "signal.netbird.io"], "Ports": [443, 51820]}] }/>
+<NetworkArtifactsTable data={ [{"Description": "NetBird control-plane and client endpoints (canonical, from official documentation)", "Domains": ["netbird.io", "*.netbird.io", "api.netbird.io", "app.netbird.io", "signal.netbird.io", "relay.netbird.io", "login.netbird.io", "pkgs.netbird.io"], "Ports": [443, 33073, 51820]}, {"Description": "Threat actor C2 / staging infrastructure observed in the May 2025 Trellix-reported CFO spear-phishing campaign and Hunt.io follow-up. Overlaps with APT MuddyWater (Earth Vetala) infrastructure.", "Domains": ["192.3.95.152", "198.46.178.135", "googl-6c11f.firebaseapp.com", "googl-6c11f.web.app", "googl-165a0.web.app", "cloud-ed980.firebaseapp.com", "cloud-233f9.firebaseapp.com", "my-sharepoint-inc.com", "my1cloudlive.com", "my2cloudlive.com", "web-16fe.app"], "Ports": [80, 443, 3333]}] }/>
 
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "NetworkInterface", "Value": "wt0"}, {"Type": "NetworkInterface", "Value": "utun100"}, {"Type": "ServiceName", "Value": "Netbird"}, {"Type": "SetupKey", "Value": "E48E4A70-4CF4-4A77-946B-C8E50A60855A"}, {"Type": "ScheduledTask", "Value": "ForceNetbirdRestart"}, {"Type": "LocalUser", "Value": "user"}, {"Type": "SHA256", "Value": "b8c84e7047080589cc2e1dc955c78349f8d37d0e79160a040096e1ffcf89d869"}, {"Type": "SignerSubject", "Value": "NetBird GmbH (current; chain GlobalSign GCC R45 EV CodeSigning CA 2020 -> GlobalSign Code Signing Root R45)"}, {"Type": "SignerSubject", "Value": "Wiretrustee UG (haftungsbeschr\u00e4nkt) (legacy; chain SSL.com EV Code Signing Intermediate CA RSA R3 -> SSL.com EV Root Certification Authority RSA R2)"}] }/>
 
 
 
@@ -59,8 +65,13 @@ NetBird is an open-source VPN and remote access platform that provides secure pe
 - [https://github.com/magicsword-io/LOLRMM/issues/81](https://github.com/magicsword-io/LOLRMM/issues/81)
 - [https://www.trellix.com/en-in/blogs/research/a-flyby-on-the-cfos-inbox-spear-phishing-campaign-targeting-financial-executives-with-netbird-deployment/](https://www.trellix.com/en-in/blogs/research/a-flyby-on-the-cfos-inbox-spear-phishing-campaign-targeting-financial-executives-with-netbird-deployment/)
 - [https://hunt.io/blog/apt-muddywater-deploys-multi-stage-phishing-to-target-cfos](https://hunt.io/blog/apt-muddywater-deploys-multi-stage-phishing-to-target-cfos)
+- [https://netbird.io/knowledge-hub/netbird-response-to-spear-phishing-campaign-targeting-financial-executives](https://netbird.io/knowledge-hub/netbird-response-to-spear-phishing-campaign-targeting-financial-executives)
+- [https://www.centripetal.ai/threat-research/threat-actors-abuse-netbird-in-spear-phishing-campaign-targeting-finance-executives](https://www.centripetal.ai/threat-research/threat-actors-abuse-netbird-in-spear-phishing-campaign-targeting-finance-executives)
+- [https://thehackernews.com/2025/06/fake-recruiter-emails-target-cfos-using.html](https://thehackernews.com/2025/06/fake-recruiter-emails-target-cfos-using.html)
 - [https://netbird.io/use-cases/remote-access](https://netbird.io/use-cases/remote-access)
+- [https://docs.netbird.io/how-to/installation](https://docs.netbird.io/how-to/installation)
 - [https://github.com/netbirdio/netbird](https://github.com/netbirdio/netbird)
+- [https://github.com/netbirdio/netbird/releases/latest](https://github.com/netbirdio/netbird/releases/latest)
 
 ### Acknowledgements
 - jacobholtz (@jacobholtz)

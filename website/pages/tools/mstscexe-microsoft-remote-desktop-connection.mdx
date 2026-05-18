@@ -1,0 +1,88 @@
+---
+description: "mstsc.exe is the built-in Microsoft Remote Desktop Connection (RDC) client that ships with all supported Windows versions. The \"MSTSC\" name is a historical acronym for \"Microsoft Terminal Services Client\" \u2014 the product was renamed from Terminal Services to Remote Desktop Services, but the binary kept the original name. It is signed by Microsoft and located in %SystemRoot%\\System32\\mstsc.exe. Adversaries abuse the native RDP client for interactive lateral movement (T1021.001) and as a living-off-the-land remote-access pathway because it is present, signed, and frequently allow-listed in enterprise environments. This entry consolidates the previous duplicate entries \"Microsoft RDP\" and \"Microsoft TSC\", which described the same binary under different names.  **IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only."
+title: "mstsc.exe (Microsoft Remote Desktop Connection)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# mstsc.exe (Microsoft Remote Desktop Connection)
+
+mstsc.exe is the built-in Microsoft Remote Desktop Connection (RDC) client
+that ships with all supported Windows versions. The "MSTSC" name is a
+historical acronym for "Microsoft Terminal Services Client" — the product
+was renamed from Terminal Services to Remote Desktop Services, but the
+binary kept the original name. It is signed by Microsoft and located in
+%SystemRoot%\System32\mstsc.exe. Adversaries abuse the native RDP client
+for interactive lateral movement (T1021.001) and as a living-off-the-land
+remote-access pathway because it is present, signed, and frequently
+allow-listed in enterprise environments. This entry consolidates the
+previous duplicate entries "Microsoft RDP" and "Microsoft TSC", which
+described the same binary under different names.
+
+**IMPORTANT**: This tool is signed with legitimate Microsoft Corporation
+certificates that are also used to sign numerous other Microsoft products
+and Windows components. Do NOT blindly block these certificate thumbprints
+as doing so will break essential Windows functionality and other Microsoft
+applications in your environment. Use certificate data for detection,
+hunting, and analysis purposes only.
+
+
+<BlockBanner name={"mstsc.exe (Microsoft Remote Desktop Connection)"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={"https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc"}
+         lastModified={"2026-05-04"}
+         privileges={"User"}
+         free={ true }
+         verification={ true }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Windows\\System32\\mstsc.exe", "*Windows\\System32\\mstsc.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Interactive remote desktop session over RDP", "Connection profile management via .rdp files", "Session shadowing (/shadow, /control)", "Restricted Admin and Remote Guard credential-protection modes"] }/>
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["mstsc.exe"], "company_names": [], "signer_names": ["Microsoft Corporation", "Power Software Limited"], "certificates": [{"signer_name": "Power Software Limited", "certificate_thumbprint": "C8DB5C8424B346AD72D19F40BD63B5EC0C84E677", "tbs_sha256": "7EDC698ACA865B764240F7E971A1E37480B92A0732889616343B31590D2A9E24", "tbs_sha1": ""}, {"signer_name": "Microsoft Corporation", "issuer": "CN=Microsoft Code Signing PCA 2011", "certificate_thumbprint": "8F985BE8FD256085C90A95D3C74580511A1DB975", "tbs_sha256": "3D7ECEA41F3A81E648E26BF630378BE677204330A6A7C3E6E6971A2B6C3B9C0D", "tbs_sha1": "C71EABE2369212728EF4949B59A97A345FBF6CAE", "valid_from": "2024-09-12T20:11:14+00:00", "valid_to": "2025-09-11T20:11:14+00:00"}, {"signer_name": "win.rar GmbH", "certificate_thumbprint": "729AE1F8B489DE176CC099FF49937F85F9E412F7", "src_file_sha256": "39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a", "src_file_path": "downloaded_files/mstsc/39baa167de334fef185ae8b97e8c709a307eed08e80fe115577c59a05200a13a", "src_file_company": "Alexander Roshal"}]} }/>
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "%USERPROFILE%\\Documents\\Default.rdp", "Description": "Hidden default RDP connection profile created by mstsc.exe.", "OS": "Windows"}, {"File": "%SystemRoot%\\System32\\termsrv.exe", "Description": "Server-side Terminal Services / Remote Desktop Services host service that listens for inbound mstsc.exe sessions on TCP/3389. Present on the destination, not the client originating the connection.", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKCU\\Software\\Microsoft\\Terminal Server Client\\Default", "Description": "Most-recently-used (MRU) list of remote hosts connected to via mstsc.exe."}, {"Path": "HKCU\\Software\\Microsoft\\Terminal Server Client\\Servers", "Description": "Per-host subkeys recording usernames and gateway hints used by mstsc.exe."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "RDP traffic initiated by mstsc.exe to a Remote Desktop Session Host or RD Gateway", "Domains": [], "Ports": [3389]}] }/>
+
+
+
+
+### Detections
+- Detects potential process activity of the mstsc.exe Remote Desktop Connection client.
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mstsc_processes_sigma.yml)
+
+### References
+- [https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc](https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc)
+- [https://learn.microsoft.com/windows-server/administration/windows-commands/remote-desktop-services-terminal-services-command-reference](https://learn.microsoft.com/windows-server/administration/windows-commands/remote-desktop-services-terminal-services-command-reference)
+- [https://learn.microsoft.com/troubleshoot/windows-server/remote/terminal-server-startup-connection-application](https://learn.microsoft.com/troubleshoot/windows-server/remote/terminal-server-startup-connection-application)
+- [https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/remote-desktop-windows-urdc](https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/remote-desktop-windows-urdc)
+- [https://attack.mitre.org/techniques/T1021/001/](https://attack.mitre.org/techniques/T1021/001/)
+
