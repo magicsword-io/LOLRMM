@@ -51,6 +51,12 @@ ninja-backup.com,NinjaRMM
 fastviewer.com,FastViewer
 anyplace-control.com,Anyplace Control
 cloudflare.com/products/tunnel/,CloudFlare Tunnel
+faronics.com,Faronics Insight
+www.faronics.com,Faronics Insight
+support.faronics.com,Faronics Insight
+docs.faronics.com,Faronics Insight
+insight,Faronics Insight
+*.local,Faronics Insight
 prod.addigy.com,Addigy
 grtmprod.addigy.com,Addigy
 agents.addigy.com,Addigy
@@ -300,6 +306,13 @@ my-sharepoint-inc.com,NetBird
 my1cloudlive.com,NetBird
 my2cloudlive.com,NetBird
 web-16fe.app,NetBird
+deepfreeze.com,Faronics Deep Freeze
+www.deepfreeze.com,Faronics Deep Freeze
+faronicscloud.com,Faronics Deep Freeze
+cloud.faronics.com,Faronics Deep Freeze
+upd.faronicslabs.com,Faronics Deep Freeze
+faronics.com,Faronics Deep Freeze
+www.faronics.com,Faronics Deep Freeze
 api.remsupp.com,RemSupp
 download.remsupp.com,RemSupp
 *.anyviewer.com,AnyViewer
@@ -424,6 +437,29 @@ instanthousecall.com,Instant Housecall
 fortra.com,Fortra
 zerotier.com,ZeroTier
 *.zerotier.com,ZeroTier
+deploy.faronics.com,Faronics Deploy
+www.faronicsdeploy.com,Faronics Deploy
+faronicscloud.com,Faronics Deploy
+nv0mddxkh7.execute-api.us-west-2.amazonaws.com,Faronics Deploy
+29qoj3q0yf.execute-api.us-west-2.amazonaws.com,Faronics Deploy
+8z5x4rqbxi.execute-api.eu-west-1.amazonaws.com,Faronics Deploy
+1wuccjc4a3.execute-api.eu-west-1.amazonaws.com,Faronics Deploy
+faronics-deploy-na-production-installers.s3.us-west-2.amazonaws.com,Faronics Deploy
+faronics-deploy-int-production-installers.s3.eu-west-1.amazonaws.com,Faronics Deploy
+remotepro-us-west-2.faronics.com,Faronics Deploy
+remotepro-us-east-1.faronics.com,Faronics Deploy
+remotepro-ca-central-1.faronics.com,Faronics Deploy
+remotepro-eu-west-1.faronicsdeploy.com,Faronics Deploy
+remotepro-ap-southeast-1.faronicsdeploy.com,Faronics Deploy
+remotepro-sa-east-1.faronicsdeploy.com,Faronics Deploy
+faronics.com,Faronics Deploy
+support.faronics.com,Faronics Deploy
+docs.faronics.com,Faronics Deploy
+upd.faronicslabs.com,Faronics Deploy
+upd.faronicslabs.com,Faronics Core
+faronics.com,Faronics Core
+www.faronics.com,Faronics Core
+*.local,Faronics Core
 meshcentral.com,MeshCentral
 *.spytech-web.com,SpyAnywhere
 spyanywhere.com,SpyAnywhere
