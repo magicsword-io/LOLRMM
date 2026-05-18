@@ -18,7 +18,6 @@ detection:
         TargetFilename|endswith:
             - 'C:\Program Files\ManageEngine\ServiceDesk\*'
             - 'C:\Users\*\AppData\Local\Temp\{*}\ManageEngine_ServiceDesk_Plus.exe'
-            - 'C:\Users\*\AppData\Local\Temp\{*}\ISBEW64.exe'
     condition: selection
 falsepositives:
     - Legitimate use of ManageEngine ServiceDesk Plus
