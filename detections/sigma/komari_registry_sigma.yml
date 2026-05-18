@@ -1,0 +1,24 @@
+title: Potential Komari RMM Tool Registry Activity
+id: 0dd44c0a-821b-54db-82f9-6a5ddf6ab236
+status: experimental
+description: |
+    Detects potential registry activity of Komari RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        TargetObject|contains:
+            - 'HKLM\System\CurrentControlSet\Services\komari-agent'
+            - 'HKLM\System\CurrentControlSet\Services\Windows Update Service'
+    condition: selection
+falsepositives:
+    - Legitimate use of Komari
+level: medium

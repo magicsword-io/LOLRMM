@@ -1,0 +1,28 @@
+title: Potential Komari RMM Tool Network Activity
+id: 4bc4fbf6-fbfa-53cb-a960-184e2be9c2d1
+status: experimental
+description: |
+    Detects potential network activity of Komari RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'github.com'
+            - 'raw.githubusercontent.com'
+            - 'ghcr.io'
+            - 'komari-document.pages.dev'
+            - 'www.komari.wiki'
+            - 'raw.githubusercontent.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of Komari
+level: medium
