@@ -74,9 +74,9 @@ Artifacts:
           Ports:
               - 80
               - 443
-        - Description: Faronics Core Server <-> Core Agent on-prem communication (administrator-supplied Core Server hostname / IP). Default Faronics Core Server listener and Core Agent ports are documented by Faronics.
+        - Description: Faronics Core Server <-> Core Agent on-prem communication. The Core Server hostname/IP is administrator-supplied (no fixed vendor domain) — hunt on TCP/7751-7752 to/from on-prem Core Server hosts and pair with the Disk / Registry / Process artifacts above. Default Faronics Core Server listener and Core Agent ports are documented by Faronics.
           Domains:
-              - '*.local'
+              - user_managed
           Ports:
               - 7751
               - 7752
