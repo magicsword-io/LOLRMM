@@ -1,0 +1,30 @@
+title: Potential LocalXpose RMM Tool Process Activity
+id: e4a2242d-e715-5aac-9b0c-4fea9cc8f93f
+status: experimental
+description: |
+    Detects potential processes activity of LocalXpose RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'loclx.exe'
+            - 'loclx.exe'
+            - 'loclx.exe'
+    selection_image:
+        Image|endswith:
+            - 'loclx.exe'
+            - 'loclx.exe'
+            - 'loclx.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of LocalXpose
+level: medium

@@ -1,0 +1,26 @@
+title: Potential Dataplicity RMM Tool File Activity
+id: 984c9c4d-0bce-5c03-bdd3-d043a4c414bb
+status: experimental
+description: |
+    Detects potential files activity of Dataplicity RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - '/opt/dataplicity/tuxtunnel/manager'
+            - '/opt/dataplicity/credentials'
+            - '/etc/systemd/system/dataplicity.service'
+            - '/etc/init.d/dataplicity'
+    condition: selection
+falsepositives:
+    - Legitimate use of Dataplicity
+level: medium

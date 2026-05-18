@@ -1,0 +1,25 @@
+title: Potential LocalXpose RMM Tool File Activity
+id: b87c5358-c728-593f-bf67-7d3229c91564
+status: experimental
+description: |
+    Detects potential files activity of LocalXpose RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'loclx.exe'
+            - '%APPDATA%\loclx\config.yaml'
+            - '~/.loclx/config.yaml'
+    condition: selection
+falsepositives:
+    - Legitimate use of LocalXpose
+level: medium
