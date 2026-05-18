@@ -191,6 +191,21 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
             return text.replace("\n", " ").strip()
         return text
 
+    def mdx_escape(text):
+        if not isinstance(text, str):
+            return text
+        pattern = re.compile(
+            r"(?P<code>``[^`\n]+?``|`[^`\n]+?`)"
+            r"|(?P<ph><[a-zA-Z_][\w.\-]*>)"
+        )
+
+        def repl(match):
+            if match.group("code"):
+                return match.group("code")
+            return f"`{match.group('ph')}`"
+
+        return pattern.sub(repl, text)
+
     def without_certificate_der(code_signing):
         if not isinstance(code_signing, dict):
             return code_signing
@@ -202,6 +217,7 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
         return sanitized
 
     j2_env.filters["clean_multiline"] = clean_multiline
+    j2_env.filters["mdx_escape"] = mdx_escape
     j2_env.filters["without_certificate_der"] = without_certificate_der
     j2_env.globals.update(dump=json.dumps)
     j2_env.globals.update(escape=re.escape)
