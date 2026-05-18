@@ -26,7 +26,7 @@ GoToMyPC is a remote monitoring and management (RMM) tool. More information will
 />
 
 #### Installation Paths
-<Card code={ ["C:\\Program Files (x86)\\GoToMyPC\\*"] }/>
+<Card code={ ["C:\\Program Files (x86)\\GoToMyPC\\*", "G2M.exe", "%APPDATA%\\GoToMeeting\\G2M.exe"] }/>
 
 
 
@@ -37,7 +37,7 @@ GoToMyPC is a remote monitoring and management (RMM) tool. More information will
 
 #### Disk Artifacts
 <EuiSpacer size="xl"/>
-<DiskArtifacts data={ [{"File": "%AppData%\\GoTo\\Logs\\goto.log", "Description": "N/A", "OS": "Windows"}] }/>
+<DiskArtifacts data={ [{"File": "%AppData%\\GoTo\\Logs\\goto.log", "Description": "N/A", "OS": "Windows"}, {"File": "%APPDATA%\\GoToMeeting\\G2M.exe", "Description": "Legitimate, LogMeIn-signed GoToMeeting binary observed in the wild as a DLL-search-order-hijacking host. The Zscaler OpenClaw campaign (May 2025) shipped G2M.exe inside a malicious MSI alongside a malicious `g2m.dll` placed in the same directory so the signed binary loaded the attacker DLL on launch, then decrypted Remcos RAT shellcode. Hunt for `G2M.exe` running with a non-LogMeIn-signed `g2m.dll` next to it.", "OS": "Windows"}] }/>
 
 
 #### Registry Artifacts
@@ -63,6 +63,9 @@ GoToMyPC is a remote monitoring and management (RMM) tool. More information will
 - [https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#](https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#)
 - [https://support.goto.com/training/help/how-do-i-configure-gototraining-to-work-with-firewalls](https://support.goto.com/training/help/how-do-i-configure-gototraining-to-work-with-firewalls)
 - [https://ruler-project.github.io/ruler-project/RULER/remote/Citrix%20GoToMyPC/](https://ruler-project.github.io/ruler-project/RULER/remote/Citrix%20GoToMyPC/)
+- [https://www.zscaler.com/blogs/security-research/malicious-openclaw-skill-distributes-remcos-rat-and-ghostloader](https://www.zscaler.com/blogs/security-research/malicious-openclaw-skill-distributes-remcos-rat-and-ghostloader)
+- [https://www.virustotal.com/gui/file/0d3ca4872e757fa406c10aa6893e831c2aaadce0687537d14fdce1702517b2d0/behavior](https://www.virustotal.com/gui/file/0d3ca4872e757fa406c10aa6893e831c2aaadce0687537d14fdce1702517b2d0/behavior)
 
 ### Acknowledgements
 - Phill Moore (@phillmoore)
+- Daniel Koifman (@KoifSec)

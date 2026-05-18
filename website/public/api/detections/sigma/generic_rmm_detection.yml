@@ -17,6 +17,7 @@ logsource:
 detection:
   selection:
     Image|endswith:
+    - \\%APPDATA%\GoToMeeting\G2M.exe
     - \\%APPDATA%\JWrapper-SimpleSetup\*
     - \\%ProgramData%\Tiflux\*
     - \\%USERPROFILE%\\AppData\\Local\\Temp\\SupremoRemoteDesktop\\
@@ -266,6 +267,7 @@ detection:
     - \\FixMeit Expert Setup.exe
     - \\FixMeit Unattended Access Setup.exe
     - \\FixMeitClient*.exe
+    - \\G2M.exe
     - \\GoTo Assist Opener.exe
     - \\GoToResolveExternalModuleHandler.exe
     - \\GoToResolveFileManager.exe
