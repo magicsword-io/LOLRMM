@@ -1,5 +1,5 @@
 Name: ShellHub
-Category: RMM
+Category: RAT
 Description: |
     ShellHub (cloud.shellhub.io / shellhub.io) is an open-source SSH gateway that enrolls devices via a per-tenant install script and gives operators browser-based remote terminal access through the ShellHub web dashboard. The agent installs via `curl -sSf "https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>" | sh` and registers the host into the operator's tenant; subsequent SSH connections are brokered through the ShellHub cloud over the persistent agent connection, with no inbound firewall change required on the device. Catalogued by the LOTTunnels project under the "shell access" category; documentation explicitly notes potential misuse by "insiders as well as threat actors" for "a variety of malicious tasks". Both a hosted SaaS (cloud.shellhub.io) and a self-hostable Docker deployment exist.
 Author: '@MHaggis'

@@ -1,5 +1,5 @@
 Name: PiTunnel
-Category: RMM
+Category: RAT
 Description: |
     PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister product of Dataplicity from Wildfoundry) that exposes local services and a persistent remote shell through the `*.pitunnel.com` tenant infrastructure. The agent installs via a curl|sudo bash one-liner (`curl -s https://pitunnel.com/get/<TOKEN> | sudo bash`) and supports persistent named tunnels via flags like `pitunnel --port=<PORT> --name=vnc --persist`. After install the operator can open arbitrary local TCP listeners (SSH, RDP, VNC, web) to the PiTunnel cloud for inbound interactive access without any firewall change on the victim host. Catalogued by the LOTTunnels project under the "shell access" category.
 Author: '@MHaggis'

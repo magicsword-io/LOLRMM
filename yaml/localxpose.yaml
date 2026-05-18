@@ -1,5 +1,5 @@
 Name: LocalXpose
-Category: RMM
+Category: RAT
 Description: |
     LocalXpose (loclx) is a free/subscription tunneling service from localxpose.io that exposes local TCP/UDP/HTTP services over the internet via the operator-controlled `*.localxpose.io` infrastructure. Marketed for developer use cases (webhook testing, local-server sharing), it is catalogued by the LOTTunnels project under the "shell access" category because the `loclx tunnel tcp/udp --port <PORT>` command pattern can expose an SSH or RDP listener through the operator's tenant subdomain, providing remote interactive access without a traditional RMM agent or open inbound firewall. Documented abuse cases include shell exposure for post-exploitation remote access, HTTP tunneling for data exfiltration, and tunnel-fronted phishing infrastructure.
 Author: '@MHaggis'
