@@ -18739,6 +18739,9 @@
                     "Filename": "G2MChat.exe"
                 },
                 {
+                    "Filename": "G2M.exe"
+                },
+                {
                     "Filename": "G2MCodecInstExtractor.exe"
                 },
                 {
@@ -18841,7 +18844,9 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "C:\\Program Files (x86)\\GoToMyPC\\*"
+                "C:\\Program Files (x86)\\GoToMyPC\\*",
+                "G2M.exe",
+                "%APPDATA%\\GoToMeeting\\G2M.exe"
             ]
         },
         "Artifacts": {
@@ -18849,6 +18854,11 @@
                 {
                     "File": "%AppData%\\GoTo\\Logs\\goto.log",
                     "Description": "N/A",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "%APPDATA%\\GoToMeeting\\G2M.exe",
+                    "Description": "Legitimate, LogMeIn-signed GoToMeeting binary observed in the wild as a DLL-search-order-hijacking host. The Zscaler OpenClaw campaign (May 2025) shipped G2M.exe inside a malicious MSI alongside a malicious `g2m.dll` placed in the same directory so the signed binary loaded the attacker DLL on launch, then decrypted Remcos RAT shellcode. Hunt for `G2M.exe` running with a non-LogMeIn-signed `g2m.dll` next to it.",
                     "OS": "Windows"
                 }
             ],
@@ -18900,12 +18910,18 @@
         "References": [
             "https://support.logmeininc.com/gotomypc/help/what-are-the-optimal-firewall-configurations#",
             "https://support.goto.com/training/help/how-do-i-configure-gototraining-to-work-with-firewalls",
-            "https://ruler-project.github.io/ruler-project/RULER/remote/Citrix%20GoToMyPC/"
+            "https://ruler-project.github.io/ruler-project/RULER/remote/Citrix%20GoToMyPC/",
+            "https://www.zscaler.com/blogs/security-research/malicious-openclaw-skill-distributes-remcos-rat-and-ghostloader",
+            "https://www.virustotal.com/gui/file/0d3ca4872e757fa406c10aa6893e831c2aaadce0687537d14fdce1702517b2d0/behavior"
         ],
         "Acknowledgement": [
             {
                 "Person": "Phill Moore",
                 "Handle": "@phillmoore"
+            },
+            {
+                "Person": "Daniel Koifman",
+                "Handle": "@KoifSec"
             }
         ]
     },
