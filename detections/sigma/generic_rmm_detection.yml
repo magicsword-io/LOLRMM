@@ -212,6 +212,7 @@ detection:
     - \\C:\Program Files\bsag\*
     - \\C:\Program Files\bsag\bma\*
     - \\C:\Program Files\ehorus_agent\*
+    - \\C:\Program Files\nezha\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
     - \\C:\ProgramData\Faronics\FCAForStartupMonitor.msi
@@ -270,6 +271,7 @@ detection:
     - \\C:\bin\netbird.msi
     - \\C:\bin\trm.zip
     - \\C:\komari\*
+    - \\C:\nezha\*
     - \\C:\temper\trm
     - \\CBBackupPlan.exe
     - \\CagService.exe
@@ -490,6 +492,7 @@ detection:
     - \\accessserver.exe
     - \\addigy-*.pkg
     - \\aeroadmin.exe
+    - \\agent
     - \\agent-installer-any.exe
     - \\agent32.exe
     - \\agent64.exe
@@ -533,6 +536,8 @@ detection:
     - \\cteshostsvc.exe
     - \\ctespersitence.exe
     - \\ctiserv.exe
+    - \\dashboard
+    - \\dashboard-windows-amd64.exe
     - \\dcagentregister.exe
     - \\dcagentservice.exe
     - \\dd.exe
@@ -665,6 +670,11 @@ detection:
     - \\neturo.exe
     - \\netviewer*.exe
     - \\netviewer.exe
+    - \\nezha-agent
+    - \\nezha-agent.exe
+    - \\nezha-agent.service
+    - \\nezha-dashboard.service
+    - \\nezha_agent
     - \\ngrok.exe
     - \\ngstw32.exe
     - \\nhostsvc.exe

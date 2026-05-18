@@ -213,6 +213,7 @@ Name,Category,Description,Author
 [JollysFastVNC](/rmm_tools/jollysfastvnc),RAT,JollysFastVNC is a remote monitoring and management (RMM) tool. More information will be added as it...,
 [Bluetrait](/rmm_tools/bluetrait),RAT,Bluetrait is a Remote Monitoring and Management (RMM) tool designed to provide IT administrators and...,The Haag
 [Quick Assist](/rmm_tools/quick-assist),RAT,Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it ...,
+[Nezha](/rmm_tools/nezha),RMM,"Nezha (nezhahq/nezha on GitHub) is a self-hosted, lightweight, open-source server and website monito...",@MHaggis
 [MEGAsync](/rmm_tools/megasync),RAT,MEGAsync is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [ezHelp](/rmm_tools/ezhelp),RMM,ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [ToDesk](/rmm_tools/todesk),RMM,ToDesk is a remote monitoring and management (RMM) tool. More information will be added as it become...,

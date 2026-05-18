@@ -20261,6 +20261,246 @@
         }
     },
     {
+        "Name": "Nezha",
+        "Category": "RMM",
+        "Description": "Nezha (nezhahq/nezha on GitHub) is a self-hosted, lightweight, open-source server and website monitoring / O&M tool written in Go. The architecture is a central Dashboard plus a per-host Agent that maintains a persistent gRPC connection back to the Dashboard for telemetry and remote operations. The Agent ships first-class capabilities by default — interactive WebSSH terminals, arbitrary command execution, file management, scheduled and triggered task execution, and batch operations across the entire fleet — and runs at SYSTEM on Windows or root on Linux/macOS/FreeBSD/OpenWRT/Synology without requiring privilege escalation.\n\nThreat actors have been observed abusing Nezha as a stealthy post-exploitation RAT. Huntress published \"The Crown Prince, Nezha\" (2025) documenting a China-nexus campaign that compromised 100+ hosts across Taiwan, Japan, South Korea, and Hong Kong via unauthenticated phpMyAdmin → log poisoning → AntSword web shell → Nezha agent deployment → Ghost RAT installation. Ontinue published a parallel writeup (\"The Monitoring Tool That's Also a Perfect RAT\") on the same abuse class. Kaspersky flags the official agent binary as `not-a-virus:HEUR:RemoteAdmin.Win64.NezhaAgent.gen`; Microsoft and most other AV engines do not currently flag it, which is exactly what makes it attractive as a living-off-the-land RMM masquerade.\n",
+        "Author": "@MHaggis",
+        "Created": "2026-05-18",
+        "LastModified": "2026-05-18",
+        "Details": {
+            "Website": "https://nezha.wiki/",
+            "PEMetadata": [
+                {
+                    "Filename": "nezha-agent.exe",
+                    "OriginalFileName": "nezha-agent.exe",
+                    "Description": "Nezha Agent (Go binary, ~20 MB). Maintains a persistent gRPC connection to the Dashboard for telemetry, command execution, WebSSH, and file operations."
+                },
+                {
+                    "Filename": "dashboard-windows-amd64.exe",
+                    "OriginalFileName": "dashboard-windows-amd64.exe",
+                    "Description": "Nezha Dashboard server binary (Windows). Hosts the web console and gRPC endpoint for all connected agents."
+                }
+            ],
+            "Privileges": "SYSTEM/root",
+            "Free": true,
+            "Verification": "Open-source; no signup required (self-hosted Dashboard plus per-tenant agent install)",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "MacOS",
+                "FreeBSD",
+                "OpenWRT",
+                "Synology",
+                "Android"
+            ],
+            "Capabilities": [
+                "Server monitoring (CPU, RAM, disk, network, traffic)",
+                "WebSSH interactive terminal (Dashboard → Agent)",
+                "Arbitrary command execution",
+                "File management (browse, upload, download)",
+                "Scheduled and triggered task execution",
+                "Batch task execution across entire fleet",
+                "DDNS support",
+                "SSL certificate monitoring",
+                "Webpage / port availability monitoring",
+                "Status alerts via Telegram, email, Slack",
+                "REST API for fleet status"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\nezha\\*",
+                "C:\\Program Files\\nezha\\*",
+                "*\\nezha-agent.exe",
+                "nezha-agent.exe",
+                "dashboard-windows-amd64.exe",
+                "/opt/nezha/*",
+                "/opt/nezha/agent",
+                "/opt/nezha/agent/nezha-agent",
+                "/opt/nezha/dashboard",
+                "/etc/systemd/system/nezha-agent.service",
+                "/etc/systemd/system/nezha-dashboard.service",
+                "nezha-agent",
+                "nezha_agent"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\nezha\\nezha-agent.exe",
+                    "Description": "Nezha Agent Windows binary (typical install path; vendor PowerShell installer drops it here)",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\nezha\\config.yml",
+                    "Description": "Nezha Agent configuration file (server address, client_secret, UUID). Sits alongside the agent binary by convention.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/opt/nezha/agent/nezha-agent",
+                    "Description": "Nezha Agent Linux binary (default install path used by the official curl|bash installer)",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/nezha/agent/config.yml",
+                    "Description": "Nezha Agent configuration file on Linux (server address, client_secret, UUID)",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/nezha-agent.service",
+                    "Description": "systemd unit file for Nezha Agent persistence on Linux",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/nezha/dashboard/app",
+                    "Description": "Nezha Dashboard server binary on Linux (when self-hosted dashboard is run on the same host)",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "nezha-agent",
+                    "ImagePath": "C:\\nezha\\nezha-agent.exe",
+                    "Description": "Service installation event for the Nezha Agent (default service name when registered via NSSM or sc.exe). Threat actors have been observed renaming the service to blend with legitimate Windows services (Huntress reports services renamed to mimic Windows infrastructure)."
+                },
+                {
+                    "EventID": 4688,
+                    "ProviderName": "Microsoft-Windows-Security-Auditing",
+                    "LogFile": "Security.evtx",
+                    "CommandLine": "nezha-agent.exe -s <dashboard-host>:<port> -p <client_secret>",
+                    "Description": "Nezha Agent process creation with characteristic `-s` (server) and `-p` (client_secret) command-line flags."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\nezha-agent",
+                    "Description": "Windows service registry key for Nezha Agent (default name; may be renamed by abuse cases)"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Nezha Agent gRPC channel to operator-controlled Dashboard. Dashboard host/port is fully tenant-configurable — no fixed vendor C2 — so the protocol fingerprint (persistent gRPC over TLS) is more reliable than any specific domain.",
+                    "Domains": [
+                        "user_managed"
+                    ],
+                    "Ports": [
+                        5555,
+                        443
+                    ]
+                },
+                {
+                    "Description": "Official Nezha project / documentation / installer hosts. Agent installers pulled directly from GitHub raw content via curl|bash on Linux/macOS or PowerShell on Windows.",
+                    "Domains": [
+                        "github.com",
+                        "raw.githubusercontent.com",
+                        "nezha.wiki",
+                        "nezhahq.github.io"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "China-nexus abuse infrastructure observed by Huntress (Crown Prince Nezha campaign). Threat-actor-controlled Dashboard host and adjacent Ghost RAT C2.",
+                    "Domains": [
+                        "c.mid.al",
+                        "gd.bj2.xyz",
+                        "rism.pages.dev"
+                    ],
+                    "Ports": [
+                        443,
+                        53762
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "SHA256",
+                    "Value": "ebf4b09229a6ad720121a849c3a79af94e677a2e02448bb471b872d13d94fc93"
+                },
+                {
+                    "Type": "SHA256",
+                    "Value": "5c36ff2d85b3de71748282b4836961fc2ca5c0e62741036ce7be5e8855d42cf0"
+                },
+                {
+                    "Type": "SHA256",
+                    "Value": "2b066c93d58e822cb77aa46555cd5849edc69296ba7a41ebbd07d572d8dcf0a6"
+                },
+                {
+                    "Type": "SHA256",
+                    "Value": "48e3f669d147bef1760f090fbb81bdf75d08b75e2d7956c4cf1a66e5617e6152"
+                },
+                {
+                    "Type": "SHA256",
+                    "Value": "d3abd4bae082d4c9918447fe82c521567cc7f9b0e5f2d55999a6e5c40fa7fd54"
+                },
+                {
+                    "Type": "SHA256",
+                    "Value": "056304fc1f7a81f08e957edff4207d5cf9c1934e52e23775da4483ecfad3bbf2"
+                },
+                {
+                    "Type": "IP",
+                    "Value": "172.245.52.169"
+                },
+                {
+                    "Type": "IP",
+                    "Value": "45.207.220.12"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "Environment variables: NZ_SERVER, NZ_CLIENT_SECRET"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "Process command-line indicators: client_secret, nezhahq"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "AV signature: Kaspersky not-a-virus:HEUR:RemoteAdmin.Win64.NezhaAgent.gen"
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nezha_files_sigma.yml",
+                "Description": "Detects potential file activity of Nezha RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nezha_network_sigma.yml",
+                "Description": "Detects potential network activity of Nezha RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nezha_processes_sigma.yml",
+                "Description": "Detects potential process activity of Nezha RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/nezha_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Nezha RMM tool"
+            }
+        ],
+        "References": [
+            "https://github.com/nezhahq/nezha",
+            "https://nezha.wiki/",
+            "https://www.huntress.com/blog/nezha-china-nexus-threat-actor-tool",
+            "https://www.ontinue.com/resource/nezha-the-monitoring-tool-thats-also-a-perfect-rat/",
+            "https://github.com/ontinue-research/threat-intel-iocs/blob/main/Hunting/2025-12-18-HuntingRules-Nezha.md",
+            "https://www.infosecurity-magazine.com/news/nezha-abused-post-exploitation/",
+            "https://www.virustotal.com/gui/file/ebf4b09229a6ad720121a849c3a79af94e677a2e02448bb471b872d13d94fc93"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "n3l5",
+                "Handle": "@n3l5"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "MEGAsync",
         "Category": "RAT",
         "Description": "MEGAsync is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
