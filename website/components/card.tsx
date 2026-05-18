@@ -50,9 +50,15 @@ type DetailProps = {
 export function Details(props: DetailProps) {
 	const leftItems = [
 		!isEmpty(props.author) && { title: "Author", description: props.author },
-		!isEmpty(props.category) && { title: "Category", description: props.category },
+		!isEmpty(props.category) && {
+			title: "Category",
+			description: props.category,
+		},
 		!isEmpty(props.created) && { title: "Created", description: props.created },
-		!isEmpty(props.lastModified) && { title: "Last Modified", description: props.lastModified },
+		!isEmpty(props.lastModified) && {
+			title: "Last Modified",
+			description: props.lastModified,
+		},
 	].filter(Boolean);
 
 	const rightItems = [
@@ -60,16 +66,25 @@ export function Details(props: DetailProps) {
 			title: "Website",
 			description: <EuiLink href={props.website}>{props.website}</EuiLink>,
 		},
-		!isEmpty(props.privileges) && { title: "Privileges", description: props.privileges },
+		!isEmpty(props.privileges) && {
+			title: "Privileges",
+			description: props.privileges,
+		},
 		{
 			title: "Pricing",
-			description: isBoolean(props.free) ? (props.free ? "Free" : "Paid") : "Unknown",
+			description: isBoolean(props.free)
+				? props.free
+					? "Free"
+					: "Paid"
+				: "Unknown",
 		},
 		{
 			title: "Verification",
 			description: (
 				<EuiIcon
-					type={props.verification ? "checkInCircleFilled" : "minusInCircleFilled"}
+					type={
+						props.verification ? "checkInCircleFilled" : "minusInCircleFilled"
+					}
 					color={props.verification ? "success" : "danger"}
 				/>
 			),
@@ -588,7 +603,8 @@ export function BlockBanner({ name }: { name: string }) {
 	return (
 		<div
 			style={{
-				background: "linear-gradient(135deg, #0d1117 0%, #101d2b 50%, #0a1a1a 100%)",
+				background:
+					"linear-gradient(135deg, #0d1117 0%, #101d2b 50%, #0a1a1a 100%)",
 				border: "1px solid #1a3a2a",
 				borderLeft: "4px solid #2ebd6e",
 				borderRadius: "12px",
@@ -622,32 +638,30 @@ export function BlockBanner({ name }: { name: string }) {
 				</span>
 			</div>
 			<a
-				href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner_logo"
+				href="https://www.magicsword.io/?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner_logo"
 				target="_blank"
 				rel="noopener noreferrer"
-				style={{ textDecoration: 'none' }}
+				style={{ textDecoration: "none" }}
 			>
 				<img
 					alt="MagicSword Logo"
-					src="/images/magicsword_dark.png"
+					src="/images/magicsword-logo-dark.svg"
 					style={{
-						width: '180px',
-						height: 'auto',
-						objectFit: 'contain',
+						width: "180px",
+						height: "auto",
+						objectFit: "contain",
 					}}
 				/>
 			</a>
 			<EuiButton
-				href="https://www.magicsword.io/plan?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner"
+				href="https://www.magicsword.io/?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=block_banner"
 				target="_blank"
 				style={{
-					backgroundColor: '#2ebd6e',
-					borderColor: '#2ebd6e',
-					color: '#0d1117',
+					backgroundColor: "#2ebd6e",
+					borderColor: "#2ebd6e",
+					color: "#0d1117",
 				}}
 				fill={true}
-				iconType="arrowRight"
-				iconSide="right"
 			>
 				Get Started Free
 			</EuiButton>
