@@ -1,0 +1,56 @@
+title: Potential Faronics Deploy RMM Tool Process Activity
+id: d827e66e-2b69-5cc7-9caa-1dcc00bda540
+status: experimental
+description: |
+    Detects potential processes activity of Faronics Deploy RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'FaronicsDeployAgent.exe'
+            - 'FWAService.exe'
+            - 'FWA_UI_Agent.exe'
+            - 'FRCServer.exe'
+            - 'FaronicsSA.exe'
+            - 'FSSInstaller.exe'
+            - 'ModulesUpgradeMgr.exe'
+            - 'NotificationHelper.exe'
+            - 'UserNotificationHelper.exe'
+            - 'MigrationHelper_32.exe'
+            - 'MigrationHelper_64.exe'
+            - 'FaronicsDeployAgent.exe'
+            - 'FWAWebInstaller_*.exe'
+            - 'FWAService.exe'
+            - 'FWA_UI_Agent.exe'
+            - 'CloudWksInstall.exe'
+    selection_image:
+        Image|endswith:
+            - 'FaronicsDeployAgent.exe'
+            - 'FWAService.exe'
+            - 'FWA_UI_Agent.exe'
+            - 'FRCServer.exe'
+            - 'FaronicsSA.exe'
+            - 'FSSInstaller.exe'
+            - 'ModulesUpgradeMgr.exe'
+            - 'NotificationHelper.exe'
+            - 'UserNotificationHelper.exe'
+            - 'MigrationHelper_32.exe'
+            - 'MigrationHelper_64.exe'
+            - 'FaronicsDeployAgent.exe'
+            - 'FWAWebInstaller_*.exe'
+            - 'FWAService.exe'
+            - 'FWA_UI_Agent.exe'
+            - 'CloudWksInstall.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of Faronics Deploy
+level: medium
