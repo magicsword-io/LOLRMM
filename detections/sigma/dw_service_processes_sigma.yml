@@ -5,8 +5,7 @@ description: |
     Detects potential processes activity of DW Service RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
-    - https://www.rapid7.com/blog/post/tr-muddying-tracks-state-sponsored-shadow-behind-chaos-ransomware/
-author: LOLRMM Project, Daniel Koifman (@KoifSec)
+author: LOLRMM Project
 date: 2025-12-01
 tags:
     - attack.execution
@@ -19,12 +18,12 @@ detection:
         ParentImage|endswith:
             - dwagsvc.exe
             - dwagent.exe
-            - dwaglnc.exe
+            - dwagsvc.exe
     selection_image:
         Image|endswith:
             - dwagsvc.exe
             - dwagent.exe
-            - dwaglnc.exe
+            - dwagsvc.exe
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DW Service
