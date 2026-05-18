@@ -1,0 +1,81 @@
+---
+description: "Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session (\"Remote Pro\"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151."
+title: "Faronics Deploy"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Faronics Deploy
+
+Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session ("Remote Pro"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151.
+
+<BlockBanner name={"Faronics Deploy"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RMM"}
+         created={"2026-05-04"}
+         website={"https://www.faronics.com/products/deploy"}
+         lastModified={"2026-05-04"}
+         privileges={"SYSTEM"}
+         free={ "30 day trial" }
+         verification={ "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA)" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\*", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsDeployAgent.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWA_UI_Agent.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FRCServer.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsSA.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FSSInstaller.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\ModulesUpgradeMgr.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\NotificationHelper.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\UserNotificationHelper.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\MigrationHelper_32.exe", "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\MigrationHelper_64.exe", "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\*", "FaronicsDeployAgent.exe", "FWAWebInstaller_*.exe", "FWAService.exe", "FWA_UI_Agent.exe", "CloudWksInstall.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "MacOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Cloud-hosted RMM console (deploy.faronics.com)", "Software / OS / patch deployment", "Application install, uninstall, and update", "Hardware and software inventory", "Integrated remote control via Remote Pro (browser), RDP, and VNC", "Custom application packaging", "Active Directory MSI deployment"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsDeployAgent.exe", "Description": "Faronics Deploy Agent main executable", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe", "Description": "Faronics Deploy Cloud Agent service (registered as FWASvc)", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWA_UI_Agent.exe", "Description": "Faronics Deploy user-interface agent", "OS": "Windows"}, {"File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FRCServer.exe", "Description": "Faronics Remote Control server component", "OS": "Windows"}, {"File": "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\CloudAgentLogs.LOG", "Description": "Faronics Deploy / Cloud Agent activity log", "OS": "Windows"}, {"File": "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\Logs\\FWASvc.log", "Description": "Faronics Deploy service log (FWASvc)", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "FWASvc", "ImagePath": "\"C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe\"", "Description": "Service installation event for the Faronics Deploy / Cloud Agent service."}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\Faronics", "Description": "Top-level Faronics product registry hive (shared with other Faronics products; presence of Faronics Deploy subkeys confirms install)"}, {"Path": "HKLM\\SOFTWARE\\WOW6432Node\\Faronics\\Faronics Core 3\\Storage Spaces\\Spaces\\FWA", "Description": "Faronics Deploy / Cloud Agent storage-space configuration"}, {"Path": "HKLM\\SOFTWARE\\Classes\\AppID\\FWAService.exe", "Description": "COM AppID registration for the FWAService.exe service host"}, {"Path": "HKLM\\SOFTWARE\\Classes\\{359C24F1-51B5-44CE-8F2D-2FBB1A0FE4EA}\\FWA_GUI_Agent", "Description": "COM CLSID for the Faronics Deploy GUI agent (FWA_GUI_Agent)"}, {"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{581F69E6-A5D1-48C7-9F6F-CC333007F7EB}", "Description": "Faronics Deploy Agent uninstall entry"}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Faronics Deploy console / endpoint sign-up (web)", "Domains": ["deploy.faronics.com", "www.faronicsdeploy.com", "faronicscloud.com"], "Ports": [443]}, {"Description": "Faronics Deploy / Cloud agent management API (AWS API Gateway, us-west-2 and eu-west-1)", "Domains": ["nv0mddxkh7.execute-api.us-west-2.amazonaws.com", "29qoj3q0yf.execute-api.us-west-2.amazonaws.com", "8z5x4rqbxi.execute-api.eu-west-1.amazonaws.com", "1wuccjc4a3.execute-api.eu-west-1.amazonaws.com"], "Ports": [443]}, {"Description": "Faronics Deploy installer / artifact storage (S3, us-west-2 and eu-west-1)", "Domains": ["faronics-deploy-na-production-installers.s3.us-west-2.amazonaws.com", "faronics-deploy-int-production-installers.s3.eu-west-1.amazonaws.com"], "Ports": [443]}, {"Description": "Faronics Deploy Remote Pro browser-based remote-control regional endpoints", "Domains": ["remotepro-us-west-2.faronics.com", "remotepro-us-east-1.faronics.com", "remotepro-ca-central-1.faronics.com", "remotepro-eu-west-1.faronicsdeploy.com", "remotepro-ap-southeast-1.faronicsdeploy.com", "remotepro-sa-east-1.faronicsdeploy.com"], "Ports": [443]}, {"Description": "Faronics support / corporate domains contacted by signed agent binaries", "Domains": ["faronics.com", "support.faronics.com", "docs.faronics.com", "upd.faronicslabs.com"], "Ports": [443]}] }/>
+
+
+
+
+### Detections
+- Detects potential files activity of Faronics Deploy RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_files_sigma.yml)
+- Detects potential network activity of Faronics Deploy RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_network_sigma.yml)
+- Detects potential processes activity of Faronics Deploy RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_processes_sigma.yml)
+- Detects potential registry activity of Faronics Deploy RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_registry_sigma.yml)
+
+### References
+- [https://www.faronics.com/products/deploy](https://www.faronics.com/products/deploy)
+- [https://docs.faronics.com/faronicsdeploy](https://docs.faronics.com/faronicsdeploy)
+- [https://docs.faronics.com/faronicsdeploy/get-started-1/quick-start/pre-requisites/install-deploy-agents/windows-install-guide](https://docs.faronics.com/faronicsdeploy/get-started-1/quick-start/pre-requisites/install-deploy-agents/windows-install-guide)
+- [https://support.faronics.com/help/en-ca/6-faronics-deploy/77-what-port-numbers-and-host-names-are-used-by-faronics-deploy](https://support.faronics.com/help/en-ca/6-faronics-deploy/77-what-port-numbers-and-host-names-are-used-by-faronics-deploy)
+- [https://www.faronics.com/deploy/remote-control](https://www.faronics.com/deploy/remote-control)
+- [https://www.virustotal.com/gui/file/b38229e9ce3a249ff7ac06ee9158e744c023338b570ffaf9bed8fc9b94b944f4](https://www.virustotal.com/gui/file/b38229e9ce3a249ff7ac06ee9158e744c023338b570ffaf9bed8fc9b94b944f4)
+- [https://www.virustotal.com/gui/file/eee04dd4e7dd58d33ffb503686cdac07f88f8bea7bb29dbcd48d6715c198cea9](https://www.virustotal.com/gui/file/eee04dd4e7dd58d33ffb503686cdac07f88f8bea7bb29dbcd48d6715c198cea9)
+
+### Acknowledgements
+- cbecks2 (cbecks2)
+- Michael Haag (@MHaggis)

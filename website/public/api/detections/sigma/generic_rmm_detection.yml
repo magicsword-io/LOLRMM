@@ -61,6 +61,24 @@ detection:
     - \\C:\Program Files (x86)\Bitvise SSH Client\*
     - \\C:\Program Files (x86)\Bluetrait Agent\*
     - \\C:\Program Files (x86)\DesktopCentral_Agent\bin\*
+    - \\C:\Program Files (x86)\Faronics\Deep Freeze\*
+    - \\C:\Program Files (x86)\Faronics\Deep Freeze\Install C-0\*
+    - \\C:\Program Files (x86)\Faronics\Deep Freeze\Install C-1\*
+    - \\C:\Program Files (x86)\Faronics\Faronics Core\*
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\*
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\FRCServer.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\FSSInstaller.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\FWAService.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\FWA_UI_Agent.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\FaronicsDeployAgent.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\FaronicsSA.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\MigrationHelper_32.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\MigrationHelper_64.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\ModulesUpgradeMgr.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\NotificationHelper.exe
+    - \\C:\Program Files (x86)\Faronics\Faronics Deploy Agent\UserNotificationHelper.exe
+    - \\C:\Program Files (x86)\Faronics\Insight Student\*
+    - \\C:\Program Files (x86)\Faronics\Insight Teacher\*
     - \\C:\Program Files (x86)\FleetDeck Agent\*\fd_agent.dll
     - \\C:\Program Files (x86)\FleetDeck Agent\*\fleetdeck_agent.exe
     - \\C:\Program Files (x86)\FleetDeck Agent\fleetdeck_agent_svc.exe
@@ -140,6 +158,13 @@ detection:
     - \\C:\Program Files\Bitvise SSH Server\*
     - \\C:\Program Files\Danware Data\NetOp Packn Deploy\*
     - \\C:\Program Files\Devolutions\Remote Desktop Manager
+    - \\C:\Program Files\Faronics Corporation\Deep Freeze 7.00\*
+    - \\C:\Program Files\Faronics\Core\Console\*
+    - \\C:\Program Files\Faronics\Deep Freeze\*
+    - \\C:\Program Files\Faronics\Faronics Core\*
+    - \\C:\Program Files\Faronics\Faronics Core\Workstation Agent\*
+    - \\C:\Program Files\Faronics\Insight Student\*
+    - \\C:\Program Files\Faronics\Insight Teacher\*
     - \\C:\Program Files\GLPI-Agent\*
     - \\C:\Program Files\GLPI-Agent\etc\*
     - \\C:\Program Files\GLPI-Agent\logs\*
@@ -186,6 +211,8 @@ detection:
     - \\C:\Program Files\ehorus_agent\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
+    - \\C:\ProgramData\Faronics\FCAForStartupMonitor.msi
+    - \\C:\ProgramData\Faronics\StorageSpace\FWA\*
     - \\C:\ProgramData\Getscreen.me\
     - \\C:\ProgramData\IDrive\*
     - \\C:\ProgramData\JWrapper-Remote Access\*
@@ -247,6 +274,7 @@ detection:
     - \\CloudRaSd.exe
     - \\CloudRaService.exe
     - \\CloudRaUtilities.exe
+    - \\CloudWksInstall.exe
     - \\ComodoRemoteControl.exe
     - \\Connect.Backdrop.cloud*.exe
     - \\Connect.exe
@@ -254,7 +282,15 @@ detection:
     - \\ConnectDetector.exe
     - \\ConnectShellSetup*.exe
     - \\ConnectWiseControl*.exe
+    - \\CoreAgentService.exe
     - \\CrossLoopConnect.exe
+    - \\DFC.exe
+    - \\DFInst.exe
+    - \\DFServ.exe
+    - \\DFServEx.exe
+    - \\DFStd.exe
+    - \\DFStdInstall.exe
+    - \\DFWks.exe
     - \\DSGuest.exe
     - \\DameWare Mini Remote Control*.exe
     - \\DameWare Remote Support.exe
@@ -266,7 +302,15 @@ detection:
     - \\DuetSetup.exe
     - \\ERAAgent.exe
     - \\EricomConnectRemoteHost*.exe
+    - \\FIStudentAgent.exe
+    - \\FIStudentSvc.exe
+    - \\FIStudentUI.exe
     - \\FSAgent.msi
+    - \\FWAService.exe
+    - \\FWAWebInstaller_*.exe
+    - \\FWA_UI_Agent.exe
+    - \\FaronicsCoreAgent.exe
+    - \\FaronicsDeployAgent.exe
     - \\FastViewer.exe
     - \\FixMeit Client.exe
     - \\FixMeit Expert Setup.exe
@@ -305,7 +349,6 @@ detection:
     - \\IDComponent.dll
     - \\IDriveEClassic.exe
     - \\IDriveWinSetup.exe
-    - \\ISBEW64.exe
     - \\ISLLight.exe
     - \\ISLLightClient.exe
     - \\ITSMAgent.exe
@@ -318,6 +361,10 @@ detection:
     - \\ImmyUpdater.exe
     - \\ImperoClientSVC.exe
     - \\ImperoInit.exe
+    - \\InsightInstaller.exe
+    - \\InsightInstallerStudent.exe
+    - \\InsightInstallerTeacher.exe
+    - \\InsightSetup.msi
     - \\InstallShield Setup.exe
     - \\InstantHousecall.exe
     - \\ItsmRsp.exe
@@ -380,6 +427,7 @@ detection:
     - \\SMPCSetup.exe
     - \\SRManager.exe
     - \\SRServer.exe
+    - \\STAHelper.exe
     - \\ScreenMeet.Support.exe
     - \\ScreenMeetSupport.exe
     - \\SensoClient.exe
@@ -393,6 +441,7 @@ detection:
     - \\Sorillus-Launcher*.exe
     - \\SplashtopSOS.exe
     - \\Splashtop_Streamer_Windows*.exe
+    - \\StudentSvc.exe
     - \\SupportTool.exe
     - \\SupremoSystem.exe
     - \\Syncro.App.Runner.exe

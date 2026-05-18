@@ -1775,6 +1775,209 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Faronics Insight",
+        "Category": "RMM",
+        "Description": "Faronics Insight is a classroom / lab management platform by Faronics Corporation (Vancouver, BC, Canada) that provides Teacher-to-Student remote control, screen monitoring, screen broadcasting, application and web blocking, keylogging, browser-history collection, and remote command execution across managed Student endpoints. The Insight Student agent (FIStudentAgent.exe / FIStudentSvc.exe / FIStudentUI.exe / STAHelper.exe) installs as a SYSTEM service on the managed device, while the Insight Teacher console drives the Students via an Insight Connector intermediary. While marketed for K-12 / EDU classroom management, the same Teacher → Student remote-control, monitoring, and command capabilities meet the LOLRMM RMM-shape definition and are part of the Faronics product family from issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/insight",
+            "PEMetadata": [
+                {
+                    "Filename": "FIStudentSvc.exe",
+                    "OriginalFileName": "FIStudentSvc.exe",
+                    "Description": "Faronics Insight Student Windows service"
+                },
+                {
+                    "Filename": "FIStudentAgent.exe",
+                    "OriginalFileName": "FIStudentAgent.exe",
+                    "Description": "Faronics Insight Student agent"
+                },
+                {
+                    "Filename": "FIStudentUI.exe",
+                    "OriginalFileName": "FIStudentUI.exe",
+                    "Description": "Faronics Insight Student user-interface process"
+                },
+                {
+                    "Filename": "STAHelper.exe",
+                    "OriginalFileName": "STAHelper.exe",
+                    "Description": "Faronics Insight Student / Teacher helper executable (commonly flagged by AV; vendor-recommended whitelist)"
+                },
+                {
+                    "Filename": "StudentSvc.exe",
+                    "OriginalFileName": "StudentSvc.exe",
+                    "Description": "Insight Student service (legacy filename)"
+                },
+                {
+                    "Filename": "InsightInstaller.exe",
+                    "OriginalFileName": "InsightInstaller.exe",
+                    "Description": "Faronics Insight unified installer"
+                },
+                {
+                    "Filename": "InsightInstallerStudent.exe",
+                    "OriginalFileName": "InsightInstallerStudent.exe",
+                    "Description": "Faronics Insight Student installer"
+                },
+                {
+                    "Filename": "InsightInstallerTeacher.exe",
+                    "OriginalFileName": "InsightInstallerTeacher.exe",
+                    "Description": "Faronics Insight Teacher installer"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "30 day trial",
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA)",
+            "SupportedOS": [
+                "Windows",
+                "MacOS",
+                "ChromeOS",
+                "Android",
+                "iOS"
+            ],
+            "Capabilities": [
+                "Remote control of Student endpoints from the Teacher console",
+                "Real-time screen monitoring and screen broadcasting",
+                "Application and website blocking / allow-listing",
+                "Keylogging and browser-history collection",
+                "Remote command execution and file transfer",
+                "Mass deployment via Faronics Deploy / Active Directory MSI"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Faronics\\Insight Student\\*",
+                "C:\\Program Files\\Faronics\\Insight Teacher\\*",
+                "C:\\Program Files (x86)\\Faronics\\Insight Student\\*",
+                "C:\\Program Files (x86)\\Faronics\\Insight Teacher\\*",
+                "*\\Faronics\\Insight Student\\STAHelper.exe",
+                "*\\Faronics\\Insight Teacher\\STAHelper.exe",
+                "*\\Faronics\\Insight Student\\FIStudentSvc.exe",
+                "*\\Faronics\\Insight Student\\FIStudentAgent.exe",
+                "*\\Faronics\\Insight Student\\FIStudentUI.exe",
+                "FIStudentAgent.exe",
+                "FIStudentSvc.exe",
+                "FIStudentUI.exe",
+                "STAHelper.exe",
+                "StudentSvc.exe",
+                "InsightInstaller.exe",
+                "InsightInstallerStudent.exe",
+                "InsightInstallerTeacher.exe",
+                "InsightSetup.msi"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\FIStudentSvc.exe",
+                    "Description": "Faronics Insight Student Windows service",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\FIStudentAgent.exe",
+                    "Description": "Faronics Insight Student agent",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\FIStudentUI.exe",
+                    "Description": "Faronics Insight Student UI host",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Student\\STAHelper.exe",
+                    "Description": "Faronics Insight Student helper executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Insight Teacher\\STAHelper.exe",
+                    "Description": "Faronics Insight Teacher helper executable",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "FIStudentSvc",
+                    "ImagePath": "\"C:\\Program Files\\Faronics\\Insight Student\\FIStudentSvc.exe\"",
+                    "Description": "Service installation event for Insight Student."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive (shared with other Faronics products)"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\FIStudentSvc",
+                    "Description": "Faronics Insight Student Windows service registration"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Faronics Insight documentation, support, and update infrastructure",
+                    "Domains": [
+                        "faronics.com",
+                        "www.faronics.com",
+                        "support.faronics.com",
+                        "docs.faronics.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Insight Connector intermediary host (administrator-supplied; IP, hostname, or FQDN). Default Teacher / Student communication ports are listed by Faronics in the Insight Quick Install Guide.",
+                    "Domains": [
+                        "insight",
+                        "*.local"
+                    ],
+                    "Ports": [
+                        1313,
+                        8080
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Insight RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Insight RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Insight RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Insight RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/insight",
+            "https://docs.faronics.com/faronics-insight-docs",
+            "https://docs.faronics.com/faronics-insight-docs/installation-and-administration/installation/installing-on-windows/installing-the-insight-student",
+            "https://docs.faronics.com/faronics-insight-docs/installation-and-administration/installation/installing-on-windows/installing-the-insight-student/command-line-installation",
+            "https://www.faronics.com/assets/INS_Manual.pdf",
+            "https://www.virustotal.com/gui/file/7c9436a2cb59e4de9dab8b0a72ce874ddae448dce47b5e07d95d221fffba3ba7",
+            "https://www.virustotal.com/gui/file/647a06a3ab62d848ed5f0e5853825dc8c97954b766ed8c710ec0a1608971a61b"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "Royal Apps",
         "Category": "RMM",
         "Description": "Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -13282,6 +13485,204 @@
         ]
     },
     {
+        "Name": "Faronics Deep Freeze",
+        "Category": "RMM",
+        "Description": "Faronics Deep Freeze is a \"reboot-to-restore\" endpoint protection and management product by Faronics Corporation (Vancouver, BC, Canada). Available as Standard, Enterprise, Cloud, and Mac editions. The Deep Freeze workstation agent (DFServ.exe / DFServEx.exe / DFWks.exe / DFC.exe) installs as a SYSTEM service and is managed either locally with a console password, via the on-prem Enterprise Configuration Administrator, or through Deep Freeze Cloud, where the cloud agent (CloudWksInstall.exe / Faronics Cloud Agent) runs alongside Deep Freeze and ties the endpoint to the Faronics Cloud / Deep Freeze Cloud console for remote freeze/thaw, software updater, anti-virus, anti-executable, MDM, and remote-control capabilities. Listed as a Faronics product family per LOLRMM issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/deep-freeze",
+            "PEMetadata": [
+                {
+                    "Filename": "DFServ.exe",
+                    "OriginalFileName": "DFServ.exe",
+                    "Description": "Deep Freeze workstation service"
+                },
+                {
+                    "Filename": "DFServEx.exe",
+                    "OriginalFileName": "DFServEx.exe",
+                    "Description": "Deep Freeze workstation service (extended host)"
+                },
+                {
+                    "Filename": "DFWks.exe",
+                    "OriginalFileName": "DFWks.exe",
+                    "Description": "Deep Freeze Workstation install program"
+                },
+                {
+                    "Filename": "DFStd.exe",
+                    "OriginalFileName": "DFStd.exe",
+                    "Description": "Deep Freeze Standard runtime"
+                },
+                {
+                    "Filename": "DFStdInstall.exe",
+                    "OriginalFileName": "DFStdInstall.exe",
+                    "Description": "Deep Freeze Standard installer"
+                },
+                {
+                    "Filename": "DFC.exe",
+                    "OriginalFileName": "DFC.exe",
+                    "Description": "Deep Freeze Console / configuration utility"
+                },
+                {
+                    "Filename": "CloudWksInstall.exe",
+                    "OriginalFileName": "CloudWksInstall.exe",
+                    "Description": "Faronics Cloud / Deep Freeze Cloud workstation installer"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "30 day trial",
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert EV Code Signing CA SHA2)",
+            "SupportedOS": [
+                "Windows",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Reboot-to-restore endpoint protection (frozen vs thawed state)",
+                "Centralized management via Deep Freeze Cloud console",
+                "Bundled Software Updater, Anti-Virus, Anti-Executable, MDM, and Remote Connect (remote control) when managed via Faronics Cloud",
+                "Active Directory deployment via MSI Packager",
+                "Silent install / uninstall via DFWks.exe command-line switches"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Faronics\\Deep Freeze\\*",
+                "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\*",
+                "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\Install C-0\\*",
+                "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\Install C-1\\*",
+                "C:\\Program Files\\Faronics Corporation\\Deep Freeze 7.00\\*",
+                "*\\Faronics\\Deep Freeze\\DFServ.exe",
+                "*\\Faronics\\Deep Freeze\\DFServEx.exe",
+                "*\\Faronics\\Deep Freeze\\DFWks.exe",
+                "*\\Faronics\\Deep Freeze\\DFC.exe",
+                "DFServ.exe",
+                "DFServEx.exe",
+                "DFWks.exe",
+                "DFStd.exe",
+                "DFStdInstall.exe",
+                "DFC.exe",
+                "CloudWksInstall.exe",
+                "DFInst.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServ.exe",
+                    "Description": "Deep Freeze workstation service binary",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServEx.exe",
+                    "Description": "Deep Freeze workstation service host",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFWks.exe",
+                    "Description": "Deep Freeze workstation install / control utility",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\Temp\\DFServiceInit.log",
+                    "Description": "Deep Freeze service initialization log",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\<USER>\\AppData\\Local\\Temp\\_$Df\\DFStdInstall.sib",
+                    "Description": "Deep Freeze Standard installer scratch file",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "DFServ",
+                    "ImagePath": "\"C:\\Program Files (x86)\\Faronics\\Deep Freeze\\DFServ.exe\"",
+                    "Description": "Service installation event for Deep Freeze workstation service."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics\\Deep Freeze",
+                    "Description": "Deep Freeze workstation configuration root key"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\DFServ",
+                    "Description": "Deep Freeze workstation Windows service registration"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Deep Freeze Cloud / Faronics Cloud management console",
+                    "Domains": [
+                        "deepfreeze.com",
+                        "www.deepfreeze.com",
+                        "faronicscloud.com",
+                        "cloud.faronics.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics legacy update / activation infrastructure embedded in Deep Freeze installers",
+                    "Domains": [
+                        "upd.faronicslabs.com",
+                        "faronics.com",
+                        "www.faronics.com"
+                    ],
+                    "Ports": [
+                        80,
+                        443
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Deep Freeze RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Deep Freeze RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Deep Freeze RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deep_freeze_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Deep Freeze RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/deep-freeze",
+            "https://docs.faronics.com/deep-freeze-cloud",
+            "https://www.faronics.com/webhelp/DFE/860/EN/Chapter.1.108.html",
+            "https://www.faronics.com/document-library/document/deep-freeze-msi-packager",
+            "https://faronicscloud.com/blogs/news/what-is-faronics-cloud-a-complete-guide-to-cloud-endpoint-management",
+            "https://www.virustotal.com/gui/file/c699e5b33564c03d65e22a272d9164fc8a2e46822d792564fb52d3b45fb5a1e4",
+            "https://www.virustotal.com/gui/file/48f35f01c04192e39b9e51850792e5fbc1a9df31e0f61ab505b1c1c30aaa0b36"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "RemSupp",
         "Category": "RMM",
         "Description": "RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phishing attack. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com. ",
@@ -15597,11 +15998,6 @@
                     "Filename": "ManageEngine_ServiceDesk_Plus.bin",
                     "OriginalFileName": "",
                     "Description": "ManageEngine ServiceDesk Plus binary installer component"
-                },
-                {
-                    "Filename": "ISBEW64.exe",
-                    "OriginalFileName": "",
-                    "Description": "InstallShield wrapper executable (observed in VT sandbox)"
                 }
             ],
             "Privileges": "SYSTEM",
@@ -15623,7 +16019,6 @@
             "InstallationPaths": [
                 "ManageEngine_ServiceDesk_Plus.exe",
                 "ManageEngine_ServiceDesk_Plus.bin",
-                "ISBEW64.exe",
                 "C:\\Program Files\\ManageEngine\\ServiceDesk\\*",
                 "C:\\Program Files (x86)\\ManageEngine\\ServiceDesk\\*"
             ]
@@ -15638,11 +16033,6 @@
                 {
                     "File": "C:\\Users\\*\\AppData\\Local\\Temp\\{*}\\ManageEngine_ServiceDesk_Plus.exe",
                     "Description": "ManageEngine ServiceDesk Plus temporary installer files (verified via VirusTotal sandbox)",
-                    "OS": "Windows"
-                },
-                {
-                    "File": "C:\\Users\\*\\AppData\\Local\\Temp\\{*}\\ISBEW64.exe",
-                    "Description": "InstallShield wrapper temporary files (verified via VirusTotal sandbox)",
                     "OS": "Windows"
                 }
             ],
@@ -19925,6 +20315,260 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Faronics Deploy",
+        "Category": "RMM",
+        "Description": "Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session (\"Remote Pro\"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/deploy",
+            "PEMetadata": [
+                {
+                    "Filename": "FaronicsDeployAgent.exe",
+                    "OriginalFileName": "FaronicsDeployAgent.exe",
+                    "Description": "Faronics Deploy Agent (full installer)"
+                },
+                {
+                    "Filename": "FWAService.exe",
+                    "OriginalFileName": "FWAService.exe",
+                    "Description": "Faronics Deploy / Cloud Agent service host (FWASvc)"
+                },
+                {
+                    "Filename": "FWA_UI_Agent.exe",
+                    "OriginalFileName": "FWA_UI_Agent.exe",
+                    "Description": "Faronics Deploy user-interface agent"
+                },
+                {
+                    "Filename": "FRCServer.exe",
+                    "OriginalFileName": "FRCServer.exe",
+                    "Description": "Faronics Remote Control server component"
+                },
+                {
+                    "Filename": "FaronicsSA.exe",
+                    "OriginalFileName": "FaronicsSA.exe",
+                    "Description": "Faronics Standalone helper"
+                },
+                {
+                    "Filename": "FSSInstaller.exe",
+                    "OriginalFileName": "FSSInstaller.exe",
+                    "Description": "Faronics Storage Spaces installer"
+                },
+                {
+                    "Filename": "NotificationHelper.exe",
+                    "OriginalFileName": "NotificationHelper.exe",
+                    "Description": "Faronics Deploy notification helper"
+                },
+                {
+                    "Filename": "ModulesUpgradeMgr.exe",
+                    "OriginalFileName": "ModulesUpgradeMgr.exe",
+                    "Description": "Faronics Deploy module upgrade manager"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "30 day trial",
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA)",
+            "SupportedOS": [
+                "Windows",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Cloud-hosted RMM console (deploy.faronics.com)",
+                "Software / OS / patch deployment",
+                "Application install, uninstall, and update",
+                "Hardware and software inventory",
+                "Integrated remote control via Remote Pro (browser), RDP, and VNC",
+                "Custom application packaging",
+                "Active Directory MSI deployment"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\*",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsDeployAgent.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWA_UI_Agent.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FRCServer.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsSA.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FSSInstaller.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\ModulesUpgradeMgr.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\NotificationHelper.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\UserNotificationHelper.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\MigrationHelper_32.exe",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\MigrationHelper_64.exe",
+                "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\*",
+                "FaronicsDeployAgent.exe",
+                "FWAWebInstaller_*.exe",
+                "FWAService.exe",
+                "FWA_UI_Agent.exe",
+                "CloudWksInstall.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FaronicsDeployAgent.exe",
+                    "Description": "Faronics Deploy Agent main executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe",
+                    "Description": "Faronics Deploy Cloud Agent service (registered as FWASvc)",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWA_UI_Agent.exe",
+                    "Description": "Faronics Deploy user-interface agent",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FRCServer.exe",
+                    "Description": "Faronics Remote Control server component",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\CloudAgentLogs.LOG",
+                    "Description": "Faronics Deploy / Cloud Agent activity log",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Faronics\\StorageSpace\\FWA\\Logs\\FWASvc.log",
+                    "Description": "Faronics Deploy service log (FWASvc)",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "FWASvc",
+                    "ImagePath": "\"C:\\Program Files (x86)\\Faronics\\Faronics Deploy Agent\\FWAService.exe\"",
+                    "Description": "Service installation event for the Faronics Deploy / Cloud Agent service."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive (shared with other Faronics products; presence of Faronics Deploy subkeys confirms install)"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\WOW6432Node\\Faronics\\Faronics Core 3\\Storage Spaces\\Spaces\\FWA",
+                    "Description": "Faronics Deploy / Cloud Agent storage-space configuration"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Classes\\AppID\\FWAService.exe",
+                    "Description": "COM AppID registration for the FWAService.exe service host"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Classes\\{359C24F1-51B5-44CE-8F2D-2FBB1A0FE4EA}\\FWA_GUI_Agent",
+                    "Description": "COM CLSID for the Faronics Deploy GUI agent (FWA_GUI_Agent)"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{581F69E6-A5D1-48C7-9F6F-CC333007F7EB}",
+                    "Description": "Faronics Deploy Agent uninstall entry"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Faronics Deploy console / endpoint sign-up (web)",
+                    "Domains": [
+                        "deploy.faronics.com",
+                        "www.faronicsdeploy.com",
+                        "faronicscloud.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Deploy / Cloud agent management API (AWS API Gateway, us-west-2 and eu-west-1)",
+                    "Domains": [
+                        "nv0mddxkh7.execute-api.us-west-2.amazonaws.com",
+                        "29qoj3q0yf.execute-api.us-west-2.amazonaws.com",
+                        "8z5x4rqbxi.execute-api.eu-west-1.amazonaws.com",
+                        "1wuccjc4a3.execute-api.eu-west-1.amazonaws.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Deploy installer / artifact storage (S3, us-west-2 and eu-west-1)",
+                    "Domains": [
+                        "faronics-deploy-na-production-installers.s3.us-west-2.amazonaws.com",
+                        "faronics-deploy-int-production-installers.s3.eu-west-1.amazonaws.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Deploy Remote Pro browser-based remote-control regional endpoints",
+                    "Domains": [
+                        "remotepro-us-west-2.faronics.com",
+                        "remotepro-us-east-1.faronics.com",
+                        "remotepro-ca-central-1.faronics.com",
+                        "remotepro-eu-west-1.faronicsdeploy.com",
+                        "remotepro-ap-southeast-1.faronicsdeploy.com",
+                        "remotepro-sa-east-1.faronicsdeploy.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics support / corporate domains contacted by signed agent binaries",
+                    "Domains": [
+                        "faronics.com",
+                        "support.faronics.com",
+                        "docs.faronics.com",
+                        "upd.faronicslabs.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Deploy RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Deploy RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Deploy RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_deploy_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Deploy RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/deploy",
+            "https://docs.faronics.com/faronicsdeploy",
+            "https://docs.faronics.com/faronicsdeploy/get-started-1/quick-start/pre-requisites/install-deploy-agents/windows-install-guide",
+            "https://support.faronics.com/help/en-ca/6-faronics-deploy/77-what-port-numbers-and-host-names-are-used-by-faronics-deploy",
+            "https://www.faronics.com/deploy/remote-control",
+            "https://www.virustotal.com/gui/file/b38229e9ce3a249ff7ac06ee9158e744c023338b570ffaf9bed8fc9b94b944f4",
+            "https://www.virustotal.com/gui/file/eee04dd4e7dd58d33ffb503686cdac07f88f8bea7bb29dbcd48d6715c198cea9"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "DeskNets",
         "Category": "RMM",
         "Description": "DeskNets is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -19957,6 +20601,164 @@
             "https://www.desknets.com/en/download.html"
         ],
         "Acknowledgement": []
+    },
+    {
+        "Name": "Faronics Core",
+        "Category": "RMM",
+        "Description": "Faronics Core is the legacy on-premises endpoint management platform from Faronics Corporation (Vancouver, BC, Canada). It uses a four-tier architecture - Core Console (admin UI), Core Server (logic), Core Database (workstation inventory), and Core Agent (endpoint). The Core Agent (FaronicsCoreAgent.exe / CoreAgentService.exe) installs as a SYSTEM service on managed workstations and brokers communication between the Core Console / Server and the workstation, allowing remote task execution, software inventory, and loadout of Faronics modules (Deep Freeze, Anti-Executable, Anti-Virus, Power Save, WINSelect). Although mostly superseded by Faronics Deploy / Faronics Cloud, the Core Agent is still seen on long-running enterprise / education fleets and is part of the Faronics product family per LOLRMM issue 151.",
+        "Author": "@MHaggis",
+        "Created": "2026-05-04",
+        "LastModified": "2026-05-04",
+        "Details": {
+            "Website": "https://www.faronics.com/products/faronics-core",
+            "PEMetadata": [
+                {
+                    "Filename": "FaronicsCoreAgent.exe",
+                    "OriginalFileName": "FaronicsCoreAgent.exe",
+                    "Description": "Faronics Core Agent (workstation)"
+                },
+                {
+                    "Filename": "CoreAgentService.exe",
+                    "OriginalFileName": "CoreAgentService.exe",
+                    "Description": "Faronics Core Agent service host"
+                },
+                {
+                    "Filename": "FCAForStartupMonitor.msi",
+                    "OriginalFileName": "FCAForStartupMonitor.msi",
+                    "Description": "Faronics Core Agent startup-monitor MSI"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": false,
+            "Verification": "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA / VeriSign Class 3 Code Signing 2010 CA)",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Centralized workstation management (legacy on-prem console)",
+                "Software / hardware inventory",
+                "Task and command execution against managed workstations",
+                "Loadouts for Deep Freeze, Anti-Executable, Anti-Virus, Power Save, WINSelect, Insight, and other Faronics modules",
+                "MSI-based mass deployment of the Core Agent"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Faronics\\Faronics Core\\*",
+                "C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\*",
+                "C:\\Program Files\\Faronics\\Core\\Console\\*",
+                "C:\\Program Files (x86)\\Faronics\\Faronics Core\\*",
+                "*\\Faronics\\Faronics Core\\Workstation Agent\\FaronicsCoreAgent.exe",
+                "*\\Faronics\\Faronics Core\\Workstation Agent\\CoreAgentService.exe",
+                "C:\\ProgramData\\Faronics\\FCAForStartupMonitor.msi",
+                "FaronicsCoreAgent.exe",
+                "CoreAgentService.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\FaronicsCoreAgent.exe",
+                    "Description": "Faronics Core Agent main executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\CoreAgentService.exe",
+                    "Description": "Faronics Core Agent service host",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Faronics\\FCAForStartupMonitor.msi",
+                    "Description": "Faronics Core Agent startup-monitor MSI installer",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "FaronicsCoreAgent",
+                    "ImagePath": "\"C:\\Program Files\\Faronics\\Faronics Core\\Workstation Agent\\FaronicsCoreAgent.exe\"",
+                    "Description": "Service installation event for the Faronics Core Agent."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\FaronicsCoreAgent",
+                    "Description": "Faronics Core Agent Windows service registration"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics\\Faronics Core 3",
+                    "Description": "Faronics Core 3 product configuration root"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\WOW6432Node\\Faronics\\Faronics Core 3",
+                    "Description": "Faronics Core 3 product configuration root (32-bit on 64-bit hosts)"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Faronics",
+                    "Description": "Top-level Faronics product registry hive"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Faronics Core legacy update / activation infrastructure",
+                    "Domains": [
+                        "upd.faronicslabs.com",
+                        "faronics.com",
+                        "www.faronics.com"
+                    ],
+                    "Ports": [
+                        80,
+                        443
+                    ]
+                },
+                {
+                    "Description": "Faronics Core Server <-> Core Agent on-prem communication (administrator-supplied Core Server hostname / IP). Default Faronics Core Server listener and Core Agent ports are documented by Faronics.",
+                    "Domains": [
+                        "*.local"
+                    ],
+                    "Ports": [
+                        7751,
+                        7752
+                    ]
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_files_sigma.yml",
+                "Description": "Detects potential files activity of Faronics Core RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_network_sigma.yml",
+                "Description": "Detects potential network activity of Faronics Core RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Faronics Core RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_core_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Faronics Core RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.faronics.com/products/faronics-core",
+            "https://www.faronics.com/assets/FCC_Manual.pdf",
+            "https://www.faronics.com/document-library/document/faronics-core-release-notes",
+            "https://www.virustotal.com/gui/file/6f78a2dc13eaf007bd83cdda91ff4d53e737e0b7205d1ae9e38f2bfd831fdb6d"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cbecks2",
+                "Handle": "cbecks2"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
     },
     {
         "Name": "Remmina",
