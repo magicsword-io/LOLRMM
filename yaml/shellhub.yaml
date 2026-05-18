@@ -1,0 +1,77 @@
+Name: ShellHub
+Category: RAT
+Description: |
+    ShellHub (cloud.shellhub.io / shellhub.io) is an open-source SSH gateway that enrolls devices via a per-tenant install script and gives operators browser-based remote terminal access through the ShellHub web dashboard. The agent installs via `curl -sSf "https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>" | sh` and registers the host into the operator's tenant; subsequent SSH connections are brokered through the ShellHub cloud over the persistent agent connection, with no inbound firewall change required on the device. Catalogued by the LOTTunnels project under the "shell access" category; documentation explicitly notes potential misuse by "insiders as well as threat actors" for "a variety of malicious tasks". Both a hosted SaaS (cloud.shellhub.io) and a self-hostable Docker deployment exist.
+Author: '@MHaggis'
+Created: '2026-05-18'
+LastModified: '2026-05-18'
+Details:
+    Website: https://shellhub.io/
+    PEMetadata:
+        - Filename: shellhub-agent
+          OriginalFileName: shellhub-agent
+          Description: ShellHub agent binary (Go). Maintains the persistent reverse connection to the ShellHub gateway and brokers inbound SSH sessions.
+    Privileges: root (installer uses curl|sh as root)
+    Free: 'Yes (open-source + free hosted tier + paid subscription)'
+    Verification: Tenant signup required; per-tenant install token (`tenant_id`) embedded in install URL
+    SupportedOS:
+        - Linux
+        - MacOS
+    Capabilities:
+        - Browser-based remote SSH (interactive terminal via web dashboard)
+        - Cloud-relayed SSH (no inbound firewall change required on agent host)
+        - SSH key + username/password authentication
+        - Device enrollment / tenant registration
+        - Docker container deployment of the gateway (self-hosted option)
+    Vulnerabilities: []
+    InstallationPaths:
+        - /usr/local/bin/shellhub-agent
+        - /etc/shellhub-agent/*
+        - /etc/systemd/system/shellhub-agent.service
+        - /var/lib/shellhub-agent/*
+Artifacts:
+    Disk:
+        - File: /usr/local/bin/shellhub-agent
+          Description: ShellHub agent binary (default install path used by the vendor install.sh)
+          OS: Linux
+        - File: /etc/shellhub-agent/agent.env
+          Description: ShellHub agent environment file (tenant_id, server_address, identity)
+          OS: Linux
+        - File: /etc/systemd/system/shellhub-agent.service
+          Description: systemd unit file for ShellHub agent persistence
+          OS: Linux
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Hosted ShellHub control plane. Self-hosted Docker deployments may use an operator-controlled domain instead.
+          Domains:
+              - shellhub.io
+              - cloud.shellhub.io
+              - www.shellhub.io
+              - '*.shellhub.io'
+          Ports:
+              - 443
+              - 80
+    Other:
+        - Type: URL
+          Value: https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>
+        - Type: Other
+          Value: 'Install command: curl -sSf "https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>" | sh  (high-signal hunt pattern — curl-to-sh from cloud.shellhub.io with tenant_id parameter)'
+        - Type: Other
+          Value: 'LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/shellhub/'
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_files_sigma.yml
+      Description: Detects potential file activity of ShellHub RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_network_sigma.yml
+      Description: Detects potential network activity of ShellHub RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_processes_sigma.yml
+      Description: Detects potential process activity of ShellHub RMM tool
+References:
+    - https://shellhub.io/
+    - https://github.com/shellhub-io/shellhub
+    - https://lottunnels.github.io/lottunnels/Binaries/shellhub/
+Acknowledgement:
+    - Person: rcKillam
+      Handle: '@rcKillam'
+    - Person: Michael Haag
+      Handle: '@MHaggis'

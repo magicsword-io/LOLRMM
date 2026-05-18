@@ -1,0 +1,81 @@
+Name: Dataplicity
+Category: RAT
+Description: |
+    Dataplicity (by Wildfoundry) is a cloud-hosted remote-access service that exposes Linux systems — primarily Raspberry Pi devices — to the Dataplicity cloud for browser-based remote shell, "Wormhole" HTTP tunneling, and remote management. The agent installs via a curl|sudo python one-liner (`curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python`) and registers the host with the operator's tenant under `*.dataplicity.com`. After install the operator has persistent remote shell access through the Dataplicity web console or Windows companion app without any inbound firewall change on the victim host. Catalogued by the LOTTunnels project under the "shell access" category for exactly this abuse profile.
+Author: '@MHaggis'
+Created: '2026-05-18'
+LastModified: '2026-05-18'
+Details:
+    Website: https://www.dataplicity.com/
+    PEMetadata:
+        - Filename: dataplicity
+          OriginalFileName: dataplicity
+          Description: Dataplicity agent (Python-based) installed via curl|sudo python one-liner; runs as a system service that maintains the persistent control channel back to *.dataplicity.com.
+    Privileges: root (Linux installer uses sudo)
+    Free: 'Yes (free + paid tiers)'
+    Verification: Tenant signup required; per-device install token embedded in installer URL
+    SupportedOS:
+        - Linux
+        - Windows
+        - MacOS
+    Capabilities:
+        - Browser-based remote terminal (shell access through Dataplicity web console)
+        - Wormhole HTTP tunneling (expose a local HTTP service publicly via `*.wormhole.dataplicity.com`)
+        - Remote file management
+        - Persistent device registration in operator tenant
+        - Windows desktop companion app for managing connected devices
+    Vulnerabilities: []
+    InstallationPaths:
+        - /opt/dataplicity/*
+        - /opt/dataplicity/tuxtunnel/*
+        - /usr/local/bin/dataplicity
+        - /etc/systemd/system/dataplicity.service
+        - /etc/init.d/dataplicity
+Artifacts:
+    Disk:
+        - File: /opt/dataplicity/tuxtunnel/manager
+          Description: Dataplicity manager binary (the persistent remote-control daemon)
+          OS: Linux
+        - File: /opt/dataplicity/credentials
+          Description: Dataplicity agent credentials file (per-tenant install token + device identity)
+          OS: Linux
+        - File: /etc/systemd/system/dataplicity.service
+          Description: systemd unit file for Dataplicity agent persistence
+          OS: Linux
+        - File: /etc/init.d/dataplicity
+          Description: SysV init script for Dataplicity agent persistence (older or non-systemd Linux distributions)
+          OS: Linux
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Dataplicity control plane and per-device tenant subdomain. Each registered device gets a `*.dataplicity.com` URL the operator uses to open a browser-based shell. `*.wormhole.dataplicity.com` is the HTTP-tunnel subdomain used to publish local HTTP services.
+          Domains:
+              - dataplicity.com
+              - www.dataplicity.com
+              - '*.dataplicity.com'
+              - '*.wormhole.dataplicity.com'
+          Ports:
+              - 443
+    Other:
+        - Type: URL
+          Value: https://www.dataplicity.com/<TOKEN>.py
+        - Type: Other
+          Value: 'Install command: curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python  (high-signal hunt pattern — sudo-piped curl-to-python from dataplicity.com)'
+        - Type: Other
+          Value: 'LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/dataplicity/'
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_files_sigma.yml
+      Description: Detects potential file activity of Dataplicity RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_network_sigma.yml
+      Description: Detects potential network activity of Dataplicity RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_processes_sigma.yml
+      Description: Detects potential process activity of Dataplicity RMM tool
+References:
+    - https://www.dataplicity.com/
+    - https://github.com/wildfoundry/dataplicity-agent
+    - https://lottunnels.github.io/lottunnels/Binaries/dataplicity/
+Acknowledgement:
+    - Person: rcKillam
+      Handle: '@rcKillam'
+    - Person: Michael Haag
+      Handle: '@MHaggis'
