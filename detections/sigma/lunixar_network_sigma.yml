@@ -1,0 +1,29 @@
+title: Potential Lunixar RMM Tool Network Activity
+id: 1b02b256-0458-5ca0-b182-81f9b3bf99c8
+status: experimental
+description: |
+    Detects potential network activity of Lunixar RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - '*.lunixar.com'
+            - 'lunixar.com'
+            - 'app.lunixar.com'
+            - 'socket.lunixar.com'
+            - 'downloads.lunixar.com'
+            - 'devrmm.lunixar.com'
+            - 'mymeetinggoogle.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of Lunixar
+level: medium

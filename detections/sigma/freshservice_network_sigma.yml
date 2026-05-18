@@ -1,0 +1,44 @@
+title: Potential Freshservice RMM Tool Network Activity
+id: 759d870d-2a70-59bd-875c-ff1dfb85574a
+status: experimental
+description: |
+    Detects potential network activity of Freshservice RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'fstools.freshservice.com'
+            - '*.freshservice.com'
+            - 'freshservice.com'
+            - 'www.freshservice.com'
+            - 'fstools.freshasset.com'
+            - 'freshasset.com'
+            - '*.myfreshworks.com'
+            - '*.freshworksapi.com'
+            - '*.freshworks.com'
+            - '*.freshconnect.io'
+            - 'api.fdcollab.com'
+            - '*.fdcollab.com'
+            - '*.freshchat.com'
+            - '*.webpush.freshchat.com'
+            - 'apicdn-wchat.freshchat.com'
+            - '*.rtschannel.com'
+            - '*.freshdev.io'
+            - 'static.freshdev.io'
+            - '*.freshcloud.io'
+            - '*.in-freshbots.ai'
+            - '<internal-customer-ranges>'
+            - '<internal-customer-ranges>'
+    condition: selection
+falsepositives:
+    - Legitimate use of Freshservice
+level: medium

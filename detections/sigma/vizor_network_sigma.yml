@@ -1,0 +1,32 @@
+title: Potential VIZOR RMM Tool Network Activity
+id: 7f21b9c6-6737-5320-a983-09a5e659007b
+status: experimental
+description: |
+    Detects potential network activity of VIZOR RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - '<operator-configured Vector Discovery Server URL>'
+            - 'vizor.cloud'
+            - 'www.vizor.cloud'
+            - 'vector-networks.com'
+            - 'www.vector-networks.com'
+            - 'metaquest.com'
+            - 'mail.metaquest.com'
+            - 'www.metaquest.com'
+            - 'downloads.vector-networks.com'
+            - 'www.vector-networks.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of VIZOR
+level: medium

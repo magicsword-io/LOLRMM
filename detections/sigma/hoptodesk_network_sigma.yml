@@ -16,9 +16,12 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - signal.hoptodesk.com
-            - api.hoptodesk.com
-            - turn.hoptodesk.com
+            - 'hoptodesk.com'
+            - 'api.hoptodesk.com'
+            - 'signal.hoptodesk.com'
+            - 'turn.hoptodesk.com'
+            - 'download.hoptodesk.com'
+            - 'www.hoptodesk.com'
     condition: selection
 falsepositives:
     - Legitimate use of HopToDesk

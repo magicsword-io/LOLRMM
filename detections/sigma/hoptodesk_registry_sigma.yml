@@ -15,7 +15,9 @@ logsource:
     category: registry_event
 detection:
     selection:
-        TargetObject|contains: HKEY_USERS\*_Classes\HopToDesk\*
+        TargetObject|contains:
+            - 'HKEY_CURRENT_USER\Software\Classes\HopToDesk\shell\open\command'
+            - 'HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\HopToDesk'
     condition: selection
 falsepositives:
     - Legitimate use of HopToDesk
