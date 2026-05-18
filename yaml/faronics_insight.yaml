@@ -105,10 +105,9 @@ Artifacts:
               - docs.faronics.com
           Ports:
               - 443
-        - Description: Insight Connector intermediary host (administrator-supplied; IP, hostname, or FQDN). Default Teacher / Student communication ports are listed by Faronics in the Insight Quick Install Guide.
+        - Description: Insight Connector intermediary host. The Connector hostname/IP is administrator-supplied (no fixed vendor domain) — hunt on TCP/1313 and TCP/8080 to/from on-prem Connector hosts and pair with the FIStudentSvc / FIStudentAgent / FIStudentUI / STAHelper process artifacts above. Default Teacher / Student communication ports are listed by Faronics in the Insight Quick Install Guide.
           Domains:
-              - insight
-              - '*.local'
+              - user_managed
           Ports:
               - 1313
               - 8080
