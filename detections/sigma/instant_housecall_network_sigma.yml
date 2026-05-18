@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.instanthousecall.com
-            - *.instanthousecall.net
-            - instanthousecall.com
-            - secure.instanthousecall.com
+            - '*.instanthousecall.com'
+            - 'secure.instanthousecall.com'
+            - '*.instanthousecall.net'
+            - 'instanthousecall.com'
     condition: selection
 falsepositives:
     - Legitimate use of Instant Housecall

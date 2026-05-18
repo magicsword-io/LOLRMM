@@ -1,0 +1,58 @@
+---
+description: "Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Level.io"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Level.io
+
+Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Level.io"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://level.io/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["level-windows-amd64.exe", "level.exe", "level-remote-control-ffmpeg.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Level Software, Inc.", "certificate_thumbprint": "3C002DCBBCB603AE08699F4CEF973864AEB16860", "src_file_sha256": "075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83", "src_file_path": "downloaded_files/level.io/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["level.io", "*.level.io"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Level.io RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml)
+- Detects potential processes activity of Level.io RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml)
+
+### References
+- [https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues](https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues)
+

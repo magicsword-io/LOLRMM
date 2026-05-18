@@ -1,0 +1,56 @@
+---
+description: "ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "ConnectWise Control"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ConnectWise Control
+
+ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"ConnectWise Control"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.screenconnect.com/"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["connectwisechat-customer.exe", "connectwisecontrol.client.exe", "screenconnect.windowsclient.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": ["ConnectWise, Inc.", "ConnectWise, LLC", "Connectwise, LLC"], "certificates": [{"signer_name": "ConnectWise, Inc.", "certificate_thumbprint": "07290735CAC17E851C608F28C3C03F68B94DDC35", "tbs_sha256": "2536E3C682B73B99B516CDEEE24FCB828C84CBDA003E3C3075CA771717B4CEBA", "tbs_sha1": ""}, {"signer_name": "Connectwise, LLC", "certificate_thumbprint": "FF8BFAFA697459874FB9843B1EFDA5C91871A44C", "tbs_sha256": "46135C0D0BC2714588E2E99AEB2BBC714F972F50D46C4C6D084F9D9CF9E485A4", "tbs_sha1": ""}, {"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "DC69069188D5CBC5FE18B7D035C90061C8741E21", "tbs_sha256": "EE87E0B6968C49806887874C952D0F6C1DAABA50D699FE8C5524103D7A3A82D1", "tbs_sha1": ""}, {"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "5C58CEA4608461C9A4188F480466123A9DD02431", "src_file_sha256": "a5c8ede4d24165797dcfbabbb85f62c44a79b058381e68249bf418a01fc67a1d", "src_file_path": "downloaded_files/connectwise_control/a5c8ede4d24165797dcfbabbb85f62c44a79b058381e68249bf418a01fc67a1d", "src_file_company": "ScreenConnect Software"}, {"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "DD631BF0A610530A2C8C93B35609054E34FF5F70", "src_file_sha256": "c218eb4c68fafc90f1f9dde973ea85184c5a7cb830af174285d8b9e6ce6e1d06", "src_file_path": "downloaded_files/connectwise_control/c218eb4c68fafc90f1f9dde973ea85184c5a7cb830af174285d8b9e6ce6e1d06", "src_file_company": "ScreenConnect Software"}, {"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "11C81879E141A8407D461ADB14EF568A58022BEC", "src_file_sha256": "ee0fd474de7eb1b844ec8359a4453bfb56263191643c03919bd05f439761c722", "src_file_path": "downloaded_files/connectwise_control/ee0fd474de7eb1b844ec8359a4453bfb56263191643c03919bd05f439761c722", "src_file_company": "ScreenConnect Software"}, {"signer_name": "ConnectWise, LLC", "certificate_thumbprint": "F307637A290C1BCDCCC4437A58DE17C0BDBFC830", "src_file_sha256": "c79526ce6eed74a509c7192decb2ce8988578cdbe3400c68b66395f9c2941e40", "src_file_path": "downloaded_files/connectwise_control/c79526ce6eed74a509c7192decb2ce8988578cdbe3400c68b66395f9c2941e40", "src_file_company": "ScreenConnect Software"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["live.screenconnect.com", "control.connectwise.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of ConnectWise Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_network_sigma.yml)
+- Detects potential processes activity of ConnectWise Control RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/connectwise_control_processes_sigma.yml)
+
+

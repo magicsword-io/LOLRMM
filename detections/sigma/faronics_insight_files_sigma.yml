@@ -1,0 +1,27 @@
+title: Potential Faronics Insight RMM Tool File Activity
+id: 6157fb7a-58dd-5592-aa8c-51b8532d30eb
+status: experimental
+description: |
+    Detects potential files activity of Faronics Insight RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'C:\Program Files\Faronics\Insight Student\FIStudentSvc.exe'
+            - 'C:\Program Files\Faronics\Insight Student\FIStudentAgent.exe'
+            - 'C:\Program Files\Faronics\Insight Student\FIStudentUI.exe'
+            - 'C:\Program Files\Faronics\Insight Student\STAHelper.exe'
+            - 'C:\Program Files\Faronics\Insight Teacher\STAHelper.exe'
+    condition: selection
+falsepositives:
+    - Legitimate use of Faronics Insight
+level: medium

@@ -13,9 +13,6 @@ Details:
         - Filename: ManageEngine_ServiceDesk_Plus.bin
           OriginalFileName: ''
           Description: ManageEngine ServiceDesk Plus binary installer component
-        - Filename: ISBEW64.exe
-          OriginalFileName: ''
-          Description: InstallShield wrapper executable (observed in VT sandbox)
     Privileges: SYSTEM
     Free: Trial Available
     Verification: Code-signed
@@ -33,7 +30,6 @@ Details:
     InstallationPaths:
         - ManageEngine_ServiceDesk_Plus.exe
         - ManageEngine_ServiceDesk_Plus.bin
-        - ISBEW64.exe
         - C:\Program Files\ManageEngine\ServiceDesk\*
         - C:\Program Files (x86)\ManageEngine\ServiceDesk\*
 Artifacts:
@@ -43,9 +39,6 @@ Artifacts:
           OS: Windows
         - File: C:\Users\*\AppData\Local\Temp\{*}\ManageEngine_ServiceDesk_Plus.exe
           Description: ManageEngine ServiceDesk Plus temporary installer files (verified via VirusTotal sandbox)
-          OS: Windows
-        - File: C:\Users\*\AppData\Local\Temp\{*}\ISBEW64.exe
-          Description: InstallShield wrapper temporary files (verified via VirusTotal sandbox)
           OS: Windows
     EventLog:
         - EventID: 4688

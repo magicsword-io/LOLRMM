@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - simple-help.com
-            - 51.255.19.178
-            - 51.255.19.179
+            - 'user_managed'
+            - 'simple-help.com'
+            - '51.255.19.178'
+            - '51.255.19.179'
     condition: selection
 falsepositives:
     - Legitimate use of SimpleHelp

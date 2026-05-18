@@ -1,0 +1,55 @@
+---
+description: "FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "FixMe.it"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# FixMe.it
+
+FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"FixMe.it"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://fixme.it/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["FixMeit Client.exe", "TiExpertStandalone.exe", "FixMeitClient*.exe", "TiExpertCore.exe", "FixMeit Unattended Access Setup.exe", "FixMeit Expert Setup.exe", "TiExpertCore.exe", "fixmeitclient.exe", "TiClientCore.exe", "TiClientHelper*.exe", "9380CC75B872221A7425D7503565B67580407F60"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.fixme.it", "*.techinline.net", "fixme.it", "*set.me", "*setme.net"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of FixMe.it RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml)
+- Detects potential processes activity of FixMe.it RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml)
+
+

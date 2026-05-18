@@ -1,0 +1,60 @@
+---
+description: "Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Quick Assist"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Quick Assist
+
+Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Quick Assist"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={"https://support.microsoft.com/windows/solve-pc-problems-remotely-using-quick-assist-b077e31a-16f4-2529-1a47-21f6a9040bf3"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["quickassist.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "GlobalSigningDig", "certificate_thumbprint": "DE523085FB77B3D8B78E80EF14BC627772C6E1D0", "src_file_sha256": "0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3", "src_file_path": "downloaded_files/quick_assist/0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3", "src_file_company": "Microsoft Corporation"}, {"signer_name": "CodeSigningMico", "certificate_thumbprint": "6116BB0D666C358E66E8E18E25B8C147B9C0F2F6", "src_file_sha256": "9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b", "src_file_path": "downloaded_files/quick_assist/9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b", "src_file_company": "Microsoft Corporation"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.support.services.microsoft.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Quick Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_network_sigma.yml)
+- Detects potential processes activity of Quick Assist RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml)
+
+### References
+- [https://github.com/magicsword-io/LOLRMM/issues/46](https://github.com/magicsword-io/LOLRMM/issues/46)
+
+### Acknowledgements
+- bittib010 (@bittib010)

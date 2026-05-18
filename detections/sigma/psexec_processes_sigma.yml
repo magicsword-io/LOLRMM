@@ -16,12 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - psexec.exe
-            - psexecsvc.exe
+            - 'psexec.exe'
+            - 'psexec64.exe'
+            - 'psexecsvc.exe'
     selection_image:
         Image|endswith:
-            - psexec.exe
-            - psexecsvc.exe
+            - 'psexec.exe'
+            - 'psexec64.exe'
+            - 'psexecsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of PSEXEC

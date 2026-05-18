@@ -1,0 +1,32 @@
+title: Potential Teramind RMM Tool Network Activity
+id: 6eeb9f4e-b360-5446-8544-aea7b7e0721e
+status: experimental
+description: |
+    Detects potential network activity of Teramind RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - '*.teramind.co'
+            - 'teramind.co'
+            - 'www.teramind.co'
+            - 'rt.teramind.co'
+            - 'www.teramind.co'
+            - 'sentry.dev.teramind.co'
+            - '<on-prem-master-server-host>'
+            - '<on-prem-app-server-host>'
+            - '*.teramind.co'
+            - 'www.teramind.co'
+    condition: selection
+falsepositives:
+    - Legitimate use of Teramind
+level: medium

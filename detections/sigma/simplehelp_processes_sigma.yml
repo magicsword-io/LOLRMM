@@ -16,20 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - simplehelpcustomer.exe
-            - simpleservice.exe
-            - simplegatewayservice.exe
-            - remote access.exe
-            - windowslauncher.exe
-            - spsrv.exe
+            - 'simplehelpcustomer.exe'
+            - 'simpleservice.exe'
+            - 'simplegatewayservice.exe'
+            - 'remote access.exe'
+            - 'windowslauncher.exe'
+            - 'spsrv.exe'
     selection_image:
         Image|endswith:
-            - simplehelpcustomer.exe
-            - simpleservice.exe
-            - simplegatewayservice.exe
-            - remote access.exe
-            - windowslauncher.exe
-            - spsrv.exe
+            - 'simplehelpcustomer.exe'
+            - 'simpleservice.exe'
+            - 'simplegatewayservice.exe'
+            - 'remote access.exe'
+            - 'windowslauncher.exe'
+            - 'spsrv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SimpleHelp

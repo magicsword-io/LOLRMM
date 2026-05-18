@@ -1,10 +1,10 @@
 ---
-description = "mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "mRemoteNG"
+description: "mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "mRemoteNG"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # mRemoteNG
@@ -29,6 +29,10 @@ mRemoteNG is a remote monitoring and management (RMM) tool. More information wil
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["7zip.exe", "mremoteng.dll", "mremoteng.exe"], "company_names": [], "signer_names": ["David Sparer", "Open Source Developer, Dimitrij Gorodeckij", "Simon Tatham"], "certificates": [{"signer_name": "David Sparer", "certificate_thumbprint": "DEFFB77C09F5ADC3691A0EA8A36E2617577AF8AB", "tbs_sha256": "80840828E6440160B4977E9AA21613D0452E7B272AF7D32B5007AB419E61CD25", "tbs_sha1": ""}, {"signer_name": "Open Source Developer, Dimitrij Gorodeckij", "certificate_thumbprint": "93F35DA1E0F1E59DB3455D29AF83CE90FAC249F4", "tbs_sha256": "C85CE1021CB17FCD3C004433B22F1018A75AEBCD8413CD4BBC2D78AE8C8878EB", "tbs_sha1": ""}, {"signer_name": "David Sparer", "certificate_thumbprint": "N/A", "tbs_sha256": "99443F90AB887671A05644A2E854F307E68508B3E7BCB7852EF6AC1DDFBA55FA", "tbs_sha1": ""}, {"signer_name": "Simon Tatham", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "", "tbs_sha384": "47D33AA6FC96754AAB657A6EC79291F7D98D12E39010E6060EF3770042343B1C2BADA6B732510F090C1A592CAE653579"}]} }/>
 
 
 ### Forensic Artifacts

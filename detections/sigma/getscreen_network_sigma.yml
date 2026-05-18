@@ -16,9 +16,12 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - getscreen.me
-            - GetScreen.me
-            - *.getscreen.me
+            - 'getscreen.me'
+            - 'GetScreen.me'
+            - '*.getscreen.me'
+            - 'go.getscreen.me'
+            - 'image.getscreen.me'
+            - 'px-*.getscreen.me'
     condition: selection
 falsepositives:
     - Legitimate use of GetScreen

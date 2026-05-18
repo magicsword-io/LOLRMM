@@ -1,0 +1,58 @@
+---
+description: "Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Ericom Connect"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Ericom Connect
+
+Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Ericom Connect"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.ericom.com/connect-accessnow/"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["EricomConnectRemoteHost*.exe", "ericomconnnectconfigurationtool.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["setupsuite"], "company_names": [], "signer_names": [], "certificates": []} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed", "ericom.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Ericom Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_network_sigma.yml)
+- Detects potential processes activity of Ericom Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ericom_connect_processes_sigma.yml)
+
+### References
+- [https://www.ericom.com/connect-accessnow/](https://www.ericom.com/connect-accessnow/)
+

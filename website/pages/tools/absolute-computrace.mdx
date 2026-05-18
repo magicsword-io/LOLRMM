@@ -1,0 +1,58 @@
+---
+description: "Absolute (Computrace) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Absolute (Computrace)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Absolute (Computrace)
+
+Absolute (Computrace) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Absolute (Computrace)"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.absolute.com/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["rpcnet.exe", "ctes.exe", "ctespersitence.exe", "cteshostsvc.exe", "rpcld.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Absolute Software Corp.", "certificate_thumbprint": "7F15551E564615F929E65B19B1C695D78DB51810", "src_file_sha256": "76a4272310b3f5151939eee0e63b61cee712d88af5b1606202360147082adbc1", "src_file_path": "downloaded_files/absolute_(computrace)/76a4272310b3f5151939eee0e63b61cee712d88af5b1606202360147082adbc1", "src_file_company": "Absolute Software Corporation"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*search.namequery.com", "*server.absolute.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Absolute (Computrace) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__network_sigma.yml)
+- Detects potential processes activity of Absolute (Computrace) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/absolute__computrace__processes_sigma.yml)
+
+### References
+- [https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com](https://community.absolute.com/s/article/Understanding-Absolutes-Endpoint-Agents-Rpcnet-CTES-and-search-namequery-com)
+

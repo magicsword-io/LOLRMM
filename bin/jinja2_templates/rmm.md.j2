@@ -1,15 +1,15 @@
 ---
-description = "{{ rmm.Description | clean_multiline }}"
-title = "{{ rmm.Name }}"
+description: {{ dump(rmm.Description | clean_multiline) }}
+title: {{ dump(rmm.Name) }}
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # {{ rmm.Name }}
 
-{{ rmm.Description }}
+{{ rmm.Description | mdx_escape }}
 
 <BlockBanner name={"{{ rmm.Name }}"}/>
 
@@ -44,6 +44,12 @@ import {EuiSpacer} from "@elastic/eui"
 {% for vulnerability in rmm.Details.Vulnerabilities %}
 - [{{ vulnerability }}]({{ vulnerability }})
 {% endfor %}
+{% endif %}
+
+{% if rmm.CodeSigning %}
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {{dump(rmm.CodeSigning | without_certificate_der)}} }/>
 {% endif %}
 
 
@@ -86,7 +92,7 @@ import {EuiSpacer} from "@elastic/eui"
 {% if rmm.Detections %}
 ### Detections
 {% for detection in rmm.Detections %}
-- {{ detection.Description }}
+- {{ detection.Description | mdx_escape }}
 {% if detection.Sigma %}
   - [Sigma Rule]({{ detection.Sigma }})
 {% endif %}

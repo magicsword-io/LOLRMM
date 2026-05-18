@@ -1,0 +1,74 @@
+---
+description: "RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phishing attack. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com."
+title: "RemSupp"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RemSupp
+
+RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phishing attack. It installs in user context, creates RemSupp-specific artifacts under AppData, and communicates with api.remsupp.com. 
+
+<BlockBanner name={"RemSupp"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2026-04-10"}
+         website={"https://api.remsupp.com"}
+         lastModified={"2026-05-04"}
+         privileges={"User"}
+         free={ "unknown" }
+         verification={ "Installer digitally signed; signer subject \"CN=RemSupp Micha\u0142 Zarach, O=RemSupp Micha\u0142 Zarach, L=Gda\u0144sk, ST=Pomorskie, C=PL\" issued under Microsoft Trusted Signing (CN=Microsoft ID Verified CS EOC CA 0*, O=Microsoft Corporation). Trusted Signing mints ephemeral 3-day leaf certs per signing event, so the leaf TBS hash rotates per release while the publisher subject DN is stable." }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Users\\*\\AppData\\Local\\remsupp-updater\\installer.exe", "C:\\Users\\*\\AppData\\Local\\Programs\\RemSupp\\RemSupp.exe", "C:\\Users\\*\\AppData\\Local\\Programs\\RemSupp\\Uninstall RemSupp.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote desktop", "Remote support", "Remote control", "Screen sharing", "File transfer"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Users\\*\\AppData\\Local\\Programs\\RemSupp\\RemSupp.exe", "Description": "Main RemSupp executable (Electron 36 / Chromium-based)", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Programs\\RemSupp\\Uninstall RemSupp.exe", "Description": "RemSupp uninstaller", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\RemSupp.lnk", "Description": "Start menu shortcut", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\Local State", "Description": "Application local state file", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\Preferences", "Description": "Application preferences file", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\chromium.log", "Description": "Chromium log file", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\Crashpad\\metadata", "Description": "Crashpad metadata", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\Crashpad\\settings.dat", "Description": "Crashpad settings", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\Local Storage\\leveldb\\*", "Description": "Local storage LevelDB artifacts", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\sentry\\queue\\queue.json", "Description": "Sentry queue artifact", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\sentry\\scope_v3.json", "Description": "Sentry scope artifact", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\sentry\\session.json", "Description": "Sentry session artifact", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\RemSupp\\quitAndInstall.json", "Description": "Updater state artifact", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKCU\\Software\\99ac595d-36d0-5122-a860-22a3443073cb", "Description": "Product-specific installer key (vendor-assigned GUID)"}, {"Path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\99ac595d-36d0-5122-a860-22a3443073cb", "Description": "Per-user uninstall key (vendor-assigned GUID)"}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "RemSupp API endpoint observed during analysis", "Domains": ["api.remsupp.com"], "Ports": [443]}, {"Description": "RemSupp installer / update download endpoint", "Domains": ["download.remsupp.com"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "CodeSigningSubject", "Value": "CN=RemSupp Micha\u0142 Zarach, O=RemSupp Micha\u0142 Zarach, L=Gda\u0144sk, ST=Pomorskie, C=PL"}, {"Type": "CodeSigningIssuer", "Value": "CN=Microsoft ID Verified CS EOC CA 01, O=Microsoft Corporation, C=US"}, {"Type": "CodeSigningIssuer", "Value": "CN=Microsoft ID Verified CS EOC CA 02, O=Microsoft Corporation, C=US"}, {"Type": "ProcessLineage", "Value": "RemSupp.exe self-check via cmd.exe /c tasklist /FI \"USERNAME eq %USERNAME%\" /FI \"IMAGENAME eq RemSupp.exe\" /FO csv | find \"RemSupp.exe\""}, {"Type": "SHA256", "Value": "994f537e69f555a6aca89db837f260aa31352d6c6bfe435d3ecafff0b8c683ae"}, {"Type": "SHA256", "Value": "38a3e51bf0fad50dc3bb08f8ce9aa4e9d3f3c7561312605c6827a81984137532"}, {"Type": "SHA256", "Value": "3cad287fbc89c40a4f481aac47d0c2b012388081c9924c09fdb2d29e5455100a"}] }/>
+
+
+
+### Detections
+- Detects potential files activity of RemSupp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_files_sigma.yml)
+- Detects potential network activity of RemSupp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_network_sigma.yml)
+- Detects potential processes activity of RemSupp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_processes_sigma.yml)
+- Detects potential registry activity of RemSupp RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remsupp_registry_sigma.yml)
+
+### References
+- [https://api.remsupp.com](https://api.remsupp.com)
+
+### Acknowledgements
+- Martha Sosa (@marthajsosa)

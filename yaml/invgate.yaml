@@ -1,0 +1,248 @@
+Name: InvGate
+Category: RMM
+Description: 'InvGate is an Argentinian (Buenos Aires) IT operations vendor whose product family includes InvGate Service Management (formerly InvGate Service Desk) and InvGate Asset Management (formerly InvGate Insight, rebranded on 2024-10-07). InvGate Asset Management ships an endpoint Agent for Windows, Linux, macOS, and Android that performs hardware/software inventory, software metering, software deployment, vulnerability detection, and remote support — including a one-click "remote desktop connection from your inventory" feature. The Agent is distributed primarily as an MSI on Windows and is configured at install time with the tenant''s Insight/IGAM URL plus an optional on-prem Proxy security token; agents in cloud tenants typically reach the platform via a per-tenant subdomain on invgate.net (load-balanced through lb-insight-001.invgate.net). The historic Windows agent installs under C:\Program Files (x86)\Inventec\InvGate.net Client\ (the "Inventec" folder name is a holdover from the original product line) and registers a SYSTEM service named InvClient. For remote agent push, InvGate''s Remote-via-Proxy uses WMI/PsExec on Windows and SSH on Linux/macOS.
+
+    Threat actors abusing legitimate RMM tooling for initial access, persistence, and remote command execution can stand up InvGate tenants and deliver the standard MSI agent — once installed, the agent runs as SYSTEM, persists as the InvClient service, beacons to the configured tenant URL every 8–12 hours, and exposes interactive remote desktop and software-deployment capabilities (MSI/EXE/.bat/.ps1 push) from the InvGate console.
+
+    '
+Author: '@MHaggis'
+Created: '2026-05-04'
+LastModified: '2026-05-04'
+Details:
+    Website: https://invgate.com/
+    PEMetadata:
+        - Filename: InvGate-ED.exe
+          OriginalFileName: InvGate-ED.exe
+          Description: InvGate Assets Client primary endpoint binary; runs as the InvClient SYSTEM service. Vendor "InvGate"; reported sample sha256 d35d852924b97126cfbf9a2d8c3384d848dbb090a9d9264e26dd766370b474e8 (Win32 EXE, ~932 KB, version 4.004.001).
+        - Filename: InvGateAssetsRD.exe
+          OriginalFileName: InvGateAssetsRD.exe
+          Description: InvGate Assets remote-desktop / remote-support helper invoked from the agent (size ~1.32 MB on v5.001.071 builds).
+        - Filename: InvGateRD.exe
+          OriginalFileName: InvGateRD.exe
+          Description: InvGate Assets RD helper located under \files\ within the install directory.
+        - Filename: DepHlp.exe
+          OriginalFileName: DepHlp.exe
+          Description: InvGate Assets deployment helper used by the software-deployment module.
+    Privileges: SYSTEM
+    Free: 30 day trial
+    Verification: Tenant signup required (corporate email; not strictly enforced)
+    SupportedOS:
+        - Windows
+        - Linux
+        - MacOS
+        - Android
+    Capabilities:
+        - IT asset management and inventory
+        - Hardware and software discovery
+        - Software metering
+        - Software deployment (MSI / EXE / .bat / .ps1 push, up to 5,000 assets per plan)
+        - Remote monitoring and management
+        - Remote desktop / remote support from the inventory console
+        - Vulnerability detection (CVE scanning of installed software)
+        - Helpdesk and ticketing (InvGate Service Management)
+        - Self-service portal
+        - Workflow automation (Service Management ↔ Asset Management integration)
+        - Network discovery (agentless and agent-based)
+        - Mobile / Android agent (com.invgate.insight.agent)
+        - Remote-via-Proxy agent push using WMI/PsExec on Windows and SSH on Linux/macOS
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Inventec\InvGate.net Client\*
+        - C:\Program Files (x86)\Inventec\InvGate.net Client\InvGate-ED.exe
+        - C:\Program Files (x86)\Inventec\InvGate.net Client\DepHlp.exe
+        - C:\Program Files (x86)\Inventec\InvGate.net Client\files\InvGateAssetsRD.exe
+        - C:\Program Files (x86)\Inventec\InvGate.net Client\files\InvGateRD.exe
+        - C:\Program Files (x86)\Inventec\InvGate.net Client\files\sas.dll
+        - C:\Program Files (x86)\Inventec\InvGate.net Client\Software Matt.dll
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\InvGate-ED.exe
+          Description: InvGate Assets Client SYSTEM service binary (registered as the InvClient service)
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\DepHlp.exe
+          Description: InvGate Assets deployment helper used by the software-deployment module
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\files\InvGateAssetsRD.exe
+          Description: InvGate Assets remote-desktop / remote-support helper invoked by the agent
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\files\InvGateRD.exe
+          Description: InvGate Assets RD helper binary
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\files\sas.dll
+          Description: Bundled DLL shipped under the agent's files directory
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\Software Matt.dll
+          Description: Software metering DLL ("Software Matt") loaded by the agent
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\InvClient-Log.txt
+          Description: Top-level InvClient service log
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\logs\InvClient-Log.txt
+          Description: InvClient service log (rotated copy under \logs\)
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\logs\InvClient-Log_SoftwareMet.txt
+          Description: Software metering subsystem log written by the agent during execution (observed in install layout per advanceduninstaller.com inventory)
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\logs\InvClient-Log_Service.txt
+          Description: InvClient service log written by the agent during execution (observed in install layout per advanceduninstaller.com inventory)
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\logs\*
+          Description: InvGate agent logs directory (multiple per-subsystem logs)
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\build.txt
+          Description: InvGate Assets Client build identifier file
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\invid
+          Description: Per-endpoint InvGate Agent ID — unique value linking the endpoint to its asset record in the tenant
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\sm_rep.inv
+          Description: Software metering report inventory file
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\sm_temp.inv
+          Description: Software metering temporary inventory file
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\usbFiles\usbLog.txt
+          Description: USB device tracking log written by the agent
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\4.002.004.ver
+          Description: Per-version marker file dropped by the agent installer/updater
+          OS: Windows
+        - File: C:\Program Files (x86)\Inventec\InvGate.net Client\5.001.004.ver
+          Description: Per-version marker file dropped by the agent installer/updater
+          OS: Windows
+        - File: C:\Windows\Installer\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}\ARPPRODUCTICON.exe
+          Description: Add/Remove Programs icon cached by Windows Installer for the InvGate Assets Client v5.001.004 product GUID
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: InvClient
+          ImagePath: '"C:\\Program Files (x86)\\Inventec\\InvGate.net Client\\InvGate-ED.exe"'
+          Description: Service installation event recorded when the InvGate Assets Client agent registers its SYSTEM service.
+        - EventID: 11707
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Product: InvGate Assets Client -- Installation completed successfully.'
+          Description: Successful MSI installation of the InvGate Assets Client agent.
+        - EventID: 4697
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          ServiceName: InvClient
+          ImagePath: '"C:\\Program Files (x86)\\Inventec\\InvGate.net Client\\InvGate-ED.exe"'
+          Description: Service installation auditing event for the InvClient SYSTEM service.
+        - EventID: 1033
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Windows Installer installed the product. Product Name: InvGate Assets Client. Product Version: <ver>. Manufacturer: InvGate.'
+          Description: MsiInstaller success event recorded when the InvGate Assets Client MSI completes.
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\InvClient
+          Description: InvGate Assets Client SYSTEM service registration (service name "InvClient", ImagePath points to InvGate-ED.exe under Inventec\InvGate.net Client)
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\InvClient\ImagePath
+          Description: ImagePath value for the InvClient service — observed value "C:\Program Files (x86)\Inventec\InvGate.net Client\InvGate-ED.exe"
+        - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}
+          Description: Add/Remove Programs uninstall key for InvGate Assets Client v5.001.004 (Publisher = InvGate)
+        - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F0076285-D0E2-4B49-92BD-25E0B7B27DF6}
+          Description: Add/Remove Programs uninstall key for InvGate Assets Client v4.004.011 — uninstall command "MsiExec.exe /I{F0076285-D0E2-4B49-92BD-25E0B7B27DF6}"
+        - Path: HKLM\SOFTWARE\Classes\Installer\Products\08BB5F1461464FA46BB7AF632CD94B4C
+          Description: Windows Installer product key (packed GUID form of {41F5BB80-6416-4AF4-B67B-FA36C29DB4C4})
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}
+          Description: 32-bit-on-64 view of the InvGate Assets Client uninstall key (the agent is a 32-bit MSI, so the canonical Uninstall entry is mirrored under WOW6432Node)
+    Network:
+        - Description: InvGate corporate / marketing site (referenced from agent installer and tenant console)
+          Domains:
+              - invgate.com
+              - www.invgate.com
+          Ports:
+              - 443
+        - Description: InvGate cloud tenant base domain — Insight / IGAM tenants are hosted as per-tenant subdomains on invgate.net (configured at agent install time as the Insight/IGAM URL); cloud agents reach the platform via a regional load balancer (lb-insight-001.invgate.net resolves to AWS elb in eu-central-1)
+          Domains:
+              - '*.invgate.net'
+              - invgate.net
+          Ports:
+              - 443
+        - Description: InvGate Insight / Asset Management cloud load balancer (CNAME prd-insight-000-999663879.eu-central-1.elb.amazonaws.com) — primary agent-to-platform endpoint for cloud tenants
+          Domains:
+              - lb-insight-001.invgate.net
+          Ports:
+              - 443
+        - Description: InvGate trust / status portal (Vanta-hosted at vantatrust.com)
+          Domains:
+              - trust.invgate.com
+              - trust-access.invgate.com
+          Ports:
+              - 443
+        - Description: InvGate tenant management endpoints used during provisioning / instance lookup
+          Domains:
+              - instances-info.invgate.com
+              - instances-list.invgate.com
+          Ports:
+              - 443
+        - Description: InvGate releases / developer / public docs portals referenced by the agent and integrators
+          Domains:
+              - releases.invgate.com
+              - docs.invgate.net
+              - help.invgate.com
+          Ports:
+              - 443
+        - Description: InvGate Service Management Developer Manual (Service Desk REST API) — host used by integrations and bots talking to a tenant
+          Domains:
+              - releases.invgate.com
+          Ports:
+              - 443
+    Other:
+        - Type: Other
+          Value: 'Windows service name: InvClient'
+        - Type: Other
+          Value: 'Vendor service display name: InvGate Assets Client'
+        - Type: Other
+          Value: 'Windows Installer product GUIDs observed: {41F5BB80-6416-4AF4-B67B-FA36C29DB4C4} (v5.001.004), {F0076285-D0E2-4B49-92BD-25E0B7B27DF6} (v4.004.011)'
+        - Type: Other
+          Value: 'Default install root: C:\Program Files (x86)\Inventec\InvGate.net Client (the "Inventec" parent folder is a vendor naming holdover from the original product line and is preserved in modern Insight / Asset Management agent builds)'
+        - Type: Other
+          Value: 'Agent ID file: C:\Program Files (x86)\Inventec\InvGate.net Client\invid — unique per-endpoint identifier persisted by the agent and used by the tenant to dedupe/refresh asset records'
+        - Type: Other
+          Value: 'Reporting cadence: cloud agent reports back to the InvGate Asset Management server every 8–12 hours; if the host is offline at the scheduled report time the agent reports immediately on next boot'
+        - Type: Other
+          Value: 'Remote-via-Proxy push uses WMI/PsExec on Windows and SSH on Linux/macOS; deployment plans support up to 5,000 assets and accept .msi, .exe, .bat, .ps1 payloads'
+        - Type: Other
+          Value: 'Install-time bypass flag observed in vendor docs: VERIFY_CERTS=false (Windows MSI property) and --verify_certs false (Linux/macOS), used to skip TLS validation when the agent connects to a self-signed on-prem Insight/IGAM URL'
+        - Type: Other
+          Value: 'Android mobile agent: Google Play package com.invgate.insight.agent (publisher InvGate)'
+        - Type: SHA256
+          Value: d35d852924b97126cfbf9a2d8c3384d848dbb090a9d9264e26dd766370b474e8
+        - Type: MD5
+          Value: e515948c8ede1192926e87df1740f876
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/invgate_files_sigma.yml
+      Description: Detects potential files activity of InvGate RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/invgate_network_sigma.yml
+      Description: Detects potential network activity of InvGate RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/invgate_processes_sigma.yml
+      Description: Detects potential processes activity of InvGate RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/invgate_registry_sigma.yml
+      Description: Detects potential registry activity of InvGate RMM tool
+References:
+    - https://invgate.com/
+    - https://invgate.com/asset-management
+    - https://invgate.com/asset-management/remote-management
+    - https://invgate.com/asset-management/software-deployment
+    - https://invgate.com/asset-management/product-tour/remote-it-support
+    - https://invgate.com/itdb/invgate-asset-management
+    - https://invgate.com/service-management
+    - https://blog.invgate.com/invgate-asset-management-agent
+    - https://blog.invgate.com/launching-software-deployment-capabilities-on-invgate-asset-management
+    - https://blog.invgate.com/agentless-discovery-for-windows-devices-on-invgate-asset-management
+    - https://blog.invgate.com/introducing-invgate-service-and-asset-management
+    - https://blog.invgate.com/whats-new-with-invgate-march-2024
+    - https://releases.invgate.com/service-desk/api/
+    - https://play.google.com/store/apps/details?id=com.invgate.insight.agent
+    - https://www.advanceduninstaller.com/InvGate-Assets-Client-2f4c0513ea2872f134927af517dacc3c-application.htm
+    - https://www.advanceduninstaller.com/InvGate-Assets-Client-196dfb9b5b25fa914ceffa42ee216d05-application.htm
+    - https://www.advanceduninstaller.com/InvGate-Assets-Client-d803c0bfcc9fdf1f0811a1a8e8e3ff3d-application.htm
+    - https://www.shouldiremoveit.com/InvGate-Assets-Client-35975-program.aspx
+    - https://www.virustotal.com/gui/file/d35d852924b97126cfbf9a2d8c3384d848dbb090a9d9264e26dd766370b474e8
+Acknowledgement:
+    - Person: Michael Haag
+      Handle: '@M_haggis'

@@ -1,0 +1,58 @@
+---
+description: "LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "LogMeIn rescue"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# LogMeIn rescue
+
+LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"LogMeIn rescue"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.logmein.com/products/rescue"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["support-logmeinrescue*.exe", "support-logmeinrescue.exe", "lmi_rescue.exe", "C:\\Users\\*\\AppData\\Local\\LogMeIn Rescue Applet\\LMIR*.tmp\\lmi_rescue.exe", "C:\\Users\\*\\AppData\\Local\\LogMeIn Rescue Applet\\LMIR*.tmp\\lmi_rescue_srv.exe", "C:\\Users\\*\\AppData\\Local\\LogMeIn Rescue Applet\\LMIR*.tmp\\lmi_rescue.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": [], "company_names": [], "signer_names": ["LogMeIn, Inc."], "certificates": [{"signer_name": "LogMeIn, Inc.", "certificate_thumbprint": "N/A", "tbs_sha256": "67C14D5CC02D94BB4380C3473FC9100FA8567975638F84D82B58773A2AE74DEE", "tbs_sha1": ""}, {"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "33023C0243016946C78CCB9B15AC6C203882E5D9", "src_file_sha256": "093e4af5f61640e64799539e8f3418e0890a3fe0aa3e33613de3d62936ee2f20", "src_file_path": "downloaded_files/logmein_rescue/093e4af5f61640e64799539e8f3418e0890a3fe0aa3e33613de3d62936ee2f20", "src_file_company": "LogMeIn, Inc."}, {"signer_name": "GoTo Technologies USA, LLC", "certificate_thumbprint": "ECC24BFE100B96AE619D81554ACFA0439146410E", "src_file_sha256": "50efac7eb47a1ff1deb0b5e037251cbd800513a8e0306659ddd212b5a5a45c25", "src_file_path": "downloaded_files/logmein_rescue/50efac7eb47a1ff1deb0b5e037251cbd800513a8e0306659ddd212b5a5a45c25", "src_file_company": "LogMeIn, Inc."}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.logmeinrescue.com", "*.logmeinrescue.eu", "logmeinrescue.com", "rescue-list.*.logmein-gateway.com", "rescue-data-cetner.logmein-gateway.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of LogMeIn rescue RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_network_sigma.yml)
+- Detects potential processes activity of LogMeIn rescue RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/logmein_rescue_processes_sigma.yml)
+
+### References
+- [https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue](https://support.logmeinrescue.com/rescue/help/allowlisting-and-rescue)
+

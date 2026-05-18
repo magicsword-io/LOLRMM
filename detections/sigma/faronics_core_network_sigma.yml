@@ -1,0 +1,26 @@
+title: Potential Faronics Core RMM Tool Network Activity
+id: 8d92ab1f-52f3-5e8c-98bb-21c160a3577f
+status: experimental
+description: |
+    Detects potential network activity of Faronics Core RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'upd.faronicslabs.com'
+            - 'faronics.com'
+            - 'www.faronics.com'
+            - '*.local'
+    condition: selection
+falsepositives:
+    - Legitimate use of Faronics Core
+level: medium

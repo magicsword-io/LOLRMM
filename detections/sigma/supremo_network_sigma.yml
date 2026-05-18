@@ -15,10 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - supremocontrol.com
-            - *.supremocontrol.com
-            - * .nanosystems.it
+        DestinationHostname|endswith: '*.supremocontrol.com'
     condition: selection
 falsepositives:
     - Legitimate use of Supremo

@@ -1,0 +1,60 @@
+---
+description: "Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Royal Apps"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Royal Apps
+
+Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Royal Apps"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.royalapps.com/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["royalserver.exe", "royalts.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Royal Apps GmbH", "certificate_thumbprint": "564F13E13238C21A522EAC9D8903CBA13F93D7A4", "src_file_sha256": "fdb7e23f6a02780def665e6ea428cd9cd59f115cd33d9dc7ba2b63a5fa8e1b3f", "src_file_path": "downloaded_files/royal_apps/fdb7e23f6a02780def665e6ea428cd9cd59f115cd33d9dc7ba2b63a5fa8e1b3f", "src_file_company": "Royal Apps GmbH"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["user_managed"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Royal Apps RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_network_sigma.yml)
+- Detects potential processes activity of Royal Apps RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/royal_apps_processes_sigma.yml)
+
+### References
+- [https://www.royalapps.com/ts/win/download](https://www.royalapps.com/ts/win/download)
+
