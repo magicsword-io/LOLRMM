@@ -16,21 +16,18 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - pubsub.atera.com
-            - pubsub.pubnub.com
-            - agentreporting.atera.com
-            - getalphacontrol.com
-            - app.atera.com
-            - agenthb.atera.com
-            - packagesstore.blob.core.windows.net
-            - ps.pndsn.com
-            - agent-api.atera.com
-            - cacerts.thawte.com
-            - agentreportingstore.blob.core.windows.net
-            - atera-agent-heartbeat.servicebus.windows.net
-            - ps.atera.com
-            - atera.pubnubapi.com
-            - appcdn.atera.com
+            - 'pubsub.atera.com'
+            - 'agentreporting.atera.com'
+            - 'getalphacontrol.com'
+            - 'app.atera.com'
+            - 'agenthb.atera.com'
+            - 'packagesstore.blob.core.windows.net'
+            - 'agent-api.atera.com'
+            - 'agentreportingstore.blob.core.windows.net'
+            - 'atera-agent-heartbeat.servicebus.windows.net'
+            - 'ps.atera.com'
+            - 'atera.pubnubapi.com'
+            - 'appcdn.atera.com'
     condition: selection
 falsepositives:
     - Legitimate use of Atera

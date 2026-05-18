@@ -1,0 +1,58 @@
+---
+description: "Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Remote Manipulator System"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Remote Manipulator System
+
+Remote Manipulator System is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Remote Manipulator System"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://rmansys.ru/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["rfusclient.exe", "rutserv.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "REMOTE UTILITIES PTE. LTD.", "certificate_thumbprint": "902CC2BB628B651954A5F7A1D68C6CDE84707A54", "src_file_sha256": "7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6", "src_file_path": "downloaded_files/remote_manipulator_system/7906a81b1dec372b4c232306678fda0cbc46db41e3db0c06b858d54d60cd7ab6", "src_file_company": "Remote Utilities Pte. Ltd."}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.internetid.ru", "rmansys.ru"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Remote Manipulator System RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_network_sigma.yml)
+- Detects potential processes activity of Remote Manipulator System RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remote_manipulator_system_processes_sigma.yml)
+
+### References
+- [https://rmansys.ru/files/](https://rmansys.ru/files/)
+

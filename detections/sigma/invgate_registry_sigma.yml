@@ -1,0 +1,28 @@
+title: Potential InvGate RMM Tool Registry Activity
+id: 3944a63d-2f2e-5d8e-bfdf-063cde5b09c5
+status: experimental
+description: |
+    Detects potential registry activity of InvGate RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        TargetObject|contains:
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\InvClient'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\InvClient\ImagePath'
+            - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}'
+            - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F0076285-D0E2-4B49-92BD-25E0B7B27DF6}'
+            - 'HKLM\SOFTWARE\Classes\Installer\Products\08BB5F1461464FA46BB7AF632CD94B4C'
+            - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{41F5BB80-6416-4AF4-B67B-FA36C29DB4C4}'
+    condition: selection
+falsepositives:
+    - Legitimate use of InvGate
+level: medium

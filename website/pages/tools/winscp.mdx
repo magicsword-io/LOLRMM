@@ -1,10 +1,10 @@
 ---
-description = "WinSCP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "WinSCP"
+description: "WinSCP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "WinSCP"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # WinSCP
@@ -29,6 +29,10 @@ WinSCP is a remote monitoring and management (RMM) tool. More information will b
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["39a4d16980a27a88493f519aa458e837856ac60a7037afe10985f8947991ef72-dropped.bin"], "company_names": [], "signer_names": ["Martin Prikryl", "RARE IDEAS, LLC"], "certificates": [{"signer_name": "Martin Prikryl", "certificate_thumbprint": "FB845245CFBB0EE97E76C775348CAA31D74BEC4C", "tbs_sha256": "74EEE4DFE920C6143FD736784DCFB3940980CC4146631D445F9BB116497B16E6", "tbs_sha1": ""}, {"signer_name": "Martin Prikryl", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "D2F63F6BE83E61B9E64E25752802F7F06F8B5BE5"}, {"signer_name": "Martin Prikryl", "certificate_thumbprint": "0DEE8F52D6B8D8C4B2C9573F4299FD97D707BAB7", "tbs_sha256": "C90767BFCA208A4FC3C990310D616C50B6E79AE77085E46A53EFA484A4E142F6", "tbs_sha1": ""}, {"signer_name": "RARE IDEAS, LLC", "certificate_thumbprint": "436F0AAD2181EDA5B606CA9BDD8D7B259833306A", "tbs_sha256": "791D415EAA0D30EEC874E1CC045F5076A41C741F792D6B9789F7E28DFB9127BD", "tbs_sha1": ""}]} }/>
 
 
 ### Forensic Artifacts

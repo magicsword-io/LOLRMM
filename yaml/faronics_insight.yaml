@@ -1,0 +1,136 @@
+Name: Faronics Insight
+Category: RMM
+Description: Faronics Insight is a classroom / lab management platform by Faronics Corporation (Vancouver, BC, Canada) that provides Teacher-to-Student remote control, screen monitoring, screen broadcasting, application and web blocking, keylogging, browser-history collection, and remote command execution across managed Student endpoints. The Insight Student agent (FIStudentAgent.exe / FIStudentSvc.exe / FIStudentUI.exe / STAHelper.exe) installs as a SYSTEM service on the managed device, while the Insight Teacher console drives the Students via an Insight Connector intermediary. While marketed for K-12 / EDU classroom management, the same Teacher → Student remote-control, monitoring, and command capabilities meet the LOLRMM RMM-shape definition and are part of the Faronics product family from issue 151.
+Author: '@MHaggis'
+Created: '2026-05-04'
+LastModified: '2026-05-04'
+Details:
+    Website: 'https://www.faronics.com/products/insight'
+    PEMetadata:
+        - Filename: FIStudentSvc.exe
+          OriginalFileName: FIStudentSvc.exe
+          Description: Faronics Insight Student Windows service
+        - Filename: FIStudentAgent.exe
+          OriginalFileName: FIStudentAgent.exe
+          Description: Faronics Insight Student agent
+        - Filename: FIStudentUI.exe
+          OriginalFileName: FIStudentUI.exe
+          Description: Faronics Insight Student user-interface process
+        - Filename: STAHelper.exe
+          OriginalFileName: STAHelper.exe
+          Description: Faronics Insight Student / Teacher helper executable (commonly flagged by AV; vendor-recommended whitelist)
+        - Filename: StudentSvc.exe
+          OriginalFileName: StudentSvc.exe
+          Description: Insight Student service (legacy filename)
+        - Filename: InsightInstaller.exe
+          OriginalFileName: InsightInstaller.exe
+          Description: Faronics Insight unified installer
+        - Filename: InsightInstallerStudent.exe
+          OriginalFileName: InsightInstallerStudent.exe
+          Description: Faronics Insight Student installer
+        - Filename: InsightInstallerTeacher.exe
+          OriginalFileName: InsightInstallerTeacher.exe
+          Description: Faronics Insight Teacher installer
+    Privileges: SYSTEM
+    Free: 30 day trial
+    Verification: Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA)
+    SupportedOS:
+        - Windows
+        - MacOS
+        - ChromeOS
+        - Android
+        - iOS
+    Capabilities:
+        - Remote control of Student endpoints from the Teacher console
+        - Real-time screen monitoring and screen broadcasting
+        - Application and website blocking / allow-listing
+        - Keylogging and browser-history collection
+        - Remote command execution and file transfer
+        - Mass deployment via Faronics Deploy / Active Directory MSI
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Faronics\Insight Student\*
+        - C:\Program Files\Faronics\Insight Teacher\*
+        - C:\Program Files (x86)\Faronics\Insight Student\*
+        - C:\Program Files (x86)\Faronics\Insight Teacher\*
+        - '*\Faronics\Insight Student\STAHelper.exe'
+        - '*\Faronics\Insight Teacher\STAHelper.exe'
+        - '*\Faronics\Insight Student\FIStudentSvc.exe'
+        - '*\Faronics\Insight Student\FIStudentAgent.exe'
+        - '*\Faronics\Insight Student\FIStudentUI.exe'
+        - FIStudentAgent.exe
+        - FIStudentSvc.exe
+        - FIStudentUI.exe
+        - STAHelper.exe
+        - StudentSvc.exe
+        - InsightInstaller.exe
+        - InsightInstallerStudent.exe
+        - InsightInstallerTeacher.exe
+        - InsightSetup.msi
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Faronics\Insight Student\FIStudentSvc.exe
+          Description: Faronics Insight Student Windows service
+          OS: Windows
+        - File: C:\Program Files\Faronics\Insight Student\FIStudentAgent.exe
+          Description: Faronics Insight Student agent
+          OS: Windows
+        - File: C:\Program Files\Faronics\Insight Student\FIStudentUI.exe
+          Description: Faronics Insight Student UI host
+          OS: Windows
+        - File: C:\Program Files\Faronics\Insight Student\STAHelper.exe
+          Description: Faronics Insight Student helper executable
+          OS: Windows
+        - File: C:\Program Files\Faronics\Insight Teacher\STAHelper.exe
+          Description: Faronics Insight Teacher helper executable
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: FIStudentSvc
+          ImagePath: '"C:\Program Files\Faronics\Insight Student\FIStudentSvc.exe"'
+          Description: Service installation event for Insight Student.
+    Registry:
+        - Path: HKLM\SOFTWARE\Faronics
+          Description: Top-level Faronics product registry hive (shared with other Faronics products)
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\FIStudentSvc
+          Description: Faronics Insight Student Windows service registration
+    Network:
+        - Description: Faronics Insight documentation, support, and update infrastructure
+          Domains:
+              - faronics.com
+              - www.faronics.com
+              - support.faronics.com
+              - docs.faronics.com
+          Ports:
+              - 443
+        - Description: Insight Connector intermediary host (administrator-supplied; IP, hostname, or FQDN). Default Teacher / Student communication ports are listed by Faronics in the Insight Quick Install Guide.
+          Domains:
+              - insight
+              - '*.local'
+          Ports:
+              - 1313
+              - 8080
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_files_sigma.yml
+      Description: Detects potential files activity of Faronics Insight RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_network_sigma.yml
+      Description: Detects potential network activity of Faronics Insight RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_processes_sigma.yml
+      Description: Detects potential processes activity of Faronics Insight RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/faronics_insight_registry_sigma.yml
+      Description: Detects potential registry activity of Faronics Insight RMM tool
+References:
+    - https://www.faronics.com/products/insight
+    - https://docs.faronics.com/faronics-insight-docs
+    - https://docs.faronics.com/faronics-insight-docs/installation-and-administration/installation/installing-on-windows/installing-the-insight-student
+    - https://docs.faronics.com/faronics-insight-docs/installation-and-administration/installation/installing-on-windows/installing-the-insight-student/command-line-installation
+    - https://www.faronics.com/assets/INS_Manual.pdf
+    - https://www.virustotal.com/gui/file/7c9436a2cb59e4de9dab8b0a72ce874ddae448dce47b5e07d95d221fffba3ba7
+    - https://www.virustotal.com/gui/file/647a06a3ab62d848ed5f0e5853825dc8c97954b766ed8c710ec0a1608971a61b
+Acknowledgement:
+    - Person: cbecks2
+      Handle: cbecks2
+    - Person: Michael Haag
+      Handle: '@MHaggis'

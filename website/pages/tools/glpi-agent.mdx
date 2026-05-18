@@ -1,0 +1,93 @@
+---
+description: "GLPI Agent is the open-source generic management agent maintained by the GLPI Project (Teclib'). It performs IT asset inventory, network discovery, network inventory (SNMP), VMware ESX inventory, software deployment, remote inventory and remote command/script collection on behalf of a GLPI server, communicating over HTTP/HTTPS. The agent is shipped as a Perl-based service / daemon for Windows, Linux and macOS, and is a fork of the FusionInventory agent.  Network endpoints are tenant-configured: the agent talks to whatever GLPI server URL the operator specifies via the `server` parameter (or the MSI `SERVER` property). There is no centralised vendor cloud \u2014 every install can point at a different self-hosted (or Teclib-hosted GLPI Network) endpoint, which makes the agent attractive for both legitimate self-hosted IT shops and threat actors who stand up their own GLPI server for inventory/deploy abuse. The agent also embeds an HTTP daemon (default port 62354/tcp) for server-initiated triggers."
+title: "GLPI Agent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# GLPI Agent
+
+GLPI Agent is the open-source generic management agent maintained by the GLPI Project (Teclib'). It performs IT asset inventory, network discovery, network inventory (SNMP), VMware ESX inventory, software deployment, remote inventory and remote command/script collection on behalf of a GLPI server, communicating over HTTP/HTTPS. The agent is shipped as a Perl-based service / daemon for Windows, Linux and macOS, and is a fork of the FusionInventory agent.
+
+Network endpoints are tenant-configured: the agent talks to whatever GLPI server URL the operator specifies via the `server` parameter (or the MSI `SERVER` property). There is no centralised vendor cloud — every install can point at a different self-hosted (or Teclib-hosted GLPI Network) endpoint, which makes the agent attractive for both legitimate self-hosted IT shops and threat actors who stand up their own GLPI server for inventory/deploy abuse. The agent also embeds an HTTP daemon (default port 62354/tcp) for server-initiated triggers.
+
+
+<BlockBanner name={"GLPI Agent"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RMM"}
+         created={"2026-05-04"}
+         website={"https://glpi-project.org/"}
+         lastModified={"2026-05-04"}
+         privileges={"SYSTEM"}
+         free={ "Yes" }
+         verification={ "None (open source \u2014 anyone can download and operate a GLPI server + agent)" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\GLPI-Agent\\*", "C:\\Program Files\\GLPI-Agent\\perl\\bin\\*", "C:\\Program Files\\GLPI-Agent\\etc\\*", "C:\\Program Files\\GLPI-Agent\\var\\*", "C:\\Program Files\\GLPI-Agent\\logs\\*", "/usr/bin/glpi-agent", "/usr/local/bin/glpi-agent", "/etc/glpi-agent/*", "/var/lib/glpi-agent/*", "/Applications/GLPI-Agent/*", "/Applications/GLPI-Agent/etc/*"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "MacOS", "Linux"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["IT asset / hardware / software inventory (Inventory task)", "SNMP network discovery (NetDiscovery task)", "SNMP network inventory (NetInventory task)", "VMware ESX inventory (ESX task)", "Software deployment (Deploy task \u2014 push files / execute commands on managed endpoints)", "Remote inventory over SSH / WinRM (RemoteInventory task)", "Data collection from arbitrary registry keys, files and WMI queries (Collect task)", "Wake-on-LAN (WakeOnLan task)", "Embedded HTTP daemon for server-initiated task triggers (default 62354/tcp)", "Self-hosted / on-premise \u2014 agent talks to operator-configured GLPI server URL (no centralised vendor cloud)"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-agent", "Description": "GLPI Agent main Perl entrypoint (Windows install)", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-win32-service.bat", "Description": "Windows service wrapper script that hosts the agent as a Windows service", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-inventory", "Description": "Standalone inventory collector (offline / one-shot)", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-netdiscovery", "Description": "SNMP network discovery task binary", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-netinventory", "Description": "SNMP network inventory task binary", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-esx", "Description": "VMware ESX inventory task binary", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-injector", "Description": "Inventory data injection / push utility", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\glpi-remote", "Description": "Remote agent management utility (SSH / WinRM-based remote inventory)", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\perl.exe", "Description": "Strawberry Perl interpreter bundled with the GLPI Agent MSI", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\perl\\bin\\wperl.exe", "Description": "Strawberry Perl windowless interpreter bundled with the GLPI Agent MSI", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\etc\\agent.cfg", "Description": "GLPI Agent configuration file (Windows portable mode and override location)", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\logs\\glpi-agent.log", "Description": "Default GLPI Agent log file path on Windows", "OS": "Windows"}, {"File": "C:\\Program Files\\GLPI-Agent\\var\\*", "Description": "GLPI Agent variable / state directory (cached inventory, last-run state)", "OS": "Windows"}, {"File": "/usr/bin/glpi-agent", "Description": "GLPI Agent main binary on Linux package installs (.deb / .rpm)", "OS": "Linux"}, {"File": "/usr/local/bin/glpi-agent", "Description": "GLPI Agent main binary on Linux AppImage installs (default --installpath)", "OS": "Linux"}, {"File": "/etc/glpi-agent/agent.cfg", "Description": "GLPI Agent main configuration file on Linux (FHS layout)", "OS": "Linux"}, {"File": "/etc/glpi-agent/conf.d/*", "Description": "GLPI Agent configuration overrides directory (preserved across package upgrades)", "OS": "Linux"}, {"File": "/var/lib/glpi-agent/*", "Description": "GLPI Agent variable / state directory on Linux (cached inventory, last-run state)", "OS": "Linux"}, {"File": "/lib/systemd/system/glpi-agent.service", "Description": "systemd unit file shipped by glpi-agent .deb / .rpm packages \u2014 ExecStart=/usr/bin/glpi-agent --daemon --no-fork $OPTIONS", "OS": "Linux"}, {"File": "/Applications/GLPI-Agent/etc/agent.cfg", "Description": "GLPI Agent main configuration file on macOS", "OS": "MacOS"}, {"File": "/Applications/GLPI-Agent/etc/conf.d/*", "Description": "GLPI Agent configuration overrides directory on macOS", "OS": "MacOS"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "glpi-agent", "ImagePath": "C:\\\\Program Files\\\\GLPI-Agent\\\\perl\\\\bin\\\\perl.exe \"C:\\\\Program Files\\\\GLPI-Agent\\\\perl\\\\bin\\\\glpi-win32-service\"", "Description": "Service installation event recorded when the GLPI Agent MSI installs in service mode (EXECMODE=1) \u2014 service Name=`glpi-agent` (DisplayName \"GLPI Agent\") confirmed via msiinfo against GLPI-Agent-1.17-x64.msi ServiceInstall table; hosted by glpi-win32-service running under perl.exe."}, {"EventID": 11707, "ProviderName": "MsiInstaller", "LogFile": "Application.evtx", "Data": "Product: GLPI Agent <version> -- Installation completed successfully.", "Description": "MSI installer success event from the GLPI-Agent-<version>-x64.msi package. ProductName is versioned in the actual log Data string (e.g. `Product: GLPI Agent 1.17 --`); confirmed against the MSI Property table."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "C:\\\\Program Files\\\\GLPI-Agent\\\\perl\\\\bin\\\\perl.exe \"C:\\\\Program Files\\\\GLPI-Agent\\\\perl\\\\bin\\\\glpi-agent\" --server=<URL> --tag=<TAG>", "Description": "Process creation observed when the GLPI Agent runs an inventory or task \u2014 perl.exe spawned with the glpi-agent script and the operator-configured server URL."}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\GLPI-Agent", "Description": "GLPI Agent root configuration key on 64-bit Windows agents (server URL, tag, httpd-port, tasks, log paths and every other agent.cfg parameter are mirrored here by the MSI)"}, {"Path": "HKLM\\SOFTWARE\\WOW6432Node\\GLPI-Agent", "Description": "GLPI Agent root configuration key on 32-bit-on-64 installs (mirrors HKLM\\SOFTWARE\\GLPI-Agent)"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\Installer", "Description": "GLPI Agent installer state \u2014 Version, InstallDir, ExecMode, RunNow, AddFirewallException, TaskFrequency etc."}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\Installer\\Version", "Description": "Installed GLPI Agent version string \u2014 checked by glpi-agent-deployment.vbs to decide install / repair / reconfigure"}, {"Path": "HKLM\\SOFTWARE\\WOW6432Node\\GLPI-Agent\\Installer\\Version", "Description": "Installed GLPI Agent version string (32-bit registry view)"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\Monitor", "Description": "GLPI-Agent-Monitor (system tray monitor) settings"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\server", "Description": "server parameter \u2014 operator-configured GLPI server URL(s) the agent reports to"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\httpd-port", "Description": "Embedded HTTP daemon listen port (default 62354)"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\httpd-ip", "Description": "Embedded HTTP daemon listen address (default 0.0.0.0)"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\httpd-trust", "Description": "Trusted IPs allowed to trigger tasks via the embedded HTTP daemon without authentication"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\tag", "Description": "Computer identification tag pushed with inventory"}, {"Path": "HKLM\\SOFTWARE\\GLPI-Agent\\tasks", "Description": "Comma-separated task list the agent will execute (Inventory, NetInventory, NetDiscovery, ESX, Deploy, Collect, RemoteInventory, WakeOnLan)"}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Embedded HTTP daemon listen port \u2014 the GLPI server (or the operator) connects to this port to trigger tasks on the endpoint. Default `httpd-port=62354` per the MSI properties; configurable.", "Domains": ["N/A (listens on httpd-ip \u2014 default 0.0.0.0 \u2014 on the agent host)"], "Ports": [62354]}, {"Description": "Outbound connection from agent to the operator-configured GLPI server (`server` parameter / MSI `SERVER` property). Endpoints are tenant-configured, not centralised \u2014 the agent talks to whatever URL the operator specifies (self-hosted GLPI, GLPI Network or attacker-controlled server).", "Domains": ["<operator-configured GLPI server>"], "Ports": [80, 443]}, {"Description": "Official GLPI Project website \u2014 referenced from the agent (URLAbout) and used to download the agent installer", "Domains": ["glpi-project.org", "www.glpi-project.org"], "Ports": [443]}, {"Description": "GLPI Project nightly build server \u2014 referenced by the bundled glpi-agent-deployment.vbs as `SetupNightlyLocation` (alternative install source)", "Domains": ["nightly.glpi-project.org"], "Ports": [443]}, {"Description": "GLPI Project community forum \u2014 bundled in MSI metadata as the support URL", "Domains": ["forum.glpi-project.org"], "Ports": [443]}, {"Description": "Teclib commercial offering for GLPI (paid services, plugins, support) \u2014 operated by Teclib', the company that maintains GLPI and the GLPI Agent", "Domains": ["glpi-network.com", "services.glpi-network.com"], "Ports": [443]}, {"Description": "GitHub release host for the GLPI Agent installers (MSI / PKG / DEB / RPM / AppImage downloaded from this host by deployment scripts)", "Domains": ["github.com", "objects.githubusercontent.com"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "Other", "Value": "MSI default install path: C:\\Program Files\\GLPI-Agent (INSTALLDIR property)"}, {"Type": "Other", "Value": "MSI execution modes: EXECMODE=1 (Service), EXECMODE=2 (Task scheduler), EXECMODE=3 (Manual)"}, {"Type": "Other", "Value": "MSI public properties used to silently configure the agent at install time: SERVER, TAG, USER, PASSWORD, TIMEOUT, RUNNOW, EXECMODE, HTTPD_IP, HTTPD_PORT, HTTPD_TRUST, ADDLOCAL"}, {"Type": "Other", "Value": "systemd unit on Linux: glpi-agent.service (ExecStart=/usr/bin/glpi-agent --daemon --no-fork $OPTIONS, After=syslog.target network.target, CapabilityBoundingSet=~CAP_SYS_PTRACE)"}, {"Type": "Other", "Value": "Default embedded HTTP daemon listen port: 62354/tcp (httpd-port parameter)"}, {"Type": "Other", "Value": "Code-signing publisher: Teclib' (per MSI Manufacturer string in Variables-v2.wxi.tt \u2014 Manufacturer=\"Teclib'\")"}, {"Type": "Other", "Value": "GLPI Agent 1.17 x64 MSI SHA-256: db2661a14359931a2d14ed7268f9b90763da4f2bec97b5ed8d51b9bb655d730c (signed via GlobalSign GCC R45 EV CodeSigning CA 2020 \u2014 OCSP host ocsp.globalsign.com)"}] }/>
+
+
+
+### Detections
+- Detects potential files activity of GLPI RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/glpi_files_sigma.yml)
+- Detects potential network activity of GLPI RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/glpi_network_sigma.yml)
+- Detects potential processes activity of GLPI RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/glpi_processes_sigma.yml)
+- Detects potential registry activity of GLPI RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/glpi_registry_sigma.yml)
+
+### References
+- [https://glpi-project.org/](https://glpi-project.org/)
+- [https://github.com/glpi-project/glpi-agent](https://github.com/glpi-project/glpi-agent)
+- [https://glpi-agent.readthedocs.io/en/latest/](https://glpi-agent.readthedocs.io/en/latest/)
+- [https://glpi-agent.readthedocs.io/en/latest/installation/index.html](https://glpi-agent.readthedocs.io/en/latest/installation/index.html)
+- [https://glpi-agent.readthedocs.io/en/latest/installation/windows-command-line.html](https://glpi-agent.readthedocs.io/en/latest/installation/windows-command-line.html)
+- [https://glpi-agent.readthedocs.io/en/latest/installation/linux-appimage.html](https://glpi-agent.readthedocs.io/en/latest/installation/linux-appimage.html)
+- [https://glpi-agent.readthedocs.io/en/latest/configuration.html](https://glpi-agent.readthedocs.io/en/latest/configuration.html)
+- [https://glpi-agent.readthedocs.io/en/latest/man/glpi-win32-service.html](https://glpi-agent.readthedocs.io/en/latest/man/glpi-win32-service.html)
+- [https://glpi-agent.readthedocs.io/en/latest/man/index.html](https://glpi-agent.readthedocs.io/en/latest/man/index.html)
+- [https://github.com/glpi-project/glpi-agent/blob/develop/contrib/unix/glpi-agent.service](https://github.com/glpi-project/glpi-agent/blob/develop/contrib/unix/glpi-agent.service)
+- [https://github.com/glpi-project/glpi-agent/blob/develop/contrib/windows/glpi-agent-deployment.vbs](https://github.com/glpi-project/glpi-agent/blob/develop/contrib/windows/glpi-agent-deployment.vbs)
+- [https://github.com/glpi-project/glpi-agent/blob/develop/contrib/windows/packaging/MSI_main-v2.wxs.tt](https://github.com/glpi-project/glpi-agent/blob/develop/contrib/windows/packaging/MSI_main-v2.wxs.tt)
+- [https://github.com/glpi-project/glpi-agent/releases/latest](https://github.com/glpi-project/glpi-agent/releases/latest)
+- [https://www.virustotal.com/gui/file/db2661a14359931a2d14ed7268f9b90763da4f2bec97b5ed8d51b9bb655d730c](https://www.virustotal.com/gui/file/db2661a14359931a2d14ed7268f9b90763da4f2bec97b5ed8d51b9bb655d730c)
+
+### Acknowledgements
+- Michael Haag (@M_haggis)

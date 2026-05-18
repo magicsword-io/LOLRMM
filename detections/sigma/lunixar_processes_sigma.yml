@@ -1,0 +1,30 @@
+title: Potential Lunixar RMM Tool Process Activity
+id: db2a7598-e45d-5651-a9af-9fab41d645c4
+status: experimental
+description: |
+    Detects potential processes activity of Lunixar RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'Lunixar.exe'
+            - 'LunixarRemote.exe'
+            - 'LunixarUpdater.exe'
+    selection_image:
+        Image|endswith:
+            - 'Lunixar.exe'
+            - 'LunixarRemote.exe'
+            - 'LunixarUpdater.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of Lunixar
+level: medium

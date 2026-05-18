@@ -1,10 +1,10 @@
 ---
-description = "SpyAnywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
-title = "SpyAnywhere"
+description: "SpyAnywhere is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "SpyAnywhere"
 ---
 
 
-import {Card, Badges, Details, BlockBanner, PEMetadata, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
 import {EuiSpacer} from "@elastic/eui"
 
 # SpyAnywhere
@@ -29,6 +29,10 @@ SpyAnywhere is a remote monitoring and management (RMM) tool. More information w
 
 
 
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "\u5317\u4eac\u706b\u7ed2\u7f51\u7edc\u79d1\u6280\u6709\u9650\u516c\u53f8", "certificate_thumbprint": "951553728DD3DE4E8F93F5A60FC4C54C12F66835", "src_file_sha256": "d77eb49917751cfebc42e468bf023e3a2b86b68a73e292ea651d8869aa2650a4", "src_file_path": "downloaded_files/spyanywhere/d77eb49917751cfebc42e468bf023e3a2b86b68a73e292ea651d8869aa2650a4", "src_file_company": "Beijing Huorong Network Technology Co., Ltd."}, {"signer_name": "Spytech Software and Design, Inc.", "certificate_thumbprint": "0F999A1FAF749C55BC095242AD221637850EE6AF", "src_file_sha256": "8188c9883b46eceed07cc494ac29a02a1506934fcdd3841ea21d7f30fdfbf16b", "src_file_path": "downloaded_files/spyanywhere/8188c9883b46eceed07cc494ac29a02a1506934fcdd3841ea21d7f30fdfbf16b"}]} }/>
 
 
 ### Forensic Artifacts

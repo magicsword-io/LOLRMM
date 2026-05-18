@@ -1,0 +1,58 @@
+---
+description: "Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Adobe Connect"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Adobe Connect
+
+Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Adobe Connect"}/>
+
+### Details
+<Details author={""}
+         category={"RAT"}
+         created={"2024-08-02"}
+         website={"https://www.adobe.com/products/adobeconnect.html"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["ConnectAppSetup*.exe", "ConnectShellSetup*.exe", "Connect.exe", "ConnectDetector.exe"] }/>
+
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "The Anti-Cloud Corporation", "certificate_thumbprint": "013371A3E52D87E59DA1C93A305732B1501FFE5A", "src_file_sha256": "4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d", "src_file_path": "downloaded_files/adobe_connect/4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d", "src_file_company": "WireSock Foundation"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.adobeconnect.com"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Adobe Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_network_sigma.yml)
+- Detects potential processes activity of Adobe Connect RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_processes_sigma.yml)
+
+### References
+- [https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html](https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html)
+

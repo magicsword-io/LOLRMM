@@ -1,0 +1,60 @@
+---
+description: "Pocket Controller (Soti Xsight) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "Pocket Controller (Soti Xsight)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Pocket Controller (Soti Xsight)
+
+Pocket Controller (Soti Xsight) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"Pocket Controller (Soti Xsight)"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://soti.net/products/soti-xsight/"}
+         lastModified={"2025-12-14"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["pocketcontroller.exe", "wysebrowser.exe", "XSightService.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["pcpro602setup.exe", "pocket controller", "pocket controller - professional", "pocket controller professional", "pocketcontroller.exe", "wysebrowser.exe", "xsightservice.core.dll", "xsightservice.dll", "xsightservice.exe", "xsightservice.linux.dll", "xsightservice.windows.dll"], "company_names": [], "signer_names": ["SOTI Inc.", "Wyse Technology Inc"], "certificates": [{"signer_name": "SOTI Inc.", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "326E0C36EE3DF3DE0FB7183A30ED6682254AB2E5"}, {"signer_name": "SOTI Inc.", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "", "tbs_sha384": "4265D6A8BFDDD5383B9A45AB04EF925DCCA723FE04AAF792B74A83CD6E817CEF125F1A388E855837D7E1DBE33733A820"}, {"signer_name": "SOTI Inc.", "issuer": "CN=VeriSign Class 3 Code Signing 2010 CA", "certificate_thumbprint": "7A3E4DECEE064889D6F6EC54C8DBAEE092ACB26E", "tbs_sha256": "AFBA691FEB4E4205B37C8929E5D10C40493F9C32D8C4FEF35C02C942BE6AE2AC", "tbs_sha1": "326E0C36EE3DF3DE0FB7183A30ED6682254AB2E5", "valid_from": "2011-02-24T00:00:00+00:00", "valid_to": "2012-02-24T23:59:59+00:00"}, {"signer_name": "SOTI Inc.", "issuer": "CN=Sectigo Public Code Signing CA R36", "certificate_thumbprint": "EBABD13769964EA7279533174328F28BB711CB03", "tbs_sha256": "20442C9DC0B4BB786D51EC3B9246AC870FB78FA32759CDC539CF05AA63FC6911", "tbs_sha1": "FCFE638120C602F83FE960E11B80ED837461F175", "valid_from": "2024-07-23T00:00:00+00:00", "valid_to": "2026-07-23T23:59:59+00:00"}, {"signer_name": "Wyse Technology Inc", "issuer": "CN=VeriSign Class 3 Code Signing 2010 CA", "certificate_thumbprint": "537AE8B3453C27FE7C5DD562ECF90CA76551E95C", "tbs_sha256": "64AC7AE69C452B5F6ACF71EA0485E36D88A868DD187C196AA2D140EA3124A0F6", "tbs_sha1": "5249EAF595CF905C688A7CA49CD9B49E7DD9E4E1", "valid_from": "2012-09-17T00:00:00+00:00", "valid_to": "2013-09-17T23:59:59+00:00"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*soti.net"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of Pocket Controller (Soti Xsight) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__network_sigma.yml)
+- Detects potential processes activity of Pocket Controller (Soti Xsight) RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__processes_sigma.yml)
+
+### References
+- [https://pulse.soti.net/support/soti-xsight/help/](https://pulse.soti.net/support/soti-xsight/help/)
+

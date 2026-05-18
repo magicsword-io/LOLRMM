@@ -1,0 +1,32 @@
+title: Potential GLPI Agent RMM Tool Network Activity
+id: 47e1cc56-2677-52dc-b1ad-b6d24b617c25
+status: experimental
+description: |
+    Detects potential network activity of GLPI Agent RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'N/A (listens on httpd-ip — default 0.0.0.0 — on the agent host)'
+            - '<operator-configured GLPI server>'
+            - 'glpi-project.org'
+            - 'www.glpi-project.org'
+            - 'nightly.glpi-project.org'
+            - 'forum.glpi-project.org'
+            - 'glpi-network.com'
+            - 'services.glpi-network.com'
+            - 'github.com'
+            - 'objects.githubusercontent.com'
+    condition: selection
+falsepositives:
+    - Legitimate use of GLPI Agent
+level: medium

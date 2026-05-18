@@ -15,7 +15,9 @@ logsource:
     category: file_event
 detection:
     selection:
-        TargetFilename|endswith: %AppData%\GoTo\Logs\goto.log
+        TargetFilename|endswith:
+            - '%AppData%\GoTo\Logs\goto.log'
+            - '%APPDATA%\GoToMeeting\G2M.exe'
     condition: selection
 falsepositives:
     - Legitimate use of GoToMyPC

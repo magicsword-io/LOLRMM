@@ -1,0 +1,301 @@
+Name: VIZOR
+Category: RMM
+Description: 'VIZOR is an ITIL-aligned IT Asset Management (ITAM), Software Asset Management (SAM) and IT Service Management (ITSM) platform from Vector Networks (vector-networks.com / vizor.cloud). VIZOR offered both on-premise (IIS + Microsoft SQL Server) and cloud-hosted deployments and integrates with Microsoft SCCM/ConfigMgr, LanSweeper, SolarWinds and JAMF. Asset data can be collected agent-less or via the Vector Discovery Client — the discovery agent ships as part of the legacy Vector Asset Management Client (also branded LANutil32 Suite) which deploys 20+ Windows binaries (CLBOOT32.EXE, CLDIST32.EXE, CLDISTSVC.EXE, clMeter32.exe, clMeterSvc.exe, HTTPGet.exe, HTTPPush.exe, regapps.exe, WINCHK32.EXE, etc.) under a single MSI bundle.
+
+
+    The Vector Discovery Client runs as a Windows service (DisplayName "Vector Asset Management Agent") under the LocalSystem account by default. It communicates with the Vector Discovery Server (a.k.a. Vector Asset Manager) over HTTP / HTTPS to an IIS endpoint — by default port 443 (HTTPS) or 80 (HTTP) but configurable to any port designated by the operator. Server-side, the "Vector Scheduler" Windows service parses the inventory upload and writes it to the on-premise SQL Server. Vector ships push-deployment tooling that uses the ADMIN$ share + local administrator credentials to install the Vector Client remotely from the VIZOR server, and the platform also supports executing standard MSIs, batch files or arbitrary scripts on managed endpoints via the bundled Software Distribution feature ("any valid code can be executed", per the Vector Asset Management v6.0 user manual). All of this gives an attacker who controls a VIZOR server (or who stands up their own Vector Asset Management server) a SYSTEM-level inventory + remote-execution channel against any reachable Windows host that has been pushed the agent.
+
+
+    Network endpoints are tenant-configured: the agent talks to whatever Vector Discovery Server URL the operator specifies, not to a centralised vendor cloud — this is similar in shape to GLPI Agent and lets self-hosted VIZOR / VIZOR Cloud customers and threat actors alike point the agent at any reachable IIS host. VIZOR Cloud (vizor.cloud) is the vendor-hosted option and resolves to the same AWS infrastructure as vector-networks.com (18.204.85.68 in the historical resolutions VirusTotal observed).
+
+    '
+Author: '@MHaggis'
+Created: '2026-05-04'
+LastModified: '2026-05-04'
+Details:
+    Website: https://www.vector-networks.com/
+    PEMetadata:
+        - Filename: CLBOOT32.EXE
+          Description: Vector Networks LANutil32 / Vector Asset Management Client main executable (boot/launcher) — author "Vector Networks Limited", original product "LANutil32 Suite"; spawns CLDIST32.EXE, WINCHK32.EXE, lusmbios16.exe etc. during inventory collection (confirmed via VirusTotal sandbox behaviour for SHA-256 435519ff10b0cfa569296dcd5dcbf470bfe5aafbe0471fcf99015a24691c0893)
+        - Filename: CLDIST32.EXE
+          Description: Vector Asset Management Client distribution component (LANutil32 Distribution Agent companion binary)
+        - Filename: CLDISTSVC.EXE
+          Description: Windows service binary — "LANutil32 Distribution Agent" (per third-party startup-program databases) — software distribution / push deployment service hosted by the Vector Asset Management Client
+        - Filename: clMeter32.exe
+          Description: Vector Asset Management software-metering client (LANutil32 Meter component)
+        - Filename: clMeterSvc.exe
+          Description: Vector Asset Management software-metering Windows service — high-frequency active-window sampling for software usage measurement (associated with the LANutil32 Suite / Vector PC Software Metering capability)
+        - Filename: HTTPGet.exe
+          Description: HTTP download helper used by the Vector Asset Management Client to retrieve content (referenced in the v5.80 release notes as occasionally requesting attention after reboot on Windows Vista)
+        - Filename: HTTPPush.exe
+          Description: HTTP push helper used by the Vector Asset Management Client to upload inventory to the Vector Discovery Server / IIS endpoint
+        - Filename: WINCHK32.EXE
+          Description: Vector Asset Management Windows-side inventory collector (executes against winchk.dat data file per VirusTotal Cuckoofork observation)
+        - Filename: regapps.exe
+          Description: Vector Asset Management installed-applications registry collector
+        - Filename: lutinfow32.exe
+          Description: Vector Asset Management hardware/software info collector (LANutil32 info utility)
+        - Filename: LuSMBIOS32.exe
+          Description: Vector Asset Management SMBIOS interrogation utility (LANutil32 SMBIOS reader, x86 build)
+        - Filename: LuLogon.exe
+          Description: Vector Asset Management logon-time helper
+        - Filename: LUGuard.exe
+          Description: Vector Asset Management watchdog / guard utility
+        - Filename: LUEDIT.EXE
+          Description: Vector Asset Management editor utility
+        - Filename: SelfUpdater.exe
+          Description: Vector Asset Management Client self-update binary
+        - Filename: VnlSelfUpdate.exe
+          Description: Vector Asset Management Client self-update orchestrator (Vector Networks LAN — VNL — namespace)
+        - Filename: VNLDriverInstaller.exe
+          Description: Vector Asset Management driver installation helper (VNL namespace)
+        - Filename: PidUpdater.exe
+          Description: Vector Asset Management product-ID / inventory updater
+        - Filename: cpuchk.exe
+          Description: Vector Asset Management CPU detection helper
+        - Filename: upload.exe
+          Description: Vector Asset Management generic upload helper
+        - Filename: NUKE32.EXE
+          Description: Vector Asset Management cleanup/uninstall helper (LANutil32 Suite component)
+        - Filename: Recycler.exe
+          Description: Vector Asset Management Client recycler / queue processor
+        - Filename: closeapp.exe
+          Description: Vector Asset Management helper that closes running applications (e.g. before software distribution)
+        - Filename: VECWAIT.EXE
+          Description: Vector Asset Management wait/synchronisation helper
+        - Filename: Prep64.exe
+          Description: Vector Asset Management 64-bit preparation helper
+        - Filename: Setup.exe
+          Description: Vector Networks server-side post-install setup binary shipped in the VIZOR 2.5.2 MSI_Merge bundle (registry footprint includes HKLM\SOFTWARE\Metaquest — Metaquest is the original Vector Networks parent brand) — SHA-256 316d76102bdb089ed48188d2b95f6dbf9dc6ae070775d2b4404f486db87aa61e
+        - Filename: VNConfigUtils.exe
+          Description: VIZOR / Vector Networks configuration utility (referenced as a VirusTotal "referrer file" for vector-networks.com — 1-2/74 detection rate, low-prevalence Vector-authored binary)
+        - Filename: MqMailIntegration.exe
+          Description: VIZOR ServiceDesk mail / email-integration component (Mq prefix = MetaQuest, the original Vector Networks codebase namespace; referenced as a vector-networks.com VirusTotal "referrer file" with 1-2/74 detection rate)
+    Privileges: SYSTEM (Vector Discovery Client runs as a Windows service under LocalSystem by default; client install requires Administrator privileges; running the client on an ongoing basis does not)
+    Free: 14-day free trial (vizor.cloud) — paid commercial product otherwise
+    Verification: Tenant signup / sales contact required; on-premise deployments require Microsoft IIS + SQL Server licensing
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - IT Asset Management (ITAM), Software Asset Management (SAM), IT Service Management (ITSM)
+        - Network device discovery (PC, server, router, switch, printer, SNMP devices)
+        - Hardware inventory (WMI, DMI, SMBIOS, BIOS, registry interrogation)
+        - Software inventory and software metering (active-window sampling every ~10s via clMeterSvc)
+        - Software distribution / push deployment — "system installs standard MSIs and other installer scripts, batch files — any valid code can be executed" (per Vector Asset Management v6.0 user manual)
+        - Remote client push install via ADMIN$ share + local administrative credentials (built-in deployment tooling)
+        - Group Policy and OS-image-based client deployment (also documented)
+        - SCCM / ConfigMgr, LanSweeper, SolarWinds and JAMF integration (asset data import / bridge)
+        - Embedded HTTP/HTTPS upload to operator-configured Vector Discovery Server (default 443/HTTPS, configurable)
+        - Active Directory connector — automated AD account provisioning, group membership changes, password resets, account creation/disable/delete (VIZOR ServiceDesk feature, executed server-side from the Vector Discovery Server)
+        - Self-hosted on-premise OR vendor-hosted cloud (vizor.cloud) — agent endpoint is operator-configured, not a fixed vendor cloud
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Vector\Asset Management Client\*
+        - C:\Program Files\Vector\Asset Management Client\*
+        - C:\Program Files\Vector Networks Limited\LANutil32 Suite\*
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\CLBOOT32.EXE
+          Description: Vector Asset Management Client v6.0 main launcher binary (per Vector Asset Management Client v6.0 advanceduninstaller.com listing — install path "C:\Program Files (x86)\Vector\Asset Management Client", uninstall ProductCode {04821777-1FD1-4C1A-AC4D-BF5D4D53C34C})
+          OS: Windows
+        - File: C:\Program Files\Vector\Asset Management Client\CLBOOT32.EXE
+          Description: Vector Asset Management Client v5.7 main launcher binary (per Vector Asset Management Client v5.7 advanceduninstaller.com listing — install path "C:\Program Files\Vector\Asset Management Client", uninstall ProductCode {A40A237D-C090-4C05-8580-9DBECFE3602B})
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\CLDIST32.EXE
+          Description: Vector Asset Management Client distribution / push-deployment binary
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\CLDISTSVC.EXE
+          Description: LANutil32 Distribution Agent — Windows service binary (software-distribution side of the Vector Asset Management Client)
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\clMeter32.exe
+          Description: Vector Asset Management software-metering client
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\clMeterSvc.exe
+          Description: Vector Asset Management software-metering Windows service
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\HTTPGet.exe
+          Description: Vector Asset Management HTTP download helper
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\HTTPPush.exe
+          Description: Vector Asset Management HTTP upload helper used to push inventory to the Vector Discovery Server / IIS endpoint
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\WINCHK32.EXE
+          Description: Vector Asset Management Windows-side inventory collector (consumes winchk.dat per VirusTotal Cuckoofork sandbox observation of the parent CLBOOT32.EXE)
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\regapps.exe
+          Description: Vector Asset Management installed-applications registry collector
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\lutinfow32.exe
+          Description: Vector Asset Management hardware/software info collector (LANutil32 info utility, x86 build)
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\LuSMBIOS32.exe
+          Description: Vector Asset Management SMBIOS interrogation utility (LANutil32 SMBIOS reader)
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\LuLogon.exe
+          Description: Vector Asset Management logon-time helper
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\LUGuard.exe
+          Description: Vector Asset Management watchdog / guard utility
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\LUEDIT.EXE
+          Description: Vector Asset Management editor utility
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\SelfUpdater.exe
+          Description: Vector Asset Management Client self-update binary
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\VnlSelfUpdate.exe
+          Description: Vector Asset Management Client self-update orchestrator
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\VNLDriverInstaller.exe
+          Description: Vector Asset Management driver installation helper
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\PidUpdater.exe
+          Description: Vector Asset Management product-ID / inventory updater
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\cpuchk.exe
+          Description: Vector Asset Management CPU detection helper
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\upload.exe
+          Description: Vector Asset Management generic upload helper
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\NUKE32.EXE
+          Description: Vector Asset Management cleanup / uninstall helper
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\Recycler.exe
+          Description: Vector Asset Management Client recycler / queue processor
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\closeapp.exe
+          Description: Vector Asset Management helper that closes running applications (e.g. before software distribution)
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\VECWAIT.EXE
+          Description: Vector Asset Management wait / synchronisation helper
+          OS: Windows
+        - File: C:\Program Files (x86)\Vector\Asset Management Client\Prep64.exe
+          Description: Vector Asset Management 64-bit preparation helper
+          OS: Windows
+        - File: C:\Program Files\Vector Networks Limited\LANutil32 Suite\clboot32.exe
+          Description: Legacy LANutil32 Suite install path (predecessor branding for the same Vector Networks discovery client — observed via Windows file databases)
+          OS: Windows
+        - File: C:\luhboot.bat
+          Description: LANutil32 Suite boot-time batch (observed dropped to root by CLBOOT32.EXE in VirusTotal Cuckoofork sandbox runs)
+          OS: Windows
+        - File: C:\winchk.dat
+          Description: Vector Asset Management Windows inventory data file consumed by winchk32.exe (observed at C:\winchk.dat in VirusTotal Cuckoofork sandbox runs)
+          OS: Windows
+        - File: C:\LUCLIENT.INI
+          Description: Vector Asset Management Client configuration INI file (observed accessed by CLBOOT32.EXE in VirusTotal Cuckoofork sandbox runs)
+          OS: Windows
+        - File: C:\LUCLIENT.MOD
+          Description: Vector Asset Management Client module file (observed accessed by CLBOOT32.EXE in VirusTotal Cuckoofork sandbox runs)
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          Description: Service installation event from the Vector Asset Management Client MSI — runs as LocalSystem by default per the VIZOR Security Topics document. The service DisplayName is documented as "Vector Asset Management Agent"; the underlying SCM service short-name (which is what 7045 events actually carry in the ServiceName field) has NOT been confirmed via MSI inspection — the public installer bundle is server-side only. Detections should match on ImagePath ending in `C:\Program Files\Vector\Asset Management Client\*.exe` rather than relying on a guessed ServiceName.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          Description: Server-side service installation event — the Vector Scheduler Windows service (documented DisplayName) runs on the Vector Discovery Server and parses inventory uploads from the Offline Area into the SQL Server database. Documented in the VIZOR Security Topics document — runs under a Windows account chosen at install time which must have read/write access to the Offline Area and SQL access to the database. SCM short-name not confirmed via MSI inspection.
+        - EventID: 11707
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Product: Vector Asset Management Client v6.0 -- Installation completed successfully.'
+          Description: MSI installer success event for the Vector Asset Management Client v6.0 — ProductCode {04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}, default install dir `C:\Program Files (x86)\Vector\Asset Management Client`. ProductName text derived from the Uninstall DisplayName per advanceduninstaller.com listing, not from a directly-introspected MSI Property table.
+        - EventID: 11707
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Data: 'Product: Vector Asset Management Client v5.7 -- Installation completed successfully.'
+          Description: MSI installer success event for the Vector Asset Management Client v5.7 — ProductCode {A40A237D-C090-4C05-8580-9DBECFE3602B}, default install dir `C:\Program Files\Vector\Asset Management Client`. ProductName text derived from the Uninstall DisplayName per advanceduninstaller.com listing.
+    Registry:
+        - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}
+          Description: Uninstall key for Vector Asset Management Client v6.0 — Publisher "Vector Networks", DisplayName "Vector Asset Management Client v6.0", DisplayVersion 6.0.7.1325 (per advanceduninstaller.com listing)
+        - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{A40A237D-C090-4C05-8580-9DBECFE3602B}
+          Description: Uninstall key for Vector Asset Management Client v5.7 — Publisher "Vector Networks", DisplayVersion 5.7.0.1390 (per advanceduninstaller.com listing)
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}
+          Description: Uninstall key for Vector Asset Management Client v6.0 (32-bit-on-64 view)
+        - Path: HKLM\SOFTWARE\Metaquest
+          Description: Vector Networks legacy product-namespace registry root — Metaquest is the original Vector Networks parent brand (vector-networks.com still aliases mail.metaquest.com / metaquest.com per the VirusTotal historical SSL certificate alt-names). Observed touched by the VIZOR Setup.exe in VirusTotal Jujubox sandbox (SHA-256 316d76102bdb089ed48188d2b95f6dbf9dc6ae070775d2b4404f486db87aa61e).
+    Network:
+        - Description: Outbound connection from the Vector Discovery Client (Vector Asset Management Client) to the operator-configured Vector Discovery Server (a.k.a. Vector Asset Manager) over HTTP/HTTPS to IIS. Default port is 443 (HTTPS) per the VIZOR Security Topics document, configurable to any port. The endpoint URL is operator-configured and not centralised — every install can point at a different self-hosted IIS server, or at the vendor-hosted vizor.cloud tenant.
+          Domains:
+              - <operator-configured Vector Discovery Server URL>
+          Ports:
+              - 443
+              - 80
+        - Description: VIZOR Cloud / Vector Networks vendor-hosted endpoint. Both vector-networks.com and vizor.cloud resolve to 18.204.85.68 (AWS) per VirusTotal historical resolutions; *.vizor.cloud wildcard certificate issued by Sectigo. VIZOR Cloud uses TLS 1.2 with SHA-256, 2048-bit certificates per the VIZOR Security Topics document.
+          Domains:
+              - vizor.cloud
+              - www.vizor.cloud
+              - vector-networks.com
+              - www.vector-networks.com
+          Ports:
+              - 443
+        - Description: Vector Networks legacy Metaquest brand domains carried in the vector-networks.com SSL certificate Subject Alt Names (SAN list — metaquest.com, mail.metaquest.com, www.metaquest.com — observed in cPanel-issued certificates 2020-2021 per VirusTotal historical SSL certificates). Same hosting infrastructure as vector-networks.com.
+          Domains:
+              - metaquest.com
+              - mail.metaquest.com
+              - www.metaquest.com
+          Ports:
+              - 443
+        - Description: Vector Networks downloads / support distribution host — serves the VIZOR MSI bundles, version directories (2.5.2, 2.50.2), Update Files.zip, VNConfig utility ZIPs and connector bundles. Operators (and threat actors emulating an operator) can pull the Vector Asset Management Client install media directly from these directories.
+          Domains:
+              - downloads.vector-networks.com
+              - www.vector-networks.com
+          Ports:
+              - 443
+    Other:
+        - Type: Other
+          Value: 'Default install path (Vector Asset Management Client v6.0): C:\Program Files (x86)\Vector\Asset Management Client (ProductCode {04821777-1FD1-4C1A-AC4D-BF5D4D53C34C}, DisplayVersion 6.0.7.1325, Publisher "Vector Networks")'
+        - Type: Other
+          Value: 'Default install path (Vector Asset Management Client v5.7): C:\Program Files\Vector\Asset Management Client (ProductCode {A40A237D-C090-4C05-8580-9DBECFE3602B}, DisplayVersion 5.7.0.1390, Publisher "Vector Networks")'
+        - Type: Other
+          Value: 'Legacy install path (LANutil32 Suite branding): C:\Program Files\Vector Networks Limited\LANutil32 Suite (predecessor product line for the same discovery client)'
+        - Type: Other
+          Value: 'Vector Discovery Client service: DisplayName "Vector Asset Management Agent", runs as LocalSystem by default (per VIZOR Security Topics, "Windows Account on Clients")'
+        - Type: Other
+          Value: 'Vector Discovery Server service: "Vector Scheduler" Windows service — parses inventory uploads from the Offline Area into the SQL Server database (per VIZOR Security Topics, "Server-Side Process")'
+        - Type: Other
+          Value: 'Default agent transport port: 443/HTTPS to operator-configured IIS endpoint; configurable to any port (per VIZOR Security Topics, "IP Ports")'
+        - Type: Other
+          Value: 'Software distribution: "any valid code can be executed" — the platform supports MSIs, batch files and arbitrary scripts pushed from the Vector Discovery Server to the agent (per Vector Asset Management v6.0 user manual)'
+        - Type: Other
+          Value: 'Remote client install: uses ADMIN$ share + local administrator credentials when push-deploying the Vector Client (per VIZOR Security Topics, "Client Deployment")'
+        - Type: Other
+          Value: 'Code-signing publisher: "Vector Networks" / "Vector Networks Limited" (per Windows file database listings for clboot32.exe — original product name "LANutil32 Suite")'
+        - Type: Other
+          Value: 'VirusTotal — VIZOR 2.5.2 MSI_Merge bundle Setup.exe SHA-256: 316d76102bdb089ed48188d2b95f6dbf9dc6ae070775d2b4404f486db87aa61e (1/67 detection, low-prevalence Vector Networks-authored binary, registry footprint includes HKLM\SOFTWARE\Metaquest)'
+        - Type: Other
+          Value: 'VirusTotal — Vector Networks LANutil32 / Vector Asset Management CLBOOTnn.EXE SHA-256: 435519ff10b0cfa569296dcd5dcbf470bfe5aafbe0471fcf99015a24691c0893 (1/72 detection; sandbox observed spawning C:\winchk32.exe, C:\cldist32.exe, C:\lusmbios16.exe and C:\luhboot.bat)'
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vizor_files_sigma.yml
+      Description: Detects potential files activity of VIZOR RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vizor_network_sigma.yml
+      Description: Detects potential network activity of VIZOR RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vizor_processes_sigma.yml
+      Description: Detects potential processes activity of VIZOR RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vizor_registry_sigma.yml
+      Description: Detects potential registry activity of VIZOR RMM tool
+References:
+    - https://www.vector-networks.com/
+    - https://www.vizor.cloud/
+    - https://www.vector-networks.com/it-asset-and-service-management/ITAM-SAM-products/asset-vizor.php
+    - https://www.vizor.cloud/content/it-asset-management/network-discovery/
+    - https://www.vector-networks.com/content/configuration-manager/network-device-discovery/
+    - https://www.vector-networks.com/content/configuration-manager/overview/
+    - https://www.vector-networks.com/content/configuration-manager/software-distribution/
+    - https://www.vizor.cloud/content/wp-content/uploads/2019/12/VIZOR-SecurityTopics.pdf
+    - https://www.vizor.cloud/content/support/vizor-security-summary/
+    - https://www.vizor.cloud/resources/guides/VIZOR-Guide%20v2.5.2%20304.pdf
+    - https://www.vector-networks.com/resources/asset-manager-pro/manual/5.8/VAM-Manual.pdf
+    - https://www.vector-networks.com/resources/asset-manager-pro/manual/6.0/VAM6-00-Man.pdf
+    - https://www.vector-networks.com/resources/asset-manager-pro/release-notes/5.8/readme.txt
+    - https://www.advanceduninstaller.com/Vector-Asset-Management-Client-v6_0-5b5735da73faf3a0a58c5de14d73336d-application.htm
+    - https://www.advanceduninstaller.com/Vector-Asset-Management-Client-v5_7-d529f35fb427790979fd75d3b73d5fc2-application.htm
+    - https://windowsbulletin.com/files/exe/vector-networks-limited/lanutil32-suite/clboot32-exe
+    - https://www.glarysoft.com/startups/lanutil32distributionagent/cldistsvcexe/511206
+    - https://www.virustotal.com/gui/file/435519ff10b0cfa569296dcd5dcbf470bfe5aafbe0471fcf99015a24691c0893
+    - https://www.virustotal.com/gui/file/316d76102bdb089ed48188d2b95f6dbf9dc6ae070775d2b4404f486db87aa61e
+Acknowledgement:
+    - Person: Michael Haag
+      Handle: '@M_haggis'

@@ -1,0 +1,33 @@
+title: Potential Controlio RMM Tool File Activity
+id: 714949ba-7d7d-56c4-be3f-7ced6723846e
+status: experimental
+description: |
+    Detects potential files activity of Controlio RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'weClipboardListener.exe'
+            - 'bbl.exe'
+            - 'weprtct.exe'
+            - 'wemonc.exe'
+            - 'wesvc.exe'
+            - 'libeay32.dll'
+            - 'ssleay32.dll'
+            - 'wec_launcher_[a-Z0-9]*_.exe'
+            - 'wec_launcher_[a-Z0-9]*_.pkg'
+            - 'weInstSvc.exe'
+            - 'C:\ProgramData\{E0E95C6C-F194-4846-928D-E5538022226D}\'
+    condition: selection
+falsepositives:
+    - Legitimate use of Controlio
+level: medium

@@ -1,0 +1,60 @@
+---
+description: "DW Service is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+title: "DW Service"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# DW Service
+
+DW Service is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+
+<BlockBanner name={"DW Service"}/>
+
+### Details
+<Details author={""}
+         category={"RMM"}
+         created={"2024-08-02"}
+         website={"https://www.dwservice.net/"}
+         lastModified={"2024-08-02"}
+         privileges={""}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["dwagsvc.exe", "dwagent.exe", "dwagsvc.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "DWSNET srl", "certificate_thumbprint": "4A13F46DEF2C9427898A46A88A6A2122ED106B37", "src_file_sha256": "cd098eddb23f2d2f6c42271ca82803b0d5ac950cb82a9b8ae0928e83945a53df", "src_file_path": "downloaded_files/dw_service/cd098eddb23f2d2f6c42271ca82803b0d5ac950cb82a9b8ae0928e83945a53df"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.dwservice.net"], "Ports": []}] }/>
+
+
+
+
+### Detections
+- Detects potential network activity of DW Service RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_network_sigma.yml)
+- Detects potential processes activity of DW Service RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dw_service_processes_sigma.yml)
+
+### References
+- [https://news.dwservice.net/dwservice-security-infrastructure/](https://news.dwservice.net/dwservice-security-infrastructure/)
+
