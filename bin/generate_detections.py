@@ -240,18 +240,22 @@ def generate_kql_detection():
         "author": "LOLRMM Project",
         "date": datetime.now().strftime("%Y/%m/%d"),
         "query": """// Detecting Unauthorized RMM Instances in Your MDE Environment
+//
+// Note: this query targets Microsoft Defender for Endpoint (DeviceNetworkEvents.Timestamp).
+// For Microsoft Sentinel, replace both `Timestamp` references with `TimeGenerated`.
 
-let SanctionRMM = dynamic(\"YOUR_APPROVED_RMM_DOMAINS\"); // E.g. \"bomgarcloud.com\" - Replace with your approved RMM domains
+let SanctionRMM = dynamic([\"bomgarcloud.com\"]); // Replace with your approved RMM domains, e.g. dynamic([\"teamviewer.com\", \"anydesk.com\"])
 let RMMList = externaldata(URI: string, RMMTool: string)
-    [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];
-let RMMUrl = RMMList | project URI;
+    [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv']
+    with (ignoreFirstRecord=true);
+let RMMUrl = toscalar(RMMList | summarize make_set(URI));
 
 DeviceNetworkEvents
-| where TimeGenerated > ago(1h)
-| where ActionType == @\"ConnectionSuccess\"
+| where Timestamp > ago(1h)
+| where ActionType == \"ConnectionSuccess\"
 | where RemoteUrl has_any(RMMUrl)
 | where not (RemoteUrl has_any(SanctionRMM))
-| summarize arg_max(TimeGenerated, *) by DeviceId""",
+| summarize arg_max(Timestamp, *) by DeviceId""",
         "references": ["https://github.com/magicsword-io/LOLRMM"],
         "requirements": [
             "Microsoft Defender for Endpoint",
