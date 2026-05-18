@@ -17,13 +17,11 @@ detection:
     selection:
         DestinationHostname|endswith:
             - 'pubsub.atera.com'
-            - 'pubsub.pubnub.com'
             - 'agentreporting.atera.com'
             - 'getalphacontrol.com'
             - 'app.atera.com'
             - 'agenthb.atera.com'
             - 'packagesstore.blob.core.windows.net'
-            - 'ps.pndsn.com'
             - 'agent-api.atera.com'
             - 'agentreportingstore.blob.core.windows.net'
             - 'atera-agent-heartbeat.servicebus.windows.net'
