@@ -1,0 +1,30 @@
+title: Potential Nezha RMM Tool Process Activity
+id: 5f2bf4b1-c382-55fd-9ce6-dd91a480fd03
+status: experimental
+description: |
+    Detects potential processes activity of Nezha RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'nezha-agent.exe'
+            - 'nezha-agent.exe'
+            - 'dashboard-windows-amd64.exe'
+    selection_image:
+        Image|endswith:
+            - 'nezha-agent.exe'
+            - 'nezha-agent.exe'
+            - 'dashboard-windows-amd64.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of Nezha
+level: medium
