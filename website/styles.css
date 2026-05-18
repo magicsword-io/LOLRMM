@@ -3,6 +3,111 @@
 @tailwind utilities;
 @tailwind variants;
 
+.ms-cta {
+  background: #08080a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 18px 40px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.ms-cta::before {
+  background: linear-gradient(90deg, transparent, #10b981, transparent);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ms-cta-logo {
+  margin-bottom: 8px;
+}
+
+.ms-cta-logo img {
+  height: 120px;
+  width: auto;
+}
+
+.ms-cta-logo .ms-logo-light {
+  display: none;
+}
+
+.ms-cta-logo .ms-logo-dark {
+  display: inline;
+}
+
+.ms-cta h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 4px;
+}
+
+.ms-cta h3 em {
+  color: #10b981;
+  font-style: normal;
+}
+
+.ms-cta p {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 auto 12px;
+  max-width: 560px;
+}
+
+.ms-cta-btn {
+  align-items: center;
+  background: #10b981 !important;
+  border-radius: 8px;
+  color: #fff !important;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 800;
+  gap: 8px;
+  padding: 14px 32px;
+  text-decoration: none !important;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.ms-cta-btn:hover {
+  background: #059669 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+}
+
+.ms-cta-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .ms-cta {
+    padding: 16px 20px 18px;
+  }
+
+  .ms-cta-logo img {
+    height: 88px;
+    max-width: 100%;
+  }
+
+  .ms-cta h3 {
+    font-size: 1.25rem;
+  }
+
+  .ms-cta-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 /* Fix for EUI Accordion display */
 .euiAccordion__childWrapper {
   height: fit-content !important;
