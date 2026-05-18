@@ -9,7 +9,7 @@ import {EuiSpacer} from "@elastic/eui"
 
 # {{ rmm.Name }}
 
-{{ rmm.Description }}
+{{ rmm.Description | mdx_escape }}
 
 <BlockBanner name={"{{ rmm.Name }}"}/>
 
@@ -92,7 +92,7 @@ import {EuiSpacer} from "@elastic/eui"
 {% if rmm.Detections %}
 ### Detections
 {% for detection in rmm.Detections %}
-- {{ detection.Description }}
+- {{ detection.Description | mdx_escape }}
 {% if detection.Sigma %}
   - [Sigma Rule]({{ detection.Sigma }})
 {% endif %}
