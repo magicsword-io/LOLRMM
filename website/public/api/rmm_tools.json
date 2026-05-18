@@ -17067,50 +17067,189 @@
     {
         "Name": "Komari",
         "Category": "RMM",
-        "Description": "A simple server monitor tool.\n",
+        "Description": "Komari is a lightweight, self-hosted server monitoring tool with a web interface and lightweight agent. It supports server status monitoring through a web dashboard and collects telemetry through an installed agent.\n",
         "Author": "Daniel Koifman (KoifSec)",
         "Created": "2026-05-03",
-        "LastModified": "2026-05-03",
+        "LastModified": "2026-05-15",
         "Details": {
             "Website": "https://github.com/komari-monitor/komari",
-            "Privileges": "User",
+            "PEMetadata": [
+                {
+                    "Filename": "komari.exe",
+                    "OriginalFileName": "komari.exe",
+                    "Description": "Komari server binary",
+                    "Product": "Komari"
+                },
+                {
+                    "Filename": "komari-agent.exe",
+                    "OriginalFileName": "komari-agent.exe",
+                    "Description": "Komari agent binary",
+                    "Product": "Komari Agent"
+                }
+            ],
+            "Privileges": "SYSTEM/root",
             "Free": true,
-            "Verification": true,
+            "Verification": "Official documentation and installer scripts",
             "SupportedOS": [
                 "Windows",
-                "Linux"
+                "Linux",
+                "Mac",
+                "FreeBSD"
             ],
             "Capabilities": [
-                "Remote Desktop Access",
-                "Remote Shell"
+                "Remote Monitoring",
+                "Web Interface",
+                "Agent-based telemetry",
+                "Server monitoring"
             ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "komari-windows-386.exe",
-                "komari-windows-amd64.exe",
-                "komari-windows-arm64.exe",
-                "komari-agent.exe"
+                "C:\\Program Files\\Komari\\*",
+                "C:\\komari\\*",
+                "/opt/komari/*",
+                "/usr/local/komari/*",
+                "/etc/systemd/system/komari.service",
+                "/etc/systemd/system/komari-agent.service"
             ]
         },
         "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": []
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Komari\\komari-agent.exe",
+                    "Description": "Komari Agent Windows service binary",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Komari\\nssm.exe",
+                    "Description": "NSSM service wrapper used by the Windows Komari Agent installer",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\komari\\agent",
+                    "Description": "Komari Agent binary path when installed from a POSIX shell on Windows",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/opt/komari/komari",
+                    "Description": "Komari server binary installed by the official Linux installer",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/komari/agent",
+                    "Description": "Komari Agent binary installed by the official Linux installer",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/usr/local/komari/agent",
+                    "Description": "Komari Agent binary path used by the official macOS installer",
+                    "OS": "Mac"
+                },
+                {
+                    "File": "/etc/systemd/system/komari.service",
+                    "Description": "Komari server systemd service",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/komari-agent.service",
+                    "Description": "Komari Agent systemd service",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "komari-agent",
+                    "ImagePath": "C:\\Program Files\\Komari\\komari-agent.exe",
+                    "Description": "Windows service installation event for Komari Agent",
+                    "OS": "Windows"
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\System\\CurrentControlSet\\Services\\komari-agent",
+                    "Description": "Windows service registry key for Komari Agent (default name when installed via the vendor PowerShell installer)"
+                },
+                {
+                    "Path": "HKLM\\System\\CurrentControlSet\\Services\\Windows Update Service",
+                    "Description": "Komari Agent persistence under a renamed NSSM-wrapped service. Observed in-the-wild abuse pattern (Huntress, April 2026) where the actor used NSSM to install komari-agent.exe as a SYSTEM service named \"Windows Update Service\" to blend with legitimate Windows servicing."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Komari server web interface and agent communication",
+                    "Domains": [
+                        "github.com",
+                        "raw.githubusercontent.com",
+                        "ghcr.io",
+                        "komari-document.pages.dev",
+                        "www.komari.wiki"
+                    ],
+                    "Ports": [
+                        25774,
+                        443
+                    ]
+                },
+                {
+                    "Description": "Komari Agent install URL pattern observed in Huntress April 2026 abuse case (PowerShell installer pulled directly from komari-monitor's main branch on GitHub).",
+                    "Domains": [
+                        "raw.githubusercontent.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "URL",
+                    "Value": "https://raw.githubusercontent.com/komari-monitor/komari-agent/refs/heads/main/install.ps1"
+                },
+                {
+                    "Type": "SHA256",
+                    "Value": "039e659ade3aa8ee7758c11fdb8fbfffd2491920046d638413cea2042f6d584c"
+                },
+                {
+                    "Type": "IP",
+                    "Value": "45.153.34.132"
+                }
+            ]
         },
         "Detections": [
             {
-                "Sigma": "https://github.com/Koifman/LOLRMM/tree/main/detections/sigma/komari_process_sigma.yml",
-                "Description": "Detects process activity of Komari"
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/komari_files_sigma.yml",
+                "Description": "Detects potential file activity of Komari RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/komari_network_sigma.yml",
+                "Description": "Detects potential network activity of Komari RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/komari_processes_sigma.yml",
+                "Description": "Detects potential process activity of Komari RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/komari_registry_sigma.yml",
+                "Description": "Detects potential registry activity of Komari RMM tool"
             }
         ],
         "References": [
-            "https://www.huntress.com/blog/komari-c2-agent-abuse"
+            "https://www.huntress.com/blog/komari-c2-agent-abuse",
+            "https://github.com/komari-monitor/komari",
+            "https://github.com/komari-monitor/komari-agent",
+            "https://raw.githubusercontent.com/komari-monitor/komari/main/install-komari.sh",
+            "https://raw.githubusercontent.com/komari-monitor/komari-agent/main/install.sh",
+            "https://raw.githubusercontent.com/komari-monitor/komari-agent/main/install.ps1"
         ],
         "Acknowledgement": [
             {
                 "Person": "Daniel Koifman",
                 "Handle": "@KoifSec"
+            },
+            {
+                "Person": "Andreas K.",
+                "Handle": "@0x90v1"
             }
         ]
     },

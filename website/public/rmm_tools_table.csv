@@ -180,7 +180,7 @@ Name,Category,Description,Author
 [Atera](/rmm_tools/atera),RMM,Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransom...,
 [Ivanti Remote Control](/rmm_tools/ivanti-remote-control),RMM,Ivanti Remote Control is a remote monitoring and management (RMM) tool. More information will be add...,
 [PuTTY Tray](/rmm_tools/putty-tray),RAT,PuTTY Tray is a remote monitoring and management (RMM) tool. More information will be added as it be...,
-[Komari](/rmm_tools/komari),RMM,A simple server monitor tool....,Daniel Koifman (KoifSec)
+[Komari](/rmm_tools/komari),RMM,"Komari is a lightweight, self-hosted server monitoring tool with a web interface and lightweight age...",Daniel Koifman (KoifSec)
 [RDPView](/rmm_tools/rdpview),RAT,RDPView is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [ISL Online](/rmm_tools/isl-online),RMM,ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Comodo RMM](/rmm_tools/comodo-rmm),RMM,Comodo RMM is a remote monitoring and management (RMM) tool. More information will be added as it be...,

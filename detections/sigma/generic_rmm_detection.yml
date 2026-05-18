@@ -176,6 +176,7 @@ detection:
     - \\C:\Program Files\IDrive\*
     - \\C:\Program Files\ImmyBot\ImmyAgent.exe
     - \\C:\Program Files\ImmyBot\ImmyUpdater.exe
+    - \\C:\Program Files\Komari\*
     - \\C:\Program Files\Level\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
     - \\C:\Program Files\Lunixar\*
@@ -268,6 +269,7 @@ detection:
     - \\C:\bin\cis.vbs
     - \\C:\bin\netbird.msi
     - \\C:\bin\trm.zip
+    - \\C:\komari\*
     - \\C:\temper\trm
     - \\CBBackupPlan.exe
     - \\CagService.exe
@@ -619,10 +621,8 @@ detection:
     - \\jumpdesktop.exe
     - \\jumpservice.exe
     - \\jumpupdater.exe
-    - \\komari-agent.exe
-    - \\komari-windows-386.exe
-    - \\komari-windows-amd64.exe
-    - \\komari-windows-arm64.exe
+    - \\komari-agent.service
+    - \\komari.service
     - \\konea.exe
     - \\landeskagentbootstrap.exe
     - \\laplink-everywhere-setup*.exe
