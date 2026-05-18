@@ -1,12 +1,12 @@
-title: Potential Microsoft TSC RMM Tool Process Activity
-id: ea9f6f7d-1757-460a-906d-53d0ba6e422a
+title: Potential Duet Display RMM Tool Process Activity
+id: e9133ac9-398c-5a2a-9a97-1b0006fcfe10
 status: experimental
 description: |
-    Detects potential processes activity of Microsoft TSC RMM tool
+    Detects potential processes activity of Duet Display RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-05-18
 tags:
     - attack.execution
     - attack.t1219
@@ -16,13 +16,15 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - termsrv.exe
-            - mstsc.exe
+            - 'duet.exe'
+            - 'DuetSetup.exe'
+            - 'DuetDisp.exe'
     selection_image:
         Image|endswith:
-            - termsrv.exe
-            - mstsc.exe
+            - 'duet.exe'
+            - 'DuetSetup.exe'
+            - 'DuetDisp.exe'
     condition: 1 of selection_*
 falsepositives:
-    - Legitimate use of Microsoft TSC
+    - Legitimate use of Duet Display
 level: medium

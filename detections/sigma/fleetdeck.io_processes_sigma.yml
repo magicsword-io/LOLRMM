@@ -16,18 +16,24 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - fleetdeck_agent_svc.exe
-            - fleetdeck_commander_svc.exe
-            - fleetdeck_installer.exe
-            - fleetdeck_commander_launcher.exe
-            - fleetdeck_agent.exe
+            - 'fleetdeck_agent_svc.exe'
+            - 'fleetdeck_agent.exe'
+            - 'fleetdeck-agent.exe'
+            - 'fleetdeck_agent_svc.exe'
+            - 'fleetdeck_commander_svc.exe'
+            - 'fleetdeck_installer.exe'
+            - 'fleetdeck_commander_launcher.exe'
+            - 'fleetdeck_agent.exe'
     selection_image:
         Image|endswith:
-            - fleetdeck_agent_svc.exe
-            - fleetdeck_commander_svc.exe
-            - fleetdeck_installer.exe
-            - fleetdeck_commander_launcher.exe
-            - fleetdeck_agent.exe
+            - 'fleetdeck_agent_svc.exe'
+            - 'fleetdeck_agent.exe'
+            - 'fleetdeck-agent.exe'
+            - 'fleetdeck_agent_svc.exe'
+            - 'fleetdeck_commander_svc.exe'
+            - 'fleetdeck_installer.exe'
+            - 'fleetdeck_commander_launcher.exe'
+            - 'fleetdeck_agent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of FleetDeck.io

@@ -15,9 +15,15 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: hoptodesk.exe
+        ParentImage|endswith:
+            - 'HopToDesk.exe'
+            - 'HopToDesk.exe'
+            - 'HopToDesk-Standalone.exe'
     selection_image:
-        Image|endswith: hoptodesk.exe
+        Image|endswith:
+            - 'HopToDesk.exe'
+            - 'HopToDesk.exe'
+            - 'HopToDesk-Standalone.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of HopToDesk

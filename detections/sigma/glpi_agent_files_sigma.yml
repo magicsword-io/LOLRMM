@@ -1,0 +1,43 @@
+title: Potential GLPI Agent RMM Tool File Activity
+id: 89bdbf99-953a-54a5-8339-17ea0e00acf5
+status: experimental
+description: |
+    Detects potential files activity of GLPI Agent RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-agent'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-win32-service.bat'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-inventory'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-netdiscovery'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-netinventory'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-esx'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-injector'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\glpi-remote'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\perl.exe'
+            - 'C:\Program Files\GLPI-Agent\perl\bin\wperl.exe'
+            - 'C:\Program Files\GLPI-Agent\etc\agent.cfg'
+            - 'C:\Program Files\GLPI-Agent\logs\glpi-agent.log'
+            - 'C:\Program Files\GLPI-Agent\var\*'
+            - '/usr/bin/glpi-agent'
+            - '/usr/local/bin/glpi-agent'
+            - '/etc/glpi-agent/agent.cfg'
+            - '/etc/glpi-agent/conf.d/*'
+            - '/var/lib/glpi-agent/*'
+            - '/lib/systemd/system/glpi-agent.service'
+            - '/Applications/GLPI-Agent/etc/agent.cfg'
+            - '/Applications/GLPI-Agent/etc/conf.d/*'
+    condition: selection
+falsepositives:
+    - Legitimate use of GLPI Agent
+level: medium

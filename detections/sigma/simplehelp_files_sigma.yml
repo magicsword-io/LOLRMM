@@ -1,0 +1,24 @@
+title: Potential SimpleHelp RMM Tool File Activity
+id: dcfe4fa2-0f13-51fc-b64b-6ea408c804a3
+status: experimental
+description: |
+    Detects potential files activity of SimpleHelp RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-05-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'C:\ProgramData\JWrapper-Remote Access\'
+            - '%APPDATA%\JWrapper-SimpleSetup\'
+    condition: selection
+falsepositives:
+    - Legitimate use of SimpleHelp
+level: medium

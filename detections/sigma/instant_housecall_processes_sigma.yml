@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - hsloader.exe
-            - ihcserver.exe
-            - instanthousecall.exe
-            - instanthousecall.exe
+            - 'hsloader.exe'
+            - 'InstantHousecall.exe'
+            - 'ihcserver.exe'
+            - 'instanthousecall.exe'
     selection_image:
         Image|endswith:
-            - hsloader.exe
-            - ihcserver.exe
-            - instanthousecall.exe
-            - instanthousecall.exe
+            - 'hsloader.exe'
+            - 'InstantHousecall.exe'
+            - 'ihcserver.exe'
+            - 'instanthousecall.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Instant Housecall

@@ -1,12 +1,12 @@
-title: Potential Microsoft RDP RMM Tool Process Activity
-id: 4122da1c-0f56-4d24-bcb4-afc2dc3f82b3
+title: Potential RDCMan RMM Tool Process Activity
+id: 9827602b-aa1f-5988-a1ff-a49e592818b7
 status: experimental
 description: |
-    Detects potential processes activity of Microsoft RDP RMM tool
+    Detects potential processes activity of RDCMan RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-05-18
 tags:
     - attack.execution
     - attack.t1219
@@ -16,13 +16,13 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - termsrv.exe
-            - mstsc.exe
+            - 'RDCMan.exe'
+            - 'RDCMan-x86.exe'
     selection_image:
         Image|endswith:
-            - termsrv.exe
-            - mstsc.exe
+            - 'RDCMan.exe'
+            - 'RDCMan-x86.exe'
     condition: 1 of selection_*
 falsepositives:
-    - Legitimate use of Microsoft RDP
+    - Legitimate use of RDCMan
 level: medium

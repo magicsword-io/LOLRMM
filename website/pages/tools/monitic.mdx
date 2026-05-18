@@ -1,0 +1,94 @@
+---
+description: "Monitic (monitic.com) is an EU/Turkey-based SaaS Remote Monitoring and Management (RMM) platform marketed at MSPs and IT departments. The product is operated by VAULT B\u0130L\u0130\u015e\u0130M S\u0130STEMLER\u0130 LTD.\u015eT\u0130. (Turkish entity, Code Signing certificate via GlobalSign GCC R45 EV CodeSigning CA 2020) and exposes its tenant console at app.monitic.com with the agent control plane at api.monitic.com (both fronted by Cloudflare).  The Windows agent ships as two SYSTEM services installed under C:\\Program Files\\Monitic\\: a large (~50-60 MB) bundled `agent.exe` that embeds RustDesk dependencies (libvpx, WinPthreadGC) and the `kopia.io` backup engine for remote control, file transfer and backup, and a smaller (~6 MB) `amon.exe` watchdog/monitoring binary written in Go. A separate `MoniticInstaller.exe` bootstrapper (Themida-packed, signed by VAULT B\u0130L\u0130\u015e\u0130M) is downloaded from app.monitic.com and uses `rundll32 url.dll,FileProtocolHandler https://app.monitic.com/installer` to drive the user through the install flow. An alternate silent installer is distributed as `agent_installer.bat` which downloads `installer.zip` from `https://api.monitic.com/api/ext/download-installer?t=<token>` via PowerShell `Net.WebClient.DownloadFile`, extracts it to `C:\\Program Files\\Monitic\\`, fetches `conf.json` from `https://api.monitic.com/api/ext/get-config?t=<token>`, then registers both services with `agent.exe install` and `amon.exe install`. A WebRTC TURN server is operated at `turn.monitic.com` (77.37.120.252) for RustDesk peer-to-peer relay.  Monitic agents are flagged by the ProofPoint Emerging Threats Open ruleset (`ET INFO Observed RMM Domain in DNS Lookup ( * .monitic .com)` and `ET INFO Observed RMM Domain in TLS SNI ( * .monitic .com)`) and are classified as a remote-access tool that may be abused under MITRE ATT&CK T1219 (Remote Access Software). Sandbox engines (Zenbox, CAPE) frequently mis-classify the Themida-packed Go/.NET binaries as `Snake` / `Gocoder`, but Microsoft / Symantec / Kaspersky engine results are clean and the binaries are EV-code-signed."
+title: "Monitic"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Monitic
+
+Monitic (monitic.com) is an EU/Turkey-based SaaS Remote Monitoring and Management (RMM) platform marketed at MSPs and IT departments. The product is operated by VAULT BİLİŞİM SİSTEMLERİ LTD.ŞTİ. (Turkish entity, Code Signing certificate via GlobalSign GCC R45 EV CodeSigning CA 2020) and exposes its tenant console at app.monitic.com with the agent control plane at api.monitic.com (both fronted by Cloudflare).
+
+The Windows agent ships as two SYSTEM services installed under C:\Program Files\Monitic\: a large (~50-60 MB) bundled `agent.exe` that embeds RustDesk dependencies (libvpx, WinPthreadGC) and the `kopia.io` backup engine for remote control, file transfer and backup, and a smaller (~6 MB) `amon.exe` watchdog/monitoring binary written in Go. A separate `MoniticInstaller.exe` bootstrapper (Themida-packed, signed by VAULT BİLİŞİM) is downloaded from app.monitic.com and uses `rundll32 url.dll,FileProtocolHandler https://app.monitic.com/installer` to drive the user through the install flow. An alternate silent installer is distributed as `agent_installer.bat` which downloads `installer.zip` from `https://api.monitic.com/api/ext/download-installer?t=<token>` via PowerShell `Net.WebClient.DownloadFile`, extracts it to `C:\Program Files\Monitic\`, fetches `conf.json` from `https://api.monitic.com/api/ext/get-config?t=<token>`, then registers both services with `agent.exe install` and `amon.exe install`. A WebRTC TURN server is operated at `turn.monitic.com` (77.37.120.252) for RustDesk peer-to-peer relay.
+
+Monitic agents are flagged by the ProofPoint Emerging Threats Open ruleset (`ET INFO Observed RMM Domain in DNS Lookup ( * .monitic .com)` and `ET INFO Observed RMM Domain in TLS SNI ( * .monitic .com)`) and are classified as a remote-access tool that may be abused under MITRE ATT&CK T1219 (Remote Access Software). Sandbox engines (Zenbox, CAPE) frequently mis-classify the Themida-packed Go/.NET binaries as `Snake` / `Gocoder`, but Microsoft / Symantec / Kaspersky engine results are clean and the binaries are EV-code-signed.
+
+
+<BlockBanner name={"Monitic"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RMM"}
+         created={"2026-05-04"}
+         website={"https://www.monitic.com/"}
+         lastModified={"2026-05-04"}
+         privileges={"SYSTEM"}
+         free={ "14-day free trial (no credit card)" }
+         verification={ "Tenant signup required; corporate email accepted, no strict enforcement observed" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Monitic\\*", "C:\\Program Files\\Monitic\\agent.exe", "C:\\Program Files\\Monitic\\amon.exe", "C:\\Program Files\\Monitic\\conf.json"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "MacOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote monitoring and management", "Remote access via bundled RustDesk (peer-to-peer with TURN relay at turn.monitic.com)", "Remote shell / command execution", "Patch management and Windows Update tracking", "Active Directory management and audit", "Hypervisor monitoring (Hyper-V, Docker)", "Network monitoring and management", "Asset inventory", "SMART / RAID disk health monitoring", "Antivirus monitoring and CVE detection", "Backup (kopia.io engine bundled in agent.exe)", "Event log management and security analytics", "API and web service uptime monitoring", "Certificate management", "Digital employee experience (DEX) monitoring"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Monitic\\agent.exe", "Description": "Monitic primary agent SYSTEM service binary (RustDesk + kopia bundle)", "OS": "Windows"}, {"File": "C:\\Program Files\\Monitic\\amon.exe", "Description": "Monitic monitor / watchdog SYSTEM service binary (Go, ~6 MB)", "OS": "Windows"}, {"File": "C:\\Program Files\\Monitic\\conf.json", "Description": "Per-tenant configuration file fetched from https://api.monitic.com/api/ext/get-config?t=<token> during install (referenced explicitly by agent_installer.bat)", "OS": "Windows"}, {"File": "C:\\Program Files\\Monitic\\*", "Description": "Monitic install directory \u2014 created/cleared by agent_installer.bat (`del /q \"C:\\Program Files\\Monitic\\*\"`) and populated from installer.zip", "OS": "Windows"}, {"File": "%USERPROFILE%\\Desktop\\MoniticInstaller.exe", "Description": "Bootstrap installer download location when fetched manually from https://app.monitic.com/MoniticInstaller.exe (typical install layout \u2014 observed in CAPE/Zenbox sandbox traces)", "OS": "Windows"}, {"File": "%TEMP%\\*\\agent_installer.bat", "Description": "Silent installer batch script \u2014 extracted to a temp directory before execution (observed path C:\\Users\\<user>\\AppData\\Local\\Temp\\<random>\\agent_installer.bat)", "OS": "Windows"}, {"File": "%TEMP%\\*\\amon.exe", "Description": "Stage-1 amon.exe drop location (observed at C:\\Users\\user\\AppData\\Local\\Temp\\vx1nkas2.1am\\amon.exe before move to Program Files)", "OS": "Windows"}, {"File": "%TEMP%\\*\\agent.exe", "Description": "Stage-1 agent.exe drop location (observed at C:\\Users\\user\\AppData\\Local\\Temp\\vx1nkas2.1am\\agent.exe before move to Program Files)", "OS": "Windows"}, {"File": "%CD%\\installer.zip", "Description": "~58 MB ZIP downloaded from https://api.monitic.com/api/ext/download-installer?t=<token> via `powershell (New-Object Net.WebClient).DownloadFile(...)` \u2014 extracted to C:\\Program Files\\Monitic\\ via `[IO.Compression.ZipFile]::ExtractToDirectory()` then deleted (observed sha256 5a5303d57956589d2b6b27e70f8a2c9cb91b17954a3e52caf4549dd4e0863404)", "OS": "Windows"}, {"File": "%CD%\\conf.json", "Description": "Transient configuration file downloaded from https://api.monitic.com/api/ext/get-config?t=<token> by agent_installer.bat then `copy`-ed to C:\\Program Files\\Monitic\\conf.json and deleted from working directory", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ImagePath": "\"C:\\\\Program Files\\\\Monitic\\\\agent.exe\"", "Description": "Service installation event resulting from `agent.exe install` invocation by Monitic agent_installer.bat (SYSTEM service registered for the primary RustDesk/kopia agent). The SCM service Name (Go service-installer subcommand value) was not directly observed \u2014 agent.exe is Themida-packed and no `services\\<name>` registry key surfaced in sandbox runs. Match on ImagePath."}, {"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ImagePath": "\"C:\\\\Program Files\\\\Monitic\\\\amon.exe\"", "Description": "Service installation event resulting from `amon.exe install` invocation by Monitic agent_installer.bat (SYSTEM service registered for the amon watchdog). Service Name not directly observed \u2014 match on ImagePath ending in `amon.exe`."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "rundll32 url.dll,FileProtocolHandler https://app.monitic.com/installer", "Description": "MoniticInstaller.exe spawning rundll32 to open the installer enrollment URL via the default browser (observed in CAPE/Zenbox sandbox traces of the bootstrap installer)."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "powershell -command \"& { (New-Object Net.WebClient).DownloadFile('https://api.monitic.com/api/ext/download-installer?t=<token>', 'installer.zip') }\"", "Description": "PowerShell download of installer.zip from api.monitic.com triggered by Monitic's agent_installer.bat."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "powershell -command \"& { (New-Object Net.WebClient).DownloadFile('https://api.monitic.com/api/ext/get-config?t=<token>', 'conf.json') }\"", "Description": "PowerShell download of per-tenant conf.json from api.monitic.com triggered by Monitic's agent_installer.bat."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "powershell -command \"& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory('installer.zip', 'C:\\Program Files\\Monitic') }\"", "Description": "PowerShell extraction of installer.zip into C:\\Program Files\\Monitic during Monitic install (observed verbatim in agent_installer.bat)."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "\"C:\\\\Program Files\\\\Monitic\\\\agent.exe\" install", "Description": "Monitic agent.exe registering itself as a SYSTEM service via the `install` subcommand (called from agent_installer.bat)."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "\"C:\\\\Program Files\\\\Monitic\\\\amon.exe\" install", "Description": "Monitic amon.exe registering itself as a SYSTEM service via the `install` subcommand (called from agent_installer.bat)."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "\"C:\\\\Program Files\\\\Monitic\\\\amon.exe\" start", "Description": "Monitic amon.exe service start triggered by agent_installer.bat after installation."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "powershell -NoProfile -NonInteractive -Command \"& {Get-WmiObject Win32_BIOS | Select-Object Manufacturer, SerialNumber | ConvertTo-Json -Compress}\"", "Description": "Hardware fingerprinting WMI query executed by Monitic agent.exe (observed in CAPE sandbox traces of agent.exe). Sibling queries seen for Win32_Processor, Win32_DiskDrive (Index=0) and Win32_BaseBoard."}, {"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "taskkill /IM tunnel.exe /F", "Description": "Monitic agent.exe terminating its bundled tunnel.exe child during lifecycle / restart (observed in CAPE sandbox traces of agent.exe \u2014 `tunnel.exe` is the RustDesk tunneling helper)."}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Monitic agent control plane \u2014 config and installer download REST API (api.monitic.com/api/ext/get-config, /api/ext/download-installer, /api/ext/check-sha256, /api/ext/get-token)", "Domains": ["api.monitic.com"], "Ports": [443]}, {"Description": "Monitic tenant web console / installer hosting (app.monitic.com/MoniticInstaller.exe, app.monitic.com/installer)", "Domains": ["app.monitic.com"], "Ports": [443]}, {"Description": "Monitic developer / staging API (referenced in MoniticInstaller.exe embedded URLs \u2014 https://devapi.monitic.com/api/ext/download-installer)", "Domains": ["devapi.monitic.com"], "Ports": [443]}, {"Description": "Monitic WebRTC TURN relay for RustDesk peer-to-peer remote control fallback (turn.monitic.com \u2192 77.37.120.252)", "Domains": ["turn.monitic.com"], "Ports": [443, 3478]}, {"Description": "Monitic corporate / marketing site", "Domains": ["monitic.com", "www.monitic.com"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "URL", "Value": "https://app.monitic.com/MoniticInstaller.exe"}, {"Type": "URL", "Value": "https://app.monitic.com/installer"}, {"Type": "URL", "Value": "https://api.monitic.com/api/ext/get-token"}, {"Type": "URL", "Value": "https://api.monitic.com/api/ext/get-config"}, {"Type": "URL", "Value": "https://api.monitic.com/api/ext/download-installer"}, {"Type": "URL", "Value": "https://api.monitic.com/api/ext/check-sha256"}, {"Type": "URL", "Value": "https://devapi.monitic.com/api/ext/download-installer"}, {"Type": "IP", "Value": "77.37.120.252"}, {"Type": "ProofpointETSignature", "Value": "ET INFO Observed RMM Domain in DNS Lookup ( * .monitic .com)"}, {"Type": "ProofpointETSignature", "Value": "ET INFO Observed RMM Domain in TLS SNI ( * .monitic .com)"}, {"Type": "CodeSigningSubject", "Value": "VAULT B\u0130L\u0130\u015e\u0130M S\u0130STEMLER\u0130 LTD.\u015eT\u0130."}, {"Type": "CodeSigningIssuer", "Value": "GlobalSign GCC R45 EV CodeSigning CA 2020"}] }/>
+
+
+
+### Detections
+- Detects potential files activity of Monitic RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/monitic_files_sigma.yml)
+- Detects potential network activity of Monitic RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/monitic_network_sigma.yml)
+- Detects potential processes activity of Monitic RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/monitic_processes_sigma.yml)
+- Detects potential registry activity of Monitic RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/monitic_registry_sigma.yml)
+
+### References
+- [https://www.monitic.com/](https://www.monitic.com/)
+- [https://www.monitic.com/en](https://www.monitic.com/en)
+- [https://www.monitic.com/en/why-monitic](https://www.monitic.com/en/why-monitic)
+- [https://www.monitic.com/faq](https://www.monitic.com/faq)
+- [https://www.monitic.com/en/features/streamlined-remote-access](https://www.monitic.com/en/features/streamlined-remote-access)
+- [https://www.monitic.com/en/products/remote-access-and-control](https://www.monitic.com/en/products/remote-access-and-control)
+- [https://app.monitic.com/](https://app.monitic.com/)
+- [https://rules.emergingthreats.net/](https://rules.emergingthreats.net/)
+- [https://www.virustotal.com/gui/file/d641841cdf83037b32e699f01da16b66a9064221013dfec43d7a3bc993d6181d](https://www.virustotal.com/gui/file/d641841cdf83037b32e699f01da16b66a9064221013dfec43d7a3bc993d6181d)
+- [https://www.virustotal.com/gui/file/71cd67afd19f9f5d0cf00d92034c40b674e3b4d9888f5be6c2f401c52863a523](https://www.virustotal.com/gui/file/71cd67afd19f9f5d0cf00d92034c40b674e3b4d9888f5be6c2f401c52863a523)
+- [https://www.virustotal.com/gui/file/9c6b26fe30870775a42d02804c9094c83479850a87703d95ebd8631ad8188b8e](https://www.virustotal.com/gui/file/9c6b26fe30870775a42d02804c9094c83479850a87703d95ebd8631ad8188b8e)
+- [https://www.virustotal.com/gui/file/53cc6eb7f52e917e3d670337204e83c2dd68cb0e5c57384a1b3fe8d12d9a46bb](https://www.virustotal.com/gui/file/53cc6eb7f52e917e3d670337204e83c2dd68cb0e5c57384a1b3fe8d12d9a46bb)
+- [https://www.virustotal.com/gui/domain/monitic.com](https://www.virustotal.com/gui/domain/monitic.com)
+- [https://www.virustotal.com/gui/domain/app.monitic.com](https://www.virustotal.com/gui/domain/app.monitic.com)
+- [https://www.virustotal.com/gui/domain/api.monitic.com](https://www.virustotal.com/gui/domain/api.monitic.com)
+- [https://www.virustotal.com/gui/domain/turn.monitic.com](https://www.virustotal.com/gui/domain/turn.monitic.com)
+
+### Acknowledgements
+- Michael Haag (@M_haggis)

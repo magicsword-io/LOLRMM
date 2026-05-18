@@ -16,17 +16,25 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *remote.management
-            - *.logicnow.com
-            - *systemmonitor.us
-            - *systemmonitor.eu.com
-            - *system-monitor.com
-            - systemmonitor.us.cdn.cloudflare.net
-            - *cloudbackup.management
-            - *systemmonitor.co.uk
-            - *.n-able.com
-            - *.beanywhere.com 
-            - *.swi-tc.com
+            - '*.beanywhere.com '
+            - 'systemmonitor.co.uk'
+            - '*system-monitor.com'
+            - 'cloudbackup.management'
+            - '*systemmonitor.co.uk'
+            - 'n-able.com'
+            - 'systemmonitor.us'
+            - '*systemmonitor.eu.com'
+            - '*.logicnow.com'
+            - '*.swi-tc.com'
+            - '*remote.management'
+            - 'systemmonitor.us.cdn.cloudflare.net'
+            - '*cloudbackup.management'
+            - 'remote.management'
+            - 'logicnow.com'
+            - 'system-monitor.com'
+            - '*systemmonitor.us'
+            - 'systemmonitor.eu.com'
+            - '*.n-able.com'
     condition: selection
 falsepositives:
     - Legitimate use of N-Able Advanced Monitoring Agent

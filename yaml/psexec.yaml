@@ -18,6 +18,7 @@ Details:
     Vulnerabilities: []
     InstallationPaths:
         - psexec.exe
+        - psexec64.exe
         - psexecsvc.exe
 Artifacts:
     Disk: []
