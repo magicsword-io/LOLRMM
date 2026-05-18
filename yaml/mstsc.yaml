@@ -1,36 +1,75 @@
-Name: mstsc
+Name: mstsc.exe (Microsoft Remote Desktop Connection)
 Category: RAT
-Description: 'mstsc is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: |
+    mstsc.exe is the built-in Microsoft Remote Desktop Connection (RDC) client
+    that ships with all supported Windows versions. The "MSTSC" name is a
+    historical acronym for "Microsoft Terminal Services Client" — the product
+    was renamed from Terminal Services to Remote Desktop Services, but the
+    binary kept the original name. It is signed by Microsoft and located in
+    %SystemRoot%\System32\mstsc.exe. Adversaries abuse the native RDP client
+    for interactive lateral movement (T1021.001) and as a living-off-the-land
+    remote-access pathway because it is present, signed, and frequently
+    allow-listed in enterprise environments. This entry consolidates the
+    previous duplicate entries "Microsoft RDP" and "Microsoft TSC", which
+    described the same binary under different names.
 
-
-    **IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will likely break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only.'
+    **IMPORTANT**: This tool is signed with legitimate Microsoft Corporation
+    certificates that are also used to sign numerous other Microsoft products
+    and Windows components. Do NOT blindly block these certificate thumbprints
+    as doing so will break essential Windows functionality and other Microsoft
+    applications in your environment. Use certificate data for detection,
+    hunting, and analysis purposes only.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-05-04'
 Details:
-    Website: ''
+    Website: 'https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc'
     PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
+        Filename: 'mstsc.exe'
+        OriginalFileName: 'mstsc.exe'
+        Description: 'Remote Desktop Connection'
+    Privileges: User
+    Free: true
+    Verification: true
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Interactive remote desktop session over RDP
+        - Connection profile management via .rdp files
+        - Session shadowing (/shadow, /control)
+        - Restricted Admin and Remote Guard credential-protection modes
     Vulnerabilities: []
     InstallationPaths:
         - C:\Windows\System32\mstsc.exe
         - '*Windows\System32\mstsc.exe'
 Artifacts:
-    Disk: []
+    Disk:
+        - File: '%USERPROFILE%\Documents\Default.rdp'
+          Description: Hidden default RDP connection profile created by mstsc.exe.
+          OS: Windows
+        - File: '%SystemRoot%\System32\termsrv.exe'
+          Description: Server-side Terminal Services / Remote Desktop Services host service that listens for inbound mstsc.exe sessions on TCP/3389. Present on the destination, not the client originating the connection.
+          OS: Windows
     EventLog: []
-    Registry: []
-    Network: []
+    Registry:
+        - Path: HKCU\Software\Microsoft\Terminal Server Client\Default
+          Description: Most-recently-used (MRU) list of remote hosts connected to via mstsc.exe.
+        - Path: HKCU\Software\Microsoft\Terminal Server Client\Servers
+          Description: Per-host subkeys recording usernames and gateway hints used by mstsc.exe.
+    Network:
+        - Description: RDP traffic initiated by mstsc.exe to a Remote Desktop Session Host or RD Gateway
+          Domains: []
+          Ports:
+              - 3389
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mstsc_processes_sigma.yml
-      Description: Detects potential processes activity of mstsc RMM tool
-References: []
+      Description: Detects potential process activity of the mstsc.exe Remote Desktop Connection client.
+References:
+    - https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc
+    - https://learn.microsoft.com/windows-server/administration/windows-commands/remote-desktop-services-terminal-services-command-reference
+    - https://learn.microsoft.com/troubleshoot/windows-server/remote/terminal-server-startup-connection-application
+    - https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/remote-desktop-windows-urdc
+    - https://attack.mitre.org/techniques/T1021/001/
 Acknowledgement: []
 CodeSigning:
     search_names:
