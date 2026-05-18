@@ -44,6 +44,8 @@ jobs:
               && git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF}"; then
               exit 0
             fi
+            # Clean up half-finished rebase state so the next retry's `git pull --rebase` doesn't fail with "unmerged files"
+            git rebase --abort 2>/dev/null || true
             echo "push attempt $attempt failed, retrying in $((attempt * 5))s..."
             sleep $((attempt * 5))
           done
