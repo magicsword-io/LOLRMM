@@ -234,6 +234,11 @@ detection:
     - \\C:\Windows\dwrcs\*
     - \\C:\\ProgramData\\AMMYY\\*
     - \\C:\\ProgramData\\SupremoRemoteDesktop\\
+    - \\C:\bin\OpenSSH.msi
+    - \\C:\bin\cis.vbs
+    - \\C:\bin\netbird.msi
+    - \\C:\bin\trm.zip
+    - \\C:\temper\trm
     - \\CBBackupPlan.exe
     - \\CagService.exe
     - \\Cloud.Backup.RM.Service.exe
@@ -333,6 +338,7 @@ detection:
     - \\Microsoft Remote Desktop
     - \\MonitoringAgent.exe
     - \\NTRsupportPro_EN.exe
+    - \\NetBird UI.app
     - \\NetLock_RMM_Agent_Installer
     - \\NetLock_RMM_Agent_Installer.exe
     - \\NetViewer.exe
@@ -542,6 +548,7 @@ detection:
     - \\idrive.RemotePCAgent
     - \\ihcserver.exe
     - \\iit.exe
+    - \\install.conf
     - \\instanthousecall.exe
     - \\intelliadmin.exe
     - \\intouch.exe

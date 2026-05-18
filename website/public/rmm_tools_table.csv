@@ -150,7 +150,7 @@ Name,Category,Description,Author
 [Naverisk](/rmm_tools/naverisk),RMM,Naverisk is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Controlio](/rmm_tools/controlio),RMM,Controlio is a commercial workforce monitoring tool developed by EfficientLab. Marketed for employee...,CERT Cwatch Almond
 [Ericom Connect](/rmm_tools/ericom-connect),RMM,Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as i...,
-[NetBird](/rmm_tools/netbird),RAT,NetBird is an open-source VPN and remote access platform that provides secure peer-to-peer connectiv...,Michael Haag
+[NetBird](/rmm_tools/netbird),RAT,NetBird is an open-source WireGuard-based VPN and remote access platform that provides secure peer-t...,Michael Haag
 [RemSupp](/rmm_tools/remsupp),RMM,RemSupp is a remote desktop / remote support tool observed in a phone-based social engineering phish...,
 [ExtraPuTTY](/rmm_tools/extraputty),RAT,ExtraPuTTY is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [AnyViewer](/rmm_tools/anyviewer),RMM,AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it bec...,@kostastsale
