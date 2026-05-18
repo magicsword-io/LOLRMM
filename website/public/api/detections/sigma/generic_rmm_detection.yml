@@ -544,6 +544,7 @@ detection:
     - \\domotz_bash.exe
     - \\duet.exe
     - \\dwagent.exe
+    - \\dwaglnc.exe
     - \\dwagsvc.exe
     - \\dwrcs.exe
     - \\eDocument-*.msi
