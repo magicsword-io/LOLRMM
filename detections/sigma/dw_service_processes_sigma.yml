@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - dwagsvc.exe
-            - dwagent.exe
-            - dwagsvc.exe
+            - 'dwagsvc.exe'
+            - 'dwagent.exe'
+            - 'dwaglnc.exe'
     selection_image:
         Image|endswith:
-            - dwagsvc.exe
-            - dwagent.exe
-            - dwagsvc.exe
+            - 'dwagsvc.exe'
+            - 'dwagent.exe'
+            - 'dwaglnc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DW Service
