@@ -1,0 +1,73 @@
+---
+description: "Dataplicity (by Wildfoundry) is a cloud-hosted remote-access service that exposes Linux systems \u2014 primarily Raspberry Pi devices \u2014 to the Dataplicity cloud for browser-based remote shell, \"Wormhole\" HTTP tunneling, and remote management. The agent installs via a curl|sudo python one-liner (`curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python`) and registers the host with the operator's tenant under `*.dataplicity.com`. After install the operator has persistent remote shell access through the Dataplicity web console or Windows companion app without any inbound firewall change on the victim host. Catalogued by the LOTTunnels project under the \"shell access\" category for exactly this abuse profile."
+title: "Dataplicity"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Dataplicity
+
+Dataplicity (by Wildfoundry) is a cloud-hosted remote-access service that exposes Linux systems — primarily Raspberry Pi devices — to the Dataplicity cloud for browser-based remote shell, "Wormhole" HTTP tunneling, and remote management. The agent installs via a curl|sudo python one-liner (`curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python`) and registers the host with the operator's tenant under `*.dataplicity.com`. After install the operator has persistent remote shell access through the Dataplicity web console or Windows companion app without any inbound firewall change on the victim host. Catalogued by the LOTTunnels project under the "shell access" category for exactly this abuse profile.
+
+
+<BlockBanner name={"Dataplicity"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RAT"}
+         created={"2026-05-18"}
+         website={"https://www.dataplicity.com/"}
+         lastModified={"2026-05-18"}
+         privileges={"root (Linux installer uses sudo)"}
+         free={ "Yes (free + paid tiers)" }
+         verification={ "Tenant signup required; per-device install token embedded in installer URL" }
+/>
+
+#### Installation Paths
+<Card code={ ["/opt/dataplicity/*", "/opt/dataplicity/tuxtunnel/*", "/usr/local/bin/dataplicity", "/etc/systemd/system/dataplicity.service", "/etc/init.d/dataplicity"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Linux", "Windows", "MacOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Browser-based remote terminal (shell access through Dataplicity web console)", "Wormhole HTTP tunneling (expose a local HTTP service publicly via `*.wormhole.dataplicity.com`)", "Remote file management", "Persistent device registration in operator tenant", "Windows desktop companion app for managing connected devices"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "/opt/dataplicity/tuxtunnel/manager", "Description": "Dataplicity manager binary (the persistent remote-control daemon)", "OS": "Linux"}, {"File": "/opt/dataplicity/credentials", "Description": "Dataplicity agent credentials file (per-tenant install token + device identity)", "OS": "Linux"}, {"File": "/etc/systemd/system/dataplicity.service", "Description": "systemd unit file for Dataplicity agent persistence", "OS": "Linux"}, {"File": "/etc/init.d/dataplicity", "Description": "SysV init script for Dataplicity agent persistence (older or non-systemd Linux distributions)", "OS": "Linux"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Dataplicity control plane and per-device tenant subdomain. Each registered device gets a `*.dataplicity.com` URL the operator uses to open a browser-based shell. `*.wormhole.dataplicity.com` is the HTTP-tunnel subdomain used to publish local HTTP services.", "Domains": ["dataplicity.com", "www.dataplicity.com", "*.dataplicity.com", "*.wormhole.dataplicity.com"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "URL", "Value": "https://www.dataplicity.com/<TOKEN>.py"}, {"Type": "Other", "Value": "Install command: curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python  (high-signal hunt pattern \u2014 sudo-piped curl-to-python from dataplicity.com)"}, {"Type": "Other", "Value": "LOTTunnels project \u2014 Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/dataplicity/"}] }/>
+
+
+
+### Detections
+- Detects potential file activity of Dataplicity RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_files_sigma.yml)
+- Detects potential network activity of Dataplicity RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_network_sigma.yml)
+- Detects potential process activity of Dataplicity RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_processes_sigma.yml)
+
+### References
+- [https://www.dataplicity.com/](https://www.dataplicity.com/)
+- [https://github.com/wildfoundry/dataplicity-agent](https://github.com/wildfoundry/dataplicity-agent)
+- [https://lottunnels.github.io/lottunnels/Binaries/dataplicity/](https://lottunnels.github.io/lottunnels/Binaries/dataplicity/)
+
+### Acknowledgements
+- rcKillam (@rcKillam)
+- Michael Haag (@MHaggis)

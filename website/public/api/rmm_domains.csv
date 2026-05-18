@@ -65,12 +65,19 @@ insight,Faronics Insight
 prod.addigy.com,Addigy
 grtmprod.addigy.com,Addigy
 agents.addigy.com,Addigy
+shellhub.io,ShellHub
+cloud.shellhub.io,ShellHub
+www.shellhub.io,ShellHub
+*.shellhub.io,ShellHub
 boot.net.anydesk.com,AnyDesk
 relay-[a-f0-9]{8}.net.anydesk.com:443,AnyDesk
 *.anydesk.com,AnyDesk
 *.rmm.datto.com,CentraStage (Now Datto)
 *cc.centrastage.net,CentraStage (Now Datto)
 datto.com/au/products/rmm/,CentraStage (Now Datto)
+localxpose.io,LocalXpose
+*.localxpose.io,LocalXpose
+api.localxpose.io,LocalXpose
 *.khelpdesk.com.br,KHelpDesk
 *.instanthousecall.com,Instant Housecall
 *.instanthousecall.net,Instant Housecall
@@ -161,6 +168,9 @@ seetrol.co.kr,Seetrol
 *.islonline.net,ISL Online
 helpu.co.kr,HelpU
 *.helpu.co.kr,HelpU
+pitunnel.com,PiTunnel
+www.pitunnel.com,PiTunnel
+*.pitunnel.com,PiTunnel
 tightvnc.com,TightVNC
 *.xeox.com,Xeox
 xeox.com,Xeox
@@ -217,6 +227,10 @@ bomgarcloud.com,BeyondTrust (Bomgar)
 router15.teamviewer.com,TeamViewer
 client.teamviewer.com,TeamViewer
 taf.teamviewer.com,TeamViewer
+dataplicity.com,Dataplicity
+www.dataplicity.com,Dataplicity
+*.dataplicity.com,Dataplicity
+*.wormhole.dataplicity.com,Dataplicity
 *.01com.com,I'm InTouch
 01com.com/imintouch-remote-pc-desktop,I'm InTouch
 electric.ai,Electric AI (Kaseya)

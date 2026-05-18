@@ -1,0 +1,73 @@
+---
+description: "ShellHub (cloud.shellhub.io / shellhub.io) is an open-source SSH gateway that enrolls devices via a per-tenant install script and gives operators browser-based remote terminal access through the ShellHub web dashboard. The agent installs via `curl -sSf \"https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>\" | sh` and registers the host into the operator's tenant; subsequent SSH connections are brokered through the ShellHub cloud over the persistent agent connection, with no inbound firewall change required on the device. Catalogued by the LOTTunnels project under the \"shell access\" category; documentation explicitly notes potential misuse by \"insiders as well as threat actors\" for \"a variety of malicious tasks\". Both a hosted SaaS (cloud.shellhub.io) and a self-hostable Docker deployment exist."
+title: "ShellHub"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# ShellHub
+
+ShellHub (cloud.shellhub.io / shellhub.io) is an open-source SSH gateway that enrolls devices via a per-tenant install script and gives operators browser-based remote terminal access through the ShellHub web dashboard. The agent installs via `curl -sSf "https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>" | sh` and registers the host into the operator's tenant; subsequent SSH connections are brokered through the ShellHub cloud over the persistent agent connection, with no inbound firewall change required on the device. Catalogued by the LOTTunnels project under the "shell access" category; documentation explicitly notes potential misuse by "insiders as well as threat actors" for "a variety of malicious tasks". Both a hosted SaaS (cloud.shellhub.io) and a self-hostable Docker deployment exist.
+
+
+<BlockBanner name={"ShellHub"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RAT"}
+         created={"2026-05-18"}
+         website={"https://shellhub.io/"}
+         lastModified={"2026-05-18"}
+         privileges={"root (installer uses curl|sh as root)"}
+         free={ "Yes (open-source + free hosted tier + paid subscription)" }
+         verification={ "Tenant signup required; per-tenant install token (`tenant_id`) embedded in install URL" }
+/>
+
+#### Installation Paths
+<Card code={ ["/usr/local/bin/shellhub-agent", "/etc/shellhub-agent/*", "/etc/systemd/system/shellhub-agent.service", "/var/lib/shellhub-agent/*"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Linux", "MacOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Browser-based remote SSH (interactive terminal via web dashboard)", "Cloud-relayed SSH (no inbound firewall change required on agent host)", "SSH key + username/password authentication", "Device enrollment / tenant registration", "Docker container deployment of the gateway (self-hosted option)"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "/usr/local/bin/shellhub-agent", "Description": "ShellHub agent binary (default install path used by the vendor install.sh)", "OS": "Linux"}, {"File": "/etc/shellhub-agent/agent.env", "Description": "ShellHub agent environment file (tenant_id, server_address, identity)", "OS": "Linux"}, {"File": "/etc/systemd/system/shellhub-agent.service", "Description": "systemd unit file for ShellHub agent persistence", "OS": "Linux"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Hosted ShellHub control plane. Self-hosted Docker deployments may use an operator-controlled domain instead.", "Domains": ["shellhub.io", "cloud.shellhub.io", "www.shellhub.io", "*.shellhub.io"], "Ports": [443, 80]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "URL", "Value": "https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>"}, {"Type": "Other", "Value": "Install command: curl -sSf \"https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>\" | sh  (high-signal hunt pattern \u2014 curl-to-sh from cloud.shellhub.io with tenant_id parameter)"}, {"Type": "Other", "Value": "LOTTunnels project \u2014 Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/shellhub/"}] }/>
+
+
+
+### Detections
+- Detects potential file activity of ShellHub RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_files_sigma.yml)
+- Detects potential network activity of ShellHub RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_network_sigma.yml)
+- Detects potential process activity of ShellHub RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_processes_sigma.yml)
+
+### References
+- [https://shellhub.io/](https://shellhub.io/)
+- [https://github.com/shellhub-io/shellhub](https://github.com/shellhub-io/shellhub)
+- [https://lottunnels.github.io/lottunnels/Binaries/shellhub/](https://lottunnels.github.io/lottunnels/Binaries/shellhub/)
+
+### Acknowledgements
+- rcKillam (@rcKillam)
+- Michael Haag (@MHaggis)

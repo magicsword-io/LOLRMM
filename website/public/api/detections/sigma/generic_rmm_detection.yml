@@ -19,6 +19,7 @@ detection:
     Image|endswith:
     - \\%APPDATA%\GoToMeeting\G2M.exe
     - \\%APPDATA%\JWrapper-SimpleSetup\*
+    - \\%APPDATA%\loclx\*
     - \\%ProgramData%\Tiflux\*
     - \\%USERPROFILE%\\AppData\\Local\\Temp\\SupremoRemoteDesktop\\
     - \\9380CC75B872221A7425D7503565B67580407F60
@@ -241,6 +242,7 @@ detection:
     - \\C:\Users\*\AppData\Local\MEGAsync\*
     - \\C:\Users\*\AppData\Local\Programs\RemSupp\RemSupp.exe
     - \\C:\Users\*\AppData\Local\Programs\RemSupp\Uninstall RemSupp.exe
+    - \\C:\Users\*\AppData\Local\Programs\loclx\loclx.exe
     - \\C:\Users\*\AppData\Local\Temp\nvda_*\*
     - \\C:\Users\*\AppData\Local\remsupp-updater\installer.exe
     - \\C:\Users\*\AppData\Local\rustdesk\*
@@ -538,6 +540,8 @@ detection:
     - \\ctiserv.exe
     - \\dashboard
     - \\dashboard-windows-amd64.exe
+    - \\dataplicity
+    - \\dataplicity.service
     - \\dcagentregister.exe
     - \\dcagentservice.exe
     - \\dd.exe
@@ -642,6 +646,8 @@ detection:
     - \\llrcservice.exe
     - \\lmi_rescue.exe
     - \\lmnoipserver.exe
+    - \\loclx
+    - \\loclx.exe
     - \\ltsvc.exe
     - \\ltsvcmon.exe
     - \\lttray.exe
@@ -712,6 +718,8 @@ detection:
     - \\pcvisit_client.exe
     - \\pcvisit_service_client.exe
     - \\pdq-connect*.exe
+    - \\pitunnel
+    - \\pitunnel.service
     - \\pocketcloud*.exe
     - \\pocketcloudservice.exe
     - \\pocketcontroller.exe
@@ -795,6 +803,8 @@ detection:
     - \\servereye*.exe
     - \\serverproxyservice.exe
     - \\serviceconfig.xml
+    - \\shellhub-agent
+    - \\shellhub-agent.service
     - \\showmypc*.exe
     - \\showmypc.exe
     - \\simplegatewayservice.exe

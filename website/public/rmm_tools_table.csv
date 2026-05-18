@@ -28,9 +28,11 @@ Name,Category,Description,Author
 [Faronics Insight](/rmm_tools/faronics-insight),RMM,"Faronics Insight is a classroom / lab management platform by Faronics Corporation (Vancouver, BC, Ca...",@MHaggis
 [Royal Apps](/rmm_tools/royal-apps),RMM,Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Addigy](/rmm_tools/addigy),RMM,Addigy is a remote monitoring and management (RMM) tool. More information will be added as it become...,
+[ShellHub](/rmm_tools/shellhub),RAT,ShellHub (cloud.shellhub.io / shellhub.io) is an open-source SSH gateway that enrolls devices via a ...,@MHaggis
 [AnyDesk](/rmm_tools/anydesk),RMM,AnyDesk is a popular remote desktop software that enables users to access and control a computer or ...,"Ali Alwashali, Nasreddine Bencherchali"
 [CentraStage (Now Datto)](/rmm_tools/centrastage-now-datto),RMM,CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be a...,
 [Pocket Cloud (Wyse)](/rmm_tools/pocket-cloud-wyse),RMM,Pocket Cloud (Wyse) is a remote monitoring and management (RMM) tool. More information will be added...,
+[LocalXpose](/rmm_tools/localxpose),RAT,LocalXpose (loclx) is a free/subscription tunneling service from localxpose.io that exposes local TC...,@MHaggis
 [KHelpDesk](/rmm_tools/khelpdesk),RMM,KHelpDesk is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [XRDP](/rmm_tools/xrdp),RAT,XRDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes ...,
 [NoteOn-desktop sharing](/rmm_tools/noteon-desktop-sharing),RAT,NoteOn-desktop sharing is a remote monitoring and management (RMM) tool. More information will be ad...,
@@ -86,6 +88,7 @@ Name,Category,Description,Author
 [Seetrol](/rmm_tools/seetrol),RMM,Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [ISL Online](/rmm_tools/isl-online),RMM,ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [HelpU](/rmm_tools/helpu),RMM,HelpU is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
+[PiTunnel](/rmm_tools/pitunnel),RAT,PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister pro...,@MHaggis
 [TightVNC](/rmm_tools/tightvnc),RAT,TightVNC is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [MobaXterm](/rmm_tools/mobaxterm),RAT,MobaXterm is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Xeox](/rmm_tools/xeox),RMM,Xeox is a remote monitoring and management (RMM) tool. More information will be added as it becomes ...,
@@ -122,6 +125,7 @@ Name,Category,Description,Author
 [TeamViewer](/rmm_tools/teamviewer),RMM,TeamViewer is a remote monitoring and management (RMM) tool....,"Nasreddine Bencherchali, Michael Haag"
 [ZOC](/rmm_tools/zoc),RAT,ZOC is a remote monitoring and management (RMM) tool. More information will be added as it becomes a...,
 [Access Remote PC](/rmm_tools/access-remote-pc),RMM,Access Remote PC is a remote monitoring and management (RMM) tool. More information will be added as...,
+[Dataplicity](/rmm_tools/dataplicity),RAT,Dataplicity (by Wildfoundry) is a cloud-hosted remote-access service that exposes Linux systems — pr...,@MHaggis
 [ManageEngine](/rmm_tools/manageengine),RMM,ManageEngine is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [I'm InTouch](/rmm_tools/im-intouch),RMM,I'm InTouch is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [PChelpware](/rmm_tools/pchelpware),RMM,PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop so...,Daniel Koifman (KoifSec)

@@ -2308,6 +2308,124 @@
         "Acknowledgement": []
     },
     {
+        "Name": "ShellHub",
+        "Category": "RAT",
+        "Description": "ShellHub (cloud.shellhub.io / shellhub.io) is an open-source SSH gateway that enrolls devices via a per-tenant install script and gives operators browser-based remote terminal access through the ShellHub web dashboard. The agent installs via `curl -sSf \"https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>\" | sh` and registers the host into the operator's tenant; subsequent SSH connections are brokered through the ShellHub cloud over the persistent agent connection, with no inbound firewall change required on the device. Catalogued by the LOTTunnels project under the \"shell access\" category; documentation explicitly notes potential misuse by \"insiders as well as threat actors\" for \"a variety of malicious tasks\". Both a hosted SaaS (cloud.shellhub.io) and a self-hostable Docker deployment exist.\n",
+        "Author": "@MHaggis",
+        "Created": "2026-05-18",
+        "LastModified": "2026-05-18",
+        "Details": {
+            "Website": "https://shellhub.io/",
+            "PEMetadata": [
+                {
+                    "Filename": "shellhub-agent",
+                    "OriginalFileName": "shellhub-agent",
+                    "Description": "ShellHub agent binary (Go). Maintains the persistent reverse connection to the ShellHub gateway and brokers inbound SSH sessions."
+                }
+            ],
+            "Privileges": "root (installer uses curl|sh as root)",
+            "Free": "Yes (open-source + free hosted tier + paid subscription)",
+            "Verification": "Tenant signup required; per-tenant install token (`tenant_id`) embedded in install URL",
+            "SupportedOS": [
+                "Linux",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Browser-based remote SSH (interactive terminal via web dashboard)",
+                "Cloud-relayed SSH (no inbound firewall change required on agent host)",
+                "SSH key + username/password authentication",
+                "Device enrollment / tenant registration",
+                "Docker container deployment of the gateway (self-hosted option)"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "/usr/local/bin/shellhub-agent",
+                "/etc/shellhub-agent/*",
+                "/etc/systemd/system/shellhub-agent.service",
+                "/var/lib/shellhub-agent/*"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "/usr/local/bin/shellhub-agent",
+                    "Description": "ShellHub agent binary (default install path used by the vendor install.sh)",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/shellhub-agent/agent.env",
+                    "Description": "ShellHub agent environment file (tenant_id, server_address, identity)",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/shellhub-agent.service",
+                    "Description": "systemd unit file for ShellHub agent persistence",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Hosted ShellHub control plane. Self-hosted Docker deployments may use an operator-controlled domain instead.",
+                    "Domains": [
+                        "shellhub.io",
+                        "cloud.shellhub.io",
+                        "www.shellhub.io",
+                        "*.shellhub.io"
+                    ],
+                    "Ports": [
+                        443,
+                        80
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "URL",
+                    "Value": "https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "Install command: curl -sSf \"https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>\" | sh  (high-signal hunt pattern — curl-to-sh from cloud.shellhub.io with tenant_id parameter)"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/shellhub/"
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_files_sigma.yml",
+                "Description": "Detects potential file activity of ShellHub RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_network_sigma.yml",
+                "Description": "Detects potential network activity of ShellHub RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_processes_sigma.yml",
+                "Description": "Detects potential process activity of ShellHub RMM tool"
+            }
+        ],
+        "References": [
+            "https://shellhub.io/",
+            "https://github.com/shellhub-io/shellhub",
+            "https://lottunnels.github.io/lottunnels/Binaries/shellhub/"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "rcKillam",
+                "Handle": "@rcKillam"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "AnyDesk",
         "Category": "RMM",
         "Description": "AnyDesk is a popular remote desktop software that enables users to access\nand control a computer or device from a remote location. It was developed with the\nprimary goal of facilitating remote work, technical support, and collaboration between\nindividuals and teams.\n",
@@ -2701,6 +2819,133 @@
             "https://wyse-pocketcloud.informer.com/2.1/"
         ],
         "Acknowledgement": []
+    },
+    {
+        "Name": "LocalXpose",
+        "Category": "RAT",
+        "Description": "LocalXpose (loclx) is a free/subscription tunneling service from localxpose.io that exposes local TCP/UDP/HTTP services over the internet via the operator-controlled `*.localxpose.io` infrastructure. Marketed for developer use cases (webhook testing, local-server sharing), it is catalogued by the LOTTunnels project under the \"shell access\" category because the `loclx tunnel tcp/udp --port <PORT>` command pattern can expose an SSH or RDP listener through the operator's tenant subdomain, providing remote interactive access without a traditional RMM agent or open inbound firewall. Documented abuse cases include shell exposure for post-exploitation remote access, HTTP tunneling for data exfiltration, and tunnel-fronted phishing infrastructure.\n",
+        "Author": "@MHaggis",
+        "Created": "2026-05-18",
+        "LastModified": "2026-05-18",
+        "Details": {
+            "Website": "https://localxpose.io/",
+            "PEMetadata": [
+                {
+                    "Filename": "loclx.exe",
+                    "OriginalFileName": "loclx.exe",
+                    "Description": "LocalXpose command-line client (Windows). Single static Go binary; invoked as `loclx tunnel <type> --port <PORT>` after `loclx account login`."
+                },
+                {
+                    "Filename": "loclx",
+                    "OriginalFileName": "loclx",
+                    "Description": "LocalXpose command-line client (Linux/macOS)."
+                }
+            ],
+            "Privileges": "User",
+            "Free": "Yes (free tier + paid subscription)",
+            "Verification": "Tenant signup required (free); API-key authenticated via `loclx account login`",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "TCP tunnel (`loclx tunnel tcp --port <PORT>`) — used to expose SSH/RDP/other shell-access services",
+                "UDP tunnel (`loclx tunnel udp --port <PORT>`)",
+                "HTTP/HTTPS tunnel (`loclx tunnel http --port <PORT>`) — used for webhook testing or to front phishing infrastructure",
+                "Custom domain support (paid tier)",
+                "Reserved tunnel addresses"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "loclx.exe",
+                "loclx",
+                "*\\loclx.exe",
+                "C:\\Users\\*\\AppData\\Local\\Programs\\loclx\\loclx.exe",
+                "/usr/local/bin/loclx",
+                "%APPDATA%\\loclx\\*"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "loclx.exe",
+                    "Description": "LocalXpose CLI client (Go static binary). Often run from the user's Downloads or AppData directory rather than a system install path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "%APPDATA%\\loclx\\config.yaml",
+                    "Description": "LocalXpose CLI configuration (account API key after `loclx account login`)",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "~/.loclx/config.yaml",
+                    "Description": "LocalXpose CLI configuration on Linux/macOS (account API key)",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 4688,
+                    "ProviderName": "Microsoft-Windows-Security-Auditing",
+                    "LogFile": "Security.evtx",
+                    "CommandLine": "loclx.exe tunnel tcp --port <PORT>",
+                    "Description": "LocalXpose tunnel-create process invocation — `tcp` and `udp` tunnel subcommands are the high-signal abuse pattern (used to expose SSH/RDP for inbound remote access through the operator-controlled relay)."
+                }
+            ],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "LocalXpose tenant tunnel control plane and per-tunnel relay endpoints (wildcard subdomain pattern matches all operator-assigned tunnel hostnames).",
+                    "Domains": [
+                        "localxpose.io",
+                        "*.localxpose.io",
+                        "api.localxpose.io"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "Other",
+                    "Value": "Install via npm (`npm install -g loclx`), choco, snap, or direct binary download from localxpose.io"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/localxpose/"
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/localxpose_files_sigma.yml",
+                "Description": "Detects potential file activity of LocalXpose RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/localxpose_network_sigma.yml",
+                "Description": "Detects potential network activity of LocalXpose RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/localxpose_processes_sigma.yml",
+                "Description": "Detects potential process activity of LocalXpose RMM tool"
+            }
+        ],
+        "References": [
+            "https://localxpose.io/",
+            "https://lottunnels.github.io/lottunnels/Binaries/localxpose/"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "rcKillam",
+                "Handle": "@rcKillam"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
     },
     {
         "Name": "KHelpDesk",
@@ -7007,6 +7252,119 @@
         }
     },
     {
+        "Name": "PiTunnel",
+        "Category": "RAT",
+        "Description": "PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister product of Dataplicity from Wildfoundry) that exposes local services and a persistent remote shell through the `*.pitunnel.com` tenant infrastructure. The agent installs via a curl|sudo bash one-liner (`curl -s https://pitunnel.com/get/<TOKEN> | sudo bash`) and supports persistent named tunnels via flags like `pitunnel --port=<PORT> --name=vnc --persist`. After install the operator can open arbitrary local TCP listeners (SSH, RDP, VNC, web) to the PiTunnel cloud for inbound interactive access without any firewall change on the victim host. Catalogued by the LOTTunnels project under the \"shell access\" category.\n",
+        "Author": "@MHaggis",
+        "Created": "2026-05-18",
+        "LastModified": "2026-05-18",
+        "Details": {
+            "Website": "https://www.pitunnel.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "pitunnel",
+                    "OriginalFileName": "pitunnel",
+                    "Description": "PiTunnel client binary; invokable as `pitunnel --port=<PORT> --name=<NAME> --persist` to register a persistent named tunnel back to the operator's tenant cloud."
+                }
+            ],
+            "Privileges": "User or root (installer uses sudo, runtime can be user-level)",
+            "Free": "Yes (free + paid subscription)",
+            "Verification": "Tenant signup required; per-device install token embedded in installer URL",
+            "SupportedOS": [
+                "Linux",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Persistent named tunnels (`--persist` flag) that auto-reconnect on reboot",
+                "TCP exposure of arbitrary local ports (SSH/RDP/VNC/HTTP) through the operator tenant",
+                "Custom subdomain routing under `*.pitunnel.com`",
+                "Custom Tunnels UI for non-CLI management",
+                "Sister product to Dataplicity (same Wildfoundry-style cloud-relay architecture)"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "/usr/local/bin/pitunnel",
+                "/opt/pitunnel/*",
+                "/etc/systemd/system/pitunnel.service"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "/usr/local/bin/pitunnel",
+                    "Description": "PiTunnel client binary (default install path)",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/pitunnel.service",
+                    "Description": "systemd unit file for PiTunnel persistence (created when `--persist` flag is used)",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "PiTunnel control plane and per-tenant relay endpoints. Operator's named tunnels publish under `*.pitunnel.com` subdomains.",
+                    "Domains": [
+                        "pitunnel.com",
+                        "www.pitunnel.com",
+                        "*.pitunnel.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "URL",
+                    "Value": "https://pitunnel.com/get/<TOKEN>"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "Install command: curl -s https://pitunnel.com/get/<TOKEN> | sudo bash  (or wget -qO- ... | sudo bash) — high-signal hunt pattern (sudo-piped curl-to-bash from pitunnel.com)"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "Persistent-tunnel command pattern: pitunnel --port=<PORT> --name=<NAME> --persist"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/pitunnel/"
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_files_sigma.yml",
+                "Description": "Detects potential file activity of PiTunnel RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_network_sigma.yml",
+                "Description": "Detects potential network activity of PiTunnel RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_processes_sigma.yml",
+                "Description": "Detects potential process activity of PiTunnel RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.pitunnel.com/",
+            "https://lottunnels.github.io/lottunnels/Binaries/pitunnel/"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "rcKillam",
+                "Handle": "@rcKillam"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
+            }
+        ]
+    },
+    {
         "Name": "TightVNC",
         "Category": "RAT",
         "Description": "TightVNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -10462,6 +10820,130 @@
             {
                 "Person": "Daniel Koifman",
                 "Handle": "@koifsec"
+            }
+        ]
+    },
+    {
+        "Name": "Dataplicity",
+        "Category": "RAT",
+        "Description": "Dataplicity (by Wildfoundry) is a cloud-hosted remote-access service that exposes Linux systems — primarily Raspberry Pi devices — to the Dataplicity cloud for browser-based remote shell, \"Wormhole\" HTTP tunneling, and remote management. The agent installs via a curl|sudo python one-liner (`curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python`) and registers the host with the operator's tenant under `*.dataplicity.com`. After install the operator has persistent remote shell access through the Dataplicity web console or Windows companion app without any inbound firewall change on the victim host. Catalogued by the LOTTunnels project under the \"shell access\" category for exactly this abuse profile.\n",
+        "Author": "@MHaggis",
+        "Created": "2026-05-18",
+        "LastModified": "2026-05-18",
+        "Details": {
+            "Website": "https://www.dataplicity.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "dataplicity",
+                    "OriginalFileName": "dataplicity",
+                    "Description": "Dataplicity agent (Python-based) installed via curl|sudo python one-liner; runs as a system service that maintains the persistent control channel back to *.dataplicity.com."
+                }
+            ],
+            "Privileges": "root (Linux installer uses sudo)",
+            "Free": "Yes (free + paid tiers)",
+            "Verification": "Tenant signup required; per-device install token embedded in installer URL",
+            "SupportedOS": [
+                "Linux",
+                "Windows",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Browser-based remote terminal (shell access through Dataplicity web console)",
+                "Wormhole HTTP tunneling (expose a local HTTP service publicly via `*.wormhole.dataplicity.com`)",
+                "Remote file management",
+                "Persistent device registration in operator tenant",
+                "Windows desktop companion app for managing connected devices"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "/opt/dataplicity/*",
+                "/opt/dataplicity/tuxtunnel/*",
+                "/usr/local/bin/dataplicity",
+                "/etc/systemd/system/dataplicity.service",
+                "/etc/init.d/dataplicity"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "/opt/dataplicity/tuxtunnel/manager",
+                    "Description": "Dataplicity manager binary (the persistent remote-control daemon)",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/dataplicity/credentials",
+                    "Description": "Dataplicity agent credentials file (per-tenant install token + device identity)",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/dataplicity.service",
+                    "Description": "systemd unit file for Dataplicity agent persistence",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/init.d/dataplicity",
+                    "Description": "SysV init script for Dataplicity agent persistence (older or non-systemd Linux distributions)",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Dataplicity control plane and per-device tenant subdomain. Each registered device gets a `*.dataplicity.com` URL the operator uses to open a browser-based shell. `*.wormhole.dataplicity.com` is the HTTP-tunnel subdomain used to publish local HTTP services.",
+                    "Domains": [
+                        "dataplicity.com",
+                        "www.dataplicity.com",
+                        "*.dataplicity.com",
+                        "*.wormhole.dataplicity.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "URL",
+                    "Value": "https://www.dataplicity.com/<TOKEN>.py"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "Install command: curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python  (high-signal hunt pattern — sudo-piped curl-to-python from dataplicity.com)"
+                },
+                {
+                    "Type": "Other",
+                    "Value": "LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/dataplicity/"
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_files_sigma.yml",
+                "Description": "Detects potential file activity of Dataplicity RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_network_sigma.yml",
+                "Description": "Detects potential network activity of Dataplicity RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_processes_sigma.yml",
+                "Description": "Detects potential process activity of Dataplicity RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.dataplicity.com/",
+            "https://github.com/wildfoundry/dataplicity-agent",
+            "https://lottunnels.github.io/lottunnels/Binaries/dataplicity/"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "rcKillam",
+                "Handle": "@rcKillam"
+            },
+            {
+                "Person": "Michael Haag",
+                "Handle": "@MHaggis"
             }
         ]
     },

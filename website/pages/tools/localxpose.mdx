@@ -1,0 +1,75 @@
+---
+description: "LocalXpose (loclx) is a free/subscription tunneling service from localxpose.io that exposes local TCP/UDP/HTTP services over the internet via the operator-controlled `*.localxpose.io` infrastructure. Marketed for developer use cases (webhook testing, local-server sharing), it is catalogued by the LOTTunnels project under the \"shell access\" category because the `loclx tunnel tcp/udp --port <PORT>` command pattern can expose an SSH or RDP listener through the operator's tenant subdomain, providing remote interactive access without a traditional RMM agent or open inbound firewall. Documented abuse cases include shell exposure for post-exploitation remote access, HTTP tunneling for data exfiltration, and tunnel-fronted phishing infrastructure."
+title: "LocalXpose"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# LocalXpose
+
+LocalXpose (loclx) is a free/subscription tunneling service from localxpose.io that exposes local TCP/UDP/HTTP services over the internet via the operator-controlled `*.localxpose.io` infrastructure. Marketed for developer use cases (webhook testing, local-server sharing), it is catalogued by the LOTTunnels project under the "shell access" category because the `loclx tunnel tcp/udp --port <PORT>` command pattern can expose an SSH or RDP listener through the operator's tenant subdomain, providing remote interactive access without a traditional RMM agent or open inbound firewall. Documented abuse cases include shell exposure for post-exploitation remote access, HTTP tunneling for data exfiltration, and tunnel-fronted phishing infrastructure.
+
+
+<BlockBanner name={"LocalXpose"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RAT"}
+         created={"2026-05-18"}
+         website={"https://localxpose.io/"}
+         lastModified={"2026-05-18"}
+         privileges={"User"}
+         free={ "Yes (free tier + paid subscription)" }
+         verification={ "Tenant signup required (free); API-key authenticated via `loclx account login`" }
+/>
+
+#### Installation Paths
+<Card code={ ["loclx.exe", "loclx", "*\\loclx.exe", "C:\\Users\\*\\AppData\\Local\\Programs\\loclx\\loclx.exe", "/usr/local/bin/loclx", "%APPDATA%\\loclx\\*"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "MacOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["TCP tunnel (`loclx tunnel tcp --port <PORT>`) \u2014 used to expose SSH/RDP/other shell-access services", "UDP tunnel (`loclx tunnel udp --port <PORT>`)", "HTTP/HTTPS tunnel (`loclx tunnel http --port <PORT>`) \u2014 used for webhook testing or to front phishing infrastructure", "Custom domain support (paid tier)", "Reserved tunnel addresses"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "loclx.exe", "Description": "LocalXpose CLI client (Go static binary). Often run from the user's Downloads or AppData directory rather than a system install path.", "OS": "Windows"}, {"File": "%APPDATA%\\loclx\\config.yaml", "Description": "LocalXpose CLI configuration (account API key after `loclx account login`)", "OS": "Windows"}, {"File": "~/.loclx/config.yaml", "Description": "LocalXpose CLI configuration on Linux/macOS (account API key)", "OS": "Linux"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 4688, "ProviderName": "Microsoft-Windows-Security-Auditing", "LogFile": "Security.evtx", "CommandLine": "loclx.exe tunnel tcp --port <PORT>", "Description": "LocalXpose tunnel-create process invocation \u2014 `tcp` and `udp` tunnel subcommands are the high-signal abuse pattern (used to expose SSH/RDP for inbound remote access through the operator-controlled relay)."}] }/>
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "LocalXpose tenant tunnel control plane and per-tunnel relay endpoints (wildcard subdomain pattern matches all operator-assigned tunnel hostnames).", "Domains": ["localxpose.io", "*.localxpose.io", "api.localxpose.io"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "Other", "Value": "Install via npm (`npm install -g loclx`), choco, snap, or direct binary download from localxpose.io"}, {"Type": "Other", "Value": "LOTTunnels project \u2014 Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/localxpose/"}] }/>
+
+
+
+### Detections
+- Detects potential file activity of LocalXpose RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/localxpose_files_sigma.yml)
+- Detects potential network activity of LocalXpose RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/localxpose_network_sigma.yml)
+- Detects potential process activity of LocalXpose RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/localxpose_processes_sigma.yml)
+
+### References
+- [https://localxpose.io/](https://localxpose.io/)
+- [https://lottunnels.github.io/lottunnels/Binaries/localxpose/](https://lottunnels.github.io/lottunnels/Binaries/localxpose/)
+
+### Acknowledgements
+- rcKillam (@rcKillam)
+- Michael Haag (@MHaggis)

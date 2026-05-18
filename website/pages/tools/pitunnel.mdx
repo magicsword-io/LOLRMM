@@ -1,0 +1,72 @@
+---
+description: "PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister product of Dataplicity from Wildfoundry) that exposes local services and a persistent remote shell through the `*.pitunnel.com` tenant infrastructure. The agent installs via a curl|sudo bash one-liner (`curl -s https://pitunnel.com/get/<TOKEN> | sudo bash`) and supports persistent named tunnels via flags like `pitunnel --port=<PORT> --name=vnc --persist`. After install the operator can open arbitrary local TCP listeners (SSH, RDP, VNC, web) to the PiTunnel cloud for inbound interactive access without any firewall change on the victim host. Catalogued by the LOTTunnels project under the \"shell access\" category."
+title: "PiTunnel"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# PiTunnel
+
+PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister product of Dataplicity from Wildfoundry) that exposes local services and a persistent remote shell through the `*.pitunnel.com` tenant infrastructure. The agent installs via a curl|sudo bash one-liner (`curl -s https://pitunnel.com/get/<TOKEN> | sudo bash`) and supports persistent named tunnels via flags like `pitunnel --port=<PORT> --name=vnc --persist`. After install the operator can open arbitrary local TCP listeners (SSH, RDP, VNC, web) to the PiTunnel cloud for inbound interactive access without any firewall change on the victim host. Catalogued by the LOTTunnels project under the "shell access" category.
+
+
+<BlockBanner name={"PiTunnel"}/>
+
+### Details
+<Details author={"@MHaggis"}
+         category={"RAT"}
+         created={"2026-05-18"}
+         website={"https://www.pitunnel.com/"}
+         lastModified={"2026-05-18"}
+         privileges={"User or root (installer uses sudo, runtime can be user-level)"}
+         free={ "Yes (free + paid subscription)" }
+         verification={ "Tenant signup required; per-device install token embedded in installer URL" }
+/>
+
+#### Installation Paths
+<Card code={ ["/usr/local/bin/pitunnel", "/opt/pitunnel/*", "/etc/systemd/system/pitunnel.service"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Linux", "MacOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Persistent named tunnels (`--persist` flag) that auto-reconnect on reboot", "TCP exposure of arbitrary local ports (SSH/RDP/VNC/HTTP) through the operator tenant", "Custom subdomain routing under `*.pitunnel.com`", "Custom Tunnels UI for non-CLI management", "Sister product to Dataplicity (same Wildfoundry-style cloud-relay architecture)"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "/usr/local/bin/pitunnel", "Description": "PiTunnel client binary (default install path)", "OS": "Linux"}, {"File": "/etc/systemd/system/pitunnel.service", "Description": "systemd unit file for PiTunnel persistence (created when `--persist` flag is used)", "OS": "Linux"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "PiTunnel control plane and per-tenant relay endpoints. Operator's named tunnels publish under `*.pitunnel.com` subdomains.", "Domains": ["pitunnel.com", "www.pitunnel.com", "*.pitunnel.com"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "URL", "Value": "https://pitunnel.com/get/<TOKEN>"}, {"Type": "Other", "Value": "Install command: curl -s https://pitunnel.com/get/<TOKEN> | sudo bash  (or wget -qO- ... | sudo bash) \u2014 high-signal hunt pattern (sudo-piped curl-to-bash from pitunnel.com)"}, {"Type": "Other", "Value": "Persistent-tunnel command pattern: pitunnel --port=<PORT> --name=<NAME> --persist"}, {"Type": "Other", "Value": "LOTTunnels project \u2014 Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/pitunnel/"}] }/>
+
+
+
+### Detections
+- Detects potential file activity of PiTunnel RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_files_sigma.yml)
+- Detects potential network activity of PiTunnel RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_network_sigma.yml)
+- Detects potential process activity of PiTunnel RMM tool
+  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_processes_sigma.yml)
+
+### References
+- [https://www.pitunnel.com/](https://www.pitunnel.com/)
+- [https://lottunnels.github.io/lottunnels/Binaries/pitunnel/](https://lottunnels.github.io/lottunnels/Binaries/pitunnel/)
+
+### Acknowledgements
+- rcKillam (@rcKillam)
+- Michael Haag (@MHaggis)
