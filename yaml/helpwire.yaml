@@ -1,0 +1,131 @@
+Name: HelpWire
+Category: RMM
+Description: HelpWire is a remote support and remote access platform from Electronic Team, Inc. The public Quick Connect client supports attended remote desktop support, while the vendor documentation also describes unattended access for persistent operator reconnects, reboot/reconnect workflows, file transfer, chat, multi-screen viewing, Windows administrator rights, and automatic background updates.
+Author: Michael Haag
+Created: '2026-05-22'
+LastModified: '2026-05-22'
+Details:
+    Website: https://www.helpwire.app/
+    PEMetadata:
+        Filename: HelpWire Quick.exe
+        OriginalFileName: helpwire.exe
+        Description: HelpWire Operator
+    Privileges: User context for attended Quick Connect; elevated/root authorization may be requested for privileged actions, and unattended access can install a service/daemon after client approval.
+    Free: true
+    Verification: Official public installers downloaded from helpwire.app/get.helpwire.app on 2026-05-22; Windows Authenticode signature verified with osslsigncode, macOS app verified as notarized Developer ID, and Windows/macOS/Linux public artifacts queried in VirusTotal with 0 malicious and 0 suspicious detections.
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+    Capabilities:
+        - Remote control
+        - Attended remote support
+        - Unattended access
+        - File transfer
+        - Chat
+        - Multi-monitor viewing
+        - Reboot and reconnect
+        - Windows administrator rights
+        - Automatic updates
+    Vulnerabilities: []
+    InstallationPaths:
+        - helpwire.exe
+        - HelpWire Quick.exe
+        - HelpWire.lnk
+        - HelpWire Unattended Access.lnk
+        - /Applications/HelpWire Operator.app
+        - helpwire-operator/bin/helpwire-operator
+        - /lib/systemd/system/helpwire-unattended.service
+Artifacts:
+    Disk:
+        - File: helpwire.exe
+          Description: Windows HelpWire Operator / Quick Connect executable; observed original file name in PE metadata.
+          OS: Windows
+        - File: HelpWire Quick.exe
+          Description: Public Windows Quick Connect download filename.
+          OS: Windows
+        - File: HelpWire.lnk
+          Description: Windows Start Menu or desktop shortcut string embedded in the Windows client.
+          OS: Windows
+        - File: HelpWire Unattended Access.lnk
+          Description: Windows unattended access shortcut string embedded in the Windows client.
+          OS: Windows
+        - File: /Applications/HelpWire Operator.app
+          Description: macOS HelpWire Operator app bundle inside the public DMG.
+          OS: macOS
+        - File: helpwire-operator/bin/helpwire-operator
+          Description: Linux Quick Connect operator executable inside the public tarball.
+          OS: Linux
+        - File: /lib/systemd/system/helpwire-unattended.service
+          Description: Linux unattended access systemd service path embedded in the Linux client.
+          OS: Linux
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System
+          ServiceName: helpwire-unattended
+          ImagePath:
+          Description: Potential Windows service installation event for HelpWire unattended access. Confirm exact Windows service name during live install triage.
+    Registry: []
+    Network:
+        - Description: HelpWire web, API, download, and signaling domains
+          Domains:
+              - helpwire.app
+              - get.helpwire.app
+              - api.helpwire.app
+              - staging.helpwire.app
+              - account.flexihub.com
+          Ports:
+              - 443
+        - Description: HelpWire STUN / NAT traversal infrastructure observed in client strings
+          Domains:
+              - stun.helpwire.app
+              - stunserver.stunprotocol.org
+          Ports:
+              - 3478
+    Other:
+        - Type: URI Scheme
+          Value: helpwire://
+        - Type: Windows Authenticode SHA256
+          Value: 9de79ff72aa09670b3d7115e9e92e1fb7e95efb607d1dab402bb7d0994fbbcec
+        - Type: macOS DMG SHA256
+          Value: 8224b40d1a55e123166643dcb3f976a7b193ed1bac653b5ca6acc8c7760ceaa2
+        - Type: Linux Quick Connect tarball SHA256
+          Value: 1455062fa16b23e95faef4f705fad630343df360ace56dd9ffe456eff4321d09
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpwire_network_sigma.yml
+      Description: Detects potential network activity of HelpWire RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpwire_files_sigma.yml
+      Description: Detects potential files activity of HelpWire RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/helpwire_processes_sigma.yml
+      Description: Detects potential processes activity of HelpWire RMM tool
+References:
+    - https://www.helpwire.app/
+    - https://www.helpwire.app/download/windows/
+    - https://www.helpwire.app/download/windows/thank-you/
+    - https://www.helpwire.app/download/macos/thank-you/
+    - https://www.helpwire.app/download/linux/thank-you/
+    - https://www.helpwire.app/unattended-remote-access/
+    - https://kb.helpwire.app/operator-application/installation/
+    - https://kb.helpwire.app/unattended/request-unattended-access/
+    - https://kb.helpwire.app/unattended/connect/
+Acknowledgement: []
+CodeSigning:
+    search_names:
+        - HelpWire Quick.exe
+        - helpwire.exe
+    company_names:
+        - Electronic Team, Inc.
+    signer_names:
+        - Electronic Team, Inc.
+    certificates:
+        - signer_name: Electronic Team, Inc.
+          issuer: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+          certificate_thumbprint: 14C914AE140C6560793EBE42E7BB6AB7F5F56168
+          tbs_sha256: 79A081B4DA60339A549DD378BEF3EB4B731177668B9D42D74B50745EE8CA84E1
+          tbs_sha1: BD13E42C0FF14E0E7B74A9A2AFB395B5E0B16D89
+          valid_from: '2024-07-31'
+          valid_to: '2027-07-30'
+          src_file_sha256: 9de79ff72aa09670b3d7115e9e92e1fb7e95efb607d1dab402bb7d0994fbbcec
+          src_file_path: downloaded_files/helpwire/9de79ff72aa09670b3d7115e9e92e1fb7e95efb607d1dab402bb7d0994fbbcec
+          src_file_company: Electronic Team, Inc.
