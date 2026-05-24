@@ -1,0 +1,39 @@
+Name: Remotely
+Description: Remotely is an open-source remote control and remote scripting solution built with .NET, Blazor, and SignalR. Threat actors have been observed deploying the agent to establish persistent background terminal access and execute remote scripts.
+Author: '@0x6d786f'
+CreationDate: '2026-05-24'
+LastModifiedDate: '2026-05-24'
+Website: https://github.com/immense/remotely
+ExecutableName: Remotely_Agent.exe
+CompanyName: Immense
+ProductName: Remotely
+PrivilegesRequired: Administrator / SYSTEM
+SupportedOS:
+  - Windows
+  - Linux
+  - macOS
+Capabilities:
+  - Remote Desktop
+  - Background Terminal
+  - Remote Scripting
+  - File Transfer
+Vulnerabilities: []
+Files:
+  - Path: 'C:\Program Files\Remotely\Remotely_Agent.exe'
+    Description: Default Agent Executable
+  - Path: '%systemroot%\Temp\Remotely\*'
+    Description: Temporary execution and installation directory
+EventLog: []
+Registry:
+  - Path: 'HKLM\SYSTEM\CurrentControlSet\Services\Remotely_Service'
+    Description: Windows Service created for persistence
+Network:
+  - Description: Agent communications to the management server over HTTPS / WebSockets
+    Domains: []
+    Ports: 
+      - 443
+Sigma: []
+References:
+  - https://github.com/immense/remotely
+Acknowledgements:
+  - '@0x6d786f'
