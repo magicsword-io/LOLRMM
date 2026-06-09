@@ -1,9 +1,9 @@
 Name: NetSupport Manager
 Category: RMM
-Description: NetSupport Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: NetSupport Manager is a remote monitoring and management (RMM) tool. Its remcmdstub.exe component is used to launch the interactive remote command shell.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2025-12-14'
+LastModified: '2026-06-09'
 Details:
     Website: 'https://www.netsupportmanager.com/'
     PEMetadata:
@@ -14,12 +14,14 @@ Details:
     Free: ''
     Verification: ''
     SupportedOS: []
-    Capabilities: []
+    Capabilities:
+        - Interactive remote command shell
     Vulnerabilities: []
     InstallationPaths:
         - pcictlui.exe
         - pcicfgui.exe
         - client32.exe
+        - remcmdstub.exe
 Artifacts:
     Disk: []
     EventLog: []
@@ -44,6 +46,7 @@ CodeSigning:
         - pcicfgui.exe
         - pcictlui
         - pcictlui.exe
+        - remcmdstub.exe
     company_names: []
     signer_names:
         - NetSupport Ltd
