@@ -17,9 +17,9 @@ detection:
     selection:
         DestinationHostname|endswith:
             - '*.instanthousecall.com'
-            - 'secure.instanthousecall.com'
             - '*.instanthousecall.net'
             - 'instanthousecall.com'
+            - 'secure.instanthousecall.com'
     condition: selection
 falsepositives:
     - Legitimate use of Instant Housecall

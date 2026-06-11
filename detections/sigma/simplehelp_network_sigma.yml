@@ -20,6 +20,11 @@ detection:
             - 'simple-help.com'
             - '51.255.19.178'
             - '51.255.19.179'
+            - 'dronemaker.org'
+            - 'telesupportgroup.com'
+            - 'microuptime.com'
+            - '192.144.34.42'
+            - '160.191.182.41'
     condition: selection
 falsepositives:
     - Legitimate use of SimpleHelp
