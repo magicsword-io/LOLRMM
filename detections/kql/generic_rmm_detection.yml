@@ -2,7 +2,7 @@ name: Generic RMM Domain Detection for Microsoft Defender for Endpoint
 id: kql-rmm-001
 description: Detects network connections to known RMM domains
 author: LOLRMM Project
-date: 2026/05/18
+date: 2026/06/11
 query: "// Detecting Unauthorized RMM Instances in Your MDE Environment\n\nlet SanctionRMM\
   \ = dynamic(\"YOUR_APPROVED_RMM_DOMAINS\"); // E.g. \"bomgarcloud.com\" - Replace\
   \ with your approved RMM domains\nlet RMMList = externaldata(URI: string, RMMTool:\

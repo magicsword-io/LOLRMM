@@ -18,18 +18,21 @@ Instant Housecall is a remote monitoring and management (RMM) tool. More informa
          category={"RMM"}
          created={"2024-08-02"}
          website={"https://instanthousecall.com/"}
-         lastModified={"2024-08-02"}
+         lastModified={"2025-12-14"}
          privileges={""}
          free={ false }
          verification={ false }
 />
 
 #### Installation Paths
-<Card code={ ["hsloader.exe", "InstantHousecall.exe", "ihcserver.exe", "instanthousecall.exe"] }/>
+<Card code={ ["hsloader.exe", "ihcserver.exe", "instanthousecall.exe", "instanthousecall.exe"] }/>
 
 
 
 
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["5", "hsloader.exe", "ihcserver.exe", "instanthousecall.dll", "instanthousecall.exe"], "company_names": [], "signer_names": ["Instant Housecall", "Symantec Corporation"], "certificates": [{"signer_name": "Symantec Corporation", "certificate_thumbprint": "N/A", "tbs_sha256": "", "tbs_sha1": "CAED29AAEF995E16501D02FFC4252AA98CFAECD2"}, {"signer_name": "Symantec Corporation", "issuer": "CN=VeriSign Class 3 Code Signing 2004 CA", "certificate_thumbprint": "508E846523E1B131438B220694BE91793886508E", "tbs_sha256": "D9C0278CD8DF5E610B66C1AE3E48ABBA1249A60CD6512108C85E1BF70EACEC04", "tbs_sha1": "CAED29AAEF995E16501D02FFC4252AA98CFAECD2", "valid_from": "2007-10-31T00:00:00+00:00", "valid_to": "2010-11-24T23:59:59+00:00"}, {"signer_name": "Instant Housecall", "issuer": "CN=Sectigo Public Code Signing CA R36", "certificate_thumbprint": "1DF407D385DFA8D8F6BB16D6EC0754FA9BD54F48", "tbs_sha256": "4C81C4E3313FEF18B2106498DD09790C78128126F405205166A154E80704C1F0", "tbs_sha1": "B9C066C75BB1498E9B1AB560187B737C9C6D8FE9", "valid_from": "2022-03-21T00:00:00+00:00", "valid_to": "2025-03-20T23:59:59+00:00"}]} }/>
 
 
 ### Forensic Artifacts
@@ -39,7 +42,7 @@ Instant Housecall is a remote monitoring and management (RMM) tool. More informa
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.instanthousecall.com", "secure.instanthousecall.com", "*.instanthousecall.net", "instanthousecall.com"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.instanthousecall.com", "*.instanthousecall.net", "instanthousecall.com", "secure.instanthousecall.com"], "Ports": []}] }/>
 
 
 
