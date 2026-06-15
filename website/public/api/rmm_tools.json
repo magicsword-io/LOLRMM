@@ -3032,7 +3032,7 @@
         "Description": "Teramind is a US-based employee/user activity monitoring (UAM), insider-threat and DLP platform that ships with a tightly integrated remote monitoring and management agent for Windows and macOS. The endpoint agent is delivered in two flavours — a \"Revealed\" agent installed under C:\\Program Files / C:\\ProgramData\\Teramind Agent that surfaces a tray UI, and a \"Hidden\" / \"Stealth\" agent installed under C:\\ProgramData\\{4CEC2908-5CE4-48F0-A717-8FC833D8017A} which is intentionally absent from Add/Remove Programs and renames its core processes (default rename: dwm.exe for the agent, clm.exe for the clipboard monitor). The Windows service is registered as tsvchst, with tmagentsvc.exe as the actual on-disk service binary. Cloud tenants reach the platform over TLS/WebSocket on tcp/443 to `<tenant>.teramind.co` plus rt.teramind.co and www.teramind.co; on-premise tenants additionally use TCP 10000 (proprietary TLS) and 10000-11000 to the App Server.\nThe hidden agent and renamed binaries make Teramind attractive both as an authorised covert workplace surveillance tool and as a dual-use remote-access capability that threat actors and rogue insiders can plant for persistent monitoring, screen recording and remote command execution. The Teramind Inc. code-signing certificate (issued by DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1) signs every component, which trivially defeats publisher-based allow-listing if the certificate is permitted. Proofpoint Emerging Threats Open ships ET INFO rules covering the teramind.co domain in DNS Lookup and TLS SNI traffic, which is the easiest network-side telemetry to turn on for hunting unauthorised deployments.\nThis catalogue entry distinguishes endpoint artifacts (services, on-disk paths, registry, control-plane traffic) from the cloud / SaaS-only features (e.g. AI behaviour analytics, compliance dashboards) which run server-side and produce no endpoint footprint of their own.\n",
         "Author": "@MHaggis",
         "Created": "2026-05-04",
-        "LastModified": "2026-05-04",
+        "LastModified": "2026-06-15",
         "Details": {
             "Website": "https://www.teramind.co/",
             "PEMetadata": [
@@ -3170,11 +3170,6 @@
                 {
                     "File": "teramind_agent_*_ARM64.msi",
                     "Description": "Teramind agent installer MSI (ARM64) — observed signed variants include teramind_agent_v26.8.183_ARM64.msi, teramind_agent_v26.8.183_ARM64_popup.msi, teramind_agent_v26.8.183_bundle_drivers_ARM64.msi.",
-                    "OS": "Windows"
-                },
-                {
-                    "File": "C:\\Windows\\Installer\\*.msi",
-                    "Description": "Cached MSI in the standard Windows Installer cache (e.g. C:\\Windows\\Installer\\46a573.msi observed for a Teramind install); content-identical to the original teramind_agent_*.msi",
                     "OS": "Windows"
                 },
                 {
