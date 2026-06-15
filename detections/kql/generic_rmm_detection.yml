@@ -2,14 +2,30 @@ name: Generic RMM Domain Detection for Microsoft Defender for Endpoint
 id: kql-rmm-001
 description: Detects network connections to known RMM domains
 author: LOLRMM Project
-date: 2026/06/11
-query: "// Detecting Unauthorized RMM Instances in Your MDE Environment\n\nlet SanctionRMM\
-  \ = dynamic(\"YOUR_APPROVED_RMM_DOMAINS\"); // E.g. \"bomgarcloud.com\" - Replace\
-  \ with your approved RMM domains\nlet RMMList = externaldata(URI: string, RMMTool:\
-  \ string)\n    [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv'];\n\
-  let RMMUrl = RMMList | project URI;\n\nDeviceNetworkEvents\n| where TimeGenerated\
-  \ > ago(1h)\n| where ActionType == @\"ConnectionSuccess\"\n| where RemoteUrl has_any(RMMUrl)\n\
-  | where not (RemoteUrl has_any(SanctionRMM))\n| summarize arg_max(TimeGenerated,\
+date: 2026/06/15
+query: "// Detecting Unauthorized RMM Instances in Your MDE Environment\n// Note:\
+  \ this query targets Microsoft Defender for Endpoint (DeviceNetworkEvents.Timestamp).\n\
+  // For Microsoft Sentinel, replace both `Timestamp` references with `TimeGenerated`.\n\
+  // Wildcard CSV entries are normalized to domain suffixes, then matched with a host\
+  \ boundary.\nlet SanctionRMM = dynamic([\"bomgarcloud.com\"]); // Replace with your\
+  \ approved RMM domains, e.g. dynamic([\"teamviewer.com\", \"anydesk.com\"])\nlet\
+  \ RMMList = externaldata(URI: string, RMMTool: string)\n    [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv']\n\
+  \    with (format=\"csv\", ignoreFirstRecord=true)\n    | extend RawURI = tolower(trim(@\"\
+  [ \\t\\r\\n]+\", URI))\n    | project Domain = trim_end(@\"\\.+\", case(\n     \
+  \   RawURI startswith \"*.\", replace_string(RawURI, \"*.\", \"\"),\n        RawURI\
+  \ startswith \"*\", replace_string(RawURI, \"*\", \"\"),\n        RawURI contains\
+  \ \"*\", replace_regex(RawURI, @\".+?\\*\", \"\"),\n        RawURI\n    ))\n   \
+  \ | where isnotempty(trim(@\"\\.+\", Domain));\nlet RMMDomains = toscalar(RMMList\
+  \ | summarize make_set(Domain));\nDeviceNetworkEvents\n| where Timestamp > ago(1h)\n\
+  | where ActionType == \"ConnectionSuccess\"\n| extend RemoteUrlClean = tolower(tostring(RemoteUrl))\n\
+  | extend RemoteHost = case(\n    RemoteUrlClean startswith \"http://\", tostring(parse_url(RemoteUrlClean).Host),\n\
+  \    RemoteUrlClean startswith \"https://\", tostring(parse_url(RemoteUrlClean).Host),\n\
+  \    tostring(split(RemoteUrlClean, \"/\")[0])\n)\n| extend RemoteHost = trim(@\"\
+  \\.+\", tostring(split(RemoteHost, \":\")[0]))\n| where isnotempty(RemoteHost)\n\
+  | where not (RemoteHost has_any(SanctionRMM))\n| mv-expand Domain = RMMDomains to\
+  \ typeof(string)\n| extend DomainRoot = trim(@\"\\.+\", Domain)\n| where RemoteHost\
+  \ == DomainRoot\n    or RemoteHost endswith strcat(\".\", DomainRoot)\n    or (Domain\
+  \ startswith \"-\" and RemoteHost endswith Domain)\n| summarize arg_max(Timestamp,\
   \ *) by DeviceId"
 references:
 - https://github.com/magicsword-io/LOLRMM
