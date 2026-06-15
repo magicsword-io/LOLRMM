@@ -222,6 +222,7 @@ Name,Category,Description,Author
 [Any Support](/rmm_tools/any-support),RMM,Any Support is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [Netop Remote Control (aka Impero Connect)](/rmm_tools/netop-remote-control-aka-impero-connect),RMM,Netop Remote Control (aka Impero Connect) is a remote monitoring and management (RMM) tool. More inf...,
 [TeamViewer](/rmm_tools/teamviewer),RMM,TeamViewer is a remote monitoring and management (RMM) tool....,"Nasreddine Bencherchali, Michael Haag"
+[Remotely](/rmm_tools/remotely),RMM,"Remotely is an open-source remote control and remote scripting solution built with .NET, Blazor, and...",@0x6d786f
 [Royal TS](/rmm_tools/royal-ts),RMM,Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Sophos-Remote Management System](/rmm_tools/sophos-remote-management-system),RMM,Sophos-Remote Management System is a remote monitoring and management (RMM) tool. More information w...,
 [Jump Cloud](/rmm_tools/jump-cloud),RMM,Jump Cloud is a remote monitoring and management (RMM) tool. More information will be added as it be...,

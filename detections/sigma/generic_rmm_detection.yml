@@ -197,6 +197,10 @@ detection:
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Ripple\*
     - \\C:\Program Files\Remote Utilities\*
+    - \\C:\Program Files\Remotely\ConnectionInfo.json
+    - \\C:\Program Files\Remotely\Desktop\Remotely_Desktop.exe
+    - \\C:\Program Files\Remotely\Remotely_Agent.exe
+    - \\C:\Program Files\Remotely\etag.txt
     - \\C:\Program Files\Rodex\RodexAgent.exe
     - \\C:\Program Files\RustDesk
     - \\C:\Program Files\Solar-Putty-v4\*
@@ -291,6 +295,7 @@ detection:
     - \\ConnectDetector.exe
     - \\ConnectShellSetup*.exe
     - \\ConnectWiseControl*.exe
+    - \\ConnectionInfo.json
     - \\CoreAgentService.exe
     - \\CrossLoopConnect.exe
     - \\DFC.exe
@@ -434,6 +439,8 @@ detection:
     - \\RemotePC.exe
     - \\RemotePCService.exe
     - \\RemoteRipple.exe
+    - \\Remotely_Agent
+    - \\Remotely_Desktop
     - \\RmmService.exe
     - \\RocketRemoteDesktop_Setup.exe
     - \\RodexAgent.exe
@@ -766,6 +773,8 @@ detection:
     - \\remote_host.exe
     - \\remoteconsole.exe
     - \\remoteit.exe
+    - \\remotely-agent.plist
+    - \\remotely-agent.service
     - \\remotepass-access.exe
     - \\remotepchost.exe
     - \\remotepcservice.exe
