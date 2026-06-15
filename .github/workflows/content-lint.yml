@@ -1,0 +1,31 @@
+name: Content Lint
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches: [main]
+
+jobs:
+  content-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5.2.0
+        with:
+          python-version: 3.12
+      - name: Install dependencies
+        # pin to avoid silent parse-behavior changes from PyYAML major bumps
+        run: pip install 'pyyaml>=6.0,<7'
+      - name: Run content lint
+        run: python bin/lint_content.py
+      - name: Suggest fix on failure
+        if: failure()
+        run: |
+          echo "::error::Content Lint found FP-prone patterns in catalog yamls."
+          echo "::error::See findings above. Each finding includes the offending file, field path, value, rule, and a suggested fix."
+          echo "::error::Tier-1 (error): always-wrong patterns (e.g. *.local, malformed wildcards, URLs in Domains, N/A in Ports). Block the merge."
+          echo "::error::Tier-2 (warn): patterns needing human judgement (e.g. public IPs in Domains). Do not block but worth confirming intent."
+          echo "::error::To run locally: python3 bin/lint_content.py"
