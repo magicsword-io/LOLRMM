@@ -149,9 +149,6 @@ turn.monitic.com,Monitic
 monitic.com,Monitic
 www.monitic.com,Monitic
 goverlan.com,Goverlan
-geo.netsupportsoftware.com,NetSupport Manager
-netsupportmanager.com,NetSupport Manager
-*.netsupportmanager.com,NetSupport Manager
 remotepass.com,RemotePass
 <operator-configured Vector Discovery Server URL>,VIZOR
 vizor.cloud,VIZOR
@@ -400,6 +397,7 @@ mdmsupport.comodo.com,Comodo RMM
 *.mdmsupport.comodo.com,Comodo RMM
 one.comodo.com,Comodo RMM
 *.ntrsupport.com,NTR Remote
+geo.netsupportsoftware.com,NetSupport Manager
 *.netsupportmanager.com,NetSupport Manager
 netsupportmanager.com,NetSupport Manager
 dataplicity.com,Dataplicity

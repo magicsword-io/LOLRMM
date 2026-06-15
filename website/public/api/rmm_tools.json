@@ -5478,63 +5478,6 @@
         }
     },
     {
-        "Name": "NetSupport Manager",
-        "Category": "RMM",
-        "Description": "NetSupport Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
-        "Details": {
-            "Website": "https://www.netsupportmanager.com/",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "pcictlui.exe",
-                "client32.exe",
-                "pcicfgui.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "geo.netsupportsoftware.com",
-                        "netsupportmanager.com",
-                        "*.netsupportmanager.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_network_sigma.yml",
-                "Description": "Detects potential network activity of NetSupport Manager RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_processes_sigma.yml",
-                "Description": "Detects potential processes activity of NetSupport Manager RMM tool"
-            }
-        ],
-        "References": [
-            "https://www.netsupportmanager.com/resources/"
-        ],
-        "Acknowledgement": []
-    },
-    {
         "Name": "RemotePass",
         "Category": "RMM",
         "Description": "RemotePass is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -16512,27 +16455,32 @@
     {
         "Name": "NetSupport Manager",
         "Category": "RMM",
-        "Description": "NetSupport Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Description": "NetSupport Manager is a remote monitoring and management (RMM) tool. Its remcmdstub.exe component is the NetSupport Remote Command Prompt Stub.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-06-15",
         "Details": {
             "Website": "https://www.netsupportmanager.com/",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
+            "PEMetadata": [
+                {
+                    "Filename": "remcmdstub.exe",
+                    "OriginalFileName": "remcmdstub.exe",
+                    "Description": "NetSupport Remote Command Prompt Stub"
+                }
+            ],
             "Privileges": "",
             "Free": "",
             "Verification": "",
             "SupportedOS": [],
-            "Capabilities": [],
+            "Capabilities": [
+                "Remote command prompt"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "pcictlui.exe",
                 "pcicfgui.exe",
-                "client32.exe"
+                "client32.exe",
+                "remcmdstub.exe"
             ]
         },
         "Artifacts": {
@@ -16543,6 +16491,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
+                        "geo.netsupportsoftware.com",
                         "*.netsupportmanager.com",
                         "netsupportmanager.com"
                     ],
@@ -16561,7 +16510,12 @@
             }
         ],
         "References": [
-            "https://www.netsupportmanager.com/resources/"
+            "https://www.netsupportmanager.com/resources/",
+            "https://www.netsupportmanager.com/complete-remote-control/",
+            "https://kb.netsupportsoftware.com/knowledge-base/netsupport-manager-control-command-line-options/",
+            "https://redcanary.com/threat-detection-report/threats/netsupport-manager/",
+            "https://www.cybereason.com/blog/net-support-rat-wordpress-clickfix",
+            "https://www.microsoft.com/en-us/security/blog/2025/03/06/malvertising-campaign-leads-to-info-stealers-hosted-on-github/"
         ],
         "Acknowledgement": [],
         "CodeSigning": {
@@ -16569,7 +16523,8 @@
                 "client32.exe",
                 "pcicfgui.exe",
                 "pcictlui",
-                "pcictlui.exe"
+                "pcictlui.exe",
+                "remcmdstub.exe"
             ],
             "company_names": [],
             "signer_names": [

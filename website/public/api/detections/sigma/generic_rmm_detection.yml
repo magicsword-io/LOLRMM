@@ -761,6 +761,7 @@ detection:
     - \\rdclient.exe
     - \\rdp.exe
     - \\rdp2tcp.py
+    - \\remcmdstub.exe
     - \\remcom.exe
     - \\remcomsvc.exe
     - \\remcos*.exe

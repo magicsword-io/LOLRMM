@@ -47,7 +47,6 @@ Name,Category,Description,Author
 [LocalXpose](/rmm_tools/localxpose),RAT,LocalXpose (loclx) is a free/subscription tunneling service from localxpose.io that exposes local TC...,@MHaggis
 [Monitic](/rmm_tools/monitic),RMM,Monitic (monitic.com) is an EU/Turkey-based SaaS Remote Monitoring and Management (RMM) platform mar...,@MHaggis
 [Goverlan](/rmm_tools/goverlan),RMM,Goverlan is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
-[NetSupport Manager](/rmm_tools/netsupport-manager),RMM,NetSupport Manager is a remote monitoring and management (RMM) tool. More information will be added ...,
 [RemotePass](/rmm_tools/remotepass),RMM,RemotePass is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [VIZOR](/rmm_tools/vizor),RMM,"VIZOR is an ITIL-aligned IT Asset Management (ITAM), Software Asset Management (SAM) and IT Service ...",@MHaggis
 [GoToAssist](/rmm_tools/gotoassist),RMM,GoToAssist is a remote monitoring and management (RMM) tool. More information will be added as it be...,
@@ -167,7 +166,7 @@ Name,Category,Description,Author
 [Total Software Deployment](/rmm_tools/total-software-deployment),RMM,Total Software Deployment is a remote monitoring and management (RMM) tool. More information will be...,
 [Comodo RMM](/rmm_tools/comodo-rmm),RMM,Comodo RMM is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [NTR Remote](/rmm_tools/ntr-remote),RMM,NTR Remote is a remote monitoring and management (RMM) tool. More information will be added as it be...,
-[NetSupport Manager](/rmm_tools/netsupport-manager),RMM,NetSupport Manager is a remote monitoring and management (RMM) tool. More information will be added ...,
+[NetSupport Manager](/rmm_tools/netsupport-manager),RMM,NetSupport Manager is a remote monitoring and management (RMM) tool. Its remcmdstub.exe component is...,
 [Royal Apps](/rmm_tools/royal-apps),RMM,Royal Apps is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Dataplicity](/rmm_tools/dataplicity),RAT,Dataplicity (by Wildfoundry) is a cloud-hosted remote-access service that exposes Linux systems — pr...,@MHaggis
 [Solar-PuTTY](/rmm_tools/solar-putty),RAT,Solar-PuTTY is a remote monitoring and management (RMM) tool. More information will be added as it b...,
