@@ -240,20 +240,39 @@ def generate_kql_detection():
         "author": "LOLRMM Project",
         "date": datetime.now().strftime("%Y/%m/%d"),
         "query": """// Detecting Unauthorized RMM Instances in Your MDE Environment
-//
 // Note: this query targets Microsoft Defender for Endpoint (DeviceNetworkEvents.Timestamp).
 // For Microsoft Sentinel, replace both `Timestamp` references with `TimeGenerated`.
-
+// Wildcard CSV entries are normalized to domain suffixes, then matched with a host boundary.
 let SanctionRMM = dynamic([\"bomgarcloud.com\"]); // Replace with your approved RMM domains, e.g. dynamic([\"teamviewer.com\", \"anydesk.com\"])
 let RMMList = externaldata(URI: string, RMMTool: string)
     [h'https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/website/public/api/rmm_domains.csv']
-    with (ignoreFirstRecord=true);
-let RMMUrl = toscalar(RMMList | summarize make_set(URI));
+    with (format=\"csv\", ignoreFirstRecord=true)
+    | extend RawURI = tolower(trim(@\"[ \\t\\r\\n]+\", URI))
+    | project Domain = trim_end(@\"\\.+\", case(
+        RawURI startswith \"*.\", replace_string(RawURI, \"*.\", \"\"),
+        RawURI startswith \"*\", replace_string(RawURI, \"*\", \"\"),
+        RawURI contains \"*\", replace_regex(RawURI, @\".+?\\*\", \"\"),
+        RawURI
+    ))
+    | where isnotempty(trim(@\"\\.+\", Domain));
+let RMMDomains = toscalar(RMMList | summarize make_set(Domain));
 DeviceNetworkEvents
-| where Timestamp > ago(24h)
+| where Timestamp > ago(1h)
 | where ActionType == \"ConnectionSuccess\"
-| where RemoteUrl has_any(RMMUrl)
-| where not (RemoteUrl has_any(SanctionRMM))
+| extend RemoteUrlClean = tolower(tostring(RemoteUrl))
+| extend RemoteHost = case(
+    RemoteUrlClean startswith \"http://\", tostring(parse_url(RemoteUrlClean).Host),
+    RemoteUrlClean startswith \"https://\", tostring(parse_url(RemoteUrlClean).Host),
+    tostring(split(RemoteUrlClean, \"/\")[0])
+)
+| extend RemoteHost = trim(@\"\\.+\", tostring(split(RemoteHost, \":\")[0]))
+| where isnotempty(RemoteHost)
+| where not (RemoteHost has_any(SanctionRMM))
+| mv-expand Domain = RMMDomains to typeof(string)
+| extend DomainRoot = trim(@\"\\.+\", Domain)
+| where RemoteHost == DomainRoot
+    or RemoteHost endswith strcat(\".\", DomainRoot)
+    or (Domain startswith \"-\" and RemoteHost endswith Domain)
 | summarize arg_max(Timestamp, *) by DeviceId""",
         "references": ["https://github.com/magicsword-io/LOLRMM"],
         "requirements": [
