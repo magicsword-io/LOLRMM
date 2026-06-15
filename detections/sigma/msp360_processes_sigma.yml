@@ -16,30 +16,32 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Online Backup.exe
-            - CBBackupPlan.exe
-            - Cloud.Backup.Scheduler.exe
-            - Cloud.Backup.RM.Service.exe
-            - cbb.exe
-            - CloudRaService.exe
-            - CloudRaSd.exe
-            - CloudRaCmd.exe
-            - CloudRaUtilities.exe
-            - Remote Desktop.exe
-            - Connect.exe
+            - 'Online Backup.exe'
+            - 'CBBackupPlan.exe'
+            - 'Cloud.Backup.Scheduler.exe'
+            - 'Cloud.Backup.RM.Service.exe'
+            - 'cbb.exe'
+            - 'CloudRaService.exe'
+            - 'CloudRaSd.exe'
+            - 'CloudRaCmd.exe'
+            - 'CloudRaUtilities.exe'
+            - 'Remote Desktop.exe'
+            - 'Connect.exe'
+            - 'RMM.Agent.exe'
     selection_image:
         Image|endswith:
-            - Online Backup.exe
-            - CBBackupPlan.exe
-            - Cloud.Backup.Scheduler.exe
-            - Cloud.Backup.RM.Service.exe
-            - cbb.exe
-            - CloudRaService.exe
-            - CloudRaSd.exe
-            - CloudRaCmd.exe
-            - CloudRaUtilities.exe
-            - Remote Desktop.exe
-            - Connect.exe
+            - 'Online Backup.exe'
+            - 'CBBackupPlan.exe'
+            - 'Cloud.Backup.Scheduler.exe'
+            - 'Cloud.Backup.RM.Service.exe'
+            - 'cbb.exe'
+            - 'CloudRaService.exe'
+            - 'CloudRaSd.exe'
+            - 'CloudRaCmd.exe'
+            - 'CloudRaUtilities.exe'
+            - 'Remote Desktop.exe'
+            - 'Connect.exe'
+            - 'RMM.Agent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of MSP360
