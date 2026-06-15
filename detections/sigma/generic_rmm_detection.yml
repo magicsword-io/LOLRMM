@@ -430,6 +430,7 @@ detection:
     - \\RDPWInst.exe
     - \\RDesktop.exe
     - \\RHost.exe
+    - \\RMM.Agent.exe
     - \\ROMFUSClient.exe
     - \\ROMServer.exe
     - \\RViewer.exe
