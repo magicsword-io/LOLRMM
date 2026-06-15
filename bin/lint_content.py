@@ -165,12 +165,13 @@ def _check_domain(file: str, idx_path: str, value: object) -> Iterable[Finding]:
         )
 
     val = stripped
+    val_lower = val.lower()
 
     # Allow sentinels + angle-bracket placeholders to pass without further checks.
     if val in ALLOWED_BARE_LABELS or _PLACEHOLDER_RE.match(val):
         return
 
-    if val in TIER1_DOMAIN_EXACT:
+    if val_lower in TIER1_DOMAIN_EXACT:
         yield Finding(
             ERROR, file, idx_path, val,
             "domain-loopback-or-local",
@@ -179,7 +180,7 @@ def _check_domain(file: str, idx_path: str, value: object) -> Iterable[Finding]:
         )
         return
 
-    if val in TIER1_DOMAIN_CATCHALL:
+    if val_lower in TIER1_DOMAIN_CATCHALL:
         yield Finding(
             ERROR, file, idx_path, val,
             "domain-catchall-wildcard",
@@ -188,7 +189,7 @@ def _check_domain(file: str, idx_path: str, value: object) -> Iterable[Finding]:
         )
         return
 
-    if val.lower() in TIER1_BARE_TLDS:
+    if val_lower in TIER1_BARE_TLDS:
         yield Finding(
             ERROR, file, idx_path, val,
             "domain-bare-tld",
