@@ -16,9 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - 'geo.netsupportsoftware.com'
-            - 'netsupportmanager.com'
             - '*.netsupportmanager.com'
+            - 'netsupportmanager.com'
     condition: selection
 falsepositives:
     - Legitimate use of NetSupport Manager
