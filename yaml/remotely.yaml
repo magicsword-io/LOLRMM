@@ -1,7 +1,7 @@
 Name: Remotely
 Category: RMM
 Description: Remotely is an open-source remote control and remote scripting solution built with .NET, Blazor, and SignalR. It uses a self-hosted server plus endpoint agent and desktop clients for remote support, unattended access, remote terminal or scripting, chat, and file transfer. Public reporting has observed Remotely abuse for persistent access in intrusions.
-Author: pklx01
+Author: '@0x6d786f'
 Created: '2026-05-24'
 LastModified: '2026-06-15'
 Details:
@@ -114,5 +114,5 @@ References:
     - https://socprime.com/active-threats/voicemail-lure-leads-to-remote-access/
     - https://www.trendmicro.com/vinfo/us/security/news/ransomware-spotlight/ransomware-spotlight-agenda
 Acknowledgement:
-    - Person: pklx01
-      Handle: '@pklx01'
+    - Person: '0x6d786f'
+      Handle: '@0x6d786f'
