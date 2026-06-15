@@ -16,9 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.itsm-us1.comodo.com
-            - *mdmsupport.comodo.com
-            - one.comodo.com
+            - '*.itsm-us1.comodo.com'
+            - 'mdmsupport.comodo.com'
+            - '*.mdmsupport.comodo.com'
+            - 'one.comodo.com'
     condition: selection
 falsepositives:
     - Legitimate use of Comodo RMM

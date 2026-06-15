@@ -32,7 +32,8 @@ Artifacts:
           Domains:
               - '*.domotz.co'
               - domotz.com
-              - '*cell-1.domotz.com'
+              - 'cell-1.domotz.com'
+              - '*.cell-1.domotz.com'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/domotz_network_sigma.yml

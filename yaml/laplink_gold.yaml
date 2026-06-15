@@ -27,7 +27,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - web.laplink.com/product/laplink-gold
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/laplink_gold_network_sigma.yml

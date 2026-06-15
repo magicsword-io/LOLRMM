@@ -15,9 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - beanywhere.en.uptodown.com/windows
-            - beanywhere.com
+        DestinationHostname|endswith: 'beanywhere.com'
     condition: selection
 falsepositives:
     - Legitimate use of BeAnyWhere

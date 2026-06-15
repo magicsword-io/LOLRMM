@@ -28,7 +28,8 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - '*soti.net'
+              - 'soti.net'
+              - '*.soti.net'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller__soti_xsight__network_sigma.yml

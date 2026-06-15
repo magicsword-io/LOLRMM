@@ -39,14 +39,12 @@ CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More informa
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["cloudflare.com/products/tunnel/"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": [], "Ports": []}] }/>
 
 
 
 
 ### Detections
-- Detects potential network activity of CloudFlare Tunnel RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_network_sigma.yml)
 - Detects potential processes activity of CloudFlare Tunnel RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_processes_sigma.yml)
 

@@ -16,7 +16,6 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - 'N/A (listens on httpd-ip — default 0.0.0.0 — on the agent host)'
             - '<operator-configured GLPI server>'
             - 'glpi-project.org'
             - 'www.glpi-project.org'

@@ -28,7 +28,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - github.com/V-E-O/rdp2tcp
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdp2tcp_network_sigma.yml

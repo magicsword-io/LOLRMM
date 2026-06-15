@@ -39,8 +39,10 @@ Artifacts:
               - '*.fixme.it'
               - '*.techinline.net'
               - fixme.it
-              - '*set.me'
-              - '*setme.net'
+              - 'set.me'
+              - '*.set.me'
+              - 'setme.net'
+              - '*.setme.net'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml

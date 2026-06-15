@@ -17,14 +17,14 @@ detection:
     selection_parent:
         ParentImage|endswith:
             - 'hsloader.exe'
-            - 'InstantHousecall.exe'
             - 'ihcserver.exe'
+            - 'instanthousecall.exe'
             - 'instanthousecall.exe'
     selection_image:
         Image|endswith:
             - 'hsloader.exe'
-            - 'InstantHousecall.exe'
             - 'ihcserver.exe'
+            - 'instanthousecall.exe'
             - 'instanthousecall.exe'
     condition: 1 of selection_*
 falsepositives:

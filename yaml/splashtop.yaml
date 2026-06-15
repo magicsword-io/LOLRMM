@@ -107,8 +107,7 @@ Artifacts:
         - Description: N/A
           Domains:
               - '*.splashtop.com'
-          Ports:
-              - N/A
+          Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/splashtop_registry_sigma.yml
       Description: Detects potential registry activity of Splashtop RMM tool

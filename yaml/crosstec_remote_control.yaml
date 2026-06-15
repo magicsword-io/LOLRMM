@@ -30,7 +30,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - crosstecsoftware.com/remotecontrol
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/crosstec_remote_control_network_sigma.yml

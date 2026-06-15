@@ -59,10 +59,8 @@ Artifacts:
     Registry: []
     Network:
         - Description: Aspia can be downloaded from the official github repository.
-          Domains:
-              - https://github.com/dchapyshev/aspia
-          Ports:
-              - N/A
+          Domains: []
+          Ports: []
 References:
     - https://ics-cert.kaspersky.com/publications/reports/2025/06/05/ttps-of-cyber-partisans-activity-aimed-at-espionage-and-disruption/
     - https://www.aspia.org/
@@ -71,8 +69,6 @@ Acknowledgement:
     - Person: Swachchhanda Shrawan Poudel
       Handle: '@_swachchhanda_'
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml
-      Description: Detects potential network activity of Aspia RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml
       Description: Detects potential files activity of Aspia RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml

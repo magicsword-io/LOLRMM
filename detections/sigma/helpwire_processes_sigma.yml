@@ -1,0 +1,28 @@
+title: Potential HelpWire RMM Tool Process Activity
+id: 8cf25a1a-0695-5638-8e28-bcba41be64e6
+status: experimental
+description: |
+    Detects potential processes activity of HelpWire RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-06-11
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - 'helpwire.exe'
+            - 'HelpWire Quick.exe'
+    selection_image:
+        Image|endswith:
+            - 'helpwire.exe'
+            - 'HelpWire Quick.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of HelpWire
+level: medium
