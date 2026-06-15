@@ -29,8 +29,6 @@ Artifacts:
           Domains: []
           Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml
-      Description: Detects potential network activity of Pcnow RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml
       Description: Detects potential processes activity of Pcnow RMM tool
 References:

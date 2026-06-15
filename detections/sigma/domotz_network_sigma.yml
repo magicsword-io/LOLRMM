@@ -16,9 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.domotz.co
-            - domotz.com
-            - *cell-1.domotz.com
+            - '*.domotz.co'
+            - 'domotz.com'
+            - 'cell-1.domotz.com'
+            - '*.cell-1.domotz.com'
     condition: selection
 falsepositives:
     - Legitimate use of Domotz

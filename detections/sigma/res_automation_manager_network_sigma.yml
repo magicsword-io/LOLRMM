@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - ivanti.com/
+            - 'user_managed'
+            - 'ivanti.com'
     condition: selection
 falsepositives:
     - Legitimate use of RES Automation Manager

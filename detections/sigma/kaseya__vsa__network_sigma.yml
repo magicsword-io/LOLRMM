@@ -16,10 +16,11 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - deploy01.kaseya.com
-            - *managedsupport.kaseya.net
-            - *.kaseya.net
-            - kaseya.com
+            - 'deploy01.kaseya.com'
+            - 'managedsupport.kaseya.net'
+            - '*.managedsupport.kaseya.net'
+            - '*.kaseya.net'
+            - 'kaseya.com'
     condition: selection
 falsepositives:
     - Legitimate use of Kaseya (VSA)

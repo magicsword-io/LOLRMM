@@ -69,8 +69,6 @@ Acknowledgement:
     - Person: Swachchhanda Shrawan Poudel
       Handle: '@_swachchhanda_'
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml
-      Description: Detects potential network activity of Aspia RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml
       Description: Detects potential files activity of Aspia RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_processes_sigma.yml

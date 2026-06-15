@@ -30,8 +30,6 @@ Artifacts:
           Domains: []
           Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_network_sigma.yml
-      Description: Detects potential network activity of Pocket Controller RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_processes_sigma.yml
       Description: Detects potential processes activity of Pocket Controller RMM tool
 References: []

@@ -15,9 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - *.01com.com
-            - 01com.com/imintouch-remote-pc-desktop
+        DestinationHostname|endswith: '*.01com.com'
     condition: selection
 falsepositives:
     - Legitimate use of I'm InTouch

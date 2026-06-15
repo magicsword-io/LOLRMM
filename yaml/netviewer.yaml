@@ -28,8 +28,6 @@ Artifacts:
           Domains: []
           Ports: []
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer_network_sigma.yml
-      Description: Detects potential network activity of Netviewer RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer_processes_sigma.yml
       Description: Detects potential processes activity of Netviewer RMM tool
 References: []

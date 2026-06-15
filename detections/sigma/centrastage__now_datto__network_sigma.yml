@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.rmm.datto.com
-            - *cc.centrastage.net
-            - datto.com/au/products/rmm/
+            - '*.rmm.datto.com'
+            - 'cc.centrastage.net'
+            - '*.cc.centrastage.net'
     condition: selection
 falsepositives:
     - Legitimate use of CentraStage (Now Datto)

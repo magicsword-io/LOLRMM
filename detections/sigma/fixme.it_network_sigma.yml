@@ -16,11 +16,13 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.fixme.it
-            - *.techinline.net
-            - fixme.it
-            - *set.me
-            - *setme.net
+            - '*.fixme.it'
+            - '*.techinline.net'
+            - 'fixme.it'
+            - 'set.me'
+            - '*.set.me'
+            - 'setme.net'
+            - '*.setme.net'
     condition: selection
 falsepositives:
     - Legitimate use of FixMe.it
