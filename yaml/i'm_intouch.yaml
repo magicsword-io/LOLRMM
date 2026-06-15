@@ -28,7 +28,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.01com.com'
-              - 01com.com/imintouch-remote-pc-desktop
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/i'm_intouch_network_sigma.yml

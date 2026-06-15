@@ -16,10 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.sophos.com
-            - *.sophosupd.com
-            - *.sophosupd.net
-            - community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system
+            - '*.sophos.com'
+            - '*.sophosupd.com'
+            - '*.sophosupd.net'
     condition: selection
 falsepositives:
     - Legitimate use of Sophos-Remote Management System

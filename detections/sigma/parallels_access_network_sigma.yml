@@ -15,9 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - *.parallels.com
-            - parallels.com/products/ras/try
+        DestinationHostname|endswith: '*.parallels.com'
     condition: selection
 falsepositives:
     - Legitimate use of Parallels Access

@@ -167,8 +167,7 @@ Artifacts:
           Description: Comma-separated task list the agent will execute (Inventory, NetInventory, NetDiscovery, ESX, Deploy, Collect, RemoteInventory, WakeOnLan)
     Network:
         - Description: Embedded HTTP daemon listen port — the GLPI server (or the operator) connects to this port to trigger tasks on the endpoint. Default `httpd-port=62354` per the MSI properties; configurable.
-          Domains:
-              - N/A (listens on httpd-ip — default 0.0.0.0 — on the agent host)
+          Domains: []
           Ports:
               - 62354
         - Description: Outbound connection from agent to the operator-configured GLPI server (`server` parameter / MSI `SERVER` property). Endpoints are tenant-configured, not centralised — the agent talks to whatever URL the operator specifies (self-hosted GLPI, GLPI Network or attacker-controlled server).

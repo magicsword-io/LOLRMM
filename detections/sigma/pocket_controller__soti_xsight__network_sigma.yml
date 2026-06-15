@@ -15,7 +15,9 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *soti.net
+        DestinationHostname|endswith:
+            - 'soti.net'
+            - '*.soti.net'
     condition: selection
 falsepositives:
     - Legitimate use of Pocket Controller (Soti Xsight)

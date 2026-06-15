@@ -15,9 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - *.kace.com
-            - www.quest.com/kace/
+        DestinationHostname|endswith: '*.kace.com'
     condition: selection
 falsepositives:
     - Legitimate use of Quest KACE Agent (formerly Dell KACE)

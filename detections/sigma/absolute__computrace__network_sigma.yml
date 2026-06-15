@@ -16,8 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *search.namequery.com
-            - *server.absolute.com
+            - 'search.namequery.com'
+            - '*.search.namequery.com'
+            - 'server.absolute.com'
+            - '*.server.absolute.com'
     condition: selection
 falsepositives:
     - Legitimate use of Absolute (Computrace)

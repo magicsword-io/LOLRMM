@@ -16,8 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.distantdesktop.com
-            - *signalserver.xyz
+            - '*.distantdesktop.com'
+            - 'signalserver.xyz'
+            - '*.signalserver.xyz'
     condition: selection
 falsepositives:
     - Legitimate use of Distant Desktop

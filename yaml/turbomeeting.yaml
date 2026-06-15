@@ -28,7 +28,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - acceo.com/turbomeeting/
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/turbomeeting_network_sigma.yml

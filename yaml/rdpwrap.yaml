@@ -28,7 +28,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - github.com/stascorp/rdpwrap
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdpwrap_network_sigma.yml

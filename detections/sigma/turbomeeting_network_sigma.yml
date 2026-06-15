@@ -15,9 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - user_managed
-            - acceo.com/turbomeeting/
+        DestinationHostname|endswith: 'user_managed'
     condition: selection
 falsepositives:
     - Legitimate use of TurboMeeting

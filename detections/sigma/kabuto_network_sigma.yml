@@ -15,9 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - *.kabuto.io
-            - repairtechsolutions.com/kabuto/
+        DestinationHostname|endswith: '*.kabuto.io'
     condition: selection
 falsepositives:
     - Legitimate use of Kabuto

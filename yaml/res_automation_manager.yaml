@@ -29,7 +29,7 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - ivanti.com/
+              - ivanti.com
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/res_automation_manager_network_sigma.yml
