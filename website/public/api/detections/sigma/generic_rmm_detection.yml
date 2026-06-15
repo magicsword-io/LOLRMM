@@ -383,7 +383,7 @@ detection:
     - \\InstantHousecall.exe
     - \\ItsmRsp.exe
     - \\IvantiRemoteControl.exe
-    - '\\JumpCloud*.exe '
+    - \\JumpCloud*.exe
     - \\KHelpDesk.exe
     - \\Kabuto.App.Runner.exe
     - \\Kabuto.Installer.exe
@@ -537,7 +537,7 @@ detection:
     - \\connectwisechat-customer.exe
     - \\connectwisecontrol.client.exe
     - \\crossloopservice.exe
-    - '\\csexec.exe '
+    - \\csexec.exe
     - \\ctes.exe
     - \\cteshostsvc.exe
     - \\ctespersitence.exe

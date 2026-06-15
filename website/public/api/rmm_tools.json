@@ -34,7 +34,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*content.rview.com",
+                        "*.content.rview.com",
                         "*.rview.com",
                         "content.rview.com"
                     ],
@@ -746,18 +746,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "au.pcmag.com/utilities/21470/webex-pcnow"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
         "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_network_sigma.yml",
-                "Description": "Detects potential network activity of Pcnow RMM tool"
-            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pcnow_processes_sigma.yml",
                 "Description": "Detects potential processes activity of Pcnow RMM tool"
@@ -937,8 +931,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "crosstecsoftware.com/remotecontrol"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -1092,8 +1085,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "web.laplink.com/product/laplink-gold"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -1395,7 +1387,7 @@
                     "Description": "Known remote domains and router IP addresses",
                     "Domains": [
                         "ammyy.com",
-                        "*ammyy.com"
+                        "*.ammyy.com"
                     ],
                     "Ports": [
                         5931,
@@ -2382,8 +2374,7 @@
                     "Description": "Known remote domains",
                     "Domains": [
                         "user_managed",
-                        "*.intelliadmin.com",
-                        "intelliadmin.com/remote-control"
+                        "*.intelliadmin.com"
                     ],
                     "Ports": []
                 }
@@ -4095,12 +4086,8 @@
             "Network": [
                 {
                     "Description": "Aspia can be downloaded from the official github repository.",
-                    "Domains": [
-                        "https://github.com/dchapyshev/aspia"
-                    ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Domains": [],
+                    "Ports": []
                 }
             ]
         },
@@ -4116,10 +4103,6 @@
             }
         ],
         "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml",
-                "Description": "Detects potential network activity of Aspia RMM tool"
-            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml",
                 "Description": "Detects potential files activity of Aspia RMM tool"
@@ -4183,19 +4166,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "tanium.com/products/tanium-deploy"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/tanium_deploy_network_sigma.yml",
-                "Description": "Detects potential network activity of Tanium Deploy RMM tool"
-            }
-        ],
+        "Detections": [],
         "References": [],
         "Acknowledgement": []
     },
@@ -6991,9 +6967,7 @@
             "Network": [
                 {
                     "Description": "Embedded HTTP daemon listen port — the GLPI server (or the operator) connects to this port to trigger tasks on the endpoint. Default `httpd-port=62354` per the MSI properties; configurable.",
-                    "Domains": [
-                        "N/A (listens on httpd-ip — default 0.0.0.0 — on the agent host)"
-                    ],
+                    "Domains": [],
                     "Ports": [
                         62354
                     ]
@@ -8732,8 +8706,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*.parallels.com",
-                        "parallels.com/products/ras/try"
+                        "*.parallels.com"
                     ],
                     "Ports": []
                 }
@@ -8994,8 +8967,7 @@
                         "plus*.site24x7.eu",
                         "plus*.site24x7.in",
                         "plus*.site24x7.cn",
-                        "plus*.site24x7.net.au",
-                        "site24x7.com/msp"
+                        "plus*.site24x7.net.au"
                     ],
                     "Ports": []
                 }
@@ -9981,7 +9953,6 @@
                         "*.zoho.com.au",
                         "*.zohoassist.jp",
                         "assist.zoho.com",
-                        "zoho.com/assist/",
                         "*.zoho.in",
                         "downloads.zohodl.com.cn",
                         "*.zohoassist.com",
@@ -10306,8 +10277,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*.01com.com",
-                        "01com.com/imintouch-remote-pc-desktop"
+                        "*.01com.com"
                     ],
                     "Ports": []
                 }
@@ -10658,8 +10628,10 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*search.namequery.com",
-                        "*server.absolute.com"
+                        "search.namequery.com",
+                        "*.search.namequery.com",
+                        "server.absolute.com",
+                        "*.server.absolute.com"
                     ],
                     "Ports": []
                 }
@@ -10721,19 +10693,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "learn.microsoft.com/en-us/azure/developer/dev-tunnels/overview"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dev_tunnels__aka_visual_studio_dev_tunnel__network_sigma.yml",
-                "Description": "Detects potential network activity of Dev Tunnels (aka Visual Studio Dev Tunnel) RMM tool"
-            }
-        ],
+        "Detections": [],
         "References": [],
         "Acknowledgement": []
     },
@@ -10766,19 +10731,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "manageengine.com/remote-monitoring-management/"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/manageengine_rmm_central_network_sigma.yml",
-                "Description": "Detects potential network activity of ManageEngine RMM Central RMM tool"
-            }
-        ],
+        "Detections": [],
         "References": [],
         "Acknowledgement": []
     },
@@ -11059,9 +11017,7 @@
                     "Domains": [
                         "*.splashtop.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 }
             ]
         },
@@ -11609,8 +11565,8 @@
                     "Description": "Known remote domains",
                     "Domains": [
                         "*.rmm.datto.com",
-                        "*cc.centrastage.net",
-                        "datto.com/au/products/rmm/"
+                        "cc.centrastage.net",
+                        "*.cc.centrastage.net"
                     ],
                     "Ports": []
                 }
@@ -12388,9 +12344,7 @@
                     "Domains": [
                         "*.GoToMyPC.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 }
             ]
         },
@@ -13174,7 +13128,8 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*soti.net"
+                        "soti.net",
+                        "*.soti.net"
                     ],
                     "Ports": []
                 }
@@ -13638,7 +13593,8 @@
                     "Domains": [
                         "*.domotz.co",
                         "domotz.com",
-                        "*cell-1.domotz.com"
+                        "cell-1.domotz.com",
+                        "*.cell-1.domotz.com"
                     ],
                     "Ports": []
                 }
@@ -13803,8 +13759,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "realvnc.com/en/connect/download/vnc"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -14535,8 +14490,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "eset.com/me/business/remote-management/remote-administrator/"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -14803,18 +14757,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "soti.net/products/soti-pocket-controller"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
         "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_network_sigma.yml",
-                "Description": "Detects potential network activity of Pocket Controller RMM tool"
-            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pocket_controller_processes_sigma.yml",
                 "Description": "Detects potential processes activity of Pocket Controller RMM tool"
@@ -15082,7 +15030,6 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "beanywhere.en.uptodown.com/windows",
                         "beanywhere.com"
                     ],
                     "Ports": []
@@ -16400,7 +16347,8 @@
                     "Description": "Known remote domains",
                     "Domains": [
                         "*.itsm-us1.comodo.com",
-                        "*mdmsupport.comodo.com",
+                        "mdmsupport.comodo.com",
+                        "*.mdmsupport.comodo.com",
                         "one.comodo.com"
                     ],
                     "Ports": []
@@ -16951,7 +16899,8 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*mygreenpc.com"
+                        "mygreenpc.com",
+                        "*.mygreenpc.com"
                     ],
                     "Ports": []
                 }
@@ -17662,16 +17611,23 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*remote.management",
+                        "remote.management",
+                        "*.remote.management",
                         "*.logicnow.com",
-                        "*systemmonitor.us",
-                        "*systemmonitor.eu.com",
-                        "*system-monitor.com",
+                        "systemmonitor.us",
+                        "*.systemmonitor.us",
+                        "systemmonitor.eu.com",
+                        "*.systemmonitor.eu.com",
+                        "system-monitor.com",
+                        "*.system-monitor.com",
                         "systemmonitor.us.cdn.cloudflare.net",
-                        "*cloudbackup.management",
-                        "*systemmonitor.co.uk",
+                        "cloudbackup.management",
+                        "*.cloudbackup.management",
+                        "systemmonitor.co.uk",
+                        "*.systemmonitor.co.uk",
                         "*.n-able.com",
-                        "*.beanywhere.com ",
+                        "beanywhere.com",
+                        "*.beanywhere.com",
                         "*.swi-tc.com"
                     ],
                     "Ports": []
@@ -18153,108 +18109,84 @@
                     "Domains": [
                         "pubsub.atera.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "agentreporting.atera.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "getalphacontrol.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "app.atera.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "agenthb.atera.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "packagesstore.blob.core.windows.net"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "agent-api.atera.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "agentreportingstore.blob.core.windows.net"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "atera-agent-heartbeat.servicebus.windows.net"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "ps.atera.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "Atera-specific PubNub tenant subdomain (CNAME api-tls11.pubnubapi.com) used by the AteraAgent for real-time tenant messaging. Distinct from the generic pubsub.pubnub.com / ps.pndsn.com PubNub multi-tenant infrastructure (shared by thousands of unrelated apps), this `atera.`-prefixed subdomain is reliable Atera-attribution signal.",
                     "Domains": [
                         "atera.pubnubapi.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 },
                 {
                     "Description": "N/A",
                     "Domains": [
                         "appcdn.atera.com"
                     ],
-                    "Ports": [
-                        "N/A"
-                    ]
+                    "Ports": []
                 }
             ]
         },
@@ -19182,8 +19114,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "acceo.com/turbomeeting/"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -19347,8 +19278,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*.kace.com",
-                        "www.quest.com/kace/"
+                        "*.kace.com"
                     ],
                     "Ports": []
                 }
@@ -19856,8 +19786,8 @@
                     "Description": "Peer discovery and control traffic",
                     "Domains": [],
                     "Ports": [
-                        "15100/tcp",
-                        "15101/tcp"
+                        15100,
+                        15101
                     ]
                 }
             ]
@@ -20438,8 +20368,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*.kabuto.io",
-                        "repairtechsolutions.com/kabuto/"
+                        "*.kabuto.io"
                     ],
                     "Ports": []
                 }
@@ -20967,8 +20896,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "systemmanager.ru/dntu.en/rdp_view.htm"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -21021,8 +20949,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "github.com/stascorp/rdpwrap"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -21757,18 +21684,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "imperosoftware.com/impero-connect/"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
         "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__network_sigma.yml",
-                "Description": "Detects potential network activity of Netop Remote Control (aka Impero Connect) RMM tool"
-            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netop_remote_control__aka_impero_connect__processes_sigma.yml",
                 "Description": "Detects potential processes activity of Netop Remote Control (aka Impero Connect) RMM tool"
@@ -22228,8 +22149,7 @@
                     "Domains": [
                         "*.sophos.com",
                         "*.sophosupd.com",
-                        "*.sophosupd.net",
-                        "community.sophos.com/on-premise-endpoint/f/sophos-endpoint-software/5725/sophos-remote-management-system"
+                        "*.sophosupd.net"
                     ],
                     "Ports": []
                 }
@@ -22271,7 +22191,7 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "JumpCloud*.exe "
+                "JumpCloud*.exe"
             ]
         },
         "Artifacts": {
@@ -23228,8 +23148,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "github.com/Mikej81/WebRDP"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -24509,7 +24428,7 @@
                     "certificate_der_base64": "MIIFpzCCA4+gAwIBAgIQeYgyse0qaFTKDanLjZ7OdTANBgkqhkiG9w0BAQsFADB7MQswCQYDVQQGEwJVUzEOMAwGA1UECAwFVGV4YXMxEDAOBgNVBAcMB0hvdXN0b24xETAPBgNVBAoMCFNTTCBDb3JwMTcwNQYDVQQDDC5TU0wuY29tIEVWIENvZGUgU2lnbmluZyBJbnRlcm1lZGlhdGUgQ0EgUlNBIFIzMB4XDTI0MDUxNjA0NDgxNloXDTI3MDUxNTE1MTUwNFowgaQxCzAJBgNVBAYTAlZOMQ4wDAYDVQQHDAVIYW5vaTEdMBsGA1UECgwURFVDIEZBQlVMT1VTIENPLixMVEQxEzARBgNVBAUTCjAxMDU4Mzg0MDkxHTAbBgNVBAMMFERVQyBGQUJVTE9VUyBDTy4sTFREMR0wGwYDVQQPDBRQcml2YXRlIE9yZ2FuaXphdGlvbjETMBEGCysGAQQBgjc8AgEDEwJWTjB2MBAGByqGSM49AgEGBSuBBAAiA2IABCU/MvcJ3RjFWiIoLYk4JPlQ2IOvSbwYSTegwMBXlgTeDNor32nQ9JbSjoF2Ykmk2JF3V5YPGm6408HXX+zcSFfwYTVLg2lE+tO6S6FtjGmgfevrSkX1JjUpbLAQELXnS6OCAakwggGlMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUNr1J/zEs669qQP6ZwBbtuvxI3V8wfQYIKwYBBQUHAQEEcTBvMEsGCCsGAQUFBzAChj9odHRwOi8vY2VydC5zc2wuY29tL1NTTGNvbS1TdWJDQS1FVi1Db2RlU2lnbmluZy1SU0EtNDA5Ni1SMy5jZXIwIAYIKwYBBQUHMAGGFGh0dHA6Ly9vY3Nwcy5zc2wuY29tMF8GA1UdIARYMFYwBwYFZ4EMAQMwDQYLKoRoAYb2dwIFAQcwPAYMKwYBBAGCqTABAwMCMCwwKgYIKwYBBQUHAgEWHmh0dHBzOi8vd3d3LnNzbC5jb20vcmVwb3NpdG9yeTATBgNVHSUEDDAKBggrBgEFBQcDAzBQBgNVHR8ESTBHMEWgQ6BBhj9odHRwOi8vY3Jscy5zc2wuY29tL1NTTGNvbS1TdWJDQS1FVi1Db2RlU2lnbmluZy1SU0EtNDA5Ni1SMy5jcmwwHQYDVR0OBBYEFBGD+HIWpkboJeB8FUq+hFWP65EqMA4GA1UdDwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAgEAYDxaY9aJEL0XPzVqL8NBHarHBYJS4Sgjn0S9UQE8rArsezy65YVoCVFCi+m8EkmMwyJwWThkLtUa08g6RdcdxiyCONtSW/6uFtzXZCXiL0VySuxVcNezwgstLgrAeDj2gCm1aa6oFu5Rf22jKWywvXkgV/xGEKDn8frLMh7TnJiV6/vwjO1adMaIhlCgnWo+yqdVE9TFIQI2mM0QpPyyKZOd3rtHr4YxTH8vLCP4LU65a7SpYibnPugrKAORM38F7It4n5AR8tEaQMkpM3+Ge2NvhQz9xO4qGVmhP3Az4ESFFU3yDcl4bNBP8THiMx6mx4CZcuIRomd1IzvvwSov76LS07i1WmxQk5GcAoQkVMgqmHHCxndwq85oKgrv8XJFU8eKrrW3yXW/uzPdk7fArzx+wgq3/CxkcPG7zzHoexJEm05qP5TyPR9xvSNK896Nj7O6ks7iQkkR8HqTgyCCCDo9jLzlpQVE4HjzjwojqBYj/KTmG0LSAgNf8/QdHhkbIMSw3dgBr7S8yqp6CcPjSHN6mWz6K/JSfvHg5tHT4w2HoIedYvV2TGlZ6ri4LE26r92bgaKCgRxdhBsSUkpVa7GCwDxJHoN5tlF67eh3pRN9uDUNOeDjA5WO+ZpjH7vhLCAqllB06A68a1G3BnIoaci8soPICWWqjDgSR7B9ixo=",
                     "src_file_sha256": "0fa31dd2affdad98dbca7d8b7a9dc02c56093ff2ca06e6b03db7aa4cd4bf5260",
                     "src_file_path": "downloaded_files/ultraviewer/0fa31dd2affdad98dbca7d8b7a9dc02c56093ff2ca06e6b03db7aa4cd4bf5260",
-                    "src_file_company": "DucFabulous                                                 "
+                    "src_file_company": "DucFabulous"
                 },
                 {
                     "signer_name": "DUC FABULOUS CO.,LTD",
@@ -24517,7 +24436,7 @@
                     "certificate_der_base64": "MIIDezCCAyGgAwIBAgIRAPGYM+rN1bUSUa/n/imopJ0wCgYIKoZIzj0EAwIwVDELMAkGA1UEBhMCR0IxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDErMCkGA1UEAxMiU2VjdGlnbyBQdWJsaWMgQ29kZSBTaWduaW5nIENBIEUzNjAeFw0yMzExMzAwMDAwMDBaFw0yNjExMjgyMzU5NTlaMFwxCzAJBgNVBAYTAlZOMQ8wDQYDVQQIDAZIYSBOb2kxHTAbBgNVBAoMFERVQyBGQUJVTE9VUyBDTy4sTFREMR0wGwYDVQQDDBREVUMgRkFCVUxPVVMgQ08uLExURDB2MBAGByqGSM49AgEGBSuBBAAiA2IABJjxfmB3Cjsuvp/hRHIPfbqXCeM2IUgg42LrB9S6HJMIFaH8ZfWPeerMVbhorXcPy35a5qg5d3hYzSqQryYSLC0XLLxpKXftnOrrezfptRLOTAfQBFkzOC+g6yuJ5Za9zaOCAa0wggGpMB8GA1UdIwQYMBaAFCUNm23YGHe3isM4UVblx/K1/4NqMB0GA1UdDgQWBBTPOAlFNgXARALIhTOORnU1oxRTEzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADATBgNVHSUEDDAKBggrBgEFBQcDAzBKBgNVHSAEQzBBMDUGDCsGAQQBsjEBAgEDAjAlMCMGCCsGAQUFBwIBFhdodHRwczovL3NlY3RpZ28uY29tL0NQUzAIBgZngQwBBAEwSQYDVR0fBEIwQDA+oDygOoY4aHR0cDovL2NybC5zZWN0aWdvLmNvbS9TZWN0aWdvUHVibGljQ29kZVNpZ25pbmdDQUUzNi5jcmwweQYIKwYBBQUHAQEEbTBrMEQGCCsGAQUFBzAChjhodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29QdWJsaWNDb2RlU2lnbmluZ0NBRTM2LmNydDAjBggrBgEFBQcwAYYXaHR0cDovL29jc3Auc2VjdGlnby5jb20wIgYDVR0RBBswGYEXY29udGFjdEB1bHRyYXZpZXdlci5uZXQwCgYIKoZIzj0EAwIDSAAwRQIhAO4o7KRITeIrefJep70oRE/8pEiBH14niamQCuXMEKQwAiAk2C4bdYJI5+lHnOeWME3jpXJ84VK+Yzg1At7Cd6L2sw==",
                     "src_file_sha256": "a7a7419a44b9e4a858b2d59f9a6876dda83e5e7841376a496e5501ffaa521883",
                     "src_file_path": "downloaded_files/ultraviewer/a7a7419a44b9e4a858b2d59f9a6876dda83e5e7841376a496e5501ffaa521883",
-                    "src_file_company": "DucFabulous                                                 "
+                    "src_file_company": "DucFabulous"
                 }
             ]
         },
@@ -24983,18 +24902,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "download.cnet.com/Net-Viewer/3000-2370_4-10034828.html"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
         "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer_network_sigma.yml",
-                "Description": "Detects potential network activity of Netviewer RMM tool"
-            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netviewer_processes_sigma.yml",
                 "Description": "Detects potential processes activity of Netviewer RMM tool"
@@ -25477,8 +25390,9 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*remotedesktop.google.com",
-                        "*remotedesktop-pa.googleapis.com",
+                        "*.remotedesktop.google.com",
+                        "remotedesktop-pa.googleapis.com",
+                        "*.remotedesktop-pa.googleapis.com",
                         "remotedesktop.google.com",
                         "chromoting-client.talkgadget.google.com",
                         "chromoting-host.talkgadget.google.com",
@@ -25591,18 +25505,12 @@
             "Network": [
                 {
                     "Description": "Known remote domains",
-                    "Domains": [
-                        "cloudflare.com/products/tunnel/"
-                    ],
+                    "Domains": [],
                     "Ports": []
                 }
             ]
         },
         "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_network_sigma.yml",
-                "Description": "Detects potential network activity of CloudFlare Tunnel RMM tool"
-            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_processes_sigma.yml",
                 "Description": "Detects potential processes activity of CloudFlare Tunnel RMM tool"
@@ -25660,8 +25568,10 @@
                         "*.fixme.it",
                         "*.techinline.net",
                         "fixme.it",
-                        "*set.me",
-                        "*setme.net"
+                        "set.me",
+                        "*.set.me",
+                        "setme.net",
+                        "*.setme.net"
                     ],
                     "Ports": []
                 }
@@ -26104,8 +26014,7 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "user_managed",
-                        "github.com/V-E-O/rdp2tcp"
+                        "user_managed"
                     ],
                     "Ports": []
                 }
@@ -26453,7 +26362,8 @@
                     "Description": "Known remote domains",
                     "Domains": [
                         "deploy01.kaseya.com",
-                        "*managedsupport.kaseya.net",
+                        "managedsupport.kaseya.net",
+                        "*.managedsupport.kaseya.net",
                         "*.kaseya.net",
                         "kaseya.com"
                     ],
@@ -26927,7 +26837,7 @@
                         "syncromsp.com",
                         "servably.com",
                         "ld.aurelius.host",
-                        "app.kabuto.io ",
+                        "app.kabuto.io",
                         "*.kabutoservices.com",
                         "repairshopr.com",
                         "kabutoservices.com",
@@ -28572,7 +28482,7 @@
                     "Description": "Known remote domains",
                     "Domains": [
                         "user_managed",
-                        "ivanti.com/"
+                        "ivanti.com"
                     ],
                     "Ports": []
                 }
@@ -29379,7 +29289,7 @@
             "InstallationPaths": [
                 "paexec.exe",
                 "PAExec-*.exe",
-                "csexec.exe ",
+                "csexec.exe",
                 "remcom.exe",
                 "remcomsvc.exe",
                 "xcmd.exe",
@@ -29557,7 +29467,8 @@
                     "Description": "Known remote domains",
                     "Domains": [
                         "*.distantdesktop.com",
-                        "*signalserver.xyz"
+                        "signalserver.xyz",
+                        "*.signalserver.xyz"
                     ],
                     "Ports": []
                 }
@@ -29818,23 +29729,24 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*.beanywhere.com ",
+                        "beanywhere.com",
+                        "*.beanywhere.com",
                         "systemmonitor.co.uk",
-                        "*system-monitor.com",
+                        "*.system-monitor.com",
                         "cloudbackup.management",
-                        "*systemmonitor.co.uk",
+                        "*.systemmonitor.co.uk",
                         "n-able.com",
                         "systemmonitor.us",
-                        "*systemmonitor.eu.com",
+                        "*.systemmonitor.eu.com",
                         "*.logicnow.com",
                         "*.swi-tc.com",
-                        "*remote.management",
+                        "*.remote.management",
                         "systemmonitor.us.cdn.cloudflare.net",
-                        "*cloudbackup.management",
+                        "*.cloudbackup.management",
                         "remote.management",
                         "logicnow.com",
                         "system-monitor.com",
-                        "*systemmonitor.us",
+                        "*.systemmonitor.us",
                         "systemmonitor.eu.com",
                         "*.n-able.com"
                     ],

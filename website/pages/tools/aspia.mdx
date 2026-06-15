@@ -53,14 +53,12 @@ Aspia is an open-source Remote Desktop, file transfer and system information too
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Aspia can be downloaded from the official github repository.", "Domains": ["https://github.com/dchapyshev/aspia"], "Ports": ["N/A"]}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Aspia can be downloaded from the official github repository.", "Domains": [], "Ports": []}] }/>
 
 
 
 
 ### Detections
-- Detects potential network activity of Aspia RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_network_sigma.yml)
 - Detects potential files activity of Aspia RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/aspia_files_sigma.yml)
 - Detects potential processes activity of Aspia RMM tool
