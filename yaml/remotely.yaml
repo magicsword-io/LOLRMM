@@ -1,0 +1,118 @@
+Name: Remotely
+Category: RMM
+Description: Remotely is an open-source remote control and remote scripting solution built with .NET, Blazor, and SignalR. It uses a self-hosted server plus endpoint agent and desktop clients for remote support, unattended access, remote terminal or scripting, chat, and file transfer. Public reporting has observed Remotely abuse for persistent access in intrusions.
+Author: '@0x6d786f'
+Created: '2026-05-24'
+LastModified: '2026-06-15'
+Details:
+    Website: https://github.com/immense/Remotely
+    PEMetadata:
+        - Filename: Remotely_Agent.exe
+          OriginalFileName: Remotely_Agent.exe
+          Description: Background service that maintains a connection to the Remotely server.
+        - Filename: Remotely_Desktop.exe
+          OriginalFileName: Remotely_Desktop.exe
+          Description: Desktop client for allowing an IT administrator to provide remote support.
+    Privileges: Windows unattended installation requires elevation and creates an automatic Remotely_Service service. Linux and macOS installers create root-level systemd or launchd agents.
+    Free: true
+    Verification: Confirmed against the official immense/Remotely repository, installer scripts, project metadata, release metadata, and public abuse reporting. No file hashes were added because current upstream releases do not publish a stable standalone agent hash.
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Remote control
+        - Remote scripting
+        - Remote terminal
+        - File transfer
+        - Chat
+        - Unattended access
+        - Self-hosted server
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Remotely\Remotely_Agent.exe
+        - C:\Program Files\Remotely\Desktop\Remotely_Desktop.exe
+        - C:\Program Files\Remotely\ConnectionInfo.json
+        - C:\Program Files\Remotely\etag.txt
+        - /usr/local/bin/Remotely/Remotely_Agent
+        - /usr/local/bin/Remotely/Desktop/Remotely_Desktop
+        - /usr/local/bin/Remotely/ConnectionInfo.json
+        - /etc/systemd/system/remotely-agent.service
+        - /Library/LaunchDaemons/remotely-agent.plist
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Remotely\Remotely_Agent.exe
+          Description: Windows unattended agent installed by Install-Remotely.ps1 and configured as the Remotely_Service service binary.
+          OS: Windows
+        - File: C:\Program Files\Remotely\Desktop\Remotely_Desktop.exe
+          Description: Windows remote desktop client bundled under the Remotely installation directory.
+          OS: Windows
+        - File: C:\Program Files\Remotely\ConnectionInfo.json
+          Description: Remotely agent configuration containing device, organization, and server connection information.
+          OS: Windows
+        - File: C:\Program Files\Remotely\etag.txt
+          Description: ETag marker written by the Windows installer for update tracking.
+          OS: Windows
+        - File: '%TEMP%\Remotely_Install.txt'
+          Description: Windows Remotely installer log path used by Install-Remotely.ps1.
+          OS: Windows
+        - File: /usr/local/bin/Remotely/Remotely_Agent
+          Description: Linux and macOS Remotely agent binary path used by upstream installers.
+          OS: Linux/macOS
+        - File: /usr/local/bin/Remotely/Desktop/Remotely_Desktop
+          Description: Linux and macOS remote desktop client path used by upstream installers.
+          OS: Linux/macOS
+        - File: /usr/local/bin/Remotely/ConnectionInfo.json
+          Description: Linux and macOS Remotely agent configuration file.
+          OS: Linux/macOS
+        - File: /var/log/remotely/Agent_Install.log
+          Description: Linux and macOS installer log path used by upstream shell installers.
+          OS: Linux/macOS
+        - File: /etc/systemd/system/remotely-agent.service
+          Description: Linux systemd service file created by the upstream Ubuntu and Manjaro installers.
+          OS: Linux
+        - File: /Library/LaunchDaemons/remotely-agent.plist
+          Description: macOS LaunchDaemon created by upstream macOS installers.
+          OS: macOS
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System
+          ServiceName: Remotely_Service
+          ImagePath: C:\Program Files\Remotely\Remotely_Agent.exe
+          Description: Windows service installation event for Remotely unattended agent persistence.
+    Registry: []
+    Network:
+        - Description: Remotely agents connect to an operator-controlled/self-hosted server over the configured web listener. Docker quickstart maps TCP 5000; internet-facing deployments are commonly reverse-proxied over HTTPS.
+          Domains: []
+          Ports:
+              - 443
+              - 5000
+    Other:
+        - Type: Windows Service Name
+          Value: Remotely_Service
+        - Type: Linux systemd service
+          Value: remotely-agent.service
+        - Type: macOS LaunchDaemon label
+          Value: com.translucency.remotely-agent
+        - Type: Remotely Agent SignalR hub
+          Value: /hubs/service
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotely_files_sigma.yml
+      Description: Detects potential files activity of Remotely RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/remotely_processes_sigma.yml
+      Description: Detects potential processes activity of Remotely RMM tool
+References:
+    - https://github.com/immense/Remotely
+    - https://github.com/immense/Remotely/blob/master/README.md
+    - https://github.com/immense/Remotely/blob/master/Agent/Agent.csproj
+    - https://github.com/immense/Remotely/blob/master/Desktop.Win/Desktop.Win.csproj
+    - https://github.com/immense/Remotely/blob/master/Shared/Utilities/EnvironmentHelper.cs
+    - https://github.com/immense/Remotely/blob/master/Server/wwwroot/Content/Install-Remotely.ps1
+    - https://github.com/immense/Remotely/blob/master/Server/wwwroot/Content/Install-Ubuntu-x64.sh
+    - https://github.com/immense/Remotely/blob/master/Server/wwwroot/Content/Install-MacOS-x64.sh
+    - https://socprime.com/active-threats/voicemail-lure-leads-to-remote-access/
+    - https://www.trendmicro.com/vinfo/us/security/news/ransomware-spotlight/ransomware-spotlight-agenda
+Acknowledgement:
+    - Person: '0x6d786f'
+      Handle: '@0x6d786f'
