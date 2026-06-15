@@ -9,7 +9,7 @@ Description: 'Teramind is a US-based employee/user activity monitoring (UAM), in
     '
 Author: '@MHaggis'
 Created: '2026-05-04'
-LastModified: '2026-05-04'
+LastModified: '2026-06-15'
 Details:
     Website: https://www.teramind.co/
     PEMetadata:
@@ -103,9 +103,6 @@ Artifacts:
           OS: Windows
         - File: teramind_agent_*_ARM64.msi
           Description: Teramind agent installer MSI (ARM64) — observed signed variants include teramind_agent_v26.8.183_ARM64.msi, teramind_agent_v26.8.183_ARM64_popup.msi, teramind_agent_v26.8.183_bundle_drivers_ARM64.msi.
-          OS: Windows
-        - File: 'C:\Windows\Installer\*.msi'
-          Description: Cached MSI in the standard Windows Installer cache (e.g. C:\Windows\Installer\46a573.msi observed for a Teramind install); content-identical to the original teramind_agent_*.msi
           OS: Windows
         - File: tmagent-i(__<hash>).pkg
           Description: Teramind macOS agent PKG installer; vendor enforces a fixed filename pattern. Per-tenant identifier embedded as -i(__<hash>); renamed installers are rejected.

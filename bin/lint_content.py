@@ -4,9 +4,10 @@ Content lint for LOLRMM yaml catalog.
 
 Distinct from `bin/validate.py` (schema/structural).  This script checks
 intent-level quality of detection-ready fields — primarily
-Artifacts.Network[].Domains and Artifacts.Network[].Ports — and surfaces
-patterns that produce downstream false positives when ingested by SIEM /
-EDR / lookup-table consumers.
+Artifacts.Network[].Domains, Artifacts.Network[].Ports, and selected
+Artifacts.Disk[].File patterns — and surfaces patterns that produce
+downstream false positives when ingested by SIEM / EDR / lookup-table
+consumers.
 
 Two severity tiers:
 
@@ -331,6 +332,27 @@ def _check_port(file: str, idx_path: str, value: object) -> Iterable[Finding]:
         )
 
 
+def _check_disk_file(file: str, idx_path: str, value: object) -> Iterable[Finding]:
+    """Yield findings for a single Disk File entry."""
+    if not isinstance(value, str):
+        return
+
+    normalized = value.strip().replace("/", "\\").lower()
+    if normalized == r"c:\windows\installer\*.msi":
+        yield Finding(
+            ERROR,
+            file,
+            idx_path,
+            value,
+            "disk-windows-installer-msi-cache-wildcard",
+            r"C:\Windows\Installer\*.msi matches the shared Windows Installer "
+            "cache for any MSI install and produces high-volume false positives",
+            "remove this generic cache wildcard; keep vendor-specific MSI "
+            "filenames, install directories, service names, or registry "
+            "artifacts instead",
+        )
+
+
 # ---------------------------------------------------------------------------
 # Walk
 # ---------------------------------------------------------------------------
@@ -355,7 +377,18 @@ def lint_file(path: str) -> list[Finding]:
         return []
 
     out: list[Finding] = []
-    nets = (data.get("Artifacts") or {}).get("Network") or []
+    artifacts = data.get("Artifacts") or {}
+
+    disks = artifacts.get("Disk") or []
+    if isinstance(disks, list):
+        for d_idx, disk in enumerate(disks):
+            if not isinstance(disk, dict):
+                continue
+            out.extend(_check_disk_file(
+                path, f"Artifacts.Disk[{d_idx}].File", disk.get("File"),
+            ))
+
+    nets = artifacts.get("Network") or []
     if not isinstance(nets, list):
         return out
 
