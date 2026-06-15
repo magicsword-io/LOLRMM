@@ -26,7 +26,6 @@ detection:
             - 'teramind_agent_*_bundle_noredist_setup.msi'
             - 'teramind_agent_*_x64.msi'
             - 'teramind_agent_*_ARM64.msi'
-            - 'C:\Windows\Installer\*.msi'
             - 'tmagent-i(__<hash>).pkg'
             - 'teramind_agent_*_hidden-do(<domain>).pkg'
             - '/usr/local/teramind/agent/bin/tmsysd'
