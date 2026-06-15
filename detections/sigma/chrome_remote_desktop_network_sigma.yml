@@ -16,12 +16,13 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *remotedesktop.google.com
-            - *remotedesktop-pa.googleapis.com
-            - remotedesktop.google.com
-            - chromoting-client.talkgadget.google.com
-            - chromoting-host.talkgadget.google.com
-            - chromoting-oauth.talkgadget.google.com
+            - '*.remotedesktop.google.com'
+            - 'remotedesktop-pa.googleapis.com'
+            - '*.remotedesktop-pa.googleapis.com'
+            - 'remotedesktop.google.com'
+            - 'chromoting-client.talkgadget.google.com'
+            - 'chromoting-host.talkgadget.google.com'
+            - 'chromoting-oauth.talkgadget.google.com'
     condition: selection
 falsepositives:
     - Legitimate use of Chrome Remote Desktop

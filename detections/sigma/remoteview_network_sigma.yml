@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *content.rview.com
-            - *.rview.com
-            - content.rview.com
+            - '*.content.rview.com'
+            - '*.rview.com'
+            - 'content.rview.com'
     condition: selection
 falsepositives:
     - Legitimate use of RemoteView

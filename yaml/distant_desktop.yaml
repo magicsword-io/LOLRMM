@@ -28,7 +28,8 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.distantdesktop.com'
-              - '*signalserver.xyz'
+              - 'signalserver.xyz'
+              - '*.signalserver.xyz'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/distant_desktop_network_sigma.yml

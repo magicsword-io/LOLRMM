@@ -1,0 +1,29 @@
+title: Potential HelpWire RMM Tool Network Activity
+id: 825d9be6-fbf9-511e-a9ab-0ead41cc18ff
+status: experimental
+description: |
+    Detects potential network activity of HelpWire RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-06-11
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - 'helpwire.app'
+            - 'get.helpwire.app'
+            - 'api.helpwire.app'
+            - 'staging.helpwire.app'
+            - 'account.flexihub.com'
+            - 'stun.helpwire.app'
+            - 'stunserver.stunprotocol.org'
+    condition: selection
+falsepositives:
+    - Legitimate use of HelpWire
+level: medium

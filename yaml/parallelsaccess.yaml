@@ -30,7 +30,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.parallels.com'
-              - parallels.com/products/ras/try
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/parallels_access_network_sigma.yml

@@ -26,7 +26,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - user_managed
-              - github.com/Mikej81/WebRDP
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/webrdp_network_sigma.yml

@@ -16,9 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - *.intelliadmin.com
-            - intelliadmin.com/remote-control
+            - 'user_managed'
+            - '*.intelliadmin.com'
     condition: selection
 falsepositives:
     - Legitimate use of IntelliAdmin Remote Control

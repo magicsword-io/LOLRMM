@@ -55,8 +55,8 @@ Artifacts:
         - Description: Peer discovery and control traffic
           Domains: []
           Ports:
-              - 15100/tcp
-              - 15101/tcp
+              - 15100
+              - 15101
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/mouse_without_borders_files_sigma.yml
       Description: Detects potential files activity of Mouse Without Borders RMM tool

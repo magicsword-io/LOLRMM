@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-05-18'
+modified: '2026-06-15'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -351,6 +351,10 @@ detection:
     - \\GovAgentInstallHelper.exe
     - \\GovAgentx64.exe
     - \\GovReachClient.exe
+    - \\HelpWire Operator.app
+    - \\HelpWire Quick.exe
+    - \\HelpWire Unattended Access.lnk
+    - \\HelpWire.lnk
     - \\HelpuManager.exe
     - \\HelpuUpdater.exe
     - \\HopToDesk-Standalone.exe
@@ -379,7 +383,7 @@ detection:
     - \\InstantHousecall.exe
     - \\ItsmRsp.exe
     - \\IvantiRemoteControl.exe
-    - '\\JumpCloud*.exe '
+    - \\JumpCloud*.exe
     - \\KHelpDesk.exe
     - \\Kabuto.App.Runner.exe
     - \\Kabuto.Installer.exe
@@ -533,7 +537,7 @@ detection:
     - \\connectwisechat-customer.exe
     - \\connectwisecontrol.client.exe
     - \\crossloopservice.exe
-    - '\\csexec.exe '
+    - \\csexec.exe
     - \\ctes.exe
     - \\cteshostsvc.exe
     - \\ctespersitence.exe
@@ -607,6 +611,9 @@ detection:
     - \\hbrm-x64.exe
     - \\helpbeam*.exe
     - \\helpu_install.exe
+    - \\helpwire-operator
+    - \\helpwire-unattended.service
+    - \\helpwire.exe
     - \\hsloader.exe
     - \\iadmin.exe
     - \\id_tray.exe

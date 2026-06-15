@@ -26,7 +26,6 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.kabuto.io'
-              - repairtechsolutions.com/kabuto/
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/kabuto_network_sigma.yml

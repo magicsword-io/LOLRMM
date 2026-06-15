@@ -31,7 +31,6 @@ Artifacts:
           Domains:
               - user_managed
               - '*.intelliadmin.com'
-              - intelliadmin.com/remote-control
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/intelliadmin_remote_control_network_sigma.yml

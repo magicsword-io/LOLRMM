@@ -33,8 +33,9 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - '*remotedesktop.google.com'
-              - '*remotedesktop-pa.googleapis.com'
+              - '*.remotedesktop.google.com'
+              - 'remotedesktop-pa.googleapis.com'
+              - '*.remotedesktop-pa.googleapis.com'
               - remotedesktop.google.com
               - chromoting-client.talkgadget.google.com
               - chromoting-host.talkgadget.google.com

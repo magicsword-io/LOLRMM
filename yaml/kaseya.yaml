@@ -78,7 +78,8 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - deploy01.kaseya.com
-              - '*managedsupport.kaseya.net'
+              - 'managedsupport.kaseya.net'
+              - '*.managedsupport.kaseya.net'
               - '*.kaseya.net'
               - kaseya.com
           Ports: []

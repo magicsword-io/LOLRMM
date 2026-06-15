@@ -27,8 +27,8 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.rmm.datto.com'
-              - '*cc.centrastage.net'
-              - datto.com/au/products/rmm/
+              - 'cc.centrastage.net'
+              - '*.cc.centrastage.net'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/centrastage__now_datto__network_sigma.yml

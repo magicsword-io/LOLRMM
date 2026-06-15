@@ -15,7 +15,9 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *mygreenpc.com
+        DestinationHostname|endswith:
+            - 'mygreenpc.com'
+            - '*.mygreenpc.com'
     condition: selection
 falsepositives:
     - Legitimate use of MyGreenPC

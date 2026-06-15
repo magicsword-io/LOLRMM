@@ -28,7 +28,8 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.itsm-us1.comodo.com'
-              - '*mdmsupport.comodo.com'
+              - 'mdmsupport.comodo.com'
+              - '*.mdmsupport.comodo.com'
               - one.comodo.com
           Ports: []
 Detections:
