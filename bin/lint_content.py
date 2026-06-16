@@ -353,6 +353,39 @@ def _check_disk_file(file: str, idx_path: str, value: object) -> Iterable[Findin
         )
 
 
+def _check_duplicate_values(
+    file: str,
+    idx_path: str,
+    values: list[object],
+    rule: str,
+) -> Iterable[Finding]:
+    """Yield findings for duplicate values inside one list field."""
+    seen: dict[tuple[str, object], int] = {}
+
+    for idx, value in enumerate(values):
+        normalized = value.strip() if isinstance(value, str) else value
+        if isinstance(normalized, (str, int, float, bool, type(None))):
+            key = (type(normalized).__name__, normalized)
+        else:
+            key = (type(normalized).__name__, repr(normalized))
+        if key in seen:
+            yield Finding(
+                ERROR,
+                file,
+                f"{idx_path}[{idx}]",
+                repr(value),
+                rule,
+                (
+                    f"exact duplicate of {idx_path}[{seen[key]}]; "
+                    "repeated values inflate generated lookups and detections without adding signal"
+                ),
+                "remove the repeated entry",
+            )
+            continue
+
+        seen[key] = idx
+
+
 # ---------------------------------------------------------------------------
 # Walk
 # ---------------------------------------------------------------------------
@@ -377,6 +410,16 @@ def lint_file(path: str) -> list[Finding]:
         return []
 
     out: list[Finding] = []
+    details = data.get("Details") or {}
+    install_paths = details.get("InstallationPaths") or []
+    if isinstance(install_paths, list):
+        out.extend(_check_duplicate_values(
+            path,
+            "Details.InstallationPaths",
+            install_paths,
+            "duplicate-installation-path",
+        ))
+
     artifacts = data.get("Artifacts") or {}
 
     disks = artifacts.get("Disk") or []
@@ -395,11 +438,27 @@ def lint_file(path: str) -> list[Finding]:
     for n_idx, net in enumerate(nets):
         if not isinstance(net, dict):
             continue
-        for d_idx, dom in enumerate(net.get("Domains") or []):
+        domains = net.get("Domains") or []
+        if isinstance(domains, list):
+            out.extend(_check_duplicate_values(
+                path,
+                f"Artifacts.Network[{n_idx}].Domains",
+                domains,
+                "duplicate-network-domain",
+            ))
+        for d_idx, dom in enumerate(domains):
             out.extend(_check_domain(
                 path, f"Artifacts.Network[{n_idx}].Domains[{d_idx}]", dom,
             ))
-        for p_idx, port in enumerate(net.get("Ports") or []):
+        ports = net.get("Ports") or []
+        if isinstance(ports, list):
+            out.extend(_check_duplicate_values(
+                path,
+                f"Artifacts.Network[{n_idx}].Ports",
+                ports,
+                "duplicate-network-port",
+            ))
+        for p_idx, port in enumerate(ports):
             out.extend(_check_port(
                 path, f"Artifacts.Network[{n_idx}].Ports[{p_idx}]", port,
             ))

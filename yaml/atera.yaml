@@ -4,7 +4,7 @@ Description: 'Atera is a remote monitoring and management (RMM) tool. It is used
 
     '
 Created: '2024-08-03'
-LastModified: '2025-12-14'
+LastModified: '2026-06-16'
 Details:
     Website: https://www.atera.com/
     PEMetadata:
@@ -37,7 +37,6 @@ Details:
         - '*\AgentPackageTaskScheduler.exe'
         - '*\ATERA Networks\AteraAgent\*'
         - '*\AteraAgent.exe'
-        - atera_agent.exe
         - atera_agent.exe
         - ateraagent.exe
         - C:\Program Files\ATERA Networks\AteraAgent\*
