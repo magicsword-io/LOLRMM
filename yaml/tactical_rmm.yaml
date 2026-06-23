@@ -3,7 +3,7 @@ Category: RMM
 Description: Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2025-12-14'
+LastModified: '2026-06-16'
 Details:
     Website: 'https://docs.tacticalrmm.com/'
     PEMetadata:
@@ -18,7 +18,6 @@ Details:
     Vulnerabilities: []
     InstallationPaths:
         - tacticalrmm.exe
-        - tacticalrmm.exe
 Artifacts:
     Disk: []
     EventLog: []
@@ -26,7 +25,6 @@ Artifacts:
     Network:
         - Description: Known remote domains
           Domains:
-              - login.tailscale.com
               - login.tailscale.com
               - docs.tacticalrmm.com
           Ports: []
