@@ -1,0 +1,56 @@
+Name: Ninite Pro (Ninite Agent)
+Category: RMM
+Description: >
+    Ninite Pro is a software deployment and patch management tool that silently installs and
+    updates applications across endpoints. It is frequently integrated with RMM platforms and
+    can be abused to silently download and install software, or deployed as the Ninite Agent to
+    establish a remote software-deployment foothold on a host.
+Author: Lorena Goldoni
+Created: '2026-06-23'
+LastModified: '2026-06-23'
+Details:
+    Website: https://ninite.com/pro
+    PEMetadata:
+        - Filename: NiniteOne.exe
+          OriginalFileName: NiniteOne.exe
+          Description: Ninite Pro Classic
+          Product: Ninite
+    Privileges: User/Admin
+    Free: false
+    Verification: false
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Silent Software Installation
+        - Patch Management
+        - Command line Support
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'NiniteOne.exe'
+        - 'NinitePro.exe'
+        - 'NiniteAgent.exe'
+        - 'Ninite.exe'
+Artifacts:
+    Disk:
+        - File: '%TEMP%\NiniteDownloads\*'
+          Description: Default Ninite download cache where installers for target apps are staged.
+          OS: Windows
+        - File: 'NiniteUpdateSummary.log'
+          Description: Ninite update and audit summary log written alongside the executable.
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: >
+              The Ninite Pro agent reaches ninite.com. Note that Ninite Classic additionally
+              downloads installers directly from many third-party application vendor domains by
+              design, so network-only detection is high noise and low value for this tool.
+          Domains:
+              - 'ninite.com'
+              - '*.ninite.com'
+          Ports:
+              - 443
+References:
+    - https://ninite.com/help/features/switches.html
+    - https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-025a
+Acknowledgement: []
