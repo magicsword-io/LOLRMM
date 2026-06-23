@@ -16,32 +16,26 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ScreenConnect.ClientService.exe
-            - Remote Workforce Client.exe
-            - ScreenConnect.ClientService.exe
-            - ScreenConnect.WindowsClient.exe
-            - screenconnect*.exe
-            - screenconnect.windowsclient.exe
-            - Remote Workforce Client.exe
-            - screenconnect*.exe
-            - ConnectWiseControl*.exe
-            - connectwise*.exe
-            - screenconnect.windowsclient.exe
-            - screenconnect.clientservice.exe
+            - 'ScreenConnect.ClientService.exe'
+            - 'Remote Workforce Client.exe'
+            - 'ScreenConnect.ClientService.exe'
+            - 'ScreenConnect.WindowsClient.exe'
+            - 'screenconnect*.exe'
+            - 'screenconnect.windowsclient.exe'
+            - 'ConnectWiseControl*.exe'
+            - 'connectwise*.exe'
+            - 'screenconnect.clientservice.exe'
     selection_image:
         Image|endswith:
-            - ScreenConnect.ClientService.exe
-            - Remote Workforce Client.exe
-            - ScreenConnect.ClientService.exe
-            - ScreenConnect.WindowsClient.exe
-            - screenconnect*.exe
-            - screenconnect.windowsclient.exe
-            - Remote Workforce Client.exe
-            - screenconnect*.exe
-            - ConnectWiseControl*.exe
-            - connectwise*.exe
-            - screenconnect.windowsclient.exe
-            - screenconnect.clientservice.exe
+            - 'ScreenConnect.ClientService.exe'
+            - 'Remote Workforce Client.exe'
+            - 'ScreenConnect.ClientService.exe'
+            - 'ScreenConnect.WindowsClient.exe'
+            - 'screenconnect*.exe'
+            - 'screenconnect.windowsclient.exe'
+            - 'ConnectWiseControl*.exe'
+            - 'connectwise*.exe'
+            - 'screenconnect.clientservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ScreenConnect

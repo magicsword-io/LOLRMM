@@ -15,13 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith:
-            - tacticalrmm.exe
-            - tacticalrmm.exe
+        ParentImage|endswith: 'tacticalrmm.exe'
     selection_image:
-        Image|endswith:
-            - tacticalrmm.exe
-            - tacticalrmm.exe
+        Image|endswith: 'tacticalrmm.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Tactical RMM

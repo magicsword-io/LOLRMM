@@ -16,20 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - support-logmeinrescue*.exe
-            - support-logmeinrescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue_srv.exe
-            - lmi_rescue.exe
+            - 'support-logmeinrescue*.exe'
+            - 'support-logmeinrescue.exe'
+            - 'lmi_rescue.exe'
+            - 'lmi_rescue.exe'
+            - 'lmi_rescue_srv.exe'
     selection_image:
         Image|endswith:
-            - support-logmeinrescue*.exe
-            - support-logmeinrescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue.exe
-            - lmi_rescue_srv.exe
-            - lmi_rescue.exe
+            - 'support-logmeinrescue*.exe'
+            - 'support-logmeinrescue.exe'
+            - 'lmi_rescue.exe'
+            - 'lmi_rescue.exe'
+            - 'lmi_rescue_srv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LogMeIn rescue
