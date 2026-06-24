@@ -16,14 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - mRemoteNG.exe
-            - mRemoteNG.exe
-            - mRemoteNG.exe
+            - 'mRemoteNG.exe'
+            - 'mRemoteNG.exe'
     selection_image:
         Image|endswith:
-            - mRemoteNG.exe
-            - mRemoteNG.exe
-            - mRemoteNG.exe
+            - 'mRemoteNG.exe'
+            - 'mRemoteNG.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of mRemoteNG

@@ -10,7 +10,10 @@ import yaml
 import csv
 import glob
 import re
-from pathlib import Path
+
+
+PLACEHOLDER_RE = re.compile(r"^<[^>]+>$")
+SENTINEL_VALUES = {"user_managed", "user-managed"}
 
 
 def clean_tool_name(filename):
@@ -25,6 +28,15 @@ def clean_tool_name(filename):
     name = name.replace("__", "_")
 
     return name.strip()
+
+
+def should_export_domain(domain):
+    """Return True when a Domains value is a real CSV lookup candidate."""
+    if not isinstance(domain, str):
+        return False
+
+    value = domain.strip()
+    return bool(value) and value not in SENTINEL_VALUES and not PLACEHOLDER_RE.match(value)
 
 
 def extract_domains(yaml_file_path):
@@ -44,8 +56,10 @@ def extract_domains(yaml_file_path):
             for network in data["Artifacts"]["Network"]:
                 if "Domains" in network:
                     for domain in network["Domains"]:
-                        # Only add the domain if it's not empty or 'user_managed'
-                        if domain and domain != "user_managed":
+                        # Only export real lookup values; placeholders document
+                        # operator-supplied infrastructure and do not belong in CSV.
+                        if should_export_domain(domain):
+                            domain = domain.strip()
                             domains.append((domain, tool_name))
                             print(f"Found domain: {domain} for tool: {tool_name}")
 
@@ -60,7 +74,7 @@ def generate_csv(yaml_dir, output_file):
     all_domains = []
 
     # Find all YAML files in the directory
-    yaml_files = glob.glob(os.path.join(yaml_dir, "*.y*ml"))
+    yaml_files = sorted(glob.glob(os.path.join(yaml_dir, "*.y*ml")))
     print(f"Found {len(yaml_files)} YAML files in {yaml_dir}")
 
     # Extract domains from each YAML file
@@ -68,15 +82,28 @@ def generate_csv(yaml_dir, output_file):
         domains = extract_domains(yaml_file)
         all_domains.extend(domains)
 
+    unique_domains = []
+    seen = set()
+    for domain, tool in all_domains:
+        key = (domain, tool)
+        if key in seen:
+            continue
+        seen.add(key)
+        unique_domains.append((domain, tool))
+
     # Write domains to CSV file
     with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile, lineterminator="\n")
         writer.writerow(["URI", "RMM_Tool"])
-        for domain, tool in all_domains:
+        for domain, tool in unique_domains:
             writer.writerow([domain, tool])
 
-    print(f"CSV file generated at {output_file} with {len(all_domains)} domains")
-    return len(all_domains)
+    removed = len(all_domains) - len(unique_domains)
+    print(
+        f"CSV file generated at {output_file} with {len(unique_domains)} domains "
+        f"({removed} duplicate rows removed)"
+    )
+    return len(unique_domains)
 
 
 if __name__ == "__main__":

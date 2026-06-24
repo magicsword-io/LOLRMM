@@ -205,7 +205,7 @@
         "Description": "NinjaRMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2026-01-27",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://www.ninjaone.com/rmm/",
             "PEMetadata": {
@@ -239,8 +239,6 @@
                         "ninjaone.com",
                         "ninjarmm.net",
                         "*.ninjarmm.net",
-                        "rmmservice.eu",
-                        "*.rmmservice.eu",
                         "rmmservice.eu",
                         "*.rmmservice.eu",
                         "rmmservice.com.au",
@@ -2095,7 +2093,7 @@
         "Description": "ScreenConnect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "Ali Alwashali, Nasreddine Bencherchali",
         "Created": "2023-10-01",
-        "LastModified": "2023-10-01",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://www.connectwise.com",
             "PEMetadata": [
@@ -2136,11 +2134,8 @@
                 "*\\*\\ScreenConnect.WindowsClient.exe",
                 "screenconnect*.exe",
                 "screenconnect.windowsclient.exe",
-                "Remote Workforce Client.exe",
-                "screenconnect*.exe",
                 "ConnectWiseControl*.exe",
                 "connectwise*.exe",
-                "screenconnect.windowsclient.exe",
                 "screenconnect.clientservice.exe"
             ]
         },
@@ -2656,7 +2651,7 @@
         "Description": "LogMeIn rescue is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://www.logmein.com/products/rescue",
             "PEMetadata": {
@@ -2675,8 +2670,7 @@
                 "support-logmeinrescue.exe",
                 "lmi_rescue.exe",
                 "C:\\Users\\*\\AppData\\Local\\LogMeIn Rescue Applet\\LMIR*.tmp\\lmi_rescue.exe",
-                "C:\\Users\\*\\AppData\\Local\\LogMeIn Rescue Applet\\LMIR*.tmp\\lmi_rescue_srv.exe",
-                "C:\\Users\\*\\AppData\\Local\\LogMeIn Rescue Applet\\LMIR*.tmp\\lmi_rescue.exe"
+                "C:\\Users\\*\\AppData\\Local\\LogMeIn Rescue Applet\\LMIR*.tmp\\lmi_rescue_srv.exe"
             ]
         },
         "Artifacts": {
@@ -4655,7 +4649,7 @@
         "Description": "MultCloud is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://www.multcloud.com/",
             "PEMetadata": {
@@ -4670,7 +4664,6 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "requires sign up",
                 "requires sign up"
             ]
         },
@@ -10378,7 +10371,7 @@
         "Description": "Free Ping Tool is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -10393,7 +10386,6 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "can't find this one",
                 "can't find this one"
             ]
         },
@@ -17887,7 +17879,7 @@
         "Category": "RMM",
         "Description": "Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransomware or facilitate command execution and lateral movement.\n",
         "Created": "2024-08-03",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://www.atera.com/",
             "PEMetadata": [
@@ -17926,7 +17918,6 @@
                 "*\\AgentPackageTaskScheduler.exe",
                 "*\\ATERA Networks\\AteraAgent\\*",
                 "*\\AteraAgent.exe",
-                "atera_agent.exe",
                 "atera_agent.exe",
                 "ateraagent.exe",
                 "C:\\Program Files\\ATERA Networks\\AteraAgent\\*",
@@ -22941,7 +22932,7 @@
         "Description": "mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://mremoteng.org/",
             "PEMetadata": {
@@ -22962,8 +22953,7 @@
                 "*\\mRemoteNG.exe",
                 "c:\\Program Files (x86)%\\mRemoteNG",
                 "*%\\mRemoteNG",
-                "mRemoteNG-Installer-*.msi",
-                "*\\mRemoteNG.exe"
+                "mRemoteNG-Installer-*.msi"
             ]
         },
         "Artifacts": {
@@ -23927,7 +23917,7 @@
         "Description": "Tactical RMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://docs.tacticalrmm.com/",
             "PEMetadata": {
@@ -23942,7 +23932,6 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "tacticalrmm.exe",
                 "tacticalrmm.exe"
             ]
         },
@@ -23954,7 +23943,6 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "login.tailscale.com",
                         "login.tailscale.com",
                         "docs.tacticalrmm.com"
                     ],
@@ -24470,7 +24458,7 @@
         "Description": "UltraViewer is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://www.ultraviewer.net/",
             "PEMetadata": {
@@ -24493,10 +24481,7 @@
                 "*\\UltraViewer\\",
                 "*\\UltraViewer_Desktop.exe",
                 "ultraviewer_desktop.exe",
-                "ultraviewer_service.exe",
-                "UltraViewer_Desktop.exe",
-                "UltraViewer_setup*",
-                "UltraViewer_Service.exe"
+                "ultraviewer_service.exe"
             ]
         },
         "Artifacts": {
@@ -25655,7 +25640,7 @@
         "Description": "FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://fixme.it/",
             "PEMetadata": {
@@ -25678,7 +25663,6 @@
                 "TiExpertCore.exe",
                 "FixMeit Unattended Access Setup.exe",
                 "FixMeit Expert Setup.exe",
-                "TiExpertCore.exe",
                 "fixmeitclient.exe",
                 "TiClientCore.exe",
                 "TiClientHelper*.exe",
@@ -26077,7 +26061,7 @@
         "Description": "Mocha VNC Lite is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "",
             "PEMetadata": {
@@ -26092,7 +26076,6 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "This installs a modified VNC and cannot be blocked by path separate from VNC",
                 "This installs a modified VNC and cannot be blocked by path separate from VNC",
                 "*\\RealVNC\\VNC4\\*"
             ]
@@ -28220,7 +28203,7 @@
         "Description": "Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-06-16",
         "Details": {
             "Website": "https://instanthousecall.com/",
             "PEMetadata": {
@@ -28237,7 +28220,6 @@
             "InstallationPaths": [
                 "hsloader.exe",
                 "ihcserver.exe",
-                "instanthousecall.exe",
                 "instanthousecall.exe"
             ]
         },

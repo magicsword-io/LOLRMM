@@ -3,7 +3,7 @@ Category: RMM
 Description: NinjaRMM is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2026-01-27'
+LastModified: '2026-06-16'
 Details:
     Website: 'https://www.ninjaone.com/rmm/'
     PEMetadata:
@@ -33,8 +33,6 @@ Artifacts:
               - ninjaone.com
               - ninjarmm.net
               - '*.ninjarmm.net'
-              - rmmservice.eu
-              - '*.rmmservice.eu'
               - rmmservice.eu
               - '*.rmmservice.eu'
               - rmmservice.com.au

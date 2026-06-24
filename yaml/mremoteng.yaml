@@ -3,7 +3,7 @@ Category: RAT
 Description: mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-06-16'
 Details:
     Website: 'https://mremoteng.org/'
     PEMetadata:
@@ -24,7 +24,6 @@ Details:
         - c:\Program Files (x86)%\mRemoteNG
         - '*%\mRemoteNG'
         - mRemoteNG-Installer-*.msi
-        - '*\mRemoteNG.exe'
 Artifacts:
     Disk:
         - File: C:\Users\*\AppData\Roaming\mRemoteNG\mRemoteNG.log
