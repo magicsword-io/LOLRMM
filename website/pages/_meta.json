@@ -14,8 +14,14 @@
 		"href": "https://www.magicsword.io/?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=nav_menu",
 		"newWindow": true
 	},
+	"loldrivers": {
+		"title": "LOLDrivers",
+		"type": "page",
+		"href": "https://loldrivers.io/",
+		"newWindow": true
+	},
 	"about": {
-		"title": "About",
+		"title": "About Us",
 		"type": "page"
 	}
 
