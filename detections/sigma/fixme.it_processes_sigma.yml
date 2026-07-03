@@ -16,28 +16,26 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - FixMeit Client.exe
-            - TiExpertStandalone.exe
-            - FixMeitClient*.exe
-            - TiExpertCore.exe
-            - FixMeit Unattended Access Setup.exe
-            - FixMeit Expert Setup.exe
-            - TiExpertCore.exe
-            - fixmeitclient.exe
-            - TiClientCore.exe
-            - TiClientHelper*.exe
+            - 'FixMeit Client.exe'
+            - 'TiExpertStandalone.exe'
+            - 'FixMeitClient*.exe'
+            - 'TiExpertCore.exe'
+            - 'FixMeit Unattended Access Setup.exe'
+            - 'FixMeit Expert Setup.exe'
+            - 'fixmeitclient.exe'
+            - 'TiClientCore.exe'
+            - 'TiClientHelper*.exe'
     selection_image:
         Image|endswith:
-            - FixMeit Client.exe
-            - TiExpertStandalone.exe
-            - FixMeitClient*.exe
-            - TiExpertCore.exe
-            - FixMeit Unattended Access Setup.exe
-            - FixMeit Expert Setup.exe
-            - TiExpertCore.exe
-            - fixmeitclient.exe
-            - TiClientCore.exe
-            - TiClientHelper*.exe
+            - 'FixMeit Client.exe'
+            - 'TiExpertStandalone.exe'
+            - 'FixMeitClient*.exe'
+            - 'TiExpertCore.exe'
+            - 'FixMeit Unattended Access Setup.exe'
+            - 'FixMeit Expert Setup.exe'
+            - 'fixmeitclient.exe'
+            - 'TiClientCore.exe'
+            - 'TiClientHelper*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of FixMe.it

@@ -3,7 +3,7 @@ Category: RAT
 Description: Mocha VNC Lite is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-06-16'
 Details:
     Website: ''
     PEMetadata:
@@ -17,7 +17,6 @@ Details:
     Capabilities: []
     Vulnerabilities: []
     InstallationPaths:
-        - This installs a modified VNC and cannot be blocked by path separate from VNC
         - This installs a modified VNC and cannot be blocked by path separate from VNC
         - '*\RealVNC\VNC4\*'
 Artifacts:

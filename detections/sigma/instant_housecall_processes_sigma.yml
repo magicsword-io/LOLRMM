@@ -19,12 +19,10 @@ detection:
             - 'hsloader.exe'
             - 'ihcserver.exe'
             - 'instanthousecall.exe'
-            - 'instanthousecall.exe'
     selection_image:
         Image|endswith:
             - 'hsloader.exe'
             - 'ihcserver.exe'
-            - 'instanthousecall.exe'
             - 'instanthousecall.exe'
     condition: 1 of selection_*
 falsepositives:
