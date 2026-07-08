@@ -5,7 +5,7 @@ import re
 import yaml
 from datetime import date
 import uuid
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 
 # Namespace UUID for generating deterministic rule IDs
 LOLRMM_NAMESPACE = uuid.UUID("a1b2c3d4-e5f6-7890-abcd-ef1234567890")
@@ -63,13 +63,15 @@ def normalize_rule(rule: Dict[str, Any]) -> Dict[str, Any]:
     return normalized
 
 
-def load_existing_sigma_rule(filepath: str) -> Optional[Dict[str, Any]]:
+def load_existing_sigma_rule(filepath: str) -> Tuple[Optional[Dict[str, Any]], bool]:
+    """Load a Sigma rule and report whether the source file needs rewriting."""
     if not os.path.exists(filepath):
-        return None
+        return None, False
 
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
 
+    needs_rewrite = False
     try:
         data = yaml.safe_load(content)
     except yaml.YAMLError:
@@ -78,8 +80,9 @@ def load_existing_sigma_rule(filepath: str) -> Optional[Dict[str, Any]]:
         # Quote those for comparison without changing the file on disk.
         sanitized = UNQUOTED_SPECIAL_VALUE.sub(r"\1'\2'", content)
         data = yaml.safe_load(sanitized)
+        needs_rewrite = True
 
-    return data if isinstance(data, dict) else None
+    return data if isinstance(data, dict) else None, needs_rewrite
 
 
 class IndentDumper(yaml.SafeDumper):
@@ -192,7 +195,7 @@ def write_sigma_rule(rule: Dict[str, Any], filepath: str) -> None:
 
 
 def write_sigma_rule_if_changed(rule: Dict[str, Any], filepath: str) -> None:
-    existing_rule = load_existing_sigma_rule(filepath)
+    existing_rule, needs_rewrite = load_existing_sigma_rule(filepath)
     if existing_rule:
         # Preserve already-published metadata so reruns do not churn every rule.
         rule["id"] = str(existing_rule.get("id", rule["id"]))
@@ -201,7 +204,7 @@ def write_sigma_rule_if_changed(rule: Dict[str, Any], filepath: str) -> None:
         if "modified" in existing_rule:
             rule["modified"] = yaml_date(existing_rule["modified"])
 
-        if normalize_rule(existing_rule) == normalize_rule(rule):
+        if not needs_rewrite and normalize_rule(existing_rule) == normalize_rule(rule):
             return
 
     write_sigma_rule(rule, filepath)

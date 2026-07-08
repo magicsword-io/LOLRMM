@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'yaml/**'
+      - 'bin/sigma-gen.py'
   workflow_dispatch:
 
 permissions:
