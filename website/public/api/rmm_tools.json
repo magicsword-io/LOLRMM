@@ -15443,10 +15443,10 @@
     {
         "Name": "Lunixar",
         "Category": "RMM",
-        "Description": "Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures.",
+        "Description": "Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures. Current Lunixar platform controls prevent operators from renaming generated agent installers from the console, reducing disguised installer deployment risk while preserving those historical filenames as abuse artifacts.",
         "Author": "Michael Haag",
         "Created": "2026-04-23",
-        "LastModified": "2026-04-23",
+        "LastModified": "2026-06-15",
         "Details": {
             "Website": "https://lunixar.com/en/",
             "PEMetadata": {
@@ -15456,7 +15456,7 @@
             },
             "Privileges": "",
             "Free": "",
-            "Verification": "",
+            "Verification": "Official vendor documentation confirms Lunixar SAS de CV controls agent installer naming and prevents renaming generated agent installers from the platform; prior renamed MSI filenames remain documented as historical abuse artifacts.",
             "SupportedOS": [
                 "Windows"
             ],
@@ -15552,11 +15552,19 @@
                     ],
                     "Ports": []
                 }
+            ],
+            "Other": [
+                {
+                    "Type": "Installer control",
+                    "Value": "Current Lunixar agent installers use platform-controlled names and cannot be renamed from the Lunixar console; historical renamed MSI filenames should be treated as abuse artifacts rather than expected current installer names."
+                }
             ]
         },
         "Detections": [],
         "References": [
             "https://lunixar.com/en/",
+            "https://lunixar.com/en/rmm-abuse-prevention/",
+            "https://lunixar.com/en/blog/lunixar-blocks-renaming-agent-installers-to-prevent-abuse/",
             "https://www.virustotal.com/gui/file/3160414da55882b9f03bae5aa76f0dc3c6cdb9e27e9091d9dac6fa610bd94c33"
         ],
         "Acknowledgement": []
@@ -22170,6 +22178,128 @@
         ]
     },
     {
+        "Name": "RemotePulse",
+        "Category": "RMM",
+        "Description": "RemotePulse is a remote monitoring and management platform that advertises unattended remote access, terminal access, file transfer, chat, real-time monitoring, Windows patching, script automation, multi-tenancy, and silent agent deployment. Public abuse reporting observed RemotePulse agent installation under C:\\Program Files (x86)\\RemotePulseAgent with command-line execution pointing to remotepulse.io.\n",
+        "Author": "Jason Killam",
+        "Created": "2026-07-08",
+        "LastModified": "2026-07-08",
+        "Details": {
+            "Website": "https://www.remotepulse.io/",
+            "PEMetadata": [
+                {
+                    "Filename": "InstallCore.exe",
+                    "OriginalFileName": "",
+                    "Description": "RemotePulse agent installer component"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "",
+            "Verification": "Public RemotePulse website documents RMM capabilities including silent deployment and unattended remote access. Reported abuse artifacts are sourced from GitHub issue #226 and the linked sandbox behavior report.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Unattended remote desktop",
+                "Remote terminal",
+                "File transfer",
+                "Real-time endpoint monitoring",
+                "Windows patch management",
+                "Script automation",
+                "Silent agent deployment"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files (x86)\\RemotePulseAgent\\InstallCore.exe",
+                "C:\\Program Files (x86)\\RemotePulseAgent\\agent.ps1",
+                "C:\\Program Files (x86)\\RemotePulseAgent\\defender-exclude.ps1",
+                "C:\\Program Files (x86)\\RemotePulseAgent\\install.ps1",
+                "C:\\Program Files (x86)\\RemotePulseAgent\\install.cmd"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\RemotePulseAgent\\InstallCore.exe",
+                    "Description": "RemotePulse agent installer component observed in issue 226.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\RemotePulseAgent\\agent.ps1",
+                    "Description": "RemotePulse agent PowerShell script observed in issue 226.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\RemotePulseAgent\\defender-exclude.ps1",
+                    "Description": "RemotePulse Defender exclusion script observed in issue 226.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\RemotePulseAgent\\install.ps1",
+                    "Description": "RemotePulse PowerShell installer script observed in issue 226.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\RemotePulseAgent\\install.cmd",
+                    "Description": "RemotePulse command installer wrapper observed in issue 226.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Known RemotePulse service domains",
+                    "Domains": [
+                        "remotepulse.io",
+                        "www.remotepulse.io"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ObservedCommandLine",
+                    "Value": "cmd.exe /c \"C:\\Program Files (x86)\\RemotePulseAgent\\install.cmd\" \"<tenant-id>\" \"https://remotepulse.io\" \"<original-lure-path>\" \"<lure-name>\""
+                },
+                {
+                    "Type": "CodeSigningSigner",
+                    "Value": "EIKON S.A."
+                },
+                {
+                    "Type": "ObservedSHA256",
+                    "Value": "4eab52778134487a4233915f30ddeeff9d165a4312a2d8c5256c20072cd8de53"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://www.remotepulse.io/",
+            "https://github.com/magicsword-io/LOLRMM/issues/226",
+            "https://www.virustotal.com/gui/file/4eab52778134487a4233915f30ddeeff9d165a4312a2d8c5256c20072cd8de53/behavior"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Jason Killam",
+                "Handle": "rcKillam"
+            }
+        ],
+        "CodeSigning": {
+            "search_names": [
+                "InstallCore.exe"
+            ],
+            "company_names": [],
+            "signer_names": [
+                "EIKON S.A."
+            ],
+            "certificates": []
+        }
+    },
+    {
         "Name": "Royal TS",
         "Category": "RMM",
         "Description": "Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -28626,6 +28756,77 @@
                 }
             ]
         }
+    },
+    {
+        "Name": "Ninite Pro (Ninite Agent)",
+        "Category": "RMM",
+        "Description": "Ninite Pro is a software deployment and patch management tool that silently installs and updates applications across endpoints. It is frequently integrated with RMM platforms and can be abused to silently download and install software, or deployed as the Ninite Agent to establish a remote software-deployment foothold on a host.\n",
+        "Author": "Lorena Goldoni",
+        "Created": "2026-06-23",
+        "LastModified": "2026-06-23",
+        "Details": {
+            "Website": "https://ninite.com/pro",
+            "PEMetadata": [
+                {
+                    "Filename": "NiniteOne.exe",
+                    "OriginalFileName": "NiniteOne.exe",
+                    "Description": "Ninite Pro Classic",
+                    "Product": "Ninite"
+                }
+            ],
+            "Privileges": "User/Admin",
+            "Free": false,
+            "Verification": false,
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Silent Software Installation",
+                "Patch Management",
+                "Command line Support"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "NiniteOne.exe",
+                "NinitePro.exe",
+                "NiniteAgent.exe",
+                "Ninite.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "%TEMP%\\NiniteDownloads\\*",
+                    "Description": "Default Ninite download cache where installers for target apps are staged.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "NiniteUpdateSummary.log",
+                    "Description": "Ninite update and audit summary log written alongside the executable.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "The Ninite Pro agent reaches ninite.com. Note that Ninite Classic additionally downloads installers directly from many third-party application vendor domains by design, so network-only detection is high noise and low value for this tool.\n",
+                    "Domains": [
+                        "ninite.com",
+                        "*.ninite.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ]
+        },
+        "References": [
+            "https://ninite.com/help/features/switches.html",
+            "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-025a",
+            "https://app.any.run/tasks/63eed0ac-312c-49ec-a336-f86098c5646b"
+        ],
+        "Acknowledgement": []
     },
     {
         "Name": "Freshservice",

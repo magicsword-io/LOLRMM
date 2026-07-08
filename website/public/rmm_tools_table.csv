@@ -222,6 +222,7 @@ Name,Category,Description,Author
 [Netop Remote Control (aka Impero Connect)](/rmm_tools/netop-remote-control-aka-impero-connect),RMM,Netop Remote Control (aka Impero Connect) is a remote monitoring and management (RMM) tool. More inf...,
 [TeamViewer](/rmm_tools/teamviewer),RMM,TeamViewer is a remote monitoring and management (RMM) tool....,"Nasreddine Bencherchali, Michael Haag"
 [Remotely](/rmm_tools/remotely),RMM,"Remotely is an open-source remote control and remote scripting solution built with .NET, Blazor, and...",@0x6d786f
+[RemotePulse](/rmm_tools/remotepulse),RMM,"RemotePulse is a remote monitoring and management platform that advertises unattended remote access,...",Jason Killam
 [Royal TS](/rmm_tools/royal-ts),RMM,Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Sophos-Remote Management System](/rmm_tools/sophos-remote-management-system),RMM,Sophos-Remote Management System is a remote monitoring and management (RMM) tool. More information w...,
 [Jump Cloud](/rmm_tools/jump-cloud),RMM,Jump Cloud is a remote monitoring and management (RMM) tool. More information will be added as it be...,
@@ -300,6 +301,7 @@ Name,Category,Description,Author
 [Remmon](/rmm_tools/remmon),RMM,Remmon is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Zabbix Agent](/rmm_tools/zabbix-agent),RMM,Zabbix Agent is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [RES Automation Manager](/rmm_tools/res-automation-manager),RMM,RES Automation Manager is a remote monitoring and management (RMM) tool. More information will be ad...,
+[Ninite Pro (Ninite Agent)](/rmm_tools/ninite-pro-ninite-agent),RMM,Ninite Pro is a software deployment and patch management tool that silently installs and updates app...,Lorena Goldoni
 [Freshservice](/rmm_tools/freshservice),RMM,Freshservice is a SaaS IT Service Management (ITSM) platform from Freshworks Inc. that includes a bu...,@MHaggis
 [PSEXEC (Clone)](/rmm_tools/psexec-clone),RAT,PSEXEC (Clone) is a remote monitoring and management (RMM) tool. More information will be added as i...,
 [RdClient](/rmm_tools/rdclient),RAT,"RdClient is a slim remote desktop client for the protocols RDP, VNC and Hyper-V. It manages remote d...",Daniel Koifman (KoifSec)

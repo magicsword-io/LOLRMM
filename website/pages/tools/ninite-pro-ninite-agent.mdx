@@ -1,0 +1,60 @@
+---
+description: "Ninite Pro is a software deployment and patch management tool that silently installs and updates applications across endpoints. It is frequently integrated with RMM platforms and can be abused to silently download and install software, or deployed as the Ninite Agent to establish a remote software-deployment foothold on a host."
+title: "Ninite Pro (Ninite Agent)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Ninite Pro (Ninite Agent)
+
+Ninite Pro is a software deployment and patch management tool that silently installs and updates applications across endpoints. It is frequently integrated with RMM platforms and can be abused to silently download and install software, or deployed as the Ninite Agent to establish a remote software-deployment foothold on a host.
+
+
+<BlockBanner name={"Ninite Pro (Ninite Agent)"}/>
+
+### Details
+<Details author={"Lorena Goldoni"}
+         category={"RMM"}
+         created={"2026-06-23"}
+         website={"https://ninite.com/pro"}
+         lastModified={"2026-06-23"}
+         privileges={"User/Admin"}
+         free={ false }
+         verification={ false }
+/>
+
+#### Installation Paths
+<Card code={ ["NiniteOne.exe", "NinitePro.exe", "NiniteAgent.exe", "Ninite.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Silent Software Installation", "Patch Management", "Command line Support"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "%TEMP%\\NiniteDownloads\\*", "Description": "Default Ninite download cache where installers for target apps are staged.", "OS": "Windows"}, {"File": "NiniteUpdateSummary.log", "Description": "Ninite update and audit summary log written alongside the executable.", "OS": "Windows"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "The Ninite Pro agent reaches ninite.com. Note that Ninite Classic additionally downloads installers directly from many third-party application vendor domains by design, so network-only detection is high noise and low value for this tool.\n", "Domains": ["ninite.com", "*.ninite.com"], "Ports": [443]}] }/>
+
+
+
+
+
+### References
+- [https://ninite.com/help/features/switches.html](https://ninite.com/help/features/switches.html)
+- [https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-025a](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-025a)
+- [https://app.any.run/tasks/63eed0ac-312c-49ec-a336-f86098c5646b](https://app.any.run/tasks/63eed0ac-312c-49ec-a336-f86098c5646b)
+

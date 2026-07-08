@@ -127,6 +127,11 @@ detection:
     - \\C:\Program Files (x86)\RdClient\*
     - \\C:\Program Files (x86)\Remote Ripple\*
     - \\C:\Program Files (x86)\RemotePC\*
+    - \\C:\Program Files (x86)\RemotePulseAgent\InstallCore.exe
+    - \\C:\Program Files (x86)\RemotePulseAgent\agent.ps1
+    - \\C:\Program Files (x86)\RemotePulseAgent\defender-exclude.ps1
+    - \\C:\Program Files (x86)\RemotePulseAgent\install.cmd
+    - \\C:\Program Files (x86)\RemotePulseAgent\install.ps1
     - \\C:\Program Files (x86)\S3 Browser\*
     - \\C:\Program Files (x86)\ScreenConnect Client (<string ID>)\*
     - \\C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe
@@ -408,6 +413,10 @@ detection:
     - \\NetLock_RMM_Agent_Installer.exe
     - \\NetViewer.exe
     - \\Netop Ondemand.exe
+    - \\Ninite.exe
+    - \\NiniteAgent.exe
+    - \\NiniteOne.exe
+    - \\NinitePro.exe
     - \\NinjaRMMAgent.exe
     - \\NinjaRMMAgentPatcher.exe
     - \\OOSysAgent.exe

@@ -1,5 +1,5 @@
 ---
-description: "Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures."
+description: "Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures. Current Lunixar platform controls prevent operators from renaming generated agent installers from the console, reducing disguised installer deployment risk while preserving those historical filenames as abuse artifacts."
 title: "Lunixar"
 ---
 
@@ -9,7 +9,7 @@ import {EuiSpacer} from "@elastic/eui"
 
 # Lunixar
 
-Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures.
+Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures. Current Lunixar platform controls prevent operators from renaming generated agent installers from the console, reducing disguised installer deployment risk while preserving those historical filenames as abuse artifacts.
 
 <BlockBanner name={"Lunixar"}/>
 
@@ -18,10 +18,10 @@ Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de C
          category={"RMM"}
          created={"2026-04-23"}
          website={"https://lunixar.com/en/"}
-         lastModified={"2026-04-23"}
+         lastModified={"2026-06-15"}
          privileges={""}
          free={ false }
-         verification={ false }
+         verification={ "Official vendor documentation confirms Lunixar SAS de CV controls agent installer naming and prevents renaming generated agent installers from the platform; prior renamed MSI filenames remain documented as historical abuse artifacts." }
 />
 
 #### Installation Paths
@@ -54,11 +54,16 @@ Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de C
 <EuiSpacer size="xl"/>
 <NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.lunixar.com", "lunixar.com", "app.lunixar.com", "socket.lunixar.com", "downloads.lunixar.com", "devrmm.lunixar.com"], "Ports": [23501]}, {"Description": "Known abuse/phishing domains distributing renamed Lunixar MSI", "Domains": ["mymeetinggoogle.com"], "Ports": []}] }/>
 
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "Installer control", "Value": "Current Lunixar agent installers use platform-controlled names and cannot be renamed from the Lunixar console; historical renamed MSI filenames should be treated as abuse artifacts rather than expected current installer names."}] }/>
 
 
 
 
 ### References
 - [https://lunixar.com/en/](https://lunixar.com/en/)
+- [https://lunixar.com/en/rmm-abuse-prevention/](https://lunixar.com/en/rmm-abuse-prevention/)
+- [https://lunixar.com/en/blog/lunixar-blocks-renaming-agent-installers-to-prevent-abuse/](https://lunixar.com/en/blog/lunixar-blocks-renaming-agent-installers-to-prevent-abuse/)
 - [https://www.virustotal.com/gui/file/3160414da55882b9f03bae5aa76f0dc3c6cdb9e27e9091d9dac6fa610bd94c33](https://www.virustotal.com/gui/file/3160414da55882b9f03bae5aa76f0dc3c6cdb9e27e9091d9dac6fa610bd94c33)
 

@@ -435,6 +435,8 @@ connect.sa.ngrok-agent.com,ngrok
 connect.jp.ngrok-agent.com,ngrok
 connect.in.ngrok-agent.com,ngrok
 ngrok.com,ngrok
+ninite.com,Ninite Pro (Ninite Agent)
+*.ninite.com,Ninite Pro (Ninite Agent)
 *.ninjarmm.com,NinjaRMM
 *.ninjaone.com,NinjaRMM
 resources.ninjarmm.com,NinjaRMM
@@ -505,6 +507,8 @@ remotepass.com,RemotePass
 *.remotepc.com,RemotePC
 www.remotepc.com,RemotePC
 remotepc.com,RemotePC
+remotepulse.io,RemotePulse
+www.remotepulse.io,RemotePulse
 remoteutilities.com,RemoteUtilities
 *.content.rview.com,RemoteView
 *.rview.com,RemoteView
