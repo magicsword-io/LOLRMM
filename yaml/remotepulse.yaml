@@ -1,0 +1,91 @@
+Name: RemotePulse
+Category: RMM
+Description: >
+    RemotePulse is a remote monitoring and management platform that advertises
+    unattended remote access, terminal access, file transfer, chat, real-time
+    monitoring, Windows patching, script automation, multi-tenancy, and silent
+    agent deployment. Public abuse reporting observed RemotePulse agent
+    installation under C:\Program Files (x86)\RemotePulseAgent with command-line
+    execution pointing to remotepulse.io.
+Author: Jason Killam
+Created: '2026-07-08'
+LastModified: '2026-07-08'
+Details:
+    Website: https://www.remotepulse.io/
+    PEMetadata:
+        - Filename: InstallCore.exe
+          OriginalFileName: ''
+          Description: RemotePulse agent installer component
+    Privileges: SYSTEM
+    Free: ''
+    Verification: >
+        Public RemotePulse website documents RMM capabilities including silent
+        deployment and unattended remote access. Reported abuse artifacts are
+        sourced from GitHub issue #226 and the linked sandbox behavior report.
+    SupportedOS:
+        - Windows
+        - Linux
+        - MacOS
+    Capabilities:
+        - Unattended remote desktop
+        - Remote terminal
+        - File transfer
+        - Real-time endpoint monitoring
+        - Windows patch management
+        - Script automation
+        - Silent agent deployment
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\RemotePulseAgent\InstallCore.exe
+        - C:\Program Files (x86)\RemotePulseAgent\agent.ps1
+        - C:\Program Files (x86)\RemotePulseAgent\defender-exclude.ps1
+        - C:\Program Files (x86)\RemotePulseAgent\install.ps1
+        - C:\Program Files (x86)\RemotePulseAgent\install.cmd
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\RemotePulseAgent\InstallCore.exe
+          Description: RemotePulse agent installer component observed in issue 226.
+          OS: Windows
+        - File: C:\Program Files (x86)\RemotePulseAgent\agent.ps1
+          Description: RemotePulse agent PowerShell script observed in issue 226.
+          OS: Windows
+        - File: C:\Program Files (x86)\RemotePulseAgent\defender-exclude.ps1
+          Description: RemotePulse Defender exclusion script observed in issue 226.
+          OS: Windows
+        - File: C:\Program Files (x86)\RemotePulseAgent\install.ps1
+          Description: RemotePulse PowerShell installer script observed in issue 226.
+          OS: Windows
+        - File: C:\Program Files (x86)\RemotePulseAgent\install.cmd
+          Description: RemotePulse command installer wrapper observed in issue 226.
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known RemotePulse service domains
+          Domains:
+              - remotepulse.io
+              - www.remotepulse.io
+          Ports:
+              - 443
+    Other:
+        - Type: ObservedCommandLine
+          Value: cmd.exe /c "C:\Program Files (x86)\RemotePulseAgent\install.cmd" "<tenant-id>" "https://remotepulse.io" "<original-lure-path>" "<lure-name>"
+        - Type: CodeSigningSigner
+          Value: EIKON S.A.
+        - Type: ObservedSHA256
+          Value: 4eab52778134487a4233915f30ddeeff9d165a4312a2d8c5256c20072cd8de53
+Detections: []
+References:
+    - https://www.remotepulse.io/
+    - https://github.com/magicsword-io/LOLRMM/issues/226
+    - https://www.virustotal.com/gui/file/4eab52778134487a4233915f30ddeeff9d165a4312a2d8c5256c20072cd8de53/behavior
+Acknowledgement:
+    - Person: Jason Killam
+      Handle: rcKillam
+CodeSigning:
+    search_names:
+        - InstallCore.exe
+    company_names: []
+    signer_names:
+        - EIKON S.A.
+    certificates: []
