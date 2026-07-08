@@ -20,6 +20,8 @@ Two severity tiers:
 Usage:
     python3 bin/lint_content.py                # walk default yaml/ dir
     python3 bin/lint_content.py -y other/dir   # walk a different dir
+    python3 bin/lint_content.py --artifact-format-advisory
+        # also warn about Disk.File values that use env vars/placeholders
 
 Exit codes:
     0  no errors
@@ -141,6 +143,13 @@ def _is_special_ip(value: str) -> tuple[bool, str | None]:
 
 
 _PLACEHOLDER_RE = re.compile(r"^<[^>]+>$")  # e.g. '<operator-supplied-host>'
+_ENV_VAR_RE = re.compile(r"%[A-Za-z0-9_() -]+%")
+_DISK_PLACEHOLDER_RE = re.compile(
+    r"<[^>]+>"
+    r"|\[[A-Za-z0-9_-]*(?:date|guid|id|org|tenant|token|user)[A-Za-z0-9_-]*\]"
+    r"|\((?:<[^>]+>|[^)]*(?:guid|id|org|tenant|token)[^)]*)\)",
+    re.IGNORECASE,
+)
 
 
 def _check_domain(file: str, idx_path: str, value: object) -> Iterable[Finding]:
@@ -332,7 +341,12 @@ def _check_port(file: str, idx_path: str, value: object) -> Iterable[Finding]:
         )
 
 
-def _check_disk_file(file: str, idx_path: str, value: object) -> Iterable[Finding]:
+def _check_disk_file(
+    file: str,
+    idx_path: str,
+    value: object,
+    artifact_format_advisory: bool = False,
+) -> Iterable[Finding]:
     """Yield findings for a single Disk File entry."""
     if not isinstance(value, str):
         return
@@ -350,6 +364,31 @@ def _check_disk_file(file: str, idx_path: str, value: object) -> Iterable[Findin
             "remove this generic cache wildcard; keep vendor-specific MSI "
             "filenames, install directories, service names, or registry "
             "artifacts instead",
+        )
+
+    if not artifact_format_advisory:
+        return
+
+    if _ENV_VAR_RE.search(value):
+        yield Finding(
+            WARN,
+            file,
+            idx_path,
+            value,
+            "disk-env-var-advisory",
+            "environment variables are useful for humans but are not literal path telemetry in many XDR/SIEM sources",
+            r"prefer explicit canonical paths such as C:\Users\*\AppData\... when known",
+        )
+
+    if _DISK_PLACEHOLDER_RE.search(value):
+        yield Finding(
+            WARN,
+            file,
+            idx_path,
+            value,
+            "disk-placeholder-advisory",
+            "placeholder tokens require downstream consumers to invent substitutions before matching",
+            "prefer a concrete wildcard form when the variable portion is a path segment or filename component",
         )
 
 
@@ -391,7 +430,7 @@ def _check_duplicate_values(
 # ---------------------------------------------------------------------------
 
 
-def lint_file(path: str) -> list[Finding]:
+def lint_file(path: str, artifact_format_advisory: bool = False) -> list[Finding]:
     with open(path, "r", encoding="utf-8") as fh:
         try:
             data = yaml.safe_load(fh)
@@ -428,7 +467,10 @@ def lint_file(path: str) -> list[Finding]:
             if not isinstance(disk, dict):
                 continue
             out.extend(_check_disk_file(
-                path, f"Artifacts.Disk[{d_idx}].File", disk.get("File"),
+                path,
+                f"Artifacts.Disk[{d_idx}].File",
+                disk.get("File"),
+                artifact_format_advisory,
             ))
 
     nets = artifacts.get("Network") or []
@@ -476,6 +518,13 @@ def main() -> int:
         "--quiet", action="store_true",
         help="suppress success message",
     )
+    parser.add_argument(
+        "--artifact-format-advisory", action="store_true",
+        help=(
+            "also warn about Disk.File environment variables and placeholder "
+            "tokens that complicate downstream KQL/SIEM matching"
+        ),
+    )
     args = parser.parse_args()
 
     files = sorted(
@@ -488,7 +537,7 @@ def main() -> int:
 
     all_findings: list[Finding] = []
     for f in files:
-        all_findings.extend(lint_file(f))
+        all_findings.extend(lint_file(f, args.artifact_format_advisory))
 
     errors = [x for x in all_findings if x.severity == ERROR]
     warns = [x for x in all_findings if x.severity == WARN]
