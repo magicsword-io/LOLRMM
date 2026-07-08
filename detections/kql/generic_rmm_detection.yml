@@ -2,7 +2,7 @@ name: Generic RMM Domain Detection for Microsoft Defender for Endpoint
 id: kql-rmm-001
 description: Detects network connections to known RMM domains
 author: LOLRMM Project
-date: 2026/06/26
+date: 2026/07/08
 query: "// Detecting Unauthorized RMM Instances in Your MDE Environment\n// Note:\
   \ this query targets Microsoft Defender for Endpoint (DeviceNetworkEvents.Timestamp).\n\
   // For Microsoft Sentinel, replace both `Timestamp` references with `TimeGenerated`.\n\
