@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.ivanticloud.com
-            - *.ivanti.com
-            - ivanti.com
+            - '*.ivanticloud.com'
+            - '*.ivanti.com'
+            - 'ivanti.com'
     condition: selection
 falsepositives:
     - Legitimate use of LANDesk

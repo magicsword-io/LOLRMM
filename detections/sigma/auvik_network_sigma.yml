@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.my.auvik.com
-            - *.auvik.com
-            - auvik.com
+            - '*.my.auvik.com'
+            - '*.auvik.com'
+            - 'auvik.com'
     condition: selection
 falsepositives:
     - Legitimate use of Auvik

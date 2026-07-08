@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.support.services.microsoft.com
+        DestinationHostname|endswith: '*.support.services.microsoft.com'
     condition: selection
 falsepositives:
     - Legitimate use of Quick Assist

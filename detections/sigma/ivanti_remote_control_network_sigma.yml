@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.ivanticloud.com
+        DestinationHostname|endswith: '*.ivanticloud.com'
     condition: selection
 falsepositives:
     - Legitimate use of Ivanti Remote Control

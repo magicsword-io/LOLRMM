@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.showmypc.com
-            - showmypc.com
+            - '*.showmypc.com'
+            - 'showmypc.com'
     condition: selection
 falsepositives:
     - Legitimate use of ShowMyPC

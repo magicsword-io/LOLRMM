@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.iperiusremote.com
-            - *.iperius.com
-            - *.iperius-rs.com
-            - iperiusremote.com
+            - '*.iperiusremote.com'
+            - '*.iperius.com'
+            - '*.iperius-rs.com'
+            - 'iperiusremote.com'
     condition: selection
 falsepositives:
     - Legitimate use of Iperius Remote

@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.splashtop.com
+        DestinationHostname|endswith: '*.splashtop.com'
     condition: selection
 falsepositives:
     - Legitimate use of Splashtop

@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.gotohttp.com
-            - gotohttp.com
+            - '*.gotohttp.com'
+            - 'gotohttp.com'
     condition: selection
 falsepositives:
     - Legitimate use of GotoHTTP

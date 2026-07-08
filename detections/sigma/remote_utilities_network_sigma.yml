@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.internetid.ru
+        DestinationHostname|endswith: '*.internetid.ru'
     condition: selection
 falsepositives:
     - Legitimate use of Remote Utilities

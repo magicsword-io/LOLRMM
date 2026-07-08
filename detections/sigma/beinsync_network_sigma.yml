@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.beinsync.net
-            - *.beinsync.com
+            - '*.beinsync.net'
+            - '*.beinsync.com'
     condition: selection
 falsepositives:
     - Legitimate use of BeInSync

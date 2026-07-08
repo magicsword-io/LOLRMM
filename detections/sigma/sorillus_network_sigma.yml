@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.sorillus.com
-            - sorillus.com
+            - '*.sorillus.com'
+            - 'sorillus.com'
     condition: selection
 falsepositives:
     - Legitimate use of Sorillus

@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.gatherplace.com
-            - *.gatherplace.net
-            - gatherplace.com
+            - '*.gatherplace.com'
+            - '*.gatherplace.net'
+            - 'gatherplace.com'
     condition: selection
 falsepositives:
     - Legitimate use of GatherPlace-desktop sharing

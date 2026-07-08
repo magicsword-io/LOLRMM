@@ -15,7 +15,7 @@ logsource:
     category: file_event
 detection:
     selection:
-        TargetFilename|endswith: %localappdata%\Alpemix\Alpemix.ini
+        TargetFilename|endswith: '%localappdata%\Alpemix\Alpemix.ini'
     condition: selection
 falsepositives:
     - Legitimate use of Alpemix

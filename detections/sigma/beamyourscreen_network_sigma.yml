@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - beamyourscreen.com
-            - *.beamyourscreen.com
+            - 'beamyourscreen.com'
+            - '*.beamyourscreen.com'
     condition: selection
 falsepositives:
     - Legitimate use of BeamYourScreen

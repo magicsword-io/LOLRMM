@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.nchuser.com
+        DestinationHostname|endswith: '*.nchuser.com'
     condition: selection
 falsepositives:
     - Legitimate use of DesktopNow

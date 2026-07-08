@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - charon.netreo.net
-            - activation.netreo.net
-            - *.api.netreo.com
-            - netreo.com
+            - 'charon.netreo.net'
+            - 'activation.netreo.net'
+            - '*.api.netreo.com'
+            - 'netreo.com'
     condition: selection
 falsepositives:
     - Legitimate use of Netreo

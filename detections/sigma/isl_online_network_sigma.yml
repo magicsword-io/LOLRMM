@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.islonline.com
-            - *.islonline.net
+            - '*.islonline.com'
+            - '*.islonline.net'
     condition: selection
 falsepositives:
     - Legitimate use of ISL Online

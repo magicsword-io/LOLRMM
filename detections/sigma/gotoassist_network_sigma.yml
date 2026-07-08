@@ -16,15 +16,15 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - goto.com
-            - *.getgo.com
-            - *.fastsupport.com
-            - *.gotoassist.com
-            - helpme.net
-            - *.gotoassist.me
-            - *.gotoassist.at
-            - *.desktopstreaming.com
-            - *.cdn.getgo.com
+            - 'goto.com'
+            - '*.getgo.com'
+            - '*.fastsupport.com'
+            - '*.gotoassist.com'
+            - 'helpme.net'
+            - '*.gotoassist.me'
+            - '*.gotoassist.at'
+            - '*.desktopstreaming.com'
+            - '*.cdn.getgo.com'
     condition: selection
 falsepositives:
     - Legitimate use of GoToAssist

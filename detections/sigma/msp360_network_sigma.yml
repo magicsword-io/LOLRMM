@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.cloudberrylab.com
-            - *.msp360.com
-            - *.mspbackups.com
-            - msp360.com
+            - '*.cloudberrylab.com'
+            - '*.msp360.com'
+            - '*.mspbackups.com'
+            - 'msp360.com'
     condition: selection
 falsepositives:
     - Legitimate use of MSP360

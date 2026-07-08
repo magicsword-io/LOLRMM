@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.247ithelp.com
+        DestinationHostname|endswith: '*.247ithelp.com'
     condition: selection
 falsepositives:
     - Legitimate use of 247ithelp.com (ConnectWise)

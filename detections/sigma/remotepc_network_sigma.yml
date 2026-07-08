@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.remotedesktop.com
-            - *.remotepc.com
-            - www.remotepc.com
-            - remotepc.com
+            - '*.remotedesktop.com'
+            - '*.remotepc.com'
+            - 'www.remotepc.com'
+            - 'remotepc.com'
     condition: selection
 falsepositives:
     - Legitimate use of RemotePC

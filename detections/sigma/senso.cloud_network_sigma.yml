@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.senso.cloud
-            - senso.cloud
+            - '*.senso.cloud'
+            - 'senso.cloud'
     condition: selection
 falsepositives:
     - Legitimate use of Senso.cloud

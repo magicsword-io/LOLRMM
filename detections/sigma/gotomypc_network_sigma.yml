@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.GoToMyPC.com
+        DestinationHostname|endswith: '*.GoToMyPC.com'
     condition: selection
 falsepositives:
     - Legitimate use of GoToMyPC

@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.action1.com
-            - a1-backend-packages.s3.amazonaws.com
+            - '*.action1.com'
+            - 'a1-backend-packages.s3.amazonaws.com'
     condition: selection
 falsepositives:
     - Legitimate use of Action1

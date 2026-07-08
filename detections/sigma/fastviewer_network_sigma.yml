@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.fastviewer.com
-            - fastviewer.com
+            - '*.fastviewer.com'
+            - 'fastviewer.com'
     condition: selection
 falsepositives:
     - Legitimate use of FastViewer

@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.internetid.ru
-            - rmansys.ru
+            - '*.internetid.ru'
+            - 'rmansys.ru'
     condition: selection
 falsepositives:
     - Legitimate use of Remote Manipulator System

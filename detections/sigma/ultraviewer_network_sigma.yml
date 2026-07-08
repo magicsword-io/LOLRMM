@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.ultraviewer.net
-            - ultraviewer.net
+            - '*.ultraviewer.net'
+            - 'ultraviewer.net'
     condition: selection
 falsepositives:
     - Legitimate use of UltraViewer

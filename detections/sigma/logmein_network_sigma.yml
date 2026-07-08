@@ -16,11 +16,11 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - logmein-gateway.com
-            - *.logmein.com
-            - *.logmein.eu
-            - logmeinrescue.com
-            - *.logmeininc.com
+            - 'logmein-gateway.com'
+            - '*.logmein.com'
+            - '*.logmein.eu'
+            - 'logmeinrescue.com'
+            - '*.logmeininc.com'
     condition: selection
 falsepositives:
     - Legitimate use of LogMeIn

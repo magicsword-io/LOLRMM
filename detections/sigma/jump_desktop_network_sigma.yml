@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.jumpdesktop.com
-            - jumpdesktop.com
-            - jumpto.me
-            - *.jumpto.me
+            - '*.jumpdesktop.com'
+            - 'jumpdesktop.com'
+            - 'jumpto.me'
+            - '*.jumpto.me'
     condition: selection
 falsepositives:
     - Legitimate use of Jump Desktop

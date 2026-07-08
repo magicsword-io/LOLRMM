@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.ezhelp.co.kr
-            - ezhelp.co.kr
+            - '*.ezhelp.co.kr'
+            - 'ezhelp.co.kr'
     condition: selection
 falsepositives:
     - Legitimate use of ezHelp

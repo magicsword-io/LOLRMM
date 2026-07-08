@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - %programdata%\\AMMYY\\access.log
-            - %Binary_path%\\AA_v3.log
+            - '%programdata%\\AMMYY\\access.log'
+            - '%Binary_path%\\AA_v3.log'
     condition: selection
 falsepositives:
     - Legitimate use of Ammyy Admin

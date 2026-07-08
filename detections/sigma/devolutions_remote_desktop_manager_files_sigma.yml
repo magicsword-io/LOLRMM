@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - %localappdata%\Devolutions\RemoteDesktopManager\Connections.log
-            - %localappdata%\Devolutions\RemoteDesktopManager[GUID]\Mru.xml
-            - %localappdata%\Devolutions\RemoteDesktopManager\Connections.db
+            - '%localappdata%\Devolutions\RemoteDesktopManager\Connections.log'
+            - '%localappdata%\Devolutions\RemoteDesktopManager[GUID]\Mru.xml'
+            - '%localappdata%\Devolutions\RemoteDesktopManager\Connections.db'
     condition: selection
 falsepositives:
     - Legitimate use of Devolutions Remote Desktop Manager

@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.teamviewer.com
-            - router15.teamviewer.com
-            - client.teamviewer.com
-            - taf.teamviewer.com
+            - '*.teamviewer.com'
+            - 'router15.teamviewer.com'
+            - 'client.teamviewer.com'
+            - 'taf.teamviewer.com'
     condition: selection
 falsepositives:
     - Legitimate use of TeamViewer

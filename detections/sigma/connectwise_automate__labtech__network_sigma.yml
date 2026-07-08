@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.hostedrmm.com
+        DestinationHostname|endswith: '*.hostedrmm.com'
     condition: selection
 falsepositives:
     - Legitimate use of Connectwise Automate (LabTech)

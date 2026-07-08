@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - splashtop.com
-            - *.api.splashtop.com
-            - *.relay.splashtop.com
-            - *.api.splashtop.eu
+            - 'splashtop.com'
+            - '*.api.splashtop.com'
+            - '*.relay.splashtop.com'
+            - '*.api.splashtop.eu'
     condition: selection
 falsepositives:
     - Legitimate use of Splashtop Remote

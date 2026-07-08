@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - helpu.co.kr
-            - *.helpu.co.kr
+            - 'helpu.co.kr'
+            - '*.helpu.co.kr'
     condition: selection
 falsepositives:
     - Legitimate use of HelpU

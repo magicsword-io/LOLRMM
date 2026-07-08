@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.analytics.insight.rapid7.com
-            - *.endpoint.ingress.rapid7.com
+            - '*.analytics.insight.rapid7.com'
+            - '*.endpoint.ingress.rapid7.com'
     condition: selection
 falsepositives:
     - Legitimate use of Rapid7

@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.rudesktop.ru
-            - rudesktop.ru
+            - '*.rudesktop.ru'
+            - 'rudesktop.ru'
     condition: selection
 falsepositives:
     - Legitimate use of RuDesktop

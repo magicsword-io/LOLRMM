@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - level.io
-            - *.level.io
+            - 'level.io'
+            - '*.level.io'
     condition: selection
 falsepositives:
     - Legitimate use of Level.io

@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.mdt.qq.com
-            - *.desktop.qq.com
-            - upload_data.qq.com
-            - qq-messenger.en.softonic.com
+            - '*.mdt.qq.com'
+            - '*.desktop.qq.com'
+            - 'upload_data.qq.com'
+            - 'qq-messenger.en.softonic.com'
     condition: selection
 falsepositives:
     - Legitimate use of QQ IM-remote assistance

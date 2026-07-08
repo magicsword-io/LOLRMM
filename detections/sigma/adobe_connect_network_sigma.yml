@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.adobeconnect.com
+        DestinationHostname|endswith: '*.adobeconnect.com'
     condition: selection
 falsepositives:
     - Legitimate use of Adobe Connect

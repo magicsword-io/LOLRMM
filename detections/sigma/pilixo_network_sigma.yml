@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - pilixo.com
-            - download.pilixo.com
-            - *.pilixo.com
+            - 'pilixo.com'
+            - 'download.pilixo.com'
+            - '*.pilixo.com'
     condition: selection
 falsepositives:
     - Legitimate use of Pilixo

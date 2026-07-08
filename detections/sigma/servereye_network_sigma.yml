@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.server-eye.de
+        DestinationHostname|endswith: '*.server-eye.de'
     condition: selection
 falsepositives:
     - Legitimate use of ServerEye

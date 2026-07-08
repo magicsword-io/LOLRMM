@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - skyfex.com
-            - deskroll.com
-            - *.deskroll.com
+            - 'skyfex.com'
+            - 'deskroll.com'
+            - '*.deskroll.com'
     condition: selection
 falsepositives:
     - Legitimate use of SkyFex

@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.anyviewer.com
-            - *.aomeisoftware.com
+            - '*.anyviewer.com'
+            - '*.aomeisoftware.com'
     condition: selection
 falsepositives:
     - Legitimate use of AnyViewer

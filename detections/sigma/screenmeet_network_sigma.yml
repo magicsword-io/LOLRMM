@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.screenmeet.com
-            - *.scrn.mt
+            - '*.screenmeet.com'
+            - '*.scrn.mt'
     condition: selection
 falsepositives:
     - Legitimate use of ScreenMeet

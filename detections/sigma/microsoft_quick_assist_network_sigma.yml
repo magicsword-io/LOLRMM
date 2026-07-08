@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - user_managed
-            - *.support.services.microsoft.com
+            - 'user_managed'
+            - '*.support.services.microsoft.com'
     condition: selection
 falsepositives:
     - Legitimate use of Microsoft Quick Assist

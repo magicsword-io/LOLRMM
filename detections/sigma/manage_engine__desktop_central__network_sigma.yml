@@ -16,12 +16,12 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - desktopcentral.manageengine.com
-            - desktopcentral.manageengine.com.eu
-            - desktopcentral.manageengine.cn
-            - *.dms.zoho.com
-            - *.dms.zoho.com.eu
-            - *.-dms.zoho.com.cn
+            - 'desktopcentral.manageengine.com'
+            - 'desktopcentral.manageengine.com.eu'
+            - 'desktopcentral.manageengine.cn'
+            - '*.dms.zoho.com'
+            - '*.dms.zoho.com.eu'
+            - '*.-dms.zoho.com.cn'
     condition: selection
 falsepositives:
     - Legitimate use of Manage Engine (Desktop Central)

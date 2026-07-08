@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.spytech-web.com
-            - spyanywhere.com
+            - '*.spytech-web.com'
+            - 'spyanywhere.com'
     condition: selection
 falsepositives:
     - Legitimate use of SpyAnywhere

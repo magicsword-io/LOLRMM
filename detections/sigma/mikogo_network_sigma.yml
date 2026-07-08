@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.real-time-collaboration.com
-            - *.mikogo4.com
-            - *.mikogo.com
-            - mikogo.com
+            - '*.real-time-collaboration.com'
+            - '*.mikogo4.com'
+            - '*.mikogo.com'
+            - 'mikogo.com'
     condition: selection
 falsepositives:
     - Legitimate use of Mikogo

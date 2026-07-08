@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - control.connectwise.com
-            - *.connectwise.com
-            - *.screenconnect.com
+            - 'control.connectwise.com'
+            - '*.connectwise.com'
+            - '*.screenconnect.com'
     condition: selection
 falsepositives:
     - Legitimate use of ScreenConnect

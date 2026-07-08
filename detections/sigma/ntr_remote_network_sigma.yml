@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.ntrsupport.com
+        DestinationHostname|endswith: '*.ntrsupport.com'
     condition: selection
 falsepositives:
     - Legitimate use of NTR Remote

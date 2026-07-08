@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.islonline.net
-            - rmm.barracudamsp.com
-            - barracudamsp.com
+            - '*.islonline.net'
+            - 'rmm.barracudamsp.com'
+            - 'barracudamsp.com'
     condition: selection
 falsepositives:
     - Legitimate use of Barracuda

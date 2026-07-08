@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.dwservice.net
+        DestinationHostname|endswith: '*.dwservice.net'
     condition: selection
 falsepositives:
     - Legitimate use of DW Service

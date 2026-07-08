@@ -16,10 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.weezo.me
-            - weezo.net
-            - *.weezo.net
-            - weezo.en.softonic.com
+            - '*.weezo.me'
+            - 'weezo.net'
+            - '*.weezo.net'
+            - 'weezo.en.softonic.com'
     condition: selection
 falsepositives:
     - Legitimate use of Weezo

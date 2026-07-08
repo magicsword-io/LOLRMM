@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.tailscale.com
-            - *.tailscale.io
-            - tailscale.com
+            - '*.tailscale.com'
+            - '*.tailscale.io'
+            - 'tailscale.com'
     condition: selection
 falsepositives:
     - Legitimate use of Tailscale

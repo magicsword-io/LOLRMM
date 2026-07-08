@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.alpemix.com
-            - *.teknopars.com
+            - '*.alpemix.com'
+            - '*.teknopars.com'
     condition: selection
 falsepositives:
     - Legitimate use of Alpemix

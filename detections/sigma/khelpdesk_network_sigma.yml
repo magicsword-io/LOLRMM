@@ -15,7 +15,7 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith: *.khelpdesk.com.br
+        DestinationHostname|endswith: '*.khelpdesk.com.br'
     condition: selection
 falsepositives:
     - Legitimate use of KHelpDesk

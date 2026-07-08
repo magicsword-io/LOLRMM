@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.api.jumpcloud.com
-            - *.assist.jumpcloud.com
+            - '*.api.jumpcloud.com'
+            - '*.assist.jumpcloud.com'
     condition: selection
 falsepositives:
     - Legitimate use of Jump Cloud

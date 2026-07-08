@@ -16,9 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - global.rel.tunnels.api.visualstudio.com
-            - *.rel.tunnels.api.visualstudio.com
-            - *.devtunnels.ms
+            - 'global.rel.tunnels.api.visualstudio.com'
+            - '*.rel.tunnels.api.visualstudio.com'
+            - '*.devtunnels.ms'
     condition: selection
 falsepositives:
     - Legitimate use of Visual Studio Dev Tunnel

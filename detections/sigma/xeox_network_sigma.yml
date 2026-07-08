@@ -16,8 +16,8 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - *.xeox.com
-            - xeox.com
+            - '*.xeox.com'
+            - 'xeox.com'
     condition: selection
 falsepositives:
     - Legitimate use of Xeox
