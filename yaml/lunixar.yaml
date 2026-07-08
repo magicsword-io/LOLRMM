@@ -5,10 +5,13 @@ Description: Lunixar is a Remote Monitoring and Management (RMM) platform by Lun
   and a Windows app, script execution and scheduling, hardware/software inventory,
   process and service management, and real-time alerting. Has been observed abused
   in the wild, renamed as Googlemeet.msi and distributed via the phishing domain
-  mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures.
+  mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures. Current
+  Lunixar platform controls prevent operators from renaming generated agent
+  installers from the console, reducing disguised installer deployment risk while
+  preserving those historical filenames as abuse artifacts.
 Author: Michael Haag
 Created: '2026-04-23'
-LastModified: '2026-04-23'
+LastModified: '2026-06-15'
 Details:
     Website: 'https://lunixar.com/en/'
     PEMetadata:
@@ -17,7 +20,10 @@ Details:
         Description: ''
     Privileges: ''
     Free: ''
-    Verification: ''
+    Verification: Official vendor documentation confirms Lunixar SAS de CV controls
+        agent installer naming and prevents renaming generated agent installers from
+        the platform; prior renamed MSI filenames remain documented as historical
+        abuse artifacts.
     SupportedOS:
         - Windows
     Capabilities:
@@ -83,8 +89,16 @@ Artifacts:
           Domains:
               - mymeetinggoogle.com
           Ports: []
+    Other:
+        - Type: Installer control
+          Value: Current Lunixar agent installers use platform-controlled names and
+              cannot be renamed from the Lunixar console; historical renamed MSI
+              filenames should be treated as abuse artifacts rather than expected
+              current installer names.
 Detections: []
 References:
     - https://lunixar.com/en/
+    - https://lunixar.com/en/rmm-abuse-prevention/
+    - https://lunixar.com/en/blog/lunixar-blocks-renaming-agent-installers-to-prevent-abuse/
     - https://www.virustotal.com/gui/file/3160414da55882b9f03bae5aa76f0dc3c6cdb9e27e9091d9dac6fa610bd94c33
 Acknowledgement: []
