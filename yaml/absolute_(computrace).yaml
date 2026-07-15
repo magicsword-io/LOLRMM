@@ -19,7 +19,7 @@ Details:
     InstallationPaths:
         - rpcnet.exe
         - ctes.exe
-        - ctespersitence.exe
+        - ctespersistence.exe
         - cteshostsvc.exe
         - rpcld.exe
 Artifacts:
