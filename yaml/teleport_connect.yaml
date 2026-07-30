@@ -1,0 +1,123 @@
+Name: Teleport Connect
+Category: RAT
+Description: Teleport Connect is the desktop client for Gravitational Teleport, an infrastructure access platform that provides connectivity, authentication, authorization, and audit for cloud infrastructure. It enables SSH, RDP, Kubernetes, database, and application access through a unified interface with certificate-based authentication and session recording.
+Author: ''
+Created: '2026-07-29'
+LastModified: '2026-07-29'
+Details:
+    Website: 'https://goteleport.com/'
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+    Capabilities:
+        - Remote Access
+        - SSH
+        - RDP
+        - Kubernetes Access
+        - Database Access
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Teleport Connect\*
+        - Teleport Connect.exe
+        - TeleportConnectSetup-*.exe
+        - tsh.exe
+        - '*\Teleport Connect.app\*'
+        - /opt/teleport/system/bin/teleport
+        - /usr/local/bin/teleport
+        - /usr/local/bin/tsh
+        - /usr/local/bin/tctl
+        - /usr/local/bin/tbot
+        - teleport-update
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Teleport Connect\Teleport Connect.exe
+          Description: Main Teleport Connect executable (Electron-based)
+          OS: Windows
+        - File: C:\Program Files\Teleport Connect\resources\bin\tsh.exe
+          Description: Teleport Shell (tsh) daemon and CLI binary
+          OS: Windows
+        - File: '%APPDATA%\Teleport Connect\certs\tshd.crt'
+          Description: TLS certificate for tsh daemon communication
+          OS: Windows
+        - File: '%LOCALAPPDATA%\Teleport Connect\Local State'
+          Description: Electron local state file
+          OS: Windows
+        - File: '%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Teleport Connect.lnk'
+          Description: Start menu shortcut
+          OS: Windows
+        - File: /Applications/Teleport Connect.app/Contents/MacOS/Teleport Connect
+          Description: Main Teleport Connect executable
+          OS: macOS
+        - File: /Applications/Teleport Connect.app/Contents/MacOS/tsh.app/Contents/MacOS/tsh
+          Description: Teleport Shell (tsh) daemon and CLI binary
+          OS: macOS
+        - File: ~/Library/Application Support/Teleport Connect/certs/
+          Description: TLS certificates for tsh daemon communication
+          OS: macOS
+        - File: /opt/teleport/system/bin/teleport
+          Description: Main Teleport daemon binary (installed via teleport-update)
+          OS: Linux
+        - File: /usr/local/bin/teleport
+          Description: Teleport daemon symlink
+          OS: Linux
+        - File: /usr/local/bin/tsh
+          Description: Teleport Shell (tsh) CLI binary
+          OS: Linux
+        - File: /usr/local/bin/tctl
+          Description: Teleport administrative control CLI
+          OS: Linux
+        - File: /usr/local/bin/tbot
+          Description: Teleport Machine ID client
+          OS: Linux
+        - File: /usr/local/bin/teleport-update
+          Description: Teleport auto-update agent
+          OS: Linux
+        - File: /etc/apt/sources.list.d/teleport.list
+          Description: APT repository configuration for Teleport packages
+          OS: Linux
+        - File: /etc/apt/keyrings/teleport-archive-keyring.asc
+          Description: Teleport APT repository signing key
+          OS: Linux
+        - File: /var/cache/apt/archives/teleport_*_amd64.deb
+          Description: Cached Teleport Debian package
+          OS: Linux
+    EventLog: []
+    Registry:
+        - Path: HKLM\SOFTWARE\Policies\Teleport\TeleportConnect
+          Description: Group policy configuration for Teleport Connect
+        - Path: HKCU\SOFTWARE\Policies\Teleport\TeleportConnect
+          Description: Per-user policy configuration for Teleport Connect
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.teleport.sh'
+              - '*.teleportinfra.sh'
+              - reporting-connect.teleportinfra.sh
+              - goteleport.com
+              - '*.goteleport.com'
+              - cdn.teleport.dev
+              - apt.releases.teleport.dev
+              - yum.releases.teleport.dev
+              - zypper.releases.teleport.dev
+              - deb.releases.teleport.dev
+          Ports:
+              - 443
+              - 3080
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teleport_connect_network_sigma.yml
+      Description: Detects potential network activity of Teleport Connect RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teleport_connect_processes_sigma.yml
+      Description: Detects potential processes activity of Teleport Connect RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teleport_connect_files_sigma.yml
+      Description: Detects potential files activity of Teleport Connect RMM tool
+References:
+    - https://goteleport.com/docs/connect-your-client/teleport-connect/
+Acknowledgement: []
