@@ -1,123 +1,156 @@
 Name: Teleport Connect
 Category: RAT
-Description: Teleport Connect is the desktop client for Gravitational Teleport, an infrastructure access platform that provides connectivity, authentication, authorization, and audit for cloud infrastructure. It enables SSH, RDP, Kubernetes, database, and application access through a unified interface with certificate-based authentication and session recording.
-Author: ''
+Description: 'Teleport Connect is Gravitational Teleport''s desktop client. It provides
+    authenticated access to SSH servers, databases, Kubernetes clusters, applications,
+    MCP servers, and Windows desktops through a graphical interface.'
+Author: Richard Berry
 Created: '2026-07-29'
-LastModified: '2026-07-29'
+LastModified: '2026-08-18'
 Details:
-    Website: 'https://goteleport.com/'
+    Website: https://goteleport.com/connect/
     PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
+        - Filename: Teleport Connect Setup-*.exe
+          OriginalFileName: ''
+          Description: Teleport Connect
+          Product: Teleport Connect
+        - Filename: Teleport Connect.exe
+          OriginalFileName: ''
+          Description: Teleport Connect
+          Product: Teleport Connect
+        - Filename: tsh.exe
+          OriginalFileName: tsh.exe
+          Description: Teleport tsh command-line client
+          Product: Teleport
+    Privileges: User; administrator/root required for system-wide installation, managed updates, or VNet
+    Free: true
+    Verification: Code-signed by Gravitational, Inc.
     SupportedOS:
         - Windows
         - macOS
         - Linux
     Capabilities:
-        - Remote Access
+        - Remote access
         - SSH
         - RDP
-        - Kubernetes Access
-        - Database Access
+        - Kubernetes access
+        - Database access
+        - Application access
+        - File transfer
     Vulnerabilities: []
     InstallationPaths:
+        - Teleport Connect Setup-*.exe
         - C:\Program Files\Teleport Connect\*
-        - Teleport Connect.exe
-        - TeleportConnectSetup-*.exe
-        - tsh.exe
-        - '*\Teleport Connect.app\*'
-        - /opt/teleport/system/bin/teleport
-        - /usr/local/bin/teleport
+        - C:\Users\*\AppData\Local\Programs\Teleport Connect\*
+        - /Applications/Teleport Connect.app/*
+        - /opt/Teleport Connect/*
         - /usr/local/bin/tsh
-        - /usr/local/bin/tctl
-        - /usr/local/bin/tbot
-        - teleport-update
 Artifacts:
     Disk:
         - File: C:\Program Files\Teleport Connect\Teleport Connect.exe
-          Description: Main Teleport Connect executable (Electron-based)
+          Description: Main executable in a per-machine Windows installation.
           OS: Windows
         - File: C:\Program Files\Teleport Connect\resources\bin\tsh.exe
-          Description: Teleport Shell (tsh) daemon and CLI binary
+          Description: Bundled tsh client in a per-machine Windows installation.
           OS: Windows
-        - File: '%APPDATA%\Teleport Connect\certs\tshd.crt'
-          Description: TLS certificate for tsh daemon communication
+        - File: C:\Users\*\AppData\Local\Programs\Teleport Connect\Teleport Connect.exe
+          Description: Main executable in a per-user Windows installation.
           OS: Windows
-        - File: '%LOCALAPPDATA%\Teleport Connect\Local State'
-          Description: Electron local state file
+        - File: C:\Users\*\AppData\Local\Programs\Teleport Connect\resources\bin\tsh.exe
+          Description: Bundled tsh client in a per-user Windows installation.
           OS: Windows
-        - File: '%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Teleport Connect.lnk'
-          Description: Start menu shortcut
+        - File: C:\Users\*\AppData\Roaming\Teleport Connect\app_state.json
+          Description: Teleport Connect application state.
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Teleport Connect\app_config.json
+          Description: Teleport Connect application configuration.
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Teleport Connect\certs\tshd.crt
+          Description: Ephemeral certificate used for local tsh daemon communication.
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Teleport Connect\logs\*
+          Description: Teleport Connect application logs.
+          OS: Windows
+        - File: C:\ProgramData\TeleportConnectUpdater\*
+          Description: Staging directory used by the privileged updater service.
           OS: Windows
         - File: /Applications/Teleport Connect.app/Contents/MacOS/Teleport Connect
-          Description: Main Teleport Connect executable
+          Description: Main macOS application executable.
           OS: macOS
         - File: /Applications/Teleport Connect.app/Contents/MacOS/tsh.app/Contents/MacOS/tsh
-          Description: Teleport Shell (tsh) daemon and CLI binary
+          Description: Bundled tsh client on macOS.
           OS: macOS
-        - File: ~/Library/Application Support/Teleport Connect/certs/
-          Description: TLS certificates for tsh daemon communication
+        - File: /Users/*/Library/Application Support/Teleport Connect/app_state.json
+          Description: Teleport Connect application state on macOS.
           OS: macOS
-        - File: /opt/teleport/system/bin/teleport
-          Description: Main Teleport daemon binary (installed via teleport-update)
+        - File: /Users/*/Library/Application Support/Teleport Connect/app_config.json
+          Description: Teleport Connect application configuration on macOS.
+          OS: macOS
+        - File: /Users/*/Library/Application Support/Teleport Connect/certs/tshd.crt
+          Description: Ephemeral certificate used for local tsh daemon communication.
+          OS: macOS
+        - File: /Users/*/Library/Application Support/Teleport Connect/logs/*
+          Description: Teleport Connect application logs on macOS.
+          OS: macOS
+        - File: /opt/Teleport Connect/teleport-connect
+          Description: Main Teleport Connect executable installed from a Linux package.
           OS: Linux
-        - File: /usr/local/bin/teleport
-          Description: Teleport daemon symlink
+        - File: /opt/Teleport Connect/resources/bin/tsh
+          Description: Bundled tsh client on Linux.
+          OS: Linux
+        - File: /usr/share/applications/teleport-connect.desktop
+          Description: Desktop entry installed by the Linux package.
+          OS: Linux
+        - File: /home/*/.config/Teleport Connect/app_state.json
+          Description: Teleport Connect application state on Linux.
+          OS: Linux
+        - File: /home/*/.config/Teleport Connect/app_config.json
+          Description: Teleport Connect application configuration on Linux.
+          OS: Linux
+        - File: /home/*/.config/Teleport Connect/certs/tshd.crt
+          Description: Ephemeral certificate used for local tsh daemon communication.
+          OS: Linux
+        - File: /home/*/.config/Teleport Connect/logs/*
+          Description: Teleport Connect application logs on Linux.
+          OS: Linux
+        - File: /home/*/.cache/Teleport Connect/teleport/teleport
+          Description: Cached Connect My Computer agent binary on Linux.
           OS: Linux
         - File: /usr/local/bin/tsh
-          Description: Teleport Shell (tsh) CLI binary
+          Description: Symlink to the bundled tsh client created during Linux installation.
           OS: Linux
-        - File: /usr/local/bin/tctl
-          Description: Teleport administrative control CLI
-          OS: Linux
-        - File: /usr/local/bin/tbot
-          Description: Teleport Machine ID client
-          OS: Linux
-        - File: /usr/local/bin/teleport-update
-          Description: Teleport auto-update agent
-          OS: Linux
-        - File: /etc/apt/sources.list.d/teleport.list
-          Description: APT repository configuration for Teleport packages
-          OS: Linux
-        - File: /etc/apt/keyrings/teleport-archive-keyring.asc
-          Description: Teleport APT repository signing key
-          OS: Linux
-        - File: /var/cache/apt/archives/teleport_*_amd64.deb
-          Description: Cached Teleport Debian package
-          OS: Linux
-    EventLog: []
+    EventLog:
+        - ServiceName: TeleportConnectUpdater
+          ImagePath: C:\Program Files\Teleport Connect\resources\bin\tsh.exe
+          CommandLine: connect-updater service
+          Description: Privileged update service created by a per-machine Windows installation.
     Registry:
         - Path: HKLM\SOFTWARE\Policies\Teleport\TeleportConnect
-          Description: Group policy configuration for Teleport Connect
+          Description: Machine-wide managed update policy configuration.
         - Path: HKCU\SOFTWARE\Policies\Teleport\TeleportConnect
-          Description: Per-user policy configuration for Teleport Connect
+          Description: Per-user managed update policy configuration.
     Network:
-        - Description: Known remote domains
+        - Description: Teleport Connect update, telemetry, and feedback services.
+          Domains:
+              - cdn.teleport.dev
+              - reporting-connect.teleportinfra.sh
+              - usage.teleport.dev
+          Ports:
+              - 443
+        - Description: Teleport Cloud clusters.
           Domains:
               - '*.teleport.sh'
-              - '*.teleportinfra.sh'
-              - reporting-connect.teleportinfra.sh
-              - goteleport.com
-              - '*.goteleport.com'
-              - cdn.teleport.dev
-              - apt.releases.teleport.dev
-              - yum.releases.teleport.dev
-              - zypper.releases.teleport.dev
-              - deb.releases.teleport.dev
+          Ports:
+              - 443
+        - Description: Administrator-supplied self-hosted Teleport proxy address.
+          Domains:
+              - user_managed
           Ports:
               - 443
               - 3080
-Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teleport_connect_network_sigma.yml
-      Description: Detects potential network activity of Teleport Connect RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teleport_connect_processes_sigma.yml
-      Description: Detects potential processes activity of Teleport Connect RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/teleport_connect_files_sigma.yml
-      Description: Detects potential files activity of Teleport Connect RMM tool
 References:
-    - https://goteleport.com/docs/connect-your-client/teleport-connect/
-Acknowledgement: []
+    - https://goteleport.com/docs/connect-your-client/teleport-clients/teleport-connect/
+    - https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/electron-builder-config.js
+    - https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/src/staticConfig.ts
+Acknowledgement:
+    - Person: Richard Berry
+      Handle: '@RichardPBerry'
