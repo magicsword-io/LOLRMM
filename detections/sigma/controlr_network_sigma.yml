@@ -1,0 +1,22 @@
+title: Potential ControlR RMM Tool Network Activity
+id: d5f41f3f-bca5-5e61-b06b-fd3793f47752
+status: experimental
+description: |
+    Detects potential network activity of ControlR RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-08-18
+tags:
+    - attack.execution
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith: 'demo.controlr.app'
+    condition: selection
+falsepositives:
+    - Legitimate use of ControlR
+level: medium

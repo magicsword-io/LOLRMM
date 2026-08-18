@@ -22,7 +22,6 @@ detection:
             - 'remote access.exe'
             - 'windowslauncher.exe'
             - 'spsrv.exe'
-            - 'vhost.exe'
     selection_image:
         Image|endswith:
             - 'simplehelpcustomer.exe'
@@ -31,7 +30,6 @@ detection:
             - 'remote access.exe'
             - 'windowslauncher.exe'
             - 'spsrv.exe'
-            - 'vhost.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SimpleHelp
