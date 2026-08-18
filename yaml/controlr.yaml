@@ -5,7 +5,7 @@ Description: 'ControlR is a legitimate Remote Monitoring and Management (RMM) to
     access to victim systems.'
 Author: Swachchhanda Shrawan Poudel
 Created: '2026-08-17'
-LastModified: '2026-08-17'
+LastModified: '2026-08-18'
 Details:
     Website: https://controlr.app/
     PEMetadata:
@@ -21,9 +21,9 @@ Details:
           OriginalFileName: ControlR.DesktopClient.dll
           Description: ControlR.DesktopClient
           Product: ControlR.DesktopClient
-    Privileges: SYSTEM
+    Privileges: SYSTEM/root
     Free: true
-    Verification: true
+    Verification: Code-signed by Bitbound
     SupportedOS:
         - Windows
         - MacOS
@@ -36,13 +36,13 @@ Details:
         - Activity monitoring
     InstallationPaths:
         - C:\Program Files\ControlR\*\ControlR.Agent.exe
-        - C:\Program Files\ControlR\*\ControlR.Agent.dll
         - C:\Program Files\ControlR\*\DesktopClient\ControlR.DesktopClient.exe
         - C:\Program Files\ControlR\*\DesktopClient\ControlR.DesktopClient.dll
         - C:\ProgramData\ControlR\
-        - /usr/local/bin/controlr/*
+        - /usr/local/bin/ControlR/*
         - /Library/Application Support/ControlR/*
         - /Applications/ControlR.app
+        - /Applications/ControlR.*.app
 Artifacts:
     Disk:
         - File: '*\ControlR.Agent.Installer.exe'
@@ -60,7 +60,7 @@ Artifacts:
         - File: C:\ProgramData\ControlR\*\Logs\ControlR.DesktopClient\LogFile*.log
           Description: ControlR desktop client log files on Windows.
           OS: Windows
-        - File: /usr/local/bin/controlr/*/ControlR.Agent
+        - File: /usr/local/bin/ControlR/*/ControlR.Agent
           Description: ControlR agent binary installed on Linux.
           OS: Linux
         - File: /etc/controlr/*/appsettings.json
@@ -79,10 +79,16 @@ Artifacts:
           Description: ControlR agent binary installed on macOS.
           OS: MacOS
         - File: /Applications/ControlR.app
-          Description: ControlR desktop client app bundle on macOS.
+          Description: Default ControlR desktop client app bundle on macOS.
           OS: MacOS
-        - File: /Library/LaunchDaemons/com.bitbound.controlr.agent*.plist
-          Description: ControlR agent launchd plist on macOS.
+        - File: /Applications/ControlR.*.app
+          Description: Instance-specific ControlR desktop client app bundle on macOS.
+          OS: MacOS
+        - File: /Library/LaunchDaemons/app.controlr.agent*.plist
+          Description: ControlR agent launchd plist files on macOS.
+          OS: MacOS
+        - File: /Library/LaunchAgents/app.controlr.desktop*.plist
+          Description: ControlR desktop client launchd plist files on macOS.
           OS: MacOS
         - File: /var/log/controlr/*/ControlR.Agent/LogFile*.log
           Description: ControlR agent log files on macOS (root).
@@ -93,14 +99,16 @@ Artifacts:
     EventLog: []
     Registry:
         - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ControlR
-          Description: ControlR uninstall registry key created during agent installation on Windows.
+          Description: Default ControlR uninstall registry key on Windows.
+        - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ControlR (*)
+          Description: Instance-specific ControlR uninstall registry key on Windows.
     Network:
         - Description: ControlR agent installer is downloaded from the official demo
               tenant domain.
           Domains:
               - demo.controlr.app
-              - controlr.app
-          Ports: []
+          Ports:
+              - 443
 References:
     - https://www.seqrite.com/blog/operation-shadowrecruit-a-recruitment-themed-malware-campaign-leveraging-controlr-and-google-sheets-to-target-indian-job-seekers/
     - https://controlr.app/
@@ -108,4 +116,3 @@ References:
 Acknowledgement:
     - Person: Swachchhanda Shrawan Poudel
       Handle: '@_swachchhanda_'
-
