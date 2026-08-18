@@ -26171,6 +26171,248 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Teleport Connect",
+        "Category": "RAT",
+        "Description": "Teleport Connect is Gravitational Teleport's desktop client. It provides authenticated access to SSH servers, databases, Kubernetes clusters, applications, MCP servers, and Windows desktops through a graphical interface.",
+        "Author": "Richard Berry",
+        "Created": "2026-07-29",
+        "LastModified": "2026-08-18",
+        "Details": {
+            "Website": "https://goteleport.com/connect/",
+            "PEMetadata": [
+                {
+                    "Filename": "Teleport Connect Setup-*.exe",
+                    "OriginalFileName": "",
+                    "Description": "Teleport Connect",
+                    "Product": "Teleport Connect"
+                },
+                {
+                    "Filename": "Teleport Connect.exe",
+                    "OriginalFileName": "",
+                    "Description": "Teleport Connect",
+                    "Product": "Teleport Connect"
+                },
+                {
+                    "Filename": "tsh.exe",
+                    "OriginalFileName": "tsh.exe",
+                    "Description": "Teleport tsh command-line client",
+                    "Product": "Teleport"
+                }
+            ],
+            "Privileges": "User; administrator/root required for system-wide installation, managed updates, or VNet",
+            "Free": true,
+            "Verification": "Code-signed by Gravitational, Inc.",
+            "SupportedOS": [
+                "Windows",
+                "macOS",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Remote access",
+                "SSH",
+                "RDP",
+                "Kubernetes access",
+                "Database access",
+                "Application access",
+                "File transfer"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "Teleport Connect Setup-*.exe",
+                "C:\\Program Files\\Teleport Connect\\*",
+                "C:\\Users\\*\\AppData\\Local\\Programs\\Teleport Connect\\*",
+                "/Applications/Teleport Connect.app/*",
+                "/opt/Teleport Connect/*",
+                "/usr/local/bin/tsh"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Teleport Connect\\Teleport Connect.exe",
+                    "Description": "Main executable in a per-machine Windows installation.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Teleport Connect\\resources\\bin\\tsh.exe",
+                    "Description": "Bundled tsh client in a per-machine Windows installation.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Local\\Programs\\Teleport Connect\\Teleport Connect.exe",
+                    "Description": "Main executable in a per-user Windows installation.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Local\\Programs\\Teleport Connect\\resources\\bin\\tsh.exe",
+                    "Description": "Bundled tsh client in a per-user Windows installation.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\app_state.json",
+                    "Description": "Teleport Connect application state.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\app_config.json",
+                    "Description": "Teleport Connect application configuration.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\certs\\tshd.crt",
+                    "Description": "Ephemeral certificate used for local tsh daemon communication.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\logs\\*",
+                    "Description": "Teleport Connect application logs.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\TeleportConnectUpdater\\*",
+                    "Description": "Staging directory used by the privileged updater service.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/Applications/Teleport Connect.app/Contents/MacOS/Teleport Connect",
+                    "Description": "Main macOS application executable.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Applications/Teleport Connect.app/Contents/MacOS/tsh.app/Contents/MacOS/tsh",
+                    "Description": "Bundled tsh client on macOS.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Users/*/Library/Application Support/Teleport Connect/app_state.json",
+                    "Description": "Teleport Connect application state on macOS.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Users/*/Library/Application Support/Teleport Connect/app_config.json",
+                    "Description": "Teleport Connect application configuration on macOS.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Users/*/Library/Application Support/Teleport Connect/certs/tshd.crt",
+                    "Description": "Ephemeral certificate used for local tsh daemon communication.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Users/*/Library/Application Support/Teleport Connect/logs/*",
+                    "Description": "Teleport Connect application logs on macOS.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/opt/Teleport Connect/teleport-connect",
+                    "Description": "Main Teleport Connect executable installed from a Linux package.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/Teleport Connect/resources/bin/tsh",
+                    "Description": "Bundled tsh client on Linux.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/usr/share/applications/teleport-connect.desktop",
+                    "Description": "Desktop entry installed by the Linux package.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/home/*/.config/Teleport Connect/app_state.json",
+                    "Description": "Teleport Connect application state on Linux.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/home/*/.config/Teleport Connect/app_config.json",
+                    "Description": "Teleport Connect application configuration on Linux.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/home/*/.config/Teleport Connect/certs/tshd.crt",
+                    "Description": "Ephemeral certificate used for local tsh daemon communication.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/home/*/.config/Teleport Connect/logs/*",
+                    "Description": "Teleport Connect application logs on Linux.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/home/*/.cache/Teleport Connect/teleport/teleport",
+                    "Description": "Cached Connect My Computer agent binary on Linux.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/usr/local/bin/tsh",
+                    "Description": "Symlink to the bundled tsh client created during Linux installation.",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [
+                {
+                    "ServiceName": "TeleportConnectUpdater",
+                    "ImagePath": "C:\\Program Files\\Teleport Connect\\resources\\bin\\tsh.exe",
+                    "CommandLine": "connect-updater service",
+                    "Description": "Privileged update service created by a per-machine Windows installation."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Policies\\Teleport\\TeleportConnect",
+                    "Description": "Machine-wide managed update policy configuration."
+                },
+                {
+                    "Path": "HKCU\\SOFTWARE\\Policies\\Teleport\\TeleportConnect",
+                    "Description": "Per-user managed update policy configuration."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Teleport Connect update, telemetry, and feedback services.",
+                    "Domains": [
+                        "cdn.teleport.dev",
+                        "reporting-connect.teleportinfra.sh",
+                        "usage.teleport.dev"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Teleport Cloud clusters.",
+                    "Domains": [
+                        "*.teleport.sh"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Administrator-supplied self-hosted Teleport proxy address.",
+                    "Domains": [
+                        "user_managed"
+                    ],
+                    "Ports": [
+                        443,
+                        3080
+                    ]
+                }
+            ]
+        },
+        "References": [
+            "https://goteleport.com/docs/connect-your-client/teleport-clients/teleport-connect/",
+            "https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/electron-builder-config.js",
+            "https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/src/staticConfig.ts"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Richard Berry",
+                "Handle": "@RichardPBerry"
+            }
+        ]
+    },
+    {
         "Name": "Netreo",
         "Category": "RMM",
         "Description": "Netreo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",

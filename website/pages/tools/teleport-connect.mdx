@@ -1,0 +1,67 @@
+---
+description: "Teleport Connect is Gravitational Teleport's desktop client. It provides authenticated access to SSH servers, databases, Kubernetes clusters, applications, MCP servers, and Windows desktops through a graphical interface."
+title: "Teleport Connect"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Teleport Connect
+
+Teleport Connect is Gravitational Teleport's desktop client. It provides authenticated access to SSH servers, databases, Kubernetes clusters, applications, MCP servers, and Windows desktops through a graphical interface.
+
+<BlockBanner name={"Teleport Connect"}/>
+
+### Details
+<Details author={"Richard Berry"}
+         category={"RAT"}
+         created={"2026-07-29"}
+         website={"https://goteleport.com/connect/"}
+         lastModified={"2026-08-18"}
+         privileges={"User; administrator/root required for system-wide installation, managed updates, or VNet"}
+         free={ true }
+         verification={ "Code-signed by Gravitational, Inc." }
+/>
+
+#### Installation Paths
+<Card code={ ["Teleport Connect Setup-*.exe", "C:\\Program Files\\Teleport Connect\\*", "C:\\Users\\*\\AppData\\Local\\Programs\\Teleport Connect\\*", "/Applications/Teleport Connect.app/*", "/opt/Teleport Connect/*", "/usr/local/bin/tsh"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "macOS", "Linux"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote access", "SSH", "RDP", "Kubernetes access", "Database access", "Application access", "File transfer"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Teleport Connect\\Teleport Connect.exe", "Description": "Main executable in a per-machine Windows installation.", "OS": "Windows"}, {"File": "C:\\Program Files\\Teleport Connect\\resources\\bin\\tsh.exe", "Description": "Bundled tsh client in a per-machine Windows installation.", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Programs\\Teleport Connect\\Teleport Connect.exe", "Description": "Main executable in a per-user Windows installation.", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Local\\Programs\\Teleport Connect\\resources\\bin\\tsh.exe", "Description": "Bundled tsh client in a per-user Windows installation.", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\app_state.json", "Description": "Teleport Connect application state.", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\app_config.json", "Description": "Teleport Connect application configuration.", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\certs\\tshd.crt", "Description": "Ephemeral certificate used for local tsh daemon communication.", "OS": "Windows"}, {"File": "C:\\Users\\*\\AppData\\Roaming\\Teleport Connect\\logs\\*", "Description": "Teleport Connect application logs.", "OS": "Windows"}, {"File": "C:\\ProgramData\\TeleportConnectUpdater\\*", "Description": "Staging directory used by the privileged updater service.", "OS": "Windows"}, {"File": "/Applications/Teleport Connect.app/Contents/MacOS/Teleport Connect", "Description": "Main macOS application executable.", "OS": "macOS"}, {"File": "/Applications/Teleport Connect.app/Contents/MacOS/tsh.app/Contents/MacOS/tsh", "Description": "Bundled tsh client on macOS.", "OS": "macOS"}, {"File": "/Users/*/Library/Application Support/Teleport Connect/app_state.json", "Description": "Teleport Connect application state on macOS.", "OS": "macOS"}, {"File": "/Users/*/Library/Application Support/Teleport Connect/app_config.json", "Description": "Teleport Connect application configuration on macOS.", "OS": "macOS"}, {"File": "/Users/*/Library/Application Support/Teleport Connect/certs/tshd.crt", "Description": "Ephemeral certificate used for local tsh daemon communication.", "OS": "macOS"}, {"File": "/Users/*/Library/Application Support/Teleport Connect/logs/*", "Description": "Teleport Connect application logs on macOS.", "OS": "macOS"}, {"File": "/opt/Teleport Connect/teleport-connect", "Description": "Main Teleport Connect executable installed from a Linux package.", "OS": "Linux"}, {"File": "/opt/Teleport Connect/resources/bin/tsh", "Description": "Bundled tsh client on Linux.", "OS": "Linux"}, {"File": "/usr/share/applications/teleport-connect.desktop", "Description": "Desktop entry installed by the Linux package.", "OS": "Linux"}, {"File": "/home/*/.config/Teleport Connect/app_state.json", "Description": "Teleport Connect application state on Linux.", "OS": "Linux"}, {"File": "/home/*/.config/Teleport Connect/app_config.json", "Description": "Teleport Connect application configuration on Linux.", "OS": "Linux"}, {"File": "/home/*/.config/Teleport Connect/certs/tshd.crt", "Description": "Ephemeral certificate used for local tsh daemon communication.", "OS": "Linux"}, {"File": "/home/*/.config/Teleport Connect/logs/*", "Description": "Teleport Connect application logs on Linux.", "OS": "Linux"}, {"File": "/home/*/.cache/Teleport Connect/teleport/teleport", "Description": "Cached Connect My Computer agent binary on Linux.", "OS": "Linux"}, {"File": "/usr/local/bin/tsh", "Description": "Symlink to the bundled tsh client created during Linux installation.", "OS": "Linux"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"ServiceName": "TeleportConnectUpdater", "ImagePath": "C:\\Program Files\\Teleport Connect\\resources\\bin\\tsh.exe", "CommandLine": "connect-updater service", "Description": "Privileged update service created by a per-machine Windows installation."}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\Policies\\Teleport\\TeleportConnect", "Description": "Machine-wide managed update policy configuration."}, {"Path": "HKCU\\SOFTWARE\\Policies\\Teleport\\TeleportConnect", "Description": "Per-user managed update policy configuration."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Teleport Connect update, telemetry, and feedback services.", "Domains": ["cdn.teleport.dev", "reporting-connect.teleportinfra.sh", "usage.teleport.dev"], "Ports": [443]}, {"Description": "Teleport Cloud clusters.", "Domains": ["*.teleport.sh"], "Ports": [443]}, {"Description": "Administrator-supplied self-hosted Teleport proxy address.", "Domains": ["user_managed"], "Ports": [443, 3080]}] }/>
+
+
+
+
+
+### References
+- [https://goteleport.com/docs/connect-your-client/teleport-clients/teleport-connect/](https://goteleport.com/docs/connect-your-client/teleport-clients/teleport-connect/)
+- [https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/electron-builder-config.js](https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/electron-builder-config.js)
+- [https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/src/staticConfig.ts](https://github.com/gravitational/teleport/blob/master/web/packages/teleterm/src/staticConfig.ts)
+
+### Acknowledgements
+- Richard Berry (@RichardPBerry)

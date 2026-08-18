@@ -215,6 +215,7 @@ detection:
     - \\C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
     - \\C:\Program Files\SysAidServer\*
     - \\C:\Program Files\TeamViewer\
+    - \\C:\Program Files\Teleport Connect\*
     - \\C:\Program Files\TightVNC\*
     - \\C:\Program Files\TrustConnect Agent\*
     - \\C:\Program Files\TrustConnect Agent\TrustConnectAgent.exe
@@ -255,6 +256,7 @@ detection:
     - \\C:\Users\*\AppData\Local\MEGAsync\*
     - \\C:\Users\*\AppData\Local\Programs\RemSupp\RemSupp.exe
     - \\C:\Users\*\AppData\Local\Programs\RemSupp\Uninstall RemSupp.exe
+    - \\C:\Users\*\AppData\Local\Programs\Teleport Connect\*
     - \\C:\Users\*\AppData\Local\Programs\loclx\loclx.exe
     - \\C:\Users\*\AppData\Local\Temp\nvda_*\*
     - \\C:\Users\*\AppData\Local\remsupp-updater\installer.exe
@@ -494,6 +496,7 @@ detection:
     - \\TaniumExecWrapper.exe
     - \\TaniumFileInfo.exe
     - \\TeamTaskManager.exe
+    - \\Teleport Connect Setup-*.exe
     - \\Teramind Agent.app
     - \\This installs a modified VNC and cannot be blocked by path separate from VNC
     - \\TiAgent.app
@@ -880,6 +883,7 @@ detection:
     - \\tmsysd
     - \\todesk.exe
     - \\toolsiq.exe
+    - \\tsh
     - \\tsircusr.exe
     - \\turbomeeting.exe
     - \\turbomeetingstarter.exe

@@ -269,6 +269,7 @@ Name,Category,Description,Author
 [InvGate](/rmm_tools/invgate),RMM,InvGate is an Argentinian (Buenos Aires) IT operations vendor whose product family includes InvGate ...,@MHaggis
 [Weezo](/rmm_tools/weezo),RMM,Weezo is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
 [XRDP](/rmm_tools/xrdp),RAT,XRDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes ...,
+[Teleport Connect](/rmm_tools/teleport-connect),RAT,Teleport Connect is Gravitational Teleport's desktop client. It provides authenticated access to SSH...,Richard Berry
 [Netreo](/rmm_tools/netreo),RMM,Netreo is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Laplink Gold](/rmm_tools/laplink-gold),RMM,Laplink Gold is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [CloudFlare Tunnel](/rmm_tools/cloudflare-tunnel),RAT,CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added a...,

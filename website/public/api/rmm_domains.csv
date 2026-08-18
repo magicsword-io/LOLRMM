@@ -606,6 +606,10 @@ router15.teamviewer.com,TeamViewer
 client.teamviewer.com,TeamViewer
 taf.teamviewer.com,TeamViewer
 tele-desk.com,TeleDesktop
+cdn.teleport.dev,Teleport Connect
+reporting-connect.teleportinfra.sh,Teleport Connect
+usage.teleport.dev,Teleport Connect
+*.teleport.sh,Teleport Connect
 *.teramind.co,Teramind
 teramind.co,Teramind
 www.teramind.co,Teramind
