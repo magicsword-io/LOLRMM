@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-07-08'
+modified: '2026-08-18'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -162,6 +162,9 @@ detection:
     - \\C:\Program Files\Aspia\
     - \\C:\Program Files\Atera Networks
     - \\C:\Program Files\Bitvise SSH Server\*
+    - \\C:\Program Files\ControlR\*\ControlR.Agent.exe
+    - \\C:\Program Files\ControlR\*\DesktopClient\ControlR.DesktopClient.dll
+    - \\C:\Program Files\ControlR\*\DesktopClient\ControlR.DesktopClient.exe
     - \\C:\Program Files\Danware Data\NetOp Packn Deploy\*
     - \\C:\Program Files\Devolutions\Remote Desktop Manager
     - \\C:\Program Files\Faronics Corporation\Deep Freeze 7.00\*
@@ -225,6 +228,7 @@ detection:
     - \\C:\Program Files\nezha\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
+    - \\C:\ProgramData\ControlR\
     - \\C:\ProgramData\Faronics\FCAForStartupMonitor.msi
     - \\C:\ProgramData\Faronics\StorageSpace\FWA\*
     - \\C:\ProgramData\Getscreen.me\
@@ -301,6 +305,8 @@ detection:
     - \\ConnectShellSetup*.exe
     - \\ConnectWiseControl*.exe
     - \\ConnectionInfo.json
+    - \\ControlR.*.app
+    - \\ControlR.app
     - \\CoreAgentService.exe
     - \\CrossLoopConnect.exe
     - \\DFC.exe
