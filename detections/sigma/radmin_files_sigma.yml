@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,10 +17,10 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Windows\SysWOW64\rserver30\Radm_log.htm
-            - C:\Windows\System32\rserver30\Radm_log.htm
-            - C:\Windows\System32\rserver30\CHATLOGS\*\*.htm
-            - C:\Users\*\Documents\ChatLogs\*\*.htm
+            - 'C:\Windows\SysWOW64\rserver30\Radm_log.htm'
+            - 'C:\Windows\System32\rserver30\Radm_log.htm'
+            - 'C:\Windows\System32\rserver30\CHATLOGS\*\*.htm'
+            - 'C:\Users\*\Documents\ChatLogs\*\*.htm'
     condition: selection
 falsepositives:
     - Legitimate use of RAdmin

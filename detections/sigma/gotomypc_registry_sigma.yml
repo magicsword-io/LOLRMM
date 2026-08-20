@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,10 +17,10 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc
-            - HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc\GuestInvite
-            - HKEY_CURRENT_USER\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history
-            - HKEY_USERS\<SID>\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history
+            - 'HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc'
+            - 'HKEY_LOCAL_MACHINE\WOW6432Node\Citrix\GoToMyPc\GuestInvite'
+            - 'HKEY_CURRENT_USER\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history'
+            - 'HKEY_USERS\<SID>\SOFTWARE\Citrix\GoToMyPc\FileTransfer\history'
     condition: selection
 falsepositives:
     - Legitimate use of GoToMyPC

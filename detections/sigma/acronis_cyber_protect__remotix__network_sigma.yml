@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,10 +17,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - cloud.acronis.com
-            - agents*-cloud.acronis.com
-            - gw.remotix.com
-            - connect.acronis.com
+            - 'cloud.acronis.com'
+            - 'agents*-cloud.acronis.com'
+            - 'gw.remotix.com'
+            - 'connect.acronis.com'
     condition: selection
 falsepositives:
     - Legitimate use of Acronis Cyber Protect (Remotix)

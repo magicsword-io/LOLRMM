@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,15 +17,15 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - connect.ngrok-agent.com
-            - connect.us.ngrok-agent.com
-            - connect.eu.ngrok-agent.com
-            - connect.ap.ngrok-agent.com
-            - connect.au.ngrok-agent.com
-            - connect.sa.ngrok-agent.com
-            - connect.jp.ngrok-agent.com
-            - connect.in.ngrok-agent.com
-            - ngrok.com
+            - 'connect.ngrok-agent.com'
+            - 'connect.us.ngrok-agent.com'
+            - 'connect.eu.ngrok-agent.com'
+            - 'connect.ap.ngrok-agent.com'
+            - 'connect.au.ngrok-agent.com'
+            - 'connect.sa.ngrok-agent.com'
+            - 'connect.jp.ngrok-agent.com'
+            - 'connect.in.ngrok-agent.com'
+            - 'ngrok.com'
     condition: selection
 falsepositives:
     - Legitimate use of ngrok

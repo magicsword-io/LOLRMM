@@ -308,7 +308,13 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
                 "references": ["https://github.com/magicsword-io/LOLRMM"],
                 "author": "LOLRMM Project",
                 "date": date.today().strftime("%Y-%m-%d"),
-                "tags": ["attack.execution", "attack.t1219"],
+                # T1219 sits under Command and Control in ATT&CK. Sigma requires
+                # the tactic that owns a technique to be tagged alongside it.
+                "tags": [
+                    "attack.command-and-control",
+                    "attack.execution",
+                    "attack.t1219",
+                ],
                 "logsource": rule_template["logsource"],
                 "detection": detection,
                 "falsepositives": [f"Legitimate use of {name}"],

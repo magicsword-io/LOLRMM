@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,11 +17,11 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Windows\Action1\action1_agent.exe
-            - C:\Windows\Action1\*
-            - C:\Windows\Action1\scripts\*
-            - C:\Windows\Action1\rule_data\*
-            - C:\Windows\Action1\action1_log_*.log
+            - 'C:\Windows\Action1\action1_agent.exe'
+            - 'C:\Windows\Action1\*'
+            - 'C:\Windows\Action1\scripts\*'
+            - 'C:\Windows\Action1\rule_data\*'
+            - 'C:\Windows\Action1\action1_log_*.log'
     condition: selection
 falsepositives:
     - Legitimate use of Action1
