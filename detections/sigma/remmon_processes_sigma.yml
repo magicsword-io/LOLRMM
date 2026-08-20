@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: 'remmon.exe'
+        ParentImage|endswith: '\\remmon.exe'
     selection_image:
-        Image|endswith: 'remmon.exe'
+        Image|endswith: '\\remmon.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remmon

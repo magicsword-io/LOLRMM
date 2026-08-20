@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - xeox-agent_x64.exe
-            - xeox_service_windows.exe
-            - xeox-agent_*.exe
-            - xeox-agent_x86.exe
+            - '\\xeox-agent_x64.exe'
+            - '\\xeox_service_windows.exe'
+            - '\\xeox-agent_*.exe'
+            - '\\xeox-agent_x86.exe'
     selection_image:
         Image|endswith:
-            - xeox-agent_x64.exe
-            - xeox_service_windows.exe
-            - xeox-agent_*.exe
-            - xeox-agent_x86.exe
+            - '\\xeox-agent_x64.exe'
+            - '\\xeox_service_windows.exe'
+            - '\\xeox-agent_*.exe'
+            - '\\xeox-agent_x86.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Xeox

@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: zoc.exe
+        ParentImage|endswith: '\\zoc.exe'
     selection_image:
-        Image|endswith: zoc.exe
+        Image|endswith: '\\zoc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ZOC

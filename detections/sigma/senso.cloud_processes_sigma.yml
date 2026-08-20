@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - SensoClient.exe
-            - SensoService.exe
-            - aadg.exe
+            - '\\SensoClient.exe'
+            - '\\SensoService.exe'
+            - '\\aadg.exe'
     selection_image:
         Image|endswith:
-            - SensoClient.exe
-            - SensoService.exe
-            - aadg.exe
+            - '\\SensoClient.exe'
+            - '\\SensoService.exe'
+            - '\\aadg.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Senso.cloud

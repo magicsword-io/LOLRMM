@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: tdp2tcp.exe
+        ParentImage|endswith: '\\tdp2tcp.exe'
     selection_image:
-        Image|endswith: tdp2tcp.exe
+        Image|endswith: '\\tdp2tcp.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of rdp2tcp

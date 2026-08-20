@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: Kabuto.App.Runner.exe
+        ParentImage|endswith: '\\Kabuto.App.Runner.exe'
     selection_image:
-        Image|endswith: Kabuto.App.Runner.exe
+        Image|endswith: '\\Kabuto.App.Runner.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Kabuto

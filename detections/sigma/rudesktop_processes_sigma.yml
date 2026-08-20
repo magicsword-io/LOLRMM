@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rd.exe
-            - rudesktop*.exe
+            - '\\rd.exe'
+            - '\\rudesktop*.exe'
     selection_image:
         Image|endswith:
-            - rd.exe
-            - rudesktop*.exe
+            - '\\rd.exe'
+            - '\\rudesktop*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RuDesktop

@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - aeroadmin.exe
-            - AeroAdmin.exe
+            - '\\aeroadmin.exe'
+            - '\\AeroAdmin.exe'
     selection_image:
         Image|endswith:
-            - aeroadmin.exe
-            - AeroAdmin.exe
+            - '\\aeroadmin.exe'
+            - '\\AeroAdmin.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of AeroAdmin

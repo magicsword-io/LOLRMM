@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: RemoteDesktopManager.exe
+        ParentImage|endswith: '\\RemoteDesktopManager.exe'
     selection_image:
-        Image|endswith: RemoteDesktopManager.exe
+        Image|endswith: '\\RemoteDesktopManager.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Devolutions Remote Desktop Manager

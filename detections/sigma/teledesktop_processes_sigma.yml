@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pstlaunch.exe
-            - ptdskclient.exe
-            - ptdskhost.exe
+            - '\\pstlaunch.exe'
+            - '\\ptdskclient.exe'
+            - '\\ptdskhost.exe'
     selection_image:
         Image|endswith:
-            - pstlaunch.exe
-            - ptdskclient.exe
-            - ptdskhost.exe
+            - '\\pstlaunch.exe'
+            - '\\ptdskclient.exe'
+            - '\\ptdskhost.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TeleDesktop

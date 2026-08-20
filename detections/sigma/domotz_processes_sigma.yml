@@ -16,20 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - domotz.exe
-            - Domotz Pro Desktop App.exe
-            - domotz_bash.exe
-            - domotz*.exe
-            - Domotz Pro Desktop App Setup*.exe
-            - domotz-windows*.exe
+            - '\\domotz.exe'
+            - '\\Domotz Pro Desktop App.exe'
+            - '\\domotz_bash.exe'
+            - '\\domotz*.exe'
+            - '\\Domotz Pro Desktop App Setup*.exe'
+            - '\\domotz-windows*.exe'
     selection_image:
         Image|endswith:
-            - domotz.exe
-            - Domotz Pro Desktop App.exe
-            - domotz_bash.exe
-            - domotz*.exe
-            - Domotz Pro Desktop App Setup*.exe
-            - domotz-windows*.exe
+            - '\\domotz.exe'
+            - '\\Domotz Pro Desktop App.exe'
+            - '\\domotz_bash.exe'
+            - '\\domotz*.exe'
+            - '\\Domotz Pro Desktop App Setup*.exe'
+            - '\\domotz-windows*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Domotz

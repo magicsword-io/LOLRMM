@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: WinSCP.exe
+        ParentImage|endswith: '\\WinSCP.exe'
     selection_image:
-        Image|endswith: WinSCP.exe
+        Image|endswith: '\\WinSCP.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of WinSCP

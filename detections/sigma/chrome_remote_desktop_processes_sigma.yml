@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - remote_host.exe
-            - remoting_host.exe
-            - remoting_host.exe
+            - '\\remote_host.exe'
+            - '\\remoting_host.exe'
+            - '\\remoting_host.exe'
     selection_image:
         Image|endswith:
-            - remote_host.exe
-            - remoting_host.exe
-            - remoting_host.exe
+            - '\\remote_host.exe'
+            - '\\remoting_host.exe'
+            - '\\remoting_host.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Chrome Remote Desktop

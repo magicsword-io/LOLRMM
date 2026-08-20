@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Deskroll.exe
-            - DeskRollUA.exe
+            - '\\Deskroll.exe'
+            - '\\DeskRollUA.exe'
     selection_image:
         Image|endswith:
-            - Deskroll.exe
-            - DeskRollUA.exe
+            - '\\Deskroll.exe'
+            - '\\DeskRollUA.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SkyFex

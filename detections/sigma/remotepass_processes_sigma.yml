@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - remotepass-access.exe
-            - rpaccess.exe
-            - rpwhostscr.exe
+            - '\\remotepass-access.exe'
+            - '\\rpaccess.exe'
+            - '\\rpwhostscr.exe'
     selection_image:
         Image|endswith:
-            - remotepass-access.exe
-            - rpaccess.exe
-            - rpwhostscr.exe
+            - '\\remotepass-access.exe'
+            - '\\rpaccess.exe'
+            - '\\rpwhostscr.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RemotePass

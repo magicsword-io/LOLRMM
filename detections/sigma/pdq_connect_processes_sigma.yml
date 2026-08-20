@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: pdq-connect*.exe
+        ParentImage|endswith: '\\pdq-connect*.exe'
     selection_image:
-        Image|endswith: pdq-connect*.exe
+        Image|endswith: '\\pdq-connect*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of PDQ Connect

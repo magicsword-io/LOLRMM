@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: IliAS.exe
+        ParentImage|endswith: '\\IliAS.exe'
     selection_image:
-        Image|endswith: IliAS.exe
+        Image|endswith: '\\IliAS.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SysAid

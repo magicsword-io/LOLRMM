@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'NetViewer.exe'
-            - 'nvClient.exe'
-            - 'nvConsole.exe'
+            - '\\NetViewer.exe'
+            - '\\nvClient.exe'
+            - '\\nvConsole.exe'
     selection_image:
         Image|endswith:
-            - 'NetViewer.exe'
-            - 'nvClient.exe'
-            - 'nvConsole.exe'
+            - '\\NetViewer.exe'
+            - '\\nvClient.exe'
+            - '\\nvConsole.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Netviewer (GoToMeet)

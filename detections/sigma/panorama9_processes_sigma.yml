@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: p9agent*.exe
+        ParentImage|endswith: '\\p9agent*.exe'
     selection_image:
-        Image|endswith: p9agent*.exe
+        Image|endswith: '\\p9agent*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Panorama9

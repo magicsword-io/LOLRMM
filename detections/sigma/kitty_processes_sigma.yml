@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - kitty.exe
-            - kitty.exe
+            - '\\kitty.exe'
+            - '\\kitty.exe'
     selection_image:
         Image|endswith:
-            - kitty.exe
-            - kitty.exe
+            - '\\kitty.exe'
+            - '\\kitty.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of KiTTY

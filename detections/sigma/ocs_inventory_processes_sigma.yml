@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ocsinventory.exe
-            - ocsservice.exe
+            - '\\ocsinventory.exe'
+            - '\\ocsservice.exe'
     selection_image:
         Image|endswith:
-            - ocsinventory.exe
-            - ocsservice.exe
+            - '\\ocsinventory.exe'
+            - '\\ocsservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of OCS inventory

@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - iadmin.exe
-            - intelliadmin.exe
-            - agent32.exe
-            - agent64.exe
-            - agent_setup_5.exe
+            - '\\iadmin.exe'
+            - '\\intelliadmin.exe'
+            - '\\agent32.exe'
+            - '\\agent64.exe'
+            - '\\agent_setup_5.exe'
     selection_image:
         Image|endswith:
-            - iadmin.exe
-            - intelliadmin.exe
-            - agent32.exe
-            - agent64.exe
-            - agent_setup_5.exe
+            - '\\iadmin.exe'
+            - '\\intelliadmin.exe'
+            - '\\agent32.exe'
+            - '\\agent64.exe'
+            - '\\agent_setup_5.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of IntelliAdmin Remote Control

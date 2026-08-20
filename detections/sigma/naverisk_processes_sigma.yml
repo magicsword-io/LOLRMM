@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: AgentSetup-*.exe
+        ParentImage|endswith: '\\AgentSetup-*.exe'
     selection_image:
-        Image|endswith: AgentSetup-*.exe
+        Image|endswith: '\\AgentSetup-*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Naverisk

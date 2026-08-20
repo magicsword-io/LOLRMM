@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - gp3.exe
-            - gp4.exe
-            - gp5.exe
+            - '\\gp3.exe'
+            - '\\gp4.exe'
+            - '\\gp5.exe'
     selection_image:
         Image|endswith:
-            - gp3.exe
-            - gp4.exe
-            - gp5.exe
+            - '\\gp3.exe'
+            - '\\gp4.exe'
+            - '\\gp5.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of GatherPlace-desktop sharing

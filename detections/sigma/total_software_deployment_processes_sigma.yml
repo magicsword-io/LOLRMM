@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tniwinagent.exe
-            - Tsdservice.exe
+            - '\\tniwinagent.exe'
+            - '\\Tsdservice.exe'
     selection_image:
         Image|endswith:
-            - tniwinagent.exe
-            - Tsdservice.exe
+            - '\\tniwinagent.exe'
+            - '\\Tsdservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Total Software Deployment

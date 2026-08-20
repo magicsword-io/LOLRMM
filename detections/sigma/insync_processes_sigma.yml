@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Insync.exe
-            - Insync.exe
-            - Insync.exe
+            - '\\Insync.exe'
+            - '\\Insync.exe'
+            - '\\Insync.exe'
     selection_image:
         Image|endswith:
-            - Insync.exe
-            - Insync.exe
-            - Insync.exe
+            - '\\Insync.exe'
+            - '\\Insync.exe'
+            - '\\Insync.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Insync

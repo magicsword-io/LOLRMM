@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - crossloopservice.exe
-            - CrossLoopConnect.exe
-            - WinVNCStub.exe
+            - '\\crossloopservice.exe'
+            - '\\CrossLoopConnect.exe'
+            - '\\WinVNCStub.exe'
     selection_image:
         Image|endswith:
-            - crossloopservice.exe
-            - CrossLoopConnect.exe
-            - WinVNCStub.exe
+            - '\\crossloopservice.exe'
+            - '\\CrossLoopConnect.exe'
+            - '\\WinVNCStub.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of CrossLoop

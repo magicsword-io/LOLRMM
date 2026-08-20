@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Sorillus-Launcher*.exe
-            - Sorillus Launcher.exe
+            - '\\Sorillus-Launcher*.exe'
+            - '\\Sorillus Launcher.exe'
     selection_image:
         Image|endswith:
-            - Sorillus-Launcher*.exe
-            - Sorillus Launcher.exe
+            - '\\Sorillus-Launcher*.exe'
+            - '\\Sorillus Launcher.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Sorillus

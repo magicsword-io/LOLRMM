@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - seetrolcenter.exe
-            - seetrolclient.exe
-            - seetrolmyservice.exe
-            - seetrolremote.exe
-            - seetrolsetting.exe
+            - '\\seetrolcenter.exe'
+            - '\\seetrolclient.exe'
+            - '\\seetrolmyservice.exe'
+            - '\\seetrolremote.exe'
+            - '\\seetrolsetting.exe'
     selection_image:
         Image|endswith:
-            - seetrolcenter.exe
-            - seetrolclient.exe
-            - seetrolmyservice.exe
-            - seetrolremote.exe
-            - seetrolsetting.exe
+            - '\\seetrolcenter.exe'
+            - '\\seetrolclient.exe'
+            - '\\seetrolmyservice.exe'
+            - '\\seetrolremote.exe'
+            - '\\seetrolsetting.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Seetrol

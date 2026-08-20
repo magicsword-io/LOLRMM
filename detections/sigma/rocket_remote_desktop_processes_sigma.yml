@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - RDConsole.exe
-            - RocketRemoteDesktop_Setup.exe
+            - '\\RDConsole.exe'
+            - '\\RocketRemoteDesktop_Setup.exe'
     selection_image:
         Image|endswith:
-            - RDConsole.exe
-            - RocketRemoteDesktop_Setup.exe
+            - '\\RDConsole.exe'
+            - '\\RocketRemoteDesktop_Setup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Rocket Remote Desktop

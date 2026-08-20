@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - nateon*.exe
-            - nateon.exe
-            - nateonmain.exe
+            - '\\nateon*.exe'
+            - '\\nateon.exe'
+            - '\\nateonmain.exe'
     selection_image:
         Image|endswith:
-            - nateon*.exe
-            - nateon.exe
-            - nateonmain.exe
+            - '\\nateon*.exe'
+            - '\\nateon.exe'
+            - '\\nateonmain.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of NoteOn-desktop sharing

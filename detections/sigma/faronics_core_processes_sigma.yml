@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
+            - '\\FaronicsCoreAgent.exe'
+            - '\\CoreAgentService.exe'
+            - '\\FaronicsCoreAgent.exe'
+            - '\\CoreAgentService.exe'
     selection_image:
         Image|endswith:
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
+            - '\\FaronicsCoreAgent.exe'
+            - '\\CoreAgentService.exe'
+            - '\\FaronicsCoreAgent.exe'
+            - '\\CoreAgentService.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Faronics Core

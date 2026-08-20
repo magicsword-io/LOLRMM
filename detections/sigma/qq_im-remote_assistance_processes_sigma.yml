@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - qq.exe
-            - QQProtect.exe
-            - qqpcmgr.exe
+            - '\\qq.exe'
+            - '\\QQProtect.exe'
+            - '\\qqpcmgr.exe'
     selection_image:
         Image|endswith:
-            - qq.exe
-            - QQProtect.exe
-            - qqpcmgr.exe
+            - '\\qq.exe'
+            - '\\QQProtect.exe'
+            - '\\qqpcmgr.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of QQ IM-remote assistance

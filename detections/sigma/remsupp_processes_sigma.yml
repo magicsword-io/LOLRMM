@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'installer.exe'
-            - 'RemSupp.exe'
-            - 'Uninstall RemSupp.exe'
+            - '\\installer.exe'
+            - '\\RemSupp.exe'
+            - '\\Uninstall RemSupp.exe'
     selection_image:
         Image|endswith:
-            - 'installer.exe'
-            - 'RemSupp.exe'
-            - 'Uninstall RemSupp.exe'
+            - '\\installer.exe'
+            - '\\RemSupp.exe'
+            - '\\Uninstall RemSupp.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RemSupp

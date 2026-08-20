@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'agent.exe'
-            - 'amon.exe'
+            - '\\agent.exe'
+            - '\\amon.exe'
     selection_image:
         Image|endswith:
-            - 'agent.exe'
-            - 'amon.exe'
+            - '\\agent.exe'
+            - '\\amon.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Monitic

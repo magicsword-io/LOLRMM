@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - OTService.exe
-            - OTPowerShell.exe
+            - '\\OTService.exe'
+            - '\\OTPowerShell.exe'
     selection_image:
         Image|endswith:
-            - OTService.exe
-            - OTPowerShell.exe
+            - '\\OTService.exe'
+            - '\\OTPowerShell.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of OptiTune

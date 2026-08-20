@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: webrdp.exe
+        ParentImage|endswith: '\\webrdp.exe'
     selection_image:
-        Image|endswith: webrdp.exe
+        Image|endswith: '\\webrdp.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of WebRDP

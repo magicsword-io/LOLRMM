@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - RDPWInst.exe
-            - RDPCheck.exe
-            - RDPConf.exe
+            - '\\RDPWInst.exe'
+            - '\\RDPCheck.exe'
+            - '\\RDPConf.exe'
     selection_image:
         Image|endswith:
-            - RDPWInst.exe
-            - RDPCheck.exe
-            - RDPConf.exe
+            - '\\RDPWInst.exe'
+            - '\\RDPCheck.exe'
+            - '\\RDPConf.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of rdpwrap

@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: 'RemoteRipple.exe'
+        ParentImage|endswith: '\\RemoteRipple.exe'
     selection_image:
-        Image|endswith: 'RemoteRipple.exe'
+        Image|endswith: '\\RemoteRipple.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remote Ripple

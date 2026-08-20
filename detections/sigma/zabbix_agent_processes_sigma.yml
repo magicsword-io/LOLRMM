@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: zabbix_agent*.exe
+        ParentImage|endswith: '\\zabbix_agent*.exe'
     selection_image:
-        Image|endswith: zabbix_agent*.exe
+        Image|endswith: '\\zabbix_agent*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Zabbix Agent

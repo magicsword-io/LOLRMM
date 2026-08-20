@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'InvGate-ED.exe'
-            - 'DepHlp.exe'
-            - 'InvGateAssetsRD.exe'
-            - 'InvGateRD.exe'
+            - '\\InvGate-ED.exe'
+            - '\\DepHlp.exe'
+            - '\\InvGateAssetsRD.exe'
+            - '\\InvGateRD.exe'
     selection_image:
         Image|endswith:
-            - 'InvGate-ED.exe'
-            - 'DepHlp.exe'
-            - 'InvGateAssetsRD.exe'
-            - 'InvGateRD.exe'
+            - '\\InvGate-ED.exe'
+            - '\\DepHlp.exe'
+            - '\\InvGateAssetsRD.exe'
+            - '\\InvGateRD.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of InvGate

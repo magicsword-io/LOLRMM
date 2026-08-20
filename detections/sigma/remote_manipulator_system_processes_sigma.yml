@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rfusclient.exe
-            - rutserv.exe
+            - '\\rfusclient.exe'
+            - '\\rutserv.exe'
     selection_image:
         Image|endswith:
-            - rfusclient.exe
-            - rutserv.exe
+            - '\\rfusclient.exe'
+            - '\\rutserv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remote Manipulator System

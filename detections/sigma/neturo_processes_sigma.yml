@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - neturo*.exe
-            - ntrntservice.exe
-            - neturo.exe
+            - '\\neturo*.exe'
+            - '\\ntrntservice.exe'
+            - '\\neturo.exe'
     selection_image:
         Image|endswith:
-            - neturo*.exe
-            - ntrntservice.exe
-            - neturo.exe
+            - '\\neturo*.exe'
+            - '\\ntrntservice.exe'
+            - '\\neturo.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Neturo

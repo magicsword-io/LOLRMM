@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: ngrok.exe
+        ParentImage|endswith: '\\ngrok.exe'
     selection_image:
-        Image|endswith: ngrok.exe
+        Image|endswith: '\\ngrok.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ngrok

@@ -16,20 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - gotoassist.exe
-            - g2a*.exe
-            - GoTo Assist Opener.exe
-            - g2mcomm.exe
-            - goto opener.exe
-            - g2ax_comm_customer.exe
+            - '\\gotoassist.exe'
+            - '\\g2a*.exe'
+            - '\\GoTo Assist Opener.exe'
+            - '\\g2mcomm.exe'
+            - '\\goto opener.exe'
+            - '\\g2ax_comm_customer.exe'
     selection_image:
         Image|endswith:
-            - gotoassist.exe
-            - g2a*.exe
-            - GoTo Assist Opener.exe
-            - g2mcomm.exe
-            - goto opener.exe
-            - g2ax_comm_customer.exe
+            - '\\gotoassist.exe'
+            - '\\g2a*.exe'
+            - '\\GoTo Assist Opener.exe'
+            - '\\g2mcomm.exe'
+            - '\\goto opener.exe'
+            - '\\g2ax_comm_customer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of GoToAssist

@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rutview.exe
-            - rutserv.exe
+            - '\\rutview.exe'
+            - '\\rutserv.exe'
     selection_image:
         Image|endswith:
-            - rutview.exe
-            - rutserv.exe
+            - '\\rutview.exe'
+            - '\\rutserv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remote Utilities

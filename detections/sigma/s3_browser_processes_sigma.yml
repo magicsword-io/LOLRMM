@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: s3browser*.exe
+        ParentImage|endswith: '\\s3browser*.exe'
     selection_image:
-        Image|endswith: s3browser*.exe
+        Image|endswith: '\\s3browser*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of S3 Browser

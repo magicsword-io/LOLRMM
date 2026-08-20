@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - CagService.exe
-            - AEMAgent.exe
+            - '\\CagService.exe'
+            - '\\AEMAgent.exe'
     selection_image:
         Image|endswith:
-            - CagService.exe
-            - AEMAgent.exe
+            - '\\CagService.exe'
+            - '\\AEMAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of CentraStage (Now Datto)

@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: echoserver*.exe
+        ParentImage|endswith: '\\echoserver*.exe'
     selection_image:
-        Image|endswith: echoserver*.exe
+        Image|endswith: '\\echoserver*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Echoware

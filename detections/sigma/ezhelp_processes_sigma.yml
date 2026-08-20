@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ezhelpclientmanager.exe
-            - ezHelpManager.exe
-            - ezhelpclient.exe
+            - '\\ezhelpclientmanager.exe'
+            - '\\ezHelpManager.exe'
+            - '\\ezhelpclient.exe'
     selection_image:
         Image|endswith:
-            - ezhelpclientmanager.exe
-            - ezHelpManager.exe
-            - ezhelpclient.exe
+            - '\\ezhelpclientmanager.exe'
+            - '\\ezHelpManager.exe'
+            - '\\ezhelpclient.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ezHelp

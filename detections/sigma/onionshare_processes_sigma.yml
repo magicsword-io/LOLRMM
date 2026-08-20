@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: onionshare*.exe
+        ParentImage|endswith: '\\onionshare*.exe'
     selection_image:
-        Image|endswith: onionshare*.exe
+        Image|endswith: '\\onionshare*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Onionshare

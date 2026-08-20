@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - TaniumClient.exe
-            - TaniumCX.exe
-            - TaniumExecWrapper.exe
-            - TaniumFileInfo.exe
-            - TPowerShell.exe
+            - '\\TaniumClient.exe'
+            - '\\TaniumCX.exe'
+            - '\\TaniumExecWrapper.exe'
+            - '\\TaniumFileInfo.exe'
+            - '\\TPowerShell.exe'
     selection_image:
         Image|endswith:
-            - TaniumClient.exe
-            - TaniumCX.exe
-            - TaniumExecWrapper.exe
-            - TaniumFileInfo.exe
-            - TPowerShell.exe
+            - '\\TaniumClient.exe'
+            - '\\TaniumCX.exe'
+            - '\\TaniumExecWrapper.exe'
+            - '\\TaniumFileInfo.exe'
+            - '\\TPowerShell.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Tanium

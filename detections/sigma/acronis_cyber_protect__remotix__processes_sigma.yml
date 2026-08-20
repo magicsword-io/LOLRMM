@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - AcronisCyberProtectConnectQuickAssist*.exe
-            - AcronisCyberProtectConnectAgent.exe
+            - '\\AcronisCyberProtectConnectQuickAssist*.exe'
+            - '\\AcronisCyberProtectConnectAgent.exe'
     selection_image:
         Image|endswith:
-            - AcronisCyberProtectConnectQuickAssist*.exe
-            - AcronisCyberProtectConnectAgent.exe
+            - '\\AcronisCyberProtectConnectQuickAssist*.exe'
+            - '\\AcronisCyberProtectConnectAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Acronis Cyber Protect (Remotix)

@@ -16,20 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - mikogo.exe
-            - mikogo-starter.exe
-            - mikogo-service.exe
-            - mikogolauncher.exe
-            - Mikogo-Service.exe
-            - Mikogo-Screen-Service.exe
+            - '\\mikogo.exe'
+            - '\\mikogo-starter.exe'
+            - '\\mikogo-service.exe'
+            - '\\mikogolauncher.exe'
+            - '\\Mikogo-Service.exe'
+            - '\\Mikogo-Screen-Service.exe'
     selection_image:
         Image|endswith:
-            - mikogo.exe
-            - mikogo-starter.exe
-            - mikogo-service.exe
-            - mikogolauncher.exe
-            - Mikogo-Service.exe
-            - Mikogo-Screen-Service.exe
+            - '\\mikogo.exe'
+            - '\\mikogo-starter.exe'
+            - '\\mikogo-service.exe'
+            - '\\mikogolauncher.exe'
+            - '\\Mikogo-Service.exe'
+            - '\\Mikogo-Screen-Service.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Mikogo

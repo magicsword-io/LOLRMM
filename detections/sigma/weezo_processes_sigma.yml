@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - weezohttpd.exe
-            - weezo.exe
-            - weezo setup*.exe
+            - '\\weezohttpd.exe'
+            - '\\weezo.exe'
+            - '\\weezo setup*.exe'
     selection_image:
         Image|endswith:
-            - weezohttpd.exe
-            - weezo.exe
-            - weezo setup*.exe
+            - '\\weezohttpd.exe'
+            - '\\weezo.exe'
+            - '\\weezo setup*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Weezo

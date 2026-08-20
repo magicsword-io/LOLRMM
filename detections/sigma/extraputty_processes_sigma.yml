@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
+            - '\\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '\\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '\\ExtraPuTTY-0.30-2016-01-28-installer.exe'
     selection_image:
         Image|endswith:
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
-            - ExtraPuTTY-0.30-2016-01-28-installer.exe
+            - '\\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '\\ExtraPuTTY-0.30-2016-01-28-installer.exe'
+            - '\\ExtraPuTTY-0.30-2016-01-28-installer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ExtraPuTTY

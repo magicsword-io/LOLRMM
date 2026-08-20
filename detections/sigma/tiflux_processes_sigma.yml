@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'TiService.exe'
-            - 'TiUpdateService.exe'
-            - 'si.exe'
-            - 'TiAgent.exe'
+            - '\\TiService.exe'
+            - '\\TiUpdateService.exe'
+            - '\\si.exe'
+            - '\\TiAgent.exe'
     selection_image:
         Image|endswith:
-            - 'TiService.exe'
-            - 'TiUpdateService.exe'
-            - 'si.exe'
-            - 'TiAgent.exe'
+            - '\\TiService.exe'
+            - '\\TiUpdateService.exe'
+            - '\\si.exe'
+            - '\\TiAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TiFLUX

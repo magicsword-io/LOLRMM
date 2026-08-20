@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - netviewer*.exe
-            - netviewer.exe
+            - '\\netviewer*.exe'
+            - '\\netviewer.exe'
     selection_image:
         Image|endswith:
-            - netviewer*.exe
-            - netviewer.exe
+            - '\\netviewer*.exe'
+            - '\\netviewer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Netviewer

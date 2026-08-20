@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ltsvc.exe
-            - ltsvcmon.exe
-            - lttray.exe
+            - '\\ltsvc.exe'
+            - '\\ltsvcmon.exe'
+            - '\\lttray.exe'
     selection_image:
         Image|endswith:
-            - ltsvc.exe
-            - ltsvcmon.exe
-            - lttray.exe
+            - '\\ltsvc.exe'
+            - '\\ltsvcmon.exe'
+            - '\\lttray.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Connectwise Automate (LabTech)

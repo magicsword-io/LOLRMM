@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: royalts.exe
+        ParentImage|endswith: '\\royalts.exe'
     selection_image:
-        Image|endswith: royalts.exe
+        Image|endswith: '\\royalts.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Royal TS

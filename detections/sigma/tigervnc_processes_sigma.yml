@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tigervnc*.exe
-            - winvnc4.exe
-            - tvnserver.exe
+            - '\\tigervnc*.exe'
+            - '\\winvnc4.exe'
+            - '\\tvnserver.exe'
     selection_image:
         Image|endswith:
-            - tigervnc*.exe
-            - winvnc4.exe
-            - tvnserver.exe
+            - '\\tigervnc*.exe'
+            - '\\winvnc4.exe'
+            - '\\tvnserver.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TigerVNC

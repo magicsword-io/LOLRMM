@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ir_agent.exe
-            - rapid7_agent_core.exe
-            - rapid7_endpoint_broker.exe
+            - '\\ir_agent.exe'
+            - '\\rapid7_agent_core.exe'
+            - '\\rapid7_endpoint_broker.exe'
     selection_image:
         Image|endswith:
-            - ir_agent.exe
-            - rapid7_agent_core.exe
-            - rapid7_endpoint_broker.exe
+            - '\\ir_agent.exe'
+            - '\\rapid7_agent_core.exe'
+            - '\\rapid7_endpoint_broker.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Rapid7

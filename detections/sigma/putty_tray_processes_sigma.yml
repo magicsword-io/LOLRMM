@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - puttytray.exe
-            - puttytray.exe
+            - '\\puttytray.exe'
+            - '\\puttytray.exe'
     selection_image:
         Image|endswith:
-            - puttytray.exe
-            - puttytray.exe
+            - '\\puttytray.exe'
+            - '\\puttytray.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of PuTTY Tray

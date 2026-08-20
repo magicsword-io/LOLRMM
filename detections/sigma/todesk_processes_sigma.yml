@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - todesk.exe
-            - ToDesk_Service.exe
-            - ToDesk_Setup.exe
+            - '\\todesk.exe'
+            - '\\ToDesk_Service.exe'
+            - '\\ToDesk_Setup.exe'
     selection_image:
         Image|endswith:
-            - todesk.exe
-            - ToDesk_Service.exe
-            - ToDesk_Setup.exe
+            - '\\todesk.exe'
+            - '\\ToDesk_Service.exe'
+            - '\\ToDesk_Setup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ToDesk

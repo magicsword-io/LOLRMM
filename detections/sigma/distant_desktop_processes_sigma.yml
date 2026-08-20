@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ddsystem.exe
-            - dd.exe
-            - distant-desktop.exe
+            - '\\ddsystem.exe'
+            - '\\dd.exe'
+            - '\\distant-desktop.exe'
     selection_image:
         Image|endswith:
-            - ddsystem.exe
-            - dd.exe
-            - distant-desktop.exe
+            - '\\ddsystem.exe'
+            - '\\dd.exe'
+            - '\\distant-desktop.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Distant Desktop

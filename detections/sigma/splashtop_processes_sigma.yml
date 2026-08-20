@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: strwinclt.exe
+        ParentImage|endswith: '\\strwinclt.exe'
     selection_image:
-        Image|endswith: strwinclt.exe
+        Image|endswith: '\\strwinclt.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Splashtop

@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: mygreenpc.exe
+        ParentImage|endswith: '\\mygreenpc.exe'
     selection_image:
-        Image|endswith: mygreenpc.exe
+        Image|endswith: '\\mygreenpc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of MyGreenPC

@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Radmin.exe
-            - rserver3.exe
+            - '\\Radmin.exe'
+            - '\\rserver3.exe'
     selection_image:
         Image|endswith:
-            - Radmin.exe
-            - rserver3.exe
+            - '\\Radmin.exe'
+            - '\\rserver3.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RAdmin

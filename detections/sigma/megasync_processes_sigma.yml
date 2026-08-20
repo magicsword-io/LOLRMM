@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - MEGAsyncSetup64.exe
-            - MEGAupdater.exe
+            - '\\MEGAsyncSetup64.exe'
+            - '\\MEGAupdater.exe'
     selection_image:
         Image|endswith:
-            - MEGAsyncSetup64.exe
-            - MEGAupdater.exe
+            - '\\MEGAsyncSetup64.exe'
+            - '\\MEGAupdater.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of MEGAsync

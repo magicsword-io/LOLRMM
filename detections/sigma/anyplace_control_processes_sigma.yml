@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: apc_host.exe
+        ParentImage|endswith: '\\apc_host.exe'
     selection_image:
-        Image|endswith: apc_host.exe
+        Image|endswith: '\\apc_host.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Anyplace Control

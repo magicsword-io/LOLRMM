@@ -16,28 +16,28 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ITSMAgent.exe
-            - RViewer.exe
-            - ItsmRsp.exe
-            - RAccess.exe
-            - RmmService.exe
-            - ITarianRemoteAccessSetup.exe
-            - RDesktop.exe
-            - ComodoRemoteControl.exe
-            - ITSMService.exe
-            - RHost.exe
+            - '\\ITSMAgent.exe'
+            - '\\RViewer.exe'
+            - '\\ItsmRsp.exe'
+            - '\\RAccess.exe'
+            - '\\RmmService.exe'
+            - '\\ITarianRemoteAccessSetup.exe'
+            - '\\RDesktop.exe'
+            - '\\ComodoRemoteControl.exe'
+            - '\\ITSMService.exe'
+            - '\\RHost.exe'
     selection_image:
         Image|endswith:
-            - ITSMAgent.exe
-            - RViewer.exe
-            - ItsmRsp.exe
-            - RAccess.exe
-            - RmmService.exe
-            - ITarianRemoteAccessSetup.exe
-            - RDesktop.exe
-            - ComodoRemoteControl.exe
-            - ITSMService.exe
-            - RHost.exe
+            - '\\ITSMAgent.exe'
+            - '\\RViewer.exe'
+            - '\\ItsmRsp.exe'
+            - '\\RAccess.exe'
+            - '\\RmmService.exe'
+            - '\\ITarianRemoteAccessSetup.exe'
+            - '\\RDesktop.exe'
+            - '\\ComodoRemoteControl.exe'
+            - '\\ITSMService.exe'
+            - '\\RHost.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Itarian

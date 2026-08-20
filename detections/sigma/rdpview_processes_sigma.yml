@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: dwrcs.exe
+        ParentImage|endswith: '\\dwrcs.exe'
     selection_image:
-        Image|endswith: dwrcs.exe
+        Image|endswith: '\\dwrcs.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RDPView

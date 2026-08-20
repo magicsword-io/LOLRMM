@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - parallelsaccess-*.exe
-            - TSClient.exe
-            - prl_deskctl_agent.exe
-            - prl_deskctl_wizard.exe
-            - prl_pm_service.exe
+            - '\\parallelsaccess-*.exe'
+            - '\\TSClient.exe'
+            - '\\prl_deskctl_agent.exe'
+            - '\\prl_deskctl_wizard.exe'
+            - '\\prl_pm_service.exe'
     selection_image:
         Image|endswith:
-            - parallelsaccess-*.exe
-            - TSClient.exe
-            - prl_deskctl_agent.exe
-            - prl_deskctl_wizard.exe
-            - prl_pm_service.exe
+            - '\\parallelsaccess-*.exe'
+            - '\\TSClient.exe'
+            - '\\prl_deskctl_agent.exe'
+            - '\\prl_deskctl_wizard.exe'
+            - '\\prl_pm_service.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Parallels Access

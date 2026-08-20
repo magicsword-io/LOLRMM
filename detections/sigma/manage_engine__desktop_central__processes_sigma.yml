@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - dcagentservice.exe
-            - dcagentregister.exe
+            - '\\dcagentservice.exe'
+            - '\\dcagentregister.exe'
     selection_image:
         Image|endswith:
-            - dcagentservice.exe
-            - dcagentregister.exe
+            - '\\dcagentservice.exe'
+            - '\\dcagentregister.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Manage Engine (Desktop Central)

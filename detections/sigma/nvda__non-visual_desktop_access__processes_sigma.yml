@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'nvda.exe'
-            - 'nvda.exe'
-            - 'nvda.exe'
-            - 'nvda_service.exe'
-            - 'nvda_*.exe'
+            - '\\nvda.exe'
+            - '\\nvda.exe'
+            - '\\nvda.exe'
+            - '\\nvda_service.exe'
+            - '\\nvda_*.exe'
     selection_image:
         Image|endswith:
-            - 'nvda.exe'
-            - 'nvda.exe'
-            - 'nvda.exe'
-            - 'nvda_service.exe'
-            - 'nvda_*.exe'
+            - '\\nvda.exe'
+            - '\\nvda.exe'
+            - '\\nvda.exe'
+            - '\\nvda_service.exe'
+            - '\\nvda_*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of NVDA (Non-Visual Desktop Access)

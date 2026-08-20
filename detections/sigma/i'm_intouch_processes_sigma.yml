@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - iit.exe
-            - intouch.exe
-            - I'm InTouch Go Installer.exe
+            - '\\iit.exe'
+            - '\\intouch.exe'
+            - '\\I''m InTouch Go Installer.exe'
     selection_image:
         Image|endswith:
-            - iit.exe
-            - intouch.exe
-            - I'm InTouch Go Installer.exe
+            - '\\iit.exe'
+            - '\\intouch.exe'
+            - '\\I''m InTouch Go Installer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of I'm InTouch

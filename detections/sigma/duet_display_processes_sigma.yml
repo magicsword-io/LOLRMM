@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'duet.exe'
-            - 'DuetSetup.exe'
-            - 'DuetDisp.exe'
+            - '\\duet.exe'
+            - '\\DuetSetup.exe'
+            - '\\DuetDisp.exe'
     selection_image:
         Image|endswith:
-            - 'duet.exe'
-            - 'DuetSetup.exe'
-            - 'DuetDisp.exe'
+            - '\\duet.exe'
+            - '\\DuetSetup.exe'
+            - '\\DuetDisp.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Duet Display

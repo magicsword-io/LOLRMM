@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: DragonDisk.exe
+        ParentImage|endswith: '\\DragonDisk.exe'
     selection_image:
-        Image|endswith: DragonDisk.exe
+        Image|endswith: '\\DragonDisk.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DragonDisk

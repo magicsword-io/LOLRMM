@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - Xpra-Launcher.exe
-            - Xpra-x86_64_Setup.exe
+            - '\\Xpra-Launcher.exe'
+            - '\\Xpra-x86_64_Setup.exe'
     selection_image:
         Image|endswith:
-            - Xpra-Launcher.exe
-            - Xpra-x86_64_Setup.exe
+            - '\\Xpra-Launcher.exe'
+            - '\\Xpra-x86_64_Setup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Xpra

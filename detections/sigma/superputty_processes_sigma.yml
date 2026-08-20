@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: superputty.exe
+        ParentImage|endswith: '\\superputty.exe'
     selection_image:
-        Image|endswith: superputty.exe
+        Image|endswith: '\\superputty.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SuperPuTTY

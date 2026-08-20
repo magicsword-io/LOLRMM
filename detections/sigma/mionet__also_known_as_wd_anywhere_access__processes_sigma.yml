@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - mionet.exe
-            - mionetmanager.exe
+            - '\\mionet.exe'
+            - '\\mionetmanager.exe'
     selection_image:
         Image|endswith:
-            - mionet.exe
-            - mionetmanager.exe
+            - '\\mionet.exe'
+            - '\\mionetmanager.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of MioNet (Also known as WD Anywhere Access)

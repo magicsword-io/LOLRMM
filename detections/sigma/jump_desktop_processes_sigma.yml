@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - jumpclient.exe
-            - jumpdesktop.exe
-            - jumpservice.exe
-            - jumpconnect.exe
-            - jumpupdater.exe
+            - '\\jumpclient.exe'
+            - '\\jumpdesktop.exe'
+            - '\\jumpservice.exe'
+            - '\\jumpconnect.exe'
+            - '\\jumpupdater.exe'
     selection_image:
         Image|endswith:
-            - jumpclient.exe
-            - jumpdesktop.exe
-            - jumpservice.exe
-            - jumpconnect.exe
-            - jumpupdater.exe
+            - '\\jumpclient.exe'
+            - '\\jumpdesktop.exe'
+            - '\\jumpservice.exe'
+            - '\\jumpconnect.exe'
+            - '\\jumpupdater.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Jump Desktop

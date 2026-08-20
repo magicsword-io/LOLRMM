@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - superopsticket.exe
-            - superops.exe
+            - '\\superopsticket.exe'
+            - '\\superops.exe'
     selection_image:
         Image|endswith:
-            - superopsticket.exe
-            - superops.exe
+            - '\\superopsticket.exe'
+            - '\\superops.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SuperOps

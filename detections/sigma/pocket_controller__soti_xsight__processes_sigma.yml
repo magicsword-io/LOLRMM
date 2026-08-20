@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pocketcontroller.exe
-            - wysebrowser.exe
-            - XSightService.exe
+            - '\\pocketcontroller.exe'
+            - '\\wysebrowser.exe'
+            - '\\XSightService.exe'
     selection_image:
         Image|endswith:
-            - pocketcontroller.exe
-            - wysebrowser.exe
-            - XSightService.exe
+            - '\\pocketcontroller.exe'
+            - '\\wysebrowser.exe'
+            - '\\XSightService.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pocket Controller (Soti Xsight)

@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - nxplayer.exe
-            - nxplayer.exe
+            - '\\nxplayer.exe'
+            - '\\nxplayer.exe'
     selection_image:
         Image|endswith:
-            - nxplayer.exe
-            - nxplayer.exe
+            - '\\nxplayer.exe'
+            - '\\nxplayer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of FreeNX

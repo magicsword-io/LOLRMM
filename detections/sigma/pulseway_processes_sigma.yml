@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - PCMonitorManager.exe
-            - pcmonitorsrv.exe
+            - '\\PCMonitorManager.exe'
+            - '\\pcmonitorsrv.exe'
     selection_image:
         Image|endswith:
-            - PCMonitorManager.exe
-            - pcmonitorsrv.exe
+            - '\\PCMonitorManager.exe'
+            - '\\pcmonitorsrv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pulseway

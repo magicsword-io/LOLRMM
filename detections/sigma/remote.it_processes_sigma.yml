@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - remote-it-installer.exe
-            - remote.it.exe
-            - remoteit.exe
+            - '\\remote-it-installer.exe'
+            - '\\remote.it.exe'
+            - '\\remoteit.exe'
     selection_image:
         Image|endswith:
-            - remote-it-installer.exe
-            - remote.it.exe
-            - remoteit.exe
+            - '\\remote-it-installer.exe'
+            - '\\remote.it.exe'
+            - '\\remoteit.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remote.it

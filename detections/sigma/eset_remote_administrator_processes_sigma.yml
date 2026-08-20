@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - era.exe
-            - einstaller.exe
-            - ezhelp*.exe
-            - eratool.exe
-            - ERAAgent.exe
+            - '\\era.exe'
+            - '\\einstaller.exe'
+            - '\\ezhelp*.exe'
+            - '\\eratool.exe'
+            - '\\ERAAgent.exe'
     selection_image:
         Image|endswith:
-            - era.exe
-            - einstaller.exe
-            - ezhelp*.exe
-            - eratool.exe
-            - ERAAgent.exe
+            - '\\era.exe'
+            - '\\einstaller.exe'
+            - '\\ezhelp*.exe'
+            - '\\eratool.exe'
+            - '\\ERAAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ESET Remote Administrator

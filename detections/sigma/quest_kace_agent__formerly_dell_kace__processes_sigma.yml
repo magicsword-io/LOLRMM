@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: konea.exe
+        ParentImage|endswith: '\\konea.exe'
     selection_image:
-        Image|endswith: konea.exe
+        Image|endswith: '\\konea.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Quest KACE Agent (formerly Dell KACE)

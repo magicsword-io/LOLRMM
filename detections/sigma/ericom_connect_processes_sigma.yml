@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - EricomConnectRemoteHost*.exe
-            - ericomconnnectconfigurationtool.exe
+            - '\\EricomConnectRemoteHost*.exe'
+            - '\\ericomconnnectconfigurationtool.exe'
     selection_image:
         Image|endswith:
-            - EricomConnectRemoteHost*.exe
-            - ericomconnnectconfigurationtool.exe
+            - '\\EricomConnectRemoteHost*.exe'
+            - '\\ericomconnnectconfigurationtool.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Ericom Connect

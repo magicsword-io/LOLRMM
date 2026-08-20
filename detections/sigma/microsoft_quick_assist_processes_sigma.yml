@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: quickassist.exe
+        ParentImage|endswith: '\\quickassist.exe'
     selection_image:
-        Image|endswith: quickassist.exe
+        Image|endswith: '\\quickassist.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Microsoft Quick Assist

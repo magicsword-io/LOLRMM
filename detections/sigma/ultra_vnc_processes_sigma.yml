@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - UVNC_Launch.exe
-            - winvnc.exe
-            - vncviewer.exe
+            - '\\UVNC_Launch.exe'
+            - '\\winvnc.exe'
+            - '\\vncviewer.exe'
     selection_image:
         Image|endswith:
-            - UVNC_Launch.exe
-            - winvnc.exe
-            - vncviewer.exe
+            - '\\UVNC_Launch.exe'
+            - '\\winvnc.exe'
+            - '\\vncviewer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Ultra VNC

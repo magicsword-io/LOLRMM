@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tailscale-*.exe
-            - tailscaled.exe
-            - tailscale-ipn.exe
+            - '\\tailscale-*.exe'
+            - '\\tailscaled.exe'
+            - '\\tailscale-ipn.exe'
     selection_image:
         Image|endswith:
-            - tailscale-*.exe
-            - tailscaled.exe
-            - tailscale-ipn.exe
+            - '\\tailscale-*.exe'
+            - '\\tailscaled.exe'
+            - '\\tailscale-ipn.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Tailscale

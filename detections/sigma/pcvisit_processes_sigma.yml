@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pcvisit.exe
-            - pcvisit_client.exe
-            - pcvisit-easysupport.exe
-            - pcvisit_service_client.exe
+            - '\\pcvisit.exe'
+            - '\\pcvisit_client.exe'
+            - '\\pcvisit-easysupport.exe'
+            - '\\pcvisit_service_client.exe'
     selection_image:
         Image|endswith:
-            - pcvisit.exe
-            - pcvisit_client.exe
-            - pcvisit-easysupport.exe
-            - pcvisit_service_client.exe
+            - '\\pcvisit.exe'
+            - '\\pcvisit_client.exe'
+            - '\\pcvisit-easysupport.exe'
+            - '\\pcvisit_service_client.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pcvisit

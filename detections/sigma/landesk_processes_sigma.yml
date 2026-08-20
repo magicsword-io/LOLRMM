@@ -16,24 +16,24 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - issuser.exe
-            - landeskagentbootstrap.exe
-            - LANDeskPortalManager.exe
-            - ldinv32.exe
-            - ldsensors.exe
-            - issuser.exe
-            - softmon.exe
-            - tmcsvc.exe
+            - '\\issuser.exe'
+            - '\\landeskagentbootstrap.exe'
+            - '\\LANDeskPortalManager.exe'
+            - '\\ldinv32.exe'
+            - '\\ldsensors.exe'
+            - '\\issuser.exe'
+            - '\\softmon.exe'
+            - '\\tmcsvc.exe'
     selection_image:
         Image|endswith:
-            - issuser.exe
-            - landeskagentbootstrap.exe
-            - LANDeskPortalManager.exe
-            - ldinv32.exe
-            - ldsensors.exe
-            - issuser.exe
-            - softmon.exe
-            - tmcsvc.exe
+            - '\\issuser.exe'
+            - '\\landeskagentbootstrap.exe'
+            - '\\LANDeskPortalManager.exe'
+            - '\\ldinv32.exe'
+            - '\\ldsensors.exe'
+            - '\\issuser.exe'
+            - '\\softmon.exe'
+            - '\\tmcsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LANDesk

@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'Remotely_Agent.exe'
-            - 'Remotely_Desktop.exe'
+            - '\\Remotely_Agent.exe'
+            - '\\Remotely_Desktop.exe'
     selection_image:
         Image|endswith:
-            - 'Remotely_Agent.exe'
-            - 'Remotely_Desktop.exe'
+            - '\\Remotely_Agent.exe'
+            - '\\Remotely_Desktop.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remotely

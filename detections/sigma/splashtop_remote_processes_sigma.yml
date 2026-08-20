@@ -16,22 +16,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - strwinclt.exe
-            - Splashtop_Streamer_Windows*.exe
-            - SplashtopSOS.exe
-            - sragent.exe
-            - srmanager.exe
-            - srserver.exe
-            - srservice.exe
+            - '\\strwinclt.exe'
+            - '\\Splashtop_Streamer_Windows*.exe'
+            - '\\SplashtopSOS.exe'
+            - '\\sragent.exe'
+            - '\\srmanager.exe'
+            - '\\srserver.exe'
+            - '\\srservice.exe'
     selection_image:
         Image|endswith:
-            - strwinclt.exe
-            - Splashtop_Streamer_Windows*.exe
-            - SplashtopSOS.exe
-            - sragent.exe
-            - srmanager.exe
-            - srserver.exe
-            - srservice.exe
+            - '\\strwinclt.exe'
+            - '\\Splashtop_Streamer_Windows*.exe'
+            - '\\SplashtopSOS.exe'
+            - '\\sragent.exe'
+            - '\\srmanager.exe'
+            - '\\srserver.exe'
+            - '\\srservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Splashtop Remote

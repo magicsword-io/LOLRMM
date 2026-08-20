@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - remobo.exe
-            - remobo_client.exe
-            - remobo_tracker.exe
+            - '\\remobo.exe'
+            - '\\remobo_client.exe'
+            - '\\remobo_tracker.exe'
     selection_image:
         Image|endswith:
-            - remobo.exe
-            - remobo_client.exe
-            - remobo_tracker.exe
+            - '\\remobo.exe'
+            - '\\remobo_client.exe'
+            - '\\remobo_tracker.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Remobo

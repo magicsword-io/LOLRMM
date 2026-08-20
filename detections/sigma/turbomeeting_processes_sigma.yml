@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pcstarter.exe
-            - turbomeeting.exe
-            - turbomeetingstarter.exe
+            - '\\pcstarter.exe'
+            - '\\turbomeeting.exe'
+            - '\\turbomeetingstarter.exe'
     selection_image:
         Image|endswith:
-            - pcstarter.exe
-            - turbomeeting.exe
-            - turbomeetingstarter.exe
+            - '\\pcstarter.exe'
+            - '\\turbomeeting.exe'
+            - '\\turbomeetingstarter.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TurboMeeting

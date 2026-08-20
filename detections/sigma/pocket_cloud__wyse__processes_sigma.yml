@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - pocketcloud*.exe
-            - pocketcloudservice.exe
+            - '\\pocketcloud*.exe'
+            - '\\pocketcloudservice.exe'
     selection_image:
         Image|endswith:
-            - pocketcloud*.exe
-            - pocketcloudservice.exe
+            - '\\pocketcloud*.exe'
+            - '\\pocketcloudservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pocket Cloud (Wyse)

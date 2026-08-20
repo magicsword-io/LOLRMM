@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - bomgar-scc-*.exe
-            - bomgar-scc.exe
-            - bomgar-pac-*.exe
-            - bomgar-pac.exe
-            - bomgar-rdp.exe
+            - '\\bomgar-scc-*.exe'
+            - '\\bomgar-scc.exe'
+            - '\\bomgar-pac-*.exe'
+            - '\\bomgar-pac.exe'
+            - '\\bomgar-rdp.exe'
     selection_image:
         Image|endswith:
-            - bomgar-scc-*.exe
-            - bomgar-scc.exe
-            - bomgar-pac-*.exe
-            - bomgar-pac.exe
-            - bomgar-rdp.exe
+            - '\\bomgar-scc-*.exe'
+            - '\\bomgar-scc.exe'
+            - '\\bomgar-pac-*.exe'
+            - '\\bomgar-pac.exe'
+            - '\\bomgar-rdp.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of BeyondTrust (Bomgar)

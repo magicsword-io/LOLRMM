@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - TeamTaskManager.exe
-            - DSGuest.exe
+            - '\\TeamTaskManager.exe'
+            - '\\DSGuest.exe'
     selection_image:
         Image|endswith:
-            - TeamTaskManager.exe
-            - DSGuest.exe
+            - '\\TeamTaskManager.exe'
+            - '\\DSGuest.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of DeskShare

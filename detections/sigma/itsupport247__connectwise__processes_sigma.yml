@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: saazapsc.exe
+        ParentImage|endswith: '\\saazapsc.exe'
     selection_image:
-        Image|endswith: saazapsc.exe
+        Image|endswith: '\\saazapsc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ITSupport247 (ConnectWise)

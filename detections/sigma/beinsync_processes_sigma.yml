@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: Beinsync*.exe
+        ParentImage|endswith: '\\Beinsync*.exe'
     selection_image:
-        Image|endswith: Beinsync*.exe
+        Image|endswith: '\\Beinsync*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of BeInSync

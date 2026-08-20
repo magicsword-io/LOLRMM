@@ -16,22 +16,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyBot.Agent.Ephemeral.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyBot.Agent.Ephemeral.exe'
     selection_image:
         Image|endswith:
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyBot.Agent.Ephemeral.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyBot.Agent.Ephemeral.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ImmyBot

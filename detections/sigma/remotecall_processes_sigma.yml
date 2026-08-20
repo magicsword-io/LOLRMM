@@ -16,22 +16,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rcengmgru.exe
-            - rcmgrsvc.exe
-            - rxstartsupport.exe
-            - rcstartsupport.exe
-            - raautoup.exe
-            - agentu.exe
-            - remotesupportplayeru.exe
+            - '\\rcengmgru.exe'
+            - '\\rcmgrsvc.exe'
+            - '\\rxstartsupport.exe'
+            - '\\rcstartsupport.exe'
+            - '\\raautoup.exe'
+            - '\\agentu.exe'
+            - '\\remotesupportplayeru.exe'
     selection_image:
         Image|endswith:
-            - rcengmgru.exe
-            - rcmgrsvc.exe
-            - rxstartsupport.exe
-            - rcstartsupport.exe
-            - raautoup.exe
-            - agentu.exe
-            - remotesupportplayeru.exe
+            - '\\rcengmgru.exe'
+            - '\\rcmgrsvc.exe'
+            - '\\rxstartsupport.exe'
+            - '\\rcstartsupport.exe'
+            - '\\raautoup.exe'
+            - '\\agentu.exe'
+            - '\\remotesupportplayeru.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RemoteCall

@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - awhost32.exe
-            - awrem32.exe
-            - pcaquickconnect.exe
-            - winaw32.exe
+            - '\\awhost32.exe'
+            - '\\awrem32.exe'
+            - '\\pcaquickconnect.exe'
+            - '\\winaw32.exe'
     selection_image:
         Image|endswith:
-            - awhost32.exe
-            - awrem32.exe
-            - pcaquickconnect.exe
-            - winaw32.exe
+            - '\\awhost32.exe'
+            - '\\awrem32.exe'
+            - '\\pcaquickconnect.exe'
+            - '\\winaw32.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of pcAnywhere

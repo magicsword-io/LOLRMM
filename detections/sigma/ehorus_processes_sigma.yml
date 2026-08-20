@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'ehorus standalone.exe'
-            - 'ehorus_agent.exe'
-            - 'ehorus_cmd.exe'
-            - 'ehorus_launcher.exe'
-            - 'ehorus_uit.exe'
+            - '\\ehorus standalone.exe'
+            - '\\ehorus_agent.exe'
+            - '\\ehorus_cmd.exe'
+            - '\\ehorus_launcher.exe'
+            - '\\ehorus_uit.exe'
     selection_image:
         Image|endswith:
-            - 'ehorus standalone.exe'
-            - 'ehorus_agent.exe'
-            - 'ehorus_cmd.exe'
-            - 'ehorus_launcher.exe'
-            - 'ehorus_uit.exe'
+            - '\\ehorus standalone.exe'
+            - '\\ehorus_agent.exe'
+            - '\\ehorus_cmd.exe'
+            - '\\ehorus_launcher.exe'
+            - '\\ehorus_uit.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of eHorus

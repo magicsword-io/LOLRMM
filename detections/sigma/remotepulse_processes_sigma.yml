@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: 'InstallCore.exe'
+        ParentImage|endswith: '\\InstallCore.exe'
     selection_image:
-        Image|endswith: 'InstallCore.exe'
+        Image|endswith: '\\InstallCore.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RemotePulse

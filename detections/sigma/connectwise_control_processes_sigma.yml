@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - connectwisechat-customer.exe
-            - connectwisecontrol.client.exe
-            - screenconnect.windowsclient.exe
+            - '\\connectwisechat-customer.exe'
+            - '\\connectwisecontrol.client.exe'
+            - '\\screenconnect.windowsclient.exe'
     selection_image:
         Image|endswith:
-            - connectwisechat-customer.exe
-            - connectwisecontrol.client.exe
-            - screenconnect.windowsclient.exe
+            - '\\connectwisechat-customer.exe'
+            - '\\connectwisecontrol.client.exe'
+            - '\\screenconnect.windowsclient.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ConnectWise Control

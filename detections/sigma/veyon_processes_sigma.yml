@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'veyon-wcli.exe'
-            - 'veyon-worker.exe'
-            - 'veyon-server.exe'
-            - 'veyon-service.exe'
-            - 'veyon-master.exe'
+            - '\\veyon-wcli.exe'
+            - '\\veyon-worker.exe'
+            - '\\veyon-server.exe'
+            - '\\veyon-service.exe'
+            - '\\veyon-master.exe'
     selection_image:
         Image|endswith:
-            - 'veyon-wcli.exe'
-            - 'veyon-worker.exe'
-            - 'veyon-server.exe'
-            - 'veyon-service.exe'
-            - 'veyon-master.exe'
+            - '\\veyon-wcli.exe'
+            - '\\veyon-worker.exe'
+            - '\\veyon-server.exe'
+            - '\\veyon-service.exe'
+            - '\\veyon-master.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Veyon

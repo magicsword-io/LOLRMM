@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rdp.exe
-            - Pilixo_Installer*.exe
+            - '\\rdp.exe'
+            - '\\Pilixo_Installer*.exe'
     selection_image:
         Image|endswith:
-            - rdp.exe
-            - Pilixo_Installer*.exe
+            - '\\rdp.exe'
+            - '\\Pilixo_Installer*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Pilixo

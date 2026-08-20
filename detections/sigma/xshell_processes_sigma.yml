@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: xShell.exe
+        ParentImage|endswith: '\\xShell.exe'
     selection_image:
-        Image|endswith: xShell.exe
+        Image|endswith: '\\xShell.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Xshell

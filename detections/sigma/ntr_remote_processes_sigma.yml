@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: NTRsupportPro_EN.exe
+        ParentImage|endswith: '\\NTRsupportPro_EN.exe'
     selection_image:
-        Image|endswith: NTRsupportPro_EN.exe
+        Image|endswith: '\\NTRsupportPro_EN.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of NTR Remote

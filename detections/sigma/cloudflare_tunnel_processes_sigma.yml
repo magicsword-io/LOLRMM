@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: cloudflared.exe
+        ParentImage|endswith: '\\cloudflared.exe'
     selection_image:
-        Image|endswith: cloudflared.exe
+        Image|endswith: '\\cloudflared.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of CloudFlare Tunnel

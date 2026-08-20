@@ -90,6 +90,22 @@ class IndentDumper(yaml.SafeDumper):
         return super().increase_indent(flow, False)
 
 
+def anchor_filename(filename: str) -> str:
+    """Tie a bare executable name to a path separator.
+
+    'Image|endswith: rd.exe' also fires on Standard.exe, keyboard.exe and any
+    other binary whose name happens to end in those characters. Requiring the
+    separator restricts the match to the file name itself.
+
+    The backslash is doubled because Sigma reads a single one as an escape
+    character. A name that already starts with a wildcard is left alone: '\\*'
+    would escape the wildcard and turn it into a literal asterisk.
+    """
+    if filename.startswith("*"):
+        return filename
+    return f"\\\\{filename}"
+
+
 def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     artifacts = {"files": [], "registry": [], "network": [], "processes": []}
 
@@ -112,7 +128,7 @@ def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     details = yaml_data.get("Details", {})
     if isinstance(details, dict):
         artifacts["processes"] = [
-            ntpath.basename(item)
+            anchor_filename(ntpath.basename(item))
             for item in details.get("InstallationPaths", []) or []
             if isinstance(item, str) and item.lower().endswith(".exe")
         ]

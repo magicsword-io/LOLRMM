@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'Lunixar.exe'
-            - 'LunixarRemote.exe'
-            - 'LunixarUpdater.exe'
+            - '\\Lunixar.exe'
+            - '\\LunixarRemote.exe'
+            - '\\LunixarUpdater.exe'
     selection_image:
         Image|endswith:
-            - 'Lunixar.exe'
-            - 'LunixarRemote.exe'
-            - 'LunixarUpdater.exe'
+            - '\\Lunixar.exe'
+            - '\\LunixarRemote.exe'
+            - '\\LunixarUpdater.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Lunixar

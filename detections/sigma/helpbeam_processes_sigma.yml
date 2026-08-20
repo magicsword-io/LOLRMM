@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: helpbeam*.exe
+        ParentImage|endswith: '\\helpbeam*.exe'
     selection_image:
-        Image|endswith: helpbeam*.exe
+        Image|endswith: '\\helpbeam*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of HelpBeam

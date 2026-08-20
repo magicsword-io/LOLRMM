@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: ImperoClientSVC.exe
+        ParentImage|endswith: '\\ImperoClientSVC.exe'
     selection_image:
-        Image|endswith: ImperoClientSVC.exe
+        Image|endswith: '\\ImperoClientSVC.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Impero Connect

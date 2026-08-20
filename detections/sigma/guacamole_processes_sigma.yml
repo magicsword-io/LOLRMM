@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: guacd.exe
+        ParentImage|endswith: '\\guacd.exe'
     selection_image:
-        Image|endswith: guacd.exe
+        Image|endswith: '\\guacd.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Guacamole

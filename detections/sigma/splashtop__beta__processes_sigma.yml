@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - SRServer.exe
-            - SplashtopSOS.exe
-            - Splashtop_Streamer_Windows*.exe
-            - SRManager.exe
+            - '\\SRServer.exe'
+            - '\\SplashtopSOS.exe'
+            - '\\Splashtop_Streamer_Windows*.exe'
+            - '\\SRManager.exe'
     selection_image:
         Image|endswith:
-            - SRServer.exe
-            - SplashtopSOS.exe
-            - Splashtop_Streamer_Windows*.exe
-            - SRManager.exe
+            - '\\SRServer.exe'
+            - '\\SplashtopSOS.exe'
+            - '\\Splashtop_Streamer_Windows*.exe'
+            - '\\SRManager.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Splashtop (Beta)

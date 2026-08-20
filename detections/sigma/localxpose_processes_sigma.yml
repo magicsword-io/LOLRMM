@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'loclx.exe'
-            - 'loclx.exe'
-            - 'loclx.exe'
+            - '\\loclx.exe'
+            - '\\loclx.exe'
+            - '\\loclx.exe'
     selection_image:
         Image|endswith:
-            - 'loclx.exe'
-            - 'loclx.exe'
-            - 'loclx.exe'
+            - '\\loclx.exe'
+            - '\\loclx.exe'
+            - '\\loclx.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LocalXpose

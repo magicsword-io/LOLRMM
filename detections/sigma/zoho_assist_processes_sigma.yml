@@ -16,28 +16,28 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'toolsiq.exe'
-            - 'zaservice.exe'
-            - 'ZMAgent.exe'
-            - 'ZohoMeeting.exe'
-            - 'Zohours.exe'
-            - 'zohotray.exe'
-            - 'ZohoURSService.exe'
-            - 'ZA_Access.exe'
-            - 'za_connect.exe'
-            - 'connect.exe'
+            - '\\toolsiq.exe'
+            - '\\zaservice.exe'
+            - '\\ZMAgent.exe'
+            - '\\ZohoMeeting.exe'
+            - '\\Zohours.exe'
+            - '\\zohotray.exe'
+            - '\\ZohoURSService.exe'
+            - '\\ZA_Access.exe'
+            - '\\za_connect.exe'
+            - '\\connect.exe'
     selection_image:
         Image|endswith:
-            - 'toolsiq.exe'
-            - 'zaservice.exe'
-            - 'ZMAgent.exe'
-            - 'ZohoMeeting.exe'
-            - 'Zohours.exe'
-            - 'zohotray.exe'
-            - 'ZohoURSService.exe'
-            - 'ZA_Access.exe'
-            - 'za_connect.exe'
-            - 'connect.exe'
+            - '\\toolsiq.exe'
+            - '\\zaservice.exe'
+            - '\\ZMAgent.exe'
+            - '\\ZohoMeeting.exe'
+            - '\\Zohours.exe'
+            - '\\zohotray.exe'
+            - '\\ZohoURSService.exe'
+            - '\\ZA_Access.exe'
+            - '\\za_connect.exe'
+            - '\\connect.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Zoho Assist

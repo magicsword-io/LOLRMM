@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - itsmagent.exe
-            - rviewer.exe
+            - '\\itsmagent.exe'
+            - '\\rviewer.exe'
     selection_image:
         Image|endswith:
-            - itsmagent.exe
-            - rviewer.exe
+            - '\\itsmagent.exe'
+            - '\\rviewer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Comodo RMM

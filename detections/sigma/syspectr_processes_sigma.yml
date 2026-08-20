@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'oolocker.exe'
-            - 'oosyspectr.exe'
-            - 'syspectr.exe'
+            - '\\oolocker.exe'
+            - '\\oosyspectr.exe'
+            - '\\syspectr.exe'
     selection_image:
         Image|endswith:
-            - 'oolocker.exe'
-            - 'oosyspectr.exe'
-            - 'syspectr.exe'
+            - '\\oolocker.exe'
+            - '\\oosyspectr.exe'
+            - '\\syspectr.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Syspectr

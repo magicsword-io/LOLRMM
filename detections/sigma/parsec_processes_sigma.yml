@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - parsecd.exe
-            - pservice.exe
+            - '\\parsecd.exe'
+            - '\\pservice.exe'
     selection_image:
         Image|endswith:
-            - parsecd.exe
-            - pservice.exe
+            - '\\parsecd.exe'
+            - '\\pservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Parsec

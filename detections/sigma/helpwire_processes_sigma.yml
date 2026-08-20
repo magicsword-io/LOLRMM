@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'helpwire.exe'
-            - 'HelpWire Quick.exe'
+            - '\\helpwire.exe'
+            - '\\HelpWire Quick.exe'
     selection_image:
         Image|endswith:
-            - 'helpwire.exe'
-            - 'HelpWire Quick.exe'
+            - '\\helpwire.exe'
+            - '\\HelpWire Quick.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of HelpWire

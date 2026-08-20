@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - beamyourscreen.exe
-            - beamyourscreen-host.exe
+            - '\\beamyourscreen.exe'
+            - '\\beamyourscreen-host.exe'
     selection_image:
         Image|endswith:
-            - beamyourscreen.exe
-            - beamyourscreen-host.exe
+            - '\\beamyourscreen.exe'
+            - '\\beamyourscreen-host.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of BeamYourScreen

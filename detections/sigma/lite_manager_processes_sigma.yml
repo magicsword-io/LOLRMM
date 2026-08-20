@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: LMNoIpServer.exe
+        ParentImage|endswith: '\\LMNoIpServer.exe'
     selection_image:
-        Image|endswith: LMNoIpServer.exe
+        Image|endswith: '\\LMNoIpServer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Lite Manager

@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - myivomgr.exe
-            - myivomanager.exe
+            - '\\myivomgr.exe'
+            - '\\myivomanager.exe'
     selection_image:
         Image|endswith:
-            - myivomgr.exe
-            - myivomanager.exe
+            - '\\myivomgr.exe'
+            - '\\myivomanager.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of MyIVO

@@ -16,18 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - rpcnet.exe
-            - ctes.exe
-            - ctespersitence.exe
-            - cteshostsvc.exe
-            - rpcld.exe
+            - '\\rpcnet.exe'
+            - '\\ctes.exe'
+            - '\\ctespersitence.exe'
+            - '\\cteshostsvc.exe'
+            - '\\rpcld.exe'
     selection_image:
         Image|endswith:
-            - rpcnet.exe
-            - ctes.exe
-            - ctespersitence.exe
-            - cteshostsvc.exe
-            - rpcld.exe
+            - '\\rpcnet.exe'
+            - '\\ctes.exe'
+            - '\\ctespersitence.exe'
+            - '\\cteshostsvc.exe'
+            - '\\rpcld.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Absolute (Computrace)

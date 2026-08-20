@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'RDCMan.exe'
-            - 'RDCMan-x86.exe'
+            - '\\RDCMan.exe'
+            - '\\RDCMan-x86.exe'
     selection_image:
         Image|endswith:
-            - 'RDCMan.exe'
-            - 'RDCMan-x86.exe'
+            - '\\RDCMan.exe'
+            - '\\RDCMan-x86.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RDCMan

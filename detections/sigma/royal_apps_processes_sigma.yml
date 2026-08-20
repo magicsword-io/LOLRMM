@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - royalserver.exe
-            - royalts.exe
+            - '\\royalserver.exe'
+            - '\\royalts.exe'
     selection_image:
         Image|endswith:
-            - royalserver.exe
-            - royalts.exe
+            - '\\royalserver.exe'
+            - '\\royalts.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Royal Apps

@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - clientmrinit.exe
-            - mgntsvc.exe
-            - routernt.exe
+            - '\\clientmrinit.exe'
+            - '\\mgntsvc.exe'
+            - '\\routernt.exe'
     selection_image:
         Image|endswith:
-            - clientmrinit.exe
-            - mgntsvc.exe
-            - routernt.exe
+            - '\\clientmrinit.exe'
+            - '\\mgntsvc.exe'
+            - '\\routernt.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Sophos-Remote Management System

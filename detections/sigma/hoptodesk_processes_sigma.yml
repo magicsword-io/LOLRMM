@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'HopToDesk.exe'
-            - 'HopToDesk.exe'
-            - 'HopToDesk-Standalone.exe'
+            - '\\HopToDesk.exe'
+            - '\\HopToDesk.exe'
+            - '\\HopToDesk-Standalone.exe'
     selection_image:
         Image|endswith:
-            - 'HopToDesk.exe'
-            - 'HopToDesk.exe'
-            - 'HopToDesk-Standalone.exe'
+            - '\\HopToDesk.exe'
+            - '\\HopToDesk.exe'
+            - '\\HopToDesk-Standalone.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of HopToDesk

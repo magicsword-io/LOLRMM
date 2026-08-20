@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: BvSshClient-Inst.exe
+        ParentImage|endswith: '\\BvSshClient-Inst.exe'
     selection_image:
-        Image|endswith: BvSshClient-Inst.exe
+        Image|endswith: '\\BvSshClient-Inst.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Bitvise SSH Client

@@ -16,20 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - goverrmc.exe
-            - govsrv*.exe
-            - GovAgentInstallHelper.exe
-            - GovAgentx64.exe
-            - GovReachClient.exe
-            - GovSrv.exe
+            - '\\goverrmc.exe'
+            - '\\govsrv*.exe'
+            - '\\GovAgentInstallHelper.exe'
+            - '\\GovAgentx64.exe'
+            - '\\GovReachClient.exe'
+            - '\\GovSrv.exe'
     selection_image:
         Image|endswith:
-            - goverrmc.exe
-            - govsrv*.exe
-            - GovAgentInstallHelper.exe
-            - GovAgentx64.exe
-            - GovReachClient.exe
-            - GovSrv.exe
+            - '\\goverrmc.exe'
+            - '\\govsrv*.exe'
+            - '\\GovAgentInstallHelper.exe'
+            - '\\GovAgentx64.exe'
+            - '\\GovReachClient.exe'
+            - '\\GovSrv.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Goverlan

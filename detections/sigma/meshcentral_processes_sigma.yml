@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - meshcentral*.exe
-            - meshagent*.exe
+            - '\\meshcentral*.exe'
+            - '\\meshagent*.exe'
     selection_image:
         Image|endswith:
-            - meshcentral*.exe
-            - meshagent*.exe
+            - '\\meshcentral*.exe'
+            - '\\meshagent*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of MeshCentral

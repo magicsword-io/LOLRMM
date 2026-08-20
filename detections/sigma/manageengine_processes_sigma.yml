@@ -16,14 +16,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - InstallShield Setup.exe
-            - ManageEngine_Remote_Access_Plus.exe
-            - dcagentservice.exe
+            - '\\InstallShield Setup.exe'
+            - '\\ManageEngine_Remote_Access_Plus.exe'
+            - '\\dcagentservice.exe'
     selection_image:
         Image|endswith:
-            - InstallShield Setup.exe
-            - ManageEngine_Remote_Access_Plus.exe
-            - dcagentservice.exe
+            - '\\InstallShield Setup.exe'
+            - '\\ManageEngine_Remote_Access_Plus.exe'
+            - '\\dcagentservice.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ManageEngine

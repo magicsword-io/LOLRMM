@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: ManualLauncher.exe
+        ParentImage|endswith: '\\ManualLauncher.exe'
     selection_image:
-        Image|endswith: ManualLauncher.exe
+        Image|endswith: '\\ManualLauncher.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Any Support

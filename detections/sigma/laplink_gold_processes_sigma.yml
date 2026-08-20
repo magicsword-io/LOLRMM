@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - tsircusr.exe
-            - laplink.exe
+            - '\\tsircusr.exe'
+            - '\\laplink.exe'
     selection_image:
         Image|endswith:
-            - tsircusr.exe
-            - laplink.exe
+            - '\\tsircusr.exe'
+            - '\\laplink.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Laplink Gold

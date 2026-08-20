@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - remoteview.exe
-            - rv.exe
-            - rvagent.exe
-            - rvagtray.exe
+            - '\\remoteview.exe'
+            - '\\rv.exe'
+            - '\\rvagent.exe'
+            - '\\rvagtray.exe'
     selection_image:
         Image|endswith:
-            - remoteview.exe
-            - rv.exe
-            - rvagent.exe
-            - rvagtray.exe
+            - '\\remoteview.exe'
+            - '\\rv.exe'
+            - '\\rvagent.exe'
+            - '\\rvagtray.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RemoteView

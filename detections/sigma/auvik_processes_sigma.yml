@@ -16,12 +16,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - auvik.engine.exe
-            - auvik.agent.exe
+            - '\\auvik.engine.exe'
+            - '\\auvik.agent.exe'
     selection_image:
         Image|endswith:
-            - auvik.engine.exe
-            - auvik.agent.exe
+            - '\\auvik.engine.exe'
+            - '\\auvik.agent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Auvik

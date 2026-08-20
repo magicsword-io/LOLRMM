@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - MEAgentHelper.exe
-            - MonitoringAgent.exe
-            - Site24x7WindowsAgentTrayIcon.exe
-            - Site24x7PluginAgent.exe
+            - '\\MEAgentHelper.exe'
+            - '\\MonitoringAgent.exe'
+            - '\\Site24x7WindowsAgentTrayIcon.exe'
+            - '\\Site24x7PluginAgent.exe'
     selection_image:
         Image|endswith:
-            - MEAgentHelper.exe
-            - MonitoringAgent.exe
-            - Site24x7WindowsAgentTrayIcon.exe
-            - Site24x7PluginAgent.exe
+            - '\\MEAgentHelper.exe'
+            - '\\MonitoringAgent.exe'
+            - '\\Site24x7WindowsAgentTrayIcon.exe'
+            - '\\Site24x7PluginAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Site24x7

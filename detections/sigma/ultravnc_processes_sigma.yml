@@ -15,9 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: UltraVNC*.exe
+        ParentImage|endswith: '\\UltraVNC*.exe'
     selection_image:
-        Image|endswith: UltraVNC*.exe
+        Image|endswith: '\\UltraVNC*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of UltraVNC

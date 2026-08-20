@@ -16,24 +16,24 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - basuptshelper.exe
-            - basupsrvcupdate.exe
-            - BASupApp.exe
-            - BASupSysInf.exe
-            - BASupAppSrvc.exe
-            - TakeControl.exe
-            - BASupAppElev.exe
-            - basupsrvc.exe
+            - '\\basuptshelper.exe'
+            - '\\basupsrvcupdate.exe'
+            - '\\BASupApp.exe'
+            - '\\BASupSysInf.exe'
+            - '\\BASupAppSrvc.exe'
+            - '\\TakeControl.exe'
+            - '\\BASupAppElev.exe'
+            - '\\basupsrvc.exe'
     selection_image:
         Image|endswith:
-            - basuptshelper.exe
-            - basupsrvcupdate.exe
-            - BASupApp.exe
-            - BASupSysInf.exe
-            - BASupAppSrvc.exe
-            - TakeControl.exe
-            - BASupAppElev.exe
-            - basupsrvc.exe
+            - '\\basuptshelper.exe'
+            - '\\basupsrvcupdate.exe'
+            - '\\BASupApp.exe'
+            - '\\BASupSysInf.exe'
+            - '\\BASupAppSrvc.exe'
+            - '\\TakeControl.exe'
+            - '\\BASupAppElev.exe'
+            - '\\basupsrvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of BeAnyWhere

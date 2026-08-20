@@ -16,16 +16,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - ConnectAppSetup*.exe
-            - ConnectShellSetup*.exe
-            - Connect.exe
-            - ConnectDetector.exe
+            - '\\ConnectAppSetup*.exe'
+            - '\\ConnectShellSetup*.exe'
+            - '\\Connect.exe'
+            - '\\ConnectDetector.exe'
     selection_image:
         Image|endswith:
-            - ConnectAppSetup*.exe
-            - ConnectShellSetup*.exe
-            - Connect.exe
-            - ConnectDetector.exe
+            - '\\ConnectAppSetup*.exe'
+            - '\\ConnectShellSetup*.exe'
+            - '\\Connect.exe'
+            - '\\ConnectDetector.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Adobe Connect
