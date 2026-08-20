@@ -18,17 +18,9 @@ detection:
         ParentImage|endswith:
             - '\\ImmyAgent.exe'
             - '\\ImmyUpdater.exe'
-            - '\\ImmyAgent.exe'
-            - '\\ImmyUpdater.exe'
-            - '\\ImmyAgent.exe'
-            - '\\ImmyUpdater.exe'
             - '\\ImmyBot.Agent.Ephemeral.exe'
     selection_image:
         Image|endswith:
-            - '\\ImmyAgent.exe'
-            - '\\ImmyUpdater.exe'
-            - '\\ImmyAgent.exe'
-            - '\\ImmyUpdater.exe'
             - '\\ImmyAgent.exe'
             - '\\ImmyUpdater.exe'
             - '\\ImmyBot.Agent.Ephemeral.exe'

@@ -19,19 +19,11 @@ detection:
             - '\\UltraViewer_Service.exe'
             - '\\UltraViewer_Desktop.exe'
             - '\\ultraviewer.exe'
-            - '\\UltraViewer_Desktop.exe'
-            - '\\UltraViewer_Desktop.exe'
-            - '\\ultraviewer_desktop.exe'
-            - '\\ultraviewer_service.exe'
     selection_image:
         Image|endswith:
             - '\\UltraViewer_Service.exe'
             - '\\UltraViewer_Desktop.exe'
             - '\\ultraviewer.exe'
-            - '\\UltraViewer_Desktop.exe'
-            - '\\UltraViewer_Desktop.exe'
-            - '\\ultraviewer_desktop.exe'
-            - '\\ultraviewer_service.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of UltraViewer

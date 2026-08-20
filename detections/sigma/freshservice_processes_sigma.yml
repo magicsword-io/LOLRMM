@@ -21,11 +21,7 @@ detection:
             - '\\plink.exe'
             - '\\FSAgentService.exe'
             - '\\FSAgentAutoUpdate.exe'
-            - '\\FSAgentService.exe'
-            - '\\FSAgentAutoUpdate.exe'
             - '\\FSWmiScanner.exe'
-            - '\\Freshservice.DiscoveryProbe.Window.exe'
-            - '\\Freshservice.DiscoveryProbe.ScanService.exe'
     selection_image:
         Image|endswith:
             - '\\Freshservice.DiscoveryProbe.ScanService.exe'
@@ -33,11 +29,7 @@ detection:
             - '\\plink.exe'
             - '\\FSAgentService.exe'
             - '\\FSAgentAutoUpdate.exe'
-            - '\\FSAgentService.exe'
-            - '\\FSAgentAutoUpdate.exe'
             - '\\FSWmiScanner.exe'
-            - '\\Freshservice.DiscoveryProbe.Window.exe'
-            - '\\Freshservice.DiscoveryProbe.ScanService.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Freshservice

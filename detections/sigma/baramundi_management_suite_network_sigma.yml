@@ -20,7 +20,6 @@ detection:
             - 'www.baramundi.com'
             - 'docs.baramundi.com'
             - 'isodownload.baramundi.com'
-            - '*.baramundi.com'
     condition: selection
 falsepositives:
     - Legitimate use of baramundi Management Suite

@@ -17,13 +17,9 @@ detection:
     selection_parent:
         ParentImage|endswith:
             - '\\RodexAgent.exe'
-            - '\\rodexagent.exe'
-            - '\\RodexAgent.exe'
             - '\\<random>.exe'
     selection_image:
         Image|endswith:
-            - '\\RodexAgent.exe'
-            - '\\rodexagent.exe'
             - '\\RodexAgent.exe'
             - '\\<random>.exe'
     condition: 1 of selection_*

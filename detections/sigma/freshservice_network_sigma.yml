@@ -37,7 +37,6 @@ detection:
             - '*.freshcloud.io'
             - '*.in-freshbots.ai'
             - '<internal-customer-ranges>'
-            - '<internal-customer-ranges>'
     condition: selection
 falsepositives:
     - Legitimate use of Freshservice

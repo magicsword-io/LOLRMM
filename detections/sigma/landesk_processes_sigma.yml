@@ -21,7 +21,6 @@ detection:
             - '\\LANDeskPortalManager.exe'
             - '\\ldinv32.exe'
             - '\\ldsensors.exe'
-            - '\\issuser.exe'
             - '\\softmon.exe'
             - '\\tmcsvc.exe'
     selection_image:
@@ -31,7 +30,6 @@ detection:
             - '\\LANDeskPortalManager.exe'
             - '\\ldinv32.exe'
             - '\\ldsensors.exe'
-            - '\\issuser.exe'
             - '\\softmon.exe'
             - '\\tmcsvc.exe'
     condition: 1 of selection_*

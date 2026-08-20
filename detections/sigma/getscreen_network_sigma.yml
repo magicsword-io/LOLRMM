@@ -17,7 +17,6 @@ detection:
     selection:
         DestinationHostname|endswith:
             - 'getscreen.me'
-            - 'GetScreen.me'
             - '*.getscreen.me'
             - 'go.getscreen.me'
             - 'image.getscreen.me'

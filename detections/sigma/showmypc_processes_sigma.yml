@@ -19,13 +19,11 @@ detection:
             - '\\SMPCSetup.exe'
             - '\\showmypc*.exe'
             - '\\showmypc.exe'
-            - '\\smpcsetup.exe'
     selection_image:
         Image|endswith:
             - '\\SMPCSetup.exe'
             - '\\showmypc*.exe'
             - '\\showmypc.exe'
-            - '\\smpcsetup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ShowMyPC

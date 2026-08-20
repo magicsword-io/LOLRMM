@@ -16,22 +16,21 @@ logsource:
 detection:
     selection:
         TargetObject|contains:
-            - HKLM\SOFTWARE\TeamViewer\*
-            - HKU\<SID>\SOFTWARE\TeamViewer\*
-            - HKLM\SYSTEM\CurrentControlSet\Services\TeamViewer\*
-            - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
-            - HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TeamViewer\*
-            - HKU\SID\SOFTWARE\TeamViewer\MainWindowHandle
-            - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImage
-            - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePath
-            - HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePosition
-            - HKU\SID\SOFTWARE\TeamViewer\MinimizeToTray
-            - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedCapturingEndpoint
-            - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioSendingVolumeV2
-            - HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedRenderingEndpoint
-            - HKLM\SOFTWARE\TeamViewer\ConnectionHistory
-            - HKU\SID\SOFTWARE\TeamViewer\ClientWindow_Mode
-            - HKU\SID\SOFTWARE\TeamViewer\ClientWindowPositions
+            - 'HKLM\SOFTWARE\TeamViewer\*'
+            - 'HKU\<SID>\SOFTWARE\TeamViewer\*'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\TeamViewer\*'
+            - 'HKLM\SOFTWARE\TeamViewer\ConnectionHistory'
+            - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TeamViewer\*'
+            - 'HKU\SID\SOFTWARE\TeamViewer\MainWindowHandle'
+            - 'HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImage'
+            - 'HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePath'
+            - 'HKU\SID\SOFTWARE\TeamViewer\DesktopWallpaperSingleImagePosition'
+            - 'HKU\SID\SOFTWARE\TeamViewer\MinimizeToTray'
+            - 'HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedCapturingEndpoint'
+            - 'HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioSendingVolumeV2'
+            - 'HKU\SID\SOFTWARE\TeamViewer\MultiMedia\AudioUserSelectedRenderingEndpoint'
+            - 'HKU\SID\SOFTWARE\TeamViewer\ClientWindow_Mode'
+            - 'HKU\SID\SOFTWARE\TeamViewer\ClientWindowPositions'
     condition: selection
 falsepositives:
     - Legitimate use of TeamViewer

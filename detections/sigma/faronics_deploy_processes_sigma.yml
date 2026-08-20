@@ -27,10 +27,7 @@ detection:
             - '\\UserNotificationHelper.exe'
             - '\\MigrationHelper_32.exe'
             - '\\MigrationHelper_64.exe'
-            - '\\FaronicsDeployAgent.exe'
             - '\\FWAWebInstaller_*.exe'
-            - '\\FWAService.exe'
-            - '\\FWA_UI_Agent.exe'
             - '\\CloudWksInstall.exe'
     selection_image:
         Image|endswith:
@@ -45,10 +42,7 @@ detection:
             - '\\UserNotificationHelper.exe'
             - '\\MigrationHelper_32.exe'
             - '\\MigrationHelper_64.exe'
-            - '\\FaronicsDeployAgent.exe'
             - '\\FWAWebInstaller_*.exe'
-            - '\\FWAService.exe'
-            - '\\FWA_UI_Agent.exe'
             - '\\CloudWksInstall.exe'
     condition: 1 of selection_*
 falsepositives:

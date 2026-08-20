@@ -20,14 +20,12 @@ detection:
             - '\\supremo.exe'
             - '\\supremohelper.exe'
             - '\\supremoservice.exe'
-            - '\\SupremoSystem.exe'
     selection_image:
         Image|endswith:
             - '\\supremosystem.exe'
             - '\\supremo.exe'
             - '\\supremohelper.exe'
             - '\\supremoservice.exe'
-            - '\\SupremoSystem.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Supremo

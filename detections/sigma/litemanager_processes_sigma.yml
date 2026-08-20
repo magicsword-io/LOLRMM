@@ -18,18 +18,14 @@ detection:
         ParentImage|endswith:
             - '\\lmnoipserver.exe'
             - '\\ROMFUSClient.exe'
-            - '\\romfusclient.exe'
             - '\\romviewer.exe'
             - '\\romserver.exe'
-            - '\\ROMServer.exe'
     selection_image:
         Image|endswith:
             - '\\lmnoipserver.exe'
             - '\\ROMFUSClient.exe'
-            - '\\romfusclient.exe'
             - '\\romviewer.exe'
             - '\\romserver.exe'
-            - '\\ROMServer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LiteManager

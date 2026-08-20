@@ -20,7 +20,6 @@ detection:
             - '\\AgentPackageTaskScheduler.exe'
             - '\\AteraAgent.exe'
             - '\\atera_agent.exe'
-            - '\\ateraagent.exe'
             - '\\syncrosetup.exe'
     selection_image:
         Image|endswith:
@@ -28,7 +27,6 @@ detection:
             - '\\AgentPackageTaskScheduler.exe'
             - '\\AteraAgent.exe'
             - '\\atera_agent.exe'
-            - '\\ateraagent.exe'
             - '\\syncrosetup.exe'
     condition: 1 of selection_*
 falsepositives:

@@ -17,11 +17,9 @@ detection:
     selection_parent:
         ParentImage|endswith:
             - '\\nezha-agent.exe'
-            - '\\nezha-agent.exe'
             - '\\dashboard-windows-amd64.exe'
     selection_image:
         Image|endswith:
-            - '\\nezha-agent.exe'
             - '\\nezha-agent.exe'
             - '\\dashboard-windows-amd64.exe'
     condition: 1 of selection_*

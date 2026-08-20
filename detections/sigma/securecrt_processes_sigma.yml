@@ -15,13 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith:
-            - '\\SecureCRT.EXE'
-            - '\\SecureCRT.EXE'
+        ParentImage|endswith: '\\SecureCRT.EXE'
     selection_image:
-        Image|endswith:
-            - '\\SecureCRT.EXE'
-            - '\\SecureCRT.EXE'
+        Image|endswith: '\\SecureCRT.EXE'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of SecureCRT

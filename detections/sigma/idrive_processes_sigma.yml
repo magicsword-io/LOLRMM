@@ -17,12 +17,10 @@ detection:
     selection_parent:
         ParentImage|endswith:
             - '\\IDriveWinSetup.exe'
-            - '\\IDriveWinSetup.exe'
             - '\\IDriveEClassic.exe'
             - '\\id_tray.exe'
     selection_image:
         Image|endswith:
-            - '\\IDriveWinSetup.exe'
             - '\\IDriveWinSetup.exe'
             - '\\IDriveEClassic.exe'
             - '\\id_tray.exe'

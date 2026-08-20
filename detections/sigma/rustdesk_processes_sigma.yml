@@ -18,11 +18,9 @@ detection:
         ParentImage|endswith:
             - '\\rustdesk*.exe'
             - '\\rustdesk.exe'
-            - '\\rustdesk.exe'
     selection_image:
         Image|endswith:
             - '\\rustdesk*.exe'
-            - '\\rustdesk.exe'
             - '\\rustdesk.exe'
     condition: 1 of selection_*
 falsepositives:

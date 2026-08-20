@@ -20,7 +20,6 @@ detection:
             - '\\mikogo-starter.exe'
             - '\\mikogo-service.exe'
             - '\\mikogolauncher.exe'
-            - '\\Mikogo-Service.exe'
             - '\\Mikogo-Screen-Service.exe'
     selection_image:
         Image|endswith:
@@ -28,7 +27,6 @@ detection:
             - '\\mikogo-starter.exe'
             - '\\mikogo-service.exe'
             - '\\mikogolauncher.exe'
-            - '\\Mikogo-Service.exe'
             - '\\Mikogo-Screen-Service.exe'
     condition: 1 of selection_*
 falsepositives:

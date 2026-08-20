@@ -18,11 +18,9 @@ detection:
         ParentImage|endswith:
             - '\\remote_host.exe'
             - '\\remoting_host.exe'
-            - '\\remoting_host.exe'
     selection_image:
         Image|endswith:
             - '\\remote_host.exe'
-            - '\\remoting_host.exe'
             - '\\remoting_host.exe'
     condition: 1 of selection_*
 falsepositives:

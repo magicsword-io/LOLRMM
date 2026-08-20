@@ -18,14 +18,10 @@ detection:
         ParentImage|endswith:
             - '\\AMMYY_Admin.exe'
             - '\\aa_v*.exe'
-            - '\\AMMYY_Admin.exe'
-            - '\\AMMYY_Admin.exe'
     selection_image:
         Image|endswith:
             - '\\AMMYY_Admin.exe'
             - '\\aa_v*.exe'
-            - '\\AMMYY_Admin.exe'
-            - '\\AMMYY_Admin.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Ammyy Admin

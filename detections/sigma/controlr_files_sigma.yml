@@ -31,8 +31,6 @@ detection:
             - '/Applications/ControlR.*.app'
             - '/Library/LaunchDaemons/app.controlr.agent*.plist'
             - '/Library/LaunchAgents/app.controlr.desktop*.plist'
-            - '/var/log/controlr/*/ControlR.Agent/LogFile*.log'
-            - '~/.controlr/*/logs/ControlR.Agent/LogFile*.log'
     condition: selection
 falsepositives:
     - Legitimate use of ControlR

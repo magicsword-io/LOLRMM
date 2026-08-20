@@ -18,12 +18,8 @@ detection:
         ParentImage|endswith:
             - '\\netbird.exe'
             - '\\netbird-ui.exe'
-            - '\\netbird.exe'
-            - '\\netbird-ui.exe'
     selection_image:
         Image|endswith:
-            - '\\netbird.exe'
-            - '\\netbird-ui.exe'
             - '\\netbird.exe'
             - '\\netbird-ui.exe'
     condition: 1 of selection_*

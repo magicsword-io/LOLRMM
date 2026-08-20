@@ -19,13 +19,11 @@ detection:
             - '\\hsloader.exe'
             - '\\InstantHousecall.exe'
             - '\\ihcserver.exe'
-            - '\\instanthousecall.exe'
     selection_image:
         Image|endswith:
             - '\\hsloader.exe'
             - '\\InstantHousecall.exe'
             - '\\ihcserver.exe'
-            - '\\instanthousecall.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Instant Housecall

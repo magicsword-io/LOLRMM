@@ -15,15 +15,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith:
-            - '\\Insync.exe'
-            - '\\Insync.exe'
-            - '\\Insync.exe'
+        ParentImage|endswith: '\\Insync.exe'
     selection_image:
-        Image|endswith:
-            - '\\Insync.exe'
-            - '\\Insync.exe'
-            - '\\Insync.exe'
+        Image|endswith: '\\Insync.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Insync

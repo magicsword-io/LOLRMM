@@ -20,16 +20,12 @@ detection:
             - '\\RemotePC.exe'
             - '\\remotepchost.exe'
             - '\\rpcsuite.exe'
-            - '\\RemotePCService.exe'
-            - '\\RemotePCService.exe'
     selection_image:
         Image|endswith:
             - '\\remotepcservice.exe'
             - '\\RemotePC.exe'
             - '\\remotepchost.exe'
             - '\\rpcsuite.exe'
-            - '\\RemotePCService.exe'
-            - '\\RemotePCService.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RemotePC

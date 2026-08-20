@@ -24,7 +24,6 @@ detection:
             - 'C:\Users\*\AppData\Local\Temp\privacyhelper.exe'
             - 'C:\Users\*\AppData\Roaming\HopToDesk\config\*'
             - 'C:\Users\*\AppData\Roaming\HopToDesk\config\hoptodesk.toml'
-            - 'C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml'
             - 'C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk_rCURRENT.log'
             - '/System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log'
     condition: selection

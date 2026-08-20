@@ -25,7 +25,6 @@ detection:
             - 'mail.metaquest.com'
             - 'www.metaquest.com'
             - 'downloads.vector-networks.com'
-            - 'www.vector-networks.com'
     condition: selection
 falsepositives:
     - Legitimate use of VIZOR
