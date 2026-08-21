@@ -58,14 +58,21 @@ jobs:
         git config --global push.default simple
         git add detections/ website/pages/tools/ website/public/
         git diff --quiet && git diff --staged --quiet && exit 0
-        git commit -m "Update generated site files [skip ci]"
         for attempt in 1 2 3; do
-          if git pull --rebase origin main \
-            && git push "https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git" HEAD:main; then
+          # Committed content is fully generated, so instead of rebasing (which
+          # conflicts on generated files), reset to latest main and regenerate.
+          git fetch origin main
+          git reset --hard origin/main
+          poetry run python bin/site.py -v
+          git add detections/ website/pages/tools/ website/public/
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No generated changes to commit."
             exit 0
           fi
-          # Clean up half-finished rebase state so the next retry's `git pull --rebase` doesn't fail with "unmerged files"
-          git rebase --abort 2>/dev/null || true
+          git commit -m "Update generated site files [skip ci]"
+          if git push "https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git" HEAD:main; then
+            exit 0
+          fi
           echo "push attempt $attempt failed, retrying in $((attempt * 5))s..."
           sleep $((attempt * 5))
         done

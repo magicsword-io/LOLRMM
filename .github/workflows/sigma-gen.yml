@@ -39,14 +39,21 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add detections/sigma/*.yml
           git diff --quiet && git diff --staged --quiet && exit 0
-          git commit -m "Update Sigma rules [skip ci]"
           for attempt in 1 2 3; do
-            if git pull --rebase origin main \
-              && git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF}"; then
+            # Committed content is fully generated, so instead of rebasing (which
+            # conflicts on generated files), reset to latest main and regenerate.
+            git fetch origin main
+            git reset --hard origin/main
+            python bin/sigma-gen.py --skip-yaml-update
+            git add detections/sigma/*.yml
+            if git diff --quiet && git diff --staged --quiet; then
+              echo "No generated changes to commit."
               exit 0
             fi
-            # Clean up half-finished rebase state so the next retry's `git pull --rebase` doesn't fail with "unmerged files"
-            git rebase --abort 2>/dev/null || true
+            git commit -m "Update Sigma rules [skip ci]"
+            if git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF}"; then
+              exit 0
+            fi
             echo "push attempt $attempt failed, retrying in $((attempt * 5))s..."
             sleep $((attempt * 5))
           done
