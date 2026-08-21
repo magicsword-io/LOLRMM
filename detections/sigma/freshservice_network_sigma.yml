@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -36,7 +37,6 @@ detection:
             - 'static.freshdev.io'
             - '*.freshcloud.io'
             - '*.in-freshbots.ai'
-            - '<internal-customer-ranges>'
             - '<internal-customer-ranges>'
     condition: selection
 falsepositives:

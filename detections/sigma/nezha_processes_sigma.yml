@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,14 +17,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'nezha-agent.exe'
-            - 'nezha-agent.exe'
-            - 'dashboard-windows-amd64.exe'
+            - '\\nezha-agent.exe'
+            - '\\dashboard-windows-amd64.exe'
     selection_image:
         Image|endswith:
-            - 'nezha-agent.exe'
-            - 'nezha-agent.exe'
-            - 'dashboard-windows-amd64.exe'
+            - '\\nezha-agent.exe'
+            - '\\dashboard-windows-amd64.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Nezha

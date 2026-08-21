@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -21,7 +22,6 @@ detection:
             - 'ghcr.io'
             - 'komari-document.pages.dev'
             - 'www.komari.wiki'
-            - 'raw.githubusercontent.com'
     condition: selection
 falsepositives:
     - Legitimate use of Komari

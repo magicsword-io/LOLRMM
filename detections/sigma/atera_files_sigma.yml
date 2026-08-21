@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,15 +17,15 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt
-            - C:\Program Files\ATERA Networks\AteraAgent\Packages\*
-            - C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe
-            - C:\Program Files\Atera Networks\AlphaAgent.exe
-            - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe
-            - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe
-            - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe
-            - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe
-            - C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe
+            - 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\log.txt'
+            - 'C:\Program Files\ATERA Networks\AteraAgent\Packages\*'
+            - 'C:\Program Files\ATERA Networks\AteraAgent\AteraAgent.exe'
+            - 'C:\Program Files\Atera Networks\AlphaAgent.exe'
+            - 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageSTRemote\AgentPackageSTRemote.exe'
+            - 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageMonitoring\AgentPackageMonitoring.exe'
+            - 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageHeartbeat\AgentPackageHeartbeat.exe'
+            - 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageFileExplorer\AgentPackageFileExplorer.exe'
+            - 'C:\Program Files\ATERA Networks\AteraAgent\Packages\AgentPackageRunCommandInteractive\AgentPackageRunCommandInteractive.exe'
     condition: selection
 falsepositives:
     - Legitimate use of Atera

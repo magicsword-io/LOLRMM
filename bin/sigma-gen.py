@@ -90,6 +90,43 @@ class IndentDumper(yaml.SafeDumper):
         return super().increase_indent(flow, False)
 
 
+def dedupe(values: List[str]) -> List[str]:
+    """Drop repeated values, keeping the first spelling of each.
+
+    Sigma string matching is case-insensitive by default, and the fields these
+    lists feed (file names, registry paths, domains) are case-insensitive on
+    Windows too, so entries that differ only in case are the same condition.
+    Collapsing several InstallationPaths to one basename is the common source:
+    'AMMYY_Admin.exe', '*\\AMMYY_Admin.exe' and
+    'C:\\Users\\*\\Downloads\\AMMYY_Admin.exe' all become 'AMMYY_Admin.exe'.
+    """
+    seen = set()
+    unique = []
+    for value in values:
+        key = value.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(value)
+    return unique
+
+
+def anchor_filename(filename: str) -> str:
+    """Tie a bare executable name to a path separator.
+
+    'Image|endswith: rd.exe' also fires on Standard.exe, keyboard.exe and any
+    other binary whose name happens to end in those characters. Requiring the
+    separator restricts the match to the file name itself.
+
+    The backslash is doubled because Sigma reads a single one as an escape
+    character. A name that already starts with a wildcard is left alone: '\\*'
+    would escape the wildcard and turn it into a literal asterisk.
+    """
+    if filename.startswith("*"):
+        return filename
+    return f"\\\\{filename}"
+
+
 def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     artifacts = {"files": [], "registry": [], "network": [], "processes": []}
 
@@ -112,12 +149,12 @@ def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     details = yaml_data.get("Details", {})
     if isinstance(details, dict):
         artifacts["processes"] = [
-            ntpath.basename(item)
+            anchor_filename(ntpath.basename(item))
             for item in details.get("InstallationPaths", []) or []
             if isinstance(item, str) and item.lower().endswith(".exe")
         ]
 
-    return artifacts
+    return {key: dedupe(values) for key, values in artifacts.items()}
 
 
 def write_sigma_rule(rule: Dict[str, Any], filepath: str) -> None:
@@ -271,7 +308,13 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
                 "references": ["https://github.com/magicsword-io/LOLRMM"],
                 "author": "LOLRMM Project",
                 "date": date.today().strftime("%Y-%m-%d"),
-                "tags": ["attack.execution", "attack.t1219"],
+                # T1219 sits under Command and Control in ATT&CK. Sigma requires
+                # the tactic that owns a technique to be tagged alongside it.
+                "tags": [
+                    "attack.command-and-control",
+                    "attack.execution",
+                    "attack.t1219",
+                ],
                 "logsource": rule_template["logsource"],
                 "detection": detection,
                 "falsepositives": [f"Legitimate use of {name}"],
@@ -345,10 +388,24 @@ def main(update_yaml: bool = True) -> None:
     output_dir = "detections/sigma/"
     os.makedirs(output_dir, exist_ok=True)
 
-    for filename in os.listdir(yaml_dir):
+    # Sorted so that runs are reproducible: os.listdir() order depends on the
+    # filesystem, and two entries sharing a Name write the same output file.
+    written_by: Dict[str, str] = {}
+
+    for filename in sorted(os.listdir(yaml_dir)):
         if filename.endswith(".yaml") or filename.endswith(".yml"):
             yaml_file = os.path.join(yaml_dir, filename)
             sigma_rules = generate_sigma_rules(yaml_file, output_dir)
+            for rule in sigma_rules:
+                output_file = rule["Sigma"][len(SIGMA_RULE_PREFIX):]
+                previous = written_by.get(output_file)
+                if previous:
+                    print(
+                        f"[!] {yaml_file} overwrites {output_file}, already written "
+                        f"from {previous}: both entries share the same Name, so only "
+                        "the last one is kept. Merge them or give them distinct names."
+                    )
+                written_by[output_file] = yaml_file
             if update_yaml:
                 update_yaml_with_sigma_rules(yaml_file, sigma_rules)
 

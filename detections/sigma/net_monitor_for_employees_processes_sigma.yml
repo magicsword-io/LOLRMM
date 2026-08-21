@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,18 +17,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'nmep_agtconfig.exe'
-            - 'nmep_ctrlagent.exe'
-            - 'nmep_ctrlagentsvc.exe'
-            - 'winpty-agent.exe'
-            - 'winpty-agent64.exe'
+            - '\\nmep_agtconfig.exe'
+            - '\\nmep_ctrlagent.exe'
+            - '\\nmep_ctrlagentsvc.exe'
+            - '\\winpty-agent.exe'
+            - '\\winpty-agent64.exe'
     selection_image:
         Image|endswith:
-            - 'nmep_agtconfig.exe'
-            - 'nmep_ctrlagent.exe'
-            - 'nmep_ctrlagentsvc.exe'
-            - 'winpty-agent.exe'
-            - 'winpty-agent64.exe'
+            - '\\nmep_agtconfig.exe'
+            - '\\nmep_ctrlagent.exe'
+            - '\\nmep_ctrlagentsvc.exe'
+            - '\\winpty-agent.exe'
+            - '\\winpty-agent64.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Net Monitor for Employees

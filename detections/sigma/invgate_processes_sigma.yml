@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,16 +17,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'InvGate-ED.exe'
-            - 'DepHlp.exe'
-            - 'InvGateAssetsRD.exe'
-            - 'InvGateRD.exe'
+            - '\\InvGate-ED.exe'
+            - '\\DepHlp.exe'
+            - '\\InvGateAssetsRD.exe'
+            - '\\InvGateRD.exe'
     selection_image:
         Image|endswith:
-            - 'InvGate-ED.exe'
-            - 'DepHlp.exe'
-            - 'InvGateAssetsRD.exe'
-            - 'InvGateRD.exe'
+            - '\\InvGate-ED.exe'
+            - '\\DepHlp.exe'
+            - '\\InvGateAssetsRD.exe'
+            - '\\InvGateRD.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of InvGate

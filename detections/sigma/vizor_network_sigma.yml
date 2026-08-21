@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -25,7 +26,6 @@ detection:
             - 'mail.metaquest.com'
             - 'www.metaquest.com'
             - 'downloads.vector-networks.com'
-            - 'www.vector-networks.com'
     condition: selection
 falsepositives:
     - Legitimate use of VIZOR

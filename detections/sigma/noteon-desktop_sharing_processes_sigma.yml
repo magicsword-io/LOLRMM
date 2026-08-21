@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,14 +17,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - nateon*.exe
-            - nateon.exe
-            - nateonmain.exe
+            - '\\nateon*.exe'
+            - '\\nateon.exe'
+            - '\\nateonmain.exe'
     selection_image:
         Image|endswith:
-            - nateon*.exe
-            - nateon.exe
-            - nateonmain.exe
+            - '\\nateon*.exe'
+            - '\\nateon.exe'
+            - '\\nateonmain.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of NoteOn-desktop sharing

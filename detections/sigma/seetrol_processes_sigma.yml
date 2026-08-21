@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,18 +17,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - seetrolcenter.exe
-            - seetrolclient.exe
-            - seetrolmyservice.exe
-            - seetrolremote.exe
-            - seetrolsetting.exe
+            - '\\seetrolcenter.exe'
+            - '\\seetrolclient.exe'
+            - '\\seetrolmyservice.exe'
+            - '\\seetrolremote.exe'
+            - '\\seetrolsetting.exe'
     selection_image:
         Image|endswith:
-            - seetrolcenter.exe
-            - seetrolclient.exe
-            - seetrolmyservice.exe
-            - seetrolremote.exe
-            - seetrolsetting.exe
+            - '\\seetrolcenter.exe'
+            - '\\seetrolclient.exe'
+            - '\\seetrolmyservice.exe'
+            - '\\seetrolremote.exe'
+            - '\\seetrolsetting.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Seetrol

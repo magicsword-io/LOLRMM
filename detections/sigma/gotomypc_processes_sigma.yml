@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -15,13 +16,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith:
-            - 'G2M.exe'
-            - 'G2M.exe'
+        ParentImage|endswith: '\\G2M.exe'
     selection_image:
-        Image|endswith:
-            - 'G2M.exe'
-            - 'G2M.exe'
+        Image|endswith: '\\G2M.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of GoToMyPC

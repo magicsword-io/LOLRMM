@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -15,9 +16,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: 'tmagentsvc.exe'
+        ParentImage|endswith: '\\tmagentsvc.exe'
     selection_image:
-        Image|endswith: 'tmagentsvc.exe'
+        Image|endswith: '\\tmagentsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Teramind

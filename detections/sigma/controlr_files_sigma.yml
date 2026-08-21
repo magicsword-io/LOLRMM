@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-08-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -31,8 +32,6 @@ detection:
             - '/Applications/ControlR.*.app'
             - '/Library/LaunchDaemons/app.controlr.agent*.plist'
             - '/Library/LaunchAgents/app.controlr.desktop*.plist'
-            - '/var/log/controlr/*/ControlR.Agent/LogFile*.log'
-            - '~/.controlr/*/logs/ControlR.Agent/LogFile*.log'
     condition: selection
 falsepositives:
     - Legitimate use of ControlR

@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -20,7 +21,6 @@ detection:
             - 'www.baramundi.com'
             - 'docs.baramundi.com'
             - 'isodownload.baramundi.com'
-            - '*.baramundi.com'
     condition: selection
 falsepositives:
     - Legitimate use of baramundi Management Suite

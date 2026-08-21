@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,22 +17,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'weCliboardListener.exe'
-            - 'bbl.exe'
-            - 'weprtct.exe'
-            - 'wemonc.exe'
-            - 'wesvc.exe'
-            - 'wec_launcher_[a-Z0-9]*_.exe'
-            - 'weInstSvc.exe'
+            - '\\weCliboardListener.exe'
+            - '\\bbl.exe'
+            - '\\weprtct.exe'
+            - '\\wemonc.exe'
+            - '\\wesvc.exe'
+            - '\\wec_launcher_[a-Z0-9]*_.exe'
+            - '\\weInstSvc.exe'
     selection_image:
         Image|endswith:
-            - 'weCliboardListener.exe'
-            - 'bbl.exe'
-            - 'weprtct.exe'
-            - 'wemonc.exe'
-            - 'wesvc.exe'
-            - 'wec_launcher_[a-Z0-9]*_.exe'
-            - 'weInstSvc.exe'
+            - '\\weCliboardListener.exe'
+            - '\\bbl.exe'
+            - '\\weprtct.exe'
+            - '\\wemonc.exe'
+            - '\\wesvc.exe'
+            - '\\wec_launcher_[a-Z0-9]*_.exe'
+            - '\\weInstSvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Controlio

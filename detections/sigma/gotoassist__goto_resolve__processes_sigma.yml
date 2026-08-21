@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,42 +17,42 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'GoToResolveExternalModuleHandler.exe'
-            - 'GoToResolveFileManager.exe'
-            - 'GoToResolveLoggerProcess.exe'
-            - 'GoToResolveNetworkChecker.exe'
-            - 'GoToResolveProcessChecker.exe'
-            - 'GoToResolveQuickView.exe'
-            - 'GoToResolveRegistryEditor.exe'
-            - 'GoToResolveRemoteControl.exe'
-            - 'GoToResolveService.exe'
-            - 'GoToResolveServiceManager.exe'
-            - 'GoToResolveTerminal.exe'
-            - 'GoToResolveTools32.exe'
-            - 'GoToResolveTools64.exe'
-            - 'GoToResolveUi.exe'
-            - 'GoToResolveUnattended.exe'
-            - 'GoToResolveUnattendedRemover.exe'
-            - 'GoToResolveUnattendedUi.exe'
+            - '\\GoToResolveExternalModuleHandler.exe'
+            - '\\GoToResolveFileManager.exe'
+            - '\\GoToResolveLoggerProcess.exe'
+            - '\\GoToResolveNetworkChecker.exe'
+            - '\\GoToResolveProcessChecker.exe'
+            - '\\GoToResolveQuickView.exe'
+            - '\\GoToResolveRegistryEditor.exe'
+            - '\\GoToResolveRemoteControl.exe'
+            - '\\GoToResolveService.exe'
+            - '\\GoToResolveServiceManager.exe'
+            - '\\GoToResolveTerminal.exe'
+            - '\\GoToResolveTools32.exe'
+            - '\\GoToResolveTools64.exe'
+            - '\\GoToResolveUi.exe'
+            - '\\GoToResolveUnattended.exe'
+            - '\\GoToResolveUnattendedRemover.exe'
+            - '\\GoToResolveUnattendedUi.exe'
     selection_image:
         Image|endswith:
-            - 'GoToResolveExternalModuleHandler.exe'
-            - 'GoToResolveFileManager.exe'
-            - 'GoToResolveLoggerProcess.exe'
-            - 'GoToResolveNetworkChecker.exe'
-            - 'GoToResolveProcessChecker.exe'
-            - 'GoToResolveQuickView.exe'
-            - 'GoToResolveRegistryEditor.exe'
-            - 'GoToResolveRemoteControl.exe'
-            - 'GoToResolveService.exe'
-            - 'GoToResolveServiceManager.exe'
-            - 'GoToResolveTerminal.exe'
-            - 'GoToResolveTools32.exe'
-            - 'GoToResolveTools64.exe'
-            - 'GoToResolveUi.exe'
-            - 'GoToResolveUnattended.exe'
-            - 'GoToResolveUnattendedRemover.exe'
-            - 'GoToResolveUnattendedUi.exe'
+            - '\\GoToResolveExternalModuleHandler.exe'
+            - '\\GoToResolveFileManager.exe'
+            - '\\GoToResolveLoggerProcess.exe'
+            - '\\GoToResolveNetworkChecker.exe'
+            - '\\GoToResolveProcessChecker.exe'
+            - '\\GoToResolveQuickView.exe'
+            - '\\GoToResolveRegistryEditor.exe'
+            - '\\GoToResolveRemoteControl.exe'
+            - '\\GoToResolveService.exe'
+            - '\\GoToResolveServiceManager.exe'
+            - '\\GoToResolveTerminal.exe'
+            - '\\GoToResolveTools32.exe'
+            - '\\GoToResolveTools64.exe'
+            - '\\GoToResolveUi.exe'
+            - '\\GoToResolveUnattended.exe'
+            - '\\GoToResolveUnattendedRemover.exe'
+            - '\\GoToResolveUnattendedUi.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of GoToAssist (GoTo Resolve)

@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,20 +17,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - lmnoipserver.exe
-            - ROMFUSClient.exe
-            - romfusclient.exe
-            - romviewer.exe
-            - romserver.exe
-            - ROMServer.exe
+            - '\\lmnoipserver.exe'
+            - '\\ROMFUSClient.exe'
+            - '\\romviewer.exe'
+            - '\\romserver.exe'
     selection_image:
         Image|endswith:
-            - lmnoipserver.exe
-            - ROMFUSClient.exe
-            - romfusclient.exe
-            - romviewer.exe
-            - romserver.exe
-            - ROMServer.exe
+            - '\\lmnoipserver.exe'
+            - '\\ROMFUSClient.exe'
+            - '\\romviewer.exe'
+            - '\\romserver.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LiteManager

@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,22 +17,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyBot.Agent.Ephemeral.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyBot.Agent.Ephemeral.exe'
     selection_image:
         Image|endswith:
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyAgent.exe'
-            - 'ImmyUpdater.exe'
-            - 'ImmyBot.Agent.Ephemeral.exe'
+            - '\\ImmyAgent.exe'
+            - '\\ImmyUpdater.exe'
+            - '\\ImmyBot.Agent.Ephemeral.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ImmyBot

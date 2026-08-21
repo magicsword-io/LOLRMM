@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-06-11
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:

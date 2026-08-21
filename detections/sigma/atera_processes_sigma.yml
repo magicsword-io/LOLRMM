@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,20 +17,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'AgentPackageNetworkDiscovery.exe'
-            - 'AgentPackageTaskScheduler.exe'
-            - 'AteraAgent.exe'
-            - 'atera_agent.exe'
-            - 'ateraagent.exe'
-            - 'syncrosetup.exe'
+            - '\\AgentPackageNetworkDiscovery.exe'
+            - '\\AgentPackageTaskScheduler.exe'
+            - '\\AteraAgent.exe'
+            - '\\atera_agent.exe'
+            - '\\syncrosetup.exe'
     selection_image:
         Image|endswith:
-            - 'AgentPackageNetworkDiscovery.exe'
-            - 'AgentPackageTaskScheduler.exe'
-            - 'AteraAgent.exe'
-            - 'atera_agent.exe'
-            - 'ateraagent.exe'
-            - 'syncrosetup.exe'
+            - '\\AgentPackageNetworkDiscovery.exe'
+            - '\\AgentPackageTaskScheduler.exe'
+            - '\\AteraAgent.exe'
+            - '\\atera_agent.exe'
+            - '\\syncrosetup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Atera

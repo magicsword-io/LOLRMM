@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2025-12-01
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,22 +17,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'UltraViewer_Service.exe'
-            - 'UltraViewer_Desktop.exe'
-            - 'ultraviewer.exe'
-            - 'UltraViewer_Desktop.exe'
-            - 'UltraViewer_Desktop.exe'
-            - 'ultraviewer_desktop.exe'
-            - 'ultraviewer_service.exe'
+            - '\\UltraViewer_Service.exe'
+            - '\\UltraViewer_Desktop.exe'
+            - '\\ultraviewer.exe'
     selection_image:
         Image|endswith:
-            - 'UltraViewer_Service.exe'
-            - 'UltraViewer_Desktop.exe'
-            - 'ultraviewer.exe'
-            - 'UltraViewer_Desktop.exe'
-            - 'UltraViewer_Desktop.exe'
-            - 'ultraviewer_desktop.exe'
-            - 'ultraviewer_service.exe'
+            - '\\UltraViewer_Service.exe'
+            - '\\UltraViewer_Desktop.exe'
+            - '\\ultraviewer.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of UltraViewer

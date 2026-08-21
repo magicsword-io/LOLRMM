@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,16 +17,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
+            - '\\FaronicsCoreAgent.exe'
+            - '\\CoreAgentService.exe'
     selection_image:
         Image|endswith:
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
-            - 'FaronicsCoreAgent.exe'
-            - 'CoreAgentService.exe'
+            - '\\FaronicsCoreAgent.exe'
+            - '\\CoreAgentService.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Faronics Core

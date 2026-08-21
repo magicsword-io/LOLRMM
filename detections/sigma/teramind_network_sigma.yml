@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -20,12 +21,9 @@ detection:
             - 'teramind.co'
             - 'www.teramind.co'
             - 'rt.teramind.co'
-            - 'www.teramind.co'
             - 'sentry.dev.teramind.co'
             - '<on-prem-master-server-host>'
             - '<on-prem-app-server-host>'
-            - '*.teramind.co'
-            - 'www.teramind.co'
     condition: selection
 falsepositives:
     - Legitimate use of Teramind

@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-06-15
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -15,9 +16,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: 'JumpCloud*.exe'
+        ParentImage|endswith: '\\JumpCloud*.exe'
     selection_image:
-        Image|endswith: 'JumpCloud*.exe'
+        Image|endswith: '\\JumpCloud*.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Jump Cloud

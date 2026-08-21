@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,28 +17,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'Freshservice.DiscoveryProbe.ScanService.exe'
-            - 'Freshservice.DiscoveryProbe.Window.exe'
-            - 'plink.exe'
-            - 'FSAgentService.exe'
-            - 'FSAgentAutoUpdate.exe'
-            - 'FSAgentService.exe'
-            - 'FSAgentAutoUpdate.exe'
-            - 'FSWmiScanner.exe'
-            - 'Freshservice.DiscoveryProbe.Window.exe'
-            - 'Freshservice.DiscoveryProbe.ScanService.exe'
+            - '\\Freshservice.DiscoveryProbe.ScanService.exe'
+            - '\\Freshservice.DiscoveryProbe.Window.exe'
+            - '\\plink.exe'
+            - '\\FSAgentService.exe'
+            - '\\FSAgentAutoUpdate.exe'
+            - '\\FSWmiScanner.exe'
     selection_image:
         Image|endswith:
-            - 'Freshservice.DiscoveryProbe.ScanService.exe'
-            - 'Freshservice.DiscoveryProbe.Window.exe'
-            - 'plink.exe'
-            - 'FSAgentService.exe'
-            - 'FSAgentAutoUpdate.exe'
-            - 'FSAgentService.exe'
-            - 'FSAgentAutoUpdate.exe'
-            - 'FSWmiScanner.exe'
-            - 'Freshservice.DiscoveryProbe.Window.exe'
-            - 'Freshservice.DiscoveryProbe.ScanService.exe'
+            - '\\Freshservice.DiscoveryProbe.ScanService.exe'
+            - '\\Freshservice.DiscoveryProbe.Window.exe'
+            - '\\plink.exe'
+            - '\\FSAgentService.exe'
+            - '\\FSAgentAutoUpdate.exe'
+            - '\\FSWmiScanner.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Freshservice

@@ -8,6 +8,7 @@ references:
 author: LOLRMM Project
 date: 2026-05-18
 tags:
+    - attack.command-and-control
     - attack.execution
     - attack.t1219
 logsource:
@@ -16,14 +17,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'installer.exe'
-            - 'RemSupp.exe'
-            - 'Uninstall RemSupp.exe'
+            - '\\installer.exe'
+            - '\\RemSupp.exe'
+            - '\\Uninstall RemSupp.exe'
     selection_image:
         Image|endswith:
-            - 'installer.exe'
-            - 'RemSupp.exe'
-            - 'Uninstall RemSupp.exe'
+            - '\\installer.exe'
+            - '\\RemSupp.exe'
+            - '\\Uninstall RemSupp.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RemSupp
