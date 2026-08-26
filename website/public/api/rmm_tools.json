@@ -15674,6 +15674,171 @@
         }
     },
     {
+        "Name": "BreezeRMM",
+        "Category": "RMM",
+        "Description": "BreezeRMM (Breeze) is an open-source remote monitoring and management platform developed by LanternOps, LLC. The vendor advertises remote access, fleet device management, patch management, script execution, software deployment, and monitoring across Windows, macOS, and Linux endpoints, with both self-hosted and managed cloud deployment options. Like other RMM agents, Breeze can be dropped and run by an operator to gain persistent remote access to endpoints. A Breeze agent sample is tracked on abuse.ch MalwareBazaar, and the on-disk artifacts below were reported in LOLRMM GitHub issue #235.\n",
+        "Author": "ChrisJr404",
+        "Created": "2026-08-26",
+        "LastModified": "2026-08-26",
+        "Details": {
+            "Website": "https://breezermm.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "breeze-agent.exe",
+                    "OriginalFileName": "",
+                    "Description": "Breeze RMM agent",
+                    "Product": "Breeze"
+                },
+                {
+                    "Filename": "breeze-watchdog.exe",
+                    "OriginalFileName": "",
+                    "Description": "Breeze agent watchdog process",
+                    "Product": "Breeze"
+                },
+                {
+                    "Filename": "breeze-user-helper.exe",
+                    "OriginalFileName": "",
+                    "Description": "Breeze user-context helper process",
+                    "Product": "Breeze"
+                },
+                {
+                    "Filename": "breeze-backup.exe",
+                    "OriginalFileName": "",
+                    "Description": "Breeze agent backup component",
+                    "Product": "Breeze"
+                }
+            ],
+            "Privileges": "User and SYSTEM",
+            "Free": true,
+            "Verification": "The public Breeze website documents an open-source RMM with remote access, patching, script execution, and software deployment. The signer LanternOps, LLC and the on-disk artifacts are sourced from LOLRMM GitHub issue #235 and the linked abuse.ch MalwareBazaar sample.\n",
+            "SupportedOS": [
+                "Windows",
+                "macOS",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Remote access",
+                "Remote monitoring",
+                "Patch management",
+                "Script execution",
+                "Software deployment",
+                "Monitoring and alerting"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Breeze\\*",
+                "C:\\ProgramData\\Breeze\\*"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Breeze\\breeze-agent.exe",
+                    "Description": "Breeze RMM agent executable reported in issue 235.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Breeze\\breeze-watchdog.exe",
+                    "Description": "Breeze agent watchdog executable reported in issue 235.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Breeze\\breeze-user-helper.exe",
+                    "Description": "Breeze user-context helper executable reported in issue 235.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Breeze\\breeze-backup.exe",
+                    "Description": "Breeze agent backup executable reported in issue 235.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Breeze\\scripts\\install\\install-windows.ps1",
+                    "Description": "Breeze Windows install script reported in issue 235.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Breeze\\agent.env",
+                    "Description": "Breeze agent environment configuration reported in issue 235.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Breeze\\secrets.yaml",
+                    "Description": "Breeze agent secrets file reported in issue 235.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Breeze\\logs\\agent.log",
+                    "Description": "Breeze agent log file reported in issue 235.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Vendor-documented Breeze managed cloud service domains.",
+                    "Domains": [
+                        "breezermm.com",
+                        "breeze.app",
+                        "us.2breeze.app",
+                        "eu.2breeze.app"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Self-hosted Breeze deployments use operator-supplied infrastructure; issue #235 notes network destinations depend on the build.\n",
+                    "Domains": [
+                        "user_managed"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ObservedSHA256",
+                    "Value": "52dd8b2f9145907477a6ebc4ad406c1e4b221ea967f1c2ce8bc23faa83b663d8"
+                },
+                {
+                    "Type": "CodeSigningSigner",
+                    "Value": "LanternOps, LLC"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://breezermm.com/",
+            "https://breeze.app/",
+            "https://bazaar.abuse.ch/sample/52dd8b2f9145907477a6ebc4ad406c1e4b221ea967f1c2ce8bc23faa83b663d8/",
+            "https://github.com/magicsword-io/LOLRMM/issues/235"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Jason Killam",
+                "Handle": "@rcKillam"
+            }
+        ],
+        "CodeSigning": {
+            "search_names": [
+                "breeze-agent.exe",
+                "breeze-watchdog.exe",
+                "breeze-user-helper.exe",
+                "breeze-backup.exe"
+            ],
+            "company_names": [
+                "LanternOps, LLC"
+            ],
+            "signer_names": [
+                "LanternOps, LLC"
+            ],
+            "certificates": []
+        }
+    },
+    {
         "Name": "Supremo",
         "Category": "RMM",
         "Description": "Supremo is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n",
