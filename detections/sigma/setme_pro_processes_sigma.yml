@@ -1,12 +1,12 @@
-title: Potential Chrome Remote Desktop RMM Tool Process Activity
-id: bc915205-3ead-4c5b-9cfc-5858b9370aeb
+title: Potential SetMe PRO RMM Tool Process Activity
+id: b4db7226-1575-5f5f-82bb-93a116b15471
 status: experimental
 description: |
-    Detects potential processes activity of Chrome Remote Desktop RMM tool
+    Detects potential processes activity of SetMe PRO RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-09-02
 tags:
     - attack.execution
     - attack.t1219
@@ -16,13 +16,13 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'remoting_host.exe'
-            - 'remoting_host.exe'
+            - 'SetMe_Client.exe'
+            - 'tinUnattendedModule.exe'
     selection_image:
         Image|endswith:
-            - 'remoting_host.exe'
-            - 'remoting_host.exe'
+            - 'SetMe_Client.exe'
+            - 'tinUnattendedModule.exe'
     condition: 1 of selection_*
 falsepositives:
-    - Legitimate use of Chrome Remote Desktop
+    - Legitimate use of SetMe PRO
 level: medium

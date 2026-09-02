@@ -1,12 +1,12 @@
-title: Potential FixMe.it RMM Tool Network Activity
-id: 5546797c-7d0f-4799-8252-b3c155a6d042
+title: Potential SetMe PRO RMM Tool Network Activity
+id: 002fb12c-8c33-5a75-b5af-76ea3e2b227f
 status: experimental
 description: |
-    Detects potential network activity of FixMe.it RMM tool
+    Detects potential network activity of SetMe PRO RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
+date: 2026-09-02
 tags:
     - attack.execution
     - attack.t1219
@@ -16,10 +16,9 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - '*.fixme.it'
-            - '*.techinline.net'
-            - 'fixme.it'
+            - 'set.me'
+            - '*.set.me'
     condition: selection
 falsepositives:
-    - Legitimate use of FixMe.it
+    - Legitimate use of SetMe PRO
 level: medium
