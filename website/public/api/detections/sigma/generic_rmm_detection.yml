@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-08-26'
+modified: '2026-09-02'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -137,6 +137,8 @@ detection:
     - \\C:\Program Files (x86)\ScreenConnect Client (Random)\ScreenConnect.ClientService.exe
     - \\C:\Program Files (x86)\SmartFTP Client\en-US\
     - \\C:\Program Files (x86)\Splashtop\*
+    - \\C:\Program Files (x86)\Techinline Ltd\SetMe Unattended\Client\SetMe_Client.exe
+    - \\C:\Program Files (x86)\Techinline Ltd\SetMe Unattended\Module\*\tinUnattendedModule.exe
     - \\C:\Program Files (x86)\TiFLUX\*
     - \\C:\Program Files (x86)\TiFLUX\TiService.exe
     - \\C:\Program Files (x86)\TiFLUX\TiUpdateService.exe
@@ -201,6 +203,7 @@ detection:
     - \\C:\Program Files\Net Monitor for Employees Pro\*
     - \\C:\Program Files\Netbird\netbird-ui.exe
     - \\C:\Program Files\Netbird\netbird.exe
+    - \\C:\Program Files\OpsBridge\OpsBridgeAgent.exe
     - \\C:\Program Files\Parsec\*
     - \\C:\Program Files\RdClient\*
     - \\C:\Program Files\RealVNC\VNC Server\*
@@ -239,6 +242,7 @@ detection:
     - \\C:\ProgramData\JWrapper-Remote Access\*
     - \\C:\ProgramData\Kaseya\
     - \\C:\ProgramData\Netbird\*
+    - \\C:\ProgramData\OpsBridge\*
     - \\C:\ProgramData\Package Cache\.unverified\agent
     - \\C:\ProgramData\Teramind Agent\*
     - \\C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\*
@@ -279,6 +283,7 @@ detection:
     - \\C:\Windows\SysWOW64\rserver30\FamItrf2
     - \\C:\Windows\SysWOW64\rserver30\FamItrfc
     - \\C:\Windows\SysWOW64\rserver30\rserver3.exe
+    - \\C:\Windows\System32\Tasks\OpsBridge Agent
     - \\C:\Windows\System32\mstsc.exe
     - \\C:\Windows\Temp\FleetDeck\*
     - \\C:\Windows\Temp\ImmyBot\*
@@ -557,6 +562,8 @@ detection:
     - \\c:\Program Files\*\Duplicati.Server.exe
     - \\can't find this one
     - \\cbb.exe
+    - \\chrome-remote-desktop
+    - \\chrome-remote-desktop-host
     - \\client32.exe
     - \\clientmrinit.exe
     - \\cloudflared.exe
@@ -792,7 +799,6 @@ detection:
     - \\remote access.exe
     - \\remote-it-installer.exe
     - \\remote.it.exe
-    - \\remote_host.exe
     - \\remoteconsole.exe
     - \\remoteit.exe
     - \\remotely-agent.plist
@@ -803,6 +809,8 @@ detection:
     - \\remotesupportplayeru.exe
     - \\remoteview.exe
     - \\remoting_host.exe
+    - \\remoting_me2me_host
+    - \\remoting_me2me_host_service
     - \\requires sign up
     - \\rfusclient.exe
     - \\rmserverconsolemediator.exe

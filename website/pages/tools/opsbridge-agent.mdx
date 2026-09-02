@@ -1,0 +1,74 @@
+---
+description: "OpsBridge Agent is the Windows endpoint component of OpsBridge LLC's remote monitoring and management platform at opsbridge.digital. The platform supports endpoint monitoring, remote command execution, file transfer, screenshots, process and software inventory, Windows event log collection, and software deployment. This entry covers the OpsBridge LLC product and is not related to OpenText Operations Bridge, which uses a similar name."
+title: "OpsBridge Agent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# OpsBridge Agent
+
+OpsBridge Agent is the Windows endpoint component of OpsBridge LLC's remote monitoring and management platform at opsbridge.digital. The platform supports endpoint monitoring, remote command execution, file transfer, screenshots, process and software inventory, Windows event log collection, and software deployment. This entry covers the OpsBridge LLC product and is not related to OpenText Operations Bridge, which uses a similar name.
+
+
+<BlockBanner name={"OpsBridge Agent"}/>
+
+### Details
+<Details author={"Chad H"}
+         category={"RMM"}
+         created={"2026-09-01"}
+         website={"https://opsbridge.digital/"}
+         lastModified={"2026-09-01"}
+         privileges={"SYSTEM"}
+         free={ false }
+         verification={ "The linked MSI and executable samples were retrieved from VirusTotal and inspected statically. The MSI targets the 64-bit Program Files directory and launches the signed agent using a deferred, no-impersonate custom action. VirusTotal behavior confirms the scheduled task, ProgramData state and job files, randomized persisted executable names, and HTTPS traffic to opsbridge.digital. Authenticode verification succeeds for both samples with OpsBridge LLC as the signer.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\OpsBridge\\OpsBridgeAgent.exe", "C:\\ProgramData\\OpsBridge\\*", "C:\\Windows\\System32\\Tasks\\OpsBridge Agent"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Endpoint monitoring and inventory", "Remote terminal and command execution", "PowerShell script execution", "File upload and download", "Remote screenshots", "Process and software inventory", "Windows event log collection", "Software deployment", "ScreenConnect deployment", "Device status alerting"] }/>
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["OpsBridgeAgent.exe"], "company_names": ["OpsBridge LLC"], "signer_names": ["OpsBridge LLC"], "certificates": [{"signer_name": "OpsBridge LLC", "certificate_thumbprint": "04BD800721290744CD4B9376D8C5285EFA5CAF3E", "issuer": "SSL.com EV Code Signing Intermediate CA RSA R3", "valid_from": "2026-08-12T07:58:19Z", "valid_to": "2027-08-12T07:58:19Z", "src_file_sha256": "6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914", "src_file_path": "OpsBridgeAgent.exe", "src_file_company": "OpsBridge LLC"}]} }/>
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\OpsBridge\\OpsBridgeAgent.exe", "Description": "Canonical agent executable installed by the observed MSI.", "OS": "Windows"}, {"File": "C:\\Program Files\\OpsBridge\\*.exe", "Description": "Randomly named persisted agent copy observed across sandbox runs.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OpsBridge\\agent_state.json", "Description": "Agent enrollment and runtime state.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OpsBridge\\agent.log", "Description": "Agent activity log.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OpsBridge\\install.log", "Description": "Agent installation and persistence log.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OpsBridge\\.persisted_v4", "Description": "Marker written after agent persistence is configured.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OpsBridge\\task_*.json", "Description": "Per-job task file consumed by an OpsBridge worker process.", "OS": "Windows"}, {"File": "C:\\Windows\\System32\\Tasks\\OpsBridge Agent", "Description": "Scheduled task file used for agent persistence.", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\OpsBridgeAgent", "Description": "Agent uninstall metadata, including the randomized persisted executable path."}, {"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\OpsBridge Agent", "Description": "Task Scheduler cache entry for the OpsBridge Agent persistence task."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "OpsBridge agent enrollment, command, and telemetry service.", "Domains": ["opsbridge.digital"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "ScheduledTaskName", "Value": "\\OpsBridge Agent"}, {"Type": "Mutex", "Value": "Global\\OpsBridgeAgentSingleton"}, {"Type": "ObservedWorkerPattern", "Value": "C:\\Program Files\\OpsBridge\\*.exe --worker C:\\ProgramData\\OpsBridge\\task_*.json"}, {"Type": "MSIProductCode", "Value": "{1C453AC7-7551-48B1-B9CA-0D0FAE88575F}"}, {"Type": "MSIUpgradeCode", "Value": "{75C245E5-96D2-41D4-B398-8E329847088C}"}, {"Type": "ObservedSHA256", "Value": "6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914"}, {"Type": "ObservedInstallerSHA256", "Value": "2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0"}] }/>
+
+
+
+
+### References
+- [https://opsbridge.digital/](https://opsbridge.digital/)
+- [https://github.com/magicsword-io/LOLRMM/issues/242](https://github.com/magicsword-io/LOLRMM/issues/242)
+- [https://www.virustotal.com/gui/file/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/behavior](https://www.virustotal.com/gui/file/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/behavior)
+- [https://www.virustotal.com/gui/file/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0](https://www.virustotal.com/gui/file/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0)
+- [https://bazaar.abuse.ch/sample/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/](https://bazaar.abuse.ch/sample/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/)
+- [https://bazaar.abuse.ch/sample/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0/](https://bazaar.abuse.ch/sample/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0/)
+
+### Acknowledgements
+- Chad H (@0xburgers)

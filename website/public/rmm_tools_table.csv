@@ -11,7 +11,7 @@ Name,Category,Description,Author
 [Xshell](/rmm_tools/xshell),RAT,Xshell is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [ISL Online](/rmm_tools/isl-online),RMM,ISL Online is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Anyplace Control](/rmm_tools/anyplace-control),RMM,Anyplace Control is a remote monitoring and management (RMM) tool. More information will be added as...,
-[Chrome Remote Desktop](/rmm_tools/chrome-remote-desktop),RAT,Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be add...,
+[Chrome Remote Desktop](/rmm_tools/chrome-remote-desktop),RAT,"Chrome Remote Desktop is Google's cross-platform remote access and support service for Windows, macO...",n2x4
 [RuDesktop](/rmm_tools/rudesktop),RMM,RuDesktop is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Tanium Deploy](/rmm_tools/tanium-deploy),RMM,Tanium Deploy is a remote monitoring and management (RMM) tool. More information will be added as it...,
 [NordLocker](/rmm_tools/nordlocker),RAT,NordLocker is a remote monitoring and management (RMM) tool. More information will be added as it be...,
@@ -62,6 +62,7 @@ Name,Category,Description,Author
 [KHelpDesk](/rmm_tools/khelpdesk),RMM,KHelpDesk is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [AnyViewer](/rmm_tools/anyviewer),RMM,AnyViewer is a remote monitoring and management (RMM) tool. More information will be added as it bec...,@kostastsale
 [Barracuda](/rmm_tools/barracuda),RMM,Barracuda is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
+[OpsBridge Agent](/rmm_tools/opsbridge-agent),RMM,OpsBridge Agent is the Windows endpoint component of OpsBridge LLC's remote monitoring and managemen...,Chad H
 [Instant Housecall](/rmm_tools/instant-housecall),RMM,Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added a...,
 [FastViewer](/rmm_tools/fastviewer),RMM,FastViewer is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Access Remote PC](/rmm_tools/access-remote-pc),RMM,Access Remote PC is a remote monitoring and management (RMM) tool. More information will be added as...,
@@ -193,10 +194,11 @@ Name,Category,Description,Author
 [Faronics Insight](/rmm_tools/faronics-insight),RMM,"Faronics Insight is a classroom / lab management platform by Faronics Corporation (Vancouver, BC, Ca...",@MHaggis
 [Remote Desktop Manager (Devolutions)](/rmm_tools/remote-desktop-manager-devolutions),RAT,Remote Desktop Manager (Devolutions) is a remote monitoring and management (RMM) tool. More informat...,
 [Domotz](/rmm_tools/domotz),RMM,Domotz is a remote monitoring and management (RMM) tool. More information will be added as it become...,
-[Adobe Connect](/rmm_tools/adobe-connect),RAT,Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it...,
+[Adobe Connect](/rmm_tools/adobe-connect),RAT,"Adobe Connect is Adobe's virtual meeting, webinar, and training platform. Its desktop application su...",Andrew Weir
 [Total Software Deployment](/rmm_tools/total-software-deployment),RMM,Total Software Deployment is a remote monitoring and management (RMM) tool. More information will be...,
 [FreeRDP](/rmm_tools/freerdp),RAT,FreeRDP is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [Level.io](/rmm_tools/levelio),RMM,Level.io is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
+[SetMe PRO](/rmm_tools/setme-pro),RMM,SetMe is a Techinline remote access and support platform for attended and unattended connections. It...,Thief1523
 [NVDA (Non-Visual Desktop Access)](/rmm_tools/nvda-non-visual-desktop-access),RMM,"NVDA (Non-Visual Desktop Access) is a free, open-source screen reader that allows blind and vision i...",Michael Haag
 [ZOC](/rmm_tools/zoc),RAT,ZOC is a remote monitoring and management (RMM) tool. More information will be added as it becomes a...,
 [eHorus](/rmm_tools/ehorus),RMM,eHorus is a remote monitoring and management (RMM) tool. More information will be added as it become...,

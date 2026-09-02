@@ -816,35 +816,103 @@
     {
         "Name": "Chrome Remote Desktop",
         "Category": "RAT",
-        "Description": "Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n\n**IMPORTANT**: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome browser and other Google applications. Do NOT blindly block these certificate thumbprints as doing so will break Google Chrome and other Google products in your environment. Use certificate data for detection, hunting, and analysis purposes only.",
-        "Author": "",
+        "Description": "Chrome Remote Desktop is Google's cross-platform remote access and support service for Windows, macOS, and Linux hosts. It supports persistent remote access and one-time attended support sessions through a web client.\nIMPORTANT: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome and other Google applications. Do not blindly block these certificate thumbprints. Use the certificate data for detection, hunting, and analysis with product-specific context.\n",
+        "Author": "n2x4",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-09-01",
         "Details": {
             "Website": "https://remotedesktop.google.com/",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [
-                "Windows"
+            "PEMetadata": [
+                {
+                    "Filename": "remoting_host.exe",
+                    "OriginalFileName": "remoting_host.exe",
+                    "Description": "Host Process",
+                    "Product": "Chrome Remote Desktop"
+                }
             ],
-            "Capabilities": [],
+            "Privileges": "User and SYSTEM/root",
+            "Free": true,
+            "Verification": "Google documents remote-access host support for Windows, macOS, and Linux, and Google Chrome Enterprise support confirms that no license is required. Chromium's current macOS installer source confirms the privileged helper bundle, host binaries, launchd files, and configuration paths. The current Google Debian package confirms the Linux service and /opt/google/chrome-remote-desktop paths. The Windows host sample and Google LLC signature were verified through VirusTotal.\n",
+            "SupportedOS": [
+                "Windows",
+                "macOS",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Persistent remote desktop access",
+                "One-time attended remote support",
+                "Remote access to applications and files"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "remote_host.exe",
                 "remoting_host.exe",
                 "C:\\Program Files (x86)\\Google\\Chrome Remote Desktop\\*",
                 "*\\Google\\Chrome Remote Desktop\\*",
-                "*\\remoting_host.exe"
+                "*\\remoting_host.exe",
+                "/Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host",
+                "/Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host_service",
+                "/opt/google/chrome-remote-desktop/chrome-remote-desktop-host",
+                "/opt/google/chrome-remote-desktop/chrome-remote-desktop"
             ]
         },
         "Artifacts": {
-            "Disk": [],
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\Google\\Chrome Remote Desktop\\*\\remoting_host.exe",
+                    "Description": "Versioned Windows host process.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host",
+                    "Description": "Primary macOS remote desktop host executable.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host_service",
+                    "Description": "macOS host service launched by launchd.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/LaunchAgents/org.chromium.chromoting.plist",
+                    "Description": "macOS per-user launch agent for the Chrome Remote Desktop host.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/LaunchDaemons/org.chromium.chromoting.broker.plist",
+                    "Description": "macOS launch daemon for the host broker.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/PrivilegedHelperTools/org.chromium.chromoting.json",
+                    "Description": "macOS Chrome Remote Desktop host configuration.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/PrivilegedHelperTools/org.chromium.chromoting.settings.json",
+                    "Description": "macOS Chrome Remote Desktop host settings.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Applications/Chrome Remote Desktop Host Uninstaller.app",
+                    "Description": "macOS host uninstaller application.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/opt/google/chrome-remote-desktop/chrome-remote-desktop-host",
+                    "Description": "Linux Chrome Remote Desktop host executable.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/google/chrome-remote-desktop/chrome-remote-desktop",
+                    "Description": "Linux host management script.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/lib/systemd/system/chrome-remote-desktop.service",
+                    "Description": "Linux systemd service unit.",
+                    "OS": "Linux"
+                }
+            ],
             "EventLog": [],
             "Registry": [],
             "Network": [
@@ -859,7 +927,10 @@
                         "chromoting-host.talkgadget.google.com",
                         "chromoting-oauth.talkgadget.google.com"
                     ],
-                    "Ports": []
+                    "Ports": [
+                        443,
+                        3478
+                    ]
                 }
             ]
         },
@@ -874,10 +945,32 @@
             }
         ],
         "References": [
-            "https://support.google.com/chrome/a/answer/2799701?hl=en"
+            "https://support.google.com/chrome/a/answer/2799701?hl=en",
+            "https://support.google.com/chrome/answer/1649523",
+            "https://support.google.com/chrome/a/thread/154474130",
+            "https://chromium.googlesource.com/chromium/src/+/HEAD/remoting/branding_Chrome",
+            "https://chromium.googlesource.com/chromium/src/+/HEAD/remoting/host/installer/mac/Scripts/remoting_postflight.sh",
+            "https://chromium.googlesource.com/chromium/src/+/HEAD/remoting/host/installer/mac/LaunchAgents/org.chromium.chromoting.plist",
+            "https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb",
+            "https://github.com/magicsword-io/LOLRMM/issues/230",
+            "https://www.virustotal.com/gui/file/1e0fbe101bbca4efdfb05c012495265f1db731c97fb82fa8e569c6ab725c0140"
         ],
-        "Acknowledgement": [],
+        "Acknowledgement": [
+            {
+                "Person": "n2x4",
+                "Handle": "@n2x4"
+            }
+        ],
         "CodeSigning": {
+            "search_names": [
+                "remoting_host.exe"
+            ],
+            "company_names": [
+                "Google LLC"
+            ],
+            "signer_names": [
+                "Google LLC"
+            ],
             "certificates": [
                 {
                     "signer_name": "Google LLC",
@@ -6218,6 +6311,192 @@
             "https://help.islonline.com/19799/166125"
         ],
         "Acknowledgement": []
+    },
+    {
+        "Name": "OpsBridge Agent",
+        "Category": "RMM",
+        "Description": "OpsBridge Agent is the Windows endpoint component of OpsBridge LLC's remote monitoring and management platform at opsbridge.digital. The platform supports endpoint monitoring, remote command execution, file transfer, screenshots, process and software inventory, Windows event log collection, and software deployment. This entry covers the OpsBridge LLC product and is not related to OpenText Operations Bridge, which uses a similar name.\n",
+        "Author": "Chad H",
+        "Created": "2026-09-01",
+        "LastModified": "2026-09-01",
+        "Details": {
+            "Website": "https://opsbridge.digital/",
+            "PEMetadata": [
+                {
+                    "Filename": "OpsBridgeAgent.exe",
+                    "OriginalFileName": "OpsBridgeAgent.exe",
+                    "Description": "OpsBridge Endpoint Service",
+                    "Product": "OpsBridge Endpoint Management Suite"
+                }
+            ],
+            "Privileges": "SYSTEM",
+            "Free": "",
+            "Verification": "The linked MSI and executable samples were retrieved from VirusTotal and inspected statically. The MSI targets the 64-bit Program Files directory and launches the signed agent using a deferred, no-impersonate custom action. VirusTotal behavior confirms the scheduled task, ProgramData state and job files, randomized persisted executable names, and HTTPS traffic to opsbridge.digital. Authenticode verification succeeds for both samples with OpsBridge LLC as the signer.\n",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Endpoint monitoring and inventory",
+                "Remote terminal and command execution",
+                "PowerShell script execution",
+                "File upload and download",
+                "Remote screenshots",
+                "Process and software inventory",
+                "Windows event log collection",
+                "Software deployment",
+                "ScreenConnect deployment",
+                "Device status alerting"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\OpsBridge\\OpsBridgeAgent.exe",
+                "C:\\ProgramData\\OpsBridge\\*",
+                "C:\\Windows\\System32\\Tasks\\OpsBridge Agent"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\OpsBridge\\OpsBridgeAgent.exe",
+                    "Description": "Canonical agent executable installed by the observed MSI.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\OpsBridge\\*.exe",
+                    "Description": "Randomly named persisted agent copy observed across sandbox runs.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OpsBridge\\agent_state.json",
+                    "Description": "Agent enrollment and runtime state.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OpsBridge\\agent.log",
+                    "Description": "Agent activity log.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OpsBridge\\install.log",
+                    "Description": "Agent installation and persistence log.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OpsBridge\\.persisted_v4",
+                    "Description": "Marker written after agent persistence is configured.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OpsBridge\\task_*.json",
+                    "Description": "Per-job task file consumed by an OpsBridge worker process.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\System32\\Tasks\\OpsBridge Agent",
+                    "Description": "Scheduled task file used for agent persistence.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\OpsBridgeAgent",
+                    "Description": "Agent uninstall metadata, including the randomized persisted executable path."
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\OpsBridge Agent",
+                    "Description": "Task Scheduler cache entry for the OpsBridge Agent persistence task."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "OpsBridge agent enrollment, command, and telemetry service.",
+                    "Domains": [
+                        "opsbridge.digital"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ScheduledTaskName",
+                    "Value": "\\OpsBridge Agent"
+                },
+                {
+                    "Type": "Mutex",
+                    "Value": "Global\\OpsBridgeAgentSingleton"
+                },
+                {
+                    "Type": "ObservedWorkerPattern",
+                    "Value": "C:\\Program Files\\OpsBridge\\*.exe --worker C:\\ProgramData\\OpsBridge\\task_*.json"
+                },
+                {
+                    "Type": "MSIProductCode",
+                    "Value": "{1C453AC7-7551-48B1-B9CA-0D0FAE88575F}"
+                },
+                {
+                    "Type": "MSIUpgradeCode",
+                    "Value": "{75C245E5-96D2-41D4-B398-8E329847088C}"
+                },
+                {
+                    "Type": "ObservedSHA256",
+                    "Value": "6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914"
+                },
+                {
+                    "Type": "ObservedInstallerSHA256",
+                    "Value": "2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://opsbridge.digital/",
+            "https://github.com/magicsword-io/LOLRMM/issues/242",
+            "https://www.virustotal.com/gui/file/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/behavior",
+            "https://www.virustotal.com/gui/file/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0",
+            "https://bazaar.abuse.ch/sample/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/",
+            "https://bazaar.abuse.ch/sample/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0/"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Chad H",
+                "Handle": "@0xburgers"
+            }
+        ],
+        "CodeSigning": {
+            "search_names": [
+                "OpsBridgeAgent.exe"
+            ],
+            "company_names": [
+                "OpsBridge LLC"
+            ],
+            "signer_names": [
+                "OpsBridge LLC"
+            ],
+            "certificates": [
+                {
+                    "signer_name": "OpsBridge LLC",
+                    "certificate_thumbprint": "04BD800721290744CD4B9376D8C5285EFA5CAF3E",
+                    "issuer": "SSL.com EV Code Signing Intermediate CA RSA R3",
+                    "valid_from": "2026-08-12T07:58:19Z",
+                    "valid_to": "2027-08-12T07:58:19Z",
+                    "src_file_sha256": "6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914",
+                    "src_file_path": "OpsBridgeAgent.exe",
+                    "src_file_company": "OpsBridge LLC"
+                }
+            ]
+        },
+        "FileHashes": {
+            "authenticode": [
+                {
+                    "file_name": "OpsBridgeAgent.exe",
+                    "sha256": "A869EF4E7F8200A2F5799A29C17F8721087E6DD67F7CE786ED33CEF07379FC30",
+                    "sha1": null
+                }
+            ]
+        }
     },
     {
         "Name": "Instant Housecall",
@@ -18097,7 +18376,7 @@
         "Description": "FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2026-06-16",
+        "LastModified": "2026-09-01",
         "Details": {
             "Website": "https://fixme.it/",
             "PEMetadata": {
@@ -18136,11 +18415,7 @@
                     "Domains": [
                         "*.fixme.it",
                         "*.techinline.net",
-                        "fixme.it",
-                        "set.me",
-                        "*.set.me",
-                        "setme.net",
-                        "*.setme.net"
+                        "fixme.it"
                     ],
                     "Ports": []
                 }
@@ -18156,7 +18431,9 @@
                 "Description": "Detects potential processes activity of FixMe.it RMM tool"
             }
         ],
-        "References": [],
+        "References": [
+            "https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use"
+        ],
         "Acknowledgement": []
     },
     {
@@ -18932,22 +19209,34 @@
     {
         "Name": "Adobe Connect",
         "Category": "RAT",
-        "Description": "Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
+        "Description": "Adobe Connect is Adobe's virtual meeting, webinar, and training platform. Its desktop application supports Windows and macOS and can be used for screen sharing and remote collaboration. The application communicates with Adobe Connect service domains over HTTPS and WebRTC.\n",
+        "Author": "Andrew Weir",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-09-01",
         "Details": {
             "Website": "https://www.adobe.com/products/adobeconnect.html",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
+            "PEMetadata": [
+                {
+                    "Filename": "ConnectAppSetup.exe",
+                    "OriginalFileName": "ConnectAppSetup.exe",
+                    "Description": "Connect App Setup",
+                    "Product": "Adobe Connect"
+                }
+            ],
+            "Privileges": "User",
+            "Free": false,
+            "Verification": "Adobe's current 64-bit Windows MSI was downloaded from the official Adobe Connect downloads page and inspected statically. The MSI and its embedded ConnectAppSetup.exe both have valid signatures from Adobe Inc. The Anti-Cloud Corporation certificate previously listed here came from a WireSock Secure Connect sample unrelated to Adobe Connect and was removed.\n",
+            "SupportedOS": [
+                "Windows",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Virtual meetings and webinars",
+                "Screen sharing",
+                "Remote collaboration",
+                "File and content sharing",
+                "Session recording"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "ConnectAppSetup*.exe",
@@ -18962,11 +19251,24 @@
             "Registry": [],
             "Network": [
                 {
-                    "Description": "Known remote domains",
+                    "Description": "Adobe Connect service domains.",
                     "Domains": [
                         "*.adobeconnect.com"
                     ],
-                    "Ports": []
+                    "Ports": [
+                        443,
+                        3478
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ObservedInstallerSHA256",
+                    "Value": "70e9cebbf2294d7805f6cda3ad8274aa20164005c8162b748fba6d1265c98c82"
+                },
+                {
+                    "Type": "ObservedSetupSHA256",
+                    "Value": "42a4974d93ae8593e0d5b59b8555aaa1e3dff60f48a41ff4d4dee20a6d211c29"
                 }
             ]
         },
@@ -18981,18 +19283,49 @@
             }
         ],
         "References": [
-            "https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html"
+            "https://helpx.adobe.com/adobe-connect/connect-downloads-updates.html",
+            "https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html",
+            "https://github.com/magicsword-io/LOLRMM/issues/234",
+            "https://www.virustotal.com/gui/file/70e9cebbf2294d7805f6cda3ad8274aa20164005c8162b748fba6d1265c98c82",
+            "https://www.virustotal.com/gui/file/42a4974d93ae8593e0d5b59b8555aaa1e3dff60f48a41ff4d4dee20a6d211c29"
         ],
-        "Acknowledgement": [],
+        "Acknowledgement": [
+            {
+                "Person": "Andrew Weir",
+                "Handle": "@mrajweir"
+            }
+        ],
         "CodeSigning": {
+            "search_names": [
+                "ConnectAppSetup.exe",
+                "Connect.exe",
+                "ConnectDetector.exe"
+            ],
+            "company_names": [
+                "Adobe Inc."
+            ],
+            "signer_names": [
+                "Adobe Inc."
+            ],
             "certificates": [
                 {
-                    "signer_name": "The Anti-Cloud Corporation",
-                    "certificate_thumbprint": "013371A3E52D87E59DA1C93A305732B1501FFE5A",
-                    "certificate_der_base64": "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",
-                    "src_file_sha256": "4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d",
-                    "src_file_path": "downloaded_files/adobe_connect/4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d",
-                    "src_file_company": "WireSock Foundation"
+                    "signer_name": "Adobe Inc.",
+                    "certificate_thumbprint": "B3E56EED6B5D6A685141BA37C60B2A616A79A77F",
+                    "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
+                    "valid_from": "2025-10-06T00:00:00Z",
+                    "valid_to": "2027-10-05T23:59:59Z",
+                    "src_file_sha256": "42a4974d93ae8593e0d5b59b8555aaa1e3dff60f48a41ff4d4dee20a6d211c29",
+                    "src_file_path": "ConnectAppSetup.exe",
+                    "src_file_company": "Adobe Inc."
+                }
+            ]
+        },
+        "FileHashes": {
+            "authenticode": [
+                {
+                    "file_name": "ConnectAppSetup.exe",
+                    "sha256": "ecae61572669a1571a82c3d150654704da3a2be4fac3c4432771547ccbe008dc",
+                    "sha1": null
                 }
             ]
         }
@@ -19146,6 +19479,186 @@
                     "certificate_der_base64": "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",
                     "src_file_sha256": "075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83",
                     "src_file_path": "downloaded_files/level.io/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83"
+                }
+            ]
+        }
+    },
+    {
+        "Name": "SetMe PRO",
+        "Category": "RMM",
+        "Description": "SetMe is a Techinline remote access and support platform for attended and unattended connections. It supports remote desktop control, file transfer, remote restart and reconnect, multi-monitor sessions, session recording, and centralized management of unattended devices. SetMe is a distinct, newer Techinline product alongside FixMe.IT and uses its own executables and service domains.\n",
+        "Author": "Thief1523",
+        "Created": "2026-09-01",
+        "LastModified": "2026-09-01",
+        "Details": {
+            "Website": "https://www.setme.net/",
+            "PEMetadata": [
+                {
+                    "Filename": "SetMe_Client.exe",
+                    "OriginalFileName": "",
+                    "Description": "SetMe Client",
+                    "Product": "SetMe"
+                },
+                {
+                    "Filename": "tinUnattendedModule.exe",
+                    "OriginalFileName": "",
+                    "Description": "SetMe Unattended Client",
+                    "Product": "SetMe"
+                }
+            ],
+            "Privileges": "User and SYSTEM",
+            "Free": false,
+            "Verification": "Techinline's website and documentation confirm SetMe's attended and unattended remote-access features, supported operating systems, paid plans, set.me service domain, and signed Windows applications. The reported version 1.1.782.32771 client and unattended module were located in VirusTotal, downloaded, hash-checked, and inspected statically. Both samples have valid Authenticode signatures from Techinline Ltd.\n",
+            "SupportedOS": [
+                "Windows",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Attended remote support",
+                "Unattended remote access",
+                "Remote desktop control",
+                "File transfer and clipboard sharing",
+                "Remote restart and reconnect",
+                "Multi-monitor support",
+                "Session recording",
+                "Unattended device management"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files (x86)\\Techinline Ltd\\SetMe Unattended\\Client\\SetMe_Client.exe",
+                "C:\\Program Files (x86)\\Techinline Ltd\\SetMe Unattended\\Module\\*\\tinUnattendedModule.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\Techinline Ltd\\SetMe Unattended\\Client\\SetMe_Client.exe",
+                    "Description": "SetMe client executable reported in issue 231.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Techinline Ltd\\SetMe Unattended\\Module\\*\\tinUnattendedModule.exe",
+                    "Description": "Versioned unattended client module reported in issue 231 and confirmed by VirusTotal.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Local\\Temp\\tinClientExtractor-*\\tinClientDesktopApplication.exe",
+                    "Description": "Attended client desktop application extracted into a per-run temporary directory.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Local\\Temp\\tinClientExtractor-*\\tinClientSessionManager.exe",
+                    "Description": "Session manager extracted and launched by the attended client.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Techinline Ltd\\settings.ini*",
+                    "Description": "SetMe client settings and lock files observed during sandbox execution.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\SetMe Client",
+                    "Description": "SetMe client ProgramData marker observed during sandbox execution.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\Temp\\setme\\Sentry\\*",
+                    "Description": "SetMe crash-reporting state created by the client.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\tinClientSessionManager-*",
+                    "Description": "Per-session temporary SetMe client service."
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\\tinClientSessionManager-*",
+                    "Description": "Safe-mode registration for the per-session SetMe client service."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Vendor-documented SetMe HTTPS and secure WebSocket services.",
+                    "Domains": [
+                        "set.me",
+                        "*.set.me"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ServiceNamePattern",
+                    "Value": "tinClientSessionManager-*"
+                },
+                {
+                    "Type": "ObservedClientSHA256",
+                    "Value": "442ab6918b0b715b4a3c7f9e9c4a67fd27cb12094eb43653c1b2501e7f4f61e5"
+                },
+                {
+                    "Type": "ObservedUnattendedModuleSHA256",
+                    "Value": "02e53fbb632c8af5e53d763b53c497b9c83493ff32406633e665ac7a01baa815"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://www.setme.net/",
+            "https://www.setme.net/Pricing",
+            "https://docs.set.me/getting-started/system-requirements",
+            "https://docs.set.me/unattended-access",
+            "https://www.setme.net/portals/0/whitepapers/SetMe-Security-Statement.pdf",
+            "https://github.com/magicsword-io/LOLRMM/issues/231",
+            "https://www.virustotal.com/gui/file/442ab6918b0b715b4a3c7f9e9c4a67fd27cb12094eb43653c1b2501e7f4f61e5",
+            "https://www.virustotal.com/gui/file/02e53fbb632c8af5e53d763b53c497b9c83493ff32406633e665ac7a01baa815"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Thief1523",
+                "Handle": "@Thief1523"
+            }
+        ],
+        "CodeSigning": {
+            "search_names": [
+                "SetMe_Client.exe",
+                "tinUnattendedModule.exe",
+                "tinClientDesktopApplication.exe",
+                "tinClientSessionManager.exe"
+            ],
+            "company_names": [
+                "Techinline Ltd"
+            ],
+            "signer_names": [
+                "Techinline Ltd"
+            ],
+            "certificates": [
+                {
+                    "signer_name": "Techinline Ltd",
+                    "certificate_thumbprint": "73FA21D6064A275C00007765AA5BBFA786B6955F",
+                    "issuer": "Entrust Code Signing CA - OVCS2",
+                    "valid_from": "2023-07-24T21:23:56Z",
+                    "valid_to": "2026-10-23T21:23:55Z",
+                    "src_file_sha256": "442ab6918b0b715b4a3c7f9e9c4a67fd27cb12094eb43653c1b2501e7f4f61e5",
+                    "src_file_path": "SetMe_Client.exe",
+                    "src_file_company": "Techinline Ltd"
+                }
+            ]
+        },
+        "FileHashes": {
+            "authenticode": [
+                {
+                    "file_name": "SetMe_Client.exe",
+                    "sha256": "36127cdd2409e2fde74bc6503613e9611bc0de8388be314f0eebd50c99a9881d",
+                    "sha1": null
+                },
+                {
+                    "file_name": "tinUnattendedModule.exe",
+                    "sha256": "29eff4a7203718f0bbd3c8d7b648010cb97682f8ed3bc8e9e894453327d2abf4",
+                    "sha1": null
                 }
             ]
         }

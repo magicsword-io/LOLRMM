@@ -158,10 +158,6 @@ fastviewer.com,FastViewer
 *.fixme.it,FixMe.it
 *.techinline.net,FixMe.it
 fixme.it,FixMe.it
-set.me,FixMe.it
-*.set.me,FixMe.it
-setme.net,FixMe.it
-*.setme.net,FixMe.it
 *.fleetdeck.io,FleetDeck.io
 fleetdeck.io,FleetDeck.io
 agentmqtt.fleetdeck.io,FleetDeck.io
@@ -461,6 +457,7 @@ nomachine.com,NoMachine
 nvaccess.org,NVDA (Non-Visual Desktop Access)
 *.nvaccess.org,NVDA (Non-Visual Desktop Access)
 ocsinventory-ng.org,OCS inventory
+opsbridge.digital,OpsBridge Agent
 *.optitune.us,OptiTune
 *.opti-tune.com,OptiTune
 portal.ehorus.com,Pandora RC (eHorus)
@@ -542,6 +539,8 @@ seetrol.co.kr,Seetrol
 *.senso.cloud,Senso.cloud
 senso.cloud,Senso.cloud
 *.server-eye.de,ServerEye
+set.me,SetMe PRO
+*.set.me,SetMe PRO
 shellhub.io,ShellHub
 cloud.shellhub.io,ShellHub
 www.shellhub.io,ShellHub

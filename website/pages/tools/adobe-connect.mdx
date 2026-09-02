@@ -1,5 +1,5 @@
 ---
-description: "Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available."
+description: "Adobe Connect is Adobe's virtual meeting, webinar, and training platform. Its desktop application supports Windows and macOS and can be used for screen sharing and remote collaboration. The application communicates with Adobe Connect service domains over HTTPS and WebRTC."
 title: "Adobe Connect"
 ---
 
@@ -9,30 +9,35 @@ import {EuiSpacer} from "@elastic/eui"
 
 # Adobe Connect
 
-Adobe Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Adobe Connect is Adobe's virtual meeting, webinar, and training platform. Its desktop application supports Windows and macOS and can be used for screen sharing and remote collaboration. The application communicates with Adobe Connect service domains over HTTPS and WebRTC.
+
 
 <BlockBanner name={"Adobe Connect"}/>
 
 ### Details
-<Details author={""}
+<Details author={"Andrew Weir"}
          category={"RAT"}
          created={"2024-08-02"}
          website={"https://www.adobe.com/products/adobeconnect.html"}
-         lastModified={"2024-08-02"}
-         privileges={""}
+         lastModified={"2026-09-01"}
+         privileges={"User"}
          free={ false }
-         verification={ false }
+         verification={ "Adobe's current 64-bit Windows MSI was downloaded from the official Adobe Connect downloads page and inspected statically. The MSI and its embedded ConnectAppSetup.exe both have valid signatures from Adobe Inc. The Anti-Cloud Corporation certificate previously listed here came from a WireSock Secure Connect sample unrelated to Adobe Connect and was removed.\n" }
 />
 
 #### Installation Paths
 <Card code={ ["ConnectAppSetup*.exe", "ConnectShellSetup*.exe", "Connect.exe", "ConnectDetector.exe"] }/>
 
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "macOS"] }/>
 
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Virtual meetings and webinars", "Screen sharing", "Remote collaboration", "File and content sharing", "Session recording"] }/>
 
 
 ### Code Signing
 <EuiSpacer size="xl"/>
-<CodeSigningTable data={ {"certificates": [{"signer_name": "The Anti-Cloud Corporation", "certificate_thumbprint": "013371A3E52D87E59DA1C93A305732B1501FFE5A", "src_file_sha256": "4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d", "src_file_path": "downloaded_files/adobe_connect/4d5e55cb8cbeb6fc530c38ffd6413ce22b618e4e06fa5c3ebb7c24902aa4ae4d", "src_file_company": "WireSock Foundation"}]} }/>
+<CodeSigningTable data={ {"search_names": ["ConnectAppSetup.exe", "Connect.exe", "ConnectDetector.exe"], "company_names": ["Adobe Inc."], "signer_names": ["Adobe Inc."], "certificates": [{"signer_name": "Adobe Inc.", "certificate_thumbprint": "B3E56EED6B5D6A685141BA37C60B2A616A79A77F", "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1", "valid_from": "2025-10-06T00:00:00Z", "valid_to": "2027-10-05T23:59:59Z", "src_file_sha256": "42a4974d93ae8593e0d5b59b8555aaa1e3dff60f48a41ff4d4dee20a6d211c29", "src_file_path": "ConnectAppSetup.exe", "src_file_company": "Adobe Inc."}]} }/>
 
 
 ### Forensic Artifacts
@@ -42,8 +47,11 @@ Adobe Connect is a remote monitoring and management (RMM) tool. More information
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["*.adobeconnect.com"], "Ports": []}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Adobe Connect service domains.", "Domains": ["*.adobeconnect.com"], "Ports": [443, 3478]}] }/>
 
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "ObservedInstallerSHA256", "Value": "70e9cebbf2294d7805f6cda3ad8274aa20164005c8162b748fba6d1265c98c82"}, {"Type": "ObservedSetupSHA256", "Value": "42a4974d93ae8593e0d5b59b8555aaa1e3dff60f48a41ff4d4dee20a6d211c29"}] }/>
 
 
 
@@ -54,5 +62,11 @@ Adobe Connect is a remote monitoring and management (RMM) tool. More information
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/adobe_connect_processes_sigma.yml)
 
 ### References
+- [https://helpx.adobe.com/adobe-connect/connect-downloads-updates.html](https://helpx.adobe.com/adobe-connect/connect-downloads-updates.html)
 - [https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html](https://helpx.adobe.com/adobe-connect/firewall-proxy-server-configuration-adobe-connect.html)
+- [https://github.com/magicsword-io/LOLRMM/issues/234](https://github.com/magicsword-io/LOLRMM/issues/234)
+- [https://www.virustotal.com/gui/file/70e9cebbf2294d7805f6cda3ad8274aa20164005c8162b748fba6d1265c98c82](https://www.virustotal.com/gui/file/70e9cebbf2294d7805f6cda3ad8274aa20164005c8162b748fba6d1265c98c82)
+- [https://www.virustotal.com/gui/file/42a4974d93ae8593e0d5b59b8555aaa1e3dff60f48a41ff4d4dee20a6d211c29](https://www.virustotal.com/gui/file/42a4974d93ae8593e0d5b59b8555aaa1e3dff60f48a41ff4d4dee20a6d211c29)
 
+### Acknowledgements
+- Andrew Weir (@mrajweir)
