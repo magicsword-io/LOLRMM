@@ -3047,7 +3047,7 @@
         "Description": "NoMachine is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-09-02",
         "Details": {
             "Website": "https://www.nomachine.com/",
             "PEMetadata": {
@@ -3063,7 +3063,7 @@
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "nomachine*.exe",
-                "nxservice*.ese",
+                "nxservice*.exe",
                 "nxd.exe"
             ]
         },
@@ -24164,7 +24164,7 @@
         "Description": "Absolute (Computrace) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-09-02",
         "Details": {
             "Website": "https://www.absolute.com/",
             "PEMetadata": {
@@ -24181,7 +24181,7 @@
             "InstallationPaths": [
                 "rpcnet.exe",
                 "ctes.exe",
-                "ctespersitence.exe",
+                "ctespersistence.exe",
                 "cteshostsvc.exe",
                 "rpcld.exe"
             ]
@@ -24608,7 +24608,7 @@
         "Description": "rdp2tcp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-09-02",
         "Details": {
             "Website": "https://github.com/V-E-O/rdp2tcp",
             "PEMetadata": {
@@ -24625,7 +24625,7 @@
             "Capabilities": [],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "tdp2tcp.exe",
+                "rdp2tcp.exe",
                 "rdp2tcp.py"
             ]
         },
@@ -24895,7 +24895,7 @@
         "Description": "Ericom Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-09-02",
         "Details": {
             "Website": "https://www.ericom.com/connect-accessnow/",
             "PEMetadata": {
@@ -24911,7 +24911,7 @@
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "EricomConnectRemoteHost*.exe",
-                "ericomconnnectconfigurationtool.exe"
+                "ericomconnectconfigurationtool.exe"
             ]
         },
         "Artifacts": {

@@ -575,7 +575,7 @@ detection:
     - \\csexec.exe
     - \\ctes.exe
     - \\cteshostsvc.exe
-    - \\ctespersitence.exe
+    - \\ctespersistence.exe
     - \\ctiserv.exe
     - \\dashboard
     - \\dashboard-windows-amd64.exe
@@ -608,7 +608,7 @@ detection:
     - \\einstaller.exe
     - \\era.exe
     - \\eratool.exe
-    - \\ericomconnnectconfigurationtool.exe
+    - \\ericomconnectconfigurationtool.exe
     - \\ezHelpManager.exe
     - \\ezhelp*.exe
     - \\ezhelpclient.exe
@@ -740,7 +740,7 @@ detection:
     - \\nvda_*.exe
     - \\nvda_service.exe
     - \\nxd.exe
-    - \\nxservice*.ese
+    - \\nxservice*.exe
     - \\ocsinventory.exe
     - \\ocsservice.exe
     - \\oolocker.exe
@@ -787,6 +787,7 @@ detection:
     - \\rd.exe
     - \\rdclient.exe
     - \\rdp.exe
+    - \\rdp2tcp.exe
     - \\rdp2tcp.py
     - \\remcmdstub.exe
     - \\remcom.exe
@@ -880,7 +881,6 @@ detection:
     - \\tailscale-*.exe
     - \\tailscale-ipn.exe
     - \\tailscaled.exe
-    - \\tdp2tcp.exe
     - \\teamviewer_desktop.exe
     - \\teamviewer_service.exe
     - \\teamviewerhost
