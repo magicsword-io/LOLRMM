@@ -63,6 +63,19 @@ def normalize_rule(rule: Dict[str, Any]) -> Dict[str, Any]:
     return normalized
 
 
+def semantic_rule(rule: Dict[str, Any]) -> Dict[str, Any]:
+    """Return the rule content used to decide whether a rule changed.
+
+    IDs and dates identify a published generated rule; they are not detection
+    semantics.  Keeping them out of this comparison lets the generator retain
+    stable metadata while only updating ``modified`` for meaningful changes.
+    """
+    normalized = normalize_rule(rule)
+    for key in ("id", "date", "modified"):
+        normalized.pop(key, None)
+    return normalized
+
+
 def load_existing_sigma_rule(filepath: str) -> Tuple[Optional[Dict[str, Any]], bool]:
     """Load a Sigma rule and report whether the source file needs rewriting."""
     if not os.path.exists(filepath):
@@ -90,34 +103,60 @@ class IndentDumper(yaml.SafeDumper):
         return super().increase_indent(flow, False)
 
 
+def dedupe(values: List[str]) -> List[str]:
+    """Drop case-insensitive duplicates while keeping the first spelling."""
+    seen = set()
+    unique = []
+    for value in values:
+        key = value.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(value)
+    return unique
+
+
+def anchor_filename(filename: str) -> str:
+    """Require a Windows path separator immediately before an executable name.
+
+    Both ordinary and wildcard-prefixed basenames need the separator.  Sigma
+    requires a backslash before a wildcard to be escaped, so the Python value
+    deliberately contains two backslashes before every basename, including
+    ``*.exe``.
+    """
+    return f"\\\\{filename}"
+
+
 def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     artifacts = {"files": [], "registry": [], "network": [], "processes": []}
 
     for item in yaml_data.get("Artifacts", {}).get("Disk", []) or []:
-        if isinstance(item, dict) and "File" in item:
+        if isinstance(item, dict) and isinstance(item.get("File"), str):
             artifacts["files"].append(item["File"])
 
     for item in yaml_data.get("Artifacts", {}).get("Registry", []) or []:
-        if isinstance(item, dict) and "Path" in item:
+        if isinstance(item, dict) and isinstance(item.get("Path"), str):
             artifacts["registry"].append(item["Path"])
 
     for item in yaml_data.get("Artifacts", {}).get("Network", []) or []:
         if isinstance(item, dict):
             if "Domains" in item:
                 if isinstance(item["Domains"], list):
-                    artifacts["network"].extend(item["Domains"])
+                    artifacts["network"].extend(
+                        domain for domain in item["Domains"] if isinstance(domain, str)
+                    )
                 elif isinstance(item["Domains"], str):
                     artifacts["network"].append(item["Domains"])
 
     details = yaml_data.get("Details", {})
     if isinstance(details, dict):
         artifacts["processes"] = [
-            ntpath.basename(item)
+            anchor_filename(ntpath.basename(item))
             for item in details.get("InstallationPaths", []) or []
             if isinstance(item, str) and item.lower().endswith(".exe")
         ]
 
-    return artifacts
+    return {key: dedupe(values) for key, values in artifacts.items()}
 
 
 def write_sigma_rule(rule: Dict[str, Any], filepath: str) -> None:
@@ -201,7 +240,12 @@ def write_sigma_rule_if_changed(rule: Dict[str, Any], filepath: str) -> None:
         rule["id"] = str(existing_rule.get("id", rule["id"]))
         if "date" in existing_rule:
             rule["date"] = yaml_date(existing_rule["date"])
-        if "modified" in existing_rule:
+
+        if semantic_rule(existing_rule) != semantic_rule(rule):
+            # Detection and other semantic content changed, so this is a new
+            # revision of the published rule.  Preserve the original date/ID.
+            rule["modified"] = date.today().strftime("%Y-%m-%d")
+        elif "modified" in existing_rule:
             rule["modified"] = yaml_date(existing_rule["modified"])
 
         if not needs_rewrite and normalize_rule(existing_rule) == normalize_rule(rule):
@@ -271,7 +315,7 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
                 "references": ["https://github.com/magicsword-io/LOLRMM"],
                 "author": "LOLRMM Project",
                 "date": date.today().strftime("%Y-%m-%d"),
-                "tags": ["attack.execution", "attack.t1219"],
+                "tags": ["attack.command-and-control", "attack.t1219"],
                 "logsource": rule_template["logsource"],
                 "detection": detection,
                 "falsepositives": [f"Legitimate use of {name}"],
@@ -340,15 +384,30 @@ def update_yaml_with_sigma_rules(
         )
 
 
-def main(update_yaml: bool = True) -> None:
-    yaml_dir = "yaml/"
-    output_dir = "detections/sigma/"
+def main(
+    update_yaml: bool = True,
+    yaml_dir: str = "yaml/",
+    output_dir: str = "detections/sigma/",
+) -> None:
     os.makedirs(output_dir, exist_ok=True)
 
-    for filename in os.listdir(yaml_dir):
+    # Sorting makes generation reproducible.  Duplicate Names produce the
+    # same output path; warn so the deterministic last writer is visible.
+    written_by: Dict[str, str] = {}
+    for filename in sorted(os.listdir(yaml_dir)):
         if filename.endswith(".yaml") or filename.endswith(".yml"):
             yaml_file = os.path.join(yaml_dir, filename)
             sigma_rules = generate_sigma_rules(yaml_file, output_dir)
+            for generated_rule in sigma_rules:
+                output_file = generated_rule["Sigma"][len(SIGMA_RULE_PREFIX) :]
+                previous = written_by.get(output_file)
+                if previous:
+                    print(
+                        f"[!] Duplicate tool Name: {yaml_file} overwrote {output_file} "
+                        f"previously generated from {previous}. Give the tools distinct "
+                        "Names or merge their artifacts."
+                    )
+                written_by[output_file] = yaml_file
             if update_yaml:
                 update_yaml_with_sigma_rules(yaml_file, sigma_rules)
 
