@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -24,7 +25,6 @@ detection:
             - 'C:\Users\*\AppData\Local\Temp\privacyhelper.exe'
             - 'C:\Users\*\AppData\Roaming\HopToDesk\config\*'
             - 'C:\Users\*\AppData\Roaming\HopToDesk\config\hoptodesk.toml'
-            - 'C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk.toml'
             - 'C:\Users\*\AppData\Roaming\HopToDesk\config\HopToDesk_rCURRENT.log'
             - '/System/Volumes/Data/Users/*/Library/Logs/HopToDesk/hoptodesk_rCURRENT.log'
     condition: selection

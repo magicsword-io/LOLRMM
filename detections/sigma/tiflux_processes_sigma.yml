@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,16 +17,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'TiService.exe'
-            - 'TiUpdateService.exe'
-            - 'si.exe'
-            - 'TiAgent.exe'
+            - '\\TiService.exe'
+            - '\\TiUpdateService.exe'
+            - '\\si.exe'
+            - '\\TiAgent.exe'
     selection_image:
         Image|endswith:
-            - 'TiService.exe'
-            - 'TiUpdateService.exe'
-            - 'si.exe'
-            - 'TiAgent.exe'
+            - '\\TiService.exe'
+            - '\\TiUpdateService.exe'
+            - '\\si.exe'
+            - '\\TiAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of TiFLUX

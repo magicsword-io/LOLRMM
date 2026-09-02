@@ -7,17 +7,18 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-09-02
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith: 'OpsBridgeAgent.exe'
+        ParentImage|endswith: '\\OpsBridgeAgent.exe'
     selection_image:
-        Image|endswith: 'OpsBridgeAgent.exe'
+        Image|endswith: '\\OpsBridgeAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of OpsBridge Agent

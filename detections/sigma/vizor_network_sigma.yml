@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -25,7 +26,6 @@ detection:
             - 'mail.metaquest.com'
             - 'www.metaquest.com'
             - 'downloads.vector-networks.com'
-            - 'www.vector-networks.com'
     condition: selection
 falsepositives:
     - Legitimate use of VIZOR

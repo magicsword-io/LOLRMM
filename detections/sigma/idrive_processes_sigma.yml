@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,16 +17,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'IDriveWinSetup.exe'
-            - 'IDriveWinSetup.exe'
-            - 'IDriveEClassic.exe'
-            - 'id_tray.exe'
+            - '\\IDriveWinSetup.exe'
+            - '\\IDriveEClassic.exe'
+            - '\\id_tray.exe'
     selection_image:
         Image|endswith:
-            - 'IDriveWinSetup.exe'
-            - 'IDriveWinSetup.exe'
-            - 'IDriveEClassic.exe'
-            - 'id_tray.exe'
+            - '\\IDriveWinSetup.exe'
+            - '\\IDriveEClassic.exe'
+            - '\\id_tray.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of iDrive

@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,32 +17,24 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'DFServ.exe'
-            - 'DFServEx.exe'
-            - 'DFWks.exe'
-            - 'DFC.exe'
-            - 'DFServ.exe'
-            - 'DFServEx.exe'
-            - 'DFWks.exe'
-            - 'DFStd.exe'
-            - 'DFStdInstall.exe'
-            - 'DFC.exe'
-            - 'CloudWksInstall.exe'
-            - 'DFInst.exe'
+            - '\\DFServ.exe'
+            - '\\DFServEx.exe'
+            - '\\DFWks.exe'
+            - '\\DFC.exe'
+            - '\\DFStd.exe'
+            - '\\DFStdInstall.exe'
+            - '\\CloudWksInstall.exe'
+            - '\\DFInst.exe'
     selection_image:
         Image|endswith:
-            - 'DFServ.exe'
-            - 'DFServEx.exe'
-            - 'DFWks.exe'
-            - 'DFC.exe'
-            - 'DFServ.exe'
-            - 'DFServEx.exe'
-            - 'DFWks.exe'
-            - 'DFStd.exe'
-            - 'DFStdInstall.exe'
-            - 'DFC.exe'
-            - 'CloudWksInstall.exe'
-            - 'DFInst.exe'
+            - '\\DFServ.exe'
+            - '\\DFServEx.exe'
+            - '\\DFWks.exe'
+            - '\\DFC.exe'
+            - '\\DFStd.exe'
+            - '\\DFStdInstall.exe'
+            - '\\CloudWksInstall.exe'
+            - '\\DFInst.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Faronics Deep Freeze

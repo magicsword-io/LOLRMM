@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -20,12 +21,9 @@ detection:
             - 'teramind.co'
             - 'www.teramind.co'
             - 'rt.teramind.co'
-            - 'www.teramind.co'
             - 'sentry.dev.teramind.co'
             - '<on-prem-master-server-host>'
             - '<on-prem-app-server-host>'
-            - '*.teramind.co'
-            - 'www.teramind.co'
     condition: selection
 falsepositives:
     - Legitimate use of Teramind

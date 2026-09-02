@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,16 +17,16 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - MEAgentHelper.exe
-            - MonitoringAgent.exe
-            - Site24x7WindowsAgentTrayIcon.exe
-            - Site24x7PluginAgent.exe
+            - '\\MEAgentHelper.exe'
+            - '\\MonitoringAgent.exe'
+            - '\\Site24x7WindowsAgentTrayIcon.exe'
+            - '\\Site24x7PluginAgent.exe'
     selection_image:
         Image|endswith:
-            - MEAgentHelper.exe
-            - MonitoringAgent.exe
-            - Site24x7WindowsAgentTrayIcon.exe
-            - Site24x7PluginAgent.exe
+            - '\\MEAgentHelper.exe'
+            - '\\MonitoringAgent.exe'
+            - '\\Site24x7WindowsAgentTrayIcon.exe'
+            - '\\Site24x7PluginAgent.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Site24x7

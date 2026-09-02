@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,24 +17,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - issuser.exe
-            - landeskagentbootstrap.exe
-            - LANDeskPortalManager.exe
-            - ldinv32.exe
-            - ldsensors.exe
-            - issuser.exe
-            - softmon.exe
-            - tmcsvc.exe
+            - '\\issuser.exe'
+            - '\\landeskagentbootstrap.exe'
+            - '\\LANDeskPortalManager.exe'
+            - '\\ldinv32.exe'
+            - '\\ldsensors.exe'
+            - '\\softmon.exe'
+            - '\\tmcsvc.exe'
     selection_image:
         Image|endswith:
-            - issuser.exe
-            - landeskagentbootstrap.exe
-            - LANDeskPortalManager.exe
-            - ldinv32.exe
-            - ldsensors.exe
-            - issuser.exe
-            - softmon.exe
-            - tmcsvc.exe
+            - '\\issuser.exe'
+            - '\\landeskagentbootstrap.exe'
+            - '\\LANDeskPortalManager.exe'
+            - '\\ldinv32.exe'
+            - '\\ldsensors.exe'
+            - '\\softmon.exe'
+            - '\\tmcsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of LANDesk

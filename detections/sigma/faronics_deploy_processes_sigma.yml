@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,40 +17,34 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'FaronicsDeployAgent.exe'
-            - 'FWAService.exe'
-            - 'FWA_UI_Agent.exe'
-            - 'FRCServer.exe'
-            - 'FaronicsSA.exe'
-            - 'FSSInstaller.exe'
-            - 'ModulesUpgradeMgr.exe'
-            - 'NotificationHelper.exe'
-            - 'UserNotificationHelper.exe'
-            - 'MigrationHelper_32.exe'
-            - 'MigrationHelper_64.exe'
-            - 'FaronicsDeployAgent.exe'
-            - 'FWAWebInstaller_*.exe'
-            - 'FWAService.exe'
-            - 'FWA_UI_Agent.exe'
-            - 'CloudWksInstall.exe'
+            - '\\FaronicsDeployAgent.exe'
+            - '\\FWAService.exe'
+            - '\\FWA_UI_Agent.exe'
+            - '\\FRCServer.exe'
+            - '\\FaronicsSA.exe'
+            - '\\FSSInstaller.exe'
+            - '\\ModulesUpgradeMgr.exe'
+            - '\\NotificationHelper.exe'
+            - '\\UserNotificationHelper.exe'
+            - '\\MigrationHelper_32.exe'
+            - '\\MigrationHelper_64.exe'
+            - '\\FWAWebInstaller_*.exe'
+            - '\\CloudWksInstall.exe'
     selection_image:
         Image|endswith:
-            - 'FaronicsDeployAgent.exe'
-            - 'FWAService.exe'
-            - 'FWA_UI_Agent.exe'
-            - 'FRCServer.exe'
-            - 'FaronicsSA.exe'
-            - 'FSSInstaller.exe'
-            - 'ModulesUpgradeMgr.exe'
-            - 'NotificationHelper.exe'
-            - 'UserNotificationHelper.exe'
-            - 'MigrationHelper_32.exe'
-            - 'MigrationHelper_64.exe'
-            - 'FaronicsDeployAgent.exe'
-            - 'FWAWebInstaller_*.exe'
-            - 'FWAService.exe'
-            - 'FWA_UI_Agent.exe'
-            - 'CloudWksInstall.exe'
+            - '\\FaronicsDeployAgent.exe'
+            - '\\FWAService.exe'
+            - '\\FWA_UI_Agent.exe'
+            - '\\FRCServer.exe'
+            - '\\FaronicsSA.exe'
+            - '\\FSSInstaller.exe'
+            - '\\ModulesUpgradeMgr.exe'
+            - '\\NotificationHelper.exe'
+            - '\\UserNotificationHelper.exe'
+            - '\\MigrationHelper_32.exe'
+            - '\\MigrationHelper_64.exe'
+            - '\\FWAWebInstaller_*.exe'
+            - '\\CloudWksInstall.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of Faronics Deploy

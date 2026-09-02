@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -17,7 +18,6 @@ detection:
     selection:
         DestinationHostname|endswith:
             - 'getscreen.me'
-            - 'GetScreen.me'
             - '*.getscreen.me'
             - 'go.getscreen.me'
             - 'image.getscreen.me'

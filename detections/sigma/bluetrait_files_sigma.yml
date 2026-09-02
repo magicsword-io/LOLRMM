@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,11 +17,11 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe
-            - C:\Program Files (x86)\Bluetrait Agent\BluetraitUserAgent.exe
-            - C:\Program Files (x86)\Bluetrait Agent\config.db
-            - C:\Program Files (x86)\Bluetrait Agent\config.json
-            - C:\Program Files (x86)\Bluetrait Agent\libraries\paexec.exe
+            - 'C:\Program Files (x86)\Bluetrait Agent\Bluetrait MSP Agent.exe'
+            - 'C:\Program Files (x86)\Bluetrait Agent\BluetraitUserAgent.exe'
+            - 'C:\Program Files (x86)\Bluetrait Agent\config.db'
+            - 'C:\Program Files (x86)\Bluetrait Agent\config.json'
+            - 'C:\Program Files (x86)\Bluetrait Agent\libraries\paexec.exe'
     condition: selection
 falsepositives:
     - Legitimate use of Bluetrait

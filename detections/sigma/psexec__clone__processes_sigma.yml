@@ -7,8 +7,9 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
+modified: 2026-09-02
 tags:
-    - attack.execution
+    - attack.command-and-control
     - attack.t1219
 logsource:
     product: windows
@@ -16,22 +17,22 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'paexec.exe'
-            - 'PAExec-*.exe'
-            - 'csexec.exe'
-            - 'remcom.exe'
-            - 'remcomsvc.exe'
-            - 'xcmd.exe'
-            - 'xcmdsvc.exe'
+            - '\\paexec.exe'
+            - '\\PAExec-*.exe'
+            - '\\csexec.exe'
+            - '\\remcom.exe'
+            - '\\remcomsvc.exe'
+            - '\\xcmd.exe'
+            - '\\xcmdsvc.exe'
     selection_image:
         Image|endswith:
-            - 'paexec.exe'
-            - 'PAExec-*.exe'
-            - 'csexec.exe'
-            - 'remcom.exe'
-            - 'remcomsvc.exe'
-            - 'xcmd.exe'
-            - 'xcmdsvc.exe'
+            - '\\paexec.exe'
+            - '\\PAExec-*.exe'
+            - '\\csexec.exe'
+            - '\\remcom.exe'
+            - '\\remcomsvc.exe'
+            - '\\xcmd.exe'
+            - '\\xcmdsvc.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of PSEXEC (Clone)
