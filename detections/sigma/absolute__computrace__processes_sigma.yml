@@ -19,14 +19,14 @@ detection:
         ParentImage|endswith:
             - '\\rpcnet.exe'
             - '\\ctes.exe'
-            - '\\ctespersitence.exe'
+            - '\\ctespersistence.exe'
             - '\\cteshostsvc.exe'
             - '\\rpcld.exe'
     selection_image:
         Image|endswith:
             - '\\rpcnet.exe'
             - '\\ctes.exe'
-            - '\\ctespersitence.exe'
+            - '\\ctespersistence.exe'
             - '\\cteshostsvc.exe'
             - '\\rpcld.exe'
     condition: 1 of selection_*

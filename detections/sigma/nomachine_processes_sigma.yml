@@ -18,10 +18,12 @@ detection:
     selection_parent:
         ParentImage|endswith:
             - '\\nomachine*.exe'
+            - '\\nxservice*.exe'
             - '\\nxd.exe'
     selection_image:
         Image|endswith:
             - '\\nomachine*.exe'
+            - '\\nxservice*.exe'
             - '\\nxd.exe'
     condition: 1 of selection_*
 falsepositives:
