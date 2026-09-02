@@ -1,0 +1,132 @@
+Name: OpsBridge Agent
+Category: RMM
+Description: >
+    OpsBridge Agent is the Windows endpoint component of OpsBridge LLC's remote
+    monitoring and management platform at opsbridge.digital. The platform
+    supports endpoint monitoring, remote command execution, file transfer,
+    screenshots, process and software inventory, Windows event log collection,
+    and software deployment. This entry covers the OpsBridge LLC product and is
+    not related to OpenText Operations Bridge, which uses a similar name.
+Author: Chad H
+Created: '2026-09-01'
+LastModified: '2026-09-01'
+Details:
+    Website: https://opsbridge.digital/
+    PEMetadata:
+        - Filename: OpsBridgeAgent.exe
+          OriginalFileName: OpsBridgeAgent.exe
+          Description: OpsBridge Endpoint Service
+          Product: OpsBridge Endpoint Management Suite
+    Privileges: SYSTEM
+    Free: ''
+    Verification: >
+        The linked MSI and executable samples were retrieved from VirusTotal and
+        inspected statically. The MSI targets the 64-bit Program Files directory
+        and launches the signed agent using a deferred, no-impersonate custom
+        action. VirusTotal behavior confirms the scheduled task, ProgramData
+        state and job files, randomized persisted executable names, and HTTPS
+        traffic to opsbridge.digital. Authenticode verification succeeds for
+        both samples with OpsBridge LLC as the signer.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Endpoint monitoring and inventory
+        - Remote terminal and command execution
+        - PowerShell script execution
+        - File upload and download
+        - Remote screenshots
+        - Process and software inventory
+        - Windows event log collection
+        - Software deployment
+        - ScreenConnect deployment
+        - Device status alerting
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\OpsBridge\OpsBridgeAgent.exe
+        - C:\ProgramData\OpsBridge\*
+        - C:\Windows\System32\Tasks\OpsBridge Agent
+Artifacts:
+    Disk:
+        - File: C:\Program Files\OpsBridge\OpsBridgeAgent.exe
+          Description: Canonical agent executable installed by the observed MSI.
+          OS: Windows
+        - File: C:\Program Files\OpsBridge\*.exe
+          Description: Randomly named persisted agent copy observed across sandbox runs.
+          OS: Windows
+        - File: C:\ProgramData\OpsBridge\agent_state.json
+          Description: Agent enrollment and runtime state.
+          OS: Windows
+        - File: C:\ProgramData\OpsBridge\agent.log
+          Description: Agent activity log.
+          OS: Windows
+        - File: C:\ProgramData\OpsBridge\install.log
+          Description: Agent installation and persistence log.
+          OS: Windows
+        - File: C:\ProgramData\OpsBridge\.persisted_v4
+          Description: Marker written after agent persistence is configured.
+          OS: Windows
+        - File: C:\ProgramData\OpsBridge\task_*.json
+          Description: Per-job task file consumed by an OpsBridge worker process.
+          OS: Windows
+        - File: C:\Windows\System32\Tasks\OpsBridge Agent
+          Description: Scheduled task file used for agent persistence.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\OpsBridgeAgent
+          Description: Agent uninstall metadata, including the randomized persisted executable path.
+        - Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\OpsBridge Agent
+          Description: Task Scheduler cache entry for the OpsBridge Agent persistence task.
+    Network:
+        - Description: OpsBridge agent enrollment, command, and telemetry service.
+          Domains:
+              - opsbridge.digital
+          Ports:
+              - 443
+    Other:
+        - Type: ScheduledTaskName
+          Value: \OpsBridge Agent
+        - Type: Mutex
+          Value: Global\OpsBridgeAgentSingleton
+        - Type: ObservedWorkerPattern
+          Value: C:\Program Files\OpsBridge\*.exe --worker C:\ProgramData\OpsBridge\task_*.json
+        - Type: MSIProductCode
+          Value: '{1C453AC7-7551-48B1-B9CA-0D0FAE88575F}'
+        - Type: MSIUpgradeCode
+          Value: '{75C245E5-96D2-41D4-B398-8E329847088C}'
+        - Type: ObservedSHA256
+          Value: 6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914
+        - Type: ObservedInstallerSHA256
+          Value: 2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0
+Detections: []
+References:
+    - https://opsbridge.digital/
+    - https://github.com/magicsword-io/LOLRMM/issues/242
+    - https://www.virustotal.com/gui/file/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/behavior
+    - https://www.virustotal.com/gui/file/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0
+    - https://bazaar.abuse.ch/sample/6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914/
+    - https://bazaar.abuse.ch/sample/2a0e94343f24039319e01636d1b30a368f43b598cff6d555fd14fa0f38236fb0/
+Acknowledgement:
+    - Person: Chad H
+      Handle: '@0xburgers'
+CodeSigning:
+    search_names:
+        - OpsBridgeAgent.exe
+    company_names:
+        - OpsBridge LLC
+    signer_names:
+        - OpsBridge LLC
+    certificates:
+        - signer_name: OpsBridge LLC
+          certificate_thumbprint: 04BD800721290744CD4B9376D8C5285EFA5CAF3E
+          issuer: SSL.com EV Code Signing Intermediate CA RSA R3
+          valid_from: '2026-08-12T07:58:19Z'
+          valid_to: '2027-08-12T07:58:19Z'
+          src_file_sha256: 6f5c207de0e60fb54e34f439b21c8c317539c8c0262f76ad1c19cff0ecb76914
+          src_file_path: OpsBridgeAgent.exe
+          src_file_company: OpsBridge LLC
+FileHashes:
+    authenticode:
+        - file_name: OpsBridgeAgent.exe
+          sha256: A869EF4E7F8200A2F5799A29C17F8721087E6DD67F7CE786ED33CEF07379FC30
+          sha1: null
