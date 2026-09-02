@@ -1,33 +1,87 @@
 Name: Chrome Remote Desktop
 Category: RAT
-Description: 'Chrome Remote Desktop is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: >
+    Chrome Remote Desktop is Google's cross-platform remote access and support
+    service for Windows, macOS, and Linux hosts. It supports persistent remote
+    access and one-time attended support sessions through a web client.
 
-
-    **IMPORTANT**: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome browser and other Google applications. Do NOT blindly block these certificate thumbprints as doing so will break Google Chrome and other Google products in your environment. Use certificate data for detection, hunting, and analysis purposes only.'
-Author: ''
+    IMPORTANT: This tool is signed with legitimate Google LLC certificates that
+    are also used to sign Chrome and other Google applications. Do not blindly
+    block these certificate thumbprints. Use the certificate data for detection,
+    hunting, and analysis with product-specific context.
+Author: n2x4
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-09-01'
 Details:
-    Website: 'https://remotedesktop.google.com/'
+    Website: https://remotedesktop.google.com/
     PEMetadata:
-        Filename: ''
-        OriginalFileName: ''
-        Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
+        - Filename: remoting_host.exe
+          OriginalFileName: remoting_host.exe
+          Description: Host Process
+          Product: Chrome Remote Desktop
+    Privileges: User and SYSTEM/root
+    Free: true
+    Verification: >
+        Google documents remote-access host support for Windows, macOS, and
+        Linux, and Google Chrome Enterprise support confirms that no license is
+        required. Chromium's current macOS installer source confirms the
+        privileged helper bundle, host binaries, launchd files, and
+        configuration paths. The current Google Debian package confirms the
+        Linux service and /opt/google/chrome-remote-desktop paths. The Windows
+        host sample and Google LLC signature were verified through VirusTotal.
     SupportedOS:
         - Windows
-    Capabilities: []
+        - macOS
+        - Linux
+    Capabilities:
+        - Persistent remote desktop access
+        - One-time attended remote support
+        - Remote access to applications and files
     Vulnerabilities: []
     InstallationPaths:
-        - remote_host.exe
         - remoting_host.exe
         - C:\Program Files (x86)\Google\Chrome Remote Desktop\*
         - '*\Google\Chrome Remote Desktop\*'
         - '*\remoting_host.exe'
+        - /Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host
+        - /Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host_service
+        - /opt/google/chrome-remote-desktop/chrome-remote-desktop-host
+        - /opt/google/chrome-remote-desktop/chrome-remote-desktop
 Artifacts:
-    Disk: []
+    Disk:
+        - File: C:\Program Files (x86)\Google\Chrome Remote Desktop\*\remoting_host.exe
+          Description: Versioned Windows host process.
+          OS: Windows
+        - File: /Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host
+          Description: Primary macOS remote desktop host executable.
+          OS: macOS
+        - File: /Library/PrivilegedHelperTools/ChromeRemoteDesktopHost.app/Contents/MacOS/remoting_me2me_host_service
+          Description: macOS host service launched by launchd.
+          OS: macOS
+        - File: /Library/LaunchAgents/org.chromium.chromoting.plist
+          Description: macOS per-user launch agent for the Chrome Remote Desktop host.
+          OS: macOS
+        - File: /Library/LaunchDaemons/org.chromium.chromoting.broker.plist
+          Description: macOS launch daemon for the host broker.
+          OS: macOS
+        - File: /Library/PrivilegedHelperTools/org.chromium.chromoting.json
+          Description: macOS Chrome Remote Desktop host configuration.
+          OS: macOS
+        - File: /Library/PrivilegedHelperTools/org.chromium.chromoting.settings.json
+          Description: macOS Chrome Remote Desktop host settings.
+          OS: macOS
+        - File: /Applications/Chrome Remote Desktop Host Uninstaller.app
+          Description: macOS host uninstaller application.
+          OS: macOS
+        - File: /opt/google/chrome-remote-desktop/chrome-remote-desktop-host
+          Description: Linux Chrome Remote Desktop host executable.
+          OS: Linux
+        - File: /opt/google/chrome-remote-desktop/chrome-remote-desktop
+          Description: Linux host management script.
+          OS: Linux
+        - File: /lib/systemd/system/chrome-remote-desktop.service
+          Description: Linux systemd service unit.
+          OS: Linux
     EventLog: []
     Registry: []
     Network:
@@ -40,7 +94,9 @@ Artifacts:
               - chromoting-client.talkgadget.google.com
               - chromoting-host.talkgadget.google.com
               - chromoting-oauth.talkgadget.google.com
-          Ports: []
+          Ports:
+              - 443
+              - 3478
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/chrome_remote_desktop_network_sigma.yml
       Description: Detects potential network activity of Chrome Remote Desktop RMM tool
@@ -48,8 +104,24 @@ Detections:
       Description: Detects potential processes activity of Chrome Remote Desktop RMM tool
 References:
     - https://support.google.com/chrome/a/answer/2799701?hl=en
-Acknowledgement: []
+    - https://support.google.com/chrome/answer/1649523
+    - https://support.google.com/chrome/a/thread/154474130
+    - https://chromium.googlesource.com/chromium/src/+/HEAD/remoting/branding_Chrome
+    - https://chromium.googlesource.com/chromium/src/+/HEAD/remoting/host/installer/mac/Scripts/remoting_postflight.sh
+    - https://chromium.googlesource.com/chromium/src/+/HEAD/remoting/host/installer/mac/LaunchAgents/org.chromium.chromoting.plist
+    - https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+    - https://github.com/magicsword-io/LOLRMM/issues/230
+    - https://www.virustotal.com/gui/file/1e0fbe101bbca4efdfb05c012495265f1db731c97fb82fa8e569c6ab725c0140
+Acknowledgement:
+    - Person: n2x4
+      Handle: '@n2x4'
 CodeSigning:
+    search_names:
+        - remoting_host.exe
+    company_names:
+        - Google LLC
+    signer_names:
+        - Google LLC
     certificates:
         - signer_name: Google LLC
           certificate_thumbprint: 607A3EDAA64933E94422FC8F0C80388E0590986C

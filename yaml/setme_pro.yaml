@@ -1,0 +1,131 @@
+Name: SetMe PRO
+Category: RMM
+Description: >
+    SetMe is a Techinline remote access and support platform for attended and
+    unattended connections. It supports remote desktop control, file transfer,
+    remote restart and reconnect, multi-monitor sessions, session recording,
+    and centralized management of unattended devices. SetMe is a distinct,
+    newer Techinline product alongside FixMe.IT and uses its own executables
+    and service domains.
+Author: Thief1523
+Created: '2026-09-01'
+LastModified: '2026-09-01'
+Details:
+    Website: https://www.setme.net/
+    PEMetadata:
+        - Filename: SetMe_Client.exe
+          OriginalFileName: ''
+          Description: SetMe Client
+          Product: SetMe
+        - Filename: tinUnattendedModule.exe
+          OriginalFileName: ''
+          Description: SetMe Unattended Client
+          Product: SetMe
+    Privileges: User and SYSTEM
+    Free: false
+    Verification: >
+        Techinline's website and documentation confirm SetMe's attended and
+        unattended remote-access features, supported operating systems, paid
+        plans, set.me service domain, and signed Windows applications. The
+        reported version 1.1.782.32771 client and unattended module were located
+        in VirusTotal, downloaded, hash-checked, and inspected statically. Both
+        samples have valid Authenticode signatures from Techinline Ltd.
+    SupportedOS:
+        - Windows
+        - macOS
+    Capabilities:
+        - Attended remote support
+        - Unattended remote access
+        - Remote desktop control
+        - File transfer and clipboard sharing
+        - Remote restart and reconnect
+        - Multi-monitor support
+        - Session recording
+        - Unattended device management
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files (x86)\Techinline Ltd\SetMe Unattended\Client\SetMe_Client.exe
+        - C:\Program Files (x86)\Techinline Ltd\SetMe Unattended\Module\*\tinUnattendedModule.exe
+Artifacts:
+    Disk:
+        - File: C:\Program Files (x86)\Techinline Ltd\SetMe Unattended\Client\SetMe_Client.exe
+          Description: SetMe client executable reported in issue 231.
+          OS: Windows
+        - File: C:\Program Files (x86)\Techinline Ltd\SetMe Unattended\Module\*\tinUnattendedModule.exe
+          Description: Versioned unattended client module reported in issue 231 and confirmed by VirusTotal.
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\tinClientExtractor-*\tinClientDesktopApplication.exe
+          Description: Attended client desktop application extracted into a per-run temporary directory.
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\tinClientExtractor-*\tinClientSessionManager.exe
+          Description: Session manager extracted and launched by the attended client.
+          OS: Windows
+        - File: C:\ProgramData\Techinline Ltd\settings.ini*
+          Description: SetMe client settings and lock files observed during sandbox execution.
+          OS: Windows
+        - File: C:\ProgramData\SetMe Client
+          Description: SetMe client ProgramData marker observed during sandbox execution.
+          OS: Windows
+        - File: C:\Windows\Temp\setme\Sentry\*
+          Description: SetMe crash-reporting state created by the client.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\tinClientSessionManager-*
+          Description: Per-session temporary SetMe client service.
+        - Path: HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\tinClientSessionManager-*
+          Description: Safe-mode registration for the per-session SetMe client service.
+    Network:
+        - Description: Vendor-documented SetMe HTTPS and secure WebSocket services.
+          Domains:
+              - set.me
+              - '*.set.me'
+          Ports:
+              - 443
+    Other:
+        - Type: ServiceNamePattern
+          Value: tinClientSessionManager-*
+        - Type: ObservedClientSHA256
+          Value: 442ab6918b0b715b4a3c7f9e9c4a67fd27cb12094eb43653c1b2501e7f4f61e5
+        - Type: ObservedUnattendedModuleSHA256
+          Value: 02e53fbb632c8af5e53d763b53c497b9c83493ff32406633e665ac7a01baa815
+Detections: []
+References:
+    - https://www.setme.net/
+    - https://www.setme.net/Pricing
+    - https://docs.set.me/getting-started/system-requirements
+    - https://docs.set.me/unattended-access
+    - https://www.setme.net/portals/0/whitepapers/SetMe-Security-Statement.pdf
+    - https://github.com/magicsword-io/LOLRMM/issues/231
+    - https://www.virustotal.com/gui/file/442ab6918b0b715b4a3c7f9e9c4a67fd27cb12094eb43653c1b2501e7f4f61e5
+    - https://www.virustotal.com/gui/file/02e53fbb632c8af5e53d763b53c497b9c83493ff32406633e665ac7a01baa815
+Acknowledgement:
+    - Person: Thief1523
+      Handle: '@Thief1523'
+CodeSigning:
+    search_names:
+        - SetMe_Client.exe
+        - tinUnattendedModule.exe
+        - tinClientDesktopApplication.exe
+        - tinClientSessionManager.exe
+    company_names:
+        - Techinline Ltd
+    signer_names:
+        - Techinline Ltd
+    certificates:
+        - signer_name: Techinline Ltd
+          certificate_thumbprint: 73FA21D6064A275C00007765AA5BBFA786B6955F
+          issuer: Entrust Code Signing CA - OVCS2
+          valid_from: '2023-07-24T21:23:56Z'
+          valid_to: '2026-10-23T21:23:55Z'
+          src_file_sha256: 442ab6918b0b715b4a3c7f9e9c4a67fd27cb12094eb43653c1b2501e7f4f61e5
+          src_file_path: SetMe_Client.exe
+          src_file_company: Techinline Ltd
+FileHashes:
+    authenticode:
+        - file_name: SetMe_Client.exe
+          sha256: 36127cdd2409e2fde74bc6503613e9611bc0de8388be314f0eebd50c99a9881d
+          sha1: null
+        - file_name: tinUnattendedModule.exe
+          sha256: 29eff4a7203718f0bbd3c8d7b648010cb97682f8ed3bc8e9e894453327d2abf4
+          sha1: null

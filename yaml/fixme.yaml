@@ -3,7 +3,7 @@ Category: RMM
 Description: FixMe.it is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2026-06-16'
+LastModified: '2026-09-01'
 Details:
     Website: 'https://fixme.it/'
     PEMetadata:
@@ -38,15 +38,12 @@ Artifacts:
               - '*.fixme.it'
               - '*.techinline.net'
               - fixme.it
-              - 'set.me'
-              - '*.set.me'
-              - 'setme.net'
-              - '*.setme.net'
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_network_sigma.yml
       Description: Detects potential network activity of FixMe.it RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/fixme.it_processes_sigma.yml
       Description: Detects potential processes activity of FixMe.it RMM tool
-References: []
+References:
+    - https://docs.fixme.it/general-questions/which-ports-and-servers-does-fixme-it-use
 Acknowledgement: []
