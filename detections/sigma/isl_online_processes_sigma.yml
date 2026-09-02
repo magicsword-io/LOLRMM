@@ -16,20 +16,18 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'ISLLight.exe'
+            - 'islalwaysonmonitor.exe'
             - 'isllight.exe'
+            - 'isllightservice.exe'
             - 'ISLLightClient.exe'
             - 'ISLLight.exe'
-            - 'isllightservice.exe'
-            - 'islalwaysonmonitor.exe'
     selection_image:
         Image|endswith:
-            - 'ISLLight.exe'
+            - 'islalwaysonmonitor.exe'
             - 'isllight.exe'
+            - 'isllightservice.exe'
             - 'ISLLightClient.exe'
             - 'ISLLight.exe'
-            - 'isllightservice.exe'
-            - 'islalwaysonmonitor.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of ISL Online

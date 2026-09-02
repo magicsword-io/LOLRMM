@@ -16,22 +16,20 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - 'BASupSrvc.exe'
-            - 'winagent.exe'
-            - 'BASupApp.exe'
-            - 'BASupTSHelper.exe'
             - 'Agent_*_RW.exe'
             - 'BASEClient.exe'
+            - 'BASupApp.exe'
+            - 'BASupSrvc.exe'
             - 'BASupSrvcCnfg.exe'
+            - 'BASupTSHelper.exe'
     selection_image:
         Image|endswith:
-            - 'BASupSrvc.exe'
-            - 'winagent.exe'
-            - 'BASupApp.exe'
-            - 'BASupTSHelper.exe'
             - 'Agent_*_RW.exe'
             - 'BASEClient.exe'
+            - 'BASupApp.exe'
+            - 'BASupSrvc.exe'
             - 'BASupSrvcCnfg.exe'
+            - 'BASupTSHelper.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of N-Able Advanced Monitoring Agent
