@@ -1,9 +1,9 @@
 Name: Faronics Deploy
 Category: RMM
-Description: Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session ("Remote Pro"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151.
+Description: Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session ("Remote Pro"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151. It has been observed in phishing campaigns delivering signed installers to enroll endpoints in attacker-controlled deployments for remote script execution.
 Author: '@MHaggis'
 Created: '2026-05-04'
-LastModified: '2026-05-04'
+LastModified: '2026-09-07'
 Details:
     Website: 'https://www.faronics.com/products/deploy'
     PEMetadata:
@@ -160,8 +160,12 @@ References:
     - https://www.faronics.com/deploy/remote-control
     - https://www.virustotal.com/gui/file/b38229e9ce3a249ff7ac06ee9158e744c023338b570ffaf9bed8fc9b94b944f4
     - https://www.virustotal.com/gui/file/eee04dd4e7dd58d33ffb503686cdac07f88f8bea7bb29dbcd48d6715c198cea9
+    - https://www.huntress.com/blog/faronics-deploy-abuse
+    - https://www.bleepingcomputer.com/news/security/hackers-abuse-faronics-deploy-admin-tool-to-install-screenconnect/
 Acknowledgement:
     - Person: cbecks2
       Handle: cbecks2
     - Person: Michael Haag
       Handle: '@MHaggis'
+    - Person: Liran Ravich
+      Hadnle: Liran017
