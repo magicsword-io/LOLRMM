@@ -1,5 +1,5 @@
 ---
-description: "Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session (\"Remote Pro\"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151."
+description: "Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session (\"Remote Pro\"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151. It has been observed in phishing campaigns delivering signed installers to enroll endpoints in attacker-controlled deployments for remote script execution."
 title: "Faronics Deploy"
 ---
 
@@ -9,7 +9,7 @@ import {EuiSpacer} from "@elastic/eui"
 
 # Faronics Deploy
 
-Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session ("Remote Pro"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151.
+Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platform by Faronics Corporation (Vancouver, BC, Canada). Provides software/OS deployment, patch management, application install/uninstall/update, hardware and software inventory, and integrated remote control over RDP, VNC, and a proprietary in-browser session ("Remote Pro"). The Windows endpoint agent (FaronicsDeployAgent / FWAService) installs as a SYSTEM service and communicates outbound only to AWS-hosted Faronics tenants in us-west-2 / eu-west-1, plus regional remotepro-* hosts for remote-control sessions. Faronics Deploy is the focus of LOLRMM issue 151. It has been observed in phishing campaigns delivering signed installers to enroll endpoints in attacker-controlled deployments for remote script execution.
 
 <BlockBanner name={"Faronics Deploy"}/>
 
@@ -18,7 +18,7 @@ Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platfor
          category={"RMM"}
          created={"2026-05-04"}
          website={"https://www.faronics.com/products/deploy"}
-         lastModified={"2026-05-04"}
+         lastModified={"2026-09-07"}
          privileges={"SYSTEM"}
          free={ "30 day trial" }
          verification={ "Signed - 'Faronics Corporation' (DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1 / DigiCert SHA2 Assured ID Code Signing CA)" }
@@ -75,7 +75,10 @@ Faronics Deploy is a cloud-hosted Remote Monitoring and Management (RMM) platfor
 - [https://www.faronics.com/deploy/remote-control](https://www.faronics.com/deploy/remote-control)
 - [https://www.virustotal.com/gui/file/b38229e9ce3a249ff7ac06ee9158e744c023338b570ffaf9bed8fc9b94b944f4](https://www.virustotal.com/gui/file/b38229e9ce3a249ff7ac06ee9158e744c023338b570ffaf9bed8fc9b94b944f4)
 - [https://www.virustotal.com/gui/file/eee04dd4e7dd58d33ffb503686cdac07f88f8bea7bb29dbcd48d6715c198cea9](https://www.virustotal.com/gui/file/eee04dd4e7dd58d33ffb503686cdac07f88f8bea7bb29dbcd48d6715c198cea9)
+- [https://www.huntress.com/blog/faronics-deploy-abuse](https://www.huntress.com/blog/faronics-deploy-abuse)
+- [https://www.bleepingcomputer.com/news/security/hackers-abuse-faronics-deploy-admin-tool-to-install-screenconnect/](https://www.bleepingcomputer.com/news/security/hackers-abuse-faronics-deploy-admin-tool-to-install-screenconnect/)
 
 ### Acknowledgements
 - cbecks2 (cbecks2)
 - Michael Haag (@MHaggis)
+- Liran Ravich

@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-09-02'
+modified: '2026-09-09'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -21,6 +21,7 @@ detection:
     - \\%APPDATA%\JWrapper-SimpleSetup\*
     - \\%APPDATA%\loclx\*
     - \\%ProgramData%\Tiflux\*
+    - \\%ProgramData%\rmmmax\AgentService\RMMmaxAgentService.exe
     - \\%USERPROFILE%\\AppData\\Local\\Temp\\SupremoRemoteDesktop\\
     - \\9380CC75B872221A7425D7503565B67580407F60
     - \\AEMAgent.exe
@@ -455,6 +456,8 @@ detection:
     - \\RDesktop.exe
     - \\RHost.exe
     - \\RMM.Agent.exe
+    - \\RMMmax Agent
+    - \\RMMmaxAgentSetup.exe
     - \\ROMFUSClient.exe
     - \\ROMServer.exe
     - \\RViewer.exe
@@ -814,6 +817,8 @@ detection:
     - \\remoting_me2me_host_service
     - \\requires sign up
     - \\rfusclient.exe
+    - \\rmmmax-agent
+    - \\rmmmax_agent.py
     - \\rmserverconsolemediator.exe
     - \\rodexagent.exe
     - \\romfusclient.exe
