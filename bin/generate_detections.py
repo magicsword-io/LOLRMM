@@ -6,6 +6,7 @@ This script creates Sigma, Splunk, and KQL detection rules.
 
 import os
 import json
+import ntpath
 import yaml
 import glob
 from datetime import datetime
@@ -27,19 +28,30 @@ def generate_sigma_rule():
                 data = yaml.safe_load(file)
 
             if "Details" in data and "InstallationPaths" in data["Details"]:
-                for path in data["Details"]["InstallationPaths"]:
-                    # Extract executable name
-                    exe_name = os.path.basename(path)
-                    if exe_name and not exe_name.startswith("*"):
+                # An empty "InstallationPaths:" key parses as None, which used to
+                # raise and skip the rest of the file.
+                for path in data["Details"]["InstallationPaths"] or []:
+                    # InstallationPaths are Windows paths, so they must be split
+                    # on backslashes regardless of the OS running this script.
+                    # os.path.basename() only splits on "/" on Linux/macOS and
+                    # would keep whole paths such as
+                    # "C:\Program Files (x86)\AnyDesk\*" as the "executable".
+                    exe_name = ntpath.basename(path)
+                    if (
+                        exe_name
+                        and not exe_name.startswith("*")
+                        and exe_name.lower().endswith(".exe")
+                    ):
                         exe_list.append(f"\\\\{exe_name}")
         except Exception as e:
             print(f"Error processing {yaml_file}: {e}")
 
-    # Deduplicate the executable list
-    exe_list = list(set(exe_list))
-
-    # Sort the list for better readability
-    exe_list.sort()
+    # Deduplicate the executable list. Sigma matches case-insensitively, so
+    # "AteraAgent.exe" and "ateraagent.exe" are the same condition.
+    unique_exes = {}
+    for exe in exe_list:
+        unique_exes.setdefault(exe.casefold(), exe)
+    exe_list = sorted(unique_exes.values(), key=str.casefold)
 
     # Print the number of executables found
     print(f"Found {len(exe_list)} unique RMM executables for Sigma rule")
@@ -53,7 +65,13 @@ def generate_sigma_rule():
         "author": "LOLRMM Project",
         "date": "2025-03-18",
         "modified": datetime.now().strftime("%Y-%m-%d"),
-        "tags": ["attack.lateral-movement", "attack.t1219"],
+        # T1219 sits under Command and Control in ATT&CK, and Sigma requires the
+        # owning tactic to be tagged alongside the technique.
+        "tags": [
+            "attack.command-and-control",
+            "attack.lateral-movement",
+            "attack.t1219",
+        ],
         "logsource": {"category": "process_creation", "product": "windows"},
         "detection": {
             "selection": {"Image|endswith": exe_list},
@@ -132,8 +150,12 @@ def generate_sigma_domains_rule():
             ".screenconnect.com",
         ]
 
-    # Deduplicate
-    domain_list = list(set(domain_list))
+    # Deduplicate. Sorting keeps regenerated rules stable: set iteration order
+    # varies between runs, which reshuffles the whole list on every run.
+    unique_domains = {}
+    for domain in domain_list:
+        unique_domains.setdefault(domain.casefold(), domain)
+    domain_list = sorted(unique_domains.values(), key=str.casefold)
 
     sigma_domains_rule = {
         "title": "DNS Queries to Known RMM Domains",
