@@ -152,7 +152,9 @@ References:
     - https://www.virustotal.com/gui/file/1e395934cbef22846dd0dd2daf868429b0a5b86313f9721543b03a66cfc25e77
     - https://www.virustotal.com/gui/file/a3b3eec0fbd1108c3cb476f5495f77dcd19b4d40d23e8240c0e983acc401bce0
     - https://www.virustotal.com/gui/file/efd86ad34b94514d5416f40bc3de42c2c7a174f82a9a5ce70c1806f062ce4de7
-Acknowledgement: []
+Acknowledgement:
+    - Person: patialavii
+      Handle: '@patialavii'
 CodeSigning:
     search_names:
         - LavawallWin.exe
