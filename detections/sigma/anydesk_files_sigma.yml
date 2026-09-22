@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-09-22
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -31,8 +31,6 @@ detection:
             - '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk'
             - 'C:\Users\*\Videos\AnyDesk\*.anydesk'
             - 'C:\Windows\SysWOW64\config\systemprofile\AppData\Roaming\AnyDesk\*'
-            - '~/Library/Application Support/AnyDesk/Logs/'
-            - '~/.config/AnyDesk/Logs/'
     condition: selection
 falsepositives:
     - Legitimate use of AnyDesk

@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-09-22
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -18,11 +18,8 @@ detection:
     selection:
         TargetFilename|endswith:
             - '%localappdata%\Kaseya\Log\KaseyaLiveConnect\*'
-            - '~/Library/Logs/com.kaseya/KaseyaLiveConnect/*'
             - 'C:\ProgramData\Kaseya\Log\Endpoint\*'
             - 'C:\Program Files*\Kaseya\*\agentmon.log'
-            - '/var/log/system.log'
-            - ' ~/opt/kaseya/*/logs*'
             - 'C:\Users\*\AppData\Local\Temp\KASetup.log'
             - 'C:\Windows\Temp\KASetup.log'
             - 'C:\ProgramData\Kaseya\Log\KaseyaEdgeServices\*'

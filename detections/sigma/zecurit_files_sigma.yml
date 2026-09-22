@@ -1,0 +1,32 @@
+title: Potential Zecurit RMM Tool File Activity
+id: 3dfe1bf5-2dbd-52ef-9c38-88bc6ae34d1e
+status: experimental
+description: |
+    Detects potential files activity of Zecurit RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-09-22
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - '*\Zecurit\Agent\ZecuritAgentService.exe'
+            - '*\Zecurit\Agent\ZecuritAgentRegister.exe'
+            - '*\Zecurit\Agent\ZecuritRemoteTools.exe'
+            - '*\Zecurit\Agent\ZecuritScreenReaderService.exe'
+            - '*\Zecurit\Agent\Logs\agent_service.log'
+            - '*\Zecurit\Agent\Logs\agent_cmd_handler.log'
+            - '*\Zecurit\Agent\Storage\AgentSettings.json'
+            - '*\Zecurit\ZecuritAgentUpgrader.exe'
+            - '*\Zecurit\zecurit_windows_agent.exe'
+            - '*\ZecuritAgentInstaller.msi'
+    condition: selection
+falsepositives:
+    - Legitimate use of Zecurit
+level: medium

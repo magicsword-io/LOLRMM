@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-08-18
-modified: 2026-09-02
+modified: 2026-09-22
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -22,16 +22,6 @@ detection:
             - 'C:\ProgramData\ControlR\*\appsettings.json'
             - 'C:\ProgramData\ControlR\*\Logs\ControlR.Agent\LogFile*.log'
             - 'C:\ProgramData\ControlR\*\Logs\ControlR.DesktopClient\LogFile*.log'
-            - '/usr/local/bin/ControlR/*/ControlR.Agent'
-            - '/etc/controlr/*/appsettings.json'
-            - '/etc/systemd/system/controlr.agent*.service'
-            - '/var/log/controlr/*/ControlR.Agent/LogFile*.log'
-            - '~/.controlr/*/logs/ControlR.Agent/LogFile*.log'
-            - '/Library/Application Support/ControlR/*/ControlR.Agent'
-            - '/Applications/ControlR.app'
-            - '/Applications/ControlR.*.app'
-            - '/Library/LaunchDaemons/app.controlr.agent*.plist'
-            - '/Library/LaunchAgents/app.controlr.desktop*.plist'
     condition: selection
 falsepositives:
     - Legitimate use of ControlR

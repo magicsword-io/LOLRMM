@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-06-11
-modified: 2026-09-02
+modified: 2026-09-22
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -21,9 +21,6 @@ detection:
             - 'HelpWire Quick.exe'
             - 'HelpWire.lnk'
             - 'HelpWire Unattended Access.lnk'
-            - '/Applications/HelpWire Operator.app'
-            - 'helpwire-operator/bin/helpwire-operator'
-            - '/lib/systemd/system/helpwire-unattended.service'
     condition: selection
 falsepositives:
     - Legitimate use of HelpWire

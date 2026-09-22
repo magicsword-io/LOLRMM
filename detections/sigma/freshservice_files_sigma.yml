@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-09-22
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -72,8 +72,6 @@ detection:
             - 'FSProbeUninstall.vbs'
             - '%PROGRAMFILES(X86)%\Freshdesk\Freshservice Discovery Agent\*'
             - '%PROGRAMFILES(X86)%\Freshworks\FreshServiceProbe\*'
-            - '/Applications/Freshservice Discovery Agent.app'
-            - '/opt/freshservice/discovery_agent/*'
     condition: selection
 falsepositives:
     - Legitimate use of Freshservice
