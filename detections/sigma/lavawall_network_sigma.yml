@@ -1,13 +1,12 @@
-title: Potential SimpleHelp RMM Tool Network Activity
-id: 5664ef88-4683-4f3c-9147-506eb5416d5e
+title: Potential Lavawall RMM Tool Network Activity
+id: 64c778e9-db46-5a65-af7a-ae81d4da0462
 status: experimental
 description: |
-    Detects potential network activity of SimpleHelp RMM tool
+    Detects potential network activity of Lavawall RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
-modified: 2026-09-22
+date: 2026-09-22
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -17,11 +16,10 @@ logsource:
 detection:
     selection:
         DestinationHostname|endswith:
-            - 'user_managed'
-            - 'simple-help.com'
-            - '51.255.19.178'
-            - '51.255.19.179'
+            - 'api-ca-1.lavawall.com'
+            - 'lavawinupdate.lavawall.com'
+            - 'caremote1.lavawall.com'
     condition: selection
 falsepositives:
-    - Legitimate use of SimpleHelp
+    - Legitimate use of Lavawall
 level: medium
