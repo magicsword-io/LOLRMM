@@ -92,6 +92,7 @@ Name,Category,Description,Author
 [TeleDesktop](/rmm_tools/teledesktop),RMM,TeleDesktop is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [mRemoteNG](/rmm_tools/mremoteng),RAT,mRemoteNG is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [tmate](/rmm_tools/tmate),RAT,"tmate is an open-source terminal sharing tool for Linux and Unix-like systems, built on tmux. It ena...",Michael Haag
+[Zecurit](/rmm_tools/zecurit),RMM,Zecurit is a cloud-based endpoint management and remote monitoring and management platform for Windo...,Michael Haag
 [Splashtop (Beta)](/rmm_tools/splashtop-beta),RMM,Splashtop (Beta) is a remote monitoring and management (RMM) tool. More information will be added as...,
 [RMMmax](/rmm_tools/rmmmax),RMM,RMMmax is a remote monitoring and management platform that integrates with existing RMM products or ...,Jose Hernandez
 [Atera](/rmm_tools/atera),RMM,Atera is a remote monitoring and management (RMM) tool. It is used by threat actors to deploy ransom...,

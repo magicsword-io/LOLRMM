@@ -19,7 +19,7 @@ PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi
          category={"RAT"}
          created={"2026-05-18"}
          website={"https://www.pitunnel.com/"}
-         lastModified={"2026-05-18"}
+         lastModified={"2026-09-22"}
          privileges={"User or root (installer uses sudo, runtime can be user-level)"}
          free={ "Yes (free + paid subscription)" }
          verification={ "Tenant signup required; per-device install token embedded in installer URL" }
@@ -56,12 +56,8 @@ PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi
 
 
 ### Detections
-- Detects potential file activity of PiTunnel RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_files_sigma.yml)
 - Detects potential network activity of PiTunnel RMM tool
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_network_sigma.yml)
-- Detects potential process activity of PiTunnel RMM tool
-  - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_processes_sigma.yml)
 
 ### References
 - [https://www.pitunnel.com/](https://www.pitunnel.com/)

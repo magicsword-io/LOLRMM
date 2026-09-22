@@ -231,6 +231,17 @@ detection:
     - \\C:\Program Files\Vector\Asset Management Client\*
     - \\C:\Program Files\Veyon\*
     - \\C:\Program Files\ZOC8\*
+    - \\C:\Program Files\Zecurit\Agent\ZecuritAgentAssetMgr.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritAgentRegister.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritAgentService.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritAgentTray.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritApplicationControlService.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritCommandProcessor.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritLiveNotifier.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritRemoteTools.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritScreenReaderApp.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritScreenReaderAppUI.exe
+    - \\C:\Program Files\Zecurit\Agent\ZecuritScreenReaderService.exe
     - \\C:\Program Files\bsag\*
     - \\C:\Program Files\bsag\bma\*
     - \\C:\Program Files\ehorus_agent\*
@@ -291,6 +302,7 @@ detection:
     - \\C:\Windows\System32\mstsc.exe
     - \\C:\Windows\Temp\FleetDeck\*
     - \\C:\Windows\Temp\ImmyBot\*
+    - \\C:\Windows\Temp\Zecurit\ZecuritAgentUpgrader.exe
     - \\C:\Windows\dwrcs\*
     - \\C:\\ProgramData\\AMMYY\\*
     - \\C:\\ProgramData\\SupremoRemoteDesktop\\
@@ -310,6 +322,7 @@ detection:
     - \\CloudRaService.exe
     - \\CloudRaUtilities.exe
     - \\CloudWksInstall.exe
+    - \\CommandProcessor
     - \\ComodoRemoteControl.exe
     - \\Connect.Backdrop.cloud*.exe
     - \\Connect.exe
@@ -409,6 +422,7 @@ detection:
     - \\InsightInstallerTeacher.exe
     - \\InsightSetup.msi
     - \\InstallShield Setup.exe
+    - \\Installer
     - \\InstantHousecall.exe
     - \\ItsmRsp.exe
     - \\IvantiRemoteControl.exe
@@ -483,6 +497,7 @@ detection:
     - \\ScreenMeetSupport.exe
     - \\SensoClient.exe
     - \\SensoService.exe
+    - \\Service
     - \\ServiceProxyLocalSys.exe
     - \\Site24x7PluginAgent.exe
     - \\Site24x7WindowsAgentTrayIcon.exe
@@ -528,6 +543,7 @@ detection:
     - \\WinVNCStub.exe
     - \\XSightService.exe
     - \\ZMAgent.exe
+    - \\ZecuritAccess
     - \\ZohoMeeting.exe
     - \\ZohoURSService.exe
     - \\Zohours.exe
@@ -541,6 +557,7 @@ detection:
     - \\agent-installer-any.exe
     - \\agent32.exe
     - \\agent64.exe
+    - \\agentService
     - \\agent_setup_5.exe
     - \\agentu.exe
     - \\alitask.exe
@@ -573,6 +590,7 @@ detection:
     - \\client32.exe
     - \\clientmrinit.exe
     - \\cloudflared.exe
+    - \\commandProcessor
     - \\connect.exe
     - \\connectwise*.exe
     - \\connectwisechat-customer.exe
@@ -662,6 +680,7 @@ detection:
     - \\ihcserver.exe
     - \\iit.exe
     - \\install.conf
+    - \\installer
     - \\instanthousecall.exe
     - \\intelliadmin.exe
     - \\intouch.exe
