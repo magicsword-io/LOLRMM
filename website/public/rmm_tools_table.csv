@@ -4,6 +4,7 @@ Name,Category,Description,Author
 [KHelpDesk](/rmm_tools/khelpdesk),RMM,KHelpDesk is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [PuTTY Tray](/rmm_tools/putty-tray),RAT,PuTTY Tray is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [Access Remote PC](/rmm_tools/access-remote-pc),RMM,Access Remote PC is a remote monitoring and management (RMM) tool. More information will be added as...,
+[Lavawall](/rmm_tools/lavawall),RMM,"Lavawall is a commercial remote monitoring, management, and security platform developed by ThreeShie...",Michael Haag
 [RMMmax](/rmm_tools/rmmmax),RMM,RMMmax is a remote monitoring and management platform that integrates with existing RMM products or ...,Jose Hernandez
 [HelpU](/rmm_tools/helpu),RMM,HelpU is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
 [RDCMan](/rmm_tools/rdcman),RAT,Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for m...,Daniel Koifman (KoifSec)

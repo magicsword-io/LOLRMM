@@ -486,6 +486,235 @@
         ]
     },
     {
+        "Name": "Lavawall",
+        "Category": "RMM",
+        "Description": "Lavawall is a commercial remote monitoring, management, and security platform developed by ThreeShield Information Security Corporation. It supports Windows, macOS, and Linux endpoints, with browser-based remote desktop control, background administration, remote shell access, file transfer, scripting, patch management, and device inventory. Windows deployments use LavawallWin.exe and a separate remote-support component. Signed Windows agent samples have been submitted under Zoom and Adobe installer names; those names alone do not establish malicious use and are not included as detection artifacts. An unexpected installation should be investigated in the context of the organization's approved remote-access tools.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-21",
+        "LastModified": "2026-09-21",
+        "Details": {
+            "Website": "https://lavawall.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "LavawallWin.exe",
+                    "OriginalFileName": "LavawallWin.dll",
+                    "Description": "LavawallWin",
+                    "Product": "Lavawall Windows Agent"
+                }
+            ],
+            "Privileges": "Administrator for installation; SYSTEM on Windows; root on macOS/Linux",
+            "Free": false,
+            "Verification": "Vendor documentation confirms the RMM capabilities and supported platforms. Windows artifacts were checked against the signed LavawallWin.exe version 1.0.162.440 and the vendor's remote-support archive version 2.0.0.16. File hashes and Authenticode signatures were verified locally without executing the agents. Installation, service, task, registry, and API details come from static analysis; temporary extraction paths are corroborated by sandbox reports. macOS/Linux installation artifacts and a complete remote session were not independently tested. The commercial platform offers a free trial.\n",
+            "SupportedOS": [
+                "Windows",
+                "macOS",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Remote desktop control",
+                "Background administration",
+                "Remote shell access",
+                "File transfer",
+                "Remote script execution",
+                "Application and operating-system patch management",
+                "Hardware and software inventory",
+                "Endpoint health and configuration monitoring"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Lavawall\\LavawallWin.exe",
+                "C:\\Program Files (x86)\\Lavawall\\LavawallWin.exe",
+                "C:\\Lavawall\\LavawallWin.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "*\\Lavawall\\LavawallWin.exe",
+                    "Description": "Canonically named Windows management agent. The inspected code selects Program Files, then Program Files (x86), then C:\\Lavawall as fallback locations. Initial installation can preserve the launched executable's basename.\n",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\Lavawall\\remote-agent\\remote-agent.exe",
+                    "Description": "Remote-support executable extracted beneath the management agent's installation directory. Keep the Lavawall directory context because remote-agent.exe is not a product-specific filename.\n",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\Lavawall\\remote-agent\\uihelper.exe",
+                    "Description": "Remote-support UI helper shipped alongside remote-agent.exe in the signed vendor package. The filename alone is not specific to Lavawall.\n",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\Lavawall\\LavawallCheckAndStartService.ps1",
+                    "Description": "PowerShell watchdog script that starts the management service if it is stopped.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\Lavawall\\Storage\\UserAgentData.db",
+                    "Description": "Local SQLite storage used by the Windows management agent.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\LavawallWin.dll",
+                    "Description": "Managed assembly extracted by the self-contained Windows executable, observed in sandbox reports. Parent directories vary with the launched filename and bundle extraction directory.\n",
+                    "OS": "Windows",
+                    "Example": [
+                        "C:\\Users\\user\\AppData\\Local\\Temp\\.net\\file\\1bb0\\LavawallWin.dll"
+                    ]
+                },
+                {
+                    "File": "*\\LavawallWin.runtimeconfig.json",
+                    "Description": "Runtime configuration extracted alongside the managed assembly in sandbox reports.",
+                    "OS": "Windows",
+                    "Example": [
+                        "C:\\Users\\user\\AppData\\Local\\Temp\\.net\\file\\1bb0\\LavawallWin.runtimeconfig.json"
+                    ]
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\WOW6432Node\\LavaWall\\Agent",
+                    "Description": "Agent registration and configuration key, including DeviceId, CompanyGuid, and IsRegistered values, confirmed in the inspected code.\n"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Lavawall Support Agent",
+                    "Description": "Automatic-start Windows management service. Its description is Patch and configuration monitoring and management.\n"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\LavaWallRemoteAgent",
+                    "Description": "Windows remote-support service identified in both inspected agent components."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Default Windows management API and secure WebSocket endpoint embedded in the inspected agent, using /go/ and /go/ws respectively. These are code-confirmed endpoints, not a claim of observed sandbox connections.\n",
+                    "Domains": [
+                        "api-ca-1.lavawall.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Vendor remote-support update host. The management agent retrieves version.json, which identifies the remote-agent.zip download and hash.\n",
+                    "Domains": [
+                        "lavawinupdate.lavawall.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Default remote-support server and port embedded in the signed remote-agent.exe version 2.0.0.16. Live session traffic was not tested.\n",
+                    "Domains": [
+                        "caremote1.lavawall.com"
+                    ],
+                    "Ports": [
+                        8443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ServiceName",
+                    "Value": "Lavawall Support Agent"
+                },
+                {
+                    "Type": "ServiceName",
+                    "Value": "LavaWallRemoteAgent"
+                },
+                {
+                    "Type": "ScheduledTask",
+                    "Value": "LavawallCheckAndStartServiceTask"
+                },
+                {
+                    "Type": "ScheduledTaskBehavior",
+                    "Value": "Runs LavawallCheckAndStartService.ps1 as SYSTEM every five minutes to start the management service if stopped, as defined in the agent.\n"
+                },
+                {
+                    "Type": "Mutex",
+                    "Value": "Global\\LavawallAgentCompanyCredentialsV2"
+                },
+                {
+                    "Type": "ObservedAgentSHA256",
+                    "Value": "1e395934cbef22846dd0dd2daf868429b0a5b86313f9721543b03a66cfc25e77"
+                },
+                {
+                    "Type": "ObservedRemoteAgentSHA256",
+                    "Value": "d494ac927c3a98f67a035a418c5e89e9a97397a837fb8cc9bedbb44d25ad3670"
+                },
+                {
+                    "Type": "ObservedUIHelperSHA256",
+                    "Value": "3c56c3cca03efdcd2044a48d588ab27f68fa1b7e577874a490ff4ada241cec3e"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://lavawall.com/rmm/",
+            "https://www.lavawall.com/remote-support/",
+            "https://www.lavawall.com/faq/",
+            "https://console.lavawall.com/FAQ.php",
+            "https://lavawinupdate.lavawall.com/version.json",
+            "https://lavawinupdate.lavawall.com/remote-agent.zip",
+            "https://www.virustotal.com/gui/file/1e395934cbef22846dd0dd2daf868429b0a5b86313f9721543b03a66cfc25e77",
+            "https://www.virustotal.com/gui/file/a3b3eec0fbd1108c3cb476f5495f77dcd19b4d40d23e8240c0e983acc401bce0",
+            "https://www.virustotal.com/gui/file/efd86ad34b94514d5416f40bc3de42c2c7a174f82a9a5ce70c1806f062ce4de7"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "patialavii",
+                "Handle": "@patialavii"
+            }
+        ],
+        "CodeSigning": {
+            "search_names": [
+                "LavawallWin.exe",
+                "LavawallWin.dll"
+            ],
+            "company_names": [
+                "ThreeShield Information Security Corporation"
+            ],
+            "signer_names": [
+                "ThreeShield Information Security Corporation"
+            ],
+            "certificates": [
+                {
+                    "signer_name": "ThreeShield Information Security Corporation",
+                    "certificate_thumbprint": "BA19F4C2488F6CA83A23BB4B5DC765991E699080",
+                    "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
+                    "valid_from": "2026-01-19T00:00:00Z",
+                    "valid_to": "2029-01-18T23:59:59Z",
+                    "tbs_sha256": "850a06b73b2efb25a211b84650c0ff6ddb299eb351639095cc93948fbf243430",
+                    "tbs_sha1": "30c4804959fc95cc1a42252672bffac612a24d69",
+                    "src_file_sha256": "1e395934cbef22846dd0dd2daf868429b0a5b86313f9721543b03a66cfc25e77",
+                    "src_file_path": "LavawallWin.exe",
+                    "src_file_company": "ThreeShield Information Security Corporation"
+                }
+            ]
+        },
+        "FileHashes": {
+            "authenticode": [
+                {
+                    "file_name": "LavawallWin.exe",
+                    "sha256": "e577759c8198c9597527022502d044e6ee396e2faa55a5fa7bdc12578cc053fc",
+                    "sha1": null
+                },
+                {
+                    "file_name": "remote-agent.exe",
+                    "sha256": "b2cf0fa2f55b8ee50133d2d6e692cc1f12514e85482ec637fb00ae9148d5b9fa",
+                    "sha1": null
+                },
+                {
+                    "file_name": "uihelper.exe",
+                    "sha256": "f30b6ef99434bc51672182b4baefc27ba7d0739cab5777ab4682edd032705922",
+                    "sha1": null
+                }
+            ]
+        }
+    },
+    {
         "Name": "RMMmax",
         "Category": "RMM",
         "Description": "RMMmax is a remote monitoring and management platform that integrates with existing RMM products or manages devices through its standalone agents. It supports remote command and script execution, software deployment, patch management, and system monitoring across Windows, macOS, and Linux.\n",
