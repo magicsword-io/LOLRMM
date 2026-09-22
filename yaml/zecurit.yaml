@@ -198,7 +198,7 @@ Artifacts:
           Value: 'Developer ID Installer: ZECURIT TECHNOLOGIES PRIVATE LIMITED (DM7CUTNR64)'
         - Type: MacOSTeamIdentifier
           Value: DM7CUTNR64
-        - Type: InspectedLinuxInstallerSHA256
+        - Type: InspectedLinuxPackageSHA256
           Value: aab8cb5e93ae707a9b041cf98091b8c76331aa2efe0d6e7bf08396ccabcb2d2e
         - Type: InspectedMacOSPackageSHA256
           Value: d148fadb4578a2c0a656aef74a6da6a6e6c6ce997fca1990c39823c3660b798a

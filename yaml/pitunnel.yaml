@@ -4,7 +4,7 @@ Description: |
     PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister product of Dataplicity from Wildfoundry) that exposes local services and a persistent remote shell through the `*.pitunnel.com` tenant infrastructure. The agent installs via a curl|sudo bash one-liner (`curl -s https://pitunnel.com/get/<TOKEN> | sudo bash`) and supports persistent named tunnels via flags like `pitunnel --port=<PORT> --name=vnc --persist`. After install the operator can open arbitrary local TCP listeners (SSH, RDP, VNC, web) to the PiTunnel cloud for inbound interactive access without any firewall change on the victim host. Catalogued by the LOTTunnels project under the "shell access" category.
 Author: '@MHaggis'
 Created: '2026-05-18'
-LastModified: '2026-05-18'
+LastModified: '2026-09-22'
 Details:
     Website: https://www.pitunnel.com/
     PEMetadata:
@@ -56,12 +56,8 @@ Artifacts:
         - Type: Other
           Value: 'LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/pitunnel/'
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_files_sigma.yml
-      Description: Detects potential file activity of PiTunnel RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_network_sigma.yml
       Description: Detects potential network activity of PiTunnel RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/pitunnel_processes_sigma.yml
-      Description: Detects potential process activity of PiTunnel RMM tool
 References:
     - https://www.pitunnel.com/
     - https://lottunnels.github.io/lottunnels/Binaries/pitunnel/
