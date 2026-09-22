@@ -4,7 +4,7 @@ Description: |
     Dataplicity (by Wildfoundry) is a cloud-hosted remote-access service that exposes Linux systems — primarily Raspberry Pi devices — to the Dataplicity cloud for browser-based remote shell, "Wormhole" HTTP tunneling, and remote management. The agent installs via a curl|sudo python one-liner (`curl -s https://www.dataplicity.com/<TOKEN>.py | sudo python`) and registers the host with the operator's tenant under `*.dataplicity.com`. After install the operator has persistent remote shell access through the Dataplicity web console or Windows companion app without any inbound firewall change on the victim host. Catalogued by the LOTTunnels project under the "shell access" category for exactly this abuse profile.
 Author: '@MHaggis'
 Created: '2026-05-18'
-LastModified: '2026-05-18'
+LastModified: '2026-09-22'
 Details:
     Website: https://www.dataplicity.com/
     PEMetadata:
@@ -64,12 +64,8 @@ Artifacts:
         - Type: Other
           Value: 'LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/dataplicity/'
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_files_sigma.yml
-      Description: Detects potential file activity of Dataplicity RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_network_sigma.yml
       Description: Detects potential network activity of Dataplicity RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/dataplicity_processes_sigma.yml
-      Description: Detects potential process activity of Dataplicity RMM tool
 References:
     - https://www.dataplicity.com/
     - https://github.com/wildfoundry/dataplicity-agent
