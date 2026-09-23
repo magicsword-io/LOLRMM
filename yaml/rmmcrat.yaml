@@ -1,0 +1,101 @@
+Name: RMMCRAT
+Category: RAT
+Description: >
+    RMMCRAT is the researchers' name, also written RMMcRAT, for a custom
+    Windows C++ remote-access payload masquerading as an RMM agent. Threat
+    Hunting Labs and MalBear Labs documented it as rmm.exe in an RVTools SEO
+    poisoning intrusion. It registers hosts, reports system inventory, receives
+    package tasks, and accepts a remote stop command. It is malicious custom
+    tooling, not an established legitimate RMM product, and is distinct from
+    LightRmmAgent and RemoteAgentAgent.
+Author: Michael Haag
+Created: '2026-09-23'
+LastModified: '2026-09-23'
+Details:
+    Website: ''
+    PEMetadata:
+        Filename: rmm.exe
+        OriginalFileName: ''
+        Description: ''
+    Privileges: Administrator for optional service installation; incident execution context is not established here
+    Free: ''
+    Verification: >
+        Based on the primary intrusion and reverse-engineering reports, not local
+        sample execution or decompilation. MalBear Labs recovered Windows service
+        support, encrypted strings, embedded RMMC configuration, host inventory,
+        package-integrity checks, and DPAPI-protected enrollment files. Threat
+        Hunting Labs observed registration, a run_package task that failed its
+        SHA-256 check, and a stop_agent task. No successful package execution,
+        installed rmm.exe service, Run key, or scheduled task was observed in the
+        incident. The report's optional RMMAgent service is a code capability, not
+        observed persistence. The published hash is report-sourced. No legitimate
+        vendor, signer, PE version resources, or Linux/macOS build was established.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Device registration and system inventory
+        - Heartbeat-based remote task polling
+        - Package download with SHA-256 verification before execution
+        - Remote agent shutdown
+        - Optional Windows service installation
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\ProgramData\RMMAgent\*
+Artifacts:
+    Disk:
+        - File: '*\AppData\Roaming\rmm.exe'
+          Description: Executable location observed in the intrusion; rmm.exe alone is a generic name and requires corroboration.
+          OS: Windows
+        - File: C:\ProgramData\RMMAgent\client_id.bin
+          Description: DPAPI-protected device identity documented by the reverse-engineering report under the observed enrollment directory.
+          OS: Windows
+        - File: C:\ProgramData\RMMAgent\credentials.dat
+          Description: DPAPI-protected issued agent token; enrollment data must not be included in public indicators.
+          OS: Windows
+        - File: C:\ProgramData\RMMAgent\packages\Notepad++.exe
+          Description: Case-specific downloaded package path; the Notepad++-named task failed its integrity check before execution.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\RMMAgent
+          Description: Potential SCM key inferred from the default service name recovered by MalBear Labs; service installation was supported by code but not observed in this intrusion.
+    Network:
+        - Description: Case-specific registration and heartbeat server resolved and contacted by rmm.exe; not legitimate vendor infrastructure.
+          Domains:
+              - softbymade.top
+          Ports:
+              - 443
+    Other:
+        - Type: ObservedPackageStagingDirectory
+          Value: C:\ProgramData\RMMAgent\packages\
+        - Type: ReportedWindowsPayloadSHA256
+          Value: 3afabe2f9197f66460044083c708a5206291b2efe1138be1c763f60c47069787
+        - Type: DefaultServiceNameFromCode
+          Value: RMMAgent
+        - Type: DefaultServiceDisplayNameFromCode
+          Value: RMM Agent
+        - Type: EmbeddedConfigurationMagic
+          Value: RMMC
+        - Type: OptionalConfigurationFile
+          Value: agent.conf next to the executable; path can be overridden
+        - Type: ReportedRegistrationRoute
+          Value: /api/v1/agents/register
+        - Type: ReportedHeartbeatRoute
+          Value: /api/v1/agents/heartbeat
+Detections:
+    - Name: MalBear Labs RMMCRAT YARA rule
+      Description: Researcher-provided rule for the analyzed RMMCRAT payload.
+      Link: https://github.com/pandare9x/Yara-Rules/blob/main/SEOPoison/rmmcrat.yar
+References:
+    - https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike
+    - https://malbearlabs.com/posts/novel-malware-built-to-survive-the-analyst
+    - https://github.com/pandare9x/Yara-Rules/blob/main/SEOPoison/rmmcrat.yar
+Acknowledgement:
+    - Person: Kostas / Threat Hunting Labs
+      Handle: '@Kostastsale'
+    - Person: Threat Hunting Labs
+      Handle: '@ThruntingLabs'
+    - Person: Anna / MalBear Labs
+      Handle: '@PandaRE__'
+    - Person: MalBear Labs
+      Handle: '@malbearlabs'
