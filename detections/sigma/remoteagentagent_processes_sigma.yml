@@ -1,0 +1,24 @@
+title: Potential RemoteAgentAgent RMM Tool Process Activity
+id: 3e5c8c55-3de5-500b-82f2-1c8fe9f49e4b
+status: experimental
+description: |
+    Detects potential processes activity of RemoteAgentAgent RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-09-23
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith: '\\RemoteAgentAgent.exe'
+    selection_image:
+        Image|endswith: '\\RemoteAgentAgent.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of RemoteAgentAgent
+level: medium
