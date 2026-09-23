@@ -24,13 +24,17 @@ Details:
     Verification: >
         A 19,248,640-byte Windows GUI sample was handled for static analysis only
         and its SHA-256 was verified. PE resources identify GO RMM as a management
-        console. Its embedded Wails interface and Go symbols confirm agent-building
-        and enrollment functions, WebSocket control, system inventory, shell,
-        remote desktop/input, file management, process/session management, and
-        configurable agent persistence. The interface additionally exposes webcam,
-        microphone, keylogging, and disruptive-control options. The sample is
-        unsigned. No independent publisher, live agent, remote endpoint, or
-        delivery-abuse relationship was established.
+        console. Its compiled Go symbols and embedded Wails interface expose
+        agent-building and enrollment controls, WebSocket command handling, system
+        inventory, shell, remote desktop/input, file management, process/session
+        management, and configurable agent persistence. The interface additionally
+        exposes webcam, microphone, keylogging, and disruptive-control options.
+        Ghidra analyzed the Windows x64 binary, but its Go 1.27 RTTI layout was
+        unsupported, preventing reliable function-level recovery; these features
+        are therefore recorded as compiled symbols and console workflows, not
+        observed endpoint actions. The sample is unsigned. No independent
+        publisher, live agent, remote endpoint, or delivery-abuse relationship was
+        established.
     SupportedOS:
         - Windows
     Capabilities:

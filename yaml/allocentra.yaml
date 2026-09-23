@@ -25,9 +25,14 @@ Details:
         and the listed management capabilities. The binary contains a separate
         API-domain string under a .io domain; that value is intentionally not
         included as a network indicator because it was not correlated to the
-        vendor documentation or runtime traffic. Static strings also recover the
-        AllocentraAgent service name and generated allocentra-update.bat update
-        script basename; neither was claimed as a fixed installation path.
+        vendor documentation or runtime traffic. Ghidra decompilation confirms
+        installation to C:\Program Files\Allocentra\Agent\allocentra-agent.exe,
+        the AllocentraAgent service with its svc argument, configuration reads
+        and writes under HKLM\SOFTWARE\Allocentra\Agent, and remote-command
+        dispatch to CMD or PowerShell. The generated allocentra-update.bat update
+        script is also present. Linux and macOS support and the shell installer
+        name are vendor-documented; no Unix package, installed path, systemd
+        unit, or launchd label was verified in this review.
     SupportedOS:
         - Windows
         - Linux
@@ -39,20 +44,22 @@ Details:
         - Remote control through embedded MeshCentral
     Vulnerabilities: []
     InstallationPaths:
-        - '%ProgramFiles%\allocentra\agent\allocentra-agent.exe'
+        - C:\Program Files\Allocentra\Agent\allocentra-agent.exe
         - allocentra-agent.exe
 Artifacts:
     Disk:
         - File: '*\allocentra\agent\allocentra-agent.exe'
-          Description: Windows agent path recorded in the inspected sample metadata.
+          Description: Windows agent install destination confirmed in the decompiled service-install routine.
           OS: Windows
         - File: '*\allocentra-update.bat'
-          Description: Dynamically generated update-script basename recovered from static strings; its directory was not established.
+          Description: Update-script basename confirmed in decompiled Windows update code; generated under the process temporary directory, whose absolute path varies.
           OS: Windows
     EventLog: []
     Registry:
+        - Path: HKLM\SOFTWARE\Allocentra\Agent
+          Description: Agent enrollment and connection configuration read and written by the inspected Windows code; values can contain credentials and must not be published.
         - Path: HKLM\SYSTEM\CurrentControlSet\Services\AllocentraAgent
-          Description: Windows service key associated with the statically recovered AllocentraAgent service name; not a runtime observation.
+          Description: Windows service key inferred from the AllocentraAgent service configuration confirmed in decompiled installation code; not a runtime observation.
     Network:
         - Description: Vendor-documented outbound API endpoint for agent deployment and operation.
           Domains:
@@ -62,6 +69,8 @@ Artifacts:
     Other:
         - Type: WindowsServiceName
           Value: AllocentraAgent
+        - Type: WindowsServiceArgument
+          Value: svc
         - Type: DocumentedLinuxMacOSInstaller
           Value: install-allocentra-agent.sh
         - Type: InspectedWindowsAgentSHA256

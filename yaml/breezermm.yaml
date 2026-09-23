@@ -52,6 +52,13 @@ Details:
         components. That sample's full-file SHA-256 was verified and it is unsigned;
         the LanternOps signer attribution does not apply to it. No PixoIT corporate
         relationship, installation path, live session, or abuse was established.
+        Official Breeze v0.115.0 Linux and macOS release artifacts were inspected
+        without execution. The Linux release binary and installer source confirm the
+        systemd layout below. The notarized macOS package payload and its installer
+        scripts confirm the LaunchDaemon, watchdog, desktop-helper LaunchAgents,
+        binaries, Application Support directory, and log paths below. The PixoIT
+        observations remain limited to the separately inspected Windows build; they
+        do not establish PixoIT Linux or macOS support.
     SupportedOS:
         - Windows
         - macOS
@@ -68,6 +75,20 @@ Details:
         - C:\Program Files\Breeze\*
         - C:\ProgramData\Breeze\*
         - PixoIT-agent.exe
+        - /usr/local/bin/breeze-agent
+        - /usr/local/bin/breeze-watchdog
+        - /usr/local/bin/breeze-backup
+        - /usr/local/bin/breeze-desktop-helper
+        - /etc/breeze/*
+        - /var/lib/breeze/*
+        - /var/log/breeze/*
+        - /etc/systemd/system/breeze-agent.service
+        - /Library/Application Support/Breeze/*
+        - /Library/Logs/Breeze/*
+        - /Library/LaunchDaemons/com.breeze.agent.plist
+        - /Library/LaunchDaemons/com.breeze.watchdog.plist
+        - /Library/LaunchAgents/com.breeze.desktop-helper-user.plist
+        - /Library/LaunchAgents/com.breeze.desktop-helper-loginwindow.plist
 Artifacts:
     Disk:
         - File: PixoIT-agent.exe
@@ -97,6 +118,69 @@ Artifacts:
         - File: C:\ProgramData\Breeze\logs\agent.log
           Description: Breeze agent log file reported in issue 235.
           OS: Windows
+        - File: /usr/local/bin/breeze-agent
+          Description: Breeze agent binary installed by the official Linux installer and present in the official v0.115.0 macOS package payload.
+          OS: Linux/macOS
+        - File: /usr/local/bin/breeze-watchdog
+          Description: Breeze watchdog binary installed by the official Linux installer when the matching helper binary is supplied, and present in the official v0.115.0 macOS package payload.
+          OS: Linux/macOS
+        - File: /usr/local/bin/breeze-backup
+          Description: Breeze backup helper installed by the official Linux installer when the matching helper binary is supplied, and present in the official v0.115.0 macOS package payload.
+          OS: Linux/macOS
+        - File: /usr/local/bin/breeze-desktop-helper
+          Description: Desktop helper present in the official v0.115.0 macOS package payload and referenced by its user-session and LoginWindow LaunchAgents.
+          OS: macOS
+        - File: /etc/breeze/agent.yaml
+          Description: Default Breeze agent configuration path checked by the official Linux installer and referenced by the released Linux agent.
+          OS: Linux
+        - File: /var/lib/breeze/*
+          Description: Breeze agent data directory created by the official Linux installer.
+          OS: Linux
+        - File: /var/log/breeze/*
+          Description: Breeze log directory created by the official Linux installer; the released Linux agent references /var/log/breeze/agent.log.
+          OS: Linux
+        - File: /var/run/breeze/agent.sock
+          Description: Breeze agent IPC socket path; the official Linux installer creates /var/run/breeze and the released Linux agent references agent.sock there.
+          OS: Linux
+        - File: /etc/systemd/system/breeze-agent.service
+          Description: Official Breeze Linux systemd unit. It runs /usr/local/bin/breeze-agent start with /etc/breeze as its working directory and enables boot persistence.
+          OS: Linux
+        - File: /usr/lib/systemd/user/breeze-agent-user.service
+          Description: Official per-user Breeze helper systemd unit installed when supplied with the Linux installer source.
+          OS: Linux
+        - File: /etc/xdg/autostart/breeze-agent-user.desktop
+          Description: Official Breeze user-helper XDG autostart fallback installed by the Linux installer.
+          OS: Linux
+        - File: /usr/lib/tmpfiles.d/breeze-agent.conf
+          Description: Official tmpfiles rule that creates /run/breeze at boot for Breeze agent IPC.
+          OS: Linux
+        - File: /Library/Application Support/Breeze/*
+          Description: Breeze macOS configuration and IPC directory created by the v0.115.0 package postinstall script.
+          OS: macOS
+        - File: /Library/Logs/Breeze/agent.log
+          Description: Standard output log path for the Breeze agent LaunchDaemon in the official v0.115.0 macOS package.
+          OS: macOS
+        - File: /Library/Logs/Breeze/agent.err
+          Description: Standard error log path for the Breeze agent LaunchDaemon in the official v0.115.0 macOS package.
+          OS: macOS
+        - File: /Library/Logs/Breeze/watchdog.log
+          Description: Standard output log path for the Breeze watchdog LaunchDaemon in the official v0.115.0 macOS package.
+          OS: macOS
+        - File: /Library/Logs/Breeze/watchdog.err
+          Description: Standard error log path for the Breeze watchdog LaunchDaemon in the official v0.115.0 macOS package.
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.breeze.agent.plist
+          Description: Official Breeze macOS LaunchDaemon, label com.breeze.agent, that runs /usr/local/bin/breeze-agent run with RunAtLoad and KeepAlive.
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.breeze.watchdog.plist
+          Description: Official Breeze macOS watchdog LaunchDaemon, label com.breeze.watchdog, that runs /usr/local/bin/breeze-watchdog run with RunAtLoad and KeepAlive.
+          OS: macOS
+        - File: /Library/LaunchAgents/com.breeze.desktop-helper-user.plist
+          Description: Official Breeze macOS Aqua-session LaunchAgent, label com.breeze.desktop-helper-user, that runs the desktop helper for user sessions.
+          OS: macOS
+        - File: /Library/LaunchAgents/com.breeze.desktop-helper-loginwindow.plist
+          Description: Official Breeze macOS LoginWindow LaunchAgent, label com.breeze.desktop-helper-loginwindow, that runs the desktop helper before user login.
+          OS: macOS
     EventLog: []
     Registry: []
     Network:
@@ -124,10 +208,17 @@ Artifacts:
           Value: 52dd8b2f9145907477a6ebc4ad406c1e4b221ea967f1c2ce8bc23faa83b663d8
         - Type: CodeSigningSigner
           Value: LanternOps, LLC
+        - Type: OfficialReleaseArtifactSHA256
+          Value: 'Breeze v0.115.0 Linux amd64 agent: bcf47edf1312f3480c172908fb36b1fc0b2a37f7c1df7a7434d99ae1850985af'
+        - Type: OfficialReleaseArtifactSHA256
+          Value: 'Breeze v0.115.0 macOS arm64 package: 8b32297661229f5173510ebbf1b6d656c85bd68fea930400808e138ce7c714d1'
 Detections: []
 References:
     - https://breezermm.com/
     - https://breeze.app/
+    - https://github.com/LanternOps/breeze
+    - https://github.com/LanternOps/breeze/releases/tag/v0.115.0
+    - https://github.com/LanternOps/breeze/blob/v0.115.0/agent/scripts/install/install-linux.sh
     - https://bazaar.abuse.ch/sample/52dd8b2f9145907477a6ebc4ad406c1e4b221ea967f1c2ce8bc23faa83b663d8/
     - https://github.com/magicsword-io/LOLRMM/issues/235
 Acknowledgement:

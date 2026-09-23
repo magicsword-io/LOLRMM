@@ -34,8 +34,10 @@ Details:
         the shared signer certificate were reviewed without executing the files.
         The inspected RMM Sender components are distinct from the Duet Display
         executable and installer names. The vendor documents Windows, macOS,
-        and Linux support, but this review has no verified macOS or Linux
-        artifact names, installed paths, services, or network endpoints.
+        and Linux support; its current platform page specifically identifies
+        Apple Silicon and Intel macOS systems, plus Ubuntu, Debian, and RHEL
+        Linux systems. This review has no verified macOS or Linux artifact
+        names, installed paths, services, launchd labels, or network endpoints.
     SupportedOS:
         - Windows
         - macOS
@@ -81,6 +83,7 @@ Artifacts:
 Detections: []
 References:
     - https://www.itagent.com/it-agent-remote-access
+    - https://www.itagent.com/remote-desktop-access
     - https://www.duetdisplay.com/remote-desktop-access-software
 Acknowledgement: []
 CodeSigning:

@@ -5,7 +5,7 @@ Description: >
     agent. Static analysis shows endpoint inventory, patch management, remote
     interactive desktop control, shell access, file transfer, and endpoint
     administration functions. The same binary also includes keylogging,
-    credential-vault collection, webcam and audio functions, and hidden virtual
+    vault scanning, webcam and audio functions, and hidden virtual
     desktop support. No independent vendor, official distribution source, or
     publisher signature was established; use the product identity, hash, and
     behavior rather than the generic agent.exe filename for triage.
@@ -23,22 +23,26 @@ Details:
     Verification: >
         A Windows x64 Go executable was inspected statically without execution.
         Its PE metadata identifies Basic RMM Agent and its Go build information
-        identifies the executable path basicrmm/cmd/agent and the basicrmm
-        module. Recovered source-file and function paths establish the listed
-        RMM and remote-access functions, including endpoint inventory, patches,
-        shell, screen, file-transfer, process/service/registry, and self-update
-        modules. The binary is unsigned. External vendor or distribution
-        provenance was not established, so the Basic RMM name is a self-identity
-        rather than an independently attributed vendor product.
+        identifies the executable path basicrmm/cmd/agent, the basicrmm module,
+        and GOOS=windows. Ghidra decompilation confirmed command dispatch for
+        shell, screen/input, keylog, vault scan, webcam, audio, and HVNC adapters,
+        plus compiled inventory, patch, and file-transfer functions. The vault
+        scan's exact collection scope was not resolved. Recovered Go module and
+        function paths additionally identify process, service, registry, and
+        self-update components; these were not decompiled in this pass.
+        The binary is unsigned.
+        External vendor or distribution provenance was not established, so the
+        Basic RMM name is a self-identity rather than an independently attributed
+        vendor product.
     SupportedOS:
         - Windows
     Capabilities:
         - Endpoint inventory and patch management
         - Interactive screen, input, and clipboard control
         - Remote shell and file transfer
-        - Process, service, and registry administration
-        - Self-update
-        - Keylogging and credential-vault collection
+        - Process, service, and registry administration components (symbol evidence)
+        - Self-update components (symbol evidence)
+        - Keylogging and vault scanning (collection scope not established)
         - Webcam, audio, and hidden virtual desktop support
     Vulnerabilities: []
     InstallationPaths: []

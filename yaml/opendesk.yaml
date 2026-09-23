@@ -21,8 +21,11 @@ Details:
         NextCore TI, and Next Core TI Ltda. The body hash of the official
         first-party OpenDesk-RMM-Agent.exe release asset matches the reviewed
         Windows sample. The first-party release repository documents Windows
-        and Linux support, but this review has no verified Linux artifact names,
-        installed paths, services, or runtime network endpoints.
+        and Linux support. Its 30 published release records each expose only a
+        Windows OpenDesk-RMM-Agent.exe asset; this review has no verified Linux
+        artifact names, installed paths, services, or runtime
+        network endpoints. The vendor does not claim macOS support in the
+        reviewed repository.
     SupportedOS:
         - Windows
         - Linux
