@@ -1,0 +1,30 @@
+title: Potential IT Agent RMM Tool Process Activity
+id: 0f5550be-9212-569e-a07b-bf652e3d0759
+status: experimental
+description: |
+    Detects potential processes activity of IT Agent RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-09-23
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - '\\ITAgentRMMSender.exe'
+            - '\\ITAgentRMMSenderSL.exe'
+            - '\\ITAgentRMMSenderUpdater.exe'
+    selection_image:
+        Image|endswith:
+            - '\\ITAgentRMMSender.exe'
+            - '\\ITAgentRMMSenderSL.exe'
+            - '\\ITAgentRMMSenderUpdater.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of IT Agent
+level: medium
