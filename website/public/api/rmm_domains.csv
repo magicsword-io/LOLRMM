@@ -314,7 +314,8 @@ level.io,Level
 builds.level.io,Level
 agents.level.io,Level
 online.level.io,Level
-downloads.io,Level
+downloads.level.io,Level
+light-rmm-monitor-20260825.azurewebsites.net,LightRmmAgent
 *.litemanager.ru,LiteManager
 *.litemanager.com,LiteManager
 litemanager.com,LiteManager
@@ -500,6 +501,7 @@ remobo.en.softonic.com,Remobo
 auth.api.remote.it,Remote.it
 api.remote.it,Remote.it
 remote.it,Remote.it
+app-af-agent-prod-009.azurewebsites.net,RemoteAgentAgent
 donkz.nl,Remote Desktop Plus
 *.internetid.ru,Remote Manipulator System
 rmansys.ru,Remote Manipulator System
@@ -524,6 +526,7 @@ ivanti.com,RES Automation Manager
 lisa.rg-supervision.com,RG System (RG Supervision)
 api.rg-supervision.com,RG System (RG Supervision)
 dashboard.rg-supervision.com,RG System (RG Supervision)
+softbymade.top,RMMCRAT
 api.rmmmax.com,RMMmax
 rodex.cc,Rodex RMM
 www.rodex.cc,Rodex RMM

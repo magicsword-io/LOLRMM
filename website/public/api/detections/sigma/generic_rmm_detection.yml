@@ -195,6 +195,7 @@ detection:
     - \\C:\Program Files\Komari\*
     - \\C:\Program Files\Lavawall\LavawallWin.exe
     - \\C:\Program Files\Level\*
+    - \\C:\Program Files\LightRmmAgent\*
     - "\\\\C:\\Program Files\\LiteManager Pro \u2013 Viewer\\*"
     - \\C:\Program Files\Lunixar\*
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
@@ -215,6 +216,7 @@ detection:
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Ripple\*
     - \\C:\Program Files\Remote Utilities\*
+    - \\C:\Program Files\RemoteAgent\RemoteAgentAgent.exe
     - \\C:\Program Files\Remotely\ConnectionInfo.json
     - \\C:\Program Files\Remotely\Desktop\Remotely_Desktop.exe
     - \\C:\Program Files\Remotely\Remotely_Agent.exe
@@ -261,6 +263,7 @@ detection:
     - \\C:\ProgramData\Netbird\*
     - \\C:\ProgramData\OpsBridge\*
     - \\C:\ProgramData\Package Cache\.unverified\agent
+    - \\C:\ProgramData\RMMAgent\*
     - \\C:\ProgramData\Teramind Agent\*
     - \\C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\*
     - \\C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\tmagentsvc.exe

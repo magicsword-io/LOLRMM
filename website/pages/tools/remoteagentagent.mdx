@@ -1,0 +1,67 @@
+---
+description: "RemoteAgentAgent is malicious custom Windows remote-management tooling documented in an RVTools SEO poisoning intrusion by Threat Hunting Labs and MalBear Labs. Its PyInstaller-packaged Python service registers a device, polls for tasks, runs server-supplied PowerShell commands, and returns output and exit status. It was installed through RemoteAgent.msi and NSSM as a SYSTEM service. No independent legitimate vendor was established. This agent is separate from LightRmmAgent, RMMCRAT, and unrelated products named RemoteAgent."
+title: "RemoteAgentAgent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# RemoteAgentAgent
+
+RemoteAgentAgent is malicious custom Windows remote-management tooling documented in an RVTools SEO poisoning intrusion by Threat Hunting Labs and MalBear Labs. Its PyInstaller-packaged Python service registers a device, polls for tasks, runs server-supplied PowerShell commands, and returns output and exit status. It was installed through RemoteAgent.msi and NSSM as a SYSTEM service. No independent legitimate vendor was established. This agent is separate from LightRmmAgent, RMMCRAT, and unrelated products named RemoteAgent.
+
+
+<BlockBanner name={"RemoteAgentAgent"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RAT"}
+         created={"2026-09-23"}
+         website={""}
+         lastModified={"2026-09-23"}
+         privileges={"Administrator for service installation; observed service ran as LocalSystem"}
+         free={ false }
+         verification={ "Based on the published incident reconstruction and MalBear Labs' Python bytecode analysis; no sample was executed or locally reverse engineered for this entry. The report documents CPython 3.11, agent_service.py, configuration through AGENT_CONFIG_PATH, a default ten-second polling interval, and PowerShell result reporting. Observed commands were Get-Date and two RemoteAgent_API_CHECK checks, not broad post-exploitation tasking. The captured panel establishes a login page, not authenticated management functions. Linux/macOS builds, PE version resources, signer, and an unambiguously mapped agent hash were not established. The exact SCM service name is not sufficiently explicit to create a service-key selector.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\RemoteAgent\\RemoteAgentAgent.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Device registration and command polling", "Remote PowerShell execution", "Command output and exit-status reporting"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\RemoteAgent\\RemoteAgentAgent.exe", "Description": "Agent executable installed by the recovered service-install script.", "OS": "Windows"}, {"File": "C:\\Program Files\\RemoteAgent\\config.json", "Description": "Default configuration file identified in the reconstructed Python code; its path can be overridden by AGENT_CONFIG_PATH.", "OS": "Windows"}, {"File": "C:\\Windows\\Temp\\RemoteAgent.msi", "Description": "Case-specific installer staging path observed before silent MSI installation.", "OS": "Windows"}] }/>
+
+
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Case-specific configured server and captured RemoteAgent login-panel hostname; initial resolution failed, and no full registration or command exchange with the panel was captured.", "Domains": ["app-af-agent-prod-009.azurewebsites.net"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "ServiceArgument", "Value": "--service"}, {"Type": "ConfigurationEnvironmentVariable", "Value": "AGENT_CONFIG_PATH"}, {"Type": "ReportedRegistrationRoute", "Value": "/api/register"}, {"Type": "ReportedCommandPollingRoute", "Value": "/api/commands"}, {"Type": "ReportedResultRoute", "Value": "/api/commands/<cmd_id>/result"}] }/>
+
+
+
+
+### References
+- [https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike](https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike)
+- [https://malbearlabs.com/posts/novel-malware-built-to-survive-the-analyst](https://malbearlabs.com/posts/novel-malware-built-to-survive-the-analyst)
+
+### Acknowledgements
+- Kostas / Threat Hunting Labs (@Kostastsale)
+- Threat Hunting Labs (@ThruntingLabs)
+- Anna / MalBear Labs (@PandaRE__)
+- MalBear Labs (@malbearlabs)
