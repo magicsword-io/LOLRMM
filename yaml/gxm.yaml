@@ -1,0 +1,79 @@
+Name: GxM RMM Agent
+Category: RMM
+Description: >
+    GxM RMM Agent is a custom Windows remote monitoring and management agent.
+    Its inspected code implements enrollment, a Windows service, remote desktop
+    support, shell and script execution, file operations, software and system
+    inventory, patching, deployment, and endpoint administration. No independent
+    vendor or source repository was identified, and the reviewed records contain
+    no observed delivery-abuse relationship. This entry documents the agent's
+    confirmed RMM functionality and static host artifacts; it does not establish
+    a legitimate commercial vendor, malware classification, or a campaign.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: ''
+    PEMetadata:
+        Filename: GxM.Agent.dll
+        OriginalFileName: GxM.Agent.dll
+        Description: GxM RMM endpoint agent — authorized remote monitoring and support for managed clients (self-identified in assembly metadata)
+    Privileges: Administrator required to install the auto-starting Windows service
+    Free: Unknown
+    Verification: >
+        A 266,752-byte .NET 8 Windows sample was downloaded for static analysis
+        only and its SHA-256 was verified. Decompilation recovered a coherent
+        GxM.Agent project with enrollment, service installation, SignalR command
+        handling, remote-screen/input/clipboard features, shell and script
+        execution, file management, inventory, patching, deployment, update, and
+        endpoint-administration components. The sample is unsigned and no reliable
+        independent vendor, source repository, or delivery-abuse relationship was
+        identified. No live installation, remote-control session, or network
+        endpoint was tested.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Enrollment and managed endpoint registration
+        - Auto-starting Windows service with restart-on-failure configuration
+        - Remote screen capture, keyboard/mouse input, and clipboard operations
+        - Interactive shell and remote script execution
+        - Remote file read, write, delete, rename, and directory operations
+        - Process and service management
+        - Hardware, software, application, event-log, registry, and network inventory
+        - Patch, software-deployment, update, and Wake-on-LAN actions
+    Vulnerabilities: []
+    InstallationPaths:
+        - '*\ProgramData\GxM\agent\GxM.Agent.exe'
+        - '*\ProgramData\GxM\enrollment.json'
+        - '*\ProgramData\GxM\install.log'
+        - C:\GxM\agent
+Artifacts:
+    Disk:
+        - File: '*\ProgramData\GxM\agent\GxM.Agent.exe'
+          Description: Windows service staging target implemented by the inspected service-install code.
+          OS: Windows
+        - File: '*\ProgramData\GxM\enrollment.json'
+          Description: Enrollment configuration path implemented by the inspected code; its contents can include agent credentials and should be handled as sensitive.
+          OS: Windows
+        - File: '*\ProgramData\GxM\install.log'
+          Description: Installer log path implemented by the inspected code.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\GxMAgent
+          Description: Windows service configuration key inferred from the inspected GxMAgent service-install code.
+    Network: []
+    Other:
+        - Type: ServiceName
+          Value: GxMAgent
+        - Type: ServiceDisplayName
+          Value: GxM RMM Agent
+        - Type: InspectedSampleSHA256
+          Value: 70cd93f03941fe638fc78b99783b7b73e55300e8e7c8710173f7e9859d52b5a6
+        - Type: ProductVersion
+          Value: 1.0.0.1
+        - Type: PublisherStatus
+          Value: Self-identified as GxM; no independent vendor or source identity established.
+Detections: []
+References: []
+Acknowledgement: []

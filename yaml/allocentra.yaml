@@ -1,0 +1,85 @@
+Name: Allocentra
+Category: RMM
+Description: >
+    Allocentra is an endpoint remote monitoring and management (RMM) and PSA
+    platform. Vendor documentation describes agents for Windows, Linux, and
+    macOS that provide endpoint telemetry, patch management, remote commands,
+    scripts, and MeshCentral-backed remote-control sessions.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: https://allocentra.co.za/
+    PEMetadata:
+        Filename: allocentra-agent.exe
+        OriginalFileName: allocentra-agent.exe
+        Description: Allocentra RMM Agent
+    Privileges: Windows installation requires elevation; the documented Linux and macOS installer is run with sudo.
+    Free: ''
+    Verification: >
+        The Windows agent was inspected statically without execution. Its
+        full-file SHA-256 and PE metadata identify Allocentra RMM Agent,
+        company Allocentra, and allocentra-agent.exe; it was unsigned at the
+        time of inspection. Vendor documentation independently establishes
+        Windows, Linux, and macOS agent support, the documented HTTPS API host,
+        and the listed management capabilities. The binary contains a separate
+        API-domain string under a .io domain; that value is intentionally not
+        included as a network indicator because it was not correlated to the
+        vendor documentation or runtime traffic. Ghidra decompilation confirms
+        installation to C:\Program Files\Allocentra\Agent\allocentra-agent.exe,
+        the AllocentraAgent service with its svc argument, configuration reads
+        and writes under HKLM\SOFTWARE\Allocentra\Agent, and remote-command
+        dispatch to CMD or PowerShell. The generated allocentra-update.bat update
+        script is also present. Linux and macOS support and the shell installer
+        name are vendor-documented; no Unix package, installed path, systemd
+        unit, or launchd label was verified in this review.
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Endpoint telemetry and inventory
+        - Patch management
+        - Remote commands and scripts
+        - Remote control through embedded MeshCentral
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Allocentra\Agent\allocentra-agent.exe
+        - allocentra-agent.exe
+Artifacts:
+    Disk:
+        - File: '*\allocentra\agent\allocentra-agent.exe'
+          Description: Windows agent install destination confirmed in the decompiled service-install routine.
+          OS: Windows
+        - File: '*\allocentra-update.bat'
+          Description: Update-script basename confirmed in decompiled Windows update code; generated under the process temporary directory, whose absolute path varies.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SOFTWARE\Allocentra\Agent
+          Description: Agent enrollment and connection configuration read and written by the inspected Windows code; values can contain credentials and must not be published.
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AllocentraAgent
+          Description: Windows service key inferred from the AllocentraAgent service configuration confirmed in decompiled installation code; not a runtime observation.
+    Network:
+        - Description: Vendor-documented outbound API endpoint for agent deployment and operation.
+          Domains:
+              - api.allocentra.co.za
+          Ports:
+              - 443
+    Other:
+        - Type: WindowsServiceName
+          Value: AllocentraAgent
+        - Type: WindowsServiceArgument
+          Value: svc
+        - Type: DocumentedLinuxMacOSInstaller
+          Value: install-allocentra-agent.sh
+        - Type: InspectedWindowsAgentSHA256
+          Value: 24c8e21c6de8726b32d5deafadf69e2ad923d672ed09cdccf23c923544daf358
+Detections: []
+References:
+    - https://allocentra.co.za/
+    - https://docs.allocentra.co.za/agent-installation
+    - https://docs.allocentra.co.za/remote-control
+    - https://docs.allocentra.co.za/scripts
+    - https://docs.allocentra.co.za/patches
+Acknowledgement: []

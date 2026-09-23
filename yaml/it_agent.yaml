@@ -1,0 +1,106 @@
+Name: IT Agent
+Category: RMM
+Description: >
+    IT Agent is a remote monitoring and management (RMM) platform. Its remote
+    access capability is powered by Duet, while its separately named ITAgent RMM
+    Sender components provide the broader IT Agent endpoint-management product.
+    The IT Agent RMM Sender binaries are distinct from the Duet Display files
+    covered by the existing Duet Display catalog entry.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: https://www.itagent.com/it-agent-remote-access
+    PEMetadata:
+        - Filename: ITAgentRMMSender.exe
+          OriginalFileName: ITAgentRMMSender.exe
+          Description: ITAgent RMM Sender
+        - Filename: ITAgentRMMSenderSL.exe
+          OriginalFileName: ITAgentRMMSenderSL.exe
+          Description: ITAgent RMM Sender Service Launcher
+        - Filename: ITAgentRMMSenderUpdater.exe
+          OriginalFileName: ITAgentRMMSenderUpdater.exe
+          Description: ITAgentRMMSenderUpdater 2026.7.31.1909
+        - Filename: ITAgentSender.aiui
+          OriginalFileName: ITAgentSender.aiui
+          Description: ITAgent RMM Sender Installer
+    Privileges: ''
+    Free: ''
+    Verification: >
+        Vendor documentation describes IT Agent as a full RMM suite whose
+        remote-access feature is powered by Duet. Reviewed metadata for three Windows RMM
+        Sender components reports valid IT Agent, Inc. Authenticode signatures;
+        their full-file SHA-256 values, PE metadata, original filenames, and
+        the shared signer certificate were reviewed without executing the files.
+        The inspected RMM Sender components are distinct from the Duet Display
+        executable and installer names. The vendor documents Windows, macOS,
+        and Linux support; its current platform page specifically identifies
+        Apple Silicon and Intel macOS systems, plus Ubuntu, Debian, and RHEL
+        Linux systems. This review has no verified macOS or Linux artifact
+        names, installed paths, services, launchd labels, or network endpoints.
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+    Capabilities:
+        - Remote desktop access
+        - Endpoint monitoring and alerts
+        - Operating-system and application patching
+        - Managed scripting
+        - Policy and compliance management
+    Vulnerabilities: []
+    InstallationPaths:
+        - ITAgentRMMSender.exe
+        - ITAgentRMMSenderSL.exe
+        - ITAgentRMMSenderUpdater.exe
+        - ITAgentSender.aiui
+Artifacts:
+    Disk:
+        - File: ITAgentRMMSender.exe
+          Description: Inspected Windows IT Agent RMM Sender component.
+          OS: Windows
+        - File: ITAgentRMMSenderSL.exe
+          Description: Inspected Windows IT Agent RMM Sender Service Launcher component.
+          OS: Windows
+        - File: ITAgentRMMSenderUpdater.exe
+          Description: Inspected Windows IT Agent RMM Sender updater component.
+          OS: Windows
+        - File: ITAgentSender.aiui
+          Description: Inspected Windows IT Agent RMM Sender installer artifact.
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network: []
+    Other:
+        - Type: InspectedWindowsComponentSHA256
+          Value: 14c9b3ecbb18231b63ad4156d760381ee0daaee1844c84b5fce1a453532f2316
+        - Type: InspectedWindowsComponentSHA256
+          Value: 8f6148457b7fba2cc5f7bd143cca625cddf215b0350791c9718409b655751e5f
+        - Type: InspectedWindowsComponentSHA256
+          Value: 8ef734ecf9d5d984e8540bc8272c089e846bf464b8f60ee9a90cbfa9e37bcd05
+        - Type: InspectedWindowsInstallerSHA256
+          Value: c00f23177b12cb03d48dd812ff77b1838bddddf294abd5f8e6013b66c9c1e72a
+Detections: []
+References:
+    - https://www.itagent.com/it-agent-remote-access
+    - https://www.itagent.com/remote-desktop-access
+    - https://www.duetdisplay.com/remote-desktop-access-software
+Acknowledgement: []
+CodeSigning:
+    search_names:
+        - ITAgentRMMSender.exe
+        - ITAgentRMMSenderSL.exe
+        - ITAgentRMMSenderUpdater.exe
+    company_names:
+        - ITAgent
+    signer_names:
+        - IT Agent, Inc.
+    certificates:
+        - signer_name: IT Agent, Inc.
+          certificate_thumbprint: BA9B6EAE4F10E0FE8D721C2956FC790289C9D0E6
+          issuer: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+          valid_from: '2025-04-24T00:00:00Z'
+          valid_to: '2028-04-25T23:59:59Z'
+          src_file_sha256: 8f6148457b7fba2cc5f7bd143cca625cddf215b0350791c9718409b655751e5f
+          src_file_path: ITAgentRMMSender.exe
+          src_file_company: ITAgent
