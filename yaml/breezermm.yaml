@@ -9,9 +9,13 @@ Description: >
     Breeze can be dropped and run by an operator to gain persistent remote access
     to endpoints. A Breeze agent sample is tracked on abuse.ch MalwareBazaar, and
     the on-disk artifacts below were reported in LOLRMM GitHub issue #235.
+    A separately inspected unsigned Windows build identifies itself as PixoIT
+    RMM Agent while retaining Breeze RMM Go module paths. Its product-specific
+    filename is included as branded-build coverage; no PixoIT vendor affiliation
+    or abuse of that build was established.
 Author: ChrisJr404
 Created: '2026-08-26'
-LastModified: '2026-08-26'
+LastModified: '2026-09-22'
 Details:
     Website: https://breezermm.com/
     PEMetadata:
@@ -31,6 +35,10 @@ Details:
           OriginalFileName: ''
           Description: Breeze agent backup component
           Product: Breeze
+        - Filename: PixoIT-agent.exe
+          OriginalFileName: PixoIT-agent.exe
+          Description: PixoIT RMM Agent
+          Product: PixoIT RMM Agent
     Privileges: User and SYSTEM
     Free: true
     Verification: >
@@ -38,6 +46,12 @@ Details:
         access, patching, script execution, and software deployment. The signer
         LanternOps, LLC and the on-disk artifacts are sourced from LOLRMM GitHub
         issue #235 and the linked abuse.ch MalwareBazaar sample.
+        Static inspection of the separate PixoIT-branded version 0.105.5 build
+        recovered github.com/breeze-rmm/agent module paths and coherent enrollment,
+        heartbeat, remote desktop, terminal, file-transfer, inventory, and patch
+        components. That sample's full-file SHA-256 was verified and it is unsigned;
+        the LanternOps signer attribution does not apply to it. No PixoIT corporate
+        relationship, installation path, live session, or abuse was established.
     SupportedOS:
         - Windows
         - macOS
@@ -53,8 +67,12 @@ Details:
     InstallationPaths:
         - C:\Program Files\Breeze\*
         - C:\ProgramData\Breeze\*
+        - PixoIT-agent.exe
 Artifacts:
     Disk:
+        - File: PixoIT-agent.exe
+          Description: Original filename of the unsigned PixoIT-branded Breeze RMM build, verified in PE resources; not an asserted standard installation path.
+          OS: Windows
         - File: C:\Program Files\Breeze\breeze-agent.exe
           Description: Breeze RMM agent executable reported in issue 235.
           OS: Windows
@@ -98,6 +116,10 @@ Artifacts:
           Ports:
               - 443
     Other:
+        - Type: InspectedBrandedBuildSHA256
+          Value: 74a9dc48d4d23983dbfc964422d57298c64234def5688a9b7e0f608b3043a66d
+        - Type: BrandedBuildIdentity
+          Value: PixoIT RMM Agent 0.105.5; unsigned; compiled Go module github.com/breeze-rmm/agent.
         - Type: ObservedSHA256
           Value: 52dd8b2f9145907477a6ebc4ad406c1e4b221ea967f1c2ce8bc23faa83b663d8
         - Type: CodeSigningSigner

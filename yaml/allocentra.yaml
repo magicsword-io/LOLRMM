@@ -1,0 +1,76 @@
+Name: Allocentra
+Category: RMM
+Description: >
+    Allocentra is an endpoint remote monitoring and management (RMM) and PSA
+    platform. Vendor documentation describes agents for Windows, Linux, and
+    macOS that provide endpoint telemetry, patch management, remote commands,
+    scripts, and MeshCentral-backed remote-control sessions.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: https://allocentra.co.za/
+    PEMetadata:
+        Filename: allocentra-agent.exe
+        OriginalFileName: allocentra-agent.exe
+        Description: Allocentra RMM Agent
+    Privileges: Windows installation requires elevation; the documented Linux and macOS installer is run with sudo.
+    Free: ''
+    Verification: >
+        The Windows agent was inspected statically without execution. Its
+        full-file SHA-256 and PE metadata identify Allocentra RMM Agent,
+        company Allocentra, and allocentra-agent.exe; it was unsigned at the
+        time of inspection. Vendor documentation independently establishes
+        Windows, Linux, and macOS agent support, the documented HTTPS API host,
+        and the listed management capabilities. The binary contains a separate
+        API-domain string under a .io domain; that value is intentionally not
+        included as a network indicator because it was not correlated to the
+        vendor documentation or runtime traffic. Static strings also recover the
+        AllocentraAgent service name and generated allocentra-update.bat update
+        script basename; neither was claimed as a fixed installation path.
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Endpoint telemetry and inventory
+        - Patch management
+        - Remote commands and scripts
+        - Remote control through embedded MeshCentral
+    Vulnerabilities: []
+    InstallationPaths:
+        - '%ProgramFiles%\allocentra\agent\allocentra-agent.exe'
+        - allocentra-agent.exe
+Artifacts:
+    Disk:
+        - File: '*\allocentra\agent\allocentra-agent.exe'
+          Description: Windows agent path recorded in the inspected sample metadata.
+          OS: Windows
+        - File: '*\allocentra-update.bat'
+          Description: Dynamically generated update-script basename recovered from static strings; its directory was not established.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AllocentraAgent
+          Description: Windows service key associated with the statically recovered AllocentraAgent service name; not a runtime observation.
+    Network:
+        - Description: Vendor-documented outbound API endpoint for agent deployment and operation.
+          Domains:
+              - api.allocentra.co.za
+          Ports:
+              - 443
+    Other:
+        - Type: WindowsServiceName
+          Value: AllocentraAgent
+        - Type: DocumentedLinuxMacOSInstaller
+          Value: install-allocentra-agent.sh
+        - Type: InspectedWindowsAgentSHA256
+          Value: 24c8e21c6de8726b32d5deafadf69e2ad923d672ed09cdccf23c923544daf358
+Detections: []
+References:
+    - https://allocentra.co.za/
+    - https://docs.allocentra.co.za/agent-installation
+    - https://docs.allocentra.co.za/remote-control
+    - https://docs.allocentra.co.za/scripts
+    - https://docs.allocentra.co.za/patches
+Acknowledgement: []

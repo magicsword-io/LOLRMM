@@ -1,0 +1,104 @@
+Name: Mremote
+Category: RMM
+Description: >
+    Mremote is a commercial remote-support and endpoint-management product from
+    EGSCI SARL (EGS Côte d'Ivoire). Its Windows agent provides remote screen and
+    keyboard/mouse control, file transfer and management, clipboard synchronization,
+    chat, remote shell and PowerShell execution, service and system actions, and
+    consent-gated webcam and microphone access. An inspected configured agent was
+    distributed under an Adobe-themed filename through a third-party download chain
+    while retaining Mremote product metadata. The delivery context is suspicious but
+    does not establish who deployed it or whether EGSCI authorized that distribution.
+    Mremote is distinct from the unrelated mRemoteNG connection manager.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: https://egs.ci/mremote.html
+    PEMetadata:
+        - Filename: mremote-agent.exe
+          OriginalFileName: mremote-agent.exe
+          Description: Mremote Agent - Outil de maintenance a distance autorise
+          Product: Mremote Agent
+    Privileges: User context for interactive operation; Administrator approval is required to install Windows service mode.
+    Free: false
+    Verification: >
+        EGSCI's product page establishes Mremote as a persistent remote-support
+        product and documents screen and input control, files, clipboard, chat,
+        consent-gated webcam and microphone access, service mode, enrollment, and
+        silent updates with rollback. Windows agent version 1.8.8.38 was inspected
+        statically without execution. Its native Go build metadata, source-function
+        map, embedded strings, PE metadata, and locally verified full-file SHA-256
+        corroborate the vendor-described features and additionally establish remote
+        shell and PowerShell execution, Windows service control, system actions,
+        update handling, and the api.mremote.io relay. Existing sandbox evidence only
+        corroborates creation of the AppData Mremote directory and agent.log; it does
+        not demonstrate enrollment, service installation, a remote session, or
+        command execution. The executable is unsigned and contains deployment-specific
+        client identity, enrollment, branding, relay, and consent configuration;
+        sensitive values are intentionally excluded.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote screen, keyboard, and mouse control
+        - File transfer and remote filesystem management
+        - Clipboard synchronization and chat
+        - Remote shell and PowerShell execution
+        - Windows service and system actions
+        - Consent-gated webcam and microphone access
+        - Persistent service mode and silent self-update with rollback
+    Vulnerabilities: []
+    InstallationPaths:
+        - '%APPDATA%\Mremote\*'
+        - '%ProgramData%\Mremote\<deployment-id>\*'
+Artifacts:
+    Disk:
+        - File: '*\AppData\Roaming\Mremote\agent.exe'
+          Description: Stable per-user agent path derived from the inspected Windows binary.
+          OS: Windows
+        - File: '*\AppData\Roaming\Mremote\agent.log'
+          Description: Agent log written by the inspected Windows sample in existing sandbox evidence.
+          OS: Windows
+        - File: '*\AppData\Roaming\Mremote\enrolled.json'
+          Description: Enrollment cache path derived from the inspected Windows binary; contents are deployment-specific.
+          OS: Windows
+        - File: '*\AppData\Roaming\Mremote\consent.ok'
+          Description: General-consent marker path derived from the inspected Windows binary.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\MremoteAgent
+          Description: Hardcoded fallback Windows service key. Configured deployments can instead derive the service name from a sanitized deployment identity.
+    Network:
+        - Description: Mremote agent WebSocket relay embedded in the inspected binary and its deployment configuration; the vendor links the management console at mremote.io.
+          Domains:
+              - api.mremote.io
+          Ports:
+              - 443
+    Other:
+        - Type: DefaultServiceName
+          Value: MremoteAgent
+        - Type: InspectedWindowsAgentSHA256
+          Value: cb70951b2bc19ea7a9c852b0d7f68f1548f6d5d2117547f7d8b4691ba2928a5c
+        - Type: InspectedWindowsAgentVersion
+          Value: 1.8.8.38
+        - Type: BuildIdentity
+          Value: Native Go 1.26.5 executable; main module mremote-host; Windows amd64.
+        - Type: DeploymentSpecificIdentity
+          Value: A configured client identity determines the ProgramData subdirectory and can replace the fallback service name; the inspected value is excluded.
+Detections: []
+References:
+    - https://egs.ci/mremote.html
+    - https://egs.ci/
+CodeSigning:
+    search_names:
+        - mremote-agent.exe
+    company_names:
+        - Mremote
+    signer_names: []
+    certificates: []
+FileHashes:
+    authenticode:
+        - file_name: mremote-agent.exe
+          sha256: bd0b6f1f0518823b446f34d6e722bdf897a6f1a565c94c564b32db978366ed60
+          sha1: null
