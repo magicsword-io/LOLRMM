@@ -23583,6 +23583,181 @@
         ]
     },
     {
+        "Name": "RG System (RG Supervision)",
+        "Category": "RMM",
+        "Description": "RG System Suite is a commercial remote monitoring and management platform from Septeo IT Solutions, also known as RG Supervision. It provides endpoint monitoring, remote script execution, patch management, and remote-access workflows. An inspected Windows deployment-kit agent was distributed under the name Adobe_Helper.exe from a third-party download location while retaining RG Supervision product metadata and a valid RG System publisher signature. The filename is a masquerading lead, not proof of unauthorized access or of a particular actor. Vendor domains and normal installation artifacts identify the product and should be assessed against approved remote-management usage.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-22",
+        "LastModified": "2026-09-22",
+        "Details": {
+            "Website": "https://www.rgsystem.septeo.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "RG_Supervision.exe",
+                    "OriginalFileName": "rgsupvd",
+                    "Description": "RG Supervision Agent",
+                    "Product": "RG Supervision"
+                }
+            ],
+            "Privileges": "Administrator required for Windows agent installation",
+            "Free": false,
+            "Verification": "Vendor documentation establishes the management capabilities, deployment methods, service name, and example installation directory. Windows agent version 2.4.132 was inspected statically; its full-file SHA-256, PE metadata, Authenticode digest, and publisher signature were verified locally without executing the sample. A recorded download relationship preserves the Adobe_Helper.exe basename. Existing sandbox evidence corroborates the RG Systemes registry hierarchy, temporary rgsupv cache, and DNS lookup of lisa.rg-supervision.com; it does not demonstrate a completed installation or remote-control session. The inspected executable contains deployment-kit configuration; account and enrollment values are intentionally omitted. Linux and macOS support is vendor-documented. The Linux init-script artifact comes from legacy vendor documentation; it was not checked against a current package. macOS installation artifacts and Unix runtime behavior were not independently verified.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Endpoint monitoring and inventory",
+                "Remote script execution",
+                "Patch management",
+                "Remote access through native protocols or the optional Assist service"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files (x86)\\RG-Supervision\\*",
+                "C:\\Program Files\\RG-Supervision\\*"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "*\\RG-Supervision\\RG_Supervision.exe",
+                    "Description": "Product executable named in the inspected agent's copy-error string, scoped to the vendor's example installation directory; the installation path is configurable.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\AppData\\Local\\Temp\\rgsupv\\cache\\prepared",
+                    "Description": "Temporary cache artifact written by the inspected Windows sample in existing sandbox evidence.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/etc/init.d/rgsupv",
+                    "Description": "SysV init script installed from rgsupv-init in the vendor's Linux monitoring-agent instructions; legacy documented artifact, not evidence of a current systemd unit.",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\RG Systemes\\RG Supervision",
+                    "Description": "Native-view Windows agent configuration hierarchy, corroborated by registry activity and embedded strings."
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\WOW6432Node\\RG Systemes\\RG Supervision",
+                    "Description": "32-bit Windows agent configuration hierarchy, also documented for the expected-host-name network setting."
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\RG-Supervision",
+                    "Description": "Windows service configuration key inferred from the RG-Supervision service name in vendor deployment scripts."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Agent host present in the inspected deployment-kit configuration and observed DNS queries; no completed connection was established by the reviewed traffic summary.",
+                    "Domains": [
+                        "lisa.rg-supervision.com"
+                    ],
+                    "Ports": []
+                },
+                {
+                    "Description": "HTTPS API URL embedded in the inspected agent; static reference, not an observed connection.",
+                    "Domains": [
+                        "api.rg-supervision.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Vendor dashboard, agent download, and support endpoint documented by the vendor and embedded in the agent.",
+                    "Domains": [
+                        "dashboard.rg-supervision.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ServiceName",
+                    "Value": "RG-Supervision"
+                },
+                {
+                    "Type": "DocumentedLinuxServiceName",
+                    "Value": "rgsupv"
+                },
+                {
+                    "Type": "InspectedWindowsAgentSHA256",
+                    "Value": "076b561bddf88c1482feefb2cbbc11a82b7829528988fd246a6e4a245eb48e73"
+                },
+                {
+                    "Type": "InspectedWindowsAgentVersion",
+                    "Value": "2.4.132"
+                },
+                {
+                    "Type": "DeploymentKitFormat",
+                    "Value": "Embedded JSON deployment configuration delimited by ---BEGIN_BLOB--- and ---END_BLOB---; values are deployment-specific and excluded."
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://bazaar.abuse.ch/sample/076b561bddf88c1482feefb2cbbc11a82b7829528988fd246a6e4a245eb48e73/",
+            "https://www.rgsystem.septeo.com/",
+            "https://info.rgsystem.fr/demande-demo",
+            "https://help.rgsystem.com/hc/en-us/articles/360020605399-Linux-Monitoring-agent",
+            "https://help.rgsystem.com/hc/en-us/articles/11614262449180-Deployment-Kits",
+            "https://help.rgsystem.com/hc/en-us/articles/360003611959-Deploying-the-agent-by-script",
+            "https://help.rgsystem.com/hc/en-us/articles/360003601340-Deploy-via-SFX-archive",
+            "https://help.rgsystem.com/hc/fr/articles/360016530440-Le-voisinage-r%C3%A9seau-en-d%C3%A9tail",
+            "https://help.rgsystem.com/hc/en-us/articles/360003611499-Remote-control-via-RDP-SSH-VNC",
+            "https://help.rgsystem.com/hc/en-us/articles/20039584263580-Windows-Update"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "patialavii",
+                "Handle": "@patialavii"
+            }
+        ],
+        "CodeSigning": {
+            "search_names": [
+                "rgsupvd",
+                "RG-Setup.exe"
+            ],
+            "company_names": [
+                "RG System"
+            ],
+            "signer_names": [
+                "RG Systèmes SAS"
+            ],
+            "certificates": [
+                {
+                    "signer_name": "RG Systèmes SAS",
+                    "certificate_thumbprint": "7E997EC20D1980963E55A567DE7B11ED4FA4D299",
+                    "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
+                    "valid_from": "2026-01-20T00:00:00Z",
+                    "valid_to": "2027-01-26T23:59:59Z",
+                    "tbs_sha256": "33d53aa1aa53b316481aff57d550f4fb8a97581b92c700e9d3302cffa2bf3240",
+                    "tbs_sha1": "9ac6af3876e4ebc5a25118fdc00b6b57a80ae2a6",
+                    "src_file_sha256": "076b561bddf88c1482feefb2cbbc11a82b7829528988fd246a6e4a245eb48e73",
+                    "src_file_path": "Adobe_Helper.exe",
+                    "src_file_company": "RG System"
+                }
+            ]
+        },
+        "FileHashes": {
+            "authenticode": [
+                {
+                    "file_name": "rgsupvd",
+                    "sha256": "09d04663a7a6bb750241a3e84f7df599cbcf0b5fd28d273b749fe50515bcd9c3",
+                    "sha1": null
+                }
+            ]
+        }
+    },
+    {
         "Name": "RES Automation Manager",
         "Category": "RMM",
         "Description": "RES Automation Manager is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",

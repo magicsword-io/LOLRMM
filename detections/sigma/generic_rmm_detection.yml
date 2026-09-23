@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-09-22'
+modified: '2026-09-23'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -126,6 +126,7 @@ detection:
     - \\C:\Program Files (x86)\NetSarang\xShell\*
     - \\C:\Program Files (x86)\OnionShare\*
     - \\C:\Program Files (x86)\PJ Technologies\GOVsrv\*
+    - \\C:\Program Files (x86)\RG-Supervision\*
     - \\C:\Program Files (x86)\Radmin Viewer 3\Radmin.exe
     - \\C:\Program Files (x86)\RdClient\*
     - \\C:\Program Files (x86)\Remote Ripple\*
@@ -209,6 +210,7 @@ detection:
     - \\C:\Program Files\Netbird\netbird.exe
     - \\C:\Program Files\OpsBridge\OpsBridgeAgent.exe
     - \\C:\Program Files\Parsec\*
+    - \\C:\Program Files\RG-Supervision\*
     - \\C:\Program Files\RdClient\*
     - \\C:\Program Files\RealVNC\VNC Server\*
     - \\C:\Program Files\Remote Ripple\*
