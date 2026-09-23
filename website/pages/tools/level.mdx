@@ -1,5 +1,5 @@
 ---
-description: "Level is a remote monitoring and management (RMM) tool. Threat actors ..."
+description: "Level is a remote monitoring and management (RMM) tool. Threat Hunting Labs documented its malicious installation through an RVTools-themed SEO poisoning chain in 2026. An operator used Level to run discovery commands as SYSTEM and install the separate LightRmmAgent service. The report distinguishes Level's routine inventory from operator activity."
 title: "Level"
 ---
 
@@ -9,7 +9,8 @@ import {EuiSpacer} from "@elastic/eui"
 
 # Level
 
-Level is a remote monitoring and management (RMM) tool. Threat actors ...
+Level is a remote monitoring and management (RMM) tool. Threat Hunting Labs documented its malicious installation through an RVTools-themed SEO poisoning chain in 2026. An operator used Level to run discovery commands as SYSTEM and install the separate LightRmmAgent service. The report distinguishes Level's routine inventory from operator activity.
+
 
 <BlockBanner name={"Level"}/>
 
@@ -18,7 +19,7 @@ Level is a remote monitoring and management (RMM) tool. Threat actors ...
          category={"RMM"}
          created={"2024-02-11"}
          website={"https://level.io/"}
-         lastModified={"2024-02-11"}
+         lastModified={"2026-09-23"}
          privileges={"User"}
          free={ "Free" }
          verification={ "True" }
@@ -36,7 +37,7 @@ Level is a remote monitoring and management (RMM) tool. Threat actors ...
 
 ### Code Signing
 <EuiSpacer size="xl"/>
-<CodeSigningTable data={ {"certificates": [{"signer_name": "win.rar GmbH", "certificate_thumbprint": "729AE1F8B489DE176CC099FF49937F85F9E412F7", "src_file_sha256": "9ce73bf30a1b85bb85dc02b0177ec362b39587e48b968b411a9ae5cc0557a7c6", "src_file_path": "downloaded_files/level/9ce73bf30a1b85bb85dc02b0177ec362b39587e48b968b411a9ae5cc0557a7c6", "src_file_company": "Alexander Roshal"}, {"signer_name": "Level Software, Inc.", "certificate_thumbprint": "3C002DCBBCB603AE08699F4CEF973864AEB16860", "src_file_sha256": "075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83", "src_file_path": "downloaded_files/level/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83"}]} }/>
+<CodeSigningTable data={ {"certificates": [{"signer_name": "Level Software, Inc.", "certificate_thumbprint": "3C002DCBBCB603AE08699F4CEF973864AEB16860", "src_file_sha256": "075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83", "src_file_path": "downloaded_files/level/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83"}]} }/>
 
 
 ### Forensic Artifacts
@@ -52,7 +53,7 @@ Level is a remote monitoring and management (RMM) tool. Threat actors ...
 
 #### Network Artifacts
 <EuiSpacer size="xl"/>
-<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["level.io", "builds.level.io", "agents.level.io", "online.level.io", "downloads.io"], "Ports": [443]}] }/>
+<NetworkArtifactsTable data={ [{"Description": "Known remote domains", "Domains": ["level.io", "builds.level.io", "agents.level.io", "online.level.io", "downloads.level.io"], "Ports": [443]}] }/>
 
 
 
@@ -64,6 +65,12 @@ Level is a remote monitoring and management (RMM) tool. Threat actors ...
   - [Sigma Rule](https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml)
 
 ### References
+- [https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike](https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike)
 - [https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/](https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/)
 - [https://docs.level.io/en/articles/9926456-level-watchdog-task](https://docs.level.io/en/articles/9926456-level-watchdog-task)
 
+### Acknowledgements
+- Kostas / Threat Hunting Labs (@Kostastsale)
+- Threat Hunting Labs (@ThruntingLabs)
+- Anna / MalBear Labs (@PandaRE__)
+- MalBear Labs (@malbearlabs)

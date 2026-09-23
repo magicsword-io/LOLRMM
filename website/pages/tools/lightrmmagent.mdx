@@ -1,0 +1,69 @@
+---
+description: "LightRmmAgent is an unattributed custom Windows service described as RMM-style tooling by Threat Hunting Labs. In the reported RVTools SEO poisoning intrusion, an operator used Level to install MonitoringPanel.msi, which deployed LightRmmAgent. The service stored a machine identifier and contacted an Azure-hosted endpoint. No command execution through this agent was observed. It is distinct from RemoteAgentAgent and RMMCRAT; no legitimate vendor or official distribution source was established."
+title: "LightRmmAgent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# LightRmmAgent
+
+LightRmmAgent is an unattributed custom Windows service described as RMM-style tooling by Threat Hunting Labs. In the reported RVTools SEO poisoning intrusion, an operator used Level to install MonitoringPanel.msi, which deployed LightRmmAgent. The service stored a machine identifier and contacted an Azure-hosted endpoint. No command execution through this agent was observed. It is distinct from RemoteAgentAgent and RMMCRAT; no legitimate vendor or official distribution source was established.
+
+
+<BlockBanner name={"LightRmmAgent"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-23"}
+         website={""}
+         lastModified={"2026-09-23"}
+         privileges={"Administrator for Windows service installation"}
+         free={ false }
+         verification={ "Based on Threat Hunting Labs' published intrusion evidence, not local execution or reverse engineering. The report identifies the executable, unsigned service installation, machine.id write, and external connection. The name is the researchers' label derived from the service and directory. No sample hash, PE version resources, Linux/macOS build, or remote-task execution was established in the reviewed public report. Level's discovery commands and the separate RemoteAgent login panel are not attributed to LightRmmAgent.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\LightRmmAgent\\*"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Machine identification", "External communication from a persistent Windows service"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "*\\LightRmmAgent\\LightRmmAgentService.exe", "Description": "Reported executable identity scoped to the reported installation directory; the exact combined path is inferred from those two observations.", "OS": "Windows"}, {"File": "C:\\ProgramData\\LightRmmAgent\\machine.id", "Description": "Machine identifier written after the service started in the reported intrusion.", "OS": "Windows"}, {"File": "C:\\Windows\\Temp\\MonitoringPanel.msi", "Description": "Installer staged and launched by Level-delivered PowerShell; a case-specific staging path, not the persistent executable.", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\LightRmmAgent", "Description": "SCM key inferred from the observed LightRmmAgent service name; the report does not separately show a registry write."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Exact case-specific endpoint contacted by LightRmmAgent; not a legitimate vendor domain or an indicator for other Azure tenants.", "Domains": ["light-rmm-monitor-20260825.azurewebsites.net"], "Ports": [443]}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "ObservedWindowsServiceName", "Value": "LightRmmAgent"}] }/>
+
+
+
+
+### References
+- [https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike](https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike)
+
+### Acknowledgements
+- Kostas / Threat Hunting Labs (@Kostastsale)
+- Threat Hunting Labs (@ThruntingLabs)
+- Anna / MalBear Labs (@PandaRE__)
+- MalBear Labs (@malbearlabs)
