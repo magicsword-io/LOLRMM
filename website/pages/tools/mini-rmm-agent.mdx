@@ -1,0 +1,59 @@
+---
+description: "Mini RMM Agent is a custom Windows endpoint-management agent. Its inspected code self-installs as a Windows service, registers and sends heartbeats to a management server, polls for remote tasks, runs PowerShell, and supports software installation and testing workflows. The assembly identifies Senin Firman as its company, but no independently verified publisher or product source was identified. This entry documents statically confirmed RMM behavior and host artifacts only; it does not establish a legitimate commercial vendor, malware classification, or observed abuse."
+title: "Mini RMM Agent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Mini RMM Agent
+
+Mini RMM Agent is a custom Windows endpoint-management agent. Its inspected code self-installs as a Windows service, registers and sends heartbeats to a management server, polls for remote tasks, runs PowerShell, and supports software installation and testing workflows. The assembly identifies Senin Firman as its company, but no independently verified publisher or product source was identified. This entry documents statically confirmed RMM behavior and host artifacts only; it does not establish a legitimate commercial vendor, malware classification, or observed abuse.
+
+
+<BlockBanner name={"Mini RMM Agent"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-22"}
+         website={""}
+         lastModified={"2026-09-22"}
+         privileges={"Administrator required by the self-install code to create and start the Windows service"}
+         free={ "Unknown" }
+         verification={ "A 5,691,392-byte .NET 8 Windows sample was downloaded for static analysis only and its SHA-256 was verified. Decompilation confirms self-installation to a fixed Program Files path, an auto-starting Windows service, registration and heartbeat logic, remote task polling and results, PowerShell execution, software installation, and verification/testing workflows. The embedded resources also include SmartScreen-test and Defender-exclusion scripts. The assembly's company field names Senin Firman, but no reliable independent vendor or source identity was found. No live installation, endpoint contact, remote task, or delivery-abuse relationship was tested or established.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\MiniRMM\\MiniRmmAgent.exe", "C:\\ProgramData\\MiniRMM\\SmartScreenTest.ps1", "C:\\ProgramData\\MiniRMM\\Invoke-AVExclusions.ps1"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Self-installation and auto-starting Windows service", "Endpoint registration, heartbeat, task polling, and result reporting", "Remote PowerShell execution", "Remote software download and installation workflows", "Software verification and SmartScreen-test workflows"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\MiniRMM\\MiniRmmAgent.exe", "Description": "Fixed executable destination in the statically inspected self-install routine.", "OS": "Windows"}, {"File": "C:\\ProgramData\\MiniRMM\\SmartScreenTest.ps1", "Description": "Embedded SmartScreen-test script extracted by the agent at runtime.", "OS": "Windows"}, {"File": "C:\\ProgramData\\MiniRMM\\Invoke-AVExclusions.ps1", "Description": "Embedded Defender-exclusion script extracted by the agent at runtime; included as an artifact, not as a conclusion about use or intent.", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\MiniRMMAgent", "Description": "Startup value set by the inspected agent code to its current executable path."}, {"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\MiniRmmAgent", "Description": "Windows service configuration key inferred from the inspected self-install code."}] }/>
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "ServiceName", "Value": "MiniRmmAgent"}, {"Type": "ServiceDisplayName", "Value": "Mini RMM Agent"}, {"Type": "InspectedSampleSHA256", "Value": "89ea754708f2be80b2d8e39533d9b98e9a8bdc588f5d732687ee7b5ce18201e7"}, {"Type": "ProductVersion", "Value": "0.4.3.0"}, {"Type": "ClaimedAssemblyCompany", "Value": "Senin Firman"}, {"Type": "PublisherStatus", "Value": "No independently verified publisher or product source identified."}] }/>
+
+
+
+
+

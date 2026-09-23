@@ -1,0 +1,60 @@
+---
+description: "BlackCrypt RMM Agent is a custom Windows endpoint-management agent whose compiled code implements registration, heartbeats, WebSocket job dispatch, interactive terminal sessions, remote command and script execution, inventory collection, and endpoint-management actions. The inspected sample self-identifies as a BlackCrypt Labs Inc product, but no independently verifiable publisher or product source was identified. Its signing certificate subject is C&P Global Investors LLC and local certificate validation reported that certificate as revoked. This entry documents the agent's confirmed functionality and observed host/network artifacts; it does not establish a legitimate commercial vendor, malware classification, or observed abuse."
+title: "BlackCrypt RMM Agent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# BlackCrypt RMM Agent
+
+BlackCrypt RMM Agent is a custom Windows endpoint-management agent whose compiled code implements registration, heartbeats, WebSocket job dispatch, interactive terminal sessions, remote command and script execution, inventory collection, and endpoint-management actions. The inspected sample self-identifies as a BlackCrypt Labs Inc product, but no independently verifiable publisher or product source was identified. Its signing certificate subject is C&P Global Investors LLC and local certificate validation reported that certificate as revoked. This entry documents the agent's confirmed functionality and observed host/network artifacts; it does not establish a legitimate commercial vendor, malware classification, or observed abuse.
+
+
+<BlockBanner name={"BlackCrypt RMM Agent"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-22"}
+         website={""}
+         lastModified={"2026-09-22"}
+         privileges={"Administrator required for elevated job execution; service-install requirements were not established"}
+         free={ "Unknown" }
+         verification={ "A 120,769,056-byte Windows sample was downloaded for static analysis only and its SHA-256 was verified. Decompilation confirms a coherent custom endpoint-management implementation, including registration, heartbeat, WebSocket, terminal, command-execution, inventory, and firewall/USB services. Version resources claim BlackCrypt Labs Inc and version 4.2.1.35, but no reliable independent vendor source was found. The signed content digest verified locally; certificate trust validation was unsuccessful because the signer certificate was reported revoked. No live installation, remote-control session, or operator infrastructure was tested.\n" }
+/>
+
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Endpoint registration, heartbeat, and WebSocket job handling", "Interactive remote terminal sessions", "Remote PowerShell, command-shell, and batch-script execution", "Elevated job execution through Scheduled Task as SYSTEM", "Screenshot capture, reboot, shutdown, and re-enrollment actions", "Software, system, USB-device, and firewall inventory"] }/>
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["BlackCryptAgent.dll"], "company_names": ["BlackCrypt Labs Inc"], "signer_names": ["C&P Global Investors LLC"], "certificates": [{"signer_name": "C&P Global Investors LLC", "certificate_thumbprint": "17AC77612F471DCDDB47B4D1169C2F4E746F7833", "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1", "valid_from": "2026-04-26T00:00:00Z", "valid_to": "2027-04-27T23:59:59Z", "src_file_sha256": "bb5c49eaa94615f7d75cfa80afb8e79b12da2defc47d9b9c53d7602e7171b668", "src_file_path": null, "src_file_company": "BlackCrypt Labs Inc"}]} }/>
+
+
+### Forensic Artifacts
+
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\BlackCryptAgent", "Description": "Run-key value observed in the saved behavior report; its sample-specific target path is intentionally not used as a generic installation indicator."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Domain resolved by the inspected sample in the saved behavior report. This observation does not establish vendor ownership, operator identity, or malicious activity.", "Domains": ["blackcryptknight.com"], "Ports": []}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "InspectedSampleSHA256", "Value": "bb5c49eaa94615f7d75cfa80afb8e79b12da2defc47d9b9c53d7602e7171b668"}, {"Type": "ClaimedPublisher", "Value": "BlackCrypt Labs Inc"}, {"Type": "SignerSubject", "Value": "C&P Global Investors LLC"}, {"Type": "CertificateValidation", "Value": "Signed content digest verified locally; certificate trust validation reported the signing certificate as revoked."}] }/>
+
+
+
+
+

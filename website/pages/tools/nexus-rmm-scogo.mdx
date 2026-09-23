@@ -1,0 +1,59 @@
+---
+description: "Nexus RMM is Scogo's endpoint-management product. Scogo describes its platform as providing direct device intelligence, endpoint telemetry, patching, vulnerability detection, compliance enforcement, and remote management. This entry records the vendor-associated Windows Nexus RMM Agent metadata reviewed in the census. The census establishes product identity only; it does not establish delivery, abuse, victim impact, or actor attribution."
+title: "Nexus RMM (Scogo)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Nexus RMM (Scogo)
+
+Nexus RMM is Scogo's endpoint-management product. Scogo describes its platform as providing direct device intelligence, endpoint telemetry, patching, vulnerability detection, compliance enforcement, and remote management. This entry records the vendor-associated Windows Nexus RMM Agent metadata reviewed in the census. The census establishes product identity only; it does not establish delivery, abuse, victim impact, or actor attribution.
+
+
+<BlockBanner name={"Nexus RMM (Scogo)"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-22"}
+         website={"https://scogo.ai/"}
+         lastModified={"2026-09-22"}
+         privileges={""}
+         free={ "Unknown" }
+         verification={ "The reviewed Windows sample has Nexus RMM Agent metadata and Scogo.ai copyright. Scogo's product materials independently describe Scogo RMM and Nexus endpoint-management functions. The sample was not executed, and this review does not assert an installation path, signer, network endpoint, or abuse relationship.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["nexusrmm.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Endpoint telemetry and monitoring", "Remote endpoint management", "Patch management", "Vulnerability detection", "Compliance enforcement"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "nexusrmm.exe", "Description": "Windows Nexus RMM Agent setup filename from reviewed PE metadata.", "OS": "Windows"}] }/>
+
+
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "InspectedWindowsSampleSHA256", "Value": "2d1134ec001eed644a0d459898d2f48c0e0418f1cc109f927b7f8a39aef6bbec"}, {"Type": "ProductVersion", "Value": "2.9.0.0"}, {"Type": "CatalogScope", "Value": "Product identity confirmed; no delivery or abuse claim."}] }/>
+
+
+
+
+### References
+- [https://scogo.ai/](https://scogo.ai/)
+- [https://scogo.ai/blog/scogo-ai-is-now-available-on-microsoft-marketplace](https://scogo.ai/blog/scogo-ai-is-now-available-on-microsoft-marketplace)
+

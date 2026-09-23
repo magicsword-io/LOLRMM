@@ -17,6 +17,7 @@ agents.addigy.com,Addigy
 auth*.aeroadmin.com,AeroAdmin
 aeroadmin.com,AeroAdmin
 wangwang.taobao.com,AliWangWang-remote-control
+api.allocentra.co.za,Allocentra
 *.alpemix.com,Alpemix
 *.teknopars.com,Alpemix
 ammyy.com,Ammyy Admin
@@ -64,6 +65,7 @@ beanywhere.com,BeAnyWhere
 *.beyondtrustcloud.com,BeyondTrust (Bomgar)
 *.bomgarcloud.com,BeyondTrust (Bomgar)
 bomgarcloud.com,BeyondTrust (Bomgar)
+blackcryptknight.com,BlackCrypt RMM Agent
 bluetrait.io,Bluetrait
 *.bluetrait.io,Bluetrait
 breezermm.com,BreezeRMM
@@ -332,6 +334,8 @@ logmeinrescue.com,LogMeIn
 logmeinrescue.com,LogMeIn rescue
 rescue-list.*.logmein-gateway.com,LogMeIn rescue
 rescue-data-cetner.logmein-gateway.com,LogMeIn rescue
+www.logistical-software.co.uk,LS RMM
+webserv.logistical-software.co.uk,LS RMM
 *.lunixar.com,Lunixar
 lunixar.com,Lunixar
 app.lunixar.com,Lunixar
@@ -363,6 +367,7 @@ devapi.monitic.com,Monitic
 turn.monitic.com,Monitic
 monitic.com,Monitic
 www.monitic.com,Monitic
+api.mremote.io,Mremote
 mremoteng.org,mRemoteNG
 *.cloudberrylab.com,MSP360
 *.msp360.com,MSP360

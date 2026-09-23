@@ -1,0 +1,63 @@
+---
+description: "OpenDesk RMM Agent is a remote monitoring and management agent from NextCore TI. Its first-party release repository documents Windows and Linux support; the reviewed Windows release is a signed OpenDesk RMM Agent binary."
+title: "OpenDesk RMM Agent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# OpenDesk RMM Agent
+
+OpenDesk RMM Agent is a remote monitoring and management agent from NextCore TI. Its first-party release repository documents Windows and Linux support; the reviewed Windows release is a signed OpenDesk RMM Agent binary.
+
+
+<BlockBanner name={"OpenDesk RMM Agent"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-22"}
+         website={"https://github.com/nextcoreti/opendesk-rmm-agent"}
+         lastModified={"2026-09-22"}
+         privileges={""}
+         free={ false }
+         verification={ "The Windows sample was not executed. Its recorded full-file SHA-256, PE metadata, and Authenticode signer identify OpenDesk RMM Agent, NextCore TI, and Next Core TI Ltda. The body hash of the official first-party OpenDesk-RMM-Agent.exe release asset matches the reviewed Windows sample. The first-party release repository documents Windows and Linux support. Its 30 published release records each expose only a Windows OpenDesk-RMM-Agent.exe asset; this review has no verified Linux artifact names, installed paths, services, or runtime network endpoints. The vendor does not claim macOS support in the reviewed repository.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["OpenDesk-RMM-Agent.exe", "opendesk-rmm-agent.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote monitoring", "Remote management"] }/>
+
+
+### Code Signing
+<EuiSpacer size="xl"/>
+<CodeSigningTable data={ {"search_names": ["OpenDesk-RMM-Agent.exe", "opendesk-rmm-agent.exe"], "company_names": ["NextCore TI"], "signer_names": ["Next Core TI Ltda"], "certificates": [{"signer_name": "Next Core TI Ltda", "certificate_thumbprint": "0E6DD4D5946FA8908346735BF7D511251E3815D2", "issuer": "Sectigo Public Code Signing CA R36", "src_file_sha256": "60e5ca6a1f82a52a104601005d8a5c768674208f8f4ce7ac89ad97ca2b5978bb", "src_file_path": "OpenDesk-RMM-Agent.exe", "src_file_company": "NextCore TI"}]} }/>
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "OpenDesk-RMM-Agent.exe", "Description": "Official Windows release-asset basename matching the inspected signed sample.", "OS": "Windows"}, {"File": "opendesk-rmm-agent.exe", "Description": "Original filename in the inspected Windows sample's PE metadata.", "OS": "Windows"}] }/>
+
+
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "InspectedWindowsAgentSHA256", "Value": "60e5ca6a1f82a52a104601005d8a5c768674208f8f4ce7ac89ad97ca2b5978bb"}] }/>
+
+
+
+
+### References
+- [https://github.com/nextcoreti/opendesk-rmm-agent](https://github.com/nextcoreti/opendesk-rmm-agent)
+- [https://github.com/nextcoreti/opendesk-rmm-agent/releases/tag/v2.10.24](https://github.com/nextcoreti/opendesk-rmm-agent/releases/tag/v2.10.24)
+- [https://github.com/nextcoreti/opendesk-rmm-agent/releases/download/v2.10.24/OpenDesk-RMM-Agent.exe](https://github.com/nextcoreti/opendesk-rmm-agent/releases/download/v2.10.24/OpenDesk-RMM-Agent.exe)
+

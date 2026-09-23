@@ -1,0 +1,62 @@
+---
+description: "LS RMM is a legacy Windows remote monitoring and management product whose embedded components identify Logistical Software LTD. Static analysis of its management application and service worker shows Windows-service deployment, endpoint inventory, Windows Update inventory, scheduled screenshot capture and upload, update retrieval, and remote-request handling. This entry records the historical product artifacts and configured hosts; it does not establish current vendor operation, trusted distribution, or abusive use."
+title: "LS RMM"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# LS RMM
+
+LS RMM is a legacy Windows remote monitoring and management product whose embedded components identify Logistical Software LTD. Static analysis of its management application and service worker shows Windows-service deployment, endpoint inventory, Windows Update inventory, scheduled screenshot capture and upload, update retrieval, and remote-request handling. This entry records the historical product artifacts and configured hosts; it does not establish current vendor operation, trusted distribution, or abusive use.
+
+
+<BlockBanner name={"LS RMM"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-22"}
+         website={""}
+         lastModified={"2026-09-22"}
+         privileges={"Administrator required to install and manage the Windows service."}
+         free={ false }
+         verification={ "The Windows .NET management application and worker were decompiled and inspected without execution. Their product metadata, namespaces, embedded worker resource, source paths, and update code consistently identify LS RMM. The user interface names Logistical Software LTD, and the worker's statically configured update hosts use the logistical-software.co.uk domain. Static code establishes the service, registry, update, inventory, Windows Update, screenshot, and remote-request artifacts below. An embedded database credential was identified and deliberately excluded. No current vendor website, distribution source, or runtime traffic was independently verified.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files (x86)\\LS RMM\\LS RMM.exe", "C:\\Program Files (x86)\\LS RMM\\LS RMM Worker.exe", "LS RMM.exe", "LS RMM Worker.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Windows service deployment and management", "Endpoint system-information collection", "Windows Update inventory collection", "Scheduled screenshot capture and upload", "Remote-request handling", "Self-update"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "*\\LS RMM\\LS RMM.exe", "Description": "Management application path recorded in the inspected sample metadata.", "OS": "Windows"}, {"File": "*\\LS RMM\\LS RMM Worker.exe", "Description": "Worker resource deployed by the management application and installed as a service.", "OS": "Windows"}, {"File": "*\\LS RMM\\LS RMM-Update.exe", "Description": "Update executable basename recovered from static update code.", "OS": "Windows"}, {"File": "*\\LS RMM\\LSRMMupdate.txt", "Description": "Version-check file basename recovered from static update code.", "OS": "Windows"}, {"File": "*\\LS RMM\\SC.exe", "Description": "Screenshot-helper executable basename recovered from the worker's static code.", "OS": "Windows"}, {"File": "*\\LS RMM\\SC.bmp", "Description": "Screenshot output basename recovered from the worker's static code.", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\LS RMM", "Description": "Product configuration and status key created and read by both inspected components."}, {"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\LSRMMWorker", "Description": "Service key for the statically recovered LSRMMWorker service name."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Historical HTTP update host hard-coded in the inspected worker; no current reachability or runtime connection was verified.", "Domains": ["www.logistical-software.co.uk"], "Ports": [80]}, {"Description": "Historical database host hard-coded in the inspected worker; no port or runtime connection was verified.", "Domains": ["webserv.logistical-software.co.uk"], "Ports": []}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "WindowsServiceName", "Value": "LSRMMWorker"}, {"Type": "InspectedWindowsApplicationSHA256", "Value": "a4c3c416a2c2348d2805fb1cb73bc01efdcd83b35b6f63e31fd1ee41c3663af4"}, {"Type": "InspectedWindowsWorkerSHA256", "Value": "d1a4f7fcdb85f55edde9fce195939d2d117ffb2ced919bc2f8b9bfdc84878376"}] }/>
+
+
+
+
+

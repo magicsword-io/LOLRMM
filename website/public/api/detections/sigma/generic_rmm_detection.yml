@@ -19,7 +19,9 @@ detection:
     Image|endswith:
     - \\%APPDATA%\GoToMeeting\G2M.exe
     - \\%APPDATA%\JWrapper-SimpleSetup\*
+    - \\%APPDATA%\Mremote\*
     - \\%APPDATA%\loclx\*
+    - \\%ProgramData%\Mremote\<deployment-id>\*
     - \\%ProgramData%\Tiflux\*
     - \\%ProgramData%\rmmmax\AgentService\RMMmaxAgentService.exe
     - \\%USERPROFILE%\\AppData\\Local\\Temp\\SupremoRemoteDesktop\\
@@ -55,6 +57,7 @@ detection:
     - \\C:\AlpemixService.exe
     - \\C:\AlpemixSrvc\
     - \\C:\Downloads\SuperPuTTY\*
+    - \\C:\GxM\agent
     - \\C:\Lavawall\LavawallWin.exe
     - \\C:\Program Files (x86)\Almageste\DragonDisk\*
     - \\C:\Program Files (x86)\AnyDesk\*
@@ -118,6 +121,8 @@ detection:
     - \\C:\Program Files (x86)\Inventec\InvGate.net Client\files\sas.dll
     - \\C:\Program Files (x86)\Kaseya\
     - \\C:\Program Files (x86)\LANDesk\*
+    - \\C:\Program Files (x86)\LS RMM\LS RMM Worker.exe
+    - \\C:\Program Files (x86)\LS RMM\LS RMM.exe
     - \\C:\Program Files (x86)\Lavawall\LavawallWin.exe
     - \\C:\Program Files (x86)\ManageEngine\ServiceDesk\*
     - \\C:\Program Files (x86)\Microsoft Garage\Mouse without Borders\*
@@ -164,6 +169,7 @@ detection:
     - \\C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_Process.exe
     - \\C:\Program Files\0x101 Cyber Security\NetLock RMM\UserAgent\NetLock_RMM_User_UAC.exe
     - \\C:\Program Files\ATERA Networks\AteraAgent\*
+    - \\C:\Program Files\Allocentra\Agent\allocentra-agent.exe
     - \\C:\Program Files\AnyDesk\*
     - \\C:\Program Files\Aspia\
     - \\C:\Program Files\Atera Networks
@@ -200,6 +206,7 @@ detection:
     - \\C:\Program Files\Lunixar\*
     - \\C:\Program Files\ManageEngine\ManageEngine Free Tools\Launcher\*
     - \\C:\Program Files\ManageEngine\ServiceDesk\*
+    - \\C:\Program Files\MiniRMM\MiniRmmAgent.exe
     - \\C:\Program Files\Miradore\OnlineClient\bin\*
     - \\C:\Program Files\Monitic\*
     - \\C:\Program Files\Monitic\agent.exe
@@ -260,6 +267,8 @@ detection:
     - \\C:\ProgramData\IDrive\*
     - \\C:\ProgramData\JWrapper-Remote Access\*
     - \\C:\ProgramData\Kaseya\
+    - \\C:\ProgramData\MiniRMM\Invoke-AVExclusions.ps1
+    - \\C:\ProgramData\MiniRMM\SmartScreenTest.ps1
     - \\C:\ProgramData\Netbird\*
     - \\C:\ProgramData\OpsBridge\*
     - \\C:\ProgramData\Package Cache\.unverified\agent
@@ -412,6 +421,10 @@ detection:
     - \\IDriveWinSetup.exe
     - \\ISLLight.exe
     - \\ISLLightClient.exe
+    - \\ITAgentRMMSender.exe
+    - \\ITAgentRMMSenderSL.exe
+    - \\ITAgentRMMSenderUpdater.exe
+    - \\ITAgentSender.aiui
     - \\ITSMAgent.exe
     - \\ITSMService.exe
     - \\ITarianRemoteAccessSetup.exe
@@ -438,6 +451,8 @@ detection:
     - \\Kabuto.Service.Runner.exe
     - \\KabutoSetup.exe
     - \\LANDeskPortalManager.exe
+    - \\LS RMM Worker.exe
+    - \\LS RMM.exe
     - \\LunixarRMM*.msi
     - \\MEAgentHelper.exe
     - \\ManageEngine_Remote_Access_Plus.exe
@@ -462,6 +477,7 @@ detection:
     - \\OTService.exe
     - \\OnionShare-win*.msi
     - \\Online Backup.exe
+    - \\OpenDesk-RMM-Agent.exe
     - \\OrayRemoteService.exe
     - \\OrayRemoteShell.exe
     - \\PAExec-*.exe
@@ -469,6 +485,7 @@ detection:
     - \\PCMonitorManager.exe
     - \\PDQConnectUpdater-*.msi
     - \\Pilixo_Installer*.exe
+    - \\PixoIT-agent.exe
     - \\QQProtect.exe
     - \\RAccess.exe
     - \\RDConsole.exe
@@ -545,6 +562,8 @@ detection:
     - \\UltraViewer_Desktop.exe
     - \\UltraViewer_Service.exe
     - \\UltraViewer_setup*
+    - \\UniRMM.exe
+    - \\UniRMM.msi
     - \\WinVNCStub.exe
     - \\XSightService.exe
     - \\ZMAgent.exe
@@ -566,6 +585,7 @@ detection:
     - \\agent_setup_5.exe
     - \\agentu.exe
     - \\alitask.exe
+    - \\allocentra-agent.exe
     - \\apc_host.exe
     - \\atera_agent.exe
     - \\ateraagent.exe
@@ -585,6 +605,11 @@ detection:
     - \\bomgar-rdp.exe
     - \\bomgar-scc-*.exe
     - \\bomgar-scc.exe
+    - \\breeze-agent
+    - \\breeze-agent.service
+    - \\breeze-backup
+    - \\breeze-desktop-helper
+    - \\breeze-watchdog
     - \\c:\Program Files (x86)%\mRemoteNG
     - \\c:\Program Files (x86)\Sysprogs\SmarTTY\*
     - \\c:\Program Files\*\Duplicati.Server.exe
@@ -595,6 +620,10 @@ detection:
     - \\client32.exe
     - \\clientmrinit.exe
     - \\cloudflared.exe
+    - \\com.breeze.agent.plist
+    - \\com.breeze.desktop-helper-loginwindow.plist
+    - \\com.breeze.desktop-helper-user.plist
+    - \\com.breeze.watchdog.plist
     - \\commandProcessor
     - \\connect.exe
     - \\connectwise*.exe
@@ -748,6 +777,7 @@ detection:
     - \\neturo.exe
     - \\netviewer*.exe
     - \\netviewer.exe
+    - \\nexusrmm.exe
     - \\nezha-agent
     - \\nezha-agent.exe
     - \\nezha-agent.service
@@ -775,6 +805,7 @@ detection:
     - \\ocsservice.exe
     - \\oolocker.exe
     - \\oosyspectr.exe
+    - \\opendesk-rmm-agent.exe
     - \\p9agent*.exe
     - \\paexec.exe
     - \\parallelsaccess-*.exe

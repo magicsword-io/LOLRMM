@@ -1,0 +1,59 @@
+---
+description: "GxM RMM Agent is a custom Windows remote monitoring and management agent. Its inspected code implements enrollment, a Windows service, remote desktop support, shell and script execution, file operations, software and system inventory, patching, deployment, and endpoint administration. No independent vendor or source repository was identified, and the reviewed records contain no observed delivery-abuse relationship. This entry documents the agent's confirmed RMM functionality and static host artifacts; it does not establish a legitimate commercial vendor, malware classification, or a campaign."
+title: "GxM RMM Agent"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# GxM RMM Agent
+
+GxM RMM Agent is a custom Windows remote monitoring and management agent. Its inspected code implements enrollment, a Windows service, remote desktop support, shell and script execution, file operations, software and system inventory, patching, deployment, and endpoint administration. No independent vendor or source repository was identified, and the reviewed records contain no observed delivery-abuse relationship. This entry documents the agent's confirmed RMM functionality and static host artifacts; it does not establish a legitimate commercial vendor, malware classification, or a campaign.
+
+
+<BlockBanner name={"GxM RMM Agent"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-22"}
+         website={""}
+         lastModified={"2026-09-22"}
+         privileges={"Administrator required to install the auto-starting Windows service"}
+         free={ "Unknown" }
+         verification={ "A 266,752-byte .NET 8 Windows sample was downloaded for static analysis only and its SHA-256 was verified. Decompilation recovered a coherent GxM.Agent project with enrollment, service installation, SignalR command handling, remote-screen/input/clipboard features, shell and script execution, file management, inventory, patching, deployment, update, and endpoint-administration components. The sample is unsigned and no reliable independent vendor, source repository, or delivery-abuse relationship was identified. No live installation, remote-control session, or network endpoint was tested.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["*\\ProgramData\\GxM\\agent\\GxM.Agent.exe", "*\\ProgramData\\GxM\\enrollment.json", "*\\ProgramData\\GxM\\install.log", "C:\\GxM\\agent"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Enrollment and managed endpoint registration", "Auto-starting Windows service with restart-on-failure configuration", "Remote screen capture, keyboard/mouse input, and clipboard operations", "Interactive shell and remote script execution", "Remote file read, write, delete, rename, and directory operations", "Process and service management", "Hardware, software, application, event-log, registry, and network inventory", "Patch, software-deployment, update, and Wake-on-LAN actions"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "*\\ProgramData\\GxM\\agent\\GxM.Agent.exe", "Description": "Windows service staging target implemented by the inspected service-install code.", "OS": "Windows"}, {"File": "*\\ProgramData\\GxM\\enrollment.json", "Description": "Enrollment configuration path implemented by the inspected code; its contents can include agent credentials and should be handled as sensitive.", "OS": "Windows"}, {"File": "*\\ProgramData\\GxM\\install.log", "Description": "Installer log path implemented by the inspected code.", "OS": "Windows"}] }/>
+
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\GxMAgent", "Description": "Windows service configuration key inferred from the inspected GxMAgent service-install code."}] }/>
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "ServiceName", "Value": "GxMAgent"}, {"Type": "ServiceDisplayName", "Value": "GxM RMM Agent"}, {"Type": "InspectedSampleSHA256", "Value": "70cd93f03941fe638fc78b99783b7b73e55300e8e7c8710173f7e9859d52b5a6"}, {"Type": "ProductVersion", "Value": "1.0.0.1"}, {"Type": "PublisherStatus", "Value": "Self-identified as GxM; no independent vendor or source identity established."}] }/>
+
+
+
+
+

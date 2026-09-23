@@ -1,0 +1,58 @@
+---
+description: "UniSystem RMM is a Windows endpoint-management platform. Matching product-branded material describes a UniRMM agent with remote terminal access, RDP tunneling, remote script execution, and endpoint monitoring. This entry records matching UniRMM Windows sample metadata. The reviewed evidence establishes product identity and vendor-described capabilities only; it does not establish delivery, abuse, victim impact, or actor attribution."
+title: "UniSystem RMM"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# UniSystem RMM
+
+UniSystem RMM is a Windows endpoint-management platform. Matching product-branded material describes a UniRMM agent with remote terminal access, RDP tunneling, remote script execution, and endpoint monitoring. This entry records matching UniRMM Windows sample metadata. The reviewed evidence establishes product identity and vendor-described capabilities only; it does not establish delivery, abuse, victim impact, or actor attribution.
+
+
+<BlockBanner name={"UniSystem RMM"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-22"}
+         website={"https://xelvarunetio.pro/"}
+         lastModified={"2026-09-22"}
+         privileges={""}
+         free={ "Unknown" }
+         verification={ "The reviewed Windows sample identifies as UniSystem RMM from UniSystem Tecnologia LTDA. A product-branded page describes matching UniRMM installation and endpoint-management functions; site ownership and legal publisher identity were not independently verified. The sample was not executed, and this review does not assert a stable installation path, signer, network endpoint, or abuse relationship.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["UniRMM.exe", "UniRMM.msi"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Remote terminal access", "RDP tunneling", "Remote script execution", "Endpoint monitoring"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "UniRMM.exe", "Description": "Windows UniSystem RMM agent filename from reviewed PE metadata.", "OS": "Windows"}, {"File": "UniRMM.msi", "Description": "Windows installer filename described by the vendor product site.", "OS": "Windows"}] }/>
+
+
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "InspectedWindowsSampleSHA256", "Value": "8a0c5fdb48d77253945e931270b9586ada54ae1066d26af5dbacf4ca261478d3"}, {"Type": "ProductVersion", "Value": "2.0.0.0"}, {"Type": "VendorIdentity", "Value": "UniSystem Tecnologia LTDA (from reviewed PE metadata)"}, {"Type": "CatalogScope", "Value": "Product identity confirmed; no delivery or abuse claim."}] }/>
+
+
+
+
+### References
+- [https://xelvarunetio.pro/](https://xelvarunetio.pro/)
+
