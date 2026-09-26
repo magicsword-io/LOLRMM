@@ -11,7 +11,7 @@ Description: 'AnyDesk is a popular remote desktop software that enables users to
     '
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-09-29'
-LastModified: '2023-09-29'
+LastModified: '2026-09-26'
 Details:
     Website: https://anydesk.com/en
     PEMetadata:
@@ -40,6 +40,9 @@ Details:
     InstallationPaths:
         - C:\Program Files (x86)\AnyDesk\*
         - C:\Program Files\AnyDesk\*
+        - C:\Program Files (x86)\AnyDesk-*\*
+        - C:\Program Files (x86)\AnyDesk-*\AnyDesk-*.exe
+        - C:\Program Files\AnyDesk-*\AnyDesk-*.exe
         - /Applications/AnyDesk.app
 Artifacts:
     Disk:
@@ -84,8 +87,32 @@ Artifacts:
         - File: '%PROGRAMDATA%\AnyDesk\system.conf'
           Description: N/A
           OS: Windows
+        - File: '%PROGRAMDATA%\AnyDesk\ad_*\ad_*_svc.trace'
+          Description: Custom client service log (per-org ID wildcard, issue #247).
+          OS: Windows
+        - File: '%APPDATA%\AnyDesk\ad_*'
+          Description: Custom client per-org directory (normalized, issue #247).
+          OS: Windows
+        - File: '%APPDATA%\AnyDesk\ad_*\ad_*.trace'
+          Description: Custom client UI log (normalized, issue #247).
+          OS: Windows
+        - File: '%APPDATA%\AnyDesk\ad_*\user.conf'
+          Description: Custom client user config (normalized, issue #247).
+          OS: Windows
+        - File: '%APPDATA%\AnyDesk\ad_*\service.conf'
+          Description: Custom client service config (normalized, issue #247).
+          OS: Windows
+        - File: '%PROGRAMDATA%\AnyDesk\ad_*\service.conf'
+          Description: Custom client service config (normalized, issue #247).
+          OS: Windows
+        - File: '%PROGRAMDATA%\AnyDesk\ad_*\system.conf'
+          Description: Custom client system config (normalized, issue #247).
+          OS: Windows
         - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk.lnk'
           Description: N/A
+          OS: Windows
+        - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk *.lnk'
+          Description: Custom client startup link (per-org name wildcard, issue #247).
           OS: Windows
         - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk'
           Description: N/A
@@ -109,6 +136,12 @@ Artifacts:
           ServiceName: AnyDesk Service
           ImagePath: '"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe" --service'
           Description: Service installation event as result of AnyDesk installation.
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: AnyDesk * Service
+          ImagePath: '"C:\\Program Files (x86)\\AnyDesk-*\\AnyDesk-*.exe" --service'
+          Description: Service installation event for custom per-org clients (normalized, issue #247).
         - EventID: 4697
           ProviderName: Microsoft-Security-Auditing
           LogFile: Security.evtx
@@ -118,12 +151,18 @@ Artifacts:
     Registry:
         - Path: HKLM\SOFTWARE\Clients\Media\AnyDesk
           Description: N/A
+        - Path: HKLM\SOFTWARE\Clients\Media\AnyDesk-*
+          Description: Custom client media entry (normalized, issue #247).
         - Path: HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk
           Description: N/A
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk-*
+          Description: Custom client service entry (normalized, issue #247).
         - Path: HKLM\SOFTWARE\Classes\.anydesk\shell\open\command
           Description: N/A
         - Path: HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command
           Description: N/A
+        - Path: HKLM\SOFTWARE\Classes\AnyDesk-*\shell\open\command
+          Description: Custom client URL handler (normalized, issue #247).
         - Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*
           Description: N/A
         - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk
@@ -132,6 +171,8 @@ Artifacts:
           Description: N/A
         - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
           Description: N/A
+        - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk-*
+          Description: Custom client uninstall entry (normalized, issue #247).
     Network:
         - Description: During setup the boot.net.anydesk.com domain is request over port 443
           Domains:
@@ -168,11 +209,14 @@ Detections:
       Description: Detects potential network activity of AnyDesk RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_files_sigma.yml
       Description: Detects potential files activity of AnyDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_processes_sigma.yml
+      Description: Detects potential processes activity of AnyDesk RMM tool
 References:
     - https://support.anydesk.com/knowledge/firewall
     - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
     - https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk
     - https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/
+    - https://github.com/magicsword-io/LOLRMM/issues/247
 Acknowledgement:
     - Person: Théo Letailleur
       Handle: in/theosyn
@@ -188,3 +232,5 @@ CodeSigning:
           src_file_sha256: 864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803
           src_file_path: downloaded_files/anydesk/864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803
           src_file_company: AnyDesk Software GmbH
+        - signer_name: AnyDesk Software GmbH
+          certificate_thumbprint: D056FB932C5A4821C328214E4F4988436650583A

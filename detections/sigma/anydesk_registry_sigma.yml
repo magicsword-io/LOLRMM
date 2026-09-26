@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-09-25
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -18,13 +18,17 @@ detection:
     selection:
         TargetObject|contains:
             - 'HKLM\SOFTWARE\Clients\Media\AnyDesk'
+            - 'HKLM\SOFTWARE\Clients\Media\AnyDesk-*'
             - 'HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk-*'
             - 'HKLM\SOFTWARE\Classes\.anydesk\shell\open\command'
             - 'HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command'
+            - 'HKLM\SOFTWARE\Classes\AnyDesk-*\shell\open\command'
             - 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*'
             - 'HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk'
             - 'HKLM\DRIVERS\DriverDatabase\DeviceIds\WSDPRINT\AnyDesk'
             - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk'
+            - 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk-*'
     condition: selection
 falsepositives:
     - Legitimate use of AnyDesk
