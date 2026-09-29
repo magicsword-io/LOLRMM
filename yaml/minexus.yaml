@@ -1,0 +1,61 @@
+Name: Minexus
+Category: RMM
+Description: >
+    Minexus is an open-source, self-hosted remote management system composed of
+    a Nexus server, Console, and Minion endpoint agent. The agent supports
+    inventory, remote shell, and file-management functions. No public malicious
+    deployment was established in this source-focused review.
+Author: Michael Haag
+Created: '2026-09-28'
+LastModified: '2026-09-28'
+Details:
+    Website: https://github.com/arhuman/minexus
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: The optional Linux installer creates a systemd unit; the Minion binary path is selected from the installer's current directory.
+    Free: true
+    Verification: >
+        Static review of pinned upstream source and documentation; no local
+        binary, server, or sample execution was performed. Upstream documents
+        Windows, Linux, and macOS agent use. No public malicious-use report was
+        established in this review.
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Self-hosted server and endpoint agent
+        - System inventory and heartbeat
+        - Remote shell
+        - File management
+    Vulnerabilities: []
+    InstallationPaths:
+        - /etc/systemd/system/minion.service
+Artifacts:
+    Disk:
+        - File: /etc/systemd/system/minion.service
+          Description: Optional systemd unit written by the generated Linux install script; the executable location is the operator-selected current directory.
+          OS: Linux
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Minion connects to the administrator-configured NEXUS_SERVER; 11972 is the documented default Minion server port.
+          Domains: []
+          Ports:
+              - 11972
+    Other:
+        - Type: ServerConfigurationEnvironmentVariable
+          Value: NEXUS_SERVER
+        - Type: DefaultMinionServerPort
+          Value: '11972'
+        - Type: OptionalSystemdServiceName
+          Value: minion.service
+Detections: []
+References:
+    - https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/README.md
+    - https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/documentation/configuration.md
+    - https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/internal/web/webroot/templates/install_minion.sh
+    - https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/cmd/minion/minion.go
+Acknowledgement: []

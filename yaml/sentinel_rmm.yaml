@@ -1,0 +1,90 @@
+Name: Sentinel RMM
+Category: RMM
+Description: >
+    Sentinel RMM is an open-source, self-hosted management console and agent.
+    Its Python agent reports inventory and health data, polls its configured
+    controller for jobs, and can execute controller-dispatched jobs only when
+    the controller enables remote execution. The project documents packaged
+    Windows, macOS, and Linux agents for tagged releases, but this review found
+    no published GitHub release at the reviewed commit.
+Author: Michael Haag
+Created: '2026-09-28'
+LastModified: '2026-09-28'
+Details:
+    Website: https://github.com/codexX64/sentinel-rmm
+    PEMetadata:
+        Filename: sentinel-agent.exe
+        OriginalFileName: ''
+        Description: Windows filename configured by the repository PyInstaller specification; Linux and macOS builds use sentinel-agent.
+    Privileges: Depends on the actions dispatched by the configured controller; the reviewed source does not establish a fixed service account.
+    Free: Open source
+    Verification: >
+        Static source review only at repository commit
+        554a21d64ab3a03df81520e1519ecb97cc1466bf. No package build, agent,
+        controller, job, enrollment, or network service was run or contacted.
+        Cross-platform support is documented and reflected in platform-specific
+        source logic; availability of a published release was not established.
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Endpoint inventory and health reporting
+        - Controller-polled remote jobs
+        - Optional remote command execution
+        - Installed-software inventory
+        - Wake-on-LAN relay
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\ProgramData\SentinelAgent\sentinel-agent.exe
+        - /usr/local/sentinel-agent/sentinel-agent
+        - /opt/sentinel-agent/sentinel-agent
+Artifacts:
+    Disk:
+        - File: C:\ProgramData\SentinelAgent\sentinel-agent.exe
+          Description: Windows self-install destination used by the reviewed agent source.
+          OS: Windows
+        - File: /usr/local/sentinel-agent/sentinel-agent
+          Description: macOS self-install destination used by the reviewed agent source.
+          OS: macOS
+        - File: /Library/LaunchDaemons/fr.sentinel.agent.plist
+          Description: macOS LaunchDaemon written by the reviewed agent source.
+          OS: macOS
+        - File: /opt/sentinel-agent/sentinel-agent
+          Description: Linux self-install destination used by the reviewed agent source.
+          OS: Linux
+        - File: /etc/systemd/system/sentinel-agent.service
+          Description: Linux systemd unit written by the reviewed agent source.
+          OS: Linux
+    EventLog: []
+    Registry:
+        - Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\SentinelAgent
+          Description: Task Scheduler cache key expected after the Windows self-installer creates the SentinelAgent task.
+    Network:
+        - Description: Controller URL and agent token are supplied at deployment; deployments are operator-hosted and have no shared vendor hostname.
+          Domains: []
+          Ports: []
+    Other:
+        - Type: SourceBinaryConfigurationMarker
+          Value: SENTINELCFG1
+        - Type: RemoteExecutionFeatureFlag
+          Value: SENTINEL_ALLOW_EXEC=1
+        - Type: ControllerUrlEnvironmentVariable
+          Value: SENTINEL_URL
+        - Type: AgentTokenEnvironmentVariable
+          Value: SENTINEL_AGENT_TOKEN
+        - Type: WindowsScheduledTaskName
+          Value: SentinelAgent
+        - Type: macOSLaunchDaemonLabel
+          Value: fr.sentinel.agent
+        - Type: LinuxSystemdServiceName
+          Value: sentinel-agent.service
+Detections: []
+References:
+    - https://github.com/codexX64/sentinel-rmm
+    - https://github.com/codexX64/sentinel-rmm/blob/554a21d64ab3a03df81520e1519ecb97cc1466bf/README.md
+    - https://github.com/codexX64/sentinel-rmm/blob/554a21d64ab3a03df81520e1519ecb97cc1466bf/agent/sentinel-agent.py
+    - https://github.com/codexX64/sentinel-rmm/blob/554a21d64ab3a03df81520e1519ecb97cc1466bf/agent/sentinel-agent.spec
+Acknowledgement:
+    - Person: codexX64
+      Handle: '@codexX64'

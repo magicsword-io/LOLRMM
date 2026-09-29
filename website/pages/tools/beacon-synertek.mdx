@@ -1,0 +1,65 @@
+---
+description: "Beacon is an AGPL-3.0-licensed remote monitoring and management project from Synertek Cloud Services. It is unrelated to Cobalt Strike Beacon. Its reviewed source installs a Go agent as a Windows service, Linux systemd unit, or macOS LaunchDaemon and uses an operator-controlled Cloudflare Workers/D1/R2 backend. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use."
+title: "Beacon (Synertek)"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Beacon (Synertek)
+
+Beacon is an AGPL-3.0-licensed remote monitoring and management project from Synertek Cloud Services. It is unrelated to Cobalt Strike Beacon. Its reviewed source installs a Go agent as a Windows service, Linux systemd unit, or macOS LaunchDaemon and uses an operator-controlled Cloudflare Workers/D1/R2 backend. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.
+
+
+<BlockBanner name={"Beacon (Synertek)"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-28"}
+         website={"https://github.com/synertek-cloud-services/beacon"}
+         lastModified={"2026-09-28"}
+         privileges={"Installation creates a Windows service, Linux systemd unit, or macOS LaunchDaemon and requires administrative privileges; the source was not executed."}
+         free={ true }
+         verification={ "Static source review at commit e3b790b72d18ed6243cc18759839ee2059022f6a. The service installer and credential store define the listed executable, service/unit/plist, credentials, and log paths. The project labels platform support as beta; no installer, backend, enrollment, or remote action was executed. The backend URL is supplied by an operator at installation, so it is intentionally not a generic network indicator.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\Beacon\\beacon-agent.exe", "C:\\ProgramData\\Beacon\\credential.json", "C:\\ProgramData\\Beacon\\agent.log", "/usr/local/bin/beacon-agent", "/etc/systemd/system/beacon-agent.service", "/etc/beacon/credential.json", "/etc/beacon/agent.log", "/Library/LaunchDaemons/com.beacon.agent.plist", "/Library/Application Support/Beacon/credential.json", "/Library/Application Support/Beacon/agent.log", "/var/log/beacon-agent.log"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "macOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Endpoint monitoring and inventory", "Remote shell and scripted automation", "Remote management commands", "Self-hosted backend and enrollment"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\Beacon\\beacon-agent.exe", "Description": "Windows service installer destination.", "OS": "Windows"}, {"File": "C:\\ProgramData\\Beacon\\credential.json", "Description": "Windows system-service credential store path.", "OS": "Windows"}, {"File": "C:\\ProgramData\\Beacon\\agent.log", "Description": "Windows system-service log path, colocated with the credential store.", "OS": "Windows"}, {"File": "/usr/local/bin/beacon-agent", "Description": "Linux agent executable destination.", "OS": "Linux"}, {"File": "/usr/local/bin/beacon-agent", "Description": "macOS agent executable destination.", "OS": "macOS"}, {"File": "/etc/systemd/system/beacon-agent.service", "Description": "Linux systemd unit written by the installer.", "OS": "Linux"}, {"File": "/etc/beacon/credential.json", "Description": "Linux root-service credential store path.", "OS": "Linux"}, {"File": "/etc/beacon/agent.log", "Description": "Linux root-service log path, colocated with the credential store.", "OS": "Linux"}, {"File": "/Library/LaunchDaemons/com.beacon.agent.plist", "Description": "macOS LaunchDaemon plist written by the installer.", "OS": "macOS"}, {"File": "/Library/Application Support/Beacon/credential.json", "Description": "macOS root-service credential store path.", "OS": "macOS"}, {"File": "/Library/Application Support/Beacon/agent.log", "Description": "macOS root-service log path, colocated with the credential store.", "OS": "macOS"}, {"File": "/var/log/beacon-agent.log", "Description": "Standard output and error path in the macOS LaunchDaemon plist.", "OS": "macOS"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System", "ServiceName": "BeaconAgent", "ImagePath": "C:\\Program Files\\Beacon\\beacon-agent.exe", "Description": "Windows installer creates the BeaconAgent automatic service from this binary; its server URL argument is operator supplied.", "CommandLine": ""}] }/>
+
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "WindowsServiceName", "Value": "BeaconAgent"}, {"Type": "LinuxSystemdUnit", "Value": "beacon-agent.service"}, {"Type": "macOSLaunchDaemonLabel", "Value": "com.beacon.agent"}] }/>
+
+
+
+
+### References
+- [https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/README.md](https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/README.md)
+- [https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/docs/BETA_PLATFORM_SUPPORT.md](https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/docs/BETA_PLATFORM_SUPPORT.md)
+- [https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/service/install_windows.go](https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/service/install_windows.go)
+- [https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/service/install_unix.go](https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/service/install_unix.go)
+- [https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/credential/store.go](https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/credential/store.go)
+

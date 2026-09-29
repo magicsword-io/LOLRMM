@@ -1,0 +1,74 @@
+---
+description: "Opale is an open-source, self-hosted remote monitoring and management platform. Its documented deployment uses a controller hosted by the organization and a Go Windows agent that enrolls with that controller, reports inventory, executes dispatched scripts, and supports signed agent updates. The public repository contains Linux and macOS agent-service code and cross-platform release assets, but its current README says endpoint management is Windows-only; this entry therefore records Windows as the supported endpoint platform."
+title: "Opale"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Opale
+
+Opale is an open-source, self-hosted remote monitoring and management platform. Its documented deployment uses a controller hosted by the organization and a Go Windows agent that enrolls with that controller, reports inventory, executes dispatched scripts, and supports signed agent updates. The public repository contains Linux and macOS agent-service code and cross-platform release assets, but its current README says endpoint management is Windows-only; this entry therefore records Windows as the supported endpoint platform.
+
+
+<BlockBanner name={"Opale"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-28"}
+         website={"https://github.com/4rtefakt/opale"}
+         lastModified={"2026-09-28"}
+         privileges={"Windows agent installation is documented to run as SYSTEM; the installed Windows service performs management actions in that context."}
+         free={ "Open source" }
+         verification={ "Static source review only at repository commit 4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692. No agent binary, installer, controller, enrollment token, or third-party endpoint was executed or contacted. Windows support is documented; source/release evidence for other platforms is not treated as supported endpoint management here.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\ProgramData\\Opale\\opale-agent.exe"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Endpoint inventory and monitoring", "Controller-dispatched script execution", "Local administrator password rotation", "Signed agent auto-update"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\ProgramData\\Opale\\opale-agent.exe", "Description": "Default branded agent binary path; the source allows the data-directory and binary branding to be changed at build or deployment time.", "OS": "Windows"}, {"File": "C:\\ProgramData\\Opale\\config.json", "Description": "Agent configuration containing the enrollment token and controller URL.", "OS": "Windows"}, {"File": "C:\\ProgramData\\Opale\\state.json", "Description": "Persistent agent state file.", "OS": "Windows"}, {"File": "C:\\ProgramData\\Opale\\agent.log", "Description": "Default agent log file.", "OS": "Windows"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System.evtx", "ServiceName": "Opale-Agent", "ImagePath": "C:\\ProgramData\\Opale\\opale-agent.exe", "Description": "A Windows service installation using the default source branding; the name and path are configurable."}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Opale-Agent", "Description": "SCM key expected when the default Opale-Agent Windows service is installed; its exact values vary with build-time branding and deployment path."}] }/>
+
+#### Network Artifacts
+<EuiSpacer size="xl"/>
+<NetworkArtifactsTable data={ [{"Description": "Controller endpoint is supplied during enrollment and stored in agent configuration; deployments are operator-hosted and have no shared vendor hostname.", "Domains": [], "Ports": []}] }/>
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "DefaultWindowsServiceName", "Value": "Opale-Agent"}, {"Type": "DefaultAgentUserAgentPrefix", "Value": "opale-agent-go"}, {"Type": "DataDirectoryOverrideEnvironmentVariable", "Value": "RMM_DATA_DIR"}] }/>
+
+
+
+
+### References
+- [https://github.com/4rtefakt/opale](https://github.com/4rtefakt/opale)
+- [https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/README.md](https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/README.md)
+- [https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/INSTALL.md](https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/INSTALL.md)
+- [https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/branding/branding.go](https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/branding/branding.go)
+- [https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/config.go](https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/config.go)
+- [https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/install.ps1](https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/install.ps1)
+
+### Acknowledgements
+- 4rtefakt (@4rtefakt)

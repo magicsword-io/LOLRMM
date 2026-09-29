@@ -3042,6 +3042,190 @@
         }
     },
     {
+        "Name": "Obliance",
+        "Category": "RMM",
+        "Description": "Obliance is a self-hosted remote monitoring and management project with a Go endpoint agent. Its reviewed source provides Windows, Linux, and macOS installers and implements endpoint monitoring, remote shell, file, process, service, update, and remote-control functions. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/MeeJay/Obliance",
+            "PEMetadata": {
+                "Filename": "obliance-agent.exe",
+                "OriginalFileName": "",
+                "Description": "Windows MSI source names this endpoint service executable; no PE metadata was inspected."
+            },
+            "Privileges": "Windows MSI installation creates a LocalSystem service and scheduled task; Linux and macOS installation create system services and require administrative privileges. The source was not executed.",
+            "Free": "Unknown",
+            "Verification": "Static source review at commit f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac. Windows WiX source, Windows service source, and Unix installer source define the listed files, service, task, registry locations, and macOS LaunchDaemon. No installer, agent, server, remote session, or update workflow was executed. Server URLs and API keys are deployment configuration and are intentionally not generic network indicators. The reviewed repository did not provide a license file, so licensing is recorded as Unknown.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Endpoint monitoring and inventory",
+                "Remote shell and script execution",
+                "File, process, and service management",
+                "Update and compliance management",
+                "Browser-mediated remote-control functions",
+                "Self-hosted server deployment"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\OblianceAgent\\obliance-agent.exe",
+                "C:\\Program Files\\OblianceAgent\\obliance-tray.exe",
+                "C:\\Program Files\\OblianceAgent\\obliance-watchdog.exe",
+                "C:\\ProgramData\\OblianceAgent\\config.json",
+                "C:\\ProgramData\\OblianceAgent\\agent.log",
+                "C:\\ProgramData\\OblianceAgent\\watchdog.json",
+                "/opt/obliance-agent/obliance-agent",
+                "/etc/obliance-agent/config.json",
+                "/etc/systemd/system/obliance-agent.service",
+                "/etc/systemd/system/obliance-watchdog.service",
+                "/Library/LaunchDaemons/com.obliance.agent.plist",
+                "/usr/local/bin/obliance-agent",
+                "/var/log/obliance-agent.log"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\OblianceAgent\\obliance-agent.exe",
+                    "Description": "Windows MSI service executable destination.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\OblianceAgent\\obliance-tray.exe",
+                    "Description": "Windows MSI tray executable destination.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\OblianceAgent\\obliance-watchdog.exe",
+                    "Description": "Windows MSI watchdog executable destination.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OblianceAgent\\config.json",
+                    "Description": "Windows agent configuration path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OblianceAgent\\agent.log",
+                    "Description": "Windows service log path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\OblianceAgent\\watchdog.json",
+                    "Description": "Windows watchdog state path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/opt/obliance-agent/obliance-agent",
+                    "Description": "Linux installer endpoint executable path.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/obliance-agent/config.json",
+                    "Description": "Linux agent configuration path.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/obliance-agent/config.json",
+                    "Description": "macOS agent configuration path.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/etc/systemd/system/obliance-agent.service",
+                    "Description": "Linux systemd unit installed by the project script.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/obliance-watchdog.service",
+                    "Description": "Linux watchdog systemd unit installed by the project script.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Library/LaunchDaemons/com.obliance.agent.plist",
+                    "Description": "macOS LaunchDaemon plist installed by the project script.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/usr/local/bin/obliance-agent",
+                    "Description": "macOS agent executable path in the project service source.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/var/log/obliance-agent.log",
+                    "Description": "macOS LaunchDaemon log path.",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System",
+                    "ServiceName": "OblianceAgent",
+                    "ImagePath": "C:\\Program Files\\OblianceAgent\\obliance-agent.exe",
+                    "Description": "Windows MSI source installs this automatic LocalSystem service.",
+                    "CommandLine": ""
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\OblianceAgent",
+                    "Description": "Windows MSI writes initial ServerUrl and ApiKey values, and agent code reads them if config.json is absent. Values can contain credentials and should not be published."
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\OblianceTray",
+                    "Description": "Windows MSI registers obliance-tray.exe for user-session startup."
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\\OblianceAgent",
+                    "Description": "Windows MSI and service source register the service for Safe Mode with Networking."
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\OblianceAgent",
+                    "Description": "Windows service configuration key inferred from the MSI ServiceInstall definition."
+                }
+            ],
+            "Network": [],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "OblianceAgent"
+                },
+                {
+                    "Type": "WindowsScheduledTask",
+                    "Value": "OblianceWatchdog"
+                },
+                {
+                    "Type": "LinuxSystemdUnit",
+                    "Value": "obliance-agent.service"
+                },
+                {
+                    "Type": "LinuxSystemdUnit",
+                    "Value": "obliance-watchdog.service"
+                },
+                {
+                    "Type": "macOSLaunchDaemonLabel",
+                    "Value": "com.obliance.agent"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/README.md",
+            "https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/installer/product.wxs",
+            "https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/service_windows.go",
+            "https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/registry_windows.go",
+            "https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/installer/install.sh",
+            "https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/service_darwin.go"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "XRDP",
         "Category": "RAT",
         "Description": "XRDP is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -3262,6 +3446,109 @@
                 }
             ]
         }
+    },
+    {
+        "Name": "NetMaster",
+        "Category": "RMM",
+        "Description": "NetMaster is an open-source Windows remote-management project with a self-hosted PHP panel and a Windows service client. Its source implements command execution, screen sharing, file transfer/download, and RDP actions. No public malicious deployment was established in this source-focused review.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/f3di006/NetMaster",
+            "PEMetadata": {
+                "Filename": "NetMaster_Client.exe",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "Administrator rights are required by the included installer to create and start the automatic Windows service.",
+            "Free": true,
+            "Verification": "Static review of pinned upstream source; no local binary, panel, or sample execution was performed. The included Windows batch installer, client source, and PHP panel source establish the paths, service, and remote-management features below. No public malicious-use report was established in this review.\n",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Self-hosted PHP panel and Windows service client",
+                "Command execution",
+                "Screen sharing",
+                "File transfer and remote download",
+                "RDP actions"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\ProgramData\\NetMaster\\NetMaster_Client.exe",
+                "C:\\ProgramData\\NetMaster\\config.ini"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\ProgramData\\NetMaster\\NetMaster_Client.exe",
+                    "Description": "Client binary copied by the included installer and registered as the netmaster service executable.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\NetMaster\\config.ini",
+                    "Description": "Client configuration containing the operator-selected panel URL and polling interval.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\NetMaster\\log.txt",
+                    "Description": "Client log file path set by NetMaster_Client Log.cpp.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System",
+                    "ServiceName": "netmaster",
+                    "ImagePath": "C:\\ProgramData\\NetMaster\\NetMaster_Client.exe",
+                    "Description": "Installation of the automatic netmaster service by the included installer."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\netmaster",
+                    "Description": "Service Control Manager key created by the included installer."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Client panel URL is set in config.ini by the operator; no vendor domain or fixed port is inherent to NetMaster.",
+                    "Domains": [],
+                    "Ports": []
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ServiceName",
+                    "Value": "netmaster"
+                },
+                {
+                    "Type": "PanelRegistrationEndpointSuffix",
+                    "Value": "userinit.php"
+                },
+                {
+                    "Type": "PanelPollingEndpointSuffix",
+                    "Value": "userupdate.php"
+                },
+                {
+                    "Type": "ConfigurationField",
+                    "Value": "url"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/f3di006/NetMaster/blob/b5dca5f2f11d8a76cda25122e82eb44cdcb07725/README.md",
+            "https://github.com/f3di006/NetMaster/blob/b5dca5f2f11d8a76cda25122e82eb44cdcb07725/ClientInstaller/installer.bat",
+            "https://github.com/f3di006/NetMaster/blob/b5dca5f2f11d8a76cda25122e82eb44cdcb07725/NetMaster_Client/Core.cpp",
+            "https://github.com/f3di006/NetMaster/blob/b5dca5f2f11d8a76cda25122e82eb44cdcb07725/NetMaster_Client/Command.cpp",
+            "https://github.com/f3di006/NetMaster/blob/b5dca5f2f11d8a76cda25122e82eb44cdcb07725/NetMaster_Client/Log.cpp"
+        ],
+        "Acknowledgement": []
     },
     {
         "Name": "Insync",
@@ -4420,6 +4707,138 @@
         ]
     },
     {
+        "Name": "Roster",
+        "Category": "RMM",
+        "Description": "Roster is an AGPL-3.0-licensed, self-hosted endpoint-inventory and remote management project. Its Go server distributes enrollment-specific agents; the reviewed deployment code installs Windows, Linux, and macOS agents with inventory, monitoring, remote-operation, and task capabilities. This entry records source-defined artifacts and does not establish a delivery relationship or malicious use.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/boonkerz/roster",
+            "PEMetadata": {
+                "Filename": "agent-windows-amd64.exe",
+                "OriginalFileName": "",
+                "Description": "Windows distribution filename specified by the repository deployment script; no PE metadata was inspected."
+            },
+            "Privileges": "The documented Windows startup script and Linux/macOS service installation require administrative privileges; the source was not executed.",
+            "Free": true,
+            "Verification": "Static source review at commit 4d753560c9fdb6e9b066eb934ccf07ab394c31a4. Deployment scripts directly define the listed Windows service, Linux systemd unit, macOS LaunchDaemon, executable locations, configuration, and log path. The server URL and enrollment token are generated by an operator deployment, so they are intentionally not generic network indicators. No release binary, installation, enrollment, or remote operation was executed. This is a young project; source presence is not independent deployment or maturity validation.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Endpoint inventory and monitoring",
+                "Remote terminal and scripted tasks",
+                "File and service operations",
+                "Windows remote control",
+                "Self-hosted server with enrollment-specific agents"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Roster\\*",
+                "C:\\ProgramData\\Roster\\agent.yaml",
+                "C:\\ProgramData\\Roster\\agent-state.json",
+                "/usr/local/bin/roster-agent",
+                "/etc/roster/agent.yaml",
+                "/etc/systemd/system/roster-agent.service",
+                "/Library/LaunchDaemons/com.roster.agent.plist",
+                "/var/log/roster-agent.log"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Roster\\agent.exe",
+                    "Description": "Windows agent destination specified by deploy/windows/install-agent.ps1.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Roster\\agent.yaml",
+                    "Description": "Windows agent configuration written by the deployment script.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Roster\\agent-state.json",
+                    "Description": "Windows agent state path configured by the deployment script.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/usr/local/bin/roster-agent",
+                    "Description": "Linux agent executable path in the supplied systemd unit.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/usr/local/bin/roster-agent",
+                    "Description": "macOS agent executable path in the supplied LaunchDaemon plist.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/etc/roster/agent.yaml",
+                    "Description": "Linux agent configuration path in the supplied systemd unit.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/roster/agent.yaml",
+                    "Description": "macOS agent configuration path in the supplied LaunchDaemon plist.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/etc/systemd/system/roster-agent.service",
+                    "Description": "Linux systemd unit supplied by the project.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Library/LaunchDaemons/com.roster.agent.plist",
+                    "Description": "macOS LaunchDaemon plist supplied by the project.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/var/log/roster-agent.log",
+                    "Description": "Standard output and error path in the macOS LaunchDaemon plist.",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System",
+                    "ServiceName": "roster-agent",
+                    "ImagePath": "C:\\Program Files\\Roster\\agent.exe",
+                    "Description": "Windows deployment script invokes the agent to install the roster-agent service from this executable path.",
+                    "CommandLine": "C:\\Program Files\\Roster\\agent.exe -config C:\\ProgramData\\Roster\\agent.yaml install"
+                }
+            ],
+            "Registry": [],
+            "Network": [],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "roster-agent"
+                },
+                {
+                    "Type": "LinuxSystemdUnit",
+                    "Value": "roster-agent.service"
+                },
+                {
+                    "Type": "macOSLaunchDaemonLabel",
+                    "Value": "com.roster.agent"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/boonkerz/roster/blob/4d753560c9fdb6e9b066eb934ccf07ab394c31a4/README.md",
+            "https://github.com/boonkerz/roster/blob/4d753560c9fdb6e9b066eb934ccf07ab394c31a4/deploy/windows/install-agent.ps1",
+            "https://github.com/boonkerz/roster/blob/4d753560c9fdb6e9b066eb934ccf07ab394c31a4/deploy/linux/pc-inventory-agent.service",
+            "https://github.com/boonkerz/roster/blob/4d753560c9fdb6e9b066eb934ccf07ab394c31a4/deploy/macos/com.pc-inventory.agent.plist",
+            "https://github.com/boonkerz/roster/blob/4d753560c9fdb6e9b066eb934ccf07ab394c31a4/cmd/agent/main.go"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "Royal TS",
         "Category": "RMM",
         "Description": "Royal TS is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -5195,6 +5614,137 @@
                 }
             ]
         }
+    },
+    {
+        "Name": "ProxiPort",
+        "Category": "RMM",
+        "Description": "ProxiPort is an open-source, self-hosted remote management and reverse- tunnel project with a server and endpoint agent. It supports remote command execution, script execution, file transfer, system monitoring, and tunnels. It is a distinct continuation of RPort/OpenRPort; this entry does not assign RPort abuse reporting or RealVNC signing metadata to ProxiPort.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/proximile/proxiport",
+            "PEMetadata": {
+                "Filename": "proxiport.exe",
+                "OriginalFileName": "",
+                "Description": "ProxiPort client for Windows"
+            },
+            "Privileges": "The packaged endpoint agent installs as an automatic operating-system service; Linux uses the dedicated proxiport-agent account.",
+            "Free": true,
+            "Verification": "Static review of pinned upstream source and documentation; no local binary, controller, or sample execution was performed. Windows MSI and Linux package sources establish the paths and service metadata below. The upstream documentation lists Linux, macOS, and Windows agents. No stable macOS installation path or service label was established in the pinned source, so no macOS artifact is asserted. No public malicious-use report was established in this review.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Self-hosted server and endpoint agent",
+                "Remote command and script execution",
+                "File transfer",
+                "System monitoring",
+                "Reverse tunnels"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\ProxiPort\\proxiport.exe",
+                "C:\\Program Files\\ProxiPort\\proxiport.conf",
+                "/usr/bin/proxiport",
+                "/etc/proxiport/proxiport.conf",
+                "/lib/systemd/system/proxiport.service"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\ProxiPort\\proxiport.exe",
+                    "Description": "Windows MSI endpoint executable installed under the product directory.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\ProxiPort\\proxiport.conf",
+                    "Description": "Windows MSI endpoint configuration file installed beside the client executable.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/usr/bin/proxiport",
+                    "Description": "Linux agent executable installed by the package/manual install instructions.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/proxiport/proxiport.conf",
+                    "Description": "Linux agent configuration file.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/var/lib/proxiport-agent",
+                    "Description": "Linux agent state directory created by the package/manual install instructions.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/var/log/proxiport-agent",
+                    "Description": "Linux agent log directory created by the package/manual install instructions.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/lib/systemd/system/proxiport.service",
+                    "Description": "Linux systemd unit for the packaged endpoint agent.",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System",
+                    "ServiceName": "proxiport",
+                    "ImagePath": "C:\\Program Files\\ProxiPort\\proxiport.exe -c C:\\Program Files\\ProxiPort\\proxiport.conf",
+                    "Description": "Windows MSI installs an automatic proxiport service with the configuration file as its argument."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\proxiport",
+                    "Description": "Windows Service Control Manager key for the packaged endpoint agent."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Endpoint dials an administrator-configured ProxiPort server; the documented seeded server listener is TCP 80.",
+                    "Domains": [],
+                    "Ports": [
+                        80
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "proxiport"
+                },
+                {
+                    "Type": "LinuxSystemdService",
+                    "Value": "proxiport.service"
+                },
+                {
+                    "Type": "LinuxServiceAccount",
+                    "Value": "proxiport-agent"
+                },
+                {
+                    "Type": "ConfiguredServerField",
+                    "Value": "client.server"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/proximile/proxiport/blob/1dfd4a9e1ca10be24fa2ee287b92d0967a2c7962/README.md",
+            "https://github.com/proximile/proxiport/blob/1dfd4a9e1ca10be24fa2ee287b92d0967a2c7962/docs/install.md",
+            "https://github.com/proximile/proxiport/blob/1dfd4a9e1ca10be24fa2ee287b92d0967a2c7962/opt/resource/Product.wxs",
+            "https://github.com/proximile/proxiport/blob/1dfd4a9e1ca10be24fa2ee287b92d0967a2c7962/opt/systemd/proxiport.service",
+            "https://github.com/proximile/proxiport/blob/1dfd4a9e1ca10be24fa2ee287b92d0967a2c7962/cmd/proxiport/servicemanagement/service.go",
+            "https://github.com/proximile/proxiport/blob/1dfd4a9e1ca10be24fa2ee287b92d0967a2c7962/docs/changes-from-openrport.md"
+        ],
+        "Acknowledgement": []
     },
     {
         "Name": "Terminals",
@@ -6127,6 +6677,98 @@
         ]
     },
     {
+        "Name": "SparkRAT",
+        "Category": "RAT",
+        "Description": "SparkRAT (Spark) is an open-source Go remote-access framework with a self-hosted controller that generates configured endpoint clients. It offers remote terminal, desktop, screenshot, file, and process functions. Public reporting has documented malicious SparkRAT deployments; that does not make every deployment of the upstream dual-use project malicious.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/XZB-1248/Spark",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "Elevated privileges may be required for OS power actions; the upstream client has no fixed default service or persistence installer.",
+            "Free": true,
+            "Verification": "Static review of pinned upstream source and public incident reporting; no local binary, controller, or sample execution was performed. The pinned upstream client build script establishes Windows and Linux builds. Hunt.io documents malicious macOS SparkRAT activity, including the campaign-specific artifacts recorded below; it does not establish a default upstream macOS installer or persistence path.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Self-hosted controller and configured endpoint generation",
+                "Remote terminal",
+                "Remote desktop and screenshots",
+                "File management",
+                "Process management"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": []
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "/Users/shared/pull.bin",
+                    "Description": "Campaign-specific downloaded SparkRAT client location documented by Hunt.io; not an upstream default path.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Users/run/com.second.startup.plist",
+                    "Description": "Campaign-specific LaunchAgent-style persistence artifact documented by Hunt.io; not an upstream default path.",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Endpoint connection values are generated per deployment and point to an operator-configured controller; no vendor domain is inherent to SparkRAT.",
+                    "Domains": [],
+                    "Ports": []
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ConfiguredWebSocketRoute",
+                    "Value": "/ws"
+                },
+                {
+                    "Type": "ConfiguredUpdateRoute",
+                    "Value": "/api/client/update"
+                },
+                {
+                    "Type": "ClientUserAgentPrefix",
+                    "Value": "SPARK COMMIT: "
+                },
+                {
+                    "Type": "ControllerDefaultListenAddress",
+                    "Value": ":8000"
+                },
+                {
+                    "Type": "HuntIOMacOSSampleSHA256",
+                    "Value": "cd313c9b706c2ba9f50d338305c456ad3392572efe387a83093b09d2cb6f1b56"
+                },
+                {
+                    "Type": "HuntIOMacOSSampleSHA256",
+                    "Value": "52277d43d2f5e8fa8c856e1c098a1ff260a956f0598e16c8fb1b38e3a9374d15"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/XZB-1248/Spark/blob/e2c8ce153d8494f7f1aa9999bfd86eef1bc6be79/README.md",
+            "https://github.com/XZB-1248/Spark/blob/e2c8ce153d8494f7f1aa9999bfd86eef1bc6be79/scripts/build.client.sh",
+            "https://github.com/XZB-1248/Spark/blob/e2c8ce153d8494f7f1aa9999bfd86eef1bc6be79/client/core/core.go",
+            "https://github.com/XZB-1248/Spark/blob/e2c8ce153d8494f7f1aa9999bfd86eef1bc6be79/server/handler/handler.go",
+            "https://www.sentinelone.com/labs/dragonspark-attacks-evade-detection-with-sparkrat-and-golang-source-code-interpretation/",
+            "https://hunt.io/blog/sparkrat-server-detection-macos-activity-and-malicious-connections"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "RDPView",
         "Category": "RAT",
         "Description": "RDPView is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -6881,6 +7523,129 @@
                 }
             ]
         }
+    },
+    {
+        "Name": "Sentinel RMM",
+        "Category": "RMM",
+        "Description": "Sentinel RMM is an open-source, self-hosted management console and agent. Its Python agent reports inventory and health data, polls its configured controller for jobs, and can execute controller-dispatched jobs only when the controller enables remote execution. The project documents packaged Windows, macOS, and Linux agents for tagged releases, but this review found no published GitHub release at the reviewed commit.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/codexX64/sentinel-rmm",
+            "PEMetadata": {
+                "Filename": "sentinel-agent.exe",
+                "OriginalFileName": "",
+                "Description": "Windows filename configured by the repository PyInstaller specification; Linux and macOS builds use sentinel-agent."
+            },
+            "Privileges": "Depends on the actions dispatched by the configured controller; the reviewed source does not establish a fixed service account.",
+            "Free": "Open source",
+            "Verification": "Static source review only at repository commit 554a21d64ab3a03df81520e1519ecb97cc1466bf. No package build, agent, controller, job, enrollment, or network service was run or contacted. Cross-platform support is documented and reflected in platform-specific source logic; availability of a published release was not established.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Endpoint inventory and health reporting",
+                "Controller-polled remote jobs",
+                "Optional remote command execution",
+                "Installed-software inventory",
+                "Wake-on-LAN relay"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\ProgramData\\SentinelAgent\\sentinel-agent.exe",
+                "/usr/local/sentinel-agent/sentinel-agent",
+                "/opt/sentinel-agent/sentinel-agent"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\ProgramData\\SentinelAgent\\sentinel-agent.exe",
+                    "Description": "Windows self-install destination used by the reviewed agent source.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/usr/local/sentinel-agent/sentinel-agent",
+                    "Description": "macOS self-install destination used by the reviewed agent source.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/LaunchDaemons/fr.sentinel.agent.plist",
+                    "Description": "macOS LaunchDaemon written by the reviewed agent source.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/opt/sentinel-agent/sentinel-agent",
+                    "Description": "Linux self-install destination used by the reviewed agent source.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/sentinel-agent.service",
+                    "Description": "Linux systemd unit written by the reviewed agent source.",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\SentinelAgent",
+                    "Description": "Task Scheduler cache key expected after the Windows self-installer creates the SentinelAgent task."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Controller URL and agent token are supplied at deployment; deployments are operator-hosted and have no shared vendor hostname.",
+                    "Domains": [],
+                    "Ports": []
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "SourceBinaryConfigurationMarker",
+                    "Value": "SENTINELCFG1"
+                },
+                {
+                    "Type": "RemoteExecutionFeatureFlag",
+                    "Value": "SENTINEL_ALLOW_EXEC=1"
+                },
+                {
+                    "Type": "ControllerUrlEnvironmentVariable",
+                    "Value": "SENTINEL_URL"
+                },
+                {
+                    "Type": "AgentTokenEnvironmentVariable",
+                    "Value": "SENTINEL_AGENT_TOKEN"
+                },
+                {
+                    "Type": "WindowsScheduledTaskName",
+                    "Value": "SentinelAgent"
+                },
+                {
+                    "Type": "macOSLaunchDaemonLabel",
+                    "Value": "fr.sentinel.agent"
+                },
+                {
+                    "Type": "LinuxSystemdServiceName",
+                    "Value": "sentinel-agent.service"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/codexX64/sentinel-rmm",
+            "https://github.com/codexX64/sentinel-rmm/blob/554a21d64ab3a03df81520e1519ecb97cc1466bf/README.md",
+            "https://github.com/codexX64/sentinel-rmm/blob/554a21d64ab3a03df81520e1519ecb97cc1466bf/agent/sentinel-agent.py",
+            "https://github.com/codexX64/sentinel-rmm/blob/554a21d64ab3a03df81520e1519ecb97cc1466bf/agent/sentinel-agent.spec"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "codexX64",
+                "Handle": "@codexX64"
+            }
+        ]
     },
     {
         "Name": "JollysFastVNC",
@@ -10661,6 +11426,82 @@
         }
     },
     {
+        "Name": "Minexus",
+        "Category": "RMM",
+        "Description": "Minexus is an open-source, self-hosted remote management system composed of a Nexus server, Console, and Minion endpoint agent. The agent supports inventory, remote shell, and file-management functions. No public malicious deployment was established in this source-focused review.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/arhuman/minexus",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "The optional Linux installer creates a systemd unit; the Minion binary path is selected from the installer's current directory.",
+            "Free": true,
+            "Verification": "Static review of pinned upstream source and documentation; no local binary, server, or sample execution was performed. Upstream documents Windows, Linux, and macOS agent use. No public malicious-use report was established in this review.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Self-hosted server and endpoint agent",
+                "System inventory and heartbeat",
+                "Remote shell",
+                "File management"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "/etc/systemd/system/minion.service"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "/etc/systemd/system/minion.service",
+                    "Description": "Optional systemd unit written by the generated Linux install script; the executable location is the operator-selected current directory.",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Minion connects to the administrator-configured NEXUS_SERVER; 11972 is the documented default Minion server port.",
+                    "Domains": [],
+                    "Ports": [
+                        11972
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ServerConfigurationEnvironmentVariable",
+                    "Value": "NEXUS_SERVER"
+                },
+                {
+                    "Type": "DefaultMinionServerPort",
+                    "Value": "11972"
+                },
+                {
+                    "Type": "OptionalSystemdServiceName",
+                    "Value": "minion.service"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/README.md",
+            "https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/documentation/configuration.md",
+            "https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/internal/web/webroot/templates/install_minion.sh",
+            "https://github.com/arhuman/minexus/blob/fe9174c5f3807b1f56fb772d3725b10a34552f37/cmd/minion/minion.go"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "ezHelp",
         "Category": "RMM",
         "Description": "ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -10715,6 +11556,114 @@
             "https://www.exhelp.co.kr"
         ],
         "Acknowledgement": []
+    },
+    {
+        "Name": "Opale",
+        "Category": "RMM",
+        "Description": "Opale is an open-source, self-hosted remote monitoring and management platform. Its documented deployment uses a controller hosted by the organization and a Go Windows agent that enrolls with that controller, reports inventory, executes dispatched scripts, and supports signed agent updates. The public repository contains Linux and macOS agent-service code and cross-platform release assets, but its current README says endpoint management is Windows-only; this entry therefore records Windows as the supported endpoint platform.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/4rtefakt/opale",
+            "PEMetadata": {
+                "Filename": "opale-agent.exe",
+                "OriginalFileName": "",
+                "Description": "Default Windows agent filename copied by the repository installer; build-time branding can change this name."
+            },
+            "Privileges": "Windows agent installation is documented to run as SYSTEM; the installed Windows service performs management actions in that context.",
+            "Free": "Open source",
+            "Verification": "Static source review only at repository commit 4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692. No agent binary, installer, controller, enrollment token, or third-party endpoint was executed or contacted. Windows support is documented; source/release evidence for other platforms is not treated as supported endpoint management here.\n",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Endpoint inventory and monitoring",
+                "Controller-dispatched script execution",
+                "Local administrator password rotation",
+                "Signed agent auto-update"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\ProgramData\\Opale\\opale-agent.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\ProgramData\\Opale\\opale-agent.exe",
+                    "Description": "Default branded agent binary path; the source allows the data-directory and binary branding to be changed at build or deployment time.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Opale\\config.json",
+                    "Description": "Agent configuration containing the enrollment token and controller URL.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Opale\\state.json",
+                    "Description": "Persistent agent state file.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Opale\\agent.log",
+                    "Description": "Default agent log file.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "Opale-Agent",
+                    "ImagePath": "C:\\ProgramData\\Opale\\opale-agent.exe",
+                    "Description": "A Windows service installation using the default source branding; the name and path are configurable."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Opale-Agent",
+                    "Description": "SCM key expected when the default Opale-Agent Windows service is installed; its exact values vary with build-time branding and deployment path."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Controller endpoint is supplied during enrollment and stored in agent configuration; deployments are operator-hosted and have no shared vendor hostname.",
+                    "Domains": [],
+                    "Ports": []
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "DefaultWindowsServiceName",
+                    "Value": "Opale-Agent"
+                },
+                {
+                    "Type": "DefaultAgentUserAgentPrefix",
+                    "Value": "opale-agent-go"
+                },
+                {
+                    "Type": "DataDirectoryOverrideEnvironmentVariable",
+                    "Value": "RMM_DATA_DIR"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/4rtefakt/opale",
+            "https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/README.md",
+            "https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/INSTALL.md",
+            "https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/branding/branding.go",
+            "https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/config.go",
+            "https://github.com/4rtefakt/opale/blob/4bf1b7ad9dd810fa97e2d1c6dd09aeaca42ba692/agent-go/install.ps1"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "4rtefakt",
+                "Handle": "@4rtefakt"
+            }
+        ]
     },
     {
         "Name": "RemotePulse",
@@ -18527,6 +19476,150 @@
         }
     },
     {
+        "Name": "Beacon (Synertek)",
+        "Category": "RMM",
+        "Description": "Beacon is an AGPL-3.0-licensed remote monitoring and management project from Synertek Cloud Services. It is unrelated to Cobalt Strike Beacon. Its reviewed source installs a Go agent as a Windows service, Linux systemd unit, or macOS LaunchDaemon and uses an operator-controlled Cloudflare Workers/D1/R2 backend. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/synertek-cloud-services/beacon",
+            "PEMetadata": {
+                "Filename": "beacon-agent.exe",
+                "OriginalFileName": "",
+                "Description": "Windows service binary name set by the reviewed installer source; no PE metadata was inspected."
+            },
+            "Privileges": "Installation creates a Windows service, Linux systemd unit, or macOS LaunchDaemon and requires administrative privileges; the source was not executed.",
+            "Free": true,
+            "Verification": "Static source review at commit e3b790b72d18ed6243cc18759839ee2059022f6a. The service installer and credential store define the listed executable, service/unit/plist, credentials, and log paths. The project labels platform support as beta; no installer, backend, enrollment, or remote action was executed. The backend URL is supplied by an operator at installation, so it is intentionally not a generic network indicator.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Endpoint monitoring and inventory",
+                "Remote shell and scripted automation",
+                "Remote management commands",
+                "Self-hosted backend and enrollment"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Beacon\\beacon-agent.exe",
+                "C:\\ProgramData\\Beacon\\credential.json",
+                "C:\\ProgramData\\Beacon\\agent.log",
+                "/usr/local/bin/beacon-agent",
+                "/etc/systemd/system/beacon-agent.service",
+                "/etc/beacon/credential.json",
+                "/etc/beacon/agent.log",
+                "/Library/LaunchDaemons/com.beacon.agent.plist",
+                "/Library/Application Support/Beacon/credential.json",
+                "/Library/Application Support/Beacon/agent.log",
+                "/var/log/beacon-agent.log"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Beacon\\beacon-agent.exe",
+                    "Description": "Windows service installer destination.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Beacon\\credential.json",
+                    "Description": "Windows system-service credential store path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Beacon\\agent.log",
+                    "Description": "Windows system-service log path, colocated with the credential store.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/usr/local/bin/beacon-agent",
+                    "Description": "Linux agent executable destination.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/usr/local/bin/beacon-agent",
+                    "Description": "macOS agent executable destination.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/etc/systemd/system/beacon-agent.service",
+                    "Description": "Linux systemd unit written by the installer.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/beacon/credential.json",
+                    "Description": "Linux root-service credential store path.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/beacon/agent.log",
+                    "Description": "Linux root-service log path, colocated with the credential store.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Library/LaunchDaemons/com.beacon.agent.plist",
+                    "Description": "macOS LaunchDaemon plist written by the installer.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/Application Support/Beacon/credential.json",
+                    "Description": "macOS root-service credential store path.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/Application Support/Beacon/agent.log",
+                    "Description": "macOS root-service log path, colocated with the credential store.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/var/log/beacon-agent.log",
+                    "Description": "Standard output and error path in the macOS LaunchDaemon plist.",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System",
+                    "ServiceName": "BeaconAgent",
+                    "ImagePath": "C:\\Program Files\\Beacon\\beacon-agent.exe",
+                    "Description": "Windows installer creates the BeaconAgent automatic service from this binary; its server URL argument is operator supplied.",
+                    "CommandLine": ""
+                }
+            ],
+            "Registry": [],
+            "Network": [],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "BeaconAgent"
+                },
+                {
+                    "Type": "LinuxSystemdUnit",
+                    "Value": "beacon-agent.service"
+                },
+                {
+                    "Type": "macOSLaunchDaemonLabel",
+                    "Value": "com.beacon.agent"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/README.md",
+            "https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/docs/BETA_PLATFORM_SUPPORT.md",
+            "https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/service/install_windows.go",
+            "https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/service/install_unix.go",
+            "https://github.com/synertek-cloud-services/beacon/blob/e3b790b72d18ed6243cc18759839ee2059022f6a/agent/internal/credential/store.go"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "ServerEye",
         "Category": "RMM",
         "Description": "ServerEye is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -18956,6 +20049,109 @@
                 }
             ]
         }
+    },
+    {
+        "Name": "Go Mini RMM",
+        "Category": "RMM",
+        "Description": "Go Mini RMM is an open-source Go management server and endpoint agent. The agent sends heartbeats, connects to a controller WebSocket, executes remote commands, transfers files, lists and terminates processes, and checks for updates. The repository supplies a Linux systemd installer and a Windows scheduled-task installer. It is distinct from LOLRMM's existing Mini RMM entry, which documents a different .NET product.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/cevrimxe/go-mini-rmm",
+            "PEMetadata": {
+                "Filename": "agent.exe",
+                "OriginalFileName": "",
+                "Description": "Generic Windows agent filename used by the repository installer; filename-only process detection would be too broad."
+            },
+            "Privileges": "The Windows installer requires Administrator and creates a scheduled task running as SYSTEM; the Linux installer requires root and creates a systemd service.",
+            "Free": "Open source",
+            "Verification": "Static source review only at repository commit 9b24b1749b5dac0a14bee4ce026181cec0843a08. No server, agent, installer, task, systemd unit, enrollment, or controller endpoint was executed or contacted. The product does not provide an independently validated, vendor-operated controller domain.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux"
+            ],
+            "Capabilities": [
+                "System metrics heartbeat",
+                "Controller WebSocket command execution",
+                "File transfer and file browsing",
+                "Process listing and termination",
+                "Network connection listing",
+                "Agent update checks"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": []
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\rmm\\agent.exe",
+                    "Description": "Windows installer download location for the generically named agent binary.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\rmm\\config.json",
+                    "Description": "Windows installer configuration containing controller URL, agent key, and agent name.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/opt/rmm/agent",
+                    "Description": "Linux installer agent path.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/rmm-agent.service",
+                    "Description": "Linux systemd unit written by the repository installer.",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Controller hostname and port are deployment-specific; deployments are operator-hosted and the agent uses the configured controller for HTTP API and WebSocket traffic.",
+                    "Domains": [],
+                    "Ports": []
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "GoModulePath",
+                    "Value": "github.com/cevrimxe/go-mini-rmm"
+                },
+                {
+                    "Type": "WindowsScheduledTaskName",
+                    "Value": "RMM-Agent"
+                },
+                {
+                    "Type": "LinuxSystemdServiceName",
+                    "Value": "rmm-agent.service"
+                },
+                {
+                    "Type": "ControllerHeartbeatPath",
+                    "Value": "/api/v1/heartbeat"
+                },
+                {
+                    "Type": "ControllerAgentWebSocketPath",
+                    "Value": "/ws/agent"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/cevrimxe/go-mini-rmm",
+            "https://github.com/cevrimxe/go-mini-rmm/blob/9b24b1749b5dac0a14bee4ce026181cec0843a08/README.md",
+            "https://github.com/cevrimxe/go-mini-rmm/blob/9b24b1749b5dac0a14bee4ce026181cec0843a08/web/templates/install.ps1",
+            "https://github.com/cevrimxe/go-mini-rmm/blob/9b24b1749b5dac0a14bee4ce026181cec0843a08/web/templates/install.sh",
+            "https://github.com/cevrimxe/go-mini-rmm/blob/9b24b1749b5dac0a14bee4ce026181cec0843a08/internal/agent/executor/executor.go",
+            "https://github.com/cevrimxe/go-mini-rmm/blob/9b24b1749b5dac0a14bee4ce026181cec0843a08/internal/server/api/router.go"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "cevrimxe",
+                "Handle": "@cevrimxe"
+            }
+        ]
     },
     {
         "Name": "BeamYourScreen",
@@ -23907,6 +25103,139 @@
         }
     },
     {
+        "Name": "Borealis",
+        "Category": "RMM",
+        "Description": "Borealis is an AGPL-3.0-licensed, self-hosted remote management, monitoring, and automation platform with a Linux-hosted Engine and a Go endpoint agent. Its reviewed source implements remote shell, file, process, service, and software operations, with Windows and Linux agent support. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/bunny-lab-io/Borealis",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": "The source build output is the generic name Agent.exe, so it is not retained as a filename detection selector; no PE metadata was inspected."
+            },
+            "Privileges": "Windows service registration and Linux installation to /opt with systemd units require administrative privileges; the source was not executed.",
+            "Free": true,
+            "Verification": "Static source review at commit 19288159199132f29d276e4dbbbfa694807987ff. The build script emits Agent.exe for Windows and Agent for Linux; runtime source defines the BorealisAgent Windows service, default C:\\Borealis bootstrap directory, agent.json alongside the executable, and the listed Linux path and units. No release binary, Engine deployment, enrollment, tunnel, or remote operation was run. Engine addresses, enrollment codes, and WireGuard settings are operator deployment data and are intentionally not generic network indicators. The project is actively developed; source review is not independent deployment or maturity validation.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Endpoint inventory and telemetry",
+                "Remote shell and signed script execution",
+                "File, process, service, and software operations",
+                "Windows remote desktop",
+                "Managed WireGuard remote-operation tunnel",
+                "Self-hosted Linux Engine"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Borealis\\*",
+                "C:\\Borealis\\agent.json",
+                "C:\\Borealis\\Logs\\Agent\\agent.log",
+                "/opt/Borealis/Agent/Agent",
+                "/opt/Borealis/Agent/agent.json",
+                "/opt/Borealis/Agent/Logs/Agent/agent.log",
+                "/etc/systemd/system/borealis-agent.service",
+                "/etc/systemd/system/borealis-agent-updater.service",
+                "/etc/systemd/system/borealis-agent-watchdog.service"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Borealis\\Agent.exe",
+                    "Description": "Default Windows bootstrap installation directory and agent filename in reviewed source.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Borealis\\agent.json",
+                    "Description": "Agent configuration defaults beside Agent.exe.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Borealis\\Logs\\Agent\\agent.log",
+                    "Description": "Agent log path is derived from the configuration directory.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/opt/Borealis/Agent/Agent",
+                    "Description": "Linux agent service executable path.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/Borealis/Agent/agent.json",
+                    "Description": "Agent configuration defaults beside the Linux executable.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/opt/Borealis/Agent/Logs/Agent/agent.log",
+                    "Description": "Agent log path is derived from the configuration directory.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/borealis-agent.service",
+                    "Description": "Linux agent systemd unit written by runtime source.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/borealis-agent-updater.service",
+                    "Description": "Linux updater systemd unit written by runtime source.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/etc/systemd/system/borealis-agent-watchdog.service",
+                    "Description": "Linux watchdog systemd unit written by runtime source.",
+                    "OS": "Linux"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System",
+                    "ServiceName": "BorealisAgent",
+                    "ImagePath": "C:\\Borealis\\Agent.exe",
+                    "Description": "Windows runtime creates this automatic service from the configured executable path; the default bootstrap path is C:\\Borealis.",
+                    "CommandLine": ""
+                }
+            ],
+            "Registry": [],
+            "Network": [],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "BorealisAgent"
+                },
+                {
+                    "Type": "LinuxSystemdUnit",
+                    "Value": "borealis-agent.service"
+                },
+                {
+                    "Type": "LinuxSystemdUnit",
+                    "Value": "borealis-agent-updater.service"
+                },
+                {
+                    "Type": "LinuxSystemdUnit",
+                    "Value": "borealis-agent-watchdog.service"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/bunny-lab-io/Borealis/blob/19288159199132f29d276e4dbbbfa694807987ff/README.md",
+            "https://github.com/bunny-lab-io/Borealis/blob/19288159199132f29d276e4dbbbfa694807987ff/Data/Agent/build-agent.sh",
+            "https://github.com/bunny-lab-io/Borealis/blob/19288159199132f29d276e4dbbbfa694807987ff/Data/Agent/internal/runtime/service.go",
+            "https://github.com/bunny-lab-io/Borealis/blob/19288159199132f29d276e4dbbbfa694807987ff/Data/Agent/internal/runtime/service_windows.go",
+            "https://github.com/bunny-lab-io/Borealis/blob/19288159199132f29d276e4dbbbfa694807987ff/Data/Agent/internal/runtime/service_unix.go",
+            "https://github.com/bunny-lab-io/Borealis/blob/19288159199132f29d276e4dbbbfa694807987ff/Data/Agent/cmd/agent/bootstrap-config.go"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "BreezeRMM",
         "Category": "RMM",
         "Description": "BreezeRMM (Breeze) is an open-source remote monitoring and management platform developed by LanternOps, LLC. The vendor advertises remote access, fleet device management, patch management, script execution, software deployment, and monitoring across Windows, macOS, and Linux endpoints, with both self-hosted and managed cloud deployment options. Like other RMM agents, Breeze can be dropped and run by an operator to gain persistent remote access to endpoints. A Breeze agent sample is tracked on abuse.ch MalwareBazaar, and the on-disk artifacts below were reported in LOLRMM GitHub issue #235. A separately inspected unsigned Windows build identifies itself as PixoIT RMM Agent while retaining Breeze RMM Go module paths. Its product-specific filename is included as branded-build coverage; no PixoIT vendor affiliation or abuse of that build was established.\n",
@@ -24772,6 +26101,100 @@
         "Acknowledgement": []
     },
     {
+        "Name": "Endar",
+        "Category": "RMM",
+        "Description": "Endar is an open-source, self-hosted RMM platform focused on endpoint monitoring and compliance policies. Its controller source exposes agent registration, policy retrieval, compliance-result, and data-collection endpoints. Static extraction of the sole GitHub 1.0.0 release asset identifies a Linux x86-64 PyInstaller endpoint agent with registration, policy, data-collection, and compliance-task code. The source for that agent is not in the repository, and the asset does not establish a default installation directory or service; this entry records only supported release evidence.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/tomkeene/endar",
+            "PEMetadata": {
+                "Filename": "endar.exe",
+                "OriginalFileName": "",
+                "Description": "Misleading release filename: the reviewed endar.exe is a stripped Linux x86-64 ELF PyInstaller executable, not a Windows PE. It bundles Python 3.8 and an endar.pyc entry point."
+            },
+            "Privileges": "Depends on the commands in compliance policies; exact agent execution context was not established from the available source and release metadata.",
+            "Free": "Open source",
+            "Verification": "Static review of controller source at repository commit 359a4495cd13711c82419e944abee14cb5c04979 and GitHub release metadata for 1.0.0 (published 2022-10-27). The sole release asset was downloaded for inert metadata, hash, string, and PyInstaller archive review; it was not executed. SHA-256: 18f1d3189486cdcefb55e38edbe00462ea3b21b676714bf67dfec97d7c978327. Despite its .exe name and README claims for Windows, Linux, and macOS, the reviewed asset is Linux x86-64 only and no Windows or macOS agent artifact was available.\n",
+            "SupportedOS": [
+                "Linux"
+            ],
+            "Capabilities": [
+                "Agent registration with a self-hosted controller",
+                "Endpoint metric collection",
+                "Compliance policy retrieval",
+                "Validation and enforcement task reporting"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": []
+        },
+        "Artifacts": {
+            "Disk": [],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Documentation uses a self-hosted controller on TCP 5000 by default; a deployment can place it behind TLS or a reverse proxy. It has no shared vendor hostname.",
+                    "Domains": [],
+                    "Ports": []
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ControllerDefaultPort",
+                    "Value": "5000"
+                },
+                {
+                    "Type": "AgentEntryPoint",
+                    "Value": "AppServerSvc"
+                },
+                {
+                    "Type": "BundledRuntime",
+                    "Value": "PyInstaller Python 3.8 on Linux x86-64"
+                },
+                {
+                    "Type": "CronPersistenceOption",
+                    "Value": "--cron"
+                },
+                {
+                    "Type": "ReviewedReleaseSHA256",
+                    "Value": "18f1d3189486cdcefb55e38edbe00462ea3b21b676714bf67dfec97d7c978327"
+                },
+                {
+                    "Type": "ControllerRegistrationRoute",
+                    "Value": "/api/v1/agent/register"
+                },
+                {
+                    "Type": "ControllerPolicyRoute",
+                    "Value": "/api/v1/agent/policy"
+                },
+                {
+                    "Type": "ControllerComplianceRoute",
+                    "Value": "/api/v1/agent/compliance"
+                },
+                {
+                    "Type": "ControllerDataCollectionRoute",
+                    "Value": "/api/v1/agent/collection"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/tomkeene/endar",
+            "https://github.com/tomkeene/endar/blob/359a4495cd13711c82419e944abee14cb5c04979/README.md",
+            "https://github.com/tomkeene/endar/blob/359a4495cd13711c82419e944abee14cb5c04979/app/agent_api_v1/views.py",
+            "https://github.com/tomkeene/endar/releases/tag/1.0.0",
+            "https://github.com/tomkeene/endar/releases/download/1.0.0/endar.exe"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "tomkeene",
+                "Handle": "@tomkeene"
+            }
+        ]
+    },
+    {
         "Name": "Pulseway",
         "Category": "RMM",
         "Description": "Pulseway is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -24836,6 +26259,75 @@
                 }
             ]
         }
+    },
+    {
+        "Name": "CHAOS RAT",
+        "Category": "RAT",
+        "Description": "CHAOS RAT is an open-source Go remote-access framework with a self-hosted controller that creates configured Windows and Linux clients. Its client connects to an operator-selected controller for remote command handling. Acronis has documented malicious CHAOS RAT Linux samples; the upstream project itself is dual-use.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://github.com/tiagorlampert/CHAOS",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "No default service or persistence installer was established in the pinned upstream client source.",
+            "Free": true,
+            "Verification": "Static review of pinned upstream source and Acronis public reporting; no local binary, controller, or sample execution was performed. The client generation service establishes Windows and Linux targets. The report documents malicious Linux samples but does not establish their delivery method.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Self-hosted controller and configured endpoint generation",
+                "Remote command handling",
+                "File transfer",
+                "System information collection"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": []
+        },
+        "Artifacts": {
+            "Disk": [],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Client server address, port, and authentication values are embedded per build and are operator-selected.",
+                    "Domains": [],
+                    "Ports": []
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "EndpointWebSocketRoute",
+                    "Value": "/client"
+                },
+                {
+                    "Type": "EndpointClientHeader",
+                    "Value": "x-client"
+                },
+                {
+                    "Type": "ControllerDefaultPort",
+                    "Value": "8080"
+                },
+                {
+                    "Type": "PerBuildConfiguration",
+                    "Value": "Base64-encoded server address, port, and JWT fields; values are omitted because they are generated per deployment."
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/tiagorlampert/CHAOS/blob/55d14b203bc1444498ee0c2b96a1ab3304d99d77/README.md",
+            "https://github.com/tiagorlampert/CHAOS/blob/55d14b203bc1444498ee0c2b96a1ab3304d99d77/services/client/client_service.go",
+            "https://github.com/tiagorlampert/CHAOS/blob/55d14b203bc1444498ee0c2b96a1ab3304d99d77/client/app/infrastructure/websocket/client.go",
+            "https://www.acronis.com/en/tru/posts/from-open-source-to-open-threat-tracking-chaos-rats-evolution/"
+        ],
+        "Acknowledgement": []
     },
     {
         "Name": "Bitvise SSH Server",
@@ -28140,6 +29632,123 @@
                 }
             ]
         }
+    },
+    {
+        "Name": "OpenUEM",
+        "Category": "RMM",
+        "Description": "OpenUEM is an Apache-2.0-licensed endpoint-management platform with a self-hosted console and agent. The reviewed source and official deployment documentation support endpoint reporting, SFTP file browsing, package and settings management, and Windows VNC assistance. This entry records source- and vendor-documented host artifacts only. It does not establish a delivery relationship or malicious use.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-09-28",
+        "LastModified": "2026-09-28",
+        "Details": {
+            "Website": "https://openuem.eu/",
+            "PEMetadata": {
+                "Filename": "openuem-agent-setup.exe",
+                "OriginalFileName": "",
+                "Description": "Official Windows installer filename; no PE metadata was inspected."
+            },
+            "Privileges": "Windows service installation and Linux system configuration require administrative privileges; the source was not executed.",
+            "Free": true,
+            "Verification": "Static source review at openuem-agent commit ee23c21f11464b9c130445d017b413385b6d0d9c and openuem-console commit 5604db7e4b4ac0fef5f95aad0ef279722966bd9d. The agent README limits currently released agents to Windows and Debian/Ubuntu Linux, while current official documentation also supports macOS and provides the listed installer paths and launchd labels. Windows source registers the openuem-agent service and writes a log beside the executable; Linux source writes the listed log path. macOS documentation says VNC proxy support is future functionality, so remote VNC is scoped to Windows here. No agent binary, installation, control-plane connection, or management action was run. NATS servers, SFTP/VNC ports, and other endpoint values are deployment configuration, so they are intentionally not generic network indicators.\n",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Endpoint inventory and reporting",
+                "SFTP service and remote file browsing",
+                "Windows VNC remote-assistance proxy",
+                "Package deployment and settings management",
+                "Self-hosted management console and agent workers"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\OpenUEM Agent\\*",
+                "C:\\Program Files\\OpenUEM Agent\\config\\openuem.ini",
+                "C:\\Program Files\\OpenUEM Agent\\logs\\openuem-log.txt",
+                "/etc/openuem-agent/openuem.ini",
+                "/var/log/openuem-agent/openuem-agent.log",
+                "/Library/OpenUEMAgent/etc/openuem-agent/openuem.ini"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\OpenUEM Agent\\config\\openuem.ini",
+                    "Description": "Official Windows documentation configuration path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\OpenUEM Agent\\logs\\openuem-log.txt",
+                    "Description": "Official Windows documentation log path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/etc/openuem-agent/openuem.ini",
+                    "Description": "Documented Linux agent configuration path.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/var/log/openuem-agent/openuem-agent.log",
+                    "Description": "Linux logger output path defined in agent source.",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Library/OpenUEMAgent/etc/openuem-agent/openuem.ini",
+                    "Description": "Official macOS documentation configuration path.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/LaunchDaemons/openuem-agent-uninstaller.plist",
+                    "Description": "Official macOS documentation identifies this uninstall LaunchDaemon plist as a possible residual after uninstall.",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System",
+                    "ServiceName": "openuem-agent",
+                    "ImagePath": "",
+                    "Description": "Service name registered by the reviewed Windows service entry point; the source does not fix an executable installation path.",
+                    "CommandLine": ""
+                }
+            ],
+            "Registry": [],
+            "Network": [],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "openuem-agent"
+                },
+                {
+                    "Type": "macOSLaunchDaemonLabel",
+                    "Value": "eu.openuem.openuem-agent"
+                },
+                {
+                    "Type": "macOSLaunchDaemonLabel",
+                    "Value": "eu.openuem.openuem-agent-updater"
+                },
+                {
+                    "Type": "TransportConfiguration",
+                    "Value": "NATS servers and service ports are administrator configured and intentionally omitted from generic network indicators."
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/README.md",
+            "https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/service/windows/main.go",
+            "https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/logger/logger_windows.go",
+            "https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/logger/logger_linux.go",
+            "https://github.com/open-uem/openuem-console/blob/5604db7e4b4ac0fef5f95aad0ef279722966bd9d/README.md",
+            "https://openuem.eu/docs/Installation/Agent/windows/",
+            "https://openuem.eu/docs/Installation/Agent/linux/",
+            "https://openuem.eu/docs/Installation/Agent/macos/"
+        ],
+        "Acknowledgement": []
     },
     {
         "Name": "ITSupport247 (ConnectWise)",

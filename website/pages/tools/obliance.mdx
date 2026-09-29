@@ -1,0 +1,69 @@
+---
+description: "Obliance is a self-hosted remote monitoring and management project with a Go endpoint agent. Its reviewed source provides Windows, Linux, and macOS installers and implements endpoint monitoring, remote shell, file, process, service, update, and remote-control functions. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use."
+title: "Obliance"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# Obliance
+
+Obliance is a self-hosted remote monitoring and management project with a Go endpoint agent. Its reviewed source provides Windows, Linux, and macOS installers and implements endpoint monitoring, remote shell, file, process, service, update, and remote-control functions. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.
+
+
+<BlockBanner name={"Obliance"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-28"}
+         website={"https://github.com/MeeJay/Obliance"}
+         lastModified={"2026-09-28"}
+         privileges={"Windows MSI installation creates a LocalSystem service and scheduled task; Linux and macOS installation create system services and require administrative privileges. The source was not executed."}
+         free={ "Unknown" }
+         verification={ "Static source review at commit f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac. Windows WiX source, Windows service source, and Unix installer source define the listed files, service, task, registry locations, and macOS LaunchDaemon. No installer, agent, server, remote session, or update workflow was executed. Server URLs and API keys are deployment configuration and are intentionally not generic network indicators. The reviewed repository did not provide a license file, so licensing is recorded as Unknown.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\OblianceAgent\\obliance-agent.exe", "C:\\Program Files\\OblianceAgent\\obliance-tray.exe", "C:\\Program Files\\OblianceAgent\\obliance-watchdog.exe", "C:\\ProgramData\\OblianceAgent\\config.json", "C:\\ProgramData\\OblianceAgent\\agent.log", "C:\\ProgramData\\OblianceAgent\\watchdog.json", "/opt/obliance-agent/obliance-agent", "/etc/obliance-agent/config.json", "/etc/systemd/system/obliance-agent.service", "/etc/systemd/system/obliance-watchdog.service", "/Library/LaunchDaemons/com.obliance.agent.plist", "/usr/local/bin/obliance-agent", "/var/log/obliance-agent.log"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "macOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Endpoint monitoring and inventory", "Remote shell and script execution", "File, process, and service management", "Update and compliance management", "Browser-mediated remote-control functions", "Self-hosted server deployment"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\OblianceAgent\\obliance-agent.exe", "Description": "Windows MSI service executable destination.", "OS": "Windows"}, {"File": "C:\\Program Files\\OblianceAgent\\obliance-tray.exe", "Description": "Windows MSI tray executable destination.", "OS": "Windows"}, {"File": "C:\\Program Files\\OblianceAgent\\obliance-watchdog.exe", "Description": "Windows MSI watchdog executable destination.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OblianceAgent\\config.json", "Description": "Windows agent configuration path.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OblianceAgent\\agent.log", "Description": "Windows service log path.", "OS": "Windows"}, {"File": "C:\\ProgramData\\OblianceAgent\\watchdog.json", "Description": "Windows watchdog state path.", "OS": "Windows"}, {"File": "/opt/obliance-agent/obliance-agent", "Description": "Linux installer endpoint executable path.", "OS": "Linux"}, {"File": "/etc/obliance-agent/config.json", "Description": "Linux agent configuration path.", "OS": "Linux"}, {"File": "/etc/obliance-agent/config.json", "Description": "macOS agent configuration path.", "OS": "macOS"}, {"File": "/etc/systemd/system/obliance-agent.service", "Description": "Linux systemd unit installed by the project script.", "OS": "Linux"}, {"File": "/etc/systemd/system/obliance-watchdog.service", "Description": "Linux watchdog systemd unit installed by the project script.", "OS": "Linux"}, {"File": "/Library/LaunchDaemons/com.obliance.agent.plist", "Description": "macOS LaunchDaemon plist installed by the project script.", "OS": "macOS"}, {"File": "/usr/local/bin/obliance-agent", "Description": "macOS agent executable path in the project service source.", "OS": "macOS"}, {"File": "/var/log/obliance-agent.log", "Description": "macOS LaunchDaemon log path.", "OS": "macOS"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System", "ServiceName": "OblianceAgent", "ImagePath": "C:\\Program Files\\OblianceAgent\\obliance-agent.exe", "Description": "Windows MSI source installs this automatic LocalSystem service.", "CommandLine": ""}] }/>
+
+#### Registry Artifacts
+<EuiSpacer size="xl"/>
+<RegistryTable data={ [{"Path": "HKLM\\SOFTWARE\\OblianceAgent", "Description": "Windows MSI writes initial ServerUrl and ApiKey values, and agent code reads them if config.json is absent. Values can contain credentials and should not be published."}, {"Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\OblianceTray", "Description": "Windows MSI registers obliance-tray.exe for user-session startup."}, {"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\\OblianceAgent", "Description": "Windows MSI and service source register the service for Safe Mode with Networking."}, {"Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\OblianceAgent", "Description": "Windows service configuration key inferred from the MSI ServiceInstall definition."}] }/>
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "WindowsServiceName", "Value": "OblianceAgent"}, {"Type": "WindowsScheduledTask", "Value": "OblianceWatchdog"}, {"Type": "LinuxSystemdUnit", "Value": "obliance-agent.service"}, {"Type": "LinuxSystemdUnit", "Value": "obliance-watchdog.service"}, {"Type": "macOSLaunchDaemonLabel", "Value": "com.obliance.agent"}] }/>
+
+
+
+
+### References
+- [https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/README.md](https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/README.md)
+- [https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/installer/product.wxs](https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/installer/product.wxs)
+- [https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/service_windows.go](https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/service_windows.go)
+- [https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/registry_windows.go](https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/registry_windows.go)
+- [https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/installer/install.sh](https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/installer/install.sh)
+- [https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/service_darwin.go](https://github.com/MeeJay/Obliance/blob/f1eb7e886df9b16d46f13d19cec4b7d6cedcf4ac/agent/service_darwin.go)
+
