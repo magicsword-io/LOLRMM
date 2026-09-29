@@ -88,31 +88,31 @@ Artifacts:
           Description: N/A
           OS: Windows
         - File: '%PROGRAMDATA%\AnyDesk\ad_*\ad_*_svc.trace'
-          Description: Custom client service log (per-org ID wildcard, issue #247).
+          Description: 'Custom client service log (per-org ID wildcard, issue #247).'
           OS: Windows
         - File: '%APPDATA%\AnyDesk\ad_*'
-          Description: Custom client per-org directory (normalized, issue #247).
+          Description: 'Custom client per-org directory (normalized, issue #247).'
           OS: Windows
         - File: '%APPDATA%\AnyDesk\ad_*\ad_*.trace'
-          Description: Custom client UI log (normalized, issue #247).
+          Description: 'Custom client UI log (normalized, issue #247).'
           OS: Windows
         - File: '%APPDATA%\AnyDesk\ad_*\user.conf'
-          Description: Custom client user config (normalized, issue #247).
+          Description: 'Custom client user config (normalized, issue #247).'
           OS: Windows
         - File: '%APPDATA%\AnyDesk\ad_*\service.conf'
-          Description: Custom client service config (normalized, issue #247).
+          Description: 'Custom client service config (normalized, issue #247).'
           OS: Windows
         - File: '%PROGRAMDATA%\AnyDesk\ad_*\service.conf'
-          Description: Custom client service config (normalized, issue #247).
+          Description: 'Custom client service config (normalized, issue #247).'
           OS: Windows
         - File: '%PROGRAMDATA%\AnyDesk\ad_*\system.conf'
-          Description: Custom client system config (normalized, issue #247).
+          Description: 'Custom client system config (normalized, issue #247).'
           OS: Windows
         - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk.lnk'
           Description: N/A
           OS: Windows
         - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\StartUp\AnyDesk *.lnk'
-          Description: Custom client startup link (per-org name wildcard, issue #247).
+          Description: 'Custom client startup link (per-org name wildcard, issue #247).'
           OS: Windows
         - File: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\AnyDesk\Uninstall AnyDesk.lnk'
           Description: N/A
@@ -141,7 +141,7 @@ Artifacts:
           LogFile: System.evtx
           ServiceName: AnyDesk * Service
           ImagePath: '"C:\\Program Files (x86)\\AnyDesk-*\\AnyDesk-*.exe" --service'
-          Description: Service installation event for custom per-org clients (normalized, issue #247).
+          Description: 'Service installation event for custom per-org clients (normalized, issue #247).'
         - EventID: 4697
           ProviderName: Microsoft-Security-Auditing
           LogFile: Security.evtx
@@ -152,17 +152,17 @@ Artifacts:
         - Path: HKLM\SOFTWARE\Clients\Media\AnyDesk
           Description: N/A
         - Path: HKLM\SOFTWARE\Clients\Media\AnyDesk-*
-          Description: Custom client media entry (normalized, issue #247).
+          Description: 'Custom client media entry (normalized, issue #247).'
         - Path: HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk
           Description: N/A
         - Path: HKLM\SYSTEM\CurrentControlSet\Services\AnyDesk-*
-          Description: Custom client service entry (normalized, issue #247).
+          Description: 'Custom client service entry (normalized, issue #247).'
         - Path: HKLM\SOFTWARE\Classes\.anydesk\shell\open\command
           Description: N/A
         - Path: HKLM\SOFTWARE\Classes\AnyDesk\shell\open\command
           Description: N/A
         - Path: HKLM\SOFTWARE\Classes\AnyDesk-*\shell\open\command
-          Description: Custom client URL handler (normalized, issue #247).
+          Description: 'Custom client URL handler (normalized, issue #247).'
         - Path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\AnyDesk Printer\*
           Description: N/A
         - Path: HKLM\DRIVERS\DriverDatabase\DeviceIds\USBPRINT\AnyDesk
@@ -172,7 +172,7 @@ Artifacts:
         - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
           Description: N/A
         - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk-*
-          Description: Custom client uninstall entry (normalized, issue #247).
+          Description: 'Custom client uninstall entry (normalized, issue #247).'
     Network:
         - Description: During setup the boot.net.anydesk.com domain is request over port 443
           Domains:
