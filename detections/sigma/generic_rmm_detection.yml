@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-09-23'
+modified: '2026-09-29'
 tags:
 - attack.lateral-movement
 - attack.t1219
@@ -32,6 +32,7 @@ detection:
     - \\AcronisCyberProtectConnectAgent.exe
     - \\AcronisCyberProtectConnectQuickAssist*.exe
     - \\AeroAdmin.exe
+    - \\Agent
     - \\AgentSetup-*.exe
     - \\Agent_*_RW.exe
     - \\AgentlessRC.exe
@@ -56,6 +57,9 @@ detection:
     - \\C:\*\puttytray.exe
     - \\C:\AlpemixService.exe
     - \\C:\AlpemixSrvc\
+    - \\C:\Borealis\*
+    - \\C:\Borealis\Logs\Agent\agent.log
+    - \\C:\Borealis\agent.json
     - \\C:\Downloads\SuperPuTTY\*
     - \\C:\GxM\agent
     - \\C:\Lavawall\LavawallWin.exe
@@ -173,6 +177,7 @@ detection:
     - \\C:\Program Files\AnyDesk\*
     - \\C:\Program Files\Aspia\
     - \\C:\Program Files\Atera Networks
+    - \\C:\Program Files\Beacon\beacon-agent.exe
     - \\C:\Program Files\Bitvise SSH Server\*
     - \\C:\Program Files\Breeze\*
     - \\C:\Program Files\ControlR\*\ControlR.Agent.exe
@@ -216,8 +221,16 @@ detection:
     - \\C:\Program Files\Net Monitor for Employees Pro\*
     - \\C:\Program Files\Netbird\netbird-ui.exe
     - \\C:\Program Files\Netbird\netbird.exe
+    - \\C:\Program Files\OblianceAgent\obliance-agent.exe
+    - \\C:\Program Files\OblianceAgent\obliance-tray.exe
+    - \\C:\Program Files\OblianceAgent\obliance-watchdog.exe
+    - \\C:\Program Files\OpenUEM Agent\*
+    - \\C:\Program Files\OpenUEM Agent\config\openuem.ini
+    - \\C:\Program Files\OpenUEM Agent\logs\openuem-log.txt
     - \\C:\Program Files\OpsBridge\OpsBridgeAgent.exe
     - \\C:\Program Files\Parsec\*
+    - \\C:\Program Files\ProxiPort\proxiport.conf
+    - \\C:\Program Files\ProxiPort\proxiport.exe
     - \\C:\Program Files\RG-Supervision\*
     - \\C:\Program Files\RdClient\*
     - \\C:\Program Files\RealVNC\VNC Server\*
@@ -229,6 +242,7 @@ detection:
     - \\C:\Program Files\Remotely\Remotely_Agent.exe
     - \\C:\Program Files\Remotely\etag.txt
     - \\C:\Program Files\Rodex\RodexAgent.exe
+    - \\C:\Program Files\Roster\*
     - \\C:\Program Files\RustDesk
     - \\C:\Program Files\Solar-Putty-v4\*
     - \\C:\Program Files\SolarWinds\Dameware Mini Remote Control\*
@@ -259,6 +273,8 @@ detection:
     - \\C:\Program Files\nezha\*
     - \\C:\Program Files\uvnc bvba\UltraVNC\*
     - \\C:\ProgramData\0x101 Cyber Security\NetLock RMM\Comm Agent\*
+    - \\C:\ProgramData\Beacon\agent.log
+    - \\C:\ProgramData\Beacon\credential.json
     - \\C:\ProgramData\Breeze\*
     - \\C:\ProgramData\ControlR\
     - \\C:\ProgramData\Faronics\FCAForStartupMonitor.msi
@@ -269,10 +285,19 @@ detection:
     - \\C:\ProgramData\Kaseya\
     - \\C:\ProgramData\MiniRMM\Invoke-AVExclusions.ps1
     - \\C:\ProgramData\MiniRMM\SmartScreenTest.ps1
+    - \\C:\ProgramData\NetMaster\NetMaster_Client.exe
+    - \\C:\ProgramData\NetMaster\config.ini
     - \\C:\ProgramData\Netbird\*
+    - \\C:\ProgramData\OblianceAgent\agent.log
+    - \\C:\ProgramData\OblianceAgent\config.json
+    - \\C:\ProgramData\OblianceAgent\watchdog.json
+    - \\C:\ProgramData\Opale\opale-agent.exe
     - \\C:\ProgramData\OpsBridge\*
     - \\C:\ProgramData\Package Cache\.unverified\agent
     - \\C:\ProgramData\RMMAgent\*
+    - \\C:\ProgramData\Roster\agent-state.json
+    - \\C:\ProgramData\Roster\agent.yaml
+    - \\C:\ProgramData\SentinelAgent\sentinel-agent.exe
     - \\C:\ProgramData\Teramind Agent\*
     - \\C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\*
     - \\C:\ProgramData\Teramind Agent\<version>\{6D99445F-F40F-45CB-B433-06302DAE6C70}\tmagentsvc.exe
@@ -579,6 +604,9 @@ detection:
     - \\aeroadmin.exe
     - \\agent
     - \\agent-installer-any.exe
+    - \\agent.json
+    - \\agent.log
+    - \\agent.yaml
     - \\agent32.exe
     - \\agent64.exe
     - \\agentService
@@ -598,6 +626,9 @@ detection:
     - \\basupsrvcupdate.exe
     - \\basuptshelper.exe
     - \\bbl.exe
+    - \\beacon-agent
+    - \\beacon-agent.log
+    - \\beacon-agent.service
     - \\beamyourscreen-host.exe
     - \\beamyourscreen.exe
     - \\bomgar-pac-*.exe
@@ -605,6 +636,9 @@ detection:
     - \\bomgar-rdp.exe
     - \\bomgar-scc-*.exe
     - \\bomgar-scc.exe
+    - \\borealis-agent-updater.service
+    - \\borealis-agent-watchdog.service
+    - \\borealis-agent.service
     - \\breeze-agent
     - \\breeze-agent.service
     - \\breeze-backup
@@ -620,15 +654,20 @@ detection:
     - \\client32.exe
     - \\clientmrinit.exe
     - \\cloudflared.exe
+    - \\com.beacon.agent.plist
     - \\com.breeze.agent.plist
     - \\com.breeze.desktop-helper-loginwindow.plist
     - \\com.breeze.desktop-helper-user.plist
     - \\com.breeze.watchdog.plist
+    - \\com.obliance.agent.plist
+    - \\com.roster.agent.plist
     - \\commandProcessor
+    - \\config.json
     - \\connect.exe
     - \\connectwise*.exe
     - \\connectwisechat-customer.exe
     - \\connectwisecontrol.client.exe
+    - \\credential.json
     - \\crossloopservice.exe
     - \\csexec.exe
     - \\ctes.exe
@@ -761,6 +800,7 @@ detection:
     - \\mikogo-starter.exe
     - \\mikogo.exe
     - \\mikogolauncher.exe
+    - \\minion.service
     - \\mionet.exe
     - \\mionetmanager.exe
     - \\mwcliun.exe
@@ -801,11 +841,17 @@ detection:
     - \\nvda_service.exe
     - \\nxd.exe
     - \\nxservice*.exe
+    - \\obliance-agent
+    - \\obliance-agent.log
+    - \\obliance-agent.service
+    - \\obliance-watchdog.service
     - \\ocsinventory.exe
     - \\ocsservice.exe
     - \\oolocker.exe
     - \\oosyspectr.exe
     - \\opendesk-rmm-agent.exe
+    - \\openuem-agent.log
+    - \\openuem.ini
     - \\p9agent*.exe
     - \\paexec.exe
     - \\parallelsaccess-*.exe
@@ -829,6 +875,9 @@ detection:
     - \\prl_deskctl_agent.exe
     - \\prl_deskctl_wizard.exe
     - \\prl_pm_service.exe
+    - \\proxiport
+    - \\proxiport.conf
+    - \\proxiport.service
     - \\pservice.exe
     - \\psexec.exe
     - \\psexec64.exe
@@ -882,6 +931,9 @@ detection:
     - \\romfusclient.exe
     - \\romserver.exe
     - \\romviewer.exe
+    - \\roster-agent
+    - \\roster-agent.log
+    - \\roster-agent.service
     - \\routernt.exe
     - \\royalserver.exe
     - \\royalts.exe
@@ -910,6 +962,7 @@ detection:
     - \\seetrolmyservice.exe
     - \\seetrolremote.exe
     - \\seetrolsetting.exe
+    - \\sentinel-agent
     - \\servereye*.exe
     - \\serverproxyservice.exe
     - \\serviceconfig.xml

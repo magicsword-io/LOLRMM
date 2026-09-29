@@ -1,0 +1,68 @@
+---
+description: "OpenUEM is an Apache-2.0-licensed endpoint-management platform with a self-hosted console and agent. The reviewed source and official deployment documentation support endpoint reporting, SFTP file browsing, package and settings management, and Windows VNC assistance. This entry records source- and vendor-documented host artifacts only. It does not establish a delivery relationship or malicious use."
+title: "OpenUEM"
+---
+
+
+import {Card, Badges, Details, BlockBanner, PEMetadata, CodeSigningTable, DiskArtifacts, EventLogTable, RegistryTable, OtherArtifactsTable, NetworkArtifactsTable} from "../../components/card";
+import {EuiSpacer} from "@elastic/eui"
+
+# OpenUEM
+
+OpenUEM is an Apache-2.0-licensed endpoint-management platform with a self-hosted console and agent. The reviewed source and official deployment documentation support endpoint reporting, SFTP file browsing, package and settings management, and Windows VNC assistance. This entry records source- and vendor-documented host artifacts only. It does not establish a delivery relationship or malicious use.
+
+
+<BlockBanner name={"OpenUEM"}/>
+
+### Details
+<Details author={"Michael Haag"}
+         category={"RMM"}
+         created={"2026-09-28"}
+         website={"https://openuem.eu/"}
+         lastModified={"2026-09-28"}
+         privileges={"Windows service installation and Linux system configuration require administrative privileges; the source was not executed."}
+         free={ true }
+         verification={ "Static source review at openuem-agent commit ee23c21f11464b9c130445d017b413385b6d0d9c and openuem-console commit 5604db7e4b4ac0fef5f95aad0ef279722966bd9d. The agent README limits currently released agents to Windows and Debian/Ubuntu Linux, while current official documentation also supports macOS and provides the listed installer paths and launchd labels. Windows source registers the openuem-agent service and writes a log beside the executable; Linux source writes the listed log path. macOS documentation says VNC proxy support is future functionality, so remote VNC is scoped to Windows here. No agent binary, installation, control-plane connection, or management action was run. NATS servers, SFTP/VNC ports, and other endpoint values are deployment configuration, so they are intentionally not generic network indicators.\n" }
+/>
+
+#### Installation Paths
+<Card code={ ["C:\\Program Files\\OpenUEM Agent\\*", "C:\\Program Files\\OpenUEM Agent\\config\\openuem.ini", "C:\\Program Files\\OpenUEM Agent\\logs\\openuem-log.txt", "/etc/openuem-agent/openuem.ini", "/var/log/openuem-agent/openuem-agent.log", "/Library/OpenUEMAgent/etc/openuem-agent/openuem.ini"] }/>
+
+#### Supported OS
+<Badges color="warning" badges={ ["Windows", "Linux", "macOS"] }/>
+
+#### Capabilities
+<Badges color="#FFA500" badges={ ["Endpoint inventory and reporting", "SFTP service and remote file browsing", "Windows VNC remote-assistance proxy", "Package deployment and settings management", "Self-hosted management console and agent workers"] }/>
+
+
+
+
+### Forensic Artifacts
+
+#### Disk Artifacts
+<EuiSpacer size="xl"/>
+<DiskArtifacts data={ [{"File": "C:\\Program Files\\OpenUEM Agent\\config\\openuem.ini", "Description": "Official Windows documentation configuration path.", "OS": "Windows"}, {"File": "C:\\Program Files\\OpenUEM Agent\\logs\\openuem-log.txt", "Description": "Official Windows documentation log path.", "OS": "Windows"}, {"File": "/etc/openuem-agent/openuem.ini", "Description": "Documented Linux agent configuration path.", "OS": "Linux"}, {"File": "/var/log/openuem-agent/openuem-agent.log", "Description": "Linux logger output path defined in agent source.", "OS": "Linux"}, {"File": "/Library/OpenUEMAgent/etc/openuem-agent/openuem.ini", "Description": "Official macOS documentation configuration path.", "OS": "macOS"}, {"File": "/Library/LaunchDaemons/openuem-agent-uninstaller.plist", "Description": "Official macOS documentation identifies this uninstall LaunchDaemon plist as a possible residual after uninstall.", "OS": "macOS"}] }/>
+
+#### Event Log Artifacts
+<EuiSpacer size="xl"/>
+<EventLogTable data={ [{"EventID": 7045, "ProviderName": "Service Control Manager", "LogFile": "System", "ServiceName": "openuem-agent", "ImagePath": "", "Description": "Service name registered by the reviewed Windows service entry point; the source does not fix an executable installation path.", "CommandLine": ""}] }/>
+
+
+
+#### Other Artifacts
+<EuiSpacer size="xl"/>
+<OtherArtifactsTable data={ [{"Type": "WindowsServiceName", "Value": "openuem-agent"}, {"Type": "macOSLaunchDaemonLabel", "Value": "eu.openuem.openuem-agent"}, {"Type": "macOSLaunchDaemonLabel", "Value": "eu.openuem.openuem-agent-updater"}, {"Type": "TransportConfiguration", "Value": "NATS servers and service ports are administrator configured and intentionally omitted from generic network indicators."}] }/>
+
+
+
+
+### References
+- [https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/README.md](https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/README.md)
+- [https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/service/windows/main.go](https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/service/windows/main.go)
+- [https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/logger/logger_windows.go](https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/logger/logger_windows.go)
+- [https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/logger/logger_linux.go](https://github.com/open-uem/openuem-agent/blob/ee23c21f11464b9c130445d017b413385b6d0d9c/internal/logger/logger_linux.go)
+- [https://github.com/open-uem/openuem-console/blob/5604db7e4b4ac0fef5f95aad0ef279722966bd9d/README.md](https://github.com/open-uem/openuem-console/blob/5604db7e4b4ac0fef5f95aad0ef279722966bd9d/README.md)
+- [https://openuem.eu/docs/Installation/Agent/windows/](https://openuem.eu/docs/Installation/Agent/windows/)
+- [https://openuem.eu/docs/Installation/Agent/linux/](https://openuem.eu/docs/Installation/Agent/linux/)
+- [https://openuem.eu/docs/Installation/Agent/macos/](https://openuem.eu/docs/Installation/Agent/macos/)
+
