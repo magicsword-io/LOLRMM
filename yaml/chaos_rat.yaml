@@ -1,0 +1,59 @@
+Name: CHAOS RAT
+Category: RAT
+Description: >
+    CHAOS RAT is an open-source Go remote-access framework with a self-hosted
+    controller that creates configured Windows and Linux clients. Its client
+    connects to an operator-selected controller for remote command handling.
+    Acronis has documented malicious CHAOS RAT Linux samples; the upstream
+    project itself is dual-use.
+Author: Michael Haag
+Created: '2026-09-28'
+LastModified: '2026-09-28'
+Details:
+    Website: https://github.com/tiagorlampert/CHAOS
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: No default service or persistence installer was established in the pinned upstream client source.
+    Free: true
+    Verification: >
+        Static review of pinned upstream source and Acronis public reporting;
+        no local binary, controller, or sample execution was performed. The
+        client generation service establishes Windows and Linux targets. The
+        report documents malicious Linux samples but does not establish their
+        delivery method.
+    SupportedOS:
+        - Windows
+        - Linux
+    Capabilities:
+        - Self-hosted controller and configured endpoint generation
+        - Remote command handling
+        - File transfer
+        - System information collection
+    Vulnerabilities: []
+    InstallationPaths: []
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Client server address, port, and authentication values are embedded per build and are operator-selected.
+          Domains: []
+          Ports: []
+    Other:
+        - Type: EndpointWebSocketRoute
+          Value: /client
+        - Type: EndpointClientHeader
+          Value: x-client
+        - Type: ControllerDefaultPort
+          Value: '8080'
+        - Type: PerBuildConfiguration
+          Value: Base64-encoded server address, port, and JWT fields; values are omitted because they are generated per deployment.
+Detections: []
+References:
+    - https://github.com/tiagorlampert/CHAOS/blob/55d14b203bc1444498ee0c2b96a1ab3304d99d77/README.md
+    - https://github.com/tiagorlampert/CHAOS/blob/55d14b203bc1444498ee0c2b96a1ab3304d99d77/services/client/client_service.go
+    - https://github.com/tiagorlampert/CHAOS/blob/55d14b203bc1444498ee0c2b96a1ab3304d99d77/client/app/infrastructure/websocket/client.go
+    - https://www.acronis.com/en/tru/posts/from-open-source-to-open-threat-tracking-chaos-rats-evolution/
+Acknowledgement: []
