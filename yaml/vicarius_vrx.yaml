@@ -1,0 +1,84 @@
+Name: Vicarius vRx
+Category: RMM
+Description: 'Vicarius vRx is a commercial vulnerability remediation and patch management platform with agents for Windows, Linux and macOS. Huntress reported that in one INC Ransom intrusion, a scheduled task pointed to C:\Program Files\7-Zip\HealthUpdater.exe, a renamed vRx executable placed in an unusual folder.'
+Author: Liran Ravich, Cribl
+Created: '2026-10-01'
+LastModified: '2026-10-01'
+Details:
+    Website: 'https://www.vicarius.io'
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: ''
+    Free: false
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Vulnerability remediation
+        - Patch deployment
+        - Script execution
+        - Software deployment
+    Vulnerabilities: []
+    InstallationPaths:
+        - 'C:\Program Files\Vicarius\Topia\*'
+        - '/usr/share/vicarius/*'
+Artifacts:
+    Disk:
+        - File: 'C:\Program Files\Vicarius\Topia\Trace\TopiaTrace.log'
+          Description: vRx agent log file
+          OS: Windows
+        - File: 'C:\Program Files\Vicarius\Topia\Topia.config'
+          Description: vRx agent configuration file
+          OS: Windows
+        - File: 'C:\Program Files\Vicarius\topiaInstaller.log'
+          Description: vRx installation log file
+          OS: Windows
+        - File: /var/log/TopiaTrace.log
+          Description: vRx agent log file
+          OS: Linux
+        - File: /usr/share/vicarius/topiad.config
+          Description: vRx agent configuration file
+          OS: Linux
+        - File: /Library/Logs/TopiaTrace.log
+          Description: vRx agent log file
+          OS: macOS
+        - File: /Library/Application Support/Vicarius/TopiaTrace.log
+          Description: vRx agent log file for version 5.1.19 and above
+          OS: macOS
+        - File: /Library/Preferences/Topia/io.vicarius.topia.config
+          Description: vRx agent configuration file
+          OS: macOS
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - '*.vicarius.cloud'
+              - customer-portal.vicarius.io
+              - vicarius-installer.s3.amazonaws.com
+              - vicarius-patches.s3.amazonaws.com
+              - vicarius-release.s3.amazonaws.com
+              - vicarius-release.s3.us-east-1.amazonaws.com
+              - vicarius-static-organizationinstallations.vicarius-cdn.com
+              - vicarius-eu-central-1-installer.s3.amazonaws.com
+              - vicarius-eu-central-1-patches.s3.amazonaws.com
+              - vicarius-eu-central-1-release.s3.amazonaws.com
+              - vicarius-ap-southeast-3-installer.s3.amazonaws.com
+              - vicarius-ap-southeast-3-patches.s3.amazonaws.com
+              - vicarius-ap-southeast-3-release.s3.amazonaws.com
+          Ports: ['443']
+    Other: []
+FileHashes:
+CodeSigning:
+Detections: []
+References:
+    - https://customer-portal.vicarius.io/vrx-logs-and-files
+    - https://customer-portal.vicarius.io/ports-opening-dns-whitelisting?hsLang=en
+    - https://www.huntress.com/blog/two-inc-ransom-notes
+Acknowledgement:
+    - Person: Liran Ravich, Cribl
+      Handle: ''
