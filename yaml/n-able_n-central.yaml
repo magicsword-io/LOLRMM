@@ -1,0 +1,65 @@
+Name: N-able N-central
+Category: RMM
+Description: N-able N-central is a remote monitoring and management (RMM) platform used by MSPs and IT teams. It has two Windows agents, the classic Windows Agent and the newer MSP Agent, which can run commands, execute scripts and deploy software on managed endpoints. CISA added CVE-2026-86218, a static code injection flaw in the N-central server, to its Known Exploited Vulnerabilities catalog on 2026-09-08.
+Author: Liran Ravich, Cribl
+Created: '2026-10-01'
+LastModified: '2026-10-01'
+Details:
+    Website: 'https://www.n-able.com/products/n-central'
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: SYSTEM
+    Free: false
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+    Capabilities:
+        - Remote command execution
+        - Scripting
+        - Software deployment
+        - File transfer
+        - Remote control
+    Vulnerabilities:
+        - CVE-2026-86218
+    InstallationPaths:
+        - 'C:\Program Files (x86)\N-able Technologies\Windows Agent\bin\*'
+        - 'C:\Program Files (x86)\Msp Agent\*'
+        - agent.exe
+        - AgentMaint.exe
+        - AgentMonitor.exe
+        - BASupTSHelper.exe
+        - msp-agent-core.exe
+        - '/opt/msp-agent'
+        - '/Library/MspAgent'
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Known remote domains
+          Domains:
+              - 'sis.n-able.com'
+              - 'update.n-able.com'
+              - 'releases.n-able.com'
+              - 'feeds.n-able.com'
+              - '*.n-able.com'
+              - '*.mspa.n-able.com'
+              - '*.prd.cdo.system-monitor.com'
+              - '*.prd.davinci.system-monitor.com'
+          Ports:
+              - '443'
+FileHashes:
+CodeSigning:
+Detections: []
+References:
+    - 'https://documentation.n-able.com/N-central/userguide/Content/Modern-agent/modern-agent.htm'
+    - 'https://documentation.n-able.com/N-central/userguide/Content/ReleaseDocs/Install_Config/FirewallRequirements.htm'
+    - 'https://documentation.n-able.com/N-central/userguide/Content/AVDefender/AVDefender_GlobalExclusions.htm'
+    - 'https://arcticwolf.com/resources/blog/cve-2026-86218'
+Acknowledgement:
+    - Person: Liran Ravich
+      Handle: ''
