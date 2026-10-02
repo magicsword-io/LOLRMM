@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CatalogGrowth from '../components/CatalogGrowth.astro';
+import Explorer from '../components/Explorer.astro';
+import MagicSwordBanner from '../components/MagicSwordBanner.astro';
+import { stats, newest, toolUrl, repository } from '../lib/catalog';
+---
+
+<BaseLayout>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">
+        <i class="status-dot"></i>LIVING OFF THE LAND · REMOTE MONITORING &amp;
+        MANAGEMENT
+      </p>
+      <h1 id="hero-title">
+        Know the tool.
+        <br />
+        <span>Spot the misuse.</span>
+      </h1>
+      <p class="intro">
+        Legitimate tools. Unintended access. Explore the remote monitoring and
+        management software that threat actors use to blend in.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#catalog">
+          Explore the catalog <span aria-hidden="true">↓</span>
+        </a>
+        <a href="/detections/">
+          Put detections to work <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-emblem" aria-hidden="true">
+      <div class="emblem-ring"></div>
+      <img src="/images/logo.svg" width="235" height="235" alt="" />
+      <span class="emblem-caption">VISIBILITY IS THE FIRST DEFENSE.</span>
+    </div>
+  </section>
+  <section class="metrics" aria-label="Catalog statistics">
+    <div>
+      <span class="metric-label">CATALOG ENTRIES</span>
+      <strong>{stats.tools}</strong>
+      <span>
+        {stats.rmm} RMM · {stats.rat} RAT
+      </span>
+    </div>
+    <div>
+      <span class="metric-label">NETWORK INDICATORS</span>
+      <strong>{stats.domains.toLocaleString('en-US')}</strong>
+      <span>Unique recorded domains</span>
+    </div>
+    <div>
+      <span class="metric-label">CODE SIGNING</span>
+      <strong>{stats.certificates}</strong>
+      <span>Tools with certificate evidence</span>
+    </div>
+    <div>
+      <span class="metric-label">OPEN INTELLIGENCE</span>
+      <strong class="accent">100%</strong>
+      <span>Community driven &amp; open source</span>
+    </div>
+  </section>
+  <div class="intelligence-grid">
+    <CatalogGrowth />
+    <section class="recent panel" aria-labelledby="recent-title">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">LATEST INTELLIGENCE</p>
+          <h2 id="recent-title">Recently added</h2>
+        </div>
+        <span class="status-dot"></span>
+      </div>
+      <div class="recent-list">
+        {newest.slice(0, 4).map((t) => (
+          <a href={toolUrl(t)}>
+            <div>
+              <span class:list={['badge', { amber: t.Category === 'RAT' }]}>
+                {t.Category}
+              </span>
+              <time datetime={t.Created}>{t.Created}</time>
+            </div>
+            <h3>
+              {t.Name}
+              <span aria-hidden="true">↗</span>
+            </h3>
+            <p>{t.Description}</p>
+          </a>
+        ))}
+      </div>
+      <a class="panel-footer" href="#catalog">
+        Explore all {stats.tools} tools <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </div>
+  <MagicSwordBanner />
+  <Explorer />
+  <section class="resources" aria-labelledby="resources-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">FROM INTELLIGENCE TO ACTION</p>
+        <h2 id="resources-title">Make the catalog work for you.</h2>
+      </div>
+      <p>Built to fit your security workflow.</p>
+    </div>
+    <div class="resource-grid">
+      <article class="resource-card">
+        <span class="resource-number">01 / DETECT &amp; HUNT</span>
+        <h3>Start with the evidence.</h3>
+        <p>
+          Hunt for remote access activity with Sigma rules, Microsoft Defender
+          queries, and Splunk detections.
+        </p>
+        <div class="tags">
+          <span>Sigma</span>
+          <span>Microsoft Defender</span>
+          <span>Splunk</span>
+        </div>
+        <a href="/detections/">Explore detections ↗</a>
+      </article>
+      <article class="resource-card">
+        <span class="resource-number">02 / BUILD &amp; INTEGRATE</span>
+        <h3>Your tools. Our intelligence.</h3>
+        <p>
+          Bring the catalog into your own workflows with open JSON and CSV
+          feeds, domains, and certificate data.
+        </p>
+        <div class="tags">
+          <span>JSON</span>
+          <span>CSV</span>
+          <span>Domain indicators</span>
+        </div>
+        <a href="/api/">Use the API ↗</a>
+      </article>
+      <article class="resource-card">
+        <span class="resource-number">03 / SHARE &amp; CONTRIBUTE</span>
+        <h3>Every finding counts.</h3>
+        <p>
+          Found a new tool or a useful artifact? Help the community understand
+          the next remote access technique.
+        </p>
+        <div class="tags">
+          <span>Open source</span>
+          <span>Community research</span>
+        </div>
+        <a href={repository + '/issues/new/choose'}>
+          Contribute intelligence ↗
+        </a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+const feeds = [
+  [
+    '/api/rmm_tools.json',
+    'Full catalog',
+    'JSON',
+    'All tools with details, artifacts, detections, and references.',
+  ],
+  [
+    '/api/rmm_tools.csv',
+    'Full catalog',
+    'CSV',
+    'A tabular export for spreadsheets and security pipelines.',
+  ],
+  [
+    '/api/rmm_domains.csv',
+    'Network domains',
+    'CSV',
+    'Domain indicators paired with their associated RMM tool.',
+  ],
+  [
+    '/api/rmm_certificates.json',
+    'Code signing certificates',
+    'JSON',
+    'The existing certificate feed for application control research.',
+  ],
+  [
+    '/api/rmm_tools_count.json',
+    'Catalog count',
+    'JSON',
+    'The number of tools in this build.',
+  ],
+  [
+    '/api/detections/sigma/generic_rmm_detection.yml',
+    'Process detection',
+    'YAML',
+    'The generated Sigma rule for RMM processes.',
+  ],
+  [
+    '/api/detections/sigma/rmm_domains_dns_queries.yml',
+    'DNS detection',
+    'YAML',
+    'The generated Sigma rule for RMM domain queries.',
+  ],
+];
+---
+
+<BaseLayout title="API & data feeds — LOLRMM">
+  <div class="page-heading">
+    <p class="eyebrow">OPEN DATA / READY TO INTEGRATE</p>
+    <h1>Your workflow. Our intelligence.</h1>
+    <p class="intro">
+      Access the same community research that powers the catalog. No API key
+      required. All feeds are static files updated when the site is published.
+    </p>
+  </div>
+  <section class="detail-section">
+    <h2>Data feeds</h2>
+    <div class="table-scroll api-table">
+      <table>
+        <thead>
+          <tr>
+            <th>ENDPOINT</th>
+            <th>FORMAT</th>
+            <th>CONTENTS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {feeds.map(([href, name, format, description]) => (
+            <tr>
+              <td>
+                <a href={href}>{href}</a>
+                <p>{name}</p>
+              </td>
+              <td>{format}</td>
+              <td>{description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="detail-section">
+    <h2>Fetch the catalog</h2>
+    <CodeBlock
+      label="catalog request"
+      code={'curl https://lolrmm.io/api/rmm_tools.json'}
+    />
+    <p class="chart-note">
+      The response is a JSON array. Existing field names and CSV columns are
+      preserved.
+    </p>
+  </section>
+  <section class="detail-section">
+    <h2>Fetch one tool</h2>
+    <CodeBlock
+      label="single tool request"
+      code={'curl https://lolrmm.io/api/tools/anydesk.json'}
+    />
+    <p class="chart-note">
+      Use the slug from a tool's catalog URL. Each detail page includes a JSON
+      download link.
+    </p>
+  </section>
+  <section class="prose">
+    <h2>Use the data thoughtfully</h2>
+    <p>
+      These entries describe tools and their potential for misuse. A match
+      provides an investigative lead; evaluate it against your environment and
+      approved software. Preserve the references and acknowledgements when
+      incorporating research into your own workflow.
+    </p>
+    <p>
+      Tool, domain, and detection feeds are regenerated from the repository at
+      build time. The certificate feed retains its existing publication process.
+    </p>
+    <p>
+      <a href="https://github.com/magicsword-io/LOLRMM">
+        Explore the source repository ↗
+      </a>
+    </p>
+  </section>
+</BaseLayout>
