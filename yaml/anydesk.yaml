@@ -11,7 +11,7 @@ Description: 'AnyDesk is a popular remote desktop software that enables users to
     '
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-09-29'
-LastModified: '2023-09-29'
+LastModified: '2026-10-04'
 Details:
     Website: https://anydesk.com/en
     PEMetadata:
@@ -49,13 +49,14 @@ Artifacts:
           Example:
               - 'info 2022-08-23 10:20:11.969       gsvc   4628   3528    3                anynet.relay_conn - External address: 34.xx.xx.123:46798'
         - File: '%programdata%\AnyDesk\connection_trace.txt'
-          Description: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)
+          Description: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used). Approval values - User = a person clicked Accept on the prompt; Passwd or Token = unattended access, a password was set or stored so the remote side can connect without anyone accepting.
           OS: Windows
           Example:
               - Incoming 2022-08-23, 10:23 Passwd 547911884 547911884
               - Incoming 2022-09-28, 12:39 User 442226597 442226597
+              - Incoming 2026-06-26, 15:42 Token (AnyDesk IDs omitted)
         - File: '%APPDATA%\AnyDesk\connection_trace.txt'
-          Description: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)
+          Description: Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used). Approval values - User = a person clicked Accept on the prompt; Passwd or Token = unattended access, a password was set or stored so the remote side can connect without anyone accepting.
           OS: Windows
           Example:
               - Incoming 2022-08-23, 10:23 Passwd 547911884 547911884
@@ -66,6 +67,14 @@ Artifacts:
           Example:
               - 'info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Client-ID: 442226597 (FPR: 8e28a2a25b30).'
               - info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Logged in from 12.xx.xx.21:59562 on relay 80e496c0.
+        - File: '*\AppData\Roaming\AnyDesk\file_transfer_trace.txt'
+          Description: File-transfer activity log for portable/user-context runs in %APPDATA%\AnyDesk. AnyDesk's built-in file manager logs every transfer here in plaintext - filename, size, direction and timestamp - which makes it a data-theft / exfil record that needs no packet capture.
+          OS: Windows
+        - File: '*\ProgramData\AnyDesk\file_transfer_trace.txt'
+          Description: File-transfer activity log for installed/service-context runs in %PROGRAMDATA%\AnyDesk (same content as the %APPDATA% variant).
+          OS: Windows
+          Example:
+              - "finish upload 'documents.zip' (~231.44 MiB)"
         - File: '%APPDATA%\AnyDesk\chat\*.txt'
           Description: If the chat functionality is used, its entries will be printed in a text file in this folder.
           OS: Windows
@@ -133,12 +142,12 @@ Artifacts:
         - Path: HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\AnyDesk
           Description: N/A
     Network:
-        - Description: During setup the boot.net.anydesk.com domain is request over port 443
+        - Description: During setup the boot.net.anydesk.com domain is requested over TCP 443.
           Domains:
               - boot.net.anydesk.com
           Ports:
               - 443
-        - Description: N/A
+        - Description: Relay-mediated session. After bootstrapping via boot.net.anydesk.com the client reaches a relay-*.net.anydesk.com server; network telemetry for this relay leg exposes the relay IP. Direct connections can separately expose the remote peer IP. 
           Domains:
               - relay-[a-f0-9]{8}.net.anydesk.com:443
           Ports:
@@ -148,6 +157,10 @@ Artifacts:
               - '*.anydesk.com'
           Ports:
               - 443
+        - Description: Direct peer-to-peer connection attempt on TCP 7070, tried in parallel with NAT hole punching before falling back to the relay (on by default). The direct leg targets the remote peer IP and uses no AnyDesk domain. Successful direct connections and failed direct attempts can expose that IP in endpoint network telemetry, including ConnectionFailed events in MDE. The address may belong to a VPN or NAT gateway and does not establish the operator's identity. A peer who disables direct connections forces relay-only and this never appears.
+          Domains: []
+          Ports:
+              - 7070
     Other:
         - Type: User-Agent
           Value: AnyDesk/*
@@ -168,11 +181,16 @@ Detections:
       Description: Detects potential network activity of AnyDesk RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_files_sigma.yml
       Description: Detects potential files activity of AnyDesk RMM tool
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/ca24243a6e3f94353a54176f83c4c3b7f579224a/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_piped_password_via_cli.yml
+      Description: Remote Access Tool - AnyDesk Piped Password Via CLI
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/ca24243a6e3f94353a54176f83c4c3b7f579224a/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_susp_exec.yml
+      Description: Remote Access Tool - Anydesk Execution From Suspicious Folder
 References:
-    - https://support.anydesk.com/knowledge/firewall
+    - https://support.anydesk.com/docs/firewall
     - https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html
     - https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk
     - https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/
+    - https://newsletter.securityinbits.com/p/32-ransomware-groups-abuse-anydesk
 Acknowledgement:
     - Person: Théo Letailleur
       Handle: in/theosyn
@@ -180,6 +198,8 @@ Acknowledgement:
       Handle: '@ali_alwashali'
     - Person: Nasreddine Bencherchali
       Handle: '@nas_bench'
+    - Person: Ayush Anand
+      Handle: '@Securityinbits'
 CodeSigning:
     certificates:
         - signer_name: AnyDesk Software GmbH
