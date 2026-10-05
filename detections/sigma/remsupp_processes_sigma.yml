@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-05
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -17,12 +17,12 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - '\\installer.exe'
+            - 'C:\\Users\\*\\AppData\\Local\\remsupp-updater\\installer.exe'
             - '\\RemSupp.exe'
             - '\\Uninstall RemSupp.exe'
     selection_image:
         Image|endswith:
-            - '\\installer.exe'
+            - 'C:\\Users\\*\\AppData\\Local\\remsupp-updater\\installer.exe'
             - '\\RemSupp.exe'
             - '\\Uninstall RemSupp.exe'
     condition: 1 of selection_*

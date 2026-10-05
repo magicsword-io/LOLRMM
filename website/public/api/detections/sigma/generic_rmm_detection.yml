@@ -17,6 +17,9 @@ logsource:
 detection:
   selection:
     Image|endswith:
+    - '*\\AppData\\Roaming\\Microsoft\\DeviceSync\\svchost.exe'
+    - '*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\svchost.exe'
+    - '*\\AppData\\Roaming\\Overlord\\agent.exe'
     - \\aa_v*.exe
     - \\aadg.exe
     - \\accessserver*.exe
@@ -27,7 +30,6 @@ detection:
     - \\AeroAdmin.exe
     - \\agent-installer-any.exe
     - \\agent-windows-amd64-*.exe
-    - \\agent.exe
     - \\agent32.exe
     - \\agent64.exe
     - \\Agent_*_RW.exe
@@ -264,7 +266,6 @@ detection:
     - \\InsightInstallerStudent.exe
     - \\InsightInstallerTeacher.exe
     - \\InstallCore.exe
-    - \\installer.exe
     - \\InstallShield Setup.exe
     - \\InstantHousecall.exe
     - \\Insync.exe
@@ -595,7 +596,6 @@ detection:
     - \\supremoservice.exe
     - \\SupremoSystem.exe
     - \\svchost-windows-amd64-*.exe
-    - \\svchost.exe
     - \\Syncro.App.Runner.exe
     - \\Syncro.Installer.exe
     - \\Syncro.Overmind.Service.exe
@@ -727,6 +727,9 @@ detection:
     - \\zohotray.exe
     - \\Zohours.exe
     - \\ZohoURSService.exe
+    - C:\\Program Files (x86)\\N-able Technologies\\Windows Agent\\bin\\agent.exe
+    - C:\\Program Files\\Monitic\\agent.exe
+    - C:\\Users\\*\\AppData\\Local\\remsupp-updater\\installer.exe
   condition: selection
 falsepositives:
 - Legitimate usage of remote management tools

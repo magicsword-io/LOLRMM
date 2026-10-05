@@ -7,6 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-10-05
+modified: 2026-10-05
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,14 +17,14 @@ logsource:
 detection:
     selection_parent:
         ParentImage|endswith:
-            - '\\agent.exe'
+            - 'C:\\Program Files (x86)\\N-able Technologies\\Windows Agent\\bin\\agent.exe'
             - '\\AgentMaint.exe'
             - '\\AgentMonitor.exe'
             - '\\BASupTSHelper.exe'
             - '\\msp-agent-core.exe'
     selection_image:
         Image|endswith:
-            - '\\agent.exe'
+            - 'C:\\Program Files (x86)\\N-able Technologies\\Windows Agent\\bin\\agent.exe'
             - '\\AgentMaint.exe'
             - '\\AgentMonitor.exe'
             - '\\BASupTSHelper.exe'
