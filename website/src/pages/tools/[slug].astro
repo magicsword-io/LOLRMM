@@ -1,0 +1,229 @@
+---
+import Platforms from '../../components/Platforms.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Evidence from '../../components/Evidence.astro';
+import Value from '../../components/Value.astro';
+import {
+  tools,
+  display,
+  platforms,
+  safeUrl,
+  repository,
+  toolUrl,
+  type CatalogTool,
+} from '../../lib/catalog';
+export function getStaticPaths() {
+  return tools.map((tool) => ({
+    params: { slug: tool.slug },
+    props: { tool },
+  }));
+}
+interface Props {
+  tool: CatalogTool;
+}
+const { tool } = Astro.props;
+const artifacts = Object.entries(tool.Artifacts || {}).filter(
+  ([, entries]) => entries?.length,
+);
+const codeSigning = tool.CodeSigning;
+const related = tools.filter(
+  (t) => t.Name === tool.Name && t.slug !== tool.slug,
+);
+const sections = [
+  ['details', 'Overview'],
+  ['executables', 'Executables & paths'],
+  ...(codeSigning ? [['code-signing', 'Code signing']] : []),
+  ...(tool.FileHashes ? [['hashes', 'File hashes']] : []),
+  ...artifacts.map(([name]) => [
+    'artifacts-' + name.toLowerCase(),
+    name + ' artifacts',
+  ]),
+  ...(tool.Detections?.length ? [['detections', 'Detections']] : []),
+  ['references', 'References'],
+];
+---
+
+<BaseLayout
+  title={`${tool.Name} — LOLRMM`}
+  description={tool.Description.replace(/\s+/g, ' ').trim()}
+>
+  <div class="page-heading">
+    <div class="breadcrumb">
+      <a href="/#catalog">Catalog</a> / {tool.Name}
+    </div>
+    <span class:list={['badge', { amber: tool.Category === 'RAT' }]}>
+      {tool.Category}
+    </span>
+    <h1>{tool.Name}</h1>
+    <p class="intro">{tool.Description}</p>
+    <div class="page-actions">
+      {safeUrl(tool.Details.Website) && (
+        <a class="button primary" href={safeUrl(tool.Details.Website)}>
+          Visit tool website ↗
+        </a>
+      )}
+      <a class="button" href={`/api/tools/${tool.slug}.json`}>
+        Download JSON ↓
+      </a>
+      <a
+        class="button"
+        href={repository + '/blob/main/yaml/' + tool.sourceFile}
+      >
+        View source YAML ↗
+      </a>
+      <a class="button" href={repository + '/issues/new/choose'}>
+        Suggest an update ↗
+      </a>
+    </div>
+  </div>
+  {related.length > 0 && (
+    <p class="related-entries">
+      Additional research for this tool:{' '}
+      {related.map((t) => (
+        <a class="value-link" href={toolUrl(t)}>
+          {t.Name} · updated {t.LastModified} ↗
+        </a>
+      ))}
+    </p>
+  )}
+  <div class="detail-layout">
+    <nav class="detail-nav" aria-label="On this page">
+      <p class="eyebrow">ON THIS PAGE</p>
+      {sections.map(([id, label]) => (
+        <a href={'#' + id}>{label}</a>
+      ))}
+    </nav>
+    <div class="detail-content">
+      <section id="details" class="detail-section">
+        <h2>Tool overview</h2>
+        <dl class="detail-grid">
+          {[
+            ['Category', tool.Category],
+            ['Research authors', tool.Author],
+            ['Created', tool.Created],
+            ['Last modified', tool.LastModified],
+            ['Privileges', tool.Details.Privileges],
+            ['Free / availability', tool.Details.Free],
+            ['Verification required', tool.Details.Verification],
+          ].map(([label, value]) => (
+            <div>
+              <dt>{label}</dt>
+              <dd>{display(value)}</dd>
+            </div>
+          ))}
+          <div>
+            <dt>Supported platforms</dt>
+            <dd>
+              <Platforms names={platforms(tool)} />
+            </dd>
+          </div>
+        </dl>
+        {tool.Details.Capabilities?.length > 0 && (
+          <>
+            <h3>Capabilities</h3>
+            <div class="tags">
+              {tool.Details.Capabilities.map((capability) => (
+                <span>{capability}</span>
+              ))}
+            </div>
+          </>
+        )}
+        {(tool.Details.Vulnerabilities?.length ?? 0) > 0 && (
+          <>
+            <h3>Known vulnerabilities</h3>
+            <Value value={tool.Details.Vulnerabilities} />
+          </>
+        )}
+      </section>
+      <section id="executables" class="detail-section">
+        <h2>Executables &amp; installation paths</h2>
+        {tool.Details.PEMetadata && <Evidence data={tool.Details.PEMetadata} />}
+        <h3>Installation paths</h3>
+        <Evidence
+          data={
+            tool.Details.InstallationPaths ||
+            tool.InstallationPaths ||
+            'Not recorded'
+          }
+        />
+      </section>
+      {codeSigning && (
+        <section id="code-signing" class="detail-section">
+          <h2>Code signing</h2>
+          <Evidence data={codeSigning.certificates} />
+          {Object.entries(codeSigning)
+            .filter(([key]) => key !== 'certificates')
+            .map(([key, value]) => (
+              <>
+                <h3>{key.replaceAll('_', ' ')}</h3>
+                <Evidence data={value} />
+              </>
+            ))}
+        </section>
+      )}
+      {tool.FileHashes && (
+        <section id="hashes" class="detail-section">
+          <h2>File hashes</h2>
+          <Evidence data={tool.FileHashes} />
+        </section>
+      )}
+      {artifacts.map(([name, entries]) => (
+        <section id={'artifacts-' + name.toLowerCase()} class="detail-section">
+          <p class="eyebrow">FORENSIC EVIDENCE</p>
+          <h2>{name === 'EventLog' ? 'Event log' : name} artifacts</h2>
+          <Evidence data={entries} />
+        </section>
+      ))}
+      {(tool.Detections?.length ?? 0) > 0 && (
+        <section id="detections" class="detail-section">
+          <h2>Detections</h2>
+          <Evidence data={tool.Detections} />
+        </section>
+      )}
+      <section id="references" class="detail-section">
+        <h2>References</h2>
+        <Value value={tool.References} />
+      </section>
+      {(tool.Acknowledgement?.length ?? 0) > 0 && (
+        <section class="detail-section">
+          <h2>Acknowledgements</h2>
+          <Evidence data={tool.Acknowledgement} />
+        </section>
+      )}
+      <aside class="detail-prevention" aria-label="MagicSword prevention">
+        <a
+          class="detail-prevention-logo"
+          href="https://www.magicsword.io/?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=tool_detail"
+          aria-label="MagicSword"
+        >
+          <img
+            class="sponsor-logo-dark"
+            src="/images/magicsword-logo-dark.svg"
+            alt=""
+            width="140"
+            height="56"
+            loading="lazy"
+          />
+          <img
+            class="sponsor-logo-light"
+            src="/images/magicsword_light.png"
+            alt=""
+            width="140"
+            height="46"
+            loading="lazy"
+          />
+        </a>
+        <p>
+          Help prevent unauthorized use of {tool.Name} with{' '}
+          <a
+            class="value-link"
+            href="https://www.magicsword.io/?utm_source=lolrmm&utm_medium=website&utm_campaign=free_prevention&utm_content=tool_detail"
+          >
+            MagicSword application control ↗
+          </a>
+          .
+        </p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

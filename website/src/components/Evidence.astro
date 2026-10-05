@@ -1,0 +1,17 @@
+---
+import Value from './Value.astro';
+import type { Value as Data } from '../lib/catalog';
+interface Props {
+  data: Data | undefined;
+}
+const { data } = Astro.props;
+const entries = Array.isArray(data) ? data : data ? [data] : [];
+---
+
+<div class="evidence-list">
+  {entries.map((value) => (
+    <div class="evidence-card">
+      <Value value={value} />
+    </div>
+  ))}
+</div>

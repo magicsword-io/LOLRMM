@@ -1,0 +1,171 @@
+---
+import { tools } from '../lib/catalog';
+import { catalogGrowth, geometry, monthLabel } from '../lib/growth';
+const { points, undated, future } = catalogGrowth(tools);
+const shown = points.slice(-36);
+const { plotted, path, area, ceiling, left, right, top, bottom } =
+  geometry(shown);
+const latest = plotted.at(-1);
+---
+
+<section
+  class="growth panel"
+  aria-labelledby="growth-title"
+  data-growth
+  data-points={JSON.stringify(points)}
+>
+  <div class="panel-heading">
+    <div>
+      <p class="eyebrow">THE GROWING CATALOG</p>
+      <h2 id="growth-title">More visibility. Over time.</h2>
+    </div>
+    <div
+      class="segmented"
+      data-growth-ranges
+      hidden
+      aria-label="Chart time range"
+    >
+      <button data-months="12" aria-pressed="false">
+        1Y
+      </button>
+      <button data-months="36" aria-pressed="true">
+        3Y
+      </button>
+      <button data-months="0" aria-pressed="false">
+        All
+      </button>
+    </div>
+  </div>
+  {latest ? (
+    <>
+      <div class="growth-summary">
+        <strong>{latest.total}</strong>
+        <span>
+          entries cataloged
+          <br />
+          <span class="muted">RMM &amp; RAT entries</span>
+        </span>
+        <span class="chart-legend">
+          <i></i>Cumulative entries
+        </span>
+      </div>
+      <figure>
+        <div class="growth-plot">
+          <svg
+            viewBox="0 0 690 205"
+            role="img"
+            aria-labelledby="chart-title chart-desc"
+            data-chart
+          >
+            <title id="chart-title">LOLRMM catalog growth</title>
+            <desc id="chart-desc">
+              Cumulative totals based on the Created dates of current entries.{' '}
+              {latest.total} entries through {monthLabel(latest.month)}. The
+              current month may be partial.
+            </desc>
+            <defs>
+              <linearGradient id="growth-fill" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="0%"
+                  stop-color="currentColor"
+                  stop-opacity=".08"
+                />
+                <stop
+                  offset="100%"
+                  stop-color="currentColor"
+                  stop-opacity=".01"
+                />
+              </linearGradient>
+            </defs>
+            {[0, ceiling / 2, ceiling].map((n) => (
+              <g class="chart-axis">
+                <line
+                  x1={left}
+                  x2={right}
+                  y1={bottom - (n / ceiling) * (bottom - top)}
+                  y2={bottom - (n / ceiling) * (bottom - top)}
+                />
+                <text
+                  x="28"
+                  y={bottom - (n / ceiling) * (bottom - top)}
+                  dy=".35em"
+                  text-anchor="end"
+                >
+                  {n}
+                </text>
+              </g>
+            ))}
+            <path d={area} fill="url(#growth-fill)" data-area />
+            <path d={path} class="chart-line" data-line />
+            <line
+              x1={latest.x}
+              x2={latest.x}
+              y1={top}
+              y2={bottom}
+              class="chart-guide"
+              data-guide
+            />
+            <circle
+              cx={latest.x}
+              cy={latest.y}
+              r="4"
+              class="chart-dot"
+              data-dot
+            />
+            <g data-ticks>
+              {[0, Math.floor((plotted.length - 1) / 2), plotted.length - 1]
+                .filter((v, i, a) => a.indexOf(v) === i)
+                .map((i, n) => (
+                  <text
+                    class="chart-date"
+                    x={plotted[i].x}
+                    y="197"
+                    text-anchor={
+                      n === 0
+                        ? 'start'
+                        : i === plotted.length - 1
+                          ? 'end'
+                          : 'middle'
+                    }
+                  >
+                    {monthLabel(plotted[i].month)}
+                  </text>
+                ))}
+            </g>
+          </svg>
+        </div>
+        <figcaption>
+          <span data-growth-readout>
+            {monthLabel(latest.month)} · <strong>{latest.total} entries</strong>
+          </span>
+        </figcaption>
+        <label class="sr-only" for="growth-month">
+          Explore monthly catalog totals
+        </label>
+        <input
+          id="growth-month"
+          data-growth-scrubber
+          type="range"
+          min="0"
+          max={plotted.length - 1}
+          value={plotted.length - 1}
+          aria-valuetext={`${monthLabel(latest.month)}: ${latest.total} entries`}
+          hidden
+        />
+      </figure>
+      <p class="chart-note">
+        Current RMM & RAT records by creation date, including older source
+        records. Counts catalog entries, not attacks. Current month may be
+        partial.
+      </p>
+    </>
+  ) : (
+    <p>No dated entries available.</p>
+  )}
+  {(undated > 0 || future > 0) && (
+    <p class="chart-note">
+      Excluded: {undated} undated entries, {future} future-dated entries.
+    </p>
+  )}
+</section>
+<script src="../scripts/growth.ts"></script>

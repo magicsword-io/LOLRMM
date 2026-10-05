@@ -1,0 +1,41 @@
+---
+interface Props {
+  code: string;
+  label: string;
+}
+const { code, label } = Astro.props;
+---
+
+<div class="code-block">
+  <button class="button" data-copy aria-label={`Copy ${label}`} hidden>
+    Copy
+  </button>
+  <pre tabindex="0"><code>{code}</code></pre>
+  <span class="sr-only" role="status" data-copy-status></span>
+</div>
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>('[data-copy]')
+    .forEach((button) => {
+      if (!navigator.clipboard) return;
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(
+            button.parentElement!.querySelector('code')!.textContent || '',
+          );
+          button.textContent = 'Copied';
+          button.parentElement!.querySelector(
+            '[data-copy-status]',
+          )!.textContent = 'Copied to clipboard';
+          setTimeout(() => {
+            button.textContent = 'Copy';
+          }, 1600);
+        } catch {
+          button.parentElement!.querySelector(
+            '[data-copy-status]',
+          )!.textContent = 'Copy failed. Select the text to copy it manually.';
+        }
+      });
+    });
+</script>

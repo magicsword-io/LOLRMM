@@ -25,9 +25,6 @@ jobs:
       run: curl -sSL https://install.python-poetry.org | python -
     - name: Install dependencies with Poetry
       run: poetry install
-    - name: Generate MDX
-      run: poetry run python bin/site.py -v
-
     - name: Use Node.js 22.x
       uses: actions/setup-node@v4
       with:
@@ -35,19 +32,18 @@ jobs:
         cache: 'npm'
         cache-dependency-path: website/package-lock.json
     - name: Export site
+      env:
+        PUBLIC_ENABLE_ANALYTICS: 'true'
       run: |
-        for attempt in 1 2 3; do
-          npm install --no-audit --no-fund --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=120000 && break
-          echo "npm install failed (attempt $attempt/3), retrying in 15s..."
-          sleep 15
-        done
-        npm run build
+        npm ci --no-audit --no-fund
+        npm run check
+        poetry run npm run build
       working-directory: website
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ./website/out
+        path: ./website/dist
 
     - name: Commit and push changes
       env:
@@ -56,7 +52,7 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git config --global push.default simple
-        git add detections/ website/pages/tools/ website/public/
+        git add detections/ website/public/
         git diff --quiet && git diff --staged --quiet && exit 0
         for attempt in 1 2 3; do
           # Committed content is fully generated, so instead of rebasing (which
@@ -64,7 +60,7 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
           poetry run python bin/site.py -v
-          git add detections/ website/pages/tools/ website/public/
+          git add detections/ website/public/
           if git diff --quiet && git diff --staged --quiet; then
             echo "No generated changes to commit."
             exit 0

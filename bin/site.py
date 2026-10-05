@@ -3,13 +3,9 @@ import argparse
 import sys
 import os
 import json
-import datetime
-import jinja2
 import csv
 import re
-import shutil
 import subprocess
-import copy
 
 
 def slugify(text):
@@ -158,7 +154,7 @@ def write_rmm_tools_table_csv(rmm_tools, output_dir, VERBOSE):
             writer.writerow(row)
 
 
-def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBOSE):
+def generate_rmm_data(REPO_PATH, OUTPUT_DIR, messages, VERBOSE):
     manifest_files = []
     for root, dirs, files in os.walk(REPO_PATH):
         for file in files:
@@ -178,64 +174,7 @@ def generate_doc_rmm_tools(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBO
                 print(f"Error reading {manifest_file}: {exc}")
                 sys.exit(1)
 
-    # Write markdowns
-    j2_env = jinja2.Environment(
-        loader=jinja2.FileSystemLoader(TEMPLATE_PATH),
-        trim_blocks=True,
-        lstrip_blocks=True,
-        autoescape=False,
-    )
-
-    def clean_multiline(text):
-        if isinstance(text, str):
-            return text.replace("\n", " ").strip()
-        return text
-
-    def mdx_escape(text):
-        if not isinstance(text, str):
-            return text
-        pattern = re.compile(
-            r"(?P<code>``[^`\n]+?``|`[^`\n]+?`)"
-            r"|(?P<ph><[a-zA-Z_][\w.\-]*>)"
-        )
-
-        def repl(match):
-            if match.group("code"):
-                return match.group("code")
-            return f"`{match.group('ph')}`"
-
-        return pattern.sub(repl, text)
-
-    def without_certificate_der(code_signing):
-        if not isinstance(code_signing, dict):
-            return code_signing
-
-        sanitized = copy.deepcopy(code_signing)
-        for certificate in sanitized.get("certificates", []):
-            if isinstance(certificate, dict):
-                certificate.pop("certificate_der_base64", None)
-        return sanitized
-
-    j2_env.filters["clean_multiline"] = clean_multiline
-    j2_env.filters["mdx_escape"] = mdx_escape
-    j2_env.filters["without_certificate_der"] = without_certificate_der
-    j2_env.globals.update(dump=json.dumps)
-    j2_env.globals.update(escape=re.escape)
-
-    tools_dir = os.path.join(OUTPUT_DIR, "pages", "tools")
-    shutil.rmtree(tools_dir)
-    os.mkdir(tools_dir)
-    d = datetime.datetime.now()
-    template = j2_env.get_template("rmm.md.j2")
-    for rmm_tool in rmm_tools:
-        file_name = f"{slugify(rmm_tool['Name'])}.mdx"
-        output_path = os.path.join(tools_dir, file_name)
-        output = template.render(rmm=rmm_tool, time=str(d.strftime("%Y-%m-%d")))
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(output)
-    messages.append(
-        f"site_gen.py wrote {len(rmm_tools)} RMM tools markdown to: {tools_dir}"
-    )
+    os.makedirs(os.path.join(OUTPUT_DIR, "public", "api"), exist_ok=True)
 
     # Write API CSV
     write_rmm_tools_csv(rmm_tools, OUTPUT_DIR, VERBOSE)
@@ -296,35 +235,9 @@ if __name__ == "__main__":
     OUTPUT_DIR = args.output
     VERBOSE = args.verbose
 
-    TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "jinja2_templates")
-
-    if VERBOSE:
-        print(f"Wiping the {os.path.join(OUTPUT_DIR, 'pages', 'tools')} folder")
-
-    # Clean up old RMM tool files
-    try:
-        rmm_tools_dir = os.path.join(OUTPUT_DIR, "pages", "tools")
-        for file in os.listdir(rmm_tools_dir):
-            if file.endswith(".md") and file != "_index.md":
-                os.remove(os.path.join(rmm_tools_dir, file))
-    except OSError as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-
-    # Clean up API artifacts
-    api_json = os.path.join(OUTPUT_DIR, "public", "api", "rmm_tools.json")
-    api_csv = os.path.join(OUTPUT_DIR, "public", "api", "rmm_tools.csv")
-    api_domains_csv = os.path.join(OUTPUT_DIR, "public", "api", "rmm_domains.csv")
-    if os.path.exists(api_json):
-        os.remove(api_json)
-    if os.path.exists(api_csv):
-        os.remove(api_csv)
-    if os.path.exists(api_domains_csv):
-        os.remove(api_domains_csv)
-
     messages = []
-    rmm_tools, messages = generate_doc_rmm_tools(
-        REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, messages, VERBOSE
+    rmm_tools, messages = generate_rmm_data(
+        REPO_PATH, OUTPUT_DIR, messages, VERBOSE
     )
 
     # Generate the domains CSV file
@@ -336,15 +249,15 @@ if __name__ == "__main__":
             os.path.dirname(os.path.abspath(__file__)), "generate_domains_csv.py"
         )
         result = subprocess.run(
-            ["python3", script_path], capture_output=True, text=True
+            [sys.executable, script_path], capture_output=True, text=True
         )
         if result.returncode == 0:
             if VERBOSE:
                 print(result.stdout)
         else:
-            print(f"Error generating domains CSV: {result.stderr}")
+            raise RuntimeError(f"Error generating domains CSV: {result.stderr}")
     except Exception as e:
-        print(f"Failed to generate domains CSV: {e}")
+        raise RuntimeError(f"Failed to generate domains CSV: {e}") from e
 
     # Generate detection files
     if VERBOSE:
@@ -355,15 +268,15 @@ if __name__ == "__main__":
             os.path.dirname(os.path.abspath(__file__)), "generate_detections.py"
         )
         result = subprocess.run(
-            ["python3", script_path], capture_output=True, text=True
+            [sys.executable, script_path], capture_output=True, text=True
         )
         if result.returncode == 0:
             if VERBOSE:
                 print(result.stdout)
         else:
-            print(f"Error generating detection files: {result.stderr}")
+            raise RuntimeError(f"Error generating detection files: {result.stderr}")
     except Exception as e:
-        print(f"Failed to generate detection files: {e}")
+        raise RuntimeError(f"Failed to generate detection files: {e}") from e
 
     for m in messages:
         print(m)

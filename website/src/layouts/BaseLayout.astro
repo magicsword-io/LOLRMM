@@ -1,0 +1,145 @@
+---
+import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import { repository } from '../lib/catalog';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'LOLRMM — Living Off the Land Remote Monitoring and Management',
+  description = 'Explore remote monitoring and management tools, forensic artifacts, and detections. Open source intelligence for threat hunters and defenders.',
+} = Astro.props;
+const nav = [
+  ['Catalog', '/'],
+  ['Detections', '/detections/'],
+  ['API', '/api/'],
+  ['About', '/about/'],
+];
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0c100e" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LOLRMM" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta
+      property="og:image"
+      content={new URL('/images/logo.png', Astro.site)}
+    />
+    <meta property="og:image:alt" content="LOLRMM logo" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script is:inline>
+      try {
+        const theme = localStorage.getItem('lolrmm-theme');
+        if (theme === 'light' || theme === 'dark')
+          document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <GoogleAnalytics />
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="wrap navigation">
+        <a class="brand" href="/" aria-label="LOLRMM home">
+          <img src="/images/logo.svg" width="56" height="56" alt="" />
+          <span>
+            LOLRMM<small>THE REMOTE ACCESS CATALOG</small>
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          {nav.map(([label, href]) => (
+            <a
+              href={href}
+              aria-current={
+                (
+                  href === '/'
+                    ? Astro.url.pathname === '/' ||
+                      Astro.url.pathname.startsWith('/tools/')
+                    : Astro.url.pathname.startsWith(href)
+                )
+                  ? 'page'
+                  : undefined
+              }
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+        <div class="nav-actions">
+          <a class="github-link" href={repository}>
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <button
+            class="icon-button"
+            id="theme-toggle"
+            aria-label="Switch to light theme"
+            title="Switch color theme"
+            hidden
+          >
+            ◐
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="wrap">
+      <slot />
+    </main>
+    <footer class="wrap site-footer">
+      <div class="footer-brand">
+        <img src="/images/logo.svg" alt="" width="34" height="34" />
+        <span>
+          Community intelligence for defenders.
+          <small>
+            A <a href="https://www.magicsword.io/">MagicSword</a> project.
+          </small>
+        </span>
+      </div>
+      <div>
+        <a href={repository + '/issues/new/choose'}>Submit a tool ↗</a>
+        <a href="https://loldrivers.io/">LOLDrivers ↗</a>
+        <a href="https://lolskills.io/">LOLSkills ↗</a>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('#theme-toggle');
+      function updateLabel() {
+        toggle?.setAttribute(
+          'aria-label',
+          `Switch to ${document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'} theme`,
+        );
+      }
+      if (toggle) {
+        toggle.hidden = false;
+        updateLabel();
+        toggle.addEventListener('click', () => {
+          const theme =
+            document.documentElement.dataset.theme === 'dark'
+              ? 'light'
+              : 'dark';
+          document.documentElement.dataset.theme = theme;
+          try {
+            localStorage.setItem('lolrmm-theme', theme);
+          } catch {}
+          updateLabel();
+        });
+      }
+    </script>
+  </body>
+</html>

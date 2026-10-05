@@ -1,0 +1,24 @@
+---
+import { tools, toolUrl } from '../../lib/catalog';
+export function getStaticPaths() {
+  return tools.map((tool) => ({
+    params: { slug: tool.slug },
+    props: { url: toolUrl(tool) },
+  }));
+}
+const { url } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LOLRMM tool moved</title>
+    <meta http-equiv="refresh" content={`0;url=${url}`} />
+    <link rel="canonical" href={new URL(url, Astro.site)} />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <a href={url}>Continue to the tool</a>
+  </body>
+</html>
