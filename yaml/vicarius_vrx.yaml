@@ -96,7 +96,13 @@ Artifacts:
     Other: []
 FileHashes:
 CodeSigning:
-Detections: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vicarius_vrx_network_sigma.yml
+      Description: Detects potential network activity of Vicarius vRx RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vicarius_vrx_files_sigma.yml
+      Description: Detects potential files activity of Vicarius vRx RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vicarius_vrx_processes_sigma.yml
+      Description: Detects potential processes activity of Vicarius vRx RMM tool
 References:
     - https://customer-portal.vicarius.io/vrx-logs-and-files
     - https://customer-portal.vicarius.io/ports-opening-dns-whitelisting?hsLang=en
