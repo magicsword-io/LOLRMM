@@ -1,9 +1,13 @@
 Name: ngrok
 Category: RAT
-Description: ngrok is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: >
+  ngrok is a tunneling / reverse-proxy service frequently abused for remote access
+  and C2 concealment. More operational detail is tracked in LOTTunnels. ANY.RUN
+  documented Overlord RAT routing encrypted WSS C2 through an ngrok tunnel
+  (hostname pattern *.ngrok... to 3.124.142.205:443) in its October 2026 Overlord write-up.
 Author: Jose Hernandez
 Created: '2024-07-19'
-LastModified: '2024-07-19'
+LastModified: '2026-10-05'
 Details:
     Website: 'https://ngrok.com/'
     PEMetadata:
@@ -36,7 +40,14 @@ Artifacts:
               - connect.jp.ngrok-agent.com
               - connect.in.ngrok-agent.com
               - ngrok.com
-          Ports: []
+              - '*.ngrok-free.app'
+              - '*.ngrok.app'
+              - '*.ngrok.io'
+              - '*.ngrok.dev'
+              - '*.ngrok.pro'
+              - '*.ngrok.pizza'
+          Ports:
+              - 443
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ngrok_network_sigma.yml
       Description: Detects potential network activity of ngrok RMM tool
@@ -44,6 +55,10 @@ Detections:
       Description: Detects potential processes activity of ngrok RMM tool
 References:
     - https://ngrok.com/docs/guides/running-behind-firewalls/
+    - https://any.run/malware-trends/overlord/
+    - https://x.com/anyrun_app/status/2107063549172367583
+    - https://app.any.run/tasks/9304f809-0265-4d7d-81f9-92f5835ba7c8/
+    - https://lottunnels.github.io/lottunnels/Binaries/ngrok/
 Acknowledgement: []
 CodeSigning:
     certificates:
