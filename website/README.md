@@ -82,17 +82,33 @@ normal review process and let the workflow deploy the resulting revision.
 
 `generated-data.yml` independently regenerates the tracked API exports,
 aggregate and per-tool detections, and README badge. It opens or refreshes one
-PR on `automation/generated-data` using the built-in token. Raw GitHub consumers
+PR on `automation/generated-data` using a repository-scoped GitHub App token. Raw GitHub consumers
 receive those changes when the generated PR is merged; the website always builds
 fresh exports directly from its own source revision. Source-only trigger paths
 prevent a generated-only merge from opening another generation run. Existing
 detection generators use the current date, so manual runs on a later day can
 produce date-only changes.
 
-The bot needs Actions' **Allow GitHub Actions to create and approve pull requests**
-setting and an unprotected `automation/generated-data` branch. If a ruleset
+The bot uses a private GitHub App installed only on LOLRMM, with repository
+**Contents: read/write** and **Pull requests: read/write** permissions (and implicit
+metadata read access). It needs no Actions, administration, workflows, organization
+permissions, or ruleset bypass. Configure its public client ID as repository
+variable `GENERATED_DATA_APP_CLIENT_ID` and its PEM private key as repository
+Actions secret `GENERATED_DATA_APP_PRIVATE_KEY`; never commit the key. Webhooks
+and user authorization are unnecessary for this installation-token workflow.
+
+The job's built-in token remains read-only. After validation and generation,
+`actions/create-github-app-token` mints a token restricted to this repository and
+those two permissions. Only the PR action receives it. The token action attempts revocation at
+job completion; otherwise the short-lived installation token expires normally. Missing app configuration fails the generator instead of falling
+back to the approval-required built-in token. To rotate the key, replace the
+repository secret with a new app key, verify a successful run, then revoke the old
+key in the app settings.
+
+The bot needs an unprotected `automation/generated-data` working branch. If a ruleset
 protects all branches, exclude only `refs/heads/automation/generated-data` from
-that ruleset; keep `main` protected. No bypass on `main` is required. GitHub may
-require a maintainer to approve workflows for the bot-created PR; inspect and
-approve its latest checks before merging. See [GitHub's event-trigger behavior](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow).
+that ruleset; keep `main` protected. No bypass on `main` is required. App-created or updated PRs start CI automatically
+without the built-in token's bot-approval gate. Normal PR review still applies;
+check the latest commit before merging. GitHub may independently hold a run for
+its security policies. See [GitHub's event-trigger behavior](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow).
 Generation or PR-policy failures do not block Pages publication.
