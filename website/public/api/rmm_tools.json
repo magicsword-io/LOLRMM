@@ -5616,6 +5616,200 @@
         }
     },
     {
+        "Name": "N-able N-central",
+        "Category": "RMM",
+        "Description": "N-able N-central is a remote monitoring and management (RMM) platform used by MSPs and IT teams. The platform supports remote commands, scripts, software deployment, file transfer and remote control. Its classic agents operate alongside the newer MSP Agent on Windows, Linux and macOS; optional Take Control components provide remote access. CISA added CVE-2026-86218, a static code injection flaw in the N-central server, to its Known Exploited Vulnerabilities catalog on 2026-09-08.",
+        "Author": "Liran Ravich, Cribl",
+        "Created": "2026-10-01",
+        "LastModified": "2026-10-05",
+        "Details": {
+            "Website": "https://www.n-able.com/products/n-central",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "Windows tasks can use LocalSystem, device or custom credentials",
+            "Free": false,
+            "Verification": "",
+            "SupportedOS": [
+                "Windows",
+                "macOS",
+                "Linux"
+            ],
+            "Capabilities": [
+                "Remote command execution",
+                "Scripting",
+                "Software deployment",
+                "File transfer",
+                "Remote control"
+            ],
+            "Vulnerabilities": [
+                "CVE-2026-86218"
+            ],
+            "InstallationPaths": [
+                "C:\\Program Files (x86)\\N-able Technologies\\Windows Agent\\bin\\*",
+                "C:\\Program Files (x86)\\Msp Agent\\*",
+                "agent.exe",
+                "AgentMaint.exe",
+                "AgentMonitor.exe",
+                "BASupTSHelper.exe",
+                "msp-agent-core.exe",
+                "/opt/msp-agent/*",
+                "/Library/MspAgent/*"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\N-able Technologies\\Windows Agent\\bin\\agent.exe",
+                    "Description": "Classic Windows agent executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\Msp Agent\\msp-agent-core.exe",
+                    "Description": "Modern MSP Agent executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/opt/msp-agent/*",
+                    "Description": "Modern MSP Agent installation directory; Linux process name is msp-agent-core",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Library/MspAgent/*",
+                    "Description": "Modern MSP Agent installation directory",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "N-central software distribution metadata",
+                    "Domains": [
+                        "sis.n-able.com"
+                    ],
+                    "Ports": [
+                        "80",
+                        "443",
+                        "8443"
+                    ]
+                },
+                {
+                    "Description": "N-central software updates and release feeds",
+                    "Domains": [
+                        "update.n-able.com",
+                        "releases.n-able.com",
+                        "feeds.n-able.com"
+                    ],
+                    "Ports": [
+                        "443"
+                    ]
+                },
+                {
+                    "Description": "Modern MSP Agent cloud configuration, components and event delivery; shared N-able services",
+                    "Domains": [
+                        "*.prd.cdo.system-monitor.com",
+                        "eb.eu-west-1.prd.davinci.system-monitor.com",
+                        "eb.us-west-2.prd.davinci.system-monitor.com",
+                        "eb.ap-southeast-2.prd.davinci.system-monitor.com",
+                        "eb.eu-central-1.prd.davinci.system-monitor.com"
+                    ],
+                    "Ports": [
+                        "443"
+                    ]
+                },
+                {
+                    "Description": "Vendor-assigned AWS IoT endpoints; N-central firewall documentation lists TCP 8088 for modern agent communication",
+                    "Domains": [
+                        "a33d8yamkwy4nx-ats.iot.eu-west-1.amazonaws.com",
+                        "a33d8yamkwy4nx-ats.iot.us-west-2.amazonaws.com",
+                        "a33d8yamkwy4nx-ats.iot.eu-central-1.amazonaws.com",
+                        "a33d8yamkwy4nx-ats.iot.ap-southeast-2.amazonaws.com"
+                    ],
+                    "Ports": [
+                        "8088"
+                    ]
+                },
+                {
+                    "Description": "Optional Take Control remote access infrastructure, shared with other N-able products",
+                    "Domains": [
+                        "swi-rc.cdn-sw.net",
+                        "comserver.global.mspa.n-able.com",
+                        "comserver.us1.mspa.n-able.com",
+                        "comserver.us2.mspa.n-able.com",
+                        "comserver.eu1.mspa.n-able.com"
+                    ],
+                    "Ports": [
+                        "443"
+                    ]
+                },
+                {
+                    "Description": "Classic agents connect to an operator-specific N-central server; addresses vary by deployment",
+                    "Domains": [],
+                    "Ports": [
+                        "80",
+                        "443"
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "WindowsService",
+                    "Value": "Windows Agent Service; Windows Agent Maintenance Service (classic agent)"
+                },
+                {
+                    "Type": "WindowsService",
+                    "Value": "MSPAgent (display name MSP Agent)"
+                },
+                {
+                    "Type": "LinuxService",
+                    "Value": "MspAgent.service (systemd)"
+                },
+                {
+                    "Type": "macOSDaemon",
+                    "Value": "MspAgent (package com.n-able.mspagent)"
+                }
+            ]
+        },
+        "FileHashes": null,
+        "CodeSigning": null,
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_network_sigma.yml",
+                "Description": "Detects potential network activity of N-able N-central RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_files_sigma.yml",
+                "Description": "Detects potential files activity of N-able N-central RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_processes_sigma.yml",
+                "Description": "Detects potential processes activity of N-able N-central RMM tool"
+            }
+        ],
+        "References": [
+            "https://documentation.n-able.com/N-central/userguide/Content/Modern-agent/modern-agent.htm",
+            "https://documentation.n-able.com/N-central/userguide/Content/ReleaseDocs/Install_Config/FirewallRequirements.htm",
+            "https://documentation.n-able.com/N-central/userguide/Content/AVDefender/AVDefender_GlobalExclusions.htm",
+            "https://documentation.n-able.com/N-central/userguide/Content/Deploying/agent_probe_services.htm",
+            "https://documentation.n-able.com/N-central/userguide/Content/User_Management/Selecting_device_credentials.htm",
+            "https://documentation.n-able.com/N-central/userguide/Content/Scheduled_Tasks/ScheduledTasks_AddScriptTask.html",
+            "https://documentation.n-able.com/N-central/userguide/Content/Scheduled_Tasks/ScheduledTasks_Add3rdPartySoftwareTask.html",
+            "https://documentation.n-able.com/N-central/userguide/Content/Devices/Direct%20Support/DS_Command_Line_Mac.htm",
+            "https://documentation.n-able.com/N-central/userguide/Content/Devices/Direct%20Support/DS_File_Transfer_Mac.htm",
+            "https://status.n-able.com/2026/09/06/n-central-2026-3-hotfix-4-cve-2026-86218/",
+            "https://www.cyber.gc.ca/en/alerts-advisories/n-able-security-advisory-av26-885"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Liran Ravich",
+                "Handle": ""
+            }
+        ]
+    },
+    {
         "Name": "ProxiPort",
         "Category": "RMM",
         "Description": "ProxiPort is an open-source, self-hosted remote management and reverse- tunnel project with a server and endpoint agent. It supports remote command execution, script execution, file transfer, system monitoring, and tunnels. It is a distinct continuation of RPort/OpenRPort; this entry does not assign RPort abuse reporting or RealVNC signing metadata to ProxiPort.\n",
@@ -11666,6 +11860,174 @@
         ]
     },
     {
+        "Name": "Vicarius vRx",
+        "Category": "RMM",
+        "Description": "Vicarius vRx is a commercial vulnerability remediation and patch management platform with agents for Windows, Linux and macOS. Its vScript engine remotely executes custom PowerShell, Bash and Batch scripts on managed assets. Huntress reported that in one INC Ransom intrusion, a scheduled task pointed to C:\\Program Files\\7-Zip\\HealthUpdater.exe, a renamed vRx executable placed in an unusual folder.",
+        "Author": "Liran Ravich, Cribl",
+        "Created": "2026-10-01",
+        "LastModified": "2026-10-05",
+        "Details": {
+            "Website": "https://www.vicarius.io",
+            "PEMetadata": {
+                "Filename": "",
+                "OriginalFileName": "",
+                "Description": ""
+            },
+            "Privileges": "",
+            "Free": false,
+            "Verification": "",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Vulnerability remediation",
+                "Patch deployment",
+                "Script execution",
+                "Software deployment"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\Vicarius\\Topia\\*",
+                "/usr/share/vicarius/*",
+                "topiad.exe",
+                "/Library/PrivilegedHelperTools/topiad"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files\\Vicarius\\Topia\\Trace\\TopiaTrace.log",
+                    "Description": "vRx agent log file",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Vicarius\\Topia\\Topia.config",
+                    "Description": "vRx agent configuration file",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\Vicarius\\topiaInstaller.log",
+                    "Description": "vRx installation log file",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/var/log/TopiaTrace.log",
+                    "Description": "vRx agent log file",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/usr/share/vicarius/topiad.config",
+                    "Description": "vRx agent configuration file",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Library/Logs/TopiaTrace.log",
+                    "Description": "vRx agent log file",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/Application Support/Vicarius/TopiaTrace.log",
+                    "Description": "vRx agent log file for version 5.1.19 and above",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/Preferences/Topia/io.vicarius.topia.config",
+                    "Description": "vRx agent configuration file",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "C:\\Program Files\\Vicarius\\Topia\\topiad.exe",
+                    "Description": "Unified v5 agent executable",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "/Library/PrivilegedHelperTools/topiad",
+                    "Description": "macOS agent executable",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/Library/LaunchDaemons/io.vicarius.Topia.plist",
+                    "Description": "macOS agent launch daemon configuration",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "/var/log/topiaInstaller.log",
+                    "Description": "vRx installation log file",
+                    "OS": "Linux"
+                },
+                {
+                    "File": "/Library/Application Support/Vicarius/topiaInstaller.log",
+                    "Description": "vRx installation log file",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [],
+            "Network": [
+                {
+                    "Description": "Vendor-hosted tenant dashboards, agent communication, installation packages and patch distribution",
+                    "Domains": [
+                        "*.vicarius.cloud",
+                        "vicarius-installer.s3.amazonaws.com",
+                        "vicarius-patches.s3.amazonaws.com",
+                        "vicarius-release.s3.amazonaws.com",
+                        "vicarius-release.s3.us-east-1.amazonaws.com",
+                        "vicarius-static-organizationinstallations.vicarius-cdn.com",
+                        "vicarius-eu-central-1-installer.s3.amazonaws.com",
+                        "vicarius-eu-central-1-installer.s3.eu-central-1.amazonaws.com",
+                        "vicarius-eu-central-1-patches.s3.amazonaws.com",
+                        "vicarius-eu-central-1-patches.s3.eu-central-1.amazonaws.com",
+                        "vicarius-eu-central-1-release.s3.amazonaws.com",
+                        "vicarius-eu-central-1-release.s3.eu-central-1.amazonaws.com",
+                        "vicarius-ap-southeast-3-installer.s3.amazonaws.com",
+                        "vicarius-ap-southeast-3-installer.s3.ap-southeast-3.amazonaws.com",
+                        "vicarius-ap-southeast-3-patches.s3.amazonaws.com",
+                        "vicarius-ap-southeast-3-patches.s3.ap-southeast-3.amazonaws.com",
+                        "vicarius-ap-southeast-3-release.s3.amazonaws.com",
+                        "vicarius-ap-southeast-3-release.s3.ap-southeast-3.amazonaws.com"
+                    ],
+                    "Ports": [
+                        "443"
+                    ]
+                }
+            ],
+            "Other": []
+        },
+        "FileHashes": null,
+        "CodeSigning": null,
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vicarius_vrx_network_sigma.yml",
+                "Description": "Detects potential network activity of Vicarius vRx RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vicarius_vrx_files_sigma.yml",
+                "Description": "Detects potential files activity of Vicarius vRx RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vicarius_vrx_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Vicarius vRx RMM tool"
+            }
+        ],
+        "References": [
+            "https://customer-portal.vicarius.io/vrx-logs-and-files",
+            "https://customer-portal.vicarius.io/ports-opening-dns-whitelisting?hsLang=en",
+            "https://www.huntress.com/blog/two-inc-ransom-notes",
+            "https://www.vicarius.io/features/scripting",
+            "https://customer-portal.vicarius.io/vrx-my-scripts",
+            "https://customer-portal.vicarius.io/how-to-uninstall-vrx-agent",
+            "https://customer-portal.vicarius.io/macos-useful-commands"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Liran Ravich, Cribl",
+                "Handle": ""
+            }
+        ]
+    },
+    {
         "Name": "RemotePulse",
         "Category": "RMM",
         "Description": "RemotePulse is a remote monitoring and management platform that advertises unattended remote access, terminal access, file transfer, chat, real-time monitoring, Windows patching, script automation, multi-tenancy, and silent agent deployment. Public abuse reporting observed RemotePulse agent installation under C:\\Program Files (x86)\\RemotePulseAgent with command-line execution pointing to remotepulse.io.\n",
@@ -14960,18 +15322,18 @@
     {
         "Name": "RustDesk",
         "Category": "RMM",
-        "Description": "RustDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Description": "RustDesk is an open-source remote desktop and remote access tool that can use the public RustDesk rendezvous/relay servers or a self-hosted server. Threat actors install it as a Windows service for persistent, interactive re-entry; in a 2025 Bumblebee to Akira intrusion it was installed on multiple servers, run in tray mode, and later used to return to the environment and pivot via RDP before ransomware deployment.\n",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-10-05",
         "Details": {
             "Website": "https://rustdesk.com/",
             "PEMetadata": {
-                "Filename": "",
+                "Filename": "rustdesk.exe",
                 "OriginalFileName": "",
                 "Description": ""
             },
-            "Privileges": "",
+            "Privileges": "User for portable operation; Administrator to install the Windows service (runs as SYSTEM)",
             "Free": "Yes",
             "Verification": "",
             "SupportedOS": [
@@ -14979,29 +15341,85 @@
                 "Linux",
                 "MacOS"
             ],
-            "Capabilities": [],
+            "Capabilities": [
+                "Remote desktop and unattended access",
+                "File transfer",
+                "Clipboard sharing",
+                "TCP port forwarding",
+                "Self-hosted rendezvous/relay server support"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
                 "rustdesk*.exe",
                 "rustdesk.exe",
                 "C:\\Users\\*\\AppData\\Local\\rustdesk\\rustdesk.exe",
                 "C:\\Users\\*\\AppData\\Local\\rustdesk\\*",
-                "C:\\Program Files\\RustDesk"
+                "C:\\Program Files\\RustDesk",
+                "C:\\Program Files\\RustDesk\\RustDesk.exe"
             ]
         },
         "Artifacts": {
             "Disk": [
                 {
                     "File": "C:\\Windows\\ServiceProfiles\\LocalService\\AppData\\Roaming\\RustDesk\\*",
-                    "Description": "N/A",
+                    "Description": "Service-context config and logs (RustDesk remaps systemprofile to LocalService)",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\ServiceProfiles\\LocalService\\AppData\\Roaming\\RustDesk\\config\\RustDesk2.toml",
+                    "Description": "Service-context options, including custom rendezvous/relay server settings",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\RustDesk\\config\\RustDesk.toml",
+                    "Description": "Per-user config (ID, password data)",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\RustDesk\\config\\RustDesk2.toml",
+                    "Description": "Per-user options, including custom rendezvous/relay server settings",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\RustDesk\\log\\*",
+                    "Description": "Per-user log directory; contents depend on process mode and logging configuration",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\RustDesk Tray.lnk",
+                    "Description": "Startup shortcut created by the installer to launch the tray process (--tray)",
                     "OS": "Windows"
                 }
             ],
-            "EventLog": [],
-            "Registry": [],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "RustDesk",
+                    "ImagePath": "\"C:\\Program Files\\RustDesk\\RustDesk.exe\" --service",
+                    "Description": "Service installation event when RustDesk is installed as a Windows service (auto start)"
+                },
+                {
+                    "EventID": 4624,
+                    "ProviderName": "Microsoft-Windows-Security-Auditing",
+                    "LogFile": "Security.evtx",
+                    "Description": "Interactive logon (Type 2) from 127.0.0.1 immediately followed by RustDesk.exe --cm, observed in the July 2025 intrusion documented by The DFIR Report; this sequence is case-specific, not a universal RustDesk logon signature"
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\RustDesk",
+                    "Description": "RustDesk Windows service"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\RustDesk",
+                    "Description": "Installation record"
+                }
+            ],
             "Network": [
                 {
-                    "Description": "Known remote domains",
+                    "Description": "Known remote domains and configurable server ports; TCP 21115 tests NAT type, TCP/UDP 21116 provides rendezvous and registration (TCP also handles hole punching), TCP 21117 relays traffic, and TCP 21118/21119 optionally supports WebSocket web clients. TCP 443 may be used for HTTPS or WSS deployments. These ports do not apply to every listed domain.",
                     "Domains": [
                         "rustdesk.com",
                         "user_managed",
@@ -15012,8 +15430,45 @@
                     "Ports": [
                         443,
                         21115,
-                        21116
+                        21116,
+                        21117,
+                        21118,
+                        21119
                     ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "RustDesk"
+                },
+                {
+                    "Type": "WindowsServiceArgument",
+                    "Value": "--service"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "\"C:\\Program Files\\RustDesk\\RustDesk.exe\" --tray"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "\"C:\\Program Files\\RustDesk\\RustDesk.exe\" --cm"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "rustdesk.exe --silent-install"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "rustdesk.exe --password <password>"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "rustdesk.exe --get-id"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "rustdesk.exe --config <config-string>"
                 }
             ]
         },
@@ -15029,12 +15484,27 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml",
                 "Description": "Detects potential processes activity of RustDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_registry_sigma.yml",
+                "Description": "Detects potential registry activity of RustDesk RMM tool"
             }
         ],
         "References": [
-            "https://rustdesk.com/docs/en/"
+            "https://rustdesk.com/docs/en/",
+            "https://rustdesk.com/docs/en/self-host/",
+            "https://rustdesk.com/docs/en/client/windows/",
+            "https://github.com/rustdesk/rustdesk/blob/master/src/core_main.rs",
+            "https://github.com/rustdesk/rustdesk/blob/master/src/platform/windows.rs",
+            "https://github.com/rustdesk/hbb_common/blob/main/src/config.rs",
+            "https://thedfirreport.com/2026/06/29/from-bing-search-to-ransomware-bumblebee-and-adaptixc2-deliver-akira-3/"
         ],
-        "Acknowledgement": []
+        "Acknowledgement": [
+            {
+                "Person": "The DFIR Report",
+                "Handle": "@TheDFIRReport"
+            }
+        ]
     },
     {
         "Name": "TurboMeeting",
@@ -15370,7 +15840,7 @@
         "Description": "ScreenConnect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "Ali Alwashali, Nasreddine Bencherchali",
         "Created": "2023-10-01",
-        "LastModified": "2026-06-16",
+        "LastModified": "2026-10-05",
         "Details": {
             "Website": "https://www.connectwise.com",
             "PEMetadata": [
@@ -15432,10 +15902,74 @@
                     "File": "C:\\ProgramData\\ScreenConnect Client*\\user.config",
                     "Description": "ScreenConnect client user configuration",
                     "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files (x86)\\ScreenConnect Client (*)\\system.config",
+                    "Description": "Client configuration observed in the cited lab investigation. Contains the relay host (h=), port (p=) and RSA server key in the launch parameters; useful for recovering the configured destination offline, without proving a connection occurred.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files*\\ScreenConnect Client*\\app.config",
+                    "Description": "Client UI configuration. The AccessShow* examples were observed set to false in abusive deployments, but their effect depends on client version; newer releases restrict hiding the banner and tray icon. Assess settings against the approved deployment and organization policy, not as proof of malicious activity.",
+                    "OS": "Windows",
+                    "Example": [
+                        "AccessShowUnderControlBanner = false",
+                        "AccessShowBalloonOnConnect = false",
+                        "AccessShowSystemTrayIcon = false"
+                    ]
+                },
+                {
+                    "File": "C:\\Windows\\SystemTemp\\ScreenConnect\\*",
+                    "Description": "ScreenConnect working directory, with version-specific subdirectories. The cited lab observed RunFile staging beneath <version>\\Temp; Huntress observed execution directly beneath <version>. Legitimate administrators also deploy files here. Correlate file writes and execution with session logs and approved activity; the path alone proves neither human interaction nor malicious intent.",
+                    "OS": "Windows"
                 }
             ],
-            "EventLog": [],
-            "Registry": [],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "ScreenConnect Client (<thumbprint>)",
+                    "ImagePath": "\"C:\\Program Files (x86)\\ScreenConnect Client (<thumbprint>)\\ScreenConnect.ClientService.exe\" \"?e=Access&y=Guest&h=<relay>&p=<port>&...\"",
+                    "Description": "Service installation observed as LocalSystem with automatic startup in the cited lab. The service image path included launch parameters for session type (e=Access), relay host (h=) and port (p=). Distinct client thumbprints can identify multiple installations; compare with the approved inventory."
+                },
+                {
+                    "EventID": 100,
+                    "ProviderName": "ScreenConnect",
+                    "LogFile": "Application.evtx",
+                    "Description": "Host user connected. In the cited lab, the message included the session label, relay URL and instance fingerprint. Use as corroboration; absence of these application events does not exclude activity."
+                },
+                {
+                    "EventID": 101,
+                    "ProviderName": "ScreenConnect",
+                    "LogFile": "Application.evtx",
+                    "Description": "Host user disconnected. Corroborates the end of that connection; it does not establish that all operator activity or spawned processes have stopped."
+                },
+                {
+                    "EventID": 201,
+                    "ProviderName": "ScreenConnect",
+                    "LogFile": "Application.evtx",
+                    "Description": "Files transferred, with the action stated, e.g. \"Transferred files with action 'Run': ScreenConnect.ClientSetup (1).msi\"."
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\System\\CurrentControlSet\\Services\\ScreenConnect Client (*)\\ImagePath",
+                    "Description": "Service ImagePath value can contain the relay host and port in client launch parameters. It can reveal a configured destination without network telemetry; the cited lab observed the registry write before DNS, but that event ordering is not guaranteed."
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Authentication Packages",
+                    "Description": "The cited case reported ScreenConnect.WindowsAuthenticationPackage.dll in the Authentication Packages value. Investigate that DLL entry against the approved deployment and loaded module provenance; this shared Windows registry location alone identifies neither ScreenConnect nor malicious activity."
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Classes\\CLSID\\{6FF59A85-BC37-4CD4-C175-070CC4814204}",
+                    "Description": "Credential provider registration pointing to ScreenConnect.WindowsCredentialProvider.dll. Display name may be \"SC FeedbackTool Credential Provider\" in malicious deployments."
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot\\Network\\ScreenConnect Client (*)",
+                    "Description": "SafeBoot Network entry allowing ScreenConnect client to start in Safe Mode with Networking."
+                }
+            ],
             "Network": [
                 {
                     "Description": "Known remote domains",
@@ -15445,10 +15979,30 @@
                         "*.screenconnect.com"
                     ],
                     "Ports": []
+                },
+                {
+                    "Description": "Cloud relay pattern observed in the cited investigations on TCP 443. The installer download hostname can differ from the relay hostname; collect both. This pattern alone does not establish trial status or malicious use.",
+                    "Domains": [
+                        "instance-*-relay.screenconnect.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Default self-hosted relay port (configurable). The h= launch parameter or service ImagePath may contain a custom domain or IP address, so a ScreenConnect domain list alone can miss these deployments. Compare the destination with approved infrastructure.",
+                    "Domains": [],
+                    "Ports": [
+                        8041
+                    ]
                 }
             ]
         },
         "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_registry_sigma.yml",
+                "Description": "Detects potential registry activity of ScreenConnect RMM tool"
+            },
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_network_sigma.yml",
                 "Description": "Detects potential network activity of ScreenConnect RMM tool"
@@ -15460,12 +16014,30 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_processes_sigma.yml",
                 "Description": "Detects potential processes activity of ScreenConnect RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/ca24243a6e3f94353a54176f83c4c3b7f579224a/rules/windows/process_creation/proc_creation_win_remote_access_tools_screenconnect.yml",
+                "Description": "Remote Access Tool - ScreenConnect Execution"
+            },
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/ca24243a6e3f94353a54176f83c4c3b7f579224a/rules-threat-hunting/windows/process_creation/proc_creation_win_remote_access_tools_screenconnect_child_proc.yml",
+                "Description": "Remote Access Tool - ScreenConnect Remote Command Execution - Hunting"
             }
         ],
         "References": [
-            "https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/"
+            "https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/",
+            "https://www.huntress.com/blog/w2-malvertising-to-kernel-mode-edr-kill",
+            "https://newsletter.securityinbits.com/p/screenconnect-rmm-abuse-the-cloud",
+            "https://f4n6.co.uk/a-feedback-tool-that-isnt-screenconnect-rmm-abuse-hidden-in-a-12-mb-batch-file/",
+            "https://www.screenconnect.com/blog/customization-update",
+            "https://alluresecurity.com/blog/signal-noise-brand-was-real-app-wasnt/"
         ],
-        "Acknowledgement": [],
+        "Acknowledgement": [
+            {
+                "Person": "Ayush Anand",
+                "Handle": "@Securityinbits"
+            }
+        ],
         "CodeSigning": {
             "certificates": [
                 {
@@ -19752,10 +20324,10 @@
     {
         "Name": "ngrok",
         "Category": "RAT",
-        "Description": "ngrok is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Description": "ngrok is a tunneling / reverse-proxy service frequently abused for remote access and C2 concealment. More operational detail is tracked in LOTTunnels. ANY.RUN documented Overlord RAT routing encrypted WSS C2 through an ngrok tunnel (hostname pattern *.ngrok... to 3.124.142.205:443) in its October 2026 Overlord write-up.\n",
         "Author": "Jose Hernandez",
         "Created": "2024-07-19",
-        "LastModified": "2024-07-19",
+        "LastModified": "2026-10-05",
         "Details": {
             "Website": "https://ngrok.com/",
             "PEMetadata": {
@@ -19791,9 +20363,17 @@
                         "connect.sa.ngrok-agent.com",
                         "connect.jp.ngrok-agent.com",
                         "connect.in.ngrok-agent.com",
-                        "ngrok.com"
+                        "ngrok.com",
+                        "*.ngrok-free.app",
+                        "*.ngrok.app",
+                        "*.ngrok.io",
+                        "*.ngrok.dev",
+                        "*.ngrok.pro",
+                        "*.ngrok.pizza"
                     ],
-                    "Ports": []
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
@@ -19808,7 +20388,11 @@
             }
         ],
         "References": [
-            "https://ngrok.com/docs/guides/running-behind-firewalls/"
+            "https://ngrok.com/docs/guides/running-behind-firewalls/",
+            "https://any.run/malware-trends/overlord/",
+            "https://x.com/anyrun_app/status/2107063549172367583",
+            "https://app.any.run/tasks/9304f809-0265-4d7d-81f9-92f5835ba7c8/",
+            "https://lottunnels.github.io/lottunnels/Binaries/ngrok/"
         ],
         "Acknowledgement": [],
         "CodeSigning": {
@@ -28302,36 +28886,144 @@
     {
         "Name": "CloudFlare Tunnel",
         "Category": "RAT",
-        "Description": "CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Description": "Cloudflare Tunnel (cloudflared) creates outbound-only tunnels from a host to Cloudflare, exposing internal services (RDP, SSH, SMB, HTTP) without inbound firewall rules. In the Swisscom intrusion described by The DFIR Report in June 2026, threat actors installed it as a Windows service on a domain controller for persistence and proxied RDP through it.\n",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-10-05",
         "Details": {
             "Website": "https://cloudflare.com/products/tunnel/",
             "PEMetadata": {
-                "Filename": "",
+                "Filename": "cloudflared.exe",
                 "OriginalFileName": "",
                 "Description": ""
             },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
+            "Privileges": "User for standalone tunnels; Administrator to install the Windows service (runs as SYSTEM)",
+            "Free": "Yes",
+            "Verification": "No account required for Quick Tunnels; named tunnels require a Cloudflare account for creation and a tunnel token or credentials to run",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "Capabilities": [
+                "Outbound-only reverse tunnel",
+                "Exposes internal RDP/SSH/SMB/HTTP services",
+                "Runs as a Windows service"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "cloudflared.exe"
+                "cloudflared.exe",
+                "C:\\Program Files (x86)\\cloudflared\\cloudflared.exe",
+                "C:\\Program Files\\cloudflared\\cloudflared.exe"
             ]
         },
         "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
+            "Disk": [
+                {
+                    "File": "C:\\ProgramData\\cloudflared\\*",
+                    "Description": "Token file written by 'cloudflared service install <TOKEN>' on recent versions (service then runs with --token-file)",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Windows\\System32\\config\\systemprofile\\.cloudflared\\*",
+                    "Description": "Service-context config.yml, cert.pem and <tunnel-id>.json credentials for locally managed tunnels",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\.cloudflared\\*",
+                    "Description": "Per-user config.yml, cert.pem and tunnel credentials",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "Cloudflared",
+                    "Description": "Service installation (display name \"Cloudflared agent\", auto start). ImagePath contains 'tunnel run --token <TOKEN>' on older versions or '--token-file' on newer versions."
+                },
+                {
+                    "EventID": 1,
+                    "ProviderName": "Cloudflared",
+                    "LogFile": "Application.evtx",
+                    "Description": "cloudflared registers an event source named Cloudflared and logs \"Cloudflared service starting\" / \"service arguments\""
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Cloudflared",
+                    "Description": "Service key; ImagePath may contain the tunnel token"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\Application\\Cloudflared",
+                    "Description": "Event log source registered during service install"
+                }
+            ],
             "Network": [
                 {
-                    "Description": "Known remote domains",
-                    "Domains": [],
+                    "Description": "Tunnel edge destinations and SNI hostnames (TCP 7844 for HTTP/2; UDP 7844 for QUIC)",
+                    "Domains": [
+                        "region1.v2.argotunnel.com",
+                        "region2.v2.argotunnel.com",
+                        "us-region1.v2.argotunnel.com",
+                        "us-region2.v2.argotunnel.com",
+                        "_v2-origintunneld._tcp.argotunnel.com",
+                        "cftunnel.com",
+                        "h2.cftunnel.com",
+                        "quic.cftunnel.com"
+                    ],
+                    "Ports": [
+                        7844
+                    ]
+                },
+                {
+                    "Description": "Public DNS routing targets for named tunnels (CNAME targets, not tunnel edge connections)",
+                    "Domains": [
+                        "*.cfargotunnel.com"
+                    ],
                     "Ports": []
+                },
+                {
+                    "Description": "Temporary public HTTPS hostnames generated by Quick Tunnels",
+                    "Domains": [
+                        "*.trycloudflare.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                },
+                {
+                    "Description": "Optional software update checks over HTTPS",
+                    "Domains": [
+                        "update.argotunnel.com",
+                        "api.cloudflare.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "WindowsServiceName",
+                    "Value": "Cloudflared"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "cloudflared.exe service install <TOKEN>"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "cloudflared.exe tunnel run --token <TOKEN>"
+                },
+                {
+                    "Type": "CommandLine",
+                    "Value": "cloudflared.exe tunnel --url http://localhost:8080"
+                },
+                {
+                    "Type": "RDPArtifact",
+                    "Value": "The Swisscom case reported RDP connections through Cloudflare Tunnel with a loopback source (::%16777216) in Windows event logs; this is a tunneling indicator, not unique to cloudflared"
                 }
             ]
         },
@@ -28339,12 +29031,39 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_processes_sigma.yml",
                 "Description": "Detects potential processes activity of CloudFlare Tunnel RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_network_sigma.yml",
+                "Description": "Detects potential network activity of CloudFlare Tunnel RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_files_sigma.yml",
+                "Description": "Detects potential files activity of CloudFlare Tunnel RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_registry_sigma.yml",
+                "Description": "Detects potential registry activity of CloudFlare Tunnel RMM tool"
             }
         ],
         "References": [
-            "https://cloudflare.com/products/tunnel/"
+            "https://cloudflare.com/products/tunnel/",
+            "https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/",
+            "https://developers.cloudflare.com/tunnel/features/locally-managed-tunnels/create-local-tunnel/",
+            "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/",
+            "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/local-management/as-a-service/windows/",
+            "https://github.com/cloudflare/cloudflared/blob/master/cmd/cloudflared/windows_service.go",
+            "https://thedfirreport.com/2026/06/29/from-bing-search-to-ransomware-bumblebee-and-adaptixc2-deliver-akira-3/"
         ],
-        "Acknowledgement": []
+        "Acknowledgement": [
+            {
+                "Person": "The DFIR Report",
+                "Handle": "@TheDFIRReport"
+            },
+            {
+                "Person": "Swisscom B2B CSIRT",
+                "Handle": ""
+            }
+        ]
     },
     {
         "Name": "FreeNX",
@@ -28492,7 +29211,7 @@
         "Description": "AnyDesk is a popular remote desktop software that enables users to access\nand control a computer or device from a remote location. It was developed with the\nprimary goal of facilitating remote work, technical support, and collaboration between\nindividuals and teams.\n",
         "Author": "Ali Alwashali, Nasreddine Bencherchali",
         "Created": "2023-09-29",
-        "LastModified": "2023-09-29",
+        "LastModified": "2026-10-05",
         "Details": {
             "Website": "https://anydesk.com/en",
             "PEMetadata": [
@@ -28526,7 +29245,11 @@
             ],
             "InstallationPaths": [
                 "C:\\Program Files (x86)\\AnyDesk\\*",
+                "C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe",
                 "C:\\Program Files\\AnyDesk\\*",
+                "C:\\Program Files (x86)\\AnyDesk-*\\*",
+                "C:\\Program Files (x86)\\AnyDesk-*\\AnyDesk-*.exe",
+                "C:\\Program Files\\AnyDesk-*\\AnyDesk-*.exe",
                 "/Applications/AnyDesk.app"
             ]
         },
@@ -28542,16 +29265,17 @@
                 },
                 {
                     "File": "%programdata%\\AnyDesk\\connection_trace.txt",
-                    "Description": "Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)",
+                    "Description": "Incoming connection request log recording date/time, requesting AnyDesk ID, and acceptance or rejection. Approval values include User (interactive acceptance), Passwd (unattended-access password authentication), and Token (saved-login token authentication). Token authentication does not mean the plaintext password was stored.",
                     "OS": "Windows",
                     "Example": [
                         "Incoming 2022-08-23, 10:23 Passwd 547911884 547911884",
-                        "Incoming 2022-09-28, 12:39 User 442226597 442226597"
+                        "Incoming 2022-09-28, 12:39 User 442226597 442226597",
+                        "Incoming 2026-06-26, 15:42 Token (AnyDesk IDs omitted)"
                     ]
                 },
                 {
                     "File": "%APPDATA%\\AnyDesk\\connection_trace.txt",
-                    "Description": "Incoming connection logs, contains IP Address of the remote machine and file transfer activity. Only generated on target side. The content indicates how the connection was approved (e.g. the local user authorized it, or a password was used)",
+                    "Description": "Incoming connection request log recording date/time, requesting AnyDesk ID, and acceptance or rejection. Approval values include User (interactive acceptance), Passwd (unattended-access password authentication), and Token (saved-login token authentication). Token authentication does not mean the plaintext password was stored.",
                     "OS": "Windows",
                     "Example": [
                         "Incoming 2022-08-23, 10:23 Passwd 547911884 547911884",
@@ -28565,6 +29289,19 @@
                     "Example": [
                         "info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Client-ID: 442226597 (FPR: 8e28a2a25b30).",
                         "info 2022-09-28 12:39:26.845       lsvc   9952   9944   21                anynet.any_socket - Logged in from 12.xx.xx.21:59562 on relay 80e496c0."
+                    ]
+                },
+                {
+                    "File": "*\\AppData\\Roaming\\AnyDesk\\file_transfer_trace.txt",
+                    "Description": "Plaintext file-manager transfer log observed in user-context runs under %APPDATA%\\AnyDesk; records transfer timestamps, filenames, sizes, and direction. Correlate with session logs to investigate file movement.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\ProgramData\\AnyDesk\\file_transfer_trace.txt",
+                    "Description": "Plaintext file-manager transfer log observed in installed/service-context runs under %PROGRAMDATA%\\AnyDesk; records transfer timestamps, filenames, sizes, and direction.",
+                    "OS": "Windows",
+                    "Example": [
+                        "finish upload 'documents.zip' (~231.44 MiB)"
                     ]
                 },
                 {
@@ -28598,8 +29335,48 @@
                     "OS": "Windows"
                 },
                 {
+                    "File": "*\\ProgramData\\AnyDesk\\ad_*\\ad_*_svc.trace",
+                    "Description": "Custom client service trace; the wildcard covers account-specific prefixes and MSI variants.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\AppData\\Roaming\\AnyDesk\\ad_*\\ad_*.trace",
+                    "Description": "Custom client user-interface trace; the wildcard covers account-specific prefixes and MSI variants.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\AppData\\Roaming\\AnyDesk\\ad_*\\chat\\*.txt",
+                    "Description": "Custom client chat log, with the account-specific prefix represented by a wildcard.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\AppData\\Roaming\\AnyDesk\\ad_*\\user.conf",
+                    "Description": "Custom client user config.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\AppData\\Roaming\\AnyDesk\\ad_*\\service.conf",
+                    "Description": "Custom client service config.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\ProgramData\\AnyDesk\\ad_*\\service.conf",
+                    "Description": "Custom client service config.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\ProgramData\\AnyDesk\\ad_*\\system.conf",
+                    "Description": "Custom client system config.",
+                    "OS": "Windows"
+                },
+                {
                     "File": "%PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\AnyDesk.lnk",
                     "Description": "N/A",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp\\AnyDesk *.lnk",
+                    "Description": "Custom client startup link.",
                     "OS": "Windows"
                 },
                 {
@@ -28634,15 +29411,23 @@
                     "ProviderName": "Service Control Manager",
                     "LogFile": "System.evtx",
                     "ServiceName": "AnyDesk Service",
-                    "ImagePath": "\"C:\\\\Program Files (x86)\\\\AnyDesk\\\\AnyDesk.exe\" --service",
+                    "ImagePath": "\"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe\" --service",
                     "Description": "Service installation event as result of AnyDesk installation."
+                },
+                {
+                    "EventID": 7045,
+                    "ProviderName": "Service Control Manager",
+                    "LogFile": "System.evtx",
+                    "ServiceName": "AnyDesk * Service",
+                    "ImagePath": "\"C:\\Program Files (x86)\\AnyDesk-*\\AnyDesk-*.exe\" --service",
+                    "Description": "Service installation event for custom per-org clients."
                 },
                 {
                     "EventID": 4697,
                     "ProviderName": "Microsoft-Security-Auditing",
                     "LogFile": "Security.evtx",
                     "ServiceName": "AnyDesk Service",
-                    "ImagePath": "\"C:\\\\Program Files (x86)\\\\AnyDesk\\\\AnyDesk.exe\" --service",
+                    "ImagePath": "\"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe\" --service",
                     "Description": "Service installation event as result of AnyDesk installation."
                 }
             ],
@@ -28652,8 +29437,16 @@
                     "Description": "N/A"
                 },
                 {
+                    "Path": "HKLM\\SOFTWARE\\Clients\\Media\\AnyDesk-*",
+                    "Description": "Custom client media entry."
+                },
+                {
                     "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\AnyDesk",
                     "Description": "N/A"
+                },
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\AnyDesk-*",
+                    "Description": "Custom client service registry entry; CurrentControlSet represents the active control set."
                 },
                 {
                     "Path": "HKLM\\SOFTWARE\\Classes\\.anydesk\\shell\\open\\command",
@@ -28662,6 +29455,10 @@
                 {
                     "Path": "HKLM\\SOFTWARE\\Classes\\AnyDesk\\shell\\open\\command",
                     "Description": "N/A"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\Classes\\AnyDesk-*\\shell\\open\\command",
+                    "Description": "Custom client URL handler."
                 },
                 {
                     "Path": "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Print\\Printers\\AnyDesk Printer\\*",
@@ -28678,11 +29475,15 @@
                 {
                     "Path": "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\AnyDesk",
                     "Description": "N/A"
+                },
+                {
+                    "Path": "HKLM\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\AnyDesk-*",
+                    "Description": "Custom client uninstall entry."
                 }
             ],
             "Network": [
                 {
-                    "Description": "During setup the boot.net.anydesk.com domain is request over port 443",
+                    "Description": "During setup the boot.net.anydesk.com domain is requested over TCP 443.",
                     "Domains": [
                         "boot.net.anydesk.com"
                     ],
@@ -28691,21 +29492,32 @@
                     ]
                 },
                 {
-                    "Description": "N/A",
-                    "Domains": [
-                        "relay-[a-f0-9]{8}.net.anydesk.com:443"
-                    ],
+                    "Description": "Direct peer-to-peer connections use TCP 7070 by default; the listening port is configurable and direct connections can be disabled. Successful or failed direct attempts may expose the peer address in endpoint network telemetry. The address may belong to a VPN or NAT gateway and does not identify the operator.",
+                    "Domains": [],
                     "Ports": [
-                        443
+                        7070
                     ]
                 },
                 {
-                    "Description": "N/A",
+                    "Description": "Relay-mediated sessions connect to AnyDesk servers over TCP 80, 443, or 6568. Network telemetry for the relay connection identifies the relay address; direct connections can separately expose the peer address.",
                     "Domains": [
-                        "*.anydesk.com"
+                        "relay-*.net.anydesk.com"
                     ],
                     "Ports": [
-                        443
+                        80,
+                        443,
+                        6568
+                    ]
+                },
+                {
+                    "Description": "AnyDesk server connectivity; at least one of the documented TCP ports must be accessible.",
+                    "Domains": [
+                        "*.net.anydesk.com"
+                    ],
+                    "Ports": [
+                        80,
+                        443,
+                        6568
                     ]
                 }
             ],
@@ -28748,13 +29560,33 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_files_sigma.yml",
                 "Description": "Detects potential files activity of AnyDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/anydesk_processes_sigma.yml",
+                "Description": "Detects potential process activity of AnyDesk RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/ca24243a6e3f94353a54176f83c4c3b7f579224a/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_piped_password_via_cli.yml",
+                "Description": "Remote Access Tool - AnyDesk Piped Password Via CLI"
+            },
+            {
+                "Sigma": "https://github.com/SigmaHQ/sigma/blob/ca24243a6e3f94353a54176f83c4c3b7f579224a/rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_susp_exec.yml",
+                "Description": "Remote Access Tool - Anydesk Execution From Suspicious Folder"
             }
         ],
         "References": [
-            "https://support.anydesk.com/knowledge/firewall",
+            "https://support.anydesk.com/docs/settings",
+            "https://support.anydesk.com/docs/advanced-options",
+            "https://support.anydesk.com/docs/unattended-access",
+            "https://support.anydesk.com/docs/command-line-interface-for-windows",
+            "https://support.anydesk.com/docs/change-of-installation-directory-for-windows-custom-clients",
+            "https://support.anydesk.com/docs/what-are-trace-files",
+            "https://support.anydesk.com/docs/firewall",
             "https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects.html",
             "https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk",
-            "https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/"
+            "https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/",
+            "https://newsletter.securityinbits.com/p/32-ransomware-groups-abuse-anydesk",
+            "https://github.com/magicsword-io/LOLRMM/issues/247"
         ],
         "Acknowledgement": [
             {
@@ -28768,6 +29600,10 @@
             {
                 "Person": "Nasreddine Bencherchali",
                 "Handle": "@nas_bench"
+            },
+            {
+                "Person": "Ayush Anand",
+                "Handle": "@Securityinbits"
             }
         ],
         "CodeSigning": {
@@ -28779,6 +29615,10 @@
                     "src_file_sha256": "864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803",
                     "src_file_path": "downloaded_files/anydesk/864e2c3675d05cd4816a42167b45ab66e3d5995fae7e1fd680223940061b9803",
                     "src_file_company": "AnyDesk Software GmbH"
+                },
+                {
+                    "signer_name": "AnyDesk Software GmbH",
+                    "certificate_thumbprint": "D056FB932C5A4821C328214E4F4988436650583A"
                 }
             ]
         }
@@ -33270,6 +34110,185 @@
             "https://remmon.hu"
         ],
         "Acknowledgement": []
+    },
+    {
+        "Name": "Overlord",
+        "Category": "RAT",
+        "Description": "Overlord is a publicly available cross-platform remote access framework with Go-based agents and a TypeScript/Node/Bun server. Operators manage agents via a web panel or Electron client over encrypted WebSocket (WSS) C2. Windows agents commonly masquerade as svchost, persist under AppData\\Roaming\\Microsoft\\DeviceSync and the user Startup folder, and write HKCU Run values named OverlordAgent-*. Observed campaigns have routed C2 through ngrok tunnels. Supports Windows, Linux, and macOS.\n",
+        "Author": "Jose Hernandez",
+        "Created": "2026-10-05",
+        "LastModified": "2026-10-05",
+        "Details": {
+            "Website": "https://github.com/doesntbreaktos/Overlord",
+            "PEMetadata": [
+                {
+                    "Filename": "svchost-windows-amd64-*.exe",
+                    "OriginalFileName": "",
+                    "Description": "Observed Go agent build naming pattern (platform-arch-hash) used for masquerading as svchost"
+                },
+                {
+                    "Filename": "svchost.exe",
+                    "OriginalFileName": "",
+                    "Description": "Persistence copy name when DefaultStartupName/custom startup name is set to svchost"
+                },
+                {
+                    "Filename": "ovd_*.exe",
+                    "OriginalFileName": "",
+                    "Description": "Default randomized Windows persistence executable prefix when no custom startup name is set"
+                },
+                {
+                    "Filename": "agent-*.exe",
+                    "OriginalFileName": "",
+                    "Description": "Alternate agent filenames observed in ANY.RUN related tasks (e.g. agent-b97b.exe)"
+                },
+                {
+                    "Filename": "agent-*.tmp",
+                    "OriginalFileName": "",
+                    "Description": "Temporary staging names written under DeviceSync and Startup during install/copy"
+                }
+            ],
+            "Privileges": "User",
+            "Free": "Yes (publicly available / open source)",
+            "Verification": "Public GitHub project (doesntbreaktos/Overlord); ANY.RUN malware-trends write-up and sandbox task",
+            "SupportedOS": [
+                "Windows",
+                "Linux",
+                "macOS"
+            ],
+            "Capabilities": [
+                "Remote Access",
+                "Encrypted WebSocket (WSS) C2",
+                "Persistence (Startup folder, Registry Run, Task Scheduler, WMI - build-dependent)",
+                "Process / filename masquerading",
+                "Cross-platform agents",
+                "Web / Electron operator console",
+                "Optional tunneling via operator-controlled services (e.g. ngrok)"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "*\\AppData\\Roaming\\Microsoft\\DeviceSync\\svchost.exe",
+                "*\\AppData\\Roaming\\Microsoft\\DeviceSync\\ovd_*.exe",
+                "*\\AppData\\Roaming\\Microsoft\\DeviceSync\\agent-*.tmp",
+                "*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\svchost.exe",
+                "*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ovd_*.exe",
+                "*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\agent-*.tmp",
+                "*\\AppData\\Roaming\\Overlord\\agent.exe",
+                "*\\svchost-windows-amd64-*.exe",
+                "*\\agent-windows-amd64-*.exe",
+                "ovd_*.exe",
+                "svchost.exe"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Microsoft\\DeviceSync\\svchost.exe",
+                    "Description": "Windows persistence copy observed by ANY.RUN (custom startup name svchost). Public agent source uses AppData\\Roaming\\Microsoft\\DeviceSync as the non-Startup install directory.\n",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Microsoft\\DeviceSync\\ovd_*.exe",
+                    "Description": "Default randomized DeviceSync persistence binary prefix (ovd_ + hex) from public agent source.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\svchost.exe",
+                    "Description": "Startup-folder persistence copy observed by ANY.RUN for the analyzed Windows sample.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ovd_*.exe",
+                    "Description": "Default randomized Startup-folder persistence binary when no custom name is configured.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Local\\Temp\\svchost-windows-amd64-*.exe",
+                    "Description": "Initial execution path pattern from ANY.RUN sandbox (e.g. svchost-windows-amd64-a8d100a3.exe).",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\AppData\\Roaming\\Overlord\\agent.exe",
+                    "Description": "Legacy install path retained in public agent source (getLegacyTargetPath).",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "~/Library/Application Support/Overlord/*",
+                    "Description": "macOS agent support directory referenced by public persistence documentation/source.",
+                    "OS": "macOS"
+                },
+                {
+                    "File": "~/Library/LaunchAgents/*.plist",
+                    "Description": "macOS LaunchAgent persistence (build-dependent; label often com.* when custom startup name is set).",
+                    "OS": "macOS"
+                }
+            ],
+            "EventLog": [
+                {
+                    "EventID": 4688,
+                    "Description": "Process creation for Overlord agent binaries (svchost-windows-amd64-*.exe, DeviceSync\\svchost.exe, ovd_*.exe).",
+                    "OS": "Windows"
+                },
+                {
+                    "EventID": 1,
+                    "Description": "Sysmon process create for agent / persistence copies.",
+                    "OS": "Windows"
+                },
+                {
+                    "EventID": 11,
+                    "Description": "Sysmon file create under DeviceSync or Startup paths.",
+                    "OS": "Windows"
+                },
+                {
+                    "EventID": 13,
+                    "Description": "Sysmon registry value set for HKCU Run OverlordAgent-* persistence.",
+                    "OS": "Windows"
+                }
+            ],
+            "Registry": [
+                {
+                    "Path": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\OverlordAgent-*",
+                    "Description": "Autorun value observed by ANY.RUN as OverlordAgent-0ba8d3ca pointing to AppData\\Roaming\\Microsoft\\DeviceSync\\svchost.exe. Public source uses registry value prefix OverlordAgent- (plus legacy OverlordAgent).\n",
+                    "OS": "Windows"
+                },
+                {
+                    "Path": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\OverlordAgent",
+                    "Description": "Legacy registry value name from public agent source.",
+                    "OS": "Windows"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Encrypted WebSocket (WSS) C2 to operator infrastructure. ANY.RUN observed the analyzed sample tunneling C2 via an ngrok hostname (cleavable-lucille-anagrammatically.ngrok... on 3.124.142.205:443 / TCP). ngrok itself is separately cataloged in LOLRMM and LOTTunnels.\n",
+                    "Domains": [
+                        "*.ngrok-free.app",
+                        "*.ngrok.app",
+                        "*.ngrok.io",
+                        "*.ngrok.com",
+                        "pandoramods.top",
+                        "savaliyapriyal874-code.github.io"
+                    ],
+                    "Ports": [
+                        443,
+                        5173
+                    ]
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://any.run/malware-trends/overlord/",
+            "https://x.com/anyrun_app/status/2107063549172367583",
+            "https://app.any.run/tasks/9304f809-0265-4d7d-81f9-92f5835ba7c8/",
+            "https://github.com/doesntbreaktos/Overlord",
+            "https://lolrmm.io/tools/ngrok",
+            "https://lottunnels.github.io/lottunnels/Binaries/ngrok/"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "ANY.RUN",
+                "Handle": "@anyrun_app"
+            }
+        ]
     },
     {
         "Name": "I'm InTouch",

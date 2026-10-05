@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-05
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -18,8 +18,8 @@ detection:
     selection:
         DestinationHostname|endswith:
             - 'boot.net.anydesk.com'
-            - 'relay-[a-f0-9]{8}.net.anydesk.com:443'
-            - '*.anydesk.com'
+            - 'relay-*.net.anydesk.com'
+            - '*.net.anydesk.com'
     condition: selection
 falsepositives:
     - Legitimate use of AnyDesk

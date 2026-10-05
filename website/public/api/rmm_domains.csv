@@ -27,8 +27,8 @@ ammyy.com,Ammyy Admin
 136.243.18.122,Ammyy Admin
 *.anysupport.net,Any Support
 boot.net.anydesk.com,AnyDesk
-relay-[a-f0-9]{8}.net.anydesk.com:443,AnyDesk
-*.anydesk.com,AnyDesk
+relay-*.net.anydesk.com,AnyDesk
+*.net.anydesk.com,AnyDesk
 anyplace-control.com,Anyplace Control
 *.anyviewer.com,AnyViewer
 *.aomeisoftware.com,AnyViewer
@@ -83,6 +83,18 @@ remotedesktop.google.com,Chrome Remote Desktop
 chromoting-client.talkgadget.google.com,Chrome Remote Desktop
 chromoting-host.talkgadget.google.com,Chrome Remote Desktop
 chromoting-oauth.talkgadget.google.com,Chrome Remote Desktop
+region1.v2.argotunnel.com,CloudFlare Tunnel
+region2.v2.argotunnel.com,CloudFlare Tunnel
+us-region1.v2.argotunnel.com,CloudFlare Tunnel
+us-region2.v2.argotunnel.com,CloudFlare Tunnel
+_v2-origintunneld._tcp.argotunnel.com,CloudFlare Tunnel
+cftunnel.com,CloudFlare Tunnel
+h2.cftunnel.com,CloudFlare Tunnel
+quic.cftunnel.com,CloudFlare Tunnel
+*.cfargotunnel.com,CloudFlare Tunnel
+*.trycloudflare.com,CloudFlare Tunnel
+update.argotunnel.com,CloudFlare Tunnel
+api.cloudflare.com,CloudFlare Tunnel
 *.itsm-us1.comodo.com,Comodo RMM
 mdmsupport.comodo.com,Comodo RMM
 *.mdmsupport.comodo.com,Comodo RMM
@@ -394,6 +406,24 @@ systemmonitor.co.uk,N-Able Advanced Monitoring Agent
 beanywhere.com,N-Able Advanced Monitoring Agent
 *.beanywhere.com,N-Able Advanced Monitoring Agent
 *.swi-tc.com,N-Able Advanced Monitoring Agent
+sis.n-able.com,N-able N-central
+update.n-able.com,N-able N-central
+releases.n-able.com,N-able N-central
+feeds.n-able.com,N-able N-central
+*.prd.cdo.system-monitor.com,N-able N-central
+eb.eu-west-1.prd.davinci.system-monitor.com,N-able N-central
+eb.us-west-2.prd.davinci.system-monitor.com,N-able N-central
+eb.ap-southeast-2.prd.davinci.system-monitor.com,N-able N-central
+eb.eu-central-1.prd.davinci.system-monitor.com,N-able N-central
+a33d8yamkwy4nx-ats.iot.eu-west-1.amazonaws.com,N-able N-central
+a33d8yamkwy4nx-ats.iot.us-west-2.amazonaws.com,N-able N-central
+a33d8yamkwy4nx-ats.iot.eu-central-1.amazonaws.com,N-able N-central
+a33d8yamkwy4nx-ats.iot.ap-southeast-2.amazonaws.com,N-able N-central
+swi-rc.cdn-sw.net,N-able N-central
+comserver.global.mspa.n-able.com,N-able N-central
+comserver.us1.mspa.n-able.com,N-able N-central
+comserver.us2.mspa.n-able.com,N-able N-central
+comserver.eu1.mspa.n-able.com,N-able N-central
 n-able.com,N-ABLE Remote Access Software
 n-able.com,N-Able Advanced Monitoring Agent
 logicnow.com,N-Able Advanced Monitoring Agent
@@ -445,6 +475,12 @@ connect.sa.ngrok-agent.com,ngrok
 connect.jp.ngrok-agent.com,ngrok
 connect.in.ngrok-agent.com,ngrok
 ngrok.com,ngrok
+*.ngrok-free.app,ngrok
+*.ngrok.app,ngrok
+*.ngrok.io,ngrok
+*.ngrok.dev,ngrok
+*.ngrok.pro,ngrok
+*.ngrok.pizza,ngrok
 ninite.com,Ninite Pro (Ninite Agent)
 *.ninite.com,Ninite Pro (Ninite Agent)
 *.ninjarmm.com,NinjaRMM
@@ -469,6 +505,12 @@ ocsinventory-ng.org,OCS inventory
 opsbridge.digital,OpsBridge Agent
 *.optitune.us,OptiTune
 *.opti-tune.com,OptiTune
+*.ngrok-free.app,Overlord
+*.ngrok.app,Overlord
+*.ngrok.io,Overlord
+*.ngrok.com,Overlord
+pandoramods.top,Overlord
+savaliyapriyal874-code.github.io,Overlord
 portal.ehorus.com,Pandora RC (eHorus)
 trusted.panorama9.com,Panorama9
 changes.panorama9.com,Panorama9
@@ -548,6 +590,7 @@ rs-ny.rustdesk.com,RustDesk
 control.connectwise.com,ScreenConnect
 *.connectwise.com,ScreenConnect
 *.screenconnect.com,ScreenConnect
+instance-*-relay.screenconnect.com,ScreenConnect
 *.screenmeet.com,ScreenMeet
 *.scrn.mt,ScreenMeet
 seetrol.co.kr,Seetrol
@@ -651,6 +694,24 @@ networkservice.cyou,TrustConnect
 *.ultraviewer.net,UltraViewer
 ultraviewer.net,UltraViewer
 ultravnc.com,UltraVNC
+*.vicarius.cloud,Vicarius vRx
+vicarius-installer.s3.amazonaws.com,Vicarius vRx
+vicarius-patches.s3.amazonaws.com,Vicarius vRx
+vicarius-release.s3.amazonaws.com,Vicarius vRx
+vicarius-release.s3.us-east-1.amazonaws.com,Vicarius vRx
+vicarius-static-organizationinstallations.vicarius-cdn.com,Vicarius vRx
+vicarius-eu-central-1-installer.s3.amazonaws.com,Vicarius vRx
+vicarius-eu-central-1-installer.s3.eu-central-1.amazonaws.com,Vicarius vRx
+vicarius-eu-central-1-patches.s3.amazonaws.com,Vicarius vRx
+vicarius-eu-central-1-patches.s3.eu-central-1.amazonaws.com,Vicarius vRx
+vicarius-eu-central-1-release.s3.amazonaws.com,Vicarius vRx
+vicarius-eu-central-1-release.s3.eu-central-1.amazonaws.com,Vicarius vRx
+vicarius-ap-southeast-3-installer.s3.amazonaws.com,Vicarius vRx
+vicarius-ap-southeast-3-installer.s3.ap-southeast-3.amazonaws.com,Vicarius vRx
+vicarius-ap-southeast-3-patches.s3.amazonaws.com,Vicarius vRx
+vicarius-ap-southeast-3-patches.s3.ap-southeast-3.amazonaws.com,Vicarius vRx
+vicarius-ap-southeast-3-release.s3.amazonaws.com,Vicarius vRx
+vicarius-ap-southeast-3-release.s3.ap-southeast-3.amazonaws.com,Vicarius vRx
 global.rel.tunnels.api.visualstudio.com,Visual Studio Dev Tunnel
 *.rel.tunnels.api.visualstudio.com,Visual Studio Dev Tunnel
 *.devtunnels.ms,Visual Studio Dev Tunnel
