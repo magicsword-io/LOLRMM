@@ -193,6 +193,9 @@ p {
   gap: 24px;
 }
 .github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 12px;
   color: var(--muted);
 }
