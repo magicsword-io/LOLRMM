@@ -53,8 +53,17 @@ Artifacts:
         - File: C:\ProgramData\ScreenConnect Client*\user.config
           Description: ScreenConnect client user configuration
           OS: Windows
+        - File: C:\Program Files*\ScreenConnect Client*\app.config
+          Description: Client configuration file. Stealth deployments may set ShowSystemTrayIcon, ShowBalloonOnConnect, and ShowUnderControlBanner to false to hide all user-visible indicators. Legitimate helpdesk deployments have no reason to disable these visibility controls.
+          OS: Windows
     EventLog: []
-    Registry: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Control\Lsa\Authentication Packages
+          Description: ScreenConnect.WindowsAuthenticationPackage.dll may be appended to the Authentication Packages list, enabling credential exposure. This is a high-signal indicator of malicious deployment.
+        - Path: HKLM\SOFTWARE\Classes\CLSID\{6FF59A85-BC37-4CD4-C175-070CC4814204}
+          Description: Credential provider registration pointing to ScreenConnect.WindowsCredentialProvider.dll. Display name may be "SC FeedbackTool Credential Provider" in malicious deployments.
+        - Path: HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\ScreenConnect Client (*)
+          Description: SafeBoot Network entry allowing ScreenConnect client to start in Safe Mode with Networking.
     Network:
         - Description: Known remote domains
           Domains:
@@ -62,6 +71,10 @@ Artifacts:
               - '*.connectwise.com'
               - '*.screenconnect.com'
           Ports: []
+        - Description: Standard ScreenConnect relay port. In malicious deployments, may point to attacker-controlled relay infrastructure.
+          Domains: []
+          Ports:
+              - 8041
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_network_sigma.yml
       Description: Detects potential network activity of ScreenConnect RMM tool
@@ -71,6 +84,7 @@ Detections:
       Description: Detects potential processes activity of ScreenConnect RMM tool
 References:
     - https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/
+    - https://f4n6.co.uk/a-feedback-tool-that-isnt-screenconnect-rmm-abuse-hidden-in-a-12-mb-batch-file/
 Acknowledgement: []
 CodeSigning:
     certificates:
