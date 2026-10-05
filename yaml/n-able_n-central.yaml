@@ -99,7 +99,13 @@ Artifacts:
           Value: MspAgent (package com.n-able.mspagent)
 FileHashes:
 CodeSigning:
-Detections: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_network_sigma.yml
+      Description: Detects potential network activity of N-able N-central RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_files_sigma.yml
+      Description: Detects potential files activity of N-able N-central RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_processes_sigma.yml
+      Description: Detects potential processes activity of N-able N-central RMM tool
 References:
     - 'https://documentation.n-able.com/N-central/userguide/Content/Modern-agent/modern-agent.htm'
     - 'https://documentation.n-able.com/N-central/userguide/Content/ReleaseDocs/Install_Config/FirewallRequirements.htm'
