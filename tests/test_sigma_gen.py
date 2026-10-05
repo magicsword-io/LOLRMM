@@ -3,6 +3,11 @@
 from __future__ import annotations
 
 import copy
+import contextlib
+import shutil
+import subprocess
+import sys
+import tempfile
 import importlib.util
 import io
 from contextlib import redirect_stdout
@@ -211,6 +216,117 @@ class SigmaGeneratorTests(unittest.TestCase):
             self.assertIn("a-first.yaml", first_output.getvalue())
             self.assertEqual(generated.read_bytes(), first_bytes)
             self.assertEqual(second_output.getvalue(), first_output.getvalue())
+
+
+SCRIPT = Path(__file__).resolve().parents[1] / 'bin' / 'generate_detections.py'
+spec = importlib.util.spec_from_file_location('generate_detections', SCRIPT)
+generator = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(generator)
+
+
+class ExecutableTests(unittest.TestCase):
+    def test_installation_paths(self):
+        cases = {
+            r'C:\Program Files\AnyDesk\AnyDesk.exe': 'AnyDesk.exe',
+            'C:/Program Files/Agent/Agent.EXE': 'Agent.EXE',
+            '  "C:\\Program Files\\Agent\\quoted.exe"  ': 'quoted.exe',
+            "'C:/Program Files/Agent/single.exe'": 'single.exe',
+            r'C:\Agent\client*.exe': 'client*.exe',
+            r'C:\Agent\client?.exe': 'client?.exe',
+            r'C:\Agent\*': None,
+            'C:/Agent/': None,
+            'agent.msi': None,
+            'agent.zip': None,
+            'ARDAgent.app': None,
+            '/usr/bin/agent': None,
+            '<random>.exe': None,
+            r'C:\Windows\<random>.exe': None,
+            '*client.exe': None,
+            'agent.exe --service': None,
+            r'C:\Args\plain.exe --output C:\Temp\wrong.exe': None,
+            '"C:/Agent/plain.exe" --output C:/Temp/wrong.exe': None,
+            '"C:/Agent/unclosed.exe': None,
+            'invalid:agent.exe': None,
+            None: None,
+            123: None,
+        }
+        for value, expected in cases.items():
+            with self.subTest(value=value):
+                self.assertEqual(generator.executable_basename(value), expected)
+
+
+class GenerationTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        (self.root / 'bin').mkdir()
+        (self.root / 'yaml').mkdir()
+        (self.root / 'website/public/api').mkdir(parents=True)
+        self.script = self.root / 'bin/generate_detections.py'
+        shutil.copyfile(SCRIPT, self.script)
+
+    def write_inputs(self, reverse=False):
+        records = [
+            [r'C:\Tools\agent.exe', 'client*.exe', 'Agent.EXE', '<random>.exe'],
+            None,
+            ['agent.exe', r'C:\Tools\B.EXE', 123, 'valid.exe'],
+        ]
+        if reverse:
+            records.reverse()
+        for i, paths in enumerate(records):
+            if reverse and paths:
+                paths = list(reversed(paths))
+            (self.root / f'yaml/{i}.yaml').write_text(yaml.safe_dump(
+                {'Details': {'InstallationPaths': paths}}))
+        domains = ['z.example', 'a.example', 'A.example', '*.wild.example']
+        if reverse:
+            domains.reverse()
+        (self.root / 'website/public/api/rmm_domains.csv').write_text(
+            'Domain\n' + '\n'.join(domains) + '\n')
+
+    def outputs(self):
+        outputs = {}
+        for name in ('generic_rmm_detection.yml', 'rmm_domains_dns_queries.yml'):
+            canonical = (self.root / 'detections/sigma' / name).read_bytes()
+            public = (self.root / 'website/public/api/detections/sigma' / name).read_bytes()
+            self.assertEqual(canonical, public)
+            outputs[name] = canonical
+        return outputs
+
+    def test_cli_outputs_are_valid_identical_and_repeatable(self):
+        self.write_inputs()
+        first = None
+        for reverse in (False, True):
+            self.write_inputs(reverse)
+            result = subprocess.run([sys.executable, str(self.script)],
+                                    capture_output=True, text=True, check=True)
+            self.assertNotIn('Error processing', result.stdout)
+            outputs = self.outputs()
+            if first is None:
+                first = outputs
+            else:
+                self.assertEqual(first, outputs)
+        rule = yaml.safe_load(first['generic_rmm_detection.yml'])
+        self.assertEqual(rule['detection']['selection']['Image|endswith'],
+                         [r'\\Agent.EXE', r'\\B.EXE', r'\\client*.exe', r'\\valid.exe'])
+        self.assertEqual(rule['tags'], ['attack.command-and-control', 'attack.t1219'])
+        domains = yaml.safe_load(first['rmm_domains_dns_queries.yml'])
+        self.assertEqual(domains['detection']['selection']['query|contains'],
+                         ['.*.wild.example', '.A.example', '.z.example'])
+
+    def test_reversed_filesystem_discovery_is_identical(self):
+        self.write_inputs()
+        files = list(map(str, (self.root / 'yaml').glob('*.yaml')))
+        with patch.object(generator, '__file__', str(self.script)):
+            with contextlib.redirect_stdout(io.StringIO()):
+                with patch.object(generator.glob, 'glob', return_value=files):
+                    generator.generate_sigma_rule()
+                    generator.generate_sigma_domains_rule()
+                first = self.outputs()
+                with patch.object(generator.glob, 'glob', return_value=list(reversed(files))):
+                    generator.generate_sigma_rule()
+                self.assertEqual(first, self.outputs())
 
 
 if __name__ == "__main__":

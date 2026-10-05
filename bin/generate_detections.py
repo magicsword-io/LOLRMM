@@ -7,9 +7,43 @@ This script creates Sigma, Splunk, and KQL detection rules.
 import os
 import json
 import ntpath
+import re
 import yaml
 import glob
 from datetime import datetime
+
+
+def executable_basename(path):
+    """Read an installation path, not a command line, on any host OS.
+
+    Preserve Sigma wildcards within filenames, but exclude directory patterns,
+    invalid Windows placeholder names, and arguments following an executable.
+    """
+    if not isinstance(path, str):
+        return None
+    path = path.strip()
+    if len(path) >= 2 and path[0] == path[-1] and path[0] in "\"'":
+        path = path[1:-1]
+    if any(char in path for char in '<>"|') or re.search(r"\.exe\s", path, re.I):
+        return None
+    name = ntpath.basename(path)
+    if (
+        not name
+        or name.startswith("*")
+        or not name.lower().endswith(".exe")
+        or ":" in name
+        or any(ord(char) < 32 for char in name)
+    ):
+        return None
+    return name
+
+
+def sorted_case_insensitive_unique(values):
+    """Pick the same spelling regardless of discovery or record order."""
+    unique = {}
+    for value in sorted(values, key=lambda value: (value.casefold(), value)):
+        unique.setdefault(value.casefold(), value)
+    return list(unique.values())
 
 
 def generate_sigma_rule():
@@ -31,27 +65,15 @@ def generate_sigma_rule():
                 # An empty "InstallationPaths:" key parses as None, which used to
                 # raise and skip the rest of the file.
                 for path in data["Details"]["InstallationPaths"] or []:
-                    # InstallationPaths are Windows paths, so they must be split
-                    # on backslashes regardless of the OS running this script.
-                    # os.path.basename() only splits on "/" on Linux/macOS and
-                    # would keep whole paths such as
-                    # "C:\Program Files (x86)\AnyDesk\*" as the "executable".
-                    exe_name = ntpath.basename(path)
-                    if (
-                        exe_name
-                        and not exe_name.startswith("*")
-                        and exe_name.lower().endswith(".exe")
-                    ):
+                    exe_name = executable_basename(path)
+                    if exe_name:
                         exe_list.append(f"\\\\{exe_name}")
         except Exception as e:
             print(f"Error processing {yaml_file}: {e}")
 
     # Deduplicate the executable list. Sigma matches case-insensitively, so
     # "AteraAgent.exe" and "ateraagent.exe" are the same condition.
-    unique_exes = {}
-    for exe in exe_list:
-        unique_exes.setdefault(exe.casefold(), exe)
-    exe_list = sorted(unique_exes.values(), key=str.casefold)
+    exe_list = sorted_case_insensitive_unique(exe_list)
 
     # Print the number of executables found
     print(f"Found {len(exe_list)} unique RMM executables for Sigma rule")
@@ -69,7 +91,6 @@ def generate_sigma_rule():
         # owning tactic to be tagged alongside the technique.
         "tags": [
             "attack.command-and-control",
-            "attack.lateral-movement",
             "attack.t1219",
         ],
         "logsource": {"category": "process_creation", "product": "windows"},
@@ -152,10 +173,7 @@ def generate_sigma_domains_rule():
 
     # Deduplicate. Sorting keeps regenerated rules stable: set iteration order
     # varies between runs, which reshuffles the whole list on every run.
-    unique_domains = {}
-    for domain in domain_list:
-        unique_domains.setdefault(domain.casefold(), domain)
-    domain_list = sorted(unique_domains.values(), key=str.casefold)
+    domain_list = sorted_case_insensitive_unique(domain_list)
 
     sigma_domains_rule = {
         "title": "DNS Queries to Known RMM Domains",
