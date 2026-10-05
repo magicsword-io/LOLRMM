@@ -70,6 +70,29 @@ configuration only sends page views on `lolrmm.io` or `www.lolrmm.io`. Navigatio
 uses ordinary page loads, so each page gets one configuration call. The build
 verification checks the ID, script count, and production/local hostname behavior.
 
-The deployment workflow publishes `dist/` and still commits generated data and
-detections. The PR workflow builds the site and runs its browser tests without
-publishing it.
+## Release workflow
+
+`deploy.yml` builds from the triggering revision with a read-only `GITHUB_TOKEN`,
+checks the production build, and runs Playwright against that same `dist/` before
+uploading it. PRs run the same build and tests. Only `main` pushes or manual runs
+on `main` can deploy; the deployment job has only Pages and OIDC write permissions.
+`/source-revision.txt` identifies the deployed commit. No personal token or git
+push is needed to publish. To roll back, revert the change on `main` through the
+normal review process and let the workflow deploy the resulting revision.
+
+`generated-data.yml` independently regenerates the tracked API exports,
+aggregate and per-tool detections, and README badge. It opens or refreshes one
+PR on `automation/generated-data` using the built-in token. Raw GitHub consumers
+receive those changes when the generated PR is merged; the website always builds
+fresh exports directly from its own source revision. Source-only trigger paths
+prevent a generated-only merge from opening another generation run. Existing
+detection generators use the current date, so manual runs on a later day can
+produce date-only changes.
+
+The bot needs Actions' **Allow GitHub Actions to create and approve pull requests**
+setting and an unprotected `automation/generated-data` branch. If a ruleset
+protects all branches, exclude only `refs/heads/automation/generated-data` from
+that ruleset; keep `main` protected. No bypass on `main` is required. GitHub may
+require a maintainer to approve workflows for the bot-created PR; inspect and
+approve its latest checks before merging. See [GitHub's event-trigger behavior](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow).
+Generation or PR-policy failures do not block Pages publication.
