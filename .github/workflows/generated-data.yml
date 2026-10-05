@@ -1,0 +1,83 @@
+name: Update generated data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'yaml/**'
+      - 'bin/**'
+      - 'tests/**'
+      - '.github/workflows/generated-data.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A single writer owns the generated branch, independently of Pages deployment.
+concurrency:
+  group: generated-data
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Queued runs regenerate the latest main, never an older event snapshot.
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5.2.0
+        with:
+          python-version: '3.12'
+      - name: Install generator dependencies
+        run: python -m pip install 'pyyaml>=6.0,<7' 'jsonschema>=4.23,<5'
+      - name: Validate source and generators
+        run: |
+          python -m unittest discover -s tests
+          python bin/lint_content.py
+          python bin/validate.py
+      - name: Generate repository exports, detections, and badge
+        id: generate
+        run: |
+          echo "source=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          python bin/sigma-gen.py --skip-yaml-update
+          python bin/site.py
+          python bin/update_badge.py
+          git diff --exit-code -- yaml/
+      - name: Create repository-scoped app token
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        with:
+          client-id: ${{ vars.GENERATED_DATA_APP_CLIENT_ID }}
+          private-key: ${{ secrets.GENERATED_DATA_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Open or refresh generated-data PR
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: automation/generated-data
+          base: main
+          add-paths: |
+            detections/
+            website/public/api/
+            website/public/rmm_tools_table.csv
+            rmm-tools-count.json
+          commit-message: Update generated catalog data and detections
+          title: Update generated catalog data and detections
+          body: |
+            Regenerated from main at ${{ steps.generate.outputs.source }}.
+
+            Includes per-tool Sigma rules, site API exports, aggregate detections,
+            and the README badge. Source YAML is unchanged.
+
+            Review and merge through the normal PR process after the checks on
+            its latest commit pass. The repository-scoped GitHub App starts CI
+            automatically. Pages builds fresh data independently of this PR.
+
+            Generator evidence: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

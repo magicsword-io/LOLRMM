@@ -1,0 +1,40 @@
+---
+import { display, safeUrl, type Value } from '../lib/catalog';
+interface Props {
+  value: Value | undefined;
+}
+const { value } = Astro.props;
+---
+
+{Array.isArray(value) ? (
+  value.length ? (
+    <ul class="value-list">
+      {value.map((item) => (
+        <li>
+          <Astro.self value={item} />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <span class="muted">Not recorded</span>
+  )
+) : value && typeof value === 'object' ? (
+  <dl>
+    {Object.entries(value)
+      .filter(([key]) => key !== 'certificate_der_base64')
+      .map(([key, item]) => (
+        <>
+          <dt>{key.replaceAll('_', ' ')}</dt>
+          <dd>
+            <Astro.self value={item} />
+          </dd>
+        </>
+      ))}
+  </dl>
+) : safeUrl(value) ? (
+  <a class="value-link" href={safeUrl(value)}>
+    {String(value)}
+  </a>
+) : (
+  <span class="value-text">{display(value)}</span>
+)}

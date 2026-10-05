@@ -131,3 +131,8 @@ dist
 
 **/.DS_Store
 .vercel
+.astro/
+test-results/
+playwright-report/
+!src/lib/
+!src/lib/**

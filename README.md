@@ -74,48 +74,32 @@ Happy hunting! 🕵️‍♂️
 
 ### Requirements
 
-* [Python 3.10](https://www.python.org/downloads/)
-* [Poetry](https://python-poetry.org/docs/#installation)
-* [Node.js](https://nodejs.org/)
+* Python 3.12+ (PyYAML, or the existing Poetry environment)
+* Node.js 22.19+
 
-### Steps to Build and Test Locally
+The website now uses Astro. From the repository root:
 
-1. Clone the repository:
-```
-git clone https://github.com/magicsword-io/LOLRMM.git
-```
-
-2. Change to the project directory:
-```
-cd LOLRMM
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pyyaml
+cd website
+npm ci
+npm run dev
 ```
 
-3. Install dependencies:
-```
-poetry install
+Visit `http://localhost:4321`. The dev/build commands regenerate data and detection
+exports from `/yaml` automatically. To build and verify the static website:
+
+```sh
+npm run check
+npm run build
+npx playwright install chromium
+npm test
 ```
 
-4. Activate the virtual environment:
-```
-poetry shell
-```
-
-5. Build the site using the files under the /yaml folder:
-```
-python bin/site.py
-```
-
-6. Change to the website directory and install dependencies:
-```
-cd website && pnpm i
-```
-
-7. Run the website locally:
-```
-pnpm dev
-```
-
-8. Visit `http://localhost:3000` in your browser to view the site.
+Output is written to `website/dist/`. See [website/README.md](website/README.md)
+for data routes, chart methodology, analytics configuration, and deployment details.
 
 Join us in our quest to create a safer and more secure digital environment for organizations everywhere. With LOLRMM by your side, you'll be well-equipped to understand and address the potential risks associated with RMM tools in the ever-evolving cyber landscape.
 

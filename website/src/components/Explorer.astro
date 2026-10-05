@@ -1,0 +1,224 @@
+---
+import Platforms from './Platforms.astro';
+import FilterSelect from './FilterSelect.astro';
+import {
+  tools,
+  newest,
+  platforms,
+  toolUrl,
+  stats,
+  display,
+} from '../lib/catalog';
+const preferredPlatforms = [
+  'Windows',
+  'macOS',
+  'Linux',
+  'Android',
+  'iOS',
+  'ChromeOS',
+];
+const operatingSystems = [...new Set(tools.flatMap(platforms))].sort(
+  (a, b) =>
+    (preferredPlatforms.includes(a) ? preferredPlatforms.indexOf(a) : 100) -
+      (preferredPlatforms.includes(b) ? preferredPlatforms.indexOf(b) : 100) ||
+    a.localeCompare(b),
+);
+const privileges = [
+  ...new Set(
+    tools.map((t) => t.Details.Privileges).filter((v): v is string => !!v),
+  ),
+].sort();
+---
+
+<section id="catalog" class="explorer" aria-labelledby="catalog-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">EXPLORE THE INTELLIGENCE</p>
+      <h2 id="catalog-title">Find your next lead.</h2>
+    </div>
+    <div class="download-links">
+      <a href="/api/rmm_tools.json">JSON ↗</a>
+      <a href="/api/rmm_tools.csv">CSV ↗</a>
+    </div>
+  </div>
+  <div class="search-box">
+    <span aria-hidden="true">⌕</span>
+    <label class="sr-only" for="catalog-search">
+      Search the catalog
+    </label>
+    <input
+      id="catalog-search"
+      type="search"
+      placeholder="Search a tool, executable, domain, or artifact…"
+      autocomplete="off"
+    />
+    <kbd aria-hidden="true">/</kbd>
+  </div>
+  <div class="explorer-grid">
+    <aside class="filters" aria-label="Filter tools" data-filters hidden>
+      <fieldset>
+        <legend>CLASSIFICATION</legend>
+        {[
+          ['', 'All tools', stats.tools],
+          ['RMM', 'RMM', stats.rmm],
+          ['RAT', 'RAT', stats.rat],
+        ].map(([value, label, count]) => (
+          <label class="category-option">
+            <input
+              type="radio"
+              name="category"
+              value={value}
+              checked={value === ''}
+            />
+            <span>
+              {label}
+              <span>{count}</span>
+            </span>
+          </label>
+        ))}
+      </fieldset>
+      <FilterSelect
+        id="platform"
+        label="OPERATING SYSTEM"
+        platformIcons
+        options={[
+          { value: '', label: 'All platforms' },
+          ...operatingSystems.map((os) => ({ value: os, label: os })),
+        ]}
+      />
+      <FilterSelect
+        id="availability"
+        label="AVAILABILITY"
+        options={[
+          { value: '', label: 'Any availability' },
+          { value: 'free', label: 'Free / open source' },
+          { value: 'trial', label: 'Trial available' },
+          { value: 'paid', label: 'Paid' },
+          { value: 'unknown', label: 'Not recorded / unknown' },
+        ]}
+      />
+      <FilterSelect
+        id="privileges"
+        label="PRIVILEGES"
+        options={[
+          { value: '', label: 'Any privileges' },
+          { value: 'unknown', label: 'Not recorded' },
+          ...privileges.map((p) => ({ value: p, label: p })),
+        ]}
+      />
+      <label class="checkbox-filter">
+        <input id="has-detections" type="checkbox" />
+        With detections
+      </label>
+      <button class="text-button" id="reset-filters">
+        Reset filters ↺
+      </button>
+      <div class="filter-footnote">
+        <span>COMMUNITY SOURCED</span>
+        <p>Inclusion identifies a tool's potential for misuse.</p>
+        <a href="/about/">About the catalog ↗</a>
+      </div>
+    </aside>
+    <div class="results">
+      <div class="results-toolbar">
+        <p id="result-count" role="status" aria-live="polite">
+          {tools.length} tools in the catalog
+        </p>
+        <label data-sort-label hidden>
+          Sort by{' '}
+          <select id="sort">
+            <option value="newest">Newest added</option>
+            <option value="name">Name A–Z</option>
+            <option value="updated">Recently updated</option>
+            <option value="category">Category</option>
+            <option value="author">Author A–Z</option>
+          </select>
+        </label>
+      </div>
+      <div class="table-scroll catalog-table">
+        <table>
+          <caption class="sr-only">
+            Remote monitoring, management, and remote access tools
+          </caption>
+          <thead>
+            <tr>
+              <th>TOOL / DESCRIPTION</th>
+              <th>TYPE</th>
+              <th>PLATFORMS</th>
+              <th>ADDED</th>
+              <th>
+                <span class="sr-only">Details</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tool-rows">
+            {newest.map((tool) => (
+              <tr data-tool-row data-slug={tool.slug}>
+                <td>
+                  <a href={toolUrl(tool)} class="tool-name">
+                    {tool.Name}
+                  </a>
+                  <p class="tool-description">{tool.Description}</p>
+                  <span class="mobile-platforms">
+                    <Platforms names={platforms(tool)} compact />
+                  </span>
+                  <span class="sr-only">Author: {display(tool.Author)}</span>
+                </td>
+                <td>
+                  <span
+                    class:list={['badge', { amber: tool.Category === 'RAT' }]}
+                  >
+                    {tool.Category}
+                  </span>
+                </td>
+                <td>
+                  <Platforms names={platforms(tool)} compact />
+                </td>
+                <td>
+                  <time datetime={tool.Created}>{tool.Created}</time>
+                </td>
+                <td>
+                  <a
+                    class="row-arrow"
+                    href={toolUrl(tool)}
+                    aria-label={`View ${tool.Name}`}
+                  >
+                    ↗
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div id="no-results" class="empty-state" hidden>
+        <h3>No matching tools</h3>
+        <p>
+          Try a different name, domain, or executable, or reset your filters.
+        </p>
+        <button class="button" id="empty-reset">
+          Reset search and filters
+        </button>
+      </div>
+      <nav class="pagination" aria-label="Catalog pagination" hidden>
+        <span id="page-summary"></span>
+        <div>
+          <button id="previous-page" class="button" aria-label="Previous page">
+            ← Previous
+          </button>
+          <span id="page-number"></span>
+          <button id="next-page" class="button" aria-label="Next page">
+            Next →
+          </button>
+        </div>
+      </nav>
+      <noscript>
+        <p class="chart-note">
+          All tools are shown. Use your browser's Find command to search; enable
+          JavaScript for filters and pagination.
+        </p>
+      </noscript>
+    </div>
+  </div>
+</section>
+<script src="../scripts/explorer.ts"></script>

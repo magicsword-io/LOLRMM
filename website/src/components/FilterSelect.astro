@@ -1,0 +1,71 @@
+---
+import Platforms from './Platforms.astro';
+interface Props {
+  id: string;
+  label: string;
+  options: { value: string; label: string }[];
+  platformIcons?: boolean;
+}
+const { id, label, options, platformIcons = false } = Astro.props;
+---
+
+<div class="filter-field">
+  <span class="filter-label" id={`${id}-label`}>
+    {label}
+  </span>
+  <select id={id} aria-labelledby={`${id}-label`} hidden>
+    {options.map((option) => (
+      <option value={option.value}>{option.label}</option>
+    ))}
+  </select>
+  <details class="filter-select" data-filter-select={id}>
+    <summary aria-labelledby={`${id}-label ${id}-value`}>
+      <span id={`${id}-value`} data-selected-label>
+        {options[0].label}
+      </span>
+      <svg
+        class="filter-chevron"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-hidden="true"
+      >
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </summary>
+    <div class="filter-options" role="group" aria-labelledby={`${id}-label`}>
+      {options.map((option) => (
+        <label class="filter-option">
+          <input
+            type="radio"
+            name={`${id}-option`}
+            value={option.value}
+            checked={!option.value}
+          />
+          <span>
+            {platformIcons && option.value ? (
+              <Platforms names={[option.label]} />
+            ) : (
+              option.label
+            )}
+          </span>
+          <svg
+            class="filter-check"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="m5 12 4 4 10-10" />
+          </svg>
+        </label>
+      ))}
+    </div>
+  </details>
+</div>
