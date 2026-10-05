@@ -1,0 +1,123 @@
+Name: N-able N-central
+Category: RMM
+Description: N-able N-central is a remote monitoring and management (RMM) platform used by MSPs and IT teams. The platform supports remote commands, scripts, software deployment, file transfer and remote control. Its classic agents operate alongside the newer MSP Agent on Windows, Linux and macOS; optional Take Control components provide remote access. CISA added CVE-2026-86218, a static code injection flaw in the N-central server, to its Known Exploited Vulnerabilities catalog on 2026-09-08.
+Author: Liran Ravich, Cribl
+Created: '2026-10-01'
+LastModified: '2026-10-05'
+Details:
+    Website: 'https://www.n-able.com/products/n-central'
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: Windows tasks can use LocalSystem, device or custom credentials
+    Free: false
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+    Capabilities:
+        - Remote command execution
+        - Scripting
+        - Software deployment
+        - File transfer
+        - Remote control
+    Vulnerabilities:
+        - CVE-2026-86218
+    InstallationPaths:
+        - 'C:\Program Files (x86)\N-able Technologies\Windows Agent\bin\*'
+        - 'C:\Program Files (x86)\Msp Agent\*'
+        - agent.exe
+        - AgentMaint.exe
+        - AgentMonitor.exe
+        - BASupTSHelper.exe
+        - msp-agent-core.exe
+        - '/opt/msp-agent/*'
+        - '/Library/MspAgent/*'
+Artifacts:
+    Disk:
+        - File: 'C:\Program Files (x86)\N-able Technologies\Windows Agent\bin\agent.exe'
+          Description: Classic Windows agent executable
+          OS: Windows
+        - File: 'C:\Program Files (x86)\Msp Agent\msp-agent-core.exe'
+          Description: Modern MSP Agent executable
+          OS: Windows
+        - File: '/opt/msp-agent/*'
+          Description: Modern MSP Agent installation directory; Linux process name is msp-agent-core
+          OS: Linux
+        - File: '/Library/MspAgent/*'
+          Description: Modern MSP Agent installation directory
+          OS: macOS
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: N-central software distribution metadata
+          Domains:
+              - sis.n-able.com
+          Ports: ['80', '443', '8443']
+        - Description: N-central software updates and release feeds
+          Domains:
+              - update.n-able.com
+              - releases.n-able.com
+              - feeds.n-able.com
+          Ports: ['443']
+        - Description: Modern MSP Agent cloud configuration, components and event delivery; shared N-able services
+          Domains:
+              - '*.prd.cdo.system-monitor.com'
+              - eb.eu-west-1.prd.davinci.system-monitor.com
+              - eb.us-west-2.prd.davinci.system-monitor.com
+              - eb.ap-southeast-2.prd.davinci.system-monitor.com
+              - eb.eu-central-1.prd.davinci.system-monitor.com
+          Ports: ['443']
+        - Description: Vendor-assigned AWS IoT endpoints; N-central firewall documentation lists TCP 8088 for modern agent communication
+          Domains:
+              - a33d8yamkwy4nx-ats.iot.eu-west-1.amazonaws.com
+              - a33d8yamkwy4nx-ats.iot.us-west-2.amazonaws.com
+              - a33d8yamkwy4nx-ats.iot.eu-central-1.amazonaws.com
+              - a33d8yamkwy4nx-ats.iot.ap-southeast-2.amazonaws.com
+          Ports: ['8088']
+        - Description: Optional Take Control remote access infrastructure, shared with other N-able products
+          Domains:
+              - swi-rc.cdn-sw.net
+              - comserver.global.mspa.n-able.com
+              - comserver.us1.mspa.n-able.com
+              - comserver.us2.mspa.n-able.com
+              - comserver.eu1.mspa.n-able.com
+          Ports: ['443']
+        - Description: Classic agents connect to an operator-specific N-central server; addresses vary by deployment
+          Domains: []
+          Ports: ['80', '443']
+    Other:
+        - Type: WindowsService
+          Value: Windows Agent Service; Windows Agent Maintenance Service (classic agent)
+        - Type: WindowsService
+          Value: MSPAgent (display name MSP Agent)
+        - Type: LinuxService
+          Value: MspAgent.service (systemd)
+        - Type: macOSDaemon
+          Value: MspAgent (package com.n-able.mspagent)
+FileHashes:
+CodeSigning:
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_network_sigma.yml
+      Description: Detects potential network activity of N-able N-central RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_files_sigma.yml
+      Description: Detects potential files activity of N-able N-central RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_n-central_processes_sigma.yml
+      Description: Detects potential processes activity of N-able N-central RMM tool
+References:
+    - 'https://documentation.n-able.com/N-central/userguide/Content/Modern-agent/modern-agent.htm'
+    - 'https://documentation.n-able.com/N-central/userguide/Content/ReleaseDocs/Install_Config/FirewallRequirements.htm'
+    - 'https://documentation.n-able.com/N-central/userguide/Content/AVDefender/AVDefender_GlobalExclusions.htm'
+    - https://documentation.n-able.com/N-central/userguide/Content/Deploying/agent_probe_services.htm
+    - https://documentation.n-able.com/N-central/userguide/Content/User_Management/Selecting_device_credentials.htm
+    - https://documentation.n-able.com/N-central/userguide/Content/Scheduled_Tasks/ScheduledTasks_AddScriptTask.html
+    - https://documentation.n-able.com/N-central/userguide/Content/Scheduled_Tasks/ScheduledTasks_Add3rdPartySoftwareTask.html
+    - https://documentation.n-able.com/N-central/userguide/Content/Devices/Direct%20Support/DS_Command_Line_Mac.htm
+    - https://documentation.n-able.com/N-central/userguide/Content/Devices/Direct%20Support/DS_File_Transfer_Mac.htm
+    - https://status.n-able.com/2026/09/06/n-central-2026-3-hotfix-4-cve-2026-86218/
+    - https://www.cyber.gc.ca/en/alerts-advisories/n-able-security-advisory-av26-885
+Acknowledgement:
+    - Person: Liran Ravich
+      Handle: ''
