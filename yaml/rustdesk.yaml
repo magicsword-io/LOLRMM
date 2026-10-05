@@ -1,23 +1,30 @@
 Name: RustDesk
 Category: RMM
-Description: RustDesk is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: 'RustDesk is an open-source remote desktop and remote access tool that can use the public RustDesk rendezvous/relay servers or a self-hosted server. Threat actors install it as a Windows service for persistent, interactive re-entry; in a 2025 Bumblebee to Akira intrusion it was installed on multiple servers, run in tray mode, and later used to return to the environment and pivot via RDP before ransomware deployment.
+
+    '
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-10-05'
 Details:
     Website: https://rustdesk.com/
     PEMetadata:
-        Filename: ''
+        Filename: rustdesk.exe
         OriginalFileName: ''
         Description: ''
-    Privileges: ''
+    Privileges: User for portable operation; Administrator to install the Windows service (runs as SYSTEM)
     Free: 'Yes'
     Verification: ''
     SupportedOS:
         - Windows
         - Linux
         - MacOS
-    Capabilities: []
+    Capabilities:
+        - Remote desktop and unattended access
+        - File transfer
+        - Clipboard sharing
+        - TCP port forwarding
+        - Self-hosted rendezvous/relay server support
     Vulnerabilities: []
     InstallationPaths:
         - rustdesk*.exe
@@ -25,15 +32,45 @@ Details:
         - C:\Users\*\AppData\Local\rustdesk\rustdesk.exe
         - C:\Users\*\AppData\Local\rustdesk\*
         - C:\Program Files\RustDesk
+        - C:\Program Files\RustDesk\RustDesk.exe
 Artifacts:
     Disk:
         - File: C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\*
-          Description: N/A
+          Description: Service-context config and logs (RustDesk remaps systemprofile to LocalService)
           OS: Windows
-    EventLog: []
-    Registry: []
+        - File: C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
+          Description: Service-context options, including custom rendezvous/relay server settings
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RustDesk\config\RustDesk.toml
+          Description: Per-user config (ID, password data)
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RustDesk\config\RustDesk2.toml
+          Description: Per-user options, including custom rendezvous/relay server settings
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\RustDesk\log\*
+          Description: Per-user log directory; contents depend on process mode and logging configuration
+          OS: Windows
+        - File: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\RustDesk Tray.lnk
+          Description: Startup shortcut created by the installer to launch the tray process (--tray)
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: RustDesk
+          ImagePath: '"C:\Program Files\RustDesk\RustDesk.exe" --service'
+          Description: Service installation event when RustDesk is installed as a Windows service (auto start)
+        - EventID: 4624
+          ProviderName: Microsoft-Windows-Security-Auditing
+          LogFile: Security.evtx
+          Description: Interactive logon (Type 2) from 127.0.0.1 immediately followed by RustDesk.exe --cm, observed in the July 2025 intrusion documented by The DFIR Report; this sequence is case-specific, not a universal RustDesk logon signature
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\RustDesk
+          Description: RustDesk Windows service
+        - Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk
+          Description: Installation record
     Network:
-        - Description: Known remote domains
+        - Description: Known remote domains and configurable server ports; TCP 21115 tests NAT type, TCP/UDP 21116 provides rendezvous and registration (TCP also handles hole punching), TCP 21117 relays traffic, and TCP 21118/21119 optionally supports WebSocket web clients. TCP 443 may be used for HTTPS or WSS deployments. These ports do not apply to every listed domain.
           Domains:
               - rustdesk.com
               - user_managed
@@ -44,6 +81,26 @@ Artifacts:
               - 443
               - 21115
               - 21116
+              - 21117
+              - 21118
+              - 21119
+    Other:
+        - Type: WindowsServiceName
+          Value: RustDesk
+        - Type: WindowsServiceArgument
+          Value: --service
+        - Type: CommandLine
+          Value: '"C:\Program Files\RustDesk\RustDesk.exe" --tray'
+        - Type: CommandLine
+          Value: '"C:\Program Files\RustDesk\RustDesk.exe" --cm'
+        - Type: CommandLine
+          Value: rustdesk.exe --silent-install
+        - Type: CommandLine
+          Value: rustdesk.exe --password <password>
+        - Type: CommandLine
+          Value: rustdesk.exe --get-id
+        - Type: CommandLine
+          Value: rustdesk.exe --config <config-string>
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_network_sigma.yml
       Description: Detects potential network activity of RustDesk RMM tool
@@ -51,6 +108,16 @@ Detections:
       Description: Detects potential files activity of RustDesk RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_processes_sigma.yml
       Description: Detects potential processes activity of RustDesk RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rustdesk_registry_sigma.yml
+      Description: Detects potential registry activity of RustDesk RMM tool
 References:
     - https://rustdesk.com/docs/en/
-Acknowledgement: []
+    - https://rustdesk.com/docs/en/self-host/
+    - https://rustdesk.com/docs/en/client/windows/
+    - https://github.com/rustdesk/rustdesk/blob/master/src/core_main.rs
+    - https://github.com/rustdesk/rustdesk/blob/master/src/platform/windows.rs
+    - https://github.com/rustdesk/hbb_common/blob/main/src/config.rs
+    - https://thedfirreport.com/2026/06/29/from-bing-search-to-ransomware-bumblebee-and-adaptixc2-deliver-akira-3/
+Acknowledgement:
+    - Person: The DFIR Report
+      Handle: '@TheDFIRReport'
