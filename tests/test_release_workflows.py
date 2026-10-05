@@ -50,6 +50,31 @@ class ReleaseWorkflowTests(unittest.TestCase):
             self.assertNotIn('if', step)
         self.assertTrue(any('source-revision.txt' in s.get('run', '') for s in steps[test:upload]))
 
+    def test_generated_pr_uses_only_a_scoped_revoked_app_token(self):
+        writer = workflow('generated-data.yml')
+        job = writer['jobs']['generate']
+        self.assertEqual(writer['permissions'], {'contents': 'read'})
+        self.assertNotIn('permissions', job)
+        steps = job['steps']
+        token_index = next(i for i, step in enumerate(steps) if step.get('id') == 'app-token')
+        self.assertEqual(token_index, len(steps) - 2)
+        token = steps[token_index]
+        self.assertTrue(token['uses'].startswith('actions/create-github-app-token@'))
+        self.assertEqual(len(token['uses'].split('@')[1]), 40)
+        self.assertEqual(token['with'], {
+            'client-id': '${{ vars.GENERATED_DATA_APP_CLIENT_ID }}',
+            'private-key': '${{ secrets.GENERATED_DATA_APP_PRIVATE_KEY }}',
+            'owner': '${{ github.repository_owner }}',
+            'repositories': '${{ github.event.repository.name }}',
+            'permission-contents': 'write',
+            'permission-pull-requests': 'write',
+        })
+        # No fallback to GITHUB_TOKEN (which makes bot PR CI approval-required).
+        self.assertEqual(steps[-1]['with']['token'], '${{ steps.app-token.outputs.token }}')
+        self.assertNotIn('branch-token', steps[-1]['with'])
+        self.assertNotIn('skip-token-revoke', token['with'])
+        self.assertNotIn('token', steps[0]['with'])
+
     def test_one_main_only_writer_preserves_all_generated_products(self):
         writer = workflow('generated-data.yml')
         job = writer['jobs']['generate']
