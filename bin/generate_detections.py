@@ -11,6 +11,7 @@ import re
 import yaml
 import glob
 from datetime import datetime
+from detection_paths import process_image_pattern
 
 
 def executable_basename(path):
@@ -67,7 +68,9 @@ def generate_sigma_rule():
                 for path in data["Details"]["InstallationPaths"] or []:
                     exe_name = executable_basename(path)
                     if exe_name:
-                        exe_list.append(f"\\\\{exe_name}")
+                        pattern = process_image_pattern(path, exe_name)
+                        if pattern:
+                            exe_list.append(pattern)
         except Exception as e:
             print(f"Error processing {yaml_file}: {e}")
 

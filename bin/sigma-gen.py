@@ -6,6 +6,7 @@ import yaml
 from datetime import date
 import uuid
 from typing import Dict, List, Any, Optional, Tuple
+from detection_paths import PATH_REQUIRED_EXECUTABLES, process_image_pattern
 
 # Namespace UUID for generating deterministic rule IDs
 LOLRMM_NAMESPACE = uuid.UUID("a1b2c3d4-e5f6-7890-abcd-ef1234567890")
@@ -116,17 +117,6 @@ def dedupe(values: List[str]) -> List[str]:
     return unique
 
 
-def anchor_filename(filename: str) -> str:
-    """Require a Windows path separator immediately before an executable name.
-
-    Both ordinary and wildcard-prefixed basenames need the separator.  Sigma
-    requires a backslash before a wildcard to be escaped, so the Python value
-    deliberately contains two backslashes before every basename, including
-    ``*.exe``.
-    """
-    return f"\\\\{filename}"
-
-
 def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     artifacts = {"files": [], "registry": [], "network": [], "processes": []}
 
@@ -156,9 +146,10 @@ def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
     details = yaml_data.get("Details", {})
     if isinstance(details, dict):
         artifacts["processes"] = [
-            anchor_filename(ntpath.basename(item))
+            pattern
             for item in details.get("InstallationPaths", []) or []
             if isinstance(item, str) and item.lower().endswith(".exe")
+            if (pattern := process_image_pattern(item, ntpath.basename(item)))
         ]
 
     return {key: dedupe(values) for key, values in artifacts.items()}
@@ -273,6 +264,18 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
         stale_file_rule = os.path.join(output_dir, f"{safe_name}_files_sigma.yml")
         if os.path.isfile(stale_file_rule):
             os.remove(stale_file_rule)
+
+    # Do not leave an old broad process rule when all its generic names were
+    # rejected. Leave unrelated legacy rules without source paths untouched.
+    paths = (data.get("Details") or {}).get("InstallationPaths") or []
+    if not artifacts["processes"] and any(
+        isinstance(path, str)
+        and ntpath.basename(path).casefold() in PATH_REQUIRED_EXECUTABLES
+        for path in paths
+    ):
+        stale_process_rule = os.path.join(output_dir, f"{safe_name}_processes_sigma.yml")
+        if os.path.isfile(stale_process_rule):
+            os.remove(stale_process_rule)
 
     rule_templates = {
         "registry": {

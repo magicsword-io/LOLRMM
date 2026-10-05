@@ -56,7 +56,6 @@ Details:
         - '*\svchost-windows-amd64-*.exe'
         - '*\agent-windows-amd64-*.exe'
         - ovd_*.exe
-        - svchost.exe
 Artifacts:
     Disk:
         - File: C:\Users\*\AppData\Roaming\Microsoft\DeviceSync\svchost.exe

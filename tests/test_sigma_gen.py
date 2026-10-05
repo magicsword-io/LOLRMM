@@ -23,7 +23,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("sigma_gen", ROOT / "bin" / "sigma-gen.py")
 assert SPEC and SPEC.loader
 sigma_gen = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(sigma_gen)
+with patch.object(sys, "path", [str(ROOT / "bin"), *sys.path]):
+    SPEC.loader.exec_module(sigma_gen)
 
 
 def sample_rule() -> dict:
@@ -266,12 +267,13 @@ class GenerationTests(unittest.TestCase):
         (self.root / 'website/public/api').mkdir(parents=True)
         self.script = self.root / 'bin/generate_detections.py'
         shutil.copyfile(SCRIPT, self.script)
+        shutil.copyfile(ROOT / 'bin/detection_paths.py', self.root / 'bin/detection_paths.py')
 
     def write_inputs(self, reverse=False):
         records = [
-            [r'C:\Tools\agent.exe', 'client*.exe', 'Agent.EXE', '<random>.exe'],
+            [r'C:\Tools\VendorAgent.exe', 'client*.exe', 'VendorAgent.EXE', '<random>.exe'],
             None,
-            ['agent.exe', r'C:\Tools\B.EXE', 123, 'valid.exe'],
+            ['vendoragent.exe', r'C:\Tools\B.EXE', 123, 'valid.exe'],
         ]
         if reverse:
             records.reverse()
@@ -310,7 +312,7 @@ class GenerationTests(unittest.TestCase):
                 self.assertEqual(first, outputs)
         rule = yaml.safe_load(first['generic_rmm_detection.yml'])
         self.assertEqual(rule['detection']['selection']['Image|endswith'],
-                         [r'\\Agent.EXE', r'\\B.EXE', r'\\client*.exe', r'\\valid.exe'])
+                         [r'\\B.EXE', r'\\client*.exe', r'\\valid.exe', r'\\VendorAgent.EXE'])
         self.assertEqual(rule['tags'], ['attack.command-and-control', 'attack.t1219'])
         domains = yaml.safe_load(first['rmm_domains_dns_queries.yml'])
         self.assertEqual(domains['detection']['selection']['query|contains'],
@@ -328,6 +330,53 @@ class GenerationTests(unittest.TestCase):
                 with patch.object(generator.glob, 'glob', return_value=list(reversed(files))):
                     generator.generate_sigma_rule()
                 self.assertEqual(first, self.outputs())
+
+    def test_generic_names_keep_paths_in_both_generated_rules(self):
+        """PROC-SCOPE-001/002/004: exercise both consumers and the public copy."""
+        specific = [
+            r'*\AppData\Roaming\Microsoft\DeviceSync\svchost.exe',
+            r'*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\svchost.exe',
+            r'C:\Program Files\Monitic\agent.exe',
+            r'C:\Users\*\AppData\Local\remsupp-updater\installer.exe',
+        ]
+        source = self.root / 'yaml/example.yaml'
+        source.write_text(yaml.safe_dump({
+            'Name': 'Example', 'Details': {'InstallationPaths': specific + [
+                'svchost.exe', 'SVCHOST.EXE', r'*\svchost.exe', r'C:\*\svchost.exe',
+                r'C:\Windows\System32\svchost.exe', 'agent.exe', 'installer.exe',
+                r'*\Windows\System32\svchost.exe', r'%APPDATA%\Vendor\agent.exe',
+                'AnyDesk.exe',
+            ]},
+        }))
+        subprocess.run([sys.executable, str(self.script)],
+                       capture_output=True, text=True, check=True)
+        output_dir = self.root / 'per-tool'
+        output_dir.mkdir()
+        sigma_gen.generate_sigma_rules(str(source), str(output_dir))
+        aggregate = yaml.safe_load((self.root / 'detections/sigma/generic_rmm_detection.yml').read_text())
+        per_tool = yaml.safe_load((output_dir / 'example_processes_sigma.yml').read_text())
+        expected = {value.replace('\\', '\\\\') for value in specific} | {r'\\AnyDesk.exe'}
+        for selectors in [
+            aggregate['detection']['selection']['Image|endswith'],
+            per_tool['detection']['selection_image']['Image|endswith'],
+            per_tool['detection']['selection_parent']['ParentImage|endswith'],
+        ]:
+            self.assertEqual(set(selectors), expected)
+        self.outputs()  # Public aggregate copy must receive the same correction.
+
+    def test_bare_generic_names_remove_stale_process_rule(self):
+        """PROC-SCOPE-003: a rejected source cannot leave an old broad rule."""
+        output_dir = self.root / 'per-tool'
+        output_dir.mkdir()
+        stale = output_dir / 'example_processes_sigma.yml'
+        stale.write_text(yaml.safe_dump(sample_rule()))
+        source = self.root / 'yaml/example.yaml'
+        source.write_text(yaml.safe_dump({
+            'Name': 'Example',
+            'Details': {'InstallationPaths': ['svchost.exe', 'agent.exe', 'installer.exe']},
+        }))
+        self.assertEqual(sigma_gen.generate_sigma_rules(str(source), str(output_dir)), [])
+        self.assertFalse(stale.exists())
 
 
 if __name__ == "__main__":
