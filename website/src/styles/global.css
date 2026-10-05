@@ -205,24 +205,6 @@ p {
   border-radius: 5px;
   font-size: 19px;
 }
-.status-strip {
-  border-bottom: 1px solid var(--line);
-  font: 9px/1.5 var(--mono);
-  letter-spacing: 1px;
-  color: var(--muted);
-}
-.status-strip .wrap {
-  min-height: 33px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-.status-strip .wrap > span {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
 .status-dot {
   display: inline-block;
   width: 6px;
@@ -346,7 +328,7 @@ p {
 }
 .metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   padding: 24px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -1337,13 +1319,6 @@ td time {
   .navigation nav a {
     font-size: 12px;
   }
-  .status-strip {
-    font-size: 7px;
-    letter-spacing: 0.7px;
-  }
-  .status-strip a {
-    display: none;
-  }
   .hero {
     padding: 36px 0 31px;
     display: block;
@@ -1379,16 +1354,19 @@ td time {
     margin-bottom: 23px;
   }
   .metrics > div {
-    padding: 18px 15px !important;
-    border-left: 1px solid var(--line);
+    padding: 18px 0;
+    border-left: 0;
     gap: 4px;
   }
-  .metrics > div:nth-child(odd) {
-    padding-left: 0 !important;
-    border-left: 0;
+  .metrics > div:first-child {
+    grid-column: 1 / -1;
   }
-  .metrics > div:nth-child(n + 3) {
+  .metrics > div:nth-child(n + 2) {
     border-top: 1px solid var(--line);
+  }
+  .metrics > div:last-child {
+    padding-left: 15px;
+    border-left: 1px solid var(--line);
   }
   .metrics strong {
     font-size: 29px;

@@ -40,7 +40,7 @@ import { stats, newest, toolUrl, repository } from '../lib/catalog';
   <section class="metrics" aria-label="Catalog statistics">
     <div>
       <span class="metric-label">CATALOG ENTRIES</span>
-      <strong>{stats.tools}</strong>
+      <strong class="accent">{stats.tools}</strong>
       <span>
         {stats.rmm} RMM · {stats.rat} RAT
       </span>
@@ -54,11 +54,6 @@ import { stats, newest, toolUrl, repository } from '../lib/catalog';
       <span class="metric-label">CODE SIGNING</span>
       <strong>{stats.certificates}</strong>
       <span>Tools with certificate evidence</span>
-    </div>
-    <div>
-      <span class="metric-label">OPEN INTELLIGENCE</span>
-      <strong class="accent">100%</strong>
-      <span>Community driven &amp; open source</span>
     </div>
   </section>
   <div class="intelligence-grid">
