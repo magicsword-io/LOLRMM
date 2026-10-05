@@ -1,0 +1,28 @@
+title: Potential Overlord RMM Tool Network Activity
+id: eff8029d-8a19-59fa-b6d1-e0d62a6458ef
+status: experimental
+description: |
+    Detects potential network activity of Overlord RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-10-05
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname|endswith:
+            - '*.ngrok-free.app'
+            - '*.ngrok.app'
+            - '*.ngrok.io'
+            - '*.ngrok.com'
+            - 'pandoramods.top'
+            - 'savaliyapriyal874-code.github.io'
+    condition: selection
+falsepositives:
+    - Legitimate use of Overlord
+level: medium

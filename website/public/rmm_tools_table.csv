@@ -53,6 +53,7 @@ Name,Category,Description,Author
 [Parsec](/rmm_tools/parsec),RAT,"Parsec is a remote desktop streaming tool for remote access and monitoring, mainly used for gaming a...",Luca Di Bartolomeo & Matt Green
 [Controlio](/rmm_tools/controlio),RMM,Controlio is a commercial workforce monitoring tool developed by EfficientLab. Marketed for employee...,CERT Cwatch Almond
 [OCS inventory](/rmm_tools/ocs-inventory),RMM,OCS inventory is a remote monitoring and management (RMM) tool. More information will be added as it...,
+[N-able N-central](/rmm_tools/n-able-n-central),RMM,N-able N-central is a remote monitoring and management (RMM) platform used by MSPs and IT teams. The...,"Liran Ravich, Cribl"
 [ProxiPort](/rmm_tools/proxiport),RMM,"ProxiPort is an open-source, self-hosted remote management and reverse- tunnel project with a server...",Michael Haag
 [Terminals](/rmm_tools/terminals),RAT,Terminals is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Splashtop Remote](/rmm_tools/splashtop-remote),RMM,Splashtop Remote is a remote monitoring and management (RMM) tool. More information will be added as...,
@@ -112,6 +113,7 @@ Name,Category,Description,Author
 [Minexus](/rmm_tools/minexus),RMM,"Minexus is an open-source, self-hosted remote management system composed of a Nexus server, Console,...",Michael Haag
 [ezHelp](/rmm_tools/ezhelp),RMM,ezHelp is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Opale](/rmm_tools/opale),RMM,"Opale is an open-source, self-hosted remote monitoring and management platform. Its documented deplo...",Michael Haag
+[Vicarius vRx](/rmm_tools/vicarius-vrx),RMM,Vicarius vRx is a commercial vulnerability remediation and patch management platform with agents for...,"Liran Ravich, Cribl"
 [RemotePulse](/rmm_tools/remotepulse),RMM,"RemotePulse is a remote monitoring and management platform that advertises unattended remote access,...",Jason Killam
 [PChelpware](/rmm_tools/pchelpware),RMM,PChelpware (also known as PCHelpWare) is a free and open-source remote support and remote desktop so...,Daniel Koifman (KoifSec)
 [Xshell](/rmm_tools/xshell),RAT,Xshell is a remote monitoring and management (RMM) tool. More information will be added as it become...,
@@ -156,7 +158,7 @@ Name,Category,Description,Author
 [QQ IM-remote assistance](/rmm_tools/qq-im-remote-assistance),RMM,QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More information will be a...,
 [HopToDesk](/rmm_tools/hoptodesk),RMM,HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed bein...,Michael Haag
 [Microsoft Quick Assist](/rmm_tools/microsoft-quick-assist),RAT,Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be ad...,
-[RustDesk](/rmm_tools/rustdesk),RMM,RustDesk is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
+[RustDesk](/rmm_tools/rustdesk),RMM,RustDesk is an open-source remote desktop and remote access tool that can use the public RustDesk re...,
 [TurboMeeting](/rmm_tools/turbomeeting),RMM,TurboMeeting is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [Kaseya (VSA)](/rmm_tools/kaseya-vsa),RMM,Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More information will be a...,Nasreddine Bencherchali
 [BeAnyWhere](/rmm_tools/beanywhere),RMM,BeAnyWhere is a remote monitoring and management (RMM) tool. More information will be added as it be...,
@@ -200,7 +202,7 @@ Name,Category,Description,Author
 [Beacon (Synertek)](/rmm_tools/beacon-synertek),RMM,Beacon is an AGPL-3.0-licensed remote monitoring and management project from Synertek Cloud Services...,Michael Haag
 [ServerEye](/rmm_tools/servereye),RMM,ServerEye is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Rapid7](/rmm_tools/rapid7),RMM,Rapid7 is a remote monitoring and management (RMM) tool. More information will be added as it become...,
-[ngrok](/rmm_tools/ngrok),RAT,ngrok is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,Jose Hernandez
+[ngrok](/rmm_tools/ngrok),RAT,ngrok is a tunneling / reverse-proxy service frequently abused for remote access and C2 concealment....,Jose Hernandez
 [HelpU](/rmm_tools/helpu),RMM,HelpU is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
 [Jump Desktop](/rmm_tools/jump-desktop),RMM,Jump Desktop is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [Go Mini RMM](/rmm_tools/go-mini-rmm),RMM,"Go Mini RMM is an open-source Go management server and endpoint agent. The agent sends heartbeats, c...",Michael Haag
@@ -278,7 +280,7 @@ Name,Category,Description,Author
 [ConnectWise](/rmm_tools/connectwise),RMM,ConnectWise is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [UltraViewer](/rmm_tools/ultraviewer),RMM,UltraViewer is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [N-Able Advanced Monitoring Agent](/rmm_tools/n-able-advanced-monitoring-agent),RMM,N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information ...,
-[CloudFlare Tunnel](/rmm_tools/cloudflare-tunnel),RAT,CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added a...,
+[CloudFlare Tunnel](/rmm_tools/cloudflare-tunnel),RAT,"Cloudflare Tunnel (cloudflared) creates outbound-only tunnels from a host to Cloudflare, exposing in...",
 [FreeNX](/rmm_tools/freenx),RAT,FreeNX is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [ZeroTier](/rmm_tools/zerotier),RAT,ZeroTier is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [AnyDesk](/rmm_tools/anydesk),RMM,AnyDesk is a popular remote desktop software that enables users to access and control a computer or ...,"Ali Alwashali, Nasreddine Bencherchali"
@@ -327,6 +329,7 @@ Name,Category,Description,Author
 [NTR Remote](/rmm_tools/ntr-remote),RMM,NTR Remote is a remote monitoring and management (RMM) tool. More information will be added as it be...,
 [FleetDeck.io](/rmm_tools/fleetdeckio),RMM,FleetDeck is a remote monitoring and management (RMM) tool that provides agent-based remote desktop ...,Michael Haag
 [Remmon](/rmm_tools/remmon),RMM,Remmon is a remote monitoring and management (RMM) tool. More information will be added as it become...,
+[Overlord](/rmm_tools/overlord),RAT,Overlord is a publicly available cross-platform remote access framework with Go-based agents and a T...,Jose Hernandez
 [I'm InTouch](/rmm_tools/im-intouch),RMM,I'm InTouch is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [SetMe PRO](/rmm_tools/setme-pro),RMM,SetMe is a Techinline remote access and support platform for attended and unattended connections. It...,Thief1523
 [DW Service](/rmm_tools/dw-service),RMM,DW Service is a remote monitoring and management (RMM) tool. More information will be added as it be...,
