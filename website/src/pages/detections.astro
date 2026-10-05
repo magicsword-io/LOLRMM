@@ -1,0 +1,111 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import { parse } from 'yaml';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CodeBlock from '../components/CodeBlock.astro';
+const load = (file: string) =>
+  fs.readFileSync(path.resolve(process.cwd(), file), 'utf8');
+const kql = parse(load('../detections/kql/generic_rmm_detection.yml'))
+  .query as string;
+const splunk = parse(load('../detections/splunk/generic_rmm_detection.yml'))
+  .query as string;
+const sigma = load('public/api/detections/sigma/generic_rmm_detection.yml');
+const domains = load('public/api/detections/sigma/rmm_domains_dns_queries.yml');
+---
+
+<BaseLayout title="Detections & hunting queries — LOLRMM">
+  <div class="page-heading">
+    <p class="eyebrow">DETECT / INVESTIGATE / DEFEND</p>
+    <h1>Put the intelligence to work.</h1>
+    <p class="intro">
+      Find remote access activity in your environment with community detection
+      rules and hunting queries. Tune each query to your approved tools and
+      available telemetry.
+    </p>
+  </div>
+  <nav class="detection-tabs" aria-label="Detection platforms">
+    <a href="#defender">Microsoft Defender ↓</a>
+    <a href="#splunk">Splunk ↓</a>
+    <a href="#sigma">Sigma ↓</a>
+    <a href="#sysmon">Sysmon ↓</a>
+  </nav>
+  <div class="detection-content">
+    <section id="defender">
+      <h2>Microsoft Defender for Endpoint</h2>
+      <p>
+        Hunt for connections to known RMM domains using{' '}
+        <code>DeviceNetworkEvents</code>. Replace the <code>SanctionRMM</code>{' '}
+        list with your organization's approved domains. For Microsoft Sentinel,
+        replace both <code>Timestamp</code> references with{' '}
+        <code>TimeGenerated</code>.
+      </p>
+      <CodeBlock code={kql} label="Microsoft Defender query" />
+    </section>
+    <section id="splunk">
+      <h2>Splunk</h2>
+      <p>
+        This query requires Splunk Enterprise Security, the Network Traffic data
+        model, and the Remote Access Software lookup. Configure the referenced
+        macros and exception lists for your environment.
+      </p>
+      <CodeBlock code={splunk} label="Splunk query" />
+      <p>
+        <a
+          class="value-link"
+          href="https://research.splunk.com/network/885ea672-07ee-475a-879e-60d28aa5dd42/"
+        >
+          View detection details on Splunk Research ↗
+        </a>
+      </p>
+    </section>
+    <section id="sigma">
+      <h2>Sigma rules</h2>
+      <p>
+        Use process and DNS indicators in your SIEM. The rules below are
+        generated from the catalog. Review the indicators and tune expected
+        remote management activity before deployment.
+      </p>
+      <div class="page-actions">
+        <a
+          class="button"
+          href="/api/detections/sigma/generic_rmm_detection.yml"
+        >
+          Download process rule ↓
+        </a>
+        <a
+          class="button"
+          href="/api/detections/sigma/rmm_domains_dns_queries.yml"
+        >
+          Download DNS rule ↓
+        </a>
+      </div>
+      <details>
+        <summary>View process detection rule</summary>
+        <CodeBlock code={sigma} label="Sigma process rule" />
+      </details>
+      <details>
+        <summary>View DNS detection rule</summary>
+        <CodeBlock code={domains} label="Sigma DNS rule" />
+      </details>
+      <p>
+        <a
+          class="value-link"
+          href="https://github.com/magicsword-io/LOLRMM/tree/main/detections/sigma"
+        >
+          Explore tool-specific Sigma rules ↗
+        </a>
+      </p>
+    </section>
+    <section id="sysmon">
+      <h2>Community Sysmon configuration</h2>
+      <p>
+        Dodge This Security maintains a Sysmon configuration for hunting RMM
+        activity using LOLRMM intelligence.
+      </p>
+      <a class="button" href="https://github.com/shotgunner101/Sysmon-LOLRMM">
+        Explore Sysmon-LOLRMM ↗
+      </a>
+    </section>
+  </div>
+</BaseLayout>

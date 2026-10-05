@@ -1,0 +1,28 @@
+title: Potential LS RMM RMM Tool Process Activity
+id: 46535aa7-c664-5f0c-a63e-865f783ec98e
+status: experimental
+description: |
+    Detects potential processes activity of LS RMM RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-09-23
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - '\\LS RMM.exe'
+            - '\\LS RMM Worker.exe'
+    selection_image:
+        Image|endswith:
+            - '\\LS RMM.exe'
+            - '\\LS RMM Worker.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of LS RMM
+level: medium

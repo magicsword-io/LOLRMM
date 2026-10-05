@@ -1,0 +1,282 @@
+Name: Zecurit
+Category: RMM
+Description: >
+    Zecurit is a cloud-based endpoint management and remote monitoring and management
+    platform for Windows, macOS, and Linux. It provides unattended remote access,
+    file transfer, remote commands and scripts, software deployment, patch management,
+    and hardware and software inventory. A Zoom-themed phishing delivery reported
+    by @patialavii used zoominstaller.exe to deliver the Zecurit Windows agent.
+    The reported payload contains Zecurit management and remote-access components;
+    the lure filename is not a product-specific detection artifact. Investigate
+    unexpected installations against the organization's approved remote-access tools.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: https://zecurit.com/
+    PEMetadata: {}
+    Privileges: Administrator for installation; Local System on Windows; root on macOS/Linux
+    Free: true
+    Verification: >
+        Vendor documentation confirms the RMM capabilities and supported platforms.
+        The reported installer SHA256 was verified and its embedded MSI and agent
+        archive were extracted without executing the software. Windows paths,
+        registry keys, and network endpoints were corroborated with execution
+        reports. Extracted ZecuritAgentService.exe, ZecuritAgentRegister.exe,
+        ZecuritRemoteTools.exe, and ZecuritScreenReaderService.exe have locally
+        verified Authenticode signatures. The outer renamed installer's signature
+        could not be validated; its embedded certificate alone does not establish
+        a valid signature. Those four extracted executables have no PE version metadata.
+        The phishing delivery chain is attributed to the reporter. Separately obtained
+        zecurit_agent_2.48.bin (Linux) and zecurit_agent_1.50.pkg (macOS) were
+        statically extracted. Their scripts, service definitions, and Ghidra
+        analysis of native installer helpers establish the platform-specific
+        artifacts below. The macOS package passes Apple signature and notarization
+        checks. No Linux package signature was independently established. Live
+        installation and remote sessions were not tested. Free Asset Manager and
+        Remote Access editions are available alongside paid plans.
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+    Capabilities:
+        - Attended and unattended remote desktop access
+        - Remote command and script execution
+        - File transfer
+        - Remote registry, service, and process management on Windows
+        - Software deployment
+        - Operating-system and application patch management
+        - Hardware and software inventory
+        - Endpoint monitoring and configuration management
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Zecurit\Agent\ZecuritAgentService.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritAgentRegister.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritAgentTray.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritAgentAssetMgr.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritLiveNotifier.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritCommandProcessor.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritRemoteTools.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritScreenReaderService.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritScreenReaderApp.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritScreenReaderAppUI.exe
+        - C:\Program Files\Zecurit\Agent\ZecuritApplicationControlService.exe
+        - C:\Windows\Temp\Zecurit\ZecuritAgentUpgrader.exe
+        - /usr/local/zecurit_agent/bin/agentService
+        - /usr/local/zecurit_agent/bin/commandProcessor
+        - /usr/local/zecurit_agent/bin/installer
+        - /Library/zecurit_agent/bin/Service
+        - /Library/zecurit_agent/bin/CommandProcessor
+        - /Library/zecurit_agent/bin/Installer
+        - /Library/zecurit_agent/bin/ZecuritAccess.app/Contents/MacOS/ZecuritAccess
+Artifacts:
+    Disk:
+        - File: '*\Zecurit\Agent\ZecuritAgentService.exe'
+          Description: Windows management service executable included in the extracted agent archive.
+          OS: Windows
+        - File: '*\Zecurit\Agent\ZecuritAgentRegister.exe'
+          Description: Agent registration executable invoked by the installer helper.
+          OS: Windows
+        - File: '*\Zecurit\Agent\ZecuritRemoteTools.exe'
+          Description: Remote-tools component included in the extracted Windows agent archive.
+          OS: Windows
+        - File: '*\Zecurit\Agent\ZecuritScreenReaderService.exe'
+          Description: Remote-access service component included in the extracted Windows agent archive.
+          OS: Windows
+        - File: '*\Zecurit\Agent\Logs\agent_service.log'
+          Description: Windows agent service log observed under the installed agent directory.
+          OS: Windows
+          Example:
+              - C:\Program Files\Zecurit\Agent\Logs\agent_service.log
+        - File: '*\Zecurit\Agent\Logs\agent_cmd_handler.log'
+          Description: Command-handler log observed under the installed agent directory.
+          OS: Windows
+        - File: '*\Zecurit\Agent\Storage\AgentSettings.json'
+          Description: Agent settings file referenced by the service and observed in execution reports.
+          OS: Windows
+        - File: '*\Zecurit\ZecuritAgentUpgrader.exe'
+          Description: Agent upgrade executable staged beneath the Windows temporary directory.
+          OS: Windows
+          Example:
+              - C:\Windows\Temp\Zecurit\ZecuritAgentUpgrader.exe
+        - File: '*\Zecurit\zecurit_windows_agent.exe'
+          Description: Downloaded update installer observed with /SILENT /NORESTART arguments.
+          OS: Windows
+          Example:
+              - C:\Windows\Temp\Zecurit\zecurit_windows_agent.exe
+        - File: '*\ZecuritAgentInstaller.msi'
+          Description: Embedded Windows installer package extracted by the reported Inno Setup wrapper.
+          OS: Windows
+          Example:
+              - C:\Windows\Temp\ZecuritAgentInstaller.msi
+        - File: /usr/local/zecurit_agent/bin/agentService
+          Description: >
+              Linux agent executable. The packaged systemd unit runs it with -s
+              as root and Restart=always. Path confirmed in the 2.48 package.
+          OS: Linux
+        - File: /usr/local/zecurit_agent/bin/commandProcessor
+          Description: Command-processing executable copied by the Linux installation script.
+          OS: Linux
+        - File: /usr/local/zecurit_agent/bin/installer
+          Description: >
+              Native Linux installer helper. After successful registration, its
+              install handler copies, enables, and starts zecurit_agent.service.
+          OS: Linux
+        - File: /etc/systemd/system/zecurit_agent.service
+          Description: >
+              systemd unit installed from the agent's bin directory. Ghidra confirms
+              the destination path and systemctl enable/start calls in the installer.
+          OS: Linux
+        - File: /usr/local/zecurit_agent/config/server.json
+          Description: Enrollment configuration copied into the default Linux installation directory.
+          OS: Linux
+        - File: /usr/local/zecurit_agent/RemoveAgent.sh
+          Description: Linux removal script invoking bin/installer uninstall.
+          OS: Linux
+        - File: /Library/zecurit_agent/bin/Service
+          Description: macOS agent executable launched as root by the packaged service launch daemon.
+          OS: macOS
+        - File: /Library/zecurit_agent/bin/CommandProcessor
+          Description: Command-processing executable in the macOS package payload.
+          OS: macOS
+        - File: /Library/zecurit_agent/bin/Installer
+          Description: Native macOS installer helper invoked by the package postinstall script.
+          OS: macOS
+        - File: /Library/zecurit_agent/bin/ZecuritAccess.app/Contents/MacOS/ZecuritAccess
+          Description: Zecurit access application included in the macOS package payload.
+          OS: macOS
+        - File: /Library/zecurit_agent/bin/ZecuritInventory.app/Contents/MacOS/ZecuritInventory
+          Description: Zecurit inventory application included in the macOS package payload.
+          OS: macOS
+        - File: /Library/LaunchDaemons/com.zecurit_agent.service.plist
+          Description: >
+              macOS launch daemon copied by the package postinstall script. Its
+              Label is com.zecurit.service, with RunAtLoad and KeepAlive enabled.
+          OS: macOS
+    EventLog: []
+    Registry:
+        - Path: HKLM\SOFTWARE\Zecurit\Agent
+          Description: >
+              Windows agent configuration key. AgentDetails holds values such as
+              agent_version, polling_interval, and agentDownloadURL. The product
+              key is present in the extracted code and writes were observed in
+              execution reports.
+    Network:
+        - Description: >
+              Vendor application server observed in Windows agent command-line
+              configuration and outbound HTTPS traffic. This host also serves the
+              legitimate web console; a connection alone does not establish abuse.
+          Domains:
+              - app.zecurit.com
+          Ports:
+              - 443
+        - Description: Vendor endpoint observed in the reported Windows agent's outbound HTTPS traffic.
+          Domains:
+              - dms.zecurit.com
+          Ports:
+              - 443
+        - Description: >
+              Specific distribution used for agent updates. An observed agentDownloadURL
+              points to /agent-directory/windows-main/zecurit_agent_3.22.exe on this
+              host. The shared CloudFront parent domain is not a product indicator.
+          Domains:
+              - d1m8kha1zyjal6.cloudfront.net
+          Ports:
+              - 443
+    Other:
+        - Type: ObservedServiceName
+          Value: Zecurit Agent
+        - Type: LinuxSystemdUnit
+          Value: zecurit_agent.service
+        - Type: MacOSLaunchDaemonLabel
+          Value: com.zecurit.service
+        - Type: MacOSPackageIdentifier
+          Value: com.zecurit_agent.app
+        - Type: MacOSAccessBundleIdentifier
+          Value: com.Zecurit.ZecuritAccess
+        - Type: MacOSInstallerSigner
+          Value: 'Developer ID Installer: ZECURIT TECHNOLOGIES PRIVATE LIMITED (DM7CUTNR64)'
+        - Type: MacOSTeamIdentifier
+          Value: DM7CUTNR64
+        - Type: InspectedLinuxPackageSHA256
+          Value: aab8cb5e93ae707a9b041cf98091b8c76331aa2efe0d6e7bf08396ccabcb2d2e
+        - Type: InspectedMacOSPackageSHA256
+          Value: d148fadb4578a2c0a656aef74a6da6a6e6c6ce997fca1990c39823c3660b798a
+        - Type: PlatformArtifactScope
+          Value: >
+              macOS/Linux indicators come from separate packages, not from the
+              reported Windows phishing payload. Linux paths describe the default
+              installation; although the shell wrapper accepts --path, the inspected
+              native helper and systemd unit use /usr/local/zecurit_agent.
+              The catalog's current Sigma generator emits Windows rules only;
+              these OS-tagged artifacts also support platform-specific hunting.
+        - Type: ReportedInstallerSHA256
+          Value: 71e6f9bdc3f3c5564ade4e6d3c9afe582a6de8e4da9127d0dfd9f1674d15f40a
+        - Type: ReportedDeliveryContext
+          Value: >
+              @patialavii reported a Zoom-themed phishing page delivering
+              zoominstaller.exe. The following defanged URLs describe that report,
+              not legitimate Zecurit infrastructure or general product indicators.
+        - Type: ReportedPhishingURL
+          Value: hxxps://zoominvite-us09web-user08b.pages[.]dev/
+        - Type: ReportedDownloadURL
+          Value: hxxps://s3-us-east-1.onlizard[.]com/8_BZotHyp-282q_v8NEAQ/default/zoominstaller.exe
+        - Type: InstallerPEMetadata
+          Value: >
+              The reported outer installer identifies its ProductName as Zecurit
+              Agent and FileDescription as Zecurit Agent Setup. CompanyName and
+              OriginalFileName are blank. These fields identify the wrapper;
+              they are not metadata for the extracted agent executables.
+        - Type: ObservedAgentServiceSHA256
+          Value: d76c4053f7b369fa374b3c36c2c01b9c5630558e67b2cc3938ecf99192c13d75
+        - Type: ObservedRemoteToolsSHA256
+          Value: 132931f79ef7bda1c12bf231da8da45b2533eb74bdd336724f47923077cfef1c
+        - Type: ObservedScreenReaderServiceSHA256
+          Value: b03fde83d90e27cb974c988cb6235167b2b05c6eacc1b7e529ef6fbac8adac69
+Detections: []
+References:
+    - https://zecurit.com/how-it-works/
+    - https://zecurit.com/remote-access/
+    - https://zecurit.com/remote-access/remote-troubleshooting-software/
+    - https://zecurit.com/help/asset-management/device-enrollment/zecurit-agent-overview/
+    - https://zecurit.com/help/asset-management/device-enrollment/manual-device-enrollment/enrollment-via-manual-download/
+    - https://zecurit.com/help/asset-management/device-enrollment/silent-and-bulk-enrollment/enrollment-via-sccm/
+    - https://zecurit.com/pricing/
+    - https://x.com/patialavii/status/2102245788885622879
+    - https://app.urlyze.io/scan/2cf6cdc9-4f7d-49c9-9755-7bd61d02a7a4
+Acknowledgement:
+    - Person: patialavii
+      Handle: '@patialavii'
+CodeSigning:
+    search_names:
+        - ZecuritAgentService.exe
+        - ZecuritAgentRegister.exe
+        - ZecuritRemoteTools.exe
+        - ZecuritScreenReaderService.exe
+    company_names: []
+    signer_names:
+        - ZECURIT TECHNOLOGIES PRIVATE LIMITED
+    certificates:
+        - signer_name: ZECURIT TECHNOLOGIES PRIVATE LIMITED
+          certificate_thumbprint: 6D9ED879ADC48C1B0EBA4058A5C6511A5DD07C63
+          issuer: Sectigo Public Code Signing CA R36
+          valid_from: '2025-06-25T00:00:00Z'
+          valid_to: '2028-06-24T23:59:59Z'
+          tbs_sha256: 496497649dbae4d0277407e371c41975f6a763206e77c414b6345d72241dc826
+          tbs_sha1: 0b0f61752a097b27293749445532ab5f3972b46a
+          src_file_sha256: d76c4053f7b369fa374b3c36c2c01b9c5630558e67b2cc3938ecf99192c13d75
+          src_file_path: ZecuritAgentService.exe
+FileHashes:
+    authenticode:
+        - file_name: ZecuritAgentService.exe
+          sha256: fe2b0aa4a6688cfb902172a7aaa9c481bd306e10f30364a732f5f53cf5e53774
+          sha1: null
+        - file_name: ZecuritAgentRegister.exe
+          sha256: e1a44899861cd16e5af6e4d44ffaf2a6242b83955972eb89fdb7a014a60a9162
+          sha1: null
+        - file_name: ZecuritRemoteTools.exe
+          sha256: 3db45c6fb5488bcf722dccf3c3b1d066a631a97ed31253c52c957d6218ec1cfc
+          sha1: null
+        - file_name: ZecuritScreenReaderService.exe
+          sha256: d3ab0518f100bdfa5ff309c79ffef5d22ce454c0626e3d9105442dcc06c94cbc
+          sha1: null

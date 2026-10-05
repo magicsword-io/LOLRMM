@@ -1,0 +1,63 @@
+Name: Basic RMM Agent
+Category: RMM
+Description: >
+    Basic RMM Agent is an unattributed Windows remote monitoring and management
+    agent. Static analysis shows endpoint inventory, patch management, remote
+    interactive desktop control, shell access, file transfer, and endpoint
+    administration functions. The same binary also includes keylogging,
+    vault scanning, webcam and audio functions, and hidden virtual
+    desktop support. No independent vendor, official distribution source, or
+    publisher signature was established; use the product identity, hash, and
+    behavior rather than the generic agent.exe filename for triage.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: ''
+    PEMetadata:
+        Filename: agent.exe
+        OriginalFileName: agent.exe
+        Description: Basic RMM monitoring and management agent
+    Privileges: ''
+    Free: ''
+    Verification: >
+        A Windows x64 Go executable was inspected statically without execution.
+        Its PE metadata identifies Basic RMM Agent and its Go build information
+        identifies the executable path basicrmm/cmd/agent, the basicrmm module,
+        and GOOS=windows. Ghidra decompilation confirmed command dispatch for
+        shell, screen/input, keylog, vault scan, webcam, audio, and HVNC adapters,
+        plus compiled inventory, patch, and file-transfer functions. The vault
+        scan's exact collection scope was not resolved. Recovered Go module and
+        function paths additionally identify process, service, registry, and
+        self-update components; these were not decompiled in this pass.
+        The binary is unsigned.
+        External vendor or distribution provenance was not established, so the
+        Basic RMM name is a self-identity rather than an independently attributed
+        vendor product.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Endpoint inventory and patch management
+        - Interactive screen, input, and clipboard control
+        - Remote shell and file transfer
+        - Process, service, and registry administration components (symbol evidence)
+        - Self-update components (symbol evidence)
+        - Keylogging and vault scanning (collection scope not established)
+        - Webcam, audio, and hidden virtual desktop support
+    Vulnerabilities: []
+    InstallationPaths: []
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
+    Other:
+        - Type: InspectedWindowsAgentSHA256
+          Value: 3f5da17df9261283d0b70e9817bbfc681c6f3101b94a45ac6f8b9cda6aa40a3f
+        - Type: GoBuildModule
+          Value: basicrmm
+        - Type: GoBuildRevision
+          Value: 7074055331fcfba7e91cac443af2288e3afed9f2
+Detections: []
+References: []
+Acknowledgement: []

@@ -1,0 +1,22 @@
+title: Potential OpenDesk RMM Agent RMM Tool File Activity
+id: d27c0955-1e07-5744-8d25-fe4c4fbe368e
+status: experimental
+description: |
+    Detects potential files activity of OpenDesk RMM Agent RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-09-23
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith: 'OpenDesk-RMM-Agent.exe'
+    condition: selection
+falsepositives:
+    - Legitimate use of OpenDesk RMM Agent
+level: medium

@@ -1,0 +1,73 @@
+Name: OpenDesk RMM Agent
+Category: RMM
+Description: >
+    OpenDesk RMM Agent is a remote monitoring and management agent from
+    NextCore TI. Its first-party release repository documents Windows and Linux
+    support; the reviewed Windows release is a signed OpenDesk RMM Agent binary.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: https://github.com/nextcoreti/opendesk-rmm-agent
+    PEMetadata:
+        Filename: OpenDesk-RMM-Agent.exe
+        OriginalFileName: opendesk-rmm-agent.exe
+        Description: OpenDesk RMM Agent - Gerenciamento Remoto
+    Privileges: ''
+    Free: ''
+    Verification: >
+        The Windows sample was not executed. Its recorded full-file SHA-256,
+        PE metadata, and Authenticode signer identify OpenDesk RMM Agent,
+        NextCore TI, and Next Core TI Ltda. The body hash of the official
+        first-party OpenDesk-RMM-Agent.exe release asset matches the reviewed
+        Windows sample. The first-party release repository documents Windows
+        and Linux support. Its 30 published release records each expose only a
+        Windows OpenDesk-RMM-Agent.exe asset; this review has no verified Linux
+        artifact names, installed paths, services, or runtime
+        network endpoints. The vendor does not claim macOS support in the
+        reviewed repository.
+    SupportedOS:
+        - Windows
+        - Linux
+    Capabilities:
+        - Remote monitoring
+        - Remote management
+    Vulnerabilities: []
+    InstallationPaths:
+        - OpenDesk-RMM-Agent.exe
+        - opendesk-rmm-agent.exe
+Artifacts:
+    Disk:
+        - File: OpenDesk-RMM-Agent.exe
+          Description: Official Windows release-asset basename matching the inspected signed sample.
+          OS: Windows
+        - File: opendesk-rmm-agent.exe
+          Description: Original filename in the inspected Windows sample's PE metadata.
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network: []
+    Other:
+        - Type: InspectedWindowsAgentSHA256
+          Value: 60e5ca6a1f82a52a104601005d8a5c768674208f8f4ce7ac89ad97ca2b5978bb
+Detections: []
+References:
+    - https://github.com/nextcoreti/opendesk-rmm-agent
+    - https://github.com/nextcoreti/opendesk-rmm-agent/releases/tag/v2.10.24
+    - https://github.com/nextcoreti/opendesk-rmm-agent/releases/download/v2.10.24/OpenDesk-RMM-Agent.exe
+Acknowledgement: []
+CodeSigning:
+    search_names:
+        - OpenDesk-RMM-Agent.exe
+        - opendesk-rmm-agent.exe
+    company_names:
+        - NextCore TI
+    signer_names:
+        - Next Core TI Ltda
+    certificates:
+        - signer_name: Next Core TI Ltda
+          certificate_thumbprint: 0E6DD4D5946FA8908346735BF7D511251E3815D2
+          issuer: Sectigo Public Code Signing CA R36
+          src_file_sha256: 60e5ca6a1f82a52a104601005d8a5c768674208f8f4ce7ac89ad97ca2b5978bb
+          src_file_path: OpenDesk-RMM-Agent.exe
+          src_file_company: NextCore TI

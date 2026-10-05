@@ -1,0 +1,78 @@
+Name: Endar
+Category: RMM
+Description: >
+    Endar is an open-source, self-hosted RMM platform focused on endpoint
+    monitoring and compliance policies. Its controller source exposes agent
+    registration, policy retrieval, compliance-result, and data-collection
+    endpoints. Static extraction of the sole GitHub 1.0.0 release asset
+    identifies a Linux x86-64 PyInstaller endpoint agent with registration,
+    policy, data-collection, and compliance-task code. The source for that
+    agent is not in the repository, and the asset does not establish a default
+    installation directory or service; this entry records only supported
+    release evidence.
+Author: Michael Haag
+Created: '2026-09-28'
+LastModified: '2026-09-28'
+Details:
+    Website: https://github.com/tomkeene/endar
+    PEMetadata:
+        Filename: endar.exe
+        OriginalFileName: ''
+        Description: 'Misleading release filename: the reviewed endar.exe is a stripped Linux x86-64 ELF PyInstaller executable, not a Windows PE. It bundles Python 3.8 and an endar.pyc entry point.'
+    Privileges: Depends on the commands in compliance policies; exact agent execution context was not established from the available source and release metadata.
+    Free: Open source
+    Verification: >
+        Static review of controller source at repository commit
+        359a4495cd13711c82419e944abee14cb5c04979 and GitHub release metadata
+        for 1.0.0 (published 2022-10-27). The sole release asset was downloaded
+        for inert metadata, hash, string, and PyInstaller archive review; it was
+        not executed. SHA-256: 18f1d3189486cdcefb55e38edbe00462ea3b21b676714bf67dfec97d7c978327.
+        Despite its .exe name and README claims for Windows, Linux, and macOS,
+        the reviewed asset is Linux x86-64 only and no Windows or macOS agent
+        artifact was available.
+    SupportedOS:
+        - Linux
+    Capabilities:
+        - Agent registration with a self-hosted controller
+        - Endpoint metric collection
+        - Compliance policy retrieval
+        - Validation and enforcement task reporting
+    Vulnerabilities: []
+    InstallationPaths: []
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Documentation uses a self-hosted controller on TCP 5000 by default; a deployment can place it behind TLS or a reverse proxy. It has no shared vendor hostname.
+          Domains: []
+          Ports: []
+    Other:
+        - Type: ControllerDefaultPort
+          Value: '5000'
+        - Type: AgentEntryPoint
+          Value: AppServerSvc
+        - Type: BundledRuntime
+          Value: PyInstaller Python 3.8 on Linux x86-64
+        - Type: CronPersistenceOption
+          Value: --cron
+        - Type: ReviewedReleaseSHA256
+          Value: 18f1d3189486cdcefb55e38edbe00462ea3b21b676714bf67dfec97d7c978327
+        - Type: ControllerRegistrationRoute
+          Value: /api/v1/agent/register
+        - Type: ControllerPolicyRoute
+          Value: /api/v1/agent/policy
+        - Type: ControllerComplianceRoute
+          Value: /api/v1/agent/compliance
+        - Type: ControllerDataCollectionRoute
+          Value: /api/v1/agent/collection
+Detections: []
+References:
+    - https://github.com/tomkeene/endar
+    - https://github.com/tomkeene/endar/blob/359a4495cd13711c82419e944abee14cb5c04979/README.md
+    - https://github.com/tomkeene/endar/blob/359a4495cd13711c82419e944abee14cb5c04979/app/agent_api_v1/views.py
+    - https://github.com/tomkeene/endar/releases/tag/1.0.0
+    - https://github.com/tomkeene/endar/releases/download/1.0.0/endar.exe
+Acknowledgement:
+    - Person: tomkeene
+      Handle: '@tomkeene'

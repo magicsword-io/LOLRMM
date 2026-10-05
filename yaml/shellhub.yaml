@@ -4,7 +4,7 @@ Description: |
     ShellHub (cloud.shellhub.io / shellhub.io) is an open-source SSH gateway that enrolls devices via a per-tenant install script and gives operators browser-based remote terminal access through the ShellHub web dashboard. The agent installs via `curl -sSf "https://cloud.shellhub.io/install.sh?tenant_id=<TENANT_ID>" | sh` and registers the host into the operator's tenant; subsequent SSH connections are brokered through the ShellHub cloud over the persistent agent connection, with no inbound firewall change required on the device. Catalogued by the LOTTunnels project under the "shell access" category; documentation explicitly notes potential misuse by "insiders as well as threat actors" for "a variety of malicious tasks". Both a hosted SaaS (cloud.shellhub.io) and a self-hostable Docker deployment exist.
 Author: '@MHaggis'
 Created: '2026-05-18'
-LastModified: '2026-05-18'
+LastModified: '2026-09-22'
 Details:
     Website: https://shellhub.io/
     PEMetadata:
@@ -60,12 +60,8 @@ Artifacts:
         - Type: Other
           Value: 'LOTTunnels project — Shell Access category: https://lottunnels.github.io/lottunnels/Binaries/shellhub/'
 Detections:
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_files_sigma.yml
-      Description: Detects potential file activity of ShellHub RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_network_sigma.yml
       Description: Detects potential network activity of ShellHub RMM tool
-    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/shellhub_processes_sigma.yml
-      Description: Detects potential process activity of ShellHub RMM tool
 References:
     - https://shellhub.io/
     - https://github.com/shellhub-io/shellhub

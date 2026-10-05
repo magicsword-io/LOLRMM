@@ -1,0 +1,62 @@
+Name: UniSystem RMM
+Category: RMM
+Description: >
+    UniSystem RMM is a Windows endpoint-management platform. Matching product-branded
+    material describes a UniRMM agent with remote terminal access, RDP
+    tunneling, remote script execution, and endpoint monitoring. This entry
+    records matching UniRMM Windows sample metadata. The reviewed evidence
+    establishes product identity and vendor-described capabilities only; it
+    does not establish delivery, abuse, victim impact, or actor attribution.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: https://xelvarunetio.pro/
+    PEMetadata:
+        Filename: UniRMM.exe
+        OriginalFileName: UniRMM.exe
+        Description: Servico de Gerenciamento Remoto
+    Privileges: ''
+    Free: Unknown
+    Verification: >
+        The reviewed Windows sample identifies as UniSystem RMM from UniSystem
+        Tecnologia LTDA. A product-branded page describes
+        matching UniRMM installation and endpoint-management functions; site
+        ownership and legal publisher identity were not independently verified. The sample was
+        not executed, and this review does not assert a stable installation
+        path, signer, network endpoint, or abuse relationship.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote terminal access
+        - RDP tunneling
+        - Remote script execution
+        - Endpoint monitoring
+    Vulnerabilities: []
+    InstallationPaths:
+        - UniRMM.exe
+        - UniRMM.msi
+Artifacts:
+    Disk:
+        - File: UniRMM.exe
+          Description: Windows UniSystem RMM agent filename from reviewed PE metadata.
+          OS: Windows
+        - File: UniRMM.msi
+          Description: Windows installer filename described by the vendor product site.
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network: []
+    Other:
+        - Type: InspectedWindowsSampleSHA256
+          Value: 8a0c5fdb48d77253945e931270b9586ada54ae1066d26af5dbacf4ca261478d3
+        - Type: ProductVersion
+          Value: 2.0.0.0
+        - Type: VendorIdentity
+          Value: UniSystem Tecnologia LTDA (from reviewed PE metadata)
+        - Type: CatalogScope
+          Value: Product identity confirmed; no delivery or abuse claim.
+Detections: []
+References:
+    - https://xelvarunetio.pro/
+Acknowledgement: []

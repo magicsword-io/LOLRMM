@@ -17,6 +17,7 @@ agents.addigy.com,Addigy
 auth*.aeroadmin.com,AeroAdmin
 aeroadmin.com,AeroAdmin
 wangwang.taobao.com,AliWangWang-remote-control
+api.allocentra.co.za,Allocentra
 *.alpemix.com,Alpemix
 *.teknopars.com,Alpemix
 ammyy.com,Ammyy Admin
@@ -64,6 +65,7 @@ beanywhere.com,BeAnyWhere
 *.beyondtrustcloud.com,BeyondTrust (Bomgar)
 *.bomgarcloud.com,BeyondTrust (Bomgar)
 bomgarcloud.com,BeyondTrust (Bomgar)
+blackcryptknight.com,BlackCrypt RMM Agent
 bluetrait.io,Bluetrait
 *.bluetrait.io,Bluetrait
 breezermm.com,BreezeRMM
@@ -305,13 +307,17 @@ ivanti.com,LANDesk
 everywhere.laplink.com,Laplink Everywhere
 le.laplink.com,Laplink Everywhere
 atled.syspectr.com,Laplink Everywhere
+api-ca-1.lavawall.com,Lavawall
+lavawinupdate.lavawall.com,Lavawall
+caremote1.lavawall.com,Lavawall
 level.io,Level.io
 *.level.io,Level.io
 level.io,Level
 builds.level.io,Level
 agents.level.io,Level
 online.level.io,Level
-downloads.io,Level
+downloads.level.io,Level
+light-rmm-monitor-20260825.azurewebsites.net,LightRmmAgent
 *.litemanager.ru,LiteManager
 *.litemanager.com,LiteManager
 litemanager.com,LiteManager
@@ -328,6 +334,8 @@ logmeinrescue.com,LogMeIn
 logmeinrescue.com,LogMeIn rescue
 rescue-list.*.logmein-gateway.com,LogMeIn rescue
 rescue-data-cetner.logmein-gateway.com,LogMeIn rescue
+www.logistical-software.co.uk,LS RMM
+webserv.logistical-software.co.uk,LS RMM
 *.lunixar.com,Lunixar
 lunixar.com,Lunixar
 app.lunixar.com,Lunixar
@@ -359,6 +367,7 @@ devapi.monitic.com,Monitic
 turn.monitic.com,Monitic
 monitic.com,Monitic
 www.monitic.com,Monitic
+api.mremote.io,Mremote
 mremoteng.org,mRemoteNG
 *.cloudberrylab.com,MSP360
 *.msp360.com,MSP360
@@ -497,6 +506,7 @@ remobo.en.softonic.com,Remobo
 auth.api.remote.it,Remote.it
 api.remote.it,Remote.it
 remote.it,Remote.it
+app-af-agent-prod-009.azurewebsites.net,RemoteAgentAgent
 donkz.nl,Remote Desktop Plus
 *.internetid.ru,Remote Manipulator System
 rmansys.ru,Remote Manipulator System
@@ -518,6 +528,10 @@ content.rview.com,RemoteView
 api.remsupp.com,RemSupp
 download.remsupp.com,RemSupp
 ivanti.com,RES Automation Manager
+lisa.rg-supervision.com,RG System (RG Supervision)
+api.rg-supervision.com,RG System (RG Supervision)
+dashboard.rg-supervision.com,RG System (RG Supervision)
+softbymade.top,RMMCRAT
 api.rmmmax.com,RMMmax
 rodex.cc,Rodex RMM
 www.rodex.cc,Rodex RMM
@@ -655,6 +669,9 @@ weezo.en.softonic.com,Weezo
 *.xeox.com,Xeox
 xeox.com,Xeox
 zabbix.com,Zabbix Agent
+app.zecurit.com,Zecurit
+dms.zecurit.com,Zecurit
+d1m8kha1zyjal6.cloudfront.net,Zecurit
 zerotier.com,ZeroTier
 *.zerotier.com,ZeroTier
 *.zoho.com.au,Zoho Assist

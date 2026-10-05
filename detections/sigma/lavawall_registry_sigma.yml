@@ -1,0 +1,25 @@
+title: Potential Lavawall RMM Tool Registry Activity
+id: fd42d6ee-392a-58cd-b520-07fcb3a1b2b4
+status: experimental
+description: |
+    Detects potential registry activity of Lavawall RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-09-22
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        TargetObject|contains:
+            - 'HKLM\SOFTWARE\WOW6432Node\LavaWall\Agent'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\Lavawall Support Agent'
+            - 'HKLM\SYSTEM\CurrentControlSet\Services\LavaWallRemoteAgent'
+    condition: selection
+falsepositives:
+    - Legitimate use of Lavawall
+level: medium

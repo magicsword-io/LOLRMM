@@ -1,0 +1,137 @@
+Name: Overlord
+Category: RAT
+Description: >
+  Overlord is a publicly available cross-platform remote access framework with
+  Go-based agents and a TypeScript/Node/Bun server. Operators manage agents via
+  a web panel or Electron client over encrypted WebSocket (WSS) C2. Windows
+  agents commonly masquerade as svchost, persist under AppData\Roaming\Microsoft\DeviceSync
+  and the user Startup folder, and write HKCU Run values named OverlordAgent-*.
+  Observed campaigns have routed C2 through ngrok tunnels. Supports Windows,
+  Linux, and macOS.
+Author: Jose Hernandez
+Created: '2026-10-05'
+LastModified: '2026-10-05'
+Details:
+    Website: https://github.com/doesntbreaktos/Overlord
+    PEMetadata:
+        - Filename: svchost-windows-amd64-*.exe
+          OriginalFileName: ''
+          Description: Observed Go agent build naming pattern (platform-arch-hash) used for masquerading as svchost
+        - Filename: svchost.exe
+          OriginalFileName: ''
+          Description: Persistence copy name when DefaultStartupName/custom startup name is set to svchost
+        - Filename: ovd_*.exe
+          OriginalFileName: ''
+          Description: Default randomized Windows persistence executable prefix when no custom startup name is set
+        - Filename: agent-*.exe
+          OriginalFileName: ''
+          Description: Alternate agent filenames observed in ANY.RUN related tasks (e.g. agent-b97b.exe)
+        - Filename: agent-*.tmp
+          OriginalFileName: ''
+          Description: Temporary staging names written under DeviceSync and Startup during install/copy
+    Privileges: User
+    Free: Yes (publicly available / open source)
+    Verification: Public GitHub project (doesntbreaktos/Overlord); ANY.RUN malware-trends write-up and sandbox task
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Remote Access
+        - Encrypted WebSocket (WSS) C2
+        - Persistence (Startup folder, Registry Run, Task Scheduler, WMI - build-dependent)
+        - Process / filename masquerading
+        - Cross-platform agents
+        - Web / Electron operator console
+        - Optional tunneling via operator-controlled services (e.g. ngrok)
+    Vulnerabilities: []
+    InstallationPaths:
+        - '*\AppData\Roaming\Microsoft\DeviceSync\svchost.exe'
+        - '*\AppData\Roaming\Microsoft\DeviceSync\ovd_*.exe'
+        - '*\AppData\Roaming\Microsoft\DeviceSync\agent-*.tmp'
+        - '*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\svchost.exe'
+        - '*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\ovd_*.exe'
+        - '*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\agent-*.tmp'
+        - '*\AppData\Roaming\Overlord\agent.exe'
+        - '*\svchost-windows-amd64-*.exe'
+        - '*\agent-windows-amd64-*.exe'
+        - ovd_*.exe
+        - svchost.exe
+Artifacts:
+    Disk:
+        - File: C:\Users\*\AppData\Roaming\Microsoft\DeviceSync\svchost.exe
+          Description: >
+            Windows persistence copy observed by ANY.RUN (custom startup name svchost).
+            Public agent source uses AppData\Roaming\Microsoft\DeviceSync as the non-Startup install directory.
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Microsoft\DeviceSync\ovd_*.exe
+          Description: Default randomized DeviceSync persistence binary prefix (ovd_ + hex) from public agent source.
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\svchost.exe
+          Description: Startup-folder persistence copy observed by ANY.RUN for the analyzed Windows sample.
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\ovd_*.exe
+          Description: Default randomized Startup-folder persistence binary when no custom name is configured.
+          OS: Windows
+        - File: C:\Users\*\AppData\Local\Temp\svchost-windows-amd64-*.exe
+          Description: Initial execution path pattern from ANY.RUN sandbox (e.g. svchost-windows-amd64-a8d100a3.exe).
+          OS: Windows
+        - File: C:\Users\*\AppData\Roaming\Overlord\agent.exe
+          Description: Legacy install path retained in public agent source (getLegacyTargetPath).
+          OS: Windows
+        - File: ~/Library/Application Support/Overlord/*
+          Description: macOS agent support directory referenced by public persistence documentation/source.
+          OS: macOS
+        - File: ~/Library/LaunchAgents/*.plist
+          Description: macOS LaunchAgent persistence (build-dependent; label often com.* when custom startup name is set).
+          OS: macOS
+    EventLog:
+        - EventID: 4688
+          Description: Process creation for Overlord agent binaries (svchost-windows-amd64-*.exe, DeviceSync\svchost.exe, ovd_*.exe).
+          OS: Windows
+        - EventID: 1
+          Description: Sysmon process create for agent / persistence copies.
+          OS: Windows
+        - EventID: 11
+          Description: Sysmon file create under DeviceSync or Startup paths.
+          OS: Windows
+        - EventID: 13
+          Description: Sysmon registry value set for HKCU Run OverlordAgent-* persistence.
+          OS: Windows
+    Registry:
+        - Path: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\OverlordAgent-*
+          Description: >
+            Autorun value observed by ANY.RUN as OverlordAgent-0ba8d3ca pointing to
+            AppData\Roaming\Microsoft\DeviceSync\svchost.exe. Public source uses
+            registry value prefix OverlordAgent- (plus legacy OverlordAgent).
+          OS: Windows
+        - Path: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\OverlordAgent
+          Description: Legacy registry value name from public agent source.
+          OS: Windows
+    Network:
+        - Description: >
+            Encrypted WebSocket (WSS) C2 to operator infrastructure. ANY.RUN observed
+            the analyzed sample tunneling C2 via an ngrok hostname
+            (cleavable-lucille-anagrammatically.ngrok... on 3.124.142.205:443 / TCP).
+            ngrok itself is separately cataloged in LOLRMM and LOTTunnels.
+          Domains:
+              - '*.ngrok-free.app'
+              - '*.ngrok.app'
+              - '*.ngrok.io'
+              - '*.ngrok.com'
+              - pandoramods.top
+              - savaliyapriyal874-code.github.io
+          Ports:
+              - 443
+              - 5173
+Detections: []
+References:
+    - https://any.run/malware-trends/overlord/
+    - https://x.com/anyrun_app/status/2107063549172367583
+    - https://app.any.run/tasks/9304f809-0265-4d7d-81f9-92f5835ba7c8/
+    - https://github.com/doesntbreaktos/Overlord
+    - https://lolrmm.io/tools/ngrok
+    - https://lottunnels.github.io/lottunnels/Binaries/ngrok/
+Acknowledgement:
+    - Person: ANY.RUN
+      Handle: '@anyrun_app'

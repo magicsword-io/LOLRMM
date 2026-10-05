@@ -1,0 +1,48 @@
+title: Potential Zecurit RMM Tool Process Activity
+id: 039daedd-9928-586a-b884-d23a2a484d1d
+status: experimental
+description: |
+    Detects potential processes activity of Zecurit RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-09-22
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - '\\ZecuritAgentService.exe'
+            - '\\ZecuritAgentRegister.exe'
+            - '\\ZecuritAgentTray.exe'
+            - '\\ZecuritAgentAssetMgr.exe'
+            - '\\ZecuritLiveNotifier.exe'
+            - '\\ZecuritCommandProcessor.exe'
+            - '\\ZecuritRemoteTools.exe'
+            - '\\ZecuritScreenReaderService.exe'
+            - '\\ZecuritScreenReaderApp.exe'
+            - '\\ZecuritScreenReaderAppUI.exe'
+            - '\\ZecuritApplicationControlService.exe'
+            - '\\ZecuritAgentUpgrader.exe'
+    selection_image:
+        Image|endswith:
+            - '\\ZecuritAgentService.exe'
+            - '\\ZecuritAgentRegister.exe'
+            - '\\ZecuritAgentTray.exe'
+            - '\\ZecuritAgentAssetMgr.exe'
+            - '\\ZecuritLiveNotifier.exe'
+            - '\\ZecuritCommandProcessor.exe'
+            - '\\ZecuritRemoteTools.exe'
+            - '\\ZecuritScreenReaderService.exe'
+            - '\\ZecuritScreenReaderApp.exe'
+            - '\\ZecuritScreenReaderAppUI.exe'
+            - '\\ZecuritApplicationControlService.exe'
+            - '\\ZecuritAgentUpgrader.exe'
+    condition: 1 of selection_*
+falsepositives:
+    - Legitimate use of Zecurit
+level: medium

@@ -1,0 +1,26 @@
+---
+// Preserve LOLRMM's existing property. Enable explicitly in the Pages build.
+const enabled =
+  import.meta.env.PROD && import.meta.env.PUBLIC_ENABLE_ANALYTICS === 'true';
+---
+
+{enabled && (
+  <>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-D04FRZLYM5"
+    ></script>
+    <script is:inline>
+      // Local production previews must not send traffic to the live property.
+      if (['lolrmm.io', 'www.lolrmm.io'].includes(window.location.hostname)) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-D04FRZLYM5');
+      }
+    </script>
+  </>
+)}

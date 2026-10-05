@@ -1,0 +1,66 @@
+Name: GO RMM
+Category: RMM
+Description: >
+    GO RMM is a custom Windows management console that builds and controls remote
+    agents. The inspected Go/Wails console includes agent enrollment and build
+    controls, WebSocket command handling, remote desktop and input, shell, file,
+    inventory, process, and session-management workflows. Its embedded interface
+    also exposes high-risk modules such as webcam, microphone, and keylogging, as
+    well as disruptive operations including a forced system crash. This entry
+    records the console's statically demonstrated remote-administration functions;
+    it does not establish a verified publisher, commercial vendor, malware
+    classification, or observed abuse.
+Author: Michael Haag
+Created: '2026-09-22'
+LastModified: '2026-09-22'
+Details:
+    Website: ''
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: GO RMM management console
+    Privileges: Not independently established; generated agents and their persistence settings are configurable in the inspected console
+    Free: Unknown
+    Verification: >
+        A 19,248,640-byte Windows GUI sample was handled for static analysis only
+        and its SHA-256 was verified. PE resources identify GO RMM as a management
+        console. Its compiled Go symbols and embedded Wails interface expose
+        agent-building and enrollment controls, WebSocket command handling, system
+        inventory, shell, remote desktop/input, file management, process/session
+        management, and configurable agent persistence. The interface additionally
+        exposes webcam, microphone, keylogging, and disruptive-control options.
+        Ghidra analyzed the Windows x64 binary, but its Go 1.27 RTTI layout was
+        unsupported, preventing reliable function-level recovery; these features
+        are therefore recorded as compiled symbols and console workflows, not
+        observed endpoint actions. The sample is unsigned. No independent
+        publisher, live agent, remote endpoint, or delivery-abuse relationship was
+        established.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Agent creation, enrollment, and module deployment
+        - WebSocket-based agent command handling
+        - System inventory and process/session management
+        - Remote shell, file management, and upload/download workflows
+        - Remote desktop, screen capture, keyboard/mouse input, and clipboard operations
+        - Webcam, microphone, and keylogging modules exposed by the management console
+        - Configurable agent persistence and endpoint-control actions
+    Vulnerabilities: []
+    InstallationPaths: []
+Artifacts:
+    Disk: []
+    EventLog: []
+    Registry: []
+    Network: []
+    Other:
+        - Type: InspectedSampleSHA256
+          Value: 491d0512e396aa70efe16873ccf78be61e14f0f7c68bcc1639a1c3b6ba90cfd0
+        - Type: InspectedComponentRole
+          Value: GO RMM management console, not a generated endpoint agent
+        - Type: PublisherStatus
+          Value: Self-identified as GO RMM; no independent publisher or product source established.
+        - Type: RiskScope
+          Value: Static console UI exposes webcam, microphone, keylogger, forced-crash, and other endpoint-control actions; no use of those features was observed.
+Detections: []
+References: []
+Acknowledgement: []

@@ -132,6 +132,11 @@ def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
 
     for item in yaml_data.get("Artifacts", {}).get("Disk", []) or []:
         if isinstance(item, dict) and isinstance(item.get("File"), str):
+            # File rules currently target Windows. Preserve legacy untagged
+            # artifacts, but do not mix explicitly non-Windows paths into them.
+            artifact_os = item.get("OS")
+            if artifact_os and str(artifact_os).strip().casefold() != "windows":
+                continue
             artifacts["files"].append(item["File"])
 
     for item in yaml_data.get("Artifacts", {}).get("Registry", []) or []:
@@ -260,6 +265,14 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
 
     name = data.get("Name", "Unknown")
     artifacts = extract_artifacts(data)
+    safe_name = name.lower().replace(" ", "_").replace("(", "_").replace(")", "_")
+
+    # An existing rule can lose all eligible files when its source is Unix-only.
+    # Remove that generated rule rather than leaving stale Windows selectors.
+    if not artifacts["files"] and data.get("Artifacts", {}).get("Disk"):
+        stale_file_rule = os.path.join(output_dir, f"{safe_name}_files_sigma.yml")
+        if os.path.isfile(stale_file_rule):
+            os.remove(stale_file_rule)
 
     rule_templates = {
         "registry": {
@@ -322,9 +335,6 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
                 "level": "medium",
             }
 
-            safe_name = (
-                name.lower().replace(" ", "_").replace("(", "_").replace(")", "_")
-            )
             output_file = f"{safe_name}_{artifact_type}_sigma.yml"
             full_output_path = os.path.join(output_dir, output_file)
 

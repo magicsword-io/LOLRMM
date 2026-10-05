@@ -42,6 +42,56 @@ def sample_rule() -> dict:
 
 
 class SigmaGeneratorTests(unittest.TestCase):
+    def test_windows_file_rule_excludes_other_platforms(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "tool.yaml"
+            windows_paths = [r"C:\Tools\agent.exe", r"C:\Tools\legacy.log", r"C:\Tools\null.log"]
+            source.write_text(yaml.safe_dump({
+                "Name": "Example",
+                "Artifacts": {"Disk": [
+                    {"File": windows_paths[0], "OS": " windows "},
+                    {"File": windows_paths[1]},
+                    {"File": windows_paths[2], "OS": None},
+                    {"File": "/opt/example/agent", "OS": "Linux"},
+                    {"File": "/Library/Example/agent", "OS": "macOS"},
+                    {"File": "/tmp/example", "OS": "Linux/macOS"},
+                ]},
+            }), encoding="utf-8")
+
+            sigma_gen.generate_sigma_rules(str(source), str(root))
+            rule = yaml.safe_load((root / "example_files_sigma.yml").read_text())
+            self.assertEqual(rule["logsource"]["product"], "windows")
+            self.assertEqual(rule["detection"]["selection"]["TargetFilename|endswith"], windows_paths)
+
+    def test_unix_only_files_remove_stale_windows_file_rule(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "tool.yaml"
+            data = {"Name": "Example", "Artifacts": {
+                "Disk": [{"File": r"C:\Tools\agent.exe", "OS": "Windows"}],
+                "Network": [{"Domains": ["example.test"]}],
+            }}
+            source.write_text(yaml.safe_dump(data), encoding="utf-8")
+            sigma_gen.generate_sigma_rules(str(source), str(root))
+            generated = root / "example_files_sigma.yml"
+            self.assertTrue(generated.exists())
+
+            # Scope this migration to explicitly non-Windows artifacts, leaving
+            # unrelated legacy rules without current Disk metadata untouched.
+            data["Artifacts"]["Disk"] = []
+            source.write_text(yaml.safe_dump(data), encoding="utf-8")
+            sigma_gen.generate_sigma_rules(str(source), str(root))
+            self.assertTrue(generated.exists())
+
+            data["Artifacts"]["Disk"] = [{"File": "/opt/example/agent", "OS": "Linux"}]
+            source.write_text(yaml.safe_dump(data), encoding="utf-8")
+            rules = sigma_gen.generate_sigma_rules(str(source), str(root))
+            self.assertFalse(generated.exists())
+            self.assertEqual(len(rules), 1)
+            self.assertTrue((root / "example_network_sigma.yml").exists())
+            self.assertEqual(sigma_gen.generate_sigma_rules(str(source), str(root)), rules)
+
     def test_anchors_ordinary_filename_with_escaped_separator(self) -> None:
         artifacts = sigma_gen.extract_artifacts(
             {"Details": {"InstallationPaths": [r"C:\Program Files\Example\rd.exe"]}}
