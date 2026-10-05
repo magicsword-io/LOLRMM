@@ -2,90 +2,79 @@ name: Deploy site
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - 'yaml/**'
+      - 'bin/**'
+      - 'tests/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
 
+permissions:
+  contents: read
+
+# PR validation cannot cancel or publish a production deployment.
 concurrency:
-  group: "pages"
+  group: pages-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PUBLIC_ENABLE_ANALYTICS: 'true'
+      ASTRO_TELEMETRY_DISABLED: '1'
     steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: true
-        token: ${{ secrets.PUSH_TOKEN }}
-    - name: Set up Python 3.12
-      uses: actions/setup-python@v5.2.0
-      with:
-        python-version: 3.12
-    - name: Install Poetry
-      run: curl -sSL https://install.python-poetry.org | python -
-    - name: Install dependencies with Poetry
-      run: poetry install
-    - name: Use Node.js 22.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22.x
-        cache: 'npm'
-        cache-dependency-path: website/package-lock.json
-    - name: Export site
-      env:
-        PUBLIC_ENABLE_ANALYTICS: 'true'
-      run: |
-        npm ci --no-audit --no-fund
-        npm run check
-        poetry run npm run build
-      working-directory: website
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5.2.0
+        with:
+          python-version: '3.12'
+      - name: Install build dependencies
+        run: python -m pip install 'pyyaml>=6.0,<7'
+      - name: Verify release boundaries
+        run: python -m unittest discover -s tests -p 'test_release_workflows.py'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci --no-audit --no-fund
+        working-directory: website
+      - name: Check and build production site
+        run: npm run check && npm run build
+        working-directory: website
+      - run: npx playwright install --with-deps chromium
+        working-directory: website
+      - name: Test the production artifact
+        run: npm test
+        working-directory: website
+      - name: Record artifact source
+        run: |
+          printf '%s\n' "$GITHUB_SHA" > website/dist/source-revision.txt
+          echo "Validated Astro production artifact for $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload tested Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/dist
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./website/dist
-
-    - name: Commit and push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git config --global push.default simple
-        git add detections/ website/public/
-        git diff --quiet && git diff --staged --quiet && exit 0
-        for attempt in 1 2 3; do
-          # Committed content is fully generated, so instead of rebasing (which
-          # conflicts on generated files), reset to latest main and regenerate.
-          git fetch origin main
-          git reset --hard origin/main
-          poetry run python bin/site.py -v
-          git add detections/ website/public/
-          if git diff --quiet && git diff --staged --quiet; then
-            echo "No generated changes to commit."
-            exit 0
-          fi
-          git commit -m "Update generated site files [skip ci]"
-          if git push "https://x-access-token:${GITHUB_TOKEN}@github.com/magicsword-io/LOLRMM.git" HEAD:main; then
-            exit 0
-          fi
-          echo "push attempt $attempt failed, retrying in $((attempt * 5))s..."
-          sleep $((attempt * 5))
-        done
-        exit 1
-
-# Deployment job
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy tested artifact to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
