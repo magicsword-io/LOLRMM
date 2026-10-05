@@ -28,7 +28,7 @@ Details:
     InstallationPaths:
         - 'C:\Program Files (x86)\N-able Technologies\Windows Agent\bin\*'
         - 'C:\Program Files (x86)\Msp Agent\*'
-        - agent.exe
+        - 'C:\Program Files (x86)\N-able Technologies\Windows Agent\bin\agent.exe'
         - AgentMaint.exe
         - AgentMonitor.exe
         - BASupTSHelper.exe
