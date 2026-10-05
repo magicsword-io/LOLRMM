@@ -1,0 +1,38 @@
+# LOLRMM
+
+> LOLRMM (Living Off the Land Remote Monitoring and Management) is a community-driven catalog of remote monitoring, management, and remote access tools. It records tool capabilities, forensic artifacts, network indicators, and detection resources for threat hunting and investigation.
+
+Use this guide to find catalog evidence, public data feeds, and detection guidance. Catalog inclusion or an indicator match is an investigative lead, not proof of malicious activity. Check each entry's classification, references, and documented platform support, and consider your organization's approved tools. Cite the individual tool record and its research sources when discussing a specific tool.
+
+## Catalog and research
+
+- [Tool catalog](https://lolrmm.io/): Search and filter tools by name, executable, domain, artifact, classification, or platform. Follow a tool's detail page for its evidence and individual JSON download.
+- [About LOLRMM](https://lolrmm.io/about/): Project scope, maintainers, and community contributions. Use for questions about how to interpret catalog inclusion.
+- [Source records](https://github.com/magicsword-io/LOLRMM/tree/main/yaml): YAML records behind the catalog. Use for full source details, references, acknowledgements, and revision history.
+
+## API and data feeds
+
+- [API documentation](https://lolrmm.io/api/): Available feeds and examples for retrieving the catalog or a single tool. No API key is required; feeds are published static files.
+- [Full catalog JSON](https://lolrmm.io/api/rmm_tools.json): Structured tool records with details, artifacts, detections, and references. Use for programmatic integration and bulk research.
+- [Full catalog CSV](https://lolrmm.io/api/rmm_tools.csv): Tabular catalog export. Use for spreadsheet review and security pipelines.
+- [Network domains CSV](https://lolrmm.io/api/rmm_domains.csv): Recorded domains associated with tools. Use for network hunting and enrichment, accounting for legitimate remote-management traffic.
+- [Code-signing certificates](https://lolrmm.io/api/rmm_certificates.json): Published certificate evidence for application control research. Consult the API documentation for its publication process.
+- [Example tool JSON](https://lolrmm.io/api/tools/anydesk.json): An individual AnyDesk record. Use as an example of the per-tool format; obtain other tool URLs from their catalog pages.
+
+## Detections and hunting
+
+- [Detection guidance](https://lolrmm.io/detections/): Microsoft Defender, Splunk, Sigma, and Sysmon resources. Use for telemetry requirements, query setup, and tuning to approved remote-access activity.
+- [Sigma process rule](https://lolrmm.io/api/detections/sigma/generic_rmm_detection.yml): Generated process indicators from the catalog. Review and tune the rule for your environment before deployment.
+- [Sigma DNS rule](https://lolrmm.io/api/detections/sigma/rmm_domains_dns_queries.yml): Generated DNS-query indicators. Use for identifying connections associated with cataloged tools.
+- [Detection-generation policy](https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/docs/detection-generation.md): Process-indicator specificity and validation requirements for generated Sigma rules. Use when reviewing how generic process names are scoped.
+
+## Contributions and licensing
+
+- [Project README](https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/README.md): Project overview, contribution workflow, and local development instructions.
+- [Issues and corrections](https://github.com/magicsword-io/LOLRMM/issues): Report missing tools, incorrect artifacts, or project issues. Include supporting research when proposing a change.
+- [License](https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/LICENSE): Apache 2.0 license terms for the repository. Consult this source for reuse requirements.
+
+## Optional
+
+- [LOLDrivers](https://www.loldrivers.io/): Companion catalog for vulnerable and malicious Windows drivers.
+- [MagicSword threat intelligence](https://www.magicsword.io/threat-intelligence): How MagicSword uses community and proprietary research in application control.
