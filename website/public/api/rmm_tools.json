@@ -5650,7 +5650,7 @@
             "InstallationPaths": [
                 "C:\\Program Files (x86)\\N-able Technologies\\Windows Agent\\bin\\*",
                 "C:\\Program Files (x86)\\Msp Agent\\*",
-                "agent.exe",
+                "C:\\Program Files (x86)\\N-able Technologies\\Windows Agent\\bin\\agent.exe",
                 "AgentMaint.exe",
                 "AgentMonitor.exe",
                 "BASupTSHelper.exe",
@@ -34175,8 +34175,7 @@
                 "*\\AppData\\Roaming\\Overlord\\agent.exe",
                 "*\\svchost-windows-amd64-*.exe",
                 "*\\agent-windows-amd64-*.exe",
-                "ovd_*.exe",
-                "svchost.exe"
+                "ovd_*.exe"
             ]
         },
         "Artifacts": {
