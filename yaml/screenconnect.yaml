@@ -3,7 +3,7 @@ Category: RMM
 Description: ScreenConnect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-10-01'
-LastModified: '2026-10-04'
+LastModified: '2026-10-05'
 Details:
     Website: https://www.connectwise.com
     PEMetadata:
@@ -54,17 +54,17 @@ Artifacts:
           Description: ScreenConnect client user configuration
           OS: Windows
         - File: C:\Program Files (x86)\ScreenConnect Client (*)\system.config
-          Description: Client configuration (the folder suffix is the instance thumbprint). Carries the h= relay host, the p= port and the RSA key launch constraint, so the relay model (cloud vs self-hosted) can be read statically, with the machine offline and the service stopped.
+          Description: Client configuration observed in the cited lab investigation. Contains the relay host (h=), port (p=) and RSA server key in the launch parameters; useful for recovering the configured destination offline, without proving a connection occurred.
           OS: Windows
-        - File: C:\Program Files (x86)\ScreenConnect Client (*)\app.config
-          Description: Optional client UI settings. A self-hosted implant was observed shipping one that switches off every user-visible indicator (tray icon, connect balloon, "under control" banner); a cloud-built client next to it shipped no app.config at all. Treat these values as a lead for a silent implant, not a confirmed indicator.
+        - File: C:\Program Files*\ScreenConnect Client*\app.config
+          Description: Client UI configuration. The AccessShow* examples were observed set to false in abusive deployments, but their effect depends on client version; newer releases restrict hiding the banner and tray icon. Assess settings against the approved deployment and organization policy, not as proof of malicious activity.
           OS: Windows
           Example:
               - AccessShowUnderControlBanner = false
               - AccessShowBalloonOnConnect = false
               - AccessShowSystemTrayIcon = false
-        - File: C:\Windows\SystemTemp\ScreenConnect\*\Temp\*
-          Description: Operator staging path (the middle folder is the client version), not an install location. Files pushed by an operator with the RunFile command are dropped here and executed, so a file written here and then run means a human pushed it (observed - a second ScreenConnect installer pushed through the first implant).
+        - File: C:\Windows\SystemTemp\ScreenConnect\*
+          Description: ScreenConnect working directory, with version-specific subdirectories. The cited lab observed RunFile staging beneath <version>\Temp; Huntress observed execution directly beneath <version>. Legitimate administrators also deploy files here. Correlate file writes and execution with session logs and approved activity; the path alone proves neither human interaction nor malicious intent.
           OS: Windows
     EventLog:
         - EventID: 7045
@@ -72,22 +72,28 @@ Artifacts:
           LogFile: System.evtx
           ServiceName: ScreenConnect Client (<thumbprint>)
           ImagePath: '"C:\Program Files (x86)\ScreenConnect Client (<thumbprint>)\ScreenConnect.ClientService.exe" "?e=Access&y=Guest&h=<relay>&p=<port>&..."'
-          Description: Service installed as LocalSystem, auto-start, named after the instance thumbprint. The ImagePath carries the full launch string - e= role (Access = unattended), h= relay host, p= port. Each ScreenConnect server gets its own service, so more than one ScreenConnect Client (<thumbprint>) service on a host means more than one instance.
+          Description: Service installation observed as LocalSystem with automatic startup in the cited lab. The service image path included launch parameters for session type (e=Access), relay host (h=) and port (p=). Distinct client thumbprints can identify multiple installations; compare with the approved inventory.
         - EventID: 100
           ProviderName: ScreenConnect
           LogFile: Application.evtx
-          Description: Host user connected. The message names the operator's session label, the relay URL and the instance fingerprint.
+          Description: Host user connected. In the cited lab, the message included the session label, relay URL and instance fingerprint. Use as corroboration; absence of these application events does not exclude activity.
         - EventID: 101
           ProviderName: ScreenConnect
           LogFile: Application.evtx
-          Description: Host user disconnected (same fields as 100). Gives the true end of operator activity, which can outlast the last EDR event.
+          Description: Host user disconnected. Corroborates the end of that connection; it does not establish that all operator activity or spawned processes have stopped.
         - EventID: 201
           ProviderName: ScreenConnect
           LogFile: Application.evtx
           Description: 'Files transferred, with the action stated, e.g. "Transferred files with action ''Run'': ScreenConnect.ClientSetup (1).msi".'
     Registry:
         - Path: HKLM\System\CurrentControlSet\Services\ScreenConnect Client (*)\ImagePath
-          Description: Service registration (the key suffix is the instance thumbprint). The value holds the full launch string including relay host and port, and is written before the client resolves its relay (Sysmon EID 13 precedes the EID 22 DNS query), so the C2 destination is readable even if no packet left the host.
+          Description: Service ImagePath value can contain the relay host and port in client launch parameters. It can reveal a configured destination without network telemetry; the cited lab observed the registry write before DNS, but that event ordering is not guaranteed.
+        - Path: HKLM\SYSTEM\CurrentControlSet\Control\Lsa\Authentication Packages
+          Description: The cited case reported ScreenConnect.WindowsAuthenticationPackage.dll in the Authentication Packages value. Investigate that DLL entry against the approved deployment and loaded module provenance; this shared Windows registry location alone identifies neither ScreenConnect nor malicious activity.
+        - Path: HKLM\SOFTWARE\Classes\CLSID\{6FF59A85-BC37-4CD4-C175-070CC4814204}
+          Description: Credential provider registration pointing to ScreenConnect.WindowsCredentialProvider.dll. Display name may be "SC FeedbackTool Credential Provider" in malicious deployments.
+        - Path: HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\ScreenConnect Client (*)
+          Description: SafeBoot Network entry allowing ScreenConnect client to start in Safe Mode with Networking.
     Network:
         - Description: Known remote domains
           Domains:
@@ -95,16 +101,18 @@ Artifacts:
               - '*.connectwise.com'
               - '*.screenconnect.com'
           Ports: []
-        - Description: Cloud / trial instance relay. The client launch parameter h=instance-<id>-relay.screenconnect.com on TCP 443 identifies a ConnectWise-hosted instance. The installer download host (<tenant>.screenconnect.com/Bin/ScreenConnect.ClientSetup.*) and the relay host share no name, so collect both.
+        - Description: Cloud relay pattern observed in the cited investigations on TCP 443. The installer download hostname can differ from the relay hostname; collect both. This pattern alone does not establish trial status or malicious use.
           Domains:
               - instance-*-relay.screenconnect.com
           Ports:
               - 443
-        - Description: Self-hosted relay. A bare IP or a non-ScreenConnect domain in h=, typically on TCP 8041. Uses no ScreenConnect domain, so it is found from the launch string or the service ImagePath, not a domain list.
+        - Description: Default self-hosted relay port (configurable). The h= launch parameter or service ImagePath may contain a custom domain or IP address, so a ScreenConnect domain list alone can miss these deployments. Compare the destination with approved infrastructure.
           Domains: []
           Ports:
               - 8041
 Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_registry_sigma.yml
+      Description: Detects potential registry activity of ScreenConnect RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_network_sigma.yml
       Description: Detects potential network activity of ScreenConnect RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/screenconnect_files_sigma.yml
@@ -119,6 +127,9 @@ References:
     - https://thedfirreport.com/2023/09/25/from-screenconnect-to-hive-ransomware-in-61-hours/
     - https://www.huntress.com/blog/w2-malvertising-to-kernel-mode-edr-kill
     - https://newsletter.securityinbits.com/p/screenconnect-rmm-abuse-the-cloud
+    - https://f4n6.co.uk/a-feedback-tool-that-isnt-screenconnect-rmm-abuse-hidden-in-a-12-mb-batch-file/
+    - https://www.screenconnect.com/blog/customization-update
+    - https://alluresecurity.com/blog/signal-noise-brand-was-real-app-wasnt/
 Acknowledgement:
     - Person: Ayush Anand
       Handle: '@Securityinbits'
