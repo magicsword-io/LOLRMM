@@ -24,14 +24,14 @@ def executable_basename(path):
     path = path.strip()
     if len(path) >= 2 and path[0] == path[-1] and path[0] in "\"'":
         path = path[1:-1]
-    if any(char in path for char in '<>"|') or re.search(r"\.exe\s", path, re.I):
+    if any(char in path for char in '"|') or re.search(r"\.exe\s", path, re.I):
         return None
     name = ntpath.basename(path)
     if (
         not name
         or name.startswith("*")
         or not name.lower().endswith(".exe")
-        or ":" in name
+        or any(char in name for char in "<>:")
         or any(ord(char) < 32 for char in name)
     ):
         return None

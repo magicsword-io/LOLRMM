@@ -241,6 +241,7 @@ class ExecutableTests(unittest.TestCase):
             '/usr/bin/agent': None,
             '<random>.exe': None,
             r'C:\Windows\<random>.exe': None,
+            r'C:\ProgramData\Teramind Agent\<version>\{GUID}\tmagentsvc.exe': 'tmagentsvc.exe',
             '*client.exe': None,
             'agent.exe --service': None,
             r'C:\Args\plain.exe --output C:\Temp\wrong.exe': None,
