@@ -1,34 +1,102 @@
 Name: CloudFlare Tunnel
 Category: RAT
-Description: CloudFlare Tunnel is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: 'Cloudflare Tunnel (cloudflared) creates outbound-only tunnels from a host to Cloudflare, exposing internal services (RDP, SSH, SMB, HTTP) without inbound firewall rules. Threat actors install it as a Windows service on domain controllers and servers for persistence and to proxy RDP, which shows up as loopback-sourced logons on the target.
+
+    '
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-10-05'
 Details:
     Website: 'https://cloudflare.com/products/tunnel/'
     PEMetadata:
-        Filename: ''
+        Filename: cloudflared.exe
         OriginalFileName: ''
         Description: ''
-    Privileges: ''
-    Free: ''
-    Verification: ''
-    SupportedOS: []
-    Capabilities: []
+    Privileges: SYSTEM
+    Free: 'Yes'
+    Verification: Cloudflare account and tunnel token
+    SupportedOS:
+        - Windows
+        - Linux
+        - MacOS
+    Capabilities:
+        - Outbound-only reverse tunnel
+        - Exposes internal RDP/SSH/SMB/HTTP services
+        - Runs as a Windows service
     Vulnerabilities: []
     InstallationPaths:
         - cloudflared.exe
+        - C:\Program Files (x86)\cloudflared\cloudflared.exe
+        - C:\Program Files\cloudflared\cloudflared.exe
 Artifacts:
-    Disk: []
-    EventLog: []
-    Registry: []
+    Disk:
+        - File: C:\ProgramData\cloudflared\*
+          Description: Token file written by 'cloudflared service install <TOKEN>' on recent versions (service then runs with --token-file)
+          OS: Windows
+        - File: C:\Windows\System32\config\systemprofile\.cloudflared\*
+          Description: Service-context config.yml, cert.pem and <tunnel-id>.json credentials for locally managed tunnels
+          OS: Windows
+        - File: C:\Users\*\.cloudflared\*
+          Description: Per-user config.yml, cert.pem and tunnel credentials
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: Cloudflared
+          Description: Service installation (display name "Cloudflared agent", auto start). ImagePath contains 'tunnel run --token <TOKEN>' on older versions or '--token-file' on newer versions.
+        - EventID: 1
+          ProviderName: Cloudflared
+          LogFile: Application.evtx
+          Description: cloudflared registers an event source named Cloudflared and logs "Cloudflared service starting" / "service arguments"
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\Cloudflared
+          Description: Service key; ImagePath may contain the tunnel token
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\EventLog\Application\Cloudflared
+          Description: Event log source registered during service install
     Network:
-        - Description: Known remote domains
-          Domains: []
-          Ports: []
+        - Description: Tunnel edge connections (TCP/UDP 7844, http2/quic)
+          Domains:
+              - region1.v2.argotunnel.com
+              - region2.v2.argotunnel.com
+              - us-region1.v2.argotunnel.com
+              - us-region2.v2.argotunnel.com
+              - _v2-origintunneld._tcp.argotunnel.com
+              - cftunnel.com
+              - h2.cftunnel.com
+              - quic.cftunnel.com
+              - '*.cfargotunnel.com'
+              - '*.trycloudflare.com'
+          Ports:
+              - 7844
+        - Description: Update checks
+          Domains:
+              - update.argotunnel.com
+              - api.cloudflare.com
+          Ports:
+              - 443
+    Other:
+        - Type: WindowsServiceName
+          Value: Cloudflared
+        - Type: CommandLine
+          Value: cloudflared.exe service install <TOKEN>
+        - Type: CommandLine
+          Value: cloudflared.exe tunnel run --token <TOKEN>
+        - Type: CommandLine
+          Value: cloudflared.exe tunnel --url <IP>:<PORT>
+        - Type: RDPArtifact
+          Value: RDP logons proxied through cloudflared appear with a loopback source address on the target (e.g. ::%16777216 in Windows event logs)
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/cloudflare_tunnel_processes_sigma.yml
       Description: Detects potential processes activity of CloudFlare Tunnel RMM tool
 References:
     - https://cloudflare.com/products/tunnel/
-Acknowledgement: []
+    - https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/
+    - https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/local-management/as-a-service/windows/
+    - https://github.com/cloudflare/cloudflared/blob/master/cmd/cloudflared/windows_service.go
+    - https://thedfirreport.com/2026/06/29/from-bing-search-to-ransomware-bumblebee-and-adaptixc2-deliver-akira-3/
+Acknowledgement:
+    - Person: The DFIR Report
+      Handle: '@TheDFIRReport'
+    - Person: Swisscom B2B CSIRT
+      Handle: ''
