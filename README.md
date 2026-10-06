@@ -3,48 +3,55 @@
 ![CI build](https://github.com/magicsword-io/LOLRMM/actions/workflows/validate.yml/badge.svg)
 ![RMM Tools](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/rmm-tools-count.json)
 
-Welcome to LOLRMM (Living Off the Land Remote Monitoring and Management), a community-driven project that provides a curated list of Remote Monitoring and Management (RMM) tools that could potentially be abused by threat actors. Our mission is to assist security professionals in staying informed about these tools and their potential for misuse, providing the community a catalog of these tools which can be used for threat hunting, detection and prevention policy creations.
+Welcome to LOLRMM (Living Off the Land Remote Monitoring and Management), a community-driven project that provides a curated list of Remote Monitoring and Management (RMM) tools and Remote Access Trojans (RATs) that could potentially be abused by threat actors. Our mission is to assist security professionals in staying informed about these tools and their potential for misuse, providing the community a catalog of **358 entries** (**261 RMM** · **97 RAT**) which can be used for threat hunting, detection and prevention policy creations.
+
+![LOLRMM Homepage](.github/screenshots/lolrmm-homepage.png)
 
 ## 🌟 Key Features
 
-- A comprehensive collection of RMM tools, that have historically been abused by threat actors
-- Structured YAML files that describe key details of each RMM tool, including:
-  - Tool name and description
-  - Author and creation/modification dates
+- **Fast Astro-powered static site** at [lolrmm.io](https://lolrmm.io/) – browse the catalog, filter by platform, search by name/domain/artifact, and explore tool details with full JavaScript-free rendering
+- **358 cataloged entries** broken down by classification: **261 RMM** tools and **97 RAT** (Remote Access Trojans)
+- **724 network indicators** (unique domains) and **145 code-signing certificates** recorded for threat hunting and application control research
+- **Cumulative growth chart** showing catalog expansion over time
+- **Structured YAML source records** describing key details of each tool:
+  - Tool name, description, author, and timestamps
   - Technical details (website, PE metadata, privileges required, etc.)
   - Supported operating systems and capabilities
-  - Known vulnerabilities
-  - Installation paths
+  - Known vulnerabilities and installation paths
   - Artifacts left on disk, in event logs, registry, or network
-  - Detection methods (including Sigma rules)
+  - Detection methods (including Sigma, Splunk, Defender, and Sysmon rules)
   - References and acknowledgements
-- Integrates with Sigma to provide detection rules for RMM tools
+- **JSON and CSV APIs** for programmatic access – fetch the full catalog, network domains, or individual tool records with no API key required
+- **LLM-discoverable guide** at [lolrmm.io/llms.txt](https://lolrmm.io/llms.txt) for AI assistants and research automation
+- **Generated Sigma detections** under `detections/` with process and DNS indicators automatically derived from catalog entries
 
 ## 🚀 Getting Started
 
-To begin working with LOLRMM, you can:
+To begin working with LOLRMM:
 
-1. Check out the [LOLRMM website](https://lolrmm.io/) for browsing the catalog.
-2. Clone the repository to explore the YAML files directly.
-3. Use our API to access the data programmatically in JSON or CSV format.
+1. **Browse the catalog** at [lolrmm.io](https://lolrmm.io/) – explore by platform, filter by tool type, or search for specific artifacts
+2. **Clone the repository** to work with the YAML source records directly
+3. **Fetch via API** to integrate catalog data into your threat hunting and detection workflows
 
-### API Usage Example
+### API Usage
 
-To fetch the complete list of RMM tools in JSON format, you can use the following curl command:
+Fetch the complete catalog in JSON or CSV format (no API key required):
 
 ```bash
+# Full catalog JSON with all tool details
 curl https://lolrmm.io/api/rmm_tools.json
-```
 
-This will return a JSON array containing detailed information about all cataloged RMM tools.
-
-For CSV format, simply change the extension to `.csv`:
-
-```bash
+# CSV export for spreadsheet review
 curl https://lolrmm.io/api/rmm_tools.csv
+
+# Network domains for hunting
+curl https://lolrmm.io/api/rmm_domains.csv
+
+# Individual tool record
+curl https://lolrmm.io/api/tools/anydesk.json
 ```
 
-These APIs provide an easy way to integrate LOLRMM data into your threat hunting, detection, and prevention workflows.
+See [lolrmm.io/api/](https://lolrmm.io/api/) for the complete API documentation and additional feeds.
 
 ## Support 📞
 
