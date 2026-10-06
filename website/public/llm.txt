@@ -1,0 +1,7 @@
+# LOLRMM
+
+> The canonical LOLRMM guide for language models is available at /llms.txt.
+
+## Guide
+
+- [LOLRMM LLM guide](https://lolrmm.io/llms.txt): Follow this link for the project summary, curated sources, and guidance on using them.
