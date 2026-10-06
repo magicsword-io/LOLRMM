@@ -51,6 +51,24 @@ const nav = [
       } catch {}
     </script>
     <GoogleAnalytics />
+    <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LOLRMM",
+        "url": "https://lolrmm.io",
+        "logo": "https://lolrmm.io/images/logo.png",
+        "description": "Living Off The Land Remote Monitoring and Management — A community-maintained catalog of remote monitoring and management tools with forensic artifacts, network indicators, and detections for threat hunters and defenders.",
+        "sameAs": ["https://github.com/magicsword-io/LOLRMM"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "LOLRMM",
+        "url": "https://lolrmm.io",
+        "description": "Explore remote monitoring and management tools, forensic artifacts, and detections. Open source intelligence for threat hunters and defenders."
+      }
+    ])} />
   </head>
   <body>
     <a class="skip" href="#main">
