@@ -3,7 +3,7 @@ Category: RMM
 Description: ScreenConnect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-10-01'
-LastModified: '2026-10-05'
+LastModified: '2026-10-08'
 Details:
     Website: https://www.connectwise.com
     PEMetadata:
@@ -65,6 +65,15 @@ Artifacts:
               - AccessShowSystemTrayIcon = false
         - File: C:\Windows\SystemTemp\ScreenConnect\*
           Description: ScreenConnect working directory, with version-specific subdirectories. The cited lab observed RunFile staging beneath <version>\Temp; Huntress observed execution directly beneath <version>. Legitimate administrators also deploy files here. Correlate file writes and execution with session logs and approved activity; the path alone proves neither human interaction nor malicious intent.
+          OS: Windows
+        - File: C:\Users\*\Downloads\ScreenConnect.ClientSetup*.exe
+          Description: Rogue ScreenConnect installer downloaded to user Downloads folder from phishing lure. Huntress observed this in Power BI-hosted phishing (Oct 2026) where the download URL followed the pattern <tenant>.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&t=<token>.
+          OS: Windows
+        - File: C:\Temp\ScreenConnect.ClientSetup.msi
+          Description: Secondary rogue ScreenConnect installer downloaded by SCAutoFix.ps1 script. Observed by Huntress (Oct 2026) when first rogue client executed a CMD file that ran the PowerShell script, which downloaded this MSI from the second instance's /Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest endpoint, installed the second client, then uninstalled the first.
+          OS: Windows
+        - File: C:\Users\ScreenConnect.ClientSetup*.exe
+          Description: Rogue ScreenConnect installer saved directly under C:\Users (unusual location). Huntress reported the secondary installer was saved as C:\Users\ScreenConnect.ClientSetup (6).exe in Oct 2026.
           OS: Windows
     EventLog:
         - EventID: 7045
@@ -130,6 +139,7 @@ References:
     - https://f4n6.co.uk/a-feedback-tool-that-isnt-screenconnect-rmm-abuse-hidden-in-a-12-mb-batch-file/
     - https://www.screenconnect.com/blog/customization-update
     - https://alluresecurity.com/blog/signal-noise-brand-was-real-app-wasnt/
+    - https://www.huntress.com/blog/screenconnect-power-bi
 Acknowledgement:
     - Person: Ayush Anand
       Handle: '@Securityinbits'
