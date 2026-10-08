@@ -3,13 +3,16 @@ Category: RMM
 Description: NetSupport Manager is a remote monitoring and management (RMM) tool. Its remcmdstub.exe component is the NetSupport Remote Command Prompt Stub.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2026-06-15'
+LastModified: '2026-10-07'
 Details:
     Website: 'https://www.netsupportmanager.com/'
     PEMetadata:
         - Filename: remcmdstub.exe
           OriginalFileName: remcmdstub.exe
           Description: NetSupport Remote Command Prompt Stub
+        - Filename: hypersnap.exe
+          OriginalFileName: client32.exe
+          Description: client32.exe renamed to hypersnap.exe in the ClearFake chain (Cisco Talos, Sep 2026)
     Privileges: ''
     Free: ''
     Verification: ''
@@ -33,6 +36,11 @@ Artifacts:
               - '*.netsupportmanager.com'
               - netsupportmanager.com
           Ports: []
+        - Description: ClearFake WebDAV infection chain NetSupport HTTP Gateway (Cisco Talos, Sep 2026)
+          Domains:
+              - paternal-angrily.com
+          Ports:
+              - 443
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/netsupport_manager_network_sigma.yml
       Description: Detects potential network activity of NetSupport Manager RMM tool
@@ -45,6 +53,7 @@ References:
     - https://redcanary.com/threat-detection-report/threats/netsupport-manager/
     - https://www.cybereason.com/blog/net-support-rat-wordpress-clickfix
     - https://www.microsoft.com/en-us/security/blog/2025/03/06/malvertising-campaign-leads-to-info-stealers-hosted-on-github/
+    - https://blog.talosintelligence.com/clearfake-webdav-infection-chain/
 Acknowledgement: []
 CodeSigning:
     search_names:
