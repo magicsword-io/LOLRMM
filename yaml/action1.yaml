@@ -5,7 +5,7 @@ Description: |
     Through the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.
 Author: '@kostastsale'
 Created: '2024-08-03'
-LastModified: '2024-08-03'
+LastModified: '2026-10-09'
 Details:
     Website: https://www.action1.com/
     PEMetadata:
@@ -75,6 +75,8 @@ Artifacts:
           Description: Ensures that detailed crash information is available for analysis, which aids in maintaining the stability and reliability of the software.
         - Path: HKLM\SOFTWARE\WOW6432Node\Action1
           Description: Storing its configuration settings and other relevant information
+        - Path: HKLM\Software\Action1\Agent
+          Description: Action1 agent stores its CustomerId here
     Network:
         - Description: N/A
           Domains:
@@ -102,6 +104,7 @@ References:
     - https://www.action1.com/documentation/
     - https://twitter.com/Kostastsale/status/1646256901506605063?s=20
     - https://ruler-project.github.io/ruler-project/RULER/remote/Action1/
+    - https://isc.sans.edu/diary/33400
 Acknowledgement:
     - Person: Kostas
       Handle: '@kostastsale'
