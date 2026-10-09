@@ -3,15 +3,14 @@
 ![CI build](https://github.com/magicsword-io/LOLRMM/actions/workflows/validate.yml/badge.svg)
 ![RMM Tools](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/magicsword-io/LOLRMM/main/rmm-tools-count.json)
 
-Welcome to LOLRMM (Living Off the Land Remote Monitoring and Management), a community-driven project that provides a curated list of Remote Monitoring and Management (RMM) tools and Remote Access Trojans (RATs) that could potentially be abused by threat actors. Our mission is to assist security professionals in staying informed about these tools and their potential for misuse, providing the community a catalog of **358 entries** (**261 RMM** · **97 RAT**) which can be used for threat hunting, detection and prevention policy creations.
+Welcome to LOLRMM (Living Off the Land Remote Monitoring and Management), a community-driven project that provides a curated list of Remote Monitoring and Management (RMM) and remote access tools that could potentially be abused by threat actors. Our mission is to assist security professionals in staying informed about these tools and their potential for misuse, providing the community a catalog which can be used for threat hunting, detection and prevention policy creations.
 
 ![LOLRMM Homepage](.github/screenshots/lolrmm-homepage.png)
 
 ## 🌟 Key Features
 
-- **Fast Astro-powered static site** at [lolrmm.io](https://lolrmm.io/) – browse the catalog, filter by platform, search by name/domain/artifact, and explore tool details with full JavaScript-free rendering
-- **358 cataloged entries** broken down by classification: **261 RMM** tools and **97 RAT** (Remote Access Trojans)
-- **724 network indicators** (unique domains) and **145 code-signing certificates** recorded for threat hunting and application control research
+- **Fast Astro-powered static site** at [lolrmm.io](https://lolrmm.io/) – browse the catalog, filter by platform, search by name/domain/artifact, and explore tool details. Catalog content is rendered as static HTML; interactive search and filters use JavaScript
+- **Catalog snapshot (2026-10-06):** 358 entries classified as 261 RMM and 97 RAT, 724 distinct recorded domain patterns, and 145 tools with certificate evidence. See the live site for current totals; catalog classification alone does not establish malicious use
 - **Cumulative growth chart** showing catalog expansion over time
 - **Structured YAML source records** describing key details of each tool:
   - Tool name, description, author, and timestamps
