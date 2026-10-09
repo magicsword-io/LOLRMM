@@ -3,7 +3,7 @@ Category: RMM
 Description: ScreenConnect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-10-01'
-LastModified: '2026-10-05'
+LastModified: '2026-10-09'
 Details:
     Website: https://www.connectwise.com
     PEMetadata:
@@ -65,6 +65,15 @@ Artifacts:
               - AccessShowSystemTrayIcon = false
         - File: C:\Windows\SystemTemp\ScreenConnect\*
           Description: ScreenConnect working directory, with version-specific subdirectories. The cited lab observed RunFile staging beneath <version>\Temp; Huntress observed execution directly beneath <version>. Legitimate administrators also deploy files here. Correlate file writes and execution with session logs and approved activity; the path alone proves neither human interaction nor malicious intent.
+          OS: Windows
+        - File: C:\Users\*\Downloads\ScreenConnect.ClientSetup*.exe
+          Description: ScreenConnect installer filename reported in Huntress's September 2026 Power BI phishing investigation (published October 7). The Downloads path generalizes the reported download destination; the filename can also occur in legitimate deployments. Observed URL pattern was <tenant>.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&t=<token>.
+          OS: Windows
+        - File: C:\Temp\ScreenConnect.ClientSetup.msi
+          Description: MSI staging path reported by Huntress in the September 2026 investigation. SCAutoFix.ps1 downloaded a second client from /Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest and replaced the first client. This is a case-specific artifact, not a default installation path.
+          OS: Windows
+        - File: C:\Users\ScreenConnect.ClientSetup*.exe
+          Description: Direct-under-Users path generalized from C:\Users\ScreenConnect.ClientSetup (6).exe in Huntress's September 2026 investigation. The report mentions both this EXE name and the MSI staging path; neither is a universal ScreenConnect installer location.
           OS: Windows
     EventLog:
         - EventID: 7045
@@ -130,6 +139,7 @@ References:
     - https://f4n6.co.uk/a-feedback-tool-that-isnt-screenconnect-rmm-abuse-hidden-in-a-12-mb-batch-file/
     - https://www.screenconnect.com/blog/customization-update
     - https://alluresecurity.com/blog/signal-noise-brand-was-real-app-wasnt/
+    - https://www.huntress.com/blog/screenconnect-power-bi
 Acknowledgement:
     - Person: Ayush Anand
       Handle: '@Securityinbits'
