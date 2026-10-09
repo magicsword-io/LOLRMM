@@ -5,7 +5,7 @@ Description: |
     Through the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.
 Author: '@kostastsale'
 Created: '2024-08-03'
-LastModified: '2024-08-03'
+LastModified: '2026-10-09'
 Details:
     Website: https://www.action1.com/
     PEMetadata:
