@@ -3,7 +3,7 @@ Category: RMM
 Description: ScreenConnect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: Ali Alwashali, Nasreddine Bencherchali
 Created: '2023-10-01'
-LastModified: '2026-10-08'
+LastModified: '2026-10-09'
 Details:
     Website: https://www.connectwise.com
     PEMetadata:
@@ -67,13 +67,13 @@ Artifacts:
           Description: ScreenConnect working directory, with version-specific subdirectories. The cited lab observed RunFile staging beneath <version>\Temp; Huntress observed execution directly beneath <version>. Legitimate administrators also deploy files here. Correlate file writes and execution with session logs and approved activity; the path alone proves neither human interaction nor malicious intent.
           OS: Windows
         - File: C:\Users\*\Downloads\ScreenConnect.ClientSetup*.exe
-          Description: Rogue ScreenConnect installer downloaded to user Downloads folder from phishing lure. Huntress observed this in Power BI-hosted phishing (Oct 2026) where the download URL followed the pattern <tenant>.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&t=<token>.
+          Description: ScreenConnect installer filename reported in Huntress's September 2026 Power BI phishing investigation (published October 7). The Downloads path generalizes the reported download destination; the filename can also occur in legitimate deployments. Observed URL pattern was <tenant>.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&t=<token>.
           OS: Windows
         - File: C:\Temp\ScreenConnect.ClientSetup.msi
-          Description: Secondary rogue ScreenConnect installer downloaded by SCAutoFix.ps1 script. Observed by Huntress (Oct 2026) when first rogue client executed a CMD file that ran the PowerShell script, which downloaded this MSI from the second instance's /Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest endpoint, installed the second client, then uninstalled the first.
+          Description: MSI staging path reported by Huntress in the September 2026 investigation. SCAutoFix.ps1 downloaded a second client from /Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest and replaced the first client. This is a case-specific artifact, not a default installation path.
           OS: Windows
         - File: C:\Users\ScreenConnect.ClientSetup*.exe
-          Description: Rogue ScreenConnect installer saved directly under C:\Users (unusual location). Huntress reported the secondary installer was saved as C:\Users\ScreenConnect.ClientSetup (6).exe in Oct 2026.
+          Description: Direct-under-Users path generalized from C:\Users\ScreenConnect.ClientSetup (6).exe in Huntress's September 2026 investigation. The report mentions both this EXE name and the MSI staging path; neither is a universal ScreenConnect installer location.
           OS: Windows
     EventLog:
         - EventID: 7045
