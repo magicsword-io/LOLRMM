@@ -5,10 +5,12 @@ import { repository } from '../lib/catalog';
 interface Props {
   title?: string;
   description?: string;
+  robots?: string;
 }
 const {
   title = 'LOLRMM — Living Off the Land Remote Monitoring and Management',
   description = 'Explore remote monitoring and management tools, forensic artifacts, and detections. Open source intelligence for threat hunters and defenders.',
+  robots,
 } = Astro.props;
 const nav = [
   ['Catalog', '/'],
@@ -16,6 +18,36 @@ const nav = [
   ['API', '/api/'],
   ['About', '/about/'],
 ];
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://lolrmm.io/#website',
+      url: 'https://lolrmm.io/',
+      name: 'LOLRMM',
+      description: 'Community-driven catalog of remote monitoring and management tools for threat hunting and detection',
+      inLanguage: 'en-US',
+      publisher: {
+        '@id': 'https://lolrmm.io/#organization',
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://lolrmm.io/#organization',
+      name: 'LOLRMM',
+      url: 'https://lolrmm.io/',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://lolrmm.io/images/logo.png',
+      },
+      sameAs: [
+        'https://github.com/magicsword-io/LOLRMM',
+      ],
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -25,14 +57,16 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
     <meta name="theme-color" content="#0c100e" />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="describedby" href="/llms.txt" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="LOLRMM" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta
       property="og:image"
       content={new URL('/images/logo.png', Astro.site)}
