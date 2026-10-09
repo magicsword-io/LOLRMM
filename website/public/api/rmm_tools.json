@@ -15840,7 +15840,7 @@
         "Description": "ScreenConnect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "Ali Alwashali, Nasreddine Bencherchali",
         "Created": "2023-10-01",
-        "LastModified": "2026-10-05",
+        "LastModified": "2026-10-09",
         "Details": {
             "Website": "https://www.connectwise.com",
             "PEMetadata": [
@@ -15921,6 +15921,21 @@
                 {
                     "File": "C:\\Windows\\SystemTemp\\ScreenConnect\\*",
                     "Description": "ScreenConnect working directory, with version-specific subdirectories. The cited lab observed RunFile staging beneath <version>\\Temp; Huntress observed execution directly beneath <version>. Legitimate administrators also deploy files here. Correlate file writes and execution with session logs and approved activity; the path alone proves neither human interaction nor malicious intent.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\*\\Downloads\\ScreenConnect.ClientSetup*.exe",
+                    "Description": "ScreenConnect installer filename reported in Huntress's September 2026 Power BI phishing investigation (published October 7). The Downloads path generalizes the reported download destination; the filename can also occur in legitimate deployments. Observed URL pattern was <tenant>.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest&t=<token>.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Temp\\ScreenConnect.ClientSetup.msi",
+                    "Description": "MSI staging path reported by Huntress in the September 2026 investigation. SCAutoFix.ps1 downloaded a second client from /Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest and replaced the first client. This is a case-specific artifact, not a default installation path.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Users\\ScreenConnect.ClientSetup*.exe",
+                    "Description": "Direct-under-Users path generalized from C:\\Users\\ScreenConnect.ClientSetup (6).exe in Huntress's September 2026 investigation. The report mentions both this EXE name and the MSI staging path; neither is a universal ScreenConnect installer location.",
                     "OS": "Windows"
                 }
             ],
@@ -16030,7 +16045,8 @@
             "https://newsletter.securityinbits.com/p/screenconnect-rmm-abuse-the-cloud",
             "https://f4n6.co.uk/a-feedback-tool-that-isnt-screenconnect-rmm-abuse-hidden-in-a-12-mb-batch-file/",
             "https://www.screenconnect.com/blog/customization-update",
-            "https://alluresecurity.com/blog/signal-noise-brand-was-real-app-wasnt/"
+            "https://alluresecurity.com/blog/signal-noise-brand-was-real-app-wasnt/",
+            "https://www.huntress.com/blog/screenconnect-power-bi"
         ],
         "Acknowledgement": [
             {
@@ -19916,7 +19932,7 @@
         "Description": "NetSupport Manager is a remote monitoring and management (RMM) tool. Its remcmdstub.exe component is the NetSupport Remote Command Prompt Stub.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2026-06-15",
+        "LastModified": "2026-10-09",
         "Details": {
             "Website": "https://www.netsupportmanager.com/",
             "PEMetadata": [
@@ -19924,6 +19940,11 @@
                     "Filename": "remcmdstub.exe",
                     "OriginalFileName": "remcmdstub.exe",
                     "Description": "NetSupport Remote Command Prompt Stub"
+                },
+                {
+                    "Filename": "hypersnap.exe",
+                    "OriginalFileName": "",
+                    "Description": "NetSupport client32.exe renamed to hypersnap.exe in the payload analyzed by Cisco Talos (report published September 8, 2026); PE OriginalFileName was not established"
                 }
             ],
             "Privileges": "",
@@ -19954,6 +19975,15 @@
                         "netsupportmanager.com"
                     ],
                     "Ports": []
+                },
+                {
+                    "Description": "Campaign-specific NetSupport HTTP Gateway from the ClearFake payload analyzed by Cisco Talos (report published September 8, 2026); not vendor infrastructure",
+                    "Domains": [
+                        "paternal-angrily.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
@@ -19973,7 +20003,8 @@
             "https://kb.netsupportsoftware.com/knowledge-base/netsupport-manager-control-command-line-options/",
             "https://redcanary.com/threat-detection-report/threats/netsupport-manager/",
             "https://www.cybereason.com/blog/net-support-rat-wordpress-clickfix",
-            "https://www.microsoft.com/en-us/security/blog/2025/03/06/malvertising-campaign-leads-to-info-stealers-hosted-on-github/"
+            "https://www.microsoft.com/en-us/security/blog/2025/03/06/malvertising-campaign-leads-to-info-stealers-hosted-on-github/",
+            "https://blog.talosintelligence.com/clearfake-webdav-infection-chain/"
         ],
         "Acknowledgement": [],
         "CodeSigning": {
@@ -30206,7 +30237,7 @@
         "Description": "Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute commands, scripts, and binaries.\nThrough the web interface of action1, the administrator must create a new policy or an app to establish remote execution and then points that the agent is installed.\n",
         "Author": "@kostastsale",
         "Created": "2024-08-03",
-        "LastModified": "2024-08-03",
+        "LastModified": "2026-10-09",
         "Details": {
             "Website": "https://www.action1.com/",
             "PEMetadata": [
@@ -30312,6 +30343,10 @@
                 {
                     "Path": "HKLM\\SOFTWARE\\WOW6432Node\\Action1",
                     "Description": "Storing its configuration settings and other relevant information"
+                },
+                {
+                    "Path": "HKLM\\Software\\Action1\\Agent",
+                    "Description": "Action1 agent stores its CustomerId here"
                 }
             ],
             "Network": [
@@ -30359,7 +30394,8 @@
             "https://www.action1.com/documentation/firewall-configuration/",
             "https://www.action1.com/documentation/",
             "https://twitter.com/Kostastsale/status/1646256901506605063?s=20",
-            "https://ruler-project.github.io/ruler-project/RULER/remote/Action1/"
+            "https://ruler-project.github.io/ruler-project/RULER/remote/Action1/",
+            "https://isc.sans.edu/diary/33400"
         ],
         "Acknowledgement": [
             {

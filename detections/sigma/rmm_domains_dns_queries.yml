@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-10-05'
+modified: '2026-10-09'
 tags:
 - attack.command-and-control
 - attack.t1219
@@ -547,6 +547,7 @@ detection:
     - .panorama9.com
     - .parsec.app
     - .parsec.gg
+    - .paternal-angrily.com
     - .pcvisit.de
     - .pdqinstallers.*.r2.cloudflarestorage.com
     - .pilixo.com
