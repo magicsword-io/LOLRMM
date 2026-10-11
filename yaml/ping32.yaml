@@ -1,0 +1,97 @@
+Name: Ping32
+Category: RMM
+Description: |
+    Ping32 is a Windows remote monitoring and management (RMM) agent sold by
+    Shandong Anzai Information Technology (NSecsoft) as an enterprise endpoint management suite,
+    covering live screen monitoring, screen recording, file and document backup, software
+    deployment and access control.
+
+    Genuine vendor builds are being repurposed by threat actors. Netresec documented a June 2026
+    campaign that delivered a modified Ping32 agent (`NSecRTS.exe`) through WhatsApp direct messages
+    impersonating ManageEngine Endpoint Central. The implant was installed into the protected
+    `C:\Program Files\Common Files\NSEC\` directory and bundled a filesystem minifilter driver
+    (`nFsFlt32.sys`) whose process-creation callback blocked attempts to terminate `NSecRTS.exe`.
+    The same C2 host also carried ValleyRAT traffic. Netresec notes a possible connection to the
+    Silver Fox cluster but considers the evidence insufficient for confident attribution.
+Author: '@cyberbuff'
+Created: '2026-10-01'
+LastModified: '2026-10-01'
+Details:
+    Website: https://www.nsecsoft.com/
+    PEMetadata:
+        - Filename: NSecRTS.exe
+          OriginalFileName: NSecRTS.exe
+          Description: Ping32 remote management agent main binary; the name used by the malicious build observed in the 2026 campaign.
+        - Filename: PCinfo.dll
+          OriginalFileName: PCinfo.dll
+          Description: Host information collection module shipped with the Ping32 agent (hardware, local accounts, OS version, disk size).
+        - Filename: nFsFlt32.sys
+          OriginalFileName: nFsFlt32.sys
+          Description: Filesystem minifilter driver installed by the agent to guard the agent process against termination.
+    Privileges: SYSTEM
+    Free: false
+    Verification: >
+        Legitimate deployments are installed by the vendor through a signed installer that registers
+        a Windows service; the malicious build documented by Netresec was staged by a VBScript
+        dropper rather than obtained from the vendor.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Live screen monitoring and screen recording
+        - Employee web-browsing activity monitoring
+        - Network traffic monitoring
+        - File and document backup / centralisation
+        - Software deployment and file push to endpoints
+        - Access control policy enforcement
+        - Host inventory collection (hardware, local accounts, OS version, disk size)
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Common Files\NSEC\
+        - C:\Program Files\Common Files\NSEC\NSecRTS.exe
+        - C:\Program Files\Common Files\NSEC\PCinfo.dll
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Common Files\NSEC\NSecRTS.exe
+          Description: Ping32 remote management agent main binary. The agent directory is hidden and access restricted at standard privilege.
+          OS: Windows
+        - File: C:\Program Files\Common Files\NSEC\PCinfo.dll
+          Description: Host information collection module used to enumerate hardware, local accounts, OS version and disk size.
+          OS: Windows
+        - File: nFsFlt32.sys
+          Description: Filesystem minifilter driver shipped with the agent and loaded from the system drivers directory. Registers a process-creation callback that blocks attempts to terminate NSecRTS.exe.
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: |
+            Ping32 agents are pointed at an operator-supplied server, so there is no fixed vendor C2.
+            The vendor operates a cloud service on port 8987 used by agents to resolve and validate
+            their endpoint.
+          Domains:
+              - cloud.nsecsoft.com
+              - nsecsoft.com
+          Ports:
+              - 8987
+    Other:
+        - Type: URL
+          Value: http://cloud.nsecsoft.com:8987/ndns/<SUFFIX>
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ping32_network_sigma.yml
+      Description: Detects potential network activity of Ping32 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ping32_files_sigma.yml
+      Description: Detects potential files activity of Ping32 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ping32_processes_sigma.yml
+      Description: Detects potential processes activity of Ping32 RMM tool
+References:
+    - https://www.nsecsoft.com/
+    - https://www.netresec.com/?page=Blog&month=2026-06&post=Ping32-RMM-and-ValleyRAT
+Acknowledgement: []
+CodeSigning:
+    search_names:
+        - NSecRTS.exe
+        - PCinfo.dll
+        - nFsFlt32.sys
+    company_names:
+        - Shandong Anzai Information Technology Co., Ltd.
+    signer_names: []
+    certificates: []
