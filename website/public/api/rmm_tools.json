@@ -29242,7 +29242,7 @@
         "Description": "AnyDesk is a popular remote desktop software that enables users to access\nand control a computer or device from a remote location. It was developed with the\nprimary goal of facilitating remote work, technical support, and collaboration between\nindividuals and teams.\n",
         "Author": "Ali Alwashali, Nasreddine Bencherchali",
         "Created": "2023-09-29",
-        "LastModified": "2026-10-05",
+        "LastModified": "2026-10-11",
         "Details": {
             "Website": "https://anydesk.com/en",
             "PEMetadata": [
@@ -29272,7 +29272,8 @@
                 "Command line Support"
             ],
             "Vulnerabilities": [
-                "https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html"
+                "https://www.cvedetails.com/vulnerability-list/vendor_id-16953/product_id-40173/Anydesk-Anydesk.html",
+                "AnyPwn: pre-authentication heap overflow in AnyDesk for Linux 8.0.2 over TCP 7070 leading to root, fixed in 8.0.3 (no CVE)"
             ],
             "InstallationPaths": [
                 "C:\\Program Files (x86)\\AnyDesk\\*",
@@ -29617,7 +29618,9 @@
             "https://github.com/mthcht/awesome-lists/tree/79ced75eebe53bcabf1235b3c17eb11788875482/Lists/RMM/anydesk",
             "https://ruler-project.github.io/ruler-project/RULER/remote/AnyDesk/",
             "https://newsletter.securityinbits.com/p/32-ransomware-groups-abuse-anydesk",
-            "https://github.com/magicsword-io/LOLRMM/issues/247"
+            "https://github.com/magicsword-io/LOLRMM/issues/247",
+            "https://github.com/v12-security/pocs",
+            "https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html"
         ],
         "Acknowledgement": [
             {
