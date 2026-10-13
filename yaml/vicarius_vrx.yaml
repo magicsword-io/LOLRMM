@@ -1,9 +1,9 @@
 Name: Vicarius vRx
 Category: RMM
-Description: 'Vicarius vRx is a commercial vulnerability remediation and patch management platform with agents for Windows, Linux and macOS. Its vScript engine remotely executes custom PowerShell, Bash and Batch scripts on managed assets. Huntress reported that in one INC Ransom intrusion, a scheduled task pointed to C:\Program Files\7-Zip\HealthUpdater.exe, a renamed vRx executable placed in an unusual folder.'
+Description: 'Vicarius vRx is a commercial vulnerability remediation and patch management platform with agents for Windows, Linux and macOS. Its vScript engine remotely executes custom PowerShell, Bash and Batch scripts on managed assets. Huntress reported that in one INC Ransom intrusion, a scheduled task pointed to C:\Program Files\7-Zip\HealthUpdater.exe, a renamed vRx binary in an unusual folder. The vRx binary was not the primary payload: it carried a Shellter-packed payload containing a Cobalt Strike beacon.'
 Author: Liran Ravich, Cribl
 Created: '2026-10-01'
-LastModified: '2026-10-05'
+LastModified: '2026-10-10'
 Details:
     Website: 'https://www.vicarius.io'
     PEMetadata:
