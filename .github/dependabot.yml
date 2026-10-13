@@ -5,12 +5,27 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 3
+    groups:
+      github-actions:
+        patterns: ["*"]
   # Maintain dependencies for npm (Next.js site lives in /website)
   - package-ecosystem: "npm"
     directory: "/website"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 3
+    groups:
+      npm:
+        patterns: ["*"]
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 3
+    groups:
+      python:
+        patterns: ["*"]
