@@ -29,17 +29,17 @@ jobs:
       PUBLIC_ENABLE_ANALYTICS: 'true'
       ASTRO_TELEMETRY_DISABLED: '1'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: actions/setup-python@v5.2.0
+      - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.12'
       - name: Install build dependencies
         run: python -m pip install 'pyyaml>=6.0,<7'
       - name: Verify release boundaries
         run: python -m unittest discover -s tests -p 'test_release_workflows.py'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: npm
@@ -59,7 +59,7 @@ jobs:
           printf '%s\n' "$GITHUB_SHA" > website/dist/source-revision.txt
           echo "Validated Astro production artifact for $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
       - name: Upload tested Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: website/dist
 
@@ -77,4 +77,4 @@ jobs:
     steps:
       - name: Deploy tested artifact to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
