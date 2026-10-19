@@ -1,0 +1,187 @@
+Name: Ping32
+Category: RMM
+Description: |
+    Ping32 is a Windows remote monitoring and management (RMM) agent sold by
+    Shandong Anzai Information Technology (NSecsoft) as an enterprise endpoint management suite,
+    covering live screen monitoring, screen recording, file and document backup, software
+    deployment and access control.
+
+    Genuine vendor builds are being repurposed by threat actors. Netresec documented a June 2026
+    campaign that delivered a modified Ping32 agent (`NSecRTS.exe`) through WhatsApp direct messages
+    impersonating ManageEngine Endpoint Central. The campaign's C2 server also carried ValleyRAT
+    traffic. Netresec notes a possible connection to the Silver Fox cluster but considers the
+    evidence insufficient for confident attribution.
+
+    Earlier abuse dates to 2019. Qianxin reported malware that downloaded and installed the agent
+    into `C:\Program Files\Common Files\NSEC\`, together with a filesystem minifilter driver
+    (`nFsFlt32.sys`) whose process-creation callback blocks attempts to terminate `NSecRTS.exe`.
+Author: '@cyberbuff'
+Created: '2026-10-11'
+LastModified: '2026-10-19'
+Details:
+    Website: https://www.nsecsoft.com/
+    PEMetadata:
+        - Filename: NSecRTS.exe
+          OriginalFileName: NSecRTS
+          Product: EPS
+          Description: Ping32 remote management agent main binary; the name used by the malicious build observed in the 2026 campaign.
+        - Filename: PCinfo.dll
+          OriginalFileName: PCInfo.dll
+          Description: Host information collection module shipped with the Ping32 agent (hardware, local accounts, OS version, disk size).
+        - Filename: nFsFlt32.sys
+          OriginalFileName: nFsFlt.sys
+          Description: Filesystem minifilter driver installed by the agent to guard the agent process against termination.
+        - Filename: NSecDs.exe
+          OriginalFileName: NSecDs.exe
+          Description: Executable observed alongside NSecRTS.exe in Ping32 installs.
+        - Filename: NSOutlookAddin32.dll
+          OriginalFileName: NativeAddIn.dll
+          Description: Ping32 Outlook add-in.
+    Privileges: null
+    Free: false
+    Verification: >
+        The vendor offers a 7-day trial after phone verification and generates client installers
+        from its console (Qianxin). The build documented by Netresec was staged by a VBScript
+        dropper rather than obtained from the vendor.
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Live screen monitoring and screen recording
+        - Employee web-browsing activity monitoring
+        - Network traffic monitoring
+        - File and document backup / centralisation
+        - Software deployment and file push to endpoints
+        - Access control policy enforcement
+        - Host inventory collection (hardware, local accounts, OS version, disk size)
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Common Files\NSEC\
+        - C:\Program Files (x86)\Common Files\NSEC\
+        - C:\Program Files (x86)\Common Files\NSecAgent\bin\x86\NSecRTS.exe
+        - C:\Program Files (x86)\Common Files\NSecAgent\bin\x64\NSecRTS.exe
+        - C:\Program Files\Common Files\NSEC\NSecRTS.exe
+        - C:\Program Files\Common Files\NSEC\PCinfo.dll
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Common Files\NSEC\NSecRTS.exe
+          Description: Ping32 remote management agent main binary. The agent directory is hidden and access restricted at standard privilege.
+          OS: Windows
+        - File: C:\Program Files\Common Files\NSEC\PCinfo.dll
+          Description: Host information collection module used to enumerate hardware, local accounts, OS version and disk size.
+          OS: Windows
+        - File: C:\Program Files (x86)\Common Files\NSEC\NSecRTS.exe
+          Description: Ping32 agent executable in the installation directory documented by Seqrite.
+          OS: Windows
+        - File: C:\Program Files (x86)\Common Files\NSEC\Data\*
+          Description: Collection directory created by the agent in the campaign documented by Seqrite.
+          OS: Windows
+        - File: C:\SmartSnap\*\*
+          Description: Protected screenshot storage, organized by date, documented by Qianxin.
+          OS: Windows
+        - File: C:\NSEC\Debug\Log\*.log
+          Description: Debug logs observed with older signed NSecRTS builds; log filenames can follow the executable name.
+          OS: Windows
+        - File: C:\NSecAgent\Debug\Log\*.log
+          Description: Debug logs observed with newer signed NSecRTS builds.
+          OS: Windows
+        - File: C:\NSEC\cache.ini
+          Description: Cache configuration written by a newer signed NSecRTS build.
+          OS: Windows
+        - File: C:\Program Files (x86)\Common Files\NSecAgent\data\xConfig.db*
+          Description: Configuration database and SQLite sidecar files observed with newer signed NSecRTS builds.
+          OS: Windows
+        - File: C:\Program Files (x86)\Common Files\NSecAgent\data\recordcached.db
+          Description: Record cache database observed with newer signed NSecRTS builds.
+          OS: Windows
+        - File: nFsFlt32.sys
+          Description: Filesystem minifilter driver shipped with the agent. Registers a process-creation callback that blocks attempts to terminate NSecRTS.exe.
+          OS: Windows
+        - File: NSecDs.exe
+          Description: Executable observed alongside NSecRTS.exe in Ping32 installs.
+          OS: Windows
+        - File: NSOutlookAddin32.dll
+          Description: Ping32 Outlook add-in.
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          Description: Service installation; Seqrite observed NSecRTS.exe registered with the display name Windows Real-time Protection Service. Correlate with the executable path.
+    Registry:
+        - Path: HKLM\SOFTWARE\NSecsoft\Debug
+          Description: Debug configuration observed with older signed NSecRTS builds; the LogUser value points to the debug log directory.
+        - Path: HKLM\SOFTWARE\NSecsoft\NSecAgent
+          Description: Agent configuration namespace observed in newer signed NSecRTS builds.
+        - Path: HKLM\SOFTWARE\WOW6432Node\NSecsoft\NSecAgent
+          Description: 32-bit agent configuration namespace observed on 64-bit Windows, including NxService settings.
+    Network:
+        - Description: |
+            Ping32 agents are pointed at an operator-supplied server, so there is no fixed vendor C2.
+            The vendor operates a cloud service on port 8987 that agents query to resolve the
+            address of their server.
+          Domains:
+              - cloud.nsecsoft.com
+          Ports:
+              - 8987
+    Other:
+        - Type: URL
+          Value: http://cloud.nsecsoft.com:8987/ndns/<SUFFIX>
+        - Type: ServiceDisplayName
+          Value: Windows Real-time Protection Service
+        - Type: Mutex
+          Value: NSEC_TRAY_MTX_3BC4445E-02DB-41F6-8A37-1E7BE2387F45
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ping32_registry_sigma.yml
+      Description: Detects potential registry activity of Ping32 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ping32_network_sigma.yml
+      Description: Detects potential network activity of Ping32 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ping32_files_sigma.yml
+      Description: Detects potential files activity of Ping32 RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/ping32_processes_sigma.yml
+      Description: Detects potential processes activity of Ping32 RMM tool
+References:
+    - https://www.nsecsoft.com/
+    - https://www.netresec.com/?page=Blog&month=2026-06&post=Ping32-RMM-and-ValleyRAT
+    - https://ti.qianxin.com/blog/articles/genuine-surveillance-software-used-by-hackers/
+    - https://www.seqrite.com/blog/indian-income-tax-themed-phishing-campaign-targets-local-businesses/
+Acknowledgement: []
+CodeSigning:
+    search_names:
+        - NSecRTS.exe
+        - PCinfo.dll
+        - nFsFlt32.sys
+        - NSecDs.exe
+        - NSOutlookAddin32.dll
+    company_names:
+        - Shandong Anzai Information Technology Co., Ltd.
+        - Shandong Anzai Information Technology CO.,Ltd.
+        - NSecsoft(Jinan) Co., Ltd.
+    signer_names:
+        - Shandong Anzai Information Technology Co., Ltd.
+        - Shandong Anzai Information Technology CO.,Ltd.
+        - NSecsoft(Jinan) Co., Ltd.
+    certificates:
+        - signer_name: Shandong Anzai Information Technology Co., Ltd.
+          certificate_thumbprint: 196F4392C808CC3AEBEBE52B2CB2946A520C042D
+          src_file_sha256: 99ea9cfbb9da9fe78140afbdaa582336302910a602fba544759aa2fb9d70fcc3
+          issuer: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+          valid_from: '2026-05-06 00:00:00'
+          valid_to: '2027-05-05 23:59:59'
+        - signer_name: Shandong Anzai Information Technology CO.,Ltd.
+          certificate_thumbprint: EFF401355F1D2A6B4E2F72F9FCDD336A1BC5ECA9
+          src_file_sha256: 936cf21d6530903e89379370934a599328fc8f2c44efb18adbd673fee04eb502
+          issuer: Thawte Code Signing CA - G2
+          valid_from: '2018-09-18 00:00:00'
+          valid_to: '2019-10-18 23:59:59'
+        - signer_name: Shandong Anzai Information Technology CO.,Ltd.
+          certificate_thumbprint: 014047EEC77A83CA304BFBB7589BE9D04807502D
+          src_file_sha256: 936cf21d6530903e89379370934a599328fc8f2c44efb18adbd673fee04eb502
+          issuer: thawte SHA256 Code Signing CA
+          valid_from: '2018-09-26 00:00:00'
+          valid_to: '2019-10-18 23:59:59'
+        - signer_name: NSecsoft(Jinan) Co., Ltd.
+          certificate_thumbprint: 5C7E1609D56F031A98BB604BD7606401A3B7BE01
+          src_file_sha256: 8dc8f30cd81c67f8880ed61f1ac517311f05ef0d8b77585f69d18deec444d15c
+          issuer: Thawte Code Signing CA - G2
+          valid_from: '2015-06-17 00:00:00'
+          valid_to: '2016-08-15 23:59:59'
