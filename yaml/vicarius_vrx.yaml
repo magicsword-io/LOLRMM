@@ -1,15 +1,16 @@
 Name: Vicarius vRx
 Category: RMM
-Description: 'Vicarius vRx is a commercial vulnerability remediation and patch management platform with agents for Windows, Linux and macOS. Its vScript engine remotely executes custom PowerShell, Bash and Batch scripts on managed assets. Huntress reported that in one INC Ransom intrusion, a scheduled task pointed to C:\Program Files\7-Zip\HealthUpdater.exe, a renamed vRx executable placed in an unusual folder.'
+Description: 'Vicarius vRx is a commercial vulnerability remediation and patch management platform with agents for Windows, Linux and macOS. Its vScript engine remotely executes custom PowerShell, Bash and Batch scripts on managed assets. Huntress reported that in one INC Ransom intrusion, a scheduled task pointed to C:\Program Files\7-Zip\HealthUpdater.exe, a renamed vRx binary in an unusual folder. The vRx binary was not the primary payload: it carried a Shellter-packed payload containing a Cobalt Strike beacon.'
 Author: Liran Ravich, Cribl
 Created: '2026-10-01'
-LastModified: '2026-10-05'
+LastModified: '2026-10-19'
 Details:
     Website: 'https://www.vicarius.io'
     PEMetadata:
-        Filename: ''
+        Filename: topiad.exe
         OriginalFileName: ''
-        Description: ''
+        Description: vRx Agent
+        Product: vRx Agent
     Privileges: ''
     Free: false
     Verification: ''
@@ -96,6 +97,17 @@ Artifacts:
     Other: []
 FileHashes:
 CodeSigning:
+    search_names:
+        - topiad.exe
+    signer_names:
+        - VICARIUS LTD
+    certificates:
+        - signer_name: VICARIUS LTD
+          certificate_thumbprint: 9DD3F6768EB763F7978E6CB44162D84DD68EF2D7
+          src_file_sha256: 90e19337a4716f6fb679233a6e2444030f1eab5cd2405db63bfd7be71c2b244d
+          issuer: DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+          valid_from: '2026-01-13 00:00:00'
+          valid_to: '2028-02-12 23:59:59'
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/vicarius_vrx_network_sigma.yml
       Description: Detects potential network activity of Vicarius vRx RMM tool
@@ -107,6 +119,7 @@ References:
     - https://customer-portal.vicarius.io/vrx-logs-and-files
     - https://customer-portal.vicarius.io/ports-opening-dns-whitelisting?hsLang=en
     - https://www.huntress.com/blog/two-inc-ransom-notes
+    - https://x.com/sudo_Rem/status/2108914178807259164
     - https://www.vicarius.io/features/scripting
     - https://customer-portal.vicarius.io/vrx-my-scripts
     - https://customer-portal.vicarius.io/how-to-uninstall-vrx-agent
