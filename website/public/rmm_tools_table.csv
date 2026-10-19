@@ -66,6 +66,7 @@ Name,Category,Description,Author
 [VNC](/rmm_tools/vnc),RAT,VNC is a remote monitoring and management (RMM) tool. More information will be added as it becomes a...,
 [LightRmmAgent](/rmm_tools/lightrmmagent),RMM,LightRmmAgent is an unattributed custom Windows service described as RMM-style tooling by Threat Hun...,Michael Haag
 [IntelliAdmin Remote Control](/rmm_tools/intelliadmin-remote-control),RMM,IntelliAdmin Remote Control is a remote monitoring and management (RMM) tool. More information will ...,
+[Ping32](/rmm_tools/ping32),RMM,Ping32 is a Windows remote monitoring and management (RMM) agent sold by Shandong Anzai Information ...,@cyberbuff
 [UniSystem RMM](/rmm_tools/unisystem-rmm),RMM,UniSystem RMM is a Windows endpoint-management platform. Matching product-branded material describes...,Michael Haag
 [Net Monitor for Employees](/rmm_tools/net-monitor-for-employees),RMM,Net Monitor for Employees Professional is a commercial workforce monitoring tool developed by Networ...,Daniel Koifman (KoifSec)
 [SparkRAT](/rmm_tools/sparkrat),RAT,SparkRAT (Spark) is an open-source Go remote-access framework with a self-hosted controller that gen...,Michael Haag

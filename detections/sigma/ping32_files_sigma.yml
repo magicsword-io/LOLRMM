@@ -1,0 +1,35 @@
+title: Potential Ping32 RMM Tool File Activity
+id: 152a5bad-3cae-5164-97d0-42a914cccb05
+status: experimental
+description: |
+    Detects potential files activity of Ping32 RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-10-19
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'C:\Program Files\Common Files\NSEC\NSecRTS.exe'
+            - 'C:\Program Files\Common Files\NSEC\PCinfo.dll'
+            - 'C:\Program Files (x86)\Common Files\NSEC\NSecRTS.exe'
+            - 'C:\Program Files (x86)\Common Files\NSEC\Data\*'
+            - 'C:\SmartSnap\*\*'
+            - 'C:\NSEC\Debug\Log\*.log'
+            - 'C:\NSecAgent\Debug\Log\*.log'
+            - 'C:\NSEC\cache.ini'
+            - 'C:\Program Files (x86)\Common Files\NSecAgent\data\xConfig.db*'
+            - 'C:\Program Files (x86)\Common Files\NSecAgent\data\recordcached.db'
+            - 'nFsFlt32.sys'
+            - 'NSecDs.exe'
+            - 'NSOutlookAddin32.dll'
+    condition: selection
+falsepositives:
+    - Legitimate use of Ping32
+level: medium
