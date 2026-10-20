@@ -10,7 +10,7 @@ Description: >-
     intrusion. Legitimate development uses the same functionality; correlate
     tunnel commands, persistence, account context, and unexpected staging paths
     rather than treating ordinary VS Code execution as malicious.
-Author: ''
+Author: Michael Haag
 Created: '2026-10-20'
 LastModified: '2026-10-20'
 Details:
@@ -22,7 +22,7 @@ Details:
     SupportedOS:
         - Windows
         - Linux
-        - MacOS
+        - macOS
     Capabilities:
         - Remote terminal and command execution
         - Remote file access and editing
@@ -69,14 +69,16 @@ Detections:
 References:
     - https://www.security.com/threat-intelligence/warlock-ransomware-critical-infrastructure
     - https://code.visualstudio.com/docs/remote/tunnels
-    - https://github.com/microsoft/vscode/blob/main/cli/src/commands/tunnels.rs
-    - https://github.com/microsoft/vscode/blob/main/cli/src/tunnels/service_windows.rs
-    - https://github.com/microsoft/vscode/blob/main/cli/src/tunnels/service_linux.rs
-    - https://github.com/microsoft/vscode/blob/main/cli/src/tunnels/service_macos.rs
-    - https://github.com/microsoft/vscode/blob/main/cli/src/constants.rs
-    - https://github.com/microsoft/vscode/blob/main/cli/src/state.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/commands/tunnels.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/tunnels/service_windows.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/tunnels/service_linux.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/tunnels/service_macos.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/constants.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/state.rs
     - https://github.com/microsoft/vscode/issues/183698
     - https://github.com/microsoft/vscode-remote-release/issues/10264
 Acknowledgement:
+    - Person: josehelps
+      Handle: '@josehelps'
     - Person: Symantec and Carbon Black Threat Hunter Team
       Handle: ''
