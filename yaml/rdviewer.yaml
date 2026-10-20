@@ -1,0 +1,110 @@
+Name: RdViewer
+Category: RMM
+Description: >-
+    RdViewer (Rd远控) is remote-control and endpoint-management software from
+    Jinan Kuai'an Network Technology Co., Ltd. (济南快安网络科技有限公司).
+    It supports remote screens, file transfer, terminals, batch management,
+    and self-hosted relay nodes. It is unrelated to the Pierschel RdClient
+    product despite the shared rdclient.exe filename. ESRC reported a
+    tax-notification phishing campaign delivering a repackaged RdViewer client
+    in July 2026. The campaign artifacts below are not default installation
+    locations or proof that all deployments are malicious.
+Author: Michael Haag
+Created: '2026-10-20'
+LastModified: '2026-10-20'
+Details:
+    Website: https://www.rdviewer.com/
+    PEMetadata:
+        - Filename: RdServer.exe
+          OriginalFileName: RdServer.exe
+          Description: Server executable in the inspected official RdViewerPro archive; PE version 6.6.4.0, independent of the advertised suite version
+        - Filename: RdClient.exe
+          OriginalFileName: ''
+          Description: Remote-control client named in vendor package strings and the ESRC report; the campaign sample impersonated Windows service-host metadata
+        - Filename: rdService.exe
+          OriginalFileName: ''
+          Description: Windows service module named in vendor package strings and the ESRC report
+    Privileges: Windows service installation requires administrative permissions; interactive components may run as a user
+    Free: Free personal and self-hosted editions; paid editions are also offered
+    Verification: >-
+        Identity and features verified against vendor documentation and static
+        inspection of the official Windows self-hosted package. Windows, macOS,
+        Linux, Android, and iOS are advertised on the download page; mobile apps
+        are described as controllers for Windows PCs. Unix endpoint installation
+        paths and persistence were not verified. No product binaries were run.
+    SupportedOS:
+        - Windows
+        - macOS
+        - Linux
+        - Android
+        - iOS
+    Capabilities:
+        - Remote desktop control
+        - Remote terminal
+        - File transfer and management
+        - Clipboard synchronization
+        - Screen recording and audio
+        - Batch endpoint management and screen wall
+        - Self-hosted relay nodes and P2P connectivity
+    Vulnerabilities: []
+    # The process generator strips directories for these filenames. Keep scoped
+    # file artifacts below instead of emitting ambiguous rdclient.exe selectors.
+    InstallationPaths: []
+Artifacts:
+    Disk:
+        - File: '*\rdpro\RdClient.exe'
+          Description: Client under the campaign's rdpro directory; path suffix generalized from ESRC's reported per-user installation
+          OS: Windows
+        - File: '*\rdpro\rdService.exe'
+          Description: Service module under the reported campaign deployment directory
+          OS: Windows
+        - File: '*\rdpro\cfg.ini'
+          Description: Campaign configuration file scoped to the reported deployment directory; the bare filename is not product-specific
+          OS: Windows
+        - File: '*\rdpro\host.dat'
+          Description: Campaign relay configuration scoped to the reported deployment directory
+          OS: Windows
+        - File: '*\RdViewerPro\RdServer.exe'
+          Description: Server executable path inside the official self-hosted ZIP, not a fixed installed path
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Official software download host linked by the vendor; this is not evidence of a remote-control session, and self-hosted deployments can use other infrastructure
+          Domains:
+              - rdviewer.oss-cn-hangzhou.aliyuncs.com
+          Ports:
+              - 443
+    Other:
+        - Type: ReportedServiceDisplayName
+          Value: RdViewer Client Service
+        - Type: ReportedCampaignEndpoint
+          Value: 204.194.54.118:7788; ESRC's narrative and IOC table agree on port 7788, while its decrypted-configuration table prints 778. Campaign infrastructure, not a vendor default; excluded from DNS-domain indicators.
+        - Type: ReportedDropperMD5
+          Value: 0084596140bfc8121401216f3d0873aa
+        - Type: CorrelatedDropperSHA256
+          Value: 5f1c6059cbca3d1ba33c9834e845d290d8bfde3c4e0a37a71207b1a9b31593a7
+        - Type: ReportedClientMD5
+          Value: 122c481e44221fefd34c808ff679b1ba
+        - Type: OfficialPackageSHA256
+          Value: c081f809350dd836c9cb12257f6975bd69c0e7689d09ad5f471300bac1afd8a4
+        - Type: OfficialServerSHA256
+          Value: 4ed32c1723b0cea3454f9085573f6cacbb371408c0ee700416079a2dad6dce63
+        - Type: OfficialServerEmbeddedCertificateSubject
+          Value: 济南快安网络科技有限公司; extracted from the official package's RdServer.exe Authenticode certificate, not a live trust or revocation validation
+Detections: []
+References:
+    - https://www.rdviewer.com/
+    - https://www.rdviewer.com/download/
+    - https://www.rdviewer.com/rdpro/
+    - https://www.rdviewer.com/help/
+    - https://rdviewer.oss-cn-hangzhou.aliyuncs.com/app/RdViewerPro.zip
+    - https://alyacofficialblog.tistory.com/5771
+    - https://github.com/magicsword-io/LOLRMM/issues/283
+Acknowledgement:
+    - Person: Kyle Cucci
+      Handle: '@d4rksystem'
+    - Person: rcKillam
+      Handle: '@rcKillam'
+    - Person: ESTsecurity Security Response Center (ESRC)
+      Handle: ''
