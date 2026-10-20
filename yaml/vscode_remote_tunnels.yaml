@@ -15,7 +15,10 @@ Created: '2026-10-20'
 LastModified: '2026-10-20'
 Details:
     Website: https://code.visualstudio.com/docs/remote/tunnels
-    PEMetadata: []
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
     Privileges: User; writing to protected staging directories requires additional permissions
     Free: 'Yes'
     Verification: Hosting and connecting require authentication with the same GitHub or Microsoft account
