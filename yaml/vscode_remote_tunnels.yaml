@@ -1,0 +1,87 @@
+Name: VS Code Remote Tunnels
+Category: RMM
+Description: >-
+    Visual Studio Code Remote Tunnels provides authenticated remote access to a
+    machine's VS Code Server, including its files and terminal, through Microsoft
+    dev tunnels. It can run through the standalone code CLI or VS Code Desktop;
+    it is distinct from the devtunnel CLI. Symantec and Carbon Black documented
+    Longlegs (Storm-2603) using code-insiders.exe from the Windows debug directory
+    with tunnel service install for persistent access in a Warlock ransomware
+    intrusion. Legitimate development uses the same functionality; correlate
+    tunnel commands, persistence, account context, and unexpected staging paths
+    rather than treating ordinary VS Code execution as malicious.
+Author: Michael Haag
+Created: '2026-10-20'
+LastModified: '2026-10-20'
+Details:
+    Website: https://code.visualstudio.com/docs/remote/tunnels
+    PEMetadata:
+        Filename: ''
+        OriginalFileName: ''
+        Description: ''
+    Privileges: User; writing to protected staging directories requires additional permissions
+    Free: 'Yes'
+    Verification: Hosting and connecting require authentication with the same GitHub or Microsoft account
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+    Capabilities:
+        - Remote terminal and command execution
+        - Remote file access and editing
+        - Remote extension execution
+        - Persistent tunnel operation using platform-specific user startup mechanisms
+    Vulnerabilities: []
+    # Executable paths here become filename-only process rules; keep the observed
+    # staging path under Disk and use command-aware detection for normal CLI use.
+    InstallationPaths: []
+Artifacts:
+    Disk:
+        - File: C:\Windows\debug\code-insiders.exe
+          Description: Observed Warlock intrusion staging path; the report uses CSIDL_WINDOWS, so C:\Windows is an example Windows directory, not a universal installation location
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Microsoft dev tunnels control endpoint documented by VS Code; shared legitimate infrastructure, not a dedicated malicious endpoint or proof of VS Code tunnel abuse
+          Domains:
+              - global.rel.tunnels.api.visualstudio.com
+          Ports: []
+    Other:
+        - Type: ObservedCommandLine
+          Value: '"CSIDL_WINDOWS\debug\code-insiders.exe" tunnel service install --accept-server-license-terms'
+        - Type: CommandLine
+          Value: code tunnel --accept-server-license-terms
+        - Type: CommandLine
+          Value: code tunnel service install --accept-server-license-terms
+        - Type: CommandLine
+          Value: code-insiders tunnel service install --accept-server-license-terms
+        - Type: BinaryNames
+          Value: code.exe and code-insiders.exe (standalone Windows CLI); code-tunnel.exe (CLI bundled with VS Code Desktop). Names alone do not establish tunnel use.
+        - Type: WindowsPersistence
+          Value: The upstream CLI writes a value under HKCU\Software\Microsoft\Windows\CurrentVersion\Run, named from the build's PRODUCT_NAME_LONG followed by " Tunnel". Its command runs tunnel service internal-run with --log-to-file pointing to tunnel-service.log in the CLI data directory. This is per-user startup, not a Windows Service Control Manager service.
+        - Type: LinuxPersistence
+          Value: The upstream CLI writes <APPLICATION_NAME>-tunnel.service in the CLI data directory and links, enables, and starts it through the user systemd manager. Availability after logout depends on user-session configuration such as lingering.
+        - Type: MacOSPersistence
+          Value: The upstream CLI writes ~/com.visualstudio.<APPLICATION_NAME>.tunnel.plist and loads it with launchctl; the plist uses KeepAlive and the Aqua session type. It is written directly in the user's home directory, not Library/LaunchAgents.
+        - Type: ServiceLog
+          Value: Windows and macOS use tunnel-service.log in the CLI data directory; Linux exposes logs through journalctl --user. The CLI data directory is configurable, and product/build names affect default paths and service identifiers.
+Detections:
+    - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_vscode_tunnel_service_install.yml
+      Description: Detects the Windows tunnel service's internal-run command with tunnel-service.log; covers service execution, not the initial install command, and can match legitimate use
+References:
+    - https://www.security.com/threat-intelligence/warlock-ransomware-critical-infrastructure
+    - https://code.visualstudio.com/docs/remote/tunnels
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/commands/tunnels.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/tunnels/service_windows.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/tunnels/service_linux.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/tunnels/service_macos.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/constants.rs
+    - https://github.com/microsoft/vscode/blob/f465ef689adfad8a454dcb8648cb7fcd49de44a9/cli/src/state.rs
+    - https://github.com/microsoft/vscode/issues/183698
+    - https://github.com/microsoft/vscode-remote-release/issues/10264
+Acknowledgement:
+    - Person: josehelps
+      Handle: '@josehelps'
+    - Person: Symantec and Carbon Black Threat Hunter Team
+      Handle: ''
