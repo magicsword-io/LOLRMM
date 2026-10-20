@@ -346,6 +346,7 @@ Name,Category,Description,Author
 [TeamViewer](/rmm_tools/teamviewer),RMM,TeamViewer is a remote monitoring and management (RMM) tool....,"Nasreddine Bencherchali, Michael Haag"
 [CentraStage (Now Datto)](/rmm_tools/centrastage-now-datto),RMM,CentraStage (Now Datto) is a remote monitoring and management (RMM) tool. More information will be a...,
 [CrossLoop](/rmm_tools/crossloop),RMM,CrossLoop is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
+[VS Code Remote Tunnels](/rmm_tools/vs-code-remote-tunnels),RMM,Visual Studio Code Remote Tunnels provides authenticated remote access to a machine's VS Code Server...,Michael Haag
 [Fortra](/rmm_tools/fortra),RMM,Fortra is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [MioNet (WD Anywhere Access)](/rmm_tools/mionet-wd-anywhere-access),RMM,MioNet (WD Anywhere Access) is a remote monitoring and management (RMM) tool. More information will ...,
 [Chrome Remote Desktop](/rmm_tools/chrome-remote-desktop),RAT,"Chrome Remote Desktop is Google's cross-platform remote access and support service for Windows, macO...",n2x4
