@@ -22,9 +22,9 @@
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@playwright/test": "1.64.1",
-    "@types/node": "22.20.3",
+    "@types/node": "26.6.5",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.1",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   }
 }
