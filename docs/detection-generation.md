@@ -92,7 +92,9 @@ before considering the published rule correction complete. Reverting the source
 and regenerating restores the previous behavior.
 
 `validate-yaml` runs the unit suite, source validation, and generated-output gate
-on pull requests before merge. Content lint independently checks source safety;
+on pull requests before merge. It always starts after `yamllint` and explicitly
+fails if lint did not succeed, preventing a skipped prerequisite from satisfying
+the required check. Content lint independently checks source safety;
 the publishing workflows also run these safety gates before generating artifacts.
 Repository administrators should require these CI statuses in the existing
 branch rules. Workflow files alone cannot prevent an administrator from bypassing

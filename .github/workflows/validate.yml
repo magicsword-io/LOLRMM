@@ -26,7 +26,15 @@ jobs:
   validate-yaml:
     runs-on: ubuntu-latest
     needs: yamllint
+    # A skipped required job can satisfy branch rules. Always run the gate and
+    # explicitly propagate prerequisite failures instead of silently skipping.
+    if: ${{ always() }}
     steps:
+    - name: Require YAML lint success
+      if: ${{ needs.yamllint.result != 'success' }}
+      run: |
+        echo "::error::yamllint must succeed before catalog validation can pass"
+        exit 1
     - uses: actions/checkout@v7
       with:
         submodules: true
