@@ -166,6 +166,36 @@ test('detail evidence, existing exports, query copy, and old URL work', async ({
   );
 });
 
+test('retired ITSupport247 URLs resolve to the merged record', async ({
+  page,
+  browser,
+}) => {
+  const retiredSlug = 'itsupport247-connectwise--itsupport247connectwise';
+  const canonicalSlug = 'itsupport247-connectwise';
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const legacyPage = await context.newPage();
+  for (const prefix of ['tools', 'rmm_tools']) {
+    await legacyPage.goto(`http://127.0.0.1:4321/${prefix}/${retiredSlug}/`);
+    await expect(legacyPage).toHaveURL(
+      `http://127.0.0.1:4321/tools/${canonicalSlug}/`,
+    );
+    await expect(
+      legacyPage.getByRole('heading', {
+        name: 'ITSupport247 (ConnectWise)',
+        exact: true,
+      }),
+    ).toBeVisible();
+  }
+  await context.close();
+  const legacyExport = await page.request.get(`/api/tools/${retiredSlug}.json`);
+  const canonicalExport = await page.request.get(
+    `/api/tools/${canonicalSlug}.json`,
+  );
+  expect(legacyExport.ok()).toBeTruthy();
+  expect(legacyExport.headers()['content-type']).toContain('application/json');
+  expect(await legacyExport.json()).toEqual(await canonicalExport.json());
+});
+
 test('desktop and mobile themes have no page overflow or script errors', async ({
   page,
 }) => {
