@@ -6,7 +6,7 @@ Description: |
     Threat actors have been observed abusing Nezha as a stealthy post-exploitation RAT. Huntress published "The Crown Prince, Nezha" (2025) documenting a China-nexus campaign that compromised 100+ hosts across Taiwan, Japan, South Korea, and Hong Kong via unauthenticated phpMyAdmin → log poisoning → AntSword web shell → Nezha agent deployment → Ghost RAT installation. Ontinue published a parallel writeup ("The Monitoring Tool That's Also a Perfect RAT") on the same abuse class. Kaspersky flags the official agent binary as `not-a-virus:HEUR:RemoteAdmin.Win64.NezhaAgent.gen`; Microsoft and most other AV engines do not currently flag it, which is exactly what makes it attractive as a living-off-the-land RMM masquerade.
 Author: '@MHaggis'
 Created: '2026-05-18'
-LastModified: '2026-05-18'
+LastModified: '2026-10-26'
 Details:
     Website: https://nezha.wiki/
     PEMetadata:
@@ -98,12 +98,18 @@ Artifacts:
               - 443
         - Description: Official Nezha project / documentation / installer hosts. Agent installers pulled directly from GitHub raw content via curl|bash on Linux/macOS or PowerShell on Windows.
           Domains:
-              - github.com
-              - raw.githubusercontent.com
               - nezha.wiki
               - nezhahq.github.io
           Ports:
               - 443
+        - Description: Official Nezha project / documentation / installer hosts. Agent installers pulled directly from GitHub raw content via curl|bash on Linux/macOS or PowerShell on Windows.
+          Domains:
+              - github.com
+              - raw.githubusercontent.com
+          Ports:
+              - 443
+          Detection: false
+          DetectionReason: Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules.
         - Description: China-nexus abuse infrastructure observed by Huntress (Crown Prince Nezha campaign). Threat-actor-controlled Dashboard host and adjacent Ghost RAT C2.
           Domains:
               - c.mid.al

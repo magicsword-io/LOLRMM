@@ -101,6 +101,8 @@
           "items": {
             "type": "object",
             "properties": {
+              "Detection": { "type": "boolean", "description": "False preserves context while excluding standalone detection exports" },
+              "DetectionReason": { "type": "string", "pattern": "\\S" },
               "Description": { "type": "string" },
               "Domains": {
                 "type": "array",
@@ -111,7 +113,11 @@
                 "items": { "type": ["string", "integer"] }
               }
             },
-            "required": ["Description", "Domains", "Ports"]
+            "required": ["Description", "Domains", "Ports"],
+            "allOf": [{
+              "if": { "properties": { "Detection": { "const": false } }, "required": ["Detection"] },
+              "then": { "required": ["DetectionReason"] }
+            }]
           }
         },
         "Other": {
@@ -162,6 +168,13 @@
       "type": ["object", "null"],
       "description": "Code signing certificate information for this RMM tool",
       "properties": {
+        "Detection": { "type": "boolean", "description": "False marks signing evidence as context only" },
+        "DetectionReason": { "type": "string", "pattern": "\\S" },
+        "FileNames": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "description": "Exact tool filenames that MUST be ANDed with every publisher/certificate selector",
+          "items": { "type": "string", "minLength": 1 }
+        },
         "search_names": {
           "type": "array",
           "description": "Filenames used to search for signed binaries",
@@ -225,6 +238,7 @@
                 "type": ["string", "null"],
                 "description": "TBS (To Be Signed) SHA1 hash for WDAC policies"
               },
+              "tbs_sha384": { "type": ["string", "null"], "description": "TBS SHA384 digest" },
               "valid_from": {
                 "type": ["string", "null"],
                 "description": "Certificate validity start date"
@@ -241,7 +255,11 @@
             "required": ["signer_name", "certificate_thumbprint"]
           }
         }
-      }
+      },
+      "allOf": [{
+        "if": { "properties": { "Detection": { "const": false } }, "required": ["Detection"] },
+        "then": { "required": ["DetectionReason"] }
+      }]
     },
     "Detections": {
       "type": ["array", "null"],

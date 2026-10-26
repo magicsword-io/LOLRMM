@@ -105,12 +105,37 @@ class SigmaGeneratorTests(unittest.TestCase):
 
         self.assertEqual(artifacts["processes"], [r"\\rd.exe"])
 
-    def test_anchors_leading_wildcard_filename_with_escaped_separator(self) -> None:
+    def test_rejects_extension_only_executable_glob(self) -> None:
         artifacts = sigma_gen.extract_artifacts(
             {"Details": {"InstallationPaths": [r"C:\Program Files\Example\*.exe"]}}
         )
 
-        self.assertEqual(artifacts["processes"], [r"\\*.exe"])
+        self.assertEqual(artifacts["processes"], [])
+
+    def test_rejects_unsafe_disk_glob_but_keeps_verified_filename(self) -> None:
+        artifacts = sigma_gen.extract_artifacts({
+            "Artifacts": {"Disk": [
+                {"File": r"C:\Program Files\OpsBridge\*.exe"},
+                {"File": r"C:\Program Files\OpsBridge\OpsBridgeAgent.exe"},
+            ]},
+        })
+        self.assertEqual(artifacts["files"], [r"C:\Program Files\OpsBridge\OpsBridgeAgent.exe"])
+
+    def test_unsafe_globs_remove_stale_file_and_process_rules(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "tool.yaml"
+            source.write_text(yaml.safe_dump({
+                "Name": "Example",
+                "Details": {"InstallationPaths": [r"C:\Example\*.exe"]},
+                "Artifacts": {"Disk": [{"File": r"C:\Example\*.exe"}]},
+            }))
+            stale = [root / f"example_{kind}_sigma.yml" for kind in ("files", "processes")]
+            for rule in stale:
+                rule.write_text(yaml.safe_dump(sample_rule()))
+            self.assertEqual(sigma_gen.generate_sigma_rules(str(source), str(root)), [])
+            for rule in stale:
+                self.assertFalse(rule.exists())
 
     def test_anchors_embedded_wildcard_filename_with_escaped_separator(self) -> None:
         artifacts = sigma_gen.extract_artifacts(
@@ -268,6 +293,10 @@ class GenerationTests(unittest.TestCase):
         self.script = self.root / 'bin/generate_detections.py'
         shutil.copyfile(SCRIPT, self.script)
         shutil.copyfile(ROOT / 'bin/detection_paths.py', self.root / 'bin/detection_paths.py')
+        shutil.copyfile(ROOT / 'bin/path_safety.py', self.root / 'bin/path_safety.py')
+        shutil.copyfile(ROOT / 'bin/domain_safety.py', self.root / 'bin/domain_safety.py')
+        shutil.copytree(ROOT / 'bin/data', self.root / 'bin/data')
+        (self.root / 'website/public/api/rmm_domains.csv').write_text('URI,RMM_Tool\nexample.test,Example\n')
 
     def write_inputs(self, reverse=False):
         records = [
@@ -315,8 +344,10 @@ class GenerationTests(unittest.TestCase):
                          [r'\\B.EXE', r'\\client*.exe', r'\\valid.exe', r'\\VendorAgent.EXE'])
         self.assertEqual(rule['tags'], ['attack.command-and-control', 'attack.t1219'])
         domains = yaml.safe_load(first['rmm_domains_dns_queries.yml'])
-        self.assertEqual(domains['detection']['selection']['query|contains'],
-                         ['.*.wild.example', '.A.example', '.z.example'])
+        self.assertEqual(domains['detection']['selection']['query'], [
+            '*.a.example', '*.a.example.', '*.wild.example', '*.wild.example.',
+            '*.z.example', '*.z.example.', 'a.example', 'a.example.', 'z.example', 'z.example.',
+        ])
 
     def test_reversed_filesystem_discovery_is_identical(self):
         self.write_inputs()
