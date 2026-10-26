@@ -97,6 +97,3 @@ the publishing workflows also run these safety gates before generating artifacts
 Repository administrators should require these CI statuses in the existing
 branch rules. Workflow files alone cannot prevent an administrator from bypassing
 an unrequired status. No policy deployments are performed by these checks.
-
-For a portable task specification for the sister project, see
-[the LOLDrivers worker prompt](loldrivers-safety-prompt.md).
