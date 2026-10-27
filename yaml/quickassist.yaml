@@ -1,9 +1,17 @@
 Name: Quick Assist
 Category: RAT
-Description: Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
+Description: >
+    Quick Assist is a Microsoft remote assistance tool that enables a user to share 
+    their Windows or macOS device with another person over a remote connection for 
+    troubleshooting. Microsoft documented Storm-1811's abuse of Quick Assist in social 
+    engineering attacks beginning mid-April 2024, where threat actors impersonated IT 
+    or help desk personnel via Teams messages and calls to gain initial access. Arctic 
+    Wolf observed Quick Assist as the most frequently abused tool in their analysis of 
+    400+ Microsoft Teams vishing incidents, often followed by installation of commercial 
+    RMM tools for persistence.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-10-27'
 Details:
     Website: 'https://support.microsoft.com/windows/solve-pc-problems-remotely-using-quick-assist-b077e31a-16f4-2529-1a47-21f6a9040bf3'
     PEMetadata:
@@ -18,25 +26,41 @@ Details:
     Vulnerabilities: []
     InstallationPaths:
         - quickassist.exe
+        - C:\Windows\System32\QuickAssist.exe
 Artifacts:
-    Disk: []
+    Disk:
+        - File: C:\Windows\System32\QuickAssist.exe
+          Description: Quick Assist executable for remote assistance
+          OS: Windows
     EventLog: []
     Registry: []
     Network:
         - Description: Known remote domains
           Domains:
               - '*.support.services.microsoft.com'
+              - user_managed
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_network_sigma.yml
       Description: Detects potential network activity of Quick Assist RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/quick_assist_processes_sigma.yml
       Description: Detects potential processes activity of Quick Assist RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_network_sigma.yml
+      Description: Detects potential network activity of Microsoft Quick Assist RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_processes_sigma.yml
+      Description: Detects potential processes activity of Microsoft Quick Assist RMM tool
 References:
     - https://github.com/magicsword-io/LOLRMM/issues/46
+    - https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca
+    - https://www.microsoft.com/en-us/security/blog/2024/05/15/threat-actors-misusing-quick-assist-in-social-engineering-attacks-leading-to-ransomware/
+    - https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/
 Acknowledgement:
     - Person: bittib010
       Handle: '@bittib010'
+    - Person: Microsoft Threat Intelligence
+      Handle: ''
+    - Person: Shubham Dubey / Arctic Wolf Labs
+      Handle: ''
 CodeSigning:
     certificates:
         - signer_name: GlobalSigningDig
