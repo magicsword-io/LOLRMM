@@ -12,6 +12,7 @@ import {
   toolUrl,
   type CatalogTool,
 } from '../../lib/catalog';
+import { toolTitle, toolDescription } from '../../lib/seo';
 export function getStaticPaths() {
   return tools.map((tool) => ({
     params: { slug: tool.slug },
@@ -42,39 +43,8 @@ const sections = [
   ['references', 'References'],
 ];
 
-function generateTitle(toolName: string): string {
-  const suffix = ' – RMM Abuse, Detection & IOCs | LOLRMM';
-  const maxLength = 60;
-  const available = maxLength - suffix.length;
-  
-  if (toolName.length <= available) {
-    return toolName + suffix;
-  }
-  
-  return toolName.slice(0, available - 1) + '…' + suffix;
-}
-
-function generateMetaDescription(toolName: string): string {
-  const template = `How attackers abuse ${toolName} for remote access: artifacts, network IOCs, detections and blocking guidance. Free LOLRMM entry.`;
-  const maxLength = 155;
-  
-  if (template.length <= maxLength) {
-    return template;
-  }
-  
-  const prefix = 'How attackers abuse ';
-  const suffix = ' for remote access: artifacts, network IOCs, detections and blocking guidance. Free LOLRMM entry.';
-  const available = maxLength - prefix.length - suffix.length;
-  
-  if (toolName.length > available) {
-    return prefix + toolName.slice(0, available - 1) + '…' + suffix;
-  }
-  
-  return template;
-}
-
-const pageTitle = generateTitle(tool.Name);
-const pageDescription = generateMetaDescription(tool.Name);
+const pageTitle = toolTitle(tool);
+const pageDescription = toolDescription(tool);
 ---
 
 <BaseLayout
