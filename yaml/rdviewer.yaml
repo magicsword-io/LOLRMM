@@ -5,13 +5,15 @@ Description: >-
     Jinan Kuai'an Network Technology Co., Ltd. (济南快安网络科技有限公司).
     It supports remote screens, file transfer, terminals, batch management,
     and self-hosted relay nodes. It is unrelated to the Pierschel RdClient
-    product despite the shared rdclient.exe filename. ESRC reported a
-    tax-notification phishing campaign delivering a repackaged RdViewer client
-    in July 2026. The campaign artifacts below are not default installation
-    locations or proof that all deployments are malicious.
+    product despite the shared rdclient.exe filename. Huorong reported RdPack
+    silently installing RdViewer in 2023. ESRC reported tax-notification
+    phishing delivering a repackaged client in July 2026, and Rogue Authority
+    separately reported fake Disk Manager installers delivering patched
+    RdViewer clients in October 2026. Campaign artifacts below are not default
+    installation locations or proof that all deployments are malicious.
 Author: Michael Haag
 Created: '2026-10-20'
-LastModified: '2026-10-20'
+LastModified: '2026-10-26'
 Details:
     Website: https://www.rdviewer.com/
     PEMetadata:
@@ -19,19 +21,21 @@ Details:
           OriginalFileName: RdServer.exe
           Description: Server executable in the inspected official RdViewerPro archive; PE version 6.6.4.0, independent of the advertised suite version
         - Filename: RdClient.exe
-          OriginalFileName: ''
-          Description: Remote-control client named in vendor package strings and the ESRC report; the campaign sample impersonated Windows service-host metadata
+          OriginalFileName: rdclient.exe
+          Description: Remote-control client; the correlated July campaign sample has original filename rdclient.exe and impersonates Windows service-host version metadata
         - Filename: rdService.exe
-          OriginalFileName: ''
-          Description: Windows service module named in vendor package strings and the ESRC report
+          OriginalFileName: rdservice.exe
+          Description: Windows service module; the correlated sample identifies product RdViewer 服务程序 and version 6.6.8.0
     Privileges: Windows service installation requires administrative permissions; interactive components may run as a user
     Free: Free personal and self-hosted editions; paid editions are also offered
     Verification: >-
         Identity and features verified against vendor documentation and static
-        inspection of the official Windows self-hosted package. Windows, macOS,
-        Linux, Android, and iOS are advertised on the download page; mobile apps
-        are described as controllers for Windows PCs. Unix endpoint installation
-        paths and persistence were not verified. No product binaries were run.
+        inspection of the official Windows self-hosted package. Campaign metadata
+        and behaviors were corroborated using public research, VirusTotal records,
+        and existing sandbox reports. Windows, macOS, Linux, Android, and iOS are
+        advertised on the download page; mobile apps are described as controllers
+        for Windows PCs. Unix endpoint installation paths and persistence were
+        not verified. No product binaries were run locally.
     SupportedOS:
         - Windows
         - macOS
@@ -52,23 +56,43 @@ Details:
     InstallationPaths: []
 Artifacts:
     Disk:
+        - File: 'C:\Program Files (x86)\rdviewer\rdclient\*'
+          Description: Vendor-documented client directory; not established as universal across every current edition
+          OS: Windows
         - File: '*\rdpro\RdClient.exe'
-          Description: Client under the campaign's rdpro directory; path suffix generalized from ESRC's reported per-user installation
+          Description: Client under the July campaign's rdpro directory; path suffix generalized from ESRC's reported per-user installation
           OS: Windows
         - File: '*\rdpro\rdService.exe'
-          Description: Service module under the reported campaign deployment directory
+          Description: Service module under the July campaign deployment directory
+          OS: Windows
+        - File: '*\rdpro\rdlibw.dll'
+          Description: Remote-screen codec library in the July campaign client package
           OS: Windows
         - File: '*\rdpro\cfg.ini'
-          Description: Campaign configuration file scoped to the reported deployment directory; the bare filename is not product-specific
+          Description: July campaign configuration file scoped to the reported deployment directory; the bare filename is not product-specific
           OS: Windows
         - File: '*\rdpro\host.dat'
-          Description: Campaign relay configuration scoped to the reported deployment directory
+          Description: July campaign relay configuration scoped to the reported deployment directory
+          OS: Windows
+        - File: 'C:\ProgramData\host\dmservice.exe'
+          Description: Genuine RdViewer service renamed by the October fake Disk Manager builds; campaign-specific path
+          OS: Windows
+        - File: 'C:\ProgramData\host\diskmgr.exe'
+          Description: Patched and relabelled RdViewer client in the October fake Disk Manager builds; campaign-specific path
+          OS: Windows
+        - File: 'C:\ProgramData\host\cfg.ini'
+          Description: October campaign configuration file, not a vendor-default installation path
+          OS: Windows
+        - File: 'C:\ProgramData\host\host.dat'
+          Description: October campaign relay configuration, not a vendor-default installation path
           OS: Windows
         - File: '*\RdViewerPro\RdServer.exe'
           Description: Server executable path inside the official self-hosted ZIP, not a fixed installed path
           OS: Windows
     EventLog: []
-    Registry: []
+    Registry:
+        - Path: 'HKLM\SYSTEM\CurrentControlSet\Services\Rd_Service'
+          Description: RdViewer Windows service key; existing sandbox records show Services\Rd_Service under ControlSet001, normalized here to CurrentControlSet
     Network:
         - Description: Official software download host linked by the vendor; this is not evidence of a remote-control session, and self-hosted deployments can use other infrastructure
           Domains:
@@ -76,35 +100,82 @@ Artifacts:
           Ports:
               - 443
     Other:
+        - Type: ServiceName
+          Value: Rd_Service; vendor-documented as rd_service and corroborated by public research and existing sandbox reports
         - Type: ReportedServiceDisplayName
-          Value: RdViewer Client Service
+          Value: RdViewer Client Service; July ESRC campaign display name, not established as the vendor default
+        - Type: ReportedCampaignServiceDisplayName
+          Value: DMService; October fake Disk Manager campaign display name, not the actual service name or a vendor default
         - Type: ReportedCampaignEndpoint
-          Value: 204.194.54.118:7788; ESRC's narrative and IOC table agree on port 7788, while its decrypted-configuration table prints 778. Campaign infrastructure, not a vendor default; excluded from DNS-domain indicators.
+          Value: 204.194.54.118:7788; ESRC's narrative and IOC table agree on port 7788, while its decrypted-configuration table prints 778. July campaign infrastructure, not a vendor default; excluded from DNS-domain indicators.
+        - Type: ReportedCampaignEndpoint
+          Value: 1.14.146.76:7790; October fake Disk Manager build 1 relay reported by Rogue Authority and corroborated by an existing VirusTotal CAPE record; not a vendor default; excluded from DNS-domain indicators.
+        - Type: ReportedCampaignEndpoint
+          Value: 103.64.13.103:7788; October fake Disk Manager build 2 relay corroborated by an existing VirusTotal CAPE record. The report also lists ports 7777 and 7799; only 7788 was independently observed in that record. Not a vendor default; excluded from DNS-domain indicators.
         - Type: ReportedDropperMD5
           Value: 0084596140bfc8121401216f3d0873aa
         - Type: CorrelatedDropperSHA256
           Value: 5f1c6059cbca3d1ba33c9834e845d290d8bfde3c4e0a37a71207b1a9b31593a7
         - Type: ReportedClientMD5
           Value: 122c481e44221fefd34c808ff679b1ba
+        - Type: CorrelatedClientSHA256
+          Value: 5bea7f348d4ff47afb4abbb06909b894434d4df83318780da23bbe49bc0fb233; July campaign RdClient.exe
+        - Type: CorrelatedServiceSHA256
+          Value: 7ed2a077a1ce34fcb182e5135ae75ad7bd96207c3204c9f343095f967bfa109f; one shared genuine service sample correlated with the July chain and renamed dmservice.exe in both October builds
+        - Type: ReportedCampaignLoaderSHA256
+          Value: e71149d889cc558e6328ea7ce3498cd858c26ab282cda9410ccc51f6275f7da6; October fake Disk Manager build 1
+        - Type: ReportedCampaignClientSHA256
+          Value: fb60876621b2932fa2681d81a17ce8b79952fa3fb9a7ea77d5ba177433d8d76d; October build 1 patched NetBridge Suite/diskmgr.exe client
+        - Type: ReportedCampaignHostSHA256
+          Value: dcb372ff16de08fd126d9fceb866343ad03795f58427e4c78e1c837f6cd140d8; October build 1 host.dat
+        - Type: ReportedCampaignConfigSHA256
+          Value: 9db36c4f42395b676d31bf7dad3dce15a3e6f4acf3003f7383fb326c9062c29a; October build 1 cfg.ini
+        - Type: ReportedCampaignLoaderSHA256
+          Value: b9115303dd3567ac75104a5a3d2bc0ce4fd7d697ebf258e61283cdf708d50133; October fake Disk Manager build 2
+        - Type: ReportedCampaignClientSHA256
+          Value: bf41e6af51ccba343098f403093b195fb5f238559f723d4088196a2648fb9272; October build 2 patched Disk Manager Corp./diskmgr.exe client
+        - Type: ReportedCampaignHostSHA256
+          Value: 6bf67a040c0da26678b8b574db5f624b6bc3cc446455e3645d8bdaf3ef4517b8; October build 2 host.dat
         - Type: OfficialPackageSHA256
           Value: c081f809350dd836c9cb12257f6975bd69c0e7689d09ad5f471300bac1afd8a4
         - Type: OfficialServerSHA256
           Value: 4ed32c1723b0cea3454f9085573f6cacbb371408c0ee700416079a2dad6dce63
         - Type: OfficialServerEmbeddedCertificateSubject
           Value: 济南快安网络科技有限公司; extracted from the official package's RdServer.exe Authenticode certificate, not a live trust or revocation validation
-Detections: []
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdviewer_files_sigma.yml
+      Description: Detects potential files activity of RdViewer RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdviewer_registry_sigma.yml
+      Description: Detects potential registry activity of RdViewer RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdviewer_network_sigma.yml
+      Description: Detects potential network activity of RdViewer RMM tool
 References:
     - https://www.rdviewer.com/
     - https://www.rdviewer.com/download/
     - https://www.rdviewer.com/rdpro/
     - https://www.rdviewer.com/help/
+    - https://www.rdviewer.com/3895.html
     - https://rdviewer.oss-cn-hangzhou.aliyuncs.com/app/RdViewerPro.zip
+    - https://www.huorong.cn/document/tech/vir_report/869.html
     - https://alyacofficialblog.tistory.com/5771
+    - https://rogueauthority.org/signed-disk-manager-installs-rdviewer-backdoor
     - https://github.com/magicsword-io/LOLRMM/issues/283
+    - https://www.virustotal.com/gui/file/5f1c6059cbca3d1ba33c9834e845d290d8bfde3c4e0a37a71207b1a9b31593a7/details
+    - https://www.virustotal.com/gui/file/5bea7f348d4ff47afb4abbb06909b894434d4df83318780da23bbe49bc0fb233/details
+    - https://www.virustotal.com/gui/file/7ed2a077a1ce34fcb182e5135ae75ad7bd96207c3204c9f343095f967bfa109f/details
+    - https://www.virustotal.com/gui/file/e71149d889cc558e6328ea7ce3498cd858c26ab282cda9410ccc51f6275f7da6/details
+    - https://www.virustotal.com/gui/file/fb60876621b2932fa2681d81a17ce8b79952fa3fb9a7ea77d5ba177433d8d76d/details
+    - https://www.virustotal.com/gui/file/b9115303dd3567ac75104a5a3d2bc0ce4fd7d697ebf258e61283cdf708d50133/details
+    - https://www.virustotal.com/gui/file/bf41e6af51ccba343098f403093b195fb5f238559f723d4088196a2648fb9272/details
+    - https://www.virustotal.com/gui/file/4ed32c1723b0cea3454f9085573f6cacbb371408c0ee700416079a2dad6dce63/details
 Acknowledgement:
     - Person: Kyle Cucci
       Handle: '@d4rksystem'
     - Person: rcKillam
       Handle: '@rcKillam'
     - Person: ESTsecurity Security Response Center (ESRC)
+      Handle: ''
+    - Person: Rogue Authority
+      Handle: ''
+    - Person: Huorong Security
       Handle: ''
