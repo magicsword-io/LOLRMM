@@ -4,11 +4,13 @@ Description: >
     Level is a remote monitoring and management (RMM) tool. Threat Hunting Labs
     documented its malicious installation through an RVTools-themed SEO poisoning
     chain in 2026. An operator used Level to run discovery commands as SYSTEM and
-    install the separate LightRmmAgent service. The report distinguishes Level's
-    routine inventory from operator activity.
+    install the separate LightRmmAgent service. Arctic Wolf documented Level's use
+    by attackers via msiexec installation for persistence beyond initial Quick Assist
+    compromise in fake IT-support Microsoft Teams vishing campaigns. The report
+    distinguishes Level's routine inventory from operator activity.
 Author: Christian Henriksen, ITM8 | Improsec
 Created: '2024-02-11'
-LastModified: '2026-09-23'
+LastModified: '2026-10-27'
 Details:
     Website: https://level.io/
     PEMetadata:
@@ -27,6 +29,9 @@ Details:
         - Automation & Scripting
     InstallationPaths:
         - C:\Program Files\Level\*
+        - level-windows-amd64.exe
+        - level.exe
+        - level-remote-control-ffmpeg.exe
 Artifacts:
     Disk:
         - File: C:\Program Files\Level\level.exe
@@ -58,10 +63,16 @@ Artifacts:
           LogFile: Security.evtx
           CallerProcessName: C:\Program Files\Level\osqueri.exe
           Description: Evidence of osqueryi doing automatic user/group enumeration.
+        - EventID: 1033
+          ProviderName: MsiInstaller
+          LogFile: Application.evtx
+          Description: Level RMM tool installation via msiexec, observed in Arctic Wolf's Teams vishing campaigns.
+    Registry: []
     Network:
         - Description: Known remote domains
           Domains:
               - level.io
+              - '*.level.io'
               - builds.level.io
               - agents.level.io
               - online.level.io
@@ -73,10 +84,18 @@ Detections:
       Description: Detects potential network activity of Level RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml
       Description: Detects potential files activity of Level RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml
+      Description: Detects potential network activity of Level.io RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_files_sigma.yml
+      Description: Detects potential files activity of Level.io RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml
+      Description: Detects potential processes activity of Level.io RMM tool
 References:
     - https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike
     - https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
     - https://docs.level.io/en/articles/9926456-level-watchdog-task
+    - https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues
+    - https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/
 Acknowledgement:
     - Person: Kostas / Threat Hunting Labs
       Handle: '@Kostastsale'
@@ -86,6 +105,8 @@ Acknowledgement:
       Handle: '@PandaRE__'
     - Person: MalBear Labs
       Handle: '@malbearlabs'
+    - Person: Shubham Dubey / Arctic Wolf Labs
+      Handle: ''
 CodeSigning:
     certificates:
         - signer_name: Level Software, Inc.
