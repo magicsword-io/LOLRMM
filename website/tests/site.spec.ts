@@ -283,3 +283,34 @@ test('catalog, growth, and detail evidence remain readable without JavaScript', 
   );
   await context.close();
 });
+
+test('retired Microsoft Quick Assist URLs serve the consolidated record', async ({
+  browser,
+  request,
+}) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  for (const route of [
+    '/tools/microsoft-quick-assist/',
+    '/tools/microsoft_quick_assist/',
+    '/rmm_tools/microsoft-quick-assist/',
+  ]) {
+    await page.goto(`http://127.0.0.1:4321${route}`);
+    await expect(page).toHaveURL(/\/tools\/quick-assist\/$/);
+    await expect(
+      page.getByRole('heading', { name: 'Quick Assist', exact: true }),
+    ).toBeVisible();
+  }
+  await context.close();
+  const retired = await request.get('/api/tools/microsoft-quick-assist.json');
+  const canonical = await request.get('/api/tools/quick-assist.json');
+  expect(retired.ok()).toBeTruthy();
+  expect(await retired.json()).toEqual(await canonical.json());
+  const index = await request.get('/data/search.json');
+  const entries = await index.json();
+  expect(
+    entries.some(
+      (entry: { slug: string }) => entry.slug === 'microsoft-quick-assist',
+    ),
+  ).toBeFalsy();
+});
