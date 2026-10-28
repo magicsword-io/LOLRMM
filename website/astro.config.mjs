@@ -5,6 +5,10 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   redirects: {
+    '/tools/quickassist/': '/tools/quick-assist/',
+    '/tools/microsoft_quick_assist/': '/tools/quick-assist/',
+    '/tools/microsoft-quick-assist/': '/tools/quick-assist/',
+    '/rmm_tools/microsoft-quick-assist/': '/tools/quick-assist/',
     '/tools/levelio/': '/tools/level/',
     '/rmm_tools/levelio/': '/tools/level/',
     '/tools/levelio--levelio/': '/tools/level/',
@@ -13,8 +17,6 @@ export default defineConfig({
       '/tools/itsupport247-connectwise/',
     '/rmm_tools/itsupport247-connectwise--itsupport247connectwise/':
       '/tools/itsupport247-connectwise/',
-    '/tools/quickassist/': '/tools/quick-assist/',
-    '/tools/microsoft_quick_assist/': '/tools/microsoft-quick-assist/',
   },
   devToolbar: { enabled: false },
 });
