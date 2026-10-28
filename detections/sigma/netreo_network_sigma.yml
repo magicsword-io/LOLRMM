@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,11 +16,21 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'charon.netreo.net'
-            - 'activation.netreo.net'
+        DestinationHostname:
+            - '*.activation.netreo.net'
+            - '*.activation.netreo.net.'
             - '*.api.netreo.com'
+            - '*.api.netreo.com.'
+            - '*.charon.netreo.net'
+            - '*.charon.netreo.net.'
+            - '*.netreo.com'
+            - '*.netreo.com.'
+            - 'activation.netreo.net'
+            - 'activation.netreo.net.'
+            - 'charon.netreo.net'
+            - 'charon.netreo.net.'
             - 'netreo.com'
+            - 'netreo.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Netreo

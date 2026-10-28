@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,12 +16,21 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'deploy01.kaseya.com'
-            - 'managedsupport.kaseya.net'
-            - '*.managedsupport.kaseya.net'
+        DestinationHostname:
+            - '*.deploy01.kaseya.com'
+            - '*.deploy01.kaseya.com.'
+            - '*.kaseya.com'
+            - '*.kaseya.com.'
             - '*.kaseya.net'
+            - '*.kaseya.net.'
+            - '*.managedsupport.kaseya.net'
+            - '*.managedsupport.kaseya.net.'
+            - 'deploy01.kaseya.com'
+            - 'deploy01.kaseya.com.'
             - 'kaseya.com'
+            - 'kaseya.com.'
+            - 'managedsupport.kaseya.net'
+            - 'managedsupport.kaseya.net.'
     condition: selection
 falsepositives:
     - Legitimate use of Kaseya (VSA)

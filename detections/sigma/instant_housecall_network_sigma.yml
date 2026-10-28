@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-10-20
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,11 +16,17 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
             - '*.instanthousecall.com'
-            - 'secure.instanthousecall.com'
+            - '*.instanthousecall.com.'
             - '*.instanthousecall.net'
+            - '*.instanthousecall.net.'
+            - '*.secure.instanthousecall.com'
+            - '*.secure.instanthousecall.com.'
             - 'instanthousecall.com'
+            - 'instanthousecall.com.'
+            - 'secure.instanthousecall.com'
+            - 'secure.instanthousecall.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Instant Housecall

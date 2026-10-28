@@ -1,6 +1,5 @@
 Name,Category,Description,Author
 [NordLocker](/rmm_tools/nordlocker),RAT,NordLocker is a remote monitoring and management (RMM) tool. More information will be added as it be...,
-[Level.io](/rmm_tools/levelio),RMM,Level.io is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [DeskNets](/rmm_tools/desknets),RMM,DeskNets is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [LogMeIn](/rmm_tools/logmein),RMM,LogMeIn is a remote monitoring and management (RMM) tool. More information will be added as it becom...,Nasreddine Bencherchali
 [ManageEngine](/rmm_tools/manageengine),RMM,ManageEngine is a remote monitoring and management (RMM) tool. More information will be added as it ...,
@@ -133,6 +132,7 @@ Name,Category,Description,Author
 [BeyondTrust (Bomgar)](/rmm_tools/beyondtrust-bomgar),RMM,BeyondTrust (Bomgar) is a remote monitoring and management (RMM) tool. More information will be adde...,
 [Netop](/rmm_tools/netop),RMM,Netop is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
 [MioNet (Also known as WD Anywhere Access)](/rmm_tools/mionet-also-known-as-wd-anywhere-access),RMM,MioNet (Also known as WD Anywhere Access) is a remote monitoring and management (RMM) tool. More inf...,
+[RdViewer](/rmm_tools/rdviewer),RMM,RdViewer (Rd远控) is remote-control and endpoint-management software from Jinan Kuai'an Network Techno...,Michael Haag
 [BlackCrypt RMM Agent](/rmm_tools/blackcrypt-rmm-agent),RMM,BlackCrypt RMM Agent is a custom Windows endpoint-management agent whose compiled code implements re...,Michael Haag
 [Remmina](/rmm_tools/remmina),RAT,Remmina is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [FastViewer](/rmm_tools/fastviewer),RMM,FastViewer is a remote monitoring and management (RMM) tool. More information will be added as it be...,
@@ -148,7 +148,6 @@ Name,Category,Description,Author
 [Guacamole](/rmm_tools/guacamole),RAT,Guacamole is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [Chrome SSH Extension](/rmm_tools/chrome-ssh-extension),RAT,Chrome SSH Extension is a remote monitoring and management (RMM) tool. More information will be adde...,
 [Access Remote PC](/rmm_tools/access-remote-pc),RMM,Access Remote PC is a remote monitoring and management (RMM) tool. More information will be added as...,
-[Level.io](/rmm_tools/levelio),RMM,Level.io is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
 [Seetrol](/rmm_tools/seetrol),RMM,Seetrol is a remote monitoring and management (RMM) tool. More information will be added as it becom...,
 [Netviewer (GoToMeet)](/rmm_tools/netviewer-gotomeet),RMM,Netviewer (GoToMeet) is a remote monitoring and management (RMM) tool. More information will be adde...,
 [Naverisk](/rmm_tools/naverisk),RMM,Naverisk is a remote monitoring and management (RMM) tool. More information will be added as it beco...,
@@ -158,7 +157,6 @@ Name,Category,Description,Author
 [LabTech RMM (Now ConnectWise Automate)](/rmm_tools/labtech-rmm-now-connectwise-automate),RMM,LabTech RMM (Now ConnectWise Automate) is a remote monitoring and management (RMM) tool. More inform...,
 [QQ IM-remote assistance](/rmm_tools/qq-im-remote-assistance),RMM,QQ IM-remote assistance is a remote monitoring and management (RMM) tool. More information will be a...,
 [HopToDesk](/rmm_tools/hoptodesk),RMM,HopToDesk is an open-source remote desktop tool similar to RustDesk. The tool has been observed bein...,Michael Haag
-[Microsoft Quick Assist](/rmm_tools/microsoft-quick-assist),RAT,Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be ad...,
 [RustDesk](/rmm_tools/rustdesk),RMM,RustDesk is an open-source remote desktop and remote access tool that can use the public RustDesk re...,
 [TurboMeeting](/rmm_tools/turbomeeting),RMM,TurboMeeting is a remote monitoring and management (RMM) tool. More information will be added as it ...,
 [Kaseya (VSA)](/rmm_tools/kaseya-vsa),RMM,Kaseya (VSA) aka Unigma is a remote monitoring and management (RMM) tool. More information will be a...,Nasreddine Bencherchali
@@ -249,9 +247,10 @@ Name,Category,Description,Author
 [Syncthing](/rmm_tools/syncthing),RAT,Syncthing is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
 [KiTTY](/rmm_tools/kitty),RAT,KiTTY is a remote monitoring and management (RMM) tool. More information will be added as it becomes...,
 [PiTunnel](/rmm_tools/pitunnel),RAT,PiTunnel is a cloud-hosted remote-access service primarily aimed at Raspberry Pi devices (sister pro...,@MHaggis
+[StifleR (2Pint Software)](/rmm_tools/stifler-2pint-software),RMM,StifleR Enterprise includes 2Pint Software's Remote Tools for Windows endpoint monitoring and admini...,Michael Haag
 [VNC Connect](/rmm_tools/vnc-connect),RAT,VNC Connect is a remote monitoring and management (RMM) tool. More information will be added as it b...,
 [ISL Light](/rmm_tools/isl-light),RMM,ISL Light is a remote monitoring and management (RMM) tool. More information will be added as it bec...,
-[Quick Assist](/rmm_tools/quick-assist),RAT,Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it ...,
+[Quick Assist](/rmm_tools/quick-assist),RAT,Quick Assist is a Microsoft remote assistance tool that enables a user to share their Windows device...,
 [NetBird](/rmm_tools/netbird),RAT,NetBird is an open-source WireGuard-based VPN and remote access platform that provides secure peer-t...,Michael Haag
 [ConnectWise Control](/rmm_tools/connectwise-control),RMM,ConnectWise Control is a remote monitoring and management (RMM) tool. More information will be added...,
 [Pilixo](/rmm_tools/pilixo),RMM,Pilixo is a remote monitoring and management (RMM) tool. More information will be added as it become...,
@@ -295,7 +294,6 @@ Name,Category,Description,Author
 [Action1](/rmm_tools/action1),RMM,Action1 is a powerful Remote Monitoring and Management(RMM) tool that enables users to execute comma...,@kostastsale
 [Bitvise SSH Client](/rmm_tools/bitvise-ssh-client),RAT,Bitvise SSH Client is a remote monitoring and management (RMM) tool. More information will be added ...,
 [OpenUEM](/rmm_tools/openuem),RMM,OpenUEM is an Apache-2.0-licensed endpoint-management platform with a self-hosted console and agent....,Michael Haag
-[ITSupport247 (ConnectWise)](/rmm_tools/itsupport247-connectwise),RMM,ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will b...,
 [Level](/rmm_tools/level),RMM,Level is a remote monitoring and management (RMM) tool. Threat Hunting Labs documented its malicious...,"Christian Henriksen, ITM8 | Improsec"
 [Kabuto](/rmm_tools/kabuto),RMM,Kabuto is a remote monitoring and management (RMM) tool. More information will be added as it become...,
 [Veyon](/rmm_tools/veyon),RAT,Veyon (Virtual Eye On Networks) is a free and open-source remote monitoring and classroom management...,Daniel Koifman (KoifSec)

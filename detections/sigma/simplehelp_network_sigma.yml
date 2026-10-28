@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-10-20
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,11 +16,11 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'user_managed'
+        DestinationHostname:
+            - '*.simple-help.com'
+            - '*.simple-help.com.'
             - 'simple-help.com'
-            - '51.255.19.178'
-            - '51.255.19.179'
+            - 'simple-help.com.'
     condition: selection
 falsepositives:
     - Legitimate use of SimpleHelp

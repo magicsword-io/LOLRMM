@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,15 +16,35 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
+            - '*.agent.tiflux.com'
+            - '*.agent.tiflux.com.'
             - 'agent.tiflux.com'
+            - 'agent.tiflux.com.'
+            - '*.app.tiflux.com'
+            - '*.app.tiflux.com.'
             - 'app.tiflux.com'
-            - 'tiflux.com'
-            - 'www.tiflux.com'
-            - 'tiflux.com.br'
-            - 'www.tiflux.com.br'
+            - 'app.tiflux.com.'
             - '*.tiflux.com'
+            - '*.tiflux.com.'
+            - '*.tiflux.com.br'
+            - '*.tiflux.com.br.'
+            - '*.www.tiflux.com'
+            - '*.www.tiflux.com.'
+            - '*.www.tiflux.com.br'
+            - '*.www.tiflux.com.br.'
+            - 'tiflux.com'
+            - 'tiflux.com.'
+            - 'tiflux.com.br'
+            - 'tiflux.com.br.'
+            - 'www.tiflux.com'
+            - 'www.tiflux.com.'
+            - 'www.tiflux.com.br'
+            - 'www.tiflux.com.br.'
+            - '*.my.splashtop.com'
+            - '*.my.splashtop.com.'
             - 'my.splashtop.com'
+            - 'my.splashtop.com.'
     condition: selection
 falsepositives:
     - Legitimate use of TiFLUX

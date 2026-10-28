@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-08-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,12 +16,21 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
+            - '*.cdn.teleport.dev'
+            - '*.cdn.teleport.dev.'
+            - '*.reporting-connect.teleportinfra.sh'
+            - '*.reporting-connect.teleportinfra.sh.'
+            - '*.usage.teleport.dev'
+            - '*.usage.teleport.dev.'
             - 'cdn.teleport.dev'
+            - 'cdn.teleport.dev.'
             - 'reporting-connect.teleportinfra.sh'
+            - 'reporting-connect.teleportinfra.sh.'
             - 'usage.teleport.dev'
+            - 'usage.teleport.dev.'
             - '*.teleport.sh'
-            - 'user_managed'
+            - '*.teleport.sh.'
     condition: selection
 falsepositives:
     - Legitimate use of Teleport Connect

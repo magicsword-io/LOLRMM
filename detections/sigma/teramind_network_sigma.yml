@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,14 +16,23 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
             - '*.teramind.co'
+            - '*.teramind.co.'
+            - '*.www.teramind.co'
+            - '*.www.teramind.co.'
             - 'teramind.co'
+            - 'teramind.co.'
             - 'www.teramind.co'
+            - 'www.teramind.co.'
+            - '*.rt.teramind.co'
+            - '*.rt.teramind.co.'
             - 'rt.teramind.co'
+            - 'rt.teramind.co.'
+            - '*.sentry.dev.teramind.co'
+            - '*.sentry.dev.teramind.co.'
             - 'sentry.dev.teramind.co'
-            - '<on-prem-master-server-host>'
-            - '<on-prem-app-server-host>'
+            - 'sentry.dev.teramind.co.'
     condition: selection
 falsepositives:
     - Legitimate use of Teramind

@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,16 +16,29 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'goto.com'
-            - '*.getgo.com'
-            - '*.fastsupport.com'
-            - '*.gotoassist.com'
-            - 'helpme.net'
-            - '*.gotoassist.me'
-            - '*.gotoassist.at'
-            - '*.desktopstreaming.com'
+        DestinationHostname:
             - '*.cdn.getgo.com'
+            - '*.cdn.getgo.com.'
+            - '*.desktopstreaming.com'
+            - '*.desktopstreaming.com.'
+            - '*.fastsupport.com'
+            - '*.fastsupport.com.'
+            - '*.getgo.com'
+            - '*.getgo.com.'
+            - '*.goto.com'
+            - '*.goto.com.'
+            - '*.gotoassist.at'
+            - '*.gotoassist.at.'
+            - '*.gotoassist.com'
+            - '*.gotoassist.com.'
+            - '*.gotoassist.me'
+            - '*.gotoassist.me.'
+            - '*.helpme.net'
+            - '*.helpme.net.'
+            - 'goto.com'
+            - 'goto.com.'
+            - 'helpme.net'
+            - 'helpme.net.'
     condition: selection
 falsepositives:
     - Legitimate use of GoToAssist

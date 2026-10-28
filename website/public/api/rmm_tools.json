@@ -32,73 +32,6 @@
         "Acknowledgement": []
     },
     {
-        "Name": "Level.io",
-        "Category": "RMM",
-        "Description": "Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
-        "Details": {
-            "Website": "https://level.io/",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "level-windows-amd64.exe",
-                "level.exe",
-                "level-remote-control-ffmpeg.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "level.io",
-                        "*.level.io"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml",
-                "Description": "Detects potential network activity of Level.io RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Level.io RMM tool"
-            }
-        ],
-        "References": [
-            "https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues"
-        ],
-        "Acknowledgement": [],
-        "CodeSigning": {
-            "certificates": [
-                {
-                    "signer_name": "Level Software, Inc.",
-                    "certificate_thumbprint": "3C002DCBBCB603AE08699F4CEF973864AEB16860",
-                    "certificate_der_base64": "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",
-                    "src_file_sha256": "075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83",
-                    "src_file_path": "downloaded_files/level.io/075b9694aa770850d54870e4a3a55fd11a26497ccb8de4f2ec7b2ecca2b88d83"
-                }
-            ]
-        }
-    },
-    {
         "Name": "DeskNets",
         "Category": "RMM",
         "Description": "DeskNets is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -761,7 +694,7 @@
         "Description": "Komari is a lightweight, self-hosted server monitoring tool with a web interface and lightweight agent. It supports server status monitoring through a web dashboard and collects telemetry through an installed agent.\n",
         "Author": "Daniel Koifman (KoifSec)",
         "Created": "2026-05-03",
-        "LastModified": "2026-05-15",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://github.com/komari-monitor/komari",
             "PEMetadata": [
@@ -871,9 +804,6 @@
                 {
                     "Description": "Komari server web interface and agent communication",
                     "Domains": [
-                        "github.com",
-                        "raw.githubusercontent.com",
-                        "ghcr.io",
                         "komari-document.pages.dev",
                         "www.komari.wiki"
                     ],
@@ -883,13 +813,29 @@
                     ]
                 },
                 {
+                    "Description": "Komari server web interface and agent communication",
+                    "Domains": [
+                        "github.com",
+                        "raw.githubusercontent.com",
+                        "ghcr.io"
+                    ],
+                    "Ports": [
+                        25774,
+                        443
+                    ],
+                    "Detection": false,
+                    "DetectionReason": "Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules."
+                },
+                {
                     "Description": "Komari Agent install URL pattern observed in Huntress April 2026 abuse case (PowerShell installer pulled directly from komari-monitor's main branch on GitHub).",
                     "Domains": [
                         "raw.githubusercontent.com"
                     ],
                     "Ports": [
                         443
-                    ]
+                    ],
+                    "Detection": false,
+                    "DetectionReason": "Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules."
                 }
             ],
             "Other": [
@@ -950,7 +896,7 @@
         "Description": "Connectwise Automate (LabTech) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://www.connectwise.com/platform/automate",
             "PEMetadata": {
@@ -1011,7 +957,7 @@
             ],
             "certificates": [
                 {
-                    "signer_name": "ConnectWise\\",
+                    "signer_name": "ConnectWise, LLC",
                     "issuer": "CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
                     "certificate_thumbprint": "DC69069188D5CBC5FE18B7D035C90061C8741E21",
                     "tbs_sha256": "EE87E0B6968C49806887874C952D0F6C1DAABA50D699FE8C5524103D7A3A82D1",
@@ -1021,7 +967,7 @@
                     "certificate_der_base64": "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"
                 },
                 {
-                    "signer_name": "Connectwise\\",
+                    "signer_name": "Connectwise, LLC",
                     "issuer": "CN=DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
                     "certificate_thumbprint": "FF8BFAFA697459874FB9843B1EFDA5C91871A44C",
                     "tbs_sha256": "46135C0D0BC2714588E2E99AEB2BBC714F972F50D46C4C6D084F9D9CF9E485A4",
@@ -1031,7 +977,7 @@
                     "certificate_der_base64": "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"
                 },
                 {
-                    "signer_name": "ConnectWise\\",
+                    "signer_name": "ConnectWise, Inc.",
                     "issuer": "CN=GlobalSign Extended Validation CodeSigning CA - SHA256 - G3",
                     "certificate_thumbprint": "07290735CAC17E851C608F28C3C03F68B94DDC35",
                     "tbs_sha256": "2536E3C682B73B99B516CDEEE24FCB828C84CBDA003E3C3075CA771717B4CEBA",
@@ -2678,7 +2624,7 @@
         "Description": "Mouse Without Borders is a Microsoft Garage utility that lets you control up to four Windows computers with a single keyboard and mouse, with clipboard sharing and simple drag-and-drop file transfers.\n\n**IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will likely break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only.",
         "Author": "Microsoft",
         "Created": "2011-09-12",
-        "LastModified": "2011-09-12",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://www.microsoft.com/en-us/download/details.aspx?id=35460",
             "PEMetadata": {
@@ -2769,6 +2715,8 @@
             }
         ],
         "CodeSigning": {
+            "Detection": false,
+            "DetectionReason": "Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.",
             "certificates": [
                 {
                     "signer_name": "Microsoft Corporation",
@@ -2795,7 +2743,7 @@
         "Description": "Remote Desktop Connection Manager (RDCMan) is a free Microsoft tool developed by Julian Burger for managing multiple remote desktop connections from a single interface. Part of the Sysinternals suite, RDCMan enables IT administrators, system administrators, server lab managers, developers, and testers to organize, group, and control numerous RDP sessions efficiently.\n\n**IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will likely break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only.\n",
         "Author": "Daniel Koifman (KoifSec)",
         "Created": "2025-11-12",
-        "LastModified": "2025-11-12",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman",
             "Privileges": "User",
@@ -2835,6 +2783,8 @@
         ],
         "Acknowledgement": [],
         "CodeSigning": {
+            "Detection": false,
+            "DetectionReason": "Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.",
             "search_names": [
                 "nmk092kb9.exe",
                 "rdcman-x86.dll",
@@ -3047,7 +2997,7 @@
         "Description": "Obliance is a self-hosted remote monitoring and management project with a Go endpoint agent. Its reviewed source provides Windows, Linux, and macOS installers and implements endpoint monitoring, remote shell, file, process, service, update, and remote-control functions. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.\n",
         "Author": "Michael Haag",
         "Created": "2026-09-28",
-        "LastModified": "2026-09-28",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://github.com/MeeJay/Obliance",
             "PEMetadata": {
@@ -3168,8 +3118,7 @@
                     "LogFile": "System",
                     "ServiceName": "OblianceAgent",
                     "ImagePath": "C:\\Program Files\\OblianceAgent\\obliance-agent.exe",
-                    "Description": "Windows MSI source installs this automatic LocalSystem service.",
-                    "CommandLine": ""
+                    "Description": "Windows MSI source installs this automatic LocalSystem service."
                 }
             ],
             "Registry": [
@@ -3263,7 +3212,7 @@
         "Description": "HelpWire is a remote support and remote access platform from Electronic Team, Inc. The public Quick Connect client supports attended remote desktop support, while the vendor documentation also describes unattended access for persistent operator reconnects, reboot/reconnect workflows, file transfer, chat, multi-screen viewing, Windows administrator rights, and automatic background updates.",
         "Author": "Michael Haag",
         "Created": "2026-05-22",
-        "LastModified": "2026-05-22",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://www.helpwire.app/",
             "PEMetadata": {
@@ -3345,7 +3294,6 @@
                     "ProviderName": "Service Control Manager",
                     "LogFile": "System",
                     "ServiceName": "helpwire-unattended",
-                    "ImagePath": null,
                     "Description": "Potential Windows service installation event for HelpWire unattended access. Confirm exact Windows service name during live install triage."
                 }
             ],
@@ -3367,12 +3315,22 @@
                 {
                     "Description": "HelpWire STUN / NAT traversal infrastructure observed in client strings",
                     "Domains": [
-                        "stun.helpwire.app",
-                        "stunserver.stunprotocol.org"
+                        "stun.helpwire.app"
                     ],
                     "Ports": [
                         3478
                     ]
+                },
+                {
+                    "Description": "HelpWire STUN / NAT traversal infrastructure observed in client strings",
+                    "Domains": [
+                        "stunserver.stunprotocol.org"
+                    ],
+                    "Ports": [
+                        3478
+                    ],
+                    "Detection": false,
+                    "DetectionReason": "Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules."
                 }
             ],
             "Other": [
@@ -9553,7 +9511,7 @@
         "Description": "OpsBridge Agent is the Windows endpoint component of OpsBridge LLC's remote monitoring and management platform at opsbridge.digital. The platform supports endpoint monitoring, remote command execution, file transfer, screenshots, process and software inventory, Windows event log collection, and software deployment. This entry covers the OpsBridge LLC product and is not related to OpenText Operations Bridge, which uses a similar name.\n",
         "Author": "Chad H",
         "Created": "2026-09-01",
-        "LastModified": "2026-09-01",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://opsbridge.digital/",
             "PEMetadata": [
@@ -9594,11 +9552,6 @@
                 {
                     "File": "C:\\Program Files\\OpsBridge\\OpsBridgeAgent.exe",
                     "Description": "Canonical agent executable installed by the observed MSI.",
-                    "OS": "Windows"
-                },
-                {
-                    "File": "C:\\Program Files\\OpsBridge\\*.exe",
-                    "Description": "Randomly named persisted agent copy observed across sandbox runs.",
                     "OS": "Windows"
                 },
                 {
@@ -11775,7 +11728,7 @@
         "Description": "Itarian is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2025-12-14",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://www.itarian.com/rmm/",
             "PEMetadata": {
@@ -11856,7 +11809,7 @@
                     "certificate_der_base64": "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"
                 },
                 {
-                    "signer_name": "Comodo Security Solutions\\",
+                    "signer_name": "Comodo Security Solutions, Inc.",
                     "issuer": "CN=Sectigo Public Code Signing CA R36",
                     "certificate_thumbprint": "6A2DD5420C34A602C048F8D79BE52690F101001B",
                     "tbs_sha256": "2E4765F85AE2822A8FAC2C12D791CCC86F74D8478B50D57B17E34B244D02DCC2",
@@ -13244,7 +13197,8 @@
                 {
                     "Description": "Known remote domains",
                     "Domains": [
-                        "*.itsupport247.net"
+                        "*.itsupport247.net",
+                        "itsupport247.net"
                     ],
                     "Ports": []
                 }
@@ -13631,6 +13585,274 @@
         ],
         "References": [],
         "Acknowledgement": []
+    },
+    {
+        "Name": "RdViewer",
+        "Category": "RMM",
+        "Description": "RdViewer (Rd远控) is remote-control and endpoint-management software from Jinan Kuai'an Network Technology Co., Ltd. (济南快安网络科技有限公司). It supports remote screens, file transfer, terminals, batch management, and self-hosted relay nodes. It is unrelated to the Pierschel RdClient product despite the shared rdclient.exe filename. Huorong reported RdPack silently installing RdViewer in 2023. ESRC reported tax-notification phishing delivering a repackaged client in July 2026, and Rogue Authority separately reported fake Disk Manager installers delivering patched RdViewer clients in October 2026. Campaign artifacts below are not default installation locations or proof that all deployments are malicious.",
+        "Author": "Michael Haag",
+        "Created": "2026-10-20",
+        "LastModified": "2026-10-26",
+        "Details": {
+            "Website": "https://www.rdviewer.com/",
+            "PEMetadata": [
+                {
+                    "Filename": "RdServer.exe",
+                    "OriginalFileName": "RdServer.exe",
+                    "Description": "Server executable in the inspected official RdViewerPro archive; PE version 6.6.4.0, independent of the advertised suite version"
+                },
+                {
+                    "Filename": "RdClient.exe",
+                    "OriginalFileName": "rdclient.exe",
+                    "Description": "Remote-control client; the correlated July campaign sample has original filename rdclient.exe and impersonates Windows service-host version metadata"
+                },
+                {
+                    "Filename": "rdService.exe",
+                    "OriginalFileName": "rdservice.exe",
+                    "Description": "Windows service module; the correlated sample identifies product RdViewer 服务程序 and version 6.6.8.0"
+                }
+            ],
+            "Privileges": "Windows service installation requires administrative permissions; interactive components may run as a user",
+            "Free": "Free personal and self-hosted editions; paid editions are also offered",
+            "Verification": "Identity and features verified against vendor documentation and static inspection of the official Windows self-hosted package. Campaign metadata and behaviors were corroborated using public research, VirusTotal records, and existing sandbox reports. Windows, macOS, Linux, Android, and iOS are advertised on the download page; mobile apps are described as controllers for Windows PCs. Unix endpoint installation paths and persistence were not verified. No product binaries were run locally.",
+            "SupportedOS": [
+                "Windows",
+                "macOS",
+                "Linux",
+                "Android",
+                "iOS"
+            ],
+            "Capabilities": [
+                "Remote desktop control",
+                "Remote terminal",
+                "File transfer and management",
+                "Clipboard synchronization",
+                "Screen recording and audio",
+                "Batch endpoint management and screen wall",
+                "Self-hosted relay nodes and P2P connectivity"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": []
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "C:\\Program Files (x86)\\rdviewer\\rdclient\\*",
+                    "Description": "Vendor-documented client directory; not established as universal across every current edition",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\rdpro\\RdClient.exe",
+                    "Description": "Client under the July campaign's rdpro directory; path suffix generalized from ESRC's reported per-user installation",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\rdpro\\rdService.exe",
+                    "Description": "Service module under the July campaign deployment directory",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\rdpro\\rdlibw.dll",
+                    "Description": "Remote-screen codec library in the July campaign client package",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\rdpro\\cfg.ini",
+                    "Description": "July campaign configuration file scoped to the reported deployment directory; the bare filename is not product-specific",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\rdpro\\host.dat",
+                    "Description": "July campaign relay configuration scoped to the reported deployment directory",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\host\\dmservice.exe",
+                    "Description": "Genuine RdViewer service renamed by the October fake Disk Manager builds; campaign-specific path",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\host\\diskmgr.exe",
+                    "Description": "Patched and relabelled RdViewer client in the October fake Disk Manager builds; campaign-specific path",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\host\\cfg.ini",
+                    "Description": "October campaign configuration file, not a vendor-default installation path",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\ProgramData\\host\\host.dat",
+                    "Description": "October campaign relay configuration, not a vendor-default installation path",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "*\\RdViewerPro\\RdServer.exe",
+                    "Description": "Server executable path inside the official self-hosted ZIP, not a fixed installed path",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\Rd_Service",
+                    "Description": "RdViewer Windows service key; existing sandbox records show Services\\Rd_Service under ControlSet001, normalized here to CurrentControlSet"
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Official software download host linked by the vendor; this is not evidence of a remote-control session, and self-hosted deployments can use other infrastructure",
+                    "Domains": [
+                        "rdviewer.oss-cn-hangzhou.aliyuncs.com"
+                    ],
+                    "Ports": [
+                        443
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "ServiceName",
+                    "Value": "Rd_Service; vendor-documented as rd_service and corroborated by public research and existing sandbox reports"
+                },
+                {
+                    "Type": "ReportedServiceDisplayName",
+                    "Value": "RdViewer Client Service; July ESRC campaign display name, not established as the vendor default"
+                },
+                {
+                    "Type": "ReportedCampaignServiceDisplayName",
+                    "Value": "DMService; October fake Disk Manager campaign display name, not the actual service name or a vendor default"
+                },
+                {
+                    "Type": "ReportedCampaignEndpoint",
+                    "Value": "204.194.54.118:7788; ESRC's narrative and IOC table agree on port 7788, while its decrypted-configuration table prints 778. July campaign infrastructure, not a vendor default; excluded from DNS-domain indicators."
+                },
+                {
+                    "Type": "ReportedCampaignEndpoint",
+                    "Value": "1.14.146.76:7790; October fake Disk Manager build 1 relay reported by Rogue Authority and corroborated by an existing VirusTotal CAPE record; not a vendor default; excluded from DNS-domain indicators."
+                },
+                {
+                    "Type": "ReportedCampaignEndpoint",
+                    "Value": "103.64.13.103:7788; October fake Disk Manager build 2 relay corroborated by an existing VirusTotal CAPE record. The report also lists ports 7777 and 7799; only 7788 was independently observed in that record. Not a vendor default; excluded from DNS-domain indicators."
+                },
+                {
+                    "Type": "ReportedDropperMD5",
+                    "Value": "0084596140bfc8121401216f3d0873aa"
+                },
+                {
+                    "Type": "CorrelatedDropperSHA256",
+                    "Value": "5f1c6059cbca3d1ba33c9834e845d290d8bfde3c4e0a37a71207b1a9b31593a7"
+                },
+                {
+                    "Type": "ReportedClientMD5",
+                    "Value": "122c481e44221fefd34c808ff679b1ba"
+                },
+                {
+                    "Type": "CorrelatedClientSHA256",
+                    "Value": "5bea7f348d4ff47afb4abbb06909b894434d4df83318780da23bbe49bc0fb233; July campaign RdClient.exe"
+                },
+                {
+                    "Type": "CorrelatedServiceSHA256",
+                    "Value": "7ed2a077a1ce34fcb182e5135ae75ad7bd96207c3204c9f343095f967bfa109f; one shared genuine service sample correlated with the July chain and renamed dmservice.exe in both October builds"
+                },
+                {
+                    "Type": "ReportedCampaignLoaderSHA256",
+                    "Value": "e71149d889cc558e6328ea7ce3498cd858c26ab282cda9410ccc51f6275f7da6; October fake Disk Manager build 1"
+                },
+                {
+                    "Type": "ReportedCampaignClientSHA256",
+                    "Value": "fb60876621b2932fa2681d81a17ce8b79952fa3fb9a7ea77d5ba177433d8d76d; October build 1 patched NetBridge Suite/diskmgr.exe client"
+                },
+                {
+                    "Type": "ReportedCampaignHostSHA256",
+                    "Value": "dcb372ff16de08fd126d9fceb866343ad03795f58427e4c78e1c837f6cd140d8; October build 1 host.dat"
+                },
+                {
+                    "Type": "ReportedCampaignConfigSHA256",
+                    "Value": "9db36c4f42395b676d31bf7dad3dce15a3e6f4acf3003f7383fb326c9062c29a; October build 1 cfg.ini"
+                },
+                {
+                    "Type": "ReportedCampaignLoaderSHA256",
+                    "Value": "b9115303dd3567ac75104a5a3d2bc0ce4fd7d697ebf258e61283cdf708d50133; October fake Disk Manager build 2"
+                },
+                {
+                    "Type": "ReportedCampaignClientSHA256",
+                    "Value": "bf41e6af51ccba343098f403093b195fb5f238559f723d4088196a2648fb9272; October build 2 patched Disk Manager Corp./diskmgr.exe client"
+                },
+                {
+                    "Type": "ReportedCampaignHostSHA256",
+                    "Value": "6bf67a040c0da26678b8b574db5f624b6bc3cc446455e3645d8bdaf3ef4517b8; October build 2 host.dat"
+                },
+                {
+                    "Type": "OfficialPackageSHA256",
+                    "Value": "c081f809350dd836c9cb12257f6975bd69c0e7689d09ad5f471300bac1afd8a4"
+                },
+                {
+                    "Type": "OfficialServerSHA256",
+                    "Value": "4ed32c1723b0cea3454f9085573f6cacbb371408c0ee700416079a2dad6dce63"
+                },
+                {
+                    "Type": "OfficialServerEmbeddedCertificateSubject",
+                    "Value": "济南快安网络科技有限公司; extracted from the official package's RdServer.exe Authenticode certificate, not a live trust or revocation validation"
+                }
+            ]
+        },
+        "Detections": [
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdviewer_files_sigma.yml",
+                "Description": "Detects potential files activity of RdViewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdviewer_registry_sigma.yml",
+                "Description": "Detects potential registry activity of RdViewer RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rdviewer_network_sigma.yml",
+                "Description": "Detects potential network activity of RdViewer RMM tool"
+            }
+        ],
+        "References": [
+            "https://www.rdviewer.com/",
+            "https://www.rdviewer.com/download/",
+            "https://www.rdviewer.com/rdpro/",
+            "https://www.rdviewer.com/help/",
+            "https://www.rdviewer.com/3895.html",
+            "https://rdviewer.oss-cn-hangzhou.aliyuncs.com/app/RdViewerPro.zip",
+            "https://www.huorong.cn/document/tech/vir_report/869.html",
+            "https://alyacofficialblog.tistory.com/5771",
+            "https://rogueauthority.org/signed-disk-manager-installs-rdviewer-backdoor",
+            "https://github.com/magicsword-io/LOLRMM/issues/283",
+            "https://www.virustotal.com/gui/file/5f1c6059cbca3d1ba33c9834e845d290d8bfde3c4e0a37a71207b1a9b31593a7/details",
+            "https://www.virustotal.com/gui/file/5bea7f348d4ff47afb4abbb06909b894434d4df83318780da23bbe49bc0fb233/details",
+            "https://www.virustotal.com/gui/file/7ed2a077a1ce34fcb182e5135ae75ad7bd96207c3204c9f343095f967bfa109f/details",
+            "https://www.virustotal.com/gui/file/e71149d889cc558e6328ea7ce3498cd858c26ab282cda9410ccc51f6275f7da6/details",
+            "https://www.virustotal.com/gui/file/fb60876621b2932fa2681d81a17ce8b79952fa3fb9a7ea77d5ba177433d8d76d/details",
+            "https://www.virustotal.com/gui/file/b9115303dd3567ac75104a5a3d2bc0ce4fd7d697ebf258e61283cdf708d50133/details",
+            "https://www.virustotal.com/gui/file/bf41e6af51ccba343098f403093b195fb5f238559f723d4088196a2648fb9272/details",
+            "https://www.virustotal.com/gui/file/4ed32c1723b0cea3454f9085573f6cacbb371408c0ee700416079a2dad6dce63/details"
+        ],
+        "Acknowledgement": [
+            {
+                "Person": "Kyle Cucci",
+                "Handle": "@d4rksystem"
+            },
+            {
+                "Person": "rcKillam",
+                "Handle": "@rcKillam"
+            },
+            {
+                "Person": "ESTsecurity Security Response Center (ESRC)",
+                "Handle": ""
+            },
+            {
+                "Person": "Rogue Authority",
+                "Handle": ""
+            },
+            {
+                "Person": "Huorong Security",
+                "Handle": ""
+            }
+        ]
     },
     {
         "Name": "BlackCrypt RMM Agent",
@@ -14492,7 +14714,7 @@
         "Description": "CrossTec Remote Control is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.\n\n**IMPORTANT**: Some components of this tool may be signed with legitimate Microsoft Windows Component Publisher certificates that are used to sign Windows system components. Do NOT blindly block Microsoft certificate thumbprints as doing so will break Windows functionality in your environment. Use certificate data for detection, hunting, and analysis purposes only.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://web.archive.org/web/20220811150547/https://www.crosstecsoftware.com/remotecontrol",
             "PEMetadata": {
@@ -14540,6 +14762,8 @@
         ],
         "Acknowledgement": [],
         "CodeSigning": {
+            "Detection": false,
+            "DetectionReason": "Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.",
             "search_names": [
                 "pcivideo.exe",
                 "supporttool.exe"
@@ -14759,84 +14983,6 @@
                 "Handle": "@koifsec"
             }
         ]
-    },
-    {
-        "Name": "Level.io",
-        "Category": "RMM",
-        "Description": "Level.io is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
-        "Details": {
-            "Website": "https://level.io/",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [
-                "Windows"
-            ],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "level-windows-amd64.exe",
-                "level.exe",
-                "level-remote-control-ffmpeg.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [
-                {
-                    "File": "C:\\Program Files\\Level\\level.exe",
-                    "Description": "Level Binary",
-                    "OS": "Windows"
-                },
-                {
-                    "File": "C:\\Program Files\\Level\\osqueryi.exe",
-                    "Description": "A tool used by level to collect machine state information.",
-                    "OS": "Windows"
-                },
-                {
-                    "File": "C:\\Program Files\\Level\\level.log",
-                    "Description": "Client log file for Level.",
-                    "OS": "Windows"
-                }
-            ],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "level.io",
-                        "*.level.io"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_network_sigma.yml",
-                "Description": "Detects potential network activity of Level.io RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_files_sigma.yml",
-                "Description": "Detects potential files activity of Level.io RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level.io_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Level.io RMM tool"
-            }
-        ],
-        "References": [
-            "https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues"
-        ],
-        "Acknowledgement": []
     },
     {
         "Name": "Seetrol",
@@ -15517,80 +15663,6 @@
                     "src_file_sha256": "99b2948fd10b23b6d36e035b60cb92b9b82fb0bd4003e6d28f950f0b227cae2d",
                     "src_file_path": "downloaded_files/hoptodesk/99b2948fd10b23b6d36e035b60cb92b9b82fb0bd4003e6d28f950f0b227cae2d",
                     "src_file_company": "Begonia Holdings"
-                }
-            ]
-        }
-    },
-    {
-        "Name": "Microsoft Quick Assist",
-        "Category": "RAT",
-        "Description": "Microsoft Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
-        "Details": {
-            "Website": "https://support.microsoft.com/windows/solve-pc-problems-remotely-using-quick-assist-b077e31a-16f4-2529-1a47-21f6a9040bf3",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "quickassist.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "user_managed",
-                        "*.support.services.microsoft.com"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_network_sigma.yml",
-                "Description": "Detects potential network activity of Microsoft Quick Assist RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/microsoft_quick_assist_processes_sigma.yml",
-                "Description": "Detects potential processes activity of Microsoft Quick Assist RMM tool"
-            }
-        ],
-        "References": [
-            "https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca"
-        ],
-        "Acknowledgement": [],
-        "CodeSigning": {
-            "certificates": [
-                {
-                    "signer_name": "GlobalSigningDig",
-                    "certificate_thumbprint": "DE523085FB77B3D8B78E80EF14BC627772C6E1D0",
-                    "certificate_der_base64": "MIIDBjCCAe6gAwIBAgIQc+jN31/yRqxBNamgs3AXfDANBgkqhkiG9w0BAQsFADAbMRkwFwYDVQQDDBBHbG9iYWxTaWduaW5nRGlnMB4XDTI1MTAzMDA4MTE0N1oXDTI2MTAzMDA4MzE0N1owGzEZMBcGA1UEAwwQR2xvYmFsU2lnbmluZ0RpZzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMx/Ld3o0K7RMJtTr0DHt1pMqrpNzLFQZja9ZPTPmYvRw4JF8gu5Sb/apCpz//BIAQJQ0N9D4C8bkoeVxsmlcuNzjaiCTBOeEHKC/epZiVvOC8OWjwoQxZcInovFiv0PS6V8cl1kM6S/4FXpVDCn2uqpxKFQHQeTrxsZa07VMyVvAKcx0u8mTFHEgiuNvgcbPZ959V+BRZ+siyzWJyzS/UmoyXO8jkkArwMybcKYVvK40FLH1t/S8teERp6iiyke2YB2eAC+EmKnkG9+HSB3NFb7Q1pOu5YrD3ieUMoNJPrpb5amUfW2fKhRAElSJD9oYW0OtA6XoROiQb3A89I6An0CAwEAAaNGMEQwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMB0GA1UdDgQWBBQbfXHoPs6WtHehmqYdqtanuiy+QTANBgkqhkiG9w0BAQsFAAOCAQEAIEJubEC/2gOkiYK6yjzfXip17fJSviz/wJ4O69XOKpHLTL0Nx9WjmqUAFUTQG46+xYOx5FU5Zvq76RmOtKfWXOXVyRgSnJVk5FYA9B+3dO4bsD6i16rRrnlGmTdWJx8WRRZBFTYhmJ24CSJtrnd5BU4Cl9Y6XYNNFOG5tsQRtGYPK1JGWJ+PVUxnZYkQC0hT4SX0mKhQQfrB1gZTySTnM2qaHkmeOOewgYzfFfkYSUn8QLiqwlrPrssU0xntqvk9PAbeRv+J+laYFDHPg/Cl1OcS8uwk4/VOInniSLQnLoDGbtQIIPOAmxezDu1l5eaT90E1TAC+sopyTOyrR8UeLw==",
-                    "src_file_sha256": "0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3",
-                    "src_file_path": "downloaded_files/microsoft_quick_assist/0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3",
-                    "src_file_company": "Microsoft Corporation"
-                },
-                {
-                    "signer_name": "CodeSigningMico",
-                    "certificate_thumbprint": "6116BB0D666C358E66E8E18E25B8C147B9C0F2F6",
-                    "certificate_der_base64": "MIIDBDCCAeygAwIBAgIQb/mz6VvfdIVCveBrem6XCTANBgkqhkiG9w0BAQsFADAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wHhcNMjUxMDI4MjExMzI3WhcNMjYxMDI4MjEzMzI3WjAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDZuvZi1Hj4Jm1u++tpo5pREUTd8ryNRtZA8EXsQhRgLc8P65gfpg5owobw8rgpEgoVB2WWhREVotBzt9cdsHNECmQb30HXuVQdeGjsFu+cvTy0+l+EN5M8tHHdfXEv4b04O45KsHiivKWTFM/MRQVI5iY5u+4vOimrUnH70c2KPmvqKIvaDqQz2XReMe5JBG3UguVdn2IL4Csmg9kL++oM8wIEoP4mj8gG3+5pHeoPSLKEIxolkascHIl6WGeNd7T4fvu8KNSDhNAYzS84x3el2HvRCBqwJ/Xqhesp2WCYFmmzOJbv1mIICPT29qbGO5pYTSmDZZsGWPmdJE3jgah5AgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUvozeOtjQSswck1CbmPJnPd9mAXcwDQYJKoZIhvcNAQELBQADggEBAFvjyqepTkG5dST/G10jUjgLwmnTC27dImW5mcG4B3VZLWGzYH1Wh8HnXCn8y9hHFqhIWqr1j22paxDeNm9biasfFvyJ/4WQqxoi/cBY/niIIP08IqlMCakJPqfZYlEw3krYeDmtXAIAuJyWeEwlG2mFfxf+TOLhUoOKwnBtN+CoSE7+TP1+83HHT0hR+i2Lt6pNdqJQENy1lxZRYkTdSKVglZMwASLnCfVtslhmnFTMabrADWUWNtpZRrP7+5fUYQ/h3xUFy8aQ7hOHRPpyjs9M0vh6c+qr0xXl7qpHHcLad8NLZzuICoA7wKBc7uKuDyjvk24cVoSpc2pV6vbBC8M=",
-                    "src_file_sha256": "9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b",
-                    "src_file_path": "downloaded_files/microsoft_quick_assist/9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b",
-                    "src_file_company": "Microsoft Corporation"
                 }
             ]
         }
@@ -18011,7 +18083,7 @@
         "Description": "MSP360 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2026-06-15",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://www.msp360.com/",
             "PEMetadata": {
@@ -18112,7 +18184,7 @@
                     "tbs_sha384": "8A459D01A551D1AFE00C32819DC5E788F67A4E8C5B937D490C53D75A0944E9B3F17599FF5E285F728AEA5191DE96BC16"
                 },
                 {
-                    "signer_name": "MSPBytes\\",
+                    "signer_name": "MSPBytes, Corp.",
                     "issuer": "CN=Sectigo Public Code Signing CA R36",
                     "certificate_thumbprint": "EF6439FC45C8031E514DD7D445D1B8BABF474E9B",
                     "tbs_sha256": "0B0B70BB42674314EFDE0A25E8DD4401C71F243078B51B1E286C663EB33C4E00",
@@ -18744,7 +18816,7 @@
         "Description": "Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2026-06-16",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://instanthousecall.com/",
             "PEMetadata": {
@@ -18796,6 +18868,8 @@
         ],
         "Acknowledgement": [],
         "CodeSigning": {
+            "Detection": false,
+            "DetectionReason": "Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.",
             "search_names": [
                 "5",
                 "hsloader.exe",
@@ -20360,7 +20434,7 @@
         "Description": "Beacon is an AGPL-3.0-licensed remote monitoring and management project from Synertek Cloud Services. It is unrelated to Cobalt Strike Beacon. Its reviewed source installs a Go agent as a Windows service, Linux systemd unit, or macOS LaunchDaemon and uses an operator-controlled Cloudflare Workers/D1/R2 backend. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.\n",
         "Author": "Michael Haag",
         "Created": "2026-09-28",
-        "LastModified": "2026-09-28",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://github.com/synertek-cloud-services/beacon",
             "PEMetadata": {
@@ -20467,8 +20541,7 @@
                     "LogFile": "System",
                     "ServiceName": "BeaconAgent",
                     "ImagePath": "C:\\Program Files\\Beacon\\beacon-agent.exe",
-                    "Description": "Windows installer creates the BeaconAgent automatic service from this binary; its server URL argument is operator supplied.",
-                    "CommandLine": ""
+                    "Description": "Windows installer creates the BeaconAgent automatic service from this binary; its server URL argument is operator supplied."
                 }
             ],
             "Registry": [],
@@ -21439,7 +21512,7 @@
         "Description": "Nezha (nezhahq/nezha on GitHub) is a self-hosted, lightweight, open-source server and website monitoring / O&M tool written in Go. The architecture is a central Dashboard plus a per-host Agent that maintains a persistent gRPC connection back to the Dashboard for telemetry and remote operations. The Agent ships first-class capabilities by default — interactive WebSSH terminals, arbitrary command execution, file management, scheduled and triggered task execution, and batch operations across the entire fleet — and runs at SYSTEM on Windows or root on Linux/macOS/FreeBSD/OpenWRT/Synology without requiring privilege escalation.\n\nThreat actors have been observed abusing Nezha as a stealthy post-exploitation RAT. Huntress published \"The Crown Prince, Nezha\" (2025) documenting a China-nexus campaign that compromised 100+ hosts across Taiwan, Japan, South Korea, and Hong Kong via unauthenticated phpMyAdmin → log poisoning → AntSword web shell → Nezha agent deployment → Ghost RAT installation. Ontinue published a parallel writeup (\"The Monitoring Tool That's Also a Perfect RAT\") on the same abuse class. Kaspersky flags the official agent binary as `not-a-virus:HEUR:RemoteAdmin.Win64.NezhaAgent.gen`; Microsoft and most other AV engines do not currently flag it, which is exactly what makes it attractive as a living-off-the-land RMM masquerade.\n",
         "Author": "@MHaggis",
         "Created": "2026-05-18",
-        "LastModified": "2026-05-18",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://nezha.wiki/",
             "PEMetadata": [
@@ -21566,14 +21639,24 @@
                 {
                     "Description": "Official Nezha project / documentation / installer hosts. Agent installers pulled directly from GitHub raw content via curl|bash on Linux/macOS or PowerShell on Windows.",
                     "Domains": [
-                        "github.com",
-                        "raw.githubusercontent.com",
                         "nezha.wiki",
                         "nezhahq.github.io"
                     ],
                     "Ports": [
                         443
                     ]
+                },
+                {
+                    "Description": "Official Nezha project / documentation / installer hosts. Agent installers pulled directly from GitHub raw content via curl|bash on Linux/macOS or PowerShell on Windows.",
+                    "Domains": [
+                        "github.com",
+                        "raw.githubusercontent.com"
+                    ],
+                    "Ports": [
+                        443
+                    ],
+                    "Detection": false,
+                    "DetectionReason": "Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules."
                 },
                 {
                     "Description": "China-nexus abuse infrastructure observed by Huntress (Crown Prince Nezha campaign). Threat-actor-controlled Dashboard host and adjacent Ghost RAT C2.",
@@ -21679,7 +21762,7 @@
         "Description": "mstsc.exe is the built-in Microsoft Remote Desktop Connection (RDC) client\nthat ships with all supported Windows versions. The \"MSTSC\" name is a\nhistorical acronym for \"Microsoft Terminal Services Client\" — the product\nwas renamed from Terminal Services to Remote Desktop Services, but the\nbinary kept the original name. It is signed by Microsoft and located in\n%SystemRoot%\\System32\\mstsc.exe. Adversaries abuse the native RDP client\nfor interactive lateral movement (T1021.001) and as a living-off-the-land\nremote-access pathway because it is present, signed, and frequently\nallow-listed in enterprise environments. This entry consolidates the\nprevious duplicate entries \"Microsoft RDP\" and \"Microsoft TSC\", which\ndescribed the same binary under different names.\n\n**IMPORTANT**: This tool is signed with legitimate Microsoft Corporation\ncertificates that are also used to sign numerous other Microsoft products\nand Windows components. Do NOT blindly block these certificate thumbprints\nas doing so will break essential Windows functionality and other Microsoft\napplications in your environment. Use certificate data for detection,\nhunting, and analysis purposes only.\n",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2026-05-04",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc",
             "PEMetadata": {
@@ -21754,6 +21837,8 @@
         ],
         "Acknowledgement": [],
         "CodeSigning": {
+            "Detection": false,
+            "DetectionReason": "Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.",
             "search_names": [
                 "mstsc.exe"
             ],
@@ -25331,6 +25416,90 @@
         ]
     },
     {
+        "Name": "StifleR (2Pint Software)",
+        "Category": "RMM",
+        "Description": "StifleR Enterprise includes 2Pint Software's Remote Tools for Windows endpoint monitoring and administration through a web dashboard.\nRemote capabilities include PowerShell and CMD execution, file and registry management, WMI queries, event log viewing, task management, remote assistance, and RDP tunneling.\nRemote Tools must be enabled and authorized; the presence of the StifleR client alone does not establish that remote access is enabled or that the software is being abused.\n",
+        "Author": "Michael Haag",
+        "Created": "2026-10-27",
+        "LastModified": "2026-10-27",
+        "Details": {
+            "Website": "https://2pintsoftware.com/solution/remote-monitoring-management",
+            "PEMetadata": [
+                {
+                    "Filename": "StifleR.ClientApp.exe"
+                }
+            ],
+            "Privileges": "Administrator required for installation",
+            "Free": "",
+            "Verification": "",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Remote monitoring and management",
+                "Remote command execution",
+                "Remote desktop",
+                "File management",
+                "Registry management",
+                "Network discovery",
+                "Reporting and analytics"
+            ],
+            "Vulnerabilities": [],
+            "InstallationPaths": [
+                "C:\\Program Files\\2Pint Software\\StifleR Client\\*"
+            ]
+        },
+        "Artifacts": {
+            "Disk": [
+                {
+                    "File": "StifleR.ClientApp.exe",
+                    "Description": "StifleR client executable documented in the vendor's WinPE integration script; filename evidence, not verified PE version metadata.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "StifleR.ClientApp.exe.Config",
+                    "Description": "StifleR client configuration file documented in the vendor's WinPE integration script.",
+                    "OS": "Windows"
+                },
+                {
+                    "File": "C:\\Program Files\\2Pint Software\\StifleR Client\\TwoPint.ConfigEditor.Wpf\\TwoPint.ConfigEditor.Wpf.exe",
+                    "Description": "Documented client configuration editor location. The installation directory can be customized.",
+                    "OS": "Windows"
+                }
+            ],
+            "EventLog": [],
+            "Registry": [
+                {
+                    "Path": "HKLM\\SYSTEM\\CurrentControlSet\\Services\\StifleRClient",
+                    "Description": "Windows service registry path derived from the documented StifleRClient service name (display name 2Pint Software Stifler Client)."
+                }
+            ],
+            "Network": [
+                {
+                    "Description": "Client connects to an organization-configured StifleR server using SignalR. Vendor installation documentation specifies port 1414; server names and ports depend on deployment. No fixed vendor management domain is documented.",
+                    "Domains": [],
+                    "Ports": [
+                        1414
+                    ]
+                }
+            ],
+            "Other": [
+                {
+                    "Type": "Windows event log channel pattern",
+                    "Value": "TwoPintSoftware-StifleR.ClientApp*"
+                }
+            ]
+        },
+        "Detections": [],
+        "References": [
+            "https://2pintsoftware.com/solution/remote-monitoring-management",
+            "https://documentation.2pintsoftware.com/stifler/configuration/remote-tools-configuration",
+            "https://documentation.2pintsoftware.com/stifler/setup/installation/stifler-client-installation",
+            "https://github.com/2pintsoftware/2Pint-OSDToolkit/blob/master/WinPEBuilder.ps1"
+        ],
+        "Acknowledgement": []
+    },
+    {
         "Name": "VNC Connect",
         "Category": "RAT",
         "Description": "VNC Connect is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -25449,10 +25618,10 @@
     {
         "Name": "Quick Assist",
         "Category": "RAT",
-        "Description": "Quick Assist is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+        "Description": "Quick Assist is a Microsoft remote assistance tool that enables a user to share their Windows device with another person over a remote connection for troubleshooting. A separate macOS offering is limited to Microsoft Support interactions. Microsoft documented Storm-1811's abuse of Quick Assist in social engineering attacks beginning mid-April 2024. Microsoft observed Teams messages and calls impersonating IT or help desk personnel from late May 2024. Arctic Wolf observed Quick Assist as the most frequently abused tool in their analysis of 400+ Microsoft Teams vishing incidents, often followed by installation of commercial RMM tools for persistence.\n",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-10-28",
         "Details": {
             "Website": "https://support.microsoft.com/windows/solve-pc-problems-remotely-using-quick-assist-b077e31a-16f4-2529-1a47-21f6a9040bf3",
             "PEMetadata": {
@@ -25460,27 +25629,42 @@
                 "OriginalFileName": "",
                 "Description": ""
             },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
+            "Privileges": "User; the recipient must consent to screen sharing and separately approve control",
+            "Free": "Yes",
+            "Verification": "Vendor documentation and published campaign research; historical self-issued certificate identities were excluded because they do not establish Microsoft publisher identity",
+            "SupportedOS": [
+                "Windows"
+            ],
+            "Capabilities": [
+                "Remote screen sharing",
+                "Remote desktop control",
+                "Screen annotation"
+            ],
             "Vulnerabilities": [],
             "InstallationPaths": [
-                "quickassist.exe"
+                "quickassist.exe",
+                "C:\\Windows\\System32\\QuickAssist.exe"
             ]
         },
         "Artifacts": {
-            "Disk": [],
+            "Disk": [
+                {
+                    "File": "C:\\Windows\\System32\\QuickAssist.exe",
+                    "Description": "Legacy Windows Quick Assist executable location; the current version is distributed through Microsoft Store",
+                    "OS": "Windows"
+                }
+            ],
             "EventLog": [],
             "Registry": [],
             "Network": [
                 {
-                    "Description": "Known remote domains",
+                    "Description": "Microsoft Remote Assistance service shared by Quick Assist and Remote Help; HTTPS traffic alone does not establish which application is used or whether the session is malicious",
                     "Domains": [
                         "*.support.services.microsoft.com"
                     ],
-                    "Ports": []
+                    "Ports": [
+                        443
+                    ]
                 }
             ]
         },
@@ -25495,34 +25679,26 @@
             }
         ],
         "References": [
-            "https://github.com/magicsword-io/LOLRMM/issues/46"
+            "https://learn.microsoft.com/en-us/windows/client-management/client-tools/quick-assist",
+            "https://github.com/magicsword-io/LOLRMM/issues/46",
+            "https://support.microsoft.com/en-us/windows/install-quick-assist-c17479b7-a49d-4d12-938c-dbfb97c88bca",
+            "https://www.microsoft.com/en-us/security/blog/2024/05/15/threat-actors-misusing-quick-assist-in-social-engineering-attacks-leading-to-ransomware/",
+            "https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/"
         ],
         "Acknowledgement": [
             {
                 "Person": "bittib010",
                 "Handle": "@bittib010"
+            },
+            {
+                "Person": "Microsoft Threat Intelligence",
+                "Handle": ""
+            },
+            {
+                "Person": "Shubham Dubey / Arctic Wolf Labs",
+                "Handle": ""
             }
-        ],
-        "CodeSigning": {
-            "certificates": [
-                {
-                    "signer_name": "GlobalSigningDig",
-                    "certificate_thumbprint": "DE523085FB77B3D8B78E80EF14BC627772C6E1D0",
-                    "certificate_der_base64": "MIIDBjCCAe6gAwIBAgIQc+jN31/yRqxBNamgs3AXfDANBgkqhkiG9w0BAQsFADAbMRkwFwYDVQQDDBBHbG9iYWxTaWduaW5nRGlnMB4XDTI1MTAzMDA4MTE0N1oXDTI2MTAzMDA4MzE0N1owGzEZMBcGA1UEAwwQR2xvYmFsU2lnbmluZ0RpZzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMx/Ld3o0K7RMJtTr0DHt1pMqrpNzLFQZja9ZPTPmYvRw4JF8gu5Sb/apCpz//BIAQJQ0N9D4C8bkoeVxsmlcuNzjaiCTBOeEHKC/epZiVvOC8OWjwoQxZcInovFiv0PS6V8cl1kM6S/4FXpVDCn2uqpxKFQHQeTrxsZa07VMyVvAKcx0u8mTFHEgiuNvgcbPZ959V+BRZ+siyzWJyzS/UmoyXO8jkkArwMybcKYVvK40FLH1t/S8teERp6iiyke2YB2eAC+EmKnkG9+HSB3NFb7Q1pOu5YrD3ieUMoNJPrpb5amUfW2fKhRAElSJD9oYW0OtA6XoROiQb3A89I6An0CAwEAAaNGMEQwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMB0GA1UdDgQWBBQbfXHoPs6WtHehmqYdqtanuiy+QTANBgkqhkiG9w0BAQsFAAOCAQEAIEJubEC/2gOkiYK6yjzfXip17fJSviz/wJ4O69XOKpHLTL0Nx9WjmqUAFUTQG46+xYOx5FU5Zvq76RmOtKfWXOXVyRgSnJVk5FYA9B+3dO4bsD6i16rRrnlGmTdWJx8WRRZBFTYhmJ24CSJtrnd5BU4Cl9Y6XYNNFOG5tsQRtGYPK1JGWJ+PVUxnZYkQC0hT4SX0mKhQQfrB1gZTySTnM2qaHkmeOOewgYzfFfkYSUn8QLiqwlrPrssU0xntqvk9PAbeRv+J+laYFDHPg/Cl1OcS8uwk4/VOInniSLQnLoDGbtQIIPOAmxezDu1l5eaT90E1TAC+sopyTOyrR8UeLw==",
-                    "src_file_sha256": "0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3",
-                    "src_file_path": "downloaded_files/quick_assist/0f6269a8095b8c622ea2b864df5fd6f09f676f0a5f87618d475b936e27b19af3",
-                    "src_file_company": "Microsoft Corporation"
-                },
-                {
-                    "signer_name": "CodeSigningMico",
-                    "certificate_thumbprint": "6116BB0D666C358E66E8E18E25B8C147B9C0F2F6",
-                    "certificate_der_base64": "MIIDBDCCAeygAwIBAgIQb/mz6VvfdIVCveBrem6XCTANBgkqhkiG9w0BAQsFADAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wHhcNMjUxMDI4MjExMzI3WhcNMjYxMDI4MjEzMzI3WjAaMRgwFgYDVQQDDA9Db2RlU2lnbmluZ01pY28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDZuvZi1Hj4Jm1u++tpo5pREUTd8ryNRtZA8EXsQhRgLc8P65gfpg5owobw8rgpEgoVB2WWhREVotBzt9cdsHNECmQb30HXuVQdeGjsFu+cvTy0+l+EN5M8tHHdfXEv4b04O45KsHiivKWTFM/MRQVI5iY5u+4vOimrUnH70c2KPmvqKIvaDqQz2XReMe5JBG3UguVdn2IL4Csmg9kL++oM8wIEoP4mj8gG3+5pHeoPSLKEIxolkascHIl6WGeNd7T4fvu8KNSDhNAYzS84x3el2HvRCBqwJ/Xqhesp2WCYFmmzOJbv1mIICPT29qbGO5pYTSmDZZsGWPmdJE3jgah5AgMBAAGjRjBEMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUvozeOtjQSswck1CbmPJnPd9mAXcwDQYJKoZIhvcNAQELBQADggEBAFvjyqepTkG5dST/G10jUjgLwmnTC27dImW5mcG4B3VZLWGzYH1Wh8HnXCn8y9hHFqhIWqr1j22paxDeNm9biasfFvyJ/4WQqxoi/cBY/niIIP08IqlMCakJPqfZYlEw3krYeDmtXAIAuJyWeEwlG2mFfxf+TOLhUoOKwnBtN+CoSE7+TP1+83HHT0hR+i2Lt6pNdqJQENy1lxZRYkTdSKVglZMwASLnCfVtslhmnFTMabrADWUWNtpZRrP7+5fUYQ/h3xUFy8aQ7hOHRPpyjs9M0vh6c+qr0xXl7qpHHcLad8NLZzuICoA7wKBc7uKuDyjvk24cVoSpc2pV6vbBC8M=",
-                    "src_file_sha256": "9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b",
-                    "src_file_path": "downloaded_files/quick_assist/9653b13e7bfa2f3be8a175ff895e5bf46537e5f742905751282f956e39587b0b",
-                    "src_file_company": "Microsoft Corporation"
-                }
-            ]
-        }
+        ]
     },
     {
         "Name": "NetBird",
@@ -25999,7 +26175,7 @@
         "Description": "Borealis is an AGPL-3.0-licensed, self-hosted remote management, monitoring, and automation platform with a Linux-hosted Engine and a Go endpoint agent. Its reviewed source implements remote shell, file, process, service, and software operations, with Windows and Linux agent support. This entry records source-confirmed artifacts only; it does not establish a delivery relationship or malicious use.\n",
         "Author": "Michael Haag",
         "Created": "2026-09-28",
-        "LastModified": "2026-09-28",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://github.com/bunny-lab-io/Borealis",
             "PEMetadata": {
@@ -26090,8 +26266,7 @@
                     "LogFile": "System",
                     "ServiceName": "BorealisAgent",
                     "ImagePath": "C:\\Borealis\\Agent.exe",
-                    "Description": "Windows runtime creates this automatic service from the configured executable path; the default bootstrap path is C:\\Borealis.",
-                    "CommandLine": ""
+                    "Description": "Windows runtime creates this automatic service from the configured executable path; the default bootstrap path is C:\\Borealis."
                 }
             ],
             "Registry": [],
@@ -27675,7 +27850,7 @@
         "Description": "GLPI Agent is the open-source generic management agent maintained by the GLPI Project (Teclib'). It performs IT asset inventory, network discovery, network inventory (SNMP), VMware ESX inventory, software deployment, remote inventory and remote command/script collection on behalf of a GLPI server, communicating over HTTP/HTTPS. The agent is shipped as a Perl-based service / daemon for Windows, Linux and macOS, and is a fork of the FusionInventory agent.\n\nNetwork endpoints are tenant-configured: the agent talks to whatever GLPI server URL the operator specifies via the `server` parameter (or the MSI `SERVER` property). There is no centralised vendor cloud — every install can point at a different self-hosted (or Teclib-hosted GLPI Network) endpoint, which makes the agent attractive for both legitimate self-hosted IT shops and threat actors who stand up their own GLPI server for inventory/deploy abuse. The agent also embeds an HTTP daemon (default port 62354/tcp) for server-initiated triggers.\n",
         "Author": "@MHaggis",
         "Created": "2026-05-04",
-        "LastModified": "2026-05-04",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://glpi-project.org/",
             "PEMetadata": [
@@ -27992,7 +28167,9 @@
                     ],
                     "Ports": [
                         443
-                    ]
+                    ],
+                    "Detection": false,
+                    "DetectionReason": "Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules."
                 }
             ],
             "Other": [
@@ -29196,7 +29373,7 @@
         "Description": "Cloudflare Tunnel (cloudflared) creates outbound-only tunnels from a host to Cloudflare, exposing internal services (RDP, SSH, SMB, HTTP) without inbound firewall rules. In the Swisscom intrusion described by The DFIR Report in June 2026, threat actors installed it as a Windows service on a domain controller for persistence and proxied RDP through it.\n",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2026-10-05",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://cloudflare.com/products/tunnel/",
             "PEMetadata": {
@@ -29303,12 +29480,22 @@
                 {
                     "Description": "Optional software update checks over HTTPS",
                     "Domains": [
-                        "update.argotunnel.com",
-                        "api.cloudflare.com"
+                        "update.argotunnel.com"
                     ],
                     "Ports": [
                         443
                     ]
+                },
+                {
+                    "Description": "Optional software update checks over HTTPS",
+                    "Domains": [
+                        "api.cloudflare.com"
+                    ],
+                    "Ports": [
+                        443
+                    ],
+                    "Detection": false,
+                    "DetectionReason": "Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules."
                 }
             ],
             "Other": [
@@ -30794,7 +30981,7 @@
         "Description": "OpenUEM is an Apache-2.0-licensed endpoint-management platform with a self-hosted console and agent. The reviewed source and official deployment documentation support endpoint reporting, SFTP file browsing, package and settings management, and Windows VNC assistance. This entry records source- and vendor-documented host artifacts only. It does not establish a delivery relationship or malicious use.\n",
         "Author": "Michael Haag",
         "Created": "2026-09-28",
-        "LastModified": "2026-09-28",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://openuem.eu/",
             "PEMetadata": {
@@ -30866,9 +31053,7 @@
                     "ProviderName": "Service Control Manager",
                     "LogFile": "System",
                     "ServiceName": "openuem-agent",
-                    "ImagePath": "",
-                    "Description": "Service name registered by the reviewed Windows service entry point; the source does not fix an executable installation path.",
-                    "CommandLine": ""
+                    "Description": "Service name registered by the reviewed Windows service entry point; the source does not fix an executable installation path."
                 }
             ],
             "Registry": [],
@@ -30906,66 +31091,12 @@
         "Acknowledgement": []
     },
     {
-        "Name": "ITSupport247 (ConnectWise)",
-        "Category": "RMM",
-        "Description": "ITSupport247 (ConnectWise) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-        "Author": "",
-        "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
-        "Details": {
-            "Website": "https://control.itsupport247.net/",
-            "PEMetadata": {
-                "Filename": "",
-                "OriginalFileName": "",
-                "Description": ""
-            },
-            "Privileges": "",
-            "Free": "",
-            "Verification": "",
-            "SupportedOS": [],
-            "Capabilities": [],
-            "Vulnerabilities": [],
-            "InstallationPaths": [
-                "saazapsc.exe"
-            ]
-        },
-        "Artifacts": {
-            "Disk": [],
-            "EventLog": [],
-            "Registry": [],
-            "Network": [
-                {
-                    "Description": "Known remote domains",
-                    "Domains": [
-                        "*.itsupport247.net",
-                        "itsupport247.net"
-                    ],
-                    "Ports": []
-                }
-            ]
-        },
-        "Detections": [
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml",
-                "Description": "Detects potential network activity of ITSupport247 (ConnectWise) RMM tool"
-            },
-            {
-                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__processes_sigma.yml",
-                "Description": "Detects potential processes activity of ITSupport247 (ConnectWise) RMM tool"
-            }
-        ],
-        "References": [
-            "https://control.itsupport247.net/"
-        ],
-        "Acknowledgement": []
-    },
-    {
         "Name": "Level",
         "Category": "RMM",
-        "Description": "Level is a remote monitoring and management (RMM) tool. Threat Hunting Labs documented its malicious installation through an RVTools-themed SEO poisoning chain in 2026. An operator used Level to run discovery commands as SYSTEM and install the separate LightRmmAgent service. The report distinguishes Level's routine inventory from operator activity.\n",
+        "Description": "Level is a remote monitoring and management (RMM) tool. Threat Hunting Labs documented its malicious installation through an RVTools-themed SEO poisoning chain in 2026. An operator used Level to run discovery commands as SYSTEM and install the separate LightRmmAgent service. Threat Hunting Labs distinguishes Level's routine inventory from operator activity. Arctic Wolf documented attackers installing Level via msiexec for persistence beyond initial Quick Assist access in fake IT-support Microsoft Teams vishing campaigns.\n",
         "Author": "Christian Henriksen, ITM8 | Improsec",
         "Created": "2024-02-11",
-        "LastModified": "2026-09-23",
+        "LastModified": "2026-10-28",
         "Details": {
             "Website": "https://level.io/",
             "PEMetadata": {
@@ -30973,11 +31104,13 @@
                 "OriginalFileName": "",
                 "Description": ""
             },
-            "Privileges": "User",
-            "Free": "Free",
-            "Verification": "True",
+            "Privileges": "Windows service runs as LocalSystem; installation requires administrative permissions",
+            "Free": "Free for up to 10 devices; paid subscription for larger fleets",
+            "Verification": "Vendor documentation and published incident research; certificate evidence retained from the consolidated entries",
             "SupportedOS": [
-                "Windows"
+                "Windows",
+                "macOS",
+                "Linux"
             ],
             "Capabilities": [
                 "File Transfer",
@@ -30986,7 +31119,10 @@
                 "Automation & Scripting"
             ],
             "InstallationPaths": [
-                "C:\\Program Files\\Level\\*"
+                "C:\\Program Files\\Level\\*",
+                "level-windows-amd64.exe",
+                "level.exe",
+                "level-remote-control-ffmpeg.exe"
             ]
         },
         "Artifacts": {
@@ -31030,15 +31166,17 @@
                     "EventID": 4798,
                     "ProviderName": "Microsoft-Windows-Security-Auditing",
                     "LogFile": "Security.evtx",
-                    "CallerProcessName": "C:\\Program Files\\Level\\osqueri.exe",
+                    "CallerProcessName": "C:\\Program Files\\Level\\osqueryi.exe",
                     "Description": "Evidence of osqueryi doing automatic user/group enumeration."
                 }
             ],
+            "Registry": [],
             "Network": [
                 {
                     "Description": "Known remote domains",
                     "Domains": [
                         "level.io",
+                        "*.level.io",
                         "builds.level.io",
                         "agents.level.io",
                         "online.level.io",
@@ -31058,12 +31196,19 @@
             {
                 "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml",
                 "Description": "Detects potential files activity of Level RMM tool"
+            },
+            {
+                "Sigma": "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_processes_sigma.yml",
+                "Description": "Detects potential processes activity of Level RMM tool"
             }
         ],
         "References": [
+            "https://level.io/pricing",
             "https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike",
             "https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/",
-            "https://docs.level.io/en/articles/9926456-level-watchdog-task"
+            "https://docs.level.io/en/articles/9926456-level-watchdog-task",
+            "https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues",
+            "https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/"
         ],
         "Acknowledgement": [
             {
@@ -31081,6 +31226,10 @@
             {
                 "Person": "MalBear Labs",
                 "Handle": "@malbearlabs"
+            },
+            {
+                "Person": "Shubham Dubey / Arctic Wolf Labs",
+                "Handle": ""
             }
         ],
         "CodeSigning": {
@@ -33267,7 +33416,7 @@
         "Description": "rdpwrap is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
         "Author": "",
         "Created": "2024-08-02",
-        "LastModified": "2024-08-02",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://github.com/stascorp/rdpwrap",
             "PEMetadata": {
@@ -33316,6 +33465,8 @@
         ],
         "Acknowledgement": [],
         "CodeSigning": {
+            "Detection": false,
+            "DetectionReason": "Includes a certificate authority certificate and mixed signing evidence; preserve for research, without generating publisher or certificate blocking identities.",
             "certificates": [
                 {
                     "signer_name": "Wide Vision Trade GmbH",
@@ -36225,7 +36376,7 @@
         "Description": "Chrome Remote Desktop is Google's cross-platform remote access and support service for Windows, macOS, and Linux hosts. It supports persistent remote access and one-time attended support sessions through a web client.\nIMPORTANT: This tool is signed with legitimate Google LLC certificates that are also used to sign Chrome and other Google applications. Do not blindly block these certificate thumbprints. Use the certificate data for detection, hunting, and analysis with product-specific context.\n",
         "Author": "n2x4",
         "Created": "2024-08-02",
-        "LastModified": "2026-09-01",
+        "LastModified": "2026-10-26",
         "Details": {
             "Website": "https://remotedesktop.google.com/",
             "PEMetadata": [
@@ -36368,6 +36519,8 @@
             }
         ],
         "CodeSigning": {
+            "Detection": false,
+            "DetectionReason": "Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.",
             "search_names": [
                 "remoting_host.exe"
             ],

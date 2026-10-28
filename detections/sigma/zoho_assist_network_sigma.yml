@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,19 +16,39 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - '*.zoho.com.au'
-            - '*.zohoassist.jp'
-            - 'assist.zoho.com'
-            - '*.zoho.in'
-            - 'downloads.zohodl.com.cn'
-            - '*.zohoassist.com'
-            - 'downloads.zohocdn.com'
-            - 'gateway.zohoassist.com'
-            - '*.zohoassist.com.cn'
-            - '*.zoho.com.cn'
+        DestinationHostname:
+            - '*.assist.zoho.com'
+            - '*.assist.zoho.com.'
+            - '*.downloads.zohocdn.com'
+            - '*.downloads.zohocdn.com.'
+            - '*.downloads.zohodl.com.cn'
+            - '*.downloads.zohodl.com.cn.'
+            - '*.gateway.zohoassist.com'
+            - '*.gateway.zohoassist.com.'
             - '*.zoho.com'
+            - '*.zoho.com.'
+            - '*.zoho.com.au'
+            - '*.zoho.com.au.'
+            - '*.zoho.com.cn'
+            - '*.zoho.com.cn.'
             - '*.zoho.eu'
+            - '*.zoho.eu.'
+            - '*.zoho.in'
+            - '*.zoho.in.'
+            - '*.zohoassist.com'
+            - '*.zohoassist.com.'
+            - '*.zohoassist.com.cn'
+            - '*.zohoassist.com.cn.'
+            - '*.zohoassist.jp'
+            - '*.zohoassist.jp.'
+            - 'assist.zoho.com'
+            - 'assist.zoho.com.'
+            - 'downloads.zohocdn.com'
+            - 'downloads.zohocdn.com.'
+            - 'downloads.zohodl.com.cn'
+            - 'downloads.zohodl.com.cn.'
+            - 'gateway.zohoassist.com'
+            - 'gateway.zohoassist.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Zoho Assist

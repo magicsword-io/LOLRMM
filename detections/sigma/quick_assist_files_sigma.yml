@@ -1,13 +1,12 @@
-title: Potential Alpemix RMM Tool File Activity
-id: 48635891-4740-4323-9654-0c950f7129a0
+title: Potential Quick Assist RMM Tool File Activity
+id: e4374d35-2e06-5254-a44f-64810f3e637c
 status: experimental
 description: |
-    Detects potential files activity of Alpemix RMM tool
+    Detects potential files activity of Quick Assist RMM tool
 references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
-date: 2025-12-01
-modified: 2026-09-02
+date: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,8 +15,8 @@ logsource:
     category: file_event
 detection:
     selection:
-        TargetFilename|endswith: '%localappdata%\Alpemix\Alpemix.ini'
+        TargetFilename|endswith: 'C:\Windows\System32\QuickAssist.exe'
     condition: selection
 falsepositives:
-    - Legitimate use of Alpemix
+    - Legitimate use of Quick Assist
 level: medium

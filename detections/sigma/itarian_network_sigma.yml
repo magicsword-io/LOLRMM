@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,12 +16,23 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'mdmsupport.comodo.com'
-            - '*.itsm-us1.comodo.com'
+        DestinationHostname:
             - '*.cmdm.comodo.com'
+            - '*.cmdm.comodo.com.'
+            - '*.itsm-us1.comodo.com'
+            - '*.itsm-us1.comodo.com.'
+            - '*.mdmsupport.comodo.com'
+            - '*.mdmsupport.comodo.com.'
+            - '*.remoteaccess.itarian.com'
+            - '*.remoteaccess.itarian.com.'
+            - '*.servicedesk.itarian.com'
+            - '*.servicedesk.itarian.com.'
+            - 'mdmsupport.comodo.com'
+            - 'mdmsupport.comodo.com.'
             - 'remoteaccess.itarian.com'
+            - 'remoteaccess.itarian.com.'
             - 'servicedesk.itarian.com'
+            - 'servicedesk.itarian.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Itarian

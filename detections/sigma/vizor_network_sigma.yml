@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,16 +16,39 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - '<operator-configured Vector Discovery Server URL>'
-            - 'vizor.cloud'
-            - 'www.vizor.cloud'
+        DestinationHostname:
+            - '*.vector-networks.com'
+            - '*.vector-networks.com.'
+            - '*.vizor.cloud'
+            - '*.vizor.cloud.'
+            - '*.www.vector-networks.com'
+            - '*.www.vector-networks.com.'
+            - '*.www.vizor.cloud'
+            - '*.www.vizor.cloud.'
             - 'vector-networks.com'
+            - 'vector-networks.com.'
+            - 'vizor.cloud'
+            - 'vizor.cloud.'
             - 'www.vector-networks.com'
-            - 'metaquest.com'
+            - 'www.vector-networks.com.'
+            - 'www.vizor.cloud'
+            - 'www.vizor.cloud.'
+            - '*.mail.metaquest.com'
+            - '*.mail.metaquest.com.'
+            - '*.metaquest.com'
+            - '*.metaquest.com.'
+            - '*.www.metaquest.com'
+            - '*.www.metaquest.com.'
             - 'mail.metaquest.com'
+            - 'mail.metaquest.com.'
+            - 'metaquest.com'
+            - 'metaquest.com.'
             - 'www.metaquest.com'
+            - 'www.metaquest.com.'
+            - '*.downloads.vector-networks.com'
+            - '*.downloads.vector-networks.com.'
             - 'downloads.vector-networks.com'
+            - 'downloads.vector-networks.com.'
     condition: selection
 falsepositives:
     - Legitimate use of VIZOR

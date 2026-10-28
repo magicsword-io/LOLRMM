@@ -1,0 +1,22 @@
+title: Potential RdViewer RMM Tool Registry Activity
+id: 1f6855f4-2e12-5c58-9447-66a3217d7730
+status: experimental
+description: |
+    Detects potential registry activity of RdViewer RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-10-28
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        TargetObject|contains: 'HKLM\SYSTEM\CurrentControlSet\Services\Rd_Service'
+    condition: selection
+falsepositives:
+    - Legitimate use of RdViewer
+level: medium

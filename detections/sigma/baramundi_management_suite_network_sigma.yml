@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,11 +16,21 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
             - '*.baramundi.com'
-            - 'www.baramundi.com'
+            - '*.baramundi.com.'
+            - '*.docs.baramundi.com'
+            - '*.docs.baramundi.com.'
+            - '*.isodownload.baramundi.com'
+            - '*.isodownload.baramundi.com.'
+            - '*.www.baramundi.com'
+            - '*.www.baramundi.com.'
             - 'docs.baramundi.com'
+            - 'docs.baramundi.com.'
             - 'isodownload.baramundi.com'
+            - 'isodownload.baramundi.com.'
+            - 'www.baramundi.com'
+            - 'www.baramundi.com.'
     condition: selection
 falsepositives:
     - Legitimate use of baramundi Management Suite

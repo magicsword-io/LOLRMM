@@ -1,0 +1,25 @@
+title: Potential StifleR (2Pint Software) RMM Tool File Activity
+id: 110b4326-5aab-5afc-b5b5-791a7bafdecd
+status: experimental
+description: |
+    Detects potential files activity of StifleR (2Pint Software) RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-10-28
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: file_event
+detection:
+    selection:
+        TargetFilename|endswith:
+            - 'StifleR.ClientApp.exe'
+            - 'StifleR.ClientApp.exe.Config'
+            - 'C:\Program Files\2Pint Software\StifleR Client\TwoPint.ConfigEditor.Wpf\TwoPint.ConfigEditor.Wpf.exe'
+    condition: selection
+falsepositives:
+    - Legitimate use of StifleR (2Pint Software)
+level: medium

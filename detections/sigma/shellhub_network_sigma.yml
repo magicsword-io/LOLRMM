@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,11 +16,19 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'shellhub.io'
-            - 'cloud.shellhub.io'
-            - 'www.shellhub.io'
+        DestinationHostname:
+            - '*.cloud.shellhub.io'
+            - '*.cloud.shellhub.io.'
             - '*.shellhub.io'
+            - '*.shellhub.io.'
+            - '*.www.shellhub.io'
+            - '*.www.shellhub.io.'
+            - 'cloud.shellhub.io'
+            - 'cloud.shellhub.io.'
+            - 'shellhub.io'
+            - 'shellhub.io.'
+            - 'www.shellhub.io'
+            - 'www.shellhub.io.'
     condition: selection
 falsepositives:
     - Legitimate use of ShellHub
