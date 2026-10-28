@@ -27,6 +27,7 @@ Artifacts:
         - Description: Known remote domains
           Domains:
               - '*.itsupport247.net'
+              - itsupport247.net
           Ports: []
 Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml

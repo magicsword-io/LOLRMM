@@ -58,6 +58,29 @@ for (const entry of index) {
   assert(read(`rmm_tools/${slug}/index.html`).includes(`/tools/${slug}/`));
   assert(!read(`tools/${slug}/index.html`).includes('certificate_der_base64'));
 }
+// Retired slugs must remain accessible even though they leave the catalog.
+const retiredSlug = 'itsupport247-connectwise--itsupport247connectwise';
+const canonicalSlug = 'itsupport247-connectwise';
+assert(!index.some((entry) => entry.slug === retiredSlug));
+for (const prefix of ['tools', 'rmm_tools']) {
+  const html = read(`${prefix}/${retiredSlug}/index.html`);
+  assert.match(html, /<meta[^>]*http-equiv="refresh"[^>]*content="0;/i);
+  assert(
+    html.includes(`url=/tools/${canonicalSlug}/`) ||
+      html.includes(`url=https://lolrmm.io/tools/${canonicalSlug}/`),
+    `Retired URL must redirect directly to the merged tool: ${prefix}`,
+  );
+  assert(
+    html.includes(
+      `rel="canonical" href="https://lolrmm.io/tools/${canonicalSlug}/"`,
+    ),
+  );
+}
+assert.deepEqual(
+  JSON.parse(read(`api/tools/${retiredSlug}.json`)),
+  JSON.parse(read(`api/tools/${canonicalSlug}.json`)),
+  'Retired JSON export must serve the merged record',
+);
 if (process.env.PUBLIC_ENABLE_ANALYTICS === 'true') {
   const snippet = [
     ...read('index.html').matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g),
@@ -81,5 +104,5 @@ if (process.env.PUBLIC_ENABLE_ANALYTICS === 'true') {
   }
 }
 console.log(
-  `Verified ${pages.length} pages, ${tools.length} tool exports and legacy redirects, internal links, and analytics configuration.`,
+  `Verified ${pages.length} pages, ${tools.length} tool exports and legacy redirects, retired ITSupport247 URLs, internal links, and analytics configuration.`,
 );
