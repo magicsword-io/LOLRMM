@@ -11,7 +11,7 @@ Description: >
     hunting, and analysis with product-specific context.
 Author: n2x4
 Created: '2024-08-02'
-LastModified: '2026-09-01'
+LastModified: '2026-10-26'
 Details:
     Website: https://remotedesktop.google.com/
     PEMetadata:
@@ -116,6 +116,8 @@ Acknowledgement:
     - Person: n2x4
       Handle: '@n2x4'
 CodeSigning:
+    Detection: false
+    DetectionReason: Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.
     search_names:
         - remoting_host.exe
     company_names:

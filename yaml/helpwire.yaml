@@ -3,7 +3,7 @@ Category: RMM
 Description: HelpWire is a remote support and remote access platform from Electronic Team, Inc. The public Quick Connect client supports attended remote desktop support, while the vendor documentation also describes unattended access for persistent operator reconnects, reboot/reconnect workflows, file transfer, chat, multi-screen viewing, Windows administrator rights, and automatic background updates.
 Author: Michael Haag
 Created: '2026-05-22'
-LastModified: '2026-05-22'
+LastModified: '2026-10-26'
 Details:
     Website: https://www.helpwire.app/
     PEMetadata:
@@ -64,7 +64,6 @@ Artifacts:
           ProviderName: Service Control Manager
           LogFile: System
           ServiceName: helpwire-unattended
-          ImagePath:
           Description: Potential Windows service installation event for HelpWire unattended access. Confirm exact Windows service name during live install triage.
     Registry: []
     Network:
@@ -80,9 +79,15 @@ Artifacts:
         - Description: HelpWire STUN / NAT traversal infrastructure observed in client strings
           Domains:
               - stun.helpwire.app
+          Ports:
+              - 3478
+        - Description: HelpWire STUN / NAT traversal infrastructure observed in client strings
+          Domains:
               - stunserver.stunprotocol.org
           Ports:
               - 3478
+          Detection: false
+          DetectionReason: Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules.
     Other:
         - Type: URI Scheme
           Value: helpwire://

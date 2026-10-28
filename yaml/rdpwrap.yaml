@@ -3,7 +3,7 @@ Category: RAT
 Description: rdpwrap is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-10-26'
 Details:
     Website: 'https://github.com/stascorp/rdpwrap'
     PEMetadata:
@@ -38,6 +38,8 @@ References:
     - https://github.com/stascorp/rdpwrap
 Acknowledgement: []
 CodeSigning:
+    Detection: false
+    DetectionReason: Includes a certificate authority certificate and mixed signing evidence; preserve for research, without generating publisher or certificate blocking identities.
     certificates:
         - signer_name: Wide Vision Trade GmbH
           certificate_thumbprint: 6F64E6DF839023E363EC7A375AC7F447AE9DF793

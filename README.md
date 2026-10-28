@@ -70,6 +70,40 @@ If you'd like to contribute, please follow these steps:
 
 For more detailed instructions, please refer to the CONTRIBUTING.md file (if available). To create a new YAML file for an RMM tool, use the provided YAML templates in the `yaml` directory.
 
+Validation rejects open wildcard rules in `Details.InstallationPaths` and
+`Artifacts.Disk[].File`. Extension-only executable patterns such as `*.exe`,
+`*.dll`, and `*.msi` are unsafe even inside a vendor directory: downstream policy
+engines may extract just the filename. Use verified filenames or patterns with a
+tool-specific filename component, such as `OpsBridgeAgent.exe` or `Example*.exe`.
+Keep evidence of randomized executable names in descriptions rather than adding
+an extension-only rule. Catch-all file patterns such as `*.*` and unscoped `*`
+also fail validation. Scoped directory globs and non-executable artifacts such
+as `C:\ProgramData\Example\*` and `C:\ProgramData\Example\*.log` remain supported.
+
+Pre-merge checks also reject public-suffix domain patterns, unscoped shared
+hosts/publishers, empty selectors, invalid hashes, and inconsistent certificate
+evidence. The generated-rule gate rebuilds exports in a temporary directory,
+checks benign controls, and verifies that source normalization preserves domain
+boundaries and excludes placeholders. See [the safety contract](docs/detection-generation.md).
+
+Shared download hosts can remain in a network artifact with `Detection: false`
+and a `DetectionReason`; they are excluded from domain CSV and Sigma exports.
+The same designation preserves signing evidence for research. Shared publishers
+used for detection require exact `CodeSigning.FileNames` plus a
+`DetectionReason`; consumers must AND that file scope with the signing identity.
+Raw catalog JSON retains contextual evidence and these fields. Policy consumers
+must honor them rather than treating all recorded artifacts as blocking rules.
+
+Run the same checks locally before opening a PR:
+
+```sh
+poetry install --no-root
+poetry run python -m unittest discover -s tests
+poetry run python bin/validate.py
+poetry run python bin/lint_content.py
+poetry run python bin/validate_generated.py
+```
+
 ## 🚨 Sigma Detection
 
 LOLRMM provides Sigma detection rules to help you effectively detect potential threats related to RMM tools. To explore these rules in detail, navigate to the `detections/sigma/` directory.

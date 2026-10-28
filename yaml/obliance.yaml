@@ -9,7 +9,7 @@ Description: >
     relationship or malicious use.
 Author: Michael Haag
 Created: '2026-09-28'
-LastModified: '2026-09-28'
+LastModified: '2026-10-26'
 Details:
     Website: https://github.com/MeeJay/Obliance
     PEMetadata:
@@ -104,7 +104,6 @@ Artifacts:
           ServiceName: OblianceAgent
           ImagePath: C:\Program Files\OblianceAgent\obliance-agent.exe
           Description: Windows MSI source installs this automatic LocalSystem service.
-          CommandLine: ''
     Registry:
         - Path: HKLM\SOFTWARE\OblianceAgent
           Description: Windows MSI writes initial ServerUrl and ApiKey values, and agent code reads them if config.json is absent. Values can contain credentials and should not be published.

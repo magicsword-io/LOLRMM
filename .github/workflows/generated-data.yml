@@ -33,12 +33,13 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install generator dependencies
-        run: python -m pip install 'pyyaml>=6.0,<7' 'jsonschema>=4.23,<5'
+        run: python -m pip install 'pyyaml>=6.0,<7' 'jsonschema>=4.23,<5' 'cryptography>=46,<47'
       - name: Validate source and generators
         run: |
           python -m unittest discover -s tests
           python bin/lint_content.py
           python bin/validate.py
+          python bin/validate_generated.py
       - name: Generate repository exports, detections, and badge
         id: generate
         run: |
