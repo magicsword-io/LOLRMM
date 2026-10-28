@@ -7,7 +7,7 @@ persisted dark/light themes. The catalog and evidence remain readable without JS
 
 ## Local development
 
-Use Node.js 22.19+ and Python 3.12+ with PyYAML installed. From the repository root:
+Use Node.js 22.23.4+ and Python 3.12+ with PyYAML installed. From the repository root:
 
 ```sh
 python3 -m venv .venv
