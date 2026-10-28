@@ -7,6 +7,8 @@ from datetime import date
 import uuid
 from typing import Dict, List, Any, Optional, Tuple
 from detection_paths import PATH_REQUIRED_EXECUTABLES, process_image_pattern
+from path_safety import unsafe_path_reason, empty_selector, metadata_path
+from domain_safety import detection_domains, domain_patterns
 
 # Namespace UUID for generating deterministic rule IDs
 LOLRMM_NAMESPACE = uuid.UUID("a1b2c3d4-e5f6-7890-abcd-ef1234567890")
@@ -122,6 +124,8 @@ def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
 
     for item in yaml_data.get("Artifacts", {}).get("Disk", []) or []:
         if isinstance(item, dict) and isinstance(item.get("File"), str):
+            if unsafe_path_reason(item["File"]) or empty_selector(item["File"]) or metadata_path(item["File"]):
+                continue
             # File rules currently target Windows. Preserve legacy untagged
             # artifacts, but do not mix explicitly non-Windows paths into them.
             artifact_os = item.get("OS")
@@ -130,25 +134,19 @@ def extract_artifacts(yaml_data: Dict[str, Any]) -> Dict[str, List[str]]:
             artifacts["files"].append(item["File"])
 
     for item in yaml_data.get("Artifacts", {}).get("Registry", []) or []:
-        if isinstance(item, dict) and isinstance(item.get("Path"), str):
+        if (isinstance(item, dict) and isinstance(item.get("Path"), str)
+                and not empty_selector(item["Path"]) and not metadata_path(item["Path"])):
             artifacts["registry"].append(item["Path"])
 
     for item in yaml_data.get("Artifacts", {}).get("Network", []) or []:
-        if isinstance(item, dict):
-            if "Domains" in item:
-                if isinstance(item["Domains"], list):
-                    artifacts["network"].extend(
-                        domain for domain in item["Domains"] if isinstance(domain, str)
-                    )
-                elif isinstance(item["Domains"], str):
-                    artifacts["network"].append(item["Domains"])
+        artifacts["network"].extend(domain_patterns(detection_domains(item)))
 
     details = yaml_data.get("Details", {})
     if isinstance(details, dict):
         artifacts["processes"] = [
             pattern
             for item in details.get("InstallationPaths", []) or []
-            if isinstance(item, str) and item.lower().endswith(".exe")
+            if isinstance(item, str) and item.lower().endswith(".exe") and not metadata_path(item)
             if (pattern := process_image_pattern(item, ntpath.basename(item)))
         ]
 
@@ -258,19 +256,25 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
     artifacts = extract_artifacts(data)
     safe_name = name.lower().replace(" ", "_").replace("(", "_").replace(")", "_")
 
-    # An existing rule can lose all eligible files when its source is Unix-only.
+    # An existing rule can lose all eligible files after platform/safety checks.
     # Remove that generated rule rather than leaving stale Windows selectors.
     if not artifacts["files"] and data.get("Artifacts", {}).get("Disk"):
         stale_file_rule = os.path.join(output_dir, f"{safe_name}_files_sigma.yml")
         if os.path.isfile(stale_file_rule):
             os.remove(stale_file_rule)
 
-    # Do not leave an old broad process rule when all its generic names were
+    if not artifacts["network"]:
+        stale_network_rule = os.path.join(output_dir, f"{safe_name}_network_sigma.yml")
+        if os.path.isfile(stale_network_rule):
+            os.remove(stale_network_rule)
+
+    # Do not leave an old broad process rule when all its unsafe names were
     # rejected. Leave unrelated legacy rules without source paths untouched.
     paths = (data.get("Details") or {}).get("InstallationPaths") or []
     if not artifacts["processes"] and any(
         isinstance(path, str)
-        and ntpath.basename(path).casefold() in PATH_REQUIRED_EXECUTABLES
+        and (ntpath.basename(path).casefold() in PATH_REQUIRED_EXECUTABLES
+             or unsafe_path_reason(path))
         for path in paths
     ):
         stale_process_rule = os.path.join(output_dir, f"{safe_name}_processes_sigma.yml")
@@ -286,7 +290,7 @@ def generate_sigma_rules(yaml_file: str, output_dir: str) -> List[Dict[str, Any]
         "network": {
             "title": f"Potential {name} RMM Tool Network Activity",
             "logsource": {"product": "windows", "category": "network_connection"},
-            "detection_key": "DestinationHostname|endswith",
+            "detection_key": "DestinationHostname",
         },
         "files": {
             "title": f"Potential {name} RMM Tool File Activity",
@@ -407,9 +411,14 @@ def main(
     # Sorting makes generation reproducible.  Duplicate Names produce the
     # same output path; warn so the deterministic last writer is visible.
     written_by: Dict[str, str] = {}
+    catalog_network_names = set()
     for filename in sorted(os.listdir(yaml_dir)):
         if filename.endswith(".yaml") or filename.endswith(".yml"):
             yaml_file = os.path.join(yaml_dir, filename)
+            with open(yaml_file, encoding="utf-8") as stream:
+                tool_name = yaml.safe_load(stream).get("Name", "Unknown")
+            prefix = tool_name.lower().replace(" ", "_").replace("(", "_").replace(")", "_")
+            catalog_network_names.add(f"{prefix}_network_sigma.yml")
             sigma_rules = generate_sigma_rules(yaml_file, output_dir)
             for generated_rule in sigma_rules:
                 output_file = generated_rule["Sigma"][len(SIGMA_RULE_PREFIX) :]
@@ -423,6 +432,17 @@ def main(
                 written_by[output_file] = yaml_file
             if update_yaml:
                 update_yaml_with_sigma_rules(yaml_file, sigma_rules)
+
+    # Renamed/removed entries must not leave generated network indicators with
+    # no current catalog provenance. Preserve rules maintained by human authors.
+    for filename in sorted(os.listdir(output_dir)):
+        if filename.endswith("_network_sigma.yml") and filename not in catalog_network_names:
+            filepath = os.path.join(output_dir, filename)
+            existing, _ = load_existing_sigma_rule(filepath)
+            if (existing and existing.get("author") == "LOLRMM Project"
+                    and existing.get("title", "").startswith("Potential ")
+                    and existing.get("title", "").endswith(" RMM Tool Network Activity")):
+                os.remove(filepath)
 
     yaml_status = "and YAML update " if update_yaml else ""
     print(

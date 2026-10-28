@@ -8,7 +8,7 @@ Description: 'Remote Desktop Connection Manager (RDCMan) is a free Microsoft too
     '
 Author: 'Daniel Koifman (KoifSec)'
 Created: '2025-11-12'
-LastModified: '2025-11-12'
+LastModified: '2026-10-26'
 Details:
     Website: https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman
     Privileges: User
@@ -38,6 +38,8 @@ References:
     - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2020-0765
 Acknowledgement: []
 CodeSigning:
+    Detection: false
+    DetectionReason: Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.
     search_names:
         - nmk092kb9.exe
         - rdcman-x86.dll

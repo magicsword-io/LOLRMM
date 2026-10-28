@@ -10,6 +10,7 @@ import yaml
 import csv
 import glob
 import re
+from domain_safety import detection_domains, should_export_domain
 
 
 PLACEHOLDER_RE = re.compile(r"^<[^>]+>$")
@@ -30,15 +31,6 @@ def clean_tool_name(filename):
     return name.strip()
 
 
-def should_export_domain(domain):
-    """Return True when a Domains value is a real CSV lookup candidate."""
-    if not isinstance(domain, str):
-        return False
-
-    value = domain.strip()
-    return bool(value) and value not in SENTINEL_VALUES and not PLACEHOLDER_RE.match(value)
-
-
 def extract_domains(yaml_file_path):
     """Extract domains from a YAML file."""
     try:
@@ -55,7 +47,7 @@ def extract_domains(yaml_file_path):
         if "Artifacts" in data and "Network" in data["Artifacts"]:
             for network in data["Artifacts"]["Network"]:
                 if "Domains" in network:
-                    for domain in network["Domains"]:
+                    for domain in detection_domains(network):
                         # Only export real lookup values; placeholders document
                         # operator-supplied infrastructure and do not belong in CSV.
                         if should_export_domain(domain):
