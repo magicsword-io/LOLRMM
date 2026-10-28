@@ -1,0 +1,59 @@
+Name: StifleR (2Pint Software)
+Category: RMM
+Description: |
+    StifleR Enterprise includes 2Pint Software's Remote Tools for Windows endpoint monitoring and administration through a web dashboard.
+    Remote capabilities include PowerShell and CMD execution, file and registry management, WMI queries, event log viewing, task management, remote assistance, and RDP tunneling.
+    Remote Tools must be enabled and authorized; the presence of the StifleR client alone does not establish that remote access is enabled or that the software is being abused.
+Author: Michael Haag
+Created: '2026-10-27'
+LastModified: '2026-10-27'
+Details:
+    Website: https://2pintsoftware.com/solution/remote-monitoring-management
+    PEMetadata:
+        - Filename: StifleR.ClientApp.exe
+    Privileges: Administrator required for installation
+    Free: ''
+    Verification: ''
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote monitoring and management
+        - Remote command execution
+        - Remote desktop
+        - File management
+        - Registry management
+        - Network discovery
+        - Reporting and analytics
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\2Pint Software\StifleR Client\*
+Artifacts:
+    Disk:
+        - File: StifleR.ClientApp.exe
+          Description: StifleR client executable documented in the vendor's WinPE integration script; filename evidence, not verified PE version metadata.
+          OS: Windows
+        - File: StifleR.ClientApp.exe.Config
+          Description: StifleR client configuration file documented in the vendor's WinPE integration script.
+          OS: Windows
+        - File: C:\Program Files\2Pint Software\StifleR Client\TwoPint.ConfigEditor.Wpf\TwoPint.ConfigEditor.Wpf.exe
+          Description: Documented client configuration editor location. The installation directory can be customized.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\StifleRClient
+          Description: Windows service registry path derived from the documented StifleRClient service name (display name 2Pint Software Stifler Client).
+    Network:
+        - Description: Client connects to an organization-configured StifleR server using SignalR. Vendor installation documentation specifies port 1414; server names and ports depend on deployment. No fixed vendor management domain is documented.
+          Domains: []
+          Ports:
+              - 1414
+    Other:
+        - Type: Windows event log channel pattern
+          Value: TwoPintSoftware-StifleR.ClientApp*
+Detections: []
+References:
+    - https://2pintsoftware.com/solution/remote-monitoring-management
+    - https://documentation.2pintsoftware.com/stifler/configuration/remote-tools-configuration
+    - https://documentation.2pintsoftware.com/stifler/setup/installation/stifler-client-installation
+    - https://github.com/2pintsoftware/2Pint-OSDToolkit/blob/master/WinPEBuilder.ps1
+Acknowledgement: []
