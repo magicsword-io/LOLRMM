@@ -21,7 +21,7 @@ Description: |
     hunting, and analysis purposes only.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2026-05-04'
+LastModified: '2026-10-26'
 Details:
     Website: 'https://learn.microsoft.com/windows-server/administration/windows-commands/mstsc'
     PEMetadata:
@@ -72,6 +72,8 @@ References:
     - https://attack.mitre.org/techniques/T1021/001/
 Acknowledgement: []
 CodeSigning:
+    Detection: false
+    DetectionReason: Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.
     search_names:
         - mstsc.exe
     company_names: []
