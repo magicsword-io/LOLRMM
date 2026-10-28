@@ -6,7 +6,7 @@ Description: 'CrossTec Remote Control is a remote monitoring and management (RMM
     **IMPORTANT**: Some components of this tool may be signed with legitimate Microsoft Windows Component Publisher certificates that are used to sign Windows system components. Do NOT blindly block Microsoft certificate thumbprints as doing so will break Windows functionality in your environment. Use certificate data for detection, hunting, and analysis purposes only.'
 Author: ''
 Created: '2024-08-02'
-LastModified: '2024-08-02'
+LastModified: '2026-10-26'
 Details:
     Website: 'https://web.archive.org/web/20220811150547/https://www.crosstecsoftware.com/remotecontrol'
     PEMetadata:
@@ -40,6 +40,8 @@ References:
     - https://www.crosstecsoftware.com/supporthome.html # Domain DOA 2/1/2024
 Acknowledgement: []
 CodeSigning:
+    Detection: false
+    DetectionReason: Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.
     search_names:
         - pcivideo.exe
         - supporttool.exe

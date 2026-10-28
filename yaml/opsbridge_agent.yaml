@@ -9,7 +9,7 @@ Description: >
     not related to OpenText Operations Bridge, which uses a similar name.
 Author: Chad H
 Created: '2026-09-01'
-LastModified: '2026-09-01'
+LastModified: '2026-10-26'
 Details:
     Website: https://opsbridge.digital/
     PEMetadata:
@@ -49,9 +49,6 @@ Artifacts:
     Disk:
         - File: C:\Program Files\OpsBridge\OpsBridgeAgent.exe
           Description: Canonical agent executable installed by the observed MSI.
-          OS: Windows
-        - File: C:\Program Files\OpsBridge\*.exe
-          Description: Randomly named persisted agent copy observed across sandbox runs.
           OS: Windows
         - File: C:\ProgramData\OpsBridge\agent_state.json
           Description: Agent enrollment and runtime state.
