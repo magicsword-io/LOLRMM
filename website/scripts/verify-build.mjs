@@ -81,6 +81,26 @@ assert.deepEqual(
   JSON.parse(read(`api/tools/${canonicalSlug}.json`)),
   'Retired JSON export must serve the merged record',
 );
+// Level aliases preserve old links without retaining duplicate catalog rows.
+assert.equal(index.filter((entry) => entry.slug === 'level').length, 1);
+for (const retired of ['levelio', 'levelio--levelio']) {
+  assert(!index.some((entry) => entry.slug === retired));
+  for (const prefix of ['tools', 'rmm_tools']) {
+    const html = read(`${prefix}/${retired}/index.html`);
+    assert.match(html, /<meta[^>]*http-equiv="refresh"[^>]*content="0;/i);
+    assert(
+      html.includes('url=/tools/level/') ||
+        html.includes('url=https://lolrmm.io/tools/level/'),
+    );
+    assert(
+      html.includes('rel="canonical" href="https://lolrmm.io/tools/level/"'),
+    );
+  }
+  assert.deepEqual(
+    JSON.parse(read(`api/tools/${retired}.json`)),
+    JSON.parse(read('api/tools/level.json')),
+  );
+}
 if (process.env.PUBLIC_ENABLE_ANALYTICS === 'true') {
   const snippet = [
     ...read('index.html').matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g),
