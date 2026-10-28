@@ -9,6 +9,10 @@ export default defineConfig({
     '/tools/microsoft_quick_assist/': '/tools/quick-assist/',
     '/tools/microsoft-quick-assist/': '/tools/quick-assist/',
     '/rmm_tools/microsoft-quick-assist/': '/tools/quick-assist/',
+    '/tools/levelio/': '/tools/level/',
+    '/rmm_tools/levelio/': '/tools/level/',
+    '/tools/levelio--levelio/': '/tools/level/',
+    '/rmm_tools/levelio--levelio/': '/tools/level/',
     '/tools/itsupport247-connectwise--itsupport247connectwise/':
       '/tools/itsupport247-connectwise/',
     '/rmm_tools/itsupport247-connectwise--itsupport247connectwise/':

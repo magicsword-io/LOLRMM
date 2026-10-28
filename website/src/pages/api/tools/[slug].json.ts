@@ -10,6 +10,9 @@ export function getStaticPaths() {
     if (tool.slug === 'quick-assist') {
       slugs.push('microsoft-quick-assist');
     }
+    if (tool.slug === 'level') {
+      slugs.push('levelio', 'levelio--levelio');
+    }
     return slugs.map((slug) => ({
       params: { slug },
       props: { tool },
