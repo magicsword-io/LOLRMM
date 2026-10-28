@@ -106,3 +106,17 @@ if (process.env.PUBLIC_ENABLE_ANALYTICS === 'true') {
 console.log(
   `Verified ${pages.length} pages, ${tools.length} tool exports and legacy redirects, retired ITSupport247 URLs, internal links, and analytics configuration.`,
 );
+
+// Consolidated Quick Assist records retain public routes and JSON export.
+assert(!index.some((entry) => entry.slug === 'microsoft-quick-assist'));
+for (const path of [
+  'tools/microsoft-quick-assist',
+  'tools/microsoft_quick_assist',
+  'rmm_tools/microsoft-quick-assist',
+]) {
+  assert(read(`${path}/index.html`).includes('url=/tools/quick-assist/'));
+}
+assert.deepEqual(
+  JSON.parse(read('api/tools/microsoft-quick-assist.json')),
+  JSON.parse(read('api/tools/quick-assist.json')),
+);
