@@ -14,19 +14,9 @@ from pathlib import Path
 from os import path, walk
 import datetime
 import re
-
-
-def check_hash_lengths(object):
-    """Validate hash lengths for MD5, SHA1, and SHA256."""
-    hash_specs = {"MD5": 32, "SHA1": 40, "SHA256": 64}
-
-    known_vulnerable_samples = object.get("KnownVulnerableSamples", [])
-    for sample in known_vulnerable_samples:
-        for hash_type, expected_len in hash_specs.items():
-            hash_value = sample.get(hash_type, "")
-            if hash_value and len(hash_value) != expected_len:
-                return f"ERROR: {hash_type} length is not {expected_len} characters for object: {object['Id']}"
-    return None
+from path_safety import unsafe_catalog_paths
+from domain_safety import catalog_domain_issues
+from evidence_safety import evidence_issues
 
 
 def check_network_structure(object):
@@ -231,9 +221,9 @@ def check_code_signing(object, filename):
         if not isinstance(thumbprint, str) or not thumbprint:
             return f"ERROR: CodeSigning certificate #{idx} is missing certificate_thumbprint in file {filename} (object: {name})"
         if thumbprint != "N/A":
-            if thumbprint in seen_thumbprints:
+            if thumbprint.casefold() in seen_thumbprints:
                 return f"ERROR: Duplicate CodeSigning certificate thumbprint '{thumbprint}' in file {filename} (object: {name})"
-            seen_thumbprints.add(thumbprint)
+            seen_thumbprints.add(thumbprint.casefold())
 
         for field, expected_len in hash_fields.items():
             value = certificate.get(field)
@@ -250,6 +240,27 @@ def check_code_signing(object, filename):
                 return f"ERROR: CodeSigning certificate #{idx} field {field} must be a string or null in file {filename} (object: {name})"
 
     return None
+
+
+def check_path_safety(object, filename):
+    """Reject file patterns that can become catch-all downstream rules."""
+    findings = [
+        f"ERROR: Unsafe path pattern in file {filename} (object: {object.get('Name', 'Unknown')}), "
+        f"{field}: {value!r}: {reason}. Use a verified filename or a filename pattern "
+        "with a tool-specific literal component; keep randomized-name evidence in a description."
+        for field, value, reason in unsafe_catalog_paths(object)
+    ]
+    return "\n".join(findings) or None
+
+
+def check_indicator_safety(object, filename):
+    findings = [
+        f"ERROR: {filename}: {field}: {value!r} [{rule}]: {reason}"
+        for field, value, rule, reason in (
+            *catalog_domain_issues(object), *evidence_issues(object),
+        )
+    ]
+    return "\n".join(findings) or None
 
 
 def check_required_fields(object, filename):
@@ -300,15 +311,20 @@ def validate_schema(yaml_dir, schema_file, verbose):
         validator = jsonschema.Draft7Validator(
             schema, format_checker=jsonschema.FormatChecker()
         )
-        for schema_error in validator.iter_errors(yaml_data):
+        schema_errors = list(validator.iter_errors(yaml_data))
+        for schema_error in schema_errors:
             errors.append(
                 f"ERROR: {json.dumps(schema_error.message)} at file {yaml_file}:\n\t{schema_error.path}"
             )
             error = True
 
+        # Structural errors already identify the problem. Do not crash later
+        # semantic checks on malformed objects or field types.
+        if schema_errors:
+            continue
+
         # Additional YAML checks
         check_functions = [
-            (check_hash_lengths, yaml_data),
             (check_network_structure, yaml_data),
             (check_date_iso8601, yaml_data, yaml_file),
             (check_date_chronology, yaml_data, yaml_file),
@@ -316,6 +332,8 @@ def validate_schema(yaml_dir, schema_file, verbose):
             (check_duplicate_detections, yaml_data, yaml_file),
             (check_port_format, yaml_data, yaml_file),
             (check_code_signing, yaml_data, yaml_file),
+            (check_path_safety, yaml_data, yaml_file),
+            (check_indicator_safety, yaml_data, yaml_file),
             (check_required_fields, yaml_data, yaml_file),
         ]
 

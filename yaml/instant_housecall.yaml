@@ -3,7 +3,7 @@ Category: RMM
 Description: Instant Housecall is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2026-06-16'
+LastModified: '2026-10-26'
 Details:
     Website: 'https://instanthousecall.com/'
     PEMetadata:
@@ -41,6 +41,8 @@ References:
     - https://instanthousecall.com/features/
 Acknowledgement: []
 CodeSigning:
+    Detection: false
+    DetectionReason: Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.
     search_names:
         - '5'
         - hsloader.exe

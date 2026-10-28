@@ -3,7 +3,7 @@ Category: RMM
 Description: MSP360 is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2026-06-15'
+LastModified: '2026-10-26'
 Details:
     Website: 'https://www.msp360.com/'
     PEMetadata:
@@ -83,7 +83,7 @@ CodeSigning:
           tbs_sha256: ''
           tbs_sha1: ''
           tbs_sha384: 8A459D01A551D1AFE00C32819DC5E788F67A4E8C5B937D490C53D75A0944E9B3F17599FF5E285F728AEA5191DE96BC16
-        - signer_name: MSPBytes\
+        - signer_name: "MSPBytes, Corp."
           issuer: CN=Sectigo Public Code Signing CA R36
           certificate_thumbprint: EF6439FC45C8031E514DD7D445D1B8BABF474E9B
           tbs_sha256: 0B0B70BB42674314EFDE0A25E8DD4401C71F243078B51B1E286C663EB33C4E00
