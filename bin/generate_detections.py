@@ -12,6 +12,7 @@ import yaml
 import glob
 from datetime import datetime
 from detection_paths import process_image_pattern
+from domain_safety import domain_patterns
 
 
 def executable_basename(path):
@@ -154,25 +155,10 @@ def generate_sigma_domains_rule():
             for row in csv_reader:
                 if row and len(row) >= 1:
                     domain = row[0].strip()
-                    if domain and "." in domain:
-                        domain_list.append(f".{domain}")
+                    domain_list.extend(domain_patterns([domain]))
     except Exception as e:
         print(f"Error processing domains file {domains_file}: {e}")
-        # Add some common RMM domains as fallback
-        domain_list = [
-            ".anydesk.com",
-            ".teamviewer.com",
-            ".splashtop.com",
-            ".connectwise.com",
-            ".bomgar.com",
-            ".logmein.com",
-            ".supremo.com",
-            ".dwservice.com",
-            ".atera.com",
-            ".gotomypc.com",
-            ".rustdesk.com",
-            ".screenconnect.com",
-        ]
+        raise RuntimeError("Cannot generate domain rules without validated source domains") from e
 
     # Deduplicate. Sorting keeps regenerated rules stable: set iteration order
     # varies between runs, which reshuffles the whole list on every run.
@@ -190,11 +176,8 @@ def generate_sigma_domains_rule():
         "tags": ["attack.command-and-control", "attack.t1219"],
         "logsource": {"category": "dns", "product": "any"},
         "detection": {
-            "selection": {"query|contains": domain_list},
-            "filter": {
-                "query|contains": "your-approved-rmm.com"  # Placeholder for user customization
-            },
-            "condition": "selection and not filter",
+            "selection": {"query": domain_list},
+            "condition": "selection",
         },
         "falsepositives": ["Legitimate usage of approved remote management tools"],
         "level": "medium",

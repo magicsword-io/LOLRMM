@@ -4,7 +4,7 @@ Description: |
     Komari is a lightweight, self-hosted server monitoring tool with a web interface and lightweight agent. It supports server status monitoring through a web dashboard and collects telemetry through an installed agent.
 Author: 'Daniel Koifman (KoifSec)'
 Created: '2026-05-03'
-LastModified: '2026-05-15'
+LastModified: '2026-10-26'
 Details:
     Website: https://github.com/komari-monitor/komari
     PEMetadata:
@@ -79,19 +79,28 @@ Artifacts:
     Network:
         - Description: Komari server web interface and agent communication
           Domains:
-              - github.com
-              - raw.githubusercontent.com
-              - ghcr.io
               - komari-document.pages.dev
               - www.komari.wiki
           Ports:
               - 25774
               - 443
+        - Description: Komari server web interface and agent communication
+          Domains:
+              - github.com
+              - raw.githubusercontent.com
+              - ghcr.io
+          Ports:
+              - 25774
+              - 443
+          Detection: false
+          DetectionReason: Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules.
         - Description: Komari Agent install URL pattern observed in Huntress April 2026 abuse case (PowerShell installer pulled directly from komari-monitor's main branch on GitHub).
           Domains:
               - raw.githubusercontent.com
           Ports:
               - 443
+          Detection: false
+          DetectionReason: Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules.
     Other:
         - Type: URL
           Value: https://raw.githubusercontent.com/komari-monitor/komari-agent/refs/heads/main/install.ps1

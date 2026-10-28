@@ -8,7 +8,7 @@ Description: 'GLPI Agent is the open-source generic management agent maintained 
     '
 Author: '@MHaggis'
 Created: '2026-05-04'
-LastModified: '2026-05-04'
+LastModified: '2026-10-26'
 Details:
     Website: https://glpi-project.org/
     PEMetadata:
@@ -172,7 +172,7 @@ Artifacts:
               - 62354
         - Description: Outbound connection from agent to the operator-configured GLPI server (`server` parameter / MSI `SERVER` property). Endpoints are tenant-configured, not centralised — the agent talks to whatever URL the operator specifies (self-hosted GLPI, GLPI Network or attacker-controlled server).
           Domains:
-              - <operator-configured GLPI server>
+              - "<operator-configured GLPI server>"
           Ports:
               - 80
               - 443
@@ -204,6 +204,8 @@ Artifacts:
               - objects.githubusercontent.com
           Ports:
               - 443
+          Detection: false
+          DetectionReason: Shared infrastructure observed for downloads or connectivity; hostname alone does not identify this tool. Do not generate standalone detection or blocking rules.
     Other:
         - Type: Other
           Value: 'MSI default install path: C:\Program Files\GLPI-Agent (INSTALLDIR property)'
