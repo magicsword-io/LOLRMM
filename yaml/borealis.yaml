@@ -9,7 +9,7 @@ Description: >
     relationship or malicious use.
 Author: Michael Haag
 Created: '2026-09-28'
-LastModified: '2026-09-28'
+LastModified: '2026-10-26'
 Details:
     Website: https://github.com/bunny-lab-io/Borealis
     PEMetadata:
@@ -86,7 +86,6 @@ Artifacts:
           ServiceName: BorealisAgent
           ImagePath: C:\Borealis\Agent.exe
           Description: Windows runtime creates this automatic service from the configured executable path; the default bootstrap path is C:\Borealis.
-          CommandLine: ''
     Registry: []
     Network: []
     Other:

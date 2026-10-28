@@ -2,6 +2,7 @@
 
 import ntpath
 import re
+from path_safety import unsafe_path_reason
 
 
 # These names describe unrelated software as often as the cataloged tool.
@@ -11,6 +12,8 @@ PATH_REQUIRED_EXECUTABLES = frozenset({"svchost.exe", "agent.exe", "installer.ex
 
 def process_image_pattern(path: str, filename: str):
     """Return an endswith pattern, or None when a generic name lacks context."""
+    if unsafe_path_reason(path):
+        return None
     if filename.casefold() not in PATH_REQUIRED_EXECUTABLES:
         return f"\\\\{filename}"
 

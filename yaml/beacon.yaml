@@ -9,7 +9,7 @@ Description: >
     it does not establish a delivery relationship or malicious use.
 Author: Michael Haag
 Created: '2026-09-28'
-LastModified: '2026-09-28'
+LastModified: '2026-10-26'
 Details:
     Website: https://github.com/synertek-cloud-services/beacon
     PEMetadata:
@@ -92,7 +92,6 @@ Artifacts:
           ServiceName: BeaconAgent
           ImagePath: C:\Program Files\Beacon\beacon-agent.exe
           Description: Windows installer creates the BeaconAgent automatic service from this binary; its server URL argument is operator supplied.
-          CommandLine: ''
     Registry: []
     Network: []
     Other:
