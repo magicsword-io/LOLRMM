@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,13 +16,31 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
+            - '*.api.monitic.com'
+            - '*.api.monitic.com.'
             - 'api.monitic.com'
+            - 'api.monitic.com.'
+            - '*.app.monitic.com'
+            - '*.app.monitic.com.'
             - 'app.monitic.com'
+            - 'app.monitic.com.'
+            - '*.devapi.monitic.com'
+            - '*.devapi.monitic.com.'
             - 'devapi.monitic.com'
+            - 'devapi.monitic.com.'
+            - '*.turn.monitic.com'
+            - '*.turn.monitic.com.'
             - 'turn.monitic.com'
+            - 'turn.monitic.com.'
+            - '*.monitic.com'
+            - '*.monitic.com.'
+            - '*.www.monitic.com'
+            - '*.www.monitic.com.'
             - 'monitic.com'
+            - 'monitic.com.'
             - 'www.monitic.com'
+            - 'www.monitic.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Monitic

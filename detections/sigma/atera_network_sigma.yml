@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,19 +16,55 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
+            - '*.pubsub.atera.com'
+            - '*.pubsub.atera.com.'
             - 'pubsub.atera.com'
+            - 'pubsub.atera.com.'
+            - '*.agentreporting.atera.com'
+            - '*.agentreporting.atera.com.'
             - 'agentreporting.atera.com'
+            - 'agentreporting.atera.com.'
+            - '*.getalphacontrol.com'
+            - '*.getalphacontrol.com.'
             - 'getalphacontrol.com'
+            - 'getalphacontrol.com.'
+            - '*.app.atera.com'
+            - '*.app.atera.com.'
             - 'app.atera.com'
+            - 'app.atera.com.'
+            - '*.agenthb.atera.com'
+            - '*.agenthb.atera.com.'
             - 'agenthb.atera.com'
+            - 'agenthb.atera.com.'
+            - '*.packagesstore.blob.core.windows.net'
+            - '*.packagesstore.blob.core.windows.net.'
             - 'packagesstore.blob.core.windows.net'
+            - 'packagesstore.blob.core.windows.net.'
+            - '*.agent-api.atera.com'
+            - '*.agent-api.atera.com.'
             - 'agent-api.atera.com'
+            - 'agent-api.atera.com.'
+            - '*.agentreportingstore.blob.core.windows.net'
+            - '*.agentreportingstore.blob.core.windows.net.'
             - 'agentreportingstore.blob.core.windows.net'
+            - 'agentreportingstore.blob.core.windows.net.'
+            - '*.atera-agent-heartbeat.servicebus.windows.net'
+            - '*.atera-agent-heartbeat.servicebus.windows.net.'
             - 'atera-agent-heartbeat.servicebus.windows.net'
+            - 'atera-agent-heartbeat.servicebus.windows.net.'
+            - '*.ps.atera.com'
+            - '*.ps.atera.com.'
             - 'ps.atera.com'
+            - 'ps.atera.com.'
+            - '*.atera.pubnubapi.com'
+            - '*.atera.pubnubapi.com.'
             - 'atera.pubnubapi.com'
+            - 'atera.pubnubapi.com.'
+            - '*.appcdn.atera.com'
+            - '*.appcdn.atera.com.'
             - 'appcdn.atera.com'
+            - 'appcdn.atera.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Atera

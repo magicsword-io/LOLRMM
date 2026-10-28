@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -17,8 +17,6 @@ logsource:
 detection:
     selection:
         TargetFilename|endswith:
-            - 'C:\ProgramData\Getscreen.me\<date>.log'
-            - 'C:\ProgramData\Getscreen.me\<date>.gui.log'
             - 'C:\ProgramData\Getscreen.me\session.inf'
             - 'C:\Users\*\AppData\Local\Getscreen.me'
     condition: selection

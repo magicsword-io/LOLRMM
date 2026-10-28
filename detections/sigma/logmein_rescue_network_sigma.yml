@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,12 +16,19 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
             - '*.logmeinrescue.com'
+            - '*.logmeinrescue.com.'
             - '*.logmeinrescue.eu'
+            - '*.logmeinrescue.eu.'
+            - '*.rescue-data-cetner.logmein-gateway.com'
+            - '*.rescue-data-cetner.logmein-gateway.com.'
             - 'logmeinrescue.com'
-            - 'rescue-list.*.logmein-gateway.com'
+            - 'logmeinrescue.com.'
             - 'rescue-data-cetner.logmein-gateway.com'
+            - 'rescue-data-cetner.logmein-gateway.com.'
+            - 'rescue-list.*.logmein-gateway.com'
+            - 'rescue-list.*.logmein-gateway.com.'
     condition: selection
 falsepositives:
     - Legitimate use of LogMeIn rescue

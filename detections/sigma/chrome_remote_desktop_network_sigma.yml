@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,14 +16,27 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - '*.remotedesktop.google.com'
-            - 'remotedesktop-pa.googleapis.com'
+        DestinationHostname:
+            - '*.chromoting-client.talkgadget.google.com'
+            - '*.chromoting-client.talkgadget.google.com.'
+            - '*.chromoting-host.talkgadget.google.com'
+            - '*.chromoting-host.talkgadget.google.com.'
+            - '*.chromoting-oauth.talkgadget.google.com'
+            - '*.chromoting-oauth.talkgadget.google.com.'
             - '*.remotedesktop-pa.googleapis.com'
-            - 'remotedesktop.google.com'
+            - '*.remotedesktop-pa.googleapis.com.'
+            - '*.remotedesktop.google.com'
+            - '*.remotedesktop.google.com.'
             - 'chromoting-client.talkgadget.google.com'
+            - 'chromoting-client.talkgadget.google.com.'
             - 'chromoting-host.talkgadget.google.com'
+            - 'chromoting-host.talkgadget.google.com.'
             - 'chromoting-oauth.talkgadget.google.com'
+            - 'chromoting-oauth.talkgadget.google.com.'
+            - 'remotedesktop-pa.googleapis.com'
+            - 'remotedesktop-pa.googleapis.com.'
+            - 'remotedesktop.google.com'
+            - 'remotedesktop.google.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Chrome Remote Desktop

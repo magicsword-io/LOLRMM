@@ -94,7 +94,6 @@ quic.cftunnel.com,CloudFlare Tunnel
 *.cfargotunnel.com,CloudFlare Tunnel
 *.trycloudflare.com,CloudFlare Tunnel
 update.argotunnel.com,CloudFlare Tunnel
-api.cloudflare.com,CloudFlare Tunnel
 *.itsm-us1.comodo.com,Comodo RMM
 mdmsupport.comodo.com,Comodo RMM
 *.mdmsupport.comodo.com,Comodo RMM
@@ -201,7 +200,6 @@ static.freshdev.io,Freshservice
 *.gatherplace.net,GatherPlace-desktop sharing
 gatherplace.com,GatherPlace-desktop sharing
 getscreen.me,GetScreen
-GetScreen.me,GetScreen
 *.getscreen.me,GetScreen
 go.getscreen.me,GetScreen
 image.getscreen.me,GetScreen
@@ -212,8 +210,6 @@ nightly.glpi-project.org,GLPI Agent
 forum.glpi-project.org,GLPI Agent
 glpi-network.com,GLPI Agent
 services.glpi-network.com,GLPI Agent
-github.com,GLPI Agent
-objects.githubusercontent.com,GLPI Agent
 app.gorelo.io,Gorelo RMM
 gorelo-rmm.azurewebsites.net,Gorelo RMM
 gw.usw.gorelo.tech,Gorelo RMM
@@ -232,7 +228,7 @@ helpme.net,GoToAssist
 *.cdn.getgo.com,GoToAssist
 *.gotohttp.com,GotoHTTP
 gotohttp.com,GotoHTTP
-*.GoToMyPC.com,GoToMyPC
+*.gotomypc.com,GoToMyPC
 goverlan.com,Goverlan
 guacamole.apache.org,Guacamole
 *.heartbeatrm.com,HeartbeatRM
@@ -246,7 +242,6 @@ api.helpwire.app,HelpWire
 staging.helpwire.app,HelpWire
 account.flexihub.com,HelpWire
 stun.helpwire.app,HelpWire
-stunserver.stunprotocol.org,HelpWire
 hoptodesk.com,HopToDesk
 api.hoptodesk.com,HopToDesk
 signal.hoptodesk.com,HopToDesk
@@ -307,9 +302,6 @@ kaseya.com,Kaseya (VSA)
 *.khelpdesk.com.br,KHelpDesk
 kickidler.com,KickIdler
 my.kickidler.com,KickIdler
-github.com,Komari
-raw.githubusercontent.com,Komari
-ghcr.io,Komari
 komari-document.pages.dev,Komari
 www.komari.wiki,Komari
 connectwise.com,LabTech RMM (Now ConnectWise Automate)
@@ -322,9 +314,8 @@ atled.syspectr.com,Laplink Everywhere
 api-ca-1.lavawall.com,Lavawall
 lavawinupdate.lavawall.com,Lavawall
 caremote1.lavawall.com,Lavawall
-level.io,Level.io
-*.level.io,Level.io
 level.io,Level
+*.level.io,Level
 builds.level.io,Level
 agents.level.io,Level
 online.level.io,Level
@@ -364,7 +355,6 @@ desktopcentral.manageengine.cn,Manage Engine (Desktop Central)
 *.manageengine.com,ManageEngine ServiceDesk Plus
 manageengine.com,ManageEngine ServiceDesk Plus
 meshcentral.com,MeshCentral
-*.support.services.microsoft.com,Microsoft Quick Assist
 *.real-time-collaboration.com,Mikogo
 *.mikogo4.com,Mikogo
 *.mikogo.com,Mikogo
@@ -460,8 +450,6 @@ paternal-angrily.com,NetSupport Manager
 neturo.uplus.co.kr,Neturo
 *.netviewer.com,Netviewer (GoToMeet)
 netviewer.com,Netviewer (GoToMeet)
-github.com,Nezha
-raw.githubusercontent.com,Nezha
 nezha.wiki,Nezha
 nezhahq.github.io,Nezha
 c.mid.al,Nezha
@@ -544,6 +532,7 @@ qq-messenger.en.softonic.com,QQ IM-remote assistance
 radmin.com,RAdmin
 *.analytics.insight.rapid7.com,Rapid7
 *.endpoint.ingress.rapid7.com,Rapid7
+rdviewer.oss-cn-hangzhou.aliyuncs.com,RdViewer
 *.remmon.hu,Remmon
 remmon.hu,Remmon
 remobo.en.softonic.com,Remobo

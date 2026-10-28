@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-06-15
-modified: 2026-09-22
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -21,7 +21,6 @@ detection:
             - 'C:\Program Files\Remotely\Desktop\Remotely_Desktop.exe'
             - 'C:\Program Files\Remotely\ConnectionInfo.json'
             - 'C:\Program Files\Remotely\etag.txt'
-            - '%TEMP%\Remotely_Install.txt'
     condition: selection
 falsepositives:
     - Legitimate use of Remotely

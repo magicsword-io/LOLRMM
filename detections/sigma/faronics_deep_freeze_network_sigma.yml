@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,14 +16,35 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'deepfreeze.com'
-            - 'www.deepfreeze.com'
-            - 'faronicscloud.com'
+        DestinationHostname:
+            - '*.cloud.faronics.com'
+            - '*.cloud.faronics.com.'
+            - '*.deepfreeze.com'
+            - '*.deepfreeze.com.'
+            - '*.faronicscloud.com'
+            - '*.faronicscloud.com.'
+            - '*.www.deepfreeze.com'
+            - '*.www.deepfreeze.com.'
             - 'cloud.faronics.com'
-            - 'upd.faronicslabs.com'
+            - 'cloud.faronics.com.'
+            - 'deepfreeze.com'
+            - 'deepfreeze.com.'
+            - 'faronicscloud.com'
+            - 'faronicscloud.com.'
+            - 'www.deepfreeze.com'
+            - 'www.deepfreeze.com.'
+            - '*.faronics.com'
+            - '*.faronics.com.'
+            - '*.upd.faronicslabs.com'
+            - '*.upd.faronicslabs.com.'
+            - '*.www.faronics.com'
+            - '*.www.faronics.com.'
             - 'faronics.com'
+            - 'faronics.com.'
+            - 'upd.faronicslabs.com'
+            - 'upd.faronicslabs.com.'
             - 'www.faronics.com'
+            - 'www.faronics.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Faronics Deep Freeze

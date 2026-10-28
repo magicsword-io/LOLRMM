@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,15 +16,27 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'user_managed'
-            - 'github.com'
-            - 'raw.githubusercontent.com'
+        DestinationHostname:
+            - '*.nezha.wiki'
+            - '*.nezha.wiki.'
+            - '*.nezhahq.github.io'
+            - '*.nezhahq.github.io.'
             - 'nezha.wiki'
+            - 'nezha.wiki.'
             - 'nezhahq.github.io'
+            - 'nezhahq.github.io.'
+            - '*.c.mid.al'
+            - '*.c.mid.al.'
+            - '*.gd.bj2.xyz'
+            - '*.gd.bj2.xyz.'
+            - '*.rism.pages.dev'
+            - '*.rism.pages.dev.'
             - 'c.mid.al'
+            - 'c.mid.al.'
             - 'gd.bj2.xyz'
+            - 'gd.bj2.xyz.'
             - 'rism.pages.dev'
+            - 'rism.pages.dev.'
     condition: selection
 falsepositives:
     - Legitimate use of Nezha

@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-10-05
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,22 +16,55 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'connect.ngrok-agent.com'
-            - 'connect.us.ngrok-agent.com'
-            - 'connect.eu.ngrok-agent.com'
-            - 'connect.ap.ngrok-agent.com'
-            - 'connect.au.ngrok-agent.com'
-            - 'connect.sa.ngrok-agent.com'
-            - 'connect.jp.ngrok-agent.com'
-            - 'connect.in.ngrok-agent.com'
-            - 'ngrok.com'
+        DestinationHostname:
+            - '*.connect.ap.ngrok-agent.com'
+            - '*.connect.ap.ngrok-agent.com.'
+            - '*.connect.au.ngrok-agent.com'
+            - '*.connect.au.ngrok-agent.com.'
+            - '*.connect.eu.ngrok-agent.com'
+            - '*.connect.eu.ngrok-agent.com.'
+            - '*.connect.in.ngrok-agent.com'
+            - '*.connect.in.ngrok-agent.com.'
+            - '*.connect.jp.ngrok-agent.com'
+            - '*.connect.jp.ngrok-agent.com.'
+            - '*.connect.ngrok-agent.com'
+            - '*.connect.ngrok-agent.com.'
+            - '*.connect.sa.ngrok-agent.com'
+            - '*.connect.sa.ngrok-agent.com.'
+            - '*.connect.us.ngrok-agent.com'
+            - '*.connect.us.ngrok-agent.com.'
             - '*.ngrok-free.app'
+            - '*.ngrok-free.app.'
             - '*.ngrok.app'
-            - '*.ngrok.io'
+            - '*.ngrok.app.'
+            - '*.ngrok.com'
+            - '*.ngrok.com.'
             - '*.ngrok.dev'
-            - '*.ngrok.pro'
+            - '*.ngrok.dev.'
+            - '*.ngrok.io'
+            - '*.ngrok.io.'
             - '*.ngrok.pizza'
+            - '*.ngrok.pizza.'
+            - '*.ngrok.pro'
+            - '*.ngrok.pro.'
+            - 'connect.ap.ngrok-agent.com'
+            - 'connect.ap.ngrok-agent.com.'
+            - 'connect.au.ngrok-agent.com'
+            - 'connect.au.ngrok-agent.com.'
+            - 'connect.eu.ngrok-agent.com'
+            - 'connect.eu.ngrok-agent.com.'
+            - 'connect.in.ngrok-agent.com'
+            - 'connect.in.ngrok-agent.com.'
+            - 'connect.jp.ngrok-agent.com'
+            - 'connect.jp.ngrok-agent.com.'
+            - 'connect.ngrok-agent.com'
+            - 'connect.ngrok-agent.com.'
+            - 'connect.sa.ngrok-agent.com'
+            - 'connect.sa.ngrok-agent.com.'
+            - 'connect.us.ngrok-agent.com'
+            - 'connect.us.ngrok-agent.com.'
+            - 'ngrok.com'
+            - 'ngrok.com.'
     condition: selection
 falsepositives:
     - Legitimate use of ngrok

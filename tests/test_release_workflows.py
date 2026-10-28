@@ -1,5 +1,7 @@
 """Regression guards for the checkout outage and production publishing boundary."""
 import unittest
+import json
+import re
 from pathlib import Path
 
 import yaml
@@ -13,6 +15,18 @@ def workflow(name):
 
 
 class ReleaseWorkflowTests(unittest.TestCase):
+    def test_build_runtime_is_pinned_and_satisfies_package_minimum(self):
+        steps = workflow('deploy.yml')['jobs']['build']['steps']
+        setup = next(s for s in steps if s.get('uses', '').startswith('actions/setup-node@'))
+        pinned = setup['with']['node-version']
+        # A major-only selector may choose an older cached runner patch.
+        self.assertRegex(pinned, r'^\d+\.\d+\.\d+$')
+        package = json.loads((ROOT / 'website/package.json').read_text())
+        minimum = re.fullmatch(r'>=(\d+)\.(\d+)\.(\d+)', package['engines']['node'])
+        self.assertIsNotNone(minimum, 'Update this guard when changing the engine range')
+        self.assertGreaterEqual(tuple(map(int, pinned.split('.'))),
+                                tuple(map(int, minimum.groups())))
+
     def test_publishing_needs_no_personal_token_or_repository_write(self):
         deploy = workflow('deploy.yml')
         self.assertEqual(deploy['permissions'], {'contents': 'read'})

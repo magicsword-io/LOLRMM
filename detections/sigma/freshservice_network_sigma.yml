@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,28 +16,61 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
+        DestinationHostname:
+            - '*.fstools.freshservice.com'
+            - '*.fstools.freshservice.com.'
             - 'fstools.freshservice.com'
+            - 'fstools.freshservice.com.'
             - '*.freshservice.com'
+            - '*.freshservice.com.'
+            - '*.www.freshservice.com'
+            - '*.www.freshservice.com.'
             - 'freshservice.com'
+            - 'freshservice.com.'
             - 'www.freshservice.com'
-            - 'fstools.freshasset.com'
+            - 'www.freshservice.com.'
+            - '*.freshasset.com'
+            - '*.freshasset.com.'
+            - '*.fstools.freshasset.com'
+            - '*.fstools.freshasset.com.'
             - 'freshasset.com'
-            - '*.myfreshworks.com'
-            - '*.freshworksapi.com'
+            - 'freshasset.com.'
+            - 'fstools.freshasset.com'
+            - 'fstools.freshasset.com.'
             - '*.freshworks.com'
-            - '*.freshconnect.io'
-            - 'api.fdcollab.com'
+            - '*.freshworks.com.'
+            - '*.freshworksapi.com'
+            - '*.freshworksapi.com.'
+            - '*.myfreshworks.com'
+            - '*.myfreshworks.com.'
+            - '*.api.fdcollab.com'
+            - '*.api.fdcollab.com.'
             - '*.fdcollab.com'
+            - '*.fdcollab.com.'
+            - '*.freshconnect.io'
+            - '*.freshconnect.io.'
+            - 'api.fdcollab.com'
+            - 'api.fdcollab.com.'
+            - '*.apicdn-wchat.freshchat.com'
+            - '*.apicdn-wchat.freshchat.com.'
             - '*.freshchat.com'
-            - '*.webpush.freshchat.com'
-            - 'apicdn-wchat.freshchat.com'
+            - '*.freshchat.com.'
             - '*.rtschannel.com'
-            - '*.freshdev.io'
-            - 'static.freshdev.io'
+            - '*.rtschannel.com.'
+            - '*.webpush.freshchat.com'
+            - '*.webpush.freshchat.com.'
+            - 'apicdn-wchat.freshchat.com'
+            - 'apicdn-wchat.freshchat.com.'
             - '*.freshcloud.io'
+            - '*.freshcloud.io.'
+            - '*.freshdev.io'
+            - '*.freshdev.io.'
             - '*.in-freshbots.ai'
-            - '<internal-customer-ranges>'
+            - '*.in-freshbots.ai.'
+            - '*.static.freshdev.io'
+            - '*.static.freshdev.io.'
+            - 'static.freshdev.io'
+            - 'static.freshdev.io.'
     condition: selection
 falsepositives:
     - Legitimate use of Freshservice

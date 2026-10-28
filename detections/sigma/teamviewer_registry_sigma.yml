@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -18,7 +18,6 @@ detection:
     selection:
         TargetObject|contains:
             - 'HKLM\SOFTWARE\TeamViewer\*'
-            - 'HKU\<SID>\SOFTWARE\TeamViewer\*'
             - 'HKLM\SYSTEM\CurrentControlSet\Services\TeamViewer\*'
             - 'HKLM\SOFTWARE\TeamViewer\ConnectionHistory'
             - 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\TeamViewer\*'

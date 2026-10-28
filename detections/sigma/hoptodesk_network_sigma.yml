@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,13 +16,31 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'hoptodesk.com'
+        DestinationHostname:
+            - '*.api.hoptodesk.com'
+            - '*.api.hoptodesk.com.'
+            - '*.download.hoptodesk.com'
+            - '*.download.hoptodesk.com.'
+            - '*.hoptodesk.com'
+            - '*.hoptodesk.com.'
+            - '*.signal.hoptodesk.com'
+            - '*.signal.hoptodesk.com.'
+            - '*.turn.hoptodesk.com'
+            - '*.turn.hoptodesk.com.'
+            - '*.www.hoptodesk.com'
+            - '*.www.hoptodesk.com.'
             - 'api.hoptodesk.com'
-            - 'signal.hoptodesk.com'
-            - 'turn.hoptodesk.com'
+            - 'api.hoptodesk.com.'
             - 'download.hoptodesk.com'
+            - 'download.hoptodesk.com.'
+            - 'hoptodesk.com'
+            - 'hoptodesk.com.'
+            - 'signal.hoptodesk.com'
+            - 'signal.hoptodesk.com.'
+            - 'turn.hoptodesk.com'
+            - 'turn.hoptodesk.com.'
             - 'www.hoptodesk.com'
+            - 'www.hoptodesk.com.'
     condition: selection
 falsepositives:
     - Legitimate use of HopToDesk

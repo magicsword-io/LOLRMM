@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2025-12-01
-modified: 2026-10-20
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,27 +16,49 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'beanywhere.com'
+        DestinationHostname:
             - '*.beanywhere.com'
-            - 'systemmonitor.co.uk'
-            - '*.system-monitor.com'
-            - 'cloudbackup.management'
-            - '*.systemmonitor.co.uk'
-            - 'n-able.com'
-            - 'systemmonitor.us'
-            - '*.systemmonitor.eu.com'
-            - '*.logicnow.com'
-            - '*.swi-tc.com'
-            - '*.remote.management'
-            - 'systemmonitor.us.cdn.cloudflare.net'
+            - '*.beanywhere.com.'
             - '*.cloudbackup.management'
-            - 'remote.management'
-            - 'logicnow.com'
-            - 'system-monitor.com'
-            - '*.systemmonitor.us'
-            - 'systemmonitor.eu.com'
+            - '*.cloudbackup.management.'
+            - '*.logicnow.com'
+            - '*.logicnow.com.'
             - '*.n-able.com'
+            - '*.n-able.com.'
+            - '*.remote.management'
+            - '*.remote.management.'
+            - '*.swi-tc.com'
+            - '*.swi-tc.com.'
+            - '*.system-monitor.com'
+            - '*.system-monitor.com.'
+            - '*.systemmonitor.co.uk'
+            - '*.systemmonitor.co.uk.'
+            - '*.systemmonitor.eu.com'
+            - '*.systemmonitor.eu.com.'
+            - '*.systemmonitor.us'
+            - '*.systemmonitor.us.'
+            - '*.systemmonitor.us.cdn.cloudflare.net'
+            - '*.systemmonitor.us.cdn.cloudflare.net.'
+            - 'beanywhere.com'
+            - 'beanywhere.com.'
+            - 'cloudbackup.management'
+            - 'cloudbackup.management.'
+            - 'logicnow.com'
+            - 'logicnow.com.'
+            - 'n-able.com'
+            - 'n-able.com.'
+            - 'remote.management'
+            - 'remote.management.'
+            - 'system-monitor.com'
+            - 'system-monitor.com.'
+            - 'systemmonitor.co.uk'
+            - 'systemmonitor.co.uk.'
+            - 'systemmonitor.eu.com'
+            - 'systemmonitor.eu.com.'
+            - 'systemmonitor.us'
+            - 'systemmonitor.us.'
+            - 'systemmonitor.us.cdn.cloudflare.net'
+            - 'systemmonitor.us.cdn.cloudflare.net.'
     condition: selection
 falsepositives:
     - Legitimate use of N-Able Advanced Monitoring Agent

@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-22
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,9 +16,7 @@ logsource:
     category: file_event
 detection:
     selection:
-        TargetFilename|endswith:
-            - 'loclx.exe'
-            - '%APPDATA%\loclx\config.yaml'
+        TargetFilename|endswith: 'loclx.exe'
     condition: selection
 falsepositives:
     - Legitimate use of LocalXpose

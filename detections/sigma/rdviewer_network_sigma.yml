@@ -1,0 +1,26 @@
+title: Potential RdViewer RMM Tool Network Activity
+id: 1db95471-9fd9-5ded-8d8c-0a5eb4574084
+status: experimental
+description: |
+    Detects potential network activity of RdViewer RMM tool
+references:
+    - https://github.com/magicsword-io/LOLRMM
+author: LOLRMM Project
+date: 2026-10-28
+tags:
+    - attack.command-and-control
+    - attack.t1219
+logsource:
+    product: windows
+    category: network_connection
+detection:
+    selection:
+        DestinationHostname:
+            - '*.rdviewer.oss-cn-hangzhou.aliyuncs.com'
+            - '*.rdviewer.oss-cn-hangzhou.aliyuncs.com.'
+            - 'rdviewer.oss-cn-hangzhou.aliyuncs.com'
+            - 'rdviewer.oss-cn-hangzhou.aliyuncs.com.'
+    condition: selection
+falsepositives:
+    - Legitimate use of RdViewer
+level: medium

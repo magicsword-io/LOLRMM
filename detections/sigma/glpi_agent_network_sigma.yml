@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,16 +16,31 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - '<operator-configured GLPI server>'
+        DestinationHostname:
+            - '*.glpi-project.org'
+            - '*.glpi-project.org.'
+            - '*.www.glpi-project.org'
+            - '*.www.glpi-project.org.'
             - 'glpi-project.org'
+            - 'glpi-project.org.'
             - 'www.glpi-project.org'
+            - 'www.glpi-project.org.'
+            - '*.nightly.glpi-project.org'
+            - '*.nightly.glpi-project.org.'
             - 'nightly.glpi-project.org'
+            - 'nightly.glpi-project.org.'
+            - '*.forum.glpi-project.org'
+            - '*.forum.glpi-project.org.'
             - 'forum.glpi-project.org'
+            - 'forum.glpi-project.org.'
+            - '*.glpi-network.com'
+            - '*.glpi-network.com.'
+            - '*.services.glpi-network.com'
+            - '*.services.glpi-network.com.'
             - 'glpi-network.com'
+            - 'glpi-network.com.'
             - 'services.glpi-network.com'
-            - 'github.com'
-            - 'objects.githubusercontent.com'
+            - 'services.glpi-network.com.'
     condition: selection
 falsepositives:
     - Legitimate use of GLPI Agent

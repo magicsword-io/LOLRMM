@@ -7,7 +7,7 @@ references:
 - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: '2025-03-18'
-modified: '2026-10-20'
+modified: '2026-10-28'
 tags:
 - attack.command-and-control
 - attack.t1219
@@ -458,7 +458,7 @@ detection:
     - \\qq.exe
     - \\qqpcmgr.exe
     - \\QQProtect.exe
-    - \\quickassist.exe
+    - \\QuickAssist.exe
     - \\raautoup.exe
     - \\RAccess.exe
     - \\Radmin.exe

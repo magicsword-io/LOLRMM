@@ -7,6 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-09-09
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -15,13 +16,9 @@ logsource:
     category: process_creation
 detection:
     selection_parent:
-        ParentImage|endswith:
-            - '\\RMMmaxAgentSetup.exe'
-            - '\\RMMmaxAgentService.exe'
+        ParentImage|endswith: '\\RMMmaxAgentSetup.exe'
     selection_image:
-        Image|endswith:
-            - '\\RMMmaxAgentSetup.exe'
-            - '\\RMMmaxAgentService.exe'
+        Image|endswith: '\\RMMmaxAgentSetup.exe'
     condition: 1 of selection_*
 falsepositives:
     - Legitimate use of RMMmax

@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,11 +16,17 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'dataplicity.com'
-            - 'www.dataplicity.com'
+        DestinationHostname:
             - '*.dataplicity.com'
+            - '*.dataplicity.com.'
             - '*.wormhole.dataplicity.com'
+            - '*.wormhole.dataplicity.com.'
+            - '*.www.dataplicity.com'
+            - '*.www.dataplicity.com.'
+            - 'dataplicity.com'
+            - 'dataplicity.com.'
+            - 'www.dataplicity.com'
+            - 'www.dataplicity.com.'
     condition: selection
 falsepositives:
     - Legitimate use of Dataplicity

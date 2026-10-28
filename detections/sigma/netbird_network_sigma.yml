@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-05-18
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,26 +16,71 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'netbird.io'
+        DestinationHostname:
+            - '*.api.netbird.io'
+            - '*.api.netbird.io.'
+            - '*.app.netbird.io'
+            - '*.app.netbird.io.'
+            - '*.login.netbird.io'
+            - '*.login.netbird.io.'
             - '*.netbird.io'
+            - '*.netbird.io.'
+            - '*.pkgs.netbird.io'
+            - '*.pkgs.netbird.io.'
+            - '*.relay.netbird.io'
+            - '*.relay.netbird.io.'
+            - '*.signal.netbird.io'
+            - '*.signal.netbird.io.'
             - 'api.netbird.io'
+            - 'api.netbird.io.'
             - 'app.netbird.io'
-            - 'signal.netbird.io'
-            - 'relay.netbird.io'
+            - 'app.netbird.io.'
             - 'login.netbird.io'
+            - 'login.netbird.io.'
+            - 'netbird.io'
+            - 'netbird.io.'
             - 'pkgs.netbird.io'
-            - '192.3.95.152'
-            - '198.46.178.135'
-            - 'googl-6c11f.firebaseapp.com'
-            - 'googl-6c11f.web.app'
-            - 'googl-165a0.web.app'
-            - 'cloud-ed980.firebaseapp.com'
+            - 'pkgs.netbird.io.'
+            - 'relay.netbird.io'
+            - 'relay.netbird.io.'
+            - 'signal.netbird.io'
+            - 'signal.netbird.io.'
+            - '*.cloud-233f9.firebaseapp.com'
+            - '*.cloud-233f9.firebaseapp.com.'
+            - '*.cloud-ed980.firebaseapp.com'
+            - '*.cloud-ed980.firebaseapp.com.'
+            - '*.googl-165a0.web.app'
+            - '*.googl-165a0.web.app.'
+            - '*.googl-6c11f.firebaseapp.com'
+            - '*.googl-6c11f.firebaseapp.com.'
+            - '*.googl-6c11f.web.app'
+            - '*.googl-6c11f.web.app.'
+            - '*.my-sharepoint-inc.com'
+            - '*.my-sharepoint-inc.com.'
+            - '*.my1cloudlive.com'
+            - '*.my1cloudlive.com.'
+            - '*.my2cloudlive.com'
+            - '*.my2cloudlive.com.'
+            - '*.web-16fe.app'
+            - '*.web-16fe.app.'
             - 'cloud-233f9.firebaseapp.com'
+            - 'cloud-233f9.firebaseapp.com.'
+            - 'cloud-ed980.firebaseapp.com'
+            - 'cloud-ed980.firebaseapp.com.'
+            - 'googl-165a0.web.app'
+            - 'googl-165a0.web.app.'
+            - 'googl-6c11f.firebaseapp.com'
+            - 'googl-6c11f.firebaseapp.com.'
+            - 'googl-6c11f.web.app'
+            - 'googl-6c11f.web.app.'
             - 'my-sharepoint-inc.com'
+            - 'my-sharepoint-inc.com.'
             - 'my1cloudlive.com'
+            - 'my1cloudlive.com.'
             - 'my2cloudlive.com'
+            - 'my2cloudlive.com.'
             - 'web-16fe.app'
+            - 'web-16fe.app.'
     condition: selection
 falsepositives:
     - Legitimate use of NetBird

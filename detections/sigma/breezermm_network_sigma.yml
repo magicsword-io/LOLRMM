@@ -7,7 +7,7 @@ references:
     - https://github.com/magicsword-io/LOLRMM
 author: LOLRMM Project
 date: 2026-08-26
-modified: 2026-09-02
+modified: 2026-10-28
 tags:
     - attack.command-and-control
     - attack.t1219
@@ -16,12 +16,23 @@ logsource:
     category: network_connection
 detection:
     selection:
-        DestinationHostname|endswith:
-            - 'breezermm.com'
+        DestinationHostname:
+            - '*.breeze.app'
+            - '*.breeze.app.'
+            - '*.breezermm.com'
+            - '*.breezermm.com.'
+            - '*.eu.2breeze.app'
+            - '*.eu.2breeze.app.'
+            - '*.us.2breeze.app'
+            - '*.us.2breeze.app.'
             - 'breeze.app'
-            - 'us.2breeze.app'
+            - 'breeze.app.'
+            - 'breezermm.com'
+            - 'breezermm.com.'
             - 'eu.2breeze.app'
-            - 'user_managed'
+            - 'eu.2breeze.app.'
+            - 'us.2breeze.app'
+            - 'us.2breeze.app.'
     condition: selection
 falsepositives:
     - Legitimate use of BreezeRMM
