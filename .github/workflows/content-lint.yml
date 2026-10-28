@@ -18,7 +18,7 @@ jobs:
           python-version: 3.12
       - name: Install dependencies
         # pin to avoid silent parse-behavior changes from PyYAML major bumps
-        run: pip install 'pyyaml>=6.0,<7' 'cryptography>=46,<47'
+        run: pip install 'pyyaml>=6.0,<7' 'cryptography>=46,<51'
       - name: Run content lint
         run: python bin/lint_content.py
       - name: Suggest fix on failure
