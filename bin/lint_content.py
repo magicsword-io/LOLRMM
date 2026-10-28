@@ -4,8 +4,9 @@ Content lint for LOLRMM yaml catalog.
 
 Distinct from `bin/validate.py` (schema/structural).  This script checks
 intent-level quality of detection-ready fields — primarily
-Artifacts.Network[].Domains, Artifacts.Network[].Ports, and selected
-Artifacts.Disk[].File patterns — and surfaces patterns that produce
+Artifacts.Network[].Domains, Artifacts.Network[].Ports,
+Details.InstallationPaths, and selected Artifacts.Disk[].File patterns —
+and surfaces patterns that produce
 downstream false positives when ingested by SIEM / EDR / lookup-table
 consumers.
 
@@ -40,6 +41,9 @@ from dataclasses import dataclass
 from typing import Iterable
 
 import yaml
+from path_safety import unsafe_catalog_paths
+from domain_safety import catalog_domain_issues
+from evidence_safety import evidence_issues
 
 
 # ---------------------------------------------------------------------------
@@ -449,6 +453,20 @@ def lint_file(path: str, artifact_format_advisory: bool = False) -> list[Finding
         return []
 
     out: list[Finding] = []
+    for field, value, rule, reason in (*catalog_domain_issues(data), *evidence_issues(data)):
+        out.append(Finding(
+            ERROR, path, field, repr(value), rule, reason,
+            "correct the indicator; shared infrastructure/publishers need explicit "
+            "scope or Detection: false with a DetectionReason; preserve evidence without exporting broad selectors",
+        ))
+    for field, value, reason in unsafe_catalog_paths(data):
+        out.append(Finding(
+            ERROR, path, field, value,
+            "path-open-wildcard",
+            reason,
+            "use a verified filename or a filename pattern with a tool-specific "
+            "literal component; keep randomized-name evidence in a description",
+        ))
     details = data.get("Details") or {}
     install_paths = details.get("InstallationPaths") or []
     if isinstance(install_paths, list):

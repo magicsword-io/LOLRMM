@@ -9,7 +9,7 @@ Description: >
     delivery relationship or malicious use.
 Author: Michael Haag
 Created: '2026-09-28'
-LastModified: '2026-09-28'
+LastModified: '2026-10-26'
 Details:
     Website: https://openuem.eu/
     PEMetadata:
@@ -75,9 +75,7 @@ Artifacts:
           ProviderName: Service Control Manager
           LogFile: System
           ServiceName: openuem-agent
-          ImagePath: ''
           Description: Service name registered by the reviewed Windows service entry point; the source does not fix an executable installation path.
-          CommandLine: ''
     Registry: []
     Network: []
     Other:
