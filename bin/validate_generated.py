@@ -118,6 +118,21 @@ def rule_issues(rule):
                     yield location, reason
 
 
+def catalog_csv_issues(rows, sources):
+    """Compare raw artifact evidence without losing duplicate-name records."""
+    actual = []
+    for idx, row in enumerate(rows):
+        try:
+            artifacts = json.loads(row["Artifacts"])
+            actual.append((row["Name"], json.dumps(artifacts, sort_keys=True)))
+        except (KeyError, TypeError, ValueError):
+            yield f"catalog CSV row {idx + 1} has invalid/missing Name or Artifacts"
+    expected = [(tool["Name"], json.dumps(tool.get("Artifacts", {}), sort_keys=True))
+                for tool in sources]
+    if sorted(actual) != sorted(expected):
+        yield "catalog CSV changed or lost source artifact evidence/scope/context metadata"
+
+
 def verify_repository(repo):
     """Exercise production generators, keeping source and committed exports intact."""
     with tempfile.TemporaryDirectory(prefix="lolrmm-detection-safety-") as directory:
@@ -146,6 +161,8 @@ def verify_repository(repo):
         sources = [yaml.safe_load(content) for _, content in sorted(source_files.items())]
         if sorted(json.dumps(item, sort_keys=True) for item in sources) != sorted(json.dumps(item, sort_keys=True) for item in tools):
             problems.append("raw API changed or lost source evidence/scope/context metadata")
+        with (api / "rmm_tools.csv").open(newline="", encoding="utf-8") as stream:
+            problems.extend(catalog_csv_issues(list(csv.DictReader(stream)), sources))
         expected_csv = {(domain, tool["Name"]) for tool in sources
                         for network in (tool.get("Artifacts") or {}).get("Network") or []
                         for domain in detection_domains(network)}
