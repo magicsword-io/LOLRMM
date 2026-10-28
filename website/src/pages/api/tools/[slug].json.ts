@@ -7,6 +7,9 @@ export function getStaticPaths() {
     if (tool.slug === 'itsupport247-connectwise') {
       slugs.push('itsupport247-connectwise--itsupport247connectwise');
     }
+    if (tool.slug === 'level') {
+      slugs.push('levelio', 'levelio--levelio');
+    }
     return slugs.map((slug) => ({
       params: { slug },
       props: { tool },

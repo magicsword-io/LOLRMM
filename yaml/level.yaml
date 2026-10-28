@@ -4,22 +4,26 @@ Description: >
     Level is a remote monitoring and management (RMM) tool. Threat Hunting Labs
     documented its malicious installation through an RVTools-themed SEO poisoning
     chain in 2026. An operator used Level to run discovery commands as SYSTEM and
-    install the separate LightRmmAgent service. The report distinguishes Level's
-    routine inventory from operator activity.
+    install the separate LightRmmAgent service. Threat Hunting Labs distinguishes
+    Level's routine inventory from operator activity. Arctic Wolf documented
+    attackers installing Level via msiexec for persistence beyond initial Quick
+    Assist access in fake IT-support Microsoft Teams vishing campaigns.
 Author: Christian Henriksen, ITM8 | Improsec
 Created: '2024-02-11'
-LastModified: '2026-09-23'
+LastModified: '2026-10-28'
 Details:
     Website: https://level.io/
     PEMetadata:
         Filename: level.exe
         OriginalFileName: ''
         Description: ''
-    Privileges: User
-    Free: Free
-    Verification: 'True'
+    Privileges: Windows service runs as LocalSystem; installation requires administrative permissions
+    Free: Free for up to 10 devices; paid subscription for larger fleets
+    Verification: Vendor documentation and published incident research; certificate evidence retained from the consolidated entries
     SupportedOS:
         - Windows
+        - macOS
+        - Linux
     Capabilities:
         - File Transfer
         - File System Access
@@ -27,6 +31,9 @@ Details:
         - Automation & Scripting
     InstallationPaths:
         - C:\Program Files\Level\*
+        - level-windows-amd64.exe
+        - level.exe
+        - level-remote-control-ffmpeg.exe
 Artifacts:
     Disk:
         - File: C:\Program Files\Level\level.exe
@@ -56,12 +63,14 @@ Artifacts:
         - EventID: 4798
           ProviderName: Microsoft-Windows-Security-Auditing
           LogFile: Security.evtx
-          CallerProcessName: C:\Program Files\Level\osqueri.exe
+          CallerProcessName: C:\Program Files\Level\osqueryi.exe
           Description: Evidence of osqueryi doing automatic user/group enumeration.
+    Registry: []
     Network:
         - Description: Known remote domains
           Domains:
               - level.io
+              - '*.level.io'
               - builds.level.io
               - agents.level.io
               - online.level.io
@@ -73,10 +82,15 @@ Detections:
       Description: Detects potential network activity of Level RMM tool
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_files_sigma.yml
       Description: Detects potential files activity of Level RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_processes_sigma.yml
+      Description: Detects potential processes activity of Level RMM tool
 References:
+    - https://level.io/pricing
     - https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike
     - https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
     - https://docs.level.io/en/articles/9926456-level-watchdog-task
+    - https://docs.level.io/1.0/admin-guides/troubleshooting-agent-issues
+    - https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/
 Acknowledgement:
     - Person: Kostas / Threat Hunting Labs
       Handle: '@Kostastsale'
@@ -86,6 +100,8 @@ Acknowledgement:
       Handle: '@PandaRE__'
     - Person: MalBear Labs
       Handle: '@malbearlabs'
+    - Person: Shubham Dubey / Arctic Wolf Labs
+      Handle: ''
 CodeSigning:
     certificates:
         - signer_name: Level Software, Inc.
