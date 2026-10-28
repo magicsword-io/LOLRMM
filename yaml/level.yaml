@@ -10,18 +10,20 @@ Description: >
     Assist access in fake IT-support Microsoft Teams vishing campaigns.
 Author: Christian Henriksen, ITM8 | Improsec
 Created: '2024-02-11'
-LastModified: '2026-10-27'
+LastModified: '2026-10-28'
 Details:
     Website: https://level.io/
     PEMetadata:
         Filename: level.exe
         OriginalFileName: ''
         Description: ''
-    Privileges: User
-    Free: Free
-    Verification: 'True'
+    Privileges: Windows service runs as LocalSystem; installation requires administrative permissions
+    Free: Free for up to 10 devices; paid subscription for larger fleets
+    Verification: Vendor documentation and published incident research; certificate evidence retained from the consolidated entries
     SupportedOS:
         - Windows
+        - macOS
+        - Linux
     Capabilities:
         - File Transfer
         - File System Access
@@ -61,7 +63,7 @@ Artifacts:
         - EventID: 4798
           ProviderName: Microsoft-Windows-Security-Auditing
           LogFile: Security.evtx
-          CallerProcessName: C:\Program Files\Level\osqueri.exe
+          CallerProcessName: C:\Program Files\Level\osqueryi.exe
           Description: Evidence of osqueryi doing automatic user/group enumeration.
     Registry: []
     Network:
@@ -83,6 +85,7 @@ Detections:
     - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/level_processes_sigma.yml
       Description: Detects potential processes activity of Level RMM tool
 References:
+    - https://level.io/pricing
     - https://www.threathuntinglabs.com/blog/from-seo-poisoning-to-custom-rmm-and-cobalt-strike
     - https://dfirtnt.wordpress.com/2023/09/05/rmm-level-io-forensic-artifacts-and-evidence/
     - https://docs.level.io/en/articles/9926456-level-watchdog-task
