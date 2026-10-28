@@ -196,6 +196,42 @@ test('retired ITSupport247 URLs resolve to the merged record', async ({
   expect(await legacyExport.json()).toEqual(await canonicalExport.json());
 });
 
+test('retired Level URLs resolve to one merged catalog record', async ({
+  page,
+  browser,
+}) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const legacyPage = await context.newPage();
+  const canonicalExport = await page.request.get('/api/tools/level.json');
+  expect(canonicalExport.ok()).toBeTruthy();
+  for (const slug of ['levelio', 'levelio--levelio']) {
+    for (const prefix of ['tools', 'rmm_tools']) {
+      await legacyPage.goto(`http://127.0.0.1:4321/${prefix}/${slug}/`);
+      await expect(legacyPage).toHaveURL('http://127.0.0.1:4321/tools/level/');
+      await expect(
+        legacyPage.getByRole('heading', { name: 'Level', exact: true }),
+      ).toBeVisible();
+    }
+    const legacyExport = await page.request.get(`/api/tools/${slug}.json`);
+    expect(legacyExport.ok()).toBeTruthy();
+    expect(legacyExport.headers()['content-type']).toContain(
+      'application/json',
+    );
+    expect(await legacyExport.json()).toEqual(await canonicalExport.json());
+  }
+  await context.close();
+  const index = await page.request.get('/data/search.json');
+  const records = await index.json();
+  expect(
+    records.filter((entry: { slug: string }) => entry.slug === 'level'),
+  ).toHaveLength(1);
+  expect(
+    records.some((entry: { slug: string }) =>
+      ['levelio', 'levelio--levelio'].includes(entry.slug),
+    ),
+  ).toBeFalsy();
+});
+
 test('desktop and mobile themes have no page overflow or script errors', async ({
   page,
 }) => {
@@ -246,4 +282,35 @@ test('catalog, growth, and detail evidence remain readable without JavaScript', 
     'boot.net.anydesk.com',
   );
   await context.close();
+});
+
+test('retired Microsoft Quick Assist URLs serve the consolidated record', async ({
+  browser,
+  request,
+}) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  for (const route of [
+    '/tools/microsoft-quick-assist/',
+    '/tools/microsoft_quick_assist/',
+    '/rmm_tools/microsoft-quick-assist/',
+  ]) {
+    await page.goto(`http://127.0.0.1:4321${route}`);
+    await expect(page).toHaveURL(/\/tools\/quick-assist\/$/);
+    await expect(
+      page.getByRole('heading', { name: 'Quick Assist', exact: true }),
+    ).toBeVisible();
+  }
+  await context.close();
+  const retired = await request.get('/api/tools/microsoft-quick-assist.json');
+  const canonical = await request.get('/api/tools/quick-assist.json');
+  expect(retired.ok()).toBeTruthy();
+  expect(await retired.json()).toEqual(await canonical.json());
+  const index = await request.get('/data/search.json');
+  const entries = await index.json();
+  expect(
+    entries.some(
+      (entry: { slug: string }) => entry.slug === 'microsoft-quick-assist',
+    ),
+  ).toBeFalsy();
 });

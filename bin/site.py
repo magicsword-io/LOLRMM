@@ -100,23 +100,9 @@ def write_rmm_tools_csv(rmm_tools, output_dir, VERBOSE):
                     )
                     else str(rmm_tool.get("Details", {}).get("InstallationPaths", ""))
                 ),
-                "Artifacts": json.dumps(
-                    {
-                        k: (
-                            v
-                            if k != "Network"
-                            else [
-                                {
-                                    "Description": item.get("Description", ""),
-                                    "Domains": item.get("Domains", []),
-                                    "Ports": item.get("Ports", []),
-                                }
-                                for item in v
-                            ]
-                        )
-                        for k, v in rmm_tool.get("Artifacts", {}).items()
-                    }
-                ),
+                # Raw catalog exports retain context/scope metadata; filtered
+                # detection feeds are generated separately.
+                "Artifacts": json.dumps(rmm_tool.get("Artifacts", {})),
                 "Detections": json.dumps(rmm_tool.get("Detections", [])),
                 "References": clean_csv_value(", ".join(rmm_tool.get("References", []))),
                 "Acknowledgement": json.dumps(rmm_tool.get("Acknowledgement", [])),
