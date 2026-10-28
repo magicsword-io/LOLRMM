@@ -81,7 +81,7 @@ Happy hunting! 🕵️‍♂️
 ### Requirements
 
 * Python 3.12+ (PyYAML, or the existing Poetry environment)
-* Node.js 22.19+
+* Node.js 22.23.4+
 
 The website now uses Astro. From the repository root:
 
