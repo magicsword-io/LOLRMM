@@ -6,7 +6,7 @@ Description: 'Mouse Without Borders is a Microsoft Garage utility that lets you 
     **IMPORTANT**: This tool is signed with legitimate Microsoft Corporation certificates that are also used to sign numerous other Microsoft products and Windows components. Do NOT blindly block these certificate thumbprints as doing so will likely break essential Windows functionality and other Microsoft applications in your environment. Use certificate data for detection, hunting, and analysis purposes only.'
 Author: Microsoft
 Created: '2011-09-12'
-LastModified: '2011-09-12'
+LastModified: '2026-10-26'
 Details:
     Website: https://www.microsoft.com/en-us/download/details.aspx?id=35460
     PEMetadata:
@@ -67,6 +67,8 @@ References:
 Acknowledgement:
     - Person: Michael Haag
 CodeSigning:
+    Detection: false
+    DetectionReason: Shared publisher identities are contextual evidence and require verified file scope before use in detection or blocking policies.
     certificates:
         - signer_name: Microsoft Corporation
           certificate_thumbprint: F5877012FBD62FABCBDC8D8CEE9C9585BA30DF79
