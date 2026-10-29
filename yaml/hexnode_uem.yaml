@@ -1,0 +1,82 @@
+Name: Hexnode UEM
+Category: RMM
+Description: 'Hexnode Unified Endpoint Management (UEM) is a unified endpoint management platform for managing and securing Windows, macOS, Linux, iOS, Android, and tvOS devices. In October 2026, attackers enrolled victim endpoints in attacker-controlled Hexnode MDM tenants and pushed ScreenConnect for remote access.
+
+    '
+Created: '2026-10-29'
+LastModified: '2026-10-29'
+Details:
+    Website: https://www.hexnode.com/
+    PEMetadata:
+        - Filename: ''
+          OriginalFileName: ''
+          Description: ''
+    Privileges: SYSTEM
+    Free: 14-day trial
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - MacOS
+        - Linux
+        - iOS
+        - Android
+        - tvOS
+    Capabilities:
+        - Remote Control
+        - Remote monitoring and management
+        - Application management
+        - Patch management
+        - Geofencing
+        - Kiosk mode
+        - File transfer
+        - Remote command execution
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Hexnode\*
+        - C:\Program Files (x86)\Hexnode\*
+        - '*\Hexnode\*'
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Hexnode\*
+          Description: Hexnode UEM agent installation directory
+          OS: Windows
+        - File: C:\Program Files (x86)\Hexnode\*
+          Description: Hexnode UEM agent installation directory (x86)
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          Description: Service installation event as result of Hexnode agent installation
+    Registry:
+        - Path: HKLM\SOFTWARE\Hexnode\*
+          Description: Hexnode agent registry keys
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\*Hexnode*
+          Description: Hexnode service registry keys
+    Network:
+        - Description: Known Hexnode cloud infrastructure domains
+          Domains:
+              - '*.hexnode.com'
+              - '*.hexnodemdm.com'
+          Ports: []
+        - Description: Hexnode management server communications
+          Domains:
+              - mdm.hexnode.com
+              - uem.hexnode.com
+          Ports:
+              - 443
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hexnode_uem_network_sigma.yml
+      Description: Detects potential network activity of Hexnode UEM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hexnode_uem_processes_sigma.yml
+      Description: Detects potential processes activity of Hexnode UEM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hexnode_uem_files_sigma.yml
+      Description: Detects potential files activity of Hexnode UEM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/hexnode_uem_registry_sigma.yml
+      Description: Detects potential registry activity of Hexnode UEM RMM tool
+References:
+    - https://www.huntress.com/blog/attackers-turn-mdm-into-remote-access
+    - https://www.hexnode.com/
+Acknowledgement:
+    - Person: Ben Nahorney
+      Handle: '@bennahorney'

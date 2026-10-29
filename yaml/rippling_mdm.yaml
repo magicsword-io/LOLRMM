@@ -1,0 +1,83 @@
+Name: Rippling MDM
+Category: RMM
+Description: 'Rippling is a workforce management platform that includes device management (MDM) capabilities for Windows, macOS, Linux, iOS, and Android devices. In October 2026, attackers enrolled victim endpoints in attacker-controlled Rippling MDM tenants and pushed ScreenConnect for remote access.
+
+    '
+Created: '2026-10-29'
+LastModified: '2026-10-29'
+Details:
+    Website: https://www.rippling.com/
+    PEMetadata:
+        - Filename: daemon.exe
+          OriginalFileName: daemon.exe
+          Description: Rippling daemon process
+    Privileges: SYSTEM
+    Free: Trial available
+    Verification: ''
+    SupportedOS:
+        - Windows
+        - MacOS
+        - Linux
+        - iOS
+        - Android
+    Capabilities:
+        - Remote monitoring and management
+        - Application management
+        - Device enrollment
+        - Policy enforcement
+        - Remote command execution
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Rippling\daemon.exe
+        - C:\Rippling\*
+        - '*\Rippling\*'
+Artifacts:
+    Disk:
+        - File: C:\Rippling\daemon.exe
+          Description: Rippling daemon executable running as SYSTEM
+          OS: Windows
+        - File: C:\Rippling\*
+          Description: Rippling installation directory
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ImagePath: '"C:\\Rippling\\daemon.exe"'
+          Description: Service installation event as result of Rippling agent installation
+        - EventID: 4697
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          CommandLine: C:\Rippling\daemon.exe
+          Description: Service installation event as result of Rippling agent installation
+    Registry:
+        - Path: HKLM\SOFTWARE\Rippling\*
+          Description: Rippling agent registry keys
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\*Rippling*
+          Description: Rippling service registry keys
+    Network:
+        - Description: Known Rippling cloud infrastructure domains
+          Domains:
+              - '*.rippling.com'
+              - app.rippling.com
+          Ports: []
+        - Description: Rippling management server communications
+          Domains:
+              - api.rippling.com
+          Ports:
+              - 443
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rippling_mdm_network_sigma.yml
+      Description: Detects potential network activity of Rippling MDM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rippling_mdm_processes_sigma.yml
+      Description: Detects potential processes activity of Rippling MDM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rippling_mdm_files_sigma.yml
+      Description: Detects potential files activity of Rippling MDM RMM tool
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/rippling_mdm_registry_sigma.yml
+      Description: Detects potential registry activity of Rippling MDM RMM tool
+References:
+    - https://www.huntress.com/blog/attackers-turn-mdm-into-remote-access
+    - https://www.rippling.com/
+Acknowledgement:
+    - Person: Ben Nahorney
+      Handle: '@bennahorney'
