@@ -1451,14 +1451,14 @@ full = ["httpx (>=0.27.0,<0.29.0)", "httpx2 (>=2.0.0)", "itsdangerous", "jinja2"
 
 [[package]]
 name = "streamlit"
-version = "1.66.0"
+version = "1.66.1"
 description = "A faster way to build and share data apps"
 optional = false
 python-versions = ">=3.11"
 groups = ["main"]
 files = [
-    {file = "streamlit-1.66.0-py3-none-any.whl", hash = "sha256:bae7c746f868c09431177df5ee7929839efe7d8fb2cedd553d2bb3c2e969822a"},
-    {file = "streamlit-1.66.0.tar.gz", hash = "sha256:8b79761394664035ff5d691b4502b70385a39123e6d78a051c79e8ae28c29f8c"},
+    {file = "streamlit-1.66.1-py3-none-any.whl", hash = "sha256:29607190a589fe1fa9bd7e154635d335d47dc09b4010c6cc273daa6e4430ee31"},
+    {file = "streamlit-1.66.1.tar.gz", hash = "sha256:7710a8b67469da7af7bf3503c9b68afca5676f832f62f9bda1221e0ce11941d1"},
 ]
 
 [package.dependencies]
@@ -1469,7 +1469,7 @@ itsdangerous = ">=2.1.2,<3"
 numpy = ">=1.25.0,<3"
 packaging = ">=20"
 pandas = ">=1.5.3,<4"
-pillow = ">=9.2.0,<13"
+pillow = ">=9.2.0,<14"
 protobuf = ">=5.26.1,<8"
 pyarrow = ">=10.0.1,!=25.0.0,<27"
 pydeck = ">=0.8.0b4,<1"
