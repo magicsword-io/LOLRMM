@@ -1,0 +1,94 @@
+Name: OpenSSH Server
+Category: RAT
+Description: 'OpenSSH Server is an optional Windows feature that provides SSH server functionality. It enables remote command-line access to Windows systems over encrypted SSH connections. While legitimate for remote administration, it has been exploited in supply chain attacks, notably by trojanized extensions that enabled the service and planted persistent backdoor keys in authorized_keys files.'
+Author: ''
+Created: '2026-10-30'
+LastModified: '2026-10-30'
+Details:
+    Website: https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
+    PEMetadata:
+        - Filename: sshd.exe
+          OriginalFileName: sshd.exe
+          Description: OpenSSH SSH Server
+          Product: OpenSSH for Windows
+    Privileges: System
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Windows
+    Capabilities:
+        - Remote Control
+        - Command line Support
+        - File Transfer
+        - File System Access
+    Vulnerabilities:
+        - https://www.cvedetails.com/vulnerability-list/vendor_id-120/product_id-585/Openbsd-Openssh.html
+    InstallationPaths:
+        - C:\Windows\System32\OpenSSH\sshd.exe
+        - C:\Windows\System32\OpenSSH\ssh-keygen.exe
+        - C:\Windows\System32\OpenSSH\*
+Artifacts:
+    Disk:
+        - File: C:\ProgramData\ssh\sshd_config
+          Description: OpenSSH Server configuration file controlling server behavior, authentication methods, port bindings, and access policies.
+          OS: Windows
+        - File: C:\ProgramData\ssh\administrators_authorized_keys
+          Description: SSH public keys authorized for members of the local Administrators group. Trojanized Claude Code extension planted svc-telemetry backdoor keys here.
+          OS: Windows
+          Example:
+              - 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG... svc-telemetry'
+        - File: C:\ProgramData\ssh\ssh_host_*_key
+          Description: SSH server host private keys generated during initial setup. Multiple key types supported (RSA, ECDSA, ED25519).
+          OS: Windows
+        - File: C:\ProgramData\ssh\ssh_host_*_key.pub
+          Description: SSH server host public keys presented to clients during connection.
+          OS: Windows
+        - File: C:\ProgramData\ssh\logs\sshd.log
+          Description: OpenSSH Server logs recording connection attempts, authentication events, and errors.
+          OS: Windows
+        - File: '%USERPROFILE%\.ssh\authorized_keys'
+          Description: Per-user SSH public keys for non-administrator accounts. Not consulted for Administrators if administrators_authorized_keys exists.
+          OS: Windows
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: sshd
+          ImagePath: C:\Windows\System32\OpenSSH\sshd.exe
+          Description: Service installation event when OpenSSH Server feature is enabled or service is manually created.
+        - EventID: 4697
+          ProviderName: Microsoft-Security-Auditing
+          LogFile: Security.evtx
+          ServiceName: sshd
+          ImagePath: C:\Windows\System32\OpenSSH\sshd.exe
+          Description: Service installation audit event (requires appropriate audit policy).
+        - EventID: 1
+          ProviderName: OpenSSH
+          LogFile: OpenSSH/Operational
+          Description: SSH server operational events including successful and failed authentication attempts, logged to dedicated OpenSSH event log channel.
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\sshd
+          Description: OpenSSH Server service registration including ImagePath, Start type, and service configuration parameters.
+        - Path: HKLM\SOFTWARE\OpenSSH
+          Description: OpenSSH installation and configuration registry keys.
+    Network:
+        - Description: Default SSH listening port. Configurable via Port directive in sshd_config.
+          Domains: []
+          Ports:
+              - 22
+Detections:
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/openssh_server_processes_sigma.yml
+      Description: Detects potential process activity of OpenSSH Server
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/openssh_server_network_sigma.yml
+      Description: Detects potential network activity of OpenSSH Server
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/openssh_server_files_sigma.yml
+      Description: Detects potential file activity of OpenSSH Server
+    - Sigma: https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/openssh_server_registry_sigma.yml
+      Description: Detects potential registry activity of OpenSSH Server
+References:
+    - https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
+    - https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_server_configuration
+    - https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement
+    - https://cursor.com/blog/claude-code-extension-security-notice
+    - https://opensourcemalware.com/blog/trojanized-claude-code-extension-plants-persistent-ssh-backdoor
+Acknowledgement: []
