@@ -5,12 +5,13 @@ Description: |
     The Windows agent installs as the LocalSystem service "Nizlo RMM Agent" and stores its device identity and operational state under a restricted ProgramData directory. The presence of Nizlo files, service, registry keys, or network traffic alone does not establish malicious use.
 Author: Kip Ecklund (Nizlo)
 Created: '2026-11-01'
-LastModified: '2026-11-01'
+LastModified: '2026-11-02'
 Details:
     Website: https://nizlo.com/
     PEMetadata:
         - Filename: Nizlo.Agent.exe
         - Filename: Nizlo.Agent.Updater.exe
+        - Filename: Nizlo.RemoteBridge.exe
     Privileges: Administrator required for per-machine installation; the Windows service runs as LocalSystem
     Free: 14-day trial; no credit card and no automatic paid conversion
     Verification: Vendor-confirmed Windows installer layout, service identity, and network endpoint; public product, download, remote-management, and security documentation
@@ -31,6 +32,7 @@ Details:
     InstallationPaths:
         - C:\Program Files\Nizlo\Agent\*
         - C:\ProgramData\Nizlo\Agent\*
+        - '*\Nizlo.RemoteBridge.exe'
 Artifacts:
     Disk:
         - File: C:\Program Files\Nizlo\Agent\Nizlo.Agent.exe
@@ -45,6 +47,9 @@ Artifacts:
         - File: C:\ProgramData\Nizlo\Agent\identity\*
           Description: Restricted device-identity storage; credentials are protected for the enrolled machine.
           OS: Windows
+        - File: '*\Nizlo.RemoteBridge.exe'
+          Description: Nizlo's reviewed Windows protocol bridge for launching an approved remote-support client from a short-lived Nizlo grant.
+          OS: Windows
     EventLog: []
     Registry:
         - Path: HKLM\SYSTEM\CurrentControlSet\Services\Nizlo RMM Agent
@@ -53,6 +58,8 @@ Artifacts:
           Description: Installer-created Nizlo agent registry key.
         - Path: HKLM\Software\Classes\nizlo
           Description: Nizlo remote-launch URL protocol registration.
+        - Path: HKLM\Software\Classes\nizlo-remote
+          Description: URL protocol registration installed with the Nizlo remote-support bridge.
     Network:
         - Description: The endpoint agent uses authenticated outbound HTTPS and WebSocket connections to the Nizlo application service. No inbound firewall port is required.
           Domains:
@@ -64,6 +71,8 @@ Artifacts:
           Value: Nizlo RMM Agent
         - Type: URL protocol
           Value: nizlo
+        - Type: URL protocol
+          Value: nizlo-remote
 Detections: []
 References:
     - https://nizlo.com/downloads
