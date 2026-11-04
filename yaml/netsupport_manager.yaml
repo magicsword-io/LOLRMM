@@ -3,7 +3,7 @@ Category: RMM
 Description: NetSupport Manager is a remote monitoring and management (RMM) tool. Its remcmdstub.exe component is the NetSupport Remote Command Prompt Stub.
 Author: ''
 Created: '2024-08-02'
-LastModified: '2026-10-09'
+LastModified: '2026-11-01'
 Details:
     Website: 'https://www.netsupportmanager.com/'
     PEMetadata:
@@ -26,9 +26,17 @@ Details:
         - client32.exe
         - remcmdstub.exe
 Artifacts:
-    Disk: []
+    Disk:
+        - File: '%LOCALAPPDATA%\<random>\client32.exe'
+          Description: NetSupport Manager client launcher dropped into a hidden, randomly named folder under the user's local application data directory by the SolanaCry PowerShell dropper (indicator.ps1). The dropper writes 13 genuine NetSupport Manager v12.10 components, and AIR Research Lab observed the folder name y2inwRnI6G in the analyzed sample. Legitimate NetSupport deployments normally use a fixed vendor install directory.
+          OS: Windows
+        - File: '%LOCALAPPDATA%\<random>\client32.ini'
+          Description: Attacker-supplied NetSupport client configuration written next to client32.exe. In the SolanaCry sample it sets silent=1, DisableDisconnect=1, DisableChat=1, DisableMessage=1, Usernames=*, ValidAddresses.TCP=*, and points GatewayAddress and SecondaryGateway at the campaign gateway on port 443. The RADIUSSecret matches the value eSentire associates with the EVALUSION NetSupport cluster.
+          OS: Windows
     EventLog: []
-    Registry: []
+    Registry:
+        - Path: HKCU\Software\Microsoft\Windows\CurrentVersion\Run\SecureModule
+          Description: Run key value named SecureModule that points to client32.exe in the randomly named folder under %LOCALAPPDATA%. The SolanaCry dropper uses it to start NetSupport at every user login. The dropper also clears the RunMRU history.
     Network:
         - Description: Known remote domains
           Domains:
@@ -39,6 +47,11 @@ Artifacts:
         - Description: Campaign-specific NetSupport HTTP Gateway from the ClearFake payload analyzed by Cisco Talos (report published September 8, 2026); not vendor infrastructure
           Domains:
               - paternal-angrily.com
+          Ports:
+              - 443
+        - Description: Campaign-specific NetSupport HTTP Gateway (primary and secondary) from the SolanaCry client32.ini analyzed by AIR Research Lab (report published October 29, 2026); not vendor infrastructure
+          Domains:
+              - maxwintodaybtc.com
           Ports:
               - 443
 Detections:
@@ -54,6 +67,8 @@ References:
     - https://www.cybereason.com/blog/net-support-rat-wordpress-clickfix
     - https://www.microsoft.com/en-us/security/blog/2025/03/06/malvertising-campaign-leads-to-info-stealers-hosted-on-github/
     - https://blog.talosintelligence.com/clearfake-webdav-infection-chain/
+    - https://www.air.security/blog-posts/solanacry
+    - https://www.esentire.com/blog/unpacking-netsupport-rat-loaders-delivered-via-clickfix
 Acknowledgement: []
 CodeSigning:
     search_names:
