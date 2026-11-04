@@ -126,7 +126,15 @@ def certificate_issues(certificate, field, detection):
             issuer_names.update((attr.value.casefold(), f"{prefix}={attr.value}".casefold()))
     if issuer and (not isinstance(issuer, str) or issuer.casefold() not in issuer_names):
         yield f"{field}.issuer", issuer, "certificate-issuer-mismatch", "issuer does not match the embedded certificate"
-    for key, actual in (("valid_from", cert.not_valid_before_utc), ("valid_to", cert.not_valid_after_utc)):
+    # Handle both old and new cryptography API
+    try:
+        not_before = cert.not_valid_before_utc
+        not_after = cert.not_valid_after_utc
+    except AttributeError:
+        # Older cryptography versions use non-UTC properties
+        not_before = cert.not_valid_before.replace(tzinfo=timezone.utc) if cert.not_valid_before.tzinfo is None else cert.not_valid_before
+        not_after = cert.not_valid_after.replace(tzinfo=timezone.utc) if cert.not_valid_after.tzinfo is None else cert.not_valid_after
+    for key, actual in (("valid_from", not_before), ("valid_to", not_after)):
         value = certificate.get(key)
         if not value:
             continue
