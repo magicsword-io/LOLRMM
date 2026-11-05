@@ -1,0 +1,83 @@
+Name: Nizlo
+Category: RMM
+Description: |
+    Nizlo is a legitimate Windows-first remote monitoring and management platform for MSPs and IT teams. Its endpoint agent maintains authenticated outbound HTTPS and WebSocket connections and supports inventory, health monitoring, alerting, Windows patch workflows, remote desktop, bounded terminal commands, reusable scripts, file transfer, and process and service operations.
+    The Windows agent installs as the LocalSystem service "Nizlo RMM Agent" and stores its device identity and operational state under a restricted ProgramData directory. The presence of Nizlo files, service, registry keys, or network traffic alone does not establish malicious use.
+Author: Kip Ecklund (Nizlo)
+Created: '2026-11-01'
+LastModified: '2026-11-02'
+Details:
+    Website: https://nizlo.com/
+    PEMetadata:
+        - Filename: Nizlo.Agent.exe
+        - Filename: Nizlo.Agent.Updater.exe
+        - Filename: Nizlo.RemoteBridge.exe
+    Privileges: Administrator required for per-machine installation; the Windows service runs as LocalSystem
+    Free: 14-day trial; no credit card and no automatic paid conversion
+    Verification: Vendor-confirmed Windows installer layout, service identity, and network endpoint; public product, download, remote-management, and security documentation
+    SupportedOS:
+        - Windows
+        - macOS
+    Capabilities:
+        - Remote monitoring and management
+        - Endpoint inventory and health monitoring
+        - Remote command execution
+        - PowerShell and batch scripting
+        - Remote desktop
+        - File transfer and file management
+        - Process and service management
+        - Windows patch management
+        - Reporting and audit history
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Nizlo\Agent\*
+        - C:\ProgramData\Nizlo\Agent\*
+        - '*\Nizlo.RemoteBridge.exe'
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Nizlo\Agent\Nizlo.Agent.exe
+          Description: Primary Nizlo Windows monitoring and management agent; installed as the Nizlo RMM Agent service.
+          OS: Windows
+        - File: C:\Program Files\Nizlo\Agent\Nizlo.Agent.Updater.exe
+          Description: Nizlo agent update helper installed alongside the primary agent.
+          OS: Windows
+        - File: C:\ProgramData\Nizlo\Agent\logs\*
+          Description: Restricted local log directory used by the Windows agent.
+          OS: Windows
+        - File: C:\ProgramData\Nizlo\Agent\identity\*
+          Description: Restricted device-identity storage; credentials are protected for the enrolled machine.
+          OS: Windows
+        - File: '*\Nizlo.RemoteBridge.exe'
+          Description: Nizlo's reviewed Windows protocol bridge for launching an approved remote-support client from a short-lived Nizlo grant.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\Nizlo RMM Agent
+          Description: Windows service registry path for the automatic LocalSystem Nizlo agent service.
+        - Path: HKLM\Software\Nizlo\Agent
+          Description: Installer-created Nizlo agent registry key.
+        - Path: HKLM\Software\Classes\nizlo
+          Description: Nizlo remote-launch URL protocol registration.
+        - Path: HKLM\Software\Classes\nizlo-remote
+          Description: URL protocol registration installed with the Nizlo remote-support bridge.
+    Network:
+        - Description: The endpoint agent uses authenticated outbound HTTPS and WebSocket connections to the Nizlo application service. No inbound firewall port is required.
+          Domains:
+              - app.nizlo.com
+          Ports:
+              - 443
+    Other:
+        - Type: Windows service
+          Value: Nizlo RMM Agent
+        - Type: URL protocol
+          Value: nizlo
+        - Type: URL protocol
+          Value: nizlo-remote
+Detections: []
+References:
+    - https://nizlo.com/downloads
+    - https://nizlo.com/remote-management
+    - https://nizlo.com/security
+    - https://nizlo.com/features
+    - https://nizlo.com/pricing
+Acknowledgement: []
