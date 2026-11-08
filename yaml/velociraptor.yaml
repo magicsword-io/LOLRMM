@@ -1,0 +1,80 @@
+Name: Velociraptor
+Category: RMM
+Description: |
+    Velociraptor is an open-source endpoint monitoring, digital forensics, and incident response platform. Installed clients keep a persistent connection to a server, which can collect artifacts, run hunts, execute shell commands, and deploy third-party tools on the endpoint. Kaspersky reported that Storm-2603 installed Velociraptor 0.73.4.0 from Supabase storage and used it for persistence, discovery, data collection, and payload execution, and to deploy several tunneling tools.
+Author: Liran Ravich, Cribl
+Created: '2026-11-08'
+LastModified: '2026-11-08'
+Details:
+    Website: https://docs.velociraptor.app/
+    PEMetadata:
+        - Filename: Velociraptor.exe
+          Description: Default Windows client executable name after service installation; filename evidence from official documentation, not inspected PE metadata
+    Privileges: Elevated privileges are required to install the Windows service; the service runs as Local System by default
+    Free: true
+    Verification: false
+    SupportedOS:
+        - Windows
+        - Linux
+        - Mac
+    Capabilities:
+        - Endpoint monitoring
+        - Remote artifact collection and hunting
+        - Remote shell command execution
+        - File collection
+        - Endpoint quarantine
+        - Remote deployment of third-party tools
+    Vulnerabilities:
+        - CVE-2025-6264 affects the Storm-2603-deployed version 0.73.4.0, as reported by Kaspersky
+    InstallationPaths:
+        - C:\Program Files\Velociraptor\Velociraptor.exe
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Velociraptor\Velociraptor.exe
+          Description: Default Windows client binary installed by the official MSI or self-install command
+          OS: Windows
+        - File: C:\Program Files\Velociraptor\velociraptor.writeback.yaml
+          Description: Default Windows client state and identity writeback file
+          OS: Windows
+        - File: $TEMP\Velociraptor_Buffer.bin
+          Description: Default Windows local buffer file
+          OS: Windows
+    EventLog: []
+    Registry: []
+    Network:
+        - Description: Client connections to deployment-configured frontend URLs. The frontend defaults to TCP 8000 and may share TCP 443 with the GUI; Velociraptor has no fixed vendor client domain.
+          Domains: []
+          Ports:
+              - 8000
+              - 443
+        - Description: Default server administration listeners for the API, monitoring endpoint, and self-signed GUI. These are server-side defaults and may be changed by the operator.
+          Domains: []
+          Ports:
+              - 8001
+              - 8003
+              - 8889
+    Other:
+        - Type: WindowsServiceName
+          Value: Velociraptor
+        - Type: WindowsServiceDescription
+          Value: Velociraptor service
+        - Type: WindowsServiceAccount
+          Value: Local System
+        - Type: WindowsServiceStart
+          Value: Automatic with delayed start
+        - Type: CommandLine
+          Value: velociraptor.exe service install --config client.config.yaml -v
+        - Type: LinuxServiceName
+          Value: velociraptor_client.service (Debian package)
+        - Type: MacOSServiceName
+          Value: com.velocidex.velociraptor
+        - Type: ReportedCampaignVersion
+          Value: 0.73.4.0; reported vulnerable to CVE-2025-6264
+Detections: []
+References:
+    - https://securelist.com/storm-2603-fileless-toolshell-attack/121467
+    - https://docs.velociraptor.app/docs/overview/
+    - https://docs.velociraptor.app/docs/deployment/clients/
+    - https://docs.velociraptor.app/docs/clients/shell/
+    - https://docs.velociraptor.app/docs/deployment/references/
+Acknowledgement: []
