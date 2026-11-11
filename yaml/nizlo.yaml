@@ -1,83 +1,89 @@
 Name: Nizlo
 Category: RMM
-Description: |
-    Nizlo is a legitimate Windows-first remote monitoring and management platform for MSPs and IT teams. Its endpoint agent maintains authenticated outbound HTTPS and WebSocket connections and supports inventory, health monitoring, alerting, Windows patch workflows, remote desktop, bounded terminal commands, reusable scripts, file transfer, and process and service operations.
-    The Windows agent installs as the LocalSystem service "Nizlo RMM Agent" and stores its device identity and operational state under a restricted ProgramData directory. The presence of Nizlo files, service, registry keys, or network traffic alone does not establish malicious use.
-Author: Kip Ecklund (Nizlo)
+Description: >
+    Nizlo is a Windows-first remote monitoring and management platform for
+    managed service providers and lean IT teams. Vendor documentation describes
+    endpoint monitoring, inventory, alerts, Windows patch workflows, scripts and
+    automation, remote support, reporting, and customer and site context. This
+    entry records vendor-published identification artifacts for authorized Nizlo
+    deployments; their presence alone is not evidence of malicious use.
+Author: Kip Ecklund / Cloud 84 Holdings, LLC
 Created: '2026-11-01'
-LastModified: '2026-11-02'
+LastModified: '2026-11-11'
 Details:
     Website: https://nizlo.com/
     PEMetadata:
         - Filename: Nizlo.Agent.exe
+          OriginalFileName: Nizlo.Agent.exe
+          Description: Nizlo RMM Windows agent
         - Filename: Nizlo.Agent.Updater.exe
+          OriginalFileName: Nizlo.Agent.Updater.exe
+          Description: Nizlo RMM Windows agent updater
         - Filename: Nizlo.RemoteBridge.exe
-    Privileges: Administrator required for per-machine installation; the Windows service runs as LocalSystem
-    Free: 14-day trial; no credit card and no automatic paid conversion
-    Verification: Vendor-confirmed Windows installer layout, service identity, and network endpoint; public product, download, remote-management, and security documentation
+          OriginalFileName: Nizlo.RemoteBridge.exe
+          Description: Nizlo remote-support bridge
+    Privileges: The Windows agent installs as an automatic LocalSystem service and requires administrator approval for installation.
+    Free: 14-day trial without a credit card; no permanent free plan
+    Verification: >
+        The executable names, Windows paths, service, registry keys, URL
+        protocols, and network destination are documented on Nizlo's public
+        first-party security-indicators page. The executable names are also
+        present in the independently maintained RMM Catalogue, which cites
+        Nizlo's official downloads page. No local installer or agent was
+        executed for this contribution.
     SupportedOS:
         - Windows
         - macOS
     Capabilities:
-        - Remote monitoring and management
-        - Endpoint inventory and health monitoring
-        - Remote command execution
-        - PowerShell and batch scripting
-        - Remote desktop
-        - File transfer and file management
-        - Process and service management
-        - Windows patch management
-        - Reporting and audit history
+        - Endpoint monitoring and inventory
+        - Alerting and reporting
+        - Windows patch workflows
+        - Remote scripts and automation
+        - Remote support
     Vulnerabilities: []
     InstallationPaths:
         - C:\Program Files\Nizlo\Agent\*
         - C:\ProgramData\Nizlo\Agent\*
-        - '*\Nizlo.RemoteBridge.exe'
+        - Nizlo.Agent.exe
+        - Nizlo.Agent.Updater.exe
+        - Nizlo.RemoteBridge.exe
 Artifacts:
     Disk:
         - File: C:\Program Files\Nizlo\Agent\Nizlo.Agent.exe
-          Description: Primary Nizlo Windows monitoring and management agent; installed as the Nizlo RMM Agent service.
+          Description: Primary Windows agent executable in the documented installation directory.
           OS: Windows
         - File: C:\Program Files\Nizlo\Agent\Nizlo.Agent.Updater.exe
-          Description: Nizlo agent update helper installed alongside the primary agent.
+          Description: Windows agent updater in the documented installation directory.
           OS: Windows
-        - File: C:\ProgramData\Nizlo\Agent\logs\*
-          Description: Restricted local log directory used by the Windows agent.
-          OS: Windows
-        - File: C:\ProgramData\Nizlo\Agent\identity\*
-          Description: Restricted device-identity storage; credentials are protected for the enrolled machine.
-          OS: Windows
-        - File: '*\Nizlo.RemoteBridge.exe'
-          Description: Nizlo's reviewed Windows protocol bridge for launching an approved remote-support client from a short-lived Nizlo grant.
+        - File: Nizlo.RemoteBridge.exe
+          Description: Remote-support bridge; the vendor notes that its path can vary, so correlate the filename with signer, parent process, command line, tenant approval, and surrounding activity.
           OS: Windows
     EventLog: []
     Registry:
-        - Path: HKLM\SYSTEM\CurrentControlSet\Services\Nizlo RMM Agent
-          Description: Windows service registry path for the automatic LocalSystem Nizlo agent service.
         - Path: HKLM\Software\Nizlo\Agent
-          Description: Installer-created Nizlo agent registry key.
+          Description: Nizlo Windows agent registry key.
         - Path: HKLM\Software\Classes\nizlo
-          Description: Nizlo remote-launch URL protocol registration.
+          Description: Registered nizlo URL protocol handler.
         - Path: HKLM\Software\Classes\nizlo-remote
-          Description: URL protocol registration installed with the Nizlo remote-support bridge.
+          Description: Registered nizlo-remote URL protocol handler.
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\Nizlo RMM Agent
+          Description: Windows service registry key for the automatic LocalSystem agent service.
     Network:
-        - Description: The endpoint agent uses authenticated outbound HTTPS and WebSocket connections to the Nizlo application service. No inbound firewall port is required.
+        - Description: Vendor-documented production API and authenticated secure-WebSocket destination. The agent initiates outbound connections and does not require an inbound firewall port.
           Domains:
               - app.nizlo.com
           Ports:
               - 443
     Other:
-        - Type: Windows service
+        - Type: WindowsServiceName
           Value: Nizlo RMM Agent
-        - Type: URL protocol
-          Value: nizlo
-        - Type: URL protocol
-          Value: nizlo-remote
+        - Type: URLProtocol
+          Value: 'nizlo:'
+        - Type: URLProtocol
+          Value: 'nizlo-remote:'
 Detections: []
 References:
+    - https://nizlo.com/guides/nizlo-rmm-security-indicators
     - https://nizlo.com/downloads
-    - https://nizlo.com/remote-management
-    - https://nizlo.com/security
-    - https://nizlo.com/features
-    - https://nizlo.com/pricing
+    - https://github.com/0x706972686f/RMM-Catalogue/blob/main/rmm.csv
 Acknowledgement: []
