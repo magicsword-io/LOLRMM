@@ -1,0 +1,89 @@
+Name: Nizlo
+Category: RMM
+Description: >
+    Nizlo is a Windows-first remote monitoring and management platform for
+    managed service providers and lean IT teams. Vendor documentation describes
+    endpoint monitoring, inventory, alerts, Windows patch workflows, scripts and
+    automation, remote support, reporting, and customer and site context. This
+    entry records vendor-published identification artifacts for authorized Nizlo
+    deployments; their presence alone is not evidence of malicious use.
+Author: Kip Ecklund / Cloud 84 Holdings, LLC
+Created: '2026-11-01'
+LastModified: '2026-11-11'
+Details:
+    Website: https://nizlo.com/
+    PEMetadata:
+        - Filename: Nizlo.Agent.exe
+          OriginalFileName: Nizlo.Agent.exe
+          Description: Nizlo RMM Windows agent
+        - Filename: Nizlo.Agent.Updater.exe
+          OriginalFileName: Nizlo.Agent.Updater.exe
+          Description: Nizlo RMM Windows agent updater
+        - Filename: Nizlo.RemoteBridge.exe
+          OriginalFileName: Nizlo.RemoteBridge.exe
+          Description: Nizlo remote-support bridge
+    Privileges: The Windows agent installs as an automatic LocalSystem service and requires administrator approval for installation.
+    Free: 14-day trial without a credit card; no permanent free plan
+    Verification: >
+        The executable names, Windows paths, service, registry keys, URL
+        protocols, and network destination are documented on Nizlo's public
+        first-party security-indicators page. The executable names are also
+        present in the independently maintained RMM Catalogue, which cites
+        Nizlo's official downloads page. No local installer or agent was
+        executed for this contribution.
+    SupportedOS:
+        - Windows
+        - macOS
+    Capabilities:
+        - Endpoint monitoring and inventory
+        - Alerting and reporting
+        - Windows patch workflows
+        - Remote scripts and automation
+        - Remote support
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\Nizlo\Agent\*
+        - C:\ProgramData\Nizlo\Agent\*
+        - Nizlo.Agent.exe
+        - Nizlo.Agent.Updater.exe
+        - Nizlo.RemoteBridge.exe
+Artifacts:
+    Disk:
+        - File: C:\Program Files\Nizlo\Agent\Nizlo.Agent.exe
+          Description: Primary Windows agent executable in the documented installation directory.
+          OS: Windows
+        - File: C:\Program Files\Nizlo\Agent\Nizlo.Agent.Updater.exe
+          Description: Windows agent updater in the documented installation directory.
+          OS: Windows
+        - File: Nizlo.RemoteBridge.exe
+          Description: Remote-support bridge; the vendor notes that its path can vary, so correlate the filename with signer, parent process, command line, tenant approval, and surrounding activity.
+          OS: Windows
+    EventLog: []
+    Registry:
+        - Path: HKLM\Software\Nizlo\Agent
+          Description: Nizlo Windows agent registry key.
+        - Path: HKLM\Software\Classes\nizlo
+          Description: Registered nizlo URL protocol handler.
+        - Path: HKLM\Software\Classes\nizlo-remote
+          Description: Registered nizlo-remote URL protocol handler.
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\Nizlo RMM Agent
+          Description: Windows service registry key for the automatic LocalSystem agent service.
+    Network:
+        - Description: Vendor-documented production API and authenticated secure-WebSocket destination. The agent initiates outbound connections and does not require an inbound firewall port.
+          Domains:
+              - app.nizlo.com
+          Ports:
+              - 443
+    Other:
+        - Type: WindowsServiceName
+          Value: Nizlo RMM Agent
+        - Type: URLProtocol
+          Value: 'nizlo:'
+        - Type: URLProtocol
+          Value: 'nizlo-remote:'
+Detections: []
+References:
+    - https://nizlo.com/guides/nizlo-rmm-security-indicators
+    - https://nizlo.com/downloads
+    - https://github.com/0x706972686f/RMM-Catalogue/blob/main/rmm.csv
+Acknowledgement: []
