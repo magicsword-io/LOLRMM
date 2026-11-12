@@ -29,7 +29,7 @@ jobs:
           # Queued runs regenerate the latest main, never an older event snapshot.
           ref: main
           persist-credentials: false
-      - uses: actions/setup-python@v7.0.0
+      - uses: actions/setup-python@v7.1.0
         with:
           python-version: '3.12'
       - name: Install generator dependencies
@@ -59,7 +59,7 @@ jobs:
           permission-contents: write
           permission-pull-requests: write
       - name: Open or refresh generated-data PR
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
+        uses: peter-evans/create-pull-request@15733dbdfeedb4f7fdb73d13c6f5ac83b710fab8 # v8
         with:
           token: ${{ steps.app-token.outputs.token }}
           branch: automation/generated-data
