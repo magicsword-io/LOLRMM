@@ -16,7 +16,7 @@
     "format": "prettier --write src scripts tests *.mjs *.ts *.json"
   },
   "dependencies": {
-    "astro": "7.4.2",
+    "astro": "7.4.7",
     "yaml": "2.9.1"
   },
   "devDependencies": {
