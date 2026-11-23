@@ -1,0 +1,98 @@
+Name: SoftEther VPN Bridge
+Category: RAT
+Description: >-
+    SoftEther VPN Bridge is the site-to-site component of the open-source
+    SoftEther VPN project. It runs as a service on a host inside a network,
+    connects out to a SoftEther VPN Server and bridges the local network
+    segment to the remote side, giving whoever controls that server access to
+    the internal network. In November 2026 Rapid7 reported that the Webworm
+    group deployed a rebuilt SoftEther VPN Bridge (version 4.44, build 9807)
+    as netcapa.exe, rebranded as "NtMonitor VPN", to reach internal networks
+    of government targets. Campaign artifacts below are marked as such and
+    are not stock installation artifacts.
+Author: Liran Ravich, Cribl
+Created: '2026-11-23'
+LastModified: '2026-11-23'
+Details:
+    Website: https://www.softether.org/
+    PEMetadata:
+        - Filename: vpnbridge_x64.exe
+          OriginalFileName: ''
+          Description: Stock 64-bit SoftEther VPN Bridge executable, installed and run as a Windows service
+        - Filename: vpnbridge.exe
+          OriginalFileName: ''
+          Description: Stock 32-bit SoftEther VPN Bridge executable
+        - Filename: netcapa.exe
+          OriginalFileName: netcapa.exe
+          Description: Rebuilt 64-bit VPN Bridge from the Webworm campaign (Rapid7). Branded "Network Monitor Software" by "Network Systems Solutions Inc."; file version 4, 44, 0, 9807 is unchanged from stock. Campaign-specific, not a stock artifact
+    Privileges: Administrator to install the Windows service (system mode); per-user installation is also possible; root for the Linux service
+    Free: Yes (Open Source)
+    Verification: Open Source; no account is required to install or self-host. Credentials are set on the remote VPN Server
+    SupportedOS:
+        - Windows
+        - Linux
+        - macOS
+        - FreeBSD
+        - Solaris
+    Capabilities:
+        - Site-to-site VPN
+        - Layer 2 Ethernet bridging to a remote VPN Server
+        - Remote network access
+        - SSL-VPN tunneling over HTTPS
+    Vulnerabilities: []
+    InstallationPaths:
+        - C:\Program Files\SoftEther VPN Bridge\vpnbridge_x64.exe
+        - C:\Program Files\SoftEther VPN Bridge\vpnbridge.exe
+        - /opt/vpnbridge/vpnbridge
+Artifacts:
+    Disk:
+        - File: C:\Program Files\SoftEther VPN Bridge\hamcore.se2
+          Description: Stock resource archive that must sit beside the executable at runtime. Rapid7 reported the Webworm build embeds a reduced copy as a PE resource instead, so this file is absent for that build
+          OS: Windows
+        - File: C:\Program Files\SoftEther VPN Bridge\vpn_bridge.config
+          Description: Stock VPN Bridge configuration file. The Webworm build renames it setting.conf and encrypts it (Rapid7)
+          OS: Windows
+        - File: /opt/vpnbridge/hamcore.se2
+          Description: Stock resource archive beside the Linux executable
+          OS: Linux
+    EventLog:
+        - EventID: 7045
+          ProviderName: Service Control Manager
+          LogFile: System.evtx
+          ServiceName: SEVPNBRIDGE
+          ImagePath: '"C:\Program Files\SoftEther VPN Bridge\vpnbridge_x64.exe" /service'
+          Description: Stock Windows service installation (display name "SoftEther VPN Bridge"); the install directory can be changed. The Webworm build replaces "SoftEther VPN" with "NtMonitor VPN" in service names and registry keys (Rapid7)
+    Registry:
+        - Path: HKLM\SYSTEM\CurrentControlSet\Services\SEVPNBRIDGE
+          Description: Stock Windows service key
+    Network:
+        - Description: Default SoftEther VPN Server listener ports the bridge connects to; the server operator can change them
+          Domains:
+              - user_managed
+          Ports:
+              - 443
+              - 992
+              - 1194
+              - 5555
+        - Description: Official project and download sites; shared infrastructure, not evidence of bridge use
+          Domains:
+              - www.softether.org
+              - softether-download.com
+              - www.softether-download.com
+          Ports:
+              - 443
+          Detection: false
+          DetectionReason: Documentation and download hosts; the hostname alone does not indicate VPN Bridge activity
+    Other:
+        - Type: WindowsServiceName
+          Value: SEVPNBRIDGE
+        - Type: LinuxSystemdUnit
+          Value: softether-vpnbridge.service
+        - Type: Other
+          Value: 'Webworm campaign (Rapid7): netcapa.exe, internal brand "NtMonitor VPN", configuration file setting.conf'
+Detections: []
+References:
+    - https://www.softether.org/
+    - https://github.com/SoftEtherVPN/SoftEtherVPN_Stable
+    - https://www.rapid7.com/blog/post/tr-spying-on-governments-no-malware-custom-webworms-toolkit-softether-bridge
+Acknowledgement: []
